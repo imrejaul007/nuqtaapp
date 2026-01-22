@@ -417,26 +417,26 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 14: UNIT ECONOMICS ====================
       case 13:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-8 py-12">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Unit Economics</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Target Metrics</h2>
-            <p className="text-gray-500 mb-12">(Pre-launch estimates for validation)</p>
+          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Unit Economics</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">Target Metrics</h2>
+            <p className="text-gray-500 text-xs sm:text-sm mb-6 sm:mb-8 md:mb-12">(Pre-launch estimates for validation)</p>
 
-            <div className="grid grid-cols-3 gap-8 max-w-3xl w-full">
-              <div className="text-center">
-                <p className="text-6xl md:text-7xl font-black text-[#c9a227]">$2-4</p>
-                <p className="text-xl font-bold mt-2">Monthly ARPU</p>
-                <p className="text-gray-500 text-sm">Per active user</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl w-full">
+              <div className="text-center bg-[#1a2a42]/30 sm:bg-transparent rounded-xl p-4 sm:p-0">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#c9a227]">$2-4</p>
+                <p className="text-base sm:text-lg md:text-xl font-bold mt-1 sm:mt-2">Monthly ARPU</p>
+                <p className="text-gray-500 text-xs sm:text-sm">Per active user</p>
               </div>
-              <div className="text-center">
-                <p className="text-6xl md:text-7xl font-black text-green-400">70%+</p>
-                <p className="text-xl font-bold mt-2">Gross Margin</p>
-                <p className="text-gray-500 text-sm">Software-based</p>
+              <div className="text-center bg-[#1a2a42]/30 sm:bg-transparent rounded-xl p-4 sm:p-0">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-green-400">70%+</p>
+                <p className="text-base sm:text-lg md:text-xl font-bold mt-1 sm:mt-2">Gross Margin</p>
+                <p className="text-gray-500 text-xs sm:text-sm">Software-based</p>
               </div>
-              <div className="text-center">
-                <p className="text-6xl md:text-7xl font-black text-blue-400">&lt;3mo</p>
-                <p className="text-xl font-bold mt-2">Payback</p>
-                <p className="text-gray-500 text-sm">Merchant CAC</p>
+              <div className="text-center bg-[#1a2a42]/30 sm:bg-transparent rounded-xl p-4 sm:p-0">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-blue-400">&lt;3mo</p>
+                <p className="text-base sm:text-lg md:text-xl font-bold mt-1 sm:mt-2">Payback</p>
+                <p className="text-gray-500 text-xs sm:text-sm">Merchant CAC</p>
               </div>
             </div>
           </div>
@@ -445,31 +445,31 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 15: TRACTION ====================
       case 14:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-8 py-12">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Current Status</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Pre-Launch</h2>
-            <p className="text-gray-400 text-lg mb-12 text-center max-w-xl">
+          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Current Status</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">Pre-Launch</h2>
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-12 text-center max-w-xl px-2">
               Building MVP, validating demand, securing pilots. No vanity metrics — just honest progress.
             </p>
 
-            <div className="grid grid-cols-2 gap-6 max-w-2xl w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-2xl w-full">
               {[
                 { icon: '📋', title: 'Early Access Waitlist', status: 'Growing' },
                 { icon: '🏪', title: 'Merchant Pilots', status: 'In Discussion' },
                 { icon: '🤝', title: 'BNPL Partnerships', status: 'Conversations Active' },
                 { icon: '📈', title: 'Investor Interest', status: 'Strong Inbound' },
               ].map((item, idx) => (
-                <div key={idx} className="bg-[#1a2a42]/50 rounded-2xl p-6 border border-[#2a3a52] flex items-center gap-4">
-                  <span className="text-4xl">{item.icon}</span>
-                  <div>
-                    <p className="font-bold">{item.title}</p>
-                    <p className="text-[#c9a227] text-sm">{item.status}</p>
+                <div key={idx} className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-[#2a3a52] flex items-center gap-2 sm:gap-3 md:gap-4">
+                  <span className="text-2xl sm:text-3xl md:text-4xl">{item.icon}</span>
+                  <div className="min-w-0">
+                    <p className="font-bold text-sm sm:text-base truncate">{item.title}</p>
+                    <p className="text-[#c9a227] text-xs sm:text-sm">{item.status}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="mt-12 text-lg text-center">
+            <p className="mt-6 sm:mt-8 md:mt-12 text-sm sm:text-base md:text-lg text-center">
               Focus: <span className="text-[#c9a227] font-bold">Repeat usage</span>, not downloads.
             </p>
           </div>
@@ -478,27 +478,27 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 16: ROADMAP ====================
       case 15:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-8 py-12">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Execution Plan</p>
-            <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">Roadmap</h2>
+          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Execution Plan</p>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">Roadmap</h2>
 
-            <div className="flex items-start gap-6 max-w-5xl w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl w-full">
               {[
                 { phase: 'Phase 1', time: '0-6 mo', title: 'Launch', items: ['MVP live', '100 merchants', 'Core features'], current: true },
                 { phase: 'Phase 2', time: '6-12 mo', title: 'Scale', items: ['500+ merchants', 'BNPL integrations', 'Category expansion'], current: false },
                 { phase: 'Phase 3', time: '12-24 mo', title: 'Expand', items: ['GCC markets', 'Bank partnerships', 'Series A ready'], current: false },
               ].map((item, idx) => (
-                <div key={idx} className={`flex-1 rounded-2xl p-6 border ${item.current ? 'bg-[#c9a227]/10 border-[#c9a227]' : 'bg-[#1a2a42]/50 border-[#2a3a52]'}`}>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${item.current ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-[#2a3a52] text-gray-400'}`}>
+                <div key={idx} className={`rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border ${item.current ? 'bg-[#c9a227]/10 border-[#c9a227]' : 'bg-[#1a2a42]/50 border-[#2a3a52]'}`}>
+                  <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
+                    <span className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold ${item.current ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-[#2a3a52] text-gray-400'}`}>
                       {item.phase}
                     </span>
-                    <span className="text-gray-500 text-sm">{item.time}</span>
+                    <span className="text-gray-500 text-[10px] sm:text-xs md:text-sm">{item.time}</span>
                   </div>
-                  <h3 className={`text-2xl font-bold mb-4 ${item.current ? 'text-[#c9a227]' : 'text-white'}`}>{item.title}</h3>
-                  <ul className="space-y-2">
+                  <h3 className={`text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3 md:mb-4 ${item.current ? 'text-[#c9a227]' : 'text-white'}`}>{item.title}</h3>
+                  <ul className="space-y-1 sm:space-y-2">
                     {item.items.map((point, i) => (
-                      <li key={i} className="flex items-center gap-2 text-gray-400 text-sm">
+                      <li key={i} className="flex items-center gap-1 sm:gap-2 text-gray-400 text-xs sm:text-sm">
                         <span className={item.current ? 'text-[#c9a227]' : 'text-gray-600'}>→</span>
                         {point}
                       </li>
