@@ -87,18 +87,14 @@ export default function TermsPage() {
 
           {/* Quick Summary */}
           <div className="bg-[#1a2a42] rounded-lg sm:rounded-xl p-4 sm:p-6 border border-[#c9a227]/30 text-left">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="text-center">
                 <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">$500K</p>
                 <p className="text-xs sm:text-sm text-gray-400">Round Size</p>
               </div>
               <div className="text-center">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold">$3M</p>
-                <p className="text-xs sm:text-sm text-gray-400">Floor</p>
-              </div>
-              <div className="text-center">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold">$10M</p>
-                <p className="text-sm text-gray-400">Cap</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold">$5M</p>
+                <p className="text-xs sm:text-sm text-gray-400">Valuation Cap</p>
               </div>
               <div className="text-center">
                 <p className="text-3xl font-bold">20%</p>
@@ -124,40 +120,39 @@ export default function TermsPage() {
         </div>
 
         {/* Term 1 */}
-        <TermCard number="1" question="Why set a $3M valuation floor?">
+        <TermCard number="1" question="Why $5M cap for a pre-revenue startup?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
-              The floor is downside protection, not a valuation assertion. We are pre-revenue, which
-              means traditional valuation methods don&apos;t apply. However, significant value has already been
-              created through product architecture, market positioning, and strategic planning.
+              The $5M cap reflects a realistic pre-revenue valuation for a GCC fintech startup with
+              validated demand signals (200+ waitlist, 5 pilot merchants signed) and clear market positioning.
+              It&apos;s deliberately conservative — not aspirational.
             </p>
             <p>
-              Without a floor, early investors face the risk of excessive dilution if market conditions
-              temporarily depress the next round&apos;s pricing. The $3M floor ensures that those who take
-              the earliest risk receive appropriate protection against short-term market volatility.
+              Unlike inflated pre-seed valuations, $5M provides fair upside for early investors while leaving
+              room for meaningful price appreciation in the seed round. If we execute well, seed investors
+              will have a clear step-up in valuation, making the round attractive.
             </p>
             <div className="bg-[#0a1628] border border-[#2a3a52] rounded-lg p-4 mt-4">
-              <p className="text-white font-medium">The principle: Early believers should be protected from scenarios where their conviction is punished by timing.</p>
+              <p className="text-white font-medium">The principle: Price fairly to reward early conviction, not to maximize dilution protection.</p>
             </div>
           </div>
         </TermCard>
 
         {/* Term 2 */}
-        <TermCard number="2" question="How do you justify a $10M cap?">
+        <TermCard number="2" question="How does the cap protect early investors?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
-              The cap reflects the potential value of the infrastructure position we are building, not
-              current traction. Nuqta is positioning as the neutral payment intelligence layer for the
-              GCC — a strategic role that doesn&apos;t currently exist in this market.
+              If we execute well and raise a seed round at $15M+ valuation, the $5M cap ensures early
+              investors convert at the capped price, not the higher seed price. This rewards their
+              early conviction with meaningful upside participation.
             </p>
             <p>
-              If execution goes well and we raise a strong seed round at a significantly higher
-              valuation, the cap ensures early investors share meaningfully in that upside. Without
-              a cap, early investors would convert at whatever the next round prices — potentially
-              missing the value creation that their early capital enabled.
+              Example: Seed round prices at $15M. Early investors with the $5M cap convert at an effective
+              $4M valuation (with 20% discount), resulting in 3.75x better economics than seed investors.
+              Without the cap, they would simply convert at the $15M price.
             </p>
             <div className="bg-[#c9a227]/10 border-l-4 border-[#c9a227] p-4 rounded-r mt-4">
-              <p className="text-[#c9a227] font-medium">The cap is about sharing upside, not claiming current value.</p>
+              <p className="text-[#c9a227] font-medium">The cap rewards early believers if we deliver on our vision.</p>
             </div>
           </div>
         </TermCard>
@@ -171,10 +166,9 @@ export default function TermsPage() {
               discount applies when the next round prices below the cap.
             </p>
             <p>
-              The discount works alongside the cap and floor, not instead of them. If the seed round
-              prices at $8M, early investors convert at an effective $6.4M valuation (20% discount).
-              If it prices at $15M, they convert at the $10M cap. If market conditions push the seed
-              round to $4M, they convert at the $3M floor.
+              The discount works alongside the cap. If the seed round prices at $8M (above the cap),
+              early investors convert at the $5M cap. If it prices at $6M (below the cap), they convert
+              at an effective $4.8M valuation (20% discount on $6M). The better outcome always applies.
             </p>
             <div className="bg-[#0a1628] border border-[#2a3a52] rounded-lg p-4 mt-4">
               <p className="text-white font-medium">The discount rewards the time value and risk premium of early capital.</p>
@@ -206,20 +200,17 @@ export default function TermsPage() {
         <TermCard number="5" question="What happens if the next round is flat or down?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
-              <p className="text-blue-400 text-sm font-medium">This scenario is explicitly considered in the structure.</p>
+              <p className="text-blue-400 text-sm font-medium">Early investors still benefit from the 20% discount.</p>
             </div>
             <p>
-              The $3M floor exists precisely for this situation. If market conditions, sector
-              sentiment, or timing result in a flat or down round, early investors are protected
-              from converting at an unreasonably low valuation. The discount still applies, and
-              conversion occurs at whichever is most favorable: the discounted seed price, the floor,
-              or the actual round price.
+              If the seed round prices at or below the $5M cap (e.g., $4M due to market conditions),
+              early investors convert with a 20% discount on that price — effectively $3.2M in this
+              example. This rewards their early conviction even in challenging market conditions.
             </p>
             <p>
-              This protection isn&apos;t about avoiding reality — it&apos;s about ensuring that temporary
-              market conditions don&apos;t permanently penalize early conviction. If fundamentals are
-              genuinely weak, subsequent rounds will reflect that; but early investors won&apos;t be
-              wiped out by bad timing alone.
+              Unlike structures with floors, we accept market reality. If fundamentals are weak,
+              subsequent rounds will reflect that. The 20% discount ensures early investors get
+              better terms than seed investors while staying aligned with actual market conditions.
             </p>
           </div>
         </TermCard>
@@ -289,13 +280,8 @@ export default function TermsPage() {
                   <td className="py-3 px-4 text-gray-400">18-24 month runway to seed metrics</td>
                 </tr>
                 <tr className="border-b border-[#2a3a52]/50">
-                  <td className="py-3 px-4 font-medium">Valuation Floor</td>
-                  <td className="py-3 px-4 text-[#c9a227]">$3M</td>
-                  <td className="py-3 px-4 text-gray-400">Downside protection for early investors</td>
-                </tr>
-                <tr className="border-b border-[#2a3a52]/50">
                   <td className="py-3 px-4 font-medium">Valuation Cap</td>
-                  <td className="py-3 px-4 text-[#c9a227]">$10M</td>
+                  <td className="py-3 px-4 text-[#c9a227]">$5M</td>
                   <td className="py-3 px-4 text-gray-400">Upside sharing for early conviction</td>
                 </tr>
                 <tr className="border-b border-[#2a3a52]/50">

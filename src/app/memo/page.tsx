@@ -233,7 +233,7 @@ export default function InvestorMemo() {
                 </div>
                 <div className="text-right">
                   <p className="text-lg font-semibold">Convertible Note</p>
-                  <p className="text-gray-400 text-sm">$3M Floor / $10M Cap</p>
+                  <p className="text-gray-400 text-sm">$5M Cap + 20% Discount</p>
                 </div>
               </div>
               <div className="grid grid-cols-4 gap-4 pt-4 border-t border-gray-700">
