@@ -275,71 +275,71 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 6: SOLUTION ====================
       case 6:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-8">The Solution</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">The Solution</p>
 
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight mb-6 sm:mb-8">
               Nuqta <span className="text-[#c9a227]">pays you</span> to shop.
             </h2>
 
-            <div className="bg-[#1a2a42]/50 rounded-2xl p-8 md:p-12 max-w-3xl border border-[#c9a227]/30 mb-8">
-              <p className="text-2xl md:text-3xl font-bold text-[#c9a227] mb-6">
+            <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-3xl border border-[#c9a227]/30 mb-6 sm:mb-8">
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227] mb-4 sm:mb-6">
                 5-10% cashback on every purchase
               </p>
-              <div className="grid md:grid-cols-2 gap-4 text-left">
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">💰</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-left">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl flex-shrink-0">💰</span>
                   <div>
-                    <p className="text-white font-semibold">Before purchase</p>
-                    <p className="text-gray-400 text-sm">Smart payment recommendation saves you money</p>
+                    <p className="text-white font-semibold text-sm sm:text-base">Before purchase</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Smart payment recommendation saves you money</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">⭐</span>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl flex-shrink-0">⭐</span>
                   <div>
-                    <p className="text-white font-semibold">After purchase</p>
-                    <p className="text-gray-400 text-sm">Earn Nuqta Coin automatically (redeemable anywhere)</p>
+                    <p className="text-white font-semibold text-sm sm:text-base">After purchase</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Earn Nuqta Coin automatically (redeemable anywhere)</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">📱</span>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl flex-shrink-0">📱</span>
                   <div>
-                    <p className="text-white font-semibold">Share on social</p>
-                    <p className="text-gray-400 text-sm">Earn 2x rewards for sharing your experience</p>
+                    <p className="text-white font-semibold text-sm sm:text-base">Share on social</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Earn 2x rewards for sharing your experience</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl">🎯</span>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl flex-shrink-0">🎯</span>
                   <div>
-                    <p className="text-white font-semibold">For merchants</p>
-                    <p className="text-gray-400 text-sm">Pay only for actual sales (10-15% commission)</p>
+                    <p className="text-white font-semibold text-sm sm:text-base">For merchants</p>
+                    <p className="text-gray-400 text-xs sm:text-sm">Pay only for actual sales (10-15% commission)</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#0a1628]/80 rounded-xl p-6 max-w-2xl border border-[#c9a227]/30">
-              <p className="text-sm text-gray-400 mb-3 text-center">Real Example: AED 100 Restaurant Bill</p>
-              <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="bg-[#0a1628]/80 rounded-lg sm:rounded-xl p-4 sm:p-6 max-w-2xl border border-[#c9a227]/30">
+              <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3 text-center">Real Example: AED 100 Restaurant Bill</p>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 text-center">
                 <div>
-                  <p className="text-2xl font-bold text-blue-400">AED 10</p>
-                  <p className="text-xs text-gray-500 mt-1">Saved with best card</p>
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-blue-400">AED 10</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">Saved with best card</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#c9a227]">AED 8</p>
-                  <p className="text-xs text-gray-500 mt-1">Cashback earned (8%)</p>
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 8</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">Cashback earned (8%)</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-green-400">AED 4</p>
-                  <p className="text-xs text-gray-500 mt-1">Social share bonus</p>
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-green-400">AED 4</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">Social share bonus</p>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-[#2a3a52]">
-                <p className="text-center">
+              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#2a3a52]">
+                <p className="text-center text-xs sm:text-sm md:text-base">
                   <span className="text-gray-400">You get: </span>
-                  <span className="text-[#c9a227] text-2xl font-bold">AED 12 cash</span>
+                  <span className="text-[#c9a227] text-base sm:text-xl md:text-2xl font-bold">AED 12 cash</span>
                   <span className="text-gray-400"> + AED 10 saved = </span>
-                  <span className="text-white text-xl font-bold">AED 22 total benefit</span>
+                  <span className="text-white text-sm sm:text-lg md:text-xl font-bold">AED 22 total benefit</span>
                 </p>
               </div>
             </div>
@@ -349,66 +349,66 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 7: WHAT IS NUQTA ====================
       case 7:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-8">Platform Definition</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Platform Definition</p>
 
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 md:mb-12">
               What is <span className="text-[#c9a227]">Nuqta</span>?
             </h2>
 
-            <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-16 max-w-4xl mb-8 sm:mb-12">
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">🧠</span>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#c9a227]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl sm:text-4xl">🧠</span>
                 </div>
-                <p className="text-xl font-bold mb-2">Intelligence</p>
-                <p className="text-gray-400 text-sm">Best card, wallet, or BNPL for every purchase</p>
+                <p className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Intelligence</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Best card, wallet, or BNPL for every purchase</p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">💰</span>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#c9a227]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl sm:text-4xl">💰</span>
                 </div>
-                <p className="text-xl font-bold mb-2">Cashback</p>
-                <p className="text-gray-400 text-sm">5-10% back on every purchase instantly</p>
+                <p className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Cashback</p>
+                <p className="text-gray-400 text-xs sm:text-sm">5-10% back on every purchase instantly</p>
               </div>
               <div className="text-center">
-                <div className="w-20 h-20 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl">🔥</span>
+                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#c9a227]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl sm:text-4xl">🔥</span>
                 </div>
-                <p className="text-xl font-bold mb-2">Rewards</p>
-                <p className="text-gray-400 text-sm">Transaction-based cashback + social bonuses</p>
+                <p className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Rewards</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Transaction-based cashback + social bonuses</p>
               </div>
             </div>
 
             {/* Smart Pay Advisor Explanation */}
-            <div className="bg-[#1a2a42]/50 rounded-2xl p-8 max-w-3xl border border-[#c9a227]/30">
-              <p className="text-sm text-[#c9a227] font-bold mb-4 uppercase tracking-wider">How Smart Pay Works</p>
-              <div className="space-y-3 text-left">
-                <div className="flex items-start gap-3">
-                  <span className="text-lg">📱</span>
+            <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 max-w-3xl border border-[#c9a227]/30">
+              <p className="text-xs sm:text-sm text-[#c9a227] font-bold mb-3 sm:mb-4 uppercase tracking-wider">How Smart Pay Works</p>
+              <div className="space-y-2 sm:space-y-3 text-left">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-base sm:text-lg flex-shrink-0">📱</span>
                   <div>
-                    <p className="text-white font-semibold text-sm">User adds their cards/wallets to Nuqta</p>
-                    <p className="text-gray-400 text-xs">ADCB card, Liv wallet, Tabby BNPL, etc.</p>
+                    <p className="text-white font-semibold text-xs sm:text-sm">User adds their cards/wallets to Nuqta</p>
+                    <p className="text-gray-400 text-[10px] sm:text-xs">ADCB card, Liv wallet, Tabby BNPL, etc.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-lg">🔍</span>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-base sm:text-lg flex-shrink-0">🔍</span>
                   <div>
-                    <p className="text-white font-semibold text-sm">We track bank offers & merchant partnerships</p>
-                    <p className="text-gray-400 text-xs">15% off dining with ADCB, 10% cashback with Liv, etc.</p>
+                    <p className="text-white font-semibold text-xs sm:text-sm">We track bank offers & merchant partnerships</p>
+                    <p className="text-gray-400 text-[10px] sm:text-xs">15% off dining with ADCB, 10% cashback with Liv, etc.</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-lg">✨</span>
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <span className="text-base sm:text-lg flex-shrink-0">✨</span>
                   <div>
-                    <p className="text-white font-semibold text-sm">At checkout, we show the best option</p>
-                    <p className="text-gray-400 text-xs">&quot;Use ADCB → Save AED 15&quot; vs &quot;Use Liv → Save AED 10&quot;</p>
+                    <p className="text-white font-semibold text-xs sm:text-sm">At checkout, we show the best option</p>
+                    <p className="text-gray-400 text-[10px] sm:text-xs">&quot;Use ADCB → Save AED 15&quot; vs &quot;Use Liv → Save AED 10&quot;</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <p className="mt-12 text-lg text-gray-500 italic">
+            <p className="mt-6 sm:mt-8 md:mt-12 text-sm sm:text-base md:text-lg text-gray-500 italic px-4">
               &quot;نقطة&quot; means &quot;point&quot; in Arabic — the starting point of every payment.
             </p>
           </div>
