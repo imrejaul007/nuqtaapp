@@ -417,26 +417,26 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 14: UNIT ECONOMICS ====================
       case 13:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Unit Economics</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">Target Metrics</h2>
-            <p className="text-gray-500 text-xs sm:text-sm mb-6 sm:mb-8 md:mb-12">(Pre-launch estimates for validation)</p>
+          <div className="h-full flex flex-col items-center justify-start sm:justify-center px-4 sm:px-6 md:px-8 py-4 sm:py-8 md:py-12 overflow-y-auto">
+            <p className="text-[#c9a227] text-xs sm:text-base md:text-lg uppercase tracking-[0.15em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Unit Economics</p>
+            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 sm:mb-4 text-center">Target Metrics</h2>
+            <p className="text-gray-500 text-[10px] sm:text-sm mb-4 sm:mb-8 md:mb-12">(Pre-launch estimates)</p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-3xl w-full">
-              <div className="text-center bg-[#1a2a42]/30 sm:bg-transparent rounded-xl p-4 sm:p-0">
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-[#c9a227]">$2-4</p>
-                <p className="text-base sm:text-lg md:text-xl font-bold mt-1 sm:mt-2">Monthly ARPU</p>
-                <p className="text-gray-500 text-xs sm:text-sm">Per active user</p>
+            <div className="flex flex-row sm:grid sm:grid-cols-3 gap-2 sm:gap-6 md:gap-8 max-w-3xl w-full">
+              <div className="flex-1 text-center bg-[#1a2a42]/50 rounded-lg sm:rounded-xl p-2 sm:p-4 border border-[#2a3a52]">
+                <p className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227]">$2-4</p>
+                <p className="text-[10px] sm:text-base md:text-lg font-bold mt-1">ARPU</p>
+                <p className="text-gray-500 text-[8px] sm:text-xs hidden sm:block">Per active user</p>
               </div>
-              <div className="text-center bg-[#1a2a42]/30 sm:bg-transparent rounded-xl p-4 sm:p-0">
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-green-400">70%+</p>
-                <p className="text-base sm:text-lg md:text-xl font-bold mt-1 sm:mt-2">Gross Margin</p>
-                <p className="text-gray-500 text-xs sm:text-sm">Software-based</p>
+              <div className="flex-1 text-center bg-[#1a2a42]/50 rounded-lg sm:rounded-xl p-2 sm:p-4 border border-[#2a3a52]">
+                <p className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-400">70%+</p>
+                <p className="text-[10px] sm:text-base md:text-lg font-bold mt-1">Margin</p>
+                <p className="text-gray-500 text-[8px] sm:text-xs hidden sm:block">Software-based</p>
               </div>
-              <div className="text-center bg-[#1a2a42]/30 sm:bg-transparent rounded-xl p-4 sm:p-0">
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-blue-400">&lt;3mo</p>
-                <p className="text-base sm:text-lg md:text-xl font-bold mt-1 sm:mt-2">Payback</p>
-                <p className="text-gray-500 text-xs sm:text-sm">Merchant CAC</p>
+              <div className="flex-1 text-center bg-[#1a2a42]/50 rounded-lg sm:rounded-xl p-2 sm:p-4 border border-[#2a3a52]">
+                <p className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400">&lt;3mo</p>
+                <p className="text-[10px] sm:text-base md:text-lg font-bold mt-1">Payback</p>
+                <p className="text-gray-500 text-[8px] sm:text-xs hidden sm:block">Merchant CAC</p>
               </div>
             </div>
           </div>
