@@ -47,41 +47,41 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 1: COVER ====================
       case 0:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8 bg-gradient-to-b from-[#0a1628] via-[#0d1c30] to-[#0a1628]">
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0a1628] via-[#0d1c30] to-[#0a1628]">
             {/* Logo */}
-            <div className="relative mb-8">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden relative">
-                <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain p-3" priority />
+            <div className="relative mb-4 sm:mb-6 md:mb-8">
+              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden relative">
+                <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain p-2 sm:p-3" priority />
               </div>
-              <div className="absolute -inset-6 bg-[#c9a227]/20 rounded-full blur-3xl -z-10" />
+              <div className="absolute -inset-4 sm:-inset-6 bg-[#c9a227]/20 rounded-full blur-3xl -z-10" />
             </div>
 
             {/* Title */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl font-black tracking-tight mb-1 sm:mb-2">
               NUQTA
             </h1>
-            <p className="text-3xl md:text-4xl text-[#c9a227] font-light mb-8">نقطة</p>
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#c9a227] font-light mb-4 sm:mb-6 md:mb-8">نقطة</p>
 
             {/* Tagline */}
-            <p className="text-xl md:text-2xl text-gray-400 font-light max-w-xl mb-12">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 font-light max-w-xs sm:max-w-md md:max-w-xl mb-6 sm:mb-8 md:mb-12">
               Smart Rewards & Payment Intelligence for the GCC
             </p>
 
             {/* Key Metrics Bar */}
-            <div className="flex items-center gap-8 md:gap-16">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16">
               <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-[#c9a227]">$500K</p>
-                <p className="text-sm text-gray-500 uppercase tracking-wider">Raising</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227]">$500K</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Raising</p>
               </div>
-              <div className="w-px h-12 bg-gray-700" />
+              <div className="w-px h-8 sm:h-10 md:h-12 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold">$3M-$10M</p>
-                <p className="text-sm text-gray-500 uppercase tracking-wider">Valuation</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">$3M-$10M</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Valuation</p>
               </div>
-              <div className="w-px h-12 bg-gray-700" />
+              <div className="w-px h-8 sm:h-10 md:h-12 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold">CCD</p>
-                <p className="text-sm text-gray-500 uppercase tracking-wider">Instrument</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">CCD</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Instrument</p>
               </div>
             </div>
           </div>
@@ -90,16 +90,16 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 2: THE PROBLEM (Hook) ====================
       case 1:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-8">The Problem</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">The Problem</p>
 
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight mb-4 sm:mb-6 md:mb-8">
               Spending is <span className="text-[#c9a227]">digital</span>.
               <br />
               Rewards are <span className="text-red-500">broken</span>.
             </h2>
 
-            <p className="text-xl md:text-2xl text-gray-400 max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl">
               Fragmented loyalty programs. Zero intelligence on how to pay.
               Billions in uncaptured value.
             </p>
@@ -109,14 +109,14 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 3: PROBLEM STAT 1 ====================
       case 2:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-red-400 text-lg uppercase tracking-[0.3em] mb-8">User Pain</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">User Pain</p>
 
-            <p className="text-[150px] md:text-[200px] lg:text-[250px] font-black text-red-500 leading-none">
+            <p className="text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] xl:text-[250px] font-black text-red-500 leading-none">
               70%
             </p>
 
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-xl mt-4">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-xs sm:max-w-md md:max-w-xl mt-2 sm:mt-4">
               of offline spending earns <span className="text-red-400 font-bold">zero rewards</span>
             </p>
           </div>
@@ -125,14 +125,14 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 4: PROBLEM STAT 2 ====================
       case 3:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-red-400 text-lg uppercase tracking-[0.3em] mb-8">Fragmentation</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Fragmentation</p>
 
-            <p className="text-[150px] md:text-[200px] lg:text-[250px] font-black text-red-500 leading-none">
+            <p className="text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] xl:text-[250px] font-black text-red-500 leading-none">
               5+
             </p>
 
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-xl mt-4">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-xs sm:max-w-md md:max-w-xl mt-2 sm:mt-4">
               loyalty apps per user — <span className="text-red-400 font-bold">none talk to each other</span>
             </p>
           </div>
@@ -141,10 +141,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 5: PROBLEM STAT 3 ====================
       case 4:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-red-400 text-lg uppercase tracking-[0.3em] mb-8">Merchant Pain</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
+            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Merchant Pain</p>
 
-            <p className="text-[100px] md:text-[140px] lg:text-[180px] font-black text-red-500 leading-none">
+            <p className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[140px] xl:text-[180px] font-black text-red-500 leading-none">
               25-30%
             </p>
 
@@ -681,49 +681,49 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
   return (
     <div className="fixed inset-0 z-[100] bg-[#0a1628]">
       {/* Minimal Header */}
-      <div className="absolute top-0 left-0 right-0 h-16 flex items-center justify-between px-6 md:px-12 z-10">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 relative">
+      <div className="absolute top-0 left-0 right-0 h-12 sm:h-14 md:h-16 flex items-center justify-between px-4 sm:px-6 md:px-12 z-10">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
             <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
           </div>
-          <span className="font-bold text-[#c9a227] hidden md:inline">NUQTA</span>
+          <span className="font-bold text-[#c9a227] hidden sm:inline text-sm md:text-base">NUQTA</span>
         </div>
 
         <button
           onClick={onClose}
-          className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
+          className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
       {/* Slide Content */}
-      <div className="h-full pt-16 pb-24">
+      <div className="h-full pt-12 sm:pt-14 md:pt-16 pb-20 sm:pb-24">
         {renderSlide()}
       </div>
 
       {/* Minimal Navigation */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 flex items-center justify-between px-6 md:px-12">
+      <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 flex items-center justify-between px-4 sm:px-6 md:px-12">
         <button
           onClick={() => setCurrentSlide(prev => Math.max(prev - 1, 0))}
           disabled={currentSlide === 0}
-          className="w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 disabled:opacity-20 flex items-center justify-center transition-all"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/5 hover:bg-white/10 disabled:opacity-20 flex items-center justify-center transition-all"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
         {/* Progress Bar */}
-        <div className="flex-1 max-w-md mx-8">
-          <div className="flex items-center justify-center gap-2 mb-2">
-            <span className="text-[#c9a227] font-bold text-lg">{currentSlide + 1}</span>
-            <span className="text-gray-600">/</span>
-            <span className="text-gray-500">{totalSlides}</span>
+        <div className="flex-1 max-w-[200px] sm:max-w-xs md:max-w-md mx-4 sm:mx-6 md:mx-8">
+          <div className="flex items-center justify-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+            <span className="text-[#c9a227] font-bold text-sm sm:text-base md:text-lg">{currentSlide + 1}</span>
+            <span className="text-gray-600 text-sm">/</span>
+            <span className="text-gray-500 text-sm">{totalSlides}</span>
           </div>
-          <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+          <div className="h-0.5 sm:h-1 bg-white/10 rounded-full overflow-hidden">
             <div
               className="h-full bg-[#c9a227] transition-all duration-300"
               style={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
@@ -734,16 +734,16 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
         <button
           onClick={() => setCurrentSlide(prev => Math.min(prev + 1, totalSlides - 1))}
           disabled={currentSlide === totalSlides - 1}
-          className="w-12 h-12 rounded-full bg-[#c9a227] text-[#0a1628] hover:bg-[#f4d35e] disabled:opacity-20 flex items-center justify-center transition-all"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#c9a227] text-[#0a1628] hover:bg-[#f4d35e] disabled:opacity-20 flex items-center justify-center transition-all"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
       </div>
 
       {/* Keyboard Hint */}
-      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs text-gray-700 hidden md:block">
+      <div className="absolute bottom-1 sm:bottom-2 left-1/2 -translate-x-1/2 text-[10px] sm:text-xs text-gray-700 hidden md:block">
         ← → to navigate • ESC to close
       </div>
     </div>

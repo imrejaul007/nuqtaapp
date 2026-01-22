@@ -19,20 +19,20 @@ function CommitmentSection({
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="mb-6 bg-[#1a2a42] rounded-xl border border-[#2a3a52] overflow-hidden">
+    <div className="mb-4 sm:mb-6 bg-[#1a2a42] rounded-lg sm:rounded-xl border border-[#2a3a52] overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 text-left flex items-start gap-4 hover:bg-[#1f3050] transition-colors"
+        className="w-full p-3 sm:p-4 md:p-6 text-left flex items-start gap-2 sm:gap-3 md:gap-4 hover:bg-[#1f3050] transition-colors"
       >
-        <span className="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+        <span className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold text-sm sm:text-lg">
           {number}
         </span>
-        <div className="flex-1">
-          <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
-          <p className="text-purple-400 text-sm">{summary}</p>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-0.5 sm:mb-1">{title}</h3>
+          <p className="text-purple-400 text-xs sm:text-sm line-clamp-2">{summary}</p>
         </div>
         <svg
-          className={`w-6 h-6 text-gray-400 transition-transform mt-1 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 sm:w-6 sm:h-6 text-gray-400 transition-transform mt-0.5 sm:mt-1 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -41,8 +41,8 @@ function CommitmentSection({
         </svg>
       </button>
       {isOpen && (
-        <div className="px-6 pb-6 pt-0 border-t border-[#2a3a52]">
-          <div className="pt-4 pl-14">{children}</div>
+        <div className="px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6 pt-0 border-t border-[#2a3a52]">
+          <div className="pt-3 sm:pt-4 pl-0 sm:pl-10 md:pl-14">{children}</div>
         </div>
       )}
     </div>
@@ -53,39 +53,39 @@ export default function FounderCommitment() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
-      <div className="bg-[#0a1628] border-b border-[#1a2a42] py-4 px-6 flex items-center justify-between sticky top-0 z-50">
+      <div className="bg-[#0a1628] border-b border-[#1a2a42] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 relative">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
             <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
           </div>
-          <span className="font-bold">NUQTA</span>
+          <span className="font-bold text-sm sm:text-base">NUQTA</span>
         </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/data-room" className="text-gray-400 hover:text-white transition-colors text-sm">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Link href="/data-room" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
             Data Room
           </Link>
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">
-            Back to Site
+          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
+            Back
           </Link>
         </div>
       </div>
 
       {/* Hero */}
-      <div className="bg-gradient-to-b from-purple-900/20 to-transparent py-16 px-6">
+      <div className="bg-gradient-to-b from-purple-900/20 to-transparent py-8 sm:py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="text-purple-400 text-sm font-medium uppercase tracking-wider mb-3">Personal Accountability</p>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Founder Commitment</h1>
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-purple-400 text-xs sm:text-sm font-medium uppercase tracking-wider mb-2 sm:mb-3">Personal Accountability</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">Founder Commitment</h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-4 sm:mb-6 md:mb-8">
             Structure that aligns interests for the long term
           </p>
-          <div className="inline-block bg-[#1a2a42] rounded-xl px-6 py-4 border border-[#2a3a52]">
-            <p className="text-gray-300 italic">&quot;Commitment isn&apos;t measured by promises — it&apos;s measured by structure.&quot;</p>
+          <div className="inline-block bg-[#1a2a42] rounded-lg sm:rounded-xl px-4 sm:px-6 py-3 sm:py-4 border border-[#2a3a52]">
+            <p className="text-sm sm:text-base text-gray-300 italic">&quot;Commitment isn&apos;t measured by promises — it&apos;s measured by structure.&quot;</p>
           </div>
         </div>
       </div>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
 
         {/* Section 1: Compensation */}
         <CommitmentSection
@@ -265,24 +265,24 @@ export default function FounderCommitment() {
         </div>
 
         {/* Footer Navigation */}
-        <div className="mt-12 pt-8 border-t border-[#1a2a42] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
+        <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#1a2a42] flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
             <Link
               href="/data-room"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
             >
               &larr; Data Room
             </Link>
             <Link
               href="/terms"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
+              className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm"
             >
               CCD Terms &rarr;
             </Link>
           </div>
           <a
             href="mailto:rejaul@nuqtaapp.com?subject=Nuqta%20Investment%20Discussion"
-            className="px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-lg font-semibold hover:bg-[#f4d35e] transition-colors"
+            className="px-4 sm:px-6 py-2 sm:py-3 bg-[#c9a227] text-[#0a1628] rounded-lg font-semibold hover:bg-[#f4d35e] transition-colors text-sm sm:text-base"
           >
             Schedule a Call
           </a>

@@ -32,53 +32,55 @@ export default function InvestorMemo() {
       `}</style>
 
       {/* Header Bar - Hidden on print */}
-      <div className="no-print bg-[#0a1628] text-white py-4 px-6 flex items-center justify-between">
+      <div className="no-print bg-[#0a1628] text-white py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 relative">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
             <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
           </div>
-          <span className="font-bold">NUQTA</span>
+          <span className="font-bold text-sm sm:text-base">NUQTA</span>
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={handlePrint}
-            className="flex items-center gap-2 px-4 py-2 bg-[#c9a227] text-[#0a1628] rounded-lg font-medium hover:bg-[#f4d35e] transition-colors"
+            className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227] text-[#0a1628] rounded-lg font-medium hover:bg-[#f4d35e] transition-colors text-xs sm:text-sm"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
             </svg>
-            Print / Save PDF
+            <span className="hidden sm:inline">Print / Save PDF</span>
+            <span className="sm:hidden">PDF</span>
           </button>
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-            Back to Site
+          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
+            <span className="hidden sm:inline">Back to Site</span>
+            <span className="sm:hidden">Back</span>
           </Link>
         </div>
       </div>
 
       {/* Memo Content */}
-      <div className="memo-container max-w-3xl mx-auto px-6 py-12">
-        <div className="memo-content bg-white rounded-lg shadow-lg border border-gray-200 p-8 md:p-12">
+      <div className="memo-container max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
+        <div className="memo-content bg-white rounded-lg shadow-lg border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-12">
 
           {/* Header */}
-          <div className="flex items-start justify-between mb-8 pb-6 border-b border-gray-200">
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 sm:mb-8 pb-4 sm:pb-6 border-b border-gray-200 gap-4 sm:gap-0">
             <div>
-              <p className="text-sm text-gray-500 uppercase tracking-wider mb-1">Investor Memo</p>
-              <h1 className="text-3xl font-bold text-gray-900">NUQTA</h1>
-              <p className="text-gray-600">Payment Intelligence & Universal Rewards</p>
+              <p className="text-xs sm:text-sm text-gray-500 uppercase tracking-wider mb-1">Investor Memo</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">NUQTA</h1>
+              <p className="text-sm sm:text-base text-gray-600">Payment Intelligence & Universal Rewards</p>
             </div>
-            <div className="text-right">
-              <p className="text-sm text-gray-500">January 2025</p>
-              <p className="text-sm text-gray-500">Pre-Seed Round</p>
+            <div className="sm:text-right">
+              <p className="text-xs sm:text-sm text-gray-500">January 2025</p>
+              <p className="text-xs sm:text-sm text-gray-500">Pre-Seed Round</p>
             </div>
           </div>
 
           {/* Executive Summary */}
-          <section className="mb-8">
-            <h2 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-              <span className="w-6 h-6 bg-[#c9a227] text-white rounded text-xs flex items-center justify-center font-bold">1</span>
+          <section className="mb-6 sm:mb-8">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+              <span className="w-5 h-5 sm:w-6 sm:h-6 bg-[#c9a227] text-white rounded text-[10px] sm:text-xs flex items-center justify-center font-bold">1</span>
               Executive Summary
             </h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
               Nuqta is building the payment intelligence layer for the Gulf region. We aggregate offers, rewards,
               and payment options across banks, BNPL providers, and merchants into a single consumer interface.
               Users make smarter payment decisions and earn universal rewards. Merchants access affordable
@@ -88,52 +90,52 @@ export default function InvestorMemo() {
           </section>
 
           {/* Market Opportunity */}
-          <section className="mb-8">
-            <h2 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-              <span className="w-6 h-6 bg-[#c9a227] text-white rounded text-xs flex items-center justify-center font-bold">2</span>
+          <section className="mb-6 sm:mb-8">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+              <span className="w-5 h-5 sm:w-6 sm:h-6 bg-[#c9a227] text-white rounded text-[10px] sm:text-xs flex items-center justify-center font-bold">2</span>
               Market Opportunity
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
               The GCC represents one of the world&apos;s most attractive consumer fintech markets. Digital
               payment adoption has accelerated dramatically, yet the infrastructure remains fragmented.
               BNPL providers like Tabby and Tamara have normalized installment payments, but consumers
               lack tools to compare options. Banks offer competing card rewards that go unclaimed.
               Merchants surrender margins to delivery aggregators while losing customer relationships.
             </p>
-            <div className="grid grid-cols-3 gap-4 text-center">
-              <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-2xl font-bold text-[#c9a227]">$600B+</p>
-                <p className="text-xs text-gray-500">GCC Consumer Spend</p>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+              <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">$600B+</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">GCC Consumer Spend</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-2xl font-bold text-[#c9a227]">70%+</p>
-                <p className="text-xs text-gray-500">Digital Payment Adoption</p>
+              <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">70%+</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Digital Payment Adoption</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-2xl font-bold text-[#c9a227]">5M+</p>
-                <p className="text-xs text-gray-500">Target Active Users</p>
+              <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">5M+</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Target Active Users</p>
               </div>
             </div>
           </section>
 
           {/* The Problem */}
-          <section className="mb-8">
-            <h2 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-              <span className="w-6 h-6 bg-[#c9a227] text-white rounded text-xs flex items-center justify-center font-bold">3</span>
+          <section className="mb-6 sm:mb-8">
+            <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
+              <span className="w-5 h-5 sm:w-6 sm:h-6 bg-[#c9a227] text-white rounded text-[10px] sm:text-xs flex items-center justify-center font-bold">3</span>
               The Problem
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <p className="font-semibold text-gray-900 mb-2">Consumer Pain Points</p>
-                <p className="text-sm text-gray-600 leading-relaxed">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-gray-50 rounded-lg p-3 sm:p-4">
+                <p className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">Consumer Pain Points</p>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   Consumers manage multiple payment apps, miss card rewards, and have no visibility into
                   the optimal payment method for each purchase. Loyalty programs are fragmented across
                   dozens of apps with points that expire unused.
                 </p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <p className="font-semibold text-gray-900 mb-2">Merchant Pain Points</p>
-                <p className="text-sm text-gray-600 leading-relaxed">
+              <div className="bg-gray-50 rounded-lg p-3 sm:p-4">
+                <p className="font-semibold text-gray-900 mb-1 sm:mb-2 text-sm sm:text-base">Merchant Pain Points</p>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
                   Small and medium merchants pay aggregator commissions that can exceed 25% per transaction.
                   They lack affordable tools to build customer loyalty and have no ownership of customer
                   relationships or data.
@@ -266,27 +268,27 @@ export default function InvestorMemo() {
       </div>
 
       {/* Bottom Actions - Hidden on print */}
-      <div className="no-print bg-gray-50 border-t border-gray-200 py-6 px-6">
-        <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-sm">
+      <div className="no-print bg-gray-50 border-t border-gray-200 py-4 sm:py-6 px-4 sm:px-6">
+        <div className="max-w-3xl mx-auto flex flex-col items-center gap-3 sm:gap-4">
+          <p className="text-gray-600 text-xs sm:text-sm text-center">
             Ready to learn more? View the full pitch deck or schedule a call.
           </p>
-          <div className="flex items-center gap-3 flex-wrap justify-center">
+          <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center">
             <Link
               href="/"
-              className="px-4 py-2 bg-[#0a1628] text-white rounded-lg font-medium hover:bg-[#1a2a42] transition-colors text-sm"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0a1628] text-white rounded-lg font-medium hover:bg-[#1a2a42] transition-colors text-xs sm:text-sm"
             >
               Full Deck
             </Link>
             <Link
               href="/data-room"
-              className="px-4 py-2 bg-[#0a1628] text-white rounded-lg font-medium hover:bg-[#1a2a42] transition-colors text-sm"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#0a1628] text-white rounded-lg font-medium hover:bg-[#1a2a42] transition-colors text-xs sm:text-sm"
             >
               Data Room
             </Link>
             <a
               href="mailto:rejaul@nuqtaapp.com?subject=Nuqta%20Investment%20Discussion"
-              className="px-4 py-2 bg-[#c9a227] text-[#0a1628] rounded-lg font-medium hover:bg-[#f4d35e] transition-colors text-sm"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227] text-[#0a1628] rounded-lg font-medium hover:bg-[#f4d35e] transition-colors text-xs sm:text-sm"
             >
               Schedule Call
             </a>

@@ -17,19 +17,19 @@ function TermCard({
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="mb-6 bg-[#1a2a42] rounded-xl border border-[#2a3a52] overflow-hidden">
+    <div className="mb-4 sm:mb-6 bg-[#1a2a42] rounded-lg sm:rounded-xl border border-[#2a3a52] overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full p-6 flex items-start justify-between text-left hover:bg-[#243550] transition-colors"
+        className="w-full p-3 sm:p-4 md:p-6 flex items-start justify-between text-left hover:bg-[#243550] transition-colors gap-2"
       >
-        <div className="flex items-start gap-4">
-          <span className="w-10 h-10 bg-[#c9a227] text-[#0a1628] rounded-xl flex items-center justify-center text-lg font-bold flex-shrink-0">
+        <div className="flex items-start gap-2 sm:gap-3 md:gap-4 min-w-0">
+          <span className="w-8 h-8 sm:w-10 sm:h-10 bg-[#c9a227] text-[#0a1628] rounded-lg sm:rounded-xl flex items-center justify-center text-sm sm:text-lg font-bold flex-shrink-0">
             {number}
           </span>
-          <h3 className="text-xl font-bold mt-1">{question}</h3>
+          <h3 className="text-base sm:text-lg md:text-xl font-bold mt-0.5 sm:mt-1">{question}</h3>
         </div>
         <svg
-          className={`w-5 h-5 text-gray-400 transition-transform mt-2 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform mt-1 sm:mt-2 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -38,8 +38,8 @@ function TermCard({
         </svg>
       </button>
       {isOpen && (
-        <div className="px-6 pb-6 border-t border-[#2a3a52]">
-          <div className="pt-4 pl-14">
+        <div className="px-3 sm:px-4 md:px-6 pb-3 sm:pb-4 md:pb-6 border-t border-[#2a3a52]">
+          <div className="pt-3 sm:pt-4 pl-0 sm:pl-10 md:pl-14">
             {children}
           </div>
         </div>
@@ -52,52 +52,52 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
-      <div className="bg-[#0d1c30] border-b border-[#2a3a52] py-4 px-6 flex items-center justify-between sticky top-0 z-50">
+      <div className="bg-[#0d1c30] border-b border-[#2a3a52] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 relative">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
             <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
           </div>
-          <span className="font-bold text-[#c9a227]">NUQTA</span>
+          <span className="font-bold text-[#c9a227] text-sm sm:text-base">NUQTA</span>
         </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/data-room" className="text-gray-400 hover:text-white transition-colors text-sm">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Link href="/data-room" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
             Data Room
           </Link>
-          <Link href="/memo" className="text-gray-400 hover:text-white transition-colors text-sm">
+          <Link href="/memo" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm hidden sm:inline">
             Memo
           </Link>
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">
+          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
             Home
           </Link>
         </div>
       </div>
 
       {/* Hero */}
-      <div className="bg-gradient-to-b from-[#0d1c30] to-[#0a1628] py-16 px-6">
+      <div className="bg-gradient-to-b from-[#0d1c30] to-[#0a1628] py-8 sm:py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-sm font-medium mb-4">
+          <span className="inline-block px-3 sm:px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             INVESTMENT TERMS
           </span>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 sm:mb-4">
             Understanding the Structure
           </h1>
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-4 sm:mb-6 md:mb-8">
             Transparent explanations for each term decision
           </p>
 
           {/* Quick Summary */}
-          <div className="bg-[#1a2a42] rounded-xl p-6 border border-[#c9a227]/30 text-left">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="bg-[#1a2a42] rounded-lg sm:rounded-xl p-4 sm:p-6 border border-[#c9a227]/30 text-left">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="text-center">
-                <p className="text-3xl font-bold text-[#c9a227]">$500K</p>
-                <p className="text-sm text-gray-400">Round Size</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">$500K</p>
+                <p className="text-xs sm:text-sm text-gray-400">Round Size</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold">$3M</p>
-                <p className="text-sm text-gray-400">Floor</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold">$3M</p>
+                <p className="text-xs sm:text-sm text-gray-400">Floor</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold">$10M</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold">$10M</p>
                 <p className="text-sm text-gray-400">Cap</p>
               </div>
               <div className="text-center">

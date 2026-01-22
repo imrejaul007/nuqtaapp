@@ -262,11 +262,11 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-5 flex justify-between items-center text-left group"
+        className="w-full py-3 sm:py-4 md:py-5 flex justify-between items-center text-left group gap-3"
       >
-        <span className="font-medium text-lg group-hover:text-[#c9a227] transition-colors">{question}</span>
+        <span className="font-medium text-sm sm:text-base md:text-lg group-hover:text-[#c9a227] transition-colors">{question}</span>
         <svg
-          className={`w-5 h-5 text-[#c9a227] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -275,9 +275,9 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
         </svg>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-5' : 'max-h-0'}`}
+        className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-4 sm:pb-5' : 'max-h-0'}`}
       >
-        <p className="text-gray-400">{answer}</p>
+        <p className="text-gray-400 text-sm sm:text-base">{answer}</p>
       </div>
     </div>
   );
@@ -299,7 +299,7 @@ function FeatureCard({ icon, title, description, items, index = 0 }: {
       ref={ref}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="card-gradient rounded-xl p-6 transition-all duration-500 cursor-pointer group relative overflow-hidden"
+      className="card-gradient rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 transition-all duration-500 cursor-pointer group relative overflow-hidden"
       style={{
         opacity: isInView ? 1 : 0,
         transform: isInView
@@ -316,17 +316,17 @@ function FeatureCard({ icon, title, description, items, index = 0 }: {
       />
 
       <div className="relative z-10">
-        <div className={`text-[#c9a227] mb-4 transition-transform duration-500 ${isHovered ? 'scale-110' : ''}`}>
+        <div className={`text-[#c9a227] mb-3 sm:mb-4 transition-transform duration-500 ${isHovered ? 'scale-110' : ''}`}>
           {icon}
         </div>
-        <h3 className="text-xl font-semibold mb-3 group-hover:text-[#c9a227] transition-colors">{title}</h3>
-        <p className="text-gray-400 mb-4">{description}</p>
+        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-[#c9a227] transition-colors">{title}</h3>
+        <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">{description}</p>
         {items && (
-          <ul className="space-y-2">
+          <ul className="space-y-1.5 sm:space-y-2">
             {items.map((item, idx) => (
               <li
                 key={idx}
-                className="flex items-start gap-2 text-sm text-gray-300"
+                className="flex items-start gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-300"
                 style={{
                   opacity: isInView ? 1 : 0,
                   transform: isInView ? 'translateX(0)' : 'translateX(-20px)',
@@ -367,16 +367,16 @@ function StepCard({ number, title, description, index }: {
       }}
     >
       <div
-        className={`w-20 h-20 bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-full mx-auto mb-4 flex items-center justify-center transition-all duration-500 ${isHovered ? 'scale-110 shadow-lg shadow-[#c9a227]/30' : ''}`}
+        className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center transition-all duration-500 ${isHovered ? 'scale-110 shadow-lg shadow-[#c9a227]/30' : ''}`}
       >
-        <span className="text-[#0a1628] text-3xl font-bold">{number}</span>
+        <span className="text-[#0a1628] text-xl sm:text-2xl md:text-3xl font-bold">{number}</span>
       </div>
       {/* Connecting line */}
       {index < 3 && (
         <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#c9a227] to-[#c9a227]/20" />
       )}
-      <h3 className="text-xl font-semibold mb-2 group-hover:text-[#c9a227] transition-colors">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2 group-hover:text-[#c9a227] transition-colors">{title}</h3>
+      <p className="text-gray-400 text-sm sm:text-base">{description}</p>
     </div>
   );
 }
@@ -472,19 +472,28 @@ export default function Home() {
 
         {/* Navigation */}
         <nav className="fixed top-1 left-0 right-0 z-50 bg-[#0a1628]/90 backdrop-blur-md border-b border-[#2a3a52]">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
             <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="w-10 h-10 relative transition-transform duration-300 group-hover:scale-110">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 relative transition-transform duration-300 group-hover:scale-110">
                 <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
               </div>
-              <span className="text-xl font-bold group-hover:text-[#c9a227] transition-colors">Nuqta</span>
+              <span className="text-lg sm:text-xl font-bold group-hover:text-[#c9a227] transition-colors">Nuqta</span>
             </div>
-            <div className="hidden md:flex items-center gap-8">
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden p-2 text-gray-300 hover:text-[#c9a227]"
+              onClick={() => setIsDeckOpen(true)}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            <div className="hidden md:flex items-center gap-4 lg:gap-8">
               {['Features', 'How It Works', 'Use Cases', 'Investors', 'FAQ'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-gray-300 hover:text-[#c9a227] transition-all duration-300 hover:scale-105 relative group"
+                  className="text-sm lg:text-base text-gray-300 hover:text-[#c9a227] transition-all duration-300 hover:scale-105 relative group"
                 >
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
@@ -498,39 +507,40 @@ export default function Home() {
         </nav>
 
         {/* Hero Section */}
-        <section className="section-padding pt-32 md:pt-40 min-h-screen flex items-center relative">
+        <section className="section-padding pt-24 sm:pt-28 md:pt-32 lg:pt-40 min-h-screen flex items-center relative">
           <FloatingParticles />
-          <div className="max-w-7xl mx-auto text-center relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
             <AnimatedSection>
-              <div className="inline-block px-4 py-2 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-full mb-6 animate-pulse">
-                <span className="text-[#c9a227] text-sm font-medium">Smart Rewards & Payment Intelligence for the GCC</span>
+              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-full mb-4 sm:mb-6 animate-pulse">
+                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">Smart Rewards & Payment Intelligence for the GCC</span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                Every payment starts<br />with a <span className="gradient-text animate-shimmer">point</span>.
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
+                Every payment starts<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>with a <span className="gradient-text animate-shimmer">point</span>.
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={400}>
-              <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-2">
                 <span className="text-white font-semibold">Nuqta (&#1606;&#1602;&#1591;&#1577;)</span> helps people earn universal rewards on everyday spending and always choose the smartest way to pay — online and offline.
               </p>
             </AnimatedSection>
 
             <AnimatedSection delay={600}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#early-access" className="btn-primary text-lg group relative overflow-hidden">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
+                <a href="#early-access" className="btn-primary text-base sm:text-lg group relative overflow-hidden">
                   <span className="relative z-10">Get Early Access</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </a>
                 <button
                   onClick={() => setIsDeckOpen(true)}
-                  className="btn-secondary text-lg group hover:border-[#c9a227] transition-all duration-300"
+                  className="btn-secondary text-base sm:text-lg group hover:border-[#c9a227] transition-all duration-300"
                 >
-                  <span className="flex items-center gap-2">
-                    <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="flex items-center justify-center gap-2">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -542,8 +552,8 @@ export default function Home() {
 
             {/* Scroll indicator */}
             <AnimatedSection delay={1000}>
-              <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                <svg className="w-6 h-6 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
               </div>
@@ -552,18 +562,18 @@ export default function Home() {
         </section>
 
         {/* ==================== INVESTOR SNAPSHOT ==================== */}
-        <section className="py-12 bg-gradient-to-b from-[#0a1628] to-[#0d1c30] border-y border-[#c9a227]/20">
-          <div className="max-w-6xl mx-auto px-6">
+        <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-b from-[#0a1628] to-[#0d1c30] border-y border-[#c9a227]/20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6">
             <AnimatedSection>
-              <div className="text-center mb-8">
-                <span className="inline-block px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-sm font-medium mb-4">
+              <div className="text-center mb-6 sm:mb-8">
+                <span className="inline-block px-3 sm:px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-xs sm:text-sm font-medium mb-3 sm:mb-4">
                   Investment Opportunity
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold">The Opportunity at a Glance</h2>
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">The Opportunity at a Glance</h2>
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {[
                 { value: '$40B', label: 'UAE Addressable Market', sub: 'Annual spend', icon: '📊' },
                 { value: '$500K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰' },
@@ -571,11 +581,11 @@ export default function Home() {
                 { value: 'First', label: 'Neutral Intelligence Layer', sub: 'in GCC payments', icon: '🏆' },
               ].map((item, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/80 rounded-xl p-5 border border-[#c9a227]/20 text-center hover:border-[#c9a227]/50 transition-all hover:scale-105">
-                    <span className="text-2xl mb-2 block">{item.icon}</span>
-                    <p className="text-2xl md:text-3xl font-bold text-[#c9a227]">{item.value}</p>
-                    <p className="font-medium text-sm mt-1">{item.label}</p>
-                    <p className="text-xs text-gray-500">{item.sub}</p>
+                  <div className="bg-[#1a2a42]/80 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 border border-[#c9a227]/20 text-center hover:border-[#c9a227]/50 transition-all hover:scale-105">
+                    <span className="text-xl sm:text-2xl mb-1 sm:mb-2 block">{item.icon}</span>
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#c9a227]">{item.value}</p>
+                    <p className="font-medium text-xs sm:text-sm mt-1">{item.label}</p>
+                    <p className="text-[10px] sm:text-xs text-gray-500">{item.sub}</p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -784,8 +794,8 @@ export default function Home() {
 
         {/* Stats Section */}
         <section className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
               {[
                 { value: 600, suffix: 'B+', prefix: '$', label: 'GCC Consumer Spending' },
                 { value: 70, suffix: '%', prefix: '', label: 'Digital Payment Rate' },
@@ -794,10 +804,10 @@ export default function Home() {
               ].map((stat, idx) => (
                 <AnimatedSection key={idx} delay={idx * 150}>
                   <div className="group cursor-pointer">
-                    <p className="text-4xl md:text-5xl font-bold text-[#c9a227] group-hover:scale-110 transition-transform">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227] group-hover:scale-110 transition-transform">
                       <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                     </p>
-                    <p className="text-gray-400 mt-2">{stat.label}</p>
+                    <p className="text-gray-400 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">{stat.label}</p>
                   </div>
                 </AnimatedSection>
               ))}

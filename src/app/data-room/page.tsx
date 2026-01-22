@@ -19,17 +19,17 @@ function Folder({
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div id={id} className="mb-8 scroll-mt-24">
+    <div id={id} className="mb-4 sm:mb-6 md:mb-8 scroll-mt-20 sm:scroll-mt-24">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full bg-[#1a2a42] rounded-t-xl p-5 flex items-center justify-between hover:bg-[#243550] transition-colors border border-[#2a3a52] border-b-0"
+        className="w-full bg-[#1a2a42] rounded-t-lg sm:rounded-t-xl p-3 sm:p-4 md:p-5 flex items-center justify-between hover:bg-[#243550] transition-colors border border-[#2a3a52] border-b-0"
       >
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{icon}</span>
-          <h2 className="text-xl font-bold">{title}</h2>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <span className="text-xl sm:text-2xl">{icon}</span>
+          <h2 className="text-base sm:text-lg md:text-xl font-bold">{title}</h2>
         </div>
         <svg
-          className={`w-5 h-5 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 sm:w-5 sm:h-5 text-gray-400 transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ function Folder({
         </svg>
       </button>
       {isOpen && (
-        <div className="bg-[#0d1c30] rounded-b-xl border border-[#2a3a52] border-t-0 p-6">
+        <div className="bg-[#0d1c30] rounded-b-lg sm:rounded-b-xl border border-[#2a3a52] border-t-0 p-3 sm:p-4 md:p-6">
           {children}
         </div>
       )}
@@ -62,16 +62,16 @@ function DocItem({
     <div className="border-b border-[#2a3a52] last:border-b-0">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-4 flex items-center justify-between text-left hover:text-[#c9a227] transition-colors"
+        className="w-full py-3 sm:py-4 flex items-center justify-between text-left hover:text-[#c9a227] transition-colors gap-2"
       >
-        <div className="flex items-center gap-3">
-          <span className="w-8 h-8 bg-[#c9a227]/20 text-[#c9a227] rounded-lg flex items-center justify-center text-sm font-bold">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+          <span className="w-6 h-6 sm:w-8 sm:h-8 bg-[#c9a227]/20 text-[#c9a227] rounded-lg flex items-center justify-center text-xs sm:text-sm font-bold flex-shrink-0">
             {number}
           </span>
-          <span className="font-medium">{title}</span>
+          <span className="font-medium text-sm sm:text-base truncate">{title}</span>
         </div>
         <svg
-          className={`w-4 h-4 text-gray-500 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 text-gray-500 transition-transform flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -80,8 +80,8 @@ function DocItem({
         </svg>
       </button>
       {isOpen && (
-        <div className="pb-6 pl-11 pr-4">
-          <div className="text-gray-300 text-sm leading-relaxed">
+        <div className="pb-4 sm:pb-6 pl-8 sm:pl-11 pr-2 sm:pr-4">
+          <div className="text-gray-300 text-xs sm:text-sm leading-relaxed">
             {children}
           </div>
         </div>
@@ -114,38 +114,38 @@ export default function DataRoomPage() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
-      <div className="bg-[#0d1c30] border-b border-[#2a3a52] py-4 px-6 flex items-center justify-between sticky top-0 z-50">
+      <div className="bg-[#0d1c30] border-b border-[#2a3a52] py-3 sm:py-4 px-4 sm:px-6 flex items-center justify-between sticky top-0 z-50">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 relative">
+          <div className="w-6 h-6 sm:w-8 sm:h-8 relative">
             <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
           </div>
-          <span className="font-bold text-[#c9a227]">NUQTA</span>
+          <span className="font-bold text-[#c9a227] text-sm sm:text-base">NUQTA</span>
         </Link>
-        <div className="flex items-center gap-4">
-          <Link href="/memo" className="text-gray-400 hover:text-white transition-colors text-sm">
+        <div className="flex items-center gap-2 sm:gap-4">
+          <Link href="/memo" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
             Memo
           </Link>
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm">
+          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm">
             Home
           </Link>
         </div>
       </div>
 
       {/* Hero */}
-      <div className="bg-gradient-to-b from-[#0d1c30] to-[#0a1628] py-16 px-6">
+      <div className="bg-gradient-to-b from-[#0d1c30] to-[#0a1628] py-8 sm:py-12 md:py-16 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-sm font-medium mb-4">
+          <span className="inline-block px-3 sm:px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-xs sm:text-sm font-medium mb-3 sm:mb-4">
             INVESTOR DATA ROOM
           </span>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 sm:mb-4">
             Due Diligence Materials
           </h1>
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-4 sm:mb-6 md:mb-8">
             Comprehensive documentation for investor review
           </p>
 
           {/* Quick Navigation */}
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {[
               { icon: '📁', label: 'Legal', href: '#legal' },
               { icon: '💻', label: 'Product', href: '#product' },
@@ -156,7 +156,7 @@ export default function DataRoomPage() {
               <a
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-2 px-4 py-2 bg-[#1a2a42] rounded-lg border border-[#2a3a52] hover:border-[#c9a227]/50 transition-colors text-sm"
+                className="flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-[#1a2a42] rounded-lg border border-[#2a3a52] hover:border-[#c9a227]/50 transition-colors text-xs sm:text-sm"
               >
                 <span>{item.icon}</span>
                 <span>{item.label}</span>
@@ -167,12 +167,12 @@ export default function DataRoomPage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-12">
 
         {/* Status Overview */}
-        <div className="bg-[#1a2a42] rounded-xl p-6 border border-[#2a3a52] mb-12">
-          <h3 className="font-bold text-lg mb-4">Documentation Status</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div className="bg-[#1a2a42] rounded-lg sm:rounded-xl p-4 sm:p-6 border border-[#2a3a52] mb-6 sm:mb-8 md:mb-12">
+          <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Documentation Status</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-4">
             {[
               { area: 'Legal Structure', status: 'complete' as const },
               { area: 'IP Ownership', status: 'complete' as const },
