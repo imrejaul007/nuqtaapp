@@ -22,15 +22,16 @@ function DataPoint({
 
   return (
     <span
-      className={`relative cursor-help inline-block ${className}`}
+      className={`relative cursor-help inline-flex items-start gap-1 ${className}`}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
       onTouchStart={() => setShowTooltip(true)}
-      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 2000)}
+      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 3000)}
     >
-      <span className="border-b border-dashed border-current">{value}</span>
+      <span>{value}</span>
+      <span className="text-[0.25em] text-[#c9a227]/70 hover:text-[#c9a227] transition-colors mt-1">ⓘ</span>
       {showTooltip && (
-        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs text-gray-300 whitespace-nowrap shadow-xl">
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs sm:text-sm text-gray-300 whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-xl font-normal">
           <span className="text-[#c9a227] font-medium">Source:</span> {source}
           <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#c9a227]/50" />
         </span>
