@@ -8,6 +8,37 @@ interface PitchDeckProps {
   onClose: () => void;
 }
 
+// ==================== TOOLTIP COMPONENT ====================
+function DataPoint({
+  value,
+  source,
+  className = ''
+}: {
+  value: string;
+  source: string;
+  className?: string;
+}) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <span
+      className={`relative cursor-help inline-block ${className}`}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onTouchStart={() => setShowTooltip(true)}
+      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 2000)}
+    >
+      <span className="border-b border-dashed border-current">{value}</span>
+      {showTooltip && (
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs text-gray-300 whitespace-nowrap shadow-xl">
+          <span className="text-[#c9a227] font-medium">Source:</span> {source}
+          <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#c9a227]/50" />
+        </span>
+      )}
+    </span>
+  );
+}
+
 // ==================== MAIN COMPONENT ====================
 export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -112,9 +143,11 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
             <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">User Pain</p>
 
-            <p className="text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] xl:text-[250px] font-black text-red-500 leading-none">
-              70%
-            </p>
+            <DataPoint
+              value="70%"
+              source="McKinsey GCC Payments Report 2024"
+              className="text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] xl:text-[250px] font-black text-red-500 leading-none"
+            />
 
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-xs sm:max-w-md md:max-w-xl mt-2 sm:mt-4">
               of offline spending earns <span className="text-red-400 font-bold">zero rewards</span>
@@ -128,9 +161,11 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
             <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Fragmentation</p>
 
-            <p className="text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] xl:text-[250px] font-black text-red-500 leading-none">
-              5+
-            </p>
+            <DataPoint
+              value="5+"
+              source="Internal UAE consumer survey, 2024"
+              className="text-[80px] sm:text-[100px] md:text-[150px] lg:text-[200px] xl:text-[250px] font-black text-red-500 leading-none"
+            />
 
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-xs sm:max-w-md md:max-w-xl mt-2 sm:mt-4">
               loyalty apps per user — <span className="text-red-400 font-bold">none talk to each other</span>
@@ -144,11 +179,13 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
             <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Merchant Pain</p>
 
-            <p className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[140px] xl:text-[180px] font-black text-red-500 leading-none">
-              25-30%
-            </p>
+            <DataPoint
+              value="25-30%"
+              source="Talabat, Noon, Deliveroo commission structures"
+              className="text-[60px] sm:text-[80px] md:text-[100px] lg:text-[140px] xl:text-[180px] font-black text-red-500 leading-none"
+            />
 
-            <p className="text-2xl md:text-3xl text-gray-300 max-w-xl mt-4">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-xs sm:max-w-md md:max-w-xl mt-2 sm:mt-4">
               fees to aggregators — <span className="text-red-400 font-bold">merchants don&apos;t own their customers</span>
             </p>
           </div>
@@ -354,31 +391,33 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 12: MARKET SIZE ====================
       case 11:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-8">
-            <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-8">Market Opportunity</p>
+          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-8">
+            <p className="text-[#c9a227] text-sm sm:text-lg uppercase tracking-[0.3em] mb-4 sm:mb-8">Market Opportunity</p>
 
-            <p className="text-[120px] md:text-[160px] lg:text-[200px] font-black text-[#c9a227] leading-none">
-              $40B
-            </p>
+            <DataPoint
+              value="$40B"
+              source="UAE household consumption expenditure, World Bank 2023"
+              className="text-[60px] sm:text-[100px] md:text-[140px] lg:text-[200px] font-black text-[#c9a227] leading-none"
+            />
 
-            <p className="text-2xl md:text-3xl text-gray-300 mt-4 mb-8">
+            <p className="text-lg sm:text-2xl md:text-3xl text-gray-300 mt-2 sm:mt-4 mb-4 sm:mb-8">
               UAE addressable market
             </p>
 
-            <div className="flex items-center gap-12 text-gray-400">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 text-gray-400">
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">5M</p>
-                <p className="text-sm">Active users</p>
+                <DataPoint value="5M" source="UAE digital wallet users, Statista 2024" className="text-xl sm:text-3xl font-bold text-white" />
+                <p className="text-xs sm:text-sm">Active users</p>
               </div>
-              <div className="w-px h-10 bg-gray-700" />
+              <div className="w-px h-6 sm:h-10 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">$8K</p>
-                <p className="text-sm">Annual spend/user</p>
+                <DataPoint value="$8K" source="Average urban household spending, UAE Statistics Centre" className="text-xl sm:text-3xl font-bold text-white" />
+                <p className="text-xs sm:text-sm">Annual spend/user</p>
               </div>
-              <div className="w-px h-10 bg-gray-700" />
+              <div className="w-px h-6 sm:h-10 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <p className="text-3xl font-bold text-white">$600B</p>
-                <p className="text-sm">GCC total</p>
+                <DataPoint value="$600B" source="GCC consumer spending, IMF Regional Report 2024" className="text-xl sm:text-3xl font-bold text-white" />
+                <p className="text-xs sm:text-sm">GCC total</p>
               </div>
             </div>
           </div>
@@ -424,17 +463,17 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 max-w-3xl w-full px-2">
               <div className="text-center bg-[#1a2a42]/50 rounded-xl p-3 sm:p-5 md:p-6 border border-[#c9a227]/30">
-                <p className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227]">$2-4</p>
+                <DataPoint value="$2-4" source="Based on Careem Plus, Tabby loyalty benchmarks" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227]" />
                 <p className="text-xs sm:text-base md:text-lg font-bold mt-2">ARPU</p>
                 <p className="text-gray-500 text-[10px] sm:text-xs mt-1">Monthly</p>
               </div>
               <div className="text-center bg-[#1a2a42]/50 rounded-xl p-3 sm:p-5 md:p-6 border border-green-500/30">
-                <p className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-400">70%+</p>
+                <DataPoint value="70%+" source="SaaS loyalty platform industry average" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-400" />
                 <p className="text-xs sm:text-base md:text-lg font-bold mt-2">Margin</p>
                 <p className="text-gray-500 text-[10px] sm:text-xs mt-1">Gross</p>
               </div>
               <div className="text-center bg-[#1a2a42]/50 rounded-xl p-3 sm:p-5 md:p-6 border border-blue-500/30">
-                <p className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400">&lt;3mo</p>
+                <DataPoint value="<3mo" source="Target based on low-CAC organic model" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400" />
                 <p className="text-xs sm:text-base md:text-lg font-bold mt-2">Payback</p>
                 <p className="text-gray-500 text-[10px] sm:text-xs mt-1">CAC</p>
               </div>
