@@ -111,7 +111,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             {/* Tagline */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 font-light max-w-xs sm:max-w-md md:max-w-xl mb-6 sm:mb-8 md:mb-12">
-              Smart Rewards & Payment Intelligence for the GCC
+              5-10% Cashback + Smart Payment Tips for the GCC
             </p>
 
             {/* Key Metrics Bar */}
@@ -318,9 +318,31 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               </div>
             </div>
 
-            <p className="text-lg md:text-xl text-gray-400 max-w-2xl">
-              <span className="text-white font-bold">Example:</span> AED 150 restaurant bill → Save AED 15 (payment tip) + Earn AED 12 cashback (8%) + Share for AED 4.50 bonus = <span className="text-[#c9a227] font-bold">AED 31.50 total value</span>
-            </p>
+            <div className="bg-[#0a1628]/80 rounded-xl p-6 max-w-2xl border border-[#c9a227]/30">
+              <p className="text-sm text-gray-400 mb-3 text-center">Real Example: AED 100 Restaurant Bill</p>
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <p className="text-2xl font-bold text-blue-400">AED 10</p>
+                  <p className="text-xs text-gray-500 mt-1">Saved with best card</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-[#c9a227]">AED 8</p>
+                  <p className="text-xs text-gray-500 mt-1">Cashback earned (8%)</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-green-400">AED 4</p>
+                  <p className="text-xs text-gray-500 mt-1">Social share bonus</p>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-[#2a3a52]">
+                <p className="text-center">
+                  <span className="text-gray-400">You get: </span>
+                  <span className="text-[#c9a227] text-2xl font-bold">AED 12 cash</span>
+                  <span className="text-gray-400"> + AED 10 saved = </span>
+                  <span className="text-white text-xl font-bold">AED 22 total benefit</span>
+                </p>
+              </div>
+            </div>
           </div>
         );
 
@@ -334,7 +356,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               What is <span className="text-[#c9a227]">Nuqta</span>?
             </h2>
 
-            <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl">
+            <div className="grid grid-cols-3 gap-8 md:gap-16 max-w-4xl mb-12">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
                   <span className="text-4xl">🧠</span>
@@ -353,8 +375,36 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 <div className="w-20 h-20 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
                   <span className="text-4xl">🔥</span>
                 </div>
-                <p className="text-xl font-bold mb-2">Loyalty</p>
-                <p className="text-gray-400 text-sm">Visit-based earning, not just spend</p>
+                <p className="text-xl font-bold mb-2">Rewards</p>
+                <p className="text-gray-400 text-sm">Transaction-based cashback + social bonuses</p>
+              </div>
+            </div>
+
+            {/* Smart Pay Advisor Explanation */}
+            <div className="bg-[#1a2a42]/50 rounded-2xl p-8 max-w-3xl border border-[#c9a227]/30">
+              <p className="text-sm text-[#c9a227] font-bold mb-4 uppercase tracking-wider">How Smart Pay Works</p>
+              <div className="space-y-3 text-left">
+                <div className="flex items-start gap-3">
+                  <span className="text-lg">📱</span>
+                  <div>
+                    <p className="text-white font-semibold text-sm">User adds their cards/wallets to Nuqta</p>
+                    <p className="text-gray-400 text-xs">ADCB card, Liv wallet, Tabby BNPL, etc.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-lg">🔍</span>
+                  <div>
+                    <p className="text-white font-semibold text-sm">We track bank offers & merchant partnerships</p>
+                    <p className="text-gray-400 text-xs">15% off dining with ADCB, 10% cashback with Liv, etc.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-lg">✨</span>
+                  <div>
+                    <p className="text-white font-semibold text-sm">At checkout, we show the best option</p>
+                    <p className="text-gray-400 text-xs">&quot;Use ADCB → Save AED 15&quot; vs &quot;Use Liv → Save AED 10&quot;</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -478,10 +528,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-3xl">
               {[
-                { icon: '💳', title: 'Smart Pay Advisor', stat: 'Saves 5-15%', desc: 'per transaction' },
-                { icon: '⭐', title: 'Universal Points', stat: 'Earn everywhere', desc: 'one currency' },
-                { icon: '📍', title: 'Local Discovery', stat: 'Real offers', desc: 'not spam' },
-                { icon: '🔥', title: 'Visit Streaks', stat: 'Bonus rewards', desc: 'for loyalty' },
+                { icon: '💳', title: 'Smart Pay Advisor', stat: 'Save 5-15%', desc: 'per transaction' },
+                { icon: '💰', title: 'Instant Cashback', stat: '5-10% back', desc: 'every purchase' },
+                { icon: '📱', title: 'Social Rewards', stat: '2x bonus', desc: 'share & earn' },
+                { icon: '⭐', title: 'Universal Points', stat: 'Redeem anywhere', desc: 'one currency' },
               ].map((item, idx) => (
                 <div key={idx} className="bg-[#1a2a42]/50 backdrop-blur rounded-2xl p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all">
                   <span className="text-4xl mb-4 block">{item.icon}</span>
@@ -531,18 +581,18 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Why Different</p>
             <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center">
-              The <span className="text-[#c9a227]">neutral</span> intelligence layer
+              Cashback + Intelligence = <span className="text-[#c9a227]">Better Value</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl w-full">
               <div className="bg-red-500/10 rounded-2xl p-8 border border-red-500/30">
-                <p className="text-red-400 font-bold text-lg mb-6">Others → Own One Layer</p>
+                <p className="text-red-400 font-bold text-lg mb-6">Others → Limited Value</p>
                 <div className="space-y-4">
                   {[
-                    'Banks optimize their cards only',
-                    'BNPL pushes their product only',
-                    'Loyalty siloed by brand',
-                    'Super apps = closed ecosystem',
+                    'Bank cards: 1-3% cashback only',
+                    'BNPL: No cashback, just financing',
+                    'Loyalty apps: Single merchant only',
+                    'Cashback sites: Online only, no advice',
                   ].map((item, idx) => (
                     <p key={idx} className="flex items-center gap-3 text-gray-400">
                       <span className="text-red-400">✗</span> {item}
@@ -552,13 +602,13 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               <div className="bg-[#c9a227]/10 rounded-2xl p-8 border border-[#c9a227]/30">
-                <p className="text-[#c9a227] font-bold text-lg mb-6">Nuqta → Connects All Layers</p>
+                <p className="text-[#c9a227] font-bold text-lg mb-6">Nuqta → Maximum Value</p>
                 <div className="space-y-4">
                   {[
-                    'Neutral comparison across ALL options',
-                    'One rewards currency everywhere',
-                    'Visit-based real loyalty',
-                    'Open infrastructure',
+                    '5-10% cashback on every purchase',
+                    'Smart advice: best card/wallet to use',
+                    'Works everywhere: online + offline',
+                    '2x rewards for social sharing',
                   ].map((item, idx) => (
                     <p key={idx} className="flex items-center gap-3 text-gray-300">
                       <span className="text-[#c9a227]">✓</span> {item}
@@ -747,10 +797,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-2xl w-full">
               {[
-                { icon: '📋', title: 'Early Access Waitlist', status: 'Growing' },
-                { icon: '🏪', title: 'Merchant Pilots', status: 'In Discussion' },
-                { icon: '🤝', title: 'BNPL Partnerships', status: 'Conversations Active' },
-                { icon: '📈', title: 'Investor Interest', status: 'Strong Inbound' },
+                { icon: '📋', title: 'Waitlist Users', status: '200+' },
+                { icon: '🏪', title: 'Pilot Merchants', status: '5 signed' },
+                { icon: '🤝', title: 'BNPL Partners', status: 'In talks with Tabby' },
+                { icon: '💻', title: 'MVP Status', status: 'In development' },
               ].map((item, idx) => (
                 <div key={idx} className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-[#2a3a52] flex items-center gap-2 sm:gap-3 md:gap-4">
                   <span className="text-2xl sm:text-3xl md:text-4xl">{item.icon}</span>
@@ -777,9 +827,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl w-full">
               {[
-                { phase: 'Phase 1', time: '0-6 mo', title: 'Launch', items: ['MVP live', '100 merchants', 'Core features'], current: true },
-                { phase: 'Phase 2', time: '6-12 mo', title: 'Scale', items: ['500+ merchants', 'BNPL integrations', 'Category expansion'], current: false },
-                { phase: 'Phase 3', time: '12-24 mo', title: 'Expand', items: ['GCC markets', 'Bank partnerships', 'Series A ready'], current: false },
+                { phase: 'Phase 1', time: '0-6 mo', title: 'Launch', items: ['MVP live (cashback + Smart Pay)', '100 merchants onboarded', '1,000 active users'], current: true },
+                { phase: 'Phase 2', time: '6-12 mo', title: 'Scale', items: ['500+ merchants', 'BNPL integrations live', '10,000+ users, 30% repeat'], current: false },
+                { phase: 'Phase 3', time: '12-24 mo', title: 'Expand', items: ['GCC expansion (KSA, Qatar)', 'Bank API partnerships', 'Series A ready'], current: false },
               ].map((item, idx) => (
                 <div key={idx} className={`rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border ${item.current ? 'bg-[#c9a227]/10 border-[#c9a227]' : 'bg-[#1a2a42]/50 border-[#2a3a52]'}`}>
                   <div className="flex items-center justify-between mb-2 sm:mb-3 md:mb-4">
