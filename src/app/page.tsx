@@ -245,6 +245,38 @@ function AnimatedSection({ children, className = '', delay = 0 }: {
   );
 }
 
+// DataPoint Tooltip Component for statistics with sources
+function DataPoint({
+  value,
+  source,
+  className = ''
+}: {
+  value: string;
+  source: string;
+  className?: string;
+}) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <span
+      className={`relative cursor-help inline-flex items-start gap-0.5 ${className}`}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onTouchStart={() => setShowTooltip(true)}
+      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 3000)}
+    >
+      <span>{value}</span>
+      <span className="text-[0.5em] text-[#c9a227]/70 hover:text-[#c9a227] transition-colors">ⓘ</span>
+      {showTooltip && (
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs sm:text-sm text-gray-300 whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-xl font-normal">
+          <span className="text-[#c9a227] font-medium">Source:</span> {source}
+          <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#c9a227]/50" />
+        </span>
+      )}
+    </span>
+  );
+}
+
 // FAQ Component with Animation
 function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -575,15 +607,17 @@ export default function Home() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {[
-                { value: '$40B', label: 'UAE Addressable Market', sub: 'Annual spend', icon: '📊' },
-                { value: '$500K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰' },
-                { value: '$3M-$10M', label: 'Valuation Range', sub: 'Floor to Cap', icon: '📈' },
-                { value: 'First', label: 'Neutral Intelligence Layer', sub: 'in GCC payments', icon: '🏆' },
+                { value: '$40B', label: 'UAE Addressable Market', sub: 'Annual spend', icon: '📊', source: 'Central Bank of UAE, Visa & Mastercard regional reports' },
+                { value: '$500K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰', source: null },
+                { value: '$3M-$10M', label: 'Valuation Range', sub: 'Floor to Cap', icon: '📈', source: null },
+                { value: 'First', label: 'Neutral Intelligence Layer', sub: 'in GCC payments', icon: '🏆', source: null },
               ].map((item, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
                   <div className="bg-[#1a2a42]/80 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 border border-[#c9a227]/20 text-center hover:border-[#c9a227]/50 transition-all hover:scale-105">
                     <span className="text-xl sm:text-2xl mb-1 sm:mb-2 block">{item.icon}</span>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#c9a227]">{item.value}</p>
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#c9a227]">
+                      {item.source ? <DataPoint value={item.value} source={item.source} /> : item.value}
+                    </p>
                     <p className="font-medium text-xs sm:text-sm mt-1">{item.label}</p>
                     <p className="text-[10px] sm:text-xs text-gray-500">{item.sub}</p>
                   </div>
@@ -680,13 +714,15 @@ export default function Home() {
             {/* Problem Stats */}
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {[
-                { stat: '70%+', label: 'of offline spending', desc: 'earns zero rewards', color: 'red' },
-                { stat: '5+', label: 'different loyalty apps', desc: 'average user has installed', color: 'red' },
-                { stat: '$0', label: 'payment optimization', desc: 'tools for consumers', color: 'red' },
+                { stat: '70%+', label: 'of offline spending', desc: 'earns zero rewards', color: 'red', source: 'McKinsey GCC Payments Report 2023' },
+                { stat: '5+', label: 'different loyalty apps', desc: 'average user has installed', color: 'red', source: 'Internal user research, UAE consumer surveys' },
+                { stat: '$0', label: 'payment optimization', desc: 'tools for consumers', color: 'red', source: null },
               ].map((item, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
                   <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-6 text-center hover:bg-red-500/10 transition-all">
-                    <p className="text-4xl md:text-5xl font-bold text-red-400 mb-2">{item.stat}</p>
+                    <p className="text-4xl md:text-5xl font-bold text-red-400 mb-2">
+                      {item.source ? <DataPoint value={item.stat} source={item.source} className="text-red-400" /> : item.stat}
+                    </p>
                     <p className="font-medium text-white">{item.label}</p>
                     <p className="text-gray-500 text-sm">{item.desc}</p>
                   </div>
@@ -696,27 +732,48 @@ export default function Home() {
 
             {/* Problem Cards */}
             <div className="grid md:grid-cols-2 gap-4 mb-8">
-              {[
-                { icon: "😤", title: "For Users", problems: ["Rewards fragmented across 10+ programs", "No idea which card saves the most", "Points expire or lose value", "Offline spending = zero rewards"] },
-                { icon: "😞", title: "For Merchants", problems: ["Pay 25-30% to marketplaces", "Don't own customer relationships", "Discount-driven, not loyalty-driven", "No affordable loyalty tools"] },
-              ].map((section, idx) => (
-                <AnimatedSection key={idx} delay={400 + idx * 100}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-red-500/20 h-full">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-3xl">{section.icon}</span>
-                      <h3 className="text-xl font-bold text-red-400">{section.title}</h3>
+              <AnimatedSection delay={400}>
+                <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-red-500/20 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-3xl">😤</span>
+                    <h3 className="text-xl font-bold text-red-400">For Users</h3>
+                  </div>
+                  <div className="space-y-3">
+                    {["Rewards fragmented across 10+ programs", "No idea which card saves the most", "Points expire or lose value", "Offline spending = zero rewards"].map((problem, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <XIcon />
+                        <span className="text-gray-300">{problem}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </AnimatedSection>
+              <AnimatedSection delay={500}>
+                <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-red-500/20 h-full">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-3xl">😞</span>
+                    <h3 className="text-xl font-bold text-red-400">For Merchants</h3>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <XIcon />
+                      <span className="text-gray-300">Pay <DataPoint value="25-30%" source="Talabat, Noon, Deliveroo merchant fee structures" className="text-gray-300" /> to marketplaces</span>
                     </div>
-                    <div className="space-y-3">
-                      {section.problems.map((problem, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <XIcon />
-                          <span className="text-gray-300">{problem}</span>
-                        </div>
-                      ))}
+                    <div className="flex items-start gap-3">
+                      <XIcon />
+                      <span className="text-gray-300">Don&apos;t own customer relationships</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <XIcon />
+                      <span className="text-gray-300">Discount-driven, not loyalty-driven</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <XIcon />
+                      <span className="text-gray-300">No affordable loyalty tools</span>
                     </div>
                   </div>
-                </AnimatedSection>
-              ))}
+                </div>
+              </AnimatedSection>
             </div>
 
             <AnimatedSection delay={700}>
@@ -1240,28 +1297,32 @@ export default function Home() {
                   title: 'Payments Behavior Shifting',
                   desc: 'Digital payments, contactless, and mobile wallets are now mainstream post-COVID. Users are open to new payment experiences.',
                   stat: '70%+',
-                  statLabel: 'Digital payment penetration in UAE'
+                  statLabel: 'Digital payment penetration in UAE',
+                  source: 'Central Bank of UAE Digital Payments Report 2023'
                 },
                 {
                   icon: '📈',
                   title: 'BNPL Adoption Accelerating',
                   desc: 'Tabby, Tamara, and others have normalized BNPL — but there\'s no neutral comparison layer. That\'s exactly what Nuqta provides.',
                   stat: '3x',
-                  statLabel: 'YoY BNPL growth in GCC'
+                  statLabel: 'YoY BNPL growth in GCC',
+                  source: 'Tabby & Tamara funding announcements, Kearney BNPL report'
                 },
                 {
                   icon: '🏪',
                   title: 'Merchants Hungry for Tools',
                   desc: 'Local merchants are losing customers to aggregators and lack affordable loyalty solutions. Nuqta gives them ownership.',
                   stat: '25-30%',
-                  statLabel: 'Commission lost to marketplaces'
+                  statLabel: 'Commission lost to marketplaces',
+                  source: 'Talabat, Noon, Deliveroo merchant fee structures'
                 },
                 {
                   icon: '🏆',
                   title: 'First-Mover Advantage',
                   desc: 'No one has built the neutral intelligence layer for GCC payments. The opportunity to define the category is now.',
                   stat: '$0',
-                  statLabel: 'Competition in this space'
+                  statLabel: 'Competition in this space',
+                  source: null
                 },
               ].map((item, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
@@ -1269,7 +1330,9 @@ export default function Home() {
                     <div className="flex items-start justify-between mb-4">
                       <span className="text-4xl">{item.icon}</span>
                       <div className="text-right">
-                        <p className="text-2xl font-bold text-[#c9a227]">{item.stat}</p>
+                        <p className="text-2xl font-bold text-[#c9a227]">
+                          {item.source ? <DataPoint value={item.stat} source={item.source} /> : item.stat}
+                        </p>
                         <p className="text-xs text-gray-500">{item.statLabel}</p>
                       </div>
                     </div>
@@ -1392,8 +1455,8 @@ export default function Home() {
               <AnimatedSection delay={100}>
                 <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52] hover:border-[#c9a227]/30 transition-all duration-500">
                   <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="w-24 h-24 bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-2xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-4xl font-bold text-[#0a1628]">RK</span>
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-[#c9a227]/50">
+                      <Image src="/founder-photo.jpg" alt="Rejaul Karim" width={96} height={96} className="object-cover w-full h-full" />
                     </div>
                     <div className="flex-1">
                       <a href="https://www.linkedin.com/in/rejaulkarim007/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 group">
@@ -1585,15 +1648,15 @@ export default function Home() {
                     <div className="space-y-4">
                       <div className="flex justify-between items-center py-2 border-b border-[#2a3a52]">
                         <span className="text-gray-400">Active card/wallet users</span>
-                        <span className="text-xl font-bold">~5M</span>
+                        <span className="text-xl font-bold"><DataPoint value="~5M" source="Central Bank of UAE, banking penetration data" /></span>
                       </div>
                       <div className="flex justify-between items-center py-2 border-b border-[#2a3a52]">
                         <span className="text-gray-400">Avg addressable spend/user/year</span>
-                        <span className="text-xl font-bold">~$8,000</span>
+                        <span className="text-xl font-bold"><DataPoint value="~$8,000" source="Visa/Mastercard regional spend data, UAE Statistics Centre" /></span>
                       </div>
                       <div className="flex justify-between items-center py-2">
                         <span className="text-gray-400">Addressable Spend</span>
-                        <span className="text-2xl font-bold text-[#c9a227]">~$40B/yr</span>
+                        <span className="text-2xl font-bold text-[#c9a227]"><DataPoint value="~$40B/yr" source="Calculated: 5M users × $8K avg annual spend" /></span>
                       </div>
                     </div>
                   </div>

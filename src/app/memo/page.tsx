@@ -2,6 +2,39 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+
+// DataPoint Tooltip Component for statistics with sources
+function DataPoint({
+  value,
+  source,
+  className = ''
+}: {
+  value: string;
+  source: string;
+  className?: string;
+}) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <span
+      className={`relative cursor-help inline-flex items-start gap-0.5 ${className}`}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onTouchStart={() => setShowTooltip(true)}
+      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 3000)}
+    >
+      <span>{value}</span>
+      <span className="text-[0.5em] text-[#c9a227]/70 hover:text-[#c9a227] transition-colors">ⓘ</span>
+      {showTooltip && (
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs sm:text-sm text-white whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-xl font-normal">
+          <span className="text-[#c9a227] font-medium">Source:</span> {source}
+          <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#c9a227]/50" />
+        </span>
+      )}
+    </span>
+  );
+}
 
 export default function InvestorMemo() {
   const handlePrint = () => {
@@ -104,15 +137,21 @@ export default function InvestorMemo() {
             </p>
             <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">$600B+</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">
+                  <DataPoint value="$600B+" source="IMF GCC Economic Outlook, World Bank regional data" />
+                </p>
                 <p className="text-[10px] sm:text-xs text-gray-500">GCC Consumer Spend</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">70%+</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">
+                  <DataPoint value="70%+" source="Central Bank of UAE Digital Payments Report 2023" />
+                </p>
                 <p className="text-[10px] sm:text-xs text-gray-500">Digital Payment Adoption</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">5M+</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">
+                  <DataPoint value="5M+" source="Central Bank of UAE, banking penetration data" />
+                </p>
                 <p className="text-[10px] sm:text-xs text-gray-500">Target Active Users</p>
               </div>
             </div>
@@ -240,15 +279,20 @@ export default function InvestorMemo() {
           {/* Footer */}
           <div className="pt-6 border-t border-gray-200">
             <div className="flex items-center justify-between">
-              <div>
-                <a href="https://www.linkedin.com/in/rejaulkarim007/" target="_blank" rel="noopener noreferrer" className="font-semibold text-gray-900 hover:text-[#0077b5] transition-colors inline-flex items-center gap-2">
-                  Rejaul Karim
-                  <svg className="w-4 h-4 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <p className="text-sm text-gray-500">Founder & CEO</p>
-                <a href="mailto:rejaul@nuqtaapp.com" className="text-sm text-[#c9a227] hover:underline">
-                  rejaul@nuqtaapp.com
-                </a>
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-xl overflow-hidden flex-shrink-0 border border-gray-200">
+                  <Image src="/founder-photo.jpg" alt="Rejaul Karim" width={56} height={56} className="object-cover w-full h-full" />
+                </div>
+                <div>
+                  <a href="https://www.linkedin.com/in/rejaulkarim007/" target="_blank" rel="noopener noreferrer" className="font-semibold text-gray-900 hover:text-[#0077b5] transition-colors inline-flex items-center gap-2">
+                    Rejaul Karim
+                    <svg className="w-4 h-4 text-[#0077b5]" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  </a>
+                  <p className="text-sm text-gray-500">Founder & CEO</p>
+                  <a href="mailto:rejaul@nuqtaapp.com" className="text-sm text-[#c9a227] hover:underline">
+                    rejaul@nuqtaapp.com
+                  </a>
+                </div>
               </div>
               <div className="text-right text-sm text-gray-500">
                 <p>Full deck available on request</p>

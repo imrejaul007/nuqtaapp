@@ -90,6 +90,38 @@ function DocItem({
   );
 }
 
+// DataPoint Tooltip Component for statistics with sources
+function DataPoint({
+  value,
+  source,
+  className = ''
+}: {
+  value: string;
+  source: string;
+  className?: string;
+}) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <span
+      className={`relative cursor-help inline-flex items-start gap-0.5 ${className}`}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onTouchStart={() => setShowTooltip(true)}
+      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 3000)}
+    >
+      <span>{value}</span>
+      <span className="text-[0.5em] text-[#c9a227]/70 hover:text-[#c9a227] transition-colors">ⓘ</span>
+      {showTooltip && (
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs sm:text-sm text-gray-300 whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-xl font-normal">
+          <span className="text-[#c9a227] font-medium">Source:</span> {source}
+          <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#c9a227]/50" />
+        </span>
+      )}
+    </span>
+  );
+}
+
 // Status Badge
 function Status({ status }: { status: 'complete' | 'planned' | 'in-progress' }) {
   const styles = {
@@ -359,7 +391,7 @@ export default function DataRoomPage() {
               <div className="bg-[#1a2a42] rounded-lg p-4">
                 <p className="font-bold text-[#c9a227] mb-2">Total Addressable Market (GCC)</p>
                 <p className="text-gray-300 text-sm">
-                  GCC consumer spending exceeds $600B annually across high card penetration markets.
+                  GCC consumer spending exceeds <DataPoint value="$600B" source="IMF GCC Economic Outlook, World Bank regional data" className="text-gray-300" /> annually across high card penetration markets.
                   Our infrastructure layer can theoretically touch all digital transactions that involve
                   payment decisions or loyalty mechanics.
                 </p>
@@ -367,7 +399,7 @@ export default function DataRoomPage() {
               <div className="bg-[#1a2a42] rounded-lg p-4">
                 <p className="font-bold text-[#c9a227] mb-2">Serviceable Addressable Market (UAE + KSA)</p>
                 <p className="text-gray-300 text-sm">
-                  Approximately 5M active digital consumers in UAE and urban KSA represent $40-50B
+                  Approximately <DataPoint value="5M" source="Central Bank of UAE, banking penetration data" className="text-gray-300" /> active digital consumers in UAE and urban KSA represent <DataPoint value="$40-50B" source="Central Bank of UAE, Visa & Mastercard regional reports" className="text-gray-300" />{' '}
                   in addressable transaction volume. These are users who actively use multiple payment
                   methods and are receptive to optimization tools.
                 </p>

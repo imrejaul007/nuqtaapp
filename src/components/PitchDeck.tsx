@@ -559,8 +559,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="bg-[#1a2a42]/50 rounded-3xl p-8 md:p-12 border border-[#c9a227]/30 max-w-2xl w-full">
               <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="w-32 h-32 bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-5xl font-black text-[#0a1628]">RK</span>
+                <div className="w-32 h-32 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-[#c9a227]/50">
+                  <Image src="/founder-photo.jpg" alt="Rejaul Karim" width={128} height={128} className="object-cover w-full h-full" />
                 </div>
                 <div className="text-center md:text-left">
                   <a href="https://www.linkedin.com/in/rejaulkarim007/" target="_blank" rel="noopener noreferrer" className="hover:text-[#c9a227] transition-colors">
