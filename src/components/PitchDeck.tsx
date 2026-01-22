@@ -169,8 +169,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Bottom Row - Supporting Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4 max-w-4xl w-full">
               <div className="bg-[#1a2a42]/60 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-[#2a3a52] text-center hover:border-[#c9a227]/50 transition-colors">
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">$3M-$10M</div>
-                <div className="text-[10px] sm:text-xs text-gray-500">Valuation Range</div>
+                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">$5M</div>
+                <div className="text-[10px] sm:text-xs text-gray-500">Valuation Cap</div>
               </div>
 
               <div className="bg-[#1a2a42]/60 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-[#2a3a52] text-center hover:border-[#c9a227]/50 transition-colors">
