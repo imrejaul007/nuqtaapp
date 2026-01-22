@@ -238,20 +238,20 @@ export default function InvestorMemo() {
               </div>
               <div className="grid grid-cols-4 gap-4 pt-4 border-t border-gray-700">
                 <div className="text-center">
-                  <p className="text-lg font-bold text-[#c9a227]">40%</p>
-                  <p className="text-xs text-gray-400">Product Dev</p>
+                  <p className="text-lg font-bold text-[#c9a227]">50%</p>
+                  <p className="text-xs text-gray-400">Team & Product</p>
                 </div>
                 <div className="text-center">
                   <p className="text-lg font-bold text-[#c9a227]">30%</p>
-                  <p className="text-xs text-gray-400">Merchant Ops</p>
+                  <p className="text-xs text-gray-400">Merchants</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-lg font-bold text-[#c9a227]">20%</p>
-                  <p className="text-xs text-gray-400">Partnerships</p>
+                  <p className="text-lg font-bold text-[#c9a227]">15%</p>
+                  <p className="text-xs text-gray-400">User Acquisition</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-lg font-bold text-[#c9a227]">10%</p>
-                  <p className="text-xs text-gray-400">Reserve</p>
+                  <p className="text-lg font-bold text-[#c9a227]">5%</p>
+                  <p className="text-xs text-gray-400">Operations</p>
                 </div>
               </div>
             </div>
