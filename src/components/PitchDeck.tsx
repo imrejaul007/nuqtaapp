@@ -122,13 +122,13 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               </div>
               <div className="w-px h-8 sm:h-10 md:h-12 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">$3M-$10M</p>
-                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Valuation</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">$5M</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Valuation Cap</p>
               </div>
               <div className="w-px h-8 sm:h-10 md:h-12 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">CCD</p>
-                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Instrument</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">20%</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Discount</p>
               </div>
             </div>
           </div>
@@ -151,12 +151,12 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border-2 border-blue-500/40 text-center hover:scale-105 transition-transform">
                 <DataPoint
-                  value="$40B"
-                  source="Central Bank of UAE, Visa & Mastercard regional reports"
+                  value="$4B"
+                  source="GCC dining & retail spending, industry reports 2024"
                   className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400 mb-1 sm:mb-2"
                 />
                 <div className="text-xs sm:text-sm md:text-base text-gray-400 font-medium">TAM</div>
-                <div className="text-[10px] sm:text-xs text-gray-600 mt-1">UAE Market</div>
+                <div className="text-[10px] sm:text-xs text-gray-600 mt-1">GCC Addressable</div>
               </div>
 
               <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border-2 border-purple-500/40 text-center hover:scale-105 transition-transform">
@@ -211,9 +211,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             </h2>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl">
-              GCC consumers spend AED 600B annually.
+              GCC consumers spend $150B+ annually on dining and retail.
               <br className="hidden sm:block" />
-              <span className="text-red-400 font-bold">90% earn nothing back</span>.
+              <span className="text-red-400 font-bold">Most earn 0-3% cashback. Nuqta offers 5-10%.</span>
             </p>
           </div>
         );
@@ -933,39 +933,43 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               $500K
             </p>
 
-            <div className="flex items-center gap-8 md:gap-16 my-8">
+            <div className="flex items-center justify-center gap-8 md:gap-16 my-8">
               <div className="text-center">
-                <p className="text-3xl font-bold">$3M</p>
-                <p className="text-gray-500">Floor</p>
+                <p className="text-3xl md:text-4xl font-bold text-[#c9a227]">$5M</p>
+                <p className="text-gray-400 text-sm">Valuation Cap</p>
               </div>
-              <div className="text-4xl text-gray-600">→</div>
+              <div className="text-4xl text-gray-600">•</div>
               <div className="text-center">
-                <p className="text-3xl font-bold">$10M</p>
-                <p className="text-gray-500">Cap</p>
-              </div>
-              <div className="text-center ml-8 pl-8 border-l border-gray-700">
-                <p className="text-3xl font-bold">20%</p>
-                <p className="text-gray-500">Discount</p>
+                <p className="text-3xl md:text-4xl font-bold text-[#c9a227]">20%</p>
+                <p className="text-gray-400 text-sm">Discount</p>
               </div>
             </div>
 
-            <div className="flex items-center justify-center gap-6 mt-4 mb-8">
-              {[
-                { pct: '40%', label: 'Product', amount: '$200K' },
-                { pct: '30%', label: 'Merchants', amount: '$150K' },
-                { pct: '20%', label: 'Partnerships', amount: '$100K' },
-                { pct: '10%', label: 'Buffer', amount: '$50K' },
-              ].map((item, idx) => (
-                <div key={idx} className="text-center">
-                  <p className="text-2xl font-bold text-[#c9a227]">{item.pct}</p>
-                  <p className="text-sm text-gray-400">{item.label}</p>
-                </div>
-              ))}
+            <div className="max-w-3xl w-full mb-8">
+              <p className="text-sm text-[#c9a227] font-bold mb-4 text-center uppercase tracking-wider">Use of Funds</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[
+                  { pct: '50%', label: 'Team & Product', desc: 'Hire CTO + engineers, build MVP', amount: '$250K' },
+                  { pct: '30%', label: 'Merchant Acquisition', desc: '100 merchants, field sales', amount: '$150K' },
+                  { pct: '15%', label: 'User Acquisition', desc: '1,000 active users, marketing', amount: '$75K' },
+                  { pct: '5%', label: 'Operations', desc: 'Legal, accounting, infra', amount: '$25K' },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-[#1a2a42]/50 rounded-xl p-4 border border-[#2a3a52]">
+                    <p className="text-2xl font-bold text-[#c9a227] mb-1">{item.pct}</p>
+                    <p className="text-sm font-semibold text-white mb-2">{item.label}</p>
+                    <p className="text-xs text-gray-500 mb-2">{item.desc}</p>
+                    <p className="text-xs text-gray-600">{item.amount}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <p className="text-gray-500">
-              Instrument: <span className="text-white font-bold">CCD</span> (Convertible Note)
-            </p>
+            <div className="bg-[#c9a227]/10 rounded-xl p-4 border border-[#c9a227]/30 max-w-2xl">
+              <p className="text-center text-sm">
+                <span className="text-[#c9a227] font-bold">Instrument:</span> <span className="text-white font-semibold">Convertible Note</span> (SAFE or CCD)
+                <span className="text-gray-400"> • Converts at next round with $5M cap + 20% discount</span>
+              </p>
+            </div>
           </div>
         );
 
@@ -1009,9 +1013,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <div className="flex items-center gap-8 mt-12 text-gray-600 text-sm">
               <span>$500K Pre-Seed</span>
               <span>•</span>
-              <span>$3M-$10M Valuation</span>
+              <span>$5M Cap</span>
               <span>•</span>
-              <span>CCD</span>
+              <span>20% Discount</span>
             </div>
           </div>
         );
