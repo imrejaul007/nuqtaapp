@@ -697,29 +697,29 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <p className="text-[#c9a227] text-sm sm:text-lg uppercase tracking-[0.3em] mb-4 sm:mb-8">Market Opportunity</p>
 
             <DataPoint
-              value="$40B"
-              source="UAE household consumption expenditure, World Bank 2023"
+              value="$4B"
+              source="GCC dining & retail spending, industry reports 2024"
               className="text-[60px] sm:text-[100px] md:text-[140px] lg:text-[200px] font-black text-[#c9a227] leading-none"
             />
 
             <p className="text-lg sm:text-2xl md:text-3xl text-gray-300 mt-2 sm:mt-4 mb-4 sm:mb-8">
-              UAE addressable market
+              GCC addressable market
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 md:gap-12 text-gray-400">
               <div className="text-center">
-                <DataPoint value="5M" source="UAE digital wallet users, Statista 2024" className="text-xl sm:text-3xl font-bold text-white" />
-                <p className="text-xs sm:text-sm">Active users</p>
+                <DataPoint value="10M+" source="GCC digital payment users, regional fintech reports 2024" className="text-xl sm:text-3xl font-bold text-white" />
+                <p className="text-xs sm:text-sm">Potential users</p>
               </div>
               <div className="w-px h-6 sm:h-10 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <DataPoint value="$8K" source="Average urban household spending, UAE Statistics Centre" className="text-xl sm:text-3xl font-bold text-white" />
-                <p className="text-xs sm:text-sm">Annual spend/user</p>
+                <DataPoint value="$150B+" source="GCC dining & retail total market size" className="text-xl sm:text-3xl font-bold text-white" />
+                <p className="text-xs sm:text-sm">Total market</p>
               </div>
               <div className="w-px h-6 sm:h-10 bg-gray-700 hidden sm:block" />
               <div className="text-center">
-                <DataPoint value="$600B" source="GCC consumer spending, IMF Regional Report 2024" className="text-xl sm:text-3xl font-bold text-white" />
-                <p className="text-xs sm:text-sm">GCC total</p>
+                <DataPoint value="3%" source="Nuqta's realistic capture over 5 years" className="text-xl sm:text-3xl font-bold text-white" />
+                <p className="text-xs sm:text-sm">Target share</p>
               </div>
             </div>
           </div>
