@@ -43,7 +43,7 @@ function DataPoint({
 // ==================== MAIN COMPONENT ====================
 export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 20;
+  const totalSlides = 21;
 
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (!isOpen) return;
@@ -389,8 +389,86 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 12: MARKET SIZE ====================
+      // ==================== SLIDE 12: COMPETITIVE LANDSCAPE ====================
       case 11:
+        return (
+          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-12">
+            <p className="text-[#c9a227] text-sm sm:text-lg uppercase tracking-[0.3em] mb-4 sm:mb-6">Competitive Landscape</p>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-10 text-center">
+              Why <span className="text-[#c9a227]">no one else</span> can do this
+            </h2>
+
+            {/* Comparison Table */}
+            <div className="w-full max-w-5xl overflow-x-auto">
+              <table className="w-full text-xs sm:text-sm md:text-base">
+                <thead>
+                  <tr className="border-b border-[#2a3a52]">
+                    <th className="text-left py-2 sm:py-3 px-2 sm:px-4 text-gray-400 font-medium">Capability</th>
+                    <th className="py-2 sm:py-3 px-2 sm:px-4 text-gray-400 font-medium">Banks</th>
+                    <th className="py-2 sm:py-3 px-2 sm:px-4 text-gray-400 font-medium">BNPL</th>
+                    <th className="py-2 sm:py-3 px-2 sm:px-4 text-gray-400 font-medium">Super Apps</th>
+                    <th className="py-2 sm:py-3 px-2 sm:px-4 text-[#c9a227] font-bold">Nuqta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-300 text-left">Neutral payment recommendations</td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-[#c9a227] text-lg sm:text-xl">✓</span></td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-300 text-left">Compare ALL payment options</td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-[#c9a227] text-lg sm:text-xl">✓</span></td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-300 text-left">Universal rewards currency</td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-[#c9a227] text-lg sm:text-xl">✓</span></td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-300 text-left">Merchant loyalty tools</td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-yellow-400">◐</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-yellow-400">◐</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-[#c9a227] text-lg sm:text-xl">✓</span></td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-300 text-left">No platform lock-in</td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-[#c9a227] text-lg sm:text-xl">✓</span></td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-300 text-left">Visit-based rewards</td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-red-400/70">✗</span></td>
+                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-center"><span className="text-[#c9a227] text-lg sm:text-xl">✓</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Key Insight */}
+            <div className="mt-6 sm:mt-10 bg-[#c9a227]/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#c9a227]/30 max-w-3xl">
+              <p className="text-center text-sm sm:text-lg text-gray-300">
+                <span className="text-[#c9a227] font-bold">Key insight:</span> Banks can&apos;t recommend competitors. BNPL providers push their own product.
+                Super apps build walls. <span className="text-white font-semibold">Only a neutral layer can optimize for the user.</span>
+              </p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 13: MARKET SIZE ====================
+      case 12:
         return (
           <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-8">
             <p className="text-[#c9a227] text-sm sm:text-lg uppercase tracking-[0.3em] mb-4 sm:mb-8">Market Opportunity</p>
@@ -424,8 +502,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 13: BUSINESS MODEL ====================
-      case 12:
+      // ==================== SLIDE 14: BUSINESS MODEL ====================
+      case 13:
         return (
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Business Model</p>
@@ -454,8 +532,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 14: UNIT ECONOMICS ====================
-      case 13:
+      // ==================== SLIDE 15: UNIT ECONOMICS ====================
+      case 14:
         return (
           <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Unit Economics</p>
@@ -482,8 +560,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 15: TRACTION ====================
-      case 14:
+      // ==================== SLIDE 16: TRACTION ====================
+      case 15:
         return (
           <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Current Status</p>
@@ -515,8 +593,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 16: ROADMAP ====================
-      case 15:
+      // ==================== SLIDE 17: ROADMAP ====================
+      case 16:
         return (
           <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Execution Plan</p>
@@ -550,8 +628,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 17: TEAM ====================
-      case 16:
+      // ==================== SLIDE 18: TEAM ====================
+      case 17:
         return (
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Leadership</p>
@@ -592,8 +670,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 18: GOVERNANCE ====================
-      case 17:
+      // ==================== SLIDE 19: GOVERNANCE ====================
+      case 18:
         return (
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Investor Protection</p>
@@ -620,8 +698,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 19: THE ASK ====================
-      case 18:
+      // ==================== SLIDE 20: THE ASK ====================
+      case 19:
         return (
           <div className="h-full flex flex-col items-center justify-center text-center px-8">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-8">The Ask</p>
@@ -666,8 +744,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 20: CLOSING ====================
-      case 19:
+      // ==================== SLIDE 21: CLOSING ====================
+      case 20:
         return (
           <div className="h-full flex flex-col items-center justify-center text-center px-8 bg-gradient-to-b from-[#0a1628] via-[#0d1c30] to-[#0a1628]">
             <div className="relative mb-8">
