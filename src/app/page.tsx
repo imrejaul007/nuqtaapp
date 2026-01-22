@@ -561,20 +561,20 @@ export default function Home() {
                     <span className="text-white font-semibold text-sm">CCD</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Valuation</span>
-                    <span className="text-white font-semibold text-sm">$3M-$10M</span>
+                    <span className="text-gray-400 text-xs">Valuation Cap</span>
+                    <span className="text-white font-semibold text-sm">$5M</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Stage</span>
-                    <span className="text-white font-semibold text-sm">Pre-Seed</span>
+                    <span className="text-gray-400 text-xs">Discount</span>
+                    <span className="text-white font-semibold text-sm">20%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400 text-xs">Runway</span>
                     <span className="text-white font-semibold text-sm">18-24 months</span>
                   </div>
                   <div className="flex justify-between items-center pt-2 border-t border-[#c9a227]/20">
-                    <span className="text-gray-400 text-xs">TAM (UAE)</span>
-                    <span className="text-[#c9a227] font-bold text-sm">$40B</span>
+                    <span className="text-gray-400 text-xs">TAM (GCC)</span>
+                    <span className="text-[#c9a227] font-bold text-sm">$4B</span>
                   </div>
                 </div>
 
@@ -680,9 +680,9 @@ export default function Home() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {[
-                { value: '$40B', label: 'UAE Addressable Market', sub: 'Annual spend', icon: '📊', source: 'Central Bank of UAE, Visa & Mastercard regional reports' },
+                { value: '$4B', label: 'GCC Addressable Market', sub: 'Dining & retail', icon: '📊', source: 'GCC dining & retail spending, industry reports 2024' },
                 { value: '$500K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰', source: null },
-                { value: '$3M-$10M', label: 'Valuation Range', sub: 'Floor to Cap', icon: '📈', source: null },
+                { value: '$5M Cap', label: 'Valuation + 20% Discount', sub: 'Convertible note', icon: '📈', source: null },
                 { value: 'First', label: 'Neutral Intelligence Layer', sub: 'in GCC payments', icon: '🏆', source: null },
               ].map((item, idx) => (
                 <AnimatedSection key={idx} delay={idx * 100}>
@@ -1590,15 +1590,15 @@ export default function Home() {
                 </AnimatedSection>
                 <AnimatedSection delay={200}>
                   <div className="bg-[#1a2a42]/50 rounded-2xl p-6 border border-[#2a3a52] text-center">
-                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Floor Valuation</p>
-                    <p className="text-2xl font-bold text-[#c9a227]">$3M</p>
+                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Valuation Cap</p>
+                    <p className="text-2xl font-bold text-[#c9a227]">$5M</p>
                   </div>
                 </AnimatedSection>
                 <AnimatedSection delay={250}>
                   <div className="bg-[#1a2a42]/50 rounded-2xl p-6 border border-[#2a3a52] text-center">
-                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Cap Valuation</p>
-                    <p className="text-2xl font-bold text-[#c9a227]">$10M</p>
-                    <p className="text-xs text-gray-500">20% Discount</p>
+                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Discount</p>
+                    <p className="text-2xl font-bold text-[#c9a227]">20%</p>
+                    <p className="text-xs text-gray-500">On next round</p>
                   </div>
                 </AnimatedSection>
               </div>
@@ -1634,10 +1634,10 @@ export default function Home() {
               </AnimatedSection>
               <div className="grid md:grid-cols-4 gap-4 mb-6">
                 {[
-                  { category: "Product & Engineering", percent: 40, amount: "$200K", icon: "💻", color: "from-[#c9a227] to-[#f4d35e]" },
+                  { category: "Team & Product", percent: 50, amount: "$250K", icon: "💻", color: "from-[#c9a227] to-[#f4d35e]" },
                   { category: "Merchant Acquisition", percent: 30, amount: "$150K", icon: "🏪", color: "from-green-500 to-green-600" },
-                  { category: "Partnerships & Ops", percent: 20, amount: "$100K", icon: "🤝", color: "from-purple-500 to-purple-600" },
-                  { category: "Contingency", percent: 10, amount: "$50K", icon: "🛡️", color: "from-orange-500 to-orange-600" },
+                  { category: "User Acquisition", percent: 15, amount: "$75K", icon: "📱", color: "from-purple-500 to-purple-600" },
+                  { category: "Operations", percent: 5, amount: "$25K", icon: "🛡️", color: "from-orange-500 to-orange-600" },
                 ].map((item, idx) => (
                   <AnimatedSection key={idx} delay={idx * 100}>
                     <div className="bg-[#1a2a42]/50 rounded-xl p-5 border border-[#2a3a52] hover:border-[#c9a227]/30 transition-all duration-300 text-center">
@@ -1782,12 +1782,12 @@ export default function Home() {
                         <span className="text-xl font-bold"><DataPoint value="~5M" source="Central Bank of UAE, banking penetration data" /></span>
                       </div>
                       <div className="flex justify-between items-center py-2 border-b border-[#2a3a52]">
-                        <span className="text-gray-400">Avg addressable spend/user/year</span>
-                        <span className="text-xl font-bold"><DataPoint value="~$8,000" source="Visa/Mastercard regional spend data, UAE Statistics Centre" /></span>
+                        <span className="text-gray-400">GCC potential users</span>
+                        <span className="text-xl font-bold"><DataPoint value="10M+" source="GCC digital payment users, regional fintech reports 2024" /></span>
                       </div>
                       <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-400">Addressable Spend</span>
-                        <span className="text-2xl font-bold text-[#c9a227]"><DataPoint value="~$40B/yr" source="Calculated: 5M users × $8K avg annual spend" /></span>
+                        <span className="text-gray-400">Addressable Market (GCC)</span>
+                        <span className="text-2xl font-bold text-[#c9a227]"><DataPoint value="$4B" source="GCC dining & retail spending, industry reports 2024" /></span>
                       </div>
                     </div>
                   </div>
@@ -2169,7 +2169,7 @@ export default function Home() {
                 {[
                   { q: "What if users transact less?", a: "Then revenue per user drops — which is why we focus on daily spend categories, not assumptions." },
                   { q: "Low CAC assumption?", a: "Because we leverage: Merchant-led acquisition, on-premise discovery, and partnerships. Not paid ads alone." },
-                  { q: "Why $10M cap?", a: "Cap reflects: Platform ambition, infrastructure positioning, and strategic acquisition optionality. Not current revenue." },
+                  { q: "Why $5M cap?", a: "Cap reflects: Pre-revenue stage, realistic pre-seed valuation for GCC fintech, room for 20% discount on next round." },
                   { q: "What if $500k isn't enough?", a: "Then we pivot scope, not burn. The goal is proof, not scale." },
                   { q: "Monthly burn?", a: "Kept intentionally lean (<$40k/month early)." },
                   { q: "Is 10k users enough?", a: "Yes — if repeat usage exists. Quality > quantity." },
