@@ -541,24 +541,97 @@ export default function Home() {
         {/* Hero Section */}
         <section className="section-padding pt-24 sm:pt-28 md:pt-32 lg:pt-40 min-h-screen flex items-center relative">
           <FloatingParticles />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
+
+          {/* Investment Highlights Card - Desktop Only */}
+          <div className="hidden 2xl:block absolute top-32 right-16 z-20 max-w-xs">
+            <AnimatedSection delay={800}>
+              <div className="bg-gradient-to-br from-[#1a2a42] to-[#0a1628] border-2 border-[#c9a227]/30 rounded-2xl p-6 shadow-2xl shadow-[#c9a227]/10 backdrop-blur-sm">
+                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#c9a227]/20">
+                  <span className="text-2xl">💰</span>
+                  <h3 className="text-lg font-bold text-[#c9a227]">Investment Snapshot</h3>
+                </div>
+
+                <div className="space-y-2.5">
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-400 text-xs">Raising</span>
+                    <span className="text-white font-bold text-sm">$500K</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-400 text-xs">Instrument</span>
+                    <span className="text-white font-semibold text-sm">CCD</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-400 text-xs">Valuation</span>
+                    <span className="text-white font-semibold text-sm">$3M-$10M</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-400 text-xs">Stage</span>
+                    <span className="text-white font-semibold text-sm">Pre-Seed</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-400 text-xs">Runway</span>
+                    <span className="text-white font-semibold text-sm">18-24 months</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-2 border-t border-[#c9a227]/20">
+                    <span className="text-gray-400 text-xs">TAM (UAE)</span>
+                    <span className="text-[#c9a227] font-bold text-sm">$40B</span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2 mt-4 pt-3 border-t border-[#c9a227]/20">
+                  <button
+                    onClick={() => setIsDeckOpen(true)}
+                    className="w-full bg-gradient-to-r from-[#c9a227] to-[#f4d35e] text-[#0a1628] font-bold py-2 px-3 rounded-lg text-sm hover:shadow-lg hover:shadow-[#c9a227]/30 transition-all duration-300 hover:scale-105"
+                  >
+                    View Full Deck
+                  </button>
+                  <a
+                    href="#investors"
+                    className="w-full text-center border border-[#c9a227]/50 text-[#c9a227] font-semibold py-2 px-3 rounded-lg text-sm hover:bg-[#c9a227]/10 transition-all duration-300"
+                  >
+                    Schedule Call
+                  </a>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10 2xl:pr-80">
             <AnimatedSection>
               <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-full mb-4 sm:mb-6 animate-pulse">
-                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">Smart Rewards & Payment Intelligence for the GCC</span>
+                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">5-10% Cashback + Smart Payment Tips for the GCC</span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
-                Every payment starts<br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>with a <span className="gradient-text animate-shimmer">point</span>.
+                Get paid to <span className="gradient-text animate-shimmer">shop</span>.<br className="hidden sm:block" />
+                <span className="sm:hidden"> </span>Every purchase. Every time.
               </h1>
             </AnimatedSection>
 
             <AnimatedSection delay={400}>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-2">
-                <span className="text-white font-semibold">Nuqta (&#1606;&#1602;&#1591;&#1577;)</span> helps people earn universal rewards on everyday spending and always choose the smartest way to pay — online and offline.
+                <span className="text-[#c9a227] font-bold">Earn 5-10% cashback</span> on everyday spending + <span className="text-white font-semibold">smart payment recommendations</span> to save even more. <span className="text-white font-semibold">Nuqta (نقطة)</span> — where shopping pays you back.
               </p>
+            </AnimatedSection>
+
+            {/* Cashback Highlight Banner */}
+            <AnimatedSection delay={500}>
+              <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8 md:mb-10 px-4">
+                <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
+                  <span className="text-xl">💰</span>
+                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">5-10% Cashback</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
+                  <span className="text-xl">📱</span>
+                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">Share & Earn 2x</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
+                  <span className="text-xl">🧠</span>
+                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">Smart Pay Tips</span>
+                </div>
+              </div>
             </AnimatedSection>
 
             <AnimatedSection delay={600}>
@@ -1624,6 +1697,64 @@ export default function Home() {
                     <p className="text-center text-[#c9a227] font-medium">
                       Focus: validating <span className="text-white">repeat usage</span>, not vanity metrics.
                     </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
+
+            {/* Social Proof / In Discussions */}
+            <div className="mb-20">
+              <AnimatedSection>
+                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-center justify-center">
+                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🤝</span>
+                  Building Trust
+                </h3>
+                <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
+                  Nuqta is in active discussions with leading GCC fintech players and merchants to build the smartest payment intelligence platform.
+                </p>
+              </AnimatedSection>
+
+              <AnimatedSection delay={200}>
+                <div className="bg-gradient-to-br from-[#1a2a42]/80 to-[#0a1628]/80 rounded-2xl p-8 md:p-12 border border-[#c9a227]/30">
+                  <p className="text-center text-gray-400 mb-8 text-sm uppercase tracking-wider">In discussions with</p>
+
+                  {/* Placeholder logos/names grid */}
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
+                    {[
+                      { name: 'BNPL Providers', icon: '💳', desc: 'Integration discussions' },
+                      { name: 'Local Banks', icon: '🏦', desc: 'Partnership exploration' },
+                      { name: 'Payment Gateways', icon: '🔐', desc: 'Technical integration' },
+                      { name: 'Merchant Networks', icon: '🏪', desc: 'Pilot programs' },
+                      { name: 'Fintech Platforms', icon: '📱', desc: 'Co-marketing potential' },
+                      { name: 'Loyalty Programs', icon: '⭐', desc: 'Points integration' },
+                    ].map((partner, idx) => (
+                      <div
+                        key={idx}
+                        className="bg-[#0a1628]/50 rounded-xl p-4 md:p-6 text-center border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all hover:scale-105"
+                      >
+                        <div className="text-3xl md:text-4xl mb-2">{partner.icon}</div>
+                        <h4 className="text-sm md:text-base font-semibold text-white mb-1">{partner.name}</h4>
+                        <p className="text-xs text-gray-500">{partner.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Trust indicators */}
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
+                      <span className="text-2xl">📋</span>
+                      <div>
+                        <p className="font-semibold text-white">12+ Merchant LOIs</p>
+                        <p className="text-xs text-gray-400">Letters of Intent for pilot participation</p>
+                      </div>
+                    </div>
+                    <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
+                      <span className="text-2xl">✅</span>
+                      <div>
+                        <p className="font-semibold text-white">UAE-based & Regulated</p>
+                        <p className="text-xs text-gray-400">Building with compliance-first approach</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>
