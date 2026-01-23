@@ -192,7 +192,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Bottom Highlight - CASHBACK HERO */}
             <div className="mt-6 sm:mt-8 bg-gradient-to-r from-[#c9a227]/10 via-[#c9a227]/5 to-transparent rounded-xl p-3 sm:p-4 border border-[#c9a227]/20 max-w-3xl">
               <p className="text-xs sm:text-sm md:text-base text-center text-gray-300">
-                <span className="text-[#c9a227] font-bold">Get paid to shop:</span> Users earn <span className="text-white font-semibold">5-10% cashback on every purchase</span> + bonus rewards for social sharing. Merchants pay only for <span className="text-white font-semibold">real sales</span> (10-15% commission).
+                <span className="text-[#c9a227] font-bold">Get paid to shop:</span> Users earn <span className="text-white font-semibold">5% cashback guaranteed</span> (+5% bonus for social sharing). Merchants pay only for <span className="text-white font-semibold">real sales</span> (15% commission).
               </p>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl">
               GCC consumers spend $150B+ annually on dining and retail.
               <br className="hidden sm:block" />
-              <span className="text-red-400 font-bold">Most earn 0-3% cashback. Nuqta offers 5-10%.</span>
+              <span className="text-red-400 font-bold">Most earn 0-3% cashback. Nuqta offers 5% guaranteed + 5% social bonus.</span>
             </p>
           </div>
         );
@@ -284,7 +284,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 max-w-2xl border border-[#c9a227]/30 mb-6 sm:mb-8">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#c9a227] mb-6 sm:mb-8">
-                5-10% cashback on every purchase
+                5% guaranteed + 5% social bonus
               </p>
               <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 <div className="text-center">
@@ -294,18 +294,18 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 </div>
                 <div className="text-center">
                   <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">💰</span>
-                  <p className="text-white font-bold text-sm sm:text-base mb-1">Instant Cash</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">5-10% back</p>
+                  <p className="text-white font-bold text-sm sm:text-base mb-1">Base Cashback</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">5% always</p>
                 </div>
                 <div className="text-center">
                   <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">📱</span>
                   <p className="text-white font-bold text-sm sm:text-base mb-1">Social Bonus</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">2x for sharing</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">+5% extra</p>
                 </div>
                 <div className="text-center">
                   <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">🏪</span>
                   <p className="text-white font-bold text-sm sm:text-base mb-1">For Merchants</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">10-15% commission</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">15% commission</p>
                 </div>
               </div>
             </div>
@@ -314,22 +314,22 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 text-center">Real Example: AED 100 Restaurant Bill</p>
               <div className="grid grid-cols-3 gap-3 sm:gap-4 text-center">
                 <div>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">AED 10</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Best card savings</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">AED 5</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Base cashback (5%)</p>
                 </div>
                 <div>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">AED 8</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Cashback (8%)</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">AED 5</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Social share (+5%)</p>
                 </div>
                 <div>
-                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">AED 4</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Social share</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">AED 5</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Nuqta keeps (5%)</p>
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-[#2a3a52]">
                 <p className="text-center text-sm sm:text-base">
-                  <span className="text-gray-400">Total benefit: </span>
-                  <span className="text-white text-lg sm:text-xl md:text-2xl font-bold">AED 22</span>
+                  <span className="text-gray-400">Merchant pays AED 15 • User gets up to </span>
+                  <span className="text-white text-lg sm:text-xl md:text-2xl font-bold">AED 10</span>
                 </p>
               </div>
             </div>
@@ -371,13 +371,20 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             </div>
 
             {/* Simplified How It Works */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-2xl border-2 border-[#c9a227]/40">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-2xl border-2 border-[#c9a227]/40 mb-6 sm:mb-8">
               <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                 <span className="text-[#c9a227] font-bold">Smart Pay Advisor</span> analyzes your cards, wallets & BNPL options, then tells you the <span className="text-white font-semibold">best way to pay</span> before every purchase.
               </p>
             </div>
 
-            <p className="mt-8 text-sm sm:text-base text-gray-500 italic">
+            {/* Bank Partnership Strategy */}
+            <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-2xl border border-[#2a3a52]">
+              <p className="text-sm sm:text-base text-gray-400 text-center">
+                <span className="text-white font-semibold">Partnering with all GCC banks</span> to provide users with unified payment intelligence and universal cashback across every card, wallet, and BNPL provider.
+              </p>
+            </div>
+
+            <p className="mt-6 sm:mt-8 text-sm sm:text-base text-gray-500 italic">
               &quot;نقطة&quot; means &quot;point&quot; in Arabic — the starting point of every payment.
             </p>
           </div>
@@ -395,15 +402,23 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               <div className="grid gap-6">
                 <div className="flex justify-between items-center pb-4 border-b border-[#2a3a52]">
                   <span className="text-gray-400">Merchant pays Nuqta</span>
-                  <span className="text-2xl sm:text-3xl font-bold text-white">10-15%</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-white">15%</span>
                 </div>
                 <div className="flex justify-between items-center pb-4 border-b border-[#2a3a52]">
-                  <span className="text-gray-400">User gets cashback</span>
-                  <span className="text-2xl sm:text-3xl font-bold text-[#c9a227]">5-10%</span>
+                  <span className="text-gray-400">User gets (base cashback)</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-[#c9a227]">5%</span>
                 </div>
                 <div className="flex justify-between items-center pb-4 border-b border-[#2a3a52]">
-                  <span className="text-gray-400">Nuqta keeps (gross margin)</span>
-                  <span className="text-2xl sm:text-3xl font-bold text-green-400">~5%</span>
+                  <span className="text-gray-400">Social sharing bonus</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-green-400">+5%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-400">Nuqta margin (if user shares)</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-blue-400">5%</span>
+                </div>
+                <div className="flex justify-between items-center pt-4 border-t-2 border-[#c9a227]/30">
+                  <span className="text-white font-bold">Nuqta margin (if user doesn't share)</span>
+                  <span className="text-2xl sm:text-3xl font-bold text-green-400">10%</span>
                 </div>
               </div>
             </div>
@@ -415,20 +430,20 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 <div className="bg-[#0a1628]/80 rounded-xl p-6 border border-[#c9a227]/20 text-center">
                   <div className="text-4xl mb-3">🏪</div>
                   <p className="text-gray-400 text-sm mb-2">Merchant Pays</p>
-                  <p className="text-3xl font-bold text-white">AED 12</p>
-                  <p className="text-xs text-gray-600 mt-1">(12% commission)</p>
+                  <p className="text-3xl font-bold text-white">AED 15</p>
+                  <p className="text-xs text-gray-600 mt-1">(15% commission)</p>
                 </div>
                 <div className="bg-[#0a1628]/80 rounded-xl p-6 border border-[#c9a227]/20 text-center">
                   <div className="text-4xl mb-3">👤</div>
                   <p className="text-gray-400 text-sm mb-2">User Gets</p>
-                  <p className="text-3xl font-bold text-[#c9a227]">AED 8</p>
-                  <p className="text-xs text-gray-600 mt-1">(8% cashback)</p>
+                  <p className="text-3xl font-bold text-[#c9a227]">AED 5-10</p>
+                  <p className="text-xs text-gray-600 mt-1">(+5% if shared)</p>
                 </div>
                 <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-xl p-6 border-2 border-green-500/40 text-center">
                   <div className="text-4xl mb-3">💎</div>
                   <p className="text-gray-400 text-sm mb-2">Nuqta Profit</p>
-                  <p className="text-3xl font-bold text-green-400">AED 4</p>
-                  <p className="text-xs text-gray-600 mt-1">(4% net margin)</p>
+                  <p className="text-3xl font-bold text-green-400">AED 5-10</p>
+                  <p className="text-xs text-gray-600 mt-1">(5-10% margin)</p>
                 </div>
               </div>
             </div>
@@ -436,7 +451,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Why It Works */}
             <div className="mt-8 max-w-2xl text-center">
               <p className="text-gray-400">
-                <span className="text-white font-bold">Win-win-win:</span> Merchants get guaranteed customers, users get paid to shop, Nuqta earns <span className="text-[#c9a227] font-semibold">70%+ gross margins</span> with no inventory, no logistics, no burn.
+                <span className="text-white font-bold">Win-win-win:</span> Merchants get guaranteed customers at fixed 15% cost, users always get 5% (10% if they share), Nuqta earns <span className="text-[#c9a227] font-semibold">33-66% gross margins</span> with no inventory, no logistics.
               </p>
             </div>
           </div>
@@ -453,8 +468,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               {[
                 { num: '1', icon: '🔍', title: 'Discover', desc: 'Find merchants & browse offers' },
                 { num: '2', icon: '🧠', title: 'Smart Pay', desc: 'Get payment recommendation' },
-                { num: '3', icon: '💰', title: 'Earn Cashback', desc: '5-10% back instantly' },
-                { num: '4', icon: '📱', title: 'Share', desc: 'Post to social, earn 2x' },
+                { num: '3', icon: '💰', title: 'Earn Cashback', desc: '5% back instantly' },
+                { num: '4', icon: '📱', title: 'Share', desc: 'Post to social, earn +5%' },
                 { num: '5', icon: '🔄', title: 'Repeat', desc: 'Redeem anywhere, come back' },
               ].map((step, idx) => (
                 <div key={idx} className="text-center relative">
@@ -480,7 +495,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Social Sharing Growth Loop */}
             <div className="mt-8 md:mt-12 bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-4 md:p-6 max-w-3xl border-l-4 border-[#c9a227]">
               <p className="text-sm md:text-base text-gray-300 text-center">
-                <span className="text-[#c9a227] font-bold">Viral growth loop:</span> Every shared purchase = free marketing. Users earn 2x cashback, merchants get social proof, Nuqta grows organically.
+                <span className="text-[#c9a227] font-bold">Viral growth loop:</span> Every shared purchase = free marketing. Users earn +5% bonus (10% total), merchants get social proof, Nuqta grows organically.
               </p>
             </div>
           </div>
@@ -574,10 +589,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 <p className="text-[#c9a227] font-bold text-lg mb-6">Nuqta → Maximum Value</p>
                 <div className="space-y-4">
                   {[
-                    '5-10% cashback on every purchase',
-                    'Smart advice: best card/wallet to use',
+                    '5% guaranteed + 5% social bonus',
+                    'Smart payment layer across all banks',
                     'Works everywhere: online + offline',
-                    '2x rewards for social sharing',
+                    'Universal loyalty currency',
                   ].map((item, idx) => (
                     <p key={idx} className="flex items-center gap-3 text-gray-300">
                       <span className="text-[#c9a227]">✓</span> {item}
@@ -653,7 +668,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Key Insight */}
             <div className="mt-6 sm:mt-10 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-[#c9a227]/40 max-w-3xl">
               <p className="text-center text-sm sm:text-lg text-gray-300">
-                <span className="text-[#c9a227] font-bold">The Nuqta difference:</span> We combine <span className="text-white font-semibold">Rakuten&apos;s cashback model</span> with <span className="text-white font-semibold">payment intelligence</span> and <span className="text-white font-semibold">social viral growth</span>. No one else in GCC does all three.
+                <span className="text-[#c9a227] font-bold">The Nuqta difference:</span> We're the <span className="text-white font-semibold">smart payment layer</span> that sits on top of ALL banks, cards, and wallets. Users earn cashback on <span className="text-white font-semibold">every transaction</span> (online + offline) through one universal app. Banks become our partners, not competitors.
               </p>
             </div>
           </div>
@@ -708,30 +723,30 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 {
                   icon: '📱',
                   title: 'Digital Payment Explosion',
-                  stat: '70%+',
-                  desc: 'GCC digital payment penetration (2024 vs 40% in 2020)',
-                  source: 'GCC Payment Reports 2024'
+                  stat: '86%',
+                  desc: 'UAE digital payment adoption in 2024 (up from 60% in 2020)',
+                  source: 'Visa Back to Business Study 2024 & CBUAE Reports'
                 },
                 {
                   icon: '💳',
                   title: 'BNPL Boom',
-                  stat: '300%',
-                  desc: 'Tabby, Postpay, Tamara growth in 2 years',
-                  source: 'Regional fintech growth data'
+                  stat: '$6.5B',
+                  desc: 'MENA BNPL market size by 2028 (23% CAGR)',
+                  source: 'Research and Markets - MENA BNPL Report 2024'
                 },
                 {
                   icon: '🏦',
-                  title: 'Open Banking Ready',
-                  stat: '2024+',
-                  desc: 'UAE & Saudi open banking regulations live',
-                  source: 'CBUAE & SAMA regulatory announcements'
+                  title: 'Open Banking Coming',
+                  stat: '2025-26',
+                  desc: 'UAE open banking framework rollout underway',
+                  source: 'CBUAE Financial Infrastructure Transformation Programme'
                 },
                 {
                   icon: '🎯',
-                  title: 'Consumer Expectations Shift',
+                  title: 'Rewards Gap',
                   stat: '5-10%',
-                  desc: 'Users now expect real cashback, not points',
-                  source: 'Regional consumer behavior studies'
+                  desc: 'Cashback rates consumers expect (vs 1-3% banks offer)',
+                  source: 'GCC consumer fintech adoption survey 2024'
                 },
               ].map((item, idx) => (
                 <div key={idx} className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-colors">
@@ -785,7 +800,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 max-w-3xl border-l-4 border-[#c9a227]">
               <p className="text-lg">
-                <span className="text-[#c9a227] font-bold">Transaction-based revenue:</span> Merchants pay 10-15% per sale, users get 5-10% cashback, Nuqta keeps ~5% margin. <span className="text-white font-semibold">70%+ gross margins. No inventory, no logistics, no burn.</span>
+                <span className="text-[#c9a227] font-bold">Transaction-based revenue:</span> Merchants pay 15% per sale, users get 5-10% cashback, Nuqta keeps 5-10% margin. <span className="text-white font-semibold">33-66% gross margins. No inventory, no logistics.</span>
               </p>
             </div>
           </div>
@@ -801,17 +816,17 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 max-w-3xl w-full px-2">
               <div className="text-center bg-[#1a2a42]/50 rounded-xl p-3 sm:p-5 md:p-6 border border-[#c9a227]/30">
-                <DataPoint value="$2-4" source="Based on Careem Plus, Tabby loyalty benchmarks" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227]" />
+                <DataPoint value="$7-14" source="5 txns × $27/txn × 5-10% margin" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227]" />
                 <p className="text-xs sm:text-base md:text-lg font-bold mt-2">ARPU</p>
-                <p className="text-gray-500 text-[10px] sm:text-xs mt-1">Monthly</p>
+                <p className="text-gray-500 text-[10px] sm:text-xs mt-1">Monthly profit</p>
               </div>
               <div className="text-center bg-[#1a2a42]/50 rounded-xl p-3 sm:p-5 md:p-6 border border-green-500/30">
-                <DataPoint value="70%+" source="SaaS loyalty platform industry average" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-400" />
+                <DataPoint value="33-66%" source="15% commission - (5-10%) cashback = 5-10% margin" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-400" />
                 <p className="text-xs sm:text-base md:text-lg font-bold mt-2">Margin</p>
                 <p className="text-gray-500 text-[10px] sm:text-xs mt-1">Gross</p>
               </div>
               <div className="text-center bg-[#1a2a42]/50 rounded-xl p-3 sm:p-5 md:p-6 border border-blue-500/30">
-                <DataPoint value="<3mo" source="Target based on low-CAC organic model" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400" />
+                <DataPoint value="2-4mo" source="$27 CAC ÷ $7-14 monthly profit" className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400" />
                 <p className="text-xs sm:text-base md:text-lg font-bold mt-2">Payback</p>
                 <p className="text-gray-500 text-[10px] sm:text-xs mt-1">CAC</p>
               </div>
@@ -831,10 +846,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-3xl w-full mb-6 sm:mb-8">
               {[
-                { icon: '🤝', title: 'D2C Brand MOUs', status: '50+ signed', highlight: true, desc: 'Formal partnership agreements' },
+                { icon: '🤝', title: 'D2C Brand MOUs', status: '30+ signed', highlight: true, desc: 'Ready to onboard post-MVP launch' },
                 { icon: '📋', title: 'Waitlist Users', status: '200+', highlight: false, desc: 'Organic signups' },
-                { icon: '🏦', title: 'Bank Partnerships', status: 'In preparation', highlight: false, desc: 'API integrations ready' },
-                { icon: '💻', title: 'MVP Status', status: 'In development', highlight: false, desc: 'Q1 2026 launch target' },
+                { icon: '🏦', title: 'Bank Partnerships', status: 'In discussion', highlight: false, desc: 'Targeting all GCC banks' },
+                { icon: '💻', title: 'MVP Status', status: 'In development', highlight: false, desc: 'Q2 2026 launch target' },
               ].map((item, idx) => (
                 <div key={idx} className={`rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border flex items-start gap-2 sm:gap-3 md:gap-4 ${
                   item.highlight
