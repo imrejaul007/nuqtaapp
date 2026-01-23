@@ -43,17 +43,17 @@ function DataPoint({
 // ==================== MAIN COMPONENT ====================
 export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 23;
+  const totalSlides = 24;
 
   // Section definitions for progress indicator
   const sections = [
     { name: 'Intro', slides: [0, 1], color: '#c9a227' },
     { name: 'Problem', slides: [2, 3, 4, 5], color: '#ef4444' },
     { name: 'Solution', slides: [6, 7, 8, 9, 10, 11], color: '#22c55e' },
-    { name: 'Market', slides: [12, 13, 14], color: '#3b82f6' },
-    { name: 'Business', slides: [15, 16, 17], color: '#8b5cf6' },
-    { name: 'Execution', slides: [18, 19, 20], color: '#f59e0b' },
-    { name: 'Ask', slides: [21, 22], color: '#c9a227' },
+    { name: 'Market', slides: [12, 13, 14, 15], color: '#3b82f6' },
+    { name: 'Business', slides: [16, 17, 18], color: '#8b5cf6' },
+    { name: 'Execution', slides: [19, 20, 21], color: '#f59e0b' },
+    { name: 'Ask', slides: [22, 23], color: '#c9a227' },
   ];
 
   const getCurrentSection = () => {
@@ -282,64 +282,54 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               Nuqta <span className="text-[#c9a227]">pays you</span> to shop.
             </h2>
 
-            <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 max-w-3xl border border-[#c9a227]/30 mb-6 sm:mb-8">
-              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227] mb-4 sm:mb-6">
+            <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 max-w-2xl border border-[#c9a227]/30 mb-6 sm:mb-8">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#c9a227] mb-6 sm:mb-8">
                 5-10% cashback on every purchase
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-left">
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-xl sm:text-2xl flex-shrink-0">💰</span>
-                  <div>
-                    <p className="text-white font-semibold text-sm sm:text-base">Before purchase</p>
-                    <p className="text-gray-400 text-xs sm:text-sm">Smart payment recommendation saves you money</p>
-                  </div>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="text-center">
+                  <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">🧠</span>
+                  <p className="text-white font-bold text-sm sm:text-base mb-1">Smart Pay</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">Best card/wallet</p>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-xl sm:text-2xl flex-shrink-0">⭐</span>
-                  <div>
-                    <p className="text-white font-semibold text-sm sm:text-base">After purchase</p>
-                    <p className="text-gray-400 text-xs sm:text-sm">Earn Nuqta Coin automatically (redeemable anywhere)</p>
-                  </div>
+                <div className="text-center">
+                  <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">💰</span>
+                  <p className="text-white font-bold text-sm sm:text-base mb-1">Instant Cash</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">5-10% back</p>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-xl sm:text-2xl flex-shrink-0">📱</span>
-                  <div>
-                    <p className="text-white font-semibold text-sm sm:text-base">Share on social</p>
-                    <p className="text-gray-400 text-xs sm:text-sm">Earn 2x rewards for sharing your experience</p>
-                  </div>
+                <div className="text-center">
+                  <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">📱</span>
+                  <p className="text-white font-bold text-sm sm:text-base mb-1">Social Bonus</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">2x for sharing</p>
                 </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-xl sm:text-2xl flex-shrink-0">🎯</span>
-                  <div>
-                    <p className="text-white font-semibold text-sm sm:text-base">For merchants</p>
-                    <p className="text-gray-400 text-xs sm:text-sm">Pay only for actual sales (10-15% commission)</p>
-                  </div>
+                <div className="text-center">
+                  <span className="text-3xl sm:text-4xl md:text-5xl block mb-2">🏪</span>
+                  <p className="text-white font-bold text-sm sm:text-base mb-1">For Merchants</p>
+                  <p className="text-gray-400 text-xs sm:text-sm">10-15% commission</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-[#0a1628]/80 rounded-lg sm:rounded-xl p-4 sm:p-6 max-w-2xl border border-[#c9a227]/30">
-              <p className="text-xs sm:text-sm text-gray-400 mb-2 sm:mb-3 text-center">Real Example: AED 100 Restaurant Bill</p>
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 text-center">
+              <p className="text-xs sm:text-sm text-gray-400 mb-3 sm:mb-4 text-center">Real Example: AED 100 Restaurant Bill</p>
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 text-center">
                 <div>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-blue-400">AED 10</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">Saved with best card</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">AED 10</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Best card savings</p>
                 </div>
                 <div>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 8</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">Cashback earned (8%)</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">AED 8</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Cashback (8%)</p>
                 </div>
                 <div>
-                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-green-400">AED 4</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1">Social share bonus</p>
+                  <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">AED 4</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 mt-1">Social share</p>
                 </div>
               </div>
-              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#2a3a52]">
-                <p className="text-center text-xs sm:text-sm md:text-base">
-                  <span className="text-gray-400">You get: </span>
-                  <span className="text-[#c9a227] text-base sm:text-xl md:text-2xl font-bold">AED 12 cash</span>
-                  <span className="text-gray-400"> + AED 10 saved = </span>
-                  <span className="text-white text-sm sm:text-lg md:text-xl font-bold">AED 22 total benefit</span>
+              <div className="mt-4 pt-4 border-t border-[#2a3a52]">
+                <p className="text-center text-sm sm:text-base">
+                  <span className="text-gray-400">Total benefit: </span>
+                  <span className="text-white text-lg sm:text-xl md:text-2xl font-bold">AED 22</span>
                 </p>
               </div>
             </div>
@@ -352,63 +342,42 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 md:mb-8">Platform Definition</p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-8 sm:mb-12">
               What is <span className="text-[#c9a227]">Nuqta</span>?
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-16 max-w-4xl mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-4xl mb-8 sm:mb-12">
               <div className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#c9a227]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                  <span className="text-3xl sm:text-4xl">🧠</span>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
+                  <span className="text-4xl sm:text-5xl">🧠</span>
                 </div>
-                <p className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Intelligence</p>
-                <p className="text-gray-400 text-xs sm:text-sm">Best card, wallet, or BNPL for every purchase</p>
+                <p className="text-xl sm:text-2xl font-bold mb-2">Intelligence</p>
+                <p className="text-gray-400 text-sm">Best payment method for every purchase</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#c9a227]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                  <span className="text-3xl sm:text-4xl">💰</span>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
+                  <span className="text-4xl sm:text-5xl">💰</span>
                 </div>
-                <p className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Cashback</p>
-                <p className="text-gray-400 text-xs sm:text-sm">5-10% back on every purchase instantly</p>
+                <p className="text-xl sm:text-2xl font-bold mb-2">Cashback</p>
+                <p className="text-gray-400 text-sm">5-10% back instantly</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#c9a227]/20 rounded-xl sm:rounded-2xl flex items-center justify-center">
-                  <span className="text-3xl sm:text-4xl">🔥</span>
+                <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
+                  <span className="text-4xl sm:text-5xl">🔥</span>
                 </div>
-                <p className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Rewards</p>
-                <p className="text-gray-400 text-xs sm:text-sm">Transaction-based cashback + social bonuses</p>
+                <p className="text-xl sm:text-2xl font-bold mb-2">Social Rewards</p>
+                <p className="text-gray-400 text-sm">2x bonus for sharing</p>
               </div>
             </div>
 
-            {/* Smart Pay Advisor Explanation */}
-            <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 max-w-3xl border border-[#c9a227]/30">
-              <p className="text-xs sm:text-sm text-[#c9a227] font-bold mb-3 sm:mb-4 uppercase tracking-wider">How Smart Pay Works</p>
-              <div className="space-y-2 sm:space-y-3 text-left">
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-base sm:text-lg flex-shrink-0">📱</span>
-                  <div>
-                    <p className="text-white font-semibold text-xs sm:text-sm">User adds their cards/wallets to Nuqta</p>
-                    <p className="text-gray-400 text-[10px] sm:text-xs">ADCB card, Liv wallet, Tabby BNPL, etc.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-base sm:text-lg flex-shrink-0">🔍</span>
-                  <div>
-                    <p className="text-white font-semibold text-xs sm:text-sm">We track bank offers & merchant partnerships</p>
-                    <p className="text-gray-400 text-[10px] sm:text-xs">15% off dining with ADCB, 10% cashback with Liv, etc.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <span className="text-base sm:text-lg flex-shrink-0">✨</span>
-                  <div>
-                    <p className="text-white font-semibold text-xs sm:text-sm">At checkout, we show the best option</p>
-                    <p className="text-gray-400 text-[10px] sm:text-xs">&quot;Use ADCB → Save AED 15&quot; vs &quot;Use Liv → Save AED 10&quot;</p>
-                  </div>
-                </div>
-              </div>
+            {/* Simplified How It Works */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-2xl border-2 border-[#c9a227]/40">
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+                <span className="text-[#c9a227] font-bold">Smart Pay Advisor</span> analyzes your cards, wallets & BNPL options, then tells you the <span className="text-white font-semibold">best way to pay</span> before every purchase.
+              </p>
             </div>
 
-            <p className="mt-6 sm:mt-8 md:mt-12 text-sm sm:text-base md:text-lg text-gray-500 italic px-4">
+            <p className="mt-8 text-sm sm:text-base text-gray-500 italic">
               &quot;نقطة&quot; means &quot;point&quot; in Arabic — the starting point of every payment.
             </p>
           </div>
@@ -725,8 +694,73 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 14: BUSINESS MODEL ====================
+      // ==================== SLIDE 15: WHY NOW ====================
       case 15:
+        return (
+          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-12">
+            <p className="text-[#c9a227] text-sm sm:text-lg uppercase tracking-[0.3em] mb-4 sm:mb-6">Timing & Momentum</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 text-center">
+              Why <span className="text-[#c9a227]">Now</span>?
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl w-full mb-6 sm:mb-8">
+              {[
+                {
+                  icon: '📱',
+                  title: 'Digital Payment Explosion',
+                  stat: '70%+',
+                  desc: 'GCC digital payment penetration (2024 vs 40% in 2020)',
+                  source: 'GCC Payment Reports 2024'
+                },
+                {
+                  icon: '💳',
+                  title: 'BNPL Boom',
+                  stat: '300%',
+                  desc: 'Tabby, Postpay, Tamara growth in 2 years',
+                  source: 'Regional fintech growth data'
+                },
+                {
+                  icon: '🏦',
+                  title: 'Open Banking Ready',
+                  stat: '2024+',
+                  desc: 'UAE & Saudi open banking regulations live',
+                  source: 'CBUAE & SAMA regulatory announcements'
+                },
+                {
+                  icon: '🎯',
+                  title: 'Consumer Expectations Shift',
+                  stat: '5-10%',
+                  desc: 'Users now expect real cashback, not points',
+                  source: 'Regional consumer behavior studies'
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-colors">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <span className="text-3xl sm:text-4xl flex-shrink-0">{item.icon}</span>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-baseline gap-2 mb-1 sm:mb-2">
+                        <h3 className="font-bold text-sm sm:text-base md:text-lg">{item.title}</h3>
+                        <span className="text-[#c9a227] font-black text-lg sm:text-xl md:text-2xl whitespace-nowrap">{item.stat}</span>
+                      </div>
+                      <p className="text-gray-400 text-xs sm:text-sm mb-2">{item.desc}</p>
+                      <p className="text-gray-600 text-[10px] sm:text-xs italic">Source: {item.source}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Key Insight */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-[#c9a227]/40 max-w-3xl">
+              <p className="text-center text-sm sm:text-base md:text-lg text-gray-300">
+                <span className="text-[#c9a227] font-bold">The perfect storm:</span> Payment infrastructure is ready, consumers expect more value, and merchants need alternatives to 25-30% aggregator fees. <span className="text-white font-semibold">This is the moment to build payment intelligence for the GCC.</span>
+              </p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 16: BUSINESS MODEL ====================
+      case 16:
         return (
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Business Model</p>
@@ -757,8 +791,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 15: UNIT ECONOMICS ====================
-      case 16:
+      // ==================== SLIDE 17: UNIT ECONOMICS ====================
+      case 17:
         return (
           <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Unit Economics</p>
@@ -785,41 +819,53 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 16: TRACTION ====================
-      case 17:
+      // ==================== SLIDE 18: TRACTION ====================
+      case 18:
         return (
           <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Current Status</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">Pre-Launch</h2>
-            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-12 text-center max-w-xl px-2">
-              Building MVP, validating demand, securing pilots. No vanity metrics — just honest progress.
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">Pre-Launch Momentum</h2>
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-12 text-center max-w-2xl px-2">
+              Building MVP, validating demand, securing partnerships. No vanity metrics — just honest progress.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-2xl w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-3xl w-full mb-6 sm:mb-8">
               {[
-                { icon: '📋', title: 'Waitlist Users', status: '200+' },
-                { icon: '🏪', title: 'Pilot Merchants', status: '5 signed' },
-                { icon: '🤝', title: 'BNPL Partners', status: 'In talks with Tabby' },
-                { icon: '💻', title: 'MVP Status', status: 'In development' },
+                { icon: '🤝', title: 'D2C Brand MOUs', status: '50+ signed', highlight: true, desc: 'Formal partnership agreements' },
+                { icon: '📋', title: 'Waitlist Users', status: '200+', highlight: false, desc: 'Organic signups' },
+                { icon: '🏦', title: 'Bank Partnerships', status: 'In preparation', highlight: false, desc: 'API integrations ready' },
+                { icon: '💻', title: 'MVP Status', status: 'In development', highlight: false, desc: 'Q1 2026 launch target' },
               ].map((item, idx) => (
-                <div key={idx} className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border border-[#2a3a52] flex items-center gap-2 sm:gap-3 md:gap-4">
-                  <span className="text-2xl sm:text-3xl md:text-4xl">{item.icon}</span>
-                  <div className="min-w-0">
-                    <p className="font-bold text-sm sm:text-base truncate">{item.title}</p>
-                    <p className="text-[#c9a227] text-xs sm:text-sm">{item.status}</p>
+                <div key={idx} className={`rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border flex items-start gap-2 sm:gap-3 md:gap-4 ${
+                  item.highlight
+                    ? 'bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-[#c9a227] shadow-lg shadow-[#c9a227]/10'
+                    : 'bg-[#1a2a42]/50 border-[#2a3a52]'
+                }`}>
+                  <span className="text-2xl sm:text-3xl md:text-4xl flex-shrink-0">{item.icon}</span>
+                  <div className="min-w-0 flex-1">
+                    <p className="font-bold text-sm sm:text-base">{item.title}</p>
+                    <p className={`text-xs sm:text-sm md:text-base font-bold ${item.highlight ? 'text-[#c9a227]' : 'text-[#c9a227]'}`}>{item.status}</p>
+                    <p className="text-gray-500 text-[10px] sm:text-xs mt-0.5 sm:mt-1">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="mt-6 sm:mt-8 md:mt-12 text-sm sm:text-base md:text-lg text-center">
-              Focus: <span className="text-[#c9a227] font-bold">Repeat usage</span>, not downloads.
+            {/* Partnership Pipeline */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl sm:rounded-2xl p-4 sm:p-6 border-l-4 border-[#c9a227] max-w-3xl w-full">
+              <p className="text-xs sm:text-sm md:text-base text-gray-300 text-center">
+                <span className="text-[#c9a227] font-bold">Partnership pipeline:</span> Preparing to onboard BNPL providers (Tabby, Postpay), payment gateways, logistics partners, and regional banks. Foundation is being built for rapid scale.
+              </p>
+            </div>
+
+            <p className="mt-6 sm:mt-8 text-sm sm:text-base md:text-lg text-center">
+              Focus: <span className="text-[#c9a227] font-bold">Real partnerships & repeat usage</span>, not downloads.
             </p>
           </div>
         );
 
-      // ==================== SLIDE 17: ROADMAP ====================
-      case 18:
+      // ==================== SLIDE 19: ROADMAP ====================
+      case 19:
         return (
           <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Execution Plan</p>
@@ -853,8 +899,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 18: TEAM ====================
-      case 19:
+      // ==================== SLIDE 20: TEAM ====================
+      case 20:
         return (
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Leadership</p>
@@ -895,8 +941,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 19: GOVERNANCE ====================
-      case 20:
+      // ==================== SLIDE 21: GOVERNANCE ====================
+      case 21:
         return (
           <div className="h-full flex flex-col items-center justify-center px-8 py-12">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-6">Investor Protection</p>
@@ -923,8 +969,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 20: THE ASK ====================
-      case 21:
+      // ==================== SLIDE 22: THE ASK ====================
+      case 22:
         return (
           <div className="h-full flex flex-col items-center justify-center text-center px-8">
             <p className="text-[#c9a227] text-lg uppercase tracking-[0.3em] mb-8">The Ask</p>
@@ -973,8 +1019,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 21: CLOSING ====================
-      case 22:
+      // ==================== SLIDE 23: CLOSING ====================
+      case 23:
         return (
           <div className="h-full flex flex-col items-center justify-center text-center px-8 bg-gradient-to-b from-[#0a1628] via-[#0d1c30] to-[#0a1628]">
             <div className="relative mb-8">
