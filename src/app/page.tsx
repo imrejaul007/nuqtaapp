@@ -599,7 +599,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10 2xl:pr-80">
             <AnimatedSection>
               <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-full mb-4 sm:mb-6 animate-pulse">
-                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">5-10% Cashback + Smart Payment Tips for the GCC</span>
+                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">5% base + 5% social bonus Cashback + Smart Payment Tips for the GCC</span>
               </div>
             </AnimatedSection>
 
@@ -612,7 +612,7 @@ export default function Home() {
 
             <AnimatedSection delay={400}>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-2">
-                <span className="text-[#c9a227] font-bold">Earn 5-10% cashback</span> on everyday spending + <span className="text-white font-semibold">smart payment recommendations</span> to save even more. <span className="text-white font-semibold">Nuqta (نقطة)</span> — where shopping pays you back.
+                <span className="text-[#c9a227] font-bold">Earn 5% cashback (+ 5% social bonus)</span> on everyday spending + <span className="text-white font-semibold">smart payment recommendations</span> to save even more. <span className="text-white font-semibold">Nuqta (نقطة)</span> — where shopping pays you back.
               </p>
             </AnimatedSection>
 
@@ -621,11 +621,11 @@ export default function Home() {
               <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8 md:mb-10 px-4">
                 <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
                   <span className="text-xl">💰</span>
-                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">5-10% Cashback</span>
+                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">5% + 5% Cashback</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
                   <span className="text-xl">📱</span>
-                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">Share & Earn 2x</span>
+                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">Share & Earn +5%</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
                   <span className="text-xl">🧠</span>
@@ -1742,10 +1742,10 @@ export default function Home() {
                   {/* Trust indicators */}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
-                      <span className="text-2xl">📋</span>
+                      <span className="text-2xl">🤝</span>
                       <div>
-                        <p className="font-semibold text-white">12+ Merchant LOIs</p>
-                        <p className="text-xs text-gray-400">Letters of Intent for pilot participation</p>
+                        <p className="font-semibold text-white">30+ D2C Brand MOUs</p>
+                        <p className="text-xs text-gray-400">Ready to onboard post-MVP launch</p>
                       </div>
                     </div>
                     <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
@@ -1837,7 +1837,7 @@ export default function Home() {
                     <h4 className="text-lg font-semibold text-[#c9a227] mb-4">Primary Revenue Streams</h4>
                     <div className="space-y-4">
                       {[
-                        { num: "1", title: "Merchant-funded rewards", desc: "(performance-based)" },
+                        { num: "1", title: "Merchant-funded rewards", desc: "(15% commission per transaction)" },
                         { num: "2", title: "Promoted listings & campaigns", desc: "" },
                         { num: "3", title: "BNPL & fintech referral commissions", desc: "" },
                         { num: "4", title: "Premium merchant tools", desc: "(later stage)" },
@@ -1892,7 +1892,7 @@ export default function Home() {
                   {
                     phase: "0–6 Months",
                     title: "Launch",
-                    items: ["MVP launch (Dubai)", "50–100 pilot merchants", "Core Smart Pay Advisor live", "First repeat usage metrics"],
+                    items: ["MVP launch (Dubai) - Q2 2026", "50–100 pilot merchants", "Core Smart Pay Advisor live", "First repeat usage metrics"],
                     color: "border-blue-500",
                     bg: "bg-blue-500/10"
                   },
