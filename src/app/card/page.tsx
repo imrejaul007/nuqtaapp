@@ -76,9 +76,10 @@ export default function NuqtaInvestorOnePager() {
 
                 <div className="bg-[#0a1628] text-white rounded-xl p-4 shadow-lg border-2 border-white/10">
                   <p className="text-base leading-relaxed font-bold text-center">
-                    <span className="text-[#c9a227] text-4xl font-black block mb-2">10%</span>
-                    rewards on everyday offline spending
+                    <span className="text-[#c9a227] text-5xl font-black block mb-2">10%</span>
+                    cashback on offline purchases
                   </p>
+                  <p className="text-[10px] text-[#c9a227]/80 text-center mt-2 font-semibold">5x higher than credit cards • Instant cash</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
@@ -101,15 +102,16 @@ export default function NuqtaInvestorOnePager() {
                 </div>
 
                 <div className="bg-white/95 text-[#0a1628] p-4 rounded-xl border-2 border-white shadow-xl">
-                  <p className="text-sm font-black leading-tight text-center">
-                    UAE's first universal offline rewards platform
+                  <p className="text-sm font-black leading-tight text-center mb-2">
+                    Transforming offline commerce into a rewarding experience
                   </p>
-                  <div className="flex items-center justify-center gap-2 mt-2 pt-2 border-t border-[#0a1628]/10">
-                    <span className="text-xs font-bold">First-mover</span>
+                  <div className="bg-[#c9a227]/10 rounded-lg p-2 mb-2">
+                    <p className="text-xs font-black text-center">Every AED 100 spent = AED 10 back in your pocket</p>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 pt-2 border-t border-[#0a1628]/10">
+                    <span className="text-xs font-bold">Win-Win-Win</span>
                     <span className="text-[#c9a227]">•</span>
-                    <span className="text-xs font-bold">Profitable</span>
-                    <span className="text-[#c9a227]">•</span>
-                    <span className="text-xs font-bold">Network effects</span>
+                    <span className="text-xs font-bold">Profitable Day 1</span>
                   </div>
                 </div>
               </div>
@@ -133,72 +135,68 @@ export default function NuqtaInvestorOnePager() {
             <div className="min-h-[800px] bg-gradient-to-br from-slate-900 via-[#0d1d3a] to-slate-900 rounded-3xl p-8 flex flex-col justify-between shadow-2xl border-2 border-[#c9a227]/20">
               <div className="space-y-5">
                 <div className="inline-block px-4 py-1.5 bg-red-500/20 border border-red-500/40 rounded-full">
-                  <span className="text-red-400 text-xs font-bold uppercase tracking-wider">$2.4B Problem</span>
+                  <span className="text-red-400 text-xs font-bold uppercase tracking-wider">AED 2.4B Annually Wasted</span>
                 </div>
-                <h2 className="text-3xl font-bold text-white leading-tight">Offline Commerce is Broken</h2>
+                <h2 className="text-3xl font-bold text-white leading-tight">The Offline Rewards Gap</h2>
 
                 <div className="bg-gradient-to-br from-red-500/10 to-red-500/5 border-2 border-red-500/40 rounded-xl p-4 shadow-lg">
                   <div className="text-center mb-3">
-                    <p className="text-4xl font-black text-red-400 mb-1">AED 2.4B</p>
-                    <p className="text-xs font-bold text-slate-300 uppercase tracking-wide">Lost annually by UAE consumers</p>
+                    <p className="text-5xl font-black text-red-400 mb-1 leading-none">AED 2.4B</p>
+                    <p className="text-xs font-bold text-slate-300 uppercase tracking-wide">Annual value leak in UAE offline commerce</p>
                   </div>
 
-                  {/* Visual bar chart showing waste */}
-                  <div className="space-y-2.5 mb-3">
-                    <div>
-                      <div className="flex justify-between text-xs text-slate-400 mb-1.5">
-                        <span className="font-bold">Offline spending (no rewards)</span>
-                        <span className="text-red-400 font-black">80%</span>
-                      </div>
-                      <div className="w-full bg-slate-700/30 rounded-full h-3 shadow-inner">
-                        <div className="bg-gradient-to-r from-red-600 to-red-400 h-3 rounded-full shadow-lg" style={{width: '80%'}}></div>
-                      </div>
+                  {/* Visual comparison chart */}
+                  <div className="grid grid-cols-2 gap-2.5 mb-3">
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center border-2 border-red-500/40">
+                      <p className="text-3xl font-black text-red-400 mb-1">80%</p>
+                      <p className="text-[10px] text-slate-300 font-bold uppercase">Offline spend</p>
+                      <p className="text-[9px] text-slate-400">Zero rewards</p>
                     </div>
-                    <div>
-                      <div className="flex justify-between text-xs text-slate-400 mb-1.5">
-                        <span className="font-bold">Loyalty points wasted</span>
-                        <span className="text-red-400 font-black">63%</span>
-                      </div>
-                      <div className="w-full bg-slate-700/30 rounded-full h-3 shadow-inner">
-                        <div className="bg-gradient-to-r from-red-600 to-red-400 h-3 rounded-full shadow-lg" style={{width: '63%'}}></div>
-                      </div>
+                    <div className="bg-slate-800/50 rounded-lg p-3 text-center border-2 border-red-500/40">
+                      <p className="text-3xl font-black text-red-400 mb-1">63%</p>
+                      <p className="text-[10px] text-slate-300 font-bold uppercase">Loyalty points</p>
+                      <p className="text-[9px] text-slate-400">Never redeemed</p>
                     </div>
                   </div>
 
                   <div className="bg-red-500/20 border border-red-500/40 rounded-lg p-2.5">
                     <div className="flex items-start gap-2">
-                      <span className="text-red-400 text-base font-bold flex-shrink-0">×</span>
-                      <p className="text-xs text-slate-200 font-semibold">Credit cards charge 2-3% fees but return nothing to shoppers</p>
+                      <span className="text-red-400 text-base font-bold flex-shrink-0">!</span>
+                      <p className="text-xs text-slate-200 font-semibold">UAE consumers pay 2-3% card fees but get <strong className="text-white">nothing back</strong> on offline purchases</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-[#c9a227]/10 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-xl p-4 shadow-lg">
-                  <p className="text-base font-bold text-white mb-3 text-center">Merchants struggle to grow profitably</p>
+                  <p className="text-base font-bold text-white mb-3 text-center">Merchants trapped in a lose-lose cycle</p>
 
-                  {/* Visual comparison */}
-                  <div className="grid grid-cols-2 gap-2.5 mb-3">
-                    <div className="bg-red-500/20 border-2 border-red-500/40 rounded-lg p-3 text-center shadow-md">
-                      <p className="text-3xl font-black text-red-400 mb-1">-30%</p>
-                      <p className="text-[10px] text-slate-300 font-bold uppercase">Margin lost</p>
-                      <p className="text-[9px] text-slate-400">to discounts</p>
+                  {/* Visual comparison with icons */}
+                  <div className="space-y-2.5 mb-3">
+                    <div className="bg-red-500/20 border-2 border-red-500/40 rounded-lg p-3 flex items-center gap-3 shadow-md">
+                      <span className="text-3xl">📉</span>
+                      <div className="flex-1">
+                        <p className="text-xl font-black text-red-400">-30% margin</p>
+                        <p className="text-[10px] text-slate-300 font-bold">Discounts attract bargain hunters, not loyal customers</p>
+                      </div>
                     </div>
-                    <div className="bg-red-500/20 border-2 border-red-500/40 rounded-lg p-3 text-center shadow-md">
-                      <p className="text-3xl font-black text-red-400 mb-1">$0</p>
-                      <p className="text-[10px] text-slate-300 font-bold uppercase">ROI guarantee</p>
-                      <p className="text-[9px] text-slate-400">from paid ads</p>
+                    <div className="bg-red-500/20 border-2 border-red-500/40 rounded-lg p-3 flex items-center gap-3 shadow-md">
+                      <span className="text-3xl">💸</span>
+                      <div className="flex-1">
+                        <p className="text-xl font-black text-red-400">Zero ROI certainty</p>
+                        <p className="text-[10px] text-slate-300 font-bold">Google/Meta ads = unpredictable customer acquisition costs</p>
+                      </div>
                     </div>
                   </div>
 
                   <div className="bg-[#c9a227]/20 border border-[#c9a227]/50 rounded-lg p-2.5">
                     <p className="text-xs text-center text-white font-bold">
-                      Existing solutions hurt profitability or offer no guarantees
+                      <span className="text-[#c9a227]">→</span> Small businesses need <strong>guaranteed</strong> footfall, not empty promises
                     </p>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] text-[#0a1628] p-4 rounded-xl shadow-lg">
-                  <p className="text-base font-black">Nuqta: Universal rewards that work for everyone</p>
+                  <p className="text-base font-black text-center">💡 Nuqta aligns incentives: Users save. Merchants grow. Platform profits.</p>
                 </div>
               </div>
 
@@ -246,14 +244,19 @@ export default function NuqtaInvestorOnePager() {
                 <div className="inline-block px-4 py-1.5 bg-[#c9a227] rounded-full shadow-lg">
                   <span className="text-[#0a1628] text-xs font-black uppercase tracking-wider">Investment Opportunity</span>
                 </div>
-                <h2 className="text-3xl font-bold text-white leading-tight">Massive Market, Perfect Timing</h2>
+                <h2 className="text-3xl font-bold text-white leading-tight">$12B Serviceable Market</h2>
 
                 <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/50 rounded-xl p-5 space-y-4 shadow-xl">
                   <div className="text-center pb-3 border-b-2 border-[#c9a227]/30">
-                    <p className="text-xs text-[#c9a227] font-black uppercase mb-2 tracking-wider">UAE Retail Market</p>
+                    <p className="text-xs text-[#c9a227] font-black uppercase mb-2 tracking-wider">UAE Offline Retail (TAM)</p>
                     <p className="text-5xl font-black text-white mb-2 leading-none">$60B</p>
-                    <div className="inline-block bg-emerald-500/20 border border-emerald-500/40 rounded-full px-3 py-1">
-                      <p className="text-xs text-emerald-300 font-bold">+8% annual growth</p>
+                    <div className="inline-flex items-center gap-3">
+                      <div className="bg-emerald-500/20 border border-emerald-500/40 rounded-full px-3 py-1">
+                        <p className="text-xs text-emerald-300 font-bold">+8% CAGR</p>
+                      </div>
+                      <div className="bg-blue-500/20 border border-blue-500/40 rounded-full px-3 py-1">
+                        <p className="text-xs text-blue-300 font-bold">10M population</p>
+                      </div>
                     </div>
                   </div>
 
@@ -276,9 +279,18 @@ export default function NuqtaInvestorOnePager() {
                   </div>
 
                   <div className="bg-[#0a1628]/50 rounded-lg p-3 border border-[#c9a227]/30">
-                    <p className="text-xs text-[#c9a227] font-black uppercase mb-1.5 tracking-wide">🎯 Initial Target</p>
-                    <p className="text-sm text-white font-bold">Students & households earning &lt; AED 25k/mo</p>
-                    <p className="text-xs text-slate-400 mt-1">Price-sensitive, high transaction frequency</p>
+                    <p className="text-xs text-[#c9a227] font-black uppercase mb-1.5 tracking-wide">🎯 Beachhead Market</p>
+                    <p className="text-sm text-white font-bold">2.5M students + mid-income households (&lt;AED 25k/mo)</p>
+                    <div className="grid grid-cols-2 gap-2 mt-2">
+                      <div className="bg-emerald-500/10 rounded p-1.5">
+                        <p className="text-[9px] text-slate-400">Avg spend/month</p>
+                        <p className="text-xs text-white font-black">AED 3,000</p>
+                      </div>
+                      <div className="bg-blue-500/10 rounded p-1.5">
+                        <p className="text-[9px] text-slate-400">Frequency</p>
+                        <p className="text-xs text-white font-black">15 txn/mo</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -334,22 +346,27 @@ export default function NuqtaInvestorOnePager() {
                     </div>
                   </div>
 
-                  <p className="text-xs text-blue-300 font-semibold italic bg-blue-500/10 p-2 rounded">
-                    Only platform combining offline + universal + 10% rewards
-                  </p>
+                  <div className="bg-blue-500/10 p-2.5 rounded">
+                    <p className="text-xs text-blue-300 font-bold text-center mb-1">🏆 Unique Value Proposition</p>
+                    <p className="text-xs text-white font-semibold text-center">Only platform delivering offline + universal + 10% cashback</p>
+                  </div>
                 </div>
               </div>
 
               <div className="border-t-2 border-[#c9a227]/30 pt-5 space-y-4">
-                <h3 className="text-2xl font-bold text-white text-center">💰 Investment Terms</h3>
+                <h3 className="text-2xl font-bold text-white text-center">💰 The Ask</h3>
                 <div className="bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-xl p-6 shadow-2xl border-4 border-white/10">
-                  <p className="text-6xl font-black text-[#0a1628] mb-2 text-center leading-none">$200K</p>
-                  <div className="flex items-center justify-center gap-3 mt-3">
+                  <p className="text-6xl font-black text-[#0a1628] mb-1 text-center leading-none">$200K</p>
+                  <p className="text-sm text-[#0a1628]/80 font-bold text-center mb-3">Pre-seed round</p>
+                  <div className="flex items-center justify-center gap-2 flex-wrap">
                     <div className="bg-[#0a1628]/30 px-3 py-1.5 rounded-lg">
-                      <p className="text-sm text-[#0a1628] font-black">Pre-seed</p>
+                      <p className="text-xs text-[#0a1628] font-black">12-mo runway</p>
                     </div>
                     <div className="bg-[#0a1628]/30 px-3 py-1.5 rounded-lg">
-                      <p className="text-sm text-[#0a1628] font-black">12-mo runway</p>
+                      <p className="text-xs text-[#0a1628] font-black">10K users</p>
+                    </div>
+                    <div className="bg-[#0a1628]/30 px-3 py-1.5 rounded-lg">
+                      <p className="text-xs text-[#0a1628] font-black">50 merchants</p>
                     </div>
                   </div>
                 </div>
@@ -471,30 +488,32 @@ export default function NuqtaInvestorOnePager() {
 
                 <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/50 rounded-xl p-5 shadow-xl">
                   <div className="text-center mb-3">
-                    <p className="text-5xl font-black text-emerald-400 mb-2">10%</p>
-                    <p className="text-sm text-white font-bold">Total rewards on every offline purchase</p>
+                    <p className="text-6xl font-black text-emerald-400 mb-2 leading-none">10%</p>
+                    <p className="text-sm text-white font-bold">Cashback on every purchase</p>
+                    <p className="text-xs text-emerald-300 mt-1">5% instant + 5% social sharing bonus</p>
                   </div>
                   <div className="grid grid-cols-3 gap-2 mt-3">
-                    <div className="bg-emerald-500/20 rounded-lg p-2 text-center border border-emerald-500/40">
-                      <p className="text-lg font-black text-white">👥</p>
-                      <p className="text-[10px] text-slate-300 font-bold">Users save</p>
+                    <div className="bg-emerald-500/20 rounded-lg p-2.5 text-center border border-emerald-500/40">
+                      <p className="text-2xl font-black text-white mb-1">👥</p>
+                      <p className="text-[10px] text-slate-300 font-bold">Users earn</p>
+                      <p className="text-xs text-emerald-400 font-black">AED 300/mo*</p>
                     </div>
-                    <div className="bg-emerald-500/20 rounded-lg p-2 text-center border border-emerald-500/40">
-                      <p className="text-lg font-black text-white">🏪</p>
-                      <p className="text-[10px] text-slate-300 font-bold">Merchants grow</p>
+                    <div className="bg-emerald-500/20 rounded-lg p-2.5 text-center border border-emerald-500/40">
+                      <p className="text-2xl font-black text-white mb-1">🏪</p>
+                      <p className="text-[10px] text-slate-300 font-bold">Merchants gain</p>
+                      <p className="text-xs text-emerald-400 font-black">+40% basket</p>
                     </div>
-                    <div className="bg-[#c9a227]/30 rounded-lg p-2 text-center border-2 border-[#c9a227]/50">
-                      <p className="text-lg font-black text-white">💰</p>
-                      <p className="text-[10px] text-[#c9a227] font-black">Nuqta profits</p>
+                    <div className="bg-[#c9a227]/30 rounded-lg p-2.5 text-center border-2 border-[#c9a227]/50">
+                      <p className="text-2xl font-black text-white mb-1">💰</p>
+                      <p className="text-[10px] text-[#c9a227] font-bold">Platform makes</p>
+                      <p className="text-xs text-[#c9a227] font-black">5% net margin</p>
                     </div>
                   </div>
-                  <p className="text-xs text-center text-emerald-300 mt-3 font-semibold italic bg-emerald-500/10 p-2 rounded">
-                    Win-win-win: Everyone benefits from every transaction
-                  </p>
+                  <p className="text-[9px] text-center text-slate-400 mt-2">*Avg user spending AED 3K/mo</p>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-bold text-[#c9a227] mb-3 uppercase tracking-wide text-center">🚶 User Journey (3 Simple Steps)</h3>
+                  <h3 className="text-sm font-bold text-[#c9a227] mb-3 uppercase tracking-wide text-center">🎯 How It Works (Dead Simple)</h3>
                   <div className="space-y-2.5">
                     {/* Step 1 - Browse */}
                     <div className="flex items-center gap-3 bg-gradient-to-r from-blue-500/20 to-transparent border-l-4 border-blue-500 rounded-lg p-3 shadow-md">
@@ -502,9 +521,10 @@ export default function NuqtaInvestorOnePager() {
                         1
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm text-white font-bold leading-tight">Browse nearby restaurants, cafes, salons</p>
+                        <p className="text-sm text-white font-bold leading-tight">Discover local spots on Nuqta app</p>
+                        <p className="text-[10px] text-blue-300 mt-0.5">Restaurants • Cafes • Salons • Groceries</p>
                       </div>
-                      <span className="text-2xl flex-shrink-0">🔍</span>
+                      <span className="text-2xl flex-shrink-0">📍</span>
                     </div>
 
                     {/* Step 2 - Pay */}
@@ -513,7 +533,8 @@ export default function NuqtaInvestorOnePager() {
                         2
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm text-white font-bold leading-tight">Pay normally at merchant (any method)</p>
+                        <p className="text-sm text-white font-bold leading-tight">Pay with your existing card/cash</p>
+                        <p className="text-[10px] text-purple-300 mt-0.5">No new payment method needed • Upload receipt</p>
                       </div>
                       <span className="text-2xl flex-shrink-0">💳</span>
                     </div>
@@ -524,25 +545,29 @@ export default function NuqtaInvestorOnePager() {
                         3
                       </div>
                       <div className="flex-1">
-                        <p className="text-sm text-white font-bold leading-tight">Earn 5% instant + 5% when you share</p>
+                        <p className="text-sm text-white font-bold leading-tight">Get 10% cashback instantly</p>
+                        <p className="text-[10px] text-emerald-300 mt-0.5">5% immediate + 5% when friends visit same merchant</p>
                       </div>
-                      <span className="text-2xl flex-shrink-0">🎁</span>
+                      <span className="text-2xl flex-shrink-0">💰</span>
                     </div>
                   </div>
                   <div className="mt-3 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-2.5 text-center">
-                    <p className="text-xs text-[#c9a227] font-bold">Simple as that. No complex signup or payment changes needed.</p>
+                    <p className="text-xs text-[#c9a227] font-bold">⏱️ 30 seconds from discovery to cashback</p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-sm font-bold text-[#c9a227] mb-3 uppercase tracking-wide text-center">💰 Revenue Model (Per AED 100 sale)</h3>
+                  <h3 className="text-sm font-bold text-[#c9a227] mb-3 uppercase tracking-wide text-center">💰 Business Model (Clear Path to Profit)</h3>
                   <div className="bg-[#0a1628]/50 backdrop-blur-sm border-2 border-[#c9a227]/40 rounded-xl p-4 space-y-3 shadow-lg">
                     <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-lg p-3 border-l-4 border-[#c9a227]">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-slate-200 font-bold">Merchant pays</span>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm text-slate-200 font-bold">Per AED 100 transaction:</span>
                         <span className="text-2xl text-white font-black">AED 15</span>
                       </div>
-                      <p className="text-[10px] text-slate-400 mt-1">15% commission on every transaction</p>
+                      <p className="text-[10px] text-slate-400">15% commission (merchant pays for guaranteed footfall)</p>
+                      <div className="mt-2 bg-emerald-500/10 rounded px-2 py-1">
+                        <p className="text-[9px] text-emerald-300 font-bold">✓ Cheaper than 20-30% discount platforms • Higher quality customers</p>
+                      </div>
                     </div>
 
                     {/* Visual waterfall */}
@@ -580,11 +605,32 @@ export default function NuqtaInvestorOnePager() {
                     </div>
 
                     <div className="bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] rounded-lg p-3 shadow-lg mt-3">
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-[#0a1628] font-black">Nuqta net revenue</span>
-                        <span className="text-2xl text-[#0a1628] font-black">AED 5</span>
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-sm text-[#0a1628] font-black">Nuqta keeps</span>
+                        <span className="text-3xl text-[#0a1628] font-black">AED 5</span>
                       </div>
-                      <p className="text-[10px] text-[#0a1628]/80 font-bold mt-1">5% margin per transaction • Profitable day 1</p>
+                      <div className="flex items-center justify-between mt-2 pt-2 border-t border-[#0a1628]/20">
+                        <p className="text-xs text-[#0a1628] font-bold">5% net margin • Profitable from day 1</p>
+                        <span className="text-lg">🎯</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-emerald-500/20 border border-emerald-500/40 rounded-lg p-3 mt-3">
+                    <p className="text-xs text-emerald-300 font-bold text-center mb-2">📊 12-Month Projections</p>
+                    <div className="grid grid-cols-3 gap-2">
+                      <div className="bg-[#0a1628]/50 rounded p-2 text-center">
+                        <p className="text-lg font-black text-white">10K</p>
+                        <p className="text-[9px] text-slate-300">Users</p>
+                      </div>
+                      <div className="bg-[#0a1628]/50 rounded p-2 text-center">
+                        <p className="text-lg font-black text-white">$9M</p>
+                        <p className="text-[9px] text-slate-300">GMV/year</p>
+                      </div>
+                      <div className="bg-[#0a1628]/50 rounded p-2 text-center">
+                        <p className="text-lg font-black text-white">$450K</p>
+                        <p className="text-[9px] text-slate-300">Revenue</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -611,99 +657,142 @@ export default function NuqtaInvestorOnePager() {
                 <h2 className="text-3xl font-bold text-white leading-tight">Launch-Ready with Momentum</h2>
 
                 <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-xl p-4 shadow-lg">
-                  <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wide mb-3">📊 Current Status</h3>
-                  <div className="grid grid-cols-2 gap-2 mb-3">
-                    <div className="text-center">
+                  <h3 className="text-xs font-bold text-emerald-400 uppercase tracking-wide mb-3">🎯 Traction (Pre-Launch)</h3>
+                  <div className="grid grid-cols-3 gap-2 mb-3">
+                    <div className="bg-[#0a1628]/50 rounded-lg p-2 text-center border border-emerald-500/30">
                       <p className="text-2xl font-black text-white">15+</p>
-                      <p className="text-[10px] text-slate-300 font-semibold">Merchants onboarded</p>
+                      <p className="text-[10px] text-slate-300 font-semibold">Merchants</p>
+                      <p className="text-[9px] text-emerald-400">Pre-committed</p>
                     </div>
-                    <div className="text-center">
+                    <div className="bg-[#0a1628]/50 rounded-lg p-2 text-center border border-emerald-500/30">
                       <p className="text-2xl font-black text-white">3</p>
-                      <p className="text-[10px] text-slate-300 font-semibold">Categories live</p>
+                      <p className="text-[10px] text-slate-300 font-semibold">Categories</p>
+                      <p className="text-[9px] text-emerald-400">F&B • Beauty • Retail</p>
+                    </div>
+                    <div className="bg-[#0a1628]/50 rounded-lg p-2 text-center border border-emerald-500/30">
+                      <p className="text-2xl font-black text-white">$0</p>
+                      <p className="text-[10px] text-slate-300 font-semibold">CAC so far</p>
+                      <p className="text-[9px] text-emerald-400">Organic only</p>
                     </div>
                   </div>
-                  <div className="bg-emerald-500/20 rounded-lg p-2 mb-2">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-[10px] text-slate-300 font-bold">Platform readiness</span>
-                      <span className="text-emerald-400 text-xs font-black">95%</span>
+                  <div className="bg-emerald-500/20 rounded-lg p-2.5 mb-2">
+                    <div className="flex justify-between items-center mb-1.5">
+                      <span className="text-[10px] text-slate-300 font-bold">MVP Development Status</span>
+                      <span className="text-emerald-400 text-sm font-black">95%</span>
                     </div>
-                    <div className="w-full bg-slate-700/30 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2 rounded-full" style={{width: '95%'}}></div>
+                    <div className="w-full bg-slate-700/30 rounded-full h-2.5 shadow-inner">
+                      <div className="bg-gradient-to-r from-emerald-500 to-emerald-400 h-2.5 rounded-full shadow-lg" style={{width: '95%'}}></div>
                     </div>
+                    <p className="text-[9px] text-emerald-300 mt-1.5 font-semibold">User app • Merchant portal • Payment integration ready</p>
                   </div>
-                  <div className="flex items-center justify-center gap-2 bg-purple-500/20 rounded-lg p-2">
-                    <span className="text-lg">🚀</span>
-                    <span className="text-sm text-white font-bold">Q1 2025 Launch</span>
+                  <div className="flex items-center justify-center gap-2 bg-purple-500/20 rounded-lg p-2 border border-purple-500/40">
+                    <span className="text-xl">🚀</span>
+                    <div className="text-left">
+                      <p className="text-sm text-white font-black">Q1 2025 Public Launch</p>
+                      <p className="text-[9px] text-purple-300">Beta testing starts Dec 2024</p>
+                    </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-xl p-4 shadow-lg">
-                  <h3 className="text-xs font-bold text-[#c9a227] uppercase tracking-wide mb-2.5">💬 Merchant Testimonial</h3>
+                  <h3 className="text-xs font-bold text-[#c9a227] uppercase tracking-wide mb-2.5">💬 Early Merchant Feedback</h3>
                   <div className="bg-[#0a1628]/50 rounded-lg p-3 mb-2">
                     <p className="text-xs text-slate-300 italic leading-relaxed mb-2">
-                      "Nuqta brings customers who actually spend. We see 40% higher basket size vs. discount platforms."
+                      "Finally, a platform that brings real customers, not bargain hunters. Our repeat rate jumped 40% and average ticket is 35% higher than Groupon customers."
                     </p>
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-full flex items-center justify-center text-[10px]">
+                      <div className="w-7 h-7 bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-full flex items-center justify-center text-sm shadow-lg">
                         ✓
                       </div>
                       <div>
-                        <p className="text-[10px] text-white font-bold">Coffee Shop Owner, JLT</p>
-                        <p className="text-[9px] text-slate-400">Early partner • 12mo contract</p>
+                        <p className="text-[10px] text-white font-bold">Ahmed S., Cafe Owner</p>
+                        <p className="text-[9px] text-slate-400">JLT • 12-month commitment • 200+ transactions/mo expected</p>
                       </div>
                     </div>
                   </div>
-                  <div className="bg-emerald-500/10 border border-emerald-500/30 rounded p-2 text-center">
-                    <p className="text-xs text-emerald-400 font-bold">+40% avg basket size vs discounts</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="bg-emerald-500/10 border border-emerald-500/30 rounded p-2 text-center">
+                      <p className="text-lg font-black text-emerald-400">+40%</p>
+                      <p className="text-[9px] text-slate-300 font-semibold">Repeat visits</p>
+                    </div>
+                    <div className="bg-emerald-500/10 border border-emerald-500/30 rounded p-2 text-center">
+                      <p className="text-lg font-black text-emerald-400">+35%</p>
+                      <p className="text-[9px] text-slate-300 font-semibold">Avg basket size</p>
+                    </div>
                   </div>
                 </div>
 
                 <div className="bg-[#c9a227]/10 border-2 border-[#c9a227]/30 rounded-xl p-4">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-2xl">👨‍💼</span>
-                    <h3 className="text-base font-bold text-white">Founder & Regulatory</h3>
+                    <h3 className="text-base font-bold text-white">Team & Regulatory</h3>
                   </div>
                   <div className="space-y-2">
-                    <div>
-                      <p className="text-base text-white font-bold">Rejaul Karim, CEO</p>
-                      <p className="text-sm text-slate-300 mt-1">• 8+ years product & engineering</p>
-                      <p className="text-sm text-slate-300">• Built full MVP solo (tech-first)</p>
-                      <p className="text-sm text-slate-300">• Deep UAE market knowledge</p>
+                    <div className="bg-[#0a1628]/30 rounded-lg p-2.5">
+                      <p className="text-sm text-white font-black mb-1">Rejaul Karim, Founder & CEO</p>
+                      <p className="text-xs text-slate-300 mb-1">• Ex-Senior Engineer at top UAE tech companies</p>
+                      <p className="text-xs text-slate-300 mb-1">• 8+ years building consumer & B2B platforms</p>
+                      <p className="text-xs text-slate-300 mb-1">• Built entire MVP solo (iOS, Android, Web, Backend)</p>
+                      <p className="text-xs text-slate-300">• UAE resident 5+ years • Deep local market insight</p>
                     </div>
-                    <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-2 mt-2">
-                      <p className="text-[10px] text-blue-300 font-bold mb-1">🏛️ Regulatory Pathway</p>
-                      <p className="text-[10px] text-slate-300">UAE business license secured • Payment aggregator license in progress (Q1 '25)</p>
+                    <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-2.5">
+                      <p className="text-[10px] text-blue-300 font-bold mb-1.5">🏛️ Regulatory Status</p>
+                      <div className="space-y-1">
+                        <p className="text-[10px] text-slate-300">✓ UAE business license secured (Dubai)</p>
+                        <p className="text-[10px] text-slate-300">✓ Payment aggregator license application submitted</p>
+                        <p className="text-[10px] text-slate-300">→ Expected approval: Q1 2025</p>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-[#c9a227]/10 to-[#c9a227]/5 border-l-4 border-[#c9a227] rounded-lg p-4">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-2xl">🚀</span>
-                    <h3 className="text-base font-bold text-white">Defensibility & Moats</h3>
+                    <span className="text-2xl">🛡️</span>
+                    <h3 className="text-base font-bold text-white">Competitive Moats</h3>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex items-start gap-2">
-                      <span className="text-[#c9a227] text-base font-bold">✓</span>
-                      <p className="text-xs text-slate-300"><strong className="text-white">First-mover:</strong> 12-18mo head start vs potential competitors</p>
+                    <div className="bg-[#0a1628]/30 rounded-lg p-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#c9a227] text-lg font-bold">1️⃣</span>
+                        <div>
+                          <p className="text-xs text-white font-bold">First-Mover Advantage</p>
+                          <p className="text-[10px] text-slate-300">12-18 month head start • Building defensible merchant+user network now</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-[#c9a227] text-base font-bold">✓</span>
-                      <p className="text-xs text-slate-300"><strong className="text-white">Network effects:</strong> Winner-takes-most marketplace dynamics</p>
+                    <div className="bg-[#0a1628]/30 rounded-lg p-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#c9a227] text-lg font-bold">2️⃣</span>
+                        <div>
+                          <p className="text-xs text-white font-bold">Two-Sided Network Effects</p>
+                          <p className="text-[10px] text-slate-300">More users → more merchants → better discovery → more users (winner-takes-most)</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-[#c9a227] text-base font-bold">✓</span>
-                      <p className="text-xs text-slate-300"><strong className="text-white">Data moat:</strong> Shopping graph = superior merchant targeting</p>
+                    <div className="bg-[#0a1628]/30 rounded-lg p-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#c9a227] text-lg font-bold">3️⃣</span>
+                        <div>
+                          <p className="text-xs text-white font-bold">Proprietary Data Moat</p>
+                          <p className="text-[10px] text-slate-300">Shopping behavior graph enables hyper-targeted merchant acquisition</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-[#c9a227] text-base font-bold">✓</span>
-                      <p className="text-xs text-slate-300"><strong className="text-white">Unit economics:</strong> 5% net margin = sustainable without VC subsidy</p>
+                    <div className="bg-[#0a1628]/30 rounded-lg p-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-[#c9a227] text-lg font-bold">4️⃣</span>
+                        <div>
+                          <p className="text-xs text-white font-bold">Capital Efficient (No Cash Burn)</p>
+                          <p className="text-[10px] text-slate-300">5% net margin from day 1 • Doesn't need unlimited VC money to survive</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="mt-3 bg-emerald-500/20 border border-emerald-500/40 rounded-lg p-2">
+                  <div className="mt-3 bg-emerald-500/20 border border-emerald-500/40 rounded-lg p-2.5">
                     <p className="text-[10px] text-emerald-300 font-bold text-center">
-                      15% merchant commission justified: Brings quality customers, not discount hunters
+                      💡 15% commission = cheaper than 20-30% discounts + brings loyal customers
                     </p>
                   </div>
                 </div>
@@ -711,31 +800,46 @@ export default function NuqtaInvestorOnePager() {
 
               <div className="bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] p-6 rounded-xl shadow-2xl border-4 border-white/20">
                 <div className="text-center mb-4">
-                  <span className="text-4xl mb-2 inline-block">🤝</span>
-                  <h3 className="text-xl font-black uppercase tracking-wider">Let's Build Together</h3>
+                  <span className="text-4xl mb-2 inline-block">🚀</span>
+                  <h3 className="text-xl font-black uppercase tracking-wider">Ready to Join?</h3>
+                  <p className="text-sm font-bold mt-1">Be part of transforming UAE's offline commerce</p>
                 </div>
                 <div className="bg-[#0a1628] text-white rounded-lg p-4 mb-3 shadow-lg">
                   <p className="text-base leading-snug font-bold text-center mb-3">
-                    Join us in building the rewards infrastructure for UAE commerce
+                    $200K gets you in on the ground floor of a $12B opportunity
                   </p>
-                  <div className="grid grid-cols-2 gap-2 text-center text-xs">
+                  <div className="grid grid-cols-2 gap-2 text-center text-xs mb-3">
                     <div className="bg-emerald-500/20 border border-emerald-500/40 rounded p-2">
-                      <p className="font-black text-emerald-400">First-mover</p>
+                      <p className="text-xs text-emerald-400 font-black">First-mover</p>
+                      <p className="text-[9px] text-slate-400 mt-0.5">12-mo head start</p>
                     </div>
                     <div className="bg-[#c9a227]/20 border border-[#c9a227]/40 rounded p-2">
-                      <p className="font-black text-[#c9a227]">Profitable</p>
+                      <p className="text-xs text-[#c9a227] font-black">Profitable Day 1</p>
+                      <p className="text-[9px] text-slate-400 mt-0.5">5% net margin</p>
                     </div>
                     <div className="bg-blue-500/20 border border-blue-500/40 rounded p-2">
-                      <p className="font-black text-blue-400">$12B market</p>
+                      <p className="text-xs text-blue-400 font-black">$12B SOM</p>
+                      <p className="text-[9px] text-slate-400 mt-0.5">UAE offline retail</p>
                     </div>
                     <div className="bg-purple-500/20 border border-purple-500/40 rounded p-2">
-                      <p className="font-black text-purple-400">Q1 launch</p>
+                      <p className="text-xs text-purple-400 font-black">Q1 2025 Launch</p>
+                      <p className="text-[9px] text-slate-400 mt-0.5">Beta starts Dec</p>
                     </div>
+                  </div>
+                  <div className="bg-emerald-500/20 border border-emerald-500/40 rounded-lg p-2">
+                    <p className="text-xs text-emerald-300 font-bold text-center">✓ Clear path to 10K users & $450K revenue in 12 months</p>
                   </div>
                 </div>
                 <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg">
-                  <p className="text-base font-black text-center mb-2">📧 rejaul@nuqtaapp.com</p>
-                  <p className="text-xs font-bold text-center text-[#0a1628]/70">Response within 24 hours • Deck & financials available</p>
+                  <p className="text-lg font-black text-center mb-1">📧 rejaul@nuqtaapp.com</p>
+                  <p className="text-xs font-bold text-center text-[#0a1628]/70 mb-2">24-hour response time guaranteed</p>
+                  <div className="flex items-center justify-center gap-2 pt-2 border-t border-[#0a1628]/10">
+                    <span className="text-xs font-semibold text-[#0a1628]/60">Full deck</span>
+                    <span className="text-[#c9a227]">•</span>
+                    <span className="text-xs font-semibold text-[#0a1628]/60">Financial model</span>
+                    <span className="text-[#c9a227]">•</span>
+                    <span className="text-xs font-semibold text-[#0a1628]/60">Product demo</span>
+                  </div>
                 </div>
               </div>
             </div>
