@@ -182,6 +182,7 @@ export default function DataRoomPage() {
               { icon: '📁', label: 'Legal', href: '#legal' },
               { icon: '💻', label: 'Product', href: '#product' },
               { icon: '📊', label: 'Market', href: '#market' },
+              { icon: '📈', label: 'Unit Economics', href: '#unit-economics' },
               { icon: '💰', label: 'Financials', href: '#financials' },
               { icon: '⚖️', label: 'Governance', href: '#governance' },
             ].map((item) => (
@@ -293,6 +294,9 @@ export default function DataRoomPage() {
                   Universal Nuqta points system with visit-based loyalty mechanics. QR-code based earning flow
                   requiring no hardware integration. Basic merchant dashboard for campaign management.
                   Initial launch limited to Dubai in select high-frequency categories.
+                </p>
+                <p className="text-gray-300 mb-3">
+                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching January 28, 2026.</strong> 90-day validation plan: 500 users, AED 30K GMV, D30 retention ≥20%.
                 </p>
                 <p className="text-[#c9a227] text-sm"><strong>Success metric:</strong> Validated repeat usage patterns and measurable merchant ROI</p>
               </div>
@@ -449,14 +453,14 @@ export default function DataRoomPage() {
             </div>
           </DocItem>
 
-          <DocItem number="10" title="Merchant Strategy">
+          <DocItem number="10" title="Merchant Strategy & LOIs">
             <p className="mb-4">
-              Merchant onboarding is designed for zero friction. We are not asking merchants to install
-              hardware, sign long contracts, or pay upfront fees. Performance-based pricing means merchants
-              only pay when Nuqta delivers measurable value.
+              30+ signed merchant LOIs with 30 more in pipeline (60+ merchant network) across Dubai Marina, Downtown, and JBR.
+              Merchant categories: cafes, salons, gyms, retail attacking a $34B UAE market (SAM).
+              Target: 50-100 merchants by Month 3.
             </p>
             <div className="mt-4">
-              <p className="font-semibold text-white mb-2">Initial 50-100 Merchant Pilot</p>
+              <p className="font-semibold text-white mb-2">Merchant Onboarding Approach</p>
               <p className="text-gray-300 text-sm mb-4">
                 Hyperlocal focus on neighborhoods with high foot traffic and repeat purchase behavior.
                 Personal introductions through founder network and warm referrals. These merchants become
@@ -472,9 +476,140 @@ export default function DataRoomPage() {
           </DocItem>
         </Folder>
 
-        {/* SECTION 4: FINANCIALS */}
-        <Folder icon="💰" title="4. Financials" id="financials">
-          <DocItem number="11" title="Runway & Milestones">
+        {/* SECTION 4: UNIT ECONOMICS */}
+        <Folder icon="📈" title="4. Unit Economics" id="unit-economics">
+          <DocItem number="11" title="LTV & CAC Breakdown">
+            <p className="mb-4">
+              Customer acquisition cost (AED 30) vs lifetime value (AED 504) across channels.
+              Includes payback period calculation (&lt;1 month) and cohort retention assumptions.
+            </p>
+            <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
+              <div className="grid md:grid-cols-3 gap-4 mb-4">
+                <div>
+                  <p className="text-2xl font-bold text-[#c9a227]">AED 30</p>
+                  <p className="text-gray-400 text-sm">Blended CAC</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-[#c9a227]">AED 504</p>
+                  <p className="text-gray-400 text-sm">Lifetime Value</p>
+                </div>
+                <div>
+                  <p className="text-2xl font-bold text-[#c9a227]">&lt;1 Month</p>
+                  <p className="text-gray-400 text-sm">Payback Period</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm">
+                LTV calculation based on 24-month customer lifetime, 8 transactions/month average frequency,
+                and blended take rate across merchant commissions and BNPL referrals. Cohort retention
+                assumptions factor in 65% Month 3 retention declining to 30% Month 12 retention.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="12" title="Channel-Specific Economics">
+            <p className="mb-4">
+              CAC by channel: Merchant QR (AED 10-15), Student Ambassadors (AED 25-30), Digital (AED 60-80).
+              16.8x blended LTV:CAC ratio.
+            </p>
+            <div className="overflow-x-auto my-4">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-[#2a3a52]">
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Channel</th>
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">CAC Range</th>
+                    <th className="text-left py-2 px-3 text-gray-400 font-medium">LTV:CAC Ratio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 px-3">Merchant QR</td>
+                    <td className="py-2 px-3 text-[#c9a227]">AED 10-15</td>
+                    <td className="py-2 px-3 text-green-400">33.6x - 50.4x</td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 px-3">Student Ambassadors</td>
+                    <td className="py-2 px-3 text-[#c9a227]">AED 25-30</td>
+                    <td className="py-2 px-3 text-green-400">16.8x - 20.2x</td>
+                  </tr>
+                  <tr className="border-b border-[#2a3a52]/50">
+                    <td className="py-2 px-3">Digital Acquisition</td>
+                    <td className="py-2 px-3 text-[#c9a227]">AED 60-80</td>
+                    <td className="py-2 px-3 text-yellow-400">6.3x - 8.4x</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-gray-300 text-sm">
+              Blended LTV:CAC ratio of 16.8x assumes 60% merchant QR acquisition, 30% student ambassadors,
+              and 10% digital channels during early growth phase. This mix heavily favors low-cost organic
+              acquisition before scaling paid channels.
+            </p>
+          </DocItem>
+
+          <DocItem number="13" title="Float Dynamics Model">
+            <p className="mb-4">
+              Operational float projections based on 30-45 day redemption lag. Cash flow benefits and
+              future interest revenue opportunity post-SVF license.
+            </p>
+            <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
+              <p className="font-semibold text-white mb-2">Float Mechanics</p>
+              <p className="text-gray-300 text-sm mb-4">
+                When users earn Nuqta points through merchant visits, those points sit in user wallets for
+                an average of 30-45 days before redemption. This creates operational float — capital that
+                can be deployed for working capital management or future yield generation.
+              </p>
+              <p className="font-semibold text-white mb-2">Cash Flow Advantage</p>
+              <p className="text-gray-300 text-sm mb-4">
+                Float provides natural working capital buffer, reducing need for external financing to fund
+                merchant payouts. At scale, this becomes a meaningful financial asset.
+              </p>
+              <p className="font-semibold text-white mb-2">Future Opportunity (Post-SVF License)</p>
+              <p className="text-gray-300 text-sm">
+                With a Stored Value Facility license, float can generate interest revenue through treasury
+                management. Conservative 3-4% yield on AED 10M float = AED 300-400K annual revenue opportunity
+                at mature scale.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="14" title="Market Opportunity & Revenue Model">
+            <p className="mb-4">
+              60+ merchant network (30+ signed LOIs, 30 in pipeline) attacking a $34B UAE market.
+              Commission rate: 15% on completed transactions.
+            </p>
+            <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
+              <p className="font-semibold text-white mb-2">Market Sizing (TAM/SAM/SOM)</p>
+              <div className="grid md:grid-cols-3 gap-4 mb-4">
+                <div>
+                  <p className="text-xl font-bold text-[#c9a227]">$78B</p>
+                  <p className="text-gray-400 text-sm">TAM (GCC Total Market)</p>
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-[#c9a227]">$34B</p>
+                  <p className="text-gray-400 text-sm">SAM (UAE Market)</p>
+                </div>
+                <div>
+                  <p className="text-xl font-bold text-[#c9a227]">$340M</p>
+                  <p className="text-gray-400 text-sm">SOM (1% Capture Target)</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm mb-4">
+                At 15% commission rate on transactions, merchants pay only for verified completed sales.
+                Performance-based pricing model means merchants pay AED 10-15 CAC vs AED 200+ on Google Ads.
+                Average merchant ROI exceeds 3-4x based on repeat purchase lift and reduced customer acquisition costs.
+              </p>
+              <p className="font-semibold text-white mb-2">Revenue Scaling Path</p>
+              <p className="text-gray-300 text-sm">
+                Month 1-3: 30 merchants activated, conservative GMV ramp-up. Month 4-6: 60+ merchants activated
+                as pipeline converts. 1% market penetration at maturity = $340M GMV opportunity × 15% = $51M annual revenue potential.
+              </p>
+            </div>
+          </DocItem>
+        </Folder>
+
+        {/* SECTION 5: FINANCIALS */}
+        <Folder icon="💰" title="5. Financials" id="financials">
+          <DocItem number="15" title="Runway & Milestones">
             <p className="mb-4">
               The pre-seed round is sized to provide 18-24 months of runway with disciplined spending.
               Our objective during this period is proving core assumptions, not achieving scale.
@@ -491,7 +626,7 @@ export default function DataRoomPage() {
             </div>
           </DocItem>
 
-          <DocItem number="12" title="Burn Rate">
+          <DocItem number="16" title="Burn Rate">
             <p className="mb-4">
               We operate with pre-seed discipline. Monthly burn is targeted below $40K during the
               build and validation phase, scaling modestly as we prove traction. Capital efficiency
@@ -511,7 +646,7 @@ export default function DataRoomPage() {
             </div>
           </DocItem>
 
-          <DocItem number="13" title="Use of Funds">
+          <DocItem number="17" title="Use of Funds">
             <p className="mb-4">
               Capital allocation reflects our stage-appropriate priorities. The majority goes to
               product development and merchant operations — the two areas that directly prove our
@@ -557,7 +692,7 @@ export default function DataRoomPage() {
             </div>
           </DocItem>
 
-          <DocItem number="14" title="Revenue Model">
+          <DocItem number="18" title="Revenue Model">
             <p className="mb-4">
               Nuqta has multiple revenue streams that activate at different stages of growth.
               The model is designed for capital efficiency — we generate revenue from both sides
@@ -581,9 +716,9 @@ export default function DataRoomPage() {
           </DocItem>
         </Folder>
 
-        {/* SECTION 5: GOVERNANCE */}
-        <Folder icon="⚖️" title="5. Governance" id="governance">
-          <DocItem number="15" title="Investor Reporting">
+        {/* SECTION 6: GOVERNANCE */}
+        <Folder icon="⚖️" title="6. Governance" id="governance">
+          <DocItem number="19" title="Investor Reporting">
             <p className="mb-4">
               Transparency with investors is non-negotiable. Regular, honest communication about
               progress and challenges builds the trust necessary for long-term partnership.
@@ -599,7 +734,7 @@ export default function DataRoomPage() {
             </div>
             </DocItem>
 
-          <DocItem number="16" title="Board Structure">
+          <DocItem number="20" title="Board Structure">
             <p className="mb-4">
               Governance structure evolves appropriately with company stage. We are not creating
               unnecessary bureaucracy at pre-seed, but establishing foundations for proper oversight.
@@ -619,7 +754,7 @@ export default function DataRoomPage() {
             </div>
           </DocItem>
 
-          <DocItem number="17" title="Financial Controls">
+          <DocItem number="21" title="Financial Controls">
             <p className="mb-4">
               Proper financial controls are established from day one. Investor capital is treated
               with the same rigor as public company funds — because that discipline is what allows

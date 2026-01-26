@@ -132,14 +132,74 @@ export default function TermsPage() {
               room for meaningful price appreciation in the seed round. If we execute well, seed investors
               will have a clear step-up in valuation, making the round attractive.
             </p>
+
+            <div className="bg-[#1a2a42] border border-[#c9a227]/20 rounded-lg p-4 mt-4">
+              <p className="text-white font-semibold mb-3">Why $5M is justified:</p>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>60+ Merchant Network</strong> — 30+ signed LOIs, 30 in pipeline attacking $34B UAE market</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>16.8x LTV:CAC Ratio</strong> — Profitable unit economics validated (AED 504 LTV ÷ AED 30 CAC)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>7-Day Launch</strong> — MVP goes live January 28, 2026 (execution signal, not just planning)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>Capital-Efficient GTM</strong> — Merchant QR at AED 10-15 CAC (10x cheaper than Google Ads)</span>
+                </li>
+              </ul>
+            </div>
+
             <div className="bg-[#0a1628] border border-[#2a3a52] rounded-lg p-4 mt-4">
               <p className="text-white font-medium">The principle: Price fairly to reward early conviction, not to maximize dilution protection.</p>
             </div>
           </div>
         </TermCard>
 
-        {/* Term 2 */}
-        <TermCard number="2" question="How does the cap protect early investors?">
+        {/* Term 2 - Merchant Momentum Signal */}
+        <TermCard number="2" question="Merchant Momentum Signal">
+          <div className="text-gray-300 leading-relaxed space-y-4">
+            <p>
+              60+ merchant network (30+ signed LOIs, 30 in pipeline) represents real market validation. These aren&apos;t verbal
+              commitments or expressions of interest — these are signed agreements where merchants have
+              committed to list deals and pay 15% commission.
+            </p>
+
+            <div className="bg-[#1a2a42] border border-[#c9a227]/20 rounded-lg p-4 mt-4">
+              <p className="text-white font-semibold mb-3">Why this matters:</p>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>Each LOI = merchant believes in ROI</strong> — Signed commitment to list deals and pay 15% commission</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>Market Opportunity:</strong> Attacking $34B UAE market (F&B, Salons, Fitness). GCC TAM: $78B</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-[#c9a227] mt-1">•</span>
+                  <span><strong>De-risked supply side:</strong> We have merchant supply, now we validate user demand</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-[#c9a227]/10 border-l-4 border-[#c9a227] p-4 rounded-r mt-4">
+              <p className="text-[#c9a227] font-semibold mb-2">Investor Implication:</p>
+              <p className="text-gray-300 text-sm">
+                Most pre-seed startups have 0 signed commitments. 60+ merchant network de-risks the biggest unknown:
+                &quot;Will merchants participate?&quot; Answer: Yes, they already committed.
+              </p>
+            </div>
+          </div>
+        </TermCard>
+
+        {/* Term 3 */}
+        <TermCard number="3" question="How does the cap protect early investors?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
               If we execute well and raise a seed round at $15M+ valuation, the $5M cap ensures early
@@ -157,8 +217,8 @@ export default function TermsPage() {
           </div>
         </TermCard>
 
-        {/* Term 3 */}
-        <TermCard number="3" question="What&apos;s the thinking behind the discount rate?">
+        {/* Term 4 */}
+        <TermCard number="4" question="What&apos;s the thinking behind the discount rate?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
               The 20% discount acknowledges the genuine risks early investors are taking: execution
@@ -176,8 +236,8 @@ export default function TermsPage() {
           </div>
         </TermCard>
 
-        {/* Term 4 */}
-        <TermCard number="4" question="Will early investors have pro-rata rights?">
+        {/* Term 5 */}
+        <TermCard number="5" question="Will early investors have pro-rata rights?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p className="text-xl font-bold text-[#c9a227] mb-4">Yes.</p>
             <p>
@@ -196,8 +256,8 @@ export default function TermsPage() {
           </div>
         </TermCard>
 
-        {/* Term 5 */}
-        <TermCard number="5" question="What happens if the next round is flat or down?">
+        {/* Term 6 */}
+        <TermCard number="6" question="What happens if the next round is flat or down?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 mb-4">
               <p className="text-blue-400 text-sm font-medium">Early investors still benefit from the 20% discount.</p>
@@ -215,8 +275,8 @@ export default function TermsPage() {
           </div>
         </TermCard>
 
-        {/* Term 6 */}
-        <TermCard number="6" question="Why use a convertible note instead of priced equity?">
+        {/* Term 7 */}
+        <TermCard number="7" question="Why use a convertible note instead of priced equity?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
               At pre-seed stage, precise valuation is largely artificial. We don&apos;t have the traction
@@ -236,8 +296,8 @@ export default function TermsPage() {
           </div>
         </TermCard>
 
-        {/* Term 7 */}
-        <TermCard number="7" question="Is there flexibility in these terms?">
+        {/* Term 8 */}
+        <TermCard number="8" question="Is there flexibility in these terms?">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
               We&apos;re open to discussion on structure with a lead investor, but we&apos;re disciplined

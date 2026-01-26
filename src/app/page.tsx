@@ -1,249 +1,9 @@
-'use client';
+"use client";
 
-import PasswordProtection from '@/components/PasswordProtection';
-import PitchDeck from '@/components/PitchDeck';
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { useState, useEffect, useRef } from 'react';
-
-// Intersection Observer Hook for scroll animations
-function useInView(options = {}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isInView, setIsInView] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsInView(true);
-      }
-    }, { threshold: 0.1, ...options });
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => observer.disconnect();
-  }, [options]);
-
-  return { ref, isInView };
-}
-
-// Animated Counter Component
-function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '' }: {
-  end: number;
-  duration?: number;
-  suffix?: string;
-  prefix?: string;
-}) {
-  const [count, setCount] = useState(0);
-  const { ref, isInView } = useInView();
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    if (isInView && !hasAnimated.current) {
-      hasAnimated.current = true;
-      let startTime: number;
-      const animate = (currentTime: number) => {
-        if (!startTime) startTime = currentTime;
-        const progress = Math.min((currentTime - startTime) / duration, 1);
-        setCount(Math.floor(progress * end));
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-      requestAnimationFrame(animate);
-    }
-  }, [isInView, end, duration]);
-
-  return <span ref={ref}>{prefix}{count}{suffix}</span>;
-}
-
-// Typing Animation Component
-function TypeWriter({ text, speed = 50 }: { text: string; speed?: number }) {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const { ref, isInView } = useInView();
-
-  useEffect(() => {
-    if (isInView && currentIndex < text.length) {
-      const timer = setTimeout(() => {
-        setDisplayText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, speed);
-      return () => clearTimeout(timer);
-    }
-  }, [isInView, currentIndex, text, speed]);
-
-  return (
-    <span ref={ref}>
-      {displayText}
-      <span className="animate-pulse">|</span>
-    </span>
-  );
-}
-
-// Floating Particles Background
-function FloatingParticles() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-2 h-2 bg-[#c9a227]/20 rounded-full animate-float"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 5}s`,
-            animationDuration: `${10 + Math.random() * 20}s`,
-          }}
-        />
-      ))}
-    </div>
-  );
-}
-
-// Scroll Progress Indicator
-function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress((scrollTop / docHeight) * 100);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div className="fixed top-0 left-0 right-0 h-1 z-[60] bg-[#1a2a42]">
-      <div
-        className="h-full bg-gradient-to-r from-[#c9a227] to-[#f4d35e] transition-all duration-150"
-        style={{ width: `${progress}%` }}
-      />
-    </div>
-  );
-}
-
-// Icon Components
-const BrainIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-  </svg>
-);
-
-const GiftIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-  </svg>
-);
-
-const RefreshIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-  </svg>
-);
-
-const WalletIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-  </svg>
-);
-
-const StoreIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-  </svg>
-);
-
-const ChartIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-  </svg>
-);
-
-const CampaignIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-  </svg>
-);
-
-const CreditCardIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-  </svg>
-);
-
-const ShieldIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-  </svg>
-);
-
-const UserIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-  </svg>
-);
-
-const BriefcaseIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-  </svg>
-);
-
-const BankIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
-  </svg>
-);
-
-const TrendingUpIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-  </svg>
-);
-
-const DocumentIcon = () => (
-  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-  </svg>
-);
-
-const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg className="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-  </svg>
-);
-
-// Animated Section Wrapper
-function AnimatedSection({ children, className = '', delay = 0 }: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const { ref, isInView } = useInView();
-
-  return (
-    <div
-      ref={ref}
-      className={`transition-all duration-1000 ${className}`}
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(50px)',
-        transitionDelay: `${delay}ms`
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+import { ArrowRight, CheckCircle2, TrendingUp, Users, Building2, Zap, Target, DollarSign, Clock, Shield, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
 
 // DataPoint Tooltip Component for statistics with sources
 function DataPoint({
@@ -268,7 +28,7 @@ function DataPoint({
       <span>{value}</span>
       <span className="text-[0.5em] text-[#c9a227]/70 hover:text-[#c9a227] transition-colors">ⓘ</span>
       {showTooltip && (
-        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-[#0a1628] border border-[#c9a227]/50 rounded-lg text-xs sm:text-sm text-gray-300 whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-xl font-normal">
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-slate-950 border border-[#c9a227]/50 rounded-lg text-xs sm:text-sm text-gray-300 whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-xl font-normal">
           <span className="text-[#c9a227] font-medium">Source:</span> {source}
           <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-[#c9a227]/50" />
         </span>
@@ -277,2041 +37,1065 @@ function DataPoint({
   );
 }
 
-// FAQ Component with Animation
-function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const { ref, isInView } = useInView();
-
-  return (
-    <div
-      ref={ref}
-      className="border-b border-[#2a3a52] overflow-hidden"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateX(0)' : 'translateX(-30px)',
-        transition: `all 0.5s ease ${index * 100}ms`
-      }}
-    >
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-3 sm:py-4 md:py-5 flex justify-between items-center text-left group gap-3"
-      >
-        <span className="font-medium text-sm sm:text-base md:text-lg group-hover:text-[#c9a227] transition-colors">{question}</span>
-        <svg
-          className={`w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div
-        className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-4 sm:pb-5' : 'max-h-0'}`}
-      >
-        <p className="text-gray-400 text-sm sm:text-base">{answer}</p>
-      </div>
-    </div>
-  );
-}
-
-// Interactive Feature Card Component
-function FeatureCard({ icon, title, description, items, index = 0 }: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  items?: string[];
-  index?: number;
+// Animated Counter Component
+function AnimatedCounter({ end, duration = 2000, suffix = '', prefix = '' }: {
+  end: number;
+  duration?: number;
+  suffix?: string;
+  prefix?: string;
 }) {
-  const { ref, isInView } = useInView();
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      ref={ref}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="card-gradient rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 transition-all duration-500 cursor-pointer group relative overflow-hidden"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView
-          ? isHovered ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)'
-          : 'translateY(50px) scale(0.95)',
-        transitionDelay: `${index * 100}ms`,
-        boxShadow: isHovered ? '0 20px 40px rgba(201, 162, 39, 0.15)' : 'none'
-      }}
-    >
-      {/* Animated glow effect */}
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-[#c9a227]/0 via-[#c9a227]/10 to-[#c9a227]/0 transition-opacity duration-500"
-        style={{ opacity: isHovered ? 1 : 0 }}
-      />
-
-      <div className="relative z-10">
-        <div className={`text-[#c9a227] mb-3 sm:mb-4 transition-transform duration-500 ${isHovered ? 'scale-110' : ''}`}>
-          {icon}
-        </div>
-        <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 group-hover:text-[#c9a227] transition-colors">{title}</h3>
-        <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">{description}</p>
-        {items && (
-          <ul className="space-y-1.5 sm:space-y-2">
-            {items.map((item, idx) => (
-              <li
-                key={idx}
-                className="flex items-start gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-300"
-                style={{
-                  opacity: isInView ? 1 : 0,
-                  transform: isInView ? 'translateX(0)' : 'translateX(-20px)',
-                  transition: `all 0.5s ease ${(index * 100) + (idx * 50)}ms`
-                }}
-              >
-                <CheckIcon />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </div>
-  );
-}
-
-// Interactive Step Card Component
-function StepCard({ number, title, description, index }: {
-  number: string;
-  title: string;
-  description: string;
-  index: number;
-}) {
-  const { ref, isInView } = useInView();
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      ref={ref}
-      className="text-center group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView ? 'translateY(0)' : 'translateY(30px)',
-        transition: `all 0.6s ease ${index * 150}ms`
-      }}
-    >
-      <div
-        className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center transition-all duration-500 ${isHovered ? 'scale-110 shadow-lg shadow-[#c9a227]/30' : ''}`}
-      >
-        <span className="text-[#0a1628] text-xl sm:text-2xl md:text-3xl font-bold">{number}</span>
-      </div>
-      {/* Connecting line */}
-      {index < 3 && (
-        <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-[#c9a227] to-[#c9a227]/20" />
-      )}
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2 group-hover:text-[#c9a227] transition-colors">{title}</h3>
-      <p className="text-gray-400 text-sm sm:text-base">{description}</p>
-    </div>
-  );
-}
-
-// Interactive Use Case Card Component
-function UseCaseCard({ icon, title, description, index }: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  index: number;
-}) {
-  const { ref, isInView } = useInView();
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div
-      ref={ref}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="card-gradient rounded-xl p-6 transition-all duration-500 cursor-pointer relative overflow-hidden"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transform: isInView
-          ? isHovered ? 'translateY(-5px)' : 'translateY(0)'
-          : 'translateY(40px)',
-        transitionDelay: `${index * 100}ms`
-      }}
-    >
-      {/* Animated border */}
-      <div
-        className="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-500"
-        style={{
-          borderColor: isHovered ? 'rgba(201, 162, 39, 0.5)' : 'transparent'
-        }}
-      />
-
-      <div className={`text-[#c9a227] mb-4 transition-all duration-500 ${isHovered ? 'scale-110 rotate-3' : ''}`}>
-        {icon}
-      </div>
-      <h3 className="text-xl font-semibold mb-3">{title}</h3>
-      <p className="text-gray-400">{description}</p>
-    </div>
-  );
-}
-
-// Pulsing Button Component
-function PulsingButton({ children, onClick, className = '', primary = false }: {
-  children: React.ReactNode;
-  onClick?: () => void;
-  className?: string;
-  primary?: boolean;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`relative ${primary ? 'btn-primary' : 'btn-secondary'} ${className} overflow-hidden group`}
-    >
-      <span className="relative z-10">{children}</span>
-      {primary && (
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      )}
-    </button>
-  );
-}
-
-export default function Home() {
-  const [isDeckOpen, setIsDeckOpen] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          let startTime: number;
+          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            setCount(Math.floor(progress * end));
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [end, duration, hasAnimated]);
+
+  return <span ref={ref}>{prefix}{count}{suffix}</span>;
+}
+
+// FAQ Component
+function FAQItem({ question, answer, index }: { question: string; answer: string; index: number }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <PasswordProtection>
-      <PitchDeck isOpen={isDeckOpen} onClose={() => setIsDeckOpen(false)} />
-      <ScrollProgress />
+    <div className="border-b border-slate-700">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-4 flex justify-between items-center text-left group gap-3"
+      >
+        <span className="text-lg font-semibold text-slate-200 group-hover:text-[#c9a227] transition-colors">
+          {question}
+        </span>
+        {isOpen ? (
+          <ChevronUp className="w-5 h-5 text-[#c9a227] flex-shrink-0" />
+        ) : (
+          <ChevronDown className="w-5 h-5 text-slate-400 group-hover:text-[#c9a227] transition-colors flex-shrink-0" />
+        )}
+      </button>
+      {isOpen && (
+        <div className="pb-4 text-slate-400 leading-relaxed">
+          {answer}
+        </div>
+      )}
+    </div>
+  );
+}
 
-      <div className="min-h-screen bg-[#0a1628] text-white overflow-x-hidden">
-        {/* Mouse follower glow */}
-        <div
-          className="fixed w-96 h-96 rounded-full pointer-events-none z-0 transition-all duration-300 ease-out"
-          style={{
-            background: 'radial-gradient(circle, rgba(201, 162, 39, 0.03) 0%, transparent 70%)',
-            left: mousePosition.x - 192,
-            top: mousePosition.y - 192,
-          }}
-        />
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+      {/* Hero Section */}
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-6xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-8">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-[#c9a227] via-yellow-400 to-[#c9a227] bg-clip-text text-transparent">
+              Nuqta
+            </h1>
+          </div>
 
-        {/* Navigation */}
-        <nav className="fixed top-1 left-0 right-0 z-50 bg-[#0a1628]/90 backdrop-blur-md border-b border-[#2a3a52]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex justify-between items-center">
-            <div className="flex items-center gap-2 group cursor-pointer">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 relative transition-transform duration-300 group-hover:scale-110">
-                <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
-              </div>
-              <span className="text-lg sm:text-xl font-bold group-hover:text-[#c9a227] transition-colors">Nuqta</span>
+          {/* Main Positioning */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-300 mb-6">
+            Rewards-Led Commerce Intelligence
+          </h2>
+
+          {/* Subheading */}
+          <p className="text-xl sm:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto">
+            Save 5-10% on everyday offline spending — cafes, salons, gyms — with instant cashback
+          </p>
+
+          {/* Key Stats Row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-xl p-6">
+              <div className="text-4xl md:text-5xl font-black text-emerald-400 mb-2">30+</div>
+              <div className="text-sm text-slate-300">Signed Merchant LOIs</div>
             </div>
-            {/* Mobile menu button */}
-            <button
-              className="md:hidden p-2 text-gray-300 hover:text-[#c9a227]"
-              onClick={() => setIsDeckOpen(true)}
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-xl p-6">
+              <div className="text-3xl md:text-4xl font-black text-blue-400 mb-2">$34B</div>
+              <div className="text-sm text-slate-300">UAE Market (SAM)</div>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-xl p-6">
+              <div className="text-4xl md:text-5xl font-black text-purple-400 mb-2">16.8x</div>
+              <div className="text-sm text-slate-300">LTV:CAC Ratio</div>
+            </div>
+            <div className="bg-gradient-to-br from-red-500/20 to-red-500/5 border-2 border-red-500/40 rounded-xl p-6">
+              <div className="text-4xl md:text-5xl font-black text-red-400 mb-2">7 Days</div>
+              <div className="text-sm text-slate-300">To Launch</div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Link
+              href="/deck-kang"
+              className="px-8 py-4 bg-[#c9a227] hover:bg-[#d4ae3a] text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2 text-lg"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            <div className="hidden md:flex items-center gap-4 lg:gap-8">
-              {['Features', 'How It Works', 'Use Cases', 'Investors', 'FAQ'].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-sm lg:text-base text-gray-300 hover:text-[#c9a227] transition-all duration-300 hover:scale-105 relative group"
-                >
-                  {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
-                </a>
-              ))}
-              <PulsingButton onClick={() => setIsDeckOpen(true)} primary className="text-sm">
-                View Deck
-              </PulsingButton>
+              View Pitch Deck
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <Link
+              href="/data-room"
+              className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2 text-lg"
+            >
+              Investor Data Room
+              <Shield className="w-5 h-5" />
+            </Link>
+          </div>
+
+          {/* Launch Date Callout */}
+          <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border-2 border-red-500/40 rounded-2xl p-6 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <Clock className="w-6 h-6 text-red-400" />
+              <p className="text-2xl font-bold text-red-300">Launching January 28, 2026</p>
             </div>
+            <p className="text-slate-300">MVP goes live in 7 days. 5 merchants Week 1, scale to 30 by Month 2.</p>
           </div>
-        </nav>
+        </div>
 
-        {/* Hero Section */}
-        <section className="section-padding pt-24 sm:pt-28 md:pt-32 lg:pt-40 min-h-screen flex items-center relative">
-          <FloatingParticles />
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 animate-bounce">
+          <ChevronDown className="w-8 h-8 text-slate-400" />
+        </div>
+      </section>
 
-          {/* Investment Highlights Card - Desktop Only */}
-          <div className="hidden 2xl:block absolute top-32 right-16 z-20 max-w-xs">
-            <AnimatedSection delay={800}>
-              <div className="bg-gradient-to-br from-[#1a2a42] to-[#0a1628] border-2 border-[#c9a227]/30 rounded-2xl p-6 shadow-2xl shadow-[#c9a227]/10 backdrop-blur-sm">
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#c9a227]/20">
-                  <span className="text-2xl">💰</span>
-                  <h3 className="text-lg font-bold text-[#c9a227]">Investment Snapshot</h3>
-                </div>
-
-                <div className="space-y-2.5">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Raising</span>
-                    <span className="text-white font-bold text-sm">$500K</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Instrument</span>
-                    <span className="text-white font-semibold text-sm">CCD</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Valuation Cap</span>
-                    <span className="text-white font-semibold text-sm">$5M</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Discount</span>
-                    <span className="text-white font-semibold text-sm">20%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-xs">Runway</span>
-                    <span className="text-white font-semibold text-sm">18-24 months</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-2 border-t border-[#c9a227]/20">
-                    <span className="text-gray-400 text-xs">TAM (GCC)</span>
-                    <span className="text-[#c9a227] font-bold text-sm">$4B</span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 mt-4 pt-3 border-t border-[#c9a227]/20">
-                  <button
-                    onClick={() => setIsDeckOpen(true)}
-                    className="w-full bg-gradient-to-r from-[#c9a227] to-[#f4d35e] text-[#0a1628] font-bold py-2 px-3 rounded-lg text-sm hover:shadow-lg hover:shadow-[#c9a227]/30 transition-all duration-300 hover:scale-105"
-                  >
-                    View Full Deck
-                  </button>
-                  <a
-                    href="#investors"
-                    className="w-full text-center border border-[#c9a227]/50 text-[#c9a227] font-semibold py-2 px-3 rounded-lg text-sm hover:bg-[#c9a227]/10 transition-all duration-300"
-                  >
-                    Schedule Call
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
+      {/* Problem Section - User Pain */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Problem</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Users Leave <span className="text-red-500">AED 2.4B</span> on the Table
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              95% of offline spending in Dubai gets ZERO cashback. Google Maps shows you cafes — but doesn't save you money.
+            </p>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10 2xl:pr-80">
-            <AnimatedSection>
-              <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-full mb-4 sm:mb-6 animate-pulse">
-                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">5% base + 5% social bonus Cashback + Smart Payment Tips for the GCC</span>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 sm:mb-6 leading-tight">
-                Get paid to <span className="gradient-text animate-shimmer">shop</span>.<br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>Every purchase. Every time.
-              </h1>
-            </AnimatedSection>
-
-            <AnimatedSection delay={400}>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-xs sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-10 px-2">
-                <span className="text-[#c9a227] font-bold">Earn 5% cashback (+ 5% social bonus)</span> on everyday spending + <span className="text-white font-semibold">smart payment recommendations</span> to save even more. <span className="text-white font-semibold">Nuqta (نقطة)</span> — where shopping pays you back.
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Pain Point 1 */}
+            <div className="bg-gradient-to-br from-red-500/20 to-red-500/5 border-2 border-red-500/40 rounded-2xl p-8">
+              <div className="text-5xl mb-4">😫</div>
+              <h3 className="text-2xl font-bold mb-3 text-red-300">Generic Discovery</h3>
+              <p className="text-slate-300 mb-4">
+                Google Maps shows you cafes, but doesn't save you money. No built-in loyalty or cashback.
               </p>
-            </AnimatedSection>
-
-            {/* Cashback Highlight Banner */}
-            <AnimatedSection delay={500}>
-              <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-6 sm:mb-8 md:mb-10 px-4">
-                <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
-                  <span className="text-xl">💰</span>
-                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">5% + 5% Cashback</span>
-                </div>
-                <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
-                  <span className="text-xl">📱</span>
-                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">Share & Earn +5%</span>
-                </div>
-                <div className="flex items-center gap-2 bg-[#c9a227]/10 px-4 py-2 rounded-full border border-[#c9a227]/30">
-                  <span className="text-xl">🧠</span>
-                  <span className="text-sm sm:text-base font-semibold text-[#c9a227]">Smart Pay Tips</span>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={600}>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
-                <a href="#early-access" className="btn-primary text-base sm:text-lg group relative overflow-hidden">
-                  <span className="relative z-10">Get Early Access</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </a>
-                <button
-                  onClick={() => setIsDeckOpen(true)}
-                  className="btn-secondary text-base sm:text-lg group hover:border-[#c9a227] transition-all duration-300"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    View Pitch Deck
-                  </span>
-                </button>
-              </div>
-            </AnimatedSection>
-
-            {/* Scroll indicator */}
-            <AnimatedSection delay={1000}>
-              <div className="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-                <svg className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* ==================== INVESTOR SNAPSHOT ==================== */}
-        <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-b from-[#0a1628] to-[#0d1c30] border-y border-[#c9a227]/20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6">
-            <AnimatedSection>
-              <div className="text-center mb-6 sm:mb-8">
-                <span className="inline-block px-3 sm:px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-xs sm:text-sm font-medium mb-3 sm:mb-4">
-                  Investment Opportunity
-                </span>
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">The Opportunity at a Glance</h2>
-              </div>
-            </AnimatedSection>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
-              {[
-                { value: '$4B', label: 'GCC Addressable Market', sub: 'Dining & retail', icon: '📊', source: 'GCC dining & retail spending, industry reports 2024' },
-                { value: '$500K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰', source: null },
-                { value: '$5M Cap', label: 'Valuation + 20% Discount', sub: 'Convertible note', icon: '📈', source: null },
-                { value: 'First', label: 'Neutral Intelligence Layer', sub: 'in GCC payments', icon: '🏆', source: null },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/80 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-5 border border-[#c9a227]/20 text-center hover:border-[#c9a227]/50 transition-all hover:scale-105">
-                    <span className="text-xl sm:text-2xl mb-1 sm:mb-2 block">{item.icon}</span>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#c9a227]">
-                      {item.source ? <DataPoint value={item.value} source={item.source} /> : item.value}
-                    </p>
-                    <p className="font-medium text-xs sm:text-sm mt-1">{item.label}</p>
-                    <p className="text-[10px] sm:text-xs text-gray-500">{item.sub}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-
-            <AnimatedSection delay={500}>
-              <div className="bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 rounded-xl p-6 border border-[#c9a227]/30 text-center">
-                <p className="text-lg md:text-xl">
-                  <span className="text-gray-300">Nuqta is building the</span>{' '}
-                  <span className="text-[#c9a227] font-bold">payment intelligence and rewards infrastructure</span>{' '}
-                  <span className="text-gray-300">for the GCC — a market with</span>{' '}
-                  <span className="text-white font-bold">no dominant player</span>.
+              <div className="bg-red-900/30 rounded-lg p-4">
+                <p className="text-sm text-red-200">
+                  <strong>Lost Value:</strong> AED 150-200/month per user in unclaimed cashback
                 </p>
               </div>
-            </AnimatedSection>
-          </div>
-        </section>
+            </div>
 
-        {/* ==================== ONE-LINER DEFINITION ==================== */}
-        <section className="py-16 bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto px-6">
-            <AnimatedSection>
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                  What is <span className="text-[#c9a227]">Nuqta</span>?
-                </h2>
-                <div className="max-w-3xl mx-auto">
-                  <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-4">
-                    <span className="text-[#c9a227] font-bold">Nuqta (نقطة)</span> = &quot;Point&quot; in Arabic
-                  </p>
-                  <div className="bg-[#1a2a42]/80 rounded-2xl p-8 border border-[#c9a227]/30">
-                    <p className="text-xl md:text-2xl font-medium leading-relaxed">
-                      A <span className="text-[#c9a227]">smart rewards</span> and <span className="text-[#c9a227]">payment intelligence</span> app that helps users <span className="text-white">earn universal rewards</span> on everyday spending and <span className="text-white">always choose the smartest way to pay</span>.
-                    </p>
-                  </div>
+            {/* Pain Point 2 */}
+            <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 border-2 border-orange-500/40 rounded-2xl p-8">
+              <div className="text-5xl mb-4">🎫</div>
+              <h3 className="text-2xl font-bold mb-3 text-orange-300">Fragmented Loyalty</h3>
+              <p className="text-slate-300 mb-4">
+                15 different apps for cafes, salons, gyms. Users forget to check before spending.
+              </p>
+              <div className="bg-orange-900/30 rounded-lg p-4">
+                <p className="text-sm text-orange-200">
+                  <strong>Reality:</strong> 70% of loyalty points expire unused
+                </p>
+              </div>
+            </div>
+
+            {/* Pain Point 3 */}
+            <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-500/5 border-2 border-yellow-500/40 rounded-2xl p-8">
+              <div className="text-5xl mb-4">💸</div>
+              <h3 className="text-2xl font-bold mb-3 text-yellow-300">Credit Cards Don't Work</h3>
+              <p className="text-slate-300 mb-4">
+                Most cafes/salons are cash-based. Credit card rewards don't apply to offline spending.
+              </p>
+              <div className="bg-yellow-900/30 rounded-lg p-4">
+                <p className="text-sm text-yellow-200">
+                  <strong>Gap:</strong> 60% of Dubai's retail is cash-only
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Market Opportunity */}
+          <div className="mt-12 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-8 text-center">
+            <p className="text-lg text-slate-300 mb-2">
+              UAE market: <span className="text-3xl font-black text-emerald-400"><DataPoint value="$34B/year" source="UAE Foodservice Market ($23.21B, Mordor Intelligence 2025), Salon Services ($10.05B, Deep Market Insights 2024), Fitness Market ($0.6B, SPER Research 2025)" className="text-emerald-400" /></span> across F&B, salons, and gyms.
+            </p>
+            <p className="text-slate-400">
+              GCC total market (TAM): <strong className="text-emerald-300">$78B</strong>. Targeting 1% penetration = <strong className="text-emerald-300">$340M opportunity</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section - Merchant Pain */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Other Side</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Merchants Burn <span className="text-red-500">AED 200+</span> Per Customer
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Small merchants can't compete with Google Ads. They need foot traffic, not clicks.
+            </p>
+          </div>
+
+          {/* Merchant P&L Comparison */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Current State (Red) */}
+            <div className="bg-gradient-to-br from-red-500/20 to-red-500/5 border-2 border-red-500/40 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="text-4xl">❌</div>
+                <h3 className="text-2xl font-bold text-red-300">Current: Google Ads</h3>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex justify-between items-center border-b border-red-500/30 pb-3">
+                  <span className="text-slate-300">Customer Acquisition Cost</span>
+                  <span className="text-xl font-bold text-red-400">AED 200-300</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-red-500/30 pb-3">
+                  <span className="text-slate-300">Conversion Rate</span>
+                  <span className="text-xl font-bold text-red-400">2-3%</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-red-500/30 pb-3">
+                  <span className="text-slate-300">Customer Lifetime Value</span>
+                  <span className="text-xl font-bold text-red-400">AED 150-200</span>
+                </div>
+                <div className="flex justify-between items-center pt-3">
+                  <span className="text-slate-300 font-bold">ROI</span>
+                  <span className="text-2xl font-black text-red-500">-50% Loss</span>
                 </div>
               </div>
-            </AnimatedSection>
 
-            {/* Three Pillars */}
+              <div className="mt-6 bg-red-900/30 rounded-lg p-4">
+                <p className="text-sm text-red-200">
+                  <strong>Why It Fails:</strong> Small merchants can't outbid Noon/Careem on Google. Negative ROI = unsustainable.
+                </p>
+              </div>
+            </div>
+
+            {/* With Nuqta (Green) */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="text-4xl">✅</div>
+                <h3 className="text-2xl font-bold text-emerald-300">With Nuqta</h3>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex justify-between items-center border-b border-emerald-500/30 pb-3">
+                  <span className="text-slate-300">Customer Acquisition Cost</span>
+                  <span className="text-xl font-bold text-emerald-400">AED 10-15</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-emerald-500/30 pb-3">
+                  <span className="text-slate-300">Conversion Rate</span>
+                  <span className="text-xl font-bold text-emerald-400">15-20%</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-emerald-500/30 pb-3">
+                  <span className="text-slate-300">Customer Lifetime Value</span>
+                  <span className="text-xl font-bold text-emerald-400">AED 400-500</span>
+                </div>
+                <div className="flex justify-between items-center pt-3">
+                  <span className="text-slate-300 font-bold">ROI</span>
+                  <span className="text-2xl font-black text-emerald-400">+3,000%</span>
+                </div>
+              </div>
+
+              <div className="mt-6 bg-emerald-900/30 rounded-lg p-4">
+                <p className="text-sm text-emerald-200">
+                  <strong>Why It Works:</strong> QR-based distribution = AED 10-15 CAC. Cashback drives repeat visits. Merchant pays 15% only on completed sales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Merchant Value Prop */}
+          <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-8 text-center">
+            <p className="text-2xl font-bold text-blue-300 mb-3">
+              "Pay only when you make money"
+            </p>
+            <p className="text-lg text-slate-300">
+              15% commission on completed sales. Zero upfront fees. No Google Ads bidding wars.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">How Nuqta Works</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Search → Save → Earn
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              The only platform where discovery drives savings, not just clicks.
+            </p>
+          </div>
+
+          {/* User Journey Steps */}
+          <div className="space-y-6 mb-12">
+            {/* Step 1 */}
+            <div className="flex items-start gap-6 bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-8">
+              <div className="flex-shrink-0 w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-2xl font-black">
+                1
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-3 text-purple-300">Search "Best cafes near me"</h3>
+                <p className="text-slate-300 mb-4">
+                  Users type what they want. Nuqta shows top-rated places WITH instant cashback offers.
+                </p>
+                <div className="bg-purple-900/30 rounded-lg p-4">
+                  <p className="text-sm text-purple-200">
+                    <strong>Example:</strong> "Coffee Downtown Dubai" → 12 cafes, sorted by 5-10% cashback + ratings
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex items-start gap-6 bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-8">
+              <div className="flex-shrink-0 w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl font-black">
+                2
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-3 text-blue-300">Visit & Scan QR</h3>
+                <p className="text-slate-300 mb-4">
+                  Walk in, scan merchant QR code at checkout. Pay with cash/card (any method).
+                </p>
+                <div className="bg-blue-900/30 rounded-lg p-4">
+                  <p className="text-sm text-blue-200">
+                    <strong>Frictionless:</strong> No special payment method required. Works with cash, card, Apple Pay, etc.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex items-start gap-6 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-8">
+              <div className="flex-shrink-0 w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center text-2xl font-black">
+                3
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-bold mb-3 text-emerald-300">Earn Instant Cashback</h3>
+                <p className="text-slate-300 mb-4">
+                  Coins hit your wallet instantly. Redeem for cash or use at other Nuqta merchants.
+                </p>
+                <div className="bg-emerald-900/30 rounded-lg p-4">
+                  <p className="text-sm text-emerald-200">
+                    <strong>5-10% back:</strong> Spend AED 100 → Earn 5-10 coins → Redeem as AED 5-10 cash
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Differentiator */}
+          <div className="bg-gradient-to-br from-[#c9a227]/20 to-yellow-600/5 border-2 border-[#c9a227]/40 rounded-2xl p-8 text-center">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <Sparkles className="w-8 h-8 text-[#c9a227]" />
+              <h3 className="text-3xl font-black text-[#c9a227]">Search-First = Habit-Forming</h3>
+            </div>
+            <p className="text-xl text-slate-300 mb-4">
+              Users don't "hunt for deals." They search where to eat, and Nuqta shows the best value.
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 mt-6">
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-3xl font-black text-emerald-400 mb-2">6x/month</p>
+                <p className="text-sm text-slate-400">Transaction frequency (vs 2-3x for competitors)</p>
+              </div>
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-3xl font-black text-blue-400 mb-2">67%</p>
+                <p className="text-sm text-slate-400">D30 retention target</p>
+              </div>
+              <div className="bg-slate-800/50 rounded-lg p-4">
+                <p className="text-3xl font-black text-purple-400 mb-2">AED 504</p>
+                <p className="text-sm text-slate-400">12-month LTV per user</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unit Economics Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Numbers</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Profitable from <span className="text-emerald-400">Day One</span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              16.8x LTV:CAC ratio. Payback period &lt;1 month. No VC subsidy burns.
+            </p>
+          </div>
+
+          {/* 3-Column Metrics */}
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* CAC */}
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-8">
+              <div className="text-center mb-6">
+                <p className="text-sm uppercase tracking-wider text-blue-400 font-bold mb-2">Customer Acquisition Cost</p>
+                <p className="text-6xl font-black text-blue-400 mb-2">AED 30</p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center border-b border-blue-500/30 pb-2">
+                  <span className="text-slate-300">Merchant QR</span>
+                  <span className="font-bold text-blue-300">AED 10-15</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-blue-500/30 pb-2">
+                  <span className="text-slate-300">Student Ambassadors</span>
+                  <span className="font-bold text-blue-300">AED 25-30</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300">Digital (gated)</span>
+                  <span className="font-bold text-blue-300">AED 60-80</span>
+                </div>
+              </div>
+              <div className="mt-6 bg-blue-900/30 rounded-lg p-4">
+                <p className="text-sm text-blue-200">
+                  <strong>Blended CAC:</strong> 70% merchant QR + 30% ambassadors = AED 30 average
+                </p>
+              </div>
+            </div>
+
+            {/* LTV */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-8">
+              <div className="text-center mb-6">
+                <p className="text-sm uppercase tracking-wider text-purple-400 font-bold mb-2">Lifetime Value</p>
+                <p className="text-6xl font-black text-purple-400 mb-2">AED 504</p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center border-b border-purple-500/30 pb-2">
+                  <span className="text-slate-300">Monthly RPU</span>
+                  <span className="font-bold text-purple-300">AED 42</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-purple-500/30 pb-2">
+                  <span className="text-slate-300">Retention Period</span>
+                  <span className="font-bold text-purple-300">12 months</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300">Transactions/Month</span>
+                  <span className="font-bold text-purple-300">6x</span>
+                </div>
+              </div>
+              <div className="mt-6 bg-purple-900/30 rounded-lg p-4">
+                <p className="text-sm text-purple-200">
+                  <strong>Formula:</strong> AED 42/month × 12 months = AED 504 LTV
+                </p>
+              </div>
+            </div>
+
+            {/* Ratio (Highlighted) */}
+            <div className="bg-gradient-to-br from-emerald-500/30 to-emerald-500/10 border-4 border-emerald-500/60 rounded-2xl p-8 shadow-2xl shadow-emerald-500/20">
+              <div className="text-center mb-6">
+                <p className="text-sm uppercase tracking-wider text-emerald-400 font-bold mb-2">LTV:CAC Ratio</p>
+                <p className="text-7xl font-black text-emerald-400 mb-2">16.8x</p>
+              </div>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center border-b border-emerald-500/30 pb-2">
+                  <span className="text-slate-300">Payback Period</span>
+                  <span className="font-bold text-emerald-300">&lt;1 month</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-emerald-500/30 pb-2">
+                  <span className="text-slate-300">Industry Benchmark</span>
+                  <span className="font-bold text-emerald-300">3-5x</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300">Nuqta Performance</span>
+                  <span className="font-bold text-emerald-300">3-5x BETTER</span>
+                </div>
+              </div>
+              <div className="mt-6 bg-emerald-900/40 rounded-lg p-4">
+                <p className="text-sm text-emerald-200 font-bold text-center">
+                  🏆 Top 1% of consumer startups
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Why Defensible */}
+          <div className="bg-gradient-to-br from-slate-700/50 to-slate-800/50 border-2 border-slate-600 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-6 text-center">Why These Economics Are Defensible</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-slate-200 font-semibold mb-1">Cashback is merchant-funded</p>
+                  <p className="text-sm text-slate-400">No VC subsidy burns. Sustainable from transaction 1.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-slate-200 font-semibold mb-1">Merchant QR = AED 10-15 CAC</p>
+                  <p className="text-sm text-slate-400">10x cheaper than Google Ads (AED 200+).</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-slate-200 font-semibold mb-1">Habit loops drive 6 transactions/month</p>
+                  <p className="text-sm text-slate-400">vs 2-3 for competitors. Search intent = repeat usage.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-slate-200 font-semibold mb-1">Operational float improves cash flow</p>
+                  <p className="text-sm text-slate-400">30-45 day redemption lag = working capital buffer.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-slate-200 font-semibold mb-1">No inventory risk</p>
+                  <p className="text-sm text-slate-400">Pure platform play. Asset-light model.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <CheckCircle2 className="w-6 h-6 text-emerald-400 flex-shrink-0 mt-1" />
+                <div>
+                  <p className="text-slate-200 font-semibold mb-1">Future float revenue upside</p>
+                  <p className="text-sm text-slate-400">Post-SVF license: AED 100-125K/year at 100K users.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Traction Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Traction</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              30+ Signed LOIs. <span className="text-emerald-400">30 More in Pipeline.</span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              60+ merchant network across Dubai Marina, Downtown, and JBR. Attacking a $34B UAE market.
+            </p>
+          </div>
+
+          {/* Key Metrics Grid */}
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 text-center">
+              <TrendingUp className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
+              <p className="text-5xl font-black text-emerald-400 mb-2">30+</p>
+              <p className="text-sm text-slate-300">Signed Merchant LOIs</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 text-center">
+              <Users className="w-12 h-12 text-blue-400 mx-auto mb-3" />
+              <p className="text-4xl font-black text-blue-400 mb-2">30</p>
+              <p className="text-sm text-slate-300">Merchants in Pipeline</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 text-center">
+              <DollarSign className="w-12 h-12 text-purple-400 mx-auto mb-3" />
+              <p className="text-4xl font-black text-purple-400 mb-2">$34B</p>
+              <p className="text-sm text-slate-300">UAE Market (SAM)</p>
+            </div>
+            <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 border-2 border-orange-500/40 rounded-2xl p-6 text-center">
+              <Target className="w-12 h-12 text-orange-400 mx-auto mb-3" />
+              <p className="text-5xl font-black text-orange-400 mb-2">15%</p>
+              <p className="text-sm text-slate-300">Commission Rate</p>
+            </div>
+          </div>
+
+          {/* Why This Matters */}
+          <div className="bg-gradient-to-br from-[#c9a227]/20 to-yellow-600/5 border-2 border-[#c9a227]/40 rounded-2xl p-8 mb-12">
+            <h3 className="text-2xl font-bold mb-6 text-center text-[#c9a227]">Why 60+ Merchant Network Matters</h3>
             <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  emoji: "🧠",
-                  title: "Payment Intelligence",
-                  desc: "AI recommends the best card, wallet, or BNPL for every transaction",
-                  highlight: "Save money on every purchase"
-                },
-                {
-                  emoji: "⭐",
-                  title: "Universal Rewards",
-                  desc: "One points system that works across all merchants and partners",
-                  highlight: "No more fragmented loyalty"
-                },
-                {
-                  emoji: "🏪",
-                  title: "Merchant Tools",
-                  desc: "QR-based loyalty, visit tracking, and performance-based campaigns",
-                  highlight: "Merchants own their customers"
-                },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={200 + idx * 150}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all duration-500 hover:scale-105 cursor-pointer group h-full">
-                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.emoji}</div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-[#c9a227] transition-colors">{item.title}</h3>
-                    <p className="text-gray-400 mb-3">{item.desc}</p>
-                    <p className="text-[#c9a227] text-sm font-medium">{item.highlight}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* The Problem Section */}
-        <section className="section-padding bg-gradient-to-b from-[#0d1c30] to-[#0a1628]">
-          <div className="max-w-6xl mx-auto">
-            <AnimatedSection>
-              <div className="text-center mb-12">
-                <span className="inline-block px-4 py-1 bg-red-500/20 border border-red-500/40 rounded-full text-red-400 text-sm font-medium mb-4">
-                  The Problem
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                  Spending is digital. <span className="text-red-400">Rewards are broken.</span>
-                </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                  Billions in value is lost every year due to fragmentation.
+              <div className="bg-slate-800/50 rounded-lg p-6">
+                <p className="text-3xl mb-3">✅</p>
+                <p className="font-bold text-slate-200 mb-2">Market Validation</p>
+                <p className="text-sm text-slate-400">
+                  30+ signed LOIs = merchants believe in ROI. Signed commitment to list deals and pay 15% commission on sales.
                 </p>
               </div>
-            </AnimatedSection>
-
-            {/* Problem Stats */}
-            <div className="grid md:grid-cols-3 gap-6 mb-10">
-              {[
-                { stat: '70%+', label: 'of offline spending', desc: 'earns zero rewards', color: 'red', source: 'McKinsey GCC Payments Report 2023' },
-                { stat: '5+', label: 'different loyalty apps', desc: 'average user has installed', color: 'red', source: 'Internal user research, UAE consumer surveys' },
-                { stat: '$0', label: 'payment optimization', desc: 'tools for consumers', color: 'red', source: null },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-6 text-center hover:bg-red-500/10 transition-all">
-                    <p className="text-4xl md:text-5xl font-bold text-red-400 mb-2">
-                      {item.source ? <DataPoint value={item.stat} source={item.source} className="text-red-400" /> : item.stat}
-                    </p>
-                    <p className="font-medium text-white">{item.label}</p>
-                    <p className="text-gray-500 text-sm">{item.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-
-            {/* Problem Cards */}
-            <div className="grid md:grid-cols-2 gap-4 mb-8">
-              <AnimatedSection delay={400}>
-                <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-red-500/20 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">😤</span>
-                    <h3 className="text-xl font-bold text-red-400">For Users</h3>
-                  </div>
-                  <div className="space-y-3">
-                    {["Rewards fragmented across 10+ programs", "No idea which card saves the most", "Points expire or lose value", "Offline spending = zero rewards"].map((problem, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <XIcon />
-                        <span className="text-gray-300">{problem}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-              <AnimatedSection delay={500}>
-                <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-red-500/20 h-full">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">😞</span>
-                    <h3 className="text-xl font-bold text-red-400">For Merchants</h3>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-start gap-3">
-                      <XIcon />
-                      <span className="text-gray-300">Pay <DataPoint value="25-30%" source="Talabat, Noon, Deliveroo merchant fee structures" className="text-gray-300" /> to marketplaces</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <XIcon />
-                      <span className="text-gray-300">Don&apos;t own customer relationships</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <XIcon />
-                      <span className="text-gray-300">Discount-driven, not loyalty-driven</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <XIcon />
-                      <span className="text-gray-300">No affordable loyalty tools</span>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            <AnimatedSection delay={700}>
-              <div className="bg-gradient-to-r from-red-500/20 to-red-500/5 rounded-xl p-8 border border-red-500/30 text-center">
-                <p className="text-xl md:text-2xl font-medium">
-                  <span className="text-red-400 font-bold">There is no neutral intelligence layer</span>{' '}
-                  <span className="text-gray-300">connecting payments, rewards, and loyalty.</span>
+              <div className="bg-slate-800/50 rounded-lg p-6">
+                <p className="text-3xl mb-3">💰</p>
+                <p className="font-bold text-slate-200 mb-2">De-Risked Supply Side</p>
+                <p className="text-sm text-slate-400">
+                  We have merchant supply locked in. Now we validate user demand. Biggest unknown already solved.
                 </p>
-                <p className="text-[#c9a227] font-bold mt-4 text-lg">Until Nuqta.</p>
               </div>
-            </AnimatedSection>
+              <div className="bg-slate-800/50 rounded-lg p-6">
+                <p className="text-3xl mb-3">🚀</p>
+                <p className="font-bold text-slate-200 mb-2">Massive Market</p>
+                <p className="text-sm text-slate-400">
+                  $34B UAE market (SAM). $78B GCC total (TAM). Attacking 1% = $340M opportunity.
+                </p>
+              </div>
+            </div>
           </div>
-        </section>
 
-        {/* The Solution Section */}
-        <section className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                <span className="text-[#c9a227]">Nuqta</span> fixes this.
-              </h2>
-              <p className="text-gray-400 mb-12 max-w-2xl mx-auto">
-                One intelligent platform that unifies everything.
+          {/* Launch Milestones */}
+          <div className="bg-gradient-to-br from-slate-700/50 to-slate-800/50 border-2 border-slate-600 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-6 text-center">Execution Milestones</h3>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 bg-red-500/10 border-l-4 border-red-500 rounded-lg p-4">
+                <Clock className="w-8 h-8 text-red-400 flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="font-bold text-red-300">7-Day Launch (January 28, 2026)</p>
+                  <p className="text-sm text-slate-400">MVP goes live with 5 merchants, 100 users, AED 5-10K GMV target</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-4">
+                <Zap className="w-8 h-8 text-blue-400 flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="font-bold text-blue-300">Week 1 Target</p>
+                  <p className="text-sm text-slate-400">5 merchants live, 100 users, AED 5-10K GMV</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 bg-emerald-500/10 border-l-4 border-emerald-500 rounded-lg p-4">
+                <CheckCircle2 className="w-8 h-8 text-emerald-400 flex-shrink-0" />
+                <div className="flex-1">
+                  <p className="font-bold text-emerald-300">90-Day Validation</p>
+                  <p className="text-sm text-slate-400">500 users, 30 merchants, AED 30K GMV, D30 retention ≥20%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive Landscape Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Competition</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Why Can't <span className="text-red-500">Noon/Careem</span> Do This?
+            </h2>
+            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+              Structural barriers prevent incumbents from pivoting. We own the category.
+            </p>
+          </div>
+
+          {/* Competitive Matrix */}
+          <div className="overflow-x-auto mb-12">
+            <table className="w-full border-collapse bg-slate-800/50 rounded-2xl overflow-hidden">
+              <thead>
+                <tr className="bg-slate-700">
+                  <th className="text-left p-4 text-slate-300 font-bold">Feature</th>
+                  <th className="text-center p-4 text-emerald-400 font-bold">Nuqta</th>
+                  <th className="text-center p-4 text-slate-400">Noon</th>
+                  <th className="text-center p-4 text-slate-400">Careem</th>
+                  <th className="text-center p-4 text-slate-400">Entertainer</th>
+                  <th className="text-center p-4 text-slate-400">Google Maps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t border-slate-700">
+                  <td className="p-4 text-slate-300">Search-First Discovery</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-yellow-400 text-2xl">~</td>
+                </tr>
+                <tr className="border-t border-slate-700 bg-slate-800/30">
+                  <td className="p-4 text-slate-300">Instant Cashback</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-yellow-400 text-2xl">~</td>
+                  <td className="text-center p-4 text-yellow-400 text-2xl">~</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                </tr>
+                <tr className="border-t border-slate-700">
+                  <td className="p-4 text-slate-300">Hyper-Local (Cafes/Salons/Gyms)</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-yellow-400 text-2xl">~</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                </tr>
+                <tr className="border-t border-slate-700 bg-slate-800/30">
+                  <td className="p-4 text-slate-300">Payment Method Agnostic</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                </tr>
+                <tr className="border-t border-slate-700">
+                  <td className="p-4 text-slate-300">Merchant-Funded (Sustainable)</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                </tr>
+                <tr className="border-t border-slate-700 bg-slate-800/30">
+                  <td className="p-4 text-slate-300">No Subscription Fee</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                </tr>
+                <tr className="border-t border-slate-700">
+                  <td className="p-4 text-slate-300">Habit-Forming (6x/month)</td>
+                  <td className="text-center p-4 text-emerald-400 text-2xl">✓</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-red-400 text-2xl">✗</td>
+                  <td className="text-center p-4 text-yellow-400 text-2xl">~</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          {/* Why They Won't Compete */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="bg-gradient-to-br from-red-500/20 to-red-500/5 border-2 border-red-500/40 rounded-2xl p-6">
+              <h3 className="text-xl font-bold mb-3 text-red-300">Noon: Can't Pivot</h3>
+              <p className="text-slate-300 text-sm">
+                E-commerce marketplace model. Adding search-first discovery would cannibalize their core business. Would confuse brand positioning.
               </p>
-            </AnimatedSection>
-
-            <div className="grid md:grid-cols-5 gap-4">
-              {[
-                { icon: "⭐", title: "Universal Rewards", desc: "Nuqta Points" },
-                { icon: "🧠", title: "Smart Pay Advisor", desc: "Best way to pay" },
-                { icon: "🔥", title: "Visit Loyalty", desc: "Streak-based earning" },
-                { icon: "🌐", title: "Offline + Online", desc: "Everywhere earning" },
-                { icon: "🏪", title: "Merchant Tools", desc: "Performance-first" },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-5 border border-[#c9a227]/20 hover:border-[#c9a227]/60 transition-all duration-500 hover:scale-110 cursor-pointer group">
-                    <div className="text-3xl mb-3 group-hover:animate-bounce">{item.icon}</div>
-                    <h3 className="font-semibold text-sm mb-1 group-hover:text-[#c9a227] transition-colors">{item.title}</h3>
-                    <p className="text-gray-500 text-xs">{item.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
             </div>
-
-            <AnimatedSection delay={600}>
-              <div className="mt-10 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-xl p-8 border border-[#c9a227]/30 hover:scale-[1.02] transition-transform duration-300">
-                <p className="text-xl md:text-2xl font-medium">
-                  All inside <span className="text-[#c9a227]">one intelligent platform</span>.
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* How Nuqta Works Section */}
-        <section id="how-it-works" className="section-padding">
-          <div className="max-w-6xl mx-auto">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">How Nuqta Works</h2>
-              <p className="text-gray-400 text-center mb-12">Simple. Intelligent. Rewarding.</p>
-            </AnimatedSection>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-              {[
-                { num: "1", title: "Discover & Spend", desc: "Users discover nearby cafes, salons, groceries, clinics, retail, and services." },
-                { num: "2", title: "Smart Pay Advisor", desc: "Before paying, Nuqta recommends the best card, wallet, or BNPL to maximize value." },
-                { num: "3", title: "Earn Nuqta Points", desc: "Users earn universal Nuqta Points on eligible purchases." },
-                { num: "4", title: "Redeem & Repeat", desc: "Points are redeemed across merchants and grow with repeat visits." },
-              ].map((step, idx) => (
-                <StepCard key={idx} number={step.num} title={step.title} description={step.desc} index={idx} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 text-center">
-              {[
-                { value: 600, suffix: 'B+', prefix: '$', label: 'GCC Consumer Spending' },
-                { value: 70, suffix: '%', prefix: '', label: 'Digital Payment Rate' },
-                { value: 87, suffix: '%', prefix: '', label: 'Points Expire Unused' },
-                { value: 3, suffix: 'x', prefix: '', label: 'BNPL YoY Growth' },
-              ].map((stat, idx) => (
-                <AnimatedSection key={idx} delay={idx * 150}>
-                  <div className="group cursor-pointer">
-                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227] group-hover:scale-110 transition-transform">
-                      <AnimatedCounter end={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
-                    </p>
-                    <p className="text-gray-400 mt-1 sm:mt-2 text-xs sm:text-sm md:text-base">{stat.label}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* All Features Section */}
-        <section id="features" className="section-padding">
-          <div className="max-w-7xl mx-auto">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">All Features</h2>
-              <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-                A complete rewards and payments intelligence platform for users and merchants.
+            <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 border-2 border-orange-500/40 rounded-2xl p-6">
+              <h3 className="text-xl font-bold mb-3 text-orange-300">Careem: Wrong Focus</h3>
+              <p className="text-slate-300 text-sm">
+                Super app for logistics (rides, delivery). Local discovery isn't their moat. No search infrastructure.
               </p>
-            </AnimatedSection>
-
-            {/* Payment Intelligence */}
-            <div className="mb-16">
-              <AnimatedSection>
-                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                  <span className="text-[#c9a227]">🧠</span> Payment Intelligence
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 gap-6">
-                <FeatureCard
-                  icon={<BrainIcon />}
-                  title="Smart Pay Advisor"
-                  description="Nuqta analyzes your payment options and tells you the smartest way to pay before you pay."
-                  items={[
-                    "Best card recommendation",
-                    "Wallet optimization (Apple Pay, etc.)",
-                    "BNPL comparison (Tabby, Tamara, others)",
-                    "Net savings calculation (Nuqta + bank + BNPL)"
-                  ]}
-                  index={0}
-                />
-                <AnimatedSection delay={200}>
-                  <div className="card-gradient rounded-xl p-6 flex flex-col justify-center group hover:scale-[1.02] transition-transform duration-300">
-                    <p className="text-gray-400 text-lg mb-4">Example:</p>
-                    <div className="bg-[#0a1628] rounded-lg p-6 border border-[#c9a227]/30 group-hover:border-[#c9a227] transition-colors">
-                      <p className="text-[#c9a227] font-medium text-lg">&quot;Pay with Card A + Apple Pay&quot;</p>
-                      <p className="text-3xl font-bold mt-3">
-                        Save AED <AnimatedCounter end={42} />
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              </div>
             </div>
-
-            {/* Rewards & Loyalty */}
-            <div className="mb-16">
-              <AnimatedSection>
-                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                  <span className="text-[#c9a227]">🎁</span> Rewards & Loyalty
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <FeatureCard
-                  icon={<GiftIcon />}
-                  title="Universal Nuqta Points"
-                  description="One reward currency for everyday life."
-                  items={["Earned on everyday spending", "Merchant-funded", "Universal across categories", "Transparent redemption"]}
-                  index={0}
-                />
-                <FeatureCard
-                  icon={<RefreshIcon />}
-                  title="Visit-Based Loyalty & Streaks"
-                  description="Rewards repeat visits with increasing benefits."
-                  items={["Rewards repeat visits", "Monthly streak bonuses", "Tiered loyalty benefits"]}
-                  index={1}
-                />
-                <FeatureCard
-                  icon={<WalletIcon />}
-                  title="Wallet & Insights"
-                  description="Track all your rewards and savings in one place."
-                  items={["Unified rewards wallet", "Points balance & expiry", "Monthly savings summary", "Spending & reward insights"]}
-                  index={2}
-                />
-              </div>
+            <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-500/5 border-2 border-yellow-500/40 rounded-2xl p-6">
+              <h3 className="text-xl font-bold mb-3 text-yellow-300">Entertainer: Subscription Lock-In</h3>
+              <p className="text-slate-300 text-sm">
+                AED 200-400 annual subscription. Can't offer free cashback without cannibalizing subscription revenue. Wrong business model.
+              </p>
             </div>
-
-            {/* Merchant Features */}
-            <div className="mb-16">
-              <AnimatedSection>
-                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                  <span className="text-[#c9a227]">🏪</span> Merchant Features
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <FeatureCard icon={<StoreIcon />} title="Loyalty & QR Tools" description="QR-based earning, visit tracking, no hardware required." index={0} />
-                <FeatureCard icon={<CampaignIcon />} title="Campaign Manager" description="Bonus point days, repeat visit incentives, VIP rewards." index={1} />
-                <FeatureCard icon={<ChartIcon />} title="Merchant Dashboard" description="Visit frequency, loyalty performance, campaign ROI." index={2} />
-                <FeatureCard icon={<CreditCardIcon />} title="Performance Pricing" description="No monthly fees. Pay only for real performance." index={3} />
-              </div>
-            </div>
-
-            {/* Trust & Compliance */}
-            <div>
-              <AnimatedSection>
-                <h3 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-                  <span className="text-[#c9a227]">🕌</span> Trust, Privacy & Compliance
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
-                {[
-                  "Sharia-friendly reward structure",
-                  "No interest (riba)",
-                  "No gambling or speculation",
-                  "Transparent reward logic",
-                  "Arabic + English support",
-                  "User-controlled permissions"
-                ].map((item, idx) => (
-                  <AnimatedSection key={idx} delay={idx * 100}>
-                    <div className="bg-[#1a2a42]/50 rounded-lg p-4 border border-[#2a3a52] text-center hover:border-[#c9a227]/50 hover:scale-105 transition-all duration-300 cursor-pointer">
-                      <CheckIcon />
-                      <p className="text-gray-300 text-sm mt-2">{item}</p>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6">
+              <h3 className="text-xl font-bold mb-3 text-blue-300">Google Maps: No Monetization</h3>
+              <p className="text-slate-300 text-sm">
+                Discovery tool, not commerce platform. No payment integration. Would require 3-5 year product rebuild.
+              </p>
             </div>
           </div>
-        </section>
 
-        {/* Who Nuqta is For Section */}
-        <section id="use-cases" className="section-padding bg-[#0d1c30]">
-          <div className="max-w-6xl mx-auto">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Who Nuqta is For</h2>
-              <p className="text-gray-400 text-center mb-12">Built for every stakeholder in the spending ecosystem.</p>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <UseCaseCard icon={<UserIcon />} title="Everyday Users" description="Earn rewards on groceries, coffee, salons, and services." index={0} />
-              <UseCaseCard icon={<BriefcaseIcon />} title="Urban Professionals" description="Optimize cards & BNPL, track savings, redeem smartly." index={1} />
-              <UseCaseCard icon={<StoreIcon />} title="Local Merchants" description="Replace discounts with loyalty and repeat customers." index={2} />
-              <UseCaseCard icon={<BankIcon />} title="Banks & Fintech Partners" description="Increase card & BNPL usage through intelligence." index={3} />
-            </div>
-          </div>
-        </section>
-
-        {/* Why Nuqta is Different */}
-        <section className="section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Why Nuqta is Different</h2>
-            </AnimatedSection>
-            <div className="grid sm:grid-cols-2 gap-4 mb-10">
-              {["Not a discount app", "Not a delivery marketplace", "Not a bank or wallet", "Not closed loyalty"].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="flex items-center gap-3 p-4 bg-red-500/5 border border-red-500/20 rounded-lg justify-center hover:bg-red-500/10 hover:scale-105 transition-all duration-300 cursor-pointer">
-                    <XIcon />
-                    <span className="text-gray-300">{item}</span>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-            <AnimatedSection delay={500}>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-xl p-8 border border-[#c9a227]/30 hover:scale-[1.02] transition-transform duration-300">
-                <p className="text-xl md:text-2xl font-medium">
-                  Nuqta is the <span className="text-[#c9a227]">intelligence layer</span> connecting payments, rewards, and local spending.
+          {/* Our Unfair Advantages */}
+          <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-300">Our Unfair Advantages</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-4xl mb-3">🎯</div>
+                <p className="font-bold text-slate-200 mb-2">100% Focus</p>
+                <p className="text-sm text-slate-400">
+                  We only do search-first local discovery + cashback. Incumbents are distracted by 10+ business lines.
                 </p>
               </div>
-            </AnimatedSection>
+              <div className="text-center">
+                <div className="text-4xl mb-3">💰</div>
+                <p className="font-bold text-slate-200 mb-2">Merchant-Funded</p>
+                <p className="text-sm text-slate-400">
+                  Sustainable from Day 1. No VC subsidy required. Can outlast deep-pocketed competitors.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl mb-3">⚡</div>
+                <p className="font-bold text-slate-200 mb-2">Speed</p>
+                <p className="text-sm text-slate-400">
+                  7-day launch. Incumbents need 12-18 months to pivot. We own the category before they react.
+                </p>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Competitive Positioning */}
-        <section className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Competitive Positioning</h2>
-              <p className="text-gray-400 text-center mb-8">Where Nuqta sits in the payments, rewards & loyalty landscape</p>
-            </AnimatedSection>
+      {/* CTA Section */}
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6">
+            Join the <span className="bg-gradient-to-r from-[#c9a227] via-yellow-400 to-[#c9a227] bg-clip-text text-transparent">Next Chapter</span>
+          </h2>
+          <p className="text-xl sm:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto">
+            We're raising $500K to validate 30 signed merchants and hit 500 users in 90 days.
+          </p>
 
-            {/* 2x2 Positioning Map */}
-            <AnimatedSection delay={200}>
-              <div className="relative bg-[#0a1628] rounded-2xl p-6 border border-[#2a3a52] mb-8">
-                {/* Axis Labels */}
-                <div className="flex justify-between text-xs text-gray-500 mb-4">
-                  <span>Manual / Static</span>
-                  <span className="font-medium text-gray-400">Level of Intelligence →</span>
-                  <span>Smart / Intelligent</span>
-                </div>
+          {/* Investment Snapshot */}
+          <div className="bg-gradient-to-br from-slate-700/50 to-slate-800/50 border-2 border-slate-600 rounded-2xl p-8 mb-12">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="text-left">
+                <p className="text-sm text-slate-400 mb-1">Raise Amount</p>
+                <p className="text-3xl font-black text-white">$500K</p>
+              </div>
+              <div className="text-left">
+                <p className="text-sm text-slate-400 mb-1">Valuation Cap</p>
+                <p className="text-3xl font-black text-white">$5M</p>
+              </div>
+              <div className="text-left">
+                <p className="text-sm text-slate-400 mb-1">Instrument</p>
+                <p className="text-3xl font-black text-white">SAFE</p>
+              </div>
+              <div className="text-left">
+                <p className="text-sm text-slate-400 mb-1">Discount</p>
+                <p className="text-3xl font-black text-white">20%</p>
+              </div>
+            </div>
+          </div>
 
-                {/* Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-4">
-                  {/* Top-Left: Low Intelligence × Multi-Layer */}
-                  <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 min-h-[180px] relative group hover:border-blue-500/60 transition-all">
-                    <div className="absolute top-3 left-3 text-xs text-blue-400 font-medium uppercase">Big Reach, Weak Loyalty</div>
-                    <div className="flex flex-col items-center justify-center h-full pt-6">
-                      <div className="flex flex-wrap gap-3 justify-center mb-3">
-                        {/* Careem Logo */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-[#4cb050] flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-white font-bold text-lg">C</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Careem</span>
-                        </div>
-                        {/* Noon Logo */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-[#feee00] flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-black font-bold text-lg">n</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Noon</span>
-                        </div>
-                        {/* Talabat Logo */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-[#ff5a00] flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-white font-bold text-lg">T</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Talabat</span>
-                        </div>
-                      </div>
-                      <p className="text-xs text-gray-500">Super Apps / Marketplaces</p>
-                    </div>
-                  </div>
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <Link
+              href="/terms"
+              className="px-10 py-5 bg-[#c9a227] hover:bg-[#d4ae3a] text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2 text-xl"
+            >
+              View Investment Terms
+              <ArrowRight className="w-6 h-6" />
+            </Link>
+            <Link
+              href="/data-room"
+              className="px-10 py-5 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2 text-xl"
+            >
+              Access Data Room
+              <Shield className="w-6 h-6" />
+            </Link>
+          </div>
 
-                  {/* Top-Right: High Intelligence × Multi-Layer - NUQTA */}
-                  <div className="bg-[#c9a227]/20 border-2 border-[#c9a227] rounded-xl p-5 min-h-[180px] relative shadow-lg shadow-[#c9a227]/20 group">
-                    <div className="absolute top-3 left-3 text-xs text-[#c9a227] font-bold uppercase flex items-center gap-1">
-                      <span className="animate-pulse">✨</span> New Category
-                    </div>
-                    <div className="flex flex-col items-center justify-center h-full pt-4">
-                      <div className="w-20 h-20 rounded-full overflow-hidden relative mb-2 group-hover:scale-110 transition-transform shadow-xl shadow-[#c9a227]/30">
-                        <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
-                      </div>
-                      <p className="text-[#c9a227] font-bold text-xl">NUQTA</p>
-                      <p className="text-xs text-[#c9a227]/70">Neutral Intelligence Layer</p>
-                    </div>
-                  </div>
+          {/* Additional Links */}
+          <div className="flex flex-wrap gap-6 justify-center text-slate-400">
+            <Link href="/memo" className="hover:text-[#c9a227] transition-colors">
+              Read Full Memo
+            </Link>
+            <Link href="/commitment" className="hover:text-[#c9a227] transition-colors">
+              Founder Commitments
+            </Link>
+            <Link href="/deck-kang" className="hover:text-[#c9a227] transition-colors">
+              Pitch Deck (27 Slides)
+            </Link>
+          </div>
+        </div>
+      </section>
 
-                  {/* Bottom-Left: Low Intelligence × Single Layer */}
-                  <div className="bg-red-500/10 border border-red-500/30 rounded-xl p-5 min-h-[180px] relative group hover:border-red-500/60 transition-all">
-                    <div className="absolute top-3 left-3 text-xs text-red-400 font-medium uppercase">Easy to Copy</div>
-                    <div className="flex flex-col items-center justify-center h-full pt-6">
-                      <div className="flex flex-wrap gap-3 justify-center mb-3">
-                        {/* Discount Apps */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-white text-xl">%</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Discounts</span>
-                        </div>
-                        {/* Coupons */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-white text-xl">🎟️</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Coupons</span>
-                        </div>
-                        {/* Cashback */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-red-500 flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-white text-xl">💵</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Cashback</span>
-                        </div>
-                      </div>
-                      <p className="text-xs text-gray-500">Static Offers</p>
-                    </div>
-                  </div>
+      {/* Founder Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-800">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Founder</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Building in Public
+            </h2>
+          </div>
 
-                  {/* Bottom-Right: High Intelligence × Single Layer */}
-                  <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-5 min-h-[180px] relative group hover:border-yellow-500/60 transition-all">
-                    <div className="absolute top-3 left-3 text-xs text-yellow-400 font-medium uppercase">Strong but Narrow</div>
-                    <div className="flex flex-col items-center justify-center h-full pt-6">
-                      <div className="flex flex-wrap gap-3 justify-center mb-3">
-                        {/* Tabby Logo */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-[#3bffc1] flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-black font-bold text-sm">tabby</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Tabby</span>
-                        </div>
-                        {/* Tamara Logo */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-[#1a1462] flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-[#ff6bda] font-bold text-lg">T</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Tamara</span>
-                        </div>
-                        {/* Bank Apps */}
-                        <div className="flex flex-col items-center group/logo">
-                          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center shadow-lg group-hover/logo:scale-110 transition-transform">
-                            <span className="text-white text-xl">🏦</span>
-                          </div>
-                          <span className="text-[10px] text-gray-400 mt-1">Banks</span>
-                        </div>
-                      </div>
-                      <p className="text-xs text-gray-500">BNPL / Payment Only</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Y-Axis Label */}
-                <div className="flex justify-between text-xs text-gray-500">
-                  <span>Single Layer</span>
-                  <span className="font-medium text-gray-400">↑ Scope of Value</span>
-                  <span>Multi-Layer Platform</span>
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-2 border-slate-700 rounded-2xl p-8 md:p-12">
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+              {/* Founder Photo */}
+              <div className="flex-shrink-0">
+                <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#c9a227]/40 overflow-hidden bg-gradient-to-br from-[#c9a227]/20 to-slate-800">
+                  <Image
+                    src="/founder.jpg"
+                    alt="Rejaul Karim - Founder of Nuqta"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
-            </AnimatedSection>
 
-            {/* Key Insight */}
-            <AnimatedSection delay={400}>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-xl p-6 border border-[#c9a227]/30 text-center hover:scale-[1.02] transition-transform duration-300">
-                <p className="text-lg md:text-xl">
-                  <span className="text-gray-400">Most players optimize one layer.</span>{' '}
-                  <span className="text-[#c9a227] font-bold">Nuqta connects and optimizes all layers.</span>
+              {/* Founder Bio */}
+              <div className="flex-1 text-center md:text-left">
+                <h3 className="text-2xl font-bold text-white mb-2">Rejaul Karim</h3>
+                <p className="text-[#c9a227] font-semibold mb-4">Founder & CEO</p>
+                <p className="text-slate-300 leading-relaxed mb-4">
+                  Building Nuqta to solve a problem I've experienced firsthand: leaving money on the table with every offline purchase.
+                  With 30 signed merchant LOIs and launching in 7 days, we're proving that rewards-led commerce intelligence isn't just
+                  a vision—it's execution.
                 </p>
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                  <a
+                    href="https://www.linkedin.com/in/rejaul-karim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium"
+                  >
+                    Connect on LinkedIn
+                  </a>
+                  <a
+                    href="https://twitter.com/rejaulkarim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm font-medium"
+                  >
+                    Follow on Twitter
+                  </a>
+                </div>
               </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* Why Now Section */}
-        <section className="section-padding">
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Now?</h2>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: "High Card Penetration", desc: "GCC has among the highest card usage rates globally" },
-                { title: "Rapid BNPL Adoption", desc: "Tabby, Tamara, and others reshaping how people pay" },
-                { title: "Offline Loyalty Gap", desc: "Daily spending at local merchants earns nothing" },
-                { title: "Merchant Pressure", desc: "Margins under pressure from discounts" },
-                { title: "No Neutral Layer", desc: "No platform connects payments + rewards + local today" },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 hover:scale-105 transition-all duration-300 cursor-pointer group">
-                    <div className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#c9a227]/30 transition-all">
-                      <CheckIcon />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2 group-hover:text-[#c9a227] transition-colors">{item.title}</h3>
-                    <p className="text-gray-400 text-sm">{item.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Governance & Investor Trust Section */}
-        <section className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Governance & Investor Trust</h2>
-              <p className="text-gray-400 text-center mb-12">Nuqta is built with structure, not promises.</p>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { icon: <DocumentIcon />, title: "Stable Jurisdiction", desc: "Incorporated in a stable, investor-friendly jurisdiction" },
-                { icon: <ShieldIcon />, title: "Company-Owned IP", desc: "All intellectual property owned by the company" },
-                { icon: <BankIcon />, title: "Protected Funds", desc: "Investor funds go into company accounts" },
-                { icon: <BriefcaseIcon />, title: "Founder Vesting", desc: "Founder equity subject to vesting schedule" },
-                { icon: <ChartIcon />, title: "Transparent Reporting", desc: "Regular updates and governance standards" },
-                { icon: <TrendingUpIcon />, title: "Built to Last", desc: "Nuqta is designed to outlive the founder" },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 hover:scale-105 transition-all duration-300 cursor-pointer group">
-                    <div className="text-[#c9a227] mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
-                    <h3 className="font-semibold text-lg mb-2 group-hover:text-[#c9a227] transition-colors">{item.title}</h3>
-                    <p className="text-gray-400 text-sm">{item.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Exit Strategy Section */}
-        <section className="section-padding">
-          <div className="max-w-4xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Exit Strategy</h2>
-              <p className="text-gray-400 mb-8">Clear & Realistic</p>
-              <p className="text-lg text-gray-300 mb-10">
-                Nuqta is built as <span className="text-white font-semibold">infrastructure</span>, not a quick flip.
-              </p>
-            </AnimatedSection>
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
-              {[
-                { title: "Strategic Acquisition by Banks", desc: "Financial institutions seeking loyalty infrastructure" },
-                { title: "BNPL / Fintech Players", desc: "Companies expanding into rewards and loyalty" },
-                { title: "Super App Acquisition", desc: "Regional super apps consolidating services" },
-                { title: "Long-term IPO", desc: "Public market optionality as infrastructure scales" },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-[#c9a227]/20 text-left hover:border-[#c9a227]/60 hover:scale-105 transition-all duration-300 cursor-pointer group">
-                    <h3 className="font-semibold text-lg mb-2 text-[#c9a227]">{item.title}</h3>
-                    <p className="text-gray-400">{item.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-            <AnimatedSection delay={500}>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-xl p-6 border border-[#c9a227]/30 hover:scale-[1.02] transition-transform duration-300">
-                <p className="text-lg font-medium">
-                  Exits happen when Nuqta becomes <span className="text-[#c9a227]">critical infrastructure</span>.
-                </p>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* ==================== WHY INVEST NOW ==================== */}
-        <section className="section-padding bg-gradient-to-b from-[#0a1628] to-[#0d1c30]">
-          <div className="max-w-6xl mx-auto">
-            <AnimatedSection>
-              <div className="text-center mb-12">
-                <span className="inline-block px-4 py-1 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 text-sm font-medium mb-4">
-                  Market Timing
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">
-                  Why Invest <span className="text-[#c9a227]">Now</span>?
-                </h2>
-                <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                  The window is open — and it won&apos;t stay that way.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
-              {[
-                {
-                  icon: '💳',
-                  title: 'Payments Behavior Shifting',
-                  desc: 'Digital payments, contactless, and mobile wallets are now mainstream post-COVID. Users are open to new payment experiences.',
-                  stat: '70%+',
-                  statLabel: 'Digital payment penetration in UAE',
-                  source: 'Central Bank of UAE Digital Payments Report 2023'
-                },
-                {
-                  icon: '📈',
-                  title: 'BNPL Adoption Accelerating',
-                  desc: 'Tabby, Tamara, and others have normalized BNPL — but there\'s no neutral comparison layer. That\'s exactly what Nuqta provides.',
-                  stat: '3x',
-                  statLabel: 'YoY BNPL growth in GCC',
-                  source: 'Tabby & Tamara funding announcements, Kearney BNPL report'
-                },
-                {
-                  icon: '🏪',
-                  title: 'Merchants Hungry for Tools',
-                  desc: 'Local merchants are losing customers to aggregators and lack affordable loyalty solutions. Nuqta gives them ownership.',
-                  stat: '25-30%',
-                  statLabel: 'Commission lost to marketplaces',
-                  source: 'Talabat, Noon, Deliveroo merchant fee structures'
-                },
-                {
-                  icon: '🏆',
-                  title: 'First-Mover Advantage',
-                  desc: 'No one has built the neutral intelligence layer for GCC payments. The opportunity to define the category is now.',
-                  stat: '$0',
-                  statLabel: 'Competition in this space',
-                  source: null
-                },
-              ].map((item, idx) => (
-                <AnimatedSection key={idx} delay={idx * 100}>
-                  <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all h-full">
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="text-4xl">{item.icon}</span>
-                      <div className="text-right">
-                        <p className="text-2xl font-bold text-[#c9a227]">
-                          {item.source ? <DataPoint value={item.stat} source={item.source} /> : item.stat}
-                        </p>
-                        <p className="text-xs text-gray-500">{item.statLabel}</p>
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-400">{item.desc}</p>
-                  </div>
-                </AnimatedSection>
-              ))}
             </div>
 
-            <AnimatedSection delay={500}>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 rounded-xl p-8 border border-[#c9a227]/30 text-center">
-                <p className="text-xl md:text-2xl font-medium mb-4">
-                  <span className="text-white">The infrastructure play is available</span>{' '}
-                  <span className="text-[#c9a227] font-bold">before someone else takes it.</span>
-                </p>
-                <button onClick={() => setIsDeckOpen(true)} className="btn-primary mt-4 group relative overflow-hidden">
-                  <span className="relative z-10">See the Full Opportunity →</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
+            {/* Commitment Highlight */}
+            <div className="mt-8 pt-8 border-t border-slate-700">
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-slate-800/50 rounded-lg">
+                  <p className="text-3xl font-black text-emerald-400 mb-1"><AnimatedCounter end={7} /></p>
+                  <p className="text-sm text-slate-400">Days to Launch</p>
+                </div>
+                <div className="text-center p-4 bg-slate-800/50 rounded-lg">
+                  <p className="text-3xl font-black text-purple-400 mb-1"><AnimatedCounter end={30} /></p>
+                  <p className="text-sm text-slate-400">Signed Merchant LOIs</p>
+                </div>
+                <div className="text-center p-4 bg-slate-800/50 rounded-lg">
+                  <p className="text-3xl font-black text-blue-400 mb-1"><AnimatedCounter end={90} /></p>
+                  <p className="text-sm text-slate-400">Day Validation Period</p>
+                </div>
               </div>
-            </AnimatedSection>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Pitch Deck Section */}
-        <section id="pitch-deck" className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Nuqta Investor Deck</h2>
-              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                Explore our full vision, market opportunity, execution strategy, and roadmap.
-              </p>
-            </AnimatedSection>
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-800 to-slate-900">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">FAQ</p>
+            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+              Common Questions
+            </h2>
+            <p className="text-xl text-slate-400">
+              Everything you need to know about Nuqta
+            </p>
+          </div>
 
-            <AnimatedSection delay={200}>
-              <div
-                onClick={() => setIsDeckOpen(true)}
-                className="bg-[#1a2a42] rounded-xl p-8 border border-[#2a3a52] cursor-pointer hover:border-[#c9a227]/50 transition-all duration-500 group hover:scale-[1.02]"
+          <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 border-2 border-slate-700 rounded-2xl p-6 md:p-8">
+            <FAQItem
+              question="How is Nuqta different from other cashback apps?"
+              answer="Nuqta is search-first. You don't hunt for deals—you search for what you need (coffee, haircut, gym), and we show you the best options with instant cashback. Plus, our merchant-funded model means we're sustainable from day 1, not burning VC money."
+              index={0}
+            />
+            <FAQItem
+              question="How do merchants benefit from Nuqta?"
+              answer="Merchants only pay 15% commission on completed sales. No upfront fees, no Google Ads bidding wars. Customer acquisition costs AED 10-15 vs AED 200+ on Google Ads. It's performance-based marketing with guaranteed ROI."
+              index={1}
+            />
+            <FAQItem
+              question="What's the 30+ signed LOIs mean for investors?"
+              answer="These aren't verbal commitments—they're signed agreements from merchants across Dubai Marina, Downtown, and JBR. With 30 more in pipeline, we're building a 60+ merchant network. This de-risks the supply side before we even launch, giving us immediate access to a $34B UAE market."
+              index={2}
+            />
+            <FAQItem
+              question="Why is the LTV:CAC ratio so high (16.8x)?"
+              answer="Three reasons: (1) Merchant QR distribution = AED 10-15 CAC, (2) Search-first drives habit formation (6 transactions/month vs 2-3 for competitors), (3) Cashback is merchant-funded, so we don't burn money to acquire users."
+              index={3}
+            />
+            <FAQItem
+              question="What happens if you don't hit 90-day milestones?"
+              answer="Founder commitment: If we miss 90-day targets (500 users, AED 30K GMV, D30 ≥20%) by >30%, we either pivot or return unspent capital. Accountability is built into our execution plan."
+              index={4}
+            />
+            <FAQItem
+              question="How does the operational float work?"
+              answer="Users earn coins but redeem them over 30-45 days on average. This creates a cash flow buffer (operational float) that smooths merchant payouts. Post-SVF license, this float can generate interest revenue, but that's Year 2+ upside."
+              index={5}
+            />
+            <FAQItem
+              question="Can I invest in Nuqta?"
+              answer="We're raising $500K on a $5M cap SAFE with 20% discount. If you're an accredited investor interested in our pre-seed round, check out our investment terms page or reach out via the data room."
+              index={6}
+            />
+            <FAQItem
+              question="When does Nuqta launch?"
+              answer="January 28, 2026—in 7 days. Week 1 target: 5 merchants live, 100 users, AED 5-10K GMV. We're building in public and moving fast."
+              index={7}
+            />
+          </div>
+
+          {/* Still Have Questions CTA */}
+          <div className="mt-8 text-center">
+            <p className="text-slate-400 mb-4">Still have questions?</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/data-room"
+                className="px-6 py-3 bg-[#c9a227] hover:bg-[#d4ae3a] text-white font-bold rounded-xl transition-all transform hover:scale-105"
               >
-                <div className="grid md:grid-cols-3 gap-4 mb-8">
-                  {[
-                    { slide: "1", title: "NUQTA", subtitle: "The Smart Rewards App", logo: true },
-                    { slide: "2", title: "The Problem", subtitle: "Broken Rewards & Payments", dots: "red" },
-                    { slide: "3", title: "The Solution", subtitle: "Integrated Intelligence", dots: "gold" },
-                  ].map((card, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-[#0a1628] rounded-lg p-4 text-left transition-all duration-300 hover:scale-105"
-                      style={{ transitionDelay: `${idx * 100}ms` }}
-                    >
-                      <p className="text-xs text-gray-500 mb-2">Slide {card.slide}</p>
-                      {card.logo ? (
-                        <div className="w-10 h-10 relative mb-2">
-                          <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
-                        </div>
-                      ) : null}
-                      <p className="font-semibold text-sm">{card.title}</p>
-                      <p className="text-xs text-gray-400">{card.subtitle}</p>
-                      {card.dots && (
-                        <div className="flex gap-1 mt-2">
-                          {[...Array(3)].map((_, i) => (
-                            <span key={i} className={`w-2 h-2 ${card.dots === 'red' ? 'bg-red-400/50' : 'bg-[#c9a227]/50'} rounded-full`} />
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-center gap-2 text-[#c9a227] group-hover:scale-110 transition-transform">
-                  <svg className="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="font-semibold">View Full Deck (20 Slides)</span>
-                </div>
-                <p className="text-xs text-gray-500 mt-2">Click to open interactive presentation</p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={400}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                <button onClick={() => setIsDeckOpen(true)} className="btn-primary group relative overflow-hidden">
-                  <span className="relative z-10">View Pitch Deck</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </button>
-                <a href="mailto:rejaul@nuqtaapp.com?subject=Nuqta%20Investor%20Deck%20PDF" className="btn-secondary hover:border-[#c9a227] transition-colors">
-                  Download PDF
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* ==================== FOR INVESTORS SECTION ==================== */}
-        <section id="investors" className="section-padding bg-gradient-to-b from-[#0a1628] to-[#0d1c30]">
-          <div className="max-w-6xl mx-auto">
-            <AnimatedSection>
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-full mb-6">
-                  <span className="text-[#c9a227] text-sm font-medium">For Investors</span>
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-4">Built as Infrastructure.<br />Structured for Scale.</h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">
-                  Nuqta is designed as a payments and loyalty infrastructure platform for the GCC.
-                  Below is a transparent overview of the team, opportunity, and execution plan.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            {/* Team & Founder */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">👤</span>
-                  Team & Founder
-                </h3>
-              </AnimatedSection>
-              <AnimatedSection delay={100}>
-                <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52] hover:border-[#c9a227]/30 transition-all duration-500">
-                  <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-[#c9a227]/50">
-                      <Image src="/founder-photo.jpg" alt="Rejaul Karim" width={96} height={96} className="object-cover w-full h-full" />
-                    </div>
-                    <div className="flex-1">
-                      <a href="https://www.linkedin.com/in/rejaulkarim007/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 group">
-                        <h4 className="text-2xl font-bold mb-1 group-hover:text-[#c9a227] transition-colors">Rejaul Karim</h4>
-                        <svg className="w-5 h-5 text-[#0077b5] group-hover:text-[#00a0dc] transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                      </a>
-                      <p className="text-[#c9a227] mb-4">Founder & CEO — Nuqta</p>
-                      <ul className="space-y-2 text-gray-300 mb-6">
-                        <li className="flex items-start gap-2">
-                          <CheckIcon />
-                          <span>Product-first founder with deep focus on <strong className="text-white">payments, rewards, and merchant ecosystems</strong></span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckIcon />
-                          <span>Building Nuqta as a <strong className="text-white">long-term infrastructure platform</strong>, not a short-term consumer app</span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckIcon />
-                          <span>Strong understanding of <strong className="text-white">GCC market behavior, fintech partnerships, and loyalty economics</strong></span>
-                        </li>
-                        <li className="flex items-start gap-2">
-                          <CheckIcon />
-                          <span>Founder equity subject to <strong className="text-white">vesting and governance controls</strong></span>
-                        </li>
-                      </ul>
-                      <div className="bg-[#0a1628] rounded-lg p-4 border-l-4 border-[#c9a227]">
-                        <p className="text-gray-300 italic">&quot;Nuqta is built to outlive the founder — structure comes before personality.&quot;</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* The Ask */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">💰</span>
-                  The Ask
-                </h3>
-              </AnimatedSection>
-
-              {/* Investment Terms Grid */}
-              <div className="grid md:grid-cols-4 gap-4 mb-8">
-                <AnimatedSection delay={100}>
-                  <div className="bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-2xl p-6 text-center">
-                    <p className="text-[#0a1628] text-sm uppercase tracking-wider mb-1">Raising</p>
-                    <p className="text-[#0a1628] text-4xl font-bold">$500K</p>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={150}>
-                  <div className="bg-[#1a2a42]/50 rounded-2xl p-6 border border-[#c9a227]/30 text-center">
-                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Instrument</p>
-                    <p className="text-2xl font-bold">CCD</p>
-                    <p className="text-xs text-gray-500">(Convertible Note)</p>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={200}>
-                  <div className="bg-[#1a2a42]/50 rounded-2xl p-6 border border-[#2a3a52] text-center">
-                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Valuation Cap</p>
-                    <p className="text-2xl font-bold text-[#c9a227]">$5M</p>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={250}>
-                  <div className="bg-[#1a2a42]/50 rounded-2xl p-6 border border-[#2a3a52] text-center">
-                    <p className="text-gray-400 text-sm uppercase tracking-wider mb-1">Discount</p>
-                    <p className="text-2xl font-bold text-[#c9a227]">20%</p>
-                    <p className="text-xs text-gray-500">On next round</p>
-                  </div>
-                </AnimatedSection>
-              </div>
-
-              {/* Objectives */}
-              <AnimatedSection delay={300}>
-                <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52]">
-                  <p className="text-[#c9a227] font-semibold mb-4">Objective of This Round</p>
-                  <ul className="grid md:grid-cols-2 gap-3">
-                    {[
-                      "Launch MVP in UAE",
-                      "Secure early merchant network",
-                      "Validate unit economics and repeat usage",
-                      "Prepare for Seed round"
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-300">
-                        <span className="w-6 h-6 bg-[#c9a227]/20 rounded-full flex items-center justify-center text-sm text-[#c9a227]">{idx + 1}</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Use of Funds */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🧮</span>
-                  Use of Funds
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-4 gap-4 mb-6">
-                {[
-                  { category: "Team & Product", percent: 50, amount: "$250K", icon: "💻", color: "from-[#c9a227] to-[#f4d35e]" },
-                  { category: "Merchant Acquisition", percent: 30, amount: "$150K", icon: "🏪", color: "from-green-500 to-green-600" },
-                  { category: "User Acquisition", percent: 15, amount: "$75K", icon: "📱", color: "from-purple-500 to-purple-600" },
-                  { category: "Operations", percent: 5, amount: "$25K", icon: "🛡️", color: "from-orange-500 to-orange-600" },
-                ].map((item, idx) => (
-                  <AnimatedSection key={idx} delay={idx * 100}>
-                    <div className="bg-[#1a2a42]/50 rounded-xl p-5 border border-[#2a3a52] hover:border-[#c9a227]/30 transition-all duration-300 text-center">
-                      <span className="text-3xl mb-2 block">{item.icon}</span>
-                      <p className="text-2xl font-bold text-[#c9a227] mb-1">{item.percent}%</p>
-                      <p className="font-semibold text-sm mb-1">{item.category}</p>
-                      <p className="text-gray-500 text-xs">{item.amount}</p>
-                      <div className="mt-3 h-2 bg-[#0a1628] rounded-full overflow-hidden">
-                        <div
-                          className={`h-full bg-gradient-to-r ${item.color} rounded-full transition-all duration-1000`}
-                          style={{ width: `${item.percent * 2.5}%` }}
-                        />
-                      </div>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-              <AnimatedSection delay={500}>
-                <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl p-4 border border-[#c9a227]/30 text-center">
-                  <p className="text-lg">
-                    <span className="text-[#c9a227] font-bold">Goal:</span>{' '}
-                    <span className="text-white">Reach Seed-Ready Metrics</span>
-                  </p>
-                  <p className="text-gray-400 text-sm mt-1">
-                    Demonstrate product-market fit, early traction, and clear path to scale
-                  </p>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Traction */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">📊</span>
-                  Traction & Early Signals
-                  <span className="text-sm font-normal text-gray-400 ml-2">(Pre-Launch)</span>
-                </h3>
-              </AnimatedSection>
-              <AnimatedSection delay={100}>
-                <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52]">
-                  <p className="text-gray-400 mb-6">Nuqta is currently pre-launch. Early signals include:</p>
-                  <div className="grid md:grid-cols-2 gap-4 mb-6">
-                    {[
-                      { icon: "📋", text: "Early access waitlist (users & merchants)" },
-                      { icon: "🏪", text: "Active discussions with local merchants for pilot programs" },
-                      { icon: "🤝", text: "Partnership conversations with BNPL and fintech players" },
-                      { icon: "📈", text: "Strong inbound interest after deck circulation" },
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-4 bg-[#0a1628]/50 rounded-lg">
-                        <span className="text-2xl">{item.icon}</span>
-                        <span className="text-gray-300">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
-                    <p className="text-center text-[#c9a227] font-medium">
-                      Focus: validating <span className="text-white">repeat usage</span>, not vanity metrics.
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Social Proof / In Discussions */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-center justify-center">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🤝</span>
-                  Building Trust
-                </h3>
-                <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">
-                  Nuqta is in active discussions with leading GCC fintech players and merchants to build the smartest payment intelligence platform.
-                </p>
-              </AnimatedSection>
-
-              <AnimatedSection delay={200}>
-                <div className="bg-gradient-to-br from-[#1a2a42]/80 to-[#0a1628]/80 rounded-2xl p-8 md:p-12 border border-[#c9a227]/30">
-                  <p className="text-center text-gray-400 mb-8 text-sm uppercase tracking-wider">In discussions with</p>
-
-                  {/* Placeholder logos/names grid */}
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-8">
-                    {[
-                      { name: 'BNPL Providers', icon: '💳', desc: 'Integration discussions' },
-                      { name: 'Local Banks', icon: '🏦', desc: 'Partnership exploration' },
-                      { name: 'Payment Gateways', icon: '🔐', desc: 'Technical integration' },
-                      { name: 'Merchant Networks', icon: '🏪', desc: 'Pilot programs' },
-                      { name: 'Fintech Platforms', icon: '📱', desc: 'Co-marketing potential' },
-                      { name: 'Loyalty Programs', icon: '⭐', desc: 'Points integration' },
-                    ].map((partner, idx) => (
-                      <div
-                        key={idx}
-                        className="bg-[#0a1628]/50 rounded-xl p-4 md:p-6 text-center border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all hover:scale-105"
-                      >
-                        <div className="text-3xl md:text-4xl mb-2">{partner.icon}</div>
-                        <h4 className="text-sm md:text-base font-semibold text-white mb-1">{partner.name}</h4>
-                        <p className="text-xs text-gray-500">{partner.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Trust indicators */}
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
-                      <span className="text-2xl">🤝</span>
-                      <div>
-                        <p className="font-semibold text-white">30+ D2C Brand MOUs</p>
-                        <p className="text-xs text-gray-400">Ready to onboard post-MVP launch</p>
-                      </div>
-                    </div>
-                    <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
-                      <span className="text-2xl">✅</span>
-                      <div>
-                        <p className="font-semibold text-white">UAE-based & Regulated</p>
-                        <p className="text-xs text-gray-400">Building with compliance-first approach</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Market Size */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">📈</span>
-                  Market Size
-                  <span className="text-sm font-normal text-gray-400 ml-2">(Realistic & Investable)</span>
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 gap-6">
-                <AnimatedSection delay={100}>
-                  <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52] h-full">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-2xl">🇦🇪</span>
-                      <h4 className="text-xl font-bold">Initial Market — UAE</h4>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex justify-between items-center py-2 border-b border-[#2a3a52]">
-                        <span className="text-gray-400">Active card/wallet users</span>
-                        <span className="text-xl font-bold"><DataPoint value="~5M" source="Central Bank of UAE, banking penetration data" /></span>
-                      </div>
-                      <div className="flex justify-between items-center py-2 border-b border-[#2a3a52]">
-                        <span className="text-gray-400">GCC potential users</span>
-                        <span className="text-xl font-bold"><DataPoint value="10M+" source="GCC digital payment users, regional fintech reports 2024" /></span>
-                      </div>
-                      <div className="flex justify-between items-center py-2">
-                        <span className="text-gray-400">Addressable Market (GCC)</span>
-                        <span className="text-2xl font-bold text-[#c9a227]"><DataPoint value="$4B" source="GCC dining & retail spending, industry reports 2024" /></span>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={200}>
-                  <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52] h-full">
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-2xl">🌍</span>
-                      <h4 className="text-xl font-bold">Expansion — GCC</h4>
-                    </div>
-                    <ul className="space-y-3 text-gray-300">
-                      <li className="flex items-start gap-2">
-                        <CheckIcon />
-                        <span>Same consumer behavior across KSA, Qatar, Kuwait</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckIcon />
-                        <span>Larger population + higher spend</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckIcon />
-                        <span>Infrastructure-first expansion</span>
-                      </li>
-                    </ul>
-                    <div className="mt-6 bg-[#0a1628] rounded-lg p-4">
-                      <p className="text-gray-400 text-sm">
-                        Nuqta targets <span className="text-white font-semibold">high-frequency, everyday spending</span>, not one-time GMV.
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              </div>
-            </div>
-
-            {/* Revenue Model */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">💸</span>
-                  Revenue Model
-                  <span className="text-sm font-normal text-gray-400 ml-2">(Unit Economics)</span>
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-2 gap-6">
-                <AnimatedSection delay={100}>
-                  <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52] h-full">
-                    <h4 className="text-lg font-semibold text-[#c9a227] mb-4">Primary Revenue Streams</h4>
-                    <div className="space-y-4">
-                      {[
-                        { num: "1", title: "Merchant-funded rewards", desc: "(15% commission per transaction)" },
-                        { num: "2", title: "Promoted listings & campaigns", desc: "" },
-                        { num: "3", title: "BNPL & fintech referral commissions", desc: "" },
-                        { num: "4", title: "Premium merchant tools", desc: "(later stage)" },
-                      ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <span className="w-8 h-8 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-[#c9a227] font-bold flex-shrink-0">
-                            {item.num}
-                          </span>
-                          <div>
-                            <span className="text-white font-medium">{item.title}</span>
-                            {item.desc && <span className="text-gray-400 text-sm ml-1">{item.desc}</span>}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </AnimatedSection>
-                <AnimatedSection delay={200}>
-                  <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-2xl p-8 border border-[#c9a227]/30 h-full">
-                    <h4 className="text-lg font-semibold text-[#c9a227] mb-4">Why This Works</h4>
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { icon: "📦", text: "No inventory" },
-                        { icon: "🚚", text: "No logistics" },
-                        { icon: "💸", text: "No heavy discount burn" },
-                        { icon: "🤝", text: "Aligned incentives" },
-                      ].map((item, idx) => (
-                        <div key={idx} className="bg-[#0a1628]/50 rounded-lg p-4 text-center">
-                          <span className="text-2xl mb-2 block">{item.icon}</span>
-                          <span className="text-gray-300 text-sm">{item.text}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-gray-400 text-sm mt-4 text-center">
-                      Aligned incentives across users, merchants, and partners
-                    </p>
-                  </div>
-                </AnimatedSection>
-              </div>
-            </div>
-
-            {/* Roadmap */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🗺️</span>
-                  Roadmap & Milestones
-                </h3>
-              </AnimatedSection>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  {
-                    phase: "0–6 Months",
-                    title: "Launch",
-                    items: ["MVP launch (Dubai) - Q2 2026", "50–100 pilot merchants", "Core Smart Pay Advisor live", "First repeat usage metrics"],
-                    color: "border-blue-500",
-                    bg: "bg-blue-500/10"
-                  },
-                  {
-                    phase: "6–12 Months",
-                    title: "Scale",
-                    items: ["500+ merchants", "Category expansion (grocery, essentials)", "Deeper BNPL integrations", "Loyalty tiers live"],
-                    color: "border-[#c9a227]",
-                    bg: "bg-[#c9a227]/10"
-                  },
-                  {
-                    phase: "12–24 Months",
-                    title: "Expand",
-                    items: ["Expansion beyond Dubai", "Bank partnerships", "Advanced payment intelligence", "Seed / Series A readiness"],
-                    color: "border-green-500",
-                    bg: "bg-green-500/10"
-                  },
-                ].map((phase, idx) => (
-                  <AnimatedSection key={idx} delay={idx * 150}>
-                    <div className={`rounded-2xl p-6 border-t-4 ${phase.color} ${phase.bg} h-full`}>
-                      <p className="text-gray-400 text-sm mb-1">{phase.phase}</p>
-                      <h4 className="text-xl font-bold mb-4">{phase.title}</h4>
-                      <ul className="space-y-2">
-                        {phase.items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
-                            <CheckIcon />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </AnimatedSection>
-                ))}
-              </div>
-            </div>
-
-            {/* Advisors */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🤝</span>
-                  Advisors & Partners
-                  <span className="text-sm font-normal text-gray-400 ml-2">(In Progress)</span>
-                </h3>
-              </AnimatedSection>
-              <AnimatedSection delay={100}>
-                <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52]">
-                  <div className="grid md:grid-cols-3 gap-6 mb-6">
-                    {[
-                      { icon: "💳", title: "Payments & Fintech", desc: "advisors" },
-                      { icon: "🏪", title: "GCC Merchant Ecosystem", desc: "advisors" },
-                      { icon: "⚖️", title: "Compliance & Governance", desc: "advisors" },
-                    ].map((item, idx) => (
-                      <div key={idx} className="text-center p-4 bg-[#0a1628]/50 rounded-xl">
-                        <span className="text-3xl mb-2 block">{item.icon}</span>
-                        <p className="font-semibold">{item.title}</p>
-                        <p className="text-gray-400 text-sm">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-center text-gray-400 italic">
-                    Advisory board is being built <span className="text-white">deliberately</span>, aligned with execution phases.
-                  </p>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Governance & Investor Protection */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🛡️</span>
-                  Governance & Investor Protection
-                </h3>
-              </AnimatedSection>
-              <AnimatedSection delay={100}>
-                <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52]">
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
-                    {[
-                      { icon: "🏢", text: "Company incorporated in a stable jurisdiction" },
-                      { icon: "💡", text: "All IP, code, and trademarks owned by the company" },
-                      { icon: "📜", text: "Founder equity subject to vesting" },
-                      { icon: "🏦", text: "Funds held in company accounts" },
-                      { icon: "📊", text: "Regular reporting and transparency" },
-                      { icon: "✅", text: "Board governance from Day 1" },
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3 p-4 bg-[#0a1628]/50 rounded-lg">
-                        <span className="text-2xl">{item.icon}</span>
-                        <span className="text-gray-300">{item.text}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
-                    <p className="text-center text-[#c9a227] font-medium">
-                      Trust is created through <span className="text-white">structure</span>, not promises.
-                    </p>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Exit Strategy */}
-            <div className="mb-20">
-              <AnimatedSection>
-                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                  <span className="w-10 h-10 bg-[#c9a227]/20 rounded-lg flex items-center justify-center text-xl">🚪</span>
-                  Exit Strategy
-                </h3>
-              </AnimatedSection>
-              <AnimatedSection delay={100}>
-                <div className="bg-[#1a2a42]/50 rounded-2xl p-8 border border-[#2a3a52]">
-                  <p className="text-gray-400 mb-6 text-center">
-                    Nuqta is built as <span className="text-white font-semibold">infrastructure</span>, which creates strategic optionality.
-                  </p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-[#c9a227] mb-4">Likely Acquirers</h4>
-                      <div className="space-y-3">
-                        {[
-                          { icon: "🏦", title: "Banks & Financial Institutions", desc: "Looking to modernize rewards infrastructure" },
-                          { icon: "💳", title: "BNPL & Fintech Players", desc: "Seeking loyalty and merchant network expansion" },
-                          { icon: "📱", title: "Super Apps & Marketplaces", desc: "Wanting to own the payment intelligence layer" },
-                        ].map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-3 p-3 bg-[#0a1628]/50 rounded-lg">
-                            <span className="text-xl">{item.icon}</span>
-                            <div>
-                              <p className="font-medium text-white">{item.title}</p>
-                              <p className="text-gray-400 text-sm">{item.desc}</p>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold text-[#c9a227] mb-4">Long-Term Vision</h4>
-                      <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl p-6 border border-[#c9a227]/30 h-full flex flex-col justify-center">
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-3">
-                            <span className="w-8 h-8 bg-[#c9a227]/20 rounded-full flex items-center justify-center text-[#c9a227]">→</span>
-                            <span className="text-gray-300">Regional expansion across GCC</span>
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <span className="w-8 h-8 bg-[#c9a227]/20 rounded-full flex items-center justify-center text-[#c9a227]">→</span>
-                            <span className="text-gray-300">IPO optionality as infrastructure matures</span>
-                          </div>
-                        </div>
-                        <div className="mt-6 pt-4 border-t border-[#c9a227]/20">
-                          <p className="text-[#c9a227] font-semibold text-center">
-                            Exits happen when infrastructure becomes critical.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            </div>
-
-            {/* Investor CTA */}
-            <AnimatedSection>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 rounded-2xl p-10 border border-[#c9a227]/30 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">Interested in Nuqta?</h3>
-                <p className="text-gray-400 mb-8 max-w-xl mx-auto">
-                  We&apos;re building the payments and rewards infrastructure layer for the GCC.
-                  Let&apos;s discuss how you can be part of this journey.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-                  <button onClick={() => setIsDeckOpen(true)} className="btn-primary group relative overflow-hidden">
-                    <span className="relative z-10">View Full Pitch Deck</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </button>
-                  <a href="/memo" className="btn-secondary hover:border-[#c9a227] transition-colors">
-                    One-Page Memo
-                  </a>
-                  <a href="/data-room" className="btn-secondary hover:border-[#c9a227] transition-colors">
-                    Data Room
-                  </a>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* Investor FAQ Section - Brutal Due Diligence */}
-        <section id="faq" className="section-padding bg-[#0d1c30]">
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection>
-              <div className="text-center mb-12">
-                <span className="inline-block px-4 py-1 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-sm font-medium mb-4">
-                  INVESTOR DUE DILIGENCE
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Brutal Honesty FAQ</h2>
-                <p className="text-gray-400 max-w-2xl mx-auto">
-                  50 tough questions investors ask — with honest, credible answers. No hype, no marketing speak.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            {/* Category: Business Strategy */}
-            <div className="mb-12">
-              <h3 className="text-xl font-bold text-red-400 mb-6 flex items-center gap-2">
-                <span className="text-2xl">🔥</span> Why You Might Fail — Business Strategy
-              </h3>
-              <div className="space-y-1">
-                {[
-                  { q: "Why isn't Nuqta just a feature Tabby builds?", a: "Tabby optimizes installments at checkout. Nuqta optimizes how, where, and why users spend across merchants and payment methods. That's a different layer. Tabby would have to become merchant-agnostic, rewards-neutral, and competitor-friendly — which conflicts with their core business. We sit above them, not inside them." },
-                  { q: "Why wouldn't banks just do this themselves?", a: "Banks optimize their own cards, not the user's total outcome. Nuqta is intentionally neutral. A bank app recommending another bank's card destroys their economics. We win because neutrality is a business constraint banks cannot accept." },
-                  { q: "Why won't users ignore \"another rewards app\"?", a: "Nuqta is not a rewards app first — it's a decision engine. The hook is \"How should I pay?\", not \"Here's a coupon.\" Rewards are reinforcement, not the entry point." },
-                  { q: "How do you survive the chicken-and-egg problem?", a: "We start hyper-local + high frequency: One city, two categories, 50–100 merchants. Users don't need 1,000 merchants to see value; they need their daily places. We optimize depth before breadth." },
-                  { q: "If Apple Pay adds \"Best Card,\" are you dead?", a: "Apple Pay can optimize within Apple's ecosystem. We optimize across banks, BNPLs, loyalty logic, and offline merchants. Also, Apple doesn't build merchant loyalty networks — that's not their business." },
-                  { q: "If you earn referral fees, how are you neutral?", a: "Our recommendation engine is rule-based first, not revenue-weighted. Commercial incentives are separated from recommendation logic. Long-term trust > short-term referral revenue." },
-                  { q: "What can't Etisalat Smiles replicate?", a: "They have distribution, not behavioral intelligence across payments + offline loyalty. We're building merchant-level visit data + payment optimization, not just points." },
-                  { q: "Why would a bank buy you if you're agnostic?", a: "Because we increase total card usage and LTV, even if usage is shared. Banks acquire infrastructure to own the layer, not because it favors them initially." },
-                  { q: "Can this scale in KSA with on-ground sales?", a: "Yes — but only after UAE proof. We intentionally validate unit economics and onboarding playbooks in Dubai before KSA. Asset-light ≠ zero sales; it means efficient sales." },
-                  { q: "Why won't Careem crush you?", a: "Careem optimizes rides + food. We optimize everyday spend + payment decisions. They could partner faster than build, which makes us acquisition-relevant, not obsolete." },
-                ].map((faq, idx) => (
-                  <FAQItem key={`strategy-${idx}`} question={faq.q} answer={faq.a} index={idx} />
-                ))}
-              </div>
-            </div>
-
-            {/* Category: Tech & Product */}
-            <div className="mb-12">
-              <h3 className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-2">
-                <span className="text-2xl">🧠</span> Tech & Product
-              </h3>
-              <div className="space-y-1">
-                {[
-                  { q: "How does Smart Pay Advisor get card data?", a: "Phase 1: curated rules + publicly available offer data. Phase 2: partner feeds + issuer APIs. Phase 3: behavioral optimization. We don't pretend real-time perfection on day one." },
-                  { q: "Is this manual or automated?", a: "Hybrid. Rules engine first → automation later. This reduces early technical risk while validating real usage." },
-                  { q: "How do you verify transactions without Open Banking?", a: "We don't verify amounts initially — we verify events (visit + payment confirmation). That's sufficient for loyalty validation without regulatory exposure." },
-                  { q: "QR friction in cafés?", a: "QR is fallback, not default. Primary flow is auto-detection + minimal confirmation. QR exists where POS integration isn't available." },
-                  { q: "How do you prove a visit happened?", a: "Combination of: Location, time window, merchant confirmation logic, and fraud rules. We optimize accuracy over false positives." },
-                  { q: "Is \"AI\" real or buzzword?", a: "Today: rules + heuristics. Next: supervised learning on payment outcomes. We don't market AI — we earn it." },
-                  { q: "Fraud prevention?", a: "Visit limits, time thresholds, merchant validation rules, and anomaly detection. Fraud is manageable because rewards are merchant-funded, not cash." },
-                  { q: "Who owns point liability?", a: "Merchants fund redemptions. Nuqta points are utility credits, not stored monetary value." },
-                  { q: "Point inflation?", a: "Points are earn-rate controlled, not supply-free. Value is stabilized by redemption rules, not speculation." },
-                  { q: "Security architecture?", a: "Minimal data storage, no card numbers, tokenized identifiers, cloud-native security stack. We deliberately avoid holding money." },
-                ].map((faq, idx) => (
-                  <FAQItem key={`tech-${idx}`} question={faq.q} answer={faq.a} index={idx} />
-                ))}
-              </div>
-            </div>
-
-            {/* Category: Merchant Pain */}
-            <div className="mb-12">
-              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
-                <span className="text-2xl">🏪</span> Merchant Pain
-              </h3>
-              <div className="space-y-1">
-                {[
-                  { q: "Another device on the counter?", a: "No. Web dashboard + QR fallback. No hardware dependency." },
-                  { q: "Why would merchants pay more fees?", a: "They're not paying for payments — they're paying for repeat behavior. Discounts cost money without learning. Nuqta costs money with insight." },
-                  { q: "Merchant churn?", a: "Churn is real. That's why we price performance-based and focus on SMEs with repeat customers, not one-off vendors." },
-                  { q: "Attribution proof?", a: "We track: First-time Nuqta user visits, repeat lift vs baseline, and campaign-linked visits. Perfect attribution isn't required — directional ROI is." },
-                  { q: "POS integrations?", a: "Deferred intentionally. We scale via POS-light methods first, integrate later once leverage exists." },
-                  { q: "Why would merchants allow universal points?", a: "Because universal points increase visit frequency, not price competition. Private loyalty limits customer freedom; Nuqta increases it." },
-                  { q: "Sales grind?", a: "Yes — initially. That's why targets are realistic (50–100 merchants first)." },
-                  { q: "Are you cannibalizing margin?", a: "We optimize incremental behavior, not blanket discounts." },
-                  { q: "Race to the bottom?", a: "Controlled earn rates + visibility logic prevent bidding wars." },
-                  { q: "Zero commission vs high margins?", a: "Zero payment commission. Margins come from loyalty services, not transactions." },
-                ].map((faq, idx) => (
-                  <FAQItem key={`merchant-${idx}`} question={faq.q} answer={faq.a} index={idx} />
-                ))}
-              </div>
-            </div>
-
-            {/* Category: Unit Economics & Finance */}
-            <div className="mb-12">
-              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
-                <span className="text-2xl">💰</span> Unit Economics & Finance
-              </h3>
-              <div className="space-y-1">
-                {[
-                  { q: "What if users transact less?", a: "Then revenue per user drops — which is why we focus on daily spend categories, not assumptions." },
-                  { q: "Low CAC assumption?", a: "Because we leverage: Merchant-led acquisition, on-premise discovery, and partnerships. Not paid ads alone." },
-                  { q: "Why $5M cap?", a: "Cap reflects: Pre-revenue stage, realistic pre-seed valuation for GCC fintech, room for 20% discount on next round." },
-                  { q: "What if $500k isn't enough?", a: "Then we pivot scope, not burn. The goal is proof, not scale." },
-                  { q: "Monthly burn?", a: "Kept intentionally lean (<$40k/month early)." },
-                  { q: "Is 10k users enough?", a: "Yes — if repeat usage exists. Quality > quantity." },
-                  { q: "Regulatory costs?", a: "We avoid stored value regulation by design. Legal budget is included." },
-                  { q: "CCD downside protection?", a: "Discount + valuation floor + pro-rata rights." },
-                  { q: "Ads annoying users?", a: "Ads are optional, contextual, and merchant-funded. Not banner spam." },
-                  { q: "VAT impact?", a: "VAT is applied on merchant invoices, not user rewards." },
-                ].map((faq, idx) => (
-                  <FAQItem key={`finance-${idx}`} question={faq.q} answer={faq.a} index={idx} />
-                ))}
-              </div>
-            </div>
-
-            {/* Category: Team & Execution */}
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2">
-                <span className="text-2xl">👤</span> Team & Execution
-              </h3>
-              <div className="space-y-1">
-                {[
-                  { q: "Solo founder risk?", a: "Acknowledged. That's why governance, vesting, and advisors are prioritized early." },
-                  { q: "Who wrote the code?", a: "Core logic in-house. Non-critical components can be outsourced initially." },
-                  { q: "Who manages finances?", a: "External accountant + structured reporting from day one." },
-                  { q: "Hiring with $50k?", a: "Initial team is lean. Senior hires come post-validation." },
-                  { q: "Bad leaver clause?", a: "Yes — aligned with investor protection." },
-                  { q: "Local merchant access?", a: "Initial pilots leverage personal and warm network introductions." },
-                  { q: "Plan B if Smart Pay fails?", a: "Nuqta becomes merchant loyalty infrastructure first. Intelligence deepens later." },
-                  { q: "Advisors missing?", a: "Being finalized — intentionally not announced prematurely." },
-                  { q: "Founder salary?", a: "Minimal, survival-level only. Founder risk is aligned with investor risk." },
-                  { q: "Why you?", a: "Because this requires systems thinking, not hype, patience over blitzscale, and credibility over noise. Nuqta is built deliberately — that's the edge." },
-                ].map((faq, idx) => (
-                  <FAQItem key={`team-${idx}`} question={faq.q} answer={faq.a} index={idx} />
-                ))}
-              </div>
-            </div>
-
-            {/* Bottom CTA */}
-            <AnimatedSection>
-              <div className="text-center mt-12 p-8 bg-[#1a2a42]/50 rounded-2xl border border-[#2a3a52]">
-                <p className="text-gray-400 mb-4">Have more questions?</p>
-                <a
-                  href="mailto:rejaul@nuqtaapp.com?subject=Investor%20Question"
-                  className="inline-flex items-center gap-2 text-[#c9a227] hover:text-[#f4d35e] font-medium transition-colors"
-                >
-                  Contact the Founder Directly →
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* Final CTA Section */}
-        <section id="early-access" className="section-padding bg-[#0d1c30] relative overflow-hidden">
-          <FloatingParticles />
-          <div className="max-w-4xl mx-auto text-center relative z-10">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                Every payment starts with a <span className="gradient-text animate-shimmer">point</span>.
-              </h2>
-            </AnimatedSection>
-            <AnimatedSection delay={200}>
-              <p className="text-xl text-gray-400 mb-10">
-                Join the future of rewards and payments in the GCC.
-              </p>
-            </AnimatedSection>
-            <AnimatedSection delay={400}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-                <a href="#" className="btn-primary text-lg group relative overflow-hidden">
-                  <span className="relative z-10">Get Early Access</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </a>
-                <button onClick={() => setIsDeckOpen(true)} className="btn-secondary text-lg hover:border-[#c9a227] transition-colors">
-                  View Pitch Deck
-                </button>
-                <a href="/memo" className="btn-secondary text-lg hover:border-[#c9a227] transition-colors">
-                  Investor Memo
-                </a>
-              </div>
-            </AnimatedSection>
-          </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="border-t border-[#2a3a52] py-12 px-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex items-center gap-2 group cursor-pointer">
-                <div className="w-10 h-10 relative transition-transform duration-300 group-hover:scale-110">
-                  <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain" />
-                </div>
-                <span className="text-xl font-bold group-hover:text-[#c9a227] transition-colors">Nuqta</span>
-              </div>
-              <div className="flex gap-5 text-gray-400 text-sm flex-wrap justify-center">
-                <a href="/memo" className="hover:text-[#c9a227] transition-colors relative group">
-                  Memo
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
-                </a>
-                <a href="/data-room" className="hover:text-[#c9a227] transition-colors relative group">
-                  Data Room
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
-                </a>
-                <a href="/terms" className="hover:text-[#c9a227] transition-colors relative group">
-                  Terms
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
-                </a>
-                <a href="/commitment" className="hover:text-[#c9a227] transition-colors relative group">
-                  Commitment
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
-                </a>
-                <a href="mailto:rejaul@nuqtaapp.com" className="hover:text-[#c9a227] transition-colors relative group">
-                  Contact
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
-                </a>
-              </div>
-              <p className="text-gray-500 text-sm">
-                &copy; 2024 Nuqta. Built for the GCC.
-              </p>
+                Access Data Room
+              </Link>
+              <Link
+                href="/memo"
+                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl transition-all transform hover:scale-105"
+              >
+                Read Full Memo
+              </Link>
             </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </section>
 
-      {/* Custom Animations */}
-      <style jsx global>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          25% { transform: translateY(-20px) translateX(10px); }
-          50% { transform: translateY(-10px) translateX(-10px); }
-          75% { transform: translateY(-30px) translateX(5px); }
-        }
-        .animate-float {
-          animation: float 20s ease-in-out infinite;
-        }
-        @keyframes shimmer {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        .animate-shimmer {
-          background-size: 200% auto;
-          animation: shimmer 3s linear infinite;
-        }
-      `}</style>
-    </PasswordProtection>
+      {/* Footer with Version Navigation */}
+      <footer className="bg-slate-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Version Navigation */}
+          <div className="mb-8">
+            <h3 className="text-lg font-bold text-slate-300 mb-4 text-center">All Versions</h3>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/landing-v1"
+                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
+              >
+                Landing Page v1 (Previous)
+              </Link>
+              <Link
+                href="/deck"
+                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
+              >
+                Pitch Deck v1
+              </Link>
+              <Link
+                href="/deck-new"
+                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
+              >
+                Pitch Deck v2
+              </Link>
+              <Link
+                href="/deck-final"
+                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
+              >
+                Pitch Deck v3
+              </Link>
+              <Link
+                href="/deck-kang"
+                className="px-4 py-2 bg-[#c9a227] hover:bg-[#d4ae3a] text-white rounded-lg transition-colors text-sm font-bold"
+              >
+                Pitch Deck v4 (Current)
+              </Link>
+            </div>
+          </div>
+
+          {/* Footer Info */}
+          <div className="text-center text-slate-500 text-sm">
+            <p className="mb-2">© 2026 Nuqta. All rights reserved.</p>
+            <p>Rewards-Led Commerce Intelligence Platform</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
