@@ -138,7 +138,7 @@ export default function TermsPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
-                  <span><strong>60+ Merchant Network</strong> — 30+ signed LOIs, 30 in pipeline attacking $34B UAE market</span>
+                  <span><strong>60+ Merchant Network</strong> — 30+ signed LOIs, 30 in pipeline attacking $45B GCC market</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
@@ -179,7 +179,7 @@ export default function TermsPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
-                  <span><strong>Market Opportunity:</strong> Attacking $34B UAE market (F&B, Salons, Fitness). GCC TAM: $78B</span>
+                  <span><strong>Market Opportunity:</strong> Attacking $45B GCC market (F&B, Beauty, Fashion, Fitness). GCC TAM: $150B</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>

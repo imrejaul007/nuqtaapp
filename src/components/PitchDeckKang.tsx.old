@@ -1,0 +1,1536 @@
+'use client';
+
+import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, PieChart, Pie, LineChart, Line, AreaChart, Area, ResponsiveContainer } from 'recharts';
+import { SectionHeader, MetricCard, FeatureCard, FlowStep, ComparisonPanel, ChartContainer, IconCard, AnimatedNumber } from './pitch-deck';
+import { typography, colors, spacing, decorative } from '@/constants/design-tokens';
+import { chartColors, chartTheme, formatCurrency, formatPercentage, formatPieLabel } from '@/constants/chart-config';
+import { useCounterAnimation } from '@/hooks/useCounterAnimation';
+import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link, Coins, User, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus } from 'lucide-react';
+
+interface PitchDeckProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+// ==================== TOOLTIP COMPONENT ====================
+function DataPoint({
+  value,
+  source,
+  className = ''
+}: {
+  value: string;
+  source: string;
+  className?: string;
+}) {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  return (
+    <span
+      className={`relative cursor-help inline-flex items-start gap-1 ${className}`}
+      onMouseEnter={() => setShowTooltip(true)}
+      onMouseLeave={() => setShowTooltip(false)}
+      onTouchStart={() => setShowTooltip(true)}
+      onTouchEnd={() => setTimeout(() => setShowTooltip(false), 3000)}
+    >
+      <span>{value}</span>
+      <span className="text-[0.25em] text-[#c9a227]/70 hover:text-[#c9a227] transition-colors mt-1">ⓘ</span>
+      {showTooltip && (
+        <span className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-white border border-slate-200 rounded-lg text-xs sm:text-sm text-slate-700 whitespace-normal max-w-[200px] sm:max-w-[280px] text-center shadow-lg font-normal">
+          <span className="text-[#c9a227] font-medium">Source:</span> {source}
+          <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-200" />
+        </span>
+      )}
+    </span>
+  );
+}
+
+// ==================== MAIN COMPONENT ====================
+export default function PitchDeckKang({ isOpen, onClose }: PitchDeckProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalSlides = 24; // Consolidated journey slides: Before Purchase + After Purchase
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (!isOpen) return;
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+      e.preventDefault();
+      setCurrentSlide(prev => Math.min(prev + 1, totalSlides - 1));
+    } else if (e.key === 'ArrowLeft') {
+      setCurrentSlide(prev => Math.max(prev - 1, 0));
+    } else if (e.key === 'Escape') {
+      onClose();
+    }
+  }, [isOpen, onClose]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      setCurrentSlide(0);
+    }
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  // ==================== RENDER SLIDES ====================
+  const renderSlide = () => {
+    switch (currentSlide) {
+
+      // ==================== SLIDE 0: COVER (NEW LAYOUT - SPLIT HERO) ====================
+      case 0:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-white via-slate-50 to-white">
+            <div className="max-w-7xl mx-auto min-h-screen grid lg:grid-cols-2 gap-12 items-center px-8 py-16">
+
+              {/* LEFT: Hero Content */}
+              <div className="space-y-8">
+                {/* Logo + Badge */}
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden border-2 border-[#c9a227]/20">
+                    <Image src="/nuqta-logo.png" alt="Nuqta" width={64} height={64} className="object-contain p-2" priority />
+                  </div>
+                  <div className="px-4 py-1.5 bg-[#c9a227]/10 rounded-full border border-[#c9a227]/20">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#c9a227]">Pre-Launch</p>
+                  </div>
+                </div>
+
+                {/* Headline */}
+                <div>
+                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
+                    UAE's Hyper-Local
+                    <span className="block text-[#c9a227] mt-2">Savings Platform</span>
+                  </h1>
+                  <p className="text-2xl text-slate-600 font-light leading-relaxed max-w-lg">
+                    Shop Local. Save Smart. Earn More.
+                  </p>
+                </div>
+
+                {/* Description */}
+                <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
+                  The only platform connecting UAE shoppers with local merchants through intelligent payment routing and dual rewards
+                </p>
+
+                {/* Market Expansion Tag */}
+                <div className="inline-flex items-center gap-3 px-5 py-3 bg-slate-900 rounded-xl text-white">
+                  <Globe size={20} className="text-[#c9a227]" />
+                  <div className="text-left">
+                    <p className="text-sm font-semibold">Starting UAE → Full GCC Expansion</p>
+                    <p className="text-xs text-slate-400">
+                      AED <AnimatedNumber value={650} suffix="B" /> market in 3-4 years
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT: Metrics Dashboard */}
+              <div className="space-y-6">
+                {/* Big Featured Metric */}
+                <div className="card-featured p-10 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-600 mb-4">Platform Readiness</p>
+                  <p className="text-7xl font-black text-[#c9a227] mb-4">
+                    95<span className="text-5xl">%</span>
+                  </p>
+                  <p className="text-slate-600">Product ready for launch</p>
+                </div>
+
+                {/* 3-Column Metrics */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="card-clean p-6 text-center hover-lift">
+                    <p className="text-3xl font-black text-slate-900 mb-1">30</p>
+                    <p className="text-xs text-slate-600">Merchants<br/>Signed</p>
+                  </div>
+                  <div className="card-clean p-6 text-center hover-lift">
+                    <p className="text-3xl font-black text-slate-900 mb-1">200+</p>
+                    <p className="text-xs text-slate-600">Waitlist<br/>Users</p>
+                  </div>
+                  <div className="card-clean p-6 text-center hover-lift">
+                    <p className="text-3xl font-black text-[#c9a227] mb-1">
+                      <AnimatedNumber value={650} suffix="B" />
+                    </p>
+                    <p className="text-xs text-slate-600">Market<br/>Size</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 1: SHOPPER PROBLEM (NEW LAYOUT - DASHBOARD SPLIT) ====================
+      case 1:
+        return (
+          <div className="w-full min-h-screen bg-white">
+            <div className="max-w-7xl mx-auto min-h-screen px-8 py-16 flex flex-col justify-center">
+
+              {/* Header */}
+              <div className="mb-12">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#c9a227] mb-3">Problem #1</p>
+                <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+                  Shoppers Lose <span className="text-[#c9a227]">AED 2.4B/Year</span>
+                </h2>
+              </div>
+
+              {/* Main Content - Split Layout */}
+              <div className="grid lg:grid-cols-5 gap-8 items-start">
+
+                {/* LEFT: Hero Metric (2 columns) */}
+                <div className="lg:col-span-2">
+                  <div className="card-featured p-12 sticky top-8">
+                    <p className="text-sm font-semibold text-slate-600 mb-6">Per Shopper Loss</p>
+                    <p className="text-8xl font-black text-[#c9a227] mb-8 leading-none">
+                      <AnimatedNumber value={684} prefix="AED " duration={2000} />
+                    </p>
+                    <div className="space-y-3 text-slate-600">
+                      <p className="text-lg font-medium">Lost annually per shopper</p>
+                      <div className="pt-6 border-t border-slate-200">
+                        <p className="text-sm">
+                          <AnimatedNumber value={3.5} suffix="M" decimals={1} /> payment users × AED 684 =
+                          <span className="block text-2xl font-bold text-slate-900 mt-2">
+                            AED <AnimatedNumber value={2.4} suffix="B" decimals={1} /> market leakage
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* RIGHT: 3 Pain Points (3 columns) */}
+                <div className="lg:col-span-3 space-y-6">
+
+                  {/* Pain Point 1 */}
+                  <div className="card-clean p-8 hover-lift flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-xl bg-red-50 flex items-center justify-center">
+                        <Search size={32} className="text-red-600" strokeWidth={2.5} />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Can't Find Deals</h3>
+                      <p className="text-5xl font-black text-[#c9a227] mb-3">
+                        <AnimatedNumber value={73} suffix="%" duration={1500} />
+                      </p>
+                      <p className="text-slate-600 leading-relaxed">
+                        Would shop local if deals were easier to find
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Pain Point 2 */}
+                  <div className="card-clean p-8 hover-lift flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-xl bg-orange-50 flex items-center justify-center">
+                        <CreditCard size={32} className="text-orange-600" strokeWidth={2.5} />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Wrong Payment Method</h3>
+                      <p className="text-5xl font-black text-[#c9a227] mb-3">
+                        <AnimatedNumber value={68} suffix="%" duration={1500} />
+                      </p>
+                      <p className="text-slate-600 leading-relaxed">
+                        Use same payment method everywhere — missing 4-6% cashback
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Pain Point 3 */}
+                  <div className="card-clean p-8 hover-lift flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 rounded-xl bg-purple-50 flex items-center justify-center">
+                        <Ban size={32} className="text-purple-600" strokeWidth={2.5} />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Unclaimed Rewards</h3>
+                      <p className="text-5xl font-black text-[#c9a227] mb-3">
+                        <AnimatedNumber value={60} suffix="%" duration={1500} />
+                      </p>
+                      <p className="text-slate-600 leading-relaxed">
+                        Of rewards never claimed (Accenture 2024)
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 2: MERCHANT PROBLEM (NEW LAYOUT - METRICS GRID) ====================
+      case 2:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white">
+            <div className="max-w-7xl mx-auto min-h-screen px-8 py-16 flex flex-col justify-center">
+
+              {/* Header */}
+              <div className="mb-12">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#c9a227] mb-3">Problem #2</p>
+                <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
+                  Merchants Burn <span className="text-[#c9a227]">AED 12B/Year</span>
+                </h2>
+                <p className="text-xl text-slate-600 max-w-3xl">
+                  High CAC, low retention, and razor-thin margins are killing local merchants
+                </p>
+              </div>
+
+              {/* Top: 4 Key Metrics - Horizontal Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
+                <div className="card-clean p-6 text-center hover-lift">
+                  <p className="text-sm text-slate-600 mb-2">Customer Acquisition</p>
+                  <p className="text-5xl font-black text-red-600 mb-1">
+                    <AnimatedNumber value={200} prefix="AED " duration={1800} />
+                  </p>
+                  <p className="text-xs text-slate-500">CAC (Digital Ads)</p>
+                </div>
+                <div className="card-clean p-6 text-center hover-lift">
+                  <p className="text-sm text-slate-600 mb-2">Repeat Purchase</p>
+                  <p className="text-5xl font-black text-orange-600 mb-1">
+                  <AnimatedNumber value={15} suffix="%" duration={1800} />
+                </p>
+                <p className="text-xs text-slate-600">Repeat Rate</p>
+              </div>
+              <div className="card-minimal p-5 text-center">
+                <p className="text-4xl font-black text-[#c9a227] mb-2">
+                  <AnimatedNumber value={1.2} suffix="x" decimals={1} duration={1800} />
+                </p>
+                <p className="text-xs text-slate-600">LTV:CAC (vs 3x+ goal)</p>
+              </div>
+              <div className="card-minimal p-5 text-center">
+                <p className="text-4xl font-black text-[#c9a227] mb-2">
+                  <AnimatedNumber value={7.5} suffix="%" decimals={1} duration={1800} />
+                </p>
+                <p className="text-xs text-slate-600">Margin (vs 25% target)</p>
+              </div>
+            </div>
+
+            {/* Three problems (Clean cards) */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
+              <div className="card-clean p-6 text-center hover-lift">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Megaphone} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 tracking-tight">Invisible Locally</h3>
+                <p className="text-4xl font-black text-[#c9a227] mb-2">
+                  <AnimatedNumber value={35} prefix="AED " suffix="K" duration={1500} />
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Wasted monthly on ads — Unknown to neighbors
+                </p>
+              </div>
+
+              <div className="card-clean p-6 text-center hover-lift">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={DollarSign} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 tracking-tight">CAC Too High</h3>
+                <p className="text-4xl font-black text-[#c9a227] mb-2">
+                  <AnimatedNumber value={200} prefix="AED " duration={1500} />
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Per customer — Need 3 purchases to break even
+                </p>
+              </div>
+
+              <div className="card-clean p-6 text-center hover-lift">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Users} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3 tracking-tight">No Retention</h3>
+                <p className="text-4xl font-black text-[#c9a227] mb-2">
+                  <AnimatedNumber value={85} suffix="%" duration={1500} />
+                </p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  One-time buyers — Never return
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 3: MERCHANT P&L DEEP DIVE ====================
+      case 3:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Merchant P&L"
+              title={<>Marketing <span className="text-[#c9a227]">Kills</span> Margins</>}
+              subtitle=""
+            />
+
+            {/* P&L Waterfall - VISUAL */}
+            <div className="max-w-4xl w-full mb-12">
+              <div className="grid grid-cols-5 gap-2 items-end text-center">
+                {/* Revenue */}
+                <div>
+                  <div className="bg-[#c9a227]/20 rounded-t-xl border-2 border-[#c9a227]/30 flex items-center justify-center" style={{height: '200px'}}>
+                    <p className="text-4xl font-black text-[#c9a227]">200K</p>
+                  </div>
+                  <p className="text-xs text-slate-600 mt-2">Revenue</p>
+                </div>
+
+                {/* COGS */}
+                <div>
+                  <div className="bg-gray-500/20 rounded-t-xl border-2 border-gray-500/40 flex items-center justify-center" style={{height: '120px'}}>
+                    <p className="text-3xl font-black text-slate-700">-120K</p>
+                  </div>
+                  <p className="text-xs text-slate-600 mt-2">COGS<br/>(60%)</p>
+                </div>
+
+                {/* Ops */}
+                <div>
+                  <div className="bg-gray-500/20 rounded-t-xl border-2 border-gray-500/40 flex items-center justify-center" style={{height: '60px'}}>
+                    <p className="text-2xl font-black text-slate-700">-30K</p>
+                  </div>
+                  <p className="text-xs text-slate-600 mt-2">Ops<br/>(15%)</p>
+                </div>
+
+                {/* Marketing - HIGHLIGHTED */}
+                <div>
+                  <div className="bg-[#c9a227]/20 rounded-t-xl border-2 border-[#c9a227]/40 flex items-center justify-center" style={{height: '70px'}}>
+                    <div>
+                      <p className="text-3xl font-black text-[#c9a227]">-35K</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-[#c9a227] mt-2 font-bold">Ads<br/>(18%)</p>
+                </div>
+
+                {/* Net */}
+                <div>
+                  <div className="bg-[#c9a227]/15 rounded-t-xl border-2 border-[#c9a227]/30 flex items-center justify-center" style={{height: '30px'}}>
+                    <p className="text-2xl font-black text-[#c9a227]">15K</p>
+                  </div>
+                  <p className="text-xs text-[#c9a227] mt-2 font-bold">Net<br/>(7.5%)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom insight - MINIMAL */}
+            <div className="text-center max-w-2xl">
+              <p className="text-xl text-slate-700">
+                Should be <span className="text-[#c9a227] font-bold">25% margin</span>, but ads eat profit
+              </p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 4: MARKET OPPORTUNITY ====================
+      case 4:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Market"
+              title={<><span className="text-[#c9a227]">AED 50B</span> UAE Opportunity</>}
+              subtitle=""
+            />
+
+            {/* TAM/SAM/SOM with Recharts Pie */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl w-full mb-8">
+              {/* Pie Chart */}
+              <ChartContainer title="">
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: 'TAM', value: 180, color: '#c9a227' },
+                        { name: 'SAM', value: 50, color: '#d4ae3a' },
+                        { name: 'SOM', value: 0.5, color: '#e6c878' }
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      outerRadius={100}
+                      dataKey="value"
+                      label={(entry) => `${entry.name}`}
+                    >
+                      {[
+                        { color: '#c9a227' },
+                        { color: '#d4ae3a' },
+                        { color: '#e6c878' }
+                      ].map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip {...chartTheme.tooltip} formatter={(value) => `AED ${value}B`} />
+                  </PieChart>
+                </ResponsiveContainer>
+              </ChartContainer>
+
+              {/* Market breakdown - SIMPLE NUMBERS */}
+              <div className="space-y-8">
+                <div className="text-center">
+                  <p className="text-6xl font-black text-[#c9a227] mb-2">AED 180B</p>
+                  <p className="text-sm text-slate-600">TAM</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-6xl font-black text-[#c9a227] mb-2">AED 50B</p>
+                  <p className="text-sm text-slate-600">SAM (Our Target)</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-6xl font-black text-[#c9a227] mb-2">AED 500M</p>
+                  <p className="text-sm text-slate-600">Year 1 GMV</p>
+                </div>
+              </div>
+            </div>
+
+            {/* GCC Vision - MINIMAL */}
+            <div className="text-center max-w-3xl">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <IconCard icon={Globe} size="sm" color="gold" />
+                <p className="text-xl text-slate-700">
+                  <span className="text-[#c9a227] font-bold">Year 3-4:</span> Expand to GCC
+                </p>
+              </div>
+              <p className="text-5xl font-black text-[#c9a227]">AED 650B</p>
+              <p className="text-sm text-slate-600 mt-2">13x larger market</p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 5: WHY NOW ====================
+      case 5:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Why Now"
+              title={<>3 Macro Trends <span className="text-[#c9a227]">Converging</span></>}
+              subtitle=""
+            />
+
+            {/* 3 trends - VISUAL ONLY */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl w-full">
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={TrendingUp} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-3">Digital Payments</h3>
+                <p className="text-6xl font-black text-slate-900 mb-2">+12%</p>
+                <p className="text-sm text-slate-600">YoY growth</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Store} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-3">D2C Brands</h3>
+                <p className="text-6xl font-black text-slate-900 mb-2">500+</p>
+                <p className="text-sm text-slate-600">New in UAE (2024-25)</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Handshake} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-3">Platform Shift</h3>
+                <p className="text-6xl font-black text-slate-900 mb-2">$10B</p>
+                <p className="text-sm text-slate-600">Careem + Noon exits</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 6: SOLUTION OVERVIEW ====================
+      case 6:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Solution"
+              title={<>Discovery → Purchase → <span className="text-[#c9a227]">Loyalty</span></>}
+              subtitle=""
+            />
+
+            {/* 5-step flow - MINIMAL */}
+            <div className="flex items-center justify-center gap-4 max-w-6xl w-full flex-wrap">
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <IconCard icon={Search} size="lg" color="gold" />
+                </div>
+                <p className="text-lg font-bold text-[#c9a227]">Discover</p>
+              </div>
+
+              <ArrowRight className="text-slate-500" size={32} />
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <IconCard icon={Lock} size="lg" color="gold" />
+                </div>
+                <p className="text-lg font-bold text-[#c9a227]">Book</p>
+              </div>
+
+              <ArrowRight className="text-slate-500" size={32} />
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <IconCard icon={CreditCard} size="lg" color="gold" />
+                </div>
+                <p className="text-lg font-bold text-[#c9a227]">Pay Smart</p>
+              </div>
+
+              <ArrowRight className="text-slate-500" size={32} />
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <IconCard icon={DollarSign} size="lg" color="gold" />
+                </div>
+                <p className="text-lg font-bold text-[#c9a227]">Earn Double</p>
+              </div>
+
+              <ArrowRight className="text-slate-500" size={32} />
+
+              <div className="text-center">
+                <div className="flex justify-center mb-2">
+                  <IconCard icon={Gift} size="lg" color="gold" />
+                </div>
+                <p className="text-lg font-bold text-[#c9a227]">Unlock Perks</p>
+              </div>
+            </div>
+
+            {/* Key differentiator */}
+            <div className="text-center max-w-3xl mt-12">
+              <p className="text-2xl text-slate-700 mb-6">
+                Intelligent <span className="text-[#c9a227] font-bold">payment routing</span> = Max rewards every time
+              </p>
+
+              {/* Social share bonus */}
+              <div className="bg-[#1a2a42]/50 border border-[#c9a227]/30 rounded-2xl p-6 mt-6">
+                <p className="text-3xl font-bold text-[#c9a227] mb-2">+5% Extra</p>
+                <p className="text-lg text-slate-700">Share deals → +5% bonus</p>
+              </div>
+            </div>
+          </div>
+        );
+
+
+      // ==================== SLIDE 7: BEFORE PURCHASE ====================
+      case 7:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="How It Works"
+              title={<><span className="text-[#c9a227]">Before</span> Purchase</>}
+              subtitle=""
+            />
+
+            {/* 2 steps - CLEAN */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-5xl w-full">
+              {/* Discover */}
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Search} size="xl" color="gold" />
+                </div>
+                <h3 className="text-3xl font-bold text-[#c9a227] mb-4">Discover</h3>
+                <p className="text-6xl font-black text-slate-900 mb-3">30+</p>
+                <p className="text-sm text-slate-600">Local brands<br/>Exclusive offers</p>
+              </div>
+
+              {/* Book */}
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Lock} size="xl" color="gold" />
+                </div>
+                <h3 className="text-3xl font-bold text-[#c9a227] mb-4">Book</h3>
+                <p className="text-6xl font-black text-slate-900 mb-3">Lock</p>
+                <p className="text-sm text-slate-600">Reserve product/service<br/>Flexible payment</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 8: AFTER PURCHASE ====================
+      case 8:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="How It Works"
+              title={<><span className="text-[#c9a227]">After</span> Purchase</>}
+              subtitle=""
+            />
+
+            {/* 3 steps - CLEAN */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl w-full mb-12">
+              {/* Pay Smart */}
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={CreditCard} size="xl" color="gold" />
+                </div>
+                <h3 className="text-3xl font-bold text-[#c9a227] mb-4">Pay Smart</h3>
+                <p className="text-5xl font-black text-slate-900 mb-3">AI</p>
+                <p className="text-sm text-slate-600">Best payment method<br/>Max rewards</p>
+              </div>
+
+              {/* Earn */}
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={DollarSign} size="xl" color="gold" />
+                </div>
+                <h3 className="text-3xl font-bold text-[#c9a227] mb-4">Earn Double</h3>
+                <p className="text-5xl font-black text-slate-900 mb-3">10%</p>
+                <p className="text-sm text-slate-600">Cashback<br/>+ Brand coins</p>
+              </div>
+
+              {/* Unlock */}
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Gift} size="xl" color="gold" />
+                </div>
+                <h3 className="text-3xl font-bold text-[#c9a227] mb-4">Unlock Perks</h3>
+                <p className="text-5xl font-black text-slate-900 mb-3">VIP</p>
+                <p className="text-sm text-slate-600">Exclusive access<br/>Special deals</p>
+              </div>
+            </div>
+
+            {/* Result - BIG NUMBER */}
+            <div className="text-center">
+              <p className="text-8xl font-black text-[#c9a227] mb-2">3.5x</p>
+              <p className="text-xl text-slate-700">More repeat visits</p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 9: PLATFORM DEFINITION - WHAT WE'RE NOT ====================
+      case 9:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Platform Definition"
+              title={<><span className="text-[#c9a227]">❌ What We're NOT</span></>}
+              subtitle=""
+            />
+
+            {/* What we're NOT - ICON GRID ONLY */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl w-full">
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Ban} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Cashback App</h3>
+                <p className="text-sm text-slate-600">Manual receipts</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Link} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Aggregator</h3>
+                <p className="text-sm text-slate-600">External links</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Coins} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Single Revenue</h3>
+                <p className="text-sm text-slate-600">One income stream</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={User} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Consumer-Only</h3>
+                <p className="text-sm text-slate-600">One-sided</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 11: PLATFORM DEFINITION - WHAT WE ARE ====================
+      case 10:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Platform Definition"
+              title={<><span className="text-[#c9a227]">✓ What We ARE</span></>}
+              subtitle=""
+            />
+
+            {/* What we ARE - ICON GRID ONLY */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl w-full mb-12">
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={ShoppingBag} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Full Journey</h3>
+                <p className="text-sm text-slate-600">Discovery → Purchase</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Target} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Pre-Purchase</h3>
+                <p className="text-sm text-slate-600">Before you buy</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={DollarSign} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">5 Revenue</h3>
+                <p className="text-sm text-slate-600">Diversified model</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Handshake} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Two-Sided</h3>
+                <p className="text-sm text-slate-600">Marketplace</p>
+              </div>
+            </div>
+
+            {/* Key differentiator - MINIMAL */}
+            <div className="text-center max-w-3xl">
+              <p className="text-2xl text-slate-700">
+                <span className="text-[#c9a227] font-bold">Intelligent payment routing</span> at checkout
+              </p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 12: TRANSACTION ECONOMICS (Money Flow) ====================
+      case 11:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Money Flow"
+              title={<>One Transaction. <span className="text-[#c9a227]">Five Revenue Streams</span></>}
+              subtitle=""
+            />
+
+            {/* Simple flow - VISUAL ONLY */}
+            <div className="max-w-3xl w-full">
+              {/* User pays */}
+              <div className="text-center mb-8">
+                <p className="text-6xl font-black text-slate-900 mb-2">AED 100</p>
+                <p className="text-sm text-slate-600">Sara pays</p>
+              </div>
+
+              {/* Arrow */}
+              <div className="text-center text-5xl text-[#c9a227] mb-8">↓</div>
+
+              {/* Split */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="text-center">
+                  <p className="text-5xl font-black text-[#c9a227] mb-2">82.5%</p>
+                  <p className="text-sm text-slate-600">To merchant</p>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-5xl font-black text-[#c9a227] mb-2">17.5%</p>
+                  <p className="text-sm text-slate-600">To Nuqta (5 streams)</p>
+                </div>
+              </div>
+
+              {/* Arrow */}
+              <div className="text-center text-5xl text-[#c9a227] mb-8">↓</div>
+
+              {/* Sara gets back */}
+              <div className="text-center">
+                <p className="text-6xl font-black text-[#c9a227] mb-2">7.5%</p>
+                <p className="text-sm text-slate-600">Cashback + coins</p>
+              </div>
+            </div>
+
+            {/* Bottom insight */}
+            <div className="text-center max-w-2xl mt-12">
+              <p className="text-base font-bold text-slate-900">
+                Everyone wins: 23.5% take rate
+              </p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 13: BUSINESS MODEL ====================
+      case 12: {
+        const revenueData = [
+          { name: 'Merchant Commission', percentage: 60, value: 87.50, color: '#c9a227' },
+          { name: 'Payment Routing', percentage: 15, value: 11.25, color: '#d4ae3a' },
+          { name: 'Promoted Listings', percentage: 15, value: 11.25, color: '#ddb94d' },
+          { name: 'Branded Coins', percentage: 5, value: 3.75, color: '#e6c878' },
+          { name: 'Transaction Fees', percentage: 5, value: 3.75, color: '#f0d89b' },
+        ];
+
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Business Model"
+              title={<><span className="text-[#c9a227]">5 Revenue Streams</span></>}
+              subtitle=""
+            />
+
+            {/* Recharts Bar Chart - KEEP */}
+            <div className="max-w-5xl w-full mb-12">
+              <ChartContainer height={320}>
+                <BarChart data={revenueData} layout="vertical" margin={{ top: 20, right: 30, left: 180, bottom: 20 }}>
+                  <CartesianGrid {...chartTheme.grid} />
+                  <XAxis type="number" domain={[0, 100]} {...chartTheme.axis.tick} />
+                  <YAxis type="category" dataKey="name" width={170} {...chartTheme.axis.tick} />
+                  <Tooltip {...chartTheme.tooltip} formatter={(value) => `${value}%`} />
+                  <Bar dataKey="percentage" radius={[0, 8, 8, 0]} animationDuration={800}>
+                    {revenueData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ChartContainer>
+            </div>
+
+            {/* Total revenue - MINIMAL */}
+            <div className="text-center">
+              <p className="text-7xl font-black text-[#c9a227] mb-2">23.5%</p>
+              <p className="text-xl text-slate-700">Take rate on GMV</p>
+            </div>
+          </div>
+        );
+      }
+
+      // ==================== SLIDE 14: UNIT ECONOMICS PART 1 ====================
+      case 13:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Unit Economics"
+              title={<>Profitable from <span className="text-[#c9a227]">Month 1</span></>}
+              subtitle=""
+            />
+
+            {/* 4 key metrics - BIG NUMBERS ONLY */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl w-full">
+              <div className="text-center animate-fadeIn">
+                <p className="text-6xl font-black text-[#c9a227] mb-2">AED 29</p>
+                <p className="text-sm text-slate-600">CAC</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <p className="text-6xl font-black text-[#c9a227] mb-2">AED 1,620</p>
+                <p className="text-sm text-slate-600">LTV (24 months)</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <p className="text-6xl font-black text-[#c9a227] mb-2">56.8:1</p>
+                <p className="text-sm text-slate-600">LTV:CAC Ratio</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <p className="text-6xl font-black text-[#c9a227] mb-2">18 days</p>
+                <p className="text-sm text-slate-600">Payback period</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 15: UNIT ECONOMICS PART 2 ====================
+      case 14:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Unit Economics"
+              title={<><span className="text-[#c9a227]">19x Better</span> Than Industry</>}
+              subtitle=""
+            />
+
+            {/* Hero number - GIANT */}
+            <div className="text-center mb-12">
+              <p className="text-8xl sm:text-9xl font-black text-[#c9a227] mb-4">56.8:1</p>
+              <p className="text-2xl text-slate-700 mb-2">LTV:CAC Ratio</p>
+              <p className="text-sm text-slate-600">(Industry benchmark: 3:1)</p>
+            </div>
+
+            {/* Supporting metrics - MINIMAL */}
+            <div className="grid grid-cols-2 gap-8 max-w-2xl w-full">
+              <div className="text-center">
+                <p className="text-4xl font-black text-[#c9a227] mb-2">18 Days</p>
+                <p className="text-sm text-slate-600">Payback period</p>
+              </div>
+
+              <div className="text-center">
+                <p className="text-4xl font-black text-[#c9a227] mb-2">57%</p>
+                <p className="text-sm text-slate-600">Gross margin</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 16: GO-TO-MARKET PART 1 ====================
+      case 15:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Go-to-Market"
+              title={<><span className="text-[#c9a227]">10 Acquisition Channels</span></>}
+              subtitle=""
+            />
+
+            {/* Icon grid - VISUAL ONLY */}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl w-full mb-12">
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Users} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-[#c9a227] mb-1">Ambassadors</h3>
+                <p className="text-3xl font-black text-slate-900">AED 5</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Package} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-[#c9a227] mb-1">Co-branding</h3>
+                <p className="text-3xl font-black text-slate-900">AED 0</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={GraduationCap} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-[#c9a227] mb-1">College Fests</h3>
+                <p className="text-3xl font-black text-slate-900">AED 80</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Video} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-[#c9a227] mb-1">Content</h3>
+                <p className="text-3xl font-black text-slate-900">AED 12</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Briefcase} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-[#c9a227] mb-1">Employee</h3>
+                <p className="text-3xl font-black text-slate-900">AED 5</p>
+              </div>
+            </div>
+
+            {/* Blended CAC - BIG NUMBER */}
+            <div className="text-center">
+              <p className="text-7xl font-black text-[#c9a227] mb-2">AED 29</p>
+              <p className="text-xl text-slate-700">Blended CAC</p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 17: GO-TO-MARKET PART 2 ====================
+      case 16:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Go-to-Market"
+              title={<><span className="text-[#c9a227]">5 More Channels</span></>}
+              subtitle=""
+            />
+
+            {/* Icon grid - VISUAL ONLY */}
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 max-w-5xl w-full mb-12">
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={ShoppingCart} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Fleamarkets</h3>
+                <p className="text-3xl font-black text-slate-900">AED 20</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={PartyPopper} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Events</h3>
+                <p className="text-3xl font-black text-slate-900">AED 100</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Trophy} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Sports</h3>
+                <p className="text-3xl font-black text-slate-900">AED 35</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Globe} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Social</h3>
+                <p className="text-3xl font-black text-slate-900">AED 15</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Megaphone} size="lg" color="gold" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 mb-1">Paid Ads</h3>
+                <p className="text-3xl font-black text-slate-900">AED 50</p>
+              </div>
+            </div>
+
+            {/* Result - BIG NUMBER */}
+            <div className="text-center">
+              <p className="text-7xl font-black text-[#c9a227] mb-2">38,000</p>
+              <p className="text-xl text-slate-700">Users/month (all channels)</p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 18: TRACTION (HERO SLIDE) ====================
+      case 17:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Traction"
+              title={<><span className="text-[#c9a227]">Execution-Stage</span> Not Idea-Stage</>}
+              subtitle=""
+            />
+
+            {/* 4 big numbers - VISUAL ONLY */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-6xl w-full">
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Package} size="xl" color="gold" />
+                </div>
+                <p className="text-6xl font-black text-[#c9a227] mb-2">95%</p>
+                <p className="text-sm text-slate-600">Product complete</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Handshake} size="xl" color="gold" />
+                </div>
+                <p className="text-6xl font-black text-[#c9a227] mb-2">30</p>
+                <p className="text-sm text-slate-600">Signed merchants</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Users} size="xl" color="gold" />
+                </div>
+                <p className="text-6xl font-black text-[#c9a227] mb-2">6</p>
+                <p className="text-sm text-slate-600">Team assembled</p>
+              </div>
+
+              <div className="text-center animate-fadeIn">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={TrendingUp} size="xl" color="gold" />
+                </div>
+                <p className="text-6xl font-black text-[#c9a227] mb-2">200+</p>
+                <p className="text-sm text-slate-600">Waitlist users</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 19: GCC EXPANSION & EXIT STRATEGY ====================
+      case 18:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="GCC Expansion"
+              title={<>UAE → Saudi → <span className="text-[#c9a227]">Full GCC</span></>}
+              subtitle=""
+            />
+
+            {/* Expansion timeline - MINIMAL */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-6xl w-full mb-12">
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={MapPin} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-bold text-[#c9a227] mb-2">Year 1</h3>
+                <p className="text-4xl font-black text-slate-900">AED 50B</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Building2} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-bold text-[#c9a227] mb-2">Year 2</h3>
+                <p className="text-4xl font-black text-slate-900">AED 450B</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Globe} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-bold text-[#c9a227] mb-2">Year 3-4</h3>
+                <p className="text-4xl font-black text-slate-900">AED 150B</p>
+              </div>
+
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <IconCard icon={Target} size="lg" color="gold" />
+                </div>
+                <h3 className="text-xl font-bold text-[#c9a227] mb-2">Total</h3>
+                <p className="text-4xl font-black text-slate-900">AED 650B</p>
+              </div>
+            </div>
+
+            {/* Exit comparables - SIMPLE */}
+            <div className="text-center mb-12">
+              <p className="text-sm text-slate-600 mb-3">Exits: Careem $3.1B • Talabat $7.8B • Noon $1B+</p>
+            </div>
+
+            {/* Hero number - YOUR RETURN */}
+            <div className="text-center">
+              <p className="text-8xl sm:text-9xl font-black text-[#c9a227] mb-4">52x</p>
+              <p className="text-2xl text-slate-700 mb-2">Your return</p>
+              <p className="text-sm text-slate-600">AED 1.85M → AED 96M (Year 3)</p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 20: FOUNDER ====================
+      case 19:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Founder"
+              title={<><span className="text-[#c9a227]">Builder + Grower + Activator</span></>}
+              subtitle=""
+            />
+
+            {/* 3-pillar structure - VISUAL FIRST */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full mb-12">
+              {/* Pillar 1: Can BUILD */}
+              <div className="card-clean p-8 text-center">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Package} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-4">BUILD</h3>
+                <p className="text-5xl font-black text-slate-900">95%</p>
+                <p className="text-sm text-slate-600 mt-2">Product complete</p>
+              </div>
+
+              {/* Pillar 2: Can GROW */}
+              <div className="card-clean p-8 text-center">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={TrendingUp} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-4">GROW</h3>
+                <p className="text-5xl font-black text-slate-900">AED 2M+</p>
+                <p className="text-sm text-slate-600 mt-2">Ads spent</p>
+              </div>
+
+              {/* Pillar 3: Can ACTIVATE */}
+              <div className="card-featured p-8 text-center">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Handshake} size="xl" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-4">ACTIVATE</h3>
+                <p className="text-5xl font-black text-slate-900">30</p>
+                <p className="text-sm text-slate-600 mt-2">Contracts signed</p>
+              </div>
+            </div>
+
+            {/* Team - BIG NUMBER */}
+            <div className="text-center mb-8">
+              <p className="text-7xl font-black text-[#c9a227]">6</p>
+              <p className="text-xl text-slate-700">Person team assembled</p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 21: TEAM ====================
+      case 20:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Team"
+              title={<><span className="text-[#c9a227]">6-Person Team</span> Assembled</>}
+              subtitle=""
+            />
+
+            {/* Team grid - SIMPLIFIED */}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl w-full mb-12">
+              {/* CHRO */}
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Briefcase} size="lg" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">CHRO</h3>
+                <p className="text-sm text-slate-600">3 yrs • Ex-Founder</p>
+              </div>
+
+              {/* CMO */}
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={BarChart3} size="lg" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">CMO</h3>
+                <p className="text-sm text-slate-600">5 yrs • Ex-Founder</p>
+              </div>
+
+              {/* Senior Developer */}
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Package} size="lg" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Sr Dev</h3>
+                <p className="text-sm text-slate-600">3 yrs • Full-Stack</p>
+              </div>
+
+              {/* Junior Developer */}
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Zap} size="lg" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Jr Dev</h3>
+                <p className="text-sm text-slate-600">1 yr • Frontend</p>
+              </div>
+
+              {/* Graphic Designer */}
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={Palette} size="lg" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">Designer</h3>
+                <p className="text-sm text-slate-600">3 yrs • UI/UX</p>
+              </div>
+
+              {/* BDA */}
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <IconCard icon={UserPlus} size="lg" color="gold" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#c9a227] mb-2">BDA</h3>
+                <p className="text-sm text-slate-600">2 yrs • Sales</p>
+              </div>
+            </div>
+
+            {/* Bottom callout */}
+            <div className="text-center">
+              <p className="text-xl text-slate-700">
+                Team Risk = <span className="text-[#c9a227] text-2xl font-bold">Zero</span>
+              </p>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 22: THE ASK ====================
+      case 21:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="The Ask"
+              title={<>Raising <span className="text-[#c9a227]">AED 1.85M</span></>}
+              subtitle=""
+            />
+
+            {/* Hero number */}
+            <div className="text-center mb-12">
+              <p className="text-8xl sm:text-9xl font-black text-[#c9a227] mb-4">$500K</p>
+              <p className="text-xl text-slate-600">Pre-money: AED 18.5M ($5M USD)</p>
+            </div>
+
+            {/* Use of funds - 3 bars - MINIMAL */}
+            <div className="max-w-3xl w-full mb-12">
+              {/* Bar 1: Go-to-Market */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-lg text-slate-700">Go-to-Market</span>
+                  <span className="text-3xl font-bold text-[#c9a227]">60%</span>
+                </div>
+                <div className="w-full bg-[#1a2a42] rounded-full h-6">
+                  <div className="bg-[#c9a227] h-6 rounded-full flex items-center justify-end px-4" style={{width: '60%'}}>
+                    <span className="text-sm font-bold text-black">AED 1.11M</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bar 2: Team Expansion */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-lg text-slate-700">Team</span>
+                  <span className="text-3xl font-bold text-[#c9a227]">25%</span>
+                </div>
+                <div className="w-full bg-[#1a2a42] rounded-full h-6">
+                  <div className="bg-[#c9a227] h-6 rounded-full flex items-center justify-end px-4" style={{width: '25%'}}>
+                    <span className="text-sm font-bold text-black">AED 462K</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bar 3: Product & Ops */}
+              <div className="mb-6">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-lg text-slate-700">Product & Ops</span>
+                  <span className="text-3xl font-bold text-[#c9a227]">15%</span>
+                </div>
+                <div className="w-full bg-[#1a2a42] rounded-full h-6">
+                  <div className="bg-[#c9a227] h-6 rounded-full flex items-center justify-end px-4" style={{width: '15%'}}>
+                    <span className="text-sm font-bold text-black">AED 277K</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Timeline - SIMPLIFIED */}
+            <div className="grid grid-cols-3 gap-6 max-w-3xl w-full">
+              <div className="text-center">
+                <p className="text-xs text-slate-600 mb-2">Close</p>
+                <p className="text-2xl font-bold text-[#c9a227]">Q1 2026</p>
+              </div>
+              <div className="text-center">
+                <p className="text-xs text-slate-600 mb-2">Launch</p>
+                <p className="text-2xl font-bold text-[#c9a227]">30 Days</p>
+              </div>
+              <div className="text-center">
+                <p className="text-xs text-slate-600 mb-2">Series A</p>
+                <p className="text-2xl font-bold text-[#c9a227]">Q4 2026</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 23: USE OF FUNDS ====================
+      case 22:
+        return (
+          <div className="w-full min-h-screen flex flex-col items-center justify-center px-6 sm:px-8 md:px-10 py-12 bg-white">
+            <SectionHeader
+              eyebrow="Use of Funds"
+              title={<><span className="text-[#c9a227]">60% Growth</span> • 25% Team • 15% Ops</>}
+              subtitle=""
+            />
+
+            {/* 3 big numbers - VISUAL FIRST */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl w-full mb-12">
+              {/* Go-to-Market */}
+              <div className="card-clean p-8 text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Megaphone} size="xl" color="gold" />
+                </div>
+                <p className="text-5xl font-black text-[#c9a227] mb-4">60%</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Go-to-Market</h3>
+                <p className="text-3xl font-bold text-[#c9a227] mb-2">AED 1.11M</p>
+                <p className="text-sm text-slate-600">50K users • AED 18-22 CAC</p>
+              </div>
+
+              {/* Team */}
+              <div className="card-clean p-8 text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Users} size="xl" color="gold" />
+                </div>
+                <p className="text-5xl font-black text-[#c9a227] mb-4">25%</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Team</h3>
+                <p className="text-3xl font-bold text-[#c9a227] mb-2">AED 462K</p>
+                <p className="text-sm text-slate-600">4 key hires</p>
+              </div>
+
+              {/* Product & Ops */}
+              <div className="card-featured p-8 text-center animate-fadeIn">
+                <div className="flex justify-center mb-6">
+                  <IconCard icon={Package} size="xl" color="gold" />
+                </div>
+                <p className="text-5xl font-black text-[#c9a227] mb-4">15%</p>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Product & Ops</h3>
+                <p className="text-3xl font-bold text-[#c9a227] mb-2">AED 277K</p>
+                <p className="text-sm text-slate-600">Final 5% + infra</p>
+              </div>
+            </div>
+
+            {/* Timeline - MINIMAL */}
+            <div className="grid grid-cols-3 gap-8 max-w-4xl w-full">
+              <div className="text-center">
+                <p className="text-xs text-slate-600 mb-2">Close</p>
+                <p className="text-2xl font-bold text-[#c9a227]">Q1 2026</p>
+              </div>
+              <div className="text-center">
+                <p className="text-xs text-slate-600 mb-2">Launch</p>
+                <p className="text-2xl font-bold text-[#c9a227]">30 Days</p>
+              </div>
+              <div className="text-center">
+                <p className="text-xs text-slate-600 mb-2">Series A</p>
+                <p className="text-2xl font-bold text-[#c9a227]">Q4 2026</p>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 24: CLOSING ====================
+      case 23:
+        return (
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 bg-white">
+            {/* Logo */}
+            <div className="relative mb-6">
+              <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full overflow-hidden relative">
+                <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain p-4 sm:p-5" />
+              </div>
+              <div className="absolute -inset-8 sm:-inset-10 bg-[#c9a227]/20 rounded-full blur-3xl -z-10" />
+            </div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
+              Thank You
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-slate-700 mb-8 font-light">
+              Let's build the future of smart shopping in UAE
+            </p>
+
+            <div className="bg-[#1a2a42]/50 rounded-xl px-6 py-4 border border-[#c9a227]/30">
+              <p className="text-base sm:text-lg text-[#c9a227] font-bold">Ready to raise • Ready to launch • Ready to scale</p>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-[#0a1628] z-50 overflow-hidden">
+      {/* Slide content */}
+      <div className="w-full h-full overflow-y-auto">
+        {renderSlide()}
+      </div>
+
+      {/* Bottom navigation */}
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-[#0a1628] via-[#0a1628] to-transparent py-4 px-6">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          {/* Progress */}
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-slate-600">
+              {currentSlide + 1} / {totalSlides}
+            </span>
+            <div className="w-32 sm:w-48 bg-[#1a2a42] rounded-full h-2">
+              <div
+                className="bg-[#c9a227] h-2 rounded-full transition-all duration-300"
+                style={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setCurrentSlide(prev => Math.max(0, prev - 1))}
+              disabled={currentSlide === 0}
+              className="px-3 py-1.5 bg-[#1a2a42] rounded-lg text-sm text-slate-900 hover:bg-[#2a3a52] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            >
+              ← Prev
+            </button>
+            <button
+              onClick={() => setCurrentSlide(prev => Math.min(totalSlides - 1, prev + 1))}
+              disabled={currentSlide === totalSlides - 1}
+              className="px-3 py-1.5 bg-[#c9a227] rounded-lg text-sm text-black font-bold hover:bg-[#d4ae3a] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            >
+              Next →
+            </button>
+            <button
+              onClick={onClose}
+              className="ml-2 px-3 py-1.5 bg-red-500/20 rounded-lg text-sm text-[#c9a227] hover:bg-red-500/30 transition-colors"
+            >
+              Close (Esc)
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -94,7 +94,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 1: COVER ====================
       case 0:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0a1628] via-[#0d1c30] to-[#0a1628]">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             {/* Logo */}
             <div className="relative mb-4 sm:mb-6 md:mb-8">
               <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden relative">
@@ -110,7 +110,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#c9a227] font-light mb-4 sm:mb-6 md:mb-8">نقطة</p>
 
             {/* Tagline */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 font-light max-w-xs sm:max-w-md md:max-w-xl mb-6 sm:mb-8 md:mb-12">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 font-light max-w-xs sm:max-w-md md:max-w-xl mb-4 sm:mb-6 md:mb-12">
               5-10% Cashback + Smart Payment Tips for the GCC
             </p>
 
@@ -137,14 +137,14 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 2: KEY METRICS DASHBOARD ====================
       case 1:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">At a Glance</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">Key Metrics Dashboard</h2>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">At a Glance</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">Key Metrics Dashboard</h2>
 
             {/* Top Row - Most Important Metrics */}
             <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl w-full mb-4 sm:mb-6">
               <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border-2 border-[#c9a227]/40 text-center hover:scale-105 transition-transform">
-                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227] mb-1 sm:mb-2">$500K</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#c9a227] mb-1 sm:mb-2">$500K</div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-400 font-medium">Raising</div>
                 <div className="text-[10px] sm:text-xs text-gray-600 mt-1">Pre-Seed Round</div>
               </div>
@@ -153,7 +153,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 <DataPoint
                   value="$4B"
                   source="GCC dining & retail spending, industry reports 2024"
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400 mb-1 sm:mb-2"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-blue-400 mb-1 sm:mb-2"
                 />
                 <div className="text-xs sm:text-sm md:text-base text-gray-400 font-medium">TAM</div>
                 <div className="text-[10px] sm:text-xs text-gray-600 mt-1">GCC Addressable</div>
@@ -201,10 +201,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 3: THE PROBLEM (Hook) ====================
       case 2:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">The Problem</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">The Problem</p>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black leading-tight mb-4 sm:mb-6 md:mb-12">
               You <span className="text-[#c9a227]">spend</span>.
               <br />
               You <span className="text-red-500">don&apos;t get paid</span>.
@@ -221,8 +221,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 3: PROBLEM STAT 1 ====================
       case 3:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
-            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">User Pain</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">User Pain</p>
 
             <DataPoint
               value="70%"
@@ -239,8 +239,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 4: PROBLEM STAT 2 ====================
       case 4:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
-            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Fragmentation</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Fragmentation</p>
 
             <DataPoint
               value="5+"
@@ -257,8 +257,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 5: PROBLEM STAT 3 ====================
       case 5:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
-            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Merchant Pain</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-red-400 text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Merchant Pain</p>
 
             <DataPoint
               value="25-30%"
@@ -275,10 +275,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 6: SOLUTION ====================
       case 6:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-3">The Solution</p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-black leading-tight mb-4 sm:mb-6">
               Nuqta <span className="text-[#c9a227]">pays you</span> to shop.
             </h2>
 
@@ -344,14 +344,14 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 7: WHAT IS NUQTA ====================
       case 7:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Platform Definition</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Platform Definition</p>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-bold mb-4 sm:mb-6 md:mb-12">
               What is <span className="text-[#c9a227]">Nuqta</span>?
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl mb-6 sm:mb-8 md:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl mb-4 sm:mb-6 md:mb-12">
               <div className="text-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
                   <span className="text-4xl sm:text-5xl">🧠</span>
@@ -376,7 +376,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             </div>
 
             {/* Simplified How It Works */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-2xl border-2 border-[#c9a227]/40 mb-6 sm:mb-8">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-2xl border-2 border-[#c9a227]/40 mb-4 sm:mb-6">
               <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                 <span className="text-[#c9a227] font-bold">Smart Pay Advisor</span> analyzes your cards, wallets & BNPL options, then tells you the <span className="text-white font-semibold">best way to pay</span> before every purchase.
               </p>
@@ -398,7 +398,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 8: HOW WE MAKE MONEY ====================
       case 8:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-3">Transaction Economics</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">How We Make Money</h2>
 
@@ -465,9 +465,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 9: HOW IT WORKS ====================
       case 9:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">User Journey</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">How It Works</h2>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">User Journey</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">How It Works</h2>
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6 max-w-6xl w-full">
               {[
@@ -509,9 +509,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 9: USER VALUE ====================
       case 10:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">For Users</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">For Users</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">
               Save money on <span className="text-[#c9a227]">every</span> purchase
             </h2>
 
@@ -536,9 +536,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 10: MERCHANT VALUE ====================
       case 11:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">For Merchants</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">For Merchants</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">
               Own your <span className="text-[#c9a227]">customers</span>
             </h2>
 
@@ -567,9 +567,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 11: DIFFERENTIATION ====================
       case 12:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Why Different</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Why Different</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">
               Cashback + Intelligence = <span className="text-[#c9a227]">Better Value</span>
             </h2>
 
@@ -682,8 +682,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 13: MARKET SIZE ====================
       case 14:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Market Opportunity</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Market Opportunity</p>
 
             <DataPoint
               value="$4B"
@@ -717,7 +717,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 15: WHY NOW ====================
       case 15:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-3">Timing & Momentum</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">
               Why <span className="text-[#c9a227]">Now</span>?
@@ -782,13 +782,13 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 16: BUSINESS MODEL ====================
       case 16:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Business Model</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Business Model</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">
               High-margin, <span className="text-[#c9a227]">asset-light</span>
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl w-full mb-6 sm:mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-4xl w-full mb-4 sm:mb-6">
               {[
                 { pct: '60%', title: 'Transaction Cashback', desc: '5% spread per sale', highlight: true },
                 { pct: '20%', title: 'Promoted Listings', desc: 'Merchant advertising' },
@@ -814,10 +814,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 17: UNIT ECONOMICS ====================
       case 17:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-4 sm:py-6">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-3">Unit Economics</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-1 sm:mb-2 text-center">Target Metrics</h2>
-            <p className="text-gray-500 text-[10px] sm:text-xs mb-6 sm:mb-8">(Pre-launch estimates)</p>
+            <p className="text-gray-500 text-[10px] sm:text-xs mb-4 sm:mb-6">(Pre-launch estimates)</p>
 
             {/* Main Metrics Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl w-full mb-6">
@@ -885,14 +885,14 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 18: TRACTION ====================
       case 18:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Current Status</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">Pre-Launch Momentum</h2>
-            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-12 text-center max-w-2xl px-2">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Current Status</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 text-center">Pre-Launch Momentum</h2>
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-12 text-center max-w-2xl px-2">
               Building MVP, validating demand, securing partnerships. No vanity metrics — just honest progress.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-3xl w-full mb-6 sm:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-3xl w-full mb-4 sm:mb-6">
               {[
                 { icon: '🤝', title: 'D2C Brand MOUs', status: '30+ signed', highlight: true, desc: 'Ready to onboard post-MVP launch' },
                 { icon: '📋', title: 'Waitlist Users', status: '200+', highlight: false, desc: 'Organic signups' },
@@ -930,9 +930,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 19: ROADMAP ====================
       case 19:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12 overflow-y-auto">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Execution Plan</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">Roadmap</h2>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Execution Plan</p>
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">Roadmap</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-5xl w-full">
               {[
@@ -965,9 +965,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 20: TEAM ====================
       case 20:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Leadership</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">The Team</h2>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Leadership</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">The Team</h2>
 
             <div className="bg-[#1a2a42]/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-12 border border-[#c9a227]/30 max-w-2xl w-full">
               <div className="flex flex-col md:flex-row items-center gap-8">
@@ -1007,9 +1007,9 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 21: GOVERNANCE ====================
       case 21:
         return (
-          <div className="h-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">Investor Protection</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 md:mb-12 text-center">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">Investor Protection</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-12 text-center">
               Trust via <span className="text-[#c9a227]">structure</span>
             </h2>
 
@@ -1035,8 +1035,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 22: THE ASK ====================
       case 22:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
-            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4 md:mb-6">The Ask</p>
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
+            <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">The Ask</p>
 
             <p className="text-[100px] md:text-[140px] lg:text-[180px] font-black text-[#c9a227] leading-none">
               $500K
@@ -1085,7 +1085,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 23: CLOSING ====================
       case 23:
         return (
-          <div className="h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 bg-gradient-to-b from-[#0a1628] via-[#0d1c30] to-[#0a1628]">
+          <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <div className="relative mb-8">
               <div className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden relative">
                 <Image src="/nuqta-logo.png" alt="Nuqta" fill className="object-contain p-3" />
@@ -1219,9 +1219,13 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
         </div>
       </div>
 
-      {/* Slide Content */}
-      <div className="h-full pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24">
-        {renderSlide()}
+      {/* Slide Content - Fixed container with consistent height constraints */}
+      <div className="h-full pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 overflow-hidden">
+        <div className="w-full h-full max-h-[calc(100vh-14rem)] overflow-y-auto overflow-x-hidden">
+          <div className="min-h-full flex items-center justify-center">
+            {renderSlide()}
+          </div>
+        </div>
       </div>
 
       {/* Minimal Navigation */}

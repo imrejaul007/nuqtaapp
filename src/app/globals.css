@@ -3,13 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #0a1628;
-  --foreground: #ffffff;
-  --primary: #0a1628;
-  --secondary: #1a2a42;
+  /* ========== MINIMALIST LIGHT THEME ========== */
+  /* Backgrounds (Light, clean) */
+  --background: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-tertiary: #f1f5f9;
+
+  /* Foreground (Dark text) */
+  --foreground: #0f172a;
+  --foreground-secondary: #475569;
+  --foreground-tertiary: #94a3b8;
+
+  /* Brand Gold (from logo) */
   --accent: #c9a227;
-  --accent-hover: #dab93a;
-  --text-muted: #94a3b8;
+  --accent-light: #f4d35e;
+  --accent-dark: #a68420;
+
+  /* Borders (Subtle) */
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-dark: #94a3b8;
+
+  /* Shadows (Material Design) */
+  --shadow-xs: rgba(0, 0, 0, 0.05);
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.15);
+  --shadow-lg: rgba(0, 0, 0, 0.2);
+  --shadow-xl: rgba(0, 0, 0, 0.25);
+
+  /* Semantic colors (minimal palette) */
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
 }
 
 * {
@@ -109,6 +135,42 @@ body {
   }
 }
 
+/* ========== MATERIAL DESIGN ELEVATION SYSTEM ========== */
+
+.elevation-0 { box-shadow: none; }
+
+.elevation-1 {
+  box-shadow: 0 1px 3px var(--shadow-xs),
+              0 1px 2px var(--shadow-xs);
+}
+
+.elevation-2 {
+  box-shadow: 0 3px 6px var(--shadow-sm),
+              0 2px 4px var(--shadow-xs);
+}
+
+.elevation-4 {
+  box-shadow: 0 10px 20px var(--shadow-sm),
+              0 3px 6px var(--shadow-xs);
+}
+
+.elevation-8 {
+  box-shadow: 0 15px 25px var(--shadow-md),
+              0 5px 10px var(--shadow-sm);
+}
+
+.elevation-16 {
+  box-shadow: 0 20px 40px var(--shadow-lg),
+              0 10px 15px var(--shadow-md);
+}
+
+.elevation-24 {
+  box-shadow: 0 25px 50px var(--shadow-xl),
+              0 15px 20px var(--shadow-lg);
+}
+
+/* ========== GOLD GRADIENT TEXT ========== */
+
 .gradient-text {
   background: linear-gradient(135deg, #c9a227 0%, #f4d35e 50%, #c9a227 100%);
   -webkit-background-clip: text;
@@ -151,16 +213,54 @@ body {
   }
 }
 
-.card-gradient {
-  background: linear-gradient(180deg, rgba(26, 42, 66, 0.8) 0%, rgba(26, 42, 66, 0.4) 100%);
-  border: 1px solid rgba(201, 162, 39, 0.2);
+/* ========== MINIMALIST CARD STYLES ========== */
+
+/* Clean white card with Material shadow */
+.card-clean {
+  background: var(--background);
+  border-radius: 1rem;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 3px 6px var(--shadow-sm), 0 2px 4px var(--shadow-xs);
+  transition: all 0.3s ease;
 }
 
-.card-gradient:hover {
-  border-color: rgba(201, 162, 39, 0.5);
+.card-clean:hover {
+  box-shadow: 0 10px 20px var(--shadow-sm), 0 3px 6px var(--shadow-xs);
+  transform: translateY(-2px);
 }
 
-@keyframes fadeInUp {
+/* Minimal card with subtle background */
+.card-minimal {
+  background: var(--background-secondary);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.card-minimal:hover {
+  background: var(--background);
+  border-color: var(--border-medium);
+}
+
+/* Featured card with gold accent */
+.card-featured {
+  background: linear-gradient(to bottom right, var(--background), var(--background-secondary));
+  border-radius: 1.5rem;
+  border: 2px solid rgba(201, 162, 39, 0.15);
+  box-shadow: 0 15px 25px var(--shadow-md), 0 5px 10px var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.card-featured:hover {
+  border-color: rgba(201, 162, 39, 0.4);
+  box-shadow: 0 20px 40px var(--shadow-lg), 0 10px 15px var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+/* ========== PROFESSIONAL PITCH DECK ANIMATIONS ========== */
+
+/* Fade In (Basic) */
+@keyframes fadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -171,8 +271,338 @@ body {
   }
 }
 
+/* Fade In Up (Smooth entrance) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Up (Dramatic entrance) */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Scale In (Numbers, icons) */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Counter Animation (Number reveals) */
+@keyframes counter {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Pulse Glow (Logo, highlights) */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.3),
+                0 0 60px rgba(201, 162, 39, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(201, 162, 39, 0.5),
+                0 0 80px rgba(201, 162, 39, 0.2);
+  }
+}
+
+/* Shimmer (Loading, transitions) */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Float (Subtle hover effect) */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate Slow (Icons) */
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Bounce In */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Glow Pulse (Icons, highlights) */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(201, 162, 39, 0.4),
+                inset 0 0 15px rgba(201, 162, 39, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.7),
+                inset 0 0 20px rgba(201, 162, 39, 0.2);
+  }
+}
+
+/* Number Count Up */
+@keyframes numberCountUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Card Flip */
+@keyframes cardFlip {
+  from {
+    transform: perspective(1000px) rotateY(-15deg);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(1000px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Slide Transition (Page enter) */
+@keyframes slideTransition {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ========== ANIMATION UTILITY CLASSES ========== */
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-counter {
+  animation: counter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-bounceIn {
+  animation: bounceIn 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+.animate-numberCountUp {
+  animation: numberCountUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-cardFlip {
+  animation: cardFlip 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-gradientShift {
+  animation: gradientShift 6s ease infinite;
+  background-size: 200% 200%;
+}
+
+.animate-slideTransition {
+  animation: slideTransition 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ========== MINIMALIST HOVER EFFECTS (Apple-style, subtle) ========== */
+
+.hover-lift {
+  transition: transform 0.2s ease-out,
+              box-shadow 0.2s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px var(--shadow-sm), 0 3px 6px var(--shadow-xs);
+}
+
+.hover-lift-strong {
+  transition: transform 0.2s ease-out,
+              box-shadow 0.2s ease-out;
+}
+
+.hover-lift-strong:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px var(--shadow-md), 0 5px 10px var(--shadow-sm);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.2),
+              0 0 40px rgba(201, 162, 39, 0.1);
+  border-color: rgba(201, 162, 39, 0.4);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease-out;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-gold {
+  transition: all 0.3s ease;
+}
+
+.hover-gold:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ========== SMOOTH TRANSITIONS ========== */
+
+.transition-smooth {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-bounce {
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.transition-spring {
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* Responsive buttons */

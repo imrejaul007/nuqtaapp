@@ -200,6 +200,58 @@ export default function FounderCommitment() {
             </div>
         </CommitmentSection>
 
+        {/* Section 6: Execution Velocity */}
+        <CommitmentSection
+          number="6"
+          title="Execution Velocity"
+          summary="Speed is the only moat in Year 1 — aggressive execution milestones with accountability"
+        >
+          <div className="space-y-4 text-gray-300">
+            <p className="leading-relaxed font-medium text-white">
+              Speed is the only moat in Year 1. I commit to aggressive execution milestones:
+            </p>
+            <div className="space-y-3 ml-1">
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <p className="leading-relaxed">
+                  <span className="font-semibold text-white">7-Day Launch:</span> MVP live January 28, 2026 (not &apos;coming soon&apos;)
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <p className="leading-relaxed">
+                  <span className="font-semibold text-white">Week 1 Target:</span> 5 merchants live, 100 users, AED 5-10K GMV
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <p className="leading-relaxed">
+                  <span className="font-semibold text-white">90-Day Validation:</span> 500 users, 10 merchants, AED 30K GMV, D30 ≥20%
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <p className="leading-relaxed">
+                  <span className="font-semibold text-white">Weekly Investor Updates:</span> Every Friday, metrics + learnings + next steps
+                </p>
+              </div>
+            </div>
+            <div className="bg-[#0a1628] rounded-lg p-4 border border-purple-500/30 mt-4">
+              <p className="text-white font-medium">
+                <span className="text-purple-400">Accountability:</span> If we miss 90-day milestones by &gt;30%, I commit to pivoting or returning unspent capital.
+              </p>
+            </div>
+          </div>
+        </CommitmentSection>
+
         {/* Summary Statement */}
         <div className="mt-12 mb-12">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">

@@ -1296,6 +1296,120 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </table>
               </div>
 
+              {/* Why Competitors Can't Copy - Memorable Analogies */}
+              <div className="bg-gradient-to-br from-[#c9a227]/10 via-white to-slate-50 border-4 border-[#c9a227]/30 rounded-3xl p-10 mb-12 shadow-2xl">
+                <div className="text-center mb-8">
+                  <div className="inline-block px-5 py-2 bg-slate-900 rounded-full mb-4">
+                    <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wider">Structural Moat — Explained Simply</p>
+                  </div>
+                  <h3 className="text-4xl font-black text-slate-900 mb-4">Why Can't They Just Copy Us?</h3>
+                  <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+                    They could try. But it would be <span className="text-red-600 font-bold">strategically stupid</span> — like these examples:
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                  {/* Analogy 1: Careem = Uber launching Google Maps */}
+                  <div className="bg-white rounded-2xl p-6 border-2 border-orange-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">🚗</span>
+                      </div>
+                      <div>
+                        <p className="text-xl font-black text-slate-900">Careem</p>
+                        <p className="text-sm text-slate-500 font-medium">Logistics → Discovery?</p>
+                      </div>
+                    </div>
+                    <div className="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500 mb-3">
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
+                        "Careem copying Nuqta is like <span className="font-black">Uber launching a Google Maps competitor</span>. Possible, but strategically stupid."
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      <strong>Why:</strong> Careem makes money from <span className="font-bold text-orange-600">delivery fees</span> (rides + food).
+                      Promoting dine-in restaurants <span className="font-bold text-red-600">kills delivery orders</span>. They'd be competing with their own revenue.
+                    </p>
+                  </div>
+
+                  {/* Analogy 2: Noon = Amazon launching offline discovery */}
+                  <div className="bg-white rounded-2xl p-6 border-2 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">🛒</span>
+                      </div>
+                      <div>
+                        <p className="text-xl font-black text-slate-900">Noon</p>
+                        <p className="text-sm text-slate-500 font-medium">E-commerce → Offline?</p>
+                      </div>
+                    </div>
+                    <div className="bg-blue-50 rounded-xl p-4 border-l-4 border-blue-500 mb-3">
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
+                        "Noon adding offline discovery is like <span className="font-black">Amazon telling you to shop at local stores instead</span>. Brand suicide."
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      <strong>Why:</strong> Noon's entire business is <span className="font-bold text-blue-600">e-commerce GMV</span>.
+                      Every offline transaction they enable is <span className="font-bold text-red-600">lost online revenue</span>. Their warehouses become liabilities.
+                    </p>
+                  </div>
+
+                  {/* Analogy 3: Tabby/Postpay = BNPL offering cashback */}
+                  <div className="bg-white rounded-2xl p-6 border-2 border-purple-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">💰</span>
+                      </div>
+                      <div>
+                        <p className="text-xl font-black text-slate-900">Tabby / Postpay</p>
+                        <p className="text-sm text-slate-500 font-medium">BNPL → Cashback?</p>
+                      </div>
+                    </div>
+                    <div className="bg-purple-50 rounded-xl p-4 border-l-4 border-purple-500 mb-3">
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
+                        "BNPL adding 10% cashback is like <span className="font-black">a bank paying you to not use their loans</span>. Economics don't work."
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      <strong>Why:</strong> They charge merchants <span className="font-bold text-purple-600">4-6%</span> for installment plans.
+                      Offering 10% cashback means <span className="font-bold text-red-600">losing 4-6% per transaction</span>. Negative margins instantly.
+                    </p>
+                  </div>
+
+                  {/* Analogy 4: Banks = Credit cards cannibalizing themselves */}
+                  <div className="bg-white rounded-2xl p-6 border-2 border-emerald-200 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-2xl">💳</span>
+                      </div>
+                      <div>
+                        <p className="text-xl font-black text-slate-900">Credit Cards</p>
+                        <p className="text-sm text-slate-500 font-medium">1-2% → 10%?</p>
+                      </div>
+                    </div>
+                    <div className="bg-emerald-50 rounded-xl p-4 border-l-4 border-emerald-500 mb-3">
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
+                        "Banks offering 10% cashback is like <span className="font-black">Apple making Android phones</span>. Why kill your cash cow?"
+                      </p>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      <strong>Why:</strong> Card networks make <span className="font-bold text-emerald-600">2-3% per swipe</span>.
+                      Offering 10% cashback <span className="font-bold text-red-600">destroys their entire margin structure</span>. They'd lose money on every transaction.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Summary */}
+                <div className="mt-8 bg-slate-900 rounded-2xl p-6 text-center">
+                  <p className="text-2xl font-black text-white mb-3">
+                    The Pattern: <span className="text-[#c9a227]">Product Cannibalization</span>
+                  </p>
+                  <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    Every major player would have to <span className="text-red-400 font-bold">destroy their core revenue</span> to compete with us.
+                    That's not a timing moat — it's a <span className="text-emerald-400 font-bold">structural impossibility</span>.
+                  </p>
+                </div>
+              </div>
+
               {/* Deep Dive: Structural Analysis */}
               <div className="text-center mb-8">
                 <p className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-2">Deep Dive Analysis</p>

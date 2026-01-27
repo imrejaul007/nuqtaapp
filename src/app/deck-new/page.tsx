@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import PitchDeckKangNew from '@/components/PitchDeckKangNew';
+import PitchDeckNew from '@/components/PitchDeckNew';
 
-export default function DeckPage() {
+export default function DeckNewPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export default function DeckPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <PitchDeckKangNew isOpen={isOpen} onClose={handleClose} />
+    <div className="min-h-screen bg-[#0a1628]">
+      <PitchDeckNew isOpen={isOpen} onClose={handleClose} />
     </div>
   );
 }
