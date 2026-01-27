@@ -3497,7 +3497,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-purple-500 to-purple-600"
                   }
                 ].map((horizon, idx) => {
-                  const statusColors = {
+                  const statusColors: Record<string, string> = {
                     "In Progress": "bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 text-emerald-700 border border-emerald-500/30",
                     "Planned": "bg-gradient-to-r from-slate-200/50 to-slate-100/30 text-slate-600 border border-slate-300/50"
                   };
@@ -3576,7 +3576,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-blue-600 to-blue-500"
                   }
                 ].map((phase, idx) => {
-                  const statusColors = {
+                  const statusColors: Record<string, string> = {
                     "In Progress": "bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 text-emerald-700 border border-emerald-500/30",
                     "Planned": "bg-gradient-to-r from-slate-200/50 to-slate-100/30 text-slate-600 border border-slate-300/50"
                   };
@@ -3655,7 +3655,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-[#c9a227] to-[#d4ab2c]"
                   }
                 ].map((phase, idx) => {
-                  const statusColors = {
+                  const statusColors: Record<string, string> = {
                     "In Progress": "bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 text-emerald-700 border border-emerald-500/30",
                     "Planned": "bg-gradient-to-r from-slate-200/50 to-slate-100/30 text-slate-600 border border-slate-300/50"
                   };
