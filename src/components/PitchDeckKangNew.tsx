@@ -2233,7 +2233,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <h4 className="text-lg font-bold text-slate-900">Manual Review Queue</h4>
                     </div>
                     <p className="text-sm text-slate-600 leading-relaxed">
-                      First 6 months: All redemptions >AED 50 manually reviewed before approval. Scales to automated ML post-PMF.
+                      First 6 months: All redemptions &gt;AED 50 manually reviewed before approval. Scales to automated ML post-PMF.
                     </p>
                   </div>
 
