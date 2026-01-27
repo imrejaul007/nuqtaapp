@@ -108,83 +108,118 @@ function FAQItem({ question, answer, index }: { question: string; answer: string
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a1628] via-[#0d1d3a] to-[#0a1628] text-white">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* Logo */}
-          <div className="mb-8">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl font-black mb-4 bg-gradient-to-r from-[#c9a227] via-yellow-400 to-[#c9a227] bg-clip-text text-transparent">
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Animated background orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-[#c9a227]/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        </div>
+
+        <div className="max-w-6xl mx-auto text-center relative z-10">
+          {/* Logo with glow effect */}
+          <div className="mb-8 inline-flex items-center justify-center relative">
+            <div className="absolute inset-0 bg-[#c9a227]/20 blur-2xl rounded-full scale-150" />
+            <h1 className="text-7xl sm:text-8xl md:text-9xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl relative z-10">
               Nuqta
             </h1>
           </div>
 
-          {/* Main Positioning */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-300 mb-6">
-            Rewards-Led Commerce Intelligence
-          </h2>
-
-          {/* Subheading */}
-          <p className="text-xl sm:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto">
-            Save 5-10% on everyday offline spending — cafes, salons, gyms — with instant cashback
-          </p>
-
-          {/* Key Stats Row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-xl p-6">
-              <div className="text-4xl md:text-5xl font-black text-emerald-400 mb-2">30+</div>
-              <div className="text-sm text-slate-300">Signed Merchant LOIs</div>
-            </div>
-            <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-xl p-6">
-              <div className="text-3xl md:text-4xl font-black text-blue-400 mb-2">$34B</div>
-              <div className="text-sm text-slate-300">UAE Market (SAM)</div>
-            </div>
-            <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-xl p-6">
-              <div className="text-4xl md:text-5xl font-black text-purple-400 mb-2">16.8x</div>
-              <div className="text-sm text-slate-300">LTV:CAC Ratio</div>
-            </div>
-            <div className="bg-gradient-to-br from-red-500/20 to-red-500/5 border-2 border-red-500/40 rounded-xl p-6">
-              <div className="text-4xl md:text-5xl font-black text-red-400 mb-2">7 Days</div>
-              <div className="text-sm text-slate-300">To Launch</div>
+          {/* Main Tagline with gradient */}
+          <div className="space-y-6 mb-8">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] blur-xl opacity-30" />
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white relative z-10">
+                Search. Save. Earn.
+              </h2>
             </div>
           </div>
 
-          {/* CTA Buttons */}
+          {/* Value Proposition */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 border-2 border-[#c9a227]/30 rounded-2xl p-8 backdrop-blur-sm">
+              <p className="text-2xl sm:text-3xl text-white leading-relaxed">
+                <span className="text-[#c9a227] font-black">10% offline cashback</span> on every purchase —{' '}
+                <span className="font-semibold">5x better than credit cards</span>
+              </p>
+            </div>
+          </div>
+
+          {/* Key Stats Row - Updated with 18x LTV:CAC */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+            <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#c9a227]/20 transition-all backdrop-blur-sm">
+              <p className="text-5xl font-black text-[#c9a227] mb-2">
+                <AnimatedCounter end={150} prefix="$" suffix="B" duration={2000} />
+              </p>
+              <p className="text-xs font-bold text-white uppercase tracking-wider">GCC TAM</p>
+            </div>
+            <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
+              <p className="text-5xl font-black text-emerald-400 mb-2">18x</p>
+              <p className="text-xs font-bold text-white uppercase tracking-wider">LTV:CAC</p>
+            </div>
+            <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
+              <p className="text-5xl font-black text-blue-400 mb-2">30+</p>
+              <p className="text-xs font-bold text-white uppercase tracking-wider">Signed LOIs</p>
+            </div>
+            <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
+              <p className="text-4xl font-black text-purple-400 mb-2">Q1 2026</p>
+              <p className="text-xs font-bold text-white uppercase tracking-wider">Launch</p>
+            </div>
+          </div>
+
+          {/* CTA Buttons with enhanced styling */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Link
               href="/deck-kang"
-              className="px-8 py-4 bg-[#c9a227] hover:bg-[#d4ae3a] text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2 text-lg"
+              className="px-10 py-5 bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] font-black rounded-2xl shadow-2xl shadow-[#c9a227]/30 border-4 border-white/20 transition-all transform hover:scale-105 flex items-center gap-2 text-xl relative overflow-hidden group"
             >
-              View Pitch Deck
-              <ArrowRight className="w-5 h-5" />
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              <span className="relative z-10">View Pitch Deck</span>
+              <ArrowRight className="w-6 h-6 relative z-10" />
             </Link>
             <Link
               href="/data-room"
-              className="px-8 py-4 bg-slate-700 hover:bg-slate-600 text-white font-bold rounded-xl transition-all transform hover:scale-105 flex items-center gap-2 text-lg"
+              className="px-10 py-5 bg-slate-800/50 hover:bg-slate-700/50 text-white font-bold rounded-2xl border-2 border-emerald-500/40 backdrop-blur-sm transition-all transform hover:scale-105 flex items-center gap-2 text-xl"
             >
               Investor Data Room
-              <Shield className="w-5 h-5" />
+              <Shield className="w-6 h-6" />
             </Link>
           </div>
 
-          {/* Launch Date Callout */}
-          <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border-2 border-red-500/40 rounded-2xl p-6 max-w-2xl mx-auto">
+          {/* Fundraising Ask - Updated styling */}
+          <div className="mb-12">
+            <div className="inline-flex flex-col items-center gap-4">
+              <div className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] px-10 py-5 rounded-2xl shadow-2xl shadow-[#c9a227]/30 border-4 border-white/20 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                <p className="text-3xl font-black text-[#0a1628] relative z-10">Raising $500K Pre-Seed</p>
+              </div>
+              <div className="flex items-center gap-3 px-6 py-3 bg-slate-800/50 border-2 border-emerald-500/40 rounded-full backdrop-blur-sm">
+                <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                <p className="text-sm font-bold text-emerald-400">CCS • $5M Cap • 20% Discount</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Launch Date Callout - Enhanced */}
+          <div className="bg-gradient-to-r from-emerald-500/20 via-emerald-500/10 to-emerald-500/20 border-2 border-emerald-500/40 rounded-2xl p-6 max-w-2xl mx-auto backdrop-blur-sm">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <Clock className="w-6 h-6 text-red-400" />
-              <p className="text-2xl font-bold text-red-300">Launching January 28, 2026</p>
+              <Clock className="w-6 h-6 text-emerald-400" />
+              <p className="text-2xl font-bold text-emerald-300">Launching January 28, 2026</p>
             </div>
             <p className="text-slate-300">MVP goes live in 7 days. 5 merchants Week 1, scale to 30 by Month 2.</p>
           </div>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 animate-bounce">
+        <div className="absolute bottom-8 animate-bounce z-10">
           <ChevronDown className="w-8 h-8 text-slate-400" />
         </div>
       </section>
 
       {/* Problem Section - User Pain */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0d1d3a] to-[#0a1628]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Problem</p>
@@ -243,17 +278,17 @@ export default function LandingPage() {
           {/* Market Opportunity */}
           <div className="mt-12 bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-8 text-center">
             <p className="text-lg text-slate-300 mb-2">
-              UAE market: <span className="text-3xl font-black text-emerald-400"><DataPoint value="$34B/year" source="UAE Foodservice Market ($23.21B, Mordor Intelligence 2025), Salon Services ($10.05B, Deep Market Insights 2024), Fitness Market ($0.6B, SPER Research 2025)" className="text-emerald-400" /></span> across F&B, salons, and gyms.
+              GCC market: <span className="text-3xl font-black text-emerald-400"><DataPoint value="$45B/year" source="GCC D2C retail + local services (F&B, Beauty, Fashion, Fitness): 30% of TAM amenable to rewards programs" className="text-emerald-400" /></span> across key categories.
             </p>
             <p className="text-slate-400">
-              GCC total market (TAM): <strong className="text-emerald-300">$78B</strong>. Targeting 1% penetration = <strong className="text-emerald-300">$340M opportunity</strong>.
+              GCC total market (TAM): <strong className="text-emerald-300">$150B</strong>. Targeting 3% Dubai penetration = <strong className="text-emerald-300">$1.35B opportunity</strong>.
             </p>
           </div>
         </div>
       </section>
 
       {/* Problem Section - Merchant Pain */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0a1628] to-[#0d1d3a]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Other Side</p>
@@ -347,7 +382,7 @@ export default function LandingPage() {
       </section>
 
       {/* Solution Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0d1d3a] to-[#0a1628]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">How Nuqta Works</p>
@@ -444,7 +479,7 @@ export default function LandingPage() {
       </section>
 
       {/* Unit Economics Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0a1628] to-[#0d1d3a]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Numbers</p>
@@ -592,7 +627,7 @@ export default function LandingPage() {
       </section>
 
       {/* Traction Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0d1d3a] to-[#0a1628]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Traction</p>
@@ -600,7 +635,7 @@ export default function LandingPage() {
               30+ Signed LOIs. <span className="text-emerald-400">30 More in Pipeline.</span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              60+ merchant network across Dubai Marina, Downtown, and JBR. Attacking a $34B UAE market.
+              60+ merchant network across Dubai Marina, Downtown, and JBR. Attacking a $45B GCC market.
             </p>
           </div>
 
@@ -618,8 +653,8 @@ export default function LandingPage() {
             </div>
             <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 text-center">
               <DollarSign className="w-12 h-12 text-purple-400 mx-auto mb-3" />
-              <p className="text-4xl font-black text-purple-400 mb-2">$34B</p>
-              <p className="text-sm text-slate-300">UAE Market (SAM)</p>
+              <p className="text-4xl font-black text-purple-400 mb-2">$45B</p>
+              <p className="text-sm text-slate-300">GCC Market (SAM)</p>
             </div>
             <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 border-2 border-orange-500/40 rounded-2xl p-6 text-center">
               <Target className="w-12 h-12 text-orange-400 mx-auto mb-3" />
@@ -650,7 +685,7 @@ export default function LandingPage() {
                 <p className="text-3xl mb-3">🚀</p>
                 <p className="font-bold text-slate-200 mb-2">Massive Market</p>
                 <p className="text-sm text-slate-400">
-                  $34B UAE market (SAM). $78B GCC total (TAM). Attacking 1% = $340M opportunity.
+                  $45B GCC market (SAM). $150B GCC total (TAM). Targeting 3% Dubai = $1.35B opportunity.
                 </p>
               </div>
             </div>
@@ -687,7 +722,7 @@ export default function LandingPage() {
       </section>
 
       {/* Competitive Landscape Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0a1628] to-[#0d1d3a]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Competition</p>
@@ -832,7 +867,7 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+      <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0d1d3a] to-[#0a1628]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6">
             Join the <span className="bg-gradient-to-r from-[#c9a227] via-yellow-400 to-[#c9a227] bg-clip-text text-transparent">Next Chapter</span>
@@ -897,7 +932,7 @@ export default function LandingPage() {
       </section>
 
       {/* Founder Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0a1628] to-[#0d1d3a]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Founder</p>
@@ -973,7 +1008,7 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-800 to-slate-900">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#0d1d3a] to-[#0a1628]">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">FAQ</p>
@@ -998,7 +1033,7 @@ export default function LandingPage() {
             />
             <FAQItem
               question="What's the 30+ signed LOIs mean for investors?"
-              answer="These aren't verbal commitments—they're signed agreements from merchants across Dubai Marina, Downtown, and JBR. With 30 more in pipeline, we're building a 60+ merchant network. This de-risks the supply side before we even launch, giving us immediate access to a $34B UAE market."
+              answer="These aren't verbal commitments—they're signed agreements from merchants across Dubai Marina, Downtown, and JBR. With 30 more in pipeline, we're building a 60+ merchant network. This de-risks the supply side before we even launch, giving us immediate access to a $45B GCC market."
               index={2}
             />
             <FAQItem
@@ -1050,7 +1085,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer with Version Navigation */}
-      <footer className="bg-slate-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#0a1628] border-t border-[#c9a227]/20 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Version Navigation */}
           <div className="mb-8">

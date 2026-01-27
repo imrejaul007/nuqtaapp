@@ -27,7 +27,7 @@
 
 ### Phase 1: Dubai Launch (Year 1-3)
 **Geography**: Dubai only
-**Timeline**: Q1 2025 - Q4 2027
+**Timeline**: Q1 2026 - Q4 2028
 
 #### Horizon 1 (Months 1-12) - Core Verticals (Tier 1)
 Focus on 6 high-frequency, habit-forming categories:
@@ -46,7 +46,7 @@ Focus on 6 high-frequency, habit-forming categories:
 
 #### Horizon 2 (Months 13-24) - Category Expansion
 Expand to additional verticals:
-5. **Entertainment** (Cinemas, experiences, events)
+5. **Entertainment** (Cinemas, gaming zones, recreation)
 6. **Home Services** (Cleaning, maintenance, repairs)
 7. **Pet Services** (Grooming, vets, pet stores)
 
@@ -121,7 +121,7 @@ Expand to all UAE cities:
 3. **Salons & Grooming**: Hair Salons, Spas, Barbershops, Nail Studios
 4. **Fitness & Wellness**: Gyms, Yoga Studios, CrossFit, Pilates, Wellness Centers
 5. **Fashion**: Boutiques, Local Brands, Apparel, Footwear
-6. **Events**: Selective high-engagement (Concerts, Experiences, Entertainment)
+6. **Events**: Selective high-engagement (Pop-ups, Exhibitions, Brand Activations)
 
 ### Tier 2: Medium-Frequency, High-Value (Horizon 2 - M13-24)
 **Expansion Phase** - Monthly transaction frequency, higher basket size
@@ -154,8 +154,8 @@ Expand to all UAE cities:
 ## Key Metrics Standardization
 
 ### Customer Acquisition
-- **Target CAC**: AED 50 (75-85% lower than Meta/Google ads)
-- **Meta/Google Benchmark**: AED 300-500 per customer
+- **Target CAC**: AED 30 (blended: QR codes AED 10-15, ambassadors AED 25-30, digital AED 60-80)
+- **Meta/Google Benchmark**: AED 300-500 per customer (75-85% lower than ads)
 - **Discount Platform Benchmark**: -30% margins + one-time customers
 
 ### Merchant Economics
@@ -166,10 +166,30 @@ Expand to all UAE cities:
 - **Contract**: No lock-in
 
 ### Customer Value Proposition
-- **Cashback Rate**: 10% on offline purchases
-- **Comparison**: 5x better than credit cards (1-2%)
+- **Cashback Rate**: 5-10% on offline purchases (5% base + 5% optional social sharing bonus)
+- **Comparison**: 5-10x better than credit cards (1-2%)
 - **Redemption**: Instant, no points expiry
 - **Coverage**: Universal across all partner merchants
+
+### Unit Economics (Per AED 100 Transaction)
+- **Merchant Fee**: AED 15 (15%)
+- **User Cashback**: -AED 5 to -AED 10 (5% base + optional 5% social bonus)
+- **Blended Cashback**: -AED 7 (assumes 40% of users share, 60% don't)
+- **Costs (Payment, Ops)**: -AED 0.5 (0.5%)
+- **Net Margin Range**: AED 4.5 to AED 9.5 (4.5% if all users share, 9.5% if none share)
+- **Blended Net Margin**: AED 7.5 (7.5%)
+- **Note**: Social sharing bonus drives viral growth + lowers CAC
+
+### Key Performance Metrics
+- **Average Transaction Size**: AED 100
+- **Transaction Frequency**: 6x per month
+- **Monthly GMV per User**: AED 600
+- **Net Take Rate**: 7.5% (blended, after cashback & costs)
+- **Monthly RPU**: AED 45 (AED 600 × 7.5%)
+- **Annual LTV**: AED 540 (AED 45 × 12 months)
+- **Blended CAC**: AED 30
+- **LTV:CAC Ratio**: 18x (AED 540 / AED 30)
+- **CAC Payback Period**: 0.67 months (~20 days)
 
 ### Proven Results (Pre-Launch Partners)
 - **+40%**: Repeat customer rate vs discount platforms
@@ -184,7 +204,7 @@ Expand to all UAE cities:
 - **Tier 1 Categories**: F&B, Grocery & Essentials, Salons & Grooming, Fashion, Fitness & Wellness, Events (selective)
 - **95%**: MVP completion status
 - **$0**: CAC for pre-launch merchants (organic)
-- **Q1 2025**: Public launch date
+- **Q1 2026**: Public launch date
 
 ---
 
@@ -208,15 +228,19 @@ Expand to all UAE cities:
 
 ### Current Round
 - **Amount**: $500K USD (AED 1.8M)
+- **Structure**: CCS (Convertible Credit Security)
+  - **Valuation Cap**: $5M USD
+  - **Discount**: 20% on next round conversion
+  - Converts to equity at Series A with 20% discount or $5M cap, whichever is more favorable to investor
 - **Use**: Product launch, initial GTM (Dubai Horizon 1)
-- **Valuation**: Pre-seed stage
-- **Timeline**: Close by Q1 2025
+- **Timeline**: Close by Q1 2026
 
 ### Use of Funds ($500K)
 1. **Product & Tech** (40% - $200K): Finalize MVP, payment integration, infrastructure
-2. **Marketing & Growth** (30% - $150K): User acquisition (CAC target: AED 50), merchant onboarding
-3. **Operations** (20% - $100K): Team expansion, customer support, compliance
-4. **Reserve** (10% - $50K): Buffer for contingencies
+2. **Marketing & Growth** (35% - $175K): User acquisition (CAC target: AED 50), merchant onboarding
+3. **Operations** (25% - $125K): UAE Central Bank SVF wallet license (regulatory capital + application), team expansion, customer support, compliance, legal, buffer
+
+**Note**: Wallet functionality launches after obtaining UAE Central Bank Stored Value Facility (SVF) license. License acquisition (including regulatory capital requirements) is part of this fundraising round. Timeline: 12-18 months post-funding.
 
 ---
 
@@ -232,7 +256,7 @@ Expand to all UAE cities:
 
 ### Regulatory Status
 - ✓ UAE business licensed
-- → Payment license application in progress (Q1 2025)
+- → UAE Central Bank SVF (Stored Value Facility) wallet license: Acquisition part of this fundraising round (12-18 month timeline post-funding)
 - → Banking partnerships being finalized
 
 ---
@@ -242,7 +266,12 @@ Expand to all UAE cities:
 1. **First-Mover Advantage**: 12-18 month head start in offline rewards UAE
 2. **Network Effects**: Two-sided marketplace with increasing returns
 3. **Data Moat**: Shopping behavior graph = proprietary merchant intelligence
-4. **Capital Efficiency**: 5% margin from day 1, profitable unit economics
+4. **Coin Lock-In Mechanism**:
+   - Free POS + inventory software for merchants (reduces churn)
+   - Unredeemed coin balances create user retention
+   - Social referral bonuses amplify network effects
+   - Strong habit formation through earned rewards
+5. **Capital Efficiency**: 4.5% gross margin from day 1, profitable unit economics
 
 ---
 
@@ -270,6 +299,6 @@ Expand to all UAE cities:
 8. ✓ Merchant commission = 15%
 9. ✓ Customer cashback = 10%
 10. ✓ Raise = $500K
-11. ✓ Launch = Q1 2025
+11. ✓ Launch = Q1 2026
 12. ✓ Traction = 30+ signed LOIs, 30+ in pipeline, 60+ merchant network
 13. ✓ Horizon 1 Categories = Tier 1 (F&B, Grocery & Essentials, Salons & Grooming, Fashion, Fitness & Wellness, Events)

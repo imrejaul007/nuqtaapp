@@ -456,7 +456,7 @@ export default function DataRoomPage() {
           <DocItem number="10" title="Merchant Strategy & LOIs">
             <p className="mb-4">
               30+ signed merchant LOIs with 30 more in pipeline (60+ merchant network) across Dubai Marina, Downtown, and JBR.
-              Merchant categories: cafes, salons, gyms, retail attacking a $34B UAE market (SAM).
+              Merchant categories: cafes, salons, gyms, retail attacking a $45B GCC market (SAM).
               Target: 50-100 merchants by Month 3.
             </p>
             <div className="mt-4">
@@ -480,7 +480,7 @@ export default function DataRoomPage() {
         <Folder icon="📈" title="4. Unit Economics" id="unit-economics">
           <DocItem number="11" title="LTV & CAC Breakdown">
             <p className="mb-4">
-              Customer acquisition cost (AED 30) vs lifetime value (AED 504) across channels.
+              Customer acquisition cost (AED 30) vs lifetime value (AED 540) across channels.
               Includes payback period calculation (&lt;1 month) and cohort retention assumptions.
             </p>
             <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
@@ -490,7 +490,7 @@ export default function DataRoomPage() {
                   <p className="text-gray-400 text-sm">Blended CAC</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#c9a227]">AED 504</p>
+                  <p className="text-2xl font-bold text-[#c9a227]">AED 540</p>
                   <p className="text-gray-400 text-sm">Lifetime Value</p>
                 </div>
                 <div>
@@ -509,7 +509,7 @@ export default function DataRoomPage() {
           <DocItem number="12" title="Channel-Specific Economics">
             <p className="mb-4">
               CAC by channel: Merchant QR (AED 10-15), Student Ambassadors (AED 25-30), Digital (AED 60-80).
-              16.8x blended LTV:CAC ratio.
+              18x blended LTV:CAC ratio.
             </p>
             <div className="overflow-x-auto my-4">
               <table className="w-full text-sm">
@@ -529,7 +529,7 @@ export default function DataRoomPage() {
                   <tr className="border-b border-[#2a3a52]/50">
                     <td className="py-2 px-3">Student Ambassadors</td>
                     <td className="py-2 px-3 text-[#c9a227]">AED 25-30</td>
-                    <td className="py-2 px-3 text-green-400">16.8x - 20.2x</td>
+                    <td className="py-2 px-3 text-green-400">18x - 20.2x</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
                     <td className="py-2 px-3">Digital Acquisition</td>
@@ -540,8 +540,8 @@ export default function DataRoomPage() {
               </table>
             </div>
             <p className="text-gray-300 text-sm">
-              Blended LTV:CAC ratio of 16.8x assumes 60% merchant QR acquisition, 30% student ambassadors,
-              and 10% digital channels during early growth phase. This mix heavily favors low-cost organic
+              Blended LTV:CAC ratio of 18x (AED 540 LTV ÷ AED 30 CAC) assumes 70% merchant QR acquisition,
+              30% student ambassadors during early growth phase. This mix heavily favors low-cost organic
               acquisition before scaling paid channels.
             </p>
           </DocItem>
@@ -574,23 +574,23 @@ export default function DataRoomPage() {
 
           <DocItem number="14" title="Market Opportunity & Revenue Model">
             <p className="mb-4">
-              60+ merchant network (30+ signed LOIs, 30 in pipeline) attacking a $34B UAE market.
+              60+ merchant network (30+ signed LOIs, 30 in pipeline) attacking a $45B GCC market.
               Commission rate: 15% on completed transactions.
             </p>
             <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
               <p className="font-semibold text-white mb-2">Market Sizing (TAM/SAM/SOM)</p>
               <div className="grid md:grid-cols-3 gap-4 mb-4">
                 <div>
-                  <p className="text-xl font-bold text-[#c9a227]">$78B</p>
+                  <p className="text-xl font-bold text-[#c9a227]">$150B</p>
                   <p className="text-gray-400 text-sm">TAM (GCC Total Market)</p>
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#c9a227]">$34B</p>
-                  <p className="text-gray-400 text-sm">SAM (UAE Market)</p>
+                  <p className="text-xl font-bold text-[#c9a227]">$45B</p>
+                  <p className="text-gray-400 text-sm">SAM (GCC Market)</p>
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#c9a227]">$340M</p>
-                  <p className="text-gray-400 text-sm">SOM (1% Capture Target)</p>
+                  <p className="text-xl font-bold text-[#c9a227]">$1.35B</p>
+                  <p className="text-gray-400 text-sm">SOM (Dubai 3yr Target)</p>
                 </div>
               </div>
               <p className="text-gray-300 text-sm mb-4">

@@ -81,57 +81,96 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 0: COVER ====================
       case 0:
         return (
-          <div className="w-full min-h-screen bg-white relative flex items-center justify-center p-8">
-            <div className="max-w-5xl mx-auto text-center space-y-12">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#0d1d3a] to-[#0a1628] relative flex items-center justify-center p-8 overflow-hidden">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute top-20 left-20 w-96 h-96 bg-[#c9a227]/10 rounded-full blur-3xl animate-pulse" />
+              <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+            </div>
 
-              {/* Logo */}
-              <div className="inline-flex items-center justify-center">
-                <Image src="/nuqta-logo.png" alt="Nuqta" width={200} height={200} className="object-contain" priority />
+            <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10">
+
+              {/* Logo with glow effect */}
+              <div className="inline-flex items-center justify-center relative">
+                <div className="absolute inset-0 bg-[#c9a227]/20 blur-2xl rounded-full scale-150" />
+                <Image src="/nuqta-logo.png" alt="Nuqta" width={220} height={220} className="object-contain relative z-10" priority />
               </div>
 
-              {/* Main Heading */}
+              {/* Main Heading with gradient */}
               <div className="space-y-6">
-                <h1 className="text-7xl sm:text-8xl md:text-9xl font-black text-slate-900 tracking-tighter leading-[0.9]">
+                <h1 className="text-7xl sm:text-8xl md:text-9xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl">
                   Nuqta
                 </h1>
-                <p className="text-4xl sm:text-5xl font-light text-slate-600">
-                  Rewards-Led Commerce Intelligence
-                </p>
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] blur-xl opacity-30" />
+                  <p className="text-3xl sm:text-4xl md:text-5xl font-bold text-white relative z-10">
+                    Search. Save. Earn.
+                  </p>
+                </div>
               </div>
 
-              {/* Subtitle */}
-              <p className="text-2xl sm:text-3xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
-                Optimize everyday offline spending —{' '}
-                <span className="font-bold text-[#c9a227]">save money, measure ROI, build loyalty</span>
-              </p>
+              {/* Value Proposition */}
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 border-2 border-[#c9a227]/30 rounded-2xl p-8 backdrop-blur-sm">
+                  <p className="text-2xl sm:text-3xl text-white leading-relaxed">
+                    <span className="text-[#c9a227] font-black">10% offline cashback</span> on every purchase —{' '}
+                    <span className="font-semibold">5x better than credit cards</span>
+                  </p>
+                </div>
+              </div>
 
-              {/* Key Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto pt-8">
-                <div className="bg-slate-50 border-2 border-slate-200 rounded-3xl p-10 hover:shadow-xl transition-shadow">
-                  <p className="text-6xl font-black text-[#c9a227] mb-3">
+              {/* Key Metrics Grid */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto pt-8">
+                <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#c9a227]/20 transition-all backdrop-blur-sm">
+                  <p className="text-5xl font-black text-[#c9a227] mb-2">
                     <AnimatedNumber value={150} prefix="$" suffix="B" duration={2000} />
                   </p>
-                  <p className="text-sm font-semibold text-slate-600 uppercase tracking-wider">GCC Market TAM</p>
+                  <p className="text-xs font-bold text-white uppercase tracking-wider">GCC TAM</p>
                 </div>
-                <div className="bg-slate-50 border-2 border-slate-200 rounded-3xl p-10 hover:shadow-xl transition-shadow">
-                  <p className="text-5xl font-black text-slate-900 mb-3">
-                    75-85%
-                  </p>
-                  <p className="text-sm font-semibold text-slate-600 uppercase tracking-wider">Lower CAC</p>
+                <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
+                  <p className="text-5xl font-black text-emerald-400 mb-2">18x</p>
+                  <p className="text-xs font-bold text-white uppercase tracking-wider">LTV:CAC</p>
                 </div>
-                <div className="bg-slate-50 border-2 border-slate-200 rounded-3xl p-10 hover:shadow-xl transition-shadow">
-                  <p className="text-6xl font-black text-slate-900 mb-3">
-                    <AnimatedNumber value={1.4} decimals={1} suffix="M" duration={2000} />
-                  </p>
-                  <p className="text-sm font-semibold text-slate-600 uppercase tracking-wider">UAE Businesses</p>
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
+                  <p className="text-5xl font-black text-blue-400 mb-2">30+</p>
+                  <p className="text-xs font-bold text-white uppercase tracking-wider">Signed LOIs</p>
+                </div>
+                <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
+                  <p className="text-4xl font-black text-purple-400 mb-2">Q1 2026</p>
+                  <p className="text-xs font-bold text-white uppercase tracking-wider">Launch</p>
                 </div>
               </div>
 
-              {/* Status Badge */}
+              {/* The Ask */}
               <div className="pt-8">
-                <div className="inline-flex items-center gap-3 px-8 py-4 bg-emerald-100 border-2 border-emerald-300 rounded-full">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                  <p className="text-base font-bold text-emerald-800">Pre-Seed Stage • Dubai, UAE</p>
+                <div className="inline-flex flex-col items-center gap-4">
+                  <div className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] px-10 py-5 rounded-2xl shadow-2xl shadow-[#c9a227]/30 border-4 border-white/20 relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                    <p className="text-3xl font-black text-[#0a1628] relative z-10">Raising $500K Pre-Seed</p>
+                  </div>
+                  <div className="flex items-center gap-3 px-6 py-3 bg-slate-800/50 border-2 border-emerald-500/40 rounded-full backdrop-blur-sm">
+                    <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
+                    <p className="text-sm font-bold text-emerald-400">CCS • $5M Cap • 20% Discount</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Location & Contact */}
+              <div className="pt-4 border-t border-white/10">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-slate-400">
+                  <div className="flex items-center gap-2">
+                    <MapPin size={18} className="text-[#c9a227]" />
+                    <span className="text-sm font-semibold">Dubai, UAE</span>
+                  </div>
+                  <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold">rejaul@nuqtaapp.com</span>
+                  </div>
+                  <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm font-semibold">nuqtaapp.com</span>
+                  </div>
                 </div>
               </div>
 
@@ -455,7 +494,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                     <div className="text-center">
                       <div className="w-3 h-3 bg-[#c9a227] rounded-full mx-auto mb-1"></div>
-                      <p className="text-xs font-bold text-slate-700">SOM</p>
+                      <p className="text-xs font-bold text-slate-700">SOM (Dubai)</p>
                       <p className="text-sm font-black text-[#c9a227]">$1.35B</p>
                     </div>
                   </div>
@@ -516,7 +555,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         </div>
                         <div>
                           <h3 className="text-lg font-black text-slate-900">Serviceable Obtainable Market</h3>
-                          <p className="text-sm text-slate-600">Phased Expansion Strategy</p>
+                          <p className="text-sm text-slate-600">Dubai 3-Year Target (3% of SAM)</p>
                         </div>
                       </div>
                       <p className="text-4xl font-black bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] bg-clip-text text-transparent">$1.35B</p>
@@ -537,7 +576,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                             <p className="text-xs font-bold text-emerald-700">🌱 Horizon 1 (M1-12)</p>
                             <p className="text-base font-black text-emerald-600">$150M</p>
                           </div>
-                          <p className="text-xs text-slate-600">F&B • Grocery • Salons • Fashion • Fitness • Events</p>
+                          <p className="text-xs text-slate-600">F&B • Grocery • Salons • Fashion • Fitness • Events (pop-ups, exhibitions)</p>
                         </div>
 
                         <div className="bg-gradient-to-r from-blue-50 to-white border-l-3 border-blue-500 rounded-lg p-3">
@@ -545,7 +584,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                             <p className="text-xs font-bold text-blue-700">📈 Horizon 2 (M13-24)</p>
                             <p className="text-base font-black text-blue-600">$450M</p>
                           </div>
-                          <p className="text-xs text-slate-600">+ Entertainment • Home Services • Pet</p>
+                          <p className="text-xs text-slate-600">+ Entertainment (cinemas, gaming) • Home Services • Pet</p>
                         </div>
 
                         <div className="bg-gradient-to-r from-purple-50 to-white border-l-3 border-purple-500 rounded-lg p-3">
@@ -975,68 +1014,113 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 8: PLATFORM DIFFERENTIATION ====================
       case 8:
         return (
-          <div className="w-full min-h-screen bg-white py-16 px-8">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16">
+              <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Differentiation</p>
+                  <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Core Differentiation</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-4">
                   We're <span className="text-[#c9a227]">NOT</span> Another Deal App
                 </h2>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
+                  We're building the <span className="text-emerald-600 font-bold">offline saving habit</span>, not chasing one-time discounts
+                </p>
               </div>
 
               {/* Comparison Table */}
-              <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
                 {/* What We're NOT */}
-                <div className="bg-slate-50 border-2 border-slate-300 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-red-50 via-red-50/50 to-white border-2 border-red-200 rounded-3xl p-8 shadow-xl">
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4 shadow-md">
                       <Ban className="text-red-600" size={32} />
                     </div>
-                    <h3 className="text-3xl font-black text-slate-900">Traditional Platforms</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-2">Deal/Discount Platforms</h3>
+                    <p className="text-sm text-red-600 font-bold uppercase">Smiles • Entertainer • Groupon</p>
                   </div>
                   <div className="space-y-4">
                     {[
-                      "Show deals from big chains only",
-                      "Require merchant onboarding/tech",
-                      "Gated rewards (points, min spend)",
-                      "Separate payment processing",
-                      "No local discovery focus"
+                      { text: "30% discount pressure on merchants", sub: "Race to the bottom, unsustainable" },
+                      { text: "One-time bargain hunters", sub: "No loyalty, never return at full price" },
+                      { text: "Subscription paywalls (AED 200-400/yr)", sub: "Gated access kills mass adoption" },
+                      { text: "Big chains only", sub: "Local businesses excluded" },
+                      { text: "Points expire, caps, fine print", sub: "73% don't know deals exist" }
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-red-600 text-xl font-bold">×</span>
+                      <div key={idx} className="bg-white rounded-xl p-4 border-l-4 border-red-500 shadow-sm">
+                        <div className="flex items-start gap-3">
+                          <div className="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <span className="text-red-600 text-xl font-bold leading-none">×</span>
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-base text-slate-900 font-bold mb-1">{item.text}</p>
+                            <p className="text-sm text-slate-600">{item.sub}</p>
+                          </div>
                         </div>
-                        <p className="text-lg text-slate-700">{item}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* What We ARE */}
-                <div className="bg-gradient-to-br from-[#c9a227]/10 to-white border-2 border-[#c9a227]/30 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-emerald-50 via-emerald-50/50 to-white border-2 border-emerald-200 rounded-3xl p-8 shadow-xl">
                   <div className="text-center mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4 shadow-md">
                       <CheckCircle2 className="text-emerald-600" size={32} />
                     </div>
-                    <h3 className="text-3xl font-black text-slate-900">Nuqta Platform</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-2">Nuqta Platform</h3>
+                    <p className="text-sm text-emerald-600 font-bold uppercase">Rewards Layer • Not Discount Platform</p>
                   </div>
                   <div className="space-y-4">
                     {[
-                      "Search-first local discovery engine",
-                      "Zero merchant tech burden (we handle routing)",
-                      "Instant cashback (not points)",
-                      "Integrated payment + rewards in one",
-                      "Hyper-local AI-powered matching"
+                      { text: "15% merchant commission (sustainable)", sub: "Merchants keep 85%, happy to participate" },
+                      { text: "Loyal repeat customers (+40% vs deals)", sub: "Real value creation, not bargain hunting" },
+                      { text: "FREE for everyone, 5-10% instant cashback", sub: "5% base + 5% social bonus, no subscriptions" },
+                      { text: "Search-first local discovery", sub: "Every neighborhood business can join" },
+                      { text: "No redemption restrictions for users", sub: "Internal fraud caps protect budget without affecting genuine users" }
                     ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-1">
-                          <CheckCircle2 className="text-emerald-600" size={16} />
+                      <div key={idx} className="bg-white rounded-xl p-4 border-l-4 border-emerald-500 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex items-start gap-3">
+                          <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <CheckCircle2 className="text-emerald-600" size={18} />
+                          </div>
+                          <div className="flex-1">
+                            <p className="text-base text-slate-900 font-bold mb-1">{item.text}</p>
+                            <p className="text-sm text-emerald-700 font-medium">{item.sub}</p>
+                          </div>
                         </div>
-                        <p className="text-lg text-slate-900 font-medium">{item}</p>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Insight Banner */}
+              <div className="max-w-5xl mx-auto">
+                <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
+                  <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
+                    <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">The Core Difference</p>
+                  </div>
+                  <p className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
+                    Discount platforms <span className="text-red-400">destroy merchant margins</span>.<br/>
+                    Nuqta <span className="text-emerald-400">builds loyalty</span> at sustainable economics.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                    <div className="bg-white/5 rounded-xl p-5 border border-red-500/30">
+                      <p className="text-xs text-red-400 font-bold uppercase mb-2">Discount Platforms</p>
+                      <p className="text-3xl font-black text-red-400 mb-1">-30%</p>
+                      <p className="text-sm text-slate-400 font-medium">Merchant margin loss</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-5 border border-emerald-500/30">
+                      <p className="text-xs text-emerald-400 font-bold uppercase mb-2">Nuqta Model</p>
+                      <p className="text-3xl font-black text-emerald-400 mb-1">+40%</p>
+                      <p className="text-sm text-slate-400 font-medium">Repeat customer rate</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-5 border border-[#c9a227]/30">
+                      <p className="text-xs text-[#c9a227] font-bold uppercase mb-2">The Result</p>
+                      <p className="text-3xl font-black text-[#c9a227] mb-1">18x</p>
+                      <p className="text-sm text-slate-400 font-medium">LTV:CAC Ratio</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1051,97 +1135,129 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Competition</p>
+                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Competitive Analysis</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-6">
-                  Why Can't <span className="text-red-600">Noon/Careem</span> Do This?
+                  Why Can't <span className="text-red-600">Noon/Careem/Smiles</span> Do This?
                 </h2>
+                <p className="text-lg text-slate-500 uppercase tracking-wide font-bold mb-3">
+                  Technical Breakdown: 8 Structural Barriers
+                </p>
                 <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
-                  We're not competing head-to-head. We're building what they structurally can't.
+                  Head-to-head feature comparison shows why incumbents <span className="text-red-600 font-bold">structurally can't pivot</span> to this model without cannibalizing their revenue.
                 </p>
               </div>
 
               {/* Competitive Matrix */}
               <div className="overflow-x-auto mb-12">
-                <table className="w-full border-collapse bg-white rounded-2xl overflow-hidden shadow-lg">
+                <table className="w-full border-collapse bg-white rounded-2xl overflow-hidden shadow-xl">
                   <thead>
-                    <tr className="bg-slate-900 text-white">
-                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Feature</th>
+                    <tr className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 text-white">
+                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Key Differentiator</th>
                       <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
                         <div className="flex flex-col items-center gap-2">
-                          <span className="text-[#c9a227] text-2xl">Nuqta</span>
+                          <span className="text-[#c9a227] text-2xl font-black">Nuqta</span>
+                          <span className="text-xs text-[#c9a227]/70 font-normal">Us</span>
                         </div>
                       </th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">Noon</th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">Careem</th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">Entertainer</th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">Google Maps</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
+                        <div className="flex flex-col items-center gap-1">
+                          <span>Noon</span>
+                          <span className="text-xs text-slate-400 font-normal">E-commerce</span>
+                        </div>
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
+                        <div className="flex flex-col items-center gap-1">
+                          <span>Careem</span>
+                          <span className="text-xs text-slate-400 font-normal">Super App</span>
+                        </div>
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
+                        <div className="flex flex-col items-center gap-1">
+                          <span>Smiles</span>
+                          <span className="text-xs text-slate-400 font-normal">Discounts</span>
+                        </div>
+                      </th>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
+                        <div className="flex flex-col items-center gap-1">
+                          <span>Cards</span>
+                          <span className="text-xs text-slate-400 font-normal">Credit</span>
+                        </div>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     {[
                       {
+                        feature: "10% Instant Cashback (Not Points)",
+                        nuqta: true,
+                        noon: false,
+                        careem: false,
+                        smiles: false,
+                        cards: false
+                      },
+                      {
+                        feature: "Offline-First Focus",
+                        nuqta: true,
+                        noon: false,
+                        careem: false,
+                        smiles: true,
+                        cards: false
+                      },
+                      {
+                        feature: "Universal (All Merchants)",
+                        nuqta: true,
+                        noon: false,
+                        careem: false,
+                        smiles: false,
+                        cards: true
+                      },
+                      {
+                        feature: "Zero Subscription Fee",
+                        nuqta: true,
+                        noon: true,
+                        careem: true,
+                        smiles: false,
+                        cards: true
+                      },
+                      {
+                        feature: "Performance-Based (Merchants)",
+                        nuqta: true,
+                        noon: false,
+                        careem: false,
+                        smiles: false,
+                        cards: false
+                      },
+                      {
                         feature: "Search-First Discovery",
                         nuqta: true,
                         noon: false,
                         careem: false,
-                        entertainer: false,
-                        google: true
+                        smiles: false,
+                        cards: false
                       },
                       {
-                        feature: "Instant Cashback (Not Points)",
+                        feature: "No Redemption Caps/Limits",
                         nuqta: true,
                         noon: false,
                         careem: false,
-                        entertainer: false,
-                        google: false
+                        smiles: false,
+                        cards: false
                       },
                       {
-                        feature: "Hyper-Local Focus (SMBs)",
+                        feature: "Merchant-Funded Model",
                         nuqta: true,
                         noon: false,
                         careem: false,
-                        entertainer: true,
-                        google: true
-                      },
-                      {
-                        feature: "Zero Merchant Tech Burden",
-                        nuqta: true,
-                        noon: false,
-                        careem: false,
-                        entertainer: false,
-                        google: true
-                      },
-                      {
-                        feature: "Offline + Online Unified",
-                        nuqta: true,
-                        noon: false,
-                        careem: true,
-                        entertainer: true,
-                        google: false
-                      },
-                      {
-                        feature: "AI-Powered Personalization",
-                        nuqta: true,
-                        noon: true,
-                        careem: true,
-                        entertainer: false,
-                        google: true
-                      },
-                      {
-                        feature: "Merchant-Funded Cashback",
-                        nuqta: true,
-                        noon: false,
-                        careem: false,
-                        entertainer: true,
-                        google: false
+                        smiles: true,
+                        cards: false
                       }
                     ].map((row, idx) => (
-                      <tr key={idx} className={idx % 2 === 0 ? "bg-slate-50" : "bg-white"}>
+                      <tr key={idx} className={idx % 2 === 0 ? "bg-gradient-to-r from-slate-50 to-white" : "bg-white"}>
                         <td className="px-6 py-4 text-base font-medium text-slate-900">{row.feature}</td>
-                        <td className="px-6 py-4 text-center">
+                        <td className="px-6 py-4 text-center bg-[#c9a227]/5">
                           {row.nuqta ? (
-                            <CheckCircle2 className="inline-block text-emerald-600" size={24} />
+                            <CheckCircle2 className="inline-block text-emerald-600" size={28} />
                           ) : (
                             <span className="inline-block text-red-600 text-2xl font-bold">×</span>
                           )}
@@ -1161,14 +1277,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           )}
                         </td>
                         <td className="px-6 py-4 text-center">
-                          {row.entertainer ? (
+                          {row.smiles ? (
                             <CheckCircle2 className="inline-block text-slate-400" size={24} />
                           ) : (
                             <span className="inline-block text-slate-300 text-2xl font-bold">×</span>
                           )}
                         </td>
                         <td className="px-6 py-4 text-center">
-                          {row.google ? (
+                          {row.cards ? (
                             <CheckCircle2 className="inline-block text-slate-400" size={24} />
                           ) : (
                             <span className="inline-block text-slate-300 text-2xl font-bold">×</span>
@@ -1180,74 +1296,105 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </table>
               </div>
 
-              {/* Why They Can't Compete */}
+              {/* Deep Dive: Structural Analysis */}
+              <div className="text-center mb-8">
+                <p className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-2">Deep Dive Analysis</p>
+                <h3 className="text-3xl font-black text-slate-900">Business Model Constraints by Competitor</h3>
+              </div>
+
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {/* Left: Structural Barriers */}
-                <div className="bg-gradient-to-br from-red-50 to-white border-2 border-red-200 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-red-50 via-red-50/50 to-white border-2 border-red-200 rounded-3xl p-8 shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
-                    <AlertCircle className="text-red-600" size={32} />
-                    <h3 className="text-2xl font-black text-slate-900">Why They Won't Compete</h3>
+                    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+                      <AlertCircle className="text-red-600" size={28} />
+                    </div>
+                    <h3 className="text-2xl font-black text-slate-900">Structural Barriers (Revenue Cannibalization Risk)</h3>
                   </div>
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-lg font-bold text-slate-900 mb-2">Noon:</p>
-                      <p className="text-base text-slate-700">E-commerce marketplace focused on inventory. Can't pivot to search-first discovery without cannibalizing core business.</p>
+                  <div className="space-y-5">
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-red-500 shadow-sm">
+                      <div className="flex items-start gap-3 mb-2">
+                        <span className="text-2xl">🛒</span>
+                        <p className="text-lg font-bold text-slate-900">Noon</p>
+                      </div>
+                      <p className="text-base text-slate-700 leading-relaxed">E-commerce marketplace built on <strong>inventory control</strong>. Can't pivot to search-first discovery without cannibalizing their warehouse model. Would destroy unit economics.</p>
                     </div>
-                    <div>
-                      <p className="text-lg font-bold text-slate-900 mb-2">Careem:</p>
-                      <p className="text-base text-slate-700">Super app for rides/food delivery. Local discovery isn't core to their logistics-first model. Too many priorities.</p>
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-orange-500 shadow-sm">
+                      <div className="flex items-start gap-3 mb-2">
+                        <span className="text-2xl">🚗</span>
+                        <p className="text-lg font-bold text-slate-900">Careem</p>
+                      </div>
+                      <p className="text-base text-slate-700 leading-relaxed">Super app for <strong>logistics</strong> (rides/food delivery). Local discovery isn't core. Would require complete product pivot + new merchant relationships. Too many priorities.</p>
                     </div>
-                    <div>
-                      <p className="text-lg font-bold text-slate-900 mb-2">Entertainer:</p>
-                      <p className="text-base text-slate-700">Subscription coupon book (AED 200-400/year). Can't compete with free instant cashback without destroying their business model.</p>
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-purple-500 shadow-sm">
+                      <div className="flex items-start gap-3 mb-2">
+                        <span className="text-2xl">🎟️</span>
+                        <p className="text-lg font-bold text-slate-900">Smiles/Entertainer</p>
+                      </div>
+                      <p className="text-base text-slate-700 leading-relaxed"><strong>Subscription coupon books</strong> (AED 200-400/year). Can't offer free 10% instant cashback without destroying their AED 200/user annual revenue. Business model incompatible.</p>
                     </div>
-                    <div>
-                      <p className="text-lg font-bold text-slate-900 mb-2">Google Maps:</p>
-                      <p className="text-base text-slate-700">Navigation tool. No payment integration, no cashback layer, no merchant relationship model. Can't monetize local search in GCC.</p>
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-blue-500 shadow-sm">
+                      <div className="flex items-start gap-3 mb-2">
+                        <span className="text-2xl">💳</span>
+                        <p className="text-lg font-bold text-slate-900">Credit Cards</p>
+                      </div>
+                      <p className="text-base text-slate-700 leading-relaxed"><strong>1-2% cashback</strong> on online spend only. Offline rewards require merchant integrations they don't have. Can't scale to 10% without changing entire economics. Banks move slow.</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Right: Our Unfair Advantages */}
-                <div className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-2xl p-8">
+                {/* Right: Our Structural Advantages */}
+                <div className="bg-gradient-to-br from-emerald-50 via-emerald-50/50 to-white border-2 border-emerald-200 rounded-3xl p-8 shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
-                    <Trophy className="text-emerald-600" size={32} />
-                    <h3 className="text-2xl font-black text-slate-900">Our Unfair Advantages</h3>
+                    <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Trophy className="text-emerald-600" size={28} />
+                    </div>
+                    <h3 className="text-2xl font-black text-slate-900">Nuqta's Structural Advantages (No Trade-Offs)</h3>
                   </div>
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={20} />
-                      <div>
-                        <p className="text-base font-bold text-slate-900">100% Focus on Local Discovery</p>
-                        <p className="text-sm text-slate-600">We're not distracted by logistics, inventory, or super app sprawl.</p>
+                  <div className="space-y-4">
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-emerald-500 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={24} />
+                        <div>
+                          <p className="text-lg font-bold text-slate-900 mb-1">100% Focus on Offline Discovery</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">Not distracted by logistics, inventory, or super app sprawl. Single mission: connect users to local businesses.</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={20} />
-                      <div>
-                        <p className="text-base font-bold text-slate-900">Merchant-Funded Cashback</p>
-                        <p className="text-sm text-slate-600">No VC subsidy burns. Sustainable from Day 1.</p>
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-[#c9a227] shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="text-[#c9a227] mt-1 flex-shrink-0" size={24} />
+                        <div>
+                          <p className="text-lg font-bold text-slate-900 mb-1">Merchant-Funded Model</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">No VC subsidy burns. 5% margin from day 1. Profitable unit economics built into the business model.</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={20} />
-                      <div>
-                        <p className="text-base font-bold text-slate-900">Speed to Market</p>
-                        <p className="text-sm text-slate-600">We're launching in 7 days. They'd need 12-18 months to pivot.</p>
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-blue-500 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={24} />
+                        <div>
+                          <p className="text-lg font-bold text-slate-900 mb-1">First-Mover Speed</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">Q1 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={20} />
-                      <div>
-                        <p className="text-base font-bold text-slate-900">Zero Merchant Tech Burden</p>
-                        <p className="text-sm text-slate-600">We handle payment routing. Merchants just accept orders.</p>
+                    <div className="bg-white rounded-xl p-5 border-l-4 border-purple-500 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="text-purple-600 mt-1 flex-shrink-0" size={24} />
+                        <div>
+                          <p className="text-lg font-bold text-slate-900 mb-1">Zero Merchant Tech Burden</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">We handle payment routing, QR codes, analytics. Merchants just accept orders. 24-hour setup.</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={20} />
-                      <div>
-                        <p className="text-base font-bold text-slate-900">Behavioral Moat (Post-PMF)</p>
-                        <p className="text-sm text-slate-600">Once we own daily saving habits, we have data they can't replicate.</p>
+                    <div className="bg-gradient-to-r from-emerald-500/10 to-emerald-500/5 rounded-xl p-5 border-2 border-emerald-500/30 shadow-sm">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 className="text-emerald-600 mt-1 flex-shrink-0" size={24} />
+                        <div>
+                          <p className="text-lg font-bold text-emerald-900 mb-1">Behavioral Moat (Post-PMF)</p>
+                          <p className="text-sm text-emerald-800 leading-relaxed font-medium">Once we own daily saving habits, we have shopping behavior data competitors can never replicate. "Search → Save → Repeat" becomes muscle memory.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1255,14 +1402,33 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Callout */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-center">
-                <p className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                  We're not trying to beat Noon or Careem at their game.
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
+                <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
+                  <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Technical Conclusion</p>
+                </div>
+                <p className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
+                  Feature-by-feature, we win on <span className="text-emerald-400">8 out of 8</span> key differentiators.
                 </p>
-                <p className="text-lg sm:text-xl text-slate-300 max-w-4xl mx-auto">
-                  We're building the <span className="text-[#c9a227] font-bold">search layer for local commerce</span> —
-                  something they structurally can't do without destroying their core business.
-                  By the time they notice (50K+ users, 35% retention), we'll have the behavioral moat.
+                <p className="text-xl sm:text-2xl text-slate-300 max-w-4xl mx-auto mb-6 leading-relaxed">
+                  This isn't about being <span className="text-[#c9a227] font-black">slightly better</span> —
+                  it's about building what they <span className="text-red-400 font-bold">structurally can't replicate</span> without destroying their core revenue model.
+                </p>
+                <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-8">
+                  <div className="bg-white/5 rounded-xl p-4 border border-emerald-500/30">
+                    <p className="text-3xl font-black text-emerald-400 mb-2">12-18mo</p>
+                    <p className="text-sm text-slate-400 font-medium">Head start advantage</p>
+                  </div>
+                  <div className="bg-white/5 rounded-xl p-4 border border-[#c9a227]/30">
+                    <p className="text-3xl font-black text-[#c9a227] mb-2">5%</p>
+                    <p className="text-sm text-slate-400 font-medium">Margin from day 1</p>
+                  </div>
+                  <div className="bg-white/5 rounded-xl p-4 border border-blue-500/30">
+                    <p className="text-3xl font-black text-blue-400 mb-2">Q1 2026</p>
+                    <p className="text-sm text-slate-400 font-medium">Launch & lock moat</p>
+                  </div>
+                </div>
+                <p className="text-base text-slate-400 mt-6 italic">
+                  By the time they notice (50K+ users, coin lock-in driving loyalty), we'll own the offline saving habit.
                 </p>
               </div>
             </div>
@@ -1441,6 +1607,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <div className="w-2 h-2 rounded-full bg-[#c9a227] mt-2 flex-shrink-0"></div>
                         <p className="text-base text-slate-700">Combine with card, EMI, or BNPL</p>
                       </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-[#c9a227] mt-2 flex-shrink-0"></div>
+                        <p className="text-base text-slate-700"><strong>No cap, no limit</strong> - use full balance anytime</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1495,6 +1665,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                         <p className="text-base text-slate-700">Lower cost than flat discounts</p>
                       </div>
+                      <div className="flex items-start gap-3">
+                        <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
+                        <p className="text-base text-slate-700"><strong>No redemption limits</strong> - use full balance</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1502,12 +1676,135 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Key Insight */}
-              <div className="bg-slate-900 rounded-2xl p-10 text-white text-center">
+              <div className="bg-slate-900 rounded-2xl p-10 text-white text-center mb-12">
                 <p className="text-3xl font-bold mb-4">
                   💡 Smart Rule: <span className="text-[#c9a227]">Nuqta Coin = Freedom</span> • <span className="text-blue-400">Brand Coin = Loyalty</span>
                 </p>
-                <p className="text-xl text-slate-300">
+                <p className="text-xl text-slate-300 mb-3">
                   Both AED-backed • Can stack together at checkout • Combines with cash/EMI/BNPL
+                </p>
+                <div className="bg-emerald-500/20 border-2 border-emerald-500/40 rounded-xl p-4 inline-block">
+                  <p className="text-lg font-black text-emerald-400">
+                    ✓ No user-facing restrictions • Use full balance anytime
+                  </p>
+                  <p className="text-xs text-emerald-300 mt-2 italic">
+                    Internal daily/monthly caps protect budget (see Fraud Controls slide)
+                  </p>
+                </div>
+              </div>
+
+              {/* Why This Works - Triple Win */}
+              <div className="mb-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-4xl font-black text-slate-900 mb-3">
+                    Why This <span className="text-[#c9a227]">Creates Stickiness</span>
+                  </h3>
+                  <p className="text-xl text-slate-600">A win-win-win for businesses, users, and Nuqta</p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6">
+
+                  {/* Business Benefits */}
+                  <div className="bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-white border-2 border-emerald-500/30 rounded-3xl p-8">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
+                      🏪
+                    </div>
+                    <h4 className="text-2xl font-black text-slate-900 mb-4">For Businesses</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>+40% repeat rate</strong> vs discount platforms</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Loyal customers</strong>, not bargain hunters</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Performance-based</strong> cost (15% only on sales)</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Guaranteed ROI</strong> with 85% take-home</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-emerald-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Brand Coin</strong> drives customers back</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* User Benefits */}
+                  <div className="bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-white border-2 border-blue-500/30 rounded-3xl p-8">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
+                      💰
+                    </div>
+                    <h4 className="text-2xl font-black text-slate-900 mb-4">For Users</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>10% instant cashback</strong> on every purchase</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Universal coverage</strong> across all merchants</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>No expiry</strong>, no points confusion</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Stack both coins</strong> for max savings</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-blue-600 mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Habit formation</strong>: "Pay with Nuqta"</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Nuqta Benefits */}
+                  <div className="bg-gradient-to-br from-[#c9a227]/10 via-[#c9a227]/5 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c9a227] to-[#b8922a] text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
+                      🚀
+                    </div>
+                    <h4 className="text-2xl font-black text-slate-900 mb-4">For Nuqta</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>5% margin</strong> on every transaction</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Scalable revenue</strong> with GMV growth</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Data moat</strong>: Shopping behavior graph</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Network effects</strong>: More users = more merchants</p>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <CheckCircle2 size={18} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <p className="text-sm text-slate-700"><strong>Coins keep users</strong> locked in platform</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Stickiness Metric */}
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl p-8 text-center">
+                <p className="text-sm text-[#c9a227] font-bold uppercase tracking-wider mb-3">The Retention Engine</p>
+                <p className="text-3xl sm:text-4xl font-black text-white mb-4">
+                  Users with <span className="text-[#c9a227]">10+ AED in coins</span> create <span className="text-emerald-400">powerful habit loops</span>
+                </p>
+                <p className="text-lg text-slate-300">
+                  Every earned coin is a reason to come back. Every redemption strengthens the habit.
                 </p>
               </div>
 
@@ -1543,12 +1840,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
                 <div className="bg-gradient-to-br from-purple-50 to-white border-2 border-purple-200 rounded-2xl p-6 text-center">
                   <p className="text-xs font-semibold text-purple-700 uppercase tracking-wider mb-2">Net Take Rate</p>
-                  <p className="text-4xl font-black text-purple-600 mb-2">~7%</p>
-                  <p className="text-sm text-slate-600">Effective commission</p>
+                  <p className="text-4xl font-black text-purple-600 mb-2">7.5%</p>
+                  <p className="text-sm text-slate-600">After cashback & costs</p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-2xl p-6 text-center">
                   <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wider mb-2">Monthly RPU</p>
-                  <p className="text-4xl font-black text-emerald-600 mb-2">AED 42</p>
+                  <p className="text-4xl font-black text-emerald-600 mb-2">AED 45</p>
                   <p className="text-sm text-slate-600">Revenue per user/month</p>
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 rounded-2xl p-6 text-center">
@@ -1580,12 +1877,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-3">Annual LTV</p>
                   <p className="text-6xl font-black text-blue-600 mb-4">
-                    <AnimatedNumber value={504} prefix="AED " duration={2000} />
+                    <AnimatedNumber value={540} prefix="AED " duration={2000} />
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
-                    <p>• Monthly RPU: AED 42</p>
+                    <p>• Monthly RPU: AED 45</p>
                     <p>• Avg retention: 12 months</p>
-                    <p>• Gross margin: ~85%</p>
+                    <p>• Net margin: 7.5%</p>
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-[#c9a227]/10 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
@@ -1594,11 +1891,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-[#c9a227] uppercase tracking-wider mb-3">LTV:CAC Ratio</p>
                   <p className="text-6xl font-black text-[#c9a227] mb-4">
-                    16.8x
+                    18x
                   </p>
                   <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-3 mt-4">
                     <p className="text-xs font-semibold text-emerald-700 uppercase mb-1">Benchmark</p>
-                    <p className="text-sm text-slate-700">Anything above 5x is excellent</p>
+                    <p className="text-sm text-slate-700">Anything above 3x is good, 5x+ is excellent</p>
                   </div>
                 </div>
               </div>
@@ -1606,31 +1903,32 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Revenue Breakdown */}
               <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-8 mb-10">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Revenue Per AED 100 Transaction</h3>
-                <div className="grid md:grid-cols-5 gap-4">
+                <div className="grid md:grid-cols-4 gap-4">
                   <div className="bg-white border-2 border-blue-200 rounded-xl p-5 text-center">
                     <p className="text-xs font-semibold text-blue-700 uppercase mb-2">Merchant Fee (15%)</p>
-                    <p className="text-3xl font-black text-blue-600">AED 15</p>
+                    <p className="text-3xl font-black text-blue-600">+AED 15</p>
                   </div>
                   <div className="bg-white border-2 border-red-200 rounded-xl p-5 text-center">
-                    <p className="text-xs font-semibold text-red-700 uppercase mb-2">User Cashback (5%)</p>
-                    <p className="text-3xl font-black text-red-600">-AED 5</p>
+                    <p className="text-xs font-semibold text-red-700 uppercase mb-2">User Cashback (5-10%)</p>
+                    <p className="text-3xl font-black text-red-600">-AED 7</p>
+                    <p className="text-xs text-slate-500 mt-1">Blended avg</p>
                   </div>
                   <div className="bg-white border-2 border-orange-200 rounded-xl p-5 text-center">
-                    <p className="text-xs font-semibold text-orange-700 uppercase mb-2">Social Paid (60% share)</p>
-                    <p className="text-3xl font-black text-orange-600">-AED 3</p>
-                  </div>
-                  <div className="bg-white border-2 border-emerald-200 rounded-xl p-5 text-center">
-                    <p className="text-xs font-semibold text-emerald-700 uppercase mb-2">Social Retained (40%)</p>
-                    <p className="text-3xl font-black text-emerald-600">+AED 2</p>
+                    <p className="text-xs font-semibold text-orange-700 uppercase mb-2">Costs (Payment, Ops)</p>
+                    <p className="text-3xl font-black text-orange-600">-AED 0.5</p>
                   </div>
                   <div className="bg-gradient-to-br from-[#c9a227]/20 to-white border-2 border-[#c9a227] rounded-xl p-5 text-center">
-                    <p className="text-xs font-semibold text-[#c9a227] uppercase mb-2">Net Nuqta Revenue</p>
-                    <p className="text-3xl font-black text-[#c9a227]">AED 7</p>
+                    <p className="text-xs font-semibold text-[#c9a227] uppercase mb-2">Net Margin</p>
+                    <p className="text-3xl font-black text-[#c9a227]">AED 7.5</p>
+                    <p className="text-xs text-slate-500 mt-1">7.5% margin</p>
                   </div>
                 </div>
-                <div className="mt-6 text-center">
-                  <p className="text-sm text-slate-600">
-                    <span className="font-bold text-emerald-600">Why 7% is strong:</span> Amazon takes 8-15%, but we have higher frequency (6x/month vs 2-3x) + subscription revenue.
+                <div className="mt-6 bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
+                  <p className="text-sm text-slate-700 text-center mb-2">
+                    <span className="font-bold text-blue-700">Cashback Structure:</span> 5% base + 5% optional social sharing bonus. ~40% of users share, creating 7% blended rate.
+                  </p>
+                  <p className="text-sm text-slate-600 text-center">
+                    <span className="font-bold text-emerald-600">Range:</span> 4.5% margin (all users share) to 9.5% margin (no shares). Social sharing = viral growth + lower CAC.
                   </p>
                 </div>
               </div>
@@ -1640,15 +1938,15 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="grid md:grid-cols-3 gap-6 items-center">
                   <div className="text-center md:text-left">
                     <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">CAC Payback Period</p>
-                    <p className="text-5xl font-black text-white mb-2">&lt;1 Month</p>
-                    <p className="text-base text-slate-300">Exceptional for any consumer business</p>
+                    <p className="text-5xl font-black text-white mb-2">&lt;3 Weeks</p>
+                    <p className="text-base text-slate-300">Exceptional for consumer business</p>
                   </div>
                   <div className="md:col-span-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
                     <p className="text-sm font-semibold text-slate-300 uppercase mb-3">Calculation:</p>
                     <div className="space-y-2 text-slate-200">
-                      <p>• Monthly RPU: <span className="font-bold text-emerald-400">AED 42</span></p>
+                      <p>• Monthly RPU: <span className="font-bold text-emerald-400">AED 45</span></p>
                       <p>• Blended CAC: <span className="font-bold text-orange-400">AED 30</span></p>
-                      <p>• Payback: <span className="font-bold text-white">AED 30 ÷ AED 42 = 0.71 months (~21 days)</span></p>
+                      <p>• Payback: <span className="font-bold text-white">AED 30 ÷ AED 45 = 0.67 months (~20 days)</span></p>
                     </div>
                   </div>
                 </div>
@@ -1724,11 +2022,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
                 <div className="mt-6 bg-purple-500/20 border-l-4 border-purple-400 rounded-lg p-4">
                   <p className="text-lg font-bold text-purple-100 mb-2">Future Upside (Post-SVF License):</p>
+                  <p className="text-sm text-white/90 mb-3">
+                    Wallet functionality launches <span className="font-bold text-yellow-300">after obtaining UAE Central Bank SVF license</span>.
+                    License acquisition (regulatory capital + application) is <span className="font-bold text-yellow-300">part of this fundraising round</span>.
+                  </p>
                   <p className="text-sm text-white/90">
-                    Once we secure a UAE Central Bank <span className="font-bold text-yellow-300">Stored Value Facility (SVF) license</span> (Month 6-12, AED 50K fee),
-                    we can invest float in UAE treasury bonds (4-5% yield), adding <span className="font-bold text-emerald-300">AED 10-15K annual revenue per AED 250K float</span>.
+                    Post-license, we can invest float in UAE treasury bonds (4-5% yield), adding <span className="font-bold text-emerald-300">AED 10-15K annual revenue per AED 250K float</span>.
                     Example: At 100K users (AED 2.5M float), this unlocks <span className="font-bold text-emerald-300">+AED 100-125K/year</span> passive income.
-                    But this is <span className="font-bold">bonus</span>, not core business.
+                    But this is <span className="font-bold">bonus</span>, not core business. Timeline: 12-18 months post-funding.
                   </p>
                 </div>
               </div>
@@ -1794,8 +2095,198 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 13: GTM STRATEGY ====================
+      // ==================== SLIDE 13: FRAUD CONTROLS ====================
       case 13:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 via-white to-orange-50/20 py-16 px-8">
+            <div className="max-w-7xl mx-auto">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
+                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Risk Mitigation</p>
+                </div>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-6">
+                  Fraud Prevention Architecture
+                </h2>
+                <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                  We don't launch with open-ended rewards. Cashback and social incentives are <span className="font-bold text-red-600">locked, gated, and verified</span> at every step.
+                </p>
+              </div>
+
+              {/* Core Principle Banner */}
+              <div className="max-w-5xl mx-auto mb-12">
+                <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-900 rounded-2xl p-8 text-center shadow-xl">
+                  <p className="text-sm text-red-300 font-bold uppercase tracking-wider mb-3">Core Defense Principle</p>
+                  <p className="text-2xl sm:text-3xl font-black text-white mb-4">
+                    Fraud thrives on instant liquidity — <span className="text-red-300">Nuqta removes that</span>
+                  </p>
+                  <div className="bg-white/10 rounded-xl p-4 mt-4">
+                    <p className="text-lg text-white font-medium">
+                      Target: <span className="text-red-300 font-black">&lt;5% reward leakage</span> by Month 3 (monitored weekly)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 8-Point Framework */}
+              <div className="max-w-6xl mx-auto mb-12">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">8-Layer Defense System</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                  {/* Layer 1 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-red-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-red-700 font-black text-sm">1</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Transaction-First Gating</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      No transaction = no rewards. Cashback only issued after verified merchant confirmation via POS/QR.
+                    </p>
+                  </div>
+
+                  {/* Layer 2 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-orange-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-orange-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-orange-700 font-black text-sm">2</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Tiered Reward Release</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      <span className="font-semibold text-emerald-700">Non-refundable transactions:</span> 5% base cashback instantly credited. <span className="font-semibold text-orange-700">Refundable transactions:</span> 5% locked until refund window expires OR user cancels refund option. <span className="font-semibold text-blue-700">Social bonus:</span> +5% released 24 hours after post verification.
+                    </p>
+                  </div>
+
+                  {/* Layer 3 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-amber-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-amber-700 font-black text-sm">3</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Social Verification</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      +5% social bonus requires public Instagram/TikTok post with merchant tag. Released 24 hours after verification. Manual review for first 6 months, then automated via API.
+                    </p>
+                  </div>
+
+                  {/* Layer 4 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-yellow-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-yellow-700 font-black text-sm">4</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Merchant KYC</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      All merchants verified with UAE trade license. Employee accounts blocked from earning cashback at their own store.
+                    </p>
+                  </div>
+
+                  {/* Layer 5 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-lime-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-lime-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-lime-700 font-black text-sm">5</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Behavioral Detection</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      ML flags suspicious patterns: round-number transactions, same location abuse, coordinated timing, velocity spikes.
+                    </p>
+                  </div>
+
+                  {/* Layer 6 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-green-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-green-700 font-black text-sm">6</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Per-Store Limits</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      10 rewarded transactions per store per month per user. Prevents single-merchant abuse while allowing unlimited rewards across different merchants. Users can visit 50 different stores and get rewarded at all 50.
+                    </p>
+                  </div>
+
+                  {/* Layer 7 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-emerald-700 font-black text-sm">7</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Delayed Redemption</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      Non-refundable: Instant for base 5% cashback. Refundable: Locked until refund window expires. Social bonus: 24-hour verification window before release.
+                    </p>
+                  </div>
+
+                  {/* Layer 8 */}
+                  <div className="bg-white rounded-xl p-5 border-2 border-teal-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-lg bg-teal-100 flex items-center justify-center flex-shrink-0">
+                        <span className="text-teal-700 font-black text-sm">8</span>
+                      </div>
+                      <h4 className="text-lg font-bold text-slate-900">Manual Review Queue</h4>
+                    </div>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      First 6 months: All redemptions >AED 50 manually reviewed before approval. Scales to automated ML post-PMF.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Investor Answer Section */}
+              <div className="max-w-5xl mx-auto">
+                <div className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-2xl p-8 shadow-lg">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                      <span className="text-blue-700 font-black text-lg">Q</span>
+                    </div>
+                    <div>
+                      <p className="text-lg font-bold text-slate-900 mb-2">Investor Question:</p>
+                      <p className="text-base text-slate-700 italic">
+                        "How do you prevent users from gaming the system with fake transactions or social shares?"
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4 pl-14">
+                    <div>
+                      <p className="text-lg font-bold text-emerald-700 mb-2">Our Answer:</p>
+                      <p className="text-base text-slate-700 leading-relaxed">
+                        We don't launch with open-ended rewards. Cashback timing depends on transaction type (instant for non-refundable, locked for refundable). Social bonuses require 24-hour verification. We cap rewards at <span className="font-bold text-blue-600">10 transactions per store per month per user</span> to prevent single-merchant abuse, while allowing unlimited rewards across different merchants. Behavioral ML flags suspicious patterns. Our early-stage target is <span className="font-bold text-emerald-600">&lt;5% reward leakage</span>, monitored weekly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Stats */}
+              <div className="max-w-5xl mx-auto mt-8 grid md:grid-cols-3 gap-4">
+                <div className="bg-white rounded-xl p-5 border-2 border-emerald-200 text-center shadow-sm">
+                  <p className="text-3xl font-black text-emerald-600 mb-1">&lt;5%</p>
+                  <p className="text-sm text-slate-600 font-medium">Target fraud/leakage rate</p>
+                </div>
+                <div className="bg-white rounded-xl p-5 border-2 border-blue-200 text-center shadow-sm">
+                  <p className="text-3xl font-black text-blue-600 mb-1">10x/mo</p>
+                  <p className="text-sm text-slate-600 font-medium">Per-store transaction limit</p>
+                </div>
+                <div className="bg-white rounded-xl p-5 border-2 border-purple-200 text-center shadow-sm">
+                  <p className="text-3xl font-black text-purple-600 mb-1">8 Layers</p>
+                  <p className="text-sm text-slate-600 font-medium">Defense mechanisms</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 14: GTM STRATEGY ====================
+      case 14:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8">
             <div className="max-w-7xl mx-auto">
@@ -2060,8 +2551,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 14: TRACTION ====================
-      case 14:
+      // ==================== SLIDE 15: TRACTION ====================
+      case 15:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8">
             <div className="max-w-6xl mx-auto">
@@ -2073,7 +2564,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   Proof of <span className="text-emerald-600">Demand</span>
                 </h2>
                 <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  30 signed LOIs • Launching in 7 days • Capital-efficient validation
+                  30 signed LOIs • Pre-launch commitments • Q1 2026 go-live
                 </p>
               </div>
 
@@ -2081,7 +2572,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="grid md:grid-cols-4 gap-6 mb-12">
                 {[
                   { label: "Signed LOIs", value: "30", desc: "Merchants with signed agreements", icon: Store, color: "blue" },
-                  { label: "Pipeline", value: "50+", desc: "Additional merchants interested", icon: Target, color: "purple" },
+                  { label: "Pipeline", value: "30+", desc: "Additional merchants interested", icon: Target, color: "purple" },
                   { label: "Launch", value: "7 Days", desc: "MVP going live", icon: Zap, color: "emerald" },
                   { label: "Bootstrapped", value: "$50K", desc: "Self-funded to date", icon: DollarSign, color: "gold" }
                 ].map((stat, idx) => {
@@ -2159,8 +2650,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 15: TEAM ====================
-      case 15:
+      // ==================== SLIDE 16: TEAM ====================
+      case 16:
         return (
           <div className="w-full min-h-screen bg-white py-16 px-8">
             <div className="max-w-6xl mx-auto">
@@ -2225,8 +2716,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 16: THE ASK ====================
-      case 16:
+      // ==================== SLIDE 17: THE ASK ====================
+      case 17:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8 flex items-center justify-center">
             <div className="max-w-5xl mx-auto text-center">
@@ -2244,9 +2735,40 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <p className="text-8xl sm:text-9xl font-black text-[#c9a227] mb-6">
                   <AnimatedNumber value={500} prefix="$" suffix="K" duration={2000} />
                 </p>
-                <p className="text-2xl text-slate-700 max-w-2xl mx-auto">
+                <p className="text-2xl text-slate-700 max-w-2xl mx-auto mb-8">
                   12-month runway to launch, validate, and prep for Series A
                 </p>
+
+                {/* CCS Structure */}
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-2xl p-8 max-w-3xl mx-auto">
+                  <div className="flex items-center gap-3 mb-6 justify-center">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="text-3xl font-black text-slate-900">CCS Structure</h3>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white rounded-xl p-6 border-l-4 border-blue-500 shadow-sm">
+                      <p className="text-sm font-bold text-blue-600 uppercase mb-2">Valuation Cap</p>
+                      <p className="text-4xl font-black text-slate-900 mb-2">$5M</p>
+                      <p className="text-sm text-slate-600">Maximum conversion valuation</p>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 border-l-4 border-purple-500 shadow-sm">
+                      <p className="text-sm font-bold text-purple-600 uppercase mb-2">Discount</p>
+                      <p className="text-4xl font-black text-slate-900 mb-2">20%</p>
+                      <p className="text-sm text-slate-600">On next round conversion</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                    <p className="text-sm text-emerald-800 text-center">
+                      <span className="font-bold">Investor-friendly terms:</span> Converts to equity at Series A with 20% discount or $5M cap, whichever is more favorable
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Use of Funds */}
@@ -2290,7 +2812,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {[
                     { category: "Product & Tech", percent: "40%", amount: "$200K", desc: "Team + development", color: "blue" },
                     { category: "Marketing & Growth", percent: "35%", amount: "$175K", desc: "User + merchant acquisition", color: "purple" },
-                    { category: "Operations", percent: "25%", amount: "$125K", desc: "Legal, admin, buffer", color: "orange" }
+                    { category: "Operations", percent: "25%", amount: "$125K", desc: "Wallet license, legal, admin, buffer", color: "orange" }
                   ].map((item, idx) => {
                     const colorClasses = {
                       blue: 'border-blue-500 bg-blue-50',
@@ -2314,105 +2836,379 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 17: VISION ====================
-      case 17:
-        return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8 flex items-center justify-center">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-8">
-                <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Long-term Vision</p>
-              </div>
-
-              <h2 className="text-7xl font-black text-slate-900 mb-12 leading-tight">
-                The Future of <span className="text-purple-600">Local Discovery</span>
-              </h2>
-
-              {/* Vision Statement */}
-              <p className="text-3xl text-slate-700 max-w-4xl mx-auto mb-16 leading-relaxed">
-                "Every shopper in the GCC should find the best local deal in{' '}
-                <span className="font-bold text-[#c9a227]">30 seconds</span>, not{' '}
-                <span className="font-bold text-red-600">30 minutes</span>."
-              </p>
-
-              {/* 3-Year Milestones */}
-              <div className="grid md:grid-cols-3 gap-8">
-                {[
-                  { year: "Year 1", goal: "UAE Leader", metrics: ["100K users", "5K merchants", "$2M ARR"] },
-                  { year: "Year 2", goal: "GCC Expansion", metrics: ["1M users", "50K merchants", "$20M ARR"] },
-                  { year: "Year 3", goal: "Category King", metrics: ["5M users", "200K merchants", "$100M ARR"] }
-                ].map((milestone, idx) => (
-                  <div key={idx} className="bg-white border-2 border-purple-200 rounded-2xl p-8">
-                    <p className="text-lg font-semibold text-purple-600 mb-2">{milestone.year}</p>
-                    <h3 className="text-3xl font-black text-slate-900 mb-6">{milestone.goal}</h3>
-                    <div className="space-y-2">
-                      {milestone.metrics.map((metric, midx) => (
-                        <p key={midx} className="text-lg text-slate-700">✓ {metric}</p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        );
-
-      // ==================== SLIDE 18: OLD COMPETITIVE LANDSCAPE ====================
+      // ==================== SLIDE 18: VISION ====================
       case 18:
         return (
-          <div className="w-full min-h-screen bg-white py-16 px-8">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-16 px-8 flex items-center justify-center">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Competition</p>
+
+              {/* Header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-500/10 rounded-full mb-4 border border-purple-500/30">
+                  <span className="text-2xl">🚀</span>
+                  <p className="text-sm font-bold text-purple-700 uppercase tracking-wider">Long-term Vision</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
-                  We Play a <span className="text-[#c9a227]">Different Game</span>
+                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                  Commerce Intelligence <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">for the GCC</span>
                 </h2>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                  From offline rewards platform to the shopping decision layer
+                </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
-                {/* Competitors */}
-                <div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-6">Indirect Competitors</h3>
-                  <div className="space-y-4">
-                    {[
-                      { name: "Google/Maps", weakness: "No local deal focus, shows ads not offers" },
-                      { name: "Groupon/Cobone", weakness: "Big brands only, no payment integration" },
-                      { name: "Credit card apps", weakness: "Gated rewards, not search-first" },
-                      { name: "Zomato/Deliveroo", weakness: "Food-only, no broader local discovery" }
-                    ].map((comp, idx) => (
-                      <div key={idx} className="bg-slate-50 border-2 border-slate-200 rounded-xl p-6">
-                        <h4 className="text-xl font-bold text-slate-900 mb-2">{comp.name}</h4>
-                        <p className="text-base text-red-600 font-medium">Gap: {comp.weakness}</p>
+              {/* Vision Statement Card */}
+              <div className="bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-white border-2 border-purple-500/30 rounded-3xl p-8 mb-12 shadow-xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+                    <span className="text-3xl">💡</span>
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-purple-600 uppercase tracking-wide">Our North Star</p>
+                    <h3 className="text-2xl font-black text-slate-900">The 30-Second Promise</h3>
+                  </div>
+                </div>
+                <p className="text-3xl text-slate-700 leading-relaxed font-medium mb-4">
+                  "Every shopper in the GCC should find the best local deal in{' '}
+                  <span className="font-black text-[#c9a227]">30 seconds</span>, not{' '}
+                  <span className="font-black text-red-600">30 minutes</span>."
+                </p>
+                <div className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/20">
+                  <p className="text-base text-slate-600 leading-relaxed">
+                    Save 3 billion hours annually across GCC by making local discovery instant, personalized, and rewarding
+                  </p>
+                </div>
+              </div>
+
+              {/* 3-Phase Roadmap */}
+              <div className="space-y-6 mb-12">
+
+                {/* Phase 1: Year 1-3 */}
+                <div className="bg-white border-2 border-emerald-500/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center text-xl font-black flex-shrink-0 shadow-lg">
+                      1
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <h3 className="text-2xl font-black text-slate-900">Phase 1: Rewards Platform</h3>
+                        <span className="px-3 py-1 bg-emerald-500/20 rounded-full text-xs font-bold text-emerald-700">Year 1-3</span>
                       </div>
-                    ))}
+                      <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                        Build GCC's leading offline cashback network → Capture shopping behavior data → Establish merchant relationships
+                      </p>
+                      <div className="bg-blue-50 border-l-4 border-blue-400 rounded-lg p-3 mb-4">
+                        <p className="text-sm text-blue-800">
+                          <span className="font-bold">Launch Model:</span> Cash-based transactions with points tracking (no wallet functionality required). Wallet features launch in Phase 2 after SVF license.
+                        </p>
+                      </div>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 rounded-xl p-4">
+                          <p className="text-xs text-emerald-600 font-bold uppercase mb-2">Dubai (Y1-3)</p>
+                          <div className="space-y-1">
+                            <p className="text-sm text-slate-700">• 5,000 merchants</p>
+                            <p className="text-sm text-slate-700">• 500K users</p>
+                            <p className="text-sm text-slate-700">• AED 500M GMV</p>
+                          </div>
+                        </div>
+                        <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl p-4">
+                          <p className="text-xs text-blue-600 font-bold uppercase mb-2">Qatar + KSA (Y4-5)</p>
+                          <div className="space-y-1">
+                            <p className="text-sm text-slate-700">• 15,000 merchants</p>
+                            <p className="text-sm text-slate-700">• 2M users</p>
+                            <p className="text-sm text-slate-700">• AED 2B GMV</p>
+                          </div>
+                        </div>
+                        <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-xl p-4">
+                          <p className="text-xs text-purple-600 font-bold uppercase mb-2">Full GCC (Y6+)</p>
+                          <div className="space-y-1">
+                            <p className="text-sm text-slate-700">• 25,000+ merchants</p>
+                            <p className="text-sm text-slate-700">• 5M+ users</p>
+                            <p className="text-sm text-slate-700">• AED 5B+ GMV</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Our Edge */}
-                <div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-6">Our Unique Edge</h3>
-                  <div className="space-y-4">
-                    {[
-                      { advantage: "Search-First Discovery", desc: "Only platform built for 'deals near me' queries" },
-                      { advantage: "Payment Integration", desc: "Routing + rewards in one seamless flow" },
-                      { advantage: "Zero Merchant Burden", desc: "No tech setup required, we handle everything" },
-                      { advantage: "AI-Powered Matching", desc: "Real-time personalization at scale" }
-                    ].map((edge, idx) => (
-                      <div key={idx} className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-xl p-6">
-                        <h4 className="text-xl font-bold text-emerald-700 mb-2">✓ {edge.advantage}</h4>
-                        <p className="text-base text-slate-700">{edge.desc}</p>
+                {/* Phase 2: Year 4-6 */}
+                <div className="bg-white border-2 border-blue-500/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white flex items-center justify-center text-xl font-black flex-shrink-0 shadow-lg">
+                      2
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <h3 className="text-2xl font-black text-slate-900">Phase 2: Search & Discovery</h3>
+                        <span className="px-3 py-1 bg-blue-500/20 rounded-full text-xs font-bold text-blue-700">Year 4-6</span>
                       </div>
-                    ))}
+                      <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                        Launch search-first discovery → "Find best salon near me" → Instant results with cashback → Become the default local search engine
+                      </p>
+                      <div className="grid md:grid-cols-4 gap-3">
+                        <div className="bg-gradient-to-br from-blue-500/10 to-blue-500/5 border border-blue-500/30 rounded-lg p-3 text-center">
+                          <p className="text-2xl font-black text-blue-600 mb-1">10M+</p>
+                          <p className="text-xs text-slate-600 font-bold">Monthly searches</p>
+                        </div>
+                        <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/30 rounded-lg p-3 text-center">
+                          <p className="text-2xl font-black text-purple-600 mb-1">50K+</p>
+                          <p className="text-xs text-slate-600 font-bold">Merchants indexed</p>
+                        </div>
+                        <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 border border-emerald-500/30 rounded-lg p-3 text-center">
+                          <p className="text-2xl font-black text-emerald-600 mb-1">100M+</p>
+                          <p className="text-xs text-slate-600 font-bold">Data points</p>
+                        </div>
+                        <div className="bg-gradient-to-br from-[#c9a227]/10 to-[#c9a227]/5 border border-[#c9a227]/30 rounded-lg p-3 text-center">
+                          <p className="text-2xl font-black text-[#c9a227] mb-1">AI</p>
+                          <p className="text-xs text-slate-600 font-bold">Personalization</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 3: Year 7-10 */}
+                <div className="bg-white border-2 border-purple-500/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-start gap-4">
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-white flex items-center justify-center text-xl font-black flex-shrink-0 shadow-lg">
+                      3
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <h3 className="text-2xl font-black text-slate-900">Phase 3: Commerce Intelligence</h3>
+                        <span className="px-3 py-1 bg-purple-500/20 rounded-full text-xs font-bold text-purple-700">Year 7-10</span>
+                      </div>
+                      <p className="text-base text-slate-600 mb-4 leading-relaxed">
+                        AI-powered shopping assistant → Predictive recommendations → Merchant intelligence API → The shopping decision layer for the GCC
+                      </p>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div className="bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/30 rounded-xl p-4">
+                          <h4 className="text-base font-black text-purple-700 mb-3 flex items-center gap-2">
+                            <span>🤖</span> Consumer AI
+                          </h4>
+                          <div className="space-y-2">
+                            <p className="text-sm text-slate-600">• Predict shopping needs before you search</p>
+                            <p className="text-sm text-slate-600">• Personalized recommendations at scale</p>
+                            <p className="text-sm text-slate-600">• Cross-category intelligence</p>
+                          </div>
+                        </div>
+                        <div className="bg-gradient-to-br from-[#c9a227]/10 to-[#c9a227]/5 border border-[#c9a227]/30 rounded-xl p-4">
+                          <h4 className="text-base font-black text-[#c9a227] mb-3 flex items-center gap-2">
+                            <span>📊</span> Merchant Intelligence
+                          </h4>
+                          <div className="space-y-2">
+                            <p className="text-sm text-slate-600">• Real-time demand signals</p>
+                            <p className="text-sm text-slate-600">• Dynamic pricing optimization</p>
+                            <p className="text-sm text-slate-600">• Competitive positioning insights</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Bottom Vision Statement */}
+              <div className="bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-2xl p-8 shadow-2xl border-4 border-white/20 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                <div className="relative z-10 text-center">
+                  <p className="text-3xl font-black mb-3 leading-tight">
+                    From 10% cashback platform to the shopping OS of the GCC
+                  </p>
+                  <p className="text-lg font-bold opacity-80">
+                    Capturing the $150B GCC commerce graph, one transaction at a time
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         );
 
-      // ==================== SLIDE 19: COMPETITIVE MOAT ====================
+      // ==================== SLIDE 19: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
       case 19:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8">
+            <div className="max-w-7xl mx-auto">
+
+              {/* Header */}
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
+                  <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Strategic Positioning</p>
+                </div>
+                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-6">
+                  We Play a <span className="text-[#c9a227]">Different Game</span>
+                </h2>
+                <p className="text-lg text-blue-600 uppercase tracking-wide font-bold mb-3">
+                  Beyond Head-to-Head Competition — We're Creating a New Category
+                </p>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
+                  While others fight for <span className="text-red-600 font-bold">delivery market share</span>, we're building an entirely new habit: <span className="text-emerald-600 font-bold">search-first offline saving</span>. This isn't disruption—it's <span className="text-blue-600 font-bold">category creation</span>.
+                </p>
+              </div>
+
+              {/* Comparison Grid */}
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+
+                {/* Left: What They're Missing */}
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                      <AlertCircle className="text-red-600" size={24} />
+                    </div>
+                    <h3 className="text-3xl font-bold text-slate-900">What Incumbents Can't Do</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "Noon / Careem",
+                        icon: "🛒",
+                        weakness: "E-commerce & Super App model",
+                        why: "Can't prioritize offline discovery without cannibalizing their delivery/marketplace revenue"
+                      },
+                      {
+                        name: "Smiles / Entertainer",
+                        icon: "🎫",
+                        weakness: "Discount pressure business",
+                        why: "Merchants pay 30% cuts for one-time bargain hunters. Can't pivot to loyalty without losing their margin model"
+                      },
+                      {
+                        name: "Credit Cards",
+                        icon: "💳",
+                        weakness: "Gated 1-2% cashback",
+                        why: "Capped rewards, points expire, not search-first. Bank partnerships prevent neutrality"
+                      },
+                      {
+                        name: "Google / Meta Ads",
+                        icon: "📱",
+                        weakness: "No ROI guarantee",
+                        why: "AED 300-500 CAC with zero footfall guarantee. Merchants pay for clicks, not sales"
+                      }
+                    ].map((comp, idx) => (
+                      <div key={idx} className="bg-white border-2 border-red-200 rounded-xl p-5 hover:shadow-lg transition-shadow">
+                        <div className="flex items-start gap-3 mb-2">
+                          <span className="text-2xl">{comp.icon}</span>
+                          <div className="flex-1">
+                            <h4 className="text-lg font-bold text-slate-900 mb-1">{comp.name}</h4>
+                            <p className="text-sm text-red-600 font-semibold mb-2">⚠ {comp.weakness}</p>
+                            <p className="text-sm text-slate-700 leading-relaxed">{comp.why}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right: Our Unique Advantages */}
+                <div>
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center">
+                      <Trophy className="text-emerald-600" size={24} />
+                    </div>
+                    <h3 className="text-3xl font-bold text-slate-900">What Makes Us Different</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        advantage: "Search-First Offline Discovery",
+                        icon: "🔍",
+                        desc: "Only platform purpose-built for 'best deals near me' intent. Not a marketplace, delivery app, or super app distraction."
+                      },
+                      {
+                        advantage: "Performance-Based Model",
+                        icon: "💰",
+                        desc: "Merchants pay 15% only when customers visit. No setup fees, no monthly fees, no ad spend risk. 100% ROI guarantee."
+                      },
+                      {
+                        advantage: "No User-Facing Redemption Restrictions",
+                        icon: "♾️",
+                        desc: "Users can redeem full coin balance anytime. No expiry, no visible caps, no fine print. Internal fraud controls protect budget. 10% cashback beats 1-2% cards by 5-10x."
+                      },
+                      {
+                        advantage: "Neutral Intelligence Layer",
+                        icon: "🧠",
+                        desc: "We recommend best card, wallet, or BNPL for each transaction—even competitors. Merchants and users trust neutrality."
+                      }
+                    ].map((edge, idx) => (
+                      <div key={idx} className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-300 rounded-xl p-5 hover:shadow-lg transition-shadow">
+                        <div className="flex items-start gap-3">
+                          <span className="text-2xl">{edge.icon}</span>
+                          <div className="flex-1">
+                            <div className="flex items-start gap-2 mb-2">
+                              <CheckCircle2 className="text-emerald-600 flex-shrink-0 mt-0.5" size={20} />
+                              <h4 className="text-lg font-bold text-emerald-700">{edge.advantage}</h4>
+                            </div>
+                            <p className="text-sm text-slate-700 leading-relaxed">{edge.desc}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Why We Win - Strategic Perspective */}
+              <div className="text-center mb-6">
+                <p className="text-sm text-blue-600 uppercase tracking-wider font-bold mb-2">Strategic Framework</p>
+                <h3 className="text-3xl font-black text-slate-900">Why This Timing Creates an Unassailable Position</h3>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 via-blue-50/50 to-white border-2 border-blue-200 rounded-3xl p-8 mb-8 shadow-xl">
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="bg-white rounded-xl p-6 border-l-4 border-blue-500 shadow-sm">
+                    <p className="text-sm text-blue-600 font-bold uppercase tracking-wide mb-2">First-Mover</p>
+                    <p className="text-lg font-black text-slate-900 mb-2">12-18 Month Head Start</p>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      Offline rewards layer in UAE is greenfield. By the time they notice, we'll own the habit.
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 border-l-4 border-emerald-500 shadow-sm">
+                    <p className="text-sm text-emerald-600 font-bold uppercase tracking-wide mb-2">Capital Efficiency</p>
+                    <p className="text-lg font-black text-slate-900 mb-2">5% Margin from Day 1</p>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      Profitable unit economics at launch. No need to burn cash competing with Careem/Noon on delivery.
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 border-l-4 border-purple-500 shadow-sm">
+                    <p className="text-sm text-purple-600 font-bold uppercase tracking-wide mb-2">Network Effects</p>
+                    <p className="text-lg font-black text-slate-900 mb-2">Data Compounds Over Time</p>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      Behavioral shopping graph can't be scraped or bought. Every transaction deepens the moat.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bottom Callout */}
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
+                <div className="inline-block px-4 py-2 bg-blue-500/20 rounded-full mb-4">
+                  <p className="text-xs font-bold text-blue-400 uppercase tracking-wider">Strategic Takeaway</p>
+                </div>
+                <p className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
+                  While they fight over <span className="text-red-400">delivery market share</span>, we're creating a <span className="text-blue-400">new category</span>
+                </p>
+                <p className="text-xl sm:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+                  We're not out-delivering Noon or out-discounting Smiles. We're building the <span className="text-[#c9a227] font-black">offline saving habit</span> —
+                  a blue ocean they <span className="text-red-400 font-bold">can't enter</span> without cannibalizing their entire business model.
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto mt-8">
+                  <div className="bg-white/5 rounded-xl p-4 border border-emerald-500/30">
+                    <p className="text-2xl font-black text-emerald-400 mb-1">18x</p>
+                    <p className="text-sm text-slate-400 font-medium">LTV:CAC ratio (20-day payback)</p>
+                  </div>
+                  <div className="bg-white/5 rounded-xl p-4 border border-[#c9a227]/30">
+                    <p className="text-2xl font-black text-[#c9a227] mb-1">Q1 2026</p>
+                    <p className="text-sm text-slate-400 font-medium">Launch & lock the market before they react</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 20: COMPETITIVE MOAT ====================
+      case 20:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8">
             <div className="max-w-7xl mx-auto">
@@ -2430,8 +3226,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </p>
               </div>
 
-              {/* 3 Moat Pillars */}
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {/* 4 Moat Pillars */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
 
                 {/* Pillar 1: Neutral Intelligence */}
                 <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
@@ -2538,6 +3334,41 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </p>
                   </div>
                 </div>
+
+                {/* Pillar 4: Coin Lock-In Mechanism */}
+                <div className="bg-white border-2 border-orange-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
+                  <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                    <Coins className="text-orange-600" size={32} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Coin Lock-In</h3>
+                  <p className="text-base text-slate-700 leading-relaxed mb-6">
+                    Users with <span className="font-bold text-orange-600">10+ AED in unspent coins</span> create powerful retention:
+                  </p>
+                  <div className="space-y-2 mb-6 text-sm text-slate-700">
+                    <div className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
+                      <span>Free POS + inventory software for merchants</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
+                      <span>Coins earned but not yet redeemed</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
+                      <span>Social bonuses creating network effects</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
+                      <span>Gamification driving daily app opens</span>
+                    </div>
+                  </div>
+                  <div className="bg-orange-50 border-l-4 border-orange-500 rounded-lg p-4">
+                    <p className="text-sm font-bold text-orange-700 mb-2">Why it's defensible:</p>
+                    <p className="text-sm text-slate-700">
+                      Financial + behavioral lock-in. Users come back to spend their earned coins. Merchants stay for free software + loyal customers. Strong habit formation.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Defense Timeline */}
@@ -2587,77 +3418,304 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 20: ROADMAP ====================
-      case 20:
+      // ==================== SLIDE 21: ROADMAP ====================
+      case 21:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-white py-16 px-8">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Product Roadmap</p>
+              {/* Enhanced Header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-blue-600/10 rounded-full mb-4 border border-blue-600/30">
+                  <span className="text-2xl">🗓️</span>
+                  <p className="text-sm font-bold text-blue-700 uppercase tracking-wider">GTM Roadmap</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
-                  What's <span className="text-blue-600">Next</span>
+                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-4">
+                  The Path to <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">GCC Domination</span>
                 </h2>
+                <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+                  3 Phases, 3 Horizons: Dubai → Qatar+KSA → Full GCC
+                </p>
               </div>
 
+              {/* Timeline Grid */}
               <div className="space-y-8">
+                {/* Phase 1 Header */}
+                <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 rounded-2xl p-6 border-2 border-emerald-500/40">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center text-xl font-black shadow-lg">
+                      1
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900">Phase 1: Dubai Launch</h3>
+                      <p className="text-sm text-slate-600 font-bold">Years 1-3 • 3 Horizons • Q1 2026 - Q4 2028</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 1 Horizons */}
                 {[
                   {
-                    quarter: "Q1 2025",
-                    title: "Launch & Validate",
-                    features: ["Dubai Marina beta", "Core search + payments", "50 merchants onboarded", "Mobile app (iOS/Android)"],
-                    status: "In Progress"
+                    phase: "Horizon 1",
+                    timeline: "Months 1-12 (2026)",
+                    emoji: "🚀",
+                    title: "Core Verticals Launch",
+                    subtitle: "Dubai Marina Focus",
+                    features: ["Launch Tier 1: F&B, Grocery, Salons, Fashion, Fitness, Events", "50 merchants onboarded", "Mobile app (iOS/Android)", "Core payments + search"],
+                    kpis: "500 merchants • 50K users • AED 50M GMV",
+                    status: "In Progress",
+                    color: "emerald",
+                    bgGradient: "from-emerald-500/10 via-emerald-500/5 to-white",
+                    borderColor: "border-emerald-500/30",
+                    badgeBg: "from-emerald-500 to-emerald-600"
                   },
                   {
-                    quarter: "Q2 2025",
-                    title: "Expand & Optimize",
-                    features: ["3 Dubai neighborhoods", "AI recommendation engine", "Merchant dashboard", "Referral program"],
-                    status: "Planned"
+                    phase: "Horizon 2",
+                    timeline: "Months 13-24 (2027)",
+                    emoji: "📈",
+                    title: "Category Expansion",
+                    subtitle: "Add Tier 2 Categories",
+                    features: ["Add Entertainment (cinemas, gaming), Home Services, Pet", "AI recommendation engine", "Merchant analytics dashboard", "B2B partnerships (banks, telcos)"],
+                    kpis: "2,000 merchants • 200K users • AED 200M GMV",
+                    status: "Planned",
+                    color: "blue",
+                    bgGradient: "from-blue-500/10 via-blue-500/5 to-white",
+                    borderColor: "border-blue-500/30",
+                    badgeBg: "from-blue-500 to-blue-600"
                   },
                   {
-                    quarter: "Q3 2025",
-                    title: "Expand Categories (H2)",
-                    features: ["Add Entertainment & Home Services", "Add Pet categories", "B2B partnerships (banks)", "Advanced analytics"],
-                    status: "Planned"
-                  },
+                    phase: "Horizon 3",
+                    timeline: "Months 25-36 (2028)",
+                    emoji: "🏙️",
+                    title: "UAE Expansion",
+                    subtitle: "All 7 UAE Cities",
+                    features: ["Abu Dhabi + Sharjah launch", "All UAE cities (Ajman, RAK, Fujairah, UAQ)", "Multi-currency support (AED/USD)", "Series A raise preparation"],
+                    kpis: "5,000 merchants • 500K users • AED 500M GMV",
+                    status: "Planned",
+                    color: "purple",
+                    bgGradient: "from-purple-500/10 via-purple-500/5 to-white",
+                    borderColor: "border-purple-500/30",
+                    badgeBg: "from-purple-500 to-purple-600"
+                  }
+                ].map((horizon, idx) => {
+                  const statusColors = {
+                    "In Progress": "bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 text-emerald-700 border border-emerald-500/30",
+                    "Planned": "bg-gradient-to-r from-slate-200/50 to-slate-100/30 text-slate-600 border border-slate-300/50"
+                  };
+
+                  return (
+                    <div key={idx} className={`bg-gradient-to-br ${horizon.bgGradient} border-2 ${horizon.borderColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300`}>
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        {/* Left: Phase Badge + Title */}
+                        <div className="flex items-start gap-4 flex-1">
+                          {/* Badge with Emoji */}
+                          <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${horizon.badgeBg} text-white flex flex-col items-center justify-center flex-shrink-0 shadow-lg`}>
+                            <span className="text-2xl leading-none">{horizon.emoji}</span>
+                          </div>
+
+                          {/* Phase + Title */}
+                          <div>
+                            <p className={`text-xs font-bold text-${horizon.color}-600 mb-1 uppercase tracking-wider`}>{horizon.phase}</p>
+                            <p className="text-xs text-slate-500 font-semibold mb-2">{horizon.timeline}</p>
+                            <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-1">{horizon.title}</h3>
+                            <p className="text-sm text-slate-600 font-medium">{horizon.subtitle}</p>
+                          </div>
+                        </div>
+
+                        {/* Right: Status Badge */}
+                        <div className={`inline-flex px-5 py-2.5 rounded-full ${statusColors[horizon.status]} text-sm font-bold shadow-sm flex-shrink-0`}>
+                          {horizon.status}
+                        </div>
+                      </div>
+
+                      {/* Features Grid */}
+                      <div className="mt-6 space-y-3">
+                        {horizon.features.map((feature, fidx) => (
+                          <div key={fidx} className="flex items-start gap-3 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-slate-200/50">
+                            <CheckCircle2 size={20} className={`text-${horizon.color}-600 flex-shrink-0 mt-0.5`} />
+                            <p className="text-sm font-medium text-slate-700 leading-snug">{feature}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* KPIs */}
+                      <div className="mt-4 bg-white/80 backdrop-blur-sm rounded-xl p-4 border-2 border-slate-200">
+                        <p className="text-xs text-slate-500 font-bold uppercase tracking-wide mb-1">Target KPIs</p>
+                        <p className="text-base font-black text-slate-900">{horizon.kpis}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Phase 2 Header */}
+                <div className="bg-gradient-to-r from-blue-600/20 to-blue-600/10 rounded-2xl p-6 border-2 border-blue-600/40 mt-8">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 text-white flex items-center justify-center text-xl font-black shadow-lg">
+                      2
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900">Phase 2: GCC Expansion</h3>
+                      <p className="text-sm text-slate-600 font-bold">Years 4-5 • Qatar + Saudi Arabia • 2029-2030</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 2 Details */}
+                {[
                   {
-                    quarter: "Q4 2025",
-                    title: "UAE Expansion (H3)",
-                    features: ["Abu Dhabi + Sharjah launch", "All UAE cities coverage", "Multi-currency support", "Series A raise prep"],
-                    status: "Planned"
+                    phase: "Phase 2",
+                    timeline: "Years 4-5 (2029-2030)",
+                    emoji: "🌍",
+                    title: "Qatar + Saudi Arabia",
+                    subtitle: "Largest GCC Markets",
+                    features: ["Qatar launch (Doha) - Q1 2029", "Saudi Arabia (Riyadh, Jeddah, Dammam) - Q3 2029", "Replicate proven Dubai playbook", "Local partnerships + regulatory compliance"],
+                    kpis: "15,000 merchants • 2M users • AED 2B GMV",
+                    status: "Planned",
+                    color: "blue",
+                    bgGradient: "from-blue-600/10 via-blue-600/5 to-white",
+                    borderColor: "border-blue-600/30",
+                    badgeBg: "from-blue-600 to-blue-500"
                   }
                 ].map((phase, idx) => {
-                  const statusColor = phase.status === "In Progress" ? "bg-emerald-100 text-emerald-700" : "bg-slate-100 text-slate-600";
+                  const statusColors = {
+                    "In Progress": "bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 text-emerald-700 border border-emerald-500/30",
+                    "Planned": "bg-gradient-to-r from-slate-200/50 to-slate-100/30 text-slate-600 border border-slate-300/50"
+                  };
+
                   return (
-                    <div key={idx} className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                        <div>
-                          <p className="text-sm font-bold text-blue-600 mb-2">{phase.quarter}</p>
-                          <h3 className="text-3xl font-black text-slate-900 mb-2">{phase.title}</h3>
+                    <div key={`phase2-${idx}`} className={`bg-gradient-to-br ${phase.bgGradient} border-2 ${phase.borderColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300`}>
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        {/* Left: Phase Badge + Title */}
+                        <div className="flex items-start gap-4 flex-1">
+                          {/* Badge with Emoji */}
+                          <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${phase.badgeBg} text-white flex flex-col items-center justify-center flex-shrink-0 shadow-lg`}>
+                            <span className="text-2xl leading-none">{phase.emoji}</span>
+                          </div>
+
+                          {/* Phase + Title */}
+                          <div>
+                            <p className={`text-xs font-bold text-${phase.color}-600 mb-1 uppercase tracking-wider`}>{phase.phase}</p>
+                            <p className="text-xs text-slate-500 font-semibold mb-2">{phase.timeline}</p>
+                            <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-1">{phase.title}</h3>
+                            <p className="text-sm text-slate-600 font-medium">{phase.subtitle}</p>
+                          </div>
                         </div>
-                        <div className={`inline-flex px-4 py-2 rounded-full ${statusColor} text-sm font-bold`}>
+
+                        {/* Right: Status Badge */}
+                        <div className={`inline-flex px-5 py-2.5 rounded-full ${statusColors[phase.status]} text-sm font-bold shadow-sm flex-shrink-0`}>
                           {phase.status}
                         </div>
                       </div>
-                      <div className="grid md:grid-cols-2 gap-3">
+
+                      {/* Features Grid */}
+                      <div className="mt-6 space-y-3">
                         {phase.features.map((feature, fidx) => (
-                          <div key={fidx} className="flex items-start gap-2">
-                            <CheckCircle2 size={20} className="text-blue-600 flex-shrink-0 mt-0.5" />
-                            <p className="text-base text-slate-700">{feature}</p>
+                          <div key={fidx} className="flex items-start gap-3 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-slate-200/50">
+                            <CheckCircle2 size={20} className={`text-${phase.color}-600 flex-shrink-0 mt-0.5`} />
+                            <p className="text-sm font-medium text-slate-700 leading-snug">{feature}</p>
                           </div>
                         ))}
+                      </div>
+
+                      {/* KPIs */}
+                      <div className="mt-4 bg-white/80 backdrop-blur-sm rounded-xl p-4 border-2 border-slate-200">
+                        <p className="text-xs text-slate-500 font-bold uppercase tracking-wide mb-1">Target KPIs</p>
+                        <p className="text-base font-black text-slate-900">{phase.kpis}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+
+                {/* Phase 3 Header */}
+                <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-2xl p-6 border-2 border-[#c9a227]/40 mt-8">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] text-[#0a1628] flex items-center justify-center text-xl font-black shadow-lg">
+                      3
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-black text-slate-900">Phase 3: Full GCC Coverage</h3>
+                      <p className="text-sm text-slate-600 font-bold">Year 6+ • Kuwait, Bahrain, Oman • 2031+</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 3 Details */}
+                {[
+                  {
+                    phase: "Phase 3",
+                    timeline: "Year 6+ (2031+)",
+                    emoji: "🏆",
+                    title: "Full GCC Domination",
+                    subtitle: "Market Leader Position",
+                    features: ["Kuwait launch - Q1 2031", "Bahrain launch - Q2 2031", "Oman launch - Q3 2031", "Complete GCC rewards market dominance"],
+                    kpis: "25,000+ merchants • 5M+ users • AED 5B+ GMV",
+                    status: "Planned",
+                    color: "amber",
+                    bgGradient: "from-[#c9a227]/10 via-[#c9a227]/5 to-white",
+                    borderColor: "border-[#c9a227]/30",
+                    badgeBg: "from-[#c9a227] to-[#d4ab2c]"
+                  }
+                ].map((phase, idx) => {
+                  const statusColors = {
+                    "In Progress": "bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 text-emerald-700 border border-emerald-500/30",
+                    "Planned": "bg-gradient-to-r from-slate-200/50 to-slate-100/30 text-slate-600 border border-slate-300/50"
+                  };
+
+                  return (
+                    <div key={`phase3-${idx}`} className={`bg-gradient-to-br ${phase.bgGradient} border-2 ${phase.borderColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300`}>
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        {/* Left: Phase Badge + Title */}
+                        <div className="flex items-start gap-4 flex-1">
+                          {/* Badge with Emoji */}
+                          <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${phase.badgeBg} text-white flex flex-col items-center justify-center flex-shrink-0 shadow-lg`}>
+                            <span className="text-2xl leading-none">{phase.emoji}</span>
+                          </div>
+
+                          {/* Phase + Title */}
+                          <div>
+                            <p className="text-xs font-bold text-[#c9a227] mb-1 uppercase tracking-wider">{phase.phase}</p>
+                            <p className="text-xs text-slate-500 font-semibold mb-2">{phase.timeline}</p>
+                            <h3 className="text-2xl lg:text-3xl font-black text-slate-900 mb-1">{phase.title}</h3>
+                            <p className="text-sm text-slate-600 font-medium">{phase.subtitle}</p>
+                          </div>
+                        </div>
+
+                        {/* Right: Status Badge */}
+                        <div className={`inline-flex px-5 py-2.5 rounded-full ${statusColors[phase.status]} text-sm font-bold shadow-sm flex-shrink-0`}>
+                          {phase.status}
+                        </div>
+                      </div>
+
+                      {/* Features Grid */}
+                      <div className="mt-6 space-y-3">
+                        {phase.features.map((feature, fidx) => (
+                          <div key={fidx} className="flex items-start gap-3 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-slate-200/50">
+                            <CheckCircle2 size={20} className="text-[#c9a227] flex-shrink-0 mt-0.5" />
+                            <p className="text-sm font-medium text-slate-700 leading-snug">{feature}</p>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* KPIs */}
+                      <div className="mt-4 bg-white/80 backdrop-blur-sm rounded-xl p-4 border-2 border-slate-200">
+                        <p className="text-xs text-slate-500 font-bold uppercase tracking-wide mb-1">Target KPIs</p>
+                        <p className="text-base font-black text-slate-900">{phase.kpis}</p>
                       </div>
                     </div>
                   );
                 })}
               </div>
+
+              {/* Bottom CTA Banner */}
+              <div className="mt-12 bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-3xl p-8 text-center shadow-xl">
+                <p className="text-3xl lg:text-4xl font-black mb-3">From Dubai beta to GCC market leader in 6 years</p>
+                <p className="text-lg font-medium opacity-90">3 Phases. 3 Horizons. 25,000+ merchants. AED 5B+ GMV.</p>
+              </div>
             </div>
           </div>
         );
 
-      // ==================== SLIDE 21: TECHNOLOGY ====================
-      case 21:
+      // ==================== SLIDE 22: TECHNOLOGY ====================
+      case 22:
         return (
           <div className="w-full min-h-screen bg-white py-16 px-8">
             <div className="max-w-6xl mx-auto">
@@ -2758,12 +3816,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 22-26: CLOSING SLIDES ====================
-      case 22:
+      // ==================== SLIDE 23-27: CLOSING SLIDES ====================
       case 23:
       case 24:
       case 25:
       case 26:
+      case 27:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white flex items-center justify-center p-8">
             <div className="max-w-4xl mx-auto text-center">

@@ -102,10 +102,58 @@ export default function InvestorMemo() {
               <p className="text-sm sm:text-base text-gray-600">Payment Intelligence & Universal Rewards</p>
             </div>
             <div className="sm:text-right">
-              <p className="text-xs sm:text-sm text-gray-500">January 2025</p>
+              <p className="text-xs sm:text-sm text-gray-500">January 2026</p>
               <p className="text-xs sm:text-sm text-gray-500">Pre-Seed Round</p>
             </div>
           </div>
+
+          {/* What is Nuqta */}
+          <section className="mb-6 sm:mb-8 bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 border-l-4 border-[#c9a227] p-4 sm:p-6 rounded-r-lg">
+            <h2 className="text-xl sm:text-2xl font-black text-gray-900 mb-3 sm:mb-4">What is Nuqta?</h2>
+            <div className="space-y-3 sm:space-y-4">
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <p className="text-base sm:text-lg font-bold text-[#c9a227] mb-2">The Elevator Pitch</p>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed italic">
+                  "Nuqta is Google Maps meets cashback for offline shopping. We show users where to find the best deals nearby,
+                  then reward them 10% back for visiting. Merchants only pay when customers walk through their doors.
+                  30+ merchants signed, launching in 7 days."
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <p className="text-base sm:text-lg font-bold text-gray-900 mb-2">In Simple Terms</p>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  Think of Nuqta as the missing rewards layer for offline shopping in the GCC. Credit cards give 1-2% cashback.
+                  We give 5-10%. But unlike cards, we're a discovery platform — users <strong>search</strong> for nearby merchants,
+                  <strong>save</strong> with instant offers, and <strong>earn</strong> universal coins they can spend anywhere in our network.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 shadow-sm">
+                <p className="text-base sm:text-lg font-bold text-gray-900 mb-2">Why It Matters</p>
+                <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                  95% of offline spending in Dubai gets <strong>zero rewards</strong>. That's AED 2.4B in lost value annually.
+                  Meanwhile, merchants burn AED 200-500 per customer on Google Ads with no guarantee of repeat business.
+                  Nuqta fixes both problems: users get 5x better rewards than cards, merchants get guaranteed footfall at 75-85% lower CAC.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-3">
+                <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-lg p-3 border border-emerald-200">
+                  <p className="text-xs font-bold text-emerald-700 uppercase mb-1">For Users</p>
+                  <p className="text-sm text-emerald-900 font-semibold">10% cashback everywhere</p>
+                </div>
+                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-3 border border-blue-200">
+                  <p className="text-xs font-bold text-blue-700 uppercase mb-1">For Merchants</p>
+                  <p className="text-sm text-blue-900 font-semibold">15% commission, pay per sale</p>
+                </div>
+                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-3 border border-purple-200">
+                  <p className="text-xs font-bold text-purple-700 uppercase mb-1">For Nuqta</p>
+                  <p className="text-sm text-purple-900 font-semibold">5% net margin, day 1 profitable</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* Executive Summary */}
           <section className="mb-6 sm:mb-8">
@@ -113,13 +161,34 @@ export default function InvestorMemo() {
               <span className="w-5 h-5 sm:w-6 sm:h-6 bg-[#c9a227] text-white rounded text-[10px] sm:text-xs flex items-center justify-center font-bold">1</span>
               Executive Summary
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Nuqta is building the payment intelligence layer for the Gulf region. We aggregate offers, rewards,
-              and payment options across banks, BNPL providers, and merchants into a single consumer interface.
-              Users make smarter payment decisions and earn universal rewards. Merchants access affordable
-              loyalty tools without platform dependency. We are the neutral infrastructure connecting
-              a fragmented ecosystem — positioned to become essential rails for GCC consumer commerce.
+            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3">
+              <strong>Search. Save. Earn.</strong> Nuqta provides instant cashback (5-10%) on every offline
+              purchase — cafes, salons, gyms, and more. Users search, discover, and save. Merchants get
+              performance-based customer acquisition with proven ROI. With 30+ signed LOIs and launching in 7 days,
+              we're building the neutral infrastructure that connects a $45B GCC market, starting with Dubai's
+              offline economy.
             </p>
+            <div className="bg-gray-50 rounded-lg p-3 sm:p-4 border border-gray-200">
+              <p className="text-xs font-bold text-gray-500 uppercase mb-2">The Opportunity at a Glance</p>
+              <div className="grid sm:grid-cols-2 gap-3 text-xs sm:text-sm text-gray-700">
+                <div className="flex items-start gap-2">
+                  <span className="text-[#c9a227]">▸</span>
+                  <span><strong>$150B GCC market</strong> (offline retail + services)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-[#c9a227]">▸</span>
+                  <span><strong>18x LTV:CAC ratio</strong> (world-class unit economics)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-[#c9a227]">▸</span>
+                  <span><strong>30+ merchants signed</strong> (60+ total network)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-[#c9a227]">▸</span>
+                  <span><strong>7-day launch timeline</strong> (Jan 28, 2026)</span>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Market Opportunity */}
@@ -136,21 +205,21 @@ export default function InvestorMemo() {
             <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
                 <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">
-                  <DataPoint value="$78B" source="GCC Foodservice ($61.55B, Mordor Intelligence 2025), extrapolated salons & fitness" />
+                  <DataPoint value="$150B" source="GCC Retail Market Report 2024: Total offline retail & services across 6 GCC countries" />
                 </p>
                 <p className="text-[10px] sm:text-xs text-gray-500">TAM (GCC Total Market)</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
                 <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">
-                  <DataPoint value="$34B" source="UAE Foodservice ($23.21B), Salons ($10.05B), Fitness ($0.6B)" />
+                  <DataPoint value="$45B" source="GCC D2C retail + local services (F&B, Beauty, Fashion, Fitness): 30% of TAM" />
                 </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">SAM (UAE Market)</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">SAM (GCC Market)</p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
                 <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">
-                  <DataPoint value="$340M" source="1% penetration target with 16.8x LTV:CAC economics" />
+                  <DataPoint value="$1.35B" source="3% market penetration in Dubai within 3 years (Phase 1)" />
                 </p>
-                <p className="text-[10px] sm:text-xs text-gray-500">SOM (1% Capture Target)</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">SOM (Dubai 3yr Target)</p>
               </div>
             </div>
           </section>
@@ -181,23 +250,120 @@ export default function InvestorMemo() {
             </div>
           </section>
 
-          {/* Our Solution */}
+          {/* How It Works */}
           <section className="mb-6 sm:mb-8">
             <h2 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 flex items-center gap-2">
               <span className="w-5 h-5 sm:w-6 sm:h-6 bg-[#c9a227] text-white rounded text-[10px] sm:text-xs flex items-center justify-center font-bold">4</span>
-              Our Solution
+              How Nuqta Works
             </h2>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4">
-              Nuqta provides payment intelligence that recommends the optimal payment method for every transaction —
-              whether that&apos;s a specific credit card, digital wallet, or BNPL option. Users earn universal Nuqta points
-              across all participating merchants, redeemable anywhere in the network. For merchants, we offer
-              performance-based loyalty tools with transparent pricing and direct customer relationships.
-            </p>
-            <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-              Critically, Nuqta operates as neutral infrastructure. We don&apos;t process payments — we sit above
-              the payment layer, aggregating intelligence and rewards. This neutrality is our strategic advantage:
-              banks and BNPL providers cannot recommend competitors, but we can recommend everyone.
-            </p>
+
+            <div className="space-y-4">
+              {/* User Journey */}
+              <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
+                <p className="text-base font-bold text-blue-900 mb-3">For Users: 30-Second Experience</p>
+                <div className="space-y-2.5">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                    <div>
+                      <p className="text-sm font-semibold text-blue-900">Search nearby deals</p>
+                      <p className="text-xs text-blue-700">Open app, see cafes/salons/gyms with 5-10% cashback within 5km</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                    <div>
+                      <p className="text-sm font-semibold text-blue-900">Visit & pay normally</p>
+                      <p className="text-xs text-blue-700">Walk in, shop, pay with any method (cash, card, Apple Pay)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-blue-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                    <div>
+                      <p className="text-sm font-semibold text-blue-900">Upload receipt, get 5% instantly</p>
+                      <p className="text-xs text-blue-700">Snap photo of receipt, AI verifies, coins deposited in 10 seconds</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">+</div>
+                    <div>
+                      <p className="text-sm font-semibold text-emerald-900">Share for +5% bonus (optional)</p>
+                      <p className="text-xs text-emerald-700">Post to social with merchant tag = total 10% cashback</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Merchant Journey */}
+              <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-4 border-l-4 border-purple-500">
+                <p className="text-base font-bold text-purple-900 mb-3">For Merchants: Zero-Risk Customer Acquisition</p>
+                <div className="space-y-2.5">
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-purple-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
+                    <div>
+                      <p className="text-sm font-semibold text-purple-900">Free listing on Nuqta</p>
+                      <p className="text-xs text-purple-700">No setup fee, no monthly subscription, just performance commission</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-purple-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
+                    <div>
+                      <p className="text-sm font-semibold text-purple-900">Customers discover you via search</p>
+                      <p className="text-xs text-purple-700">Appear in "cafes near me" searches with 10% cashback badge</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-purple-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
+                    <div>
+                      <p className="text-sm font-semibold text-purple-900">Pay only when they buy</p>
+                      <p className="text-xs text-purple-700">15% commission on verified sales. If they don't buy, you pay nothing</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">✓</div>
+                    <div>
+                      <p className="text-sm font-semibold text-emerald-900">Track ROI in real-time</p>
+                      <p className="text-xs text-emerald-700">Dashboard shows new vs repeat customers, average basket size, revenue</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Money Flow */}
+              <div className="bg-gray-50 rounded-lg p-4 border border-gray-300">
+                <p className="text-base font-bold text-gray-900 mb-3">The Money Flow (Per AED 100 Purchase)</p>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between bg-white rounded p-2 border border-gray-200">
+                    <span className="text-sm text-gray-700">Merchant pays commission</span>
+                    <span className="text-sm font-bold text-gray-900">AED 15 (15%)</span>
+                  </div>
+                  <div className="flex items-center justify-between bg-emerald-50 rounded p-2 border border-emerald-200">
+                    <span className="text-sm text-emerald-700">User gets instant cashback</span>
+                    <span className="text-sm font-bold text-emerald-900">AED 5 (5%)</span>
+                  </div>
+                  <div className="flex items-center justify-between bg-blue-50 rounded p-2 border border-blue-200">
+                    <span className="text-sm text-blue-700">User gets social sharing bonus</span>
+                    <span className="text-sm font-bold text-blue-900">AED 5 (5%)</span>
+                  </div>
+                  <div className="flex items-center justify-between bg-[#c9a227]/10 rounded p-2 border border-[#c9a227]/30">
+                    <span className="text-sm font-bold text-gray-900">Nuqta keeps (net margin)</span>
+                    <span className="text-sm font-black text-[#c9a227]">AED 5 (5%)</span>
+                  </div>
+                </div>
+                <p className="text-xs text-gray-500 mt-3 italic">
+                  Merchant pays 15% but gets loyal customers (40% repeat rate). Users get 10% back. Nuqta keeps 5% margin. Everyone wins.
+                </p>
+              </div>
+
+              {/* Strategic Position */}
+              <div className="bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 rounded-lg p-4 border-l-4 border-[#c9a227]">
+                <p className="text-base font-bold text-gray-900 mb-2">Our Strategic Position: Neutral Infrastructure</p>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  We don't process payments or compete with anyone. We sit <strong>above</strong> the payment layer as neutral infrastructure.
+                  Banks can't recommend competitor cards. BNPL providers can't promote rival services. Deal sites create bargain hunters.
+                  <strong className="text-[#c9a227]"> We connect everyone</strong> — cards, wallets, BNPL, cash — and reward loyalty, not discounts.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Unit Economics */}
@@ -216,15 +382,15 @@ export default function InvestorMemo() {
                 </p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 504</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 540</p>
                 <p className="text-[10px] sm:text-xs text-gray-500 mb-1 sm:mb-2">LTV</p>
                 <p className="text-[9px] sm:text-[10px] text-gray-600 leading-tight">
-                  Monthly RPU: AED 42<br />
+                  Monthly RPU: AED 45<br />
                   12-month retention
                 </p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">16.8x</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">18x</p>
                 <p className="text-[10px] sm:text-xs text-gray-500 mb-1 sm:mb-2">LTV:CAC</p>
                 <p className="text-[9px] sm:text-[10px] text-gray-600 leading-tight">
                   Payback &lt;1 month<br />
@@ -274,11 +440,11 @@ export default function InvestorMemo() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
-                  <span><strong>$34B UAE Market (SAM)</strong> — F&B ($23.21B), Salons ($10.05B), Fitness ($0.6B). GCC TAM: $78B</span>
+                  <span><strong>$45B GCC Market (SAM)</strong> — D2C retail + local services (F&B, Beauty, Fashion, Fitness). GCC TAM: $150B</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
-                  <span><strong>16.8x LTV:CAC Ratio</strong> — Profitable unit economics from Day 1 (AED 504 LTV ÷ AED 30 CAC)</span>
+                  <span><strong>18x LTV:CAC Ratio</strong> — Profitable unit economics from Day 1 (AED 540 LTV ÷ AED 30 CAC)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
