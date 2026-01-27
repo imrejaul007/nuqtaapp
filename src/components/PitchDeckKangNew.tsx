@@ -350,122 +350,246 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 3: MARKET OPPORTUNITY - DATA VISUALIZATION ====================
       case 3:
         return (
-          <div className="w-full min-h-screen bg-white py-16 px-8 flex items-center justify-center">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 flex items-center justify-center">
+            <div className="max-w-7xl mx-auto w-full">
 
               {/* Header */}
-              <div className="text-center mb-16">
-                <div className="inline-block px-3 py-1 bg-[#c9a227]/10 rounded-full mb-4">
-                  <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Market Size</p>
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-full mb-4 border border-[#c9a227]/30">
+                  <span className="text-2xl">🎯</span>
+                  <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wider">Market Opportunity</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
-                  <span className="text-[#c9a227]">$78B</span> Market Opportunity
+                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-4">
+                  <span className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] bg-clip-text text-transparent">$150B</span> GCC Market
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  GCC F&B, salon, and fitness market
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                  Offline retail & services across 6 GCC countries
                 </p>
               </div>
 
-              {/* TAM/SAM/SOM Visualization */}
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Main Content Grid */}
+              <div className="grid lg:grid-cols-5 gap-8 items-start">
 
-                {/* LEFT: Recharts Nested Pie Chart */}
-                <div className="h-96 flex items-center justify-center">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <PieChart>
-                      <Pie
-                        data={[
-                          { name: 'TAM', value: 78, fill: '#3b82f6' },
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={120}
-                        innerRadius={90}
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={450}
-                        animationBegin={0}
-                        animationDuration={1000}
-                      />
-                      <Pie
-                        data={[
-                          { name: 'SAM', value: 34, fill: '#6366f1' },
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={85}
-                        innerRadius={55}
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={450}
-                        animationBegin={200}
-                        animationDuration={1000}
-                      />
-                      <Pie
-                        data={[
-                          { name: 'SOM', value: 0.34, fill: '#c9a227' },
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={50}
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={450}
-                        animationBegin={400}
-                        animationDuration={1000}
-                        label={({ name, value }) => `${name}: $${value}${value >= 1 ? 'B' : 'M'}`}
-                      />
-                      <Tooltip
-                        contentStyle={{
-                          backgroundColor: '#0f172a',
-                          border: '2px solid #c9a227',
-                          borderRadius: '8px',
-                        }}
-                        labelStyle={{ color: '#c9a227', fontWeight: 'bold' }}
-                      />
-                    </PieChart>
-                  </ResponsiveContainer>
+                {/* LEFT: Recharts Nested Pie Chart - 2 columns */}
+                <div className="lg:col-span-2 bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-black text-slate-900 mb-2">Market Funnel</h3>
+                    <p className="text-sm text-slate-500">Progressive capture strategy</p>
+                  </div>
+                  <div className="h-80 flex items-center justify-center relative">
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie
+                          data={[{ name: 'TAM', value: 150, fill: '#3b82f6' }]}
+                          cx="50%"
+                          cy="50%"
+                          outerRadius={110}
+                          innerRadius={85}
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={450}
+                          animationBegin={0}
+                          animationDuration={1000}
+                          stroke="#fff"
+                          strokeWidth={3}
+                        />
+                        <Pie
+                          data={[{ name: 'SAM', value: 45, fill: '#6366f1' }]}
+                          cx="50%"
+                          cy="50%"
+                          outerRadius={80}
+                          innerRadius={55}
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={450}
+                          animationBegin={200}
+                          animationDuration={1000}
+                          stroke="#fff"
+                          strokeWidth={3}
+                        />
+                        <Pie
+                          data={[{ name: 'SOM', value: 1.35, fill: '#c9a227' }]}
+                          cx="50%"
+                          cy="50%"
+                          outerRadius={50}
+                          dataKey="value"
+                          startAngle={90}
+                          endAngle={450}
+                          animationBegin={400}
+                          animationDuration={1000}
+                          stroke="#fff"
+                          strokeWidth={3}
+                        />
+                        <Tooltip
+                          contentStyle={{
+                            backgroundColor: '#0f172a',
+                            border: '2px solid #c9a227',
+                            borderRadius: '12px',
+                            padding: '12px',
+                          }}
+                          labelStyle={{ color: '#c9a227', fontWeight: 'bold' }}
+                        />
+                      </PieChart>
+                    </ResponsiveContainer>
+
+                    {/* Center Label */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="text-center">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Target</p>
+                        <p className="text-2xl font-black text-[#c9a227]">$1.35B</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Legend */}
+                  <div className="grid grid-cols-3 gap-3 mt-6">
+                    <div className="text-center">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mx-auto mb-1"></div>
+                      <p className="text-xs font-bold text-slate-700">TAM</p>
+                      <p className="text-sm font-black text-blue-600">$150B</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-3 h-3 bg-indigo-500 rounded-full mx-auto mb-1"></div>
+                      <p className="text-xs font-bold text-slate-700">SAM</p>
+                      <p className="text-sm font-black text-indigo-600">$45B</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-3 h-3 bg-[#c9a227] rounded-full mx-auto mb-1"></div>
+                      <p className="text-xs font-bold text-slate-700">SOM</p>
+                      <p className="text-sm font-black text-[#c9a227]">$1.35B</p>
+                    </div>
+                  </div>
                 </div>
 
-                {/* RIGHT: Market Breakdown */}
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-r from-blue-50 to-white border-l-4 border-blue-500 rounded-xl p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-bold text-slate-900">TAM</h3>
-                      <p className="text-3xl font-black text-blue-600">$78B</p>
+                {/* RIGHT: Market Breakdown - 3 columns */}
+                <div className="lg:col-span-3 space-y-4">
+                  {/* TAM Card */}
+                  <div className="bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-white border-2 border-blue-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <span className="text-2xl">🌍</span>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-black text-slate-900">Total Addressable Market</h3>
+                          <p className="text-sm text-slate-600">6 GCC Countries</p>
+                        </div>
+                      </div>
+                      <p className="text-4xl font-black bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">$150B</p>
                     </div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-slate-700 leading-relaxed">
                       <DataPoint
-                        value="GCC total market across F&B, salons, and fitness"
-                        source="GCC Foodservice ($61.55B, Mordor Intelligence 2025), extrapolated salons (~$15B) & fitness (~$2B)"
+                        value="Total offline retail & services spending across UAE, Saudi Arabia, Qatar, Kuwait, Bahrain, and Oman"
+                        source="GCC Retail Market Report 2024 + UAE Ministry of Economy 2025"
                       />
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-r from-indigo-50 to-white border-l-4 border-indigo-500 rounded-xl p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-bold text-slate-900">SAM</h3>
-                      <p className="text-3xl font-black text-indigo-600">$34B</p>
+                  {/* SAM Card */}
+                  <div className="bg-gradient-to-br from-indigo-500/10 via-indigo-500/5 to-white border-2 border-indigo-500/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
+                          <span className="text-2xl">🎯</span>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-black text-slate-900">Serviceable Addressable Market</h3>
+                          <p className="text-sm text-slate-600">D2C + Local Services</p>
+                        </div>
+                      </div>
+                      <p className="text-4xl font-black bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">$45B</p>
                     </div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-slate-700 leading-relaxed">
                       <DataPoint
-                        value="UAE market (initial focus)"
-                        source="UAE Foodservice ($23.21B, Mordor Intelligence 2025), Salon Services ($10.05B, Deep Market Insights 2024), Fitness ($0.6B, SPER Research 2025)"
+                        value="Consumer-facing offline businesses: F&B, Beauty, Fashion, Fitness, Retail - all amenable to rewards programs"
+                        source="30% of TAM: businesses with repeat customer potential and offline transaction focus"
                       />
                     </p>
                   </div>
 
-                  <div className="bg-gradient-to-r from-[#c9a227]/10 to-white border-l-4 border-[#c9a227] rounded-xl p-6">
-                    <div className="flex items-center justify-between mb-2">
-                      <h3 className="text-lg font-bold text-slate-900">SOM (1% Target)</h3>
-                      <p className="text-3xl font-black text-[#c9a227]">$340M</p>
+                  {/* SOM Card - Enhanced with Phases */}
+                  <div className="bg-gradient-to-br from-[#c9a227]/10 via-[#c9a227]/5 to-white border-2 border-[#c9a227]/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-12 bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-xl flex items-center justify-center shadow-lg">
+                          <span className="text-2xl">🚀</span>
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-black text-slate-900">Serviceable Obtainable Market</h3>
+                          <p className="text-sm text-slate-600">Phased Expansion Strategy</p>
+                        </div>
+                      </div>
+                      <p className="text-4xl font-black bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] bg-clip-text text-transparent">$1.35B</p>
                     </div>
-                    <p className="text-sm text-slate-600 leading-relaxed">
-                      <DataPoint
-                        value="1% penetration of UAE SAM"
-                        source="Conservative 1% market capture with 16.8x LTV:CAC economics. At 15% commission: $51M annual revenue potential at maturity"
-                      />
-                    </p>
+
+                    {/* Phase 1: Dubai Horizons */}
+                    <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 mb-4 border border-slate-200">
+                      <div className="flex items-center gap-2 mb-3">
+                        <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center shadow-sm">
+                          <span className="text-white text-xs font-black">1</span>
+                        </div>
+                        <p className="text-sm font-black text-slate-900">Phase 1: Dubai (Year 1-3)</p>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="bg-gradient-to-r from-emerald-50 to-white border-l-3 border-emerald-500 rounded-lg p-3">
+                          <div className="flex items-center justify-between mb-1">
+                            <p className="text-xs font-bold text-emerald-700">🌱 Horizon 1 (M1-12)</p>
+                            <p className="text-base font-black text-emerald-600">$150M</p>
+                          </div>
+                          <p className="text-xs text-slate-600">F&B • Grocery • Salons • Fashion • Fitness • Events</p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-blue-50 to-white border-l-3 border-blue-500 rounded-lg p-3">
+                          <div className="flex items-center justify-between mb-1">
+                            <p className="text-xs font-bold text-blue-700">📈 Horizon 2 (M13-24)</p>
+                            <p className="text-base font-black text-blue-600">$450M</p>
+                          </div>
+                          <p className="text-xs text-slate-600">+ Entertainment • Home Services • Pet</p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-purple-50 to-white border-l-3 border-purple-500 rounded-lg p-3">
+                          <div className="flex items-center justify-between mb-1">
+                            <p className="text-xs font-bold text-purple-700">🌍 Horizon 3 (M25-36)</p>
+                            <p className="text-base font-black text-purple-600">$750M</p>
+                          </div>
+                          <p className="text-xs text-slate-600">All UAE cities (Abu Dhabi • Sharjah • Ajman • RAK • Fujairah)</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Phase 2 & 3 - Compact */}
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="bg-gradient-to-br from-blue-100/50 to-white border border-blue-200 rounded-lg p-3">
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-sm">
+                            <span className="text-white text-xs font-black">2</span>
+                          </div>
+                          <p className="text-xs font-bold text-slate-700">Phase 2 (Y4-5)</p>
+                        </div>
+                        <p className="text-sm font-black text-blue-600 mb-1">$3B+</p>
+                        <p className="text-xs text-slate-600">Qatar + KSA</p>
+                      </div>
+
+                      <div className="bg-gradient-to-br from-purple-100/50 to-white border border-purple-200 rounded-lg p-3">
+                        <div className="flex items-center gap-2 mb-1">
+                          <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-sm">
+                            <span className="text-white text-xs font-black">3</span>
+                          </div>
+                          <p className="text-xs font-bold text-slate-700">Phase 3 (Y6+)</p>
+                        </div>
+                        <p className="text-sm font-black text-purple-600 mb-1">$5B+</p>
+                        <p className="text-xs text-slate-600">Full GCC</p>
+                      </div>
+                    </div>
+
+                    {/* Bottom CTA */}
+                    <div className="mt-4 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3">
+                      <p className="text-xs text-center text-slate-700">
+                        <span className="font-black text-[#c9a227]">3% penetration</span> in Dubai within 36 months •
+                        <span className="font-black text-slate-900"> KPI-driven expansion</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
 
@@ -1987,7 +2111,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">60+ Merchant Network</h3>
                     <p className="text-lg text-slate-700 mb-4">
-                      <span className="font-bold text-emerald-600">30+ signed LOIs</span> with <span className="font-bold text-blue-600">30 more in pipeline</span> across Dubai Marina, Downtown, and JBR. Attacking a <span className="font-bold text-purple-600">$34B UAE market</span> (F&B, salons, fitness). GCC TAM: <span className="font-bold">$78B</span>.
+                      <span className="font-bold text-emerald-600">30+ signed LOIs</span> with <span className="font-bold text-blue-600">30 more in pipeline</span> across Dubai Marina, Downtown, and JBR. Attacking a <span className="font-bold text-purple-600">$45B GCC SAM</span> (F&B, Beauty, Fashion, Fitness). GCC TAM: <span className="font-bold">$150B</span>.
                     </p>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="bg-white rounded-lg p-4">
@@ -1999,8 +2123,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <p className="text-2xl font-black text-purple-600">30</p>
                       </div>
                       <div className="bg-white rounded-lg p-4">
-                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">UAE Market (SAM)</p>
-                        <p className="text-2xl font-black text-emerald-600">$34B</p>
+                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">GCC Market (SAM)</p>
+                        <p className="text-2xl font-black text-emerald-600">$45B</p>
                       </div>
                     </div>
                   </div>
@@ -2493,14 +2617,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   },
                   {
                     quarter: "Q3 2025",
-                    title: "Scale UAE",
-                    features: ["Abu Dhabi + Sharjah launch", "Category expansion (wellness, services)", "B2B partnerships (banks)", "Advanced analytics"],
+                    title: "Expand Categories (H2)",
+                    features: ["Add Entertainment & Home Services", "Add Pet categories", "B2B partnerships (banks)", "Advanced analytics"],
                     status: "Planned"
                   },
                   {
                     quarter: "Q4 2025",
-                    title: "GCC Ready",
-                    features: ["Saudi Arabia prep", "Multi-currency support", "API for partners", "Series A raise"],
+                    title: "UAE Expansion (H3)",
+                    features: ["Abu Dhabi + Sharjah launch", "All UAE cities coverage", "Multi-currency support", "Series A raise prep"],
                     status: "Planned"
                   }
                 ].map((phase, idx) => {
