@@ -3246,14 +3246,18 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 14: GTM STRATEGY ====================
       case 14:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
               <div className="text-center mb-12">
-                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Go-to-Market Strategy</p>
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
+                  <p className="text-xs font-black text-purple-700 uppercase tracking-wider">Go-to-Market Strategy</p>
                 </div>
-                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6">
                   Institutional-Grade <span className="text-purple-600">GTM</span>
                 </h2>
                 <div className="max-w-5xl mx-auto bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-6 mb-8">
@@ -3512,13 +3516,17 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 15: TRACTION ====================
       case 15:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-6xl mx-auto relative z-10">
               <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-emerald-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Pre-Launch Traction</p>
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full mb-4 border-2 border-emerald-200 shadow-lg">
+                  <p className="text-xs font-black text-emerald-700 uppercase tracking-wider">Pre-Launch Traction</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6">
                   Proof of <span className="text-emerald-600">Demand</span>
                 </h2>
                 <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
@@ -3611,11 +3619,15 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 16: TEAM (PREMIUM ✓) ====================
       case 16:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-6xl mx-auto relative z-10">
               <div className="text-center mb-12">
-                <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
-                  <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Our Team</p>
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-slate-100 rounded-full mb-4 border-2 border-[#c9a227]/30 shadow-lg">
+                  <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Our Team</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   Built by <span className="text-[#c9a227]">Experts</span>
@@ -3719,10 +3731,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 17: THE ASK ====================
       case 17:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8 flex items-center justify-center">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-8">
-                <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Investment Opportunity</p>
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8 flex items-center justify-center relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-5xl mx-auto text-center relative z-10">
+              <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-orange-100 rounded-full mb-8 border-2 border-[#c9a227]/30 shadow-lg">
+                <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Investment Opportunity</p>
               </div>
 
               <h2 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
@@ -3839,14 +3855,18 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 18: VISION ====================
       case 18:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-16 px-8 flex items-center justify-center">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-16 px-8 flex items-center justify-center relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-slate-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-6xl mx-auto relative z-10">
 
               {/* Header */}
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-500/10 rounded-full mb-4 border border-purple-500/30">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-500/10 rounded-full mb-4 border-2 border-purple-500/30 shadow-lg">
                   <span className="text-2xl">🚀</span>
-                  <p className="text-sm font-bold text-purple-700 uppercase tracking-wider">Long-term Vision</p>
+                  <p className="text-sm font-black text-purple-700 uppercase tracking-wider">Long-term Vision</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-6 leading-tight">
                   Commerce Intelligence <span className="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">for the GCC</span>
@@ -4028,13 +4048,17 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 19: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
       case 19:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header */}
               <div className="text-center mb-12">
-                <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Strategic Positioning</p>
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-slate-100 rounded-full mb-4 border-2 border-blue-200 shadow-lg">
+                  <p className="text-xs font-black text-blue-700 uppercase tracking-wider">Strategic Positioning</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-6">
                   We Play a <span className="text-[#c9a227]">Different Game</span>
@@ -4210,13 +4234,17 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 20: COMPETITIVE MOAT ====================
       case 20:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header */}
               <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-[#c9a227]/10 rounded-full mb-4">
-                  <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Defensibility</p>
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#c9a227]/10 to-blue-100 rounded-full mb-4 border-2 border-[#c9a227]/30 shadow-lg">
+                  <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Defensibility</p>
                 </div>
                 <h2 className="text-6xl font-black text-slate-900 mb-6">
                   Why This Can't Be Copied <span className="text-[#c9a227]">in 3 Months</span>
@@ -4421,13 +4449,17 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 21: ROADMAP ====================
       case 21:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-6xl mx-auto relative z-10">
               {/* Enhanced Header */}
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-blue-600/10 rounded-full mb-4 border border-blue-600/30">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-blue-600/10 rounded-full mb-4 border-2 border-blue-600/30 shadow-lg">
                   <span className="text-2xl">🗓️</span>
-                  <p className="text-sm font-bold text-blue-700 uppercase tracking-wider">GTM Roadmap</p>
+                  <p className="text-sm font-black text-blue-700 uppercase tracking-wider">GTM Roadmap</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-4">
                   The Path to <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">GCC Domination</span>
@@ -4717,11 +4749,15 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 22: TECHNOLOGY ====================
       case 22:
         return (
-          <div className="w-full min-h-screen bg-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-white via-purple-50/20 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-6xl mx-auto relative z-10">
               <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Tech Stack</p>
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
+                  <p className="text-xs font-black text-purple-700 uppercase tracking-wider">Tech Stack</p>
                 </div>
                 <h2 className="text-6xl font-black text-slate-900 mb-6">
                   Built for <span className="text-purple-600">Scale</span>
@@ -4819,8 +4855,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 23: QUESTIONS? ====================
       case 23:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-8">
-            <div className="max-w-5xl mx-auto text-center">
+          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-5xl mx-auto text-center relative z-10">
               <div className="text-9xl mb-8">❓</div>
               <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Questions?
@@ -4857,8 +4897,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 24: LET'S TALK ====================
       case 24:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-8">
-            <div className="max-w-5xl mx-auto text-center">
+          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-5xl mx-auto text-center relative z-10">
               <div className="text-9xl mb-8">💬</div>
               <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Let's <span className="text-emerald-600">Talk</span>
@@ -4898,8 +4942,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 25: JOIN US ====================
       case 25:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center p-8">
-            <div className="max-w-5xl mx-auto text-center">
+          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center p-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-5xl mx-auto text-center relative z-10">
               <div className="text-9xl mb-8">🚀</div>
               <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Join <span className="text-[#c9a227]">Us</span>
@@ -4947,8 +4995,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 26: THANK YOU ====================
       case 26:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center p-8">
-            <div className="max-w-5xl mx-auto text-center">
+          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center p-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-pink-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-5xl mx-auto text-center relative z-10">
               <div className="text-9xl mb-8">🙏</div>
               <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Thank <span className="text-purple-600">You</span>
