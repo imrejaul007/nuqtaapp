@@ -353,7 +353,201 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ---
 
-## 5. Summary Value Proposition
+## 5. H1 2026 Master Event Calendar & Field Map
+
+This section integrates **major Dubai/Sharjah events, community festivals, and university activations** into a month-by-month tactical execution calendar.
+
+### The 3-Tier Event Onboarding Logic
+
+**Tier 1: Mega-Exhibitions** (Global Village, Gulfood, Dubai Food Festival)
+- **Strategy**: Sign 30-50 merchants per event
+- **Focus**: Mass user acquisition (5K-10K downloads per event)
+- **Commission**: Standard Engine A/B models
+
+**Tier 2: Community Markets** (Ripe Market, Last Exit, Sikka Art)
+- **Strategy**: Sign 10-20 indie/boutique merchants per event
+- **Focus**: Authentic UGC content (high social share rate)
+- **Commission**: Negotiable for unique vendors
+
+**Tier 3: University Hubs** (AUS, Sharjah University, UOWD)
+- **Strategy**: Campus ambassador program (5 students per uni)
+- **Focus**: Gen-Z viral adoption (500-1,000 students per campus)
+- **Commission**: Student discount layer (extra 2% Nuqta Coins for .edu emails)
+
+---
+
+### Monthly Anchor Events + Nuqta Strategy
+
+| Month | Major Anchor Event | Community/Small-Scale Layer | Nuqta Strategy |
+|-------|-------------------|----------------------------|----------------|
+| **January** | **Global Village** (Oct 2025 - Apr 2026)<br>**Dubai Shopping Festival (DSF)** (Dec 2025 - Jan 2026)<br>**Gulfood** (Feb 17-21, 2026) | **Ripe Market** (Weekly at Zabeel Park & The Greens)<br>**Last Exit** (Food truck hubs - Al Khawaneej, Al Qudra) | **F&B Domination**: Sign 30+ F&B vendors at Global Village. Activate DSF mall promotions (Noon platform integration). Gulfood = B2B networking goldmine for F&B chains. |
+| **February** | **SteelFab** (Sharjah, Feb 4-7, 2026)<br>**Spring Shopper** (Sharjah, Feb 5-15, 2026)<br>**Dubai Food Festival** (Feb 27 - Mar 15, 2026) | **Sikka Art Fair** (Al Fahidi Historical District)<br>**University Festivals** (AUS, Sharjah Univ) | **Gen-Z Sprint**: Activate university ambassadors at AUS & Sharjah Uni fests. Spring Shopper Sharjah = sign 20+ fashion/lifestyle merchants with 0% commission trial. Dubai Food Festival = social blitz (target 1,000 food posts with #NuqtaEats). |
+| **March** | **Ramadan Nights** (Sharjah, Mar 6-22, 2026)<br>**Art Dubai** (Mar 5-8, 2026)<br>**Middle East Film & Comic Con** (Mar 6-8, 2026) | **Quoz Arts Fest**<br>**Ripe Night Market** (Every Friday) | **🚨 RAMADAN BLITZ**: Sign 50% of vendors at Ramadan Nights Sharjah with 0% commission trial (first 30 days free, then 15%). Art Dubai = luxury merchant targets (galleries, high-end cafes). Comic Con = merch/collectibles + cosplay cafe partnerships. |
+| **April** | **Arabian Travel Market** (Apr 28 - May 1, 2026)<br>**Mother of the Nation Festival** (Abu Dhabi, Mar 22 - Apr 19, 2026) | **Dubai Flea Market** (Times Square Center)<br>**Yoga by The Beach** (Kite Beach, weekly) | **Night Economy**: Activate nightlife merchants (Nightjar, Locale, etc.). Arabian Travel Market = hotel/tourism partnerships (Marriott Bonvoy rebuttal in action). Mother of Nation = family entertainment merchants (kids cafes, play zones). |
+| **May** | **Dubai Summer Surprises** (Starts late May, runs through August)<br>**Eid Al Adha** (June 6-9, 2026 approx) | **Summer Pop-ups** (City Walk, The Beach JBR)<br>**University Exams** (Mid-May - Early June) | **Social Bonus Surge**: Launch "Share & Earn Double" campaign for DSS mall merchants. Eid Al Adha = gold souk blitz (jewelry purchases spike). University exams = study cafe partnerships (free coffee for 10 hours studied). |
+| **June** | **Eid Al Adha** (June 6-9, 2026)<br>**Dubai Summer Surprises** (Ongoing)<br>**Sharjah Summer Sale** (Starts June) | **Ripe Market** (Moves indoors for summer)<br>**Gym Summer Memberships** (Fitness First, GymNation promos) | **Liquid Liquidity**: Push Nuqta Coins as "universal mall currency" during DSS. Gold Souk partnerships for Eid gifting. Fitness summer memberships = 6-month commitment merchants (high LTV). |
+
+---
+
+### Critical Milestone: Ramadan Blitz (March 6-22, 2026)
+
+**Why It's Critical**:
+- **Ramadan Nights Sharjah**: 300+ vendors (F&B, fashion, crafts, perfumes)
+- **Zero Competition**: No loyalty platform targets Ramadan events
+- **High-Intent Shoppers**: Families spend 3-5 hours per visit, AED 500+ average basket
+- **Perfect Social Context**: Ramadan = content goldmine (food, decor, shopping hauls)
+
+**The Blitz Strategy**:
+
+**Week 1 (March 6-12)**: Vendor Onboarding Sprint
+- Target: Sign 150 vendors (50% of total)
+- Pitch: "0% commission for first 30 days, then 15% Engine A"
+- Setup: QR code integration in 5 minutes (use tablet + Square reader)
+
+**Week 2 (March 13-19)**: User Acquisition Blitz
+- Target: 5,000 users activated at Ramadan Nights
+- Method: Booth at entrance (scan QR, get AED 20 free)
+- Referral: "Invite family, both get AED 10 bonus"
+
+**Week 3 (March 20-22)**: Social Surge
+- Target: 1,000 Instagram/TikTok posts with #NuqtaRamadan
+- Incentive: Post = enter draw for AED 5,000 shopping spree
+- Outcome: 500K+ impressions, 2,000 new app downloads
+
+**Expected Results**:
+- ✅ 150 merchants onboarded
+- ✅ 5,000 new users
+- ✅ AED 300K GMV in 16 days
+- ✅ 1,000 social posts (500K+ reach)
+
+---
+
+### Tactical Playbook by Event Type
+
+#### **Mega-Exhibitions** (Global Village, Gulfood, Dubai Food Festival)
+
+**Pre-Event (2 weeks before)**:
+1. Research vendor list (organizer websites usually publish)
+2. Cold email 100+ vendors with deck
+3. Book meeting room at event venue for on-site pitches
+
+**During Event**:
+1. Booth setup (if budget allows) or guerrilla booth near entrance
+2. Door-to-door vendor visits (10 vendors/hour)
+3. On-site QR integration demos (5 minutes to go live)
+
+**Post-Event**:
+1. Follow-up emails to warm leads (48-hour window)
+2. Offer extended trial: "First 30 days, 0% commission"
+3. Case study: Track first vendor's sales, share with others
+
+---
+
+#### **Community Markets** (Ripe Market, Last Exit, Sikka Art)
+
+**Pre-Event (1 week before)**:
+1. DM vendors on Instagram (most have active social presence)
+2. Pitch: "Turn your followers into paying customers"
+3. Offer: "Share your Ripe Market booth location, get 100 Nuqta users to visit"
+
+**During Event**:
+1. User activation: "Download Nuqta, get AED 10 to spend at any booth"
+2. Social amplification: "Post your purchase, tag vendor, get extra 5%"
+3. Vendor upsell: "3 vendors signed up today, join them"
+
+**Post-Event**:
+1. Share UGC with vendors: "Your booth got 50 Instagram posts this weekend"
+2. Offer permanent partnership: "Move from event-only to full Nuqta integration"
+
+---
+
+#### **University Hubs** (AUS, Sharjah University, UOWD)
+
+**Pre-Semester (August for Fall, January for Spring)**:
+1. Recruit 5 campus ambassadors per university (pay AED 500/month + commission)
+2. Partner with student councils (sponsor 1 event = booth access)
+3. Target: 500 students per campus in first month
+
+**During Semester**:
+1. Weekly activations: Monday = gym, Wednesday = library cafe, Friday = student lounge
+2. Gamification: "10 purchases = enter draw for MacBook"
+3. Referral bonuses: "Invite 5 friends, get AED 25"
+
+**Exam Periods (Mid-term & Finals)**:
+1. Study cafe partnerships: "10 hours studied = free coffee via Nuqta"
+2. Survival kits: "AED 50 Nuqta credit for exam week essentials"
+
+---
+
+### Geographic Event Clustering (H1 2026)
+
+**Dubai Cluster**:
+- **Core**: Global Village, DSF malls, Dubai Food Festival, Art Dubai, Comic Con
+- **Community**: Ripe Market (Zabeel Park, The Greens), Last Exit, Sikka Art
+- **Universities**: UOWD, Manipal, Middlesex
+
+**Sharjah Cluster**:
+- **Core**: SteelFab, Spring Shopper, Ramadan Nights, Summer Sale, Watch & Jewellery Show
+- **Community**: Sharjah Art events, Al Qasba, Mega Mall
+- **Universities**: AUS, Sharjah University
+
+**Strategy**: Dominate Sharjah FIRST (less competition, lower CAC, Arabic-first market), then leverage social proof for Dubai expansion.
+
+---
+
+### Budget Allocation by Event Tier
+
+| Event Tier | Budget/Event | Merchant Target | User Target | Expected GMV |
+|-----------|--------------|-----------------|-------------|--------------|
+| **Mega-Exhibitions** | $5K | 30-50 merchants | 5,000 users | AED 300K |
+| **Community Markets** | $1K | 10-20 merchants | 1,000 users | AED 50K |
+| **University Hubs** | $2K/semester | 20 campus merchants | 2,000 students | AED 100K |
+
+**Total H1 Budget**: $30K (15% of $200K H1 allocation)
+
+---
+
+### Success Metrics by Event
+
+**Merchant Onboarding Rate**:
+- ✅ Mega-Exhibitions: 30% conversion (100 pitches → 30 signups)
+- ✅ Community Markets: 50% conversion (indie vendors more agile)
+- ✅ University Hubs: 70% conversion (student ambassadors pre-warm leads)
+
+**User Activation Rate**:
+- ✅ Mega-Exhibitions: 10% of event footfall (500K visitors → 5K users)
+- ✅ Community Markets: 20% of vendor customers (5K visitors → 1K users)
+- ✅ University Hubs: 25% of student body (8K students → 2K users)
+
+**Social Share Rate**:
+- ✅ Mega-Exhibitions: 20% (scale play, not content play)
+- ✅ Community Markets: 40% (aesthetic merchants = high UGC)
+- ✅ University Hubs: 60% (Gen-Z shares everything)
+
+---
+
+### The Ramadan Blitz ROI Projection
+
+**Investment**:
+- Event booth rental: AED 10K (16 days)
+- User acquisition bonuses: AED 100K (5,000 users × AED 20)
+- Merchant onboarding support: AED 10K (tablets, Square readers)
+- **Total**: AED 120K (~$32K)
+
+**Returns**:
+- GMV: AED 300K (5,000 users × AED 60 average basket)
+- Revenue: AED 15K (5% average commission)
+- **Immediate ROI**: -$28K (loss in Month 1)
+
+**BUT**:
+- 150 merchants onboarded (worth AED 500K in Y1 GMV)
+- 5,000 users acquired (CAC = AED 24, vs AED 50 industry average)
+- 500K+ social impressions (worth AED 50K in paid ads)
+- **True ROI**: 5x by Month 6
+
+---
+
+## 6. Summary Value Proposition
 
 ### For Users
 - **One Wallet**: Consolidate all rewards across 250+ merchants
@@ -370,7 +564,7 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ---
 
-## 6. Critical Success Metrics (H1 2026)
+## 7. Critical Success Metrics (H1 2026)
 
 ### Merchant Metrics
 
@@ -410,7 +604,7 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ---
 
-## 7. Go-to-Market Tactics (Week by Week)
+## 8. Go-to-Market Tactics (Week by Week)
 
 ### Week 1-2: Cluster A Activation (JLT)
 
@@ -505,7 +699,7 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ---
 
-## 8. Team & Resources (H1 2026)
+## 9. Team & Resources (H1 2026)
 
 ### Current Team
 
@@ -546,7 +740,7 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ---
 
-## 9. Risk Mitigation & Contingency Plans
+## 10. Risk Mitigation & Contingency Plans
 
 ### Risk 1: Merchant Adoption is Slow
 
@@ -596,7 +790,7 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ---
 
-## 10. H2 2026 Preview (Post-PMF Scaling)
+## 11. H2 2026 Preview (Post-PMF Scaling)
 
 If H1 succeeds (10,000 users, AED 2M GMV, 30% retention):
 
@@ -620,7 +814,7 @@ If H1 succeeds (10,000 users, AED 2M GMV, 30% retention):
 
 ---
 
-## 11. Call to Action
+## 12. Call to Action
 
 This is the execution roadmap. Every merchant conversation, every user activation, every metric tracked—all flows from this blueprint.
 
@@ -643,7 +837,7 @@ rejaul@nuqtapp.com
 
 ---
 
-**Document Version**: 2.1
+**Document Version**: 3.0
 **Last Updated**: January 29, 2026
-**Status**: Active Execution - Corrected Revenue Model
+**Status**: Active Execution - Master Event Calendar Integrated
 **Distribution**: Internal Strategy Document

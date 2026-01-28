@@ -21,7 +21,7 @@ export default function ExecutionPlanPage() {
               <span className="text-slate-400">Active Execution</span>
             </div>
             <div className="text-slate-400">•</div>
-            <div className="text-slate-400">Version 2.0 - January 29, 2026</div>
+            <div className="text-slate-400">Version 3.0 - January 29, 2026</div>
           </div>
         </div>
       </div>
@@ -34,6 +34,7 @@ export default function ExecutionPlanPage() {
             <a href="#merchants" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Merchants</a>
             <a href="#objections" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Objections</a>
             <a href="#roadmap" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Roadmap</a>
+            <a href="#calendar" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Event Calendar</a>
             <a href="#metrics" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Metrics</a>
           </div>
         </div>
@@ -602,9 +603,353 @@ export default function ExecutionPlanPage() {
           </div>
         </section>
 
+        {/* H1 2026 Master Event Calendar */}
+        <section id="calendar" className="mb-20">
+          <h2 className="text-4xl font-black text-slate-900 mb-8">5. H1 2026 Master Event Calendar & Field Map</h2>
+          <p className="text-lg text-slate-600 mb-8">
+            Month-by-month tactical execution calendar integrating major Dubai/Sharjah events, community festivals, and university activations.
+          </p>
+
+          {/* 3-Tier Event Onboarding Logic */}
+          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-3xl p-8 mb-8">
+            <h3 className="text-2xl font-black text-slate-900 mb-6">The 3-Tier Event Onboarding Logic</h3>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Tier 1 */}
+              <div className="bg-white rounded-2xl p-6 border-2 border-red-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-3xl">🏟️</span>
+                  <h4 className="text-xl font-bold text-red-700">Tier 1: Mega-Exhibitions</h4>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">Global Village, Gulfood, Dubai Food Festival</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <span className="text-red-600 font-bold">•</span>
+                    <p className="text-slate-700">30-50 merchants per event</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-red-600 font-bold">•</span>
+                    <p className="text-slate-700">5K-10K user downloads</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-red-600 font-bold">•</span>
+                    <p className="text-slate-700">Standard Engine A/B models</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tier 2 */}
+              <div className="bg-white rounded-2xl p-6 border-2 border-orange-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-3xl">🎨</span>
+                  <h4 className="text-xl font-bold text-orange-700">Tier 2: Community Markets</h4>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">Ripe Market, Last Exit, Sikka Art</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <span className="text-orange-600 font-bold">•</span>
+                    <p className="text-slate-700">10-20 indie/boutique merchants</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-orange-600 font-bold">•</span>
+                    <p className="text-slate-700">Authentic UGC content focus</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-orange-600 font-bold">•</span>
+                    <p className="text-slate-700">Negotiable commission for unique vendors</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tier 3 */}
+              <div className="bg-white rounded-2xl p-6 border-2 border-blue-200">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-3xl">🎓</span>
+                  <h4 className="text-xl font-bold text-blue-700">Tier 3: University Hubs</h4>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">AUS, Sharjah University, UOWD</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-start gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <p className="text-slate-700">Campus ambassador program</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <p className="text-slate-700">500-1K students per campus</p>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <p className="text-slate-700">Extra 2% for .edu emails</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Monthly Calendar Timeline */}
+          <div className="space-y-6 mb-12">
+            {/* January */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-3xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-2 bg-blue-600 text-white rounded-full font-black text-sm">JANUARY</div>
+                <h3 className="text-xl font-black text-slate-900">F&B Domination</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-white rounded-xl p-4 border border-blue-200">
+                  <p className="font-bold text-blue-700 mb-2 text-sm">🏟️ Major Anchors</p>
+                  <p className="text-xs text-slate-600">Global Village (Oct-Apr), DSF (Dec-Jan), Gulfood (Feb 17-21)</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-orange-200">
+                  <p className="font-bold text-orange-700 mb-2 text-sm">🎪 Community Layer</p>
+                  <p className="text-xs text-slate-600">Ripe Market (Weekly at Zabeel Park), Last Exit (Al Khawaneej, Al Qudra)</p>
+                </div>
+              </div>
+              <div className="bg-blue-100 rounded-xl p-4">
+                <p className="text-sm font-semibold text-blue-900">💡 Nuqta Strategy: Sign 30+ F&B vendors at Global Village. Activate DSF mall promotions. Gulfood = B2B networking goldmine for F&B chains.</p>
+              </div>
+            </div>
+
+            {/* February */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-3xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-2 bg-purple-600 text-white rounded-full font-black text-sm">FEBRUARY</div>
+                <h3 className="text-xl font-black text-slate-900">Gen-Z Sprint</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-white rounded-xl p-4 border border-purple-200">
+                  <p className="font-bold text-purple-700 mb-2 text-sm">🏟️ Major Anchors</p>
+                  <p className="text-xs text-slate-600">SteelFab Sharjah (Feb 4-7), Spring Shopper Sharjah (Feb 5-15), Dubai Food Festival (Feb 27-Mar 15)</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-orange-200">
+                  <p className="font-bold text-orange-700 mb-2 text-sm">🎪 Community Layer</p>
+                  <p className="text-xs text-slate-600">Sikka Art Fair (Al Fahidi), University Festivals (AUS, Sharjah Univ)</p>
+                </div>
+              </div>
+              <div className="bg-purple-100 rounded-xl p-4">
+                <p className="text-sm font-semibold text-purple-900">💡 Nuqta Strategy: Activate university ambassadors at AUS & Sharjah Uni fests. Spring Shopper = 20+ fashion merchants with 0% trial. Food Festival = 1,000 posts with #NuqtaEats.</p>
+              </div>
+            </div>
+
+            {/* March - RAMADAN BLITZ */}
+            <div className="bg-gradient-to-br from-orange-50 via-red-50 to-orange-50 border-4 border-red-400 rounded-3xl p-6 shadow-xl">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-2 bg-red-600 text-white rounded-full font-black text-sm">MARCH</div>
+                <h3 className="text-xl font-black text-slate-900">🚨 RAMADAN BLITZ (Critical Milestone)</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-white rounded-xl p-4 border-2 border-red-300">
+                  <p className="font-bold text-red-700 mb-2 text-sm">🏟️ Major Anchors</p>
+                  <p className="text-xs text-slate-600">Ramadan Nights Sharjah (Mar 6-22), Art Dubai (Mar 5-8), Comic Con (Mar 6-8)</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-2 border-orange-300">
+                  <p className="font-bold text-orange-700 mb-2 text-sm">🎪 Community Layer</p>
+                  <p className="text-xs text-slate-600">Quoz Arts Fest, Ripe Night Market (Every Friday)</p>
+                </div>
+              </div>
+              <div className="bg-gradient-to-r from-red-100 to-orange-100 rounded-xl p-6 border-2 border-red-300">
+                <p className="text-lg font-black text-red-900 mb-3">🎯 CRITICAL MILESTONE: Sign 50% of Ramadan Nights vendors (150/300)</p>
+                <div className="grid md:grid-cols-3 gap-4 text-xs">
+                  <div className="bg-white rounded-lg p-3 border border-red-200">
+                    <p className="font-bold text-red-700 mb-1">Week 1 (Mar 6-12)</p>
+                    <p className="text-slate-600">Onboard 150 vendors with 0% trial (first 30 days free)</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 border border-orange-200">
+                    <p className="font-bold text-orange-700 mb-1">Week 2 (Mar 13-19)</p>
+                    <p className="text-slate-600">Activate 5,000 users (booth at entrance, AED 20 bonus)</p>
+                  </div>
+                  <div className="bg-white rounded-lg p-3 border border-red-200">
+                    <p className="font-bold text-red-700 mb-1">Week 3 (Mar 20-22)</p>
+                    <p className="text-slate-600">1,000 #NuqtaRamadan posts = AED 5K draw (500K+ reach)</p>
+                  </div>
+                </div>
+                <div className="mt-4 bg-red-600 text-white rounded-lg p-3">
+                  <p className="font-bold text-sm">Expected: 150 merchants + 5K users + AED 300K GMV in 16 days</p>
+                </div>
+              </div>
+            </div>
+
+            {/* April */}
+            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-3xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-2 bg-amber-600 text-white rounded-full font-black text-sm">APRIL</div>
+                <h3 className="text-xl font-black text-slate-900">Night Economy</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-white rounded-xl p-4 border border-amber-200">
+                  <p className="font-bold text-amber-700 mb-2 text-sm">🏟️ Major Anchors</p>
+                  <p className="text-xs text-slate-600">Arabian Travel Market (Apr 28-May 1), Mother of the Nation Festival (Abu Dhabi, Mar 22-Apr 19)</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-orange-200">
+                  <p className="font-bold text-orange-700 mb-2 text-sm">🎪 Community Layer</p>
+                  <p className="text-xs text-slate-600">Dubai Flea Market (Times Square Center), Yoga by The Beach (Kite Beach, weekly)</p>
+                </div>
+              </div>
+              <div className="bg-amber-100 rounded-xl p-4">
+                <p className="text-sm font-semibold text-amber-900">💡 Nuqta Strategy: Activate nightlife merchants (Nightjar, Locale). Arabian Travel Market = hotel/tourism partnerships (Marriott Bonvoy rebuttal). Family entertainment merchants.</p>
+              </div>
+            </div>
+
+            {/* May */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-3xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-2 bg-green-600 text-white rounded-full font-black text-sm">MAY</div>
+                <h3 className="text-xl font-black text-slate-900">Social Bonus Surge</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-white rounded-xl p-4 border border-green-200">
+                  <p className="font-bold text-green-700 mb-2 text-sm">🏟️ Major Anchors</p>
+                  <p className="text-xs text-slate-600">Dubai Summer Surprises (starts late May), Eid Al Adha prep</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-orange-200">
+                  <p className="font-bold text-orange-700 mb-2 text-sm">🎪 Community Layer</p>
+                  <p className="text-xs text-slate-600">Summer Pop-ups (City Walk, JBR), University Exams (study cafe partnerships)</p>
+                </div>
+              </div>
+              <div className="bg-green-100 rounded-xl p-4">
+                <p className="text-sm font-semibold text-green-900">💡 Nuqta Strategy: Launch "Share & Earn Double" for DSS merchants. University exams = study cafe partnerships (free coffee for 10 hours studied).</p>
+              </div>
+            </div>
+
+            {/* June */}
+            <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-3xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="px-4 py-2 bg-indigo-600 text-white rounded-full font-black text-sm">JUNE</div>
+                <h3 className="text-xl font-black text-slate-900">Liquid Liquidity</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <div className="bg-white rounded-xl p-4 border border-indigo-200">
+                  <p className="font-bold text-indigo-700 mb-2 text-sm">🏟️ Major Anchors</p>
+                  <p className="text-xs text-slate-600">Eid Al Adha (Jun 6-9), Dubai Summer Surprises (ongoing), Sharjah Summer Sale (starts June)</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border border-orange-200">
+                  <p className="font-bold text-orange-700 mb-2 text-sm">🎪 Community Layer</p>
+                  <p className="text-xs text-slate-600">Ripe Market (moves indoors), Gym Summer Memberships (Fitness First, GymNation)</p>
+                </div>
+              </div>
+              <div className="bg-indigo-100 rounded-xl p-4">
+                <p className="text-sm font-semibold text-indigo-900">💡 Nuqta Strategy: Push Nuqta Coins as "universal mall currency" during DSS. Gold Souk partnerships for Eid gifting. Fitness summer memberships = high LTV.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Budget Allocation by Tier */}
+          <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-12">
+            <h3 className="text-2xl font-black text-slate-900 mb-6">Budget Allocation by Event Tier</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-slate-100">
+                  <tr>
+                    <th className="text-left p-3 font-bold text-slate-700">Event Tier</th>
+                    <th className="text-center p-3 font-bold text-slate-700">Budget/Event</th>
+                    <th className="text-center p-3 font-bold text-slate-700">Merchant Target</th>
+                    <th className="text-center p-3 font-bold text-slate-700">User Target</th>
+                    <th className="text-center p-3 font-bold text-slate-700">Expected GMV</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  <tr className="hover:bg-red-50">
+                    <td className="p-3 font-semibold text-red-700">🏟️ Mega-Exhibitions</td>
+                    <td className="p-3 text-center text-slate-700">$5K</td>
+                    <td className="p-3 text-center text-slate-700">30-50 merchants</td>
+                    <td className="p-3 text-center text-slate-700">5,000 users</td>
+                    <td className="p-3 text-center font-bold text-slate-900">AED 300K</td>
+                  </tr>
+                  <tr className="hover:bg-orange-50">
+                    <td className="p-3 font-semibold text-orange-700">🎨 Community Markets</td>
+                    <td className="p-3 text-center text-slate-700">$1K</td>
+                    <td className="p-3 text-center text-slate-700">10-20 merchants</td>
+                    <td className="p-3 text-center text-slate-700">1,000 users</td>
+                    <td className="p-3 text-center font-bold text-slate-900">AED 50K</td>
+                  </tr>
+                  <tr className="hover:bg-blue-50">
+                    <td className="p-3 font-semibold text-blue-700">🎓 University Hubs</td>
+                    <td className="p-3 text-center text-slate-700">$2K/semester</td>
+                    <td className="p-3 text-center text-slate-700">20 campus merchants</td>
+                    <td className="p-3 text-center text-slate-700">2,000 students</td>
+                    <td className="p-3 text-center font-bold text-slate-900">AED 100K</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="mt-6 bg-slate-100 rounded-xl p-4">
+              <p className="text-sm font-bold text-slate-900">Total H1 Budget: $30K (15% of $200K H1 allocation)</p>
+            </div>
+          </div>
+
+          {/* Ramadan Blitz ROI */}
+          <div className="bg-gradient-to-br from-red-50 via-orange-50 to-red-50 border-4 border-red-300 rounded-3xl p-8">
+            <h3 className="text-2xl font-black text-slate-900 mb-6">💰 The Ramadan Blitz ROI Projection</h3>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="bg-white rounded-2xl p-6 border-2 border-red-200">
+                <p className="text-lg font-bold text-red-700 mb-4">Investment (Month 1)</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-slate-600">Event booth rental (16 days)</span>
+                    <span className="font-bold text-slate-900">AED 10K</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-600">User acquisition bonuses</span>
+                    <span className="font-bold text-slate-900">AED 100K</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-600">Merchant onboarding support</span>
+                    <span className="font-bold text-slate-900">AED 10K</span>
+                  </div>
+                  <div className="flex justify-between pt-2 border-t-2 border-red-200">
+                    <span className="font-bold text-red-700">Total Investment</span>
+                    <span className="font-black text-red-700 text-lg">AED 120K (~$32K)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 border-2 border-emerald-200">
+                <p className="text-lg font-bold text-emerald-700 mb-4">Returns (Month 1 vs Month 6)</p>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-slate-600">Immediate GMV</span>
+                    <span className="font-bold text-slate-900">AED 300K</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-600">Immediate Revenue (5%)</span>
+                    <span className="font-bold text-slate-900">AED 15K</span>
+                  </div>
+                  <div className="flex justify-between text-red-600">
+                    <span className="font-semibold">Month 1 ROI</span>
+                    <span className="font-bold">-$28K (loss)</span>
+                  </div>
+                  <div className="pt-2 border-t-2 border-emerald-200">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-slate-600">Y1 merchant GMV</span>
+                      <span className="font-bold text-slate-900">AED 500K</span>
+                    </div>
+                    <div className="flex justify-between mb-1">
+                      <span className="text-slate-600">Social impressions value</span>
+                      <span className="font-bold text-slate-900">AED 50K</span>
+                    </div>
+                    <div className="flex justify-between text-emerald-600">
+                      <span className="font-bold">True ROI (Month 6)</span>
+                      <span className="font-black text-lg">5x</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-2xl p-6">
+              <p className="text-lg font-black mb-2">✅ Strategic Value Beyond ROI:</p>
+              <div className="grid md:grid-cols-3 gap-4 text-sm">
+                <div>• 150 merchants onboarded</div>
+                <div>• 5,000 users acquired (CAC = AED 24 vs AED 50 industry avg)</div>
+                <div>• 500K+ social impressions</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Metrics */}
         <section id="metrics" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-8">5. Critical Success Metrics (H1 2026)</h2>
+          <h2 className="text-4xl font-black text-slate-900 mb-8">6. Critical Success Metrics (H1 2026)</h2>
 
           {/* Merchant Metrics */}
           <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-8">
