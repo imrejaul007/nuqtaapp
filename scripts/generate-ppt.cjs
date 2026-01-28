@@ -445,6 +445,159 @@ function createSlide10() {
 
 function createSlide11() {
   const slide = pptx.addSlide();
+  slide.background = { color: COLORS.slate[50] };
+
+  // Header
+  slide.addText('PLATFORM ARCHITECTURE', {
+    x: '15%',
+    y: '8%',
+    w: '70%',
+    h: '5%',
+    align: 'center',
+    fontSize: 10,
+    bold: true,
+    color: COLORS.blue,
+    fill: { color: COLORS.blue, transparency: 85 },
+  });
+
+  slide.addText('3-Sided Marketplace', {
+    x: '10%',
+    y: '14%',
+    w: '80%',
+    h: '8%',
+    align: 'center',
+    fontSize: 36,
+    bold: true,
+    color: COLORS.primary,
+  });
+
+  slide.addText('Enterprise-grade platform connecting users, merchants, and payment partners', {
+    x: '15%',
+    y: '23%',
+    w: '70%',
+    h: '5%',
+    align: 'center',
+    fontSize: 12,
+    color: COLORS.slate[600],
+  });
+
+  // Platform Components - 3 columns
+  const components = [
+    {
+      title: 'User App',
+      color: COLORS.blue,
+      features: [
+        '• Search Engine: AI, voice, filters',
+        '• Wallet System: Dual coins',
+        '• Social: Referrals, leaderboards',
+        '• Gamification: Loyalty tiers',
+      ],
+      x: '8%',
+    },
+    {
+      title: 'Merchant Hub',
+      color: COLORS.purple,
+      features: [
+        '• Analytics: Demographics, hours',
+        '• Campaign Manager: A/B testing',
+        '• QR/POS Integration',
+        '• Multi-Location Management',
+      ],
+      x: '38%',
+    },
+    {
+      title: 'Admin Panel',
+      color: COLORS.emerald,
+      features: [
+        '• Fraud Detection: 8-layer defense',
+        '• KYC Automation',
+        '• Content Moderation',
+        '• Financial Reporting',
+      ],
+      x: '68%',
+    },
+  ];
+
+  components.forEach((comp) => {
+    // Box
+    slide.addShape(pptx.ShapeType.rect, {
+      x: comp.x,
+      y: '32%',
+      w: '28%',
+      h: '28%',
+      fill: { color: COLORS.white },
+      line: { color: comp.color, width: 2 },
+    });
+
+    // Title
+    slide.addText(comp.title, {
+      x: comp.x,
+      y: '34%',
+      w: '28%',
+      h: '5%',
+      align: 'center',
+      fontSize: 14,
+      bold: true,
+      color: COLORS.primary,
+    });
+
+    // Features
+    slide.addText(comp.features.join('\n'), {
+      x: comp.x,
+      y: '40%',
+      w: '27%',
+      h: '18%',
+      fontSize: 8,
+      color: COLORS.slate[700],
+      valign: 'top',
+    });
+  });
+
+  // Intelligence Layer
+  slide.addShape(pptx.ShapeType.rect, {
+    x: '8%',
+    y: '63%',
+    w: '84%',
+    h: '16%',
+    fill: { color: COLORS.primary },
+    line: { color: COLORS.accent, width: 2 },
+  });
+
+  slide.addText('Intelligence Layer', {
+    x: '10%',
+    y: '65%',
+    w: '80%',
+    h: '4%',
+    fontSize: 14,
+    bold: true,
+    color: COLORS.accent,
+  });
+
+  slide.addText('Price Intelligence • Behavioral Insights • Predictive Analytics • Merchant ROI Tracking', {
+    x: '10%',
+    y: '70%',
+    w: '80%',
+    h: '6%',
+    fontSize: 9,
+    color: COLORS.white,
+  });
+
+  // Bottom callout
+  slide.addText('Not just an app • Built as a full-stack platform from Day 1', {
+    x: '15%',
+    y: '85%',
+    w: '70%',
+    h: '5%',
+    align: 'center',
+    fontSize: 11,
+    bold: true,
+    color: COLORS.blue,
+    fill: { color: COLORS.blue, transparency: 90 },
+  });
+}
+
+function createSlide11OLD() {
+  const slide = pptx.addSlide();
   addGradientSlide(slide, COLORS.slate[50]);
   addTitleWithBadge(slide, 'UNIT ECONOMICS', '18x LTV:CAC Ratio', 'Industry-leading metrics');
 }
