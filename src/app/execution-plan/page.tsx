@@ -59,30 +59,44 @@ export default function ExecutionPlanPage() {
             </div>
 
             <div className="bg-white rounded-2xl p-6 mb-6">
-              <p className="text-xl font-bold text-emerald-700 mb-4">15% Commission</p>
-              <div className="grid md:grid-cols-3 gap-4 mb-6">
-                <div className="border-2 border-blue-200 rounded-xl p-4 text-center">
-                  <p className="text-3xl font-black text-blue-600 mb-2">5%</p>
-                  <p className="text-sm font-semibold text-slate-700">User Cashback</p>
-                  <p className="text-xs text-slate-500 mt-1">Immediate liquid reward</p>
-                </div>
-                <div className="border-2 border-purple-200 rounded-xl p-4 text-center">
-                  <p className="text-3xl font-black text-purple-600 mb-2">5%</p>
-                  <p className="text-sm font-semibold text-slate-700">Social Incentive</p>
-                  <p className="text-xs text-slate-500 mt-1">Only if user posts Story/Reel</p>
-                </div>
+              <p className="text-xl font-bold text-emerald-700 mb-4">15% Total Commission (10% if no share)</p>
+              <div className="grid md:grid-cols-4 gap-4 mb-6">
                 <div className="border-2 border-emerald-200 rounded-xl p-4 text-center">
                   <p className="text-3xl font-black text-emerald-600 mb-2">5%</p>
                   <p className="text-sm font-semibold text-slate-700">Nuqta Revenue</p>
-                  <p className="text-xs text-slate-500 mt-1">Platform fee</p>
+                  <p className="text-xs text-slate-500 mt-1">Fixed platform fee</p>
+                </div>
+                <div className="border-2 border-blue-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-blue-600 mb-2">5%</p>
+                  <p className="text-sm font-semibold text-slate-700">Nuqta Coins</p>
+                  <p className="text-xs text-slate-500 mt-1">Fixed user reward</p>
+                </div>
+                <div className="border-2 border-purple-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-purple-600 mb-2">5%</p>
+                  <p className="text-sm font-semibold text-slate-700">Social Bonus</p>
+                  <p className="text-xs text-slate-500 mt-1">If user shares</p>
+                </div>
+                <div className="border-2 border-amber-200 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-black text-amber-600 mb-2">+</p>
+                  <p className="text-sm font-semibold text-slate-700">Brand Coins</p>
+                  <p className="text-xs text-slate-500 mt-1">Merchant optional</p>
                 </div>
               </div>
 
-              <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4">
+              <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4 mb-4">
                 <p className="font-bold text-amber-800 mb-2">📊 Social Bonus Logic:</p>
                 <ul className="text-sm text-slate-700 space-y-1">
-                  <li>• <span className="font-semibold">With Share:</span> User gets 10% (5% + 5%), Nuqta gets 5%</li>
-                  <li>• <span className="font-semibold">No Share:</span> User gets 5%, Nuqta gets 10%</li>
+                  <li>• <span className="font-semibold">With Share:</span> User gets 10% Nuqta Coins (5% + 5%), Nuqta gets 5% revenue</li>
+                  <li>• <span className="font-semibold">No Share:</span> User gets 5% Nuqta Coins, Nuqta gets 10% revenue (5% + 5%)</li>
+                  <li>• <span className="font-semibold">Plus:</span> Merchant can optionally give Brand Coins (e.g., 3% Starbucks Coins)</li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4">
+                <p className="font-bold text-blue-800 mb-2">💰 Example (AED 100 Coffee):</p>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• <span className="font-semibold">With Share:</span> User gets AED 10 Nuqta Coins, Nuqta gets AED 5</li>
+                  <li>• <span className="font-semibold">Without Share:</span> User gets AED 5 Nuqta Coins, Nuqta gets AED 10</li>
                 </ul>
               </div>
             </div>
@@ -114,27 +128,41 @@ export default function ExecutionPlanPage() {
             </div>
 
             <div className="bg-white rounded-2xl p-6 mb-6">
-              <p className="text-xl font-bold text-purple-700 mb-4">5% Brand Coins</p>
-              <div className="grid md:grid-cols-2 gap-4 mb-6">
-                <div className="border-2 border-purple-200 rounded-xl p-4">
-                  <p className="text-2xl font-black text-purple-600 mb-2">5%</p>
-                  <p className="text-sm font-semibold text-slate-700">User Reward</p>
-                  <p className="text-xs text-slate-500 mt-1">In Brand Coins (merchant-specific)</p>
-                </div>
-                <div className="border-2 border-pink-200 rounded-xl p-4">
-                  <p className="text-2xl font-black text-pink-600 mb-2">0%</p>
+              <p className="text-xl font-bold text-purple-700 mb-4">5% Total Commission</p>
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="border-2 border-purple-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-purple-600 mb-2">3%</p>
                   <p className="text-sm font-semibold text-slate-700">Nuqta Revenue</p>
-                  <p className="text-xs text-slate-500 mt-1">Upfront (monetize via data/float)</p>
+                  <p className="text-xs text-slate-500 mt-1">Platform fee</p>
+                </div>
+                <div className="border-2 border-blue-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-blue-600 mb-2">2%</p>
+                  <p className="text-sm font-semibold text-slate-700">Nuqta Coins</p>
+                  <p className="text-xs text-slate-500 mt-1">Universal reward</p>
+                </div>
+                <div className="border-2 border-pink-200 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-black text-pink-600 mb-2">+</p>
+                  <p className="text-sm font-semibold text-slate-700">Brand Coins</p>
+                  <p className="text-xs text-slate-500 mt-1">Merchant optional</p>
                 </div>
               </div>
 
-              <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4">
+              <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4 mb-4">
                 <p className="font-bold text-purple-800 mb-2">💎 Why It Works:</p>
                 <ul className="text-sm text-slate-700 space-y-1">
-                  <li>• Protects ultra-thin margins (grocery operates on 2-3%)</li>
-                  <li>• Forces repeat visits (coins expire in 90 days)</li>
-                  <li>• Builds loyalty without universal liquidity</li>
-                  <li>• Merchant pays zero commission upfront</li>
+                  <li>• 5% total commission vs 2-3% margins = sustainable</li>
+                  <li>• Nuqta Coins provide universal liquidity (redeemable anywhere)</li>
+                  <li>• Brand Coins force repeat visits (redeemable only at that merchant)</li>
+                  <li>• Merchant chooses Brand Coin % based on their economics</li>
+                </ul>
+              </div>
+
+              <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-4">
+                <p className="font-bold text-emerald-800 mb-2">💰 Example (AED 500 Grocery):</p>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• User gets AED 10 Nuqta Coins (2%, universal)</li>
+                  <li>• Nuqta gets AED 15 revenue (3%)</li>
+                  <li>• Merchant optionally gives AED 20 Carrefour Brand Coins (4%)</li>
                 </ul>
               </div>
             </div>

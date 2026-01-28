@@ -19,20 +19,26 @@ This document serves as the **Nuqta H1 2026 Master Strategic Blueprint**. It con
 
 To ensure scalability across 26 sub-categories, Nuqta operates two distinct engines based on merchant margin profiles.
 
-### Engine A: The Growth & Social Model (15% Commission)
+### Engine A: The Growth & Social Model (15% Total Commission)
 
 **Target:** High-margin sectors where the cost of customer acquisition (CAC) is high.
 
 **The Breakdown:**
-- **5% User Cashback:** Immediate liquid reward to the user
-- **5% Social Incentive:** Paid to the user *only* upon posting a Story/Reel of the transaction
-- **5% Nuqta Revenue:** Platform fee for facilitating the lifecycle
+- **5% Nuqta Revenue:** Fixed platform fee (always ours)
+- **5% Nuqta Coins:** Fixed reward to user (universal, liquid)
+- **5% Social Bonus:** Conditional Nuqta Coins (only if user shares on social media)
+- **+ Brand Coins:** Optional loyalty coins from merchant (at merchant's discretion)
 
-**Total**: 15% merchant commission
+**Total**: 15% merchant commission (10% if no social share)
 
 **Social Bonus Logic**:
-- If user shares → They get 10% total (5% + 5%), Nuqta gets 5%
-- If user doesn't share → User gets 5%, Nuqta gets 10%
+- **If user shares on Instagram/TikTok** → User gets 10% Nuqta Coins (5% fixed + 5% social), Nuqta gets 5% revenue
+- **If user doesn't share** → User gets 5% Nuqta Coins, Nuqta gets 10% revenue (5% fixed + 5% social bonus kept)
+
+**Example** (AED 100 Coffee Purchase):
+- **With Social Share**: User gets AED 10 Nuqta Coins (5% + 5%), Nuqta gets AED 5 revenue
+- **Without Social Share**: User gets AED 5 Nuqta Coins, Nuqta gets AED 10 revenue (5% + 5%)
+- **Plus**: Merchant can optionally give Brand Coins (e.g., 3% Starbucks Coins)
 
 **Win Factor:** Merchants stop paying for "blind" ads and only pay for guaranteed sales + authentic User Generated Content (UGC).
 
@@ -40,22 +46,32 @@ To ensure scalability across 26 sub-categories, Nuqta operates two distinct engi
 
 ---
 
-### Engine B: The Transaction & Volume Model (5% Brand Coins)
+### Engine B: The Transaction & Volume Model (5% Total Commission)
 
 **Target:** Low-margin, high-frequency sectors (Grocery, Supermarkets, Gold, Fashion Chains).
 
-**The Logic:** These merchants issue **Brand Coins** (internal currency) instead of liquid Nuqta Coins.
+**The Breakdown:**
+- **3% Nuqta Revenue:** Platform fee (our monetization)
+- **2% Nuqta Coins:** Universal liquid reward to user
+- **+ Brand Coins:** Merchant-specific loyalty coins (at merchant's discretion, typically 3-5%)
 
-**The Split**:
-- **User Reward**: 5% in Brand Coins (redeemable only at that merchant)
-- **Nuqta Revenue**: 0% upfront (monetize through data intelligence, float, future upsells)
+**Total**: 5% merchant commission (ultra-low for thin-margin businesses)
 
-**The Benefit:** Brand Coins force the user back to the *same* brand, protecting the merchant's ecosystem while benefiting from Nuqta's 2026 discovery engine.
+**The Logic:**
+- Protects ultra-thin margins (grocery operates on 2-3%)
+- Nuqta Coins provide universal liquidity (redeemable anywhere)
+- Brand Coins force repeat visits (redeemable only at that merchant)
+- Merchant chooses Brand Coin percentage based on their economics
+
+**Example** (AED 500 Grocery Purchase):
+- User gets AED 10 Nuqta Coins (2%, universal)
+- Nuqta gets AED 15 revenue (3%)
+- Merchant optionally gives AED 20 Carrefour Brand Coins (4%, only redeemable at Carrefour)
 
 **Why It Works**:
-- Protects ultra-thin margins (grocery operates on 2-3%)
-- Forces repeat visits (coins expire in 90 days)
-- Builds loyalty without universal liquidity
+- 5% total commission vs 2-3% margins = sustainable
+- Brand Coins create loyalty without cash outflow
+- Nuqta Coins drive cross-merchant spending
 - Merchant pays zero commission upfront
 
 **Target Sectors**: Grocery, Supermarkets, Gold, Fashion Chains
@@ -71,8 +87,9 @@ To ensure scalability across 26 sub-categories, Nuqta operates two distinct engi
 **Example** (AED 10,000 Gold Necklace Purchase):
 - Gold value: AED 8,000 (no commission)
 - Making charges: AED 2,000 (15% commission = AED 300)
-- User gets AED 300 in cashback/brand coins
-- Merchant pays AED 300 commission
+- User gets AED 100 Nuqta Coins (5%) + AED 100 Social Bonus if shared
+- Nuqta gets AED 100-200 revenue (depending on social share)
+- Merchant optionally gives Brand Coins
 
 **Trust-Building**: This is non-negotiable for Souk merchants. Shows we understand the business.
 
@@ -113,7 +130,7 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 ### 🛒 Grocery & Retail (The "Volume" Hub)
 
-**Commercial Model**: Engine B (5% Brand Coins)
+**Commercial Model**: Engine B (5% Commission)
 
 | Sub-Category | Target Merchants |
 |--------------|------------------|
@@ -280,18 +297,18 @@ This table includes **every merchant and category** identified for the H1 2026 r
 **Focus:** High-frequency daily spend.
 
 **Strategy**:
-1. **Grocery Chains** (Model B: Brand Coins):
+1. **Grocery Chains** (Model B: 5% Commission):
    - Carrefour, Lulu, Spinneys, Waitrose, Choithrams
-   - Offer: 5% Brand Coins on every purchase
+   - Offer: 2% Nuqta Coins + 3% Nuqta Revenue + optional Brand Coins
    - Pilot: 5 stores per chain in Dubai
 
 2. **QSR Chains** (Model A: 15% Commission):
    - McDonald's, KFC, Starbucks, Tim Hortons
-   - Offer: 10% universal cashback (5% base + 5% social)
+   - Offer: 5% Nuqta Coins + 5% Social Bonus + 5% Nuqta Revenue
    - Pilot: 10 stores per chain in Dubai
 
 3. **User Acquisition**:
-   - Leverage chain footfall: "Scan QR at checkout, get 10% back"
+   - Leverage chain footfall: "Scan QR at checkout, get Nuqta Coins"
    - Target: 5,000 active users across Dubai
 
 **Outcome:** Nuqta becomes a "Daily Utility" app, not just an occasional reward app.
@@ -342,13 +359,14 @@ This table includes **every merchant and category** identified for the H1 2026 r
 - **One Wallet**: Consolidate all rewards across 250+ merchants
 - **Daily Utility**: Earn on coffee, groceries, haircuts, gym sessions
 - **Get Paid to Create**: Share your purchases, earn extra 5%
-- **Universal Liquidity**: Spend coins anywhere (Model A merchants)
+- **Universal Liquidity**: Spend Nuqta Coins anywhere + collect Brand Coins
 
 ### For Merchants
 - **Zero Upfront Cost**: Pay only when sale is made
 - **Guaranteed ROI**: Full attribution tracking
 - **Localized Social Dominance**: Customers become micro-influencers
 - **Performance Marketing**: Replace blind ads with trackable sales
+- **Flexible Brand Coins**: Build loyalty your way
 
 ---
 
@@ -452,11 +470,11 @@ This table includes **every merchant and category** identified for the H1 2026 r
 
 **Week 9-10**:
 - Sign 5 grocery chains (Carrefour, Lulu, Spinneys, Waitrose, Choithrams)
-- Model: 5% Brand Coins
+- Model: 5% commission (2% Nuqta Coins + 3% revenue)
 
 **Week 11-12**:
 - Sign 4 QSR chains (McDonald's, KFC, Starbucks, Tim Hortons)
-- Model: 15% commission (10% universal cashback)
+- Model: 15% commission (5% Nuqta Coins + 5% social + 5% revenue)
 
 **Week 13-14**:
 - Launch chain integrations (5 stores per chain)
@@ -625,7 +643,7 @@ rejaul@nuqtapp.com
 
 ---
 
-**Document Version**: 2.0
+**Document Version**: 2.1
 **Last Updated**: January 29, 2026
-**Status**: Active Execution - Updated with Big Brand Rebuttal
+**Status**: Active Execution - Corrected Revenue Model
 **Distribution**: Internal Strategy Document
