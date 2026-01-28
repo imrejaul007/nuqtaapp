@@ -38,6 +38,24 @@ If you say this to an investor, they instantly know you're structured.
 
 ---
 
+## 🎯 KPI-Gated Progression (Critical)
+
+> **"We don't scale by time. We scale by proof."**
+
+Every transition (H1→H2→H3 and Phase 1→2→3) is **gated by KPIs**, not calendar dates.
+
+**Key Decision Gates**:
+- **H1 → H2**: Requires 10K MAU, 25% D30 retention, ≤10% merchant churn (sustained 2 months)
+- **H2 → H3**: Requires 75K MAU, 30% D30 retention, 40% merchants using campaigns (sustained 3 months)
+- **Phase 1 → Phase 2**: Requires 30% D30 retention, ≤8% merchant churn, LTV:CAC ≥5x, 18mo cash runway
+- **Phase 2 → Phase 3**: Requires 1.5M users, 3 countries live, 10% cross-border usage, 25% enterprise revenue
+
+**Acceleration Rule**: If KPIs exceed thresholds by 20%+ for 3 consecutive months, advance early.
+
+**Full Framework**: [KPI_GATED_PROGRESSION_FRAMEWORK.md](KPI_GATED_PROGRESSION_FRAMEWORK.md)
+
+---
+
 ## 📊 The Complete Framework (Visual)
 
 ```
@@ -330,17 +348,43 @@ By Year 10:
 
 ---
 
-## 🚩 The Non-Negotiable Rule
+## 🚩 The Non-Negotiable Rules
 
-**❌ Do NOT enter Phase 2 if:**
+### Phase Progression Gates
 
-- UAE merchant churn >10%
-- D30 retention <25%
-- Event playbook not repeatable
-- Fraud not under control
-- H3 infrastructure not built
+**❌ Do NOT enter Phase 2 (KSA + Qatar) unless:**
 
-Investors will expect this discipline.
+✅ **H3 Complete**: UAE infrastructure fully built (WaaS, enterprise partnerships, data APIs)
+✅ **Retention Proven**: D30 retention ≥30% in UAE
+✅ **Churn Controlled**: Merchant churn ≤8% in UAE
+✅ **Playbook Repeatable**: Event onboarding proven in ≥3 UAE cities
+✅ **Fraud Tight**: Fraud loss ≤4% of rewards
+✅ **Unit Economics**: LTV:CAC ≥5x
+✅ **Cash Runway**: ≥18 months of capital
+✅ **Regulatory Ready**: SAMA + Qatar Central Bank licensing confirmed
+
+**❌ Do NOT enter Phase 3 (Kuwait + Bahrain + Oman) unless:**
+
+✅ **Multi-Country Scale**: ≥1.5M users across UAE, KSA, Qatar
+✅ **Network Effects**: ≥10% cross-border coin usage (earn in one country, spend in another)
+✅ **Enterprise Revenue**: ≥25% revenue from non-GMV sources (SaaS, data, partnerships)
+✅ **Institutional Partnerships**: ≥2 government partnerships operational
+✅ **Churn Excellence**: Merchant churn ≤7% GCC average
+✅ **Regulatory Clean**: Zero violations across all markets
+
+### Horizon Progression Gates
+
+**❌ Do NOT move H1 → H2 unless:**
+
+✅ 10K MAU, 25% D30 retention, ≤10% merchant churn (sustained 2 months)
+
+**❌ Do NOT move H2 → H3 unless:**
+
+✅ 75K MAU, 30% D30 retention, 40% merchants using campaigns, 15% non-GMV revenue (sustained 3 months)
+
+**Full KPI Framework**: [KPI_GATED_PROGRESSION_FRAMEWORK.md](KPI_GATED_PROGRESSION_FRAMEWORK.md)
+
+**Why This Matters**: Investors expect this discipline. Most startups fail by expanding on hope, not proof.
 
 ---
 
