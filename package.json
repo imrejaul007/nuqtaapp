@@ -6,11 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-ppt": "node scripts/generate-ppt.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
     "next": "^14.2.35",
+    "pptxgenjs": "^4.0.1",
     "qrcode.react": "^4.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
