@@ -154,11 +154,6 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
                     <p className="text-sm font-bold text-emerald-400">CCS • $5M Cap • 20% Discount</p>
                   </div>
-                  {/* FOMO: Round Status */}
-                  <div className="flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-400/50 rounded-full backdrop-blur-sm">
-                    <Clock className="w-4 h-4 text-orange-300" />
-                    <p className="text-sm font-bold text-orange-200">$350K Committed • Closing Feb 15, 2026</p>
-                  </div>
                 </div>
               </div>
 
@@ -3812,25 +3807,6 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
               </div>
 
-              {/* FOMO: Pilot Merchant Momentum */}
-              <div className="bg-gradient-to-r from-orange-50 to-red-50 border-2 border-orange-300 rounded-2xl p-6 mb-12 max-w-4xl mx-auto">
-                <div className="flex items-center justify-between flex-wrap gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                      <Store className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="text-lg font-bold text-orange-800">Limited Pilot Slots Filling Fast</p>
-                      <p className="text-sm text-orange-700">10 premium merchants onboarding this week</p>
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-lg px-6 py-3 border-2 border-orange-400">
-                    <p className="text-sm font-semibold text-orange-700 uppercase">MVP Launch</p>
-                    <p className="text-2xl font-black text-orange-600">7 Days</p>
-                  </div>
-                </div>
-              </div>
-
               {/* Milestones */}
               <div className="bg-white border-2 border-emerald-200 rounded-2xl p-10">
                 <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">90-Day Validation Plan</h3>
@@ -3997,30 +3973,6 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <p className="text-2xl text-slate-700 max-w-2xl mx-auto mb-8">
                   12-month runway to launch, validate, and prep for Series A
                 </p>
-
-                {/* FOMO: Round Progress & Urgency */}
-                <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
-                  <div className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-300 rounded-2xl p-6 shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Clock className="w-5 h-5 text-orange-600" />
-                      <p className="text-sm font-bold text-orange-700 uppercase tracking-wider">Round Status</p>
-                    </div>
-                    <p className="text-4xl font-black text-orange-600 mb-2">$350K</p>
-                    <p className="text-sm text-orange-700 mb-1">of $500K committed</p>
-                    <div className="w-full bg-orange-200 rounded-full h-2 mt-3">
-                      <div className="bg-orange-600 h-2 rounded-full" style={{ width: '70%' }}></div>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-300 rounded-2xl p-6 shadow-lg">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Users className="w-5 h-5 text-blue-600" />
-                      <p className="text-sm font-bold text-blue-700 uppercase tracking-wider">Investor Interest</p>
-                    </div>
-                    <p className="text-4xl font-black text-blue-600 mb-2">8</p>
-                    <p className="text-sm text-blue-700">angels committed or in diligence</p>
-                    <p className="text-xs text-blue-600 mt-2">Closing Feb 15, 2026</p>
-                  </div>
-                </div>
 
                 {/* CCS Structure */}
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-2xl p-8 max-w-3xl mx-auto">
@@ -5151,34 +5103,6 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="text-4xl mb-4">🌐</div>
                   <p className="text-sm font-bold text-slate-600 uppercase mb-2">Website</p>
                   <p className="text-xl font-bold text-slate-900">www.nuqtapp.com</p>
-                </div>
-              </div>
-
-              {/* FOMO: Early Investor Benefits */}
-              <div className="bg-gradient-to-br from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-2xl p-8 mb-8 max-w-2xl mx-auto">
-                <div className="flex items-center justify-center gap-2 mb-4">
-                  <Trophy className="w-6 h-6 text-emerald-600" />
-                  <h3 className="text-xl font-bold text-slate-900">Early Investor Benefits</h3>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5" />
-                    <p className="text-base text-slate-700"><span className="font-bold">Advisory Board Seat</span> - First $250K investors</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5" />
-                    <p className="text-base text-slate-700"><span className="font-bold">Pro-rata rights</span> - Series A participation</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-600 mt-0.5" />
-                    <p className="text-base text-slate-700"><span className="font-bold">Quarterly updates</span> - Direct founder access</p>
-                  </div>
-                </div>
-                <div className="mt-6 pt-6 border-t border-emerald-200">
-                  <div className="flex items-center justify-center gap-2">
-                    <Clock className="w-4 h-4 text-orange-600" />
-                    <p className="text-sm font-bold text-orange-700">Round closes Feb 15, 2026 • $150K remaining</p>
-                  </div>
                 </div>
               </div>
 
