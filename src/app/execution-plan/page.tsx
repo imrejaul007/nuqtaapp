@@ -23,8 +23,12 @@ export default function ExecutionPlanPage() {
             <div className="text-slate-400">•</div>
             <div className="text-slate-400">Version 3.0 - January 29, 2026</div>
             <div className="text-slate-400">•</div>
+            <a href="/master-roadmap" className="text-[#c9a227] hover:text-white transition-colors font-semibold underline">
+              ← Master Roadmap
+            </a>
+            <div className="text-slate-400">•</div>
             <a href="/h2-strategy" className="text-purple-400 hover:text-purple-300 transition-colors font-semibold underline">
-              View H2 2026 Strategy →
+              H2 Strategy →
             </a>
           </div>
         </div>

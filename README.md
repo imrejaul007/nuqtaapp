@@ -17,6 +17,7 @@ Nuqta's complete strategic roadmap is documented in the following files:
 
 ### Web Views
 
+- [Master Roadmap](http://localhost:3000/master-roadmap) - Interactive 10-year strategic framework
 - [H1 Execution Plan](http://localhost:3000/execution-plan) - Interactive web version of H1 strategy
 - [H2 Strategy](http://localhost:3000/h2-strategy) - Interactive web version of H2 strategy
 - [Pitch Deck](http://localhost:3000/deck-kang) - Investor presentation

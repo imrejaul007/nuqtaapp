@@ -23,11 +23,15 @@ export default function H2StrategyPage() {
             <div className="text-purple-400">•</div>
             <div className="text-purple-300">January 29, 2026</div>
             <div className="text-purple-400">•</div>
-            <a href="/execution-plan" className="text-purple-300 hover:text-white transition-colors font-semibold underline">
-              ← View H1 Execution Plan
+            <a href="/master-roadmap" className="text-[#c9a227] hover:text-white transition-colors font-semibold underline">
+              ← Master Roadmap
             </a>
             <div className="text-purple-400">•</div>
-            <div className="text-purple-300">Next: H3 Infrastructure (Years 3-5)</div>
+            <a href="/execution-plan" className="text-purple-300 hover:text-white transition-colors font-semibold underline">
+              ← H1 Plan
+            </a>
+            <div className="text-purple-400">•</div>
+            <div className="text-purple-300">Next: H3 Infrastructure</div>
           </div>
         </div>
       </div>
