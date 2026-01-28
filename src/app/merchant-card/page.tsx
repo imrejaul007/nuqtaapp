@@ -220,7 +220,7 @@ export default function NuqtaMerchantOnePager() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
-                      <span className="text-sm text-slate-300">partners@nuqtaapp.com</span>
+                      <span className="text-sm text-slate-300">partners@nuqtapp.com</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-lg bg-[#c9a227]/10 flex items-center justify-center flex-shrink-0">
@@ -777,7 +777,7 @@ export default function NuqtaMerchantOnePager() {
 
                   <div className="bg-white/95 backdrop-blur-sm rounded-xl p-5 shadow-xl">
                     <div className="text-center mb-3">
-                      <p className="text-2xl font-black mb-2">📧 partners@nuqtaapp.com</p>
+                      <p className="text-2xl font-black mb-2">📧 partners@nuqtapp.com</p>
                       <div className="inline-flex items-center gap-2 bg-emerald-500/10 px-4 py-2 rounded-full mb-2">
                         <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                         <p className="text-xs text-emerald-700 font-bold">Response within 24 hours</p>

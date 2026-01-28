@@ -170,7 +170,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold">nuqtaapp.com</span>
+                    <span className="text-sm font-semibold">nuqtapp.com</span>
                   </div>
                 </div>
               </div>
@@ -5063,7 +5063,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-xl transition-all">
                   <div className="text-4xl mb-4">📧</div>
                   <p className="text-sm font-bold text-slate-600 uppercase mb-2">Email</p>
-                  <p className="text-xl font-bold text-slate-900">rejaul@nuqta.com</p>
+                  <p className="text-xl font-bold text-slate-900">rejaul@nuqtapp.com</p>
                 </div>
                 <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-xl transition-all">
                   <div className="text-4xl mb-4">📱</div>
@@ -5073,7 +5073,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-xl transition-all">
                   <div className="text-4xl mb-4">🌐</div>
                   <p className="text-sm font-bold text-slate-600 uppercase mb-2">Website</p>
-                  <p className="text-xl font-bold text-slate-900">www.nuqta.com</p>
+                  <p className="text-xl font-bold text-slate-900">www.nuqtapp.com</p>
                 </div>
               </div>
 
@@ -5118,7 +5118,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 <p className="text-xl text-slate-600">
-                  📧 <strong>rejaul@nuqta.com</strong> • 📱 <strong>+971 50 376 4345</strong>
+                  📧 <strong>rejaul@nuqtapp.com</strong> • 📱 <strong>+971 50 376 4345</strong>
                 </p>
               </div>
 
@@ -5170,7 +5170,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                 <div className="border-t-2 border-white/10 pt-6">
                   <p className="text-lg text-slate-300">
-                    📧 <strong className="text-white">rejaul@nuqta.com</strong>
+                    📧 <strong className="text-white">rejaul@nuqtapp.com</strong>
                   </p>
                 </div>
               </div>
@@ -5215,12 +5215,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="flex items-center justify-center gap-8 mb-8">
                 <div className="text-center">
                   <p className="text-sm text-slate-600 mb-2">Contact</p>
-                  <p className="text-lg font-bold text-slate-900">rejaul@nuqta.com</p>
+                  <p className="text-lg font-bold text-slate-900">rejaul@nuqtapp.com</p>
                 </div>
                 <div className="w-1 h-12 bg-slate-300"></div>
                 <div className="text-center">
                   <p className="text-sm text-slate-600 mb-2">Website</p>
-                  <p className="text-lg font-bold text-slate-900">www.nuqta.com</p>
+                  <p className="text-lg font-bold text-slate-900">www.nuqtapp.com</p>
                 </div>
               </div>
 
@@ -5255,7 +5255,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="space-y-6 text-2xl text-slate-700">
                   <div className="flex items-center justify-center gap-4">
                     <span className="text-3xl">📧</span>
-                    <p className="font-semibold">rejaul@nuqta.com</p>
+                    <p className="font-semibold">rejaul@nuqtapp.com</p>
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <span className="text-3xl">📱</span>
@@ -5263,7 +5263,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <span className="text-3xl">🌐</span>
-                    <p className="font-semibold">www.nuqta.com</p>
+                    <p className="font-semibold">www.nuqtapp.com</p>
                   </div>
                 </div>
               </div>
