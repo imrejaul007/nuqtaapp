@@ -2,25 +2,39 @@
 
 Utility scripts for generating various formats of the Nuqta pitch deck.
 
-## PowerPoint Generator
+## PowerPoint Generators
 
-### Usage
+### 1. Pitch Deck Generator
 
-Generate a PowerPoint (.pptx) version of the pitch deck:
+Generate a PowerPoint (.pptx) version of the full 27-slide pitch deck:
 
 ```bash
 npm run generate-ppt
 ```
 
-### Output
-
+**Output:**
 - **File**: `Nuqta-Pitch-Deck-2026.pptx`
 - **Location**: Root directory
 - **Size**: ~241KB
 - **Slides**: 27 slides
 - **Format**: PowerPoint (PPTX)
 
-### What's Included
+### 2. Investor One-Pager Generator
+
+Generate a PowerPoint version of the A4 tri-fold investor one-pager (card):
+
+```bash
+npm run generate-card-ppt
+```
+
+**Output:**
+- **File**: `Nuqta-Investor-One-Pager-2026.pptx`
+- **Location**: Root directory
+- **Size**: ~104KB
+- **Slides**: 6 slides (representing the tri-fold panels)
+- **Format**: PowerPoint (PPTX)
+
+## Pitch Deck Content
 
 The generated PowerPoint deck includes all 27 slides from the web version:
 
@@ -51,6 +65,20 @@ The generated PowerPoint deck includes all 27 slides from the web version:
 25. **Slide 24**: Let's Talk - Contact info
 26. **Slide 25**: Join Us - Investment opportunity
 27. **Slide 26**: Thank You - Closing slide
+
+## Investor One-Pager Content
+
+The generated PowerPoint one-pager includes 6 slides representing the A4 tri-fold layout:
+
+### Front Side (Outer Panels - Slides 1-3)
+1. **Slide 1**: Front Cover (Right Panel) - Nuqta branding, 10% cashback, key metrics, contact
+2. **Slide 2**: Problem (Middle Panel) - AED 2.4B wasted annually, user pain points, merchant struggles
+3. **Slide 3**: Market & Investment (Left Panel) - $150B TAM, GTM strategy, $500K ask
+
+### Back Side (Inner Panels - Slides 4-6)
+4. **Slide 4**: Why Now (Left Panel) - Perfect timing, market readiness, first-mover advantage
+5. **Slide 5**: Solution & Flow (Middle Panel) - 10% cashback, 3-step journey, business model
+6. **Slide 6**: Traction, Team & Closing (Right Panel) - 30+ LOIs, team, moats, call-to-action
 
 ### Design Features
 

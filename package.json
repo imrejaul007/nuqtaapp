@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "generate-ppt": "node scripts/generate-ppt.cjs"
+    "generate-ppt": "node scripts/generate-ppt.cjs",
+    "generate-card-ppt": "node scripts/generate-card-ppt.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.563.0",
