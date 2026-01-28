@@ -10,10 +10,10 @@ export default function ExecutionPlanPage() {
             <p className="text-xs font-black uppercase tracking-wider">Master Strategic Blueprint</p>
           </div>
           <h1 className="text-5xl md:text-7xl font-black mb-6">
-            H1 2026 Execution Plan
+            Nuqta H1 2026 Strategic Blueprint
           </h1>
-          <p className="text-2xl text-slate-300 max-w-3xl">
-            Merchant Ecosystem & Go-to-Market Strategy
+          <p className="text-2xl text-slate-300 max-w-3xl mb-4">
+            Solving "Loyalty Fatigue" by bridging social content and physical commerce through universal liquidity
           </p>
           <div className="mt-8 flex items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
@@ -21,7 +21,7 @@ export default function ExecutionPlanPage() {
               <span className="text-slate-400">Active Execution</span>
             </div>
             <div className="text-slate-400">•</div>
-            <div className="text-slate-400">Updated: January 29, 2026</div>
+            <div className="text-slate-400">Version 2.0 - January 29, 2026</div>
           </div>
         </div>
       </div>
@@ -30,10 +30,9 @@ export default function ExecutionPlanPage() {
       <div className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
         <div className="max-w-6xl mx-auto px-8 py-4">
           <div className="flex items-center gap-6 overflow-x-auto text-sm">
-            <a href="#vision" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Vision</a>
-            <a href="#merchants" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Merchants</a>
             <a href="#models" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Commercial Models</a>
-            <a href="#playbook" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Sales Playbook</a>
+            <a href="#merchants" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Merchants</a>
+            <a href="#objections" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Objections</a>
             <a href="#roadmap" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Roadmap</a>
             <a href="#metrics" className="whitespace-nowrap text-slate-600 hover:text-[#c9a227] font-semibold transition-colors">Metrics</a>
           </div>
@@ -43,604 +42,626 @@ export default function ExecutionPlanPage() {
       {/* Main Content */}
       <div className="max-w-6xl mx-auto px-8 py-16">
 
-        {/* Vision */}
-        <section id="vision" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">1. Executive Summary: The Nuqta Vision</h2>
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-3xl p-8 mb-8">
-            <p className="text-xl text-slate-700 leading-relaxed">
-              Nuqta is the UAE's first <span className="font-bold text-blue-600">Social-Commerce & Universal Loyalty Ecosystem</span>.
-              For H1 2026, we are moving away from traditional "discounting" to a <span className="font-bold text-purple-600">Performance-Marketing</span> model.
-              We solve the "Loyalty Fatigue" problem by providing users with a single liquid wallet while giving merchants a risk-free way to acquire and retain customers.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-red-700 mb-4 flex items-center gap-2">
-                <span className="text-2xl">❌</span> Old Model (2015-2025)
-              </h3>
-              <ul className="space-y-2 text-slate-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  <span>Merchants burn cash on upfront discounts (20-30% off)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  <span>Zero attribution on customer acquisition</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  <span>Rewards stuck in "island programs"</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-red-500 mt-1">•</span>
-                  <span>Users overwhelmed with 15+ loyalty apps</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-emerald-700 mb-4 flex items-center gap-2">
-                <span className="text-2xl">✅</span> Nuqta Model (2026+)
-              </h3>
-              <ul className="space-y-2 text-slate-700">
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-500 mt-1">•</span>
-                  <span>Performance-based: Pay only when sale is made</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-500 mt-1">•</span>
-                  <span>Full attribution: Track every customer journey</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-500 mt-1">•</span>
-                  <span>Universal liquidity: One wallet, works everywhere</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-emerald-500 mt-1">•</span>
-                  <span>Social amplification: Customers become micro-influencers</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Merchant Universe */}
-        <section id="merchants" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">2. The Merchant Universe (Target List)</h2>
-          <p className="text-lg text-slate-600 mb-8">
-            We have aggregated the "Top Tier" chains for volume and "Local Gems" for density.
-            <span className="font-bold text-[#c9a227]"> Target: 50+ merchants per sub-category.</span>
-          </p>
-
-          <div className="space-y-6">
-            {/* F&B */}
-            <div className="bg-white border-2 border-orange-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">🍔</span>
-                <h3 className="text-2xl font-bold text-slate-900">F&B (Food & Beverage)</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">Sub-Categories: Cafés, QSR, Casual Dining, Desserts, Street Food, Juice Bars</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs font-bold text-orange-600 uppercase mb-2">Top Tier Chains (Volume)</p>
-                  <p className="text-sm text-slate-700">Starbucks, McDonald's, KFC, Tim Hortons, Nando's, Baskin Robbins, Krispy Kreme, Joe & The Juice</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-orange-600 uppercase mb-2">Local Gems / Independents (Density)</p>
-                  <p className="text-sm text-slate-700">Nightjar Coffee, Pickl, High Joint, Stomping Grounds, Al Fanar Restaurant, Mama'esh, Ravi Restaurant, Salt</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Salons */}
-            <div className="bg-white border-2 border-pink-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">💅</span>
-                <h3 className="text-2xl font-bold text-slate-900">Salons & Grooming</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">Sub-Categories: Men's Barbershops, Women's Salons, Beauty Lounges, Spa & Wellness</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs font-bold text-pink-600 uppercase mb-2">Top Tier Chains (Volume)</p>
-                  <p className="text-sm text-slate-700">1847 Grooming, Tips & Toes, Sisters Beauty Lounge, NStyle, Chaps & Co</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-pink-600 uppercase mb-2">Local Gems / Independents (Density)</p>
-                  <p className="text-sm text-slate-700">Chalk Barbershop, Fade & Shave, Willow Lane Salon, Peaky Blinders, CG Barbershop</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Grocery */}
-            <div className="bg-white border-2 border-green-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">🛒</span>
-                <h3 className="text-2xl font-bold text-slate-900">Grocery & Essentials</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">Sub-Categories: Hypermarkets, Supermarkets, Convenience Stores</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs font-bold text-green-600 uppercase mb-2">Top Tier Chains (Volume)</p>
-                  <p className="text-sm text-slate-700">Carrefour, Lulu Hypermarket, Spinneys, Waitrose, Choithrams, West Zone, Zoom, Circle K</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-green-600 uppercase mb-2">Local Gems / Independents (Density)</p>
-                  <p className="text-sm text-slate-700">Grandiose Supermarket, Union Coop, Al Adil Trading, Shaklan Market, Blue Mart</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Fitness */}
-            <div className="bg-white border-2 border-blue-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">🏋️</span>
-                <h3 className="text-2xl font-bold text-slate-900">Fitness & Wellness</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">Sub-Categories: Gyms, Yoga Studios, Pilates, CrossFit, Personal Training</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs font-bold text-blue-600 uppercase mb-2">Top Tier Chains (Volume)</p>
-                  <p className="text-sm text-slate-700">Fitness First, GymNation, Gold's Gym, F45 Training, Barry's Bootcamp</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-blue-600 uppercase mb-2">Local Gems / Independents (Density)</p>
-                  <p className="text-sm text-slate-700">Warehouse Gym, Train SF, Crank Fitness, Platform Studios, Seva Experience (Yoga)</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Events */}
-            <div className="bg-white border-2 border-purple-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">🎪</span>
-                <h3 className="text-2xl font-bold text-slate-900">Events & Experiences</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">Sub-Categories: Pop-ups, Markets, Festivals, Cultural Events</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs font-bold text-purple-600 uppercase mb-2">Top Tier Events (Volume)</p>
-                  <p className="text-sm text-slate-700">Global Village, Ripe Market, Dubai Food Festival</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-purple-600 uppercase mb-2">Local Gems / Community Events</p>
-                  <p className="text-sm text-slate-700">Flea Markets (Various), University Festivals, Last Exit Food Trucks</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Fashion */}
-            <div className="bg-white border-2 border-indigo-200 rounded-2xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">👕</span>
-                <h3 className="text-2xl font-bold text-slate-900">Fashion & Retail</h3>
-              </div>
-              <p className="text-sm text-slate-600 mb-4">Sub-Categories: Streetwear, Boutiques, Perfumes, Accessories</p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <p className="text-xs font-bold text-indigo-600 uppercase mb-2">Top Tier Chains (Volume)</p>
-                  <p className="text-sm text-slate-700">Zara, H&M, Mango, Ajmal, Arabian Oud, Level Shoes</p>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-indigo-600 uppercase mb-2">Local Gems / Independents</p>
-                  <p className="text-sm text-slate-700">The Giving Movement, Amongst Few, Frame Boutique, LILI BLANC, VAO Concept Store</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Commercial Models */}
         <section id="models" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">3. The Two Commercial Engines</h2>
+          <h2 className="text-4xl font-black text-slate-900 mb-8">1. The H1 2026 Commercial Models</h2>
           <p className="text-lg text-slate-600 mb-8">
-            To maximize adoption, we apply two distinct financial models based on merchant margins.
+            To ensure scalability across 26 sub-categories, Nuqta operates two distinct engines based on merchant margin profiles.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Model A */}
-            <div className="bg-gradient-to-br from-[#c9a227]/10 to-orange-50 border-2 border-[#c9a227] rounded-3xl p-8">
-              <div className="inline-block px-4 py-2 bg-[#c9a227] text-white rounded-full mb-4">
-                <p className="text-xs font-black uppercase">Model A</p>
+          {/* Engine A */}
+          <div className="bg-gradient-to-br from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="px-4 py-2 bg-emerald-600 rounded-full">
+                <span className="text-white font-black text-sm">ENGINE A</span>
               </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">Growth & Loyalty</h3>
-              <div className="bg-white rounded-2xl p-6 mb-6">
-                <p className="text-5xl font-black text-[#c9a227] mb-2">15%</p>
-                <p className="text-sm text-slate-600">Merchant Commission</p>
+              <h3 className="text-3xl font-black text-slate-900">The Growth & Social Model</h3>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 mb-6">
+              <p className="text-xl font-bold text-emerald-700 mb-4">15% Commission</p>
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="border-2 border-blue-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-blue-600 mb-2">5%</p>
+                  <p className="text-sm font-semibold text-slate-700">User Cashback</p>
+                  <p className="text-xs text-slate-500 mt-1">Immediate liquid reward</p>
+                </div>
+                <div className="border-2 border-purple-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-purple-600 mb-2">5%</p>
+                  <p className="text-sm font-semibold text-slate-700">Social Incentive</p>
+                  <p className="text-xs text-slate-500 mt-1">Only if user posts Story/Reel</p>
+                </div>
+                <div className="border-2 border-emerald-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-emerald-600 mb-2">5%</p>
+                  <p className="text-sm font-semibold text-slate-700">Nuqta Revenue</p>
+                  <p className="text-xs text-slate-500 mt-1">Platform fee</p>
+                </div>
               </div>
 
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-700">User Cashback</span>
-                  <span className="font-bold text-blue-600">5%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-700">Social Bonus</span>
-                  <span className="font-bold text-purple-600">5%</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-700">Nuqta Revenue</span>
-                  <span className="font-bold text-emerald-600">5%</span>
-                </div>
-              </div>
-
-              <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-4">
-                <p className="text-sm font-bold text-orange-800 mb-2">Target Sectors</p>
-                <p className="text-sm text-orange-700">High-margin: F&B, Salons, Fitness, Boutiques</p>
-              </div>
-
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                <p className="text-xs font-bold text-blue-800 mb-2">Social Bonus Logic</p>
-                <p className="text-xs text-blue-700">If user shares → Get 10% total (5% + 5%). If no share → Nuqta keeps extra 5% (10% revenue)</p>
+              <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4">
+                <p className="font-bold text-amber-800 mb-2">📊 Social Bonus Logic:</p>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• <span className="font-semibold">With Share:</span> User gets 10% (5% + 5%), Nuqta gets 5%</li>
+                  <li>• <span className="font-semibold">No Share:</span> User gets 5%, Nuqta gets 10%</li>
+                </ul>
               </div>
             </div>
 
-            {/* Model B */}
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-300 rounded-3xl p-8">
-              <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full mb-4">
-                <p className="text-xs font-black uppercase">Model B</p>
-              </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">Transaction-Only</h3>
-              <div className="bg-white rounded-2xl p-6 mb-6">
-                <p className="text-5xl font-black text-blue-600 mb-2">5%</p>
-                <p className="text-sm text-slate-600">Brand Coins</p>
-              </div>
+            <div className="bg-emerald-600 text-white rounded-2xl p-6">
+              <p className="font-bold mb-2">💡 Win Factor:</p>
+              <p className="text-sm">Merchants stop paying for "blind" ads and only pay for guaranteed sales + authentic User Generated Content (UGC).</p>
+            </div>
 
-              <div className="space-y-4 mb-6">
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-700">User Reward</span>
-                  <span className="font-bold text-purple-600">5% Brand Coins</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span className="text-slate-700">Nuqta Revenue</span>
-                  <span className="font-bold text-emerald-600">0% upfront</span>
-                </div>
-              </div>
-
-              <div className="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-4">
-                <p className="text-sm font-bold text-purple-800 mb-2">Target Sectors</p>
-                <p className="text-sm text-purple-700">Low-margin/High-volume: Grocery, Supermarkets, Gold, Fashion Chains</p>
-              </div>
-
-              <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                <p className="text-xs font-bold text-green-800 mb-2">Logic</p>
-                <p className="text-xs text-green-700">Brand Coins only redeemable at that merchant → Protects margins, forces repeat visits. Monetize through data intelligence & float.</p>
+            <div className="mt-6">
+              <p className="text-sm font-semibold text-slate-600 mb-2">Target Sectors:</p>
+              <div className="flex flex-wrap gap-2">
+                {['F&B', 'Salons', 'Fitness', 'Boutiques', 'Events'].map((sector) => (
+                  <span key={sector} className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">
+                    {sector}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Special Case: Gold */}
-          <div className="mt-8 bg-gradient-to-br from-yellow-50 to-amber-50 border-2 border-yellow-400 rounded-2xl p-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-3xl">💎</span>
-              <h3 className="text-2xl font-bold text-yellow-900">Special Case: Gold & Jewellery</h3>
+          {/* Engine B */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-3xl p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="px-4 py-2 bg-purple-600 rounded-full">
+                <span className="text-white font-black text-sm">ENGINE B</span>
+              </div>
+              <h3 className="text-3xl font-black text-slate-900">The Transaction & Volume Model</h3>
             </div>
-            <div className="grid md:grid-cols-2 gap-6">
+
+            <div className="bg-white rounded-2xl p-6 mb-6">
+              <p className="text-xl font-bold text-purple-700 mb-4">5% Brand Coins</p>
+              <div className="grid md:grid-cols-2 gap-4 mb-6">
+                <div className="border-2 border-purple-200 rounded-xl p-4">
+                  <p className="text-2xl font-black text-purple-600 mb-2">5%</p>
+                  <p className="text-sm font-semibold text-slate-700">User Reward</p>
+                  <p className="text-xs text-slate-500 mt-1">In Brand Coins (merchant-specific)</p>
+                </div>
+                <div className="border-2 border-pink-200 rounded-xl p-4">
+                  <p className="text-2xl font-black text-pink-600 mb-2">0%</p>
+                  <p className="text-sm font-semibold text-slate-700">Nuqta Revenue</p>
+                  <p className="text-xs text-slate-500 mt-1">Upfront (monetize via data/float)</p>
+                </div>
+              </div>
+
+              <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4">
+                <p className="font-bold text-purple-800 mb-2">💎 Why It Works:</p>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• Protects ultra-thin margins (grocery operates on 2-3%)</li>
+                  <li>• Forces repeat visits (coins expire in 90 days)</li>
+                  <li>• Builds loyalty without universal liquidity</li>
+                  <li>• Merchant pays zero commission upfront</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-purple-600 text-white rounded-2xl p-6">
+              <p className="font-bold mb-2">💡 The Benefit:</p>
+              <p className="text-sm">Brand Coins force the user back to the <span className="font-bold">same</span> brand, protecting the merchant's ecosystem while benefiting from Nuqta's 2026 discovery engine.</p>
+            </div>
+
+            <div className="mt-6">
+              <p className="text-sm font-semibold text-slate-600 mb-2">Target Sectors:</p>
+              <div className="flex flex-wrap gap-2">
+                {['Grocery', 'Supermarkets', 'Gold', 'Fashion Chains'].map((sector) => (
+                  <span key={sector} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
+                    {sector}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Merchants */}
+        <section id="merchants" className="mb-20">
+          <h2 className="text-4xl font-black text-slate-900 mb-8">2. Master Merchant & Category Matrix</h2>
+          <p className="text-lg text-slate-600 mb-8">
+            Every merchant and category identified for the H1 2026 rollout.
+          </p>
+
+          {/* F&B */}
+          <div className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-4xl">🍔</span>
               <div>
-                <p className="text-sm font-bold text-yellow-800 mb-2">Commission Structure</p>
-                <p className="text-sm text-yellow-700">15% applies ONLY to Making Charges, NOT gold value</p>
-              </div>
-              <div className="bg-white rounded-xl p-4">
-                <p className="text-xs font-bold text-slate-700 mb-2">Example (AED 10,000 Necklace)</p>
-                <div className="space-y-1 text-xs text-slate-600">
-                  <div className="flex justify-between"><span>Gold value:</span> <span>AED 8,000 (0%)</span></div>
-                  <div className="flex justify-between"><span>Making charges:</span> <span>AED 2,000</span></div>
-                  <div className="flex justify-between font-bold text-yellow-700"><span>Commission:</span> <span>AED 300 (15%)</span></div>
-                </div>
+                <h3 className="text-2xl font-black text-slate-900">Food & Beverage</h3>
+                <p className="text-sm text-slate-600">The "High-Frequency" Hub • Engine A (15%)</p>
               </div>
             </div>
+
+            <div className="grid gap-4">
+              <div className="bg-white rounded-xl p-4 border border-orange-200">
+                <p className="font-bold text-orange-700 mb-2">☕ Cafes & Coffee</p>
+                <p className="text-sm text-slate-600">Starbucks, Costa, Tim Hortons, Caribou, Café Nero, % Arabica, Stomping Grounds, Nightjar, Casette, Alchemy, Boston Lane, Seven Fortunes, Depresso, The Sum of Us</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-orange-200">
+                <p className="font-bold text-orange-700 mb-2">🍔 QSR & Fast Food</p>
+                <p className="text-sm text-slate-600">McDonald's, KFC, Subway, Burger King, Hardee's, AlBaik, Five Guys, High Joint, Pickl, Salt, Slaw, Jailbird, Bluestone, Lads Burger, She Burger</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-orange-200">
+                <p className="font-bold text-orange-700 mb-2">🍕 Casual & Street</p>
+                <p className="text-sm text-slate-600">Nando's, P.F. Chang's, Paul, Jones the Grocer, Chili's, Wagamama, Al Fanar, Operation: Falafel, Zaroob, Logma, Mama'esh, Bait Maryam, Reif Kushiyaki, Ravi Restaurant</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-orange-200">
+                <p className="font-bold text-orange-700 mb-2">🍰 Desserts & Juice</p>
+                <p className="text-sm text-slate-600">Baskin Robbins, Magnolia Bakery, Mister Baker, Krispy Kreme, Sugaholic, Home Bakery, Rise & Dawn, L'ETO, Tonic, Joga, Wild & The Moon</p>
+              </div>
+            </div>
+
+            <div className="mt-4 text-center">
+              <span className="inline-block px-4 py-2 bg-orange-600 text-white rounded-full text-sm font-bold">
+                Target: 100+ F&B merchants by Month 6
+              </span>
+            </div>
           </div>
-        </section>
 
-        {/* Sales Playbook */}
-        <section id="playbook" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">4. Sales Playbook: Category-Specific Pitches</h2>
+          {/* Salons */}
+          <div className="bg-gradient-to-br from-pink-50 to-purple-50 border-2 border-pink-200 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-4xl">💅</span>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Salons, Fitness & Wellness</h3>
+                <p className="text-sm text-slate-600">The "Lifestyle" Hub • Engine A (15%)</p>
+              </div>
+            </div>
 
-          <div className="bg-gradient-to-br from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-2xl p-8 mb-8">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">The Universal Promise (All Merchants)</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white rounded-xl p-4 border border-pink-200">
+                <p className="font-bold text-pink-700 mb-2">💈 Grooming (M/F)</p>
+                <p className="text-sm text-slate-600">1847, Chaps & Co, Tips & Toes, NStyle, Sisters Beauty Lounge, Fade & Shave, CG Barbershop, Chalk, Peaky Blinders, THT, Willow Lane</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-purple-200">
+                <p className="font-bold text-purple-700 mb-2">🏋️ Gyms & Fitness</p>
+                <p className="text-sm text-slate-600">Fitness First, GymNation, Gold's Gym, Snap Fitness, Warehouse Gym, Train SF, Platform Studios, Crank, F45</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-pink-200">
+                <p className="font-bold text-pink-700 mb-2">🧘 Yoga & Wellness</p>
+                <p className="text-sm text-slate-600">Karma Yoga, Trident Wellness, Inspire, Paus, Seva Experience</p>
+              </div>
+            </div>
+
+            <div className="mt-4 text-center">
+              <span className="inline-block px-4 py-2 bg-pink-600 text-white rounded-full text-sm font-bold">
+                Target: 75+ Salon/Fitness merchants by Month 6
+              </span>
+            </div>
+          </div>
+
+          {/* Grocery */}
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-4xl">🛒</span>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Grocery & Retail</h3>
+                <p className="text-sm text-slate-600">The "Volume" Hub • Engine B (5% Brand Coins)</p>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-white rounded-xl p-4 border border-green-200">
+                <p className="font-bold text-green-700 mb-2">🏪 Supermarkets</p>
+                <p className="text-sm text-slate-600">Carrefour, Lulu, Spinneys, Choithrams, West Zone, Grandiose, Union Coop, Al Adil, Shaklan</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-emerald-200">
+                <p className="font-bold text-emerald-700 mb-2">🏪 Convenience</p>
+                <p className="text-sm text-slate-600">Zoom, Circle K, 7-Eleven, ADNOC Oasis, ENOC, All Day, Blue Mart</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-amber-200">
+                <p className="font-bold text-amber-700 mb-2">💍 Gold & Jewellery</p>
+                <p className="text-sm text-slate-600">All Gold Souk Merchants (Commission on making charges only)</p>
+              </div>
+            </div>
+
+            <div className="mt-4 text-center">
+              <span className="inline-block px-4 py-2 bg-green-600 text-white rounded-full text-sm font-bold">
+                Target: 20+ Grocery merchants by Month 6
+              </span>
+            </div>
+          </div>
+
+          {/* Fashion */}
+          <div className="bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 rounded-3xl p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="text-4xl">👗</span>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Fashion, Events & Pop-ups</h3>
+                <p className="text-sm text-slate-600">The "Discovery" Hub • Dual Model</p>
+              </div>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3">
-                <span className="text-emerald-500 text-xl">✓</span>
-                <div>
-                  <p className="font-bold text-slate-900">Performance Based</p>
-                  <p className="text-sm text-slate-600">No upfront costs. Pay only when sale is made.</p>
-                </div>
+              <div className="bg-white rounded-xl p-4 border border-indigo-200">
+                <p className="font-bold text-indigo-700 mb-2">👕 Fashion Retail (Dual Model)</p>
+                <p className="text-sm text-slate-600">Zara, H&M, Mango, Tommy Hilfiger, The Giving Movement, Amongst Few, Frame, Level Shoes, Ajmal, Arabian Oud, Skims, VAO Concept</p>
               </div>
-              <div className="flex items-start gap-3">
-                <span className="text-emerald-500 text-xl">✓</span>
-                <div>
-                  <p className="font-bold text-slate-900">Social Distribution</p>
-                  <p className="text-sm text-slate-600">Customers become your micro-influencers.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-emerald-500 text-xl">✓</span>
-                <div>
-                  <p className="font-bold text-slate-900">Data Intelligence</p>
-                  <p className="text-sm text-slate-600">Real-time insights into spending habits and footfall.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-emerald-500 text-xl">✓</span>
-                <div>
-                  <p className="font-bold text-slate-900">Zero Tech Burden</p>
-                  <p className="text-sm text-slate-600">QR code integration, no POS changes required.</p>
-                </div>
+              <div className="bg-white rounded-xl p-4 border border-purple-200">
+                <p className="font-bold text-purple-700 mb-2">🎪 Events & Fests (Engine A)</p>
+                <p className="text-sm text-slate-600">Global Village, Ripe Market, Dubai Food Festival, Dubai Flea Market, Art Central, College/University Fests</p>
               </div>
             </div>
-          </div>
 
-          <div className="space-y-6">
-            {[
-              {
-                emoji: '🍔',
-                category: 'Food & Beverage',
-                color: 'orange',
-                pitch: 'Turn one-time diners into daily regulars. Replace margin-killing discounts with post-purchase rewards.',
-                painPoint: 'Traditional: 20% upfront discount burns AED 20 on AED 100 bill, customer might never return.',
-                solution: 'Nuqta: 15% post-purchase cashback only if they buy, they return to redeem coins.',
-                caseStudy: 'Café in JBR increased repeat visits by 3x in 30 days using 10% post-purchase rewards vs 20% upfront discounts.'
-              },
-              {
-                emoji: '💅',
-                category: 'Salons & Grooming',
-                color: 'pink',
-                pitch: 'The Retention Engine. Fill your empty chairs during off-peak hours using targeted loyalty pushes.',
-                painPoint: 'Traditional: 40% empty chairs on weekdays (10am-2pm).',
-                solution: 'Nuqta: Send push "Visit today before 3pm, get extra 5% cashback" → Fill slow hours.',
-                caseStudy: 'Barbershop in Marina increased weekday occupancy from 60% to 85% using off-peak cashback boosts.'
-              },
-              {
-                emoji: '🛒',
-                category: 'Grocery & Essentials',
-                color: 'green',
-                pitch: 'Neighborhood Dominance. Ensure your store is the "default" choice by locking in users with Brand Coins.',
-                painPoint: 'Traditional: User shops at 3 different supermarkets based on proximity.',
-                solution: 'Nuqta: User has AED 50 in Carrefour Coins → Always goes to Carrefour first.',
-                caseStudy: 'Supermarket chain saw 40% increase in basket frequency when customers had Brand Coins to redeem.'
-              },
-              {
-                emoji: '🏋️',
-                category: 'Fitness & Wellness',
-                color: 'blue',
-                pitch: 'Lower Churn. Gamify the fitness journey—reward every workout and every membership renewal.',
-                painPoint: 'Traditional: 60% gym membership churn within 3 months.',
-                solution: 'Nuqta: Earn 5% coins on every class/session → Builds habit, increases retention.',
-                caseStudy: 'Boutique gym reduced churn from 60% to 35% by rewarding every workout with cashback.'
-              },
-              {
-                emoji: '👕',
-                category: 'Fashion Retail',
-                color: 'indigo',
-                pitch: 'Content-to-Commerce. Turn "Outfits of the Day" (OOTD) into trackable, offline store sales.',
-                painPoint: 'Traditional: Influencer posts OOTD, you have no idea if it drove any sales.',
-                solution: 'Nuqta: User shares OOTD with Nuqta tag → You track exactly how many people visited your store.',
-                caseStudy: 'Boutique tracked 50 store visits from 1 customer\'s Instagram post, resulting in AED 15K sales.'
-              }
-            ].map((item, idx) => {
-              const colorClasses = {
-                orange: 'border-orange-200 bg-orange-50',
-                pink: 'border-pink-200 bg-pink-50',
-                green: 'border-green-200 bg-green-50',
-                blue: 'border-blue-200 bg-blue-50',
-                indigo: 'border-indigo-200 bg-indigo-50'
-              };
-
-              return (
-                <div key={idx} className={`border-2 ${colorClasses[item.color as keyof typeof colorClasses]} rounded-2xl p-6`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-3xl">{item.emoji}</span>
-                    <h3 className="text-2xl font-bold text-slate-900">{item.category}</h3>
-                  </div>
-                  <div className="bg-white rounded-xl p-4 mb-4">
-                    <p className="text-lg font-bold text-slate-900 mb-2">The Pitch</p>
-                    <p className="text-slate-700">{item.pitch}</p>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4 mb-4">
-                    <div className="bg-white rounded-xl p-4">
-                      <p className="text-sm font-bold text-red-600 mb-2">Pain Point</p>
-                      <p className="text-sm text-slate-700">{item.painPoint}</p>
-                    </div>
-                    <div className="bg-white rounded-xl p-4">
-                      <p className="text-sm font-bold text-emerald-600 mb-2">Nuqta Solution</p>
-                      <p className="text-sm text-slate-700">{item.solution}</p>
-                    </div>
-                  </div>
-                  <div className="bg-blue-600 text-white rounded-xl p-4">
-                    <p className="text-xs font-bold mb-1">Case Study</p>
-                    <p className="text-sm">{item.caseStudy}</p>
-                  </div>
-                </div>
-              );
-            })}
+            <div className="mt-4 text-center">
+              <span className="inline-block px-4 py-2 bg-indigo-600 text-white rounded-full text-sm font-bold">
+                Target: 55+ Fashion/Events merchants by Month 6
+              </span>
+            </div>
           </div>
         </section>
 
-        {/* Execution Roadmap */}
-        <section id="roadmap" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">5. H1 2026 Execution: The "Density" Roadmap</h2>
+        {/* Objections */}
+        <section id="objections" className="mb-20">
+          <h2 className="text-4xl font-black text-slate-900 mb-8">3. The "Why Nuqta?" Playbook</h2>
+          <p className="text-lg text-slate-600 mb-8">
+            Overcoming the most common merchant objections.
+          </p>
 
-          <div className="space-y-8">
-            {/* Phase 1 */}
-            <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-300 rounded-3xl p-8">
-              <div className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full mb-4">
-                <p className="text-xs font-black uppercase">Phase 1 • Month 1-2</p>
+          {/* Small Business Pitch */}
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-200 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">🏪</span>
+              <h3 className="text-2xl font-black text-slate-900">A. The "Small Business" Pitch</h3>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border-2 border-blue-300">
+              <p className="text-lg italic text-slate-700 mb-4">
+                "You are currently spending 25% of your revenue on Instagram ads and aggregators like Talabat.
+                Nuqta gives you that money back. You only pay us 15% when a customer actually walks in, pays,
+                and posts a video of your store. We are your outsourced marketing team."
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                {[
+                  'Zero upfront costs',
+                  'Pay only for guaranteed sales',
+                  'Social proof included (UGC)',
+                  'Full attribution tracking'
+                ].map((point, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span className="text-emerald-500 text-xl">✅</span>
+                    <span className="text-sm font-semibold text-slate-700">{point}</span>
+                  </div>
+                ))}
               </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">The JLT Pilot</h3>
-              <p className="text-lg text-slate-700 mb-6">Prove unit economics in a controlled cluster</p>
+            </div>
+          </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-blue-600 mb-2">50</p>
-                  <p className="text-sm text-slate-600">Merchants in JLT</p>
+          {/* Big Brand Rebuttal */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">🏨</span>
+              <h3 className="text-2xl font-black text-slate-900">B. The "Big Brand" (Marriott/Bonvoy) Rebuttal</h3>
+            </div>
+
+            <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">
+              <p className="font-bold text-red-700 mb-2">❌ The Objection:</p>
+              <p className="text-slate-700 italic">"We already have Marriott Bonvoy. It's a multi-billion dollar system. Why join Nuqta?"</p>
+            </div>
+
+            <div className="space-y-6">
+              {/* Point 1 */}
+              <div className="bg-white rounded-2xl p-6 border border-purple-200">
+                <p className="font-bold text-purple-700 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">1️⃣</span> Acquisition vs. Retention
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div className="bg-slate-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-slate-500 uppercase mb-1">Bonvoy</p>
+                    <p className="text-sm text-slate-700">For people who already love Marriott (top 20%)</p>
+                  </div>
+                  <div className="bg-purple-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-purple-600 uppercase mb-1">Nuqta</p>
+                    <p className="text-sm text-slate-700">For the Local UAE Resident who hasn't stepped into Marriott yet (other 80%)</p>
+                  </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-purple-600 mb-2">1,000</p>
-                  <p className="text-sm text-slate-600">Active Users</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-emerald-600 mb-2">AED 100K</p>
-                  <p className="text-sm text-slate-600">GMV Target</p>
+                <div className="bg-purple-100 rounded-lg p-3">
+                  <p className="text-sm italic text-purple-800">"Bonvoy is your retention engine. Nuqta is your acquisition engine. They complement each other."</p>
                 </div>
               </div>
 
-              <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                <p className="text-sm font-bold text-blue-800 mb-2">Success Criteria</p>
-                <div className="grid md:grid-cols-2 gap-2 text-sm text-blue-700">
-                  <div className="flex items-center gap-2"><span className="text-blue-500">✓</span> 50 merchants live</div>
-                  <div className="flex items-center gap-2"><span className="text-blue-500">✓</span> 1,000 active users</div>
-                  <div className="flex items-center gap-2"><span className="text-blue-500">✓</span> AED 100K GMV</div>
-                  <div className="flex items-center gap-2"><span className="text-blue-500">✓</span> 20%+ D30 retention</div>
+              {/* Point 2 */}
+              <div className="bg-white rounded-2xl p-6 border border-pink-200">
+                <p className="font-bold text-pink-700 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">2️⃣</span> Marketing Credit vs. Equity
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div className="bg-slate-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-slate-500 uppercase mb-1">Bonvoy Points</p>
+                    <p className="text-sm text-slate-700">High-value liabilities on your balance sheet</p>
+                  </div>
+                  <div className="bg-pink-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-pink-600 uppercase mb-1">Nuqta Brand Coins</p>
+                    <p className="text-sm text-slate-700">Flexible "marketing credits" to fill empty brunch/spa slots</p>
+                  </div>
+                </div>
+                <div className="bg-pink-100 rounded-lg p-3">
+                  <p className="text-sm italic text-pink-800">"Brand Coins let you fill your 40% empty Thursday brunch slots without devaluing your Saturday premium pricing."</p>
+                </div>
+              </div>
+
+              {/* Point 3 */}
+              <div className="bg-white rounded-2xl p-6 border border-purple-200">
+                <p className="font-bold text-purple-700 mb-3 flex items-center gap-2">
+                  <span className="text-2xl">3️⃣</span> Social Proof
+                </p>
+                <div className="grid md:grid-cols-2 gap-4 mb-4">
+                  <div className="bg-slate-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-slate-500 uppercase mb-1">Bonvoy</p>
+                    <p className="text-sm text-slate-700">Silent redemption (user collects points privately)</p>
+                  </div>
+                  <div className="bg-purple-50 rounded-lg p-3">
+                    <p className="text-xs font-bold text-purple-600 uppercase mb-1">Nuqta</p>
+                    <p className="text-sm text-slate-700">User posts TikTok → 500 people see it → Drives new foot traffic</p>
+                  </div>
+                </div>
+                <div className="bg-purple-100 rounded-lg p-3">
+                  <p className="text-sm italic text-purple-800">"Bonvoy doesn't pay you to post a TikTok. Nuqta does. We turn Marriott's guests into a 24/7 content engine for the local Dubai market."</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Phase 2 */}
-            <div className="bg-gradient-to-br from-purple-50 to-white border-2 border-purple-300 rounded-3xl p-8">
-              <div className="inline-block px-4 py-2 bg-purple-600 text-white rounded-full mb-4">
-                <p className="text-xs font-black uppercase">Phase 2 • Month 3-4</p>
-              </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">The Chain Activation</h3>
-              <p className="text-lg text-slate-700 mb-6">Add volume through national chains</p>
+          {/* In-House App Objection */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">📱</span>
+              <h3 className="text-2xl font-black text-slate-900">C. The "In-House App" Objection</h3>
+            </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-purple-600 mb-2">150</p>
-                  <p className="text-sm text-slate-600">Total Merchants</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-blue-600 mb-2">5,000</p>
-                  <p className="text-sm text-slate-600">Active Users</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-emerald-600 mb-2">AED 500K</p>
-                  <p className="text-sm text-slate-600">GMV Target</p>
-                </div>
+            <div className="bg-red-50 border-2 border-red-200 rounded-xl p-4 mb-6">
+              <p className="font-bold text-red-700 mb-2">❌ The Objection:</p>
+              <p className="text-slate-700 italic">"We already have our own loyalty app. Why do we need Nuqta?"</p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="bg-white rounded-xl p-4 border border-amber-200">
+                <p className="font-bold text-amber-700 mb-2">1. Nuqta is for Acquisition, Your App is for Retention</p>
+                <p className="text-sm italic text-slate-600">"Your app is for the choir. Nuqta is for the unconverted."</p>
               </div>
+
+              <div className="bg-white rounded-xl p-4 border border-orange-200">
+                <p className="font-bold text-orange-700 mb-2">2. Nuqta is Social, Your App is a Private Wallet</p>
+                <p className="text-sm italic text-slate-600">"Your app is a vault. Nuqta is a megaphone."</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 border border-amber-200">
+                <p className="font-bold text-amber-700 mb-2">3. Universal Liquidity vs Island Points</p>
+                <p className="text-sm italic text-slate-600">"Users value freedom. They'd rather have AED 100 in universal coins than AED 150 stuck in your app."</p>
+              </div>
+            </div>
+
+            <div className="mt-6 bg-emerald-600 text-white rounded-2xl p-6">
+              <p className="font-bold mb-2">🤝 The Win-Win Integration:</p>
+              <ul className="text-sm space-y-1">
+                <li>• Keep your app for your super fans (top 20%)</li>
+                <li>• Use Nuqta to acquire the other 80%</li>
+                <li>• Migrate them to your app after 5 visits</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Roadmap */}
+        <section id="roadmap" className="mb-20">
+          <h2 className="text-4xl font-black text-slate-900 mb-8">4. H1 2026 Strategic Roadmap</h2>
+
+          {/* Phase 1 */}
+          <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="px-4 py-2 bg-blue-600 rounded-full">
+                <span className="text-white font-black text-sm">PHASE 1</span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Month 1-2: The JLT "Density" Sprint</h3>
+                <p className="text-sm text-slate-600">Onboard 60 merchants within a 2km radius</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-blue-200 mb-4">
+              <p className="font-bold text-blue-700 mb-3">Goal:</p>
+              <p className="text-slate-700 mb-4">"A user can earn coins at breakfast and spend them at their haircut an hour later."</p>
 
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                  <p className="text-sm font-bold text-green-800 mb-2">Grocery Chains (Model B)</p>
-                  <p className="text-sm text-green-700">Carrefour, Lulu, Spinneys, Waitrose, Choithrams • 5% Brand Coins</p>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase mb-2">Focus</p>
+                  <p className="text-sm text-slate-700">Cafes (Stomping Grounds/Nightjar) + Salons (Chaps & Co)</p>
                 </div>
-                <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
-                  <p className="text-sm font-bold text-orange-800 mb-2">QSR Chains (Model A)</p>
-                  <p className="text-sm text-orange-700">McDonald's, KFC, Starbucks, Tim Hortons • 10% cashback</p>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase mb-2">Outcome</p>
+                  <p className="text-sm text-slate-700">50 merchants, 1K users, AED 100K GMV, 20%+ D30 retention</p>
                 </div>
               </div>
             </div>
 
-            {/* Phase 3 */}
-            <div className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-300 rounded-3xl p-8">
-              <div className="inline-block px-4 py-2 bg-emerald-600 text-white rounded-full mb-4">
-                <p className="text-xs font-black uppercase">Phase 3 • Month 5-6</p>
-              </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4">The Social Multiplier</h3>
-              <p className="text-lg text-slate-700 mb-6">Drive viral user growth through social rewards</p>
+            <div className="grid md:grid-cols-4 gap-4">
+              {[
+                '✅ 50 merchants live',
+                '✅ 1,000 active users',
+                '✅ AED 100K GMV',
+                '✅ 20%+ D30 retention'
+              ].map((metric, i) => (
+                <div key={i} className="bg-blue-100 rounded-xl p-3 text-center">
+                  <p className="text-sm font-bold text-blue-800">{metric}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-emerald-600 mb-2">250+</p>
-                  <p className="text-sm text-slate-600">Total Merchants</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-blue-600 mb-2">10,000</p>
-                  <p className="text-sm text-slate-600">Active Users</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 text-center">
-                  <p className="text-4xl font-black text-purple-600 mb-2">AED 2M</p>
-                  <p className="text-sm text-slate-600">GMV Target</p>
-                </div>
+          {/* Phase 2 */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-3xl p-8 mb-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="px-4 py-2 bg-purple-600 rounded-full">
+                <span className="text-white font-black text-sm">PHASE 2</span>
               </div>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Month 3-4: The "Grocery Anchor" Integration</h3>
+                <p className="text-sm text-slate-600">Sign Carrefour or Lulu for Engine B</p>
+              </div>
+            </div>
 
-              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
-                <p className="text-sm font-bold text-emerald-800 mb-2">Geographic Expansion</p>
-                <p className="text-sm text-emerald-700">JLT → Marina → Downtown → JBR → Business Bay • 50 merchants per zone</p>
+            <div className="bg-white rounded-2xl p-6 border border-purple-200 mb-4">
+              <p className="font-bold text-purple-700 mb-3">Goal:</p>
+              <p className="text-slate-700 mb-4">"Nuqta becomes a 'Daily Utility' app, not just an occasional reward app."</p>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase mb-2">Chains</p>
+                  <p className="text-sm text-slate-700">5 grocery (Brand Coins) + 4 QSR (15% commission)</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase mb-2">Outcome</p>
+                  <p className="text-sm text-slate-700">150 merchants, 5K users, AED 500K GMV</p>
+                </div>
               </div>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-4">
+              {[
+                '✅ 9 chain partnerships',
+                '✅ 5,000 active users',
+                '✅ AED 500K GMV',
+                '✅ 15%+ repeat rate'
+              ].map((metric, i) => (
+                <div key={i} className="bg-purple-100 rounded-xl p-3 text-center">
+                  <p className="text-sm font-bold text-purple-800">{metric}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Phase 3 */}
+          <div className="bg-gradient-to-br from-emerald-50 to-green-50 border-2 border-emerald-300 rounded-3xl p-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="px-4 py-2 bg-emerald-600 rounded-full">
+                <span className="text-white font-black text-sm">PHASE 3</span>
+              </div>
+              <div>
+                <h3 className="text-2xl font-black text-slate-900">Month 5-6: The "Social Viral" Scale</h3>
+                <p className="text-sm text-slate-600">Activate the 5% Social Reward at scale</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-emerald-200 mb-4">
+              <p className="font-bold text-emerald-700 mb-3">Goal:</p>
+              <p className="text-slate-700 mb-4">"Your feed becomes flooded with Nuqta-verified recommendations, driving organic user growth to 10K+."</p>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase mb-2">Focus</p>
+                  <p className="text-sm text-slate-700">Fashion Boutiques + Pop-ups + 10 micro-influencers</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase mb-2">Outcome</p>
+                  <p className="text-sm text-slate-700">250 merchants, 10K users, AED 2M GMV</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-4 gap-4">
+              {[
+                '✅ 250+ merchants live',
+                '✅ 10,000 active users',
+                '✅ AED 2M GMV',
+                '✅ 30% social share rate'
+              ].map((metric, i) => (
+                <div key={i} className="bg-emerald-100 rounded-xl p-3 text-center">
+                  <p className="text-sm font-bold text-emerald-800">{metric}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Critical Metrics */}
+        {/* Metrics */}
         <section id="metrics" className="mb-20">
-          <h2 className="text-4xl font-black text-slate-900 mb-6">6. Critical Success Metrics (H1 2026)</h2>
+          <h2 className="text-4xl font-black text-slate-900 mb-8">5. Critical Success Metrics (H1 2026)</h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Merchant Metrics */}
-            <div className="bg-white border-2 border-orange-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-orange-700 mb-4">Merchant Metrics</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm text-slate-600 mb-1">Total Merchants</p>
-                  <p className="text-3xl font-black text-orange-600">250+</p>
-                </div>
-                <div className="h-px bg-slate-200"></div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-slate-600">F&B:</span> <span className="font-bold">100+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">Salons:</span> <span className="font-bold">50+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">Grocery:</span> <span className="font-bold">20+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">Fitness:</span> <span className="font-bold">25+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">Fashion:</span> <span className="font-bold">30+</span></div>
-                </div>
-              </div>
+          {/* Merchant Metrics */}
+          <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-8">
+            <h3 className="text-2xl font-black text-slate-900 mb-6">Merchant Metrics</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-slate-100">
+                  <tr>
+                    <th className="text-left p-3 font-bold text-slate-700">Metric</th>
+                    <th className="text-center p-3 font-bold text-blue-600">Month 2</th>
+                    <th className="text-center p-3 font-bold text-purple-600">Month 4</th>
+                    <th className="text-center p-3 font-bold text-emerald-600">Month 6</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200">
+                  {[
+                    { label: 'Total Merchants', m2: '50', m4: '150', m6: '250+' },
+                    { label: 'F&B', m2: '20', m4: '60', m6: '100+' },
+                    { label: 'Salons', m2: '10', m4: '30', m6: '50+' },
+                    { label: 'Grocery', m2: '5', m4: '15', m6: '20+' },
+                    { label: 'Fitness', m2: '5', m4: '15', m6: '25+' },
+                    { label: 'Fashion', m2: '5', m4: '15', m6: '30+' },
+                    { label: 'Events', m2: '5', m4: '15', m6: '25+' },
+                  ].map((row, i) => (
+                    <tr key={i} className="hover:bg-slate-50">
+                      <td className="p-3 font-semibold text-slate-700">{row.label}</td>
+                      <td className="p-3 text-center text-blue-700 font-bold">{row.m2}</td>
+                      <td className="p-3 text-center text-purple-700 font-bold">{row.m4}</td>
+                      <td className="p-3 text-center text-emerald-700 font-bold">{row.m6}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+          </div>
 
-            {/* User Metrics */}
-            <div className="bg-white border-2 border-blue-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-blue-700 mb-4">User Metrics</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm text-slate-600 mb-1">Active Users</p>
-                  <p className="text-3xl font-black text-blue-600">10,000+</p>
+          {/* Financial Metrics */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8">
+            <h3 className="text-2xl font-black text-slate-900 mb-6">Financial Metrics</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { label: 'GMV', m2: 'AED 100K', m4: 'AED 500K', m6: 'AED 2M+', color: 'blue' },
+                { label: 'Revenue', m2: 'AED 5K', m4: 'AED 25K', m6: 'AED 100K+', color: 'emerald' },
+                { label: 'LTV:CAC', m2: '3:1', m4: '5:1', m6: '10:1+', color: 'purple' },
+              ].map((metric, i) => (
+                <div key={i} className={`bg-white border-2 border-${metric.color}-200 rounded-2xl p-6`}>
+                  <p className={`text-lg font-black text-${metric.color}-700 mb-4`}>{metric.label}</p>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-slate-500">Month 2</span>
+                      <span className={`text-sm font-bold text-${metric.color}-600`}>{metric.m2}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-slate-500">Month 4</span>
+                      <span className={`text-sm font-bold text-${metric.color}-600`}>{metric.m4}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-xs text-slate-500">Month 6</span>
+                      <span className={`text-lg font-black text-${metric.color}-700`}>{metric.m6}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="h-px bg-slate-200"></div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-slate-600">D7 Retention:</span> <span className="font-bold">40%+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">D30 Retention:</span> <span className="font-bold">30%+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">Social Share:</span> <span className="font-bold">30%+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">Trans/User/Month:</span> <span className="font-bold">20+</span></div>
-                </div>
-              </div>
-            </div>
-
-            {/* Financial Metrics */}
-            <div className="bg-white border-2 border-emerald-200 rounded-2xl p-6">
-              <h3 className="text-xl font-bold text-emerald-700 mb-4">Financial Metrics</h3>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm text-slate-600 mb-1">GMV (H1)</p>
-                  <p className="text-3xl font-black text-emerald-600">AED 2M+</p>
-                </div>
-                <div className="h-px bg-slate-200"></div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between"><span className="text-slate-600">Revenue:</span> <span className="font-bold">AED 100K+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">CAC:</span> <span className="font-bold">≤ AED 30</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">LTV:</span> <span className="font-bold">AED 300+</span></div>
-                  <div className="flex justify-between"><span className="text-slate-600">LTV:CAC:</span> <span className="font-bold">10:1+</span></div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-[#0a1628] to-[#1a2a42] text-white rounded-3xl p-12 text-center">
-          <h2 className="text-4xl font-black mb-4">Let's Build the Future of Local Commerce</h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            This is the execution roadmap. Every merchant conversation, every user activation, every metric tracked—all flows from this blueprint.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="mailto:rejaul@nuqtapp.com" className="px-8 py-4 bg-[#c9a227] hover:bg-[#d4ab2c] text-[#0a1628] font-bold rounded-xl transition-colors">
-              Get in Touch
-            </a>
-            <a href="/" className="px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/30 text-white font-bold rounded-xl transition-colors">
-              Back to Home
-            </a>
+        <section className="text-center">
+          <div className="bg-gradient-to-r from-[#0a1628] to-[#1a2a42] text-white rounded-3xl p-12">
+            <h2 className="text-3xl md:text-5xl font-black mb-6">Let's build the future of local commerce.</h2>
+            <div className="space-y-2 mb-8">
+              <p className="text-xl text-slate-300">Rejaul Karim</p>
+              <p className="text-sm text-slate-400">Founder & CEO, Nuqta</p>
+            </div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <a href="mailto:rejaul@nuqtapp.com" className="px-6 py-3 bg-[#c9a227] hover:bg-[#b8922] text-white font-bold rounded-full transition-colors">
+                rejaul@nuqtapp.com
+              </a>
+              <a href="tel:+971503764345" className="px-6 py-3 border-2 border-white hover:bg-white hover:text-slate-900 text-white font-bold rounded-full transition-colors">
+                +971 50 376 4345
+              </a>
+            </div>
           </div>
-          <div className="mt-8 text-sm text-slate-400">
-            Rejaul Karim • Founder & CEO • rejaul@nuqtapp.com • +971 50 376 4345
-          </div>
-        </div>
+        </section>
 
       </div>
     </div>
