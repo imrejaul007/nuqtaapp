@@ -363,7 +363,7 @@ export default function TermsPage() {
         <div className="mt-12 text-center">
           <p className="text-gray-400 mb-4">Ready to discuss terms?</p>
           <a
-            href="mailto:rejaul@nuqtaapp.com?subject=Investment%20Terms%20Discussion"
+            href="mailto:rejaul@nuqtapp.com?subject=Investment%20Terms%20Discussion"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors"
           >
             Start Conversation

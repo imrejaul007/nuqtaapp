@@ -154,7 +154,7 @@ function createFrontCover() {
   // Contact Section
   slide.addText([
     { text: '📧 ', options: { fontSize: 10 } },
-    { text: 'rejaul@nuqtaapp.com\n', options: { fontSize: 10, color: COLORS.white } },
+    { text: 'rejaul@nuqtapp.com\n', options: { fontSize: 10, color: COLORS.white } },
     { text: '📍 ', options: { fontSize: 9 } },
     { text: 'Dubai, UAE  •  ', options: { fontSize: 9, color: COLORS.slate[400] } },
     { text: 'Available 24/7', options: { fontSize: 9, color: COLORS.slate[500] } },
@@ -935,7 +935,7 @@ function createTractionTeam() {
 
   slide.addText([
     { text: "Let's Talk\n", options: { fontSize: 13, bold: true, color: COLORS.accent } },
-    { text: 'rejaul@nuqtaapp.com\n', options: { fontSize: 9, color: COLORS.white } },
+    { text: 'rejaul@nuqtapp.com\n', options: { fontSize: 9, color: COLORS.white } },
     { text: 'Dubai, UAE • Available 24/7', options: { fontSize: 7, color: COLORS.slate[400] } },
   ], {
     x: '8%',

@@ -1214,8 +1214,8 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Email</p>
-                  <a href="mailto:rejaul@nuqtaapp.com" className="text-slate-300 hover:text-[#c9a227] transition-colors text-sm">
-                    rejaul@nuqtaapp.com
+                  <a href="mailto:rejaul@nuqtapp.com" className="text-slate-300 hover:text-[#c9a227] transition-colors text-sm">
+                    rejaul@nuqtapp.com
                   </a>
                 </li>
                 <li>
@@ -1245,7 +1245,7 @@ export default function LandingPage() {
                 <Link href="/commitment" className="text-slate-500 hover:text-[#c9a227] transition-colors">
                   Privacy
                 </Link>
-                <a href="mailto:rejaul@nuqtaapp.com" className="text-slate-500 hover:text-[#c9a227] transition-colors">
+                <a href="mailto:rejaul@nuqtapp.com" className="text-slate-500 hover:text-[#c9a227] transition-colors">
                   Support
                 </a>
                 <div className="text-emerald-500 flex items-center gap-1">

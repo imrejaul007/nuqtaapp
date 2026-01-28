@@ -333,7 +333,7 @@ export default function FounderCommitment() {
             </Link>
           </div>
           <a
-            href="mailto:rejaul@nuqtaapp.com?subject=Nuqta%20Investment%20Discussion"
+            href="mailto:rejaul@nuqtapp.com?subject=Nuqta%20Investment%20Discussion"
             className="px-4 sm:px-6 py-2 sm:py-3 bg-[#c9a227] text-[#0a1628] rounded-lg font-semibold hover:bg-[#f4d35e] transition-colors text-sm sm:text-base"
           >
             Schedule a Call

@@ -1492,7 +1492,7 @@ export default function Home() {
                   <span className="relative z-10">View Pitch Deck</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-[#f4d35e] to-[#c9a227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </button>
-                <a href="mailto:rejaul@nuqtaapp.com?subject=Nuqta%20Investor%20Deck%20PDF" className="btn-secondary hover:border-[#c9a227] transition-colors">
+                <a href="mailto:rejaul@nuqtapp.com?subject=Nuqta%20Investor%20Deck%20PDF" className="btn-secondary hover:border-[#c9a227] transition-colors">
                   Download PDF
                 </a>
               </div>
@@ -2291,7 +2291,7 @@ export default function Home() {
               <div className="text-center mt-12 p-8 bg-[#1a2a42]/50 rounded-2xl border border-[#2a3a52]">
                 <p className="text-gray-400 mb-4">Have more questions?</p>
                 <a
-                  href="mailto:rejaul@nuqtaapp.com?subject=Investor%20Question"
+                  href="mailto:rejaul@nuqtapp.com?subject=Investor%20Question"
                   className="inline-flex items-center gap-2 text-[#c9a227] hover:text-[#f4d35e] font-medium transition-colors"
                 >
                   Contact the Founder Directly →
@@ -2359,7 +2359,7 @@ export default function Home() {
                   Commitment
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
                 </a>
-                <a href="mailto:rejaul@nuqtaapp.com" className="hover:text-[#c9a227] transition-colors relative group">
+                <a href="mailto:rejaul@nuqtapp.com" className="hover:text-[#c9a227] transition-colors relative group">
                   Contact
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#c9a227] transition-all duration-300 group-hover:w-full" />
                 </a>

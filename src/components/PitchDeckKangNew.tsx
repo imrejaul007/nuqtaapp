@@ -166,7 +166,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold">rejaul@nuqtaapp.com</span>
+                    <span className="text-sm font-semibold">rejaul@nuqtapp.com</span>
                   </div>
                   <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
                   <div className="flex items-center gap-2">
@@ -5068,7 +5068,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-xl transition-all">
                   <div className="text-4xl mb-4">📱</div>
                   <p className="text-sm font-bold text-slate-600 uppercase mb-2">Phone</p>
-                  <p className="text-xl font-bold text-slate-900">+971 XXX XXX XXX</p>
+                  <p className="text-xl font-bold text-slate-900">+971 50 376 4345</p>
                 </div>
                 <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-xl transition-all">
                   <div className="text-4xl mb-4">🌐</div>
@@ -5118,7 +5118,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 <p className="text-xl text-slate-600">
-                  📧 <strong>rejaul@nuqta.com</strong> • 📱 <strong>+971 XXX XXX XXX</strong>
+                  📧 <strong>rejaul@nuqta.com</strong> • 📱 <strong>+971 50 376 4345</strong>
                 </p>
               </div>
 
@@ -5259,7 +5259,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <span className="text-3xl">📱</span>
-                    <p className="font-semibold">+971 XXX XXX XXX</p>
+                    <p className="font-semibold">+971 50 376 4345</p>
                   </div>
                   <div className="flex items-center justify-center gap-4">
                     <span className="text-3xl">🌐</span>

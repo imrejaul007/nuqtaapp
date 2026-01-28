@@ -138,7 +138,7 @@ function createSlide0() {
   });
 
   // Contact
-  slide.addText('rejaul@nuqtaapp.com | Dubai, UAE', {
+  slide.addText('rejaul@nuqtapp.com | Dubai, UAE', {
     x: '20%',
     y: '85%',
     w: '60%',
@@ -1180,7 +1180,7 @@ function createSlide24() {
     color: COLORS.slate[300],
   });
 
-  slide.addText('rejaul@nuqtaapp.com', {
+  slide.addText('rejaul@nuqtapp.com', {
     x: '15%',
     y: '62%',
     w: '70%',
@@ -1256,7 +1256,7 @@ function createSlide26() {
     color: COLORS.accent,
   });
 
-  slide.addText('rejaul@nuqtaapp.com  •  nuqtaapp.com', {
+  slide.addText('rejaul@nuqtapp.com  •  nuqtaapp.com', {
     x: '20%',
     y: '60%',
     w: '60%',

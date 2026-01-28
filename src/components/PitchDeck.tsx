@@ -1105,7 +1105,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mb-4">
               <a
-                href="mailto:rejaul@nuqtaapp.com"
+                href="mailto:rejaul@nuqtapp.com"
                 className="bg-[#c9a227] text-[#0a1628] px-10 py-4 rounded-xl font-bold text-xl hover:bg-[#f4d35e] transition-colors"
               >
                 Let&apos;s Talk →
@@ -1117,7 +1117,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 One-Page Memo
               </a>
             </div>
-            <p className="text-gray-500">rejaul@nuqtaapp.com</p>
+            <p className="text-gray-500">rejaul@nuqtapp.com</p>
 
             <div className="flex items-center gap-8 mt-12 text-gray-600 text-sm">
               <span>$500K Pre-Seed</span>

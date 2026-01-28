@@ -777,7 +777,7 @@ export default function DataRoomPage() {
         <div className="mt-12 text-center">
           <p className="text-gray-400 mb-4">Questions about any materials?</p>
           <a
-            href="mailto:rejaul@nuqtaapp.com?subject=Data%20Room%20Question"
+            href="mailto:rejaul@nuqtapp.com?subject=Data%20Room%20Question"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors"
           >
             Contact Founder
