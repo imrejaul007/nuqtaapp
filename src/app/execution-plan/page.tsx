@@ -15,13 +15,17 @@ export default function ExecutionPlanPage() {
           <p className="text-2xl text-slate-300 max-w-3xl mb-4">
             Solving "Loyalty Fatigue" by bridging social content and physical commerce through universal liquidity
           </p>
-          <div className="mt-8 flex items-center gap-6 text-sm">
+          <div className="mt-8 flex flex-wrap items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
               <span className="text-slate-400">Active Execution</span>
             </div>
             <div className="text-slate-400">•</div>
             <div className="text-slate-400">Version 3.0 - January 29, 2026</div>
+            <div className="text-slate-400">•</div>
+            <a href="/h2-strategy" className="text-purple-400 hover:text-purple-300 transition-colors font-semibold underline">
+              View H2 2026 Strategy →
+            </a>
           </div>
         </div>
       </div>
