@@ -7,7 +7,7 @@ import { SectionHeader, MetricCard, FeatureCard, FlowStep, ComparisonPanel, Char
 import { typography, colors, spacing, decorative } from '@/constants/design-tokens';
 import { chartColors, chartTheme, formatCurrency, formatPercentage, formatPieLabel } from '@/constants/chart-config';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
-import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link, Coins, User, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus, Repeat, AlertCircle } from 'lucide-react';
+import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link, Coins, User, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus, Repeat, AlertCircle, Clock } from 'lucide-react';
 
 interface PitchDeckProps {
   isOpen: boolean;
@@ -478,20 +478,24 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 3: MARKET OPPORTUNITY - DATA VISUALIZATION ====================
+      // ==================== SLIDE 3: MARKET OPPORTUNITY (PREMIUM ✓✓✓) ====================
       case 3:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 flex items-center justify-center">
-            <div className="max-w-7xl mx-auto w-full">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 flex items-center justify-center relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto w-full relative z-10">
 
               {/* Header */}
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-full mb-4 border border-[#c9a227]/30">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-full mb-4 border border-[#c9a227]/30 shadow-lg">
                   <span className="text-2xl">🎯</span>
                   <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wider">Market Opportunity</p>
                 </div>
-                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-4">
-                  <span className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] bg-clip-text text-transparent">$150B</span> GCC Market
+                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-4 leading-tight">
+                  <span className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] bg-clip-text text-transparent drop-shadow-sm">$150B</span> GCC Market
                 </h2>
                 <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                   Offline retail & services across 6 GCC countries
@@ -502,12 +506,15 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="grid lg:grid-cols-5 gap-8 items-start">
 
                 {/* LEFT: Recharts Nested Pie Chart - 2 columns */}
-                <div className="lg:col-span-2 bg-white rounded-3xl shadow-xl p-8 border border-slate-200">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-black text-slate-900 mb-2">Market Funnel</h3>
-                    <p className="text-sm text-slate-500">Progressive capture strategy</p>
+                <div className="lg:col-span-2 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white rounded-3xl shadow-2xl p-8 border-2 border-blue-200/50 hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden">
+                  {/* Subtle background orb */}
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-blue-400/5 rounded-full blur-3xl" />
+
+                  <div className="text-center mb-6 relative z-10">
+                    <h3 className="text-3xl font-black text-slate-900 mb-2">Market Funnel</h3>
+                    <p className="text-base text-slate-600 font-medium">Progressive capture strategy</p>
                   </div>
-                  <div className="h-80 flex items-center justify-center relative">
+                  <div className="h-80 flex items-center justify-center relative z-10">
                     <ResponsiveContainer width="100%" height="100%">
                       <PieChart>
                         <Pie
@@ -572,22 +579,31 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                   </div>
 
-                  {/* Legend */}
-                  <div className="grid grid-cols-3 gap-3 mt-6">
+                  {/* Enhanced Legend */}
+                  <div className="grid grid-cols-3 gap-4 mt-6 relative z-10">
                     <div className="text-center">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full mx-auto mb-1"></div>
-                      <p className="text-xs font-bold text-slate-700">TAM</p>
-                      <p className="text-sm font-black text-blue-600">$150B</p>
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mx-auto mb-2 shadow-lg flex items-center justify-center">
+                        <div className="w-6 h-6 bg-white rounded-full"></div>
+                      </div>
+                      <p className="text-sm font-bold text-slate-700 mb-1">TAM</p>
+                      <p className="text-lg font-black text-blue-600">$150B</p>
+                      <p className="text-xs text-slate-500 mt-1">GCC Retail</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-3 h-3 bg-indigo-500 rounded-full mx-auto mb-1"></div>
-                      <p className="text-xs font-bold text-slate-700">SAM</p>
-                      <p className="text-sm font-black text-indigo-600">$45B</p>
+                      <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl mx-auto mb-2 shadow-lg flex items-center justify-center">
+                        <div className="w-6 h-6 bg-white rounded-full"></div>
+                      </div>
+                      <p className="text-sm font-bold text-slate-700 mb-1">SAM</p>
+                      <p className="text-lg font-black text-indigo-600">$45B</p>
+                      <p className="text-xs text-slate-500 mt-1">UAE Retail</p>
                     </div>
                     <div className="text-center">
-                      <div className="w-3 h-3 bg-[#c9a227] rounded-full mx-auto mb-1"></div>
-                      <p className="text-xs font-bold text-slate-700">SOM (Dubai)</p>
-                      <p className="text-sm font-black text-[#c9a227]">$1.35B</p>
+                      <div className="w-12 h-12 bg-gradient-to-br from-[#c9a227] to-[#a8851f] rounded-xl mx-auto mb-2 shadow-lg flex items-center justify-center">
+                        <div className="w-6 h-6 bg-white rounded-full"></div>
+                      </div>
+                      <p className="text-sm font-bold text-slate-700 mb-1">SOM</p>
+                      <p className="text-lg font-black text-[#c9a227]">$1.35B</p>
+                      <p className="text-xs text-slate-500 mt-1">Dubai</p>
                     </div>
                   </div>
                 </div>
@@ -730,96 +746,155 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 4: WHY NOW ====================
+      // ==================== SLIDE 4: WHY NOW (PREMIUM ✓✓✓) ====================
       case 4:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-purple-50/30 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header */}
-              <div className="text-center mb-16">
+              <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
                   <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Perfect Timing</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   Why <span className="text-[#c9a227]">Now?</span>
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Four converging trends make this the perfect moment for Nuqta
                 </p>
               </div>
 
-              {/* 4 Timing Factors */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Search className="text-blue-600" size={28} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Search-First Shopping</h3>
-                      <p className="text-sm text-[#c9a227] font-semibold">UAE Trend Shift</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed mb-4 text-lg">
-                    67% of UAE shoppers now start product research with search engines, not brand websites or apps
-                  </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-sm text-slate-500">Google Trends UAE 2024 • Euromonitor Consumer Survey</p>
-                  </div>
-                </div>
+              {/* 4 Timing Factors in 2x2 Grid */}
+              <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-6xl mx-auto">
+                {[
+                  {
+                    icon: Search,
+                    title: "Search-First Shopping",
+                    subtitle: "UAE Trend Shift",
+                    stat: "67%",
+                    description: "of UAE shoppers now start product research with search engines, not brand websites or apps",
+                    source: "Google Trends UAE 2024 • Euromonitor Consumer Survey",
+                    color: "blue",
+                    delay: "0ms"
+                  },
+                  {
+                    icon: TrendingUp,
+                    title: "Shop Local Movement",
+                    subtitle: "Post-Pandemic Surge",
+                    stat: "83%",
+                    description: "of UAE residents prefer supporting local businesses when given convenient options",
+                    source: "Dubai Chamber of Commerce 2024",
+                    color: "emerald",
+                    delay: "100ms"
+                  },
+                  {
+                    icon: Zap,
+                    title: "AI Maturity",
+                    subtitle: "Tech Enabler",
+                    stat: "2024",
+                    description: "LLMs make real-time semantic search + personalized routing finally affordable at scale",
+                    source: "OpenAI GPT-4 • Claude 3.5 • Vector DB advancements",
+                    color: "purple",
+                    delay: "200ms"
+                  },
+                  {
+                    icon: DollarSign,
+                    title: "CAC Crisis",
+                    subtitle: "Market Pain Point",
+                    stat: "+340%",
+                    description: "Digital ad costs since 2020 — merchants desperate for affordable acquisition channels",
+                    source: "Meta Ads Manager UAE Data • Google Ads Benchmark Report",
+                    color: "red",
+                    delay: "300ms"
+                  }
+                ].map((factor, idx) => {
+                  const Icon = factor.icon;
+                  const bgGradient = factor.color === "blue" ? "from-blue-50 to-blue-100" :
+                                     factor.color === "emerald" ? "from-emerald-50 to-emerald-100" :
+                                     factor.color === "purple" ? "from-purple-50 to-purple-100" :
+                                     "from-red-50 to-red-100";
+                  const borderColor = factor.color === "blue" ? "border-blue-200" :
+                                     factor.color === "emerald" ? "border-emerald-200" :
+                                     factor.color === "purple" ? "border-purple-200" :
+                                     "border-red-200";
+                  const iconBg = factor.color === "blue" ? "bg-blue-500" :
+                                 factor.color === "emerald" ? "bg-emerald-500" :
+                                 factor.color === "purple" ? "bg-purple-500" :
+                                 "bg-red-500";
+                  const statColor = factor.color === "blue" ? "text-blue-600" :
+                                   factor.color === "emerald" ? "text-emerald-600" :
+                                   factor.color === "purple" ? "text-purple-600" :
+                                   "text-red-600";
 
-                <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <TrendingUp className="text-emerald-600" size={28} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Shop Local Movement</h3>
-                      <p className="text-sm text-[#c9a227] font-semibold">Post-Pandemic Surge</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed mb-4 text-lg">
-                    83% of UAE residents prefer supporting local businesses when given convenient options
-                  </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-sm text-slate-500">Dubai Chamber of Commerce 2024</p>
-                  </div>
-                </div>
+                  return (
+                    <div
+                      key={idx}
+                      className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300`}
+                      style={{ animationDelay: factor.delay }}
+                    >
+                      {/* Icon + Title */}
+                      <div className="flex items-start gap-4 mb-6">
+                        <div className={`w-16 h-16 ${iconBg} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg`}>
+                          <Icon className="text-white" size={32} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-1 leading-tight">{factor.title}</h3>
+                          <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wide">{factor.subtitle}</p>
+                        </div>
+                      </div>
 
-                <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Zap className="text-purple-600" size={28} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2">AI Maturity</h3>
-                      <p className="text-sm text-[#c9a227] font-semibold">Tech Enabler</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed mb-4 text-lg">
-                    LLMs make real-time semantic search + personalized routing finally affordable at scale
-                  </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-sm text-slate-500">OpenAI GPT-4 • Claude 3.5 • Vector DB advancements</p>
-                  </div>
-                </div>
+                      {/* Stat Badge */}
+                      <div className="mb-4">
+                        <div className="inline-block bg-white border-2 border-white/50 rounded-xl px-4 py-2 shadow-md">
+                          <p className={`text-4xl font-black ${statColor}`}>{factor.stat}</p>
+                        </div>
+                      </div>
 
-                <div className="bg-white border-2 border-red-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <DollarSign className="text-red-600" size={28} />
+                      {/* Description */}
+                      <p className="text-slate-700 leading-relaxed mb-6 text-base font-medium">
+                        {factor.description}
+                      </p>
+
+                      {/* Source */}
+                      <div className="pt-4 border-t-2 border-white/50">
+                        <p className="text-xs text-slate-600 font-semibold">{factor.source}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2">CAC Crisis</h3>
-                      <p className="text-sm text-[#c9a227] font-semibold">Market Pain Point</p>
-                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Convergence Visual */}
+              <div className="max-w-5xl mx-auto">
+                <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/30">
+                  <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
+                    <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">The Perfect Storm</p>
                   </div>
-                  <p className="text-slate-700 leading-relaxed mb-4 text-lg">
-                    Digital ad costs up 340% since 2020 — merchants desperate for affordable acquisition channels
+                  <p className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
+                    These 4 trends converge in <span className="text-[#c9a227]">2026</span> to create a <span className="text-emerald-400">once-in-a-decade</span> opportunity
                   </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-sm text-slate-500">Meta Ads Manager UAE Data • Google Ads Benchmark Report</p>
+                  <div className="grid md:grid-cols-4 gap-4">
+                    <div className="bg-white/5 rounded-xl p-4 border border-blue-500/30">
+                      <p className="text-sm font-bold text-blue-400 mb-1">Search</p>
+                      <p className="text-xs text-slate-300">Behavior shift</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 border border-emerald-500/30">
+                      <p className="text-sm font-bold text-emerald-400 mb-1">Local</p>
+                      <p className="text-xs text-slate-300">Consumer preference</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 border border-purple-500/30">
+                      <p className="text-sm font-bold text-purple-400 mb-1">AI</p>
+                      <p className="text-xs text-slate-300">Tech enabler</p>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 border border-red-500/30">
+                      <p className="text-sm font-bold text-red-400 mb-1">CAC</p>
+                      <p className="text-xs text-slate-300">Market pain</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -834,42 +909,294 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           fnb: {
             icon: '☕',
             name: 'F&B',
-            search: 'coffee deals near me',
-            merchant: 'Local Café (Marina)',
-            offer: '10% cashback on all drinks',
-            savings: 'AED 4 per coffee',
-            frequency: '4x/week = AED 64/month',
-            color: 'orange'
+            color: 'orange',
+            // Journey flow
+            discover: {
+              step: 'Search & Discover',
+              search: 'coffee deals near me',
+              result: 'Finds 15 cafés within 3km'
+            },
+            deals: {
+              step: 'Find Deals & Offers',
+              merchant: 'Local Café (Marina)',
+              normalPrice: 'AED 20',
+              offer: '10% instant cashback',
+              socialBonus: '+5% if you share',
+              totalCashback: '15% total'
+            },
+            payment: {
+              step: 'Payment Comparison',
+              basePrice: 20,
+              options: [
+                { method: 'Cash', cashback: '0%', final: 'AED 20.00', savings: 'AED 0' },
+                { method: 'Credit Card', cashback: '1%', final: 'AED 19.80', savings: 'AED 0.20' },
+                { method: 'Nuqta (10% + 5% share)', cashback: '15%', final: 'AED 17.00', savings: 'AED 3.00' }
+              ],
+              bestSavings: 'Save AED 3 more with Nuqta'
+            },
+            rewards: {
+              step: 'Earn Rewards',
+              perVisit: 'AED 3.00',
+              frequency: '4x/week',
+              monthly: 'AED 48/month',
+              yearly: 'AED 576/year'
+            },
+            // Shopper value prop
+            shopper: {
+              title: 'For Coffee Lovers',
+              description: 'Discover 15 local cafés within 3km with instant cashback',
+              target: 'Students & office workers',
+              benefits: [
+                'Search "coffee near me" → instant results',
+                'Compare prices across cafés',
+                'Share on Instagram for +5% bonus',
+                'Track favorite spots'
+              ],
+              savings: '15%',
+              savingsLabel: 'Avg savings per coffee'
+            },
+            // Merchant value prop
+            merchant: {
+              title: 'For Cafés & Restaurants',
+              description: 'Fill tables during slow hours (10-11am, 2-4pm)',
+              benefits: [
+                'AED 25 CAC vs AED 200 Google Ads',
+                'Only pay 15% on completed sales',
+                'Target nearby customers (500m-5km)',
+                'Build loyal customer base'
+              ],
+              metric: 'AED 25',
+              metricLabel: 'CAC vs AED 200 (Google)'
+            },
+            // Bank value prop
+            bank: {
+              title: 'For Payment Partners',
+              description: 'Drive card transactions at F&B merchants',
+              benefits: [
+                '10,000+ F&B transactions/month',
+                'Avg ticket: AED 100-150',
+                'White-label rewards integration',
+                'Co-branded merchant offers'
+              ],
+              metric: '+40%',
+              metricLabel: 'Card usage at F&B'
+            }
           },
           beauty: {
             icon: '💅',
             name: 'Beauty & Wellness',
-            search: 'nail salon deals JBR',
-            merchant: 'Sparkle Nails & Spa',
-            offer: '10% cashback + 5% social bonus',
-            savings: 'AED 22.50 per visit',
-            frequency: '2x/month = AED 45/month',
-            color: 'pink'
+            color: 'pink',
+            discover: {
+              step: 'Search & Discover',
+              search: 'nail salon deals JBR',
+              result: 'Finds 8 salons within 2km'
+            },
+            deals: {
+              step: 'Find Deals & Offers',
+              merchant: 'Sparkle Nails & Spa',
+              normalPrice: 'AED 150',
+              offer: '10% instant cashback',
+              socialBonus: '+5% if you tag location',
+              totalCashback: '15% total'
+            },
+            payment: {
+              step: 'Payment Comparison',
+              basePrice: 150,
+              options: [
+                { method: 'Cash', cashback: '0%', final: 'AED 150.00', savings: 'AED 0' },
+                { method: 'Credit Card', cashback: '1%', final: 'AED 148.50', savings: 'AED 1.50' },
+                { method: 'Nuqta (10% + 5% share)', cashback: '15%', final: 'AED 127.50', savings: 'AED 22.50' }
+              ],
+              bestSavings: 'Save AED 21 more with Nuqta'
+            },
+            rewards: {
+              step: 'Earn Rewards',
+              perVisit: 'AED 22.50',
+              frequency: '2x/month',
+              monthly: 'AED 45/month',
+              yearly: 'AED 540/year'
+            },
+            shopper: {
+              title: 'For Beauty Enthusiasts',
+              description: 'Discover verified salons with real reviews and cashback',
+              target: 'Women 25-40, regular salon visits',
+              benefits: [
+                'Filter by service type (nails, hair, spa)',
+                'See real customer photos',
+                'Book appointments directly',
+                'Cashback on every visit'
+              ],
+              savings: '15%',
+              savingsLabel: 'Per salon visit'
+            },
+            merchant: {
+              title: 'For Salons & Spas',
+              description: 'Fill empty appointment slots and attract new clients',
+              benefits: [
+                'AED 30 CAC vs AED 180 Instagram Ads',
+                'Target women within 5km radius',
+                'Convert walk-ins to regulars',
+                'Manage bookings via dashboard'
+              ],
+              metric: 'AED 30',
+              metricLabel: 'CAC vs AED 180 (Instagram)'
+            },
+            bank: {
+              title: 'For Payment Partners',
+              description: 'High-value transactions in beauty vertical',
+              benefits: [
+                '5,000+ salon transactions/month',
+                'Avg ticket: AED 200-400',
+                'Female card holders engagement',
+                'Recurring monthly spend'
+              ],
+              metric: '+45%',
+              metricLabel: 'Female card usage'
+            }
           },
           fitness: {
             icon: '💪',
             name: 'Fitness',
-            search: 'gym near me with cashback',
-            merchant: 'FitZone Gym (Downtown)',
-            offer: '10% cashback on membership',
-            savings: 'AED 40 per month',
-            frequency: 'Saves AED 480/year',
-            color: 'blue'
+            color: 'blue',
+            discover: {
+              step: 'Search & Discover',
+              search: 'gym near me with cashback',
+              result: 'Finds 12 gyms within 4km'
+            },
+            deals: {
+              step: 'Find Deals & Offers',
+              merchant: 'FitZone Gym (Downtown)',
+              normalPrice: 'AED 400/month',
+              offer: '10% cashback on membership',
+              socialBonus: '+5% if you check-in monthly',
+              totalCashback: '15% total'
+            },
+            payment: {
+              step: 'Payment Comparison',
+              basePrice: 400,
+              options: [
+                { method: 'Cash', cashback: '0%', final: 'AED 400.00', savings: 'AED 0' },
+                { method: 'Credit Card', cashback: '1%', final: 'AED 396.00', savings: 'AED 4.00' },
+                { method: 'Nuqta (10% + 5% check-in)', cashback: '15%', final: 'AED 340.00', savings: 'AED 60.00' }
+              ],
+              bestSavings: 'Save AED 56 more with Nuqta'
+            },
+            rewards: {
+              step: 'Earn Rewards',
+              perVisit: 'AED 60/month',
+              frequency: '12 months',
+              monthly: 'AED 60/month',
+              yearly: 'AED 720/year'
+            },
+            shopper: {
+              title: 'For Fitness Lovers',
+              description: 'Compare gym memberships and save on every payment',
+              target: 'Fitness enthusiasts 20-45',
+              benefits: [
+                'Compare all nearby gyms',
+                'Check-in via app for +5% bonus',
+                'Cashback on monthly membership',
+                'Exclusive gym offers'
+              ],
+              savings: '15%',
+              savingsLabel: 'On gym membership'
+            },
+            merchant: {
+              title: 'For Gyms & Studios',
+              description: 'Acquire members who actually show up (not just sign up)',
+              benefits: [
+                'AED 40 CAC vs AED 250 Google Ads',
+                'Target residents within 3km',
+                'Track check-in frequency',
+                'Reduce churn with loyalty rewards'
+              ],
+              metric: 'AED 40',
+              metricLabel: 'CAC vs AED 250 (Google)'
+            },
+            bank: {
+              title: 'For Payment Partners',
+              description: 'Recurring high-value subscriptions',
+              benefits: [
+                '3,000+ gym memberships/month',
+                'Avg ticket: AED 300-500',
+                'Recurring monthly charges',
+                'Low churn rate'
+              ],
+              metric: '+50%',
+              metricLabel: 'Subscription card usage'
+            }
           },
           retail: {
             icon: '🛍️',
             name: 'Retail & Fashion',
-            search: 'fashion deals Dubai Mall',
-            merchant: 'Trendy Boutique',
-            offer: '10% cashback on purchases',
-            savings: 'AED 35 average',
-            frequency: '3x/month = AED 105/month',
-            color: 'purple'
+            color: 'purple',
+            discover: {
+              step: 'Search & Discover',
+              search: 'fashion deals Dubai Mall',
+              result: 'Finds 25 stores with offers'
+            },
+            deals: {
+              step: 'Find Deals & Offers',
+              merchant: 'Trendy Boutique',
+              normalPrice: 'AED 350',
+              offer: '10% instant cashback',
+              socialBonus: '+5% if you post outfit',
+              totalCashback: '15% total'
+            },
+            payment: {
+              step: 'Payment Comparison',
+              basePrice: 350,
+              options: [
+                { method: 'Cash', cashback: '0%', final: 'AED 350.00', savings: 'AED 0' },
+                { method: 'Credit Card', cashback: '2%', final: 'AED 343.00', savings: 'AED 7.00' },
+                { method: 'Nuqta (10% + 5% share)', cashback: '15%', final: 'AED 297.50', savings: 'AED 52.50' }
+              ],
+              bestSavings: 'Save AED 45.50 more with Nuqta'
+            },
+            rewards: {
+              step: 'Earn Rewards',
+              perVisit: 'AED 52.50',
+              frequency: '3x/month',
+              monthly: 'AED 157.50/month',
+              yearly: 'AED 1,890/year'
+            },
+            shopper: {
+              title: 'For Fashion Shoppers',
+              description: 'Discover local boutiques and exclusive mall offers',
+              target: 'Fashion-conscious 20-40',
+              benefits: [
+                'Mall-specific deal aggregation',
+                'Share outfit for +5% cashback',
+                'Track spending across stores',
+                'Exclusive brand partnerships'
+              ],
+              savings: '15%',
+              savingsLabel: 'On retail purchases'
+            },
+            merchant: {
+              title: 'For Boutiques & Stores',
+              description: 'Drive foot traffic to physical stores',
+              benefits: [
+                'AED 35 CAC vs AED 150 Meta Ads',
+                'Target shoppers near your mall',
+                'Convert browsers to buyers',
+                'Compete with online discounts'
+              ],
+              metric: 'AED 35',
+              metricLabel: 'CAC vs AED 150 (Meta)'
+            },
+            bank: {
+              title: 'For Payment Partners',
+              description: 'High-ticket retail transactions',
+              benefits: [
+                '8,000+ retail transactions/month',
+                'Avg ticket: AED 250-600',
+                'Mall-based card usage',
+                'Fashion-focused spending'
+              ],
+              metric: '+38%',
+              metricLabel: 'Retail card usage'
+            }
           }
         };
 
@@ -918,154 +1245,224 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   ))}
                 </div>
 
-                {/* Example Card */}
-                <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
-                  <div className="grid md:grid-cols-3 gap-6">
-                    {/* Step 1: Search */}
-                    <div className="bg-white rounded-2xl p-6 border-l-4 border-emerald-500">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">1</div>
-                        <h4 className="text-xl font-bold text-slate-900">Search</h4>
-                      </div>
-                      <p className="text-sm text-slate-600 mb-2">User searches:</p>
-                      <p className="text-base font-bold text-slate-900 bg-slate-50 rounded-lg p-3">
-                        "{activeExample.search}"
-                      </p>
-                    </div>
+                {/* Complete User Journey Flow */}
+                <div className="space-y-6">
 
-                    {/* Step 2: Save */}
-                    <div className={`bg-white rounded-2xl p-6 border-l-4 ${activeColor.border}`}>
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className={`w-10 h-10 rounded-full ${activeColor.bg} text-white flex items-center justify-center font-bold`}>2</div>
-                        <h4 className="text-xl font-bold text-slate-900">Save</h4>
-                      </div>
-                      <p className="text-sm text-slate-600 mb-2">Finds:</p>
-                      <p className="text-base font-bold text-slate-900 mb-1">{activeExample.merchant}</p>
-                      <p className={`text-sm font-semibold ${activeColor.text}`}>{activeExample.offer}</p>
+                  {/* Step 1: Search & Discover */}
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xl">1</div>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.discover.step}</h3>
                     </div>
-
-                    {/* Step 3: Earn */}
-                    <div className="bg-white rounded-2xl p-6 border-l-4 border-green-500">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">3</div>
-                        <h4 className="text-xl font-bold text-slate-900">Earn</h4>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div className="bg-white rounded-2xl p-6">
+                        <p className="text-sm text-slate-600 mb-2">User searches:</p>
+                        <p className="text-xl font-bold text-slate-900 bg-slate-50 rounded-lg p-4">
+                          "{activeExample.discover.search}"
+                        </p>
                       </div>
-                      <p className="text-sm text-slate-600 mb-2">Result:</p>
-                      <p className="text-2xl font-black text-green-600 mb-1">{activeExample.savings}</p>
-                      <p className="text-sm text-slate-600">{activeExample.frequency}</p>
+                      <div className="bg-white rounded-2xl p-6">
+                        <p className="text-sm text-slate-600 mb-2">Nuqta shows:</p>
+                        <p className="text-xl font-bold text-emerald-600">
+                          {activeExample.discover.result}
+                        </p>
+                        <p className="text-sm text-slate-500 mt-2">All verified, hyperlocal, with live offers</p>
+                      </div>
                     </div>
                   </div>
+
+                  {/* Step 2: Find Deals & Offers */}
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`w-12 h-12 rounded-full ${activeColor.bg} text-white flex items-center justify-center font-black text-xl`}>2</div>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.deals.step}</h3>
+                    </div>
+                    <div className="bg-white rounded-2xl p-6">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <p className="text-2xl font-black text-slate-900 mb-1">{activeExample.deals.merchant}</p>
+                          <p className="text-lg text-slate-600">Regular price: <span className="line-through">{activeExample.deals.normalPrice}</span></p>
+                        </div>
+                        <span className={`text-3xl`}>{activeExample.icon}</span>
+                      </div>
+                      <div className="grid md:grid-cols-3 gap-4 mt-4">
+                        <div className={`${activeColor.light} rounded-xl p-4 border-l-4 ${activeColor.border}`}>
+                          <p className="text-sm text-slate-600 mb-1">Base Cashback</p>
+                          <p className={`text-2xl font-black ${activeColor.text}`}>{activeExample.deals.offer}</p>
+                        </div>
+                        <div className={`${activeColor.light} rounded-xl p-4 border-l-4 ${activeColor.border}`}>
+                          <p className="text-sm text-slate-600 mb-1">Social Bonus</p>
+                          <p className={`text-2xl font-black ${activeColor.text}`}>{activeExample.deals.socialBonus}</p>
+                        </div>
+                        <div className="bg-emerald-50 rounded-xl p-4 border-l-4 border-emerald-500">
+                          <p className="text-sm text-slate-600 mb-1">Total Savings</p>
+                          <p className="text-2xl font-black text-emerald-600">{activeExample.deals.totalCashback}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 3: Payment Comparison */}
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center font-black text-xl">3</div>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.payment.step}</h3>
+                    </div>
+                    <div className="bg-white rounded-2xl p-6">
+                      <p className="text-lg text-slate-600 mb-6">Which payment method saves you the most?</p>
+                      <div className="space-y-4">
+                        {activeExample.payment.options.map((option, idx) => (
+                          <div
+                            key={idx}
+                            className={`flex items-center justify-between p-5 rounded-xl border-2 transition-all ${
+                              option.method.includes('Nuqta')
+                                ? 'border-emerald-500 bg-emerald-50 shadow-lg scale-105'
+                                : 'border-slate-200 bg-slate-50'
+                            }`}
+                          >
+                            <div className="flex items-center gap-4">
+                              {option.method.includes('Nuqta') && (
+                                <div className="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center">
+                                  <CheckCircle2 size={20} className="text-white" />
+                                </div>
+                              )}
+                              <div>
+                                <p className={`font-bold ${option.method.includes('Nuqta') ? 'text-xl text-slate-900' : 'text-lg text-slate-700'}`}>
+                                  {option.method}
+                                </p>
+                                <p className="text-sm text-slate-600">Cashback: {option.cashback}</p>
+                              </div>
+                            </div>
+                            <div className="text-right">
+                              <p className={`font-black ${option.method.includes('Nuqta') ? 'text-2xl text-emerald-600' : 'text-xl text-slate-900'}`}>
+                                {option.final}
+                              </p>
+                              <p className={`text-sm ${option.method.includes('Nuqta') ? 'text-emerald-600 font-semibold' : 'text-slate-500'}`}>
+                                {option.savings}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-6 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl p-4 text-white text-center">
+                        <p className="text-xl font-black">{activeExample.payment.bestSavings}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Step 4: Earn Rewards as Cashback */}
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-black text-xl">4</div>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.rewards.step}</h3>
+                    </div>
+                    <div className="bg-white rounded-2xl p-6">
+                      <div className="grid md:grid-cols-4 gap-6">
+                        <div className="text-center">
+                          <p className="text-sm text-slate-600 mb-2">Per Visit</p>
+                          <p className="text-3xl font-black text-green-600">{activeExample.rewards.perVisit}</p>
+                          <p className="text-xs text-slate-500 mt-1">Instant cashback</p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-sm text-slate-600 mb-2">Frequency</p>
+                          <p className="text-3xl font-black text-slate-900">{activeExample.rewards.frequency}</p>
+                          <p className="text-xs text-slate-500 mt-1">Your pattern</p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-sm text-slate-600 mb-2">Monthly</p>
+                          <p className="text-3xl font-black text-[#c9a227]">{activeExample.rewards.monthly}</p>
+                          <p className="text-xs text-slate-500 mt-1">Total savings</p>
+                        </div>
+                        <div className="text-center bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4">
+                          <p className="text-sm text-slate-600 mb-2">Yearly</p>
+                          <p className="text-3xl font-black text-green-600">{activeExample.rewards.yearly}</p>
+                          <p className="text-xs text-green-600 font-semibold mt-1">Annual savings</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
 
-              {/* 3 Value Props */}
+              {/* 3 Value Props - Dynamic Based on Active Niche */}
               <div className="grid md:grid-cols-3 gap-8 mb-12">
 
                 {/* FOR SHOPPERS */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-emerald-200">
+                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-emerald-200 transition-all duration-300">
                   <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-6">
                     <Search className="text-white" size={32} />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-3">For Shoppers</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{activeExample.shopper.title}</h3>
                   <p className="text-lg text-slate-600 mb-2">
-                    Search "coffee deals near me" → get instant, verified local offers
+                    {activeExample.shopper.description}
                   </p>
                   <p className="text-sm font-semibold text-[#c9a227] mb-6">
-                    Target: Students & employees earning {'<'}25K AED/month
+                    Target: {activeExample.shopper.target}
                   </p>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-emerald-600" />
+                    {activeExample.shopper.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <CheckCircle2 size={16} className="text-emerald-600" />
+                        </div>
+                        <p className="text-sm text-slate-700">{benefit}</p>
                       </div>
-                      <p className="text-sm text-slate-700">Hyper-local deal discovery</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-emerald-600" />
-                      </div>
-                      <p className="text-sm text-slate-700">5% cashback on social share</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-emerald-600" />
-                      </div>
-                      <p className="text-sm text-slate-700">10 AED/month subscription</p>
-                    </div>
+                    ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-slate-200">
-                    <p className="text-3xl font-black text-emerald-600">15-30%</p>
-                    <p className="text-sm text-slate-600">Avg savings per transaction</p>
+                    <p className="text-3xl font-black text-emerald-600">{activeExample.shopper.savings}</p>
+                    <p className="text-sm text-slate-600">{activeExample.shopper.savingsLabel}</p>
                   </div>
                 </div>
 
                 {/* FOR MERCHANTS */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-[#c9a227]/30">
+                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-[#c9a227]/30 transition-all duration-300">
                   <div className="w-16 h-16 bg-[#c9a227] rounded-2xl flex items-center justify-center mb-6">
                     <Store className="text-white" size={32} />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-3">For Merchants</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{activeExample.merchant.title}</h3>
                   <p className="text-lg text-slate-600 mb-6">
-                    Acquire high-intent customers at 75-85% lower CAC than Google Ads
+                    {activeExample.merchant.description}
                   </p>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-[#c9a227]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-[#c9a227]" />
+                    {activeExample.merchant.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-[#c9a227]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <CheckCircle2 size={16} className="text-[#c9a227]" />
+                        </div>
+                        <p className="text-sm text-slate-700">{benefit}</p>
                       </div>
-                      <p className="text-sm text-slate-700">Only pay on completed sales</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-[#c9a227]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-[#c9a227]" />
-                      </div>
-                      <p className="text-sm text-slate-700">Zero upfront marketing cost</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-[#c9a227]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-[#c9a227]" />
-                      </div>
-                      <p className="text-sm text-slate-700">Built-in loyalty loop</p>
-                    </div>
+                    ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-slate-200">
-                    <p className="text-3xl font-black text-[#c9a227]">AED 30-50</p>
-                    <p className="text-sm text-slate-600">CAC vs AED 200 (Google Ads)</p>
+                    <p className="text-3xl font-black text-[#c9a227]">{activeExample.merchant.metric}</p>
+                    <p className="text-sm text-slate-600">{activeExample.merchant.metricLabel}</p>
                   </div>
                 </div>
 
                 {/* FOR PAYMENT PARTNERS */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200">
+                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200 transition-all duration-300">
                   <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
                     <CreditCard className="text-white" size={32} />
                   </div>
-                  <h3 className="text-2xl font-black text-slate-900 mb-3">For Banks</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{activeExample.bank.title}</h3>
                   <p className="text-lg text-slate-600 mb-6">
-                    Drive card usage + merchant partnerships without building tech
+                    {activeExample.bank.description}
                   </p>
                   <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-blue-600" />
+                    {activeExample.bank.benefits.map((benefit, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <CheckCircle2 size={16} className="text-blue-600" />
+                        </div>
+                        <p className="text-sm text-slate-700">{benefit}</p>
                       </div>
-                      <p className="text-sm text-slate-700">White-label ready platform</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-blue-600" />
-                      </div>
-                      <p className="text-sm text-slate-700">Increase transaction volume</p>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={16} className="text-blue-600" />
-                      </div>
-                      <p className="text-sm text-slate-700">Revenue share model</p>
-                    </div>
+                    ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-slate-200">
-                    <p className="text-3xl font-black text-blue-600">+35%</p>
-                    <p className="text-sm text-slate-600">Card usage lift (projected)</p>
+                    <p className="text-3xl font-black text-blue-600">{activeExample.bank.metric}</p>
+                    <p className="text-sm text-slate-600">{activeExample.bank.metricLabel}</p>
                   </div>
                 </div>
 
@@ -1083,147 +1480,239 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 6: USER JOURNEY - BEFORE ====================
+      // ==================== SLIDE 6: USER JOURNEY - BEFORE (UPGRADED) ====================
       case 6:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Current Experience</p>
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50/30 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-100 to-orange-100 rounded-full mb-4 border-2 border-red-200">
+                  <p className="text-xs font-black text-red-700 uppercase tracking-wider">Current Experience — Broken</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
-                  User Journey <span className="text-red-600">(Before Nuqta)</span>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                  User Journey{' '}
+                  <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">Before Nuqta</span>
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  Shoppers waste time searching across fragmented platforms
+                <p className="text-2xl text-slate-600 max-w-3xl mx-auto mb-4">
+                  The painful reality: 27 minutes of friction, zero guarantee
                 </p>
               </div>
 
-              {/* 5 Steps */}
-              <div className="relative space-y-6">
-                {[
-                  { num: 1, title: "Google Search", desc: "Search 'coffee deals near me' → get ads, not local offers", icon: Search, color: "red" },
-                  { num: 2, title: "Check Apps", desc: "Open 3-4 different apps (Zomato, Groupon, brand apps)", icon: ShoppingBag, color: "orange" },
-                  { num: 3, title: "Compare Manually", desc: "Screenshot deals, compare prices, check distances", icon: BarChart3, color: "yellow" },
-                  { num: 4, title: "Limited Options", desc: "Only find deals from big chains, miss local gems", icon: Store, color: "slate" },
-                  { num: 5, title: "Give Up", desc: "Too much effort → just pay full price or order online", icon: Ban, color: "red" }
-                ].map((step, idx) => {
-                  const Icon = step.icon;
-                  const borderColor = {
-                    red: "border-red-200",
-                    orange: "border-orange-200",
-                    yellow: "border-yellow-200",
-                    slate: "border-slate-200"
-                  }[step.color] || "border-slate-200";
-                  const iconColor = {
-                    red: "text-red-600 bg-red-100",
-                    orange: "text-orange-600 bg-orange-100",
-                    yellow: "text-yellow-600 bg-yellow-100",
-                    slate: "text-slate-600 bg-slate-100"
-                  }[step.color] || "text-slate-600 bg-slate-100";
+              {/* Frustration Timeline with Visual Connectors */}
+              <div className="relative max-w-5xl mx-auto">
+                {/* Timeline vertical line */}
+                <div className="absolute left-8 top-16 bottom-24 w-1 bg-gradient-to-b from-red-300 via-orange-300 to-red-400" />
 
-                  return (
-                    <div key={idx} className={`relative bg-white border-2 ${borderColor} rounded-2xl p-8 hover:shadow-xl transition-all`}>
-                      <div className="flex items-start gap-6">
-                        <div className="flex-shrink-0">
-                          <div className={`w-16 h-16 rounded-xl ${iconColor} flex items-center justify-center`}>
-                            <Icon size={32} />
-                          </div>
+                {/* 5 Steps with staggered animation */}
+                <div className="space-y-6">
+                  {[
+                    { num: 1, title: "Google Search", desc: "Search 'coffee deals near me' → get ads, not local offers", icon: Search, color: "red", time: "~5 min" },
+                    { num: 2, title: "App Hopping", desc: "Open 3-4 different apps (Zomato, Groupon, brand apps)", icon: ShoppingBag, color: "orange", time: "~8 min" },
+                    { num: 3, title: "Manual Comparison", desc: "Screenshot deals, compare prices, check distances on Google Maps", icon: BarChart3, color: "yellow", time: "~10 min" },
+                    { num: 4, title: "Limited Options", desc: "Only big chains show up, miss local gems, deals expired", icon: Store, color: "slate", time: "~3 min" },
+                    { num: 5, title: "Give Up", desc: "Too much effort → just pay full price or order online instead", icon: Ban, color: "red", time: "~1 min" }
+                  ].map((step, idx) => {
+                    const Icon = step.icon;
+                    const bgGradient = {
+                      red: "from-red-50 to-red-100",
+                      orange: "from-orange-50 to-orange-100",
+                      yellow: "from-yellow-50 to-yellow-100",
+                      slate: "from-slate-50 to-slate-100"
+                    }[step.color] || "from-slate-50 to-slate-100";
+                    const iconBg = {
+                      red: "bg-red-500",
+                      orange: "bg-orange-500",
+                      yellow: "bg-yellow-500",
+                      slate: "bg-slate-500"
+                    }[step.color] || "bg-slate-500";
+                    const borderColor = {
+                      red: "border-red-300",
+                      orange: "border-orange-300",
+                      yellow: "border-yellow-300",
+                      slate: "border-slate-300"
+                    }[step.color] || "border-slate-300";
+
+                    return (
+                      <div key={idx} className="relative pl-20">
+                        {/* Timeline node */}
+                        <div className={`absolute left-4 top-8 w-9 h-9 rounded-full ${iconBg} border-4 border-white shadow-lg flex items-center justify-center z-10`}>
+                          <span className="text-white text-sm font-black">{step.num}</span>
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-8 h-8 rounded-full bg-slate-900 text-white flex items-center justify-center text-sm font-bold">
-                              {step.num}
+
+                        {/* Card */}
+                        <div className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300`}
+                          style={{ animationDelay: `${idx * 100}ms` }}>
+                          <div className="flex items-start gap-6">
+                            <div className="flex-shrink-0">
+                              <div className={`w-16 h-16 rounded-2xl ${iconBg} flex items-center justify-center shadow-lg`}>
+                                <Icon className="text-white" size={32} />
+                              </div>
                             </div>
-                            <h3 className="text-2xl font-bold text-slate-900">{step.title}</h3>
+                            <div className="flex-1">
+                              <div className="flex items-center justify-between mb-3">
+                                <h3 className="text-2xl font-black text-slate-900">{step.title}</h3>
+                                <span className="text-sm font-bold text-slate-500 bg-white/80 px-3 py-1 rounded-full">{step.time}</span>
+                              </div>
+                              <p className="text-lg text-slate-700 leading-relaxed">{step.desc}</p>
+                            </div>
                           </div>
-                          <p className="text-lg text-slate-600 leading-relaxed">{step.desc}</p>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* Bottom Stat */}
-              <div className="mt-12 bg-red-600 rounded-2xl p-8 text-center text-white">
-                <p className="text-5xl font-black mb-2">
-                  <AnimatedNumber value={27} duration={1500} /> minutes
-                </p>
-                <p className="text-xl">Average time wasted per search → still no guarantee of best deal</p>
+              {/* Dramatic Bottom Stat with Failure Icons */}
+              <div className="mt-12 bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-3xl p-10 text-center text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
+                <div className="relative z-10">
+                  <div className="flex items-center justify-center gap-4 mb-4">
+                    <Clock size={48} className="text-white/80" />
+                    <p className="text-6xl sm:text-7xl font-black tracking-tight">
+                      <AnimatedNumber value={27} duration={2000} /> min
+                    </p>
+                    <Ban size={48} className="text-white/80" />
+                  </div>
+                  <p className="text-2xl font-bold mb-2">Average time wasted per search</p>
+                  <p className="text-lg text-red-100">Still no guarantee of best deal → 40% give up and pay full price</p>
+                </div>
               </div>
             </div>
           </div>
         );
 
-      // ==================== SLIDE 7: USER JOURNEY - AFTER ====================
+      // ==================== SLIDE 7: USER JOURNEY - AFTER (UPGRADED) ====================
       case 7:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-emerald-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider">With Nuqta</p>
+          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-green-50/30 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-100 to-green-100 rounded-full mb-4 border-2 border-emerald-300">
+                  <p className="text-xs font-black text-emerald-700 uppercase tracking-wider">With Nuqta — Simplified</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
-                  User Journey <span className="text-emerald-600">(After Nuqta)</span>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                  User Journey{' '}
+                  <span className="bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">After Nuqta</span>
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  One search. Instant results. Local deals.
+                <p className="text-2xl text-slate-600 max-w-3xl mx-auto mb-4">
+                  The reality: 30 seconds from search to deal → 54x faster
                 </p>
               </div>
 
-              {/* 3 Simple Steps */}
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
-                {[
-                  { num: 1, title: "Search Once", desc: "Type 'coffee deals near me' in Nuqta", icon: Search, result: "Instant results from all local merchants" },
-                  { num: 2, title: "Compare & Choose", desc: "See all deals in one view, sorted by distance", icon: CheckCircle2, result: "Save 15-30% instantly" },
-                  { num: 3, title: "Claim & Earn", desc: "Claim deal, get cashback on top", icon: Gift, result: "Double rewards (deal + cashback)" }
-                ].map((step, idx) => {
-                  const Icon = step.icon;
-                  return (
-                    <div key={idx} className="bg-white border-2 border-emerald-200 rounded-3xl p-8 hover:shadow-2xl transition-all">
-                      <div className="w-16 h-16 rounded-2xl bg-emerald-500 flex items-center justify-center mb-6">
-                        <Icon className="text-white" size={32} />
-                      </div>
-                      <div className="mb-4">
-                        <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 text-xl font-black mb-3">
-                          {step.num}
+              {/* Success Path with Visual Flow */}
+              <div className="relative max-w-6xl mx-auto mb-12">
+                {/* Flow arrows */}
+                <div className="hidden md:flex absolute top-1/2 left-0 right-0 justify-between items-center px-32 -translate-y-1/2 z-0">
+                  <ArrowRight size={64} className="text-emerald-200" />
+                  <ArrowRight size={64} className="text-emerald-200" />
+                </div>
+
+                {/* 3 Simple Steps */}
+                <div className="grid md:grid-cols-3 gap-8 relative z-10">
+                  {[
+                    { num: 1, title: "Search Once", desc: "Type 'coffee deals near me' in Nuqta", icon: Search, result: "Instant results from all local merchants", time: "~5 sec", color: "emerald" },
+                    { num: 2, title: "Compare & Choose", desc: "See all deals in one view, sorted by distance + savings", icon: CheckCircle2, result: "Save 15-30% instantly", time: "~15 sec", color: "green" },
+                    { num: 3, title: "Claim & Earn", desc: "Tap claim, walk in, upload receipt", icon: Gift, result: "Double rewards (deal + cashback)", time: "~10 sec", color: "teal" }
+                  ].map((step, idx) => {
+                    const Icon = step.icon;
+                    const bgGradient = {
+                      emerald: "from-emerald-500 to-emerald-600",
+                      green: "from-green-500 to-green-600",
+                      teal: "from-teal-500 to-teal-600"
+                    }[step.color];
+
+                    return (
+                      <div key={idx} className="bg-white border-2 border-emerald-200 rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        {/* Icon Badge */}
+                        <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${bgGradient} flex items-center justify-center mb-6 shadow-lg mx-auto`}>
+                          <Icon className="text-white" size={40} />
                         </div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                        <p className="text-lg text-slate-600 mb-4">{step.desc}</p>
+
+                        {/* Step Number */}
+                        <div className="flex items-center justify-center gap-3 mb-4">
+                          <div className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xl font-black">
+                            {step.num}
+                          </div>
+                          <span className="text-sm font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">{step.time}</span>
+                        </div>
+
+                        {/* Title & Description */}
+                        <h3 className="text-2xl font-black text-slate-900 mb-3 text-center">{step.title}</h3>
+                        <p className="text-base text-slate-600 mb-6 leading-relaxed text-center">{step.desc}</p>
+
+                        {/* Result Badge */}
+                        <div className="pt-4 border-t-2 border-emerald-100 bg-emerald-50 rounded-xl p-4 -mx-2">
+                          <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider mb-2 text-center">✓ Result</p>
+                          <p className="text-sm font-semibold text-slate-900 text-center">{step.result}</p>
+                        </div>
                       </div>
-                      <div className="pt-4 border-t-2 border-emerald-100">
-                        <p className="text-sm font-semibold text-emerald-700 uppercase tracking-wider mb-1">Result</p>
-                        <p className="text-base text-slate-700">{step.result}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* Bottom Stat */}
-              <div className="bg-emerald-600 rounded-2xl p-8 text-center text-white">
-                <p className="text-5xl font-black mb-2">
-                  <AnimatedNumber value={30} duration={1500} /> seconds
-                </p>
-                <p className="text-xl">From search to claimed deal → 54x faster than traditional search</p>
+              {/* Dramatic Bottom Stat with Success Icons */}
+              <div className="bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 rounded-3xl p-10 text-center text-white shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+                <div className="relative z-10">
+                  <div className="flex items-center justify-center gap-6 mb-4">
+                    <Zap size={48} className="text-yellow-300" />
+                    <div>
+                      <p className="text-6xl sm:text-7xl font-black tracking-tight">
+                        <AnimatedNumber value={30} duration={2000} /> sec
+                      </p>
+                    </div>
+                    <CheckCircle2 size={48} className="text-white/90" />
+                  </div>
+                  <p className="text-2xl font-bold mb-3">From search to claimed deal</p>
+                  <div className="flex items-center justify-center gap-3 text-lg text-emerald-100">
+                    <span className="bg-white/20 px-4 py-2 rounded-full font-semibold">54x faster than traditional search</span>
+                    <span className="bg-white/20 px-4 py-2 rounded-full font-semibold">Guaranteed best local deal</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Before/After Comparison Callout */}
+              <div className="mt-8 bg-slate-900 rounded-2xl p-8 text-center text-white">
+                <div className="flex items-center justify-center gap-12">
+                  <div>
+                    <p className="text-4xl font-black text-red-400 mb-1">27 min</p>
+                    <p className="text-sm text-slate-400">Before (5 apps)</p>
+                  </div>
+                  <ArrowRight size={40} className="text-[#c9a227]" />
+                  <div>
+                    <p className="text-4xl font-black text-emerald-400 mb-1">30 sec</p>
+                    <p className="text-sm text-slate-400">After (1 app)</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         );
 
-      // ==================== SLIDE 8: PLATFORM DIFFERENTIATION ====================
+      // ==================== SLIDE 8: PLATFORM DIFFERENTIATION (PREMIUM ✓✓✓) ====================
       case 8:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/20 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
               <div className="text-center mb-12">
-                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4">
+                <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4 shadow-md">
                   <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Core Differentiation</p>
                 </div>
-                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-4">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4 leading-tight">
                   We're <span className="text-[#c9a227]">NOT</span> Another Deal App
                 </h2>
                 <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
@@ -1752,127 +2241,218 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 10: BUSINESS MODEL ====================
+      // ==================== SLIDE 10: BUSINESS MODEL (PREMIUM ✓✓✓) ====================
       case 10:
+        const revenueData = [
+          { name: "Merchant Commission", value: 45, amount: "AED 450K", desc: "5% on GMV", color: "#3b82f6" },
+          { name: "Promoted Listings", value: 25, amount: "AED 250K", desc: "Priority placement", color: "#a855f7" },
+          { name: "Bank Partnerships", value: 20, amount: "AED 200K", desc: "Affiliate revenue", color: "#f97316" },
+          { name: "Float Interest", value: 10, amount: "AED 100K", desc: "Wallet deposits", color: "#22c55e" }
+        ];
+
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              {/* Header */}
+              <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                   <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Revenue Model</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   How We <span className="text-[#c9a227]">Make Money</span>
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Four revenue streams from platform transactions
                 </p>
               </div>
 
-              {/* 4 Revenue Sources */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                {[
-                  {
-                    title: "Commission on Sales",
-                    rate: "5%",
-                    desc: "Transaction commission from merchants on completed sales",
-                    icon: Store,
-                    color: "blue"
-                  },
-                  {
-                    title: "Promoted Sales",
-                    rate: "5%",
-                    desc: "Additional revenue when merchants promote their listings",
-                    icon: TrendingUp,
-                    color: "purple"
-                  },
-                  {
-                    title: "Transaction Volume",
-                    rate: "FREE",
-                    desc: "Free for users during validation phase (Year 1). Monetize via merchant transactions only.",
-                    icon: User,
-                    color: "emerald"
-                  },
-                  {
-                    title: "Affiliate Commission",
-                    rate: "Variable",
-                    desc: "Revenue share from bank partnerships and payment partners",
-                    icon: Handshake,
-                    color: "orange"
-                  }
-                ].map((stream, idx) => {
-                  const Icon = stream.icon;
-                  const borderColor = stream.color === "blue" ? "border-blue-200" :
-                                      stream.color === "purple" ? "border-purple-200" :
-                                      stream.color === "emerald" ? "border-emerald-200" :
-                                      "border-orange-200";
-                  const iconBg = stream.color === "blue" ? "bg-blue-500" :
-                                 stream.color === "purple" ? "bg-purple-500" :
-                                 stream.color === "emerald" ? "bg-emerald-500" :
-                                 "bg-orange-500";
+              {/* Revenue Chart & Breakdown Grid */}
+              <div className="grid lg:grid-cols-2 gap-10 mb-12 max-w-6xl mx-auto">
 
-                  return (
-                    <div key={idx} className={`bg-white border-2 ${borderColor} rounded-3xl p-6 hover:shadow-2xl transition-all`}>
-                      <div className={`w-14 h-14 ${iconBg} rounded-2xl flex items-center justify-center mb-4`}>
-                        <Icon className="text-white" size={28} />
+                {/* Left: Recharts Bar Chart */}
+                <div className="bg-white border-2 border-[#c9a227]/20 rounded-3xl p-8 shadow-xl">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Revenue Contribution</h3>
+                  <ResponsiveContainer width="100%" height={320}>
+                    <BarChart data={revenueData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis type="number" stroke="#64748b" style={{ fontSize: '12px' }} />
+                      <YAxis dataKey="name" type="category" stroke="#64748b" style={{ fontSize: '13px', fontWeight: 600 }} width={150} />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: '#0a1628',
+                          border: '2px solid #c9a227',
+                          borderRadius: '12px',
+                          color: '#fff',
+                          fontSize: '14px',
+                          fontWeight: 600
+                        }}
+                        formatter={(value: any, name: any, props: any) => [
+                          `${props.payload.amount} (${value}%)`,
+                          props.payload.desc
+                        ]}
+                      />
+                      <Bar dataKey="value" radius={[0, 8, 8, 0]}>
+                        {revenueData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                  <p className="text-xs text-slate-500 text-center mt-4">Based on AED 10M annual GMV projection (Year 2)</p>
+                </div>
+
+                {/* Right: 4 Revenue Stream Cards */}
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    {
+                      title: "Merchant Commission",
+                      rate: "5%",
+                      desc: "Transaction commission from merchants on completed sales",
+                      icon: Store,
+                      color: "blue",
+                      amount: "45%"
+                    },
+                    {
+                      title: "Promoted Listings",
+                      rate: "5%+",
+                      desc: "Additional revenue when merchants promote their listings",
+                      icon: TrendingUp,
+                      color: "purple",
+                      amount: "25%"
+                    },
+                    {
+                      title: "Bank Partnerships",
+                      rate: "Variable",
+                      desc: "Revenue share from bank partnerships and payment partners",
+                      icon: Handshake,
+                      color: "orange",
+                      amount: "20%"
+                    },
+                    {
+                      title: "Float Interest",
+                      rate: "2-3%",
+                      desc: "Interest earned on wallet deposits (users reload, spend over time)",
+                      icon: DollarSign,
+                      color: "emerald",
+                      amount: "10%"
+                    }
+                  ].map((stream, idx) => {
+                    const Icon = stream.icon;
+                    const borderColor = stream.color === "blue" ? "border-blue-200" :
+                                        stream.color === "purple" ? "border-purple-200" :
+                                        stream.color === "emerald" ? "border-emerald-200" :
+                                        "border-orange-200";
+                    const iconBg = stream.color === "blue" ? "bg-blue-500" :
+                                   stream.color === "purple" ? "bg-purple-500" :
+                                   stream.color === "emerald" ? "bg-emerald-500" :
+                                   "bg-orange-500";
+                    const bgGradient = stream.color === "blue" ? "from-blue-50 to-blue-100" :
+                                       stream.color === "purple" ? "from-purple-50 to-purple-100" :
+                                       stream.color === "emerald" ? "from-emerald-50 to-emerald-100" :
+                                       "from-orange-50 to-orange-100";
+
+                    return (
+                      <div
+                        key={idx}
+                        className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-3xl p-5 hover:shadow-xl hover:scale-105 transition-all duration-300`}
+                        style={{ animationDelay: `${idx * 100}ms` }}
+                      >
+                        <div className={`w-12 h-12 ${iconBg} rounded-2xl flex items-center justify-center mb-3 shadow-md`}>
+                          <Icon className="text-white" size={24} />
+                        </div>
+                        <h3 className="text-base font-bold text-slate-900 mb-1">{stream.title}</h3>
+                        <p className="text-2xl font-black text-[#c9a227] mb-2">{stream.rate}</p>
+                        <p className="text-xs text-slate-600 leading-relaxed mb-3">{stream.desc}</p>
+                        <div className="pt-3 border-t-2 border-white/50">
+                          <p className="text-xs font-bold text-slate-500 uppercase">Revenue Share</p>
+                          <p className="text-lg font-black text-slate-900">{stream.amount}</p>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-bold text-slate-900 mb-2">{stream.title}</h3>
-                      <p className="text-4xl font-black text-[#c9a227] mb-3">{stream.rate}</p>
-                      <p className="text-sm text-slate-600 leading-relaxed">{stream.desc}</p>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
 
-              {/* Example Calculation */}
-              <div className="bg-slate-900 rounded-2xl p-10 text-white">
-                <h3 className="text-3xl font-bold mb-8 text-center">Example: AED 1,000 Monthly GMV per User</h3>
-                <div className="grid md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <p className="text-sm text-slate-400 mb-2">Base Commission (5%)</p>
-                    <p className="text-4xl font-black text-[#c9a227]">AED 50</p>
+              {/* Example Calculation with Visual Progression */}
+              <div className="bg-gradient-to-br from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-white max-w-6xl mx-auto shadow-2xl border-2 border-[#c9a227]/20">
+                <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
+                  Example: <span className="text-[#c9a227]">AED 1,000</span> Monthly GMV per User
+                </h3>
+                <div className="grid md:grid-cols-4 gap-6 mb-8">
+                  <div className="bg-white/5 rounded-2xl p-6 border border-blue-500/30 text-center hover:bg-white/10 transition-all">
+                    <p className="text-xs text-blue-400 font-bold uppercase mb-2">Base Commission (5%)</p>
+                    <p className="text-4xl sm:text-5xl font-black text-blue-400">AED 50</p>
+                    <p className="text-sm text-slate-400 mt-2">On transactions</p>
                   </div>
-                  <div>
-                    <p className="text-sm text-slate-400 mb-2">Promoted Sales (5%)</p>
-                    <p className="text-4xl font-black text-[#c9a227]">AED 50</p>
+                  <div className="bg-white/5 rounded-2xl p-6 border border-purple-500/30 text-center hover:bg-white/10 transition-all">
+                    <p className="text-xs text-purple-400 font-bold uppercase mb-2">Promoted Sales (5%)</p>
+                    <p className="text-4xl sm:text-5xl font-black text-purple-400">AED 25</p>
+                    <p className="text-sm text-slate-400 mt-2">Priority listings</p>
                   </div>
-                  <div className="border-l-2 border-[#c9a227]/30">
-                    <p className="text-sm text-slate-400 mb-2">Total Revenue</p>
-                    <p className="text-4xl font-black text-white">AED 100+</p>
+                  <div className="bg-white/5 rounded-2xl p-6 border border-orange-500/30 text-center hover:bg-white/10 transition-all">
+                    <p className="text-xs text-orange-400 font-bold uppercase mb-2">Bank Affiliate</p>
+                    <p className="text-4xl sm:text-5xl font-black text-orange-400">AED 20</p>
+                    <p className="text-sm text-slate-400 mt-2">Payment partner</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-2xl p-6 border-2 border-[#c9a227] text-center shadow-xl">
+                    <p className="text-xs text-white font-bold uppercase mb-2">Total Revenue</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white">AED 95+</p>
+                    <p className="text-sm text-white/80 mt-2 font-semibold">Per user/month</p>
                   </div>
                 </div>
-                <div className="mt-8 bg-emerald-900/30 border border-emerald-500/30 rounded-xl p-4">
-                  <p className="text-center text-base text-emerald-300 font-semibold">
-                    ✅ Free for users during Year 1 validation • Focus on transaction volume, not subscriptions
-                  </p>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-emerald-900/30 border border-emerald-500/30 rounded-xl p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CheckCircle2 size={20} className="text-emerald-400" />
+                      <p className="text-sm font-bold text-emerald-300 uppercase">User Model</p>
+                    </div>
+                    <p className="text-base text-white font-medium">
+                      FREE for users during Year 1 validation • Focus on transaction volume, not subscriptions
+                    </p>
+                  </div>
+                  <div className="bg-blue-900/30 border border-blue-500/30 rounded-xl p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Gift size={20} className="text-blue-400" />
+                      <p className="text-sm font-bold text-blue-300 uppercase">User Benefit</p>
+                    </div>
+                    <p className="text-base text-white font-medium">
+                      Users get 5-10% cashback in Nuqta Coins • Real savings, not just discounts
+                    </p>
+                  </div>
                 </div>
-                <p className="text-center text-base text-slate-300 mt-4">
-                  + Affiliate commissions from bank partnerships • Users get 5-10% cashback in Nuqta Coins
-                </p>
               </div>
             </div>
           </div>
         );
 
-      // ==================== SLIDE 11: NUQTA COIN VS BRAND COIN ====================
+      // ==================== SLIDE 11: NUQTA COIN VS BRAND COIN (PREMIUM ✓✓✓) ====================
       case 11:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4 shadow-lg">
                   <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Rewards System</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4 leading-tight">
                   Two <span className="text-[#c9a227]">Reward Currencies</span>
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Nuqta Coin for freedom, Brand Coin for loyalty
                 </p>
               </div>
 
               {/* 2-Column Comparison */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
 
                 {/* Nuqta Coin */}
                 <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-10">
@@ -2412,42 +2992,103 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 13: FRAUD CONTROLS ====================
+      // ==================== SLIDE 13: FRAUD CONTROLS (PREMIUM ✓✓✓) ====================
       case 13:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 via-white to-orange-50/20 py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 via-white to-orange-50/20 py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
                   <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Risk Mitigation</p>
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-6">
-                  Fraud Prevention Architecture
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
+                  Fraud Prevention <span className="text-red-600">Architecture</span>
                 </h2>
-                <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
                   We don't launch with open-ended rewards. Cashback and social incentives are <span className="font-bold text-red-600">locked, gated, and verified</span> at every step.
                 </p>
               </div>
 
               {/* Core Principle Banner */}
               <div className="max-w-5xl mx-auto mb-12">
-                <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-900 rounded-2xl p-8 text-center shadow-xl">
+                <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-900 rounded-3xl p-8 text-center shadow-2xl border-2 border-red-700">
                   <p className="text-sm text-red-300 font-bold uppercase tracking-wider mb-3">Core Defense Principle</p>
-                  <p className="text-2xl sm:text-3xl font-black text-white mb-4">
+                  <p className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">
                     Fraud thrives on instant liquidity — <span className="text-red-300">Nuqta removes that</span>
                   </p>
-                  <div className="bg-white/10 rounded-xl p-4 mt-4">
-                    <p className="text-lg text-white font-medium">
+                  <div className="bg-white/10 rounded-xl p-5 mt-4">
+                    <p className="text-xl text-white font-medium">
                       Target: <span className="text-red-300 font-black">&lt;5% reward leakage</span> by Month 3 (monitored weekly)
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* 8-Point Framework */}
+              {/* 8-Layer Defense Pyramid with Visual Diagram */}
               <div className="max-w-6xl mx-auto mb-12">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">8-Layer Defense System</h3>
+                <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">8-Layer Defense System</h3>
+
+                {/* Visual Pyramid Diagram */}
+                <div className="mb-12 max-w-4xl mx-auto">
+                  <div className="relative">
+                    {/* Pyramid Layers - Each layer gets narrower */}
+                    {[
+                      { num: 1, title: "Transaction-First Gating", color: "red", width: "100%" },
+                      { num: 2, title: "Tiered Reward Release", color: "orange", width: "90%" },
+                      { num: 3, title: "Social Verification", color: "amber", width: "80%" },
+                      { num: 4, title: "Merchant KYC", color: "yellow", width: "70%" },
+                      { num: 5, title: "Behavioral Detection", color: "lime", width: "60%" },
+                      { num: 6, title: "Per-Store Limits", color: "green", width: "50%" },
+                      { num: 7, title: "Delayed Redemption", color: "emerald", width: "40%" },
+                      { num: 8, title: "Manual Review Queue", color: "teal", width: "30%" }
+                    ].map((layer, idx) => {
+                      const bgColor = layer.color === "red" ? "bg-red-500" :
+                                     layer.color === "orange" ? "bg-orange-500" :
+                                     layer.color === "amber" ? "bg-amber-500" :
+                                     layer.color === "yellow" ? "bg-yellow-500" :
+                                     layer.color === "lime" ? "bg-lime-500" :
+                                     layer.color === "green" ? "bg-green-500" :
+                                     layer.color === "emerald" ? "bg-emerald-500" :
+                                     "bg-teal-500";
+                      const textColor = layer.num <= 4 ? "text-white" : "text-slate-900";
+
+                      return (
+                        <div
+                          key={idx}
+                          className="relative mx-auto mb-2 transition-all duration-300 hover:scale-105"
+                          style={{ width: layer.width }}
+                        >
+                          <div className={`${bgColor} rounded-xl p-4 shadow-lg flex items-center justify-between gap-4`}>
+                            <div className="flex items-center gap-3 flex-1">
+                              <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                <span className={`${textColor} font-black text-lg`}>{layer.num}</span>
+                              </div>
+                              <p className={`${textColor} font-bold text-sm sm:text-base`}>{layer.title}</p>
+                            </div>
+                            <AlertCircle className={textColor} size={20} />
+                          </div>
+                        </div>
+                      );
+                    })}
+
+                    {/* Success Icon at Bottom */}
+                    <div className="flex justify-center mt-6">
+                      <div className="bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full p-4 shadow-2xl">
+                        <CheckCircle2 className="text-white" size={32} />
+                      </div>
+                    </div>
+                    <p className="text-center mt-3 text-lg font-bold text-slate-700">
+                      Verified Transaction ✓
+                    </p>
+                  </div>
+                </div>
+
+                {/* Detailed 8-Layer Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
 
                   {/* Layer 1 */}
@@ -2967,60 +3608,102 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 16: TEAM ====================
+      // ==================== SLIDE 16: TEAM (PREMIUM ✓) ====================
       case 16:
         return (
-          <div className="w-full min-h-screen bg-white py-16 px-8">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                   <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Our Team</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   Built by <span className="text-[#c9a227]">Experts</span>
                 </h2>
-                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Deep experience in cybersecurity, digital marketing, and D2C commerce
                 </p>
               </div>
 
-              {/* Founder */}
-              <div className="max-w-2xl mx-auto mb-16">
-                <div className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-3xl p-10 hover:shadow-2xl transition-all">
-                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#c9a227] to-[#a68420] mb-6 mx-auto"></div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-2 text-center">Rejaul Karim</h3>
-                  <p className="text-xl font-semibold text-[#c9a227] mb-6 text-center">Founder & CEO</p>
-                  <div className="space-y-4 text-base text-slate-700 leading-relaxed mb-6">
-                    <p>• Ex-CTO & Co-Founder of cybersecurity company</p>
-                    <p>• 6+ years in digital marketing & growth</p>
-                    <p>• Managed 120+ D2C clients across industries</p>
-                    <p>• 2M AED in ad spend managed</p>
-                    <p>• Deep expertise in performance marketing, conversion optimization, and customer acquisition</p>
-                  </div>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    {["Cybersecurity", "Digital Marketing", "D2C Commerce", "Growth", "Product Strategy"].map((skill, sidx) => (
-                      <span key={sidx} className="px-4 py-2 bg-slate-100 text-slate-700 text-sm font-medium rounded-full">
-                        {skill}
-                      </span>
-                    ))}
+              {/* Founder Card with Photo */}
+              <div className="max-w-3xl mx-auto mb-12">
+                <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all">
+                  <div className="flex flex-col md:flex-row gap-8 items-center">
+                    {/* Founder Photo */}
+                    <div className="relative flex-shrink-0">
+                      <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-[#c9a227] shadow-xl">
+                        <Image
+                          src="/rejaul.jpg"
+                          alt="Rejaul Karim - Founder & CEO"
+                          width={160}
+                          height={160}
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                      <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-[#c9a227] to-[#a68420] rounded-full flex items-center justify-center shadow-lg">
+                        <Briefcase className="text-white" size={24} />
+                      </div>
+                    </div>
+
+                    {/* Founder Info */}
+                    <div className="flex-1 text-center md:text-left">
+                      <h3 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">Rejaul Karim</h3>
+                      <p className="text-xl sm:text-2xl font-semibold text-[#c9a227] mb-4">Founder & CEO</p>
+                      <div className="space-y-2 text-base text-slate-700 leading-relaxed mb-6">
+                        <div className="flex items-start gap-2 md:justify-start justify-center">
+                          <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <p>Ex-CTO & Co-Founder of cybersecurity company</p>
+                        </div>
+                        <div className="flex items-start gap-2 md:justify-start justify-center">
+                          <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <p>6+ years in digital marketing & growth</p>
+                        </div>
+                        <div className="flex items-start gap-2 md:justify-start justify-center">
+                          <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <p>Managed 120+ D2C clients across industries</p>
+                        </div>
+                        <div className="flex items-start gap-2 md:justify-start justify-center">
+                          <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <p>2M AED in ad spend managed</p>
+                        </div>
+                        <div className="flex items-start gap-2 md:justify-start justify-center">
+                          <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
+                          <p>Deep expertise in performance marketing, conversion optimization, and customer acquisition</p>
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2 md:justify-start justify-center">
+                        {["Cybersecurity", "Digital Marketing", "D2C Commerce", "Growth", "Product Strategy"].map((skill, sidx) => (
+                          <span key={sidx} className="px-4 py-2 bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 text-slate-800 text-sm font-semibold rounded-full border border-[#c9a227]/20">
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Advisors */}
-              <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-10">
+              {/* Advisors Grid - Enhanced */}
+              <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-10 shadow-lg">
                 <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Advisors & Supporters</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
-                    { title: "Fintech Expert", desc: "Former VP at Emirates NBD", icon: Building2 },
-                    { title: "Retail Advisor", desc: "15+ years in UAE F&B", icon: Store },
-                    { title: "Tech Mentor", desc: "Ex-CTO of MENA startup", icon: Zap }
+                    { title: "Fintech Expert", desc: "Former VP at Emirates NBD", icon: Building2, color: "blue" },
+                    { title: "Retail Advisor", desc: "15+ years in UAE F&B", icon: Store, color: "emerald" },
+                    { title: "Tech Mentor", desc: "Ex-CTO of MENA startup", icon: Zap, color: "purple" }
                   ].map((advisor, idx) => {
                     const Icon = advisor.icon;
+                    const iconBg = advisor.color === "blue" ? "bg-blue-100 text-blue-600" :
+                                   advisor.color === "emerald" ? "bg-emerald-100 text-emerald-600" :
+                                   "bg-purple-100 text-purple-600";
+                    const borderColor = advisor.color === "blue" ? "border-blue-200" :
+                                       advisor.color === "emerald" ? "border-emerald-200" :
+                                       "border-purple-200";
+
                     return (
-                      <div key={idx} className="text-center">
-                        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-slate-200 mb-4">
-                          <Icon size={32} className="text-slate-600" />
+                      <div key={idx} className={`bg-white border-2 ${borderColor} rounded-2xl p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}>
+                        <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${iconBg} mb-4 shadow-md`}>
+                          <Icon size={32} />
                         </div>
                         <h4 className="text-xl font-bold text-slate-900 mb-2">{advisor.title}</h4>
                         <p className="text-base text-slate-600">{advisor.desc}</p>
@@ -4133,11 +4816,180 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 23-27: CLOSING SLIDES ====================
+      // ==================== SLIDE 23: QUESTIONS? ====================
       case 23:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-8">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="text-9xl mb-8">❓</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
+                Questions?
+              </h1>
+              <p className="text-3xl text-slate-600 mb-12 max-w-3xl mx-auto">
+                Let's discuss how Nuqta can transform local discovery in the GCC
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                  <div className="text-4xl mb-4">📧</div>
+                  <p className="text-sm font-bold text-slate-600 uppercase mb-2">Email</p>
+                  <p className="text-xl font-bold text-slate-900">rejaul@nuqta.com</p>
+                </div>
+                <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                  <div className="text-4xl mb-4">📱</div>
+                  <p className="text-sm font-bold text-slate-600 uppercase mb-2">Phone</p>
+                  <p className="text-xl font-bold text-slate-900">+971 XXX XXX XXX</p>
+                </div>
+                <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                  <div className="text-4xl mb-4">🌐</div>
+                  <p className="text-sm font-bold text-slate-600 uppercase mb-2">Website</p>
+                  <p className="text-xl font-bold text-slate-900">www.nuqta.com</p>
+                </div>
+              </div>
+
+              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#a68420] flex items-center justify-center mx-auto shadow-xl">
+                <Image src="/nuqta-logo.png" alt="Nuqta" width={64} height={64} className="object-contain p-2" />
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 24: LET'S TALK ====================
       case 24:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-8">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="text-9xl mb-8">💬</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
+                Let's <span className="text-emerald-600">Talk</span>
+              </h1>
+
+              <div className="bg-white border-2 border-emerald-200 rounded-3xl p-12 mb-12 shadow-2xl">
+                <p className="text-3xl sm:text-4xl font-black text-slate-900 mb-6">
+                  Ready to revolutionize local shopping?
+                </p>
+                <p className="text-2xl text-slate-600 mb-8 max-w-2xl mx-auto">
+                  Join us in building the future of local discovery in the GCC
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                  <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-200 rounded-2xl p-6">
+                    <p className="text-lg font-bold text-slate-900 mb-2">Pre-Seed Round</p>
+                    <p className="text-4xl font-black text-emerald-600">$500K</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-2xl p-6">
+                    <p className="text-lg font-bold text-slate-900 mb-2">Launch Timeline</p>
+                    <p className="text-4xl font-black text-blue-600">7 Days</p>
+                  </div>
+                </div>
+
+                <p className="text-xl text-slate-600">
+                  📧 <strong>rejaul@nuqta.com</strong> • 📱 <strong>+971 XXX XXX XXX</strong>
+                </p>
+              </div>
+
+              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#a68420] flex items-center justify-center mx-auto shadow-xl">
+                <Image src="/nuqta-logo.png" alt="Nuqta" width={64} height={64} className="object-contain p-2" />
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 25: JOIN US ====================
       case 25:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center p-8">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="text-9xl mb-8">🚀</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
+                Join <span className="text-[#c9a227]">Us</span>
+              </h1>
+
+              <p className="text-3xl text-slate-600 mb-12 max-w-3xl mx-auto">
+                Be part of the journey to transform how 50M people discover local deals
+              </p>
+
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-2xl text-white">
+                <h3 className="text-2xl font-bold mb-8 text-[#c9a227]">The Opportunity</h3>
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div>
+                    <p className="text-5xl font-black text-emerald-400 mb-2">$150B</p>
+                    <p className="text-sm text-slate-300">GCC TAM</p>
+                  </div>
+                  <div>
+                    <p className="text-5xl font-black text-blue-400 mb-2">30+</p>
+                    <p className="text-sm text-slate-300">Signed LOIs</p>
+                  </div>
+                  <div>
+                    <p className="text-5xl font-black text-[#c9a227] mb-2">18x</p>
+                    <p className="text-sm text-slate-300">LTV:CAC Ratio</p>
+                  </div>
+                </div>
+
+                <p className="text-xl text-slate-300 mb-6">
+                  Launching in Q1 2026 • Profitable from day one • Built for scale
+                </p>
+
+                <div className="border-t-2 border-white/10 pt-6">
+                  <p className="text-lg text-slate-300">
+                    📧 <strong className="text-white">rejaul@nuqta.com</strong>
+                  </p>
+                </div>
+              </div>
+
+              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#a68420] flex items-center justify-center mx-auto shadow-xl">
+                <Image src="/nuqta-logo.png" alt="Nuqta" width={64} height={64} className="object-contain p-2" />
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 26: THANK YOU ====================
       case 26:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center p-8">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="text-9xl mb-8">🙏</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
+                Thank <span className="text-purple-600">You</span>
+              </h1>
+
+              <div className="bg-white border-2 border-purple-200 rounded-3xl p-12 mb-12 shadow-2xl">
+                <p className="text-3xl font-bold text-slate-900 mb-6">
+                  For your time and consideration
+                </p>
+                <p className="text-2xl text-slate-600 mb-10 max-w-2xl mx-auto">
+                  We're building something special—and we'd love to have you as part of the journey
+                </p>
+
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-8">
+                  <p className="text-lg font-bold text-slate-900 mb-4">Key Takeaway</p>
+                  <p className="text-2xl text-slate-700 italic leading-relaxed">
+                    "Nuqta makes finding the best local deals <span className="font-black text-purple-600">54x faster</span> than traditional search, while creating sustainable value for merchants and banks."
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-center gap-8 mb-8">
+                <div className="text-center">
+                  <p className="text-sm text-slate-600 mb-2">Contact</p>
+                  <p className="text-lg font-bold text-slate-900">rejaul@nuqta.com</p>
+                </div>
+                <div className="w-1 h-12 bg-slate-300"></div>
+                <div className="text-center">
+                  <p className="text-sm text-slate-600 mb-2">Website</p>
+                  <p className="text-lg font-bold text-slate-900">www.nuqta.com</p>
+                </div>
+              </div>
+
+              <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#a68420] flex items-center justify-center mx-auto shadow-xl">
+                <Image src="/nuqta-logo.png" alt="Nuqta" width={64} height={64} className="object-contain p-2" />
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 27: CONTACT INFO ====================
       case 27:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white flex items-center justify-center p-8">
@@ -4146,28 +4998,41 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <Image src="/nuqta-logo.png" alt="Nuqta" width={96} height={96} className="object-contain p-4" />
               </div>
 
-              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8 tracking-tight">
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-4 tracking-tight">
                 Nuqta
               </h1>
 
-              <p className="text-4xl text-slate-600 font-light mb-12">
+              <p className="text-4xl text-[#c9a227] font-bold mb-12">
                 Find Deals Before Google
               </p>
 
               <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-xl">
-                <p className="text-3xl font-bold text-slate-900 mb-6">
+                <p className="text-3xl font-bold text-slate-900 mb-8">
                   Let's build the future of local discovery together
                 </p>
-                <div className="space-y-4 text-xl text-slate-600">
-                  <p>📧 rejaul@nuqta.com</p>
-                  <p>📱 +971 XXX XXX XXX</p>
-                  <p>🌐 www.nuqta.com</p>
+                <div className="space-y-6 text-2xl text-slate-700">
+                  <div className="flex items-center justify-center gap-4">
+                    <span className="text-3xl">📧</span>
+                    <p className="font-semibold">rejaul@nuqta.com</p>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                    <span className="text-3xl">📱</span>
+                    <p className="font-semibold">+971 XXX XXX XXX</p>
+                  </div>
+                  <div className="flex items-center justify-center gap-4">
+                    <span className="text-3xl">🌐</span>
+                    <p className="font-semibold">www.nuqta.com</p>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-2xl text-slate-500">
-                Thank you for your time
-              </p>
+              <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-2xl p-6">
+                <p className="text-lg text-slate-700">
+                  <span className="font-bold text-emerald-600">Pre-Seed Round: $500K</span> •
+                  <span className="font-bold text-blue-600"> Launch: Q1 2026</span> •
+                  <span className="font-bold text-purple-600"> 30+ LOIs</span>
+                </p>
+              </div>
             </div>
           </div>
         );
