@@ -262,35 +262,35 @@ export default function MasterRoadmapPage() {
               </div>
             </a>
 
-            <div className="bg-white rounded-xl p-6 border-2 border-slate-200">
+            <a href="/h3-infrastructure" className="block bg-white rounded-xl p-6 border-2 border-emerald-200 hover:border-emerald-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-slate-700 mb-2">H3 Infrastructure (Years 3-5)</h3>
+                  <h3 className="text-xl font-black text-emerald-700 mb-2">H3 Infrastructure (Years 3-5)</h3>
                   <p className="text-sm text-slate-700">Become Infrastructure - WaaS, government partnerships, data monetization</p>
                 </div>
-                <span className="text-slate-400 text-sm">Available in docs</span>
+                <span className="text-emerald-500 text-2xl">→</span>
               </div>
-            </div>
+            </a>
 
-            <div className="bg-white rounded-xl p-6 border-2 border-slate-200">
+            <a href="/phase-2" className="block bg-white rounded-xl p-6 border-2 border-cyan-200 hover:border-cyan-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-slate-700 mb-2">Phase 2: KSA + Qatar (Years 6-8)</h3>
+                  <h3 className="text-xl font-black text-cyan-700 mb-2">Phase 2: KSA + Qatar (Years 6-8)</h3>
                   <p className="text-sm text-slate-700">GCC Expansion - Exporting proven system to larger markets</p>
                 </div>
-                <span className="text-slate-400 text-sm">Available in docs</span>
+                <span className="text-cyan-500 text-2xl">→</span>
               </div>
-            </div>
+            </a>
 
-            <div className="bg-white rounded-xl p-6 border-2 border-slate-200">
+            <a href="/phase-3" className="block bg-white rounded-xl p-6 border-2 border-pink-200 hover:border-pink-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-slate-700 mb-2">Phase 3: Full GCC (Years 9-10)</h3>
+                  <h3 className="text-xl font-black text-pink-700 mb-2">Phase 3: Full GCC (Years 9-10)</h3>
                   <p className="text-sm text-slate-700">Infrastructure Lock-In - Kuwait, Bahrain, Oman top-down entry</p>
                 </div>
-                <span className="text-slate-400 text-sm">Available in docs</span>
+                <span className="text-pink-500 text-2xl">→</span>
               </div>
-            </div>
+            </a>
 
             <div className="bg-white rounded-xl p-6 border-2 border-slate-200">
               <div className="flex items-center justify-between">

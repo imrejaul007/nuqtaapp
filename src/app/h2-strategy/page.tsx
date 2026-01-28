@@ -31,7 +31,9 @@ export default function H2StrategyPage() {
               ← H1 Plan
             </a>
             <div className="text-purple-400">•</div>
-            <div className="text-purple-300">Next: H3 Infrastructure</div>
+            <a href="/h3-infrastructure" className="text-purple-300 hover:text-white transition-colors font-semibold underline">
+              H3 Infrastructure →
+            </a>
           </div>
         </div>
       </div>

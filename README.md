@@ -18,8 +18,11 @@ Nuqta's complete strategic roadmap is documented in the following files:
 ### Web Views
 
 - [Master Roadmap](http://localhost:3000/master-roadmap) - Interactive 10-year strategic framework
-- [H1 Execution Plan](http://localhost:3000/execution-plan) - Interactive web version of H1 strategy
-- [H2 Strategy](http://localhost:3000/h2-strategy) - Interactive web version of H2 strategy
+- [H1 Execution Plan](http://localhost:3000/execution-plan) - Interactive web version of H1 strategy (Year 1: Prove the Loop)
+- [H2 Strategy](http://localhost:3000/h2-strategy) - Interactive web version of H2 strategy (Year 2: Scale Responsibly)
+- [H3 Infrastructure](http://localhost:3000/h3-infrastructure) - Interactive web version of H3 strategy (Years 3-5: Become Infrastructure)
+- [Phase 2 Expansion](http://localhost:3000/phase-2) - Interactive web version of Phase 2 strategy (Years 6-8: KSA + Qatar)
+- [Phase 3 Full GCC](http://localhost:3000/phase-3) - Interactive web version of Phase 3 strategy (Years 9-10: Kuwait + Bahrain + Oman)
 - [Pitch Deck](http://localhost:3000/deck-kang) - Investor presentation
 
 ## Getting Started
