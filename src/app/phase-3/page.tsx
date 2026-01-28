@@ -499,6 +499,105 @@ export default function Phase3Page() {
           </div>
         </div>
 
+        {/* Timeline & Exit Readiness */}
+        <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Timeline */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border-2 border-blue-500/40 rounded-2xl p-8">
+              <h2 className="text-3xl font-black mb-6 text-blue-300">📅 Phase 3 Timeline</h2>
+              <div className="space-y-4">
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-blue-300">Standard Timeline</span>
+                    <span className="text-sm text-slate-400">Years 9-10 (2 years)</span>
+                  </div>
+                  <p className="text-sm text-slate-300">Kuwait (8 months) + Bahrain (6 months) + Oman (10 months)</p>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-emerald-300">Accelerated Timeline</span>
+                    <span className="text-sm font-black text-emerald-400">~10 months</span>
+                  </div>
+                  <p className="text-sm text-slate-300">Parallel entry: All 3 countries simultaneously with institutional partnerships</p>
+                </div>
+                <div className="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 rounded-xl p-4">
+                  <p className="text-sm font-bold text-emerald-300 mb-1">⚡ Acceleration Strategy</p>
+                  <p className="text-xs text-slate-300">Pre-negotiated institutional deals, shared regional team, simultaneous mall launches</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Exit Readiness Metrics */}
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-2xl p-8">
+              <h2 className="text-3xl font-black mb-6 text-purple-300">🎯 Exit Readiness Metrics</h2>
+              <p className="text-sm text-slate-300 mb-6">Required for Series C / IPO / Acquisition:</p>
+              <div className="space-y-3">
+                <div className="bg-purple-500/10 border-l-4 border-purple-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Annual Revenue</span>
+                    <span className="text-lg font-black text-purple-300">AED 400M+</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">$110M+ (minimum for NASDAQ)</p>
+                </div>
+                <div className="bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">EBITDA Margin</span>
+                    <span className="text-lg font-black text-blue-300">≥55%</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">Best-in-class SaaS margins</p>
+                </div>
+                <div className="bg-emerald-500/10 border-l-4 border-emerald-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">WaaS Partnerships</span>
+                    <span className="text-lg font-black text-emerald-300">15+</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">Institutional lock-in</p>
+                </div>
+                <div className="bg-amber-500/10 border-l-4 border-amber-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Gov Partnerships</span>
+                    <span className="text-lg font-black text-amber-300">10+</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">Public infrastructure status</p>
+                </div>
+                <div className="bg-pink-500/10 border-l-4 border-pink-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Revenue Visibility</span>
+                    <span className="text-lg font-black text-pink-300">18-24mo</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">From SaaS contracts</p>
+                </div>
+              </div>
+              <div className="mt-6 bg-purple-500/10 border border-purple-500/30 rounded-xl p-4">
+                <p className="text-xs font-bold text-purple-300 mb-1">Exit Valuation Range:</p>
+                <p className="text-xs text-slate-300">$800M-$2.3B depending on buyer (bank vs payment network vs tech giant)</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Exit Options Summary */}
+          <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-2xl p-8">
+            <h3 className="text-2xl font-black mb-6 text-center text-[#c9a227]">End of Phase 3: GCC Infrastructure Complete</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-white/80 rounded-xl p-6 text-center">
+                <p className="text-sm font-bold text-slate-700 mb-2">Strategic Acquisition</p>
+                <p className="text-3xl font-black text-purple-600 mb-2">$1.1B-1.7B</p>
+                <p className="text-xs text-slate-600">Payment networks, regional banks, telecom</p>
+              </div>
+              <div className="bg-white/80 rounded-xl p-6 text-center">
+                <p className="text-sm font-bold text-slate-700 mb-2">IPO (NASDAQ)</p>
+                <p className="text-3xl font-black text-blue-600 mb-2">$1.1B-1.7B</p>
+                <p className="text-xs text-slate-600">10-15x revenue at $110M ARR</p>
+              </div>
+              <div className="bg-white/80 rounded-xl p-6 text-center">
+                <p className="text-sm font-bold text-slate-700 mb-2">Sovereign Buyout</p>
+                <p className="text-3xl font-black text-emerald-600 mb-2">$900M-1.4B</p>
+                <p className="text-xs text-slate-600">Mubadala, PIF, QIA strategic asset</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center space-y-6 py-12">
           <h2 className="text-4xl font-black">Navigate Strategy</h2>

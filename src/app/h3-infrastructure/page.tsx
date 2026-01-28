@@ -368,6 +368,88 @@ export default function H3InfrastructurePage() {
           </div>
         </div>
 
+        {/* Timeline & KPI Gates */}
+        <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Timeline */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border-2 border-blue-500/40 rounded-2xl p-8">
+              <h2 className="text-3xl font-black mb-6 text-blue-300">📅 H3 Timeline</h2>
+              <div className="space-y-4">
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-blue-300">Standard Timeline</span>
+                    <span className="text-sm text-slate-400">Years 3-5 (3 years)</span>
+                  </div>
+                  <p className="text-sm text-slate-300">Original plan: 3 years to become infrastructure</p>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-emerald-300">Accelerated Timeline</span>
+                    <span className="text-sm font-black text-emerald-400">~1.2 years</span>
+                  </div>
+                  <p className="text-sm text-slate-300">60% faster: Complete in Years 2-3.2 with aggressive execution</p>
+                </div>
+                <div className="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 rounded-xl p-4">
+                  <p className="text-sm font-bold text-emerald-300 mb-1">⚡ Acceleration Strategy</p>
+                  <p className="text-xs text-slate-300">Parallel partnership negotiations, faster mall rollouts, early government pilots</p>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI Gate to Phase 2 */}
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-2xl p-8">
+              <h2 className="text-3xl font-black mb-6 text-purple-300">🎯 H3 → Phase 2 KPI Gate</h2>
+              <p className="text-sm text-slate-300 mb-6">Critical gates before geographic expansion:</p>
+              <div className="space-y-3">
+                <div className="bg-purple-500/10 border-l-4 border-purple-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">UAE Merchant Churn</span>
+                    <span className="text-lg font-black text-purple-300">≤8%</span>
+                  </div>
+                </div>
+                <div className="bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">EBITDA Margin</span>
+                    <span className="text-lg font-black text-blue-300">≥30%</span>
+                  </div>
+                </div>
+                <div className="bg-emerald-500/10 border-l-4 border-emerald-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">WaaS Partnerships</span>
+                    <span className="text-lg font-black text-emerald-300">≥5</span>
+                  </div>
+                </div>
+                <div className="bg-amber-500/10 border-l-4 border-amber-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Gov Partnerships</span>
+                    <span className="text-lg font-black text-amber-300">≥2</span>
+                  </div>
+                </div>
+                <div className="bg-pink-500/10 border-l-4 border-pink-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Fraud Rate</span>
+                    <span className="text-lg font-black text-pink-300">≤2%</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 bg-purple-500/10 border border-purple-500/30 rounded-xl p-4">
+                <p className="text-xs font-bold text-purple-300 mb-1">Early Gate Rule:</p>
+                <p className="text-xs text-slate-300">Hit all gates 6+ months early with strong metrics → greenlight Phase 2</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Next Phase Preview */}
+          <div className="bg-gradient-to-r from-cyan-900/40 to-blue-900/40 border-2 border-cyan-500/40 rounded-2xl p-8 text-center">
+            <p className="text-sm font-bold text-cyan-300 mb-2">AFTER H3 GATE ✅</p>
+            <h3 className="text-3xl font-black mb-4">Next: Phase 2 GCC Expansion</h3>
+            <p className="text-slate-300 mb-6">Qatar (pilot), Saudi Arabia (3 cities), replicate proven playbook regionally</p>
+            <a href="/phase-2" className="inline-block px-8 py-3 bg-cyan-500 hover:bg-cyan-600 transition-colors rounded-xl font-bold text-white">
+              View Phase 2 Strategy →
+            </a>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center space-y-6 py-12">
           <h2 className="text-4xl font-black">Navigate Strategy</h2>

@@ -523,6 +523,86 @@ export default function Phase2Page() {
           </div>
         </div>
 
+        {/* Timeline & KPI Gates */}
+        <div className="space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Timeline */}
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border-2 border-blue-500/40 rounded-2xl p-8">
+              <h2 className="text-3xl font-black mb-6 text-blue-300">📅 Phase 2 Timeline</h2>
+              <div className="space-y-4">
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-blue-300">Standard Timeline</span>
+                    <span className="text-sm text-slate-400">Years 6-8 (3 years)</span>
+                  </div>
+                  <p className="text-sm text-slate-300">Qatar pilot (9 months) + Saudi expansion (24 months)</p>
+                </div>
+                <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-emerald-300">Accelerated Timeline</span>
+                    <span className="text-sm font-black text-emerald-400">~1.2 years</span>
+                  </div>
+                  <p className="text-sm text-slate-300">Qatar (3-4 months) + Saudi (9-10 months) with top-down approach</p>
+                </div>
+                <div className="bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 rounded-xl p-4">
+                  <p className="text-sm font-bold text-emerald-300 mb-1">⚡ Acceleration Strategy</p>
+                  <p className="text-xs text-slate-300">Pre-launch partnerships, chain HQ deals (not store-by-store), government alignment before launch</p>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI Gate to Phase 3 */}
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-2xl p-8">
+              <h2 className="text-3xl font-black mb-6 text-purple-300">🎯 Phase 2 → Phase 3 KPI Gate</h2>
+              <p className="text-sm text-slate-300 mb-6">Required before Kuwait/Bahrain/Oman entry:</p>
+              <div className="space-y-3">
+                <div className="bg-purple-500/10 border-l-4 border-purple-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Total Active Users</span>
+                    <span className="text-lg font-black text-purple-300">150K+</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">Across UAE, Qatar, Saudi</p>
+                </div>
+                <div className="bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Countries Live</span>
+                    <span className="text-lg font-black text-blue-300">3</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">UAE + Qatar + Saudi operational</p>
+                </div>
+                <div className="bg-emerald-500/10 border-l-4 border-emerald-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Cross-Border Usage</span>
+                    <span className="text-lg font-black text-emerald-300">≥10%</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">Users active in 2+ countries</p>
+                </div>
+                <div className="bg-amber-500/10 border-l-4 border-amber-500 rounded-lg p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-white text-sm">Enterprise Revenue</span>
+                    <span className="text-lg font-black text-amber-300">≥25%</span>
+                  </div>
+                  <p className="text-xs text-slate-400 mt-1">% from SaaS + data (non-GMV)</p>
+                </div>
+              </div>
+              <div className="mt-6 bg-purple-500/10 border border-purple-500/30 rounded-xl p-4">
+                <p className="text-xs font-bold text-purple-300 mb-1">Acceleration Rule:</p>
+                <p className="text-xs text-slate-300">Hit gates 4+ months early → Phase 3 pilot in Kuwait/Bahrain immediately</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Next Phase Preview */}
+          <div className="bg-gradient-to-r from-pink-900/40 to-purple-900/40 border-2 border-pink-500/40 rounded-2xl p-8 text-center">
+            <p className="text-sm font-bold text-pink-300 mb-2">AFTER PHASE 2 GATE ✅</p>
+            <h3 className="text-3xl font-black mb-4">Next: Phase 3 Full GCC Infrastructure</h3>
+            <p className="text-slate-300 mb-6">Kuwait, Bahrain, Oman - top-down institutional entry, complete regional lock-in</p>
+            <a href="/phase-3" className="inline-block px-8 py-3 bg-pink-500 hover:bg-pink-600 transition-colors rounded-xl font-bold text-white">
+              View Phase 3 Strategy →
+            </a>
+          </div>
+        </div>
+
         {/* CTA Section */}
         <div className="text-center space-y-6 py-12">
           <h2 className="text-4xl font-black">Navigate Strategy</h2>

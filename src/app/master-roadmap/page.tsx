@@ -160,6 +160,80 @@ export default function MasterRoadmapPage() {
           </div>
         </div>
 
+        {/* Accelerated Timeline */}
+        <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8 mb-12">
+          <h2 className="text-3xl font-black text-slate-900 mb-8">⚡ Accelerated Timeline (60% Faster)</h2>
+          <p className="text-lg text-slate-700 mb-8">
+            With aggressive execution and early KPI achievement, Nuqta can compress the 10-year roadmap to ~4 years:
+          </p>
+
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full bg-white rounded-2xl overflow-hidden shadow-sm border-2 border-amber-200">
+              <thead className="bg-amber-100">
+                <tr>
+                  <th className="text-left p-3 font-bold text-slate-700">Phase/Horizon</th>
+                  <th className="text-center p-3 font-bold text-slate-700">Standard</th>
+                  <th className="text-center p-3 font-bold text-amber-700">Accelerated</th>
+                  <th className="text-left p-3 font-bold text-slate-700">Key Strategy</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 text-sm">
+                <tr className="hover:bg-blue-50">
+                  <td className="p-3 font-bold text-blue-700">H1: Prove Loop</td>
+                  <td className="p-3 text-center text-slate-600">12 months</td>
+                  <td className="p-3 text-center font-black text-amber-600">~5 months</td>
+                  <td className="p-3 text-slate-600">Parallel events, faster merchant cycles</td>
+                </tr>
+                <tr className="hover:bg-purple-50">
+                  <td className="p-3 font-bold text-purple-700">H2: Scale</td>
+                  <td className="p-3 text-center text-slate-600">6 months</td>
+                  <td className="p-3 text-center font-black text-amber-600">~2.5 months</td>
+                  <td className="p-3 text-slate-600">Simultaneous category launches</td>
+                </tr>
+                <tr className="hover:bg-emerald-50">
+                  <td className="p-3 font-bold text-emerald-700">H3: Infrastructure</td>
+                  <td className="p-3 text-center text-slate-600">3 years</td>
+                  <td className="p-3 text-center font-black text-amber-600">~1.2 years</td>
+                  <td className="p-3 text-slate-600">Parallel partnerships</td>
+                </tr>
+                <tr className="hover:bg-cyan-50">
+                  <td className="p-3 font-bold text-cyan-700">Phase 2: GCC</td>
+                  <td className="p-3 text-center text-slate-600">3 years</td>
+                  <td className="p-3 text-center font-black text-amber-600">~1.2 years</td>
+                  <td className="p-3 text-slate-600">Pre-launch deals, chain HQ</td>
+                </tr>
+                <tr className="hover:bg-pink-50">
+                  <td className="p-3 font-bold text-pink-700">Phase 3: Complete</td>
+                  <td className="p-3 text-center text-slate-600">2 years</td>
+                  <td className="p-3 text-center font-black text-amber-600">~10 months</td>
+                  <td className="p-3 text-slate-600">Parallel 3-country entry</td>
+                </tr>
+                <tr className="bg-amber-100 font-bold">
+                  <td className="p-3 text-amber-900">TOTAL</td>
+                  <td className="p-3 text-center text-slate-700">10 years</td>
+                  <td className="p-3 text-center text-2xl text-amber-700">~4 years</td>
+                  <td className="p-3 text-amber-700">Exit-ready by Year 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white rounded-xl p-4 border-2 border-amber-200">
+              <p className="text-xs text-slate-600 mb-1">Time to Exit</p>
+              <p className="text-lg font-black text-amber-700">10yr → 4yr (60% faster)</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 border-2 border-blue-200">
+              <p className="text-xs text-slate-600 mb-1">Same Target Revenue</p>
+              <p className="text-lg font-black text-blue-700">AED 420M ($115M)</p>
+            </div>
+            <div className="bg-white rounded-xl p-4 border-2 border-purple-200">
+              <p className="text-xs text-slate-600 mb-1">Same Exit Valuation</p>
+              <p className="text-lg font-black text-purple-700">$800M-$2.3B</p>
+            </div>
+          </div>
+        </div>
+
         {/* Financial Trajectory */}
         <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-3xl p-8 mb-12">
           <h2 className="text-3xl font-black text-slate-900 mb-8">📈 10-Year Financial Trajectory</h2>

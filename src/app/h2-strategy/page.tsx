@@ -869,6 +869,84 @@ export default function H2StrategyPage() {
           </div>
         </section>
 
+        {/* Timeline & KPI Gates */}
+        <section className="mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Timeline */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-3xl p-8">
+              <h2 className="text-3xl font-black text-slate-900 mb-6">📅 H2 Timeline</h2>
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl p-4 border-2 border-blue-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-blue-700">Standard Timeline</span>
+                    <span className="text-sm text-slate-500">Months 7-12 (6 months)</span>
+                  </div>
+                  <p className="text-sm text-slate-600">Original plan: 6 months to scale categories and geography</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-2 border-emerald-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-emerald-700">Accelerated Timeline</span>
+                    <span className="text-sm font-black text-emerald-600">~2.5 months</span>
+                  </div>
+                  <p className="text-sm text-slate-600">60% faster: Complete in Months 6-8.5 with parallel execution</p>
+                </div>
+                <div className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white rounded-xl p-4">
+                  <p className="text-sm font-bold mb-1">⚡ Acceleration Strategy</p>
+                  <p className="text-xs">Simultaneous category launches, faster partnership cycles, aggressive geographic expansion</p>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI Gate to H3 */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-3xl p-8">
+              <h2 className="text-3xl font-black text-slate-900 mb-6">🎯 H2 → H3 KPI Gate</h2>
+              <p className="text-sm text-slate-600 mb-6">Must sustain ALL metrics for 3 consecutive months:</p>
+              <div className="space-y-3">
+                <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Monthly Active Users</span>
+                    <span className="text-lg font-black text-purple-600">75,000+</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">D30 Retention</span>
+                    <span className="text-lg font-black text-blue-600">≥30%</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-emerald-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Campaign Usage</span>
+                    <span className="text-lg font-black text-emerald-600">≥40%</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-1">% of merchants actively using campaign tools</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Cross-Category Usage</span>
+                    <span className="text-lg font-black text-amber-600">≥30%</span>
+                  </div>
+                  <p className="text-xs text-slate-500 mt-1">% of users active in 2+ categories</p>
+                </div>
+              </div>
+              <div className="mt-6 bg-purple-100 rounded-xl p-4">
+                <p className="text-xs font-bold text-purple-900 mb-1">Early Acceleration Rule:</p>
+                <p className="text-xs text-purple-800">If KPIs exceed by 20%+ for 3 months → advance to H3 early</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Next Phase Preview */}
+          <div className="bg-gradient-to-r from-emerald-900 to-teal-900 text-white rounded-3xl p-8 text-center">
+            <p className="text-sm font-bold text-emerald-300 mb-2">AFTER H2 GATE ✅</p>
+            <h3 className="text-3xl font-black mb-4">Next: H3 Become Infrastructure</h3>
+            <p className="text-slate-300 mb-6">WaaS partnerships, government integrations, data monetization, enterprise SaaS revenue</p>
+            <a href="/h3-infrastructure" className="inline-block px-8 py-3 bg-emerald-500 hover:bg-emerald-600 transition-colors rounded-xl font-bold">
+              View H3 Strategy →
+            </a>
+          </div>
+        </section>
+
         {/* Footer CTA */}
         <div className="bg-gradient-to-r from-purple-900 to-indigo-900 rounded-3xl p-12 text-center text-white">
           <h3 className="text-3xl font-black mb-4">H2 2026: Scale Responsibly, Build Defensibility</h3>

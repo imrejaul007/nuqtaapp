@@ -1025,6 +1025,82 @@ export default function ExecutionPlanPage() {
           </div>
         </section>
 
+        {/* Timeline & KPI Gate */}
+        <section className="mb-20">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Timeline */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-3xl p-8">
+              <h2 className="text-3xl font-black text-slate-900 mb-6">📅 H1 Timeline</h2>
+              <div className="space-y-4">
+                <div className="bg-white rounded-xl p-4 border-2 border-blue-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-blue-700">Standard Timeline</span>
+                    <span className="text-sm text-slate-500">12 months</span>
+                  </div>
+                  <p className="text-sm text-slate-600">Original plan: Full year to prove the loop</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-2 border-emerald-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-bold text-emerald-700">Accelerated Timeline</span>
+                    <span className="text-sm font-black text-emerald-600">~5 months</span>
+                  </div>
+                  <p className="text-sm text-slate-600">60% faster: Hit KPI gates in 4-5 months with aggressive execution</p>
+                </div>
+                <div className="bg-gradient-to-r from-emerald-500 to-blue-500 text-white rounded-xl p-4">
+                  <p className="text-sm font-bold mb-1">⚡ Acceleration Strategy</p>
+                  <p className="text-xs">Parallel event execution, faster merchant onboarding cycles, increased marketing spend</p>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI Gate to H2 */}
+            <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-3xl p-8">
+              <h2 className="text-3xl font-black text-slate-900 mb-6">🎯 H1 → H2 KPI Gate</h2>
+              <p className="text-sm text-slate-600 mb-6">Must achieve ALL metrics for 2 consecutive months to advance:</p>
+              <div className="space-y-3">
+                <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Monthly Active Users</span>
+                    <span className="text-lg font-black text-purple-600">10,000+</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-blue-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">D30 Retention</span>
+                    <span className="text-lg font-black text-blue-600">≥25%</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-emerald-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Merchant Churn</span>
+                    <span className="text-lg font-black text-emerald-600">≤10%</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-amber-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Active Merchants</span>
+                    <span className="text-lg font-black text-amber-600">250+</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 bg-purple-100 rounded-xl p-4">
+                <p className="text-xs font-bold text-purple-900 mb-1">Early Acceleration Rule:</p>
+                <p className="text-xs text-purple-800">If KPIs exceed thresholds by 20%+ for 2 months → advance to H2 immediately</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Next Phase Preview */}
+          <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white rounded-3xl p-8 text-center">
+            <p className="text-sm font-bold text-purple-300 mb-2">AFTER H1 GATE ✅</p>
+            <h3 className="text-3xl font-black mb-4">Next: H2 Scale Responsibly</h3>
+            <p className="text-slate-300 mb-6">New categories (gyms, salons, healthcare), platform upgrades, geographic expansion within UAE</p>
+            <a href="/h2-strategy" className="inline-block px-8 py-3 bg-purple-500 hover:bg-purple-600 transition-colors rounded-xl font-bold">
+              View H2 Strategy →
+            </a>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="text-center">
           <div className="bg-gradient-to-r from-[#0a1628] to-[#1a2a42] text-white rounded-3xl p-12">
