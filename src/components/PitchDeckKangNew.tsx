@@ -178,208 +178,299 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 1: SHOPPER PROBLEM - DASHBOARD STYLE ====================
+      // ==================== SLIDE 1: SHOPPER PROBLEM - UPGRADED VISUAL STORYTELLING ====================
       case 1:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 to-white py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50/30 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
 
-              {/* Header */}
-              <div className="mb-12">
-                <div className="inline-block px-3 py-1 bg-red-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Problem #1</p>
+            <div className="max-w-7xl mx-auto relative z-10">
+
+              {/* Header with emotional hook */}
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mb-6 shadow-lg">
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">The Hidden Tragedy</p>
                 </div>
-                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-4">
-                  Shoppers Waste <span className="text-red-600">AED 2.4B</span>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                  Shoppers Waste <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">AED 2.4B</span> Annually
                 </h2>
-                <p className="text-xl text-slate-600 max-w-2xl">
-                  Every year, UAE shoppers overpay because they can't find local deals
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                  95% of offline spending gets <span className="font-bold text-red-600">zero rewards</span>.
+                  That's AED 684 per person, every year, left on the table.
                 </p>
               </div>
 
-              {/* Big Stat Card */}
-              <div className="bg-gradient-to-br from-red-500 to-red-600 rounded-3xl p-12 mb-10 shadow-2xl">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                  <div className="text-white">
-                    <p className="text-lg mb-2 opacity-90">Average Loss Per Shopper/Year</p>
-                    <p className="text-8xl font-black tracking-tight">
-                      <AnimatedNumber value={684} prefix="AED " duration={2000} />
-                    </p>
-                  </div>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 text-white">
-                    <p className="text-sm mb-1">Total Market Loss</p>
-                    <p className="text-4xl font-black">AED 2.4B</p>
+              {/* Hero Stat - Dramatic Visual */}
+              <div className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 rounded-3xl p-8 sm:p-12 mb-12 shadow-2xl relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+
+                <div className="relative z-10">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div className="text-white">
+                      <p className="text-sm sm:text-base mb-3 opacity-90 uppercase tracking-wider font-bold">Every Shopper Loses Per Year</p>
+                      <p className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tight mb-4">
+                        <AnimatedNumber value={684} prefix="AED " duration={2000} />
+                      </p>
+                      <p className="text-lg opacity-90">Just by shopping at places without cashback</p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
+                        <p className="text-sm text-white/80 mb-2">Total Market Loss</p>
+                        <p className="text-3xl font-black text-white">AED 2.4B</p>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
+                        <p className="text-sm text-white/80 mb-2">Offline Spend</p>
+                        <p className="text-3xl font-black text-white">95%</p>
+                      </div>
+                      <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30 col-span-2">
+                        <p className="text-sm text-white/80 mb-2">Without Rewards</p>
+                        <p className="text-3xl font-black text-white">AED 684/person</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* 3 Pain Points - Card Grid */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white border-2 border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                  <div className="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
-                    <Search className="text-red-600" size={28} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Can't Find Deals</h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">
-                    Search "coffee deals near me" — get Google ads, not local offers
-                  </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-3xl font-black text-red-600">73%</p>
-                    <p className="text-sm text-slate-500">Don't know local deals exist</p>
+              {/* 3 Pain Points - Enhanced Cards with Better Visual Hierarchy */}
+              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+                {/* Pain Point 1 */}
+                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <Search className="text-white" size={32} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Can't Find Deals</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      Search "coffee deals near me" — get Google ads, not actual offers from local cafés
+                    </p>
+                    <div className="bg-red-50 rounded-xl p-4 border-l-4 border-red-500">
+                      <p className="text-4xl font-black text-red-600 mb-1">73%</p>
+                      <p className="text-sm text-slate-600 font-medium">Don't know local deals exist</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                  <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
-                    <Lock className="text-orange-600" size={28} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Gated Rewards</h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">
-                    Points expire, minimum spends, blackout dates — rewards feel impossible
-                  </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-3xl font-black text-orange-600">AED 450M</p>
-                    <p className="text-sm text-slate-500">Unredeemed points/year</p>
+                {/* Pain Point 2 */}
+                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-orange-200 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <Lock className="text-white" size={32} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Gated Rewards</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      Points expire, minimum spends, blackout dates — rewards designed to never be used
+                    </p>
+                    <div className="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500">
+                      <p className="text-4xl font-black text-orange-600 mb-1">AED 450M</p>
+                      <p className="text-sm text-slate-600 font-medium">Unredeemed points per year</p>
+                    </div>
                   </div>
                 </div>
 
-                <div className="bg-white border-2 border-slate-200 rounded-2xl p-8 hover:shadow-xl transition-shadow">
-                  <div className="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
-                    <CreditCard className="text-yellow-600" size={28} />
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">No Local Cashback</h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">
-                    Credit cards reward Amazon, not the café downstairs
-                  </p>
-                  <div className="pt-4 border-t border-slate-200">
-                    <p className="text-3xl font-black text-yellow-600">0.5%</p>
-                    <p className="text-sm text-slate-500">Avg cashback on local purchases</p>
+                {/* Pain Point 3 */}
+                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <CreditCard className="text-white" size={32} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">No Local Cashback</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      Credit cards reward Amazon, not the café downstairs — local businesses get forgotten
+                    </p>
+                    <div className="bg-yellow-50 rounded-xl p-4 border-l-4 border-yellow-500">
+                      <p className="text-4xl font-black text-yellow-600 mb-1">0.5%</p>
+                      <p className="text-sm text-slate-600 font-medium">Avg cashback on local purchases</p>
+                    </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Bottom Callout - Emotional Impact */}
+              <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-center shadow-2xl">
+                <p className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                  The result? <span className="text-red-400">3.5 million shoppers</span> leave money on the table, every single day.
+                </p>
+                <p className="text-lg text-slate-300">
+                  While e-commerce gets 2-5% cashback, offline gets <span className="font-bold text-yellow-400">almost nothing</span>.
+                </p>
               </div>
 
             </div>
           </div>
         );
 
-      // ==================== SLIDE 2: MERCHANT PROBLEM - METRICS DASHBOARD ====================
+      // ==================== SLIDE 2: MERCHANT PROBLEM - UPGRADED VISUAL STORYTELLING ====================
       case 2:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50/30 to-white py-16 px-8">
-            <div className="max-w-7xl mx-auto">
+          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-red-50/30 to-white py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
 
-              {/* Header */}
-              <div className="mb-12">
-                <div className="inline-block px-3 py-1 bg-orange-100 rounded-full mb-4">
-                  <p className="text-xs font-bold text-orange-700 uppercase tracking-wider">Problem #2</p>
+            <div className="max-w-7xl mx-auto relative z-10">
+
+              {/* Header with emotional hook */}
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mb-6 shadow-lg">
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">The Other Side</p>
                 </div>
-                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-4">
-                  Merchants Burn <span className="text-orange-600">AED 12B/Year</span>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                  Merchants Burn <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">AED 12B/Year</span>
                 </h2>
-                <p className="text-xl text-slate-600 max-w-2xl">
-                  High CAC, low retention, razor-thin margins
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                  Google Ads cost <span className="font-bold text-red-600">AED 200/customer</span> with zero guarantee.
+                  Small merchants can't compete, can't retain, can't survive.
                 </p>
               </div>
 
-              {/* 4 Metric Cards - Horizontal */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-                <div className="bg-white border-l-4 border-red-500 rounded-xl p-6 shadow-md">
-                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">CAC</p>
-                  <p className="text-4xl font-black text-red-600 mb-1">
-                    <AnimatedNumber value={200} prefix="AED " duration={1500} />
-                  </p>
-                  <p className="text-sm text-slate-600">Digital Ads</p>
+              {/* Dramatic Metrics Dashboard - 4 Key Stats */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div className="group bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
+                  <div className="relative z-10">
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">CAC (Digital)</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
+                      <AnimatedNumber value={200} prefix="AED " duration={1500} />
+                    </p>
+                    <p className="text-sm text-white/90 font-medium">3x higher than sustainable</p>
+                  </div>
                 </div>
-                <div className="bg-white border-l-4 border-orange-500 rounded-xl p-6 shadow-md">
-                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Repeat Rate</p>
-                  <p className="text-4xl font-black text-orange-600 mb-1">
-                    <AnimatedNumber value={15} suffix="%" duration={1500} />
-                  </p>
-                  <p className="text-sm text-slate-600">First 90 days</p>
+
+                <div className="group bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
+                  <div className="relative z-10">
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">Repeat Rate</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
+                      <AnimatedNumber value={15} suffix="%" duration={1500} />
+                    </p>
+                    <p className="text-sm text-white/90 font-medium">85% never come back</p>
+                  </div>
                 </div>
-                <div className="bg-white border-l-4 border-yellow-500 rounded-xl p-6 shadow-md">
-                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">LTV:CAC</p>
-                  <p className="text-4xl font-black text-yellow-600 mb-1">
-                    <AnimatedNumber value={1.2} decimals={1} suffix="x" duration={1500} />
-                  </p>
-                  <p className="text-sm text-slate-600">vs 3x+ goal</p>
+
+                <div className="group bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
+                  <div className="relative z-10">
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">LTV:CAC</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
+                      <AnimatedNumber value={1.2} decimals={1} suffix="x" duration={1500} />
+                    </p>
+                    <p className="text-sm text-white/90 font-medium">vs 3x+ needed</p>
+                  </div>
                 </div>
-                <div className="bg-white border-l-4 border-slate-500 rounded-xl p-6 shadow-md">
-                  <p className="text-xs text-slate-500 uppercase tracking-wider mb-2">Net Margin</p>
-                  <p className="text-4xl font-black text-slate-600 mb-1">
-                    <AnimatedNumber value={7.5} decimals={1} suffix="%" duration={1500} />
-                  </p>
-                  <p className="text-sm text-slate-600">vs 25% target</p>
+
+                <div className="group bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
+                  <div className="relative z-10">
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">Net Margin</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
+                      <AnimatedNumber value={7.5} decimals={1} suffix="%" duration={1500} />
+                    </p>
+                    <p className="text-sm text-white/90 font-medium">vs 25% target</p>
+                  </div>
                 </div>
               </div>
 
-              {/* 3 Core Problems - Feature Cards */}
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-white rounded-2xl p-8 border-2 border-orange-200 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Megaphone className="text-orange-600" size={24} />
+              {/* 3 Core Problems - Enhanced Visual Cards */}
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* Problem 1: Discovery */}
+                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-orange-200 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <Megaphone className="text-white" size={32} />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900">Invisible Locally</h3>
-                      <p className="text-sm text-slate-600 mt-1">Unknown to neighbors</p>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center pb-2 border-b border-slate-200">
-                      <span className="text-sm text-slate-600">Monthly ad spend</span>
-                      <span className="text-lg font-bold text-orange-600">AED 35K</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-600">Local awareness</span>
-                      <span className="text-lg font-bold text-slate-900">&lt;10%</span>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Invisible Locally</h3>
+                    <p className="text-sm text-slate-500 mb-6">Unknown to neighbors 100m away</p>
+
+                    <div className="space-y-4">
+                      <div className="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-slate-700">Monthly ad spend</span>
+                          <span className="text-2xl font-black text-orange-600">AED 35K</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium text-slate-700">Local awareness</span>
+                          <span className="text-2xl font-black text-slate-900">&lt;10%</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-slate-600 italic">Burning cash on Google bidding wars for tourists, not locals</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border-2 border-red-200 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <DollarSign className="text-red-600" size={24} />
+                {/* Problem 2: High CAC */}
+                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <DollarSign className="text-white" size={32} />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900">CAC Too High</h3>
-                      <p className="text-sm text-slate-600 mt-1">3 purchases to break even</p>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center pb-2 border-b border-slate-200">
-                      <span className="text-sm text-slate-600">Cost per customer</span>
-                      <span className="text-lg font-bold text-red-600">AED 200</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-600">Avg transaction</span>
-                      <span className="text-lg font-bold text-slate-900">AED 85</span>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">CAC Too High</h3>
+                    <p className="text-sm text-slate-500 mb-6">Need 3 purchases just to break even</p>
+
+                    <div className="space-y-4">
+                      <div className="bg-red-50 rounded-xl p-4 border-l-4 border-red-500">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-slate-700">Cost per customer</span>
+                          <span className="text-2xl font-black text-red-600">AED 200</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium text-slate-700">Avg transaction</span>
+                          <span className="text-2xl font-black text-slate-900">AED 85</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-slate-600 italic">85% of merchants operate at negative ROI for months</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 border-2 border-yellow-200 hover:shadow-2xl transition-all">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Users className="text-yellow-600" size={24} />
+                {/* Problem 3: Retention */}
+                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
+
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                      <Users className="text-white" size={32} />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900">No Retention</h3>
-                      <p className="text-sm text-slate-600 mt-1">One-time buyers</p>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center pb-2 border-b border-slate-200">
-                      <span className="text-sm text-slate-600">Repeat rate (90d)</span>
-                      <span className="text-lg font-bold text-yellow-600">15%</span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-slate-600">Never return</span>
-                      <span className="text-lg font-bold text-slate-900">85%</span>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">No Retention</h3>
+                    <p className="text-sm text-slate-500 mb-6">One-time buyers, never loyal</p>
+
+                    <div className="space-y-4">
+                      <div className="bg-yellow-50 rounded-xl p-4 border-l-4 border-yellow-500">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-slate-700">Repeat rate (90d)</span>
+                          <span className="text-2xl font-black text-yellow-600">15%</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium text-slate-700">Never return</span>
+                          <span className="text-2xl font-black text-slate-900">85%</span>
+                        </div>
+                      </div>
+                      <p className="text-sm text-slate-600 italic">No data, no relationships, no competitive advantage</p>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Bottom Callout - The Vicious Cycle */}
+              <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-center shadow-2xl">
+                <p className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                  The vicious cycle: <span className="text-orange-400">High CAC → Low margin → Can't invest in retention → Repeat</span>
+                </p>
+                <p className="text-lg text-slate-300">
+                  Small merchants are stuck. They need <span className="font-bold text-emerald-400">performance-based discovery</span>, not ad bidding wars.
+                </p>
               </div>
 
             </div>
@@ -736,14 +827,68 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 5: SOLUTION OVERVIEW ====================
+      // ==================== SLIDE 5: SOLUTION OVERVIEW WITH NICHE TABS ====================
       case 5:
+        const [activeNiche, setActiveNiche] = useState('fnb');
+
+        const nicheExamples = {
+          fnb: {
+            icon: '☕',
+            name: 'F&B',
+            search: 'coffee deals near me',
+            merchant: 'Local Café (Marina)',
+            offer: '10% cashback on all drinks',
+            savings: 'AED 4 per coffee',
+            frequency: '4x/week = AED 64/month',
+            color: 'orange'
+          },
+          beauty: {
+            icon: '💅',
+            name: 'Beauty & Wellness',
+            search: 'nail salon deals JBR',
+            merchant: 'Sparkle Nails & Spa',
+            offer: '10% cashback + 5% social bonus',
+            savings: 'AED 22.50 per visit',
+            frequency: '2x/month = AED 45/month',
+            color: 'pink'
+          },
+          fitness: {
+            icon: '💪',
+            name: 'Fitness',
+            search: 'gym near me with cashback',
+            merchant: 'FitZone Gym (Downtown)',
+            offer: '10% cashback on membership',
+            savings: 'AED 40 per month',
+            frequency: 'Saves AED 480/year',
+            color: 'blue'
+          },
+          retail: {
+            icon: '🛍️',
+            name: 'Retail & Fashion',
+            search: 'fashion deals Dubai Mall',
+            merchant: 'Trendy Boutique',
+            offer: '10% cashback on purchases',
+            savings: 'AED 35 average',
+            frequency: '3x/month = AED 105/month',
+            color: 'purple'
+          }
+        };
+
+        const activeExample = nicheExamples[activeNiche as keyof typeof nicheExamples];
+        const colorClasses = {
+          orange: { bg: 'bg-orange-500', light: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-600' },
+          pink: { bg: 'bg-pink-500', light: 'bg-pink-50', border: 'border-pink-200', text: 'text-pink-600' },
+          blue: { bg: 'bg-blue-500', light: 'bg-blue-50', border: 'border-blue-200', text: 'text-blue-600' },
+          purple: { bg: 'bg-purple-500', light: 'bg-purple-50', border: 'border-purple-200', text: 'text-purple-600' }
+        };
+        const activeColor = colorClasses[activeExample.color as keyof typeof colorClasses];
+
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8">
             <div className="max-w-7xl mx-auto">
 
               {/* Header */}
-              <div className="text-center mb-16">
+              <div className="text-center mb-12">
                 <div className="inline-block px-3 py-1 bg-emerald-100 rounded-full mb-4">
                   <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Our Solution</p>
                 </div>
@@ -753,6 +898,65 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
                   A three-sided marketplace connecting shoppers, merchants, and payment partners
                 </p>
+              </div>
+
+              {/* Interactive Niche Tabs */}
+              <div className="mb-12">
+                <div className="flex items-center justify-center gap-3 mb-8">
+                  {Object.entries(nicheExamples).map(([key, niche]) => (
+                    <button
+                      key={key}
+                      onClick={() => setActiveNiche(key)}
+                      className={`px-6 py-3 rounded-2xl font-bold text-sm transition-all duration-300 ${
+                        activeNiche === key
+                          ? 'bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] text-white shadow-lg scale-105'
+                          : 'bg-white text-slate-600 hover:bg-slate-50 border-2 border-slate-200'
+                      }`}
+                    >
+                      <span className="text-xl mr-2">{niche.icon}</span>
+                      {niche.name}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Example Card */}
+                <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {/* Step 1: Search */}
+                    <div className="bg-white rounded-2xl p-6 border-l-4 border-emerald-500">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">1</div>
+                        <h4 className="text-xl font-bold text-slate-900">Search</h4>
+                      </div>
+                      <p className="text-sm text-slate-600 mb-2">User searches:</p>
+                      <p className="text-base font-bold text-slate-900 bg-slate-50 rounded-lg p-3">
+                        "{activeExample.search}"
+                      </p>
+                    </div>
+
+                    {/* Step 2: Save */}
+                    <div className={`bg-white rounded-2xl p-6 border-l-4 ${activeColor.border}`}>
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className={`w-10 h-10 rounded-full ${activeColor.bg} text-white flex items-center justify-center font-bold`}>2</div>
+                        <h4 className="text-xl font-bold text-slate-900">Save</h4>
+                      </div>
+                      <p className="text-sm text-slate-600 mb-2">Finds:</p>
+                      <p className="text-base font-bold text-slate-900 mb-1">{activeExample.merchant}</p>
+                      <p className={`text-sm font-semibold ${activeColor.text}`}>{activeExample.offer}</p>
+                    </div>
+
+                    {/* Step 3: Earn */}
+                    <div className="bg-white rounded-2xl p-6 border-l-4 border-green-500">
+                      <div className="flex items-center gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold">3</div>
+                        <h4 className="text-xl font-bold text-slate-900">Earn</h4>
+                      </div>
+                      <p className="text-sm text-slate-600 mb-2">Result:</p>
+                      <p className="text-2xl font-black text-green-600 mb-1">{activeExample.savings}</p>
+                      <p className="text-sm text-slate-600">{activeExample.frequency}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* 3 Value Props */}
