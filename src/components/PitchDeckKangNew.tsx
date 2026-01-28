@@ -1943,6 +1943,22 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         careem: false,
                         smiles: true,
                         cards: false
+                      },
+                      {
+                        feature: "Merchant Analytics & CRM",
+                        nuqta: true,
+                        noon: false,
+                        careem: false,
+                        smiles: false,
+                        cards: false
+                      },
+                      {
+                        feature: "Behavioral Data Intelligence",
+                        nuqta: true,
+                        noon: false,
+                        careem: false,
+                        smiles: false,
+                        cards: false
                       }
                     ].map((row, idx) => (
                       <tr key={idx} className={idx % 2 === 0 ? "bg-gradient-to-r from-slate-50 to-white" : "bg-white"}>
