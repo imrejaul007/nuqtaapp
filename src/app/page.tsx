@@ -1179,6 +1179,21 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <div className="text-slate-500 text-sm pt-2 border-t border-slate-700 mt-2">
+                    <p className="font-semibold text-slate-400 mb-2">Downloads:</p>
+                    <div className="space-y-2 pl-2">
+                      <a href="/Nuqta-Pitch-Deck-2026.pptx" download className="block text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                        <ArrowRight className="w-3 h-3" />
+                        Pitch Deck (PPT)
+                      </a>
+                      <a href="/Nuqta-Investor-One-Pager-2026.pptx" download className="block text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                        <ArrowRight className="w-3 h-3" />
+                        One-Pager (PPT)
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div className="text-slate-500 text-sm pt-2 border-t border-slate-700 mt-2">
                     <p className="font-semibold text-slate-400 mb-2">All Pitch Decks:</p>
                     <div className="space-y-2 pl-2">
                       <Link href="/deck" className="block text-slate-400 hover:text-[#c9a227] transition-colors text-sm">v1 • v2 • v3</Link>
