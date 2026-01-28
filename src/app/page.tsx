@@ -1084,50 +1084,161 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Footer with Version Navigation */}
-      <footer className="bg-[#0a1628] border-t border-[#c9a227]/20 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          {/* Version Navigation */}
-          <div className="mb-8">
-            <h3 className="text-lg font-bold text-slate-300 mb-4 text-center">All Versions</h3>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/landing-v1"
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
-              >
-                Landing Page v1 (Previous)
-              </Link>
-              <Link
-                href="/deck"
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
-              >
-                Pitch Deck v1
-              </Link>
-              <Link
-                href="/deck-new"
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
-              >
-                Pitch Deck v2
-              </Link>
-              <Link
-                href="/deck-final"
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg transition-colors text-sm"
-              >
-                Pitch Deck v3
-              </Link>
-              <Link
-                href="/deck-kang"
-                className="px-4 py-2 bg-[#c9a227] hover:bg-[#d4ae3a] text-white rounded-lg transition-colors text-sm font-bold"
-              >
-                Pitch Deck v4 (Current)
-              </Link>
+      {/* Enhanced Footer */}
+      <footer className="bg-gradient-to-br from-[#0a1628] via-[#0d1d3a] to-[#0a1628] border-t-2 border-[#c9a227]/30 py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Background orbs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          {/* Main Footer Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+            {/* Column 1: Brand */}
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="text-4xl font-black text-white">Nuqta</div>
+              </div>
+              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                Rewards-Led Commerce Intelligence Platform. Search. Save. Earn 10% cashback on every offline purchase.
+              </p>
+              <div className="flex gap-3">
+                <a href="https://twitter.com/nuqtaapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 hover:bg-[#c9a227] rounded-lg flex items-center justify-center transition-colors">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/nuqtaapp" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-slate-800 hover:bg-[#c9a227] rounded-lg flex items-center justify-center transition-colors">
+                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Column 2: For Investors */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">For Investors</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/deck-kang" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4" />
+                    Pitch Deck (27 Slides)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/data-room" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Shield className="w-4 h-4" />
+                    Investor Data Room
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4" />
+                    Investment Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/memo" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4" />
+                    Full Investment Memo
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/commitment" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" />
+                    Founder Commitments
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 3: Resources */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/card" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4" />
+                    Investor One-Pager
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/merchant-card" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Building2 className="w-4 h-4" />
+                    Merchant One-Pager
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/landing-v1" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <ArrowRight className="w-4 h-4" />
+                    Landing Page v1
+                  </Link>
+                </li>
+                <li>
+                  <div className="text-slate-500 text-sm pt-2 border-t border-slate-700 mt-2">
+                    <p className="font-semibold text-slate-400 mb-2">All Pitch Decks:</p>
+                    <div className="space-y-2 pl-2">
+                      <Link href="/deck" className="block text-slate-400 hover:text-[#c9a227] transition-colors text-sm">v1 • v2 • v3</Link>
+                      <Link href="/deck-kang" className="block text-[#c9a227] hover:text-[#d4ae3a] transition-colors text-sm font-bold">v4 (Current ✓)</Link>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Contact */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Contact</h3>
+              <ul className="space-y-4">
+                <li>
+                  <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Founder</p>
+                  <p className="text-slate-300 font-semibold">Rejaul Karim</p>
+                </li>
+                <li>
+                  <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Email</p>
+                  <a href="mailto:rejaul@nuqtaapp.com" className="text-slate-300 hover:text-[#c9a227] transition-colors text-sm">
+                    rejaul@nuqtaapp.com
+                  </a>
+                </li>
+                <li>
+                  <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Location</p>
+                  <p className="text-slate-300 text-sm">Dubai, UAE</p>
+                </li>
+                <li>
+                  <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Launch Date</p>
+                  <p className="text-emerald-400 font-bold text-sm">January 28, 2026</p>
+                  <p className="text-slate-500 text-xs">7 days to go</p>
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Footer Info */}
-          <div className="text-center text-slate-500 text-sm">
-            <p className="mb-2">© 2026 Nuqta. All rights reserved.</p>
-            <p>Rewards-Led Commerce Intelligence Platform</p>
+          {/* Bottom Bar */}
+          <div className="pt-8 border-t border-slate-700">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-slate-500 text-sm text-center md:text-left">
+                <p className="mb-1">© 2026 Nuqta. All rights reserved.</p>
+                <p className="text-xs text-slate-600">Rewards-Led Commerce Intelligence Platform • $150B GCC TAM • 18x LTV:CAC</p>
+              </div>
+              <div className="flex flex-wrap gap-6 justify-center text-xs">
+                <Link href="/terms" className="text-slate-500 hover:text-[#c9a227] transition-colors">
+                  Terms
+                </Link>
+                <Link href="/commitment" className="text-slate-500 hover:text-[#c9a227] transition-colors">
+                  Privacy
+                </Link>
+                <a href="mailto:rejaul@nuqtaapp.com" className="text-slate-500 hover:text-[#c9a227] transition-colors">
+                  Support
+                </a>
+                <div className="text-emerald-500 flex items-center gap-1">
+                  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Raising $500K</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
