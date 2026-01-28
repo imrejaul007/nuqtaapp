@@ -146,11 +146,13 @@ PHASE 3: Kuwait + Bahrain + Oman (Years 9-10)
 
 ---
 
-## 2️⃣ PHASE 2: KSA + Qatar (Years 6-8)
+## 2️⃣ PHASE 2: KSA + Qatar Expansion (Years 6-8)
 
-**Geography**: Riyadh, Jeddah, Dammam (KSA) + Doha (Qatar)
+**One-Liner**: "Exporting a Proven System, Not Inventing a New One"
 
-**Critical Understanding**: This is NOT "H4". This is **Phase 2, with its own mini-H1/H2 inside it**.
+**Geography**: Qatar (Doha) → Saudi Arabia (Riyadh, Jeddah, Dammam)
+
+**Critical Understanding**: This is NOT "H4". This is **Phase 2, replaying the proven Phase 1 playbook in larger GCC markets**.
 
 ### What You Carry from Phase 1
 
@@ -159,25 +161,65 @@ PHASE 3: Kuwait + Bahrain + Oman (Years 9-10)
 ✅ Proven event playbook (Global Village → replicate to Riyadh Season)
 ✅ Proven fraud controls (3 years of learning)
 ✅ Proven category mix (F&B, salons, gyms, healthcare, etc.)
+✅ Proven unit economics (LTV:CAC 10:1, 42-45% EBITDA)
 
-### What You Re-run in Phase 2
+### What Changes in Phase 2
 
-- Localized H1 (core categories: F&B, salons, gyms)
-- Localized event partnerships (Riyadh Season, Doha Festival)
-- Localized Brand Coin rules (SAR/QAR pricing)
+**Regulatory Compliance**:
+- SAMA licensing (KSA: E-Money Institution or PSP license)
+- Qatar Central Bank licensing (Payment Services Provider)
+- Local data residency requirements
+- Shari'ah compliance alignment
 
-### Phase 2 = "Replaying Phase 1 with a Stronger Engine"
+**Cultural Localization**:
+- Arabic-first UI/UX (RTL design priority)
+- Family-centric positioning (not youth-only)
+- Gender dynamics (separate merchant categories for women-only spaces)
+- Local event calendar integration (Ramadan, National Day, Riyadh Season)
 
-**Key Differences from Phase 1**:
-- **Faster execution** (proven playbook, not figuring it out)
-- **Higher starting metrics** (use UAE social proof to acquire users)
-- **Larger funding** (Series B capital accelerates rollout)
+**Partnership Strategy**:
+- Top-down approach (chains first, not SMB)
+- Bank partnerships critical (Al Rajhi Bank, Qatar National Bank)
+- Mall partnerships anchor (Arabian Centres, Place Vendôme)
+- Event partnerships scale (Riyadh Season, Qatar National Day)
 
-**Target Metrics by Year 8 End**:
-- 200,000+ users across UAE + KSA + Qatar
-- 1,000+ merchants across 3 countries
-- AED 2-3B annual GMV
-- 40% revenue from non-GMV sources (SaaS, data)
+### Phase 2 Entry Strategy
+
+**🇶🇦 Qatar First** (Months 1-9):
+- Pilot in 1 anchor mall (Mall of Qatar)
+- Sign 50 merchants (70% existing UAE chains)
+- Activate 5,000 users via mall + university partnerships
+- Test cross-border redemption: Earn in Doha, spend in Dubai
+- **Success Criteria Month 9**: 100 merchants, 20K users, AED 10M GMV, 30% D30 retention
+
+**🇸🇦 Saudi Arabia Second** (Months 10-24):
+- **Riyadh** (government & corporates): Ministry partnerships, corporate wellness programs
+- **Jeddah** (lifestyle & events): Red Sea Film Festival, Jeddah Season activation
+- **Dammam** (family retail): Malls, family entertainment centers
+- **Success Criteria Month 24**: 1,000 merchants, 150K users, AED 2-3B GMV
+
+### Target Metrics by Year 8 End
+
+**User Metrics**:
+- 200,000+ active users across UAE + KSA + Qatar
+- 35% D30 retention (maintained from Phase 1)
+- 40% cross-border usage (earn in one country, spend in another)
+
+**Merchant Metrics**:
+- 1,500+ merchants (70% chains, 30% independents)
+- 60% merchant retention Year 2+
+- 8-12% blended take rate
+
+**Financial Metrics**:
+- AED 2.5B annual GMV
+- AED 220M revenue (60% GMV, 20% SaaS, 15% data, 5% BNPL)
+- AED 100M EBITDA (45% margin, maintained profitability)
+
+**Team**: 40 → 80 people (lean country teams: 5-7 people per market)
+
+**Funding**: Series B deployed across 24 months
+
+**Document**: [PHASE_2_GCC_EXPANSION.md](PHASE_2_GCC_EXPANSION.md)
 
 ---
 

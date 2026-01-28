@@ -10,6 +10,7 @@ Nuqta's complete strategic roadmap is documented in the following files:
 - **[H1_2026_EXECUTION_PLAN.md](H1_2026_EXECUTION_PLAN.md)** - Year 1: Prove the Loop (Phase 1, H1)
 - **[H2_2026_STRATEGY.md](H2_2026_STRATEGY.md)** - Year 2: Scale Responsibly (Phase 1, H2)
 - **[H3_2027_2029_INFRASTRUCTURE.md](H3_2027_2029_INFRASTRUCTURE.md)** - Years 3-5: Become Infrastructure (Phase 1, H3)
+- **[PHASE_2_GCC_EXPANSION.md](PHASE_2_GCC_EXPANSION.md)** - Years 6-8: KSA + Qatar Expansion (Phase 2)
 - **[EVENT_ORGANIZER_PARTNERSHIP_MODEL.md](EVENT_ORGANIZER_PARTNERSHIP_MODEL.md)** - Event partnership playbook
 
 ### Web Views
