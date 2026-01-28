@@ -7,7 +7,7 @@ import { SectionHeader, MetricCard, FeatureCard, FlowStep, ComparisonPanel, Char
 import { typography, colors, spacing, decorative } from '@/constants/design-tokens';
 import { chartColors, chartTheme, formatCurrency, formatPercentage, formatPieLabel } from '@/constants/chart-config';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
-import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link, Coins, User, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus, Repeat, AlertCircle, Clock } from 'lucide-react';
+import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link as LinkIcon, Coins, User, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus, Repeat, AlertCircle, Clock, Smartphone, Shield } from 'lucide-react';
 
 interface PitchDeckProps {
   isOpen: boolean;
@@ -50,7 +50,7 @@ function DataPoint({
 export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeNiche, setActiveNiche] = useState('fnb');
-  const totalSlides = 27;
+  const totalSlides = 28;
 
   // Keyboard navigation
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -2430,8 +2430,182 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 11: NUQTA COIN VS BRAND COIN (PREMIUM ✓✓✓) ====================
+      // ==================== SLIDE 11: PLATFORM ARCHITECTURE (NEW) ====================
       case 11:
+        return (
+          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-16 px-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-4 border-2 border-blue-200 shadow-lg">
+                  <p className="text-xs font-black text-blue-700 uppercase tracking-wider">Platform Architecture</p>
+                </div>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
+                  3-Sided <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Marketplace</span>
+                </h2>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
+                  Enterprise-grade platform connecting users, merchants, and payment partners
+                </p>
+              </div>
+
+              {/* Platform Components Grid */}
+              <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-6xl mx-auto">
+
+                {/* User App */}
+                <div className="bg-white border-2 border-blue-200 rounded-3xl p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
+                      <Smartphone size={24} className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-black text-slate-900">User App</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">▸</span>
+                      <span><strong>Search Engine:</strong> Semantic AI, voice, filters</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">▸</span>
+                      <span><strong>Wallet System:</strong> Dual coins, instant cashback</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">▸</span>
+                      <span><strong>Social Features:</strong> Referrals, leaderboards</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">▸</span>
+                      <span><strong>Gamification:</strong> Loyalty tiers, badges</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Merchant Dashboard */}
+                <div className="bg-white border-2 border-purple-200 rounded-3xl p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <Store size={24} className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-black text-slate-900">Merchant Hub</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500 mt-0.5">▸</span>
+                      <span><strong>Analytics Dashboard:</strong> Demographics, peak hours</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500 mt-0.5">▸</span>
+                      <span><strong>Campaign Manager:</strong> Targeted offers, A/B testing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500 mt-0.5">▸</span>
+                      <span><strong>QR/POS Integration:</strong> Instant checkout</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500 mt-0.5">▸</span>
+                      <span><strong>Multi-Location:</strong> Chain management</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Admin Panel */}
+                <div className="bg-white border-2 border-emerald-200 rounded-3xl p-6 hover:shadow-2xl transition-all hover:-translate-y-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <Shield size={24} className="text-white" />
+                    </div>
+                    <h3 className="text-2xl font-black text-slate-900">Admin Panel</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-slate-700">
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 mt-0.5">▸</span>
+                      <span><strong>Fraud Detection:</strong> 8-layer defense system</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 mt-0.5">▸</span>
+                      <span><strong>KYC Automation:</strong> Identity verification</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 mt-0.5">▸</span>
+                      <span><strong>Content Moderation:</strong> Reviews, disputes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-emerald-500 mt-0.5">▸</span>
+                      <span><strong>Financial Reporting:</strong> Revenue, payouts</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Intelligence Layer */}
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-[#c9a227] rounded-3xl p-8 mb-8 max-w-6xl mx-auto shadow-2xl">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 bg-[#c9a227] rounded-xl flex items-center justify-center">
+                    <Zap size={28} className="text-slate-900" />
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-black text-white">Intelligence Layer</h3>
+                    <p className="text-sm text-gray-400">Behavioral data moat & competitive intelligence</p>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
+                    <p className="text-xs text-gray-400 uppercase mb-1">Price Intelligence</p>
+                    <p className="text-sm text-white font-medium">Real-time market pricing data</p>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
+                    <p className="text-xs text-gray-400 uppercase mb-1">Behavioral Insights</p>
+                    <p className="text-sm text-white font-medium">User shopping patterns</p>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
+                    <p className="text-xs text-gray-400 uppercase mb-1">Predictive Analytics</p>
+                    <p className="text-sm text-white font-medium">Demand forecasting</p>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
+                    <p className="text-xs text-gray-400 uppercase mb-1">Merchant ROI</p>
+                    <p className="text-sm text-white font-medium">Attribution tracking</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Partner API - Roadmap */}
+              <div className="bg-white border-2 border-orange-200 rounded-2xl p-6 max-w-4xl mx-auto">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                      <LinkIcon size={20} className="text-orange-600" />
+                    </div>
+                    <h3 className="text-xl font-black text-slate-900">Partner API</h3>
+                  </div>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full">Phase 2</span>
+                </div>
+                <p className="text-sm text-slate-600 mb-3">
+                  <strong>Bank Integrations:</strong> Direct card linking for seamless cashback • <strong>Fintech Partnerships:</strong> BNPL, digital wallets • <strong>Loyalty Programs:</strong> Airline miles, hotel points
+                </p>
+                <div className="bg-orange-50 border border-orange-200 rounded-lg p-3">
+                  <p className="text-xs text-orange-800">
+                    <strong>Note:</strong> Bank partnership revenue shown in financials represents pilot agreements. Full API rollout planned for Year 2 post-SVF license.
+                  </p>
+                </div>
+              </div>
+
+              {/* Bottom Callout */}
+              <div className="mt-10 text-center">
+                <div className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 border-2 border-blue-300 rounded-2xl px-8 py-4 shadow-lg">
+                  <p className="text-lg font-bold text-slate-900">
+                    <span className="text-blue-600">Not just an app</span> • Built as a full-stack platform from Day 1
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 12: NUQTA COIN VS BRAND COIN (PREMIUM ✓✓✓) ====================
+      case 12:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -2709,8 +2883,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 12: UNIT ECONOMICS ====================
-      case 12:
+      // ==================== SLIDE 13: UNIT ECONOMICS ====================
+      case 13:
         return (
           <div className="w-full min-h-screen bg-white py-16 px-8">
             <div className="max-w-7xl mx-auto">
@@ -2992,8 +3166,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 13: FRAUD CONTROLS (PREMIUM ✓✓✓) ====================
-      case 13:
+      // ==================== SLIDE 14: FRAUD CONTROLS (PREMIUM ✓✓✓) ====================
+      case 14:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 via-white to-orange-50/20 py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -3243,8 +3417,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 14: GTM STRATEGY ====================
-      case 14:
+      // ==================== SLIDE 15: GTM STRATEGY ====================
+      case 15:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -3513,8 +3687,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 15: TRACTION ====================
-      case 15:
+      // ==================== SLIDE 16: TRACTION ====================
+      case 16:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -3616,8 +3790,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 16: TEAM (PREMIUM ✓) ====================
-      case 16:
+      // ==================== SLIDE 17: TEAM (PREMIUM ✓) ====================
+      case 17:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -3728,8 +3902,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 17: THE ASK ====================
-      case 17:
+      // ==================== SLIDE 18: THE ASK ====================
+      case 18:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -3852,8 +4026,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 18: VISION ====================
-      case 18:
+      // ==================== SLIDE 19: VISION ====================
+      case 19:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-16 px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -4045,8 +4219,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 19: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
-      case 19:
+      // ==================== SLIDE 20: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
+      case 20:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4231,8 +4405,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 20: COMPETITIVE MOAT ====================
-      case 20:
+      // ==================== SLIDE 21: COMPETITIVE MOAT ====================
+      case 21:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4446,8 +4620,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 21: ROADMAP ====================
-      case 21:
+      // ==================== SLIDE 22: ROADMAP ====================
+      case 22:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4746,8 +4920,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 22: TECHNOLOGY ====================
-      case 22:
+      // ==================== SLIDE 23: TECHNOLOGY ====================
+      case 23:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-white via-purple-50/20 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4852,8 +5026,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 23: QUESTIONS? ====================
-      case 23:
+      // ==================== SLIDE 24: QUESTIONS? ====================
+      case 24:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4894,8 +5068,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 24: LET'S TALK ====================
-      case 24:
+      // ==================== SLIDE 25: LET'S TALK ====================
+      case 25:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4939,8 +5113,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 25: JOIN US ====================
-      case 25:
+      // ==================== SLIDE 26: JOIN US ====================
+      case 26:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4992,8 +5166,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 26: THANK YOU ====================
-      case 26:
+      // ==================== SLIDE 27: THANK YOU ====================
+      case 27:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -5041,8 +5215,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 27: CONTACT INFO ====================
-      case 27:
+      // ==================== SLIDE 28: CONTACT INFO ====================
+      case 28:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white flex items-center justify-center p-8">
             <div className="max-w-4xl mx-auto text-center">
