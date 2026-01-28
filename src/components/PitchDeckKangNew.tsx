@@ -49,6 +49,7 @@ function DataPoint({
 // ==================== MAIN COMPONENT ====================
 export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeNiche, setActiveNiche] = useState('fnb');
   const totalSlides = 27;
 
   // Keyboard navigation
@@ -829,8 +830,6 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
       // ==================== SLIDE 5: SOLUTION OVERVIEW WITH NICHE TABS ====================
       case 5:
-        const [activeNiche, setActiveNiche] = useState('fnb');
-
         const nicheExamples = {
           fnb: {
             icon: '☕',
