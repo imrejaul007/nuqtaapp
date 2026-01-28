@@ -26,6 +26,8 @@ export default function H2StrategyPage() {
             <a href="/execution-plan" className="text-purple-300 hover:text-white transition-colors font-semibold underline">
               ← View H1 Execution Plan
             </a>
+            <div className="text-purple-400">•</div>
+            <div className="text-purple-300">Next: H3 Infrastructure (Years 3-5)</div>
           </div>
         </div>
       </div>
