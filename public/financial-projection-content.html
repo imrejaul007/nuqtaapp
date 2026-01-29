@@ -1248,7 +1248,19 @@
                     </div>
                 </div>
 
-                <div class="subsection-title" style="font-size: 1rem; margin-top: 20px; margin-bottom: 10px;">5️⃣ User Subscription (Premium Features)</div>
+                <div class="alert alert-success" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 4px solid #10b981; margin: 20px 0; padding: 16px; border-radius: 8px;">
+                    <div style="display: flex; align-items: start; gap: 10px;">
+                        <span style="font-size: 20px;">🎁</span>
+                        <div>
+                            <strong style="color: #065f46; font-size: 1rem;">Year 1 FREE Policy</strong>
+                            <p style="color: #047857; margin: 6px 0 0 0; font-size: 0.9rem; line-height: 1.5;">
+                                Streams 5-7 (User Subscriptions, Finance Revenue, B2B Commission) are <strong>FREE for the first 12 months</strong> to drive adoption and build loyalty. Revenue kicks in from Month 13+ once the platform has proven value. This aligns with our merchant-led positioning in H1.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection-title" style="font-size: 1rem; margin-top: 20px; margin-bottom: 10px;">5️⃣ User Subscription (Premium Features) <span style="color: #10b981; font-size: 0.85rem; font-weight: 600;">[FREE YEAR 1]</span></div>
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="user-sub-price">User Subscription (Monthly)</label>
@@ -1263,7 +1275,7 @@
                     </div>
                 </div>
 
-                <div class="subsection-title" style="font-size: 1rem; margin-top: 20px; margin-bottom: 10px;">6️⃣ Finance (BNPL / Lending)</div>
+                <div class="subsection-title" style="font-size: 1rem; margin-top: 20px; margin-bottom: 10px;">6️⃣ Finance (BNPL / Lending) <span style="color: #10b981; font-size: 0.85rem; font-weight: 600;">[FREE YEAR 1]</span></div>
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="finance-revenue-per-user">Finance Revenue per MAU</label>
@@ -1278,7 +1290,7 @@
                     </div>
                 </div>
 
-                <div class="subsection-title" style="font-size: 1rem; margin-top: 20px; margin-bottom: 10px;">7️⃣ B2B Buying (Bulk Orders)</div>
+                <div class="subsection-title" style="font-size: 1rem; margin-top: 20px; margin-bottom: 10px;">7️⃣ B2B Buying (Bulk Orders) <span style="color: #10b981; font-size: 0.85rem; font-weight: 600;">[FREE YEAR 1]</span></div>
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="b2b-commission">B2B Commission Rate</label>
@@ -2272,8 +2284,30 @@
                 </div>
 
                 <h2 class="section-title">H1 Monthly Breakdown (Until Gate Hit)</h2>
+
                 <div class="alert alert-info">
-                    <strong>🎯 H1 Phase:</strong> Validate Categories - Advances to H2 when: 5K MAU • 125 Merchants • AED 5M GMV • 5x LTV:CAC
+                    <strong>🎯 H1 Phase Gates:</strong> Advances to H2 when: 5K MAU • 125 Merchants • AED 5M GMV • 5x LTV:CAC
+                </div>
+
+                <div class="alert alert-warning" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 20px 0; padding: 20px; border-radius: 8px;">
+                    <div style="display: flex; align-items: start; gap: 12px;">
+                        <span style="font-size: 24px;">📊</span>
+                        <div style="flex: 1;">
+                            <strong style="font-size: 1.1rem; color: #92400e; display: block; margin-bottom: 8px;">💡 Model vs Target Explained</strong>
+                            <p style="color: #78350f; margin: 8px 0; line-height: 1.6;">
+                                <strong>Conservative Model (shown below):</strong> This projection uses conservative assumptions (30% activation, 4x order frequency, AED 35 CAC) based on UAE marketplace benchmarks. With these inputs, H1 typically achieves <strong>~5-7K MAU, 150-200 merchants, AED 5-7M GMV</strong>.
+                            </p>
+                            <p style="color: #78350f; margin: 8px 0; line-height: 1.6;">
+                                <strong>Aggressive Target (pitch deck):</strong> Our target is <strong>10K MAU, 250 merchants, AED 10M GMV</strong>. This requires optimized execution (40% activation, 6x frequency, AED 20 CAC via merchant-QR strategy). Research shows this is achievable—comparable UAE platforms like Tabby and Cobone hit 100K-200K users in 6 months—but requires flawless merchant acquisition (50/month).
+                            </p>
+                            <p style="color: #78350f; margin: 8px 0; line-height: 1.6;">
+                                <strong>How to bridge the gap:</strong> Test scenario buttons above! Click <strong>"Aggressive"</strong> to see 10K MAU projection with optimized inputs. The difference is execution quality, not market potential.
+                            </p>
+                            <p style="color: #92400e; margin: 12px 0 0 0; font-weight: 600; font-size: 0.95rem;">
+                                📈 <strong>Benchmark context:</strong> WaffarX (Egypt) reached 450K users with 260 merchants. Tabby (UAE) grew from 400K to 15M users in 5 years. Nuqta's 10K target represents 0.1% of UAE's 10M population—aggressive but defensible.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="table-container enhanced-table">
@@ -4328,15 +4362,15 @@
                 const affiliateGmv = monthlyGMV * (affiliateGmvPct / 100);
                 const affiliateRev = affiliateGmv * (affiliateCommission / 100);
 
-                // 5. User Subscription (Premium)
-                const userSubRev = currentMAU * (userSubAttach / 100) * userSubPrice;
+                // 5. User Subscription (Premium) - FREE FOR FIRST 12 MONTHS
+                const userSubRev = month > 12 ? currentMAU * (userSubAttach / 100) * userSubPrice : 0;
 
-                // 6. Finance (BNPL / Lending)
-                const financeRev = currentMAU * (financeAttach / 100) * financeRevenuePerUser;
+                // 6. Finance (BNPL / Lending) - FREE FOR FIRST 12 MONTHS
+                const financeRev = month > 12 ? currentMAU * (financeAttach / 100) * financeRevenuePerUser : 0;
 
-                // 7. B2B Buying (Bulk Orders)
+                // 7. B2B Buying (Bulk Orders) - FREE FOR FIRST 12 MONTHS
                 const b2bGmv = monthlyGMV * (b2bGmvPct / 100);
-                const b2bRev = b2bGmv * (b2bCommission / 100);
+                const b2bRev = month > 12 ? b2bGmv * (b2bCommission / 100) : 0;
 
                 // Total Revenue
                 const monthlyRevenue = regularCommissionRev + promotedRev + merchantSubRev +
