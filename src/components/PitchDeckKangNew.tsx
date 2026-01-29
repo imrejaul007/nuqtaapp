@@ -5566,55 +5566,32 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       </div>
 
       {/* Slide Content */}
-      <div className="w-full h-full overflow-y-auto pb-20 sm:pb-24">
+      <div className="w-full h-full overflow-y-auto">
         {renderSlide()}
       </div>
 
-      {/* Bottom Navigation - Mobile Optimized */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 py-2 sm:py-3 px-2 sm:px-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
-          {/* Previous Button */}
-          <button
-            onClick={() => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)}
-            disabled={currentSlide === 0}
-            className="px-3 py-2 sm:px-6 sm:py-3 bg-white border-2 border-slate-300 text-slate-900 rounded-lg hover:bg-slate-50 transition-colors font-semibold text-xs sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-          >
-            <span className="hidden sm:inline">← Prev</span>
-            <span className="sm:hidden">←</span>
-          </button>
+      {/* Side Navigation Arrows - Minimal Design */}
+      {/* Left Arrow */}
+      {currentSlide > 0 && (
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)}
+          className="fixed left-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 sm:w-14 sm:h-14 bg-white/90 backdrop-blur border-2 border-slate-300 text-slate-900 rounded-full hover:bg-slate-50 hover:border-slate-400 transition-all shadow-lg flex items-center justify-center text-2xl"
+          aria-label="Previous slide"
+        >
+          ←
+        </button>
+      )}
 
-          {/* Slide Dots - Mobile Optimized */}
-          <div className="flex gap-1 sm:gap-1.5 overflow-x-auto scrollbar-hide flex-1 justify-center px-2">
-            {Array.from({ length: totalSlides }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentSlide(i)}
-                className={`rounded-full transition-all flex-shrink-0 ${
-                  i === currentSlide
-                    ? 'bg-[#c9a227] w-6 h-3 sm:w-8 sm:h-3'
-                    : 'bg-slate-300 w-3 h-3 sm:w-3 sm:h-3 hover:bg-slate-400'
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
-
-          {/* Next Button */}
-          <button
-            onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
-            disabled={currentSlide === totalSlides - 1}
-            className="px-3 py-2 sm:px-6 sm:py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition-colors font-semibold text-xs sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
-          >
-            <span className="hidden sm:inline">Next →</span>
-            <span className="sm:hidden">→</span>
-          </button>
-        </div>
-
-        {/* Swipe Hint for Mobile */}
-        <div className="sm:hidden text-center mt-2">
-          <p className="text-xs text-slate-500">Swipe left/right to navigate</p>
-        </div>
-      </div>
+      {/* Right Arrow */}
+      {currentSlide < totalSlides - 1 && (
+        <button
+          onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
+          className="fixed right-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 sm:w-14 sm:h-14 bg-slate-900 text-white rounded-full hover:bg-slate-700 transition-all shadow-lg flex items-center justify-center text-2xl"
+          aria-label="Next slide"
+        >
+          →
+        </button>
+      )}
     </div>
   );
 }
