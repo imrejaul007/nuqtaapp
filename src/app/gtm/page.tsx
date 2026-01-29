@@ -46,7 +46,7 @@ export default function GTMMainPage() {
             <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-6">
               <div className="text-4xl mb-3">2️⃣</div>
               <h3 className="text-xl font-bold text-blue-300 mb-2">Metrics, Not Vanity</h3>
-              <p className="text-sm text-slate-300">D7/D30 retention > user count. Weekly reviews. Kill what doesn't work.</p>
+              <p className="text-sm text-slate-300">D7/D30 retention {'>'}user count. Weekly reviews. Kill what doesn&apos;t work.</p>
             </div>
             <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-6">
               <div className="text-4xl mb-3">3️⃣</div>
@@ -405,7 +405,7 @@ export default function GTMMainPage() {
                 <CheckCircle2 size={20} className="text-emerald-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-bold text-white">Metrics over vanity</p>
-                  <p className="text-sm text-slate-300">D30 retention > downloads. LTV:CAC proven before scale.</p>
+                  <p className="text-sm text-slate-300">D30 retention {'>'} downloads. LTV:CAC proven before scale.</p>
                 </div>
               </div>
             </div>
