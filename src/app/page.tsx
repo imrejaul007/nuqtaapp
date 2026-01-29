@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, TrendingUp, Users, Building2, Zap, Target, DollarSign, Clock, Shield, Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowRight, CheckCircle2, TrendingUp, Users, Building2, Zap, Target, DollarSign, Clock, Shield, Sparkles, ChevronDown, ChevronUp, MapPin, Globe, Trophy } from 'lucide-react';
 
 // DataPoint Tooltip Component for statistics with sources
 function DataPoint({
@@ -1094,7 +1094,7 @@ export default function LandingPage() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
 
             {/* Column 1: Brand */}
             <div>
@@ -1155,7 +1155,56 @@ export default function LandingPage() {
               </ul>
             </div>
 
-            {/* Column 3: Resources */}
+            {/* Column 3: Strategy */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Strategy & Roadmap</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/gtm" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Target className="w-4 h-4" />
+                    GTM Strategy (Complete)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/master-roadmap" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <MapPin className="w-4 h-4" />
+                    Master Roadmap (10yr → 4yr)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/execution-plan" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Zap className="w-4 h-4" />
+                    H1: Prove the Loop (~5mo)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/h2-strategy" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <TrendingUp className="w-4 h-4" />
+                    H2: Scale (~2.5mo)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/h3-infrastructure" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Building2 className="w-4 h-4" />
+                    H3: Infrastructure (~1.2yr)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/phase-2" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Globe className="w-4 h-4" />
+                    Phase 2: Qatar + KSA (~1.2yr)
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/phase-3" className="text-slate-400 hover:text-[#c9a227] transition-colors text-sm flex items-center gap-2">
+                    <Trophy className="w-4 h-4" />
+                    Phase 3: Full GCC (~10mo)
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Column 4: Resources */}
             <div>
               <h3 className="text-lg font-bold text-white mb-4">Resources</h3>
               <ul className="space-y-3">

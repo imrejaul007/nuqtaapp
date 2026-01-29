@@ -270,68 +270,6 @@ export default function H2StrategyPage() {
             </div>
           </div>
 
-          {/* Category 3: Education */}
-          <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border-2 border-indigo-300 rounded-3xl p-8 mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="text-4xl">🎓</span>
-              <h3 className="text-3xl font-black text-slate-900">Category 3: Education & Skill Centers</h3>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div>
-                <p className="text-sm font-black text-indigo-700 mb-3">INCLUDES</p>
-                <ul className="text-sm text-slate-700 space-y-1">
-                  <li>• Coaching centers (British Council, Berlitz, Eton)</li>
-                  <li>• Skill institutes (CodeAcademy Dubai, General Assembly)</li>
-                  <li>• Language schools (ES Dubai, Alliance Française)</li>
-                  <li>• Test prep (Kaplan, Manhattan Review, British Council)</li>
-                </ul>
-              </div>
-
-              <div>
-                <p className="text-sm font-black text-purple-700 mb-3">WHY H2 (NOT H1)</p>
-                <ul className="text-sm text-slate-700 space-y-1">
-                  <li>• <span className="font-semibold">Longer LTV:</span> Users commit for 3-6 months</li>
-                  <li>• <span className="font-semibold">Low churn:</span> High completion rate once enrolled</li>
-                  <li>• <span className="font-semibold">Referral-heavy:</span> Students refer friends to join cohort</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 mb-4">
-              <p className="text-sm font-black text-slate-900 mb-3">COMMERCIAL MODEL</p>
-              <ul className="text-sm text-slate-700 space-y-2">
-                <li>• <span className="font-semibold">Brand Coin only:</span> No universal Nuqta Coins (education shouldn't feel "transactional")</li>
-                <li>• <span className="font-semibold">Milestone-based rewards:</span> Enrollment (50 AED) → Mid-term (50 AED) → Completion (100 AED)</li>
-              </ul>
-            </div>
-
-            <div className="bg-gradient-to-r from-indigo-100 to-purple-100 rounded-2xl p-6 border-2 border-indigo-400">
-              <p className="text-sm font-black text-indigo-900 mb-3">💡 EXAMPLE FLOW</p>
-              <p className="text-sm text-slate-800">
-                User enrolls in <span className="font-bold">AED 3,000</span> 3-month IELTS prep at British Council
-                → Gets <span className="font-bold text-indigo-600">150 AED Brand Coins</span> at enrollment
-                → Gets <span className="font-bold text-purple-600">+150 AED</span> at completion
-                → Redeems 300 AED on next family course
-                → Nuqta gets <span className="font-bold text-emerald-600">AED 150 revenue</span> (5%)
-              </p>
-            </div>
-
-            <div className="mt-6 grid grid-cols-3 gap-4">
-              <div className="text-center">
-                <p className="text-3xl font-black text-indigo-600">20</p>
-                <p className="text-xs text-slate-600 font-semibold">Education Centers</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-black text-purple-600">2,000</p>
-                <p className="text-xs text-slate-600 font-semibold">Users</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-black text-emerald-600">AED 1.5M</p>
-                <p className="text-xs text-slate-600 font-semibold">H2 GMV Target</p>
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* Platform Upgrades */}
@@ -618,7 +556,7 @@ export default function H2StrategyPage() {
               <div className="bg-white border-2 border-red-200 rounded-xl p-4 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-black text-slate-900">Partnerships Manager (Month 10)</p>
-                  <p className="text-xs text-slate-600">Healthcare, home services, education partnerships</p>
+                  <p className="text-xs text-slate-600">Healthcare and home services partnerships</p>
                 </div>
                 <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-black">BIZ DEV</span>
               </div>
@@ -804,7 +742,7 @@ export default function H2StrategyPage() {
               <ul className="text-sm text-slate-700 space-y-2">
                 <li>• <span className="font-semibold">Proven PMF</span> with strong retention and LTV:CAC</li>
                 <li>• <span className="font-semibold">Platform defensibility</span> through payment intelligence, Brand Coin engine, analytics</li>
-                <li>• <span className="font-semibold">Multi-category traction</span> (F&B + healthcare + home services + education)</li>
+                <li>• <span className="font-semibold">Multi-category traction</span> (F&B + healthcare + home services)</li>
                 <li>• <span className="font-semibold">Geographic expansion blueprint</span> (Dubai → Abu Dhabi → Sharjah working model)</li>
                 <li>• <span className="font-semibold">Path to profitability</span> (already near break-even at Month 12)</li>
               </ul>
@@ -846,7 +784,7 @@ export default function H2StrategyPage() {
                 <span className="text-2xl">🚫</span>
                 <div>
                   <p className="text-sm font-black text-slate-900 mb-1">Don't add 10 new categories</p>
-                  <p className="text-xs text-slate-600">Only 3 new categories (healthcare, home services, education). Quality over quantity.</p>
+                  <p className="text-xs text-slate-600">Only 2 new categories (healthcare, home services). Quality over quantity.</p>
                 </div>
               </div>
 

@@ -7,13 +7,13 @@ export default function MasterRoadmapPage() {
       <div className="bg-gradient-to-r from-[#0a1628] via-[#1a2a42] to-[#0a1628] text-white py-16 px-8">
         <div className="max-w-6xl mx-auto">
           <div className="inline-block px-4 py-2 bg-[#c9a227] rounded-full mb-6">
-            <p className="text-xs font-black uppercase tracking-wider">10-Year Strategic Framework</p>
+            <p className="text-xs font-black uppercase tracking-wider">4-Year Accelerated Framework (60% Faster)</p>
           </div>
           <h1 className="text-5xl md:text-7xl font-black mb-6">
             Nuqta Master Roadmap
           </h1>
           <p className="text-2xl text-slate-300 max-w-3xl mb-4">
-            From Startup → Platform → Infrastructure
+            10-Year Plan → 4-Year Execution • Exit-Ready GCC Platform
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
@@ -76,19 +76,19 @@ export default function MasterRoadmapPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
               <h4 className="text-lg font-black text-blue-700 mb-3">H1 → H2 Gate</h4>
-              <p className="text-sm text-slate-700">10K MAU, 25% D30 retention, ≤10% merchant churn (sustained 2 months)</p>
+              <p className="text-sm text-slate-700">10K MAU, 25% D30 retention, 250 merchants, AED 10M GMV, 10x LTV:CAC</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
               <h4 className="text-lg font-black text-purple-700 mb-3">H2 → H3 Gate</h4>
-              <p className="text-sm text-slate-700">75K MAU, 30% D30 retention, 40% merchants using campaigns (sustained 3 months)</p>
+              <p className="text-sm text-slate-700">75K MAU, 30% D30 retention, 40% multi-category users, 40% merchants running campaigns</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-emerald-200">
-              <h4 className="text-lg font-black text-emerald-700 mb-3">Phase 1 → Phase 2 Gate</h4>
-              <p className="text-sm text-slate-700">30% D30 retention, ≤8% merchant churn, LTV:CAC ≥5x, 18mo cash runway</p>
+              <h4 className="text-lg font-black text-emerald-700 mb-3">H3 → Phase 2 Gate</h4>
+              <p className="text-sm text-slate-700">150K MAU, ≤8% churn, 30% EBITDA, 5 WaaS clients, 25% B2B revenue</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-orange-200">
               <h4 className="text-lg font-black text-orange-700 mb-3">Phase 2 → Phase 3 Gate</h4>
-              <p className="text-sm text-slate-700">1.5M users, 3 countries live, 10% cross-border usage, 25% enterprise revenue</p>
+              <p className="text-sm text-slate-700">50K MAU per country, 30% D30, 10% cross-border tx, 12x LTV:CAC, 25% EBITDA</p>
             </div>
           </div>
 
@@ -100,61 +100,61 @@ export default function MasterRoadmapPage() {
 
         {/* Visual Timeline */}
         <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-12">
-          <h2 className="text-3xl font-black text-slate-900 mb-8">📊 Complete 10-Year Framework</h2>
+          <h2 className="text-3xl font-black text-slate-900 mb-8">📊 Complete 4-Year Framework (Accelerated)</h2>
 
           <div className="space-y-8">
             {/* Phase 1 */}
             <div className="border-l-4 border-blue-500 pl-6">
-              <h3 className="text-2xl font-black text-blue-700 mb-4">PHASE 1: UAE (Years 1-5)</h3>
+              <h3 className="text-2xl font-black text-blue-700 mb-4">PHASE 1: UAE (~2 Years • H1 + H2 + H3)</h3>
               <div className="space-y-4">
                 <div className="bg-blue-50 rounded-xl p-4 border-2 border-blue-200">
                   <a href="/execution-plan" className="text-lg font-black text-blue-900 hover:text-blue-700 transition-colors">
-                    H1 (Year 1): Prove the Loop →
+                    H1 (~5 Months): Prove the Loop →
                   </a>
-                  <p className="text-sm text-slate-700 mt-2">10K users, 250 merchants, AED 2M GMV, 30% D30 retention</p>
+                  <p className="text-sm text-slate-700 mt-2">10K MAU, 250 merchants, AED 10M GMV, 25% D30 retention</p>
                 </div>
 
                 <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200">
                   <a href="/h2-strategy" className="text-lg font-black text-purple-900 hover:text-purple-700 transition-colors">
-                    H2 (Year 2): Scale Responsibly →
+                    H2 (~2.5 Months): Scale Categories →
                   </a>
-                  <p className="text-sm text-slate-700 mt-2">30K users, 450 merchants, AED 14M GMV, 35% D30 retention</p>
+                  <p className="text-sm text-slate-700 mt-2">75K MAU, 500 merchants, AED 50M GMV, 30% D30 retention, 40% multi-category</p>
                 </div>
 
                 <div className="bg-emerald-50 rounded-xl p-4 border-2 border-emerald-200">
-                  <div className="text-lg font-black text-emerald-900">
-                    H3 (Years 3-5): Become Infrastructure
-                  </div>
-                  <p className="text-sm text-slate-700 mt-2">100K+ users, 4K merchants, AED 500M-1B GMV, 50+ malls, 6 government partnerships</p>
+                  <a href="/h3-infrastructure" className="text-lg font-black text-emerald-900 hover:text-emerald-700 transition-colors">
+                    H3 (~1.2 Years): B2B Infrastructure →
+                  </a>
+                  <p className="text-sm text-slate-700 mt-2">150K MAU, 1K merchants, AED 200M GMV, 5 WaaS clients, 30% EBITDA, 40% GMV + 30% WaaS + 30% Data</p>
                 </div>
               </div>
             </div>
 
             {/* Phase 2 */}
             <div className="border-l-4 border-orange-500 pl-6">
-              <h3 className="text-2xl font-black text-orange-700 mb-4">PHASE 2: KSA + Qatar (Years 6-8)</h3>
+              <h3 className="text-2xl font-black text-orange-700 mb-4">PHASE 2: GCC Expansion (~1.2 Years)</h3>
               <div className="bg-orange-50 rounded-xl p-4 border-2 border-orange-200">
-                <div className="text-lg font-black text-orange-900 mb-2">
-                  Exporting a Proven System
-                </div>
+                <a href="/phase-2" className="text-lg font-black text-orange-900 hover:text-orange-700 transition-colors mb-2 block">
+                  Qatar (3-4mo) + Saudi Arabia (9-10mo) →
+                </a>
                 <p className="text-sm text-slate-700 mb-3">
-                  Qatar first (Months 1-9) → Saudi Arabia (Riyadh, Jeddah, Dammam) (Months 10-24)
+                  Qatar first (test market) → Saudi Arabia (Riyadh, Jeddah, Dammam) — Same GTM playbook, localized
                 </p>
-                <p className="text-sm text-slate-700">200K+ users, 1.5K merchants, AED 2.5B GMV, AED 220M revenue, 45% EBITDA</p>
+                <p className="text-sm text-slate-700">Per Country: 50K MAU, 150 merchants, AED 15M GMV, 30% D30 retention</p>
               </div>
             </div>
 
             {/* Phase 3 */}
             <div className="border-l-4 border-red-500 pl-6">
-              <h3 className="text-2xl font-black text-red-700 mb-4">PHASE 3: Full GCC Infrastructure (Years 9-10)</h3>
+              <h3 className="text-2xl font-black text-red-700 mb-4">PHASE 3: Full GCC Completion (~10 Months)</h3>
               <div className="bg-red-50 rounded-xl p-4 border-2 border-red-200">
-                <div className="text-lg font-black text-red-900 mb-2">
-                  Infrastructure Lock-In
-                </div>
+                <a href="/phase-3" className="text-lg font-black text-red-900 hover:text-red-700 transition-colors mb-2 block">
+                  Kuwait + Bahrain + Oman (Parallel Launch) →
+                </a>
                 <p className="text-sm text-slate-700 mb-3">
-                  Kuwait, Bahrain, Oman (top-down institutional entry)
+                  Top-down institutional entry • Shared infrastructure (80% cost savings)
                 </p>
-                <p className="text-sm text-slate-700">300K+ users, 3K merchants, AED 7B GMV, AED 420M revenue, 60% EBITDA, 15+ WaaS partnerships</p>
+                <p className="text-sm text-slate-700">Exit-Ready: 300K MAU, 3K merchants, AED 7B GMV, AED 420M revenue, 60% EBITDA, 15+ WaaS, $800M-$2.3B valuation</p>
               </div>
             </div>
           </div>
@@ -236,13 +236,13 @@ export default function MasterRoadmapPage() {
 
         {/* Financial Trajectory */}
         <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-3xl p-8 mb-12">
-          <h2 className="text-3xl font-black text-slate-900 mb-8">📈 10-Year Financial Trajectory</h2>
+          <h2 className="text-3xl font-black text-slate-900 mb-8">📈 4-Year Financial Trajectory (Accelerated)</h2>
 
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="bg-slate-100">
                 <tr>
-                  <th className="text-left p-3 font-bold text-slate-700">Year</th>
+                  <th className="text-left p-3 font-bold text-slate-700">Period</th>
                   <th className="text-left p-3 font-bold text-slate-700">Phase/Horizon</th>
                   <th className="text-center p-3 font-bold text-slate-700">GMV</th>
                   <th className="text-center p-3 font-bold text-slate-700">Revenue</th>
@@ -252,39 +252,39 @@ export default function MasterRoadmapPage() {
               </thead>
               <tbody className="divide-y divide-slate-200">
                 <tr className="hover:bg-blue-50">
-                  <td className="p-3 font-bold">Y1</td>
+                  <td className="p-3 font-bold">M1-5</td>
                   <td className="p-3">Phase 1, H1</td>
-                  <td className="p-3 text-center">AED 2M</td>
-                  <td className="p-3 text-center">AED 100K</td>
+                  <td className="p-3 text-center">AED 10M</td>
+                  <td className="p-3 text-center">AED 500K</td>
                   <td className="p-3 text-center">Break-even</td>
                   <td className="p-3 text-center">7</td>
                 </tr>
                 <tr className="hover:bg-purple-50">
-                  <td className="p-3 font-bold">Y2</td>
+                  <td className="p-3 font-bold">M6-8</td>
                   <td className="p-3">Phase 1, H2</td>
-                  <td className="p-3 text-center">AED 14M</td>
-                  <td className="p-3 text-center">AED 1.3M</td>
+                  <td className="p-3 text-center">AED 50M</td>
+                  <td className="p-3 text-center">AED 2.5M</td>
                   <td className="p-3 text-center">10%</td>
-                  <td className="p-3 text-center">30</td>
+                  <td className="p-3 text-center">15</td>
                 </tr>
                 <tr className="hover:bg-emerald-50">
-                  <td className="p-3 font-bold">Y3-5</td>
+                  <td className="p-3 font-bold">M9-22</td>
                   <td className="p-3">Phase 1, H3</td>
-                  <td className="p-3 text-center">AED 500M-1B</td>
-                  <td className="p-3 text-center">AED 50M+</td>
-                  <td className="p-3 text-center">30-40%</td>
+                  <td className="p-3 text-center">AED 200M</td>
+                  <td className="p-3 text-center">AED 28M</td>
+                  <td className="p-3 text-center">30%</td>
                   <td className="p-3 text-center">40</td>
                 </tr>
                 <tr className="hover:bg-orange-50">
-                  <td className="p-3 font-bold">Y6-8</td>
+                  <td className="p-3 font-bold">Y2-3</td>
                   <td className="p-3">Phase 2</td>
                   <td className="p-3 text-center">AED 2.5B</td>
-                  <td className="p-3 text-center">AED 220M</td>
-                  <td className="p-3 text-center">45%</td>
-                  <td className="p-3 text-center">80</td>
+                  <td className="p-3 text-center">AED 125M</td>
+                  <td className="p-3 text-center">35%</td>
+                  <td className="p-3 text-center">60</td>
                 </tr>
                 <tr className="hover:bg-red-50">
-                  <td className="p-3 font-bold">Y9-10</td>
+                  <td className="p-3 font-bold">Y3.2-4</td>
                   <td className="p-3">Phase 3</td>
                   <td className="p-3 text-center">AED 7B</td>
                   <td className="p-3 text-center">AED 420M</td>
@@ -298,15 +298,15 @@ export default function MasterRoadmapPage() {
           <div className="mt-6 grid md:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl p-4 border-2 border-emerald-200">
               <p className="text-xs text-slate-600 mb-1">Margin Expansion</p>
-              <p className="text-lg font-black text-emerald-700">10% → 60%</p>
+              <p className="text-lg font-black text-emerald-700">0% → 60%</p>
             </div>
             <div className="bg-white rounded-xl p-4 border-2 border-blue-200">
               <p className="text-xs text-slate-600 mb-1">Revenue per Employee</p>
-              <p className="text-lg font-black text-blue-700">AED 2.75M → AED 4.2M</p>
+              <p className="text-lg font-black text-blue-700">AED 70K → AED 4.2M</p>
             </div>
             <div className="bg-white rounded-xl p-4 border-2 border-purple-200">
-              <p className="text-xs text-slate-600 mb-1">Exit Valuation (Year 10)</p>
-              <p className="text-lg font-black text-purple-700">$800M-$1.7B</p>
+              <p className="text-xs text-slate-600 mb-1">Exit Valuation (Year 4)</p>
+              <p className="text-lg font-black text-purple-700">$800M-$2.3B</p>
             </div>
           </div>
         </div>
@@ -319,8 +319,8 @@ export default function MasterRoadmapPage() {
             <a href="/execution-plan" className="block bg-white rounded-xl p-6 border-2 border-blue-200 hover:border-blue-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-blue-700 mb-2">H1 2026 Execution Plan</h3>
-                  <p className="text-sm text-slate-700">Year 1: Prove the Loop - Month-by-month tactical execution with integrated event calendar</p>
+                  <h3 className="text-xl font-black text-blue-700 mb-2">H1 2026 Execution Plan (~5 Months)</h3>
+                  <p className="text-sm text-slate-700">Prove the Loop - Month-by-month tactical execution with integrated event calendar</p>
                 </div>
                 <span className="text-blue-500 text-2xl">→</span>
               </div>
@@ -329,8 +329,8 @@ export default function MasterRoadmapPage() {
             <a href="/h2-strategy" className="block bg-white rounded-xl p-6 border-2 border-purple-200 hover:border-purple-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-purple-700 mb-2">H2 2026 Strategy</h3>
-                  <p className="text-sm text-slate-700">Year 2: Scale Responsibly - New categories, platform upgrades, geographic expansion</p>
+                  <h3 className="text-xl font-black text-purple-700 mb-2">H2 2026 Strategy (~2.5 Months)</h3>
+                  <p className="text-sm text-slate-700">Scale Categories - Healthcare + Home Services expansion, cross-category synergies</p>
                 </div>
                 <span className="text-purple-500 text-2xl">→</span>
               </div>
@@ -339,30 +339,40 @@ export default function MasterRoadmapPage() {
             <a href="/h3-infrastructure" className="block bg-white rounded-xl p-6 border-2 border-emerald-200 hover:border-emerald-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-emerald-700 mb-2">H3 Infrastructure (Years 3-5)</h3>
-                  <p className="text-sm text-slate-700">Become Infrastructure - WaaS, government partnerships, data monetization</p>
+                  <h3 className="text-xl font-black text-emerald-700 mb-2">H3 Infrastructure (~1.2 Years)</h3>
+                  <p className="text-sm text-slate-700">Become Infrastructure - WaaS, government partnerships, B2B revenue model (40% GMV + 30% WaaS + 30% Data)</p>
                 </div>
                 <span className="text-emerald-500 text-2xl">→</span>
               </div>
             </a>
 
-            <a href="/phase-2" className="block bg-white rounded-xl p-6 border-2 border-cyan-200 hover:border-cyan-400 transition-colors">
+            <a href="/phase-2-gtm" className="block bg-white rounded-xl p-6 border-2 border-cyan-200 hover:border-cyan-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-cyan-700 mb-2">Phase 2: KSA + Qatar (Years 6-8)</h3>
-                  <p className="text-sm text-slate-700">GCC Expansion - Exporting proven system to larger markets</p>
+                  <h3 className="text-xl font-black text-cyan-700 mb-2">Phase 2: KSA + Qatar (~1.2 Years)</h3>
+                  <p className="text-sm text-slate-700">GCC Expansion - Qatar first (3-4mo), then Saudi Arabia (9-10mo) with localized GTM playbook</p>
                 </div>
                 <span className="text-cyan-500 text-2xl">→</span>
               </div>
             </a>
 
-            <a href="/phase-3" className="block bg-white rounded-xl p-6 border-2 border-pink-200 hover:border-pink-400 transition-colors">
+            <a href="/phase-3-gtm" className="block bg-white rounded-xl p-6 border-2 border-pink-200 hover:border-pink-400 transition-colors">
               <div className="flex items-center justify-between">
                 <div>
-                  <h3 className="text-xl font-black text-pink-700 mb-2">Phase 3: Full GCC (Years 9-10)</h3>
-                  <p className="text-sm text-slate-700">Infrastructure Lock-In - Kuwait, Bahrain, Oman top-down entry</p>
+                  <h3 className="text-xl font-black text-pink-700 mb-2">Phase 3: Full GCC (~10 Months)</h3>
+                  <p className="text-sm text-slate-700">Infrastructure Lock-In - Kuwait + Bahrain + Oman parallel launch, top-down institutional entry, exit-ready</p>
                 </div>
                 <span className="text-pink-500 text-2xl">→</span>
+              </div>
+            </a>
+
+            <a href="/gtm" className="block bg-white rounded-xl p-6 border-2 border-amber-200 hover:border-amber-400 transition-colors">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-black text-amber-700 mb-2">Complete GTM Strategy</h3>
+                  <p className="text-sm text-slate-700">Institutional-grade Go-To-Market playbook covering all 5 phases with cultural adaptations and channel evolution</p>
+                </div>
+                <span className="text-amber-500 text-2xl">→</span>
               </div>
             </a>
 

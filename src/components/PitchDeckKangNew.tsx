@@ -130,7 +130,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <p className="text-xs font-bold text-white uppercase tracking-wider">GCC TAM</p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
-                  <p className="text-5xl font-black text-emerald-400 mb-2">18x</p>
+                  <p className="text-5xl font-black text-emerald-400 mb-2">10x+</p>
                   <p className="text-xs font-bold text-white uppercase tracking-wider">LTV:CAC</p>
                 </div>
                 <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
@@ -1042,8 +1042,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               step: 'Earn Rewards',
               perVisit: 'AED 22.50',
               frequency: '2x/month',
-              monthly: 'AED 45/month',
-              yearly: 'AED 540/year'
+              monthly: 'AED 30/month',
+              yearly: 'AED 360/year'
             },
             shopper: {
               title: 'For Beauty Enthusiasts',
@@ -1839,7 +1839,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                     <div className="bg-white/5 rounded-xl p-5 border border-[#c9a227]/30">
                       <p className="text-xs text-[#c9a227] font-bold uppercase mb-2">The Result</p>
-                      <p className="text-3xl font-black text-[#c9a227] mb-1">18x</p>
+                      <p className="text-3xl font-black text-[#c9a227] mb-1">10x+</p>
                       <p className="text-sm text-slate-400 font-medium">LTV:CAC Ratio</p>
                     </div>
                   </div>
@@ -2961,7 +2961,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
                 <div className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-2xl p-6 text-center">
                   <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wider mb-2">Monthly RPU</p>
-                  <p className="text-4xl font-black text-emerald-600 mb-2">AED 45</p>
+                  <p className="text-4xl font-black text-emerald-600 mb-2">AED 30</p>
                   <p className="text-sm text-slate-600">Revenue per user/month</p>
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 rounded-2xl p-6 text-center">
@@ -2993,10 +2993,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-3">Annual LTV</p>
                   <p className="text-6xl font-black text-blue-600 mb-4">
-                    <AnimatedNumber value={540} prefix="AED " duration={2000} />
+                    <AnimatedNumber value={360} prefix="AED " duration={2000} />
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
-                    <p>• Monthly RPU: AED 45</p>
+                    <p>• Monthly RPU: AED 30</p>
                     <p>• Avg retention: 12 months</p>
                     <p>• Net margin: 7.5%</p>
                   </div>
@@ -3007,7 +3007,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-[#c9a227] uppercase tracking-wider mb-3">LTV:CAC Ratio</p>
                   <p className="text-6xl font-black text-[#c9a227] mb-4">
-                    18x
+                    10x+
                   </p>
                   <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-3 mt-4">
                     <p className="text-xs font-semibold text-emerald-700 uppercase mb-1">Benchmark</p>
@@ -3016,9 +3016,62 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
               </div>
 
-              {/* Revenue Breakdown */}
+              {/* Revenue Breakdown with Waterfall Chart */}
               <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-8 mb-10">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Revenue Per AED 100 Transaction</h3>
+
+                {/* Waterfall Chart Visualization */}
+                <div className="bg-white rounded-2xl p-6 mb-6 shadow-lg">
+                  <ResponsiveContainer width="100%" height={300}>
+                    <BarChart
+                      data={[
+                        { name: 'Merchant\nFee', value: 15, fill: '#3b82f6', cumulative: 15 },
+                        { name: 'User\nCashback', value: -7, fill: '#ef4444', cumulative: 8 },
+                        { name: 'Platform\nCosts', value: -0.5, fill: '#f97316', cumulative: 7.5 },
+                        { name: 'Net\nMargin', value: 7.5, fill: '#c9a227', cumulative: 7.5 }
+                      ]}
+                      margin={{ top: 20, right: 30, bottom: 40, left: 20 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis
+                        dataKey="name"
+                        stroke="#64748b"
+                        style={{ fontSize: '12px', fontWeight: 600 }}
+                        angle={0}
+                        textAnchor="middle"
+                      />
+                      <YAxis
+                        stroke="#64748b"
+                        style={{ fontSize: '12px' }}
+                        label={{ value: 'AED', angle: -90, position: 'insideLeft', style: { fontSize: '14px', fontWeight: 'bold' } }}
+                      />
+                      <Tooltip
+                        contentStyle={{
+                          backgroundColor: '#0f172a',
+                          border: '2px solid #c9a227',
+                          borderRadius: '12px',
+                          padding: '12px'
+                        }}
+                        labelStyle={{ color: '#c9a227', fontWeight: 'bold' }}
+                        formatter={(value: any) => [`AED ${value}`, value >= 0 ? 'Revenue' : 'Cost']}
+                      />
+                      <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                        {[
+                          { fill: '#3b82f6' },
+                          { fill: '#ef4444' },
+                          { fill: '#f97316' },
+                          { fill: '#c9a227' }
+                        ].map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.fill} />
+                        ))}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                  <p className="text-xs text-slate-500 text-center mt-2">
+                    Waterfall showing revenue flow from merchant fee to net margin
+                  </p>
+                </div>
+
                 <div className="grid md:grid-cols-4 gap-4">
                   <div className="bg-white border-2 border-blue-200 rounded-xl p-5 text-center">
                     <p className="text-xs font-semibold text-blue-700 uppercase mb-2">Merchant Fee (15%)</p>
@@ -3060,9 +3113,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="md:col-span-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
                     <p className="text-sm font-semibold text-slate-300 uppercase mb-3">Calculation:</p>
                     <div className="space-y-2 text-slate-200">
-                      <p>• Monthly RPU: <span className="font-bold text-emerald-400">AED 45</span></p>
+                      <p>• Monthly RPU: <span className="font-bold text-emerald-400">AED 30</span></p>
                       <p>• Blended CAC: <span className="font-bold text-orange-400">AED 30</span></p>
-                      <p>• Payback: <span className="font-bold text-white">AED 30 ÷ AED 45 = 0.67 months (~20 days)</span></p>
+                      <p>• Payback: <span className="font-bold text-white">AED 30 ÷ AED 30 = 1 month</span></p>
                     </div>
                   </div>
                 </div>
@@ -3746,75 +3799,146 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <p className="text-xs font-black text-emerald-700 uppercase tracking-wider">Pre-Launch Traction</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6">
-                  Proof of <span className="text-emerald-600">Demand</span>
+                  Supply-Side <span className="text-emerald-600">Validation</span>
                 </h2>
                 <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  30 signed LOIs • Pre-launch commitments • Q1 2026 go-live
+                  30+ signed merchant LOIs • $50K self-funded • MVP launching in 7 days
                 </p>
               </div>
 
-              {/* Stats Grid */}
+              {/* Stats Grid with Sparklines */}
               <div className="grid md:grid-cols-4 gap-6 mb-12">
                 {[
-                  { label: "Signed LOIs", value: "30", desc: "Merchants with signed agreements", icon: Store, color: "blue" },
-                  { label: "Pipeline", value: "30+", desc: "Additional merchants interested", icon: Target, color: "purple" },
-                  { label: "Launch", value: "7 Days", desc: "MVP going live", icon: Zap, color: "emerald" },
-                  { label: "Bootstrapped", value: "$50K", desc: "Self-funded to date", icon: DollarSign, color: "gold" }
+                  {
+                    label: "Signed Merchants",
+                    value: "30+",
+                    desc: "LOIs with revenue-share terms",
+                    icon: Store,
+                    color: "blue",
+                    trend: [5, 8, 12, 18, 22, 28, 30],
+                    trendLabel: "Supply ✓"
+                  },
+                  {
+                    label: "Core Team",
+                    value: "6",
+                    desc: "Complementary skill sets",
+                    icon: Target,
+                    color: "purple",
+                    trend: [1, 1, 2, 3, 4, 5, 6],
+                    trendLabel: "Assembled"
+                  },
+                  {
+                    label: "MVP Launch",
+                    value: "7 Days",
+                    desc: "Product ready to go live",
+                    icon: Zap,
+                    color: "emerald",
+                    trend: [0, 20, 40, 60, 75, 90, 100],
+                    trendLabel: "95% Done"
+                  },
+                  {
+                    label: "Self-Funded",
+                    value: "$50K",
+                    desc: "Founder commitment validated",
+                    icon: DollarSign,
+                    color: "gold",
+                    trend: [10, 15, 20, 30, 35, 45, 50],
+                    trendLabel: "Invested"
+                  }
                 ].map((stat, idx) => {
                   const Icon = stat.icon;
                   const iconBg = stat.color === "blue" ? "bg-blue-100 text-blue-600" :
                                  stat.color === "purple" ? "bg-purple-100 text-purple-600" :
                                  stat.color === "emerald" ? "bg-emerald-100 text-emerald-600" :
                                  "bg-[#c9a227]/10 text-[#c9a227]";
+                  const lineColor = stat.color === "blue" ? "#3b82f6" :
+                                   stat.color === "purple" ? "#a855f7" :
+                                   stat.color === "emerald" ? "#22c55e" :
+                                   "#c9a227";
+
+                  const sparklineData = stat.trend.map((val, i) => ({ x: i, y: val }));
 
                   return (
-                    <div key={idx} className="bg-white border-2 border-slate-200 rounded-2xl p-8 text-center hover:shadow-xl transition-all">
-                      <div className={`inline-flex items-center justify-center w-14 h-14 rounded-xl ${iconBg} mb-4`}>
-                        <Icon size={28} />
+                    <div key={idx} className="bg-white border-2 border-slate-200 rounded-2xl p-6 hover:shadow-xl transition-all">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${iconBg}`}>
+                          <Icon size={24} />
+                        </div>
+                        <div className="text-right">
+                          <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">
+                            {stat.trendLabel}
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-sm font-semibold text-slate-600 uppercase tracking-wider mb-2">{stat.label}</p>
-                      <p className="text-5xl font-black text-slate-900 mb-2">{stat.value}</p>
-                      <p className="text-base text-slate-600">{stat.desc}</p>
+
+                      <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">{stat.label}</p>
+                      <p className="text-4xl font-black text-slate-900 mb-3">{stat.value}</p>
+
+                      {/* Sparkline */}
+                      <div className="h-12 mb-2">
+                        <ResponsiveContainer width="100%" height="100%">
+                          <LineChart data={sparklineData} margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
+                            <Line
+                              type="monotone"
+                              dataKey="y"
+                              stroke={lineColor}
+                              strokeWidth={2}
+                              dot={false}
+                              animationDuration={1000}
+                              animationBegin={idx * 100}
+                            />
+                          </LineChart>
+                        </ResponsiveContainer>
+                      </div>
+
+                      <p className="text-sm text-slate-600">{stat.desc}</p>
                     </div>
                   );
                 })}
               </div>
 
-              {/* LOI Proof Section */}
+              {/* Pre-Launch Validation */}
               <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-2 border-blue-200 rounded-2xl p-8 mb-12">
                 <div className="flex items-start gap-4">
                   <CheckCircle2 size={32} className="text-emerald-600 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">60+ Merchant Network</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Pre-Launch Readiness: Supply Side Validated</h3>
                     <p className="text-lg text-slate-700 mb-4">
-                      <span className="font-bold text-emerald-600">30+ signed LOIs</span> with <span className="font-bold text-blue-600">30 more in pipeline</span> across Dubai Marina, Downtown, and JBR. Attacking a <span className="font-bold text-purple-600">$45B GCC SAM</span> (F&B, Beauty, Fashion, Fitness). GCC TAM: <span className="font-bold">$150B</span>.
+                      <span className="font-bold text-emerald-600">30+ signed merchant LOIs</span> with revenue-share agreements across Dubai Marina, Downtown, and JBR (F&B, Beauty, Fashion, Fitness).
+                      <span className="font-bold text-blue-600"> 6-person founding team</span> assembled with complementary skills (CEO, CHRO, CMO, CTO, Designer, BDA).
+                      <span className="font-bold text-purple-600"> $50K self-funded</span> demonstrates founder commitment.
+                      Attacking a <span className="font-bold text-emerald-600">$35B GCC SAM</span> (total GCC TAM: <span className="font-bold">$150B</span>).
                     </p>
-                    <div className="grid md:grid-cols-3 gap-4">
+                    <div className="grid md:grid-cols-4 gap-4">
                       <div className="bg-white rounded-lg p-4">
                         <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Signed LOIs</p>
                         <p className="text-2xl font-black text-blue-600">30+</p>
                       </div>
                       <div className="bg-white rounded-lg p-4">
-                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Pipeline</p>
-                        <p className="text-2xl font-black text-purple-600">30</p>
+                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Core Team</p>
+                        <p className="text-2xl font-black text-purple-600">6</p>
                       </div>
                       <div className="bg-white rounded-lg p-4">
-                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">GCC Market (SAM)</p>
-                        <p className="text-2xl font-black text-emerald-600">$45B</p>
+                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Self-Funded</p>
+                        <p className="text-2xl font-black text-emerald-600">$50K</p>
+                      </div>
+                      <div className="bg-white rounded-lg p-4">
+                        <p className="text-sm font-semibold text-slate-600 uppercase mb-1">GCC SAM</p>
+                        <p className="text-2xl font-black text-orange-600">$35B</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Milestones */}
+              {/* Post-Launch: H1 Timeline (5 Months) */}
               <div className="bg-white border-2 border-emerald-200 rounded-2xl p-10">
-                <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">90-Day Validation Plan</h3>
+                <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">H1 2026: Prove the Loop (~5 Months)</h3>
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
-                    { milestone: "Week 1-2: SHIP", date: "Launch NOW", tasks: ["5 merchants live", "100 users", "AED 5-10K GMV", "D7 retention ≥30%"] },
-                    { milestone: "Month 1-2: PROVE", date: "Validate PMF", tasks: ["300 users", "10 merchants", "AED 20K GMV", "D30 retention ≥20%"] },
-                    { milestone: "Month 3: SCALE", date: "Fundraise Ready", tasks: ["500 users", "AED 30K GMV", "CAC ≤AED 50", "Raise $500-750K"] }
+                    { milestone: "Month 1-2: Launch", date: "Weeks 1-8", tasks: ["Activate first 10-20 merchants", "Acquire 1,000 MAU", "Process AED 500K GMV", "Track D7 retention ≥30%"] },
+                    { milestone: "Month 3-4: Scale", date: "Weeks 9-16", tasks: ["Scale to 5,000 MAU", "100 active merchants", "AED 5M GMV processed", "Measure D30 retention ≥25%"] },
+                    { milestone: "Month 5: Gate Exit", date: "H1 → H2 Decision", tasks: ["10K MAU achieved", "250 merchants live", "AED 10M GMV", "10x LTV:CAC validated"] }
                   ].map((item, idx) => (
                     <div key={idx} className="text-center">
                       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white text-2xl font-black mb-4">
@@ -3829,6 +3953,42 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* H1 Gate Criteria */}
+                <div className="mt-8 bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-2xl p-8">
+                  <h4 className="text-2xl font-bold text-slate-900 mb-6 text-center">H1 Exit Gate: Must Pass to Scale to H2</h4>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
+                      <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Growth Metrics</h5>
+                      <div className="space-y-2 text-sm text-slate-700">
+                        <p>✓ <span className="font-bold text-blue-600">10K MAU</span></p>
+                        <p>✓ <span className="font-bold text-blue-600">250 merchants</span></p>
+                        <p>✓ <span className="font-bold text-blue-600">AED 10M GMV</span></p>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 border-2 border-emerald-200">
+                      <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Unit Economics</h5>
+                      <div className="space-y-2 text-sm text-slate-700">
+                        <p>✓ <span className="font-bold text-emerald-600">10x LTV:CAC ratio</span></p>
+                        <p>✓ <span className="font-bold text-emerald-600">CAC ≤ AED 40</span></p>
+                        <p>✓ <span className="font-bold text-emerald-600">40%+ activation</span></p>
+                      </div>
+                    </div>
+                    <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
+                      <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Retention</h5>
+                      <div className="space-y-2 text-sm text-slate-700">
+                        <p>✓ <span className="font-bold text-purple-600">D30 ≥ 25%</span></p>
+                        <p>✓ <span className="font-bold text-purple-600">4+ trans/month</span></p>
+                        <p>✓ <span className="font-bold text-purple-600">Merchant NPS ≥40</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-6 text-center">
+                    <p className="text-lg text-slate-700">
+                      <span className="font-bold text-emerald-600">Pass all gates</span> → Scale to H2 (75K MAU, 3 categories) in 2.5 months
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -3911,6 +4071,43 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Core Team Grid - NEW */}
+              <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-8 sm:p-10 shadow-lg mb-8">
+                <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Core Team</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {[
+                    { title: "CHRO", desc: "Ex Co-Founder of EdTech company", icon: Users, color: "blue", exp: "HR & Operations" },
+                    { title: "CMO", desc: "Ex Co-Founder of e-commerce app", icon: Megaphone, color: "purple", exp: "Marketing & Growth" },
+                    { title: "CTO", desc: "4 years engineering experience", icon: Zap, color: "emerald", exp: "Tech & Product" },
+                    { title: "Graphic Designer", desc: "Brand & Visual Design Lead", icon: Palette, color: "orange", exp: "UI/UX Design" },
+                    { title: "BDA", desc: "Business Development & Partnerships", icon: Handshake, color: "pink", exp: "Merchant Relations" }
+                  ].map((member, idx) => {
+                    const Icon = member.icon;
+                    const iconBg = member.color === "blue" ? "bg-blue-100 text-blue-600" :
+                                   member.color === "purple" ? "bg-purple-100 text-purple-600" :
+                                   member.color === "emerald" ? "bg-emerald-100 text-emerald-600" :
+                                   member.color === "orange" ? "bg-orange-100 text-orange-600" :
+                                   "bg-pink-100 text-pink-600";
+                    const borderColor = member.color === "blue" ? "border-blue-200" :
+                                       member.color === "purple" ? "border-purple-200" :
+                                       member.color === "emerald" ? "border-emerald-200" :
+                                       member.color === "orange" ? "border-orange-200" :
+                                       "border-pink-200";
+
+                    return (
+                      <div key={idx} className={`bg-gradient-to-br from-white to-slate-50 border-2 ${borderColor} rounded-2xl p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}>
+                        <div className={`inline-flex items-center justify-center w-14 h-14 rounded-full ${iconBg} mb-4 shadow-md`}>
+                          <Icon size={28} />
+                        </div>
+                        <h4 className="text-xl font-black text-slate-900 mb-1">{member.title}</h4>
+                        <p className="text-sm font-semibold text-[#c9a227] mb-2">{member.exp}</p>
+                        <p className="text-sm text-slate-600">{member.desc}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -4436,8 +4633,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto mt-8">
                   <div className="bg-white/5 rounded-xl p-4 border border-emerald-500/30">
-                    <p className="text-2xl font-black text-emerald-400 mb-1">18x</p>
-                    <p className="text-sm text-slate-400 font-medium">LTV:CAC ratio (20-day payback)</p>
+                    <p className="text-2xl font-black text-emerald-400 mb-1">10x+</p>
+                    <p className="text-sm text-slate-400 font-medium">LTV:CAC ratio (1-month payback)</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-[#c9a227]/30">
                     <p className="text-2xl font-black text-[#c9a227] mb-1">Q1 2026</p>
@@ -4684,8 +4881,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   The Path to <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">GCC Domination</span>
                 </h2>
                 <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-                  3 Phases, 3 Horizons: Dubai → Qatar+KSA → Full GCC
+                  10-Year Plan → 4-Year Execution • 60% Faster Timeline
                 </p>
+                <div className="mt-4 inline-block px-6 py-3 bg-emerald-500/10 border-2 border-emerald-500/30 rounded-full">
+                  <p className="text-sm font-black text-emerald-700">
+                    Phase 1 (~2yr) • Phase 2 (~1.2yr) • Phase 3 (~10mo) = Exit-Ready in 4 Years
+                  </p>
+                </div>
               </div>
 
               {/* Timeline Grid */}
@@ -4697,8 +4899,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       1
                     </div>
                     <div>
-                      <h3 className="text-2xl font-black text-slate-900">Phase 1: Dubai Launch</h3>
-                      <p className="text-sm text-slate-600 font-bold">Years 1-3 • 3 Horizons • Q1 2026 - Q4 2028</p>
+                      <h3 className="text-2xl font-black text-slate-900">Phase 1: Dubai/UAE Dominance</h3>
+                      <p className="text-sm text-slate-600 font-bold">~2 Years • 3 Horizons (H1: 5mo • H2: 2.5mo • H3: 1.2yr) • 2026-2027</p>
                     </div>
                   </div>
                 </div>
@@ -4706,13 +4908,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {/* Phase 1 Horizons */}
                 {[
                   {
-                    phase: "Horizon 1",
-                    timeline: "Months 1-12 (2026)",
+                    phase: "Horizon 1 (H1)",
+                    timeline: "~5 Months • Prove the Loop",
                     emoji: "🚀",
-                    title: "Core Verticals Launch",
-                    subtitle: "Dubai Marina Focus",
-                    features: ["Launch Tier 1: F&B, Grocery, Salons, Fashion, Fitness, Events", "50 merchants onboarded", "Mobile app (iOS/Android)", "Core payments + search"],
-                    kpis: "500 merchants • 50K users • AED 50M GMV",
+                    title: "Core PMF Validation",
+                    subtitle: "Dubai Marina/JBR Focus",
+                    features: ["Launch F&B + Core Verticals", "100 merchants • 5K users", "Prove 20% D30 retention + LTV:CAC 10x+", "Validate coin-led rewards model"],
+                    kpis: "250 merchants • 10K MAU • AED 10M GMV • 25% D30 retention",
                     status: "In Progress",
                     color: "emerald",
                     bgGradient: "from-emerald-500/10 via-emerald-500/5 to-white",
@@ -4720,13 +4922,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-emerald-500 to-emerald-600"
                   },
                   {
-                    phase: "Horizon 2",
-                    timeline: "Months 13-24 (2027)",
+                    phase: "Horizon 2 (H2)",
+                    timeline: "~2.5 Months • Scale Responsibly",
                     emoji: "📈",
-                    title: "Category Expansion",
-                    subtitle: "Add Tier 2 Categories",
-                    features: ["Add Entertainment (cinemas, gaming), Home Services, Pet", "AI recommendation engine", "Merchant analytics dashboard", "B2B partnerships (banks, telcos)"],
-                    kpis: "2,000 merchants • 200K users • AED 200M GMV",
+                    title: "Multi-Category Expansion",
+                    subtitle: "Healthcare + Home Services",
+                    features: ["Add 2 new categories", "Geographic expansion (Downtown, Business Bay)", "Platform tech (analytics, AI recommendations)", "Merchant WaaS pilots"],
+                    kpis: "500 merchants • 75K MAU • AED 75M GMV • 30% D30 retention",
                     status: "Planned",
                     color: "blue",
                     bgGradient: "from-blue-500/10 via-blue-500/5 to-white",
@@ -4734,13 +4936,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-blue-500 to-blue-600"
                   },
                   {
-                    phase: "Horizon 3",
-                    timeline: "Months 25-36 (2028)",
+                    phase: "Horizon 3 (H3)",
+                    timeline: "~1.2 Years • Become Infrastructure",
                     emoji: "🏙️",
-                    title: "UAE Expansion",
-                    subtitle: "All 7 UAE Cities",
-                    features: ["Abu Dhabi + Sharjah launch", "All UAE cities (Ajman, RAK, Fujairah, UAQ)", "Multi-currency support (AED/USD)", "Series A raise preparation"],
-                    kpis: "5,000 merchants • 500K users • AED 500M GMV",
+                    title: "UAE-Wide Platform",
+                    subtitle: "Enterprise + Data Moats",
+                    features: ["All 7 UAE cities coverage", "WaaS revenue (5+ clients)", "Government partnerships (2+)", "Data intelligence layer operational"],
+                    kpis: "1,500 merchants • 150K MAU • AED 180M GMV • 30% EBITDA",
                     status: "Planned",
                     color: "purple",
                     bgGradient: "from-purple-500/10 via-purple-500/5 to-white",
@@ -4805,7 +5007,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                     <div>
                       <h3 className="text-2xl font-black text-slate-900">Phase 2: GCC Expansion</h3>
-                      <p className="text-sm text-slate-600 font-bold">Years 4-5 • Qatar + Saudi Arabia • 2029-2030</p>
+                      <p className="text-sm text-slate-600 font-bold">~1.2 Years • Qatar (3-4mo) + Saudi Arabia (9-10mo) • 2028-2029</p>
                     </div>
                   </div>
                 </div>
@@ -4814,12 +5016,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     phase: "Phase 2",
-                    timeline: "Years 4-5 (2029-2030)",
+                    timeline: "~1.2 Years Total",
                     emoji: "🌍",
                     title: "Qatar + Saudi Arabia",
-                    subtitle: "Largest GCC Markets",
-                    features: ["Qatar launch (Doha) - Q1 2029", "Saudi Arabia (Riyadh, Jeddah, Dammam) - Q3 2029", "Replicate proven Dubai playbook", "Local partnerships + regulatory compliance"],
-                    kpis: "15,000 merchants • 2M users • AED 2B GMV",
+                    subtitle: "Export Proven System",
+                    features: ["🇶🇦 Qatar (3-4 months): Doha launch, QFC license, 50 merchants", "🇸🇦 Saudi Arabia (9-10 months): Riyadh → Jeddah → Dammam", "Parallel market entry strategy", "Leverage UAE playbook + local partnerships"],
+                    kpis: "2,500 merchants • 200K MAU • AED 300M GMV • 3 countries live",
                     status: "Planned",
                     color: "blue",
                     bgGradient: "from-blue-600/10 via-blue-600/5 to-white",
@@ -4884,7 +5086,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                     <div>
                       <h3 className="text-2xl font-black text-slate-900">Phase 3: Full GCC Coverage</h3>
-                      <p className="text-sm text-slate-600 font-bold">Year 6+ • Kuwait, Bahrain, Oman • 2031+</p>
+                      <p className="text-sm text-slate-600 font-bold">~10 Months • Kuwait + Bahrain + Oman (Parallel) • 2029-2030</p>
                     </div>
                   </div>
                 </div>
@@ -4893,12 +5095,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     phase: "Phase 3",
-                    timeline: "Year 6+ (2031+)",
+                    timeline: "~10 Months (Parallel Launch)",
                     emoji: "🏆",
-                    title: "Full GCC Domination",
-                    subtitle: "Market Leader Position",
-                    features: ["Kuwait launch - Q1 2031", "Bahrain launch - Q2 2031", "Oman launch - Q3 2031", "Complete GCC rewards market dominance"],
-                    kpis: "25,000+ merchants • 5M+ users • AED 5B+ GMV",
+                    title: "Full GCC Infrastructure",
+                    subtitle: "Exit-Ready Position",
+                    features: ["🇰🇼🇧🇭🇴🇲 Parallel 3-country launch (institutional entry)", "Top-down strategy: govt partnerships + enterprise first", "Shared regional infrastructure (marginal cost 20%)", "Exit readiness: AED 420M revenue, 60% EBITDA, 300K MAU"],
+                    kpis: "3,000 merchants • 300K MAU • AED 420M revenue • Exit: $800M-$2.3B",
                     status: "Planned",
                     color: "amber",
                     bgGradient: "from-[#c9a227]/10 via-[#c9a227]/5 to-white",
@@ -5188,7 +5390,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-300">Signed LOIs</p>
                   </div>
                   <div>
-                    <p className="text-5xl font-black text-[#c9a227] mb-2">18x</p>
+                    <p className="text-5xl font-black text-[#c9a227] mb-2">10x+</p>
                     <p className="text-sm text-slate-300">LTV:CAC Ratio</p>
                   </div>
                 </div>
@@ -5313,51 +5515,105 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
     }
   };
 
+  // Touch/swipe support for mobile
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    }
+    if (isRightSwipe) {
+      setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    }
+  };
+
   return (
-    <div className="fixed inset-0 bg-white z-50 overflow-hidden">
-      {/* Navigation Controls */}
-      <div className="absolute top-6 right-6 z-50 flex items-center gap-4">
-        <span className="text-sm text-slate-600 font-mono">
+    <div
+      className="fixed inset-0 bg-white z-50 overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Top Navigation - Mobile Optimized */}
+      <div className="absolute top-2 sm:top-4 md:top-6 right-2 sm:right-4 md:right-6 z-50 flex items-center gap-2 sm:gap-4">
+        <span className="text-xs sm:text-sm text-slate-600 font-mono bg-white/90 backdrop-blur px-2 py-1 rounded">
           {currentSlide + 1} / {totalSlides}
         </span>
         <button
           onClick={onClose}
-          className="px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition-colors text-sm font-semibold"
+          className="px-2 py-1 sm:px-4 sm:py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition-colors text-xs sm:text-sm font-semibold"
         >
-          Close (ESC)
+          <span className="hidden sm:inline">Close (ESC)</span>
+          <span className="sm:hidden">✕</span>
         </button>
       </div>
 
       {/* Slide Content */}
-      <div className="w-full h-full overflow-y-auto">
+      <div className="w-full h-full overflow-y-auto pb-20 sm:pb-24">
         {renderSlide()}
       </div>
 
-      {/* Bottom Navigation */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3">
-        <button
-          onClick={() => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)}
-          className="px-6 py-3 bg-white border-2 border-slate-300 text-slate-900 rounded-lg hover:bg-slate-50 transition-colors font-semibold"
-        >
-          ← Prev
-        </button>
-        <div className="flex gap-1">
-          {Array.from({ length: totalSlides }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentSlide(i)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                i === currentSlide ? 'bg-[#c9a227] w-6' : 'bg-slate-300'
-              }`}
-            />
-          ))}
+      {/* Bottom Navigation - Mobile Optimized */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur border-t border-slate-200 py-2 sm:py-3 px-2 sm:px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+          {/* Previous Button */}
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides)}
+            disabled={currentSlide === 0}
+            className="px-3 py-2 sm:px-6 sm:py-3 bg-white border-2 border-slate-300 text-slate-900 rounded-lg hover:bg-slate-50 transition-colors font-semibold text-xs sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+          >
+            <span className="hidden sm:inline">← Prev</span>
+            <span className="sm:hidden">←</span>
+          </button>
+
+          {/* Slide Dots - Mobile Optimized */}
+          <div className="flex gap-1 sm:gap-1.5 overflow-x-auto scrollbar-hide flex-1 justify-center px-2">
+            {Array.from({ length: totalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentSlide(i)}
+                className={`rounded-full transition-all flex-shrink-0 ${
+                  i === currentSlide
+                    ? 'bg-[#c9a227] w-6 h-3 sm:w-8 sm:h-3'
+                    : 'bg-slate-300 w-3 h-3 sm:w-3 sm:h-3 hover:bg-slate-400'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
+            disabled={currentSlide === totalSlides - 1}
+            className="px-3 py-2 sm:px-6 sm:py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition-colors font-semibold text-xs sm:text-base disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+          >
+            <span className="hidden sm:inline">Next →</span>
+            <span className="sm:hidden">→</span>
+          </button>
         </div>
-        <button
-          onClick={() => setCurrentSlide((prev) => (prev + 1) % totalSlides)}
-          className="px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-700 transition-colors font-semibold"
-        >
-          Next →
-        </button>
+
+        {/* Swipe Hint for Mobile */}
+        <div className="sm:hidden text-center mt-2">
+          <p className="text-xs text-slate-500">Swipe left/right to navigate</p>
+        </div>
       </div>
     </div>
   );
