@@ -2259,10 +2259,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 10: BUSINESS MODEL (PREMIUM ✓✓✓) ====================
       case 10:
         const revenueData = [
-          { name: "Merchant Commission", value: 45, amount: "AED 450K", desc: "5% on GMV", color: "#3b82f6" },
-          { name: "Promoted Listings", value: 25, amount: "AED 250K", desc: "Priority placement", color: "#a855f7" },
-          { name: "Bank Partnerships", value: 20, amount: "AED 200K", desc: "Affiliate revenue", color: "#f97316" },
-          { name: "Float Interest", value: 10, amount: "AED 100K", desc: "Wallet deposits", color: "#22c55e" }
+          { name: "Merchant Commission", value: 50, amount: "AED 950K", desc: "15% fee on redemptions", color: "#3b82f6" },
+          { name: "Promoted Listings", value: 30, amount: "AED 570K", desc: "Priority placement", color: "#a855f7" },
+          { name: "Bank Partnerships", value: 20, amount: "AED 380K", desc: "Card/BNPL affiliate fees", color: "#f97316" }
         ];
 
         return (
@@ -4719,13 +4718,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     year: 'Year 1',
-                    period: '12 Months',
-                    revenue: '$1.8M',
+                    period: '10 Months',
+                    revenue: '$1.9M',
                     ebitda: '-83%',
                     margin: 'Investment Phase',
                     merchants: '500',
                     mau: '50K',
-                    gmv: '$24M',
+                    gmv: '$25.5M',
                     color: 'from-red-500/20 to-orange-500/20 border-red-500/40'
                   },
                   {
@@ -4820,7 +4819,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Year 1 GMV Footnote */}
               <div className="mt-4 text-center">
                 <p className="text-xs text-slate-400 italic">
-                  * Year 1 GMV based on 10-month operating period (Feb 28-Dec 2026) with avg 30K MAU, ramping from 5K → 50K users
+                  * Year 1 GMV based on 10-month operating period (Feb 28-Dec 2026) with avg 24K MAU, ramping from 2K → 50K users, avg 3.6 txn/month × $27
                 </p>
               </div>
 
