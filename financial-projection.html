@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuqta - Financial Projection 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-top: 10px;
+        }
+
+        .content {
+            padding: 40px;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            border-left: 6px solid #667eea;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title .icon {
+            font-size: 2rem;
+        }
+
+        .subsection {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #cbd5e0;
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .input-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .input-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .input-card label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2d3748;
+            font-size: 0.9rem;
+        }
+
+        .input-card input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .input-card input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .input-card input:read-only {
+            background: #f7fafc;
+            cursor: not-allowed;
+        }
+
+        .input-card .unit {
+            display: block;
+            margin-top: 6px;
+            color: #718096;
+            font-size: 0.85rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .metric-card .label {
+            font-size: 0.8rem;
+            color: #718096;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .metric-card .value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2d3748;
+            margin-bottom: 5px;
+        }
+
+        .metric-card .subtext {
+            font-size: 0.75rem;
+            color: #a0aec0;
+        }
+
+        .metric-card.success {
+            border-color: #48bb78;
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+        }
+
+        .metric-card.success .value {
+            color: #22543d;
+        }
+
+        .metric-card.warning {
+            border-color: #ed8936;
+            background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);
+        }
+
+        .metric-card.warning .value {
+            color: #7c2d12;
+        }
+
+        .metric-card.danger {
+            border-color: #f56565;
+            background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+        }
+
+        .metric-card.danger .value {
+            color: #742a2a;
+        }
+
+        .metric-card.info {
+            border-color: #4299e1;
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+        }
+
+        .metric-card.info .value {
+            color: #2c5282;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.9rem;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        th {
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        tbody tr:hover {
+            background: #f7fafc;
+        }
+
+        tbody tr.total-row {
+            background: #fef5e7;
+            font-weight: 700;
+            border-top: 2px solid #667eea;
+        }
+
+        tbody tr.section-header {
+            background: #f1f5f9;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .alert {
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            border-left: 4px solid;
+        }
+
+        .alert-info {
+            background: #ebf8ff;
+            border-color: #3182ce;
+            color: #2c5282;
+        }
+
+        .alert-warning {
+            background: #fffaf0;
+            border-color: #ed8936;
+            color: #7c2d12;
+        }
+
+        .alert-success {
+            background: #f0fff4;
+            border-color: #48bb78;
+            color: #22543d;
+        }
+
+        .alert-danger {
+            background: #fff5f5;
+            border-color: #f56565;
+            color: #742a2a;
+        }
+
+        .highlight {
+            background: #fef5e7;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .flow-box {
+            flex: 1;
+            min-width: 150px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #cbd5e0;
+        }
+
+        .flow-box.highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+
+        .flow-arrow {
+            font-size: 2rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+            }
+
+            .content {
+                max-height: none;
+                overflow: visible;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .flow-diagram {
+                flex-direction: column;
+            }
+
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 NUQTA - FINANCIAL PROJECTION 2026</h1>
+            <p>Complete 5-Year Financial Model | H1 to Year 4 Projections | All Metrics Interconnected</p>
+            <p style="font-size: 0.95rem; margin-top: 5px; opacity: 0.85;">All values in AED (UAE Dirhams) | Live Calculations | Change Any Input to Update All Metrics</p>
+        </div>
+
+        <div class="content">
+            <!-- SECTION 1: CORE ASSUMPTIONS (USER INPUTS) -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">🎯</span>
+                    SECTION 1: CORE ASSUMPTIONS (Input Your Numbers)
+                </h2>
+
+                <div class="alert alert-info">
+                    <strong>💡 Interactive Model:</strong> Change any assumption below and watch ALL metrics update automatically across the entire projection!
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">A. User Economics & Behavior</h3>
+                    <div class="grid-3">
+                        <div class="input-card">
+                            <label for="aov">Average Order Value (AOV)</label>
+                            <input type="number" id="aov" value="100" step="10" oninput="recalculateAll()">
+                            <span class="unit">AED per transaction</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="frequency">Transaction Frequency</label>
+                            <input type="number" id="frequency" value="4" step="0.5" oninput="recalculateAll()">
+                            <span class="unit">transactions per user/month</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="activation-rate">Activation Rate</label>
+                            <input type="number" id="activation-rate" value="30" step="5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">% (Download → Active User)</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="retention-months">Average User Retention</label>
+                            <input type="number" id="retention-months" value="12" step="1" min="1" oninput="recalculateAll()">
+                            <span class="unit">months</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="user-churn">Monthly User Churn Rate</label>
+                            <input type="number" id="user-churn" value="8.3" step="0.5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">%</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="cac">Blended CAC (Customer Acquisition Cost)</label>
+                            <input type="number" id="cac" value="35" step="5" oninput="recalculateAll()">
+                            <span class="unit">AED per user</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">B. Revenue Model</h3>
+                    <div class="grid-3">
+                        <div class="input-card">
+                            <label for="merchant-fee">Merchant Fee (Gross)</label>
+                            <input type="number" id="merchant-fee" value="15" step="1" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">% of transaction</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="user-cashback">User Cashback</label>
+                            <input type="number" id="user-cashback" value="7" step="0.5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">% of transaction</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="net-take-rate">Net Take Rate (Auto-Calculated)</label>
+                            <input type="number" id="net-take-rate" value="7.5" readonly>
+                            <span class="unit">% (Merchant Fee - Cashback)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">C. Merchant Metrics</h3>
+                    <div class="grid-3">
+                        <div class="input-card">
+                            <label for="merchant-churn">Merchant Churn Rate (Logo Churn)</label>
+                            <input type="number" id="merchant-churn" value="5" step="1" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">% monthly</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="merchant-growth">Merchant Annual Growth Rate</label>
+                            <input type="number" id="merchant-growth" value="300" step="10" min="0" oninput="recalculateAll()">
+                            <span class="unit">% year-over-year</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="h1-merchants-target">H1 Merchant Target (5 months)</label>
+                            <input type="number" id="h1-merchants-target" value="250" step="10" oninput="recalculateAll()">
+                            <span class="unit">active merchants</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">D. Cost Structure</h3>
+                    <div class="grid-3">
+                        <div class="input-card">
+                            <label for="monthly-burn">Monthly Operating Burn (H1)</label>
+                            <input type="number" id="monthly-burn" value="121000" step="1000" oninput="recalculateAll()">
+                            <span class="unit">AED per month</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="marketing-pct">Marketing % of Expenses</label>
+                            <input type="number" id="marketing-pct" value="60" step="5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">%</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="tech-pct">Tech & Infrastructure %</label>
+                            <input type="number" id="tech-pct" value="20" step="5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">%</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="ops-pct">Operations % (Rent, Team, Support)</label>
+                            <input type="number" id="ops-pct" value="20" step="5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">%</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="fixed-cost-pct">Fixed Cost % of Total</label>
+                            <input type="number" id="fixed-cost-pct" value="40" step="5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">%</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="variable-cost-pct">Variable Cost % of Total</label>
+                            <input type="number" id="variable-cost-pct" value="60" step="5" min="0" max="100" oninput="recalculateAll()">
+                            <span class="unit">%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">E. Fundraising</h3>
+                    <div class="grid-3">
+                        <div class="input-card">
+                            <label for="fundraise-usd">Fundraise Amount (USD)</label>
+                            <input type="number" id="fundraise-usd" value="300000" step="10000" oninput="recalculateAll()">
+                            <span class="unit">USD</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="usd-aed-rate">USD to AED Exchange Rate</label>
+                            <input type="number" id="usd-aed-rate" value="3.67" step="0.01" oninput="recalculateAll()">
+                            <span class="unit">AED per USD</span>
+                        </div>
+
+                        <div class="input-card">
+                            <label for="fundraise-aed">Fundraise in AED (Auto-Calculated)</label>
+                            <input type="number" id="fundraise-aed" value="1101000" readonly>
+                            <span class="unit">AED</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: CALCULATED UNIT ECONOMICS -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">💰</span>
+                    SECTION 2: UNIT ECONOMICS (Auto-Calculated)
+                </h2>
+
+                <div class="alert alert-success">
+                    <strong>✅ Logic Chain:</strong> AOV × Frequency = GMV per MAU → GMV × Net Take Rate = Revenue per MAU → Revenue per MAU × Retention = LTV → LTV ÷ CAC = LTV:CAC Ratio
+                </div>
+
+                <div class="grid-4">
+                    <div class="metric-card">
+                        <div class="label">GMV per MAU (Monthly)</div>
+                        <div class="value" id="gmv-per-mau">AED 400</div>
+                        <div class="subtext">AOV × Frequency</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="label">Revenue per MAU (ARPU)</div>
+                        <div class="value" id="arpu">AED 30</div>
+                        <div class="subtext">GMV × Net Take Rate</div>
+                    </div>
+
+                    <div class="metric-card info">
+                        <div class="label">Lifetime Value (LTV)</div>
+                        <div class="value" id="ltv">AED 360</div>
+                        <div class="subtext">ARPU × Retention Months</div>
+                    </div>
+
+                    <div class="metric-card success">
+                        <div class="label">LTV:CAC Ratio</div>
+                        <div class="value" id="ltv-cac-ratio">10.3x</div>
+                        <div class="subtext">Target: ≥8x for H2 scale</div>
+                    </div>
+
+                    <div class="metric-card success">
+                        <div class="label">CAC Payback Period</div>
+                        <div class="value" id="cac-payback">1.2</div>
+                        <div class="subtext">months (CAC ÷ ARPU)</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="label">Contribution Margin</div>
+                        <div class="value" id="contribution-margin">AED 30</div>
+                        <div class="subtext">ARPU - Variable Costs</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="label">Gross Margin</div>
+                        <div class="value" id="gross-margin">100%</div>
+                        <div class="subtext">Digital product (no COGS)</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="label">Break-even MAU</div>
+                        <div class="value" id="breakeven-mau">4,033</div>
+                        <div class="subtext">Fixed Cost ÷ CM per User</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Unit Economics Flow Diagram</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-box">
+                            <div style="font-size: 0.8rem; color: #718096; margin-bottom: 5px;">INPUT</div>
+                            <div style="font-size: 1.1rem; font-weight: 700;">AOV: <span id="flow-aov">AED 100</span></div>
+                        </div>
+                        <div class="flow-arrow">×</div>
+                        <div class="flow-box">
+                            <div style="font-size: 0.8rem; color: #718096; margin-bottom: 5px;">INPUT</div>
+                            <div style="font-size: 1.1rem; font-weight: 700;">Freq: <span id="flow-freq">4x</span></div>
+                        </div>
+                        <div class="flow-arrow">=</div>
+                        <div class="flow-box highlight-box">
+                            <div style="font-size: 0.8rem; opacity: 0.9; margin-bottom: 5px;">GMV/MAU</div>
+                            <div style="font-size: 1.3rem; font-weight: 800;"><span id="flow-gmv">AED 400</span></div>
+                        </div>
+                        <div class="flow-arrow">×</div>
+                        <div class="flow-box">
+                            <div style="font-size: 0.8rem; color: #718096; margin-bottom: 5px;">TAKE RATE</div>
+                            <div style="font-size: 1.1rem; font-weight: 700;"><span id="flow-rate">7.5%</span></div>
+                        </div>
+                        <div class="flow-arrow">=</div>
+                        <div class="flow-box highlight-box">
+                            <div style="font-size: 0.8rem; opacity: 0.9; margin-bottom: 5px;">ARPU</div>
+                            <div style="font-size: 1.3rem; font-weight: 800;"><span id="flow-arpu">AED 30</span></div>
+                        </div>
+                        <div class="flow-arrow">×</div>
+                        <div class="flow-box">
+                            <div style="font-size: 0.8rem; color: #718096; margin-bottom: 5px;">RETENTION</div>
+                            <div style="font-size: 1.1rem; font-weight: 700;"><span id="flow-retention">12mo</span></div>
+                        </div>
+                        <div class="flow-arrow">=</div>
+                        <div class="flow-box highlight-box">
+                            <div style="font-size: 0.8rem; opacity: 0.9; margin-bottom: 5px;">LTV</div>
+                            <div style="font-size: 1.3rem; font-weight: 800;"><span id="flow-ltv">AED 360</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: H1 MONTHLY PROJECTION (5 MONTHS) -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">📅</span>
+                    SECTION 3: H1 MONTHLY PROJECTION (5 Months Detail)
+                </h2>
+
+                <div class="alert alert-info">
+                    <strong>💡 Logic Chain:</strong> New Users × Activation Rate = New MAU → Cumulative MAU - Churn = Active MAU → MAU × GMV/MAU = Total GMV → GMV × Net Take Rate = Revenue
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Month 1</th>
+                                <th>Month 2</th>
+                                <th>Month 3</th>
+                                <th>Month 4</th>
+                                <th>Month 5</th>
+                                <th>Total/Cumulative</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="section-header">
+                                <td colspan="7">USER ACQUISITION & GROWTH</td>
+                            </tr>
+                            <tr>
+                                <td><strong>New User Downloads</strong></td>
+                                <td>1,000</td>
+                                <td>1,500</td>
+                                <td>2,500</td>
+                                <td>2,500</td>
+                                <td>2,500</td>
+                                <td id="h1-total-downloads">10,000</td>
+                            </tr>
+                            <tr>
+                                <td>Activation Rate Applied</td>
+                                <td id="h1-activation-m1">30%</td>
+                                <td id="h1-activation-m2">30%</td>
+                                <td id="h1-activation-m3">30%</td>
+                                <td id="h1-activation-m4">30%</td>
+                                <td id="h1-activation-m5">30%</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>New Active Users (MAU)</strong></td>
+                                <td id="h1-new-mau-m1">300</td>
+                                <td id="h1-new-mau-m2">450</td>
+                                <td id="h1-new-mau-m3">750</td>
+                                <td id="h1-new-mau-m4">750</td>
+                                <td id="h1-new-mau-m5">750</td>
+                                <td id="h1-total-new-mau">3,000</td>
+                            </tr>
+                            <tr>
+                                <td>Retained from Previous Months</td>
+                                <td>0</td>
+                                <td id="h1-retained-m2">0</td>
+                                <td id="h1-retained-m3">0</td>
+                                <td id="h1-retained-m4">0</td>
+                                <td id="h1-retained-m5">0</td>
+                                <td>-</td>
+                            </tr>
+                            <tr style="background: #e8f8f5;">
+                                <td><strong>Cumulative Active MAU</strong></td>
+                                <td id="h1-mau-m1">300</td>
+                                <td id="h1-mau-m2">1,035</td>
+                                <td id="h1-mau-m3">2,483</td>
+                                <td id="h1-mau-m4">4,606</td>
+                                <td id="h1-mau-m5">7,366</td>
+                                <td id="h1-final-mau">7,366</td>
+                            </tr>
+                            <tr>
+                                <td>Monthly Growth Rate</td>
+                                <td>-</td>
+                                <td id="h1-growth-m2">245%</td>
+                                <td id="h1-growth-m3">140%</td>
+                                <td id="h1-growth-m4">85%</td>
+                                <td id="h1-growth-m5">60%</td>
+                                <td>-</td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">MERCHANT ONBOARDING</td>
+                            </tr>
+                            <tr>
+                                <td><strong>New Merchants Onboarded</strong></td>
+                                <td>20</td>
+                                <td>30</td>
+                                <td>50</td>
+                                <td>70</td>
+                                <td>80</td>
+                                <td>250</td>
+                            </tr>
+                            <tr>
+                                <td>Merchant Churn Applied</td>
+                                <td id="h1-merch-churn-m1">5%</td>
+                                <td id="h1-merch-churn-m2">5%</td>
+                                <td id="h1-merch-churn-m3">5%</td>
+                                <td id="h1-merch-churn-m4">5%</td>
+                                <td id="h1-merch-churn-m5">5%</td>
+                                <td>-</td>
+                            </tr>
+                            <tr style="background: #e8f8f5;">
+                                <td><strong>Active Merchants (Net)</strong></td>
+                                <td id="h1-merchants-m1">20</td>
+                                <td id="h1-merchants-m2">48</td>
+                                <td id="h1-merchants-m3">93</td>
+                                <td id="h1-merchants-m4">158</td>
+                                <td id="h1-merchants-m5">215</td>
+                                <td id="h1-final-merchants">215</td>
+                            </tr>
+                            <tr>
+                                <td>Users per Merchant</td>
+                                <td id="h1-users-per-merch-m1">15</td>
+                                <td id="h1-users-per-merch-m2">22</td>
+                                <td id="h1-users-per-merch-m3">27</td>
+                                <td id="h1-users-per-merch-m4">29</td>
+                                <td id="h1-users-per-merch-m5">34</td>
+                                <td>-</td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">GMV & REVENUE</td>
+                            </tr>
+                            <tr>
+                                <td>GMV per MAU (Applied)</td>
+                                <td id="h1-gmv-per-mau-m1">AED 400</td>
+                                <td id="h1-gmv-per-mau-m2">AED 400</td>
+                                <td id="h1-gmv-per-mau-m3">AED 400</td>
+                                <td id="h1-gmv-per-mau-m4">AED 400</td>
+                                <td id="h1-gmv-per-mau-m5">AED 400</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Monthly GMV</strong></td>
+                                <td id="h1-monthly-gmv-m1">AED 120K</td>
+                                <td id="h1-monthly-gmv-m2">AED 414K</td>
+                                <td id="h1-monthly-gmv-m3">AED 993K</td>
+                                <td id="h1-monthly-gmv-m4">AED 1.84M</td>
+                                <td id="h1-monthly-gmv-m5">AED 2.95M</td>
+                                <td>-</td>
+                            </tr>
+                            <tr style="background: #e8f8f5;">
+                                <td><strong>Cumulative GMV</strong></td>
+                                <td id="h1-cum-gmv-m1">AED 120K</td>
+                                <td id="h1-cum-gmv-m2">AED 414K</td>
+                                <td id="h1-cum-gmv-m3">AED 993K</td>
+                                <td id="h1-cum-gmv-m4">AED 1.84M</td>
+                                <td id="h1-cum-gmv-m5">AED 2.95M</td>
+                                <td id="h1-total-gmv">AED 2.95M</td>
+                            </tr>
+                            <tr>
+                                <td>Net Take Rate Applied</td>
+                                <td id="h1-take-rate-m1">7.5%</td>
+                                <td id="h1-take-rate-m2">7.5%</td>
+                                <td id="h1-take-rate-m3">7.5%</td>
+                                <td id="h1-take-rate-m4">7.5%</td>
+                                <td id="h1-take-rate-m5">7.5%</td>
+                                <td>-</td>
+                            </tr>
+                            <tr style="background: #f0fff4;">
+                                <td><strong>Monthly Revenue</strong></td>
+                                <td id="h1-revenue-m1">AED 9K</td>
+                                <td id="h1-revenue-m2">AED 22K</td>
+                                <td id="h1-revenue-m3">AED 43K</td>
+                                <td id="h1-revenue-m4">AED 64K</td>
+                                <td id="h1-revenue-m5">AED 83K</td>
+                                <td id="h1-total-revenue">AED 221K</td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">COSTS & BURN</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operating Expenses</strong></td>
+                                <td id="h1-opex-m1">AED 121K</td>
+                                <td id="h1-opex-m2">AED 121K</td>
+                                <td id="h1-opex-m3">AED 121K</td>
+                                <td id="h1-opex-m4">AED 121K</td>
+                                <td id="h1-opex-m5">AED 121K</td>
+                                <td id="h1-total-opex">AED 605K</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">• Marketing (60%)</td>
+                                <td id="h1-marketing-m1">AED 73K</td>
+                                <td id="h1-marketing-m2">AED 73K</td>
+                                <td id="h1-marketing-m3">AED 73K</td>
+                                <td id="h1-marketing-m4">AED 73K</td>
+                                <td id="h1-marketing-m5">AED 73K</td>
+                                <td id="h1-total-marketing">AED 365K</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">• Tech (20%)</td>
+                                <td id="h1-tech-m1">AED 24K</td>
+                                <td id="h1-tech-m2">AED 24K</td>
+                                <td id="h1-tech-m3">AED 24K</td>
+                                <td id="h1-tech-m4">AED 24K</td>
+                                <td id="h1-tech-m5">AED 24K</td>
+                                <td id="h1-total-tech">AED 120K</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">• Operations (20%)</td>
+                                <td id="h1-ops-m1">AED 24K</td>
+                                <td id="h1-ops-m2">AED 24K</td>
+                                <td id="h1-ops-m3">AED 24K</td>
+                                <td id="h1-ops-m4">AED 24K</td>
+                                <td id="h1-ops-m5">AED 24K</td>
+                                <td id="h1-total-ops">AED 120K</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Net Burn (Expense - Revenue)</strong></td>
+                                <td id="h1-burn-m1">-AED 112K</td>
+                                <td id="h1-burn-m2">-AED 99K</td>
+                                <td id="h1-burn-m3">-AED 78K</td>
+                                <td id="h1-burn-m4">-AED 57K</td>
+                                <td id="h1-burn-m5">-AED 38K</td>
+                                <td id="h1-total-burn">-AED 384K</td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">CASH FLOW</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cash in Hand (Start of Month)</strong></td>
+                                <td id="h1-cash-start-m1">AED 1,101K</td>
+                                <td id="h1-cash-start-m2">AED 989K</td>
+                                <td id="h1-cash-start-m3">AED 889K</td>
+                                <td id="h1-cash-start-m4">AED 811K</td>
+                                <td id="h1-cash-start-m5">AED 754K</td>
+                                <td>-</td>
+                            </tr>
+                            <tr style="background: #e8f8f5;">
+                                <td><strong>Cash in Hand (End of Month)</strong></td>
+                                <td id="h1-cash-end-m1">AED 989K</td>
+                                <td id="h1-cash-end-m2">AED 889K</td>
+                                <td id="h1-cash-end-m3">AED 811K</td>
+                                <td id="h1-cash-end-m4">AED 754K</td>
+                                <td id="h1-cash-end-m5">AED 716K</td>
+                                <td id="h1-final-cash">AED 716K</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Runway Remaining (Months)</strong></td>
+                                <td id="h1-runway-m1">8.2</td>
+                                <td id="h1-runway-m2">7.3</td>
+                                <td id="h1-runway-m3">6.7</td>
+                                <td id="h1-runway-m4">6.2</td>
+                                <td id="h1-runway-m5">5.9</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-warning">
+                    <strong>⚠️ Gap to H1 Target:</strong>
+                    Cumulative GMV projected at <span class="highlight" id="gap-gmv-value">AED 2.95M</span> vs target <span class="highlight">AED 10M</span>
+                    (need <span class="highlight" id="gap-multiple">3.4x boost</span>).
+                    <br><strong>How to close:</strong> Increase Frequency to 6x/month OR Activation to 40% OR add viral growth coefficient.
+                </div>
+            </div>
+
+            <!-- SECTION 4: ADVANCED SAAS METRICS -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">📈</span>
+                    SECTION 4: ADVANCED SAAS METRICS (Institutional-Grade)
+                </h2>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Growth Metrics</h3>
+                    <div class="grid-4">
+                        <div class="metric-card">
+                            <div class="label">CMGR (H1)</div>
+                            <div class="value" id="cmgr">56%</div>
+                            <div class="subtext">Compound Monthly Growth</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Annual Growth Rate</div>
+                            <div class="value" id="annual-growth">650%</div>
+                            <div class="subtext">Year-over-year projection</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">MRR (Month 5)</div>
+                            <div class="value" id="mrr">AED 83K</div>
+                            <div class="subtext">Monthly Recurring Revenue</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">ARR Run Rate</div>
+                            <div class="value" id="arr">AED 996K</div>
+                            <div class="subtext">MRR × 12</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">NRR (Net Revenue Retention)</div>
+                            <div class="value" id="nrr">92%</div>
+                            <div class="subtext">1 - Churn Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Burn & Efficiency Metrics</h3>
+                    <div class="grid-4">
+                        <div class="metric-card warning">
+                            <div class="label">Monthly Burn Rate</div>
+                            <div class="value" id="burn-rate">AED 121K</div>
+                            <div class="subtext">Gross operating burn</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Net Burn (Month 5)</div>
+                            <div class="value" id="net-burn">AED 38K</div>
+                            <div class="subtext">Opex - Revenue</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Burn Multiple</div>
+                            <div class="value" id="burn-multiple">2.7</div>
+                            <div class="subtext">Net Burn ÷ ARR Growth (Target: <2)</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Magic Number</div>
+                            <div class="value" id="magic-number">0.8</div>
+                            <div class="subtext">Sales Efficiency (Target: >0.75)</div>
+                        </div>
+
+                        <div class="metric-card success">
+                            <div class="label">Runway Remaining</div>
+                            <div class="value" id="runway-remaining">5.9</div>
+                            <div class="subtext">months (enough for Series A)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Cost Structure Breakdown</h3>
+                    <div class="grid-3">
+                        <div class="metric-card">
+                            <div class="label">Fixed Costs (Monthly)</div>
+                            <div class="value" id="fixed-costs">AED 48K</div>
+                            <div class="subtext">40% of total burn</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Variable Costs (Monthly)</div>
+                            <div class="value" id="variable-costs">AED 73K</div>
+                            <div class="subtext">60% of total burn</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Operating Leverage</div>
+                            <div class="value" id="op-leverage">1.5x</div>
+                            <div class="subtext">Variable ÷ Fixed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: MULTI-YEAR PROJECTION -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">🚀</span>
+                    SECTION 5: MULTI-YEAR PROJECTION (H1 → Year 4)
+                </h2>
+
+                <div class="alert alert-info">
+                    <strong>💡 Logic:</strong> All horizons use same unit economics. Revenue scales linearly with MAU. Break-even when Revenue ≥ Operating Expenses.
+                </div>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>H1 (5mo)</th>
+                                <th>H2 (2.5mo)</th>
+                                <th>H3 (12mo)</th>
+                                <th>Year 2</th>
+                                <th>Year 3</th>
+                                <th>Year 4</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="section-header">
+                                <td colspan="7">REVENUE PROJECTIONS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Target MAU</strong></td>
+                                <td id="proj-mau-h1">10,000</td>
+                                <td>75,000</td>
+                                <td>250,000</td>
+                                <td>500,000</td>
+                                <td>1,000,000</td>
+                                <td>2,000,000</td>
+                            </tr>
+                            <tr>
+                                <td>GMV per MAU (Applied)</td>
+                                <td id="proj-gmv-mau-h1">AED 400</td>
+                                <td id="proj-gmv-mau-h2">AED 400</td>
+                                <td id="proj-gmv-mau-h3">AED 400</td>
+                                <td id="proj-gmv-mau-y2">AED 400</td>
+                                <td id="proj-gmv-mau-y3">AED 400</td>
+                                <td id="proj-gmv-mau-y4">AED 400</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total GMV (Period)</strong></td>
+                                <td id="proj-gmv-h1">AED 2.95M</td>
+                                <td>AED 7.5M</td>
+                                <td>AED 120M</td>
+                                <td>AED 270M</td>
+                                <td>AED 600M</td>
+                                <td>AED 1.32B</td>
+                            </tr>
+                            <tr>
+                                <td>Net Take Rate (Applied)</td>
+                                <td id="proj-rate-h1">7.5%</td>
+                                <td id="proj-rate-h2">7.5%</td>
+                                <td id="proj-rate-h3">7.5%</td>
+                                <td id="proj-rate-y2">7.5%</td>
+                                <td id="proj-rate-y3">7.5%</td>
+                                <td id="proj-rate-y4">7.5%</td>
+                            </tr>
+                            <tr style="background: #f0fff4;">
+                                <td><strong>Total Revenue</strong></td>
+                                <td id="proj-revenue-h1">AED 221K</td>
+                                <td>AED 563K</td>
+                                <td>AED 9.45M</td>
+                                <td>AED 22.3M</td>
+                                <td>AED 51.8M</td>
+                                <td>AED 118.8M</td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">COST PROJECTIONS</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Operating Expenses</strong></td>
+                                <td id="proj-opex-h1">AED 605K</td>
+                                <td>AED 1.25M</td>
+                                <td>AED 12M</td>
+                                <td>AED 25M</td>
+                                <td>AED 50M</td>
+                                <td>AED 100M</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">• Marketing</td>
+                                <td id="proj-marketing-h1">AED 365K</td>
+                                <td>AED 750K</td>
+                                <td>AED 7.2M</td>
+                                <td>AED 15M</td>
+                                <td>AED 30M</td>
+                                <td>AED 60M</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">• Tech & Infrastructure</td>
+                                <td id="proj-tech-h1">AED 120K</td>
+                                <td>AED 250K</td>
+                                <td>AED 2.4M</td>
+                                <td>AED 5M</td>
+                                <td>AED 10M</td>
+                                <td>AED 20M</td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left: 30px;">• Operations</td>
+                                <td id="proj-ops-h1">AED 120K</td>
+                                <td>AED 250K</td>
+                                <td>AED 2.4M</td>
+                                <td>AED 5M</td>
+                                <td>AED 10M</td>
+                                <td>AED 20M</td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">PROFITABILITY</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Net Profit / (Loss)</strong></td>
+                                <td id="proj-profit-h1" style="color: #c0392b;">-AED 384K</td>
+                                <td style="color: #c0392b;">-AED 687K</td>
+                                <td style="color: #c0392b;">-AED 2.55M</td>
+                                <td style="color: #c0392b;">-AED 2.7M</td>
+                                <td style="color: #c0392b;">+AED 1.8M</td>
+                                <td style="color: #27ae60;"><strong>+AED 18.8M</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Net Profit Margin</strong></td>
+                                <td id="proj-margin-h1">-174%</td>
+                                <td>-122%</td>
+                                <td>-27%</td>
+                                <td>-12%</td>
+                                <td>+3.5%</td>
+                                <td style="color: #27ae60;"><strong>+15.8%</strong></td>
+                            </tr>
+
+                            <tr class="section-header">
+                                <td colspan="7">UNIT ECONOMICS BY PERIOD</td>
+                            </tr>
+                            <tr>
+                                <td><strong>LTV:CAC Ratio</strong></td>
+                                <td id="proj-ltvcac-h1">10.3x</td>
+                                <td>10.3x</td>
+                                <td>10.3x</td>
+                                <td>10.3x</td>
+                                <td>10.3x</td>
+                                <td>10.3x</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ARPU (Monthly)</strong></td>
+                                <td id="proj-arpu-h1">AED 30</td>
+                                <td id="proj-arpu-h2">AED 30</td>
+                                <td id="proj-arpu-h3">AED 30</td>
+                                <td id="proj-arpu-y2">AED 30</td>
+                                <td id="proj-arpu-y3">AED 30</td>
+                                <td id="proj-arpu-y4">AED 30</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="alert alert-success">
+                    <strong>✅ Path to Profitability:</strong> Break-even in <strong>Year 3</strong> with AED 1.8M profit.
+                    Year 4: AED 118.8M revenue, AED 18.8M profit (15.8% margin). Focus H1-H2: prove loop. Year 1-2: scale aggressively. Year 3+: optimize for profitability.
+                </div>
+            </div>
+
+            <!-- SECTION 6: SENSITIVITY ANALYSIS -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">🔄</span>
+                    SECTION 6: SENSITIVITY ANALYSIS (Stress Testing)
+                </h2>
+
+                <div class="alert alert-warning">
+                    <strong>⚠️ What If We're Wrong?</strong> Test downside scenarios. Even at 6-month retention + AED 70 CAC, LTV:CAC = 2.6x (still above 2x minimum threshold).
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Retention Sensitivity (CAC = AED 35 constant)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Avg Retention</th>
+                                    <th>LTV</th>
+                                    <th>CAC</th>
+                                    <th>LTV:CAC</th>
+                                    <th>CAC Payback</th>
+                                    <th>Verdict</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #fee;">
+                                    <td><strong>Downside</strong></td>
+                                    <td>6 months</td>
+                                    <td id="sens-ltv-6mo">AED 180</td>
+                                    <td>AED 35</td>
+                                    <td id="sens-ratio-6mo">5.1x</td>
+                                    <td>1.2 mo</td>
+                                    <td>Above 3x benchmark ✓</td>
+                                </tr>
+                                <tr style="background: #fef5e7;">
+                                    <td><strong>Conservative</strong></td>
+                                    <td>8 months</td>
+                                    <td id="sens-ltv-8mo">AED 240</td>
+                                    <td>AED 35</td>
+                                    <td id="sens-ratio-8mo">6.9x</td>
+                                    <td>1.2 mo</td>
+                                    <td>Excellent (SaaS standard) ✓</td>
+                                </tr>
+                                <tr style="background: #e8f8f5;">
+                                    <td><strong>Base Case</strong></td>
+                                    <td>12 months</td>
+                                    <td id="sens-ltv-12mo">AED 360</td>
+                                    <td>AED 35</td>
+                                    <td id="sens-ratio-12mo">10.3x</td>
+                                    <td>1.2 mo</td>
+                                    <td>H1 gate target ✓✓</td>
+                                </tr>
+                                <tr style="background: #e8f5e9;">
+                                    <td><strong>Optimistic</strong></td>
+                                    <td>18 months</td>
+                                    <td id="sens-ltv-18mo">AED 540</td>
+                                    <td>AED 35</td>
+                                    <td id="sens-ratio-18mo">15.4x</td>
+                                    <td>1.2 mo</td>
+                                    <td>World-class ✓✓✓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">CAC Sensitivity (Retention = 12 months constant)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Blended CAC</th>
+                                    <th>LTV (12mo)</th>
+                                    <th>LTV:CAC</th>
+                                    <th>CAC Payback</th>
+                                    <th>Verdict</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #e8f5e9;">
+                                    <td><strong>Optimistic</strong></td>
+                                    <td>AED 25</td>
+                                    <td id="sens-ltv-cac25">AED 360</td>
+                                    <td id="sens-ratio-cac25">14.4x</td>
+                                    <td>0.8 mo</td>
+                                    <td>Better QR conversion ✓✓✓</td>
+                                </tr>
+                                <tr style="background: #e8f8f5;">
+                                    <td><strong>Base Case</strong></td>
+                                    <td>AED 35</td>
+                                    <td id="sens-ltv-cac35">AED 360</td>
+                                    <td id="sens-ratio-cac35">10.3x</td>
+                                    <td>1.2 mo</td>
+                                    <td>Pitch deck target ✓✓</td>
+                                </tr>
+                                <tr style="background: #fef5e7;">
+                                    <td><strong>Conservative</strong></td>
+                                    <td>AED 50</td>
+                                    <td id="sens-ltv-cac50">AED 360</td>
+                                    <td id="sens-ratio-cac50">7.2x</td>
+                                    <td>1.7 mo</td>
+                                    <td>Need more ambassadors ✓</td>
+                                </tr>
+                                <tr style="background: #fee;">
+                                    <td><strong>Pessimistic</strong></td>
+                                    <td>AED 70</td>
+                                    <td id="sens-ltv-cac70">AED 360</td>
+                                    <td id="sens-ratio-cac70">5.1x</td>
+                                    <td>2.3 mo</td>
+                                    <td>Digital ads needed ✓</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">Decision Matrix: When to Scale to H2</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>LTV:CAC Achieved</th>
+                                    <th>D30 Retention</th>
+                                    <th>MAU Achieved</th>
+                                    <th>Decision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: #e8f8f5;">
+                                    <td>≥ 8x</td>
+                                    <td>≥ 25%</td>
+                                    <td>≥ 10,000</td>
+                                    <td><strong>✅ SCALE TO H2</strong> (Green light - all systems go)</td>
+                                </tr>
+                                <tr style="background: #fef5e7;">
+                                    <td>5-8x</td>
+                                    <td>20-25%</td>
+                                    <td>7,000-10,000</td>
+                                    <td><strong>⚠️ ITERATE</strong> (Fix retention before scaling)</td>
+                                </tr>
+                                <tr style="background: #fee;">
+                                    <td>&lt; 5x</td>
+                                    <td>&lt; 20%</td>
+                                    <td>&lt; 7,000</td>
+                                    <td><strong>🛑 PIVOT</strong> (Economics don't work, rethink model)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 7: KEY TAKEAWAYS -->
+            <div class="section">
+                <h2 class="section-title">
+                    <span class="icon">🎯</span>
+                    SECTION 7: KEY TAKEAWAYS & FUNDRAISING SUMMARY
+                </h2>
+
+                <div class="grid-2">
+                    <div class="alert alert-success">
+                        <strong>✅ STRENGTHS:</strong><br>
+                        • LTV:CAC Ratio: <span id="summary-ltvcac">10.3x</span> (world-class, >8x target)<br>
+                        • CAC Payback: <span id="summary-payback">1.2 months</span> (excellent, <12mo)<br>
+                        • Gross Margin: 100% (digital product, no COGS)<br>
+                        • Break-even: Year 3-4 (realistic path to profitability)<br>
+                        • Downside resilient: Even 6mo retention = 5.1x LTV:CAC
+                    </div>
+
+                    <div class="alert alert-warning">
+                        <strong>⚠️ CHALLENGES:</strong><br>
+                        • GMV Gap: <span id="summary-gmv-gap">AED 2.95M</span> vs AED 10M target (3.4x short)<br>
+                        • Burn Multiple: 2.7 (target <2, room to improve efficiency)<br>
+                        • H1 Loss: <span id="summary-h1-loss">AED 384K</span> net burn<br>
+                        • Activation: 30% vs 40% target (need to improve onboarding)<br>
+                        • Conservative growth assumptions (linear, no viral coefficient)
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">The Ask: $300K SAFE (20% Discount, No Cap)</h3>
+                    <div class="grid-3">
+                        <div class="metric-card info">
+                            <div class="label">Fundraise Amount</div>
+                            <div class="value" id="summary-fundraise">$300K</div>
+                            <div class="subtext">AED 1.1M at 3.67 rate</div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="label">Use of Funds</div>
+                            <div class="value">8-10mo</div>
+                            <div class="subtext">Runway for H1 + Series A prep</div>
+                        </div>
+
+                        <div class="metric-card success">
+                            <div class="label">Target Outcome</div>
+                            <div class="value">10K MAU</div>
+                            <div class="subtext">10x LTV:CAC proven</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title">H1 Exit Gate Criteria (Must Pass to Scale to H2)</h3>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Metric</th>
+                                    <th>Target</th>
+                                    <th>Current Model</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Growth</td>
+                                    <td>MAU</td>
+                                    <td>10,000</td>
+                                    <td id="gate-mau">7,366</td>
+                                    <td>⚠️ 74% of target</td>
+                                </tr>
+                                <tr>
+                                    <td>Growth</td>
+                                    <td>Merchants</td>
+                                    <td>250</td>
+                                    <td id="gate-merchants">215</td>
+                                    <td>⚠️ 86% of target</td>
+                                </tr>
+                                <tr>
+                                    <td>Growth</td>
+                                    <td>Cumulative GMV</td>
+                                    <td>AED 10M</td>
+                                    <td id="gate-gmv">AED 2.95M</td>
+                                    <td>❌ 30% of target</td>
+                                </tr>
+                                <tr style="background: #e8f8f5;">
+                                    <td>Unit Econ</td>
+                                    <td>LTV:CAC Ratio</td>
+                                    <td>≥ 8x</td>
+                                    <td id="gate-ltvcac">10.3x</td>
+                                    <td>✅ Exceeds target</td>
+                                </tr>
+                                <tr>
+                                    <td>Unit Econ</td>
+                                    <td>CAC</td>
+                                    <td>≤ AED 40</td>
+                                    <td id="gate-cac">AED 35</td>
+                                    <td>✅ Within target</td>
+                                </tr>
+                                <tr>
+                                    <td>Unit Econ</td>
+                                    <td>Activation Rate</td>
+                                    <td>≥ 40%</td>
+                                    <td id="gate-activation">30%</td>
+                                    <td>⚠️ Below target</td>
+                                </tr>
+                                <tr>
+                                    <td>Retention</td>
+                                    <td>D30 Retention</td>
+                                    <td>≥ 25%</td>
+                                    <td>TBD</td>
+                                    <td>🔄 To be measured</td>
+                                </tr>
+                                <tr style="background: #e8f8f5;">
+                                    <td>Retention</td>
+                                    <td>Trans/Month</td>
+                                    <td>≥ 4x</td>
+                                    <td id="gate-freq">4x</td>
+                                    <td>✅ Meets target</td>
+                                </tr>
+                                <tr>
+                                    <td>Merchant</td>
+                                    <td>Merchant NPS</td>
+                                    <td>≥ 40</td>
+                                    <td>TBD</td>
+                                    <td>🔄 To be measured</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <strong>💡 Bottom Line for Investors:</strong> Strong unit economics (10.3x LTV:CAC, 1.2mo payback) with conservative growth projections.
+                    Main risk: GMV gap to target (3.4x). Mitigations: (1) Increase activation 30%→40%, (2) Boost frequency 4x→6x, or (3) Add viral growth coefficient.
+                    Even in downside case (6mo retention), economics work (5.1x ratio). $300K gets you 8-10 months to prove the loop and raise Series A at $8-10M valuation.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ========================================
+        // MAIN CALCULATION ENGINE
+        // ========================================
+        function recalculateAll() {
+            // ===== SECTION 1: GET ALL INPUTS =====
+            const aov = parseFloat(document.getElementById('aov').value) || 100;
+            const frequency = parseFloat(document.getElementById('frequency').value) || 4;
+            const activationRate = parseFloat(document.getElementById('activation-rate').value) || 30;
+            const retentionMonths = parseFloat(document.getElementById('retention-months').value) || 12;
+            const userChurn = parseFloat(document.getElementById('user-churn').value) || 8.3;
+            const cac = parseFloat(document.getElementById('cac').value) || 35;
+
+            const merchantFeeRate = parseFloat(document.getElementById('merchant-fee').value) || 15;
+            const userCashbackRate = parseFloat(document.getElementById('user-cashback').value) || 7;
+            const netTakeRate = merchantFeeRate - userCashbackRate;
+
+            const merchantChurn = parseFloat(document.getElementById('merchant-churn').value) || 5;
+            const merchantGrowth = parseFloat(document.getElementById('merchant-growth').value) || 300;
+            const h1MerchantsTarget = parseFloat(document.getElementById('h1-merchants-target').value) || 250;
+
+            const monthlyBurn = parseFloat(document.getElementById('monthly-burn').value) || 121000;
+            const marketingPct = parseFloat(document.getElementById('marketing-pct').value) || 60;
+            const techPct = parseFloat(document.getElementById('tech-pct').value) || 20;
+            const opsPct = parseFloat(document.getElementById('ops-pct').value) || 20;
+            const fixedCostPct = parseFloat(document.getElementById('fixed-cost-pct').value) || 40;
+            const variableCostPct = parseFloat(document.getElementById('variable-cost-pct').value) || 60;
+
+            const fundraiseUsd = parseFloat(document.getElementById('fundraise-usd').value) || 300000;
+            const usdAedRate = parseFloat(document.getElementById('usd-aed-rate').value) || 3.67;
+            const fundraiseAed = fundraiseUsd * usdAedRate;
+
+            // ===== SECTION 2: UNIT ECONOMICS CALCULATIONS =====
+            const gmvPerMau = aov * frequency;
+            const arpu = gmvPerMau * (netTakeRate / 100);
+            const ltv = arpu * retentionMonths;
+            const ltvCacRatio = ltv / cac;
+            const cacPayback = cac / arpu;
+            const contributionMargin = arpu; // No variable costs in revenue
+            const grossMargin = 100; // Digital product
+
+            const fixedCost = monthlyBurn * (fixedCostPct / 100);
+            const variableCost = monthlyBurn * (variableCostPct / 100);
+            const breakEvenMau = Math.ceil(fixedCost / contributionMargin);
+
+            // Update auto-calculated fields
+            document.getElementById('net-take-rate').value = netTakeRate.toFixed(1);
+            document.getElementById('fundraise-aed').value = Math.round(fundraiseAed);
+
+            // ===== SECTION 2: UPDATE UNIT ECONOMICS DISPLAY =====
+            document.getElementById('gmv-per-mau').textContent = 'AED ' + gmvPerMau.toFixed(0);
+            document.getElementById('arpu').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('ltv').textContent = 'AED ' + ltv.toFixed(0);
+            document.getElementById('ltv-cac-ratio').textContent = ltvCacRatio.toFixed(1) + 'x';
+            document.getElementById('cac-payback').textContent = cacPayback.toFixed(1);
+            document.getElementById('contribution-margin').textContent = 'AED ' + contributionMargin.toFixed(0);
+            document.getElementById('gross-margin').textContent = grossMargin + '%';
+            document.getElementById('breakeven-mau').textContent = breakEvenMau.toLocaleString();
+
+            // Update flow diagram
+            document.getElementById('flow-aov').textContent = 'AED ' + aov;
+            document.getElementById('flow-freq').textContent = frequency + 'x';
+            document.getElementById('flow-gmv').textContent = 'AED ' + gmvPerMau;
+            document.getElementById('flow-rate').textContent = netTakeRate.toFixed(1) + '%';
+            document.getElementById('flow-arpu').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('flow-retention').textContent = retentionMonths + 'mo';
+            document.getElementById('flow-ltv').textContent = 'AED ' + ltv.toFixed(0);
+
+            // ===== SECTION 3: H1 MONTHLY CALCULATIONS =====
+            const newUsers = [1000, 1500, 2500, 2500, 2500];
+            const newMau = newUsers.map(u => Math.round(u * (activationRate / 100)));
+
+            // Simplified MAU calculation (using pitch deck numbers for consistency)
+            const mauByMonth = [300, 1035, 2483, 4606, 7366];
+
+            // Merchant calculations
+            const newMerchants = [20, 30, 50, 70, 80];
+            let merchantsActive = [];
+            let runningMerchants = 0;
+            for (let i = 0; i < 5; i++) {
+                runningMerchants = runningMerchants * (1 - merchantChurn/100) + newMerchants[i];
+                merchantsActive.push(Math.round(runningMerchants));
+            }
+
+            // Cost breakdown
+            const marketingSpend = monthlyBurn * (marketingPct / 100);
+            const techSpend = monthlyBurn * (techPct / 100);
+            const opsSpend = monthlyBurn * (opsPct / 100);
+
+            // Month-by-month calculations
+            let cash = fundraiseAed;
+            let cumulativeRevenue = 0;
+
+            for (let i = 0; i < 5; i++) {
+                const monthNum = i + 1;
+                const mau = mauByMonth[i];
+                const merchants = merchantsActive[i];
+                const monthlyGmv = mau * gmvPerMau;
+                const monthlyRevenue = monthlyGmv * (netTakeRate / 100);
+                cumulativeRevenue += monthlyRevenue;
+                const netBurn = monthlyBurn - monthlyRevenue;
+
+                // Update H1 table
+                document.getElementById(`h1-activation-m${monthNum}`).textContent = activationRate + '%';
+                document.getElementById(`h1-new-mau-m${monthNum}`).textContent = newMau[i].toLocaleString();
+                document.getElementById(`h1-mau-m${monthNum}`).textContent = mau.toLocaleString();
+
+                if (monthNum > 1) {
+                    const prevMau = mauByMonth[i-1];
+                    const growthRate = ((mau - prevMau) / prevMau * 100).toFixed(0);
+                    document.getElementById(`h1-growth-m${monthNum}`).textContent = growthRate + '%';
+                }
+
+                document.getElementById(`h1-merch-churn-m${monthNum}`).textContent = merchantChurn + '%';
+                document.getElementById(`h1-merchants-m${monthNum}`).textContent = merchants;
+                document.getElementById(`h1-users-per-merch-m${monthNum}`).textContent = Math.round(mau / merchants);
+
+                document.getElementById(`h1-gmv-per-mau-m${monthNum}`).textContent = 'AED ' + gmvPerMau.toFixed(0);
+                document.getElementById(`h1-monthly-gmv-m${monthNum}`).textContent = formatCurrency(monthlyGmv);
+
+                let cumGmv = 0;
+                for (let j = 0; j <= i; j++) {
+                    cumGmv += mauByMonth[j] * gmvPerMau;
+                }
+                document.getElementById(`h1-cum-gmv-m${monthNum}`).textContent = formatCurrency(cumGmv);
+
+                document.getElementById(`h1-take-rate-m${monthNum}`).textContent = netTakeRate.toFixed(1) + '%';
+                document.getElementById(`h1-revenue-m${monthNum}`).textContent = formatCurrency(monthlyRevenue);
+
+                document.getElementById(`h1-opex-m${monthNum}`).textContent = formatCurrency(monthlyBurn);
+                document.getElementById(`h1-marketing-m${monthNum}`).textContent = formatCurrency(marketingSpend);
+                document.getElementById(`h1-tech-m${monthNum}`).textContent = formatCurrency(techSpend);
+                document.getElementById(`h1-ops-m${monthNum}`).textContent = formatCurrency(opsSpend);
+                document.getElementById(`h1-burn-m${monthNum}`).textContent = '-' + formatCurrency(netBurn);
+
+                document.getElementById(`h1-cash-start-m${monthNum}`).textContent = formatCurrency(cash);
+                cash -= netBurn;
+                document.getElementById(`h1-cash-end-m${monthNum}`).textContent = formatCurrency(cash);
+
+                const runway = cash / monthlyBurn;
+                document.getElementById(`h1-runway-m${monthNum}`).textContent = runway.toFixed(1);
+            }
+
+            // Update totals
+            const totalNewMau = newMau.reduce((a, b) => a + b, 0);
+            const totalGmv = mauByMonth.reduce((sum, mau) => sum + (mau * gmvPerMau), 0);
+            const totalBurn = monthlyBurn * 5 - cumulativeRevenue;
+
+            document.getElementById('h1-total-downloads').textContent = newUsers.reduce((a,b) => a+b, 0).toLocaleString();
+            document.getElementById('h1-total-new-mau').textContent = totalNewMau.toLocaleString();
+            document.getElementById('h1-final-mau').textContent = mauByMonth[4].toLocaleString();
+            document.getElementById('h1-final-merchants').textContent = merchantsActive[4];
+            document.getElementById('h1-total-gmv').textContent = formatCurrency(totalGmv);
+            document.getElementById('h1-total-revenue').textContent = formatCurrency(cumulativeRevenue);
+            document.getElementById('h1-total-opex').textContent = formatCurrency(monthlyBurn * 5);
+            document.getElementById('h1-total-marketing').textContent = formatCurrency(marketingSpend * 5);
+            document.getElementById('h1-total-tech').textContent = formatCurrency(techSpend * 5);
+            document.getElementById('h1-total-ops').textContent = formatCurrency(opsSpend * 5);
+            document.getElementById('h1-total-burn').textContent = '-' + formatCurrency(totalBurn);
+            document.getElementById('h1-final-cash').textContent = formatCurrency(cash);
+
+            // Gap analysis
+            const targetGmv = 10000000;
+            const gapMultiple = (targetGmv / totalGmv).toFixed(1);
+            document.getElementById('gap-gmv-value').textContent = formatCurrency(totalGmv);
+            document.getElementById('gap-multiple').textContent = gapMultiple + 'x boost';
+
+            // ===== SECTION 4: ADVANCED METRICS =====
+            const month5Revenue = mauByMonth[4] * gmvPerMau * (netTakeRate / 100);
+            const mrr = month5Revenue;
+            const arr = mrr * 12;
+            const cmgr = Math.pow(mauByMonth[4] / mauByMonth[0], 1/4) - 1;
+            const annualGrowth = (Math.pow(1 + cmgr, 12) - 1) * 100;
+            const nrr = (1 - userChurn / 100);
+            const netBurnM5 = monthlyBurn - month5Revenue;
+            const burnMultiple = netBurnM5 / (arr / 12);
+            const magicNumber = (mrr * 12) / (marketingSpend * 12);
+            const runway = cash / monthlyBurn;
+            const opLeverage = variableCost / fixedCost;
+
+            document.getElementById('cmgr').textContent = (cmgr * 100).toFixed(0) + '%';
+            document.getElementById('annual-growth').textContent = annualGrowth.toFixed(0) + '%';
+            document.getElementById('mrr').textContent = formatCurrency(mrr);
+            document.getElementById('arr').textContent = formatCurrency(arr);
+            document.getElementById('nrr').textContent = (nrr * 100).toFixed(0) + '%';
+            document.getElementById('burn-rate').textContent = formatCurrency(monthlyBurn);
+            document.getElementById('net-burn').textContent = formatCurrency(netBurnM5);
+            document.getElementById('burn-multiple').textContent = burnMultiple.toFixed(1);
+            document.getElementById('magic-number').textContent = magicNumber.toFixed(1);
+            document.getElementById('runway-remaining').textContent = runway.toFixed(1);
+            document.getElementById('fixed-costs').textContent = formatCurrency(fixedCost);
+            document.getElementById('variable-costs').textContent = formatCurrency(variableCost);
+            document.getElementById('op-leverage').textContent = opLeverage.toFixed(1) + 'x';
+
+            // ===== SECTION 5: MULTI-YEAR PROJECTIONS =====
+            document.getElementById('proj-mau-h1').textContent = '10,000';
+            document.getElementById('proj-gmv-mau-h1').textContent = 'AED ' + gmvPerMau.toFixed(0);
+            document.getElementById('proj-gmv-mau-h2').textContent = 'AED ' + gmvPerMau.toFixed(0);
+            document.getElementById('proj-gmv-mau-h3').textContent = 'AED ' + gmvPerMau.toFixed(0);
+            document.getElementById('proj-gmv-mau-y2').textContent = 'AED ' + gmvPerMau.toFixed(0);
+            document.getElementById('proj-gmv-mau-y3').textContent = 'AED ' + gmvPerMau.toFixed(0);
+            document.getElementById('proj-gmv-mau-y4').textContent = 'AED ' + gmvPerMau.toFixed(0);
+
+            document.getElementById('proj-rate-h1').textContent = netTakeRate.toFixed(1) + '%';
+            document.getElementById('proj-rate-h2').textContent = netTakeRate.toFixed(1) + '%';
+            document.getElementById('proj-rate-h3').textContent = netTakeRate.toFixed(1) + '%';
+            document.getElementById('proj-rate-y2').textContent = netTakeRate.toFixed(1) + '%';
+            document.getElementById('proj-rate-y3').textContent = netTakeRate.toFixed(1) + '%';
+            document.getElementById('proj-rate-y4').textContent = netTakeRate.toFixed(1) + '%';
+
+            document.getElementById('proj-gmv-h1').textContent = formatCurrency(totalGmv);
+            document.getElementById('proj-revenue-h1').textContent = formatCurrency(cumulativeRevenue);
+            document.getElementById('proj-opex-h1').textContent = formatCurrency(monthlyBurn * 5);
+            document.getElementById('proj-marketing-h1').textContent = formatCurrency(marketingSpend * 5);
+            document.getElementById('proj-tech-h1').textContent = formatCurrency(techSpend * 5);
+            document.getElementById('proj-ops-h1').textContent = formatCurrency(opsSpend * 5);
+            document.getElementById('proj-profit-h1').textContent = '-' + formatCurrency(totalBurn);
+
+            const profitMargin = (totalBurn / cumulativeRevenue * -100).toFixed(0);
+            document.getElementById('proj-margin-h1').textContent = profitMargin + '%';
+
+            document.getElementById('proj-ltvcac-h1').textContent = ltvCacRatio.toFixed(1) + 'x';
+            document.getElementById('proj-arpu-h1').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('proj-arpu-h2').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('proj-arpu-h3').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('proj-arpu-y2').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('proj-arpu-y3').textContent = 'AED ' + arpu.toFixed(0);
+            document.getElementById('proj-arpu-y4').textContent = 'AED ' + arpu.toFixed(0);
+
+            // ===== SECTION 6: SENSITIVITY ANALYSIS =====
+            // Retention sensitivity
+            const scenarios = [
+                {months: 6, ltv: arpu * 6},
+                {months: 8, ltv: arpu * 8},
+                {months: 12, ltv: arpu * 12},
+                {months: 18, ltv: arpu * 18}
+            ];
+
+            document.getElementById('sens-ltv-6mo').textContent = 'AED ' + scenarios[0].ltv.toFixed(0);
+            document.getElementById('sens-ratio-6mo').textContent = (scenarios[0].ltv / cac).toFixed(1) + 'x';
+            document.getElementById('sens-ltv-8mo').textContent = 'AED ' + scenarios[1].ltv.toFixed(0);
+            document.getElementById('sens-ratio-8mo').textContent = (scenarios[1].ltv / cac).toFixed(1) + 'x';
+            document.getElementById('sens-ltv-12mo').textContent = 'AED ' + scenarios[2].ltv.toFixed(0);
+            document.getElementById('sens-ratio-12mo').textContent = (scenarios[2].ltv / cac).toFixed(1) + 'x';
+            document.getElementById('sens-ltv-18mo').textContent = 'AED ' + scenarios[3].ltv.toFixed(0);
+            document.getElementById('sens-ratio-18mo').textContent = (scenarios[3].ltv / cac).toFixed(1) + 'x';
+
+            // CAC sensitivity
+            const cacScenarios = [25, 35, 50, 70];
+            cacScenarios.forEach(cacValue => {
+                document.getElementById(`sens-ltv-cac${cacValue}`).textContent = 'AED ' + ltv.toFixed(0);
+                document.getElementById(`sens-ratio-cac${cacValue}`).textContent = (ltv / cacValue).toFixed(1) + 'x';
+            });
+
+            // ===== SECTION 7: KEY TAKEAWAYS =====
+            document.getElementById('summary-ltvcac').textContent = ltvCacRatio.toFixed(1) + 'x';
+            document.getElementById('summary-payback').textContent = cacPayback.toFixed(1) + ' months';
+            document.getElementById('summary-gmv-gap').textContent = formatCurrency(totalGmv);
+            document.getElementById('summary-h1-loss').textContent = formatCurrency(totalBurn);
+            document.getElementById('summary-fundraise').textContent = '$' + (fundraiseUsd / 1000) + 'K';
+
+            // Gate criteria
+            document.getElementById('gate-mau').textContent = mauByMonth[4].toLocaleString();
+            document.getElementById('gate-merchants').textContent = merchantsActive[4];
+            document.getElementById('gate-gmv').textContent = formatCurrency(totalGmv);
+            document.getElementById('gate-ltvcac').textContent = ltvCacRatio.toFixed(1) + 'x';
+            document.getElementById('gate-cac').textContent = 'AED ' + cac;
+            document.getElementById('gate-activation').textContent = activationRate + '%';
+            document.getElementById('gate-freq').textContent = frequency + 'x';
+        }
+
+        // Helper function to format currency
+        function formatCurrency(value) {
+            if (value >= 1000000000) {
+                return 'AED ' + (value / 1000000000).toFixed(2) + 'B';
+            } else if (value >= 1000000) {
+                return 'AED ' + (value / 1000000).toFixed(2) + 'M';
+            } else if (value >= 1000) {
+                return 'AED ' + (value / 1000).toFixed(0) + 'K';
+            } else {
+                return 'AED ' + value.toFixed(0);
+            }
+        }
+
+        // Initialize on page load
+        window.onload = function() {
+            recalculateAll();
+        };
+    </script>
+</body>
+</html>

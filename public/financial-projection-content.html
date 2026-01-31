@@ -1003,12 +1003,16 @@
                 <h2 class="section-title">Executive Dashboard</h2>
 
                 <div class="alert alert-success">
-                    <strong>🎯 H1 Target (~5 months):</strong> 10,000 MAU • 250 Merchants • AED 10M GMV • AED 500K Revenue • 25% D30 Retention • 10x LTV:CAC
+                    <strong>🎯 H1 Target (~5 months, $400K USD):</strong> 5,800 MAU (baseline) • 10K MAU (stretch) • 290 Merchants • AED 7.2M GMV (baseline) / AED 10M GMV (stretch) • 25% D30 Retention • 10.3x LTV:CAC
                 </div>
 
                 <div class="alert alert-info" style="margin-top: 10px;">
                     <strong>📊 Full Roadmap:</strong> H1 (5mo) → H2 (2.5mo: 75K MAU, AED 50M GMV) → H3 (14mo: 150K MAU, AED 200M GMV) |
                     <a href="/master-roadmap" style="color: #667eea; font-weight: 600; text-decoration: underline;">View Master Roadmap →</a>
+                </div>
+
+                <div class="alert alert-warning" style="margin-top: 10px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b;">
+                    <strong>⚠️ Cost Disclaimer:</strong> Revenue projections shown are gross revenue. Payment processing fees (~2.5% of GMV = AED 180-250K for H1) will reduce net revenue. CAC assumptions (AED 35 baseline) require validation in first 90 days; realistic CAC likely AED 50-60 when including full merchant acquisition costs. All projections based on pre-launch assumptions.
                 </div>
 
                 <h3 class="subsection-title">Key Performance Indicators</h3>
@@ -1141,7 +1145,7 @@
 
                     <div class="assumption-card">
                         <label for="frequency">Transaction Frequency</label>
-                        <input type="number" id="frequency" value="5" step="0.5" oninput="updateAll()">
+                        <input type="number" id="frequency" value="4" step="0.5" oninput="updateAll()">
                         <span class="unit">transactions/user/month</span>
                     </div>
 
@@ -1393,8 +1397,8 @@
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="initial-budget-aed">Total Initial Budget (Starting Cash)</label>
-                        <input type="number" id="initial-budget-aed" value="1500000" step="10000" oninput="updateAll()">
-                        <span class="unit">AED (controls runway, not user acquisition)</span>
+                        <input type="number" id="initial-budget-aed" value="1468000" step="10000" oninput="updateAll()">
+                        <span class="unit">AED ($400K USD @ 3.67 rate - covers operations + payment fees + support + legal)</span>
                     </div>
 
                     <div class="assumption-card">
@@ -1566,25 +1570,25 @@
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="h2-gate-mau">MAU Target for H2</label>
-                        <input type="number" id="h2-gate-mau" value="5000" step="1000" min="0" oninput="updateAll()">
+                        <input type="number" id="h2-gate-mau" value="10000" step="1000" min="0" oninput="updateAll()">
                         <span class="unit">users</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="h2-gate-merchants">Merchants Target for H2</label>
-                        <input type="number" id="h2-gate-merchants" value="125" step="10" min="0" oninput="updateAll()">
+                        <input type="number" id="h2-gate-merchants" value="250" step="10" min="0" oninput="updateAll()">
                         <span class="unit">merchants</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="h2-gate-gmv">GMV Target for H2</label>
-                        <input type="number" id="h2-gate-gmv" value="5000000" step="1000000" min="0" oninput="updateAll()">
+                        <input type="number" id="h2-gate-gmv" value="10000000" step="1000000" min="0" oninput="updateAll()">
                         <span class="unit">AED (cumulative)</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="h2-gate-ltvcac">LTV:CAC Target for H2</label>
-                        <input type="number" id="h2-gate-ltvcac" value="5" step="1" min="0" oninput="updateAll()">
+                        <input type="number" id="h2-gate-ltvcac" value="10" step="1" min="0" oninput="updateAll()">
                         <span class="unit">ratio (10x = healthy)</span>
                     </div>
                 </div>
@@ -1593,25 +1597,25 @@
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="h3-gate-mau">MAU Target for H3</label>
-                        <input type="number" id="h3-gate-mau" value="37500" step="5000" min="0" oninput="updateAll()">
+                        <input type="number" id="h3-gate-mau" value="75000" step="5000" min="0" oninput="updateAll()">
                         <span class="unit">users</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="h3-gate-merchants">Merchants Target for H3</label>
-                        <input type="number" id="h3-gate-merchants" value="250" step="50" min="0" oninput="updateAll()">
+                        <input type="number" id="h3-gate-merchants" value="500" step="50" min="0" oninput="updateAll()">
                         <span class="unit">merchants</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="h3-gate-gmv">GMV Target for H3</label>
-                        <input type="number" id="h3-gate-gmv" value="25000000" step="5000000" min="0" oninput="updateAll()">
+                        <input type="number" id="h3-gate-gmv" value="50000000" step="5000000" min="0" oninput="updateAll()">
                         <span class="unit">AED (cumulative)</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="h3-gate-retention">D30 Retention Target for H3</label>
-                        <input type="number" id="h3-gate-retention" value="15" step="5" min="0" max="100" oninput="updateAll()">
+                        <input type="number" id="h3-gate-retention" value="30" step="5" min="0" max="100" oninput="updateAll()">
                         <span class="unit">%</span>
                     </div>
                 </div>
@@ -1620,25 +1624,25 @@
                 <div class="assumptions-grid">
                     <div class="assumption-card">
                         <label for="phase2-gate-mau">MAU Target for Phase 2</label>
-                        <input type="number" id="phase2-gate-mau" value="75000" step="10000" min="0" oninput="updateAll()">
+                        <input type="number" id="phase2-gate-mau" value="150000" step="10000" min="0" oninput="updateAll()">
                         <span class="unit">users</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="phase2-gate-merchants">Merchants Target for Phase 2</label>
-                        <input type="number" id="phase2-gate-merchants" value="500" step="100" min="0" oninput="updateAll()">
+                        <input type="number" id="phase2-gate-merchants" value="1000" step="100" min="0" oninput="updateAll()">
                         <span class="unit">merchants</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="phase2-gate-ebitda">EBITDA Margin Target for Phase 2</label>
-                        <input type="number" id="phase2-gate-ebitda" value="15" step="5" min="0" max="100" oninput="updateAll()">
+                        <input type="number" id="phase2-gate-ebitda" value="30" step="5" min="0" max="100" oninput="updateAll()">
                         <span class="unit">%</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="phase2-gate-gmv">GMV Target for Phase 2</label>
-                        <input type="number" id="phase2-gate-gmv" value="100000000" step="10000000" min="0" oninput="updateAll()">
+                        <input type="number" id="phase2-gate-gmv" value="200000000" step="10000000" min="0" oninput="updateAll()">
                         <span class="unit">AED (cumulative)</span>
                     </div>
                 </div>
@@ -1659,8 +1663,8 @@
 
                     <div class="assumption-card">
                         <label for="support-cost-per-1k">Customer Support Cost per 1K MAU</label>
-                        <input type="number" id="support-cost-per-1k" value="500" step="100" oninput="updateAll()">
-                        <span class="unit">AED/month (AI-powered)</span>
+                        <input type="number" id="support-cost-per-1k" value="2000" step="100" oninput="updateAll()">
+                        <span class="unit">AED/month (AED 2/MAU - 1 support agent + chatbot)</span>
                     </div>
 
                     <div class="assumption-card">
@@ -2124,27 +2128,27 @@
 
                     <div class="scenario-buttons">
                         <button class="scenario-btn" onclick="applyScenario('conservative')" data-scenario="conservative">
-                            <span class="amount">1.5M AED</span>
-                            <span class="label">Conservative</span>
+                            <span class="amount">CAC AED 50</span>
+                            <span class="label">Realistic CAC</span>
                         </button>
                         <button class="scenario-btn" onclick="applyScenario('moderate')" data-scenario="moderate">
-                            <span class="amount">5M AED</span>
-                            <span class="label">Moderate</span>
+                            <span class="amount">CAC AED 35</span>
+                            <span class="label">Baseline ($400K)</span>
                         </button>
                         <button class="scenario-btn" onclick="applyScenario('aggressive')" data-scenario="aggressive">
-                            <span class="amount">10M AED</span>
-                            <span class="label">Aggressive</span>
+                            <span class="amount">CAC AED 20</span>
+                            <span class="label">Optimized</span>
                         </button>
                         <button class="scenario-btn" onclick="applyScenario('moonshot')" data-scenario="moonshot">
-                            <span class="amount">20M AED</span>
-                            <span class="label">Moonshot</span>
+                            <span class="amount">CAC AED 15</span>
+                            <span class="label">Stretch (10K MAU)</span>
                         </button>
                     </div>
 
                     <div class="quick-inputs">
                         <div class="quick-input">
                             <label>💰 Initial Budget (AED)</label>
-                            <input type="number" id="quick-budget" value="1500000" step="100000"
+                            <input type="number" id="quick-budget" value="1468000" step="100000"
                                    oninput="quickUpdateBudget(this.value)">
                         </div>
                         <div class="quick-input">
@@ -3550,10 +3554,10 @@
             document.querySelector(`[data-scenario="${scenario}"]`).classList.add('active');
 
             const scenarios = {
-                conservative: { budget: 1500000, runway: 6, cac: 35, activation: 40 },
-                moderate: { budget: 5000000, runway: 6, cac: 30, activation: 45 },
-                aggressive: { budget: 10000000, runway: 6, cac: 25, activation: 50 },
-                moonshot: { budget: 20000000, runway: 8, cac: 20, activation: 55 }
+                conservative: { budget: 1468000, runway: 6, cac: 50, activation: 35 },
+                moderate: { budget: 1468000, runway: 6, cac: 35, activation: 40 },
+                aggressive: { budget: 1468000, runway: 6, cac: 20, activation: 50 },
+                moonshot: { budget: 1468000, runway: 6, cac: 15, activation: 55 }
             };
 
             const config = scenarios[scenario];
@@ -4051,25 +4055,25 @@
             // Update the display field to show calculated monthly budget
             document.getElementById('fixed-monthly-budget').value = Math.round(fixedMonthlyBudget).toString();
 
-            // KPI-gated phase progression (50% reduced targets)
-            const h2GateMAU = parseFloat(document.getElementById('h2-gate-mau').value) || 5000;
-            const h2GateMerchants = parseFloat(document.getElementById('h2-gate-merchants').value) || 125;
-            const h2GateGMV = parseFloat(document.getElementById('h2-gate-gmv').value) || 5000000;
-            const h2GateLtvCac = parseFloat(document.getElementById('h2-gate-ltvcac').value) || 5;
+            // KPI-gated phase progression (100% of targets)
+            const h2GateMAU = parseFloat(document.getElementById('h2-gate-mau').value) || 10000;
+            const h2GateMerchants = parseFloat(document.getElementById('h2-gate-merchants').value) || 250;
+            const h2GateGMV = parseFloat(document.getElementById('h2-gate-gmv').value) || 10000000;
+            const h2GateLtvCac = parseFloat(document.getElementById('h2-gate-ltvcac').value) || 10;
 
-            const h3GateMAU = parseFloat(document.getElementById('h3-gate-mau').value) || 37500;
-            const h3GateMerchants = parseFloat(document.getElementById('h3-gate-merchants').value) || 250;
-            const h3GateGMV = parseFloat(document.getElementById('h3-gate-gmv').value) || 25000000;
-            const h3GateRetention = parseFloat(document.getElementById('h3-gate-retention').value) || 15;
+            const h3GateMAU = parseFloat(document.getElementById('h3-gate-mau').value) || 75000;
+            const h3GateMerchants = parseFloat(document.getElementById('h3-gate-merchants').value) || 500;
+            const h3GateGMV = parseFloat(document.getElementById('h3-gate-gmv').value) || 50000000;
+            const h3GateRetention = parseFloat(document.getElementById('h3-gate-retention').value) || 30;
 
-            const phase2GateMAU = parseFloat(document.getElementById('phase2-gate-mau').value) || 75000;
-            const phase2GateMerchants = parseFloat(document.getElementById('phase2-gate-merchants').value) || 500;
-            const phase2GateEBITDA = parseFloat(document.getElementById('phase2-gate-ebitda').value) || 15;
-            const phase2GateGMV = parseFloat(document.getElementById('phase2-gate-gmv').value) || 100000000;
+            const phase2GateMAU = parseFloat(document.getElementById('phase2-gate-mau').value) || 150000;
+            const phase2GateMerchants = parseFloat(document.getElementById('phase2-gate-merchants').value) || 1000;
+            const phase2GateEBITDA = parseFloat(document.getElementById('phase2-gate-ebitda').value) || 30;
+            const phase2GateGMV = parseFloat(document.getElementById('phase2-gate-gmv').value) || 200000000;
 
             const locationExpansionMAU = parseFloat(document.getElementById('location-expansion-mau').value) || 50000;
             const maxMonths = parseInt(document.getElementById('max-months').value) || 36;
-            const supportCostPer1K = parseFloat(document.getElementById('support-cost-per-1k').value) || 500;
+            const supportCostPer1K = parseFloat(document.getElementById('support-cost-per-1k').value) || 2000;
             const fundingAllocationWindow = parseInt(document.getElementById('funding-allocation-window').value) || 3;
 
             // 7 Revenue Streams

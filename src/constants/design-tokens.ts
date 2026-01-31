@@ -4,32 +4,62 @@
  */
 
 export const typography = {
-  // Slide titles (main headers)
-  h1: 'text-3xl sm:text-4xl md:text-5xl font-black',
+  // ==================== SLIDE TITLES (Main Headers) ====================
+  // Primary slide titles - largest, most prominent (e.g., "Market Opportunity", "Exit Strategy")
+  h1: 'text-5xl sm:text-6xl md:text-7xl font-black',
 
-  // Section headers
-  h2: 'text-2xl sm:text-3xl md:text-4xl font-bold',
+  // ==================== SECTION HEADERS ====================
+  // Major section headers within slides
+  h2: 'text-3xl sm:text-4xl md:text-5xl font-bold',
 
-  // Sub-headers
-  h3: 'text-lg sm:text-xl md:text-2xl font-bold',
+  // Sub-section headers
+  h3: 'text-2xl sm:text-3xl md:text-4xl font-bold',
 
-  // Body text
-  body: 'text-base sm:text-lg font-normal',
+  // Tertiary headers
+  h4: 'text-lg sm:text-xl md:text-2xl font-bold',
 
-  // Small body text
-  bodySmall: 'text-sm sm:text-base font-normal',
+  // ==================== METRICS (Numbers) ====================
+  // Hero numbers - for cover slide and major emphasis (e.g., "Raising $400K")
+  metricHero: 'text-6xl sm:text-7xl md:text-8xl font-black',
 
-  // Labels and captions
-  label: 'text-xs sm:text-sm uppercase tracking-wider font-semibold',
+  // Extra large metrics (e.g., "67-133x", "$38M")
+  metricXL: 'text-5xl sm:text-6xl md:text-7xl font-black',
 
-  // Large metrics/numbers
+  // Large metrics (e.g., "10x LTV:CAC", main slide metrics)
   metric: 'text-4xl sm:text-5xl md:text-6xl font-black',
 
-  // Medium metrics
+  // Medium metrics (card numbers, secondary stats)
   metricMedium: 'text-2xl sm:text-3xl md:text-4xl font-black',
 
-  // Small metrics
+  // Small metrics (inline numbers in paragraphs)
   metricSmall: 'text-xl sm:text-2xl md:text-3xl font-bold',
+
+  // ==================== BODY TEXT ====================
+  // Large body text (primary paragraphs, important descriptions)
+  bodyLarge: 'text-base sm:text-lg md:text-xl',
+
+  // Regular body text (standard paragraphs)
+  body: 'text-sm sm:text-base md:text-lg',
+
+  // Small body text (card content, dense text)
+  bodySmall: 'text-xs sm:text-sm md:text-base',
+
+  // ==================== LABELS/CAPTIONS ====================
+  // Eyebrow labels (e.g., "5-YEAR FINANCIAL OUTLOOK")
+  labelEyebrow: 'text-xs sm:text-sm uppercase tracking-wider font-bold',
+
+  // Regular labels (chart labels, axis labels)
+  label: 'text-xs sm:text-sm font-semibold',
+
+  // Micro labels (sources, footnotes, disclaimers)
+  labelMicro: 'text-xs',
+
+  // ==================== SPECIAL CASES ====================
+  // Card titles within slides
+  cardTitle: 'text-lg sm:text-xl md:text-2xl font-bold',
+
+  // Button/CTA text
+  buttonText: 'text-sm sm:text-base md:text-lg font-bold',
 } as const;
 
 export const colors = {

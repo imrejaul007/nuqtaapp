@@ -88,10 +88,12 @@ PHASE 3: Kuwait + Bahrain + Oman (Years 9-10)
 - Social bonus drives authentic UGC
 
 **Key Metrics by Year 1 End**:
-- 10,000 active users
-- 250 merchants live
-- AED 2M GMV
+- 50,000 active users
+- 500 merchants live
+- AED 88M GMV ($24M USD)
 - 30% D30 retention
+- $1.8M revenue
+- -83% EBITDA (Investment Phase)
 
 **Revenue Model**:
 - 100% from GMV (Engine A: 15%, Engine B: 5%)
@@ -99,7 +101,7 @@ PHASE 3: Kuwait + Bahrain + Oman (Years 9-10)
 
 **Team**: 1 founder → 7 people
 
-**Funding**: $500K pre-seed
+**Funding**: $400K pre-seed (SAFE, 20% discount, $5M cap)
 
 **Document**: [H1_2026_EXECUTION_PLAN.md](H1_2026_EXECUTION_PLAN.md)
 
@@ -116,10 +118,12 @@ PHASE 3: Kuwait + Bahrain + Oman (Years 9-10)
 - Geographic expansion within UAE is controlled
 
 **Key Metrics by Year 2 End**:
-- 30,000 active users (3x growth)
-- 400-450 merchants (1.8x growth)
-- AED 14M GMV annual run-rate (7x growth)
+- 150,000 active users (3x growth)
+- 750 merchants (1.5x growth)
+- AED 349M GMV ($95M USD)
 - 35% D30 retention (+5%)
+- $7.1M revenue
+- -7% EBITDA (Near break-even)
 
 **Revenue Model**:
 - 90% GMV (blended 7-12% take rate)
@@ -144,11 +148,14 @@ PHASE 3: Kuwait + Bahrain + Oman (Years 9-10)
 - Top-down expansion to smaller GCC markets
 
 **Key Metrics by Year 5 End**:
-- 100,000+ active users
+- 1,500,000 active users
+- 5,000 merchants live
 - 50+ malls integrated
 - 6 government partnerships
 - 10 university wallets
-- AED 500M-1B annual GMV
+- AED 5.8B GMV ($1.58B USD)
+- $118.5M revenue
+- +55% EBITDA margin
 
 **Revenue Model**:
 - 60% GMV (still core)
@@ -388,51 +395,64 @@ By Year 10:
 
 ---
 
-## 📈 10-Year Financial Trajectory
+## 📈 5-Year Financial Trajectory (CORRECTED - Jan 30, 2026)
 
-| Year | Phase | Horizon | GMV (Annual) | Revenue | EBITDA Margin | Team | Funding Stage |
-|------|-------|---------|-------------|---------|---------------|------|---------------|
-| **Y1** | Phase 1 | H1 | AED 2M | AED 100K | Break-even | 7 | Pre-seed ($500K) |
-| **Y2** | Phase 1 | H2 | AED 14M | AED 1.3M | 10% | 30 | Series A ($2-3M) |
-| **Y3** | Phase 1 | H3 | AED 100M | AED 8M | 20% | 15 | - |
-| **Y4** | Phase 1 | H3 | AED 300M | AED 22M | 30% | 25 | - |
-| **Y5** | Phase 1 | H3 | AED 500M-1B | AED 50M+ | 30-40% | 40 | Series B ($15-25M) |
-| **Y6-8** | Phase 2 | - | AED 2.5B | AED 220M | 45% | 80 | - |
-| **Y9-10** | Phase 3 | - | AED 7B | AED 420M | 60% | 100 | Series C / IPO |
+**Note:** This replaces the previous 10-year model. Financials updated to match corrected pitch deck projections.
 
-**Key Insights**:
-- **Margin expansion**: 10% (Y2) → 45% (Y8) → 60% (Y10) as revenue mix shifts from GMV to SaaS + data
-- **Capital efficiency**: Y6-8 (Phase 2) runs on Series B capital, profitable growth funds Phase 3
-- **Revenue per employee**: AED 2.75M (Y8) → AED 4.2M (Y10) due to institutional distribution leverage
+| Year | Phase | GMV (Annual) | Revenue | EBITDA | Margin | Users (MAU) | Merchants | Funding |
+|------|-------|-------------|---------|--------|--------|-------------|-----------|---------|
+| **Y1** | Launch | $24M (AED 88M) | $1.8M (AED 6.6M) | -$1.5M | -83% | 50K | 500 | Pre-seed ($400K) |
+| **Y2** | Growth | $95M (AED 349M) | $7.1M (AED 26M) | -$500K | -7% | 150K | 750 | Series A ($2M) |
+| **Y3** | Expansion | $277M (AED 1.02B) | $20.8M (AED 76M) | $5.2M | +25% | 350K | 1,500 | - |
+| **Y4** | UAE Dominance | $688M (AED 2.53B) | $51.6M (AED 189M) | $20.6M | +40% | 750K | 3,000 | Series B ($10M) |
+| **Y5** | GCC Ready | $1.58B (AED 5.8B) | $118.5M (AED 435M) | $65.3M | +55% | 1.5M | 5,000 | Exit-Ready |
+
+**Key Assumptions**:
+- **Transaction frequency:** 3x/month (Year 1) → 5x/month (Year 5)
+- **AOV:** AED 100 ($27) → AED 130 ($35)
+- **Take rate:** 7.5% (consistent across all years)
+- **CAC:** AED 50 blended (Year 1: AED 40-45, Year 2+: AED 50-60)
+- **Profitability:** Investment Phase Year 1-2, Break-even Year 2, Profitable Year 3+
+
+**Exit Scenarios (Year 5)**:
+- **Conservative (8x revenue):** $950M valuation
+- **Base case (10x revenue):** $1.2B valuation
+- **Optimistic (12x revenue):** $1.4B valuation
+- **Pre-seed investor return:** 95-140x on $400K SAFE ($5M cap)
 
 ---
 
-## 🎯 Milestone Summary
+## 🎯 Milestone Summary (CORRECTED)
 
-### Year 1 (H1 - Prove Loop)
-- ✅ 10K users, 250 merchants, AED 2M GMV
-- ✅ 30% retention, 10:1 LTV:CAC
-- ✅ Proven: Users earn, share, repeat
+### Year 1 (Launch - Dubai Focus)
+- 50K users by Dec, 500 merchants live
+- $24M GMV, $1.8M revenue, -83% EBITDA margin (Investment Phase)
+- Focus on validating unit economics and product-market fit
+- 10x LTV:CAC target, 30% D30 retention
 
-### Year 2 (H2 - Scale)
-- ✅ 30K users, 450 merchants, AED 14M GMV
-- ✅ 3 new categories (healthcare, home services, education)
-- ✅ Platform upgrades (Payment Intelligence v2, Brand Coin Engine v2)
+### Year 2 (Growth - Dubai Expansion)
+- 150K users, 750 merchants
+- $95M GMV, $7.1M revenue, -7% EBITDA margin (Near break-even)
+- 3 new categories (healthcare, home services, education)
+- Series A raise: $2M @ $10-12M valuation
 
-### Years 3-5 (H3 - Infrastructure)
-- ✅ 100K+ users, 50+ malls, 6 governments, 10 universities
-- ✅ 40% non-GMV revenue (SaaS, data)
-- ✅ Profitable (30-40% EBITDA margin)
+### Year 3 (Expansion - All Dubai + Abu Dhabi + Sharjah)
+- 350K users, 1,500 merchants
+- $277M GMV, $20.8M revenue, +25% EBITDA margin (Profitable!)
+- Full UAE coverage (3 emirates)
+- Merchant SaaS tools launch
 
-### Years 6-8 (Phase 2 - KSA/Qatar)
-- ✅ 200K+ users across 3 countries
-- ✅ AED 2-3B GMV, AED 200M+ revenue
-- ✅ Regional market leader
+### Year 4 (UAE Dominance - All 7 Emirates)
+- 750K users, 3,000 merchants
+- $688M GMV, $51.6M revenue, +40% EBITDA margin
+- Regional expansion planning (KSA/Qatar)
+- Series B raise: $10M @ $150-200M valuation
 
-### Years 9-10 (Phase 3 - Full GCC)
-- ✅ 6 countries, 500K+ users
-- ✅ AED 5B+ GMV, AED 500M+ revenue
-- ✅ IPO-ready or strategic acquisition target
+### Year 5 (GCC Ready - UAE Market Leader)
+- 1.5M users, 5,000 merchants
+- $1.58B GMV, $118.5M revenue, +55% EBITDA margin
+- **Exit-ready:** $950M-1.4B valuation
+- Strategic acquisition or GCC expansion with new capital
 
 ---
 

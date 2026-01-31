@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, PieChart, Pie, LineChart, Line, AreaChart, Area, ResponsiveContainer, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Cell, PieChart, Pie, LineChart, Line, AreaChart, Area, ResponsiveContainer } from 'recharts';
 import { SectionHeader, MetricCard, FeatureCard, FlowStep, ComparisonPanel, ChartContainer, IconCard, AnimatedNumber } from './pitch-deck';
 import { typography, colors, spacing, decorative } from '@/constants/design-tokens';
 import { chartColors, chartTheme, formatCurrency, formatPercentage, formatPieLabel } from '@/constants/chart-config';
@@ -50,7 +50,7 @@ function DataPoint({
 export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeNiche, setActiveNiche] = useState('fnb');
-  const totalSlides = 31;
+  const totalSlides = 30;
 
   // Keyboard navigation
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -138,7 +138,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <p className={`${typography.labelEyebrow} text-white`}>Signed LOIs</p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>Q2 2026</p>
+                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>Q1 2026</p>
                   <p className={`${typography.labelEyebrow} text-white`}>Launch</p>
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="flex items-center gap-3 px-6 py-3 bg-slate-800/50 border-2 border-emerald-500/40 rounded-full backdrop-blur-sm">
                     <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className={`${typography.bodySmall} font-bold text-emerald-400`}>SAFE • 20% Discount • $5M Cap</p>
+                    <p className={`${typography.bodySmall} font-bold text-emerald-400`}>SAFE • 20% Discount • No Cap</p>
                   </div>
                 </div>
               </div>
@@ -192,12 +192,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header with emotional hook */}
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mb-6 shadow-lg">
-                  <p className={`${typography.label} font-bold text-white uppercase tracking-wider`}>The Hidden Tragedy</p>
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">The Hidden Tragedy</p>
                 </div>
-                <h2 className={`${typography.h1} font-black text-slate-900 mb-6 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
                   Shoppers Waste <span className="bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">AED 2.4B</span> Annually
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto leading-relaxed`}>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                   95% of offline spending gets <span className="font-bold text-red-600">zero rewards</span>.
                   That's AED 684 per person, every year, left on the table.
                 </p>
@@ -211,24 +211,24 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="relative z-10">
                   <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="text-white">
-                      <p className={`${typography.bodyLarge} mb-3 opacity-90 uppercase tracking-wider font-bold`}>Every Shopper Loses Per Year</p>
-                      <p className={`${typography.metricHero} font-black tracking-tight mb-4`}>
+                      <p className="text-sm sm:text-base mb-3 opacity-90 uppercase tracking-wider font-bold">Every Shopper Loses Per Year</p>
+                      <p className="text-6xl sm:text-7xl md:text-8xl font-black tracking-tight mb-4">
                         <AnimatedNumber value={684} prefix="AED " duration={2000} />
                       </p>
-                      <p className={`${typography.bodyLarge} opacity-90`}>Just by shopping at places without cashback</p>
+                      <p className="text-lg opacity-90">Just by shopping at places without cashback</p>
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
-                        <p className={`${typography.label} text-white/80 mb-2`}>Total Market Loss</p>
-                        <p className={`${typography.h3} font-black text-white`}>AED 2.4B</p>
+                        <p className="text-sm text-white/80 mb-2">Total Market Loss</p>
+                        <p className="text-3xl font-black text-white">AED 2.4B</p>
                       </div>
                       <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
-                        <p className={`${typography.label} text-white/80 mb-2`}>Offline Spend</p>
-                        <p className={`${typography.h3} font-black text-white`}>95%</p>
+                        <p className="text-sm text-white/80 mb-2">Offline Spend</p>
+                        <p className="text-3xl font-black text-white">95%</p>
                       </div>
                       <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30 col-span-2">
-                        <p className={`${typography.label} text-white/80 mb-2`}>Without Rewards</p>
-                        <p className={`${typography.h3} font-black text-white`}>AED 684/person</p>
+                        <p className="text-sm text-white/80 mb-2">Without Rewards</p>
+                        <p className="text-3xl font-black text-white">AED 684/person</p>
                       </div>
                     </div>
                   </div>
@@ -245,13 +245,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                       <Search className="text-white" size={32} />
                     </div>
-                    <h3 className={`${typography.h3} font-bold text-slate-900 mb-3`}>Can't Find Deals</h3>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed mb-6`}>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Can't Find Deals</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
                       Search "coffee deals near me" — get Google ads, not actual offers from local cafés
                     </p>
                     <div className="bg-red-50 rounded-xl p-4 border-l-4 border-red-500">
-                      <p className={`${typography.metric} font-black text-red-600 mb-1`}>73%</p>
-                      <p className={`${typography.label} text-slate-600 font-medium`}>Don't know local deals exist</p>
+                      <p className="text-4xl font-black text-red-600 mb-1">73%</p>
+                      <p className="text-sm text-slate-600 font-medium">Don't know local deals exist</p>
                     </div>
                   </div>
                 </div>
@@ -264,13 +264,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                       <Lock className="text-white" size={32} />
                     </div>
-                    <h3 className={`${typography.h3} font-bold text-slate-900 mb-3`}>Gated Rewards</h3>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed mb-6`}>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Gated Rewards</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
                       Points expire, minimum spends, blackout dates — rewards designed to never be used
                     </p>
                     <div className="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500">
-                      <p className={`${typography.metric} font-black text-orange-600 mb-1`}>AED 450M</p>
-                      <p className={`${typography.label} text-slate-600 font-medium`}>Unredeemed points per year</p>
+                      <p className="text-4xl font-black text-orange-600 mb-1">AED 450M</p>
+                      <p className="text-sm text-slate-600 font-medium">Unredeemed points per year</p>
                     </div>
                   </div>
                 </div>
@@ -283,13 +283,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                       <CreditCard className="text-white" size={32} />
                     </div>
-                    <h3 className={`${typography.h3} font-bold text-slate-900 mb-3`}>No Local Cashback</h3>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed mb-6`}>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">No Local Cashback</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
                       Credit cards reward Amazon, not the café downstairs — local businesses get forgotten
                     </p>
                     <div className="bg-yellow-50 rounded-xl p-4 border-l-4 border-yellow-500">
-                      <p className={`${typography.metric} font-black text-yellow-600 mb-1`}>0.5%</p>
-                      <p className={`${typography.label} text-slate-600 font-medium`}>Avg cashback on local purchases</p>
+                      <p className="text-4xl font-black text-yellow-600 mb-1">0.5%</p>
+                      <p className="text-sm text-slate-600 font-medium">Avg cashback on local purchases</p>
                     </div>
                   </div>
                 </div>
@@ -297,10 +297,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Bottom Callout - Emotional Impact */}
               <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-center shadow-2xl">
-                <p className={`${typography.h3} font-bold text-white mb-3`}>
+                <p className="text-2xl sm:text-3xl font-bold text-white mb-3">
                   The result? <span className="text-red-400">3.5 million shoppers</span> leave money on the table, every single day.
                 </p>
-                <p className={`${typography.bodyLarge} text-slate-300`}>
+                <p className="text-lg text-slate-300">
                   While e-commerce gets 2-5% cashback, offline gets <span className="font-bold text-yellow-400">almost nothing</span>.
                 </p>
               </div>
@@ -322,12 +322,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header with emotional hook */}
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mb-6 shadow-lg">
-                  <p className={`${typography.label} font-bold text-white uppercase tracking-wider`}>The Other Side</p>
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">The Other Side</p>
                 </div>
-                <h2 className={`${typography.h1} font-black text-slate-900 mb-6 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
                   Merchants Burn <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">AED 12B/Year</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto leading-relaxed`}>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                   Google Ads cost <span className="font-bold text-red-600">AED 200/customer</span> with zero guarantee.
                   Small merchants can't compete, can't retain, can't survive.
                 </p>
@@ -338,44 +338,44 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="group bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <p className={`${typography.label} text-white/80 uppercase tracking-wider mb-2 font-bold`}>CAC (Digital)</p>
-                    <p className={`${typography.metricXL} font-black text-white mb-2`}>
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">CAC (Digital)</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
                       <AnimatedNumber value={200} prefix="AED " duration={1500} />
                     </p>
-                    <p className={`${typography.label} text-white/90 font-medium`}>3x higher than sustainable</p>
+                    <p className="text-sm text-white/90 font-medium">3x higher than sustainable</p>
                   </div>
                 </div>
 
                 <div className="group bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <p className={`${typography.label} text-white/80 uppercase tracking-wider mb-2 font-bold`}>Repeat Rate</p>
-                    <p className={`${typography.metricXL} font-black text-white mb-2`}>
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">Repeat Rate</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
                       <AnimatedNumber value={15} suffix="%" duration={1500} />
                     </p>
-                    <p className={`${typography.label} text-white/90 font-medium`}>85% never come back</p>
+                    <p className="text-sm text-white/90 font-medium">85% never come back</p>
                   </div>
                 </div>
 
                 <div className="group bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <p className={`${typography.label} text-white/80 uppercase tracking-wider mb-2 font-bold`}>LTV:CAC</p>
-                    <p className={`${typography.metricXL} font-black text-white mb-2`}>
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">LTV:CAC</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
                       <AnimatedNumber value={1.2} decimals={1} suffix="x" duration={1500} />
                     </p>
-                    <p className={`${typography.label} text-white/90 font-medium`}>vs 3x+ needed</p>
+                    <p className="text-sm text-white/90 font-medium">vs 3x+ needed</p>
                   </div>
                 </div>
 
                 <div className="group bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
-                    <p className={`${typography.label} text-white/80 uppercase tracking-wider mb-2 font-bold`}>Net Margin</p>
-                    <p className={`${typography.metricXL} font-black text-white mb-2`}>
+                    <p className="text-sm text-white/80 uppercase tracking-wider mb-2 font-bold">Net Margin</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white mb-2">
                       <AnimatedNumber value={7.5} decimals={1} suffix="%" duration={1500} />
                     </p>
-                    <p className={`${typography.label} text-white/90 font-medium`}>vs 25% target</p>
+                    <p className="text-sm text-white/90 font-medium">vs 25% target</p>
                   </div>
                 </div>
               </div>
@@ -390,21 +390,21 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                       <Megaphone className="text-white" size={32} />
                     </div>
-                    <h3 className={`${typography.h3} font-bold text-slate-900 mb-2`}>Invisible Locally</h3>
-                    <p className={`${typography.label} text-slate-500 mb-6`}>Unknown to neighbors 100m away</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">Invisible Locally</h3>
+                    <p className="text-sm text-slate-500 mb-6">Unknown to neighbors 100m away</p>
 
                     <div className="space-y-4">
                       <div className="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500">
                         <div className="flex justify-between items-center mb-2">
-                          <span className={`${typography.label} font-medium text-slate-700`}>Monthly ad spend</span>
-                          <span className={`${typography.h3} font-black text-orange-600`}>AED 35K</span>
+                          <span className="text-sm font-medium text-slate-700">Monthly ad spend</span>
+                          <span className="text-2xl font-black text-orange-600">AED 35K</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className={`${typography.label} font-medium text-slate-700`}>Local awareness</span>
-                          <span className={`${typography.h3} font-black text-slate-900`}>&lt;10%</span>
+                          <span className="text-sm font-medium text-slate-700">Local awareness</span>
+                          <span className="text-2xl font-black text-slate-900">&lt;10%</span>
                         </div>
                       </div>
-                      <p className={`${typography.label} text-slate-600 italic`}>Burning cash on Google bidding wars for tourists, not locals</p>
+                      <p className="text-sm text-slate-600 italic">Burning cash on Google bidding wars for tourists, not locals</p>
                     </div>
                   </div>
                 </div>
@@ -417,21 +417,21 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                       <DollarSign className="text-white" size={32} />
                     </div>
-                    <h3 className={`${typography.h3} font-bold text-slate-900 mb-2`}>CAC Too High</h3>
-                    <p className={`${typography.label} text-slate-500 mb-6`}>Need 3 purchases just to break even</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">CAC Too High</h3>
+                    <p className="text-sm text-slate-500 mb-6">Need 3 purchases just to break even</p>
 
                     <div className="space-y-4">
                       <div className="bg-red-50 rounded-xl p-4 border-l-4 border-red-500">
                         <div className="flex justify-between items-center mb-2">
-                          <span className={`${typography.label} font-medium text-slate-700`}>Cost per customer</span>
-                          <span className={`${typography.h3} font-black text-red-600`}>AED 200</span>
+                          <span className="text-sm font-medium text-slate-700">Cost per customer</span>
+                          <span className="text-2xl font-black text-red-600">AED 200</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className={`${typography.label} font-medium text-slate-700`}>Avg transaction</span>
-                          <span className={`${typography.h3} font-black text-slate-900`}>AED 85</span>
+                          <span className="text-sm font-medium text-slate-700">Avg transaction</span>
+                          <span className="text-2xl font-black text-slate-900">AED 85</span>
                         </div>
                       </div>
-                      <p className={`${typography.label} text-slate-600 italic`}>85% of merchants operate at negative ROI for months</p>
+                      <p className="text-sm text-slate-600 italic">85% of merchants operate at negative ROI for months</p>
                     </div>
                   </div>
                 </div>
@@ -444,21 +444,21 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
                       <Users className="text-white" size={32} />
                     </div>
-                    <h3 className={`${typography.h3} font-bold text-slate-900 mb-2`}>No Retention</h3>
-                    <p className={`${typography.label} text-slate-500 mb-6`}>One-time buyers, never loyal</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-2">No Retention</h3>
+                    <p className="text-sm text-slate-500 mb-6">One-time buyers, never loyal</p>
 
                     <div className="space-y-4">
                       <div className="bg-yellow-50 rounded-xl p-4 border-l-4 border-yellow-500">
                         <div className="flex justify-between items-center mb-2">
-                          <span className={`${typography.label} font-medium text-slate-700`}>Repeat rate (90d)</span>
-                          <span className={`${typography.h3} font-black text-yellow-600`}>15%</span>
+                          <span className="text-sm font-medium text-slate-700">Repeat rate (90d)</span>
+                          <span className="text-2xl font-black text-yellow-600">15%</span>
                         </div>
                         <div className="flex justify-between items-center">
-                          <span className={`${typography.label} font-medium text-slate-700`}>Never return</span>
-                          <span className={`${typography.h3} font-black text-slate-900`}>85%</span>
+                          <span className="text-sm font-medium text-slate-700">Never return</span>
+                          <span className="text-2xl font-black text-slate-900">85%</span>
                         </div>
                       </div>
-                      <p className={`${typography.label} text-slate-600 italic`}>No data, no relationships, no competitive advantage</p>
+                      <p className="text-sm text-slate-600 italic">No data, no relationships, no competitive advantage</p>
                     </div>
                   </div>
                 </div>
@@ -466,10 +466,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Bottom Callout - The Vicious Cycle */}
               <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-center shadow-2xl">
-                <p className={`${typography.h3} font-bold text-white mb-3`}>
+                <p className="text-2xl sm:text-3xl font-bold text-white mb-3">
                   The vicious cycle: <span className="text-orange-400">High CAC → Low margin → Can't invest in retention → Repeat</span>
                 </p>
-                <p className={`${typography.bodyLarge} text-slate-300`}>
+                <p className="text-lg text-slate-300">
                   Small merchants are stuck. They need <span className="font-bold text-emerald-400">performance-based discovery</span>, not ad bidding wars.
                 </p>
               </div>
@@ -491,10 +491,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-full mb-4 border border-[#c9a227]/30 shadow-lg">
-                  <span className={typography.h3}>🎯</span>
-                  <p className={`${typography.bodySmall} font-bold text-[#c9a227] uppercase tracking-wider`}>Market Opportunity</p>
+                  <span className="text-2xl">🎯</span>
+                  <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wider">Market Opportunity</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-4 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-4 leading-tight">
                   <span className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] bg-clip-text text-transparent drop-shadow-sm">$35B</span> GCC Market
                 </h2>
                 <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -511,8 +511,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="absolute top-0 right-0 w-48 h-48 bg-blue-400/5 rounded-full blur-3xl" />
 
                   <div className="text-center mb-6 relative z-10">
-                    <h3 className={`${typography.h2} text-slate-900 mb-2`}>Market Funnel</h3>
-                    <p className={`${typography.body} text-slate-600 font-medium`}>Progressive capture strategy</p>
+                    <h3 className="text-3xl font-black text-slate-900 mb-2">Market Funnel</h3>
+                    <p className="text-base text-slate-600 font-medium">Progressive capture strategy</p>
                   </div>
                   <div className="h-80 flex items-center justify-center relative z-10">
                     <ResponsiveContainer width="100%" height="100%">
@@ -573,8 +573,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     {/* Center Label */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <div className="text-center">
-                        <p className={`${typography.labelMicro} font-bold text-slate-400 uppercase tracking-wider`}>Target</p>
-                        <p className={`${typography.h3} text-[#c9a227]`}>$1.35B</p>
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Target</p>
+                        <p className="text-2xl font-black text-[#c9a227]">$1.35B</p>
                       </div>
                     </div>
                   </div>
@@ -607,14 +607,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                          <span className={typography.h3}>🎯</span>
+                          <span className="text-2xl">🎯</span>
                         </div>
                         <div>
-                          <h3 className={`${typography.h4} text-slate-900`}>Serviceable Addressable Market</h3>
-                          <p className={`${typography.bodySmall} text-slate-600`}>4 Verticals (H1 Focus)</p>
+                          <h3 className="text-lg font-black text-slate-900">Serviceable Addressable Market</h3>
+                          <p className="text-sm text-slate-600">4 Verticals (H1 Focus)</p>
                         </div>
                       </div>
-                      <p className={`${typography.metricMedium} bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent`}>$35B</p>
+                      <p className="text-4xl font-black bg-gradient-to-r from-indigo-600 to-indigo-500 bg-clip-text text-transparent">$35B</p>
                     </div>
                     <p className="text-sm text-slate-700 leading-relaxed">
                       <DataPoint
@@ -629,48 +629,48 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-xl flex items-center justify-center shadow-lg">
-                          <span className={typography.h3}>🚀</span>
+                          <span className="text-2xl">🚀</span>
                         </div>
                         <div>
-                          <h3 className={`${typography.h4} text-slate-900`}>Serviceable Obtainable Market</h3>
-                          <p className={`${typography.bodySmall} text-slate-600`}>Dubai 3-Year Target (3% of SAM)</p>
+                          <h3 className="text-lg font-black text-slate-900">Serviceable Obtainable Market</h3>
+                          <p className="text-sm text-slate-600">Dubai 3-Year Target (3% of SAM)</p>
                         </div>
                       </div>
-                      <p className={`${typography.metricMedium} bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] bg-clip-text text-transparent`}>$1.05B</p>
+                      <p className="text-4xl font-black bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] bg-clip-text text-transparent">$1.05B</p>
                     </div>
 
                     {/* Phase 1: Dubai Horizons */}
                     <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 mb-4 border border-slate-200">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center shadow-sm">
-                          <span className={`${typography.labelMicro} text-white font-black`}>1</span>
+                          <span className="text-white text-xs font-black">1</span>
                         </div>
-                        <p className={`${typography.label} font-black text-slate-900`}>Phase 1: Dubai (Year 1-3)</p>
+                        <p className="text-sm font-black text-slate-900">Phase 1: Dubai (Year 1-3)</p>
                       </div>
 
                       <div className="space-y-2">
                         <div className="bg-gradient-to-r from-emerald-50 to-white border-l-3 border-emerald-500 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
-                            <p className={`${typography.labelMicro} font-bold text-emerald-700`}>🌱 Horizon 1 (M1-12)</p>
-                            <p className={`${typography.bodyLarge} font-black text-emerald-600`}>$150M</p>
+                            <p className="text-xs font-bold text-emerald-700">🌱 Horizon 1 (M1-12)</p>
+                            <p className="text-base font-black text-emerald-600">$150M</p>
                           </div>
-                          <p className={`${typography.labelMicro} text-slate-600`}>F&B • Grocery • Salons • Fashion • Fitness • Events (pop-ups, exhibitions)</p>
+                          <p className="text-xs text-slate-600">F&B • Grocery • Salons • Fashion • Fitness • Events (pop-ups, exhibitions)</p>
                         </div>
 
                         <div className="bg-gradient-to-r from-blue-50 to-white border-l-3 border-blue-500 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
-                            <p className={`${typography.labelMicro} font-bold text-blue-700`}>📈 Horizon 2 (M13-24)</p>
-                            <p className={`${typography.bodyLarge} font-black text-blue-600`}>$450M</p>
+                            <p className="text-xs font-bold text-blue-700">📈 Horizon 2 (M13-24)</p>
+                            <p className="text-base font-black text-blue-600">$450M</p>
                           </div>
-                          <p className={`${typography.labelMicro} text-slate-600`}>+ Entertainment (cinemas, gaming) • Home Services • Pet</p>
+                          <p className="text-xs text-slate-600">+ Entertainment (cinemas, gaming) • Home Services • Pet</p>
                         </div>
 
                         <div className="bg-gradient-to-r from-purple-50 to-white border-l-3 border-purple-500 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
-                            <p className={`${typography.labelMicro} font-bold text-purple-700`}>🌍 Horizon 3 (M25-36)</p>
-                            <p className={`${typography.bodyLarge} font-black text-purple-600`}>$750M</p>
+                            <p className="text-xs font-bold text-purple-700">🌍 Horizon 3 (M25-36)</p>
+                            <p className="text-base font-black text-purple-600">$750M</p>
                           </div>
-                          <p className={`${typography.labelMicro} text-slate-600`}>All UAE cities (Abu Dhabi • Sharjah • Ajman • RAK • Fujairah)</p>
+                          <p className="text-xs text-slate-600">All UAE cities (Abu Dhabi • Sharjah • Ajman • RAK • Fujairah)</p>
                         </div>
                       </div>
                     </div>
@@ -680,29 +680,29 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <div className="bg-gradient-to-br from-blue-100/50 to-white border border-blue-200 rounded-lg p-3">
                         <div className="flex items-center gap-2 mb-1">
                           <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-sm">
-                            <span className={`${typography.labelMicro} text-white font-black`}>2</span>
+                            <span className="text-white text-xs font-black">2</span>
                           </div>
-                          <p className={`${typography.labelMicro} font-bold text-slate-700`}>Phase 2 (Y4-5)</p>
+                          <p className="text-xs font-bold text-slate-700">Phase 2 (Y4-5)</p>
                         </div>
-                        <p className={`${typography.label} font-black text-blue-600 mb-1`}>$3B+</p>
-                        <p className={`${typography.labelMicro} text-slate-600`}>Qatar + KSA</p>
+                        <p className="text-sm font-black text-blue-600 mb-1">$3B+</p>
+                        <p className="text-xs text-slate-600">Qatar + KSA</p>
                       </div>
 
                       <div className="bg-gradient-to-br from-purple-100/50 to-white border border-purple-200 rounded-lg p-3">
                         <div className="flex items-center gap-2 mb-1">
                           <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-sm">
-                            <span className={`${typography.labelMicro} text-white font-black`}>3</span>
+                            <span className="text-white text-xs font-black">3</span>
                           </div>
-                          <p className={`${typography.labelMicro} font-bold text-slate-700`}>Phase 3 (Y6+)</p>
+                          <p className="text-xs font-bold text-slate-700">Phase 3 (Y6+)</p>
                         </div>
-                        <p className={`${typography.label} font-black text-purple-600 mb-1`}>$5B+</p>
-                        <p className={`${typography.labelMicro} text-slate-600`}>Full GCC</p>
+                        <p className="text-sm font-black text-purple-600 mb-1">$5B+</p>
+                        <p className="text-xs text-slate-600">Full GCC</p>
                       </div>
                     </div>
 
                     {/* Bottom CTA */}
                     <div className="mt-4 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3">
-                      <p className={`${typography.labelMicro} text-center text-slate-700`}>
+                      <p className="text-xs text-center text-slate-700">
                         <span className="font-black text-[#c9a227]">3% penetration</span> in Dubai within 36 months •
                         <span className="font-black text-slate-900"> KPI-driven expansion</span>
                       </p>
@@ -729,12 +729,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
-                  <p className={`${typography.labelEyebrow} text-blue-700`}>Perfect Timing</p>
+                  <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Perfect Timing</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-4`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   Why <span className="text-[#c9a227]">Now?</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto`}>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Four converging trends make this the perfect moment for Nuqta
                 </p>
               </div>
@@ -813,26 +813,26 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           <Icon className="text-white" size={32} />
                         </div>
                         <div className="flex-1">
-                          <h3 className={`${typography.h3} font-black text-slate-900 mb-1 leading-tight`}>{factor.title}</h3>
-                          <p className={`${typography.label} font-bold text-[#c9a227] uppercase tracking-wide`}>{factor.subtitle}</p>
+                          <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-1 leading-tight">{factor.title}</h3>
+                          <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wide">{factor.subtitle}</p>
                         </div>
                       </div>
 
                       {/* Stat Badge */}
                       <div className="mb-4">
                         <div className="inline-block bg-white border-2 border-white/50 rounded-xl px-4 py-2 shadow-md">
-                          <p className={`${typography.metric} font-black ${statColor}`}>{factor.stat}</p>
+                          <p className={`text-4xl font-black ${statColor}`}>{factor.stat}</p>
                         </div>
                       </div>
 
                       {/* Description */}
-                      <p className={`${typography.bodyLarge} text-slate-700 leading-relaxed mb-6 font-medium`}>
+                      <p className="text-slate-700 leading-relaxed mb-6 text-base font-medium">
                         {factor.description}
                       </p>
 
                       {/* Source */}
                       <div className="pt-4 border-t-2 border-white/50">
-                        <p className={`${typography.labelMicro} text-slate-600 font-semibold`}>{factor.source}</p>
+                        <p className="text-xs text-slate-600 font-semibold">{factor.source}</p>
                       </div>
                     </div>
                   );
@@ -843,27 +843,27 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="max-w-5xl mx-auto">
                 <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/30">
                   <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
-                    <p className={`${typography.labelEyebrow} text-[#c9a227]`}>The Perfect Storm</p>
+                    <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">The Perfect Storm</p>
                   </div>
-                  <p className={`${typography.h2} font-black text-white mb-6 leading-tight`}>
+                  <p className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
                     These 4 trends converge in <span className="text-[#c9a227]">2026</span> to create a <span className="text-emerald-400">once-in-a-decade</span> opportunity
                   </p>
                   <div className="grid md:grid-cols-4 gap-4">
                     <div className="bg-white/5 rounded-xl p-4 border border-blue-500/30">
-                      <p className={`${typography.label} font-bold text-blue-400 mb-1`}>Search</p>
-                      <p className={`${typography.labelMicro} text-slate-300`}>Behavior shift</p>
+                      <p className="text-sm font-bold text-blue-400 mb-1">Search</p>
+                      <p className="text-xs text-slate-300">Behavior shift</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-4 border border-emerald-500/30">
-                      <p className={`${typography.label} font-bold text-emerald-400 mb-1`}>Local</p>
-                      <p className={`${typography.labelMicro} text-slate-300`}>Consumer preference</p>
+                      <p className="text-sm font-bold text-emerald-400 mb-1">Local</p>
+                      <p className="text-xs text-slate-300">Consumer preference</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-4 border border-purple-500/30">
-                      <p className={`${typography.label} font-bold text-purple-400 mb-1`}>AI</p>
-                      <p className={`${typography.labelMicro} text-slate-300`}>Tech enabler</p>
+                      <p className="text-sm font-bold text-purple-400 mb-1">AI</p>
+                      <p className="text-xs text-slate-300">Tech enabler</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-4 border border-red-500/30">
-                      <p className={`${typography.label} font-bold text-red-400 mb-1`}>CAC</p>
-                      <p className={`${typography.labelMicro} text-slate-300`}>Market pain</p>
+                      <p className="text-sm font-bold text-red-400 mb-1">CAC</p>
+                      <p className="text-xs text-slate-300">Market pain</p>
                     </div>
                   </div>
                 </div>
@@ -875,23 +875,23 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="bg-slate-900 rounded-[22px] p-8">
                     <div className="flex items-center justify-center gap-3 mb-4">
                       <AlertCircle className="w-6 h-6 text-orange-400" />
-                      <h3 className={`${typography.h3} font-black text-white`}>12-18 Month Window</h3>
+                      <h3 className="text-2xl font-black text-white">12-18 Month Window</h3>
                     </div>
-                    <p className={`${typography.bodyLarge} text-slate-300 text-center mb-6`}>
+                    <p className="text-lg text-slate-300 text-center mb-6">
                       First-mover advantage before UAE competitors pivot to offline rewards
                     </p>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="bg-slate-800/50 border border-orange-500/30 rounded-xl p-4 text-center">
-                        <p className={`${typography.h3} font-black text-orange-400 mb-1`}>Q2 2026</p>
-                        <p className={`${typography.label} text-slate-400`}>Launch before competitors</p>
+                        <p className="text-3xl font-black text-orange-400 mb-1">Q1 2026</p>
+                        <p className="text-sm text-slate-400">Launch before competitors</p>
                       </div>
                       <div className="bg-slate-800/50 border border-red-500/30 rounded-xl p-4 text-center">
-                        <p className={`${typography.h3} font-black text-red-400 mb-1`}>Q4 2026</p>
-                        <p className={`${typography.label} text-slate-400`}>Establish UAE market lead</p>
+                        <p className="text-3xl font-black text-red-400 mb-1">Q4 2026</p>
+                        <p className="text-sm text-slate-400">Establish UAE market lead</p>
                       </div>
                       <div className="bg-slate-800/50 border border-orange-500/30 rounded-xl p-4 text-center">
-                        <p className={`${typography.h3} font-black text-orange-400 mb-1`}>2027</p>
-                        <p className={`${typography.label} text-slate-400`}>Raise Series A as category leader</p>
+                        <p className="text-3xl font-black text-orange-400 mb-1">2027</p>
+                        <p className="text-sm text-slate-400">Raise Series A as category leader</p>
                       </div>
                     </div>
                   </div>
@@ -1251,7 +1251,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xl">1</div>
-                      <h3 className={`${typography.h2} text-slate-900`}>{activeExample.discover.step}</h3>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.discover.step}</h3>
                     </div>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="bg-white rounded-2xl p-6">
@@ -1274,12 +1274,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className={`w-12 h-12 rounded-full ${activeColor.bg} text-white flex items-center justify-center font-black text-xl`}>2</div>
-                      <h3 className={`${typography.h2} text-slate-900`}>{activeExample.deals.step}</h3>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.deals.step}</h3>
                     </div>
                     <div className="bg-white rounded-2xl p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <p className={`${typography.h3} text-slate-900 mb-1`}>{activeExample.deals.merchant}</p>
+                          <p className="text-2xl font-black text-slate-900 mb-1">{activeExample.deals.merchant}</p>
                           <p className="text-lg text-slate-600">Regular price: <span className="line-through">{activeExample.deals.normalPrice}</span></p>
                         </div>
                         <span className={`text-3xl`}>{activeExample.icon}</span>
@@ -1295,7 +1295,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         </div>
                         <div className="bg-emerald-50 rounded-xl p-4 border-l-4 border-emerald-500">
                           <p className="text-sm text-slate-600 mb-1">Total Savings</p>
-                          <p className={`${typography.h3} text-emerald-600`}>{activeExample.deals.totalCashback}</p>
+                          <p className="text-2xl font-black text-emerald-600">{activeExample.deals.totalCashback}</p>
                         </div>
                       </div>
                     </div>
@@ -1305,7 +1305,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center font-black text-xl">3</div>
-                      <h3 className={`${typography.h2} text-slate-900`}>{activeExample.payment.step}</h3>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.payment.step}</h3>
                     </div>
                     <div className="bg-white rounded-2xl p-6">
                       <p className="text-lg text-slate-600 mb-6">Which payment method saves you the most?</p>
@@ -1353,28 +1353,28 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-black text-xl">4</div>
-                      <h3 className={`${typography.h2} text-slate-900`}>{activeExample.rewards.step}</h3>
+                      <h3 className="text-3xl font-black text-slate-900">{activeExample.rewards.step}</h3>
                     </div>
                     <div className="bg-white rounded-2xl p-6">
                       <div className="grid md:grid-cols-4 gap-6">
                         <div className="text-center">
                           <p className="text-sm text-slate-600 mb-2">Per Visit</p>
-                          <p className={`${typography.h2} text-green-600`}>{activeExample.rewards.perVisit}</p>
+                          <p className="text-3xl font-black text-green-600">{activeExample.rewards.perVisit}</p>
                           <p className="text-xs text-slate-500 mt-1">Instant cashback</p>
                         </div>
                         <div className="text-center">
                           <p className="text-sm text-slate-600 mb-2">Frequency</p>
-                          <p className={`${typography.h2} text-slate-900`}>{activeExample.rewards.frequency}</p>
+                          <p className="text-3xl font-black text-slate-900">{activeExample.rewards.frequency}</p>
                           <p className="text-xs text-slate-500 mt-1">Your pattern</p>
                         </div>
                         <div className="text-center">
                           <p className="text-sm text-slate-600 mb-2">Monthly</p>
-                          <p className={`${typography.h2} text-[#c9a227]`}>{activeExample.rewards.monthly}</p>
+                          <p className="text-3xl font-black text-[#c9a227]">{activeExample.rewards.monthly}</p>
                           <p className="text-xs text-slate-500 mt-1">Total savings</p>
                         </div>
                         <div className="text-center bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4">
                           <p className="text-sm text-slate-600 mb-2">Yearly</p>
-                          <p className={`${typography.h2} text-green-600`}>{activeExample.rewards.yearly}</p>
+                          <p className="text-3xl font-black text-green-600">{activeExample.rewards.yearly}</p>
                           <p className="text-xs text-green-600 font-semibold mt-1">Annual savings</p>
                         </div>
                       </div>
@@ -1392,7 +1392,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-6">
                     <Search className="text-white" size={32} />
                   </div>
-                  <h3 className={`${typography.h3} text-slate-900 mb-3`}>{activeExample.shopper.title}</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{activeExample.shopper.title}</h3>
                   <p className="text-lg text-slate-600 mb-2">
                     {activeExample.shopper.description}
                   </p>
@@ -1410,7 +1410,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-slate-200">
-                    <p className={`${typography.h2} text-emerald-600`}>{activeExample.shopper.savings}</p>
+                    <p className="text-3xl font-black text-emerald-600">{activeExample.shopper.savings}</p>
                     <p className="text-sm text-slate-600">{activeExample.shopper.savingsLabel}</p>
                   </div>
                 </div>
@@ -1420,7 +1420,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="w-16 h-16 bg-[#c9a227] rounded-2xl flex items-center justify-center mb-6">
                     <Store className="text-white" size={32} />
                   </div>
-                  <h3 className={`${typography.h3} text-slate-900 mb-3`}>{activeExample.merchant.title}</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{activeExample.merchant.title}</h3>
                   <p className="text-lg text-slate-600 mb-6">
                     {activeExample.merchant.description}
                   </p>
@@ -1435,7 +1435,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-slate-200">
-                    <p className={`${typography.h2} text-[#c9a227]`}>{activeExample.merchant.metric}</p>
+                    <p className="text-3xl font-black text-[#c9a227]">{activeExample.merchant.metric}</p>
                     <p className="text-sm text-slate-600">{activeExample.merchant.metricLabel}</p>
                   </div>
                 </div>
@@ -1445,7 +1445,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
                     <CreditCard className="text-white" size={32} />
                   </div>
-                  <h3 className={`${typography.h3} text-slate-900 mb-3`}>{activeExample.bank.title}</h3>
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{activeExample.bank.title}</h3>
                   <p className="text-lg text-slate-600 mb-6">
                     {activeExample.bank.description}
                   </p>
@@ -1460,7 +1460,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     ))}
                   </div>
                   <div className="mt-6 pt-6 border-t border-slate-200">
-                    <p className={`${typography.h2} text-blue-600`}>{activeExample.bank.metric}</p>
+                    <p className="text-3xl font-black text-blue-600">{activeExample.bank.metric}</p>
                     <p className="text-sm text-slate-600">{activeExample.bank.metricLabel}</p>
                   </div>
                 </div>
@@ -1469,10 +1469,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Bottom CTA */}
               <div className="text-center bg-slate-900 rounded-2xl p-8 text-white">
-                <p className={`${typography.h3} mb-2`}>
+                <p className="text-2xl font-bold mb-2">
                   One platform. Three revenue streams. Zero customer acquisition cost.
                 </p>
-                <p className={typography.body}>Shoppers save → Merchants grow → Banks win</p>
+                <p className="text-slate-400">Shoppers save → Merchants grow → Banks win</p>
               </div>
 
             </div>
@@ -1492,11 +1492,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-100 to-orange-100 rounded-full mb-4 border-2 border-red-200">
                   <p className="text-xs font-black text-red-700 uppercase tracking-wider">Current Experience — Broken</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-6 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
                   User Journey{' '}
                   <span className="bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">Before Nuqta</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto mb-4`}>
+                <p className="text-2xl text-slate-600 max-w-3xl mx-auto mb-4">
                   The painful reality: 27 minutes of friction, zero guarantee
                 </p>
               </div>
@@ -1553,8 +1553,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                             </div>
                             <div className="flex-1">
                               <div className="flex items-center justify-between mb-3">
-                                <h3 className={`${typography.h3} text-slate-900`}>{step.title}</h3>
-                                <span className={`${typography.bodySmall} font-bold text-slate-500 bg-white/80 px-3 py-1 rounded-full`}>{step.time}</span>
+                                <h3 className="text-2xl font-black text-slate-900">{step.title}</h3>
+                                <span className="text-sm font-bold text-slate-500 bg-white/80 px-3 py-1 rounded-full">{step.time}</span>
                               </div>
                               <p className="text-lg text-slate-700 leading-relaxed">{step.desc}</p>
                             </div>
@@ -1572,12 +1572,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="relative z-10">
                   <div className="flex items-center justify-center gap-4 mb-4">
                     <Clock size={48} className="text-white/80" />
-                    <p className={`${typography.metricXL} tracking-tight`}>
+                    <p className="text-6xl sm:text-7xl font-black tracking-tight">
                       <AnimatedNumber value={27} duration={2000} /> min
                     </p>
                     <Ban size={48} className="text-white/80" />
                   </div>
-                  <p className={`${typography.h3} mb-2`}>Average time wasted per search</p>
+                  <p className="text-2xl font-bold mb-2">Average time wasted per search</p>
                   <p className="text-lg text-red-100">Still no guarantee of best deal → 40% give up and pay full price</p>
                 </div>
               </div>
@@ -1598,11 +1598,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-100 to-green-100 rounded-full mb-4 border-2 border-emerald-300">
                   <p className="text-xs font-black text-emerald-700 uppercase tracking-wider">With Nuqta — Simplified</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-6 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
                   User Journey{' '}
                   <span className="bg-gradient-to-r from-emerald-600 to-green-500 bg-clip-text text-transparent">After Nuqta</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto mb-4`}>
+                <p className="text-2xl text-slate-600 max-w-3xl mx-auto mb-4">
                   The reality: 30 seconds from search to deal → 54x faster
                 </p>
               </div>
@@ -1645,8 +1645,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         </div>
 
                         {/* Title & Description */}
-                        <h3 className={`${typography.h3} text-slate-900 mb-3 text-center`}>{step.title}</h3>
-                        <p className={`${typography.body} text-slate-600 mb-6 leading-relaxed text-center`}>{step.desc}</p>
+                        <h3 className="text-2xl font-black text-slate-900 mb-3 text-center">{step.title}</h3>
+                        <p className="text-base text-slate-600 mb-6 leading-relaxed text-center">{step.desc}</p>
 
                         {/* Result Badge */}
                         <div className="pt-4 border-t-2 border-emerald-100 bg-emerald-50 rounded-xl p-4 -mx-2">
@@ -1666,13 +1666,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="flex items-center justify-center gap-6 mb-4">
                     <Zap size={48} className="text-yellow-300" />
                     <div>
-                      <p className={`${typography.metricXL} tracking-tight`}>
+                      <p className="text-6xl sm:text-7xl font-black tracking-tight">
                         <AnimatedNumber value={30} duration={2000} /> sec
                       </p>
                     </div>
                     <CheckCircle2 size={48} className="text-white/90" />
                   </div>
-                  <p className={`${typography.h3} mb-3`}>From search to claimed deal</p>
+                  <p className="text-2xl font-bold mb-3">From search to claimed deal</p>
                   <div className="flex items-center justify-center gap-3 text-lg text-emerald-100">
                     <span className="bg-white/20 px-4 py-2 rounded-full font-semibold">54x faster than traditional search</span>
                     <span className="bg-white/20 px-4 py-2 rounded-full font-semibold">Guaranteed best local deal</span>
@@ -1684,13 +1684,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="mt-8 bg-slate-900 rounded-2xl p-8 text-center text-white">
                 <div className="flex items-center justify-center gap-12">
                   <div>
-                    <p className={`${typography.metricMedium} text-red-400 mb-1`}>27 min</p>
-                    <p className={`${typography.bodySmall} text-slate-400`}>Before (5 apps)</p>
+                    <p className="text-4xl font-black text-red-400 mb-1">27 min</p>
+                    <p className="text-sm text-slate-400">Before (5 apps)</p>
                   </div>
                   <ArrowRight size={40} className="text-[#c9a227]" />
                   <div>
-                    <p className={`${typography.metricMedium} text-emerald-400 mb-1`}>30 sec</p>
-                    <p className={`${typography.bodySmall} text-slate-400`}>After (1 app)</p>
+                    <p className="text-4xl font-black text-emerald-400 mb-1">30 sec</p>
+                    <p className="text-sm text-slate-400">After (1 app)</p>
                   </div>
                 </div>
               </div>
@@ -1711,7 +1711,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4 shadow-md">
                   <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Core Differentiation</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-4 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4 leading-tight">
                   We're <span className="text-[#c9a227]">NOT</span> Another Deal App
                 </h2>
                 <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
@@ -1727,7 +1727,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4 shadow-md">
                       <Ban className="text-red-600" size={32} />
                     </div>
-                    <h3 className={`${typography.h2} text-slate-900 mb-2`}>Deal/Discount Platforms</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-2">Deal/Discount Platforms</h3>
                     <p className="text-sm text-red-600 font-bold uppercase">Smiles • Entertainer • Groupon</p>
                   </div>
                   <div className="space-y-4">
@@ -1759,7 +1759,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4 shadow-md">
                       <CheckCircle2 className="text-emerald-600" size={32} />
                     </div>
-                    <h3 className={`${typography.h2} text-slate-900 mb-2`}>Nuqta Platform</h3>
+                    <h3 className="text-3xl font-black text-slate-900 mb-2">Nuqta Platform</h3>
                     <p className="text-sm text-emerald-600 font-bold uppercase">Rewards Layer • Not Discount Platform</p>
                   </div>
                   <div className="space-y-4">
@@ -1792,25 +1792,25 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                     <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">The Core Difference</p>
                   </div>
-                  <p className={`${typography.h2} text-white mb-6 leading-tight`}>
+                  <p className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
                     Discount platforms <span className="text-red-400">destroy merchant margins</span>.<br/>
                     Nuqta <span className="text-emerald-400">builds loyalty</span> at sustainable economics.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
                     <div className="bg-white/5 rounded-xl p-5 border border-red-500/30">
-                      <p className={`${typography.labelMicro} text-red-400 font-bold uppercase mb-2`}>Discount Platforms</p>
-                      <p className={`${typography.h2} text-red-400 mb-1`}>-30%</p>
-                      <p className={`${typography.bodySmall} text-slate-400 font-medium`}>Merchant margin loss</p>
+                      <p className="text-xs text-red-400 font-bold uppercase mb-2">Discount Platforms</p>
+                      <p className="text-3xl font-black text-red-400 mb-1">-30%</p>
+                      <p className="text-sm text-slate-400 font-medium">Merchant margin loss</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-5 border border-emerald-500/30">
-                      <p className={`${typography.labelMicro} text-emerald-400 font-bold uppercase mb-2`}>Nuqta Model</p>
-                      <p className={`${typography.h2} text-emerald-400 mb-1`}>+40%</p>
-                      <p className={`${typography.bodySmall} text-slate-400 font-medium`}>Repeat customer rate</p>
+                      <p className="text-xs text-emerald-400 font-bold uppercase mb-2">Nuqta Model</p>
+                      <p className="text-3xl font-black text-emerald-400 mb-1">+40%</p>
+                      <p className="text-sm text-slate-400 font-medium">Repeat customer rate</p>
                     </div>
                     <div className="bg-white/5 rounded-xl p-5 border border-[#c9a227]/30">
-                      <p className={`${typography.labelMicro} text-[#c9a227] font-bold uppercase mb-2`}>The Result</p>
-                      <p className={`${typography.h2} text-[#c9a227] mb-1`}>10x+</p>
-                      <p className={`${typography.bodySmall} text-slate-400 font-medium`}>LTV:CAC Ratio</p>
+                      <p className="text-xs text-[#c9a227] font-bold uppercase mb-2">The Result</p>
+                      <p className="text-3xl font-black text-[#c9a227] mb-1">10x+</p>
+                      <p className="text-sm text-slate-400 font-medium">LTV:CAC Ratio</p>
                     </div>
                   </div>
                 </div>
@@ -1826,15 +1826,15 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto">
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
-                  <p className={`${typography.labelEyebrow} text-red-700`}>Competitive Analysis</p>
+                  <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Competitive Analysis</p>
                 </div>
-                <h2 className={`${typography.h1} font-black text-slate-900 mb-6`}>
+                <h2 className="text-5xl sm:text-6xl font-black text-slate-900 mb-6">
                   Why Can't <span className="text-red-600">Noon/Careem/Smiles</span> Do This?
                 </h2>
-                <p className={`${typography.bodyLarge} text-slate-500 uppercase tracking-wide font-bold mb-3`}>
+                <p className="text-lg text-slate-500 uppercase tracking-wide font-bold mb-3">
                   Technical Breakdown: 8 Structural Barriers
                 </p>
-                <p className={`${typography.h3} text-slate-600 max-w-4xl mx-auto`}>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-4xl mx-auto">
                   Head-to-head feature comparison shows why incumbents <span className="text-red-600 font-bold">structurally can't pivot</span> to this model without cannibalizing their revenue.
                 </p>
               </div>
@@ -1844,35 +1844,35 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <table className="w-full border-collapse bg-white rounded-2xl overflow-hidden shadow-xl">
                   <thead>
                     <tr className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 text-white">
-                      <th className={`${typography.label} px-6 py-4 text-left font-bold uppercase tracking-wider`}>Key Differentiator</th>
-                      <th className={`${typography.label} px-6 py-4 text-center font-bold uppercase tracking-wider`}>
+                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider">Key Differentiator</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
                         <div className="flex flex-col items-center gap-2">
-                          <span className={`${typography.h3} text-[#c9a227] font-black`}>Nuqta</span>
-                          <span className={`${typography.labelMicro} text-[#c9a227]/70 font-normal`}>Us</span>
+                          <span className="text-[#c9a227] text-2xl font-black">Nuqta</span>
+                          <span className="text-xs text-[#c9a227]/70 font-normal">Us</span>
                         </div>
                       </th>
-                      <th className={`${typography.label} px-6 py-4 text-center font-bold uppercase tracking-wider`}>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
                         <div className="flex flex-col items-center gap-1">
                           <span>Noon</span>
-                          <span className={`${typography.labelMicro} text-slate-400 font-normal`}>E-commerce</span>
+                          <span className="text-xs text-slate-400 font-normal">E-commerce</span>
                         </div>
                       </th>
-                      <th className={`${typography.label} px-6 py-4 text-center font-bold uppercase tracking-wider`}>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
                         <div className="flex flex-col items-center gap-1">
                           <span>Careem</span>
-                          <span className={`${typography.labelMicro} text-slate-400 font-normal`}>Super App</span>
+                          <span className="text-xs text-slate-400 font-normal">Super App</span>
                         </div>
                       </th>
-                      <th className={`${typography.label} px-6 py-4 text-center font-bold uppercase tracking-wider`}>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
                         <div className="flex flex-col items-center gap-1">
                           <span>Smiles</span>
-                          <span className={`${typography.labelMicro} text-slate-400 font-normal`}>Discounts</span>
+                          <span className="text-xs text-slate-400 font-normal">Discounts</span>
                         </div>
                       </th>
-                      <th className={`${typography.label} px-6 py-4 text-center font-bold uppercase tracking-wider`}>
+                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider">
                         <div className="flex flex-col items-center gap-1">
                           <span>Cards</span>
-                          <span className={`${typography.labelMicro} text-slate-400 font-normal`}>Credit</span>
+                          <span className="text-xs text-slate-400 font-normal">Credit</span>
                         </div>
                       </th>
                     </tr>
@@ -1961,7 +1961,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       }
                     ].map((row, idx) => (
                       <tr key={idx} className={idx % 2 === 0 ? "bg-gradient-to-r from-slate-50 to-white" : "bg-white"}>
-                        <td className={`${typography.bodyLarge} px-6 py-4 font-medium text-slate-900`}>{row.feature}</td>
+                        <td className="px-6 py-4 text-base font-medium text-slate-900">{row.feature}</td>
                         <td className="px-6 py-4 text-center bg-[#c9a227]/5">
                           {row.nuqta ? (
                             <CheckCircle2 className="inline-block text-emerald-600" size={28} />
@@ -2007,10 +2007,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-[#c9a227]/10 via-white to-slate-50 border-4 border-[#c9a227]/30 rounded-3xl p-10 mb-12 shadow-2xl">
                 <div className="text-center mb-8">
                   <div className="inline-block px-5 py-2 bg-slate-900 rounded-full mb-4">
-                    <p className={`${typography.label} font-bold text-[#c9a227] uppercase tracking-wider`}>Structural Moat — Explained Simply</p>
+                    <p className="text-sm font-bold text-[#c9a227] uppercase tracking-wider">Structural Moat — Explained Simply</p>
                   </div>
-                  <h3 className={`${typography.h2} font-black text-slate-900 mb-4`}>Why Can't They Just Copy Us?</h3>
-                  <p className={`${typography.bodyLarge} text-slate-600 max-w-3xl mx-auto`}>
+                  <h3 className="text-4xl font-black text-slate-900 mb-4">Why Can't They Just Copy Us?</h3>
+                  <p className="text-lg text-slate-600 max-w-3xl mx-auto">
                     They could try. But it would be <span className="text-red-600 font-bold">strategically stupid</span> — like these examples:
                   </p>
                 </div>
@@ -2023,16 +2023,16 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <span className="text-2xl">🚗</span>
                       </div>
                       <div>
-                        <p className={`${typography.h4} font-black text-slate-900`}>Careem</p>
-                        <p className={`${typography.label} text-slate-500 font-medium`}>Logistics → Discovery?</p>
+                        <p className="text-xl font-black text-slate-900">Careem</p>
+                        <p className="text-sm text-slate-500 font-medium">Logistics → Discovery?</p>
                       </div>
                     </div>
                     <div className="bg-orange-50 rounded-xl p-4 border-l-4 border-orange-500 mb-3">
-                      <p className={`${typography.bodyLarge} text-slate-800 leading-relaxed font-medium italic`}>
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
                         "Careem copying Nuqta is like <span className="font-black">Uber launching a Google Maps competitor</span>. Possible, but strategically stupid."
                       </p>
                     </div>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed`}>
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       <strong>Why:</strong> Careem makes money from <span className="font-bold text-orange-600">delivery fees</span> (rides + food).
                       Promoting dine-in restaurants <span className="font-bold text-red-600">kills delivery orders</span>. They'd be competing with their own revenue.
                     </p>
@@ -2045,16 +2045,16 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <span className="text-2xl">🛒</span>
                       </div>
                       <div>
-                        <p className={`${typography.h4} font-black text-slate-900`}>Noon</p>
-                        <p className={`${typography.label} text-slate-500 font-medium`}>E-commerce → Offline?</p>
+                        <p className="text-xl font-black text-slate-900">Noon</p>
+                        <p className="text-sm text-slate-500 font-medium">E-commerce → Offline?</p>
                       </div>
                     </div>
                     <div className="bg-blue-50 rounded-xl p-4 border-l-4 border-blue-500 mb-3">
-                      <p className={`${typography.bodyLarge} text-slate-800 leading-relaxed font-medium italic`}>
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
                         "Noon adding offline discovery is like <span className="font-black">Amazon telling you to shop at local stores instead</span>. Brand suicide."
                       </p>
                     </div>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed`}>
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       <strong>Why:</strong> Noon's entire business is <span className="font-bold text-blue-600">e-commerce GMV</span>.
                       Every offline transaction they enable is <span className="font-bold text-red-600">lost online revenue</span>. Their warehouses become liabilities.
                     </p>
@@ -2067,16 +2067,16 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <span className="text-2xl">💰</span>
                       </div>
                       <div>
-                        <p className={`${typography.h4} font-black text-slate-900`}>Tabby / Postpay</p>
-                        <p className={`${typography.label} text-slate-500 font-medium`}>BNPL → Cashback?</p>
+                        <p className="text-xl font-black text-slate-900">Tabby / Postpay</p>
+                        <p className="text-sm text-slate-500 font-medium">BNPL → Cashback?</p>
                       </div>
                     </div>
                     <div className="bg-purple-50 rounded-xl p-4 border-l-4 border-purple-500 mb-3">
-                      <p className={`${typography.bodyLarge} text-slate-800 leading-relaxed font-medium italic`}>
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
                         "BNPL adding 10% cashback is like <span className="font-black">a bank paying you to not use their loans</span>. Economics don't work."
                       </p>
                     </div>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed`}>
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       <strong>Why:</strong> They charge merchants <span className="font-bold text-purple-600">4-6%</span> for installment plans.
                       Offering 10% cashback means <span className="font-bold text-red-600">losing 4-6% per transaction</span>. Negative margins instantly.
                     </p>
@@ -2089,16 +2089,16 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <span className="text-2xl">💳</span>
                       </div>
                       <div>
-                        <p className={`${typography.h4} font-black text-slate-900`}>Credit Cards</p>
-                        <p className={`${typography.label} text-slate-500 font-medium`}>1-2% → 10%?</p>
+                        <p className="text-xl font-black text-slate-900">Credit Cards</p>
+                        <p className="text-sm text-slate-500 font-medium">1-2% → 10%?</p>
                       </div>
                     </div>
                     <div className="bg-emerald-50 rounded-xl p-4 border-l-4 border-emerald-500 mb-3">
-                      <p className={`${typography.bodyLarge} text-slate-800 leading-relaxed font-medium italic`}>
+                      <p className="text-base text-slate-800 leading-relaxed font-medium italic">
                         "Banks offering 10% cashback is like <span className="font-black">Apple making Android phones</span>. Why kill your cash cow?"
                       </p>
                     </div>
-                    <p className={`${typography.body} text-slate-600 leading-relaxed`}>
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       <strong>Why:</strong> Card networks make <span className="font-bold text-emerald-600">2-3% per swipe</span>.
                       Offering 10% cashback <span className="font-bold text-red-600">destroys their entire margin structure</span>. They'd lose money on every transaction.
                     </p>
@@ -2107,10 +2107,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                 {/* Bottom Summary */}
                 <div className="mt-8 bg-slate-900 rounded-2xl p-6 text-center">
-                  <p className={`${typography.h3} font-black text-white mb-3`}>
+                  <p className="text-2xl font-black text-white mb-3">
                     The Pattern: <span className="text-[#c9a227]">Product Cannibalization</span>
                   </p>
-                  <p className={`${typography.bodyLarge} text-slate-300 max-w-3xl mx-auto leading-relaxed`}>
+                  <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
                     Every major player would have to <span className="text-red-400 font-bold">destroy their core revenue</span> to compete with us.
                     That's not a timing moat — it's a <span className="text-emerald-400 font-bold">structural impossibility</span>.
                   </p>
@@ -2119,8 +2119,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Deep Dive: Structural Analysis */}
               <div className="text-center mb-8">
-                <p className={`${typography.label} text-slate-500 uppercase tracking-wider font-bold mb-2`}>Deep Dive Analysis</p>
-                <h3 className={`${typography.h2} font-black text-slate-900`}>Business Model Constraints by Competitor</h3>
+                <p className="text-sm text-slate-500 uppercase tracking-wider font-bold mb-2">Deep Dive Analysis</p>
+                <h3 className="text-3xl font-black text-slate-900">Business Model Constraints by Competitor</h3>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -2130,22 +2130,22 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
                       <AlertCircle className="text-red-600" size={28} />
                     </div>
-                    <h3 className={`${typography.h3} font-black text-slate-900`}>Structural Barriers (Revenue Cannibalization Risk)</h3>
+                    <h3 className="text-2xl font-black text-slate-900">Structural Barriers (Revenue Cannibalization Risk)</h3>
                   </div>
                   <div className="space-y-5">
                     <div className="bg-white rounded-xl p-5 border-l-4 border-red-500 shadow-sm">
                       <div className="flex items-start gap-3 mb-2">
                         <span className="text-2xl">🛒</span>
-                        <p className={`${typography.h4} font-bold text-slate-900`}>Noon</p>
+                        <p className="text-lg font-bold text-slate-900">Noon</p>
                       </div>
-                      <p className={`${typography.bodyLarge} text-slate-700 leading-relaxed`}>E-commerce marketplace built on <strong>inventory control</strong>. Can't pivot to search-first discovery without cannibalizing their warehouse model. Would destroy unit economics.</p>
+                      <p className="text-base text-slate-700 leading-relaxed">E-commerce marketplace built on <strong>inventory control</strong>. Can't pivot to search-first discovery without cannibalizing their warehouse model. Would destroy unit economics.</p>
                     </div>
                     <div className="bg-white rounded-xl p-5 border-l-4 border-orange-500 shadow-sm">
                       <div className="flex items-start gap-3 mb-2">
                         <span className="text-2xl">🚗</span>
-                        <p className={`${typography.h4} font-bold text-slate-900`}>Careem</p>
+                        <p className="text-lg font-bold text-slate-900">Careem</p>
                       </div>
-                      <p className={`${typography.bodyLarge} text-slate-700 leading-relaxed`}>Super app for <strong>logistics</strong> (rides/food delivery). Local discovery isn't core. Would require complete product pivot + new merchant relationships. Too many priorities.</p>
+                      <p className="text-base text-slate-700 leading-relaxed">Super app for <strong>logistics</strong> (rides/food delivery). Local discovery isn't core. Would require complete product pivot + new merchant relationships. Too many priorities.</p>
                     </div>
                     <div className="bg-white rounded-xl p-5 border-l-4 border-purple-500 shadow-sm">
                       <div className="flex items-start gap-3 mb-2">
@@ -2196,7 +2196,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={24} />
                         <div>
                           <p className="text-lg font-bold text-slate-900 mb-1">First-Mover Speed</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">Q2 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">Q1 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
                         </div>
                       </div>
                     </div>
@@ -2244,7 +2244,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-400 font-medium">Margin from day 1</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-blue-500/30">
-                    <p className="text-3xl font-black text-blue-400 mb-2">Q2 2026</p>
+                    <p className="text-3xl font-black text-blue-400 mb-2">Q1 2026</p>
                     <p className="text-sm text-slate-400 font-medium">Launch & lock moat</p>
                   </div>
                 </div>
@@ -2275,12 +2275,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
-                  <p className={`${typography.labelEyebrow} text-[#c9a227]`}>Revenue Model</p>
+                  <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Revenue Model</p>
                 </div>
-                <h2 className={`${typography.h1} font-black text-slate-900 mb-4`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   How We <span className="text-[#c9a227]">Make Money</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto`}>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Four revenue streams from platform transactions
                 </p>
               </div>
@@ -2290,7 +2290,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                 {/* Left: Recharts Bar Chart */}
                 <div className="bg-white border-2 border-[#c9a227]/20 rounded-3xl p-8 shadow-xl">
-                  <h3 className={`${typography.h3} font-bold text-slate-900 mb-6 text-center`}>Revenue Contribution</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Revenue Contribution</h3>
                   <ResponsiveContainer width="100%" height={320}>
                     <BarChart data={revenueData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                       <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
@@ -2317,7 +2317,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       </Bar>
                     </BarChart>
                   </ResponsiveContainer>
-                  <p className={`${typography.labelMicro} text-slate-500 text-center mt-4`}>Based on conservative Year 1 GMV projections (3-5x monthly transactions)</p>
+                  <p className="text-xs text-slate-500 text-center mt-4">Based on AED 10M cumulative GMV projection (H1: 5 months)</p>
                 </div>
 
                 {/* Right: 4 Revenue Stream Cards */}
@@ -2379,12 +2379,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <div className={`w-12 h-12 ${iconBg} rounded-2xl flex items-center justify-center mb-3 shadow-md`}>
                           <Icon className="text-white" size={24} />
                         </div>
-                        <h3 className={`${typography.bodyLarge} font-bold text-slate-900 mb-1`}>{stream.title}</h3>
-                        <p className={`${typography.h3} font-black text-[#c9a227] mb-2`}>{stream.rate}</p>
-                        <p className={`${typography.labelMicro} text-slate-600 leading-relaxed mb-3`}>{stream.desc}</p>
+                        <h3 className="text-base font-bold text-slate-900 mb-1">{stream.title}</h3>
+                        <p className="text-2xl font-black text-[#c9a227] mb-2">{stream.rate}</p>
+                        <p className="text-xs text-slate-600 leading-relaxed mb-3">{stream.desc}</p>
                         <div className="pt-3 border-t-2 border-white/50">
-                          <p className={`${typography.labelEyebrow} text-slate-500`}>Revenue Share</p>
-                          <p className={`${typography.h4} font-black text-slate-900`}>{stream.amount}</p>
+                          <p className="text-xs font-bold text-slate-500 uppercase">Revenue Share</p>
+                          <p className="text-lg font-black text-slate-900">{stream.amount}</p>
                         </div>
                       </div>
                     );
@@ -2394,29 +2394,29 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Example Calculation with Visual Progression */}
               <div className="bg-gradient-to-br from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-white max-w-6xl mx-auto shadow-2xl border-2 border-[#c9a227]/20">
-                <h3 className={`${typography.h2} font-bold mb-8 text-center`}>
+                <h3 className="text-3xl sm:text-4xl font-bold mb-8 text-center">
                   Example: <span className="text-[#c9a227]">AED 1,000</span> Monthly GMV per User
                 </h3>
                 <div className="grid md:grid-cols-4 gap-6 mb-8">
                   <div className="bg-white/5 rounded-2xl p-6 border border-blue-500/30 text-center hover:bg-white/10 transition-all">
-                    <p className={`${typography.labelEyebrow} text-blue-400 mb-2`}>Base Commission (5%)</p>
-                    <p className={`${typography.metricXL} font-black text-blue-400`}>AED 50</p>
-                    <p className={`${typography.label} text-slate-400 mt-2`}>On transactions</p>
+                    <p className="text-xs text-blue-400 font-bold uppercase mb-2">Base Commission (5%)</p>
+                    <p className="text-4xl sm:text-5xl font-black text-blue-400">AED 50</p>
+                    <p className="text-sm text-slate-400 mt-2">On transactions</p>
                   </div>
                   <div className="bg-white/5 rounded-2xl p-6 border border-purple-500/30 text-center hover:bg-white/10 transition-all">
-                    <p className={`${typography.labelEyebrow} text-purple-400 mb-2`}>Promoted Sales (5%)</p>
-                    <p className={`${typography.metricXL} font-black text-purple-400`}>AED 25</p>
-                    <p className={`${typography.label} text-slate-400 mt-2`}>Priority listings</p>
+                    <p className="text-xs text-purple-400 font-bold uppercase mb-2">Promoted Sales (5%)</p>
+                    <p className="text-4xl sm:text-5xl font-black text-purple-400">AED 25</p>
+                    <p className="text-sm text-slate-400 mt-2">Priority listings</p>
                   </div>
                   <div className="bg-white/5 rounded-2xl p-6 border border-orange-500/30 text-center hover:bg-white/10 transition-all">
-                    <p className={`${typography.labelEyebrow} text-orange-400 mb-2`}>Bank Affiliate</p>
-                    <p className={`${typography.metricXL} font-black text-orange-400`}>AED 20</p>
-                    <p className={`${typography.label} text-slate-400 mt-2`}>Payment partner</p>
+                    <p className="text-xs text-orange-400 font-bold uppercase mb-2">Bank Affiliate</p>
+                    <p className="text-4xl sm:text-5xl font-black text-orange-400">AED 20</p>
+                    <p className="text-sm text-slate-400 mt-2">Payment partner</p>
                   </div>
                   <div className="bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-2xl p-6 border-2 border-[#c9a227] text-center shadow-xl">
-                    <p className={`${typography.labelEyebrow} text-white mb-2`}>Total Revenue</p>
-                    <p className={`${typography.metricXL} font-black text-white`}>AED 95+</p>
-                    <p className={`${typography.label} text-white/80 mt-2 font-semibold`}>Per user/month</p>
+                    <p className="text-xs text-white font-bold uppercase mb-2">Total Revenue</p>
+                    <p className="text-4xl sm:text-5xl font-black text-white">AED 95+</p>
+                    <p className="text-sm text-white/80 mt-2 font-semibold">Per user/month</p>
                   </div>
                 </div>
 
@@ -2424,18 +2424,18 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="bg-emerald-900/30 border border-emerald-500/30 rounded-xl p-5">
                     <div className="flex items-center gap-2 mb-2">
                       <CheckCircle2 size={20} className="text-emerald-400" />
-                      <p className={`${typography.label} font-bold text-emerald-300 uppercase`}>User Model</p>
+                      <p className="text-sm font-bold text-emerald-300 uppercase">User Model</p>
                     </div>
-                    <p className={`${typography.bodyLarge} text-white font-medium`}>
+                    <p className="text-base text-white font-medium">
                       FREE for users during Year 1 validation • Focus on transaction volume, not subscriptions
                     </p>
                   </div>
                   <div className="bg-blue-900/30 border border-blue-500/30 rounded-xl p-5">
                     <div className="flex items-center gap-2 mb-2">
                       <Gift size={20} className="text-blue-400" />
-                      <p className={`${typography.label} font-bold text-blue-300 uppercase`}>User Benefit</p>
+                      <p className="text-sm font-bold text-blue-300 uppercase">User Benefit</p>
                     </div>
-                    <p className={`${typography.bodyLarge} text-white font-medium`}>
+                    <p className="text-base text-white font-medium">
                       Users get 5-10% cashback in Nuqta Coins • Real savings, not just discounts
                     </p>
                   </div>
@@ -2459,7 +2459,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-4 border-2 border-blue-200 shadow-lg">
                   <p className="text-xs font-black text-blue-700 uppercase tracking-wider">Platform Architecture</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-6 leading-tight`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6 leading-tight">
                   3-Sided <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Marketplace</span>
                 </h2>
                 <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
@@ -2476,7 +2476,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center">
                       <Smartphone size={24} className="text-white" />
                     </div>
-                    <h3 className={`${typography.h3} text-slate-900`}>User App</h3>
+                    <h3 className="text-2xl font-black text-slate-900">User App</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-700">
                     <li className="flex items-start gap-2">
@@ -2504,7 +2504,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
                       <Store size={24} className="text-white" />
                     </div>
-                    <h3 className={`${typography.h3} text-slate-900`}>Merchant Hub</h3>
+                    <h3 className="text-2xl font-black text-slate-900">Merchant Hub</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-700">
                     <li className="flex items-start gap-2">
@@ -2517,7 +2517,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-500 mt-0.5">▸</span>
-                      <span><strong>QR Checkout System:</strong> Instant checkout (Year 1) → POS integration (Year 2+)</span>
+                      <span><strong>QR/POS Integration:</strong> Instant checkout</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-purple-500 mt-0.5">▸</span>
@@ -2532,7 +2532,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
                       <Shield size={24} className="text-white" />
                     </div>
-                    <h3 className={`${typography.h3} text-slate-900`}>Admin Panel</h3>
+                    <h3 className="text-2xl font-black text-slate-900">Admin Panel</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-slate-700">
                     <li className="flex items-start gap-2">
@@ -2562,7 +2562,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <Zap size={28} className="text-slate-900" />
                   </div>
                   <div>
-                    <h3 className={`${typography.h2} text-white`}>Intelligence Layer</h3>
+                    <h3 className="text-3xl font-black text-white">Intelligence Layer</h3>
                     <p className="text-sm text-gray-400">Behavioral data moat & competitive intelligence</p>
                   </div>
                 </div>
@@ -2936,7 +2936,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
                 <div className="bg-gradient-to-br from-orange-50 to-white border-2 border-orange-200 rounded-2xl p-6 text-center">
                   <p className="text-xs font-semibold text-orange-700 uppercase tracking-wider mb-2">Frequency</p>
-                  <p className="text-4xl font-black text-orange-600 mb-2">3-5x</p>
+                  <p className="text-4xl font-black text-orange-600 mb-2">6x</p>
                   <p className="text-sm text-slate-600">Transactions/month</p>
                 </div>
               </div>
@@ -2949,19 +2949,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-emerald-700 uppercase tracking-wider mb-3">Blended CAC</p>
                   <p className="text-6xl font-black text-emerald-600 mb-4">
-                    <AnimatedNumber value={50} prefix="AED " duration={2000} />
+                    <AnimatedNumber value={30} prefix="AED " duration={2000} />
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
-                    <p>• Year 1 (QR + Ambassador): AED 40-45</p>
-                    <p>• Year 2+ (Digital Mix): AED 50-60</p>
-                    <p>• Blended Average: AED 50</p>
-                  </div>
-                  <div className="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200">
-                    <p className="text-xs font-semibold text-slate-700 mb-1">Sensitivity Analysis:</p>
-                    <p className="text-xs text-slate-600">• Optimistic (organic-heavy): AED 50 → LTV:CAC 9.4x</p>
-                    <p className="text-xs text-slate-600">• Base case (blended): AED 70 → LTV:CAC 6.7x</p>
-                    <p className="text-xs text-slate-600">• Conservative (digital-primary): AED 90 → LTV:CAC 5.2x</p>
-                    <p className="text-xs text-slate-500 mt-1 italic">All scenarios remain above 5x industry threshold</p>
+                    <p>• Merchant QR: AED 10-15</p>
+                    <p>• Student Ambassadors: AED 25-30</p>
+                    <p>• Digital (later): AED 60-80</p>
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
@@ -2970,12 +2963,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-3">Annual LTV</p>
                   <p className="text-6xl font-black text-blue-600 mb-4">
-                    <AnimatedNumber value={500} prefix="AED " duration={2000} />
+                    <AnimatedNumber value={360} prefix="AED " duration={2000} />
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
-                    <p>• 4x txn/month avg × AED 100</p>
-                    <p>• 12-month retention</p>
-                    <p>• 7.5% net take rate</p>
+                    <p>• Monthly RPU: AED 30</p>
+                    <p>• Avg retention: 12 months</p>
+                    <p>• Net margin: 7.5%</p>
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-[#c9a227]/10 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
@@ -2984,11 +2977,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-[#c9a227] uppercase tracking-wider mb-3">LTV:CAC Ratio</p>
                   <p className="text-6xl font-black text-[#c9a227] mb-4">
-                    8-10x
+                    10x
                   </p>
                   <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-3 mt-4">
                     <p className="text-xs font-semibold text-emerald-700 uppercase mb-1">Benchmark</p>
-                    <p className="text-sm text-slate-700">Base case: 8.6x | Target: 10x+ with optimization | Industry: 3-5x</p>
+                    <p className="text-sm text-slate-700">Anything above 3x is good, 5x+ is excellent</p>
                   </div>
                 </div>
               </div>
@@ -3913,202 +3906,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 16: MERCHANT ONBOARDING ====================
+      // ==================== SLIDE 16: TRACTION ====================
       case 16:
-        return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8 relative overflow-hidden">
-            {/* Background decoration */}
-            <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-amber-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-
-            <div className="max-w-7xl mx-auto relative z-10">
-              {/* Header */}
-              <div className="text-center mb-12">
-                <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-amber-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
-                  <p className="text-xs font-black text-purple-700 uppercase tracking-wider">Solving Chicken-Egg Problem</p>
-                </div>
-                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-6">
-                  Merchant <span className="text-purple-600">Onboarding</span>
-                </h2>
-                <p className="text-2xl font-medium text-slate-600 max-w-4xl mx-auto">
-                  <span className="font-bold text-purple-600">Merchants ARE our distribution channel.</span> 500 merchants × 100 customers = 50K users. <span className="font-bold text-emerald-600">Zero paid ads.</span>
-                </p>
-              </div>
-
-              {/* Flywheel Diagram */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 mb-10">
-                <h3 className="text-2xl font-bold text-white mb-6 text-center">Network Effects Flywheel</h3>
-                <div className="flex items-center justify-center">
-                  <div className="relative">
-                    <svg width="600" height="300" viewBox="0 0 600 300" className="mx-auto">
-                      {/* Arrows forming a cycle */}
-                      <defs>
-                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                          <polygon points="0 0, 10 3, 0 6" fill="#c9a227" />
-                        </marker>
-                      </defs>
-
-                      {/* More Merchants */}
-                      <text x="300" y="30" textAnchor="middle" fill="#c9a227" fontSize="18" fontWeight="bold">More Merchants</text>
-                      <line x1="300" y1="40" x2="450" y2="100" stroke="#c9a227" strokeWidth="3" markerEnd="url(#arrowhead)" />
-
-                      {/* More QR Codes → More Users */}
-                      <text x="500" y="120" textAnchor="middle" fill="#c9a227" fontSize="16" fontWeight="600">More QR Codes</text>
-                      <text x="500" y="140" textAnchor="middle" fill="#c9a227" fontSize="16" fontWeight="600">→ More Users</text>
-                      <line x1="480" y1="150" x2="400" y2="210" stroke="#c9a227" strokeWidth="3" markerEnd="url(#arrowhead)" />
-
-                      {/* Easier to Sign More Merchants */}
-                      <text x="350" y="240" textAnchor="middle" fill="#c9a227" fontSize="16" fontWeight="600">Easier to Sign</text>
-                      <text x="350" y="260" textAnchor="middle" fill="#c9a227" fontSize="16" fontWeight="600">More Merchants</text>
-                      <line x1="300" y1="260" x2="150" y2="210" stroke="#c9a227" strokeWidth="3" markerEnd="url(#arrowhead)" />
-
-                      {/* Merchants Call Us */}
-                      <text x="100" y="120" textAnchor="middle" fill="#c9a227" fontSize="16" fontWeight="600">Merchants</text>
-                      <text x="100" y="140" textAnchor="middle" fill="#c9a227" fontSize="16" fontWeight="600">Call Us</text>
-                      <line x1="120" y1="100" x2="270" y2="40" stroke="#c9a227" strokeWidth="3" markerEnd="url(#arrowhead)" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              {/* 3-Phase Strategy */}
-              <div className="grid md:grid-cols-3 gap-6 mb-10">
-                {/* Phase 1: Founder Sales */}
-                <div className="bg-white border-2 border-blue-200 rounded-2xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl">
-                      👤
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-blue-700 uppercase">Phase 1</p>
-                      <p className="text-lg font-black text-slate-900">Founder Sales</p>
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Timeline:</span> Month 1-3</p>
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 50 Merchants</p>
-                  </div>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-sm text-slate-700">✅ Walk into high-traffic cafes/salons/gyms</p>
-                    <p className="text-sm text-slate-700">✅ 30-second pitch: "Zero cost, bring new customers"</p>
-                    <p className="text-sm text-slate-700">✅ Event activation: Global Village (30 merchants in 1 weekend)</p>
-                  </div>
-                  <div className="bg-blue-50 rounded-lg p-4">
-                    <p className="text-sm font-semibold text-blue-700 mb-2">Results:</p>
-                    <p className="text-sm text-slate-700">• 50 merchants signed</p>
-                    <p className="text-sm text-slate-700">• 3,000 users acquired</p>
-                    <p className="text-sm text-slate-700">• <span className="font-bold text-blue-600">CAC: AED 7</span></p>
-                    <p className="text-sm text-slate-700">• Cost: AED 21,000</p>
-                  </div>
-                  <div className="mt-4 text-center p-3 bg-slate-900 rounded-lg">
-                    <p className="text-xs text-slate-300">1 merchant = 60 users/month</p>
-                    <p className="text-xs text-emerald-400 font-bold">Merchants pay AED 0 upfront</p>
-                  </div>
-                </div>
-
-                {/* Phase 2: Sales Team */}
-                <div className="bg-white border-2 border-purple-200 rounded-2xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-2xl">
-                      👥
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-purple-700 uppercase">Phase 2</p>
-                      <p className="text-lg font-black text-slate-900">Sales Team</p>
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Timeline:</span> Month 4-6</p>
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 150 Merchants</p>
-                  </div>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-sm text-slate-700">✅ Hire 2 BDMs (ex-Talabat/Careem partnerships)</p>
-                    <p className="text-sm text-slate-700">✅ Commission-driven: AED 200/merchant</p>
-                    <p className="text-sm text-slate-700">✅ Target: 25 meetings/week, 10 sign-ups/month each</p>
-                  </div>
-                  <div className="bg-purple-50 rounded-lg p-4">
-                    <p className="text-sm font-semibold text-purple-700 mb-2">Results:</p>
-                    <p className="text-sm text-slate-700">• 150 merchants signed</p>
-                    <p className="text-sm text-slate-700">• 15,000 users acquired</p>
-                    <p className="text-sm text-slate-700">• <span className="font-bold text-purple-600">CAC: AED 8.4</span></p>
-                    <p className="text-sm text-slate-700">• Cost: AED 126,000</p>
-                  </div>
-                  <div className="mt-4 text-center p-3 bg-slate-900 rounded-lg">
-                    <p className="text-xs text-slate-300">Close rate: 40%</p>
-                    <p className="text-xs text-emerald-400 font-bold">Merchants compete to join</p>
-                  </div>
-                </div>
-
-                {/* Phase 3: Self-Serve */}
-                <div className="bg-white border-2 border-emerald-200 rounded-2xl p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-2xl">
-                      🔄
-                    </div>
-                    <div>
-                      <p className="text-sm font-bold text-emerald-700 uppercase">Phase 3</p>
-                      <p className="text-lg font-black text-slate-900">Self-Serve</p>
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Timeline:</span> Month 7-12</p>
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 300 Merchants</p>
-                  </div>
-                  <div className="space-y-2 mb-4">
-                    <p className="text-sm text-slate-700">✅ Self-serve platform: nuqtapp.com/merchants</p>
-                    <p className="text-sm text-slate-700">✅ Merchant referral program (AED 500 credit)</p>
-                    <p className="text-sm text-slate-700">✅ Marketplace effects: "Why doesn't MY cafe have Nuqta?"</p>
-                  </div>
-                  <div className="bg-emerald-50 rounded-lg p-4">
-                    <p className="text-sm font-semibold text-emerald-700 mb-2">Results:</p>
-                    <p className="text-sm text-slate-700">• 300 merchants signed</p>
-                    <p className="text-sm text-slate-700">• 30,000 users acquired</p>
-                    <p className="text-sm text-slate-700">• <span className="font-bold text-emerald-600">CAC: AED 5</span></p>
-                    <p className="text-sm text-slate-700">• Cost: AED 150,000</p>
-                  </div>
-                  <div className="mt-4 text-center p-3 bg-slate-900 rounded-lg">
-                    <p className="text-xs text-slate-300">40% inbound sign-ups</p>
-                    <p className="text-xs text-emerald-400 font-bold">Flywheel activated</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bottom Stats Bar */}
-              <div className="bg-gradient-to-r from-purple-900 to-slate-900 rounded-2xl p-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-purple-300 uppercase mb-2">Total Merchants Year 1</p>
-                    <p className="text-5xl font-black text-purple-400">500</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-amber-300 uppercase mb-2">Total Users Year 1</p>
-                    <p className="text-5xl font-black text-amber-400">50,000</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-emerald-300 uppercase mb-2">Blended CAC</p>
-                    <p className="text-5xl font-black text-emerald-400">AED 6.8</p>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-blue-300 uppercase mb-2">Zero Paid Ads</p>
-                    <p className="text-5xl font-black text-emerald-400">✅</p>
-                  </div>
-                </div>
-                <div className="mt-6 text-center">
-                  <p className="text-lg text-white">
-                    <span className="font-bold text-amber-400">Merchants ARE the marketing budget.</span> 500 merchants × AED 0 paid ads = AED 0.
-                  </p>
-                  <p className="text-base text-slate-300 mt-2">
-                    Equivalent Instagram budget: AED 2.5M • We spend: AED 297K • <span className="font-bold text-emerald-400">Savings: AED 2.2M</span>
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        );
-
-      // ==================== SLIDE 17: TRACTION ====================
-      case 17:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4346,8 +4145,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 18: TEAM (PREMIUM ✓) ====================
-      case 18:
+      // ==================== SLIDE 17: TEAM (PREMIUM ✓) ====================
+      case 17:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -4359,10 +4158,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-slate-100 rounded-full mb-4 border-2 border-[#c9a227]/30 shadow-lg">
                   <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Our Team</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-4`}>
+                <h2 className="text-5xl sm:text-6xl md:text-7xl font-black text-slate-900 mb-4">
                   Built by <span className="text-[#c9a227]">Experts</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto`}>
+                <p className="text-xl sm:text-2xl text-slate-600 max-w-3xl mx-auto">
                   Deep experience in cybersecurity, digital marketing, and D2C commerce
                 </p>
               </div>
@@ -4389,8 +4188,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                     {/* Founder Info */}
                     <div className="flex-1 text-center md:text-left">
-                      <h3 className={`${typography.h2} text-slate-900 mb-2`}>Rejaul Karim</h3>
-                      <p className={`${typography.h3} font-semibold text-[#c9a227] mb-4`}>Founder & CEO</p>
+                      <h3 className="text-3xl sm:text-4xl font-black text-slate-900 mb-2">Rejaul Karim</h3>
+                      <p className="text-xl sm:text-2xl font-semibold text-[#c9a227] mb-4">Founder & CEO</p>
                       <div className="space-y-2 text-base text-slate-700 leading-relaxed mb-6">
                         <div className="flex items-start gap-2 md:justify-start justify-center">
                           <CheckCircle2 size={20} className="text-emerald-600 flex-shrink-0 mt-0.5" />
@@ -4427,7 +4226,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Core Team Grid - NEW */}
               <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-8 sm:p-10 shadow-lg mb-8">
-                <h3 className={`${typography.h2} text-slate-900 mb-8 text-center`}>Core Team</h3>
+                <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Core Team</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
                     { title: "CHRO", desc: "Ex Co-Founder of EdTech company", icon: Users, color: "blue", exp: "HR & Operations" },
@@ -4464,7 +4263,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Advisors Grid - Enhanced */}
               <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-10 shadow-lg">
-                <h3 className={`${typography.h2} text-slate-900 mb-8 text-center`}>Advisors & Supporters</h3>
+                <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">Advisors & Supporters</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
                     { title: "Fintech Expert", desc: "Former VP at Emirates NBD", icon: Building2, color: "blue" },
@@ -4495,8 +4294,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 19: THE ASK ====================
-      case 19:
+      // ==================== SLIDE 18: THE ASK ====================
+      case 18:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -4548,7 +4347,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                   <div className="mt-6 bg-emerald-50 border border-emerald-200 rounded-lg p-4">
                     <p className="text-sm text-emerald-800 text-center">
-                      <span className="font-bold">SAFE with $5M Valuation Cap:</span> 20% discount on Series A valuation, capped at $5M. Investor-friendly terms for pre-launch stage with founder-aligned upside protection.
+                      <span className="font-bold">Discount-only SAFE:</span> No valuation cap. Converts at Series A valuation with 20% discount (investor-friendly for pre-launch stage).
                     </p>
                   </div>
                 </div>
@@ -4619,8 +4418,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 20: FINANCIAL PROJECTIONS ====================
-      case 20:
+      // ==================== SLIDE 19: FINANCIAL PROJECTIONS ====================
+      case 19:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-16 px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -4631,27 +4430,27 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-block bg-emerald-500/20 border border-emerald-400 px-6 py-2 rounded-full mb-4">
-                  <p className={`${typography.labelEyebrow} text-emerald-300`}>5-Year Financial Outlook</p>
+                  <p className="text-emerald-300 text-sm font-bold uppercase tracking-wider">5-Year Financial Outlook</p>
                 </div>
-                <h2 className={`${typography.h1} text-white mb-4`}>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4">
                   Financial Projections
                 </h2>
-                <p className={`${typography.bodyLarge} text-slate-300 max-w-3xl mx-auto`}>
-                  Path from $400K pre-seed to $118.5M revenue with 55% EBITDA margin by Year 5
+                <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+                  Path from $400K pre-seed to $38M revenue with 60% EBITDA margin in Year 5
                 </p>
               </div>
 
               {/* Revenue Chart */}
               <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 mb-8">
-                <h3 className={`${typography.h3} text-white mb-6`}>Revenue Growth Trajectory</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">Revenue Growth Trajectory</h3>
                 <div className="h-80">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={[
-                      { year: 'Year 1', revenue: 1.8, ebitda: -1.5, label: '$1.8M' },
-                      { year: 'Year 2', revenue: 7.1, ebitda: -0.5, label: '$7.1M' },
-                      { year: 'Year 3', revenue: 20.8, ebitda: 5.2, label: '$20.8M' },
-                      { year: 'Year 4', revenue: 51.6, ebitda: 20.6, label: '$51.6M' },
-                      { year: 'Year 5', revenue: 118.5, ebitda: 65.3, label: '$118.5M' }
+                      { year: 'Year 1\n(H1-H2)', revenue: 0.15, ebitda: -0.10, label: '$150K' },
+                      { year: 'Year 2\n(H3)', revenue: 1.5, ebitda: -0.23, label: '$1.5M' },
+                      { year: 'Year 3\n(Phase 2)', revenue: 3.7, ebitda: 1.1, label: '$3.7M' },
+                      { year: 'Year 4', revenue: 12, ebitda: 4.8, label: '$12M' },
+                      { year: 'Year 5', revenue: 38, ebitda: 23, label: '$38M' }
                     ]}>
                       <defs>
                         <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
@@ -4719,58 +4518,58 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     year: 'Year 1',
-                    period: '12 Months',
-                    revenue: '$1.8M',
-                    ebitda: '-83%',
-                    margin: 'Investment Phase',
+                    period: 'H1-H2',
+                    revenue: '$150K',
+                    ebitda: '-65%',
+                    margin: 'Investment',
                     merchants: '500',
-                    mau: '50K',
-                    gmv: '$24M',
+                    mau: '75K',
+                    gmv: '$2.0M',
                     color: 'from-red-500/20 to-orange-500/20 border-red-500/40'
                   },
                   {
                     year: 'Year 2',
-                    period: 'Growth',
-                    revenue: '$7.1M',
-                    ebitda: '-7%',
-                    margin: 'Near Break-even',
-                    merchants: '1,200',
+                    period: 'H3',
+                    revenue: '$1.5M',
+                    ebitda: '-15%',
+                    margin: 'Growth',
+                    merchants: '1,500',
                     mau: '150K',
-                    gmv: '$95M',
+                    gmv: '$20M',
                     color: 'from-orange-500/20 to-yellow-500/20 border-orange-500/40'
                   },
                   {
                     year: 'Year 3',
-                    period: 'Expansion',
-                    revenue: '$20.8M',
-                    ebitda: '+25%',
+                    period: 'Phase 2',
+                    revenue: '$3.7M',
+                    ebitda: '+30%',
                     margin: 'Profitable',
-                    merchants: '2,500',
-                    mau: '350K',
-                    gmv: '$277M',
-                    color: 'from-emerald-500/20 to-green-500/20 border-emerald-500/40'
+                    merchants: '3,000',
+                    mau: '400K',
+                    gmv: '$49M',
+                    color: 'from-yellow-500/20 to-emerald-500/20 border-emerald-500/40'
                   },
                   {
                     year: 'Year 4',
-                    period: 'UAE Leader',
-                    revenue: '$51.6M',
+                    period: 'Scale',
+                    revenue: '$12M',
                     ebitda: '+40%',
-                    margin: 'Market Leader',
-                    merchants: '5,000',
-                    mau: '750K',
-                    gmv: '$688M',
-                    color: 'from-blue-500/20 to-indigo-500/20 border-blue-500/40'
+                    margin: 'Scaling',
+                    merchants: '8,000',
+                    mau: '1.2M',
+                    gmv: '$160M',
+                    color: 'from-emerald-500/20 to-blue-500/20 border-emerald-500/40'
                   },
                   {
                     year: 'Year 5',
-                    period: 'GCC Expansion',
-                    revenue: '$118.5M',
-                    ebitda: '+55%',
+                    period: 'Exit Ready',
+                    revenue: '$38M',
+                    ebitda: '+60%',
                     margin: 'Exit Ready',
-                    merchants: '5K',
-                    mau: '1.5M',
-                    gmv: '$1.58B',
-                    color: 'from-indigo-500/20 to-purple-500/20 border-indigo-500/40'
+                    merchants: '15K',
+                    mau: '2M',
+                    gmv: '$507M',
+                    color: 'from-blue-500/20 to-purple-500/20 border-blue-500/40'
                   }
                 ].map((item, idx) => (
                   <div
@@ -4784,8 +4583,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                     <div className="space-y-3">
                       <div>
-                        <p className={`${typography.labelMicro} text-slate-400`}>Revenue</p>
-                        <p className={`${typography.metricMedium} text-white`}>{item.revenue}</p>
+                        <p className="text-xs text-slate-400">Revenue</p>
+                        <p className="text-2xl font-black text-white">{item.revenue}</p>
                       </div>
 
                       <div>
@@ -4815,13 +4614,6 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              {/* Year 1 GMV Footnote */}
-              <div className="mt-4 text-center">
-                <p className="text-xs text-slate-400 italic">
-                  * Year 1 GMV based on 9-month operating period (Apr-Dec 2026) with avg 30K MAU, ramping from 5K → 50K users
-                </p>
               </div>
 
               {/* Key Assumptions */}
@@ -4868,9 +4660,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { phase: 'Year 1-2', status: 'Investment Phase', desc: 'Validate model, build merchant network, achieve break-even', color: 'orange' },
-                      { phase: 'Year 3', status: 'Profitable', desc: '+25% EBITDA, proven unit economics, 350K users', color: 'emerald' },
-                      { phase: 'Year 4-5', status: 'Scale & Expand', desc: '40-55% EBITDA, UAE leader, GCC expansion', color: 'blue' }
+                      { phase: 'Year 1-2', status: 'Investment Phase', desc: 'Prove unit economics, build merchant network', color: 'red' },
+                      { phase: 'Year 3', status: 'Break-Even', desc: '30% EBITDA, 400K MAU, cash-flow positive', color: 'emerald' },
+                      { phase: 'Year 4-5', status: 'Scale & Profit', desc: '40-60% EBITDA, dominant GCC position', color: 'blue' }
                     ].map((item, idx) => (
                       <div key={idx} className={`border-l-4 border-${item.color}-500 pl-4`}>
                         <p className="text-sm font-bold text-white">{item.phase}: {item.status}</p>
@@ -4880,9 +4672,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
 
                   <div className="mt-6 pt-4 border-t border-white/20">
-                    <p className={`${typography.labelMicro} text-slate-400 mb-2`}>Exit Valuation Range (8-12x revenue):</p>
-                    <p className={`${typography.metricMedium} text-emerald-400`}>$950M - $1.42B</p>
-                    <p className={`${typography.labelMicro} text-slate-500 mt-1`}>Based on Year 5 revenue of $118.5M</p>
+                    <p className="text-xs text-slate-400 mb-2">Exit Valuation Range (8-12x revenue):</p>
+                    <p className="text-2xl font-black text-emerald-400">$304M - $456M</p>
+                    <p className="text-xs text-slate-500 mt-1">Based on Year 5 revenue of $38M</p>
                   </div>
                 </div>
               </div>
@@ -4900,8 +4692,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 21: EXIT STRATEGY ====================
-      case 21:
+      // ==================== SLIDE 20: EXIT STRATEGY ====================
+      case 20:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-16 px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -4912,13 +4704,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-block bg-emerald-500/20 border border-emerald-400 px-6 py-2 rounded-full mb-4">
-                  <p className={`${typography.labelEyebrow} text-emerald-300`}>Path to Liquidity</p>
+                  <p className="text-emerald-300 text-sm font-bold uppercase tracking-wider">Path to Liquidity</p>
                 </div>
-                <h2 className={`${typography.h1} text-white mb-4`}>
+                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-4">
                   Exit Strategy & Investor Returns
                 </h2>
-                <p className={`${typography.bodyLarge} text-slate-300 max-w-3xl mx-auto`}>
-                  Clear exit path with strong strategic acquirer interest and 95-140x return potential for pre-seed investors
+                <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+                  Clear exit path with strong strategic acquirer interest and 67-133x return potential for pre-seed investors
                 </p>
               </div>
 
@@ -4952,10 +4744,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 ].map((tier, idx) => (
                   <div key={idx} className={`bg-gradient-to-br ${tier.color} border-2 rounded-xl p-6`}>
                     <div className="flex items-center gap-3 mb-4">
-                      <span className={typography.metricMedium}>{tier.icon}</span>
+                      <span className="text-4xl">{tier.icon}</span>
                       <div>
-                        <h3 className={`${typography.h3} text-white`}>{tier.tier}</h3>
-                        <p className={`${typography.bodySmall} text-slate-300`}>{tier.subtitle}</p>
+                        <h3 className="text-2xl font-black text-white">{tier.tier}</h3>
+                        <p className="text-sm text-slate-300">{tier.subtitle}</p>
                       </div>
                     </div>
                     <div className="space-y-2 mb-4">
@@ -4972,7 +4764,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Comparable MENA Exits */}
               <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 mb-8">
-                <h3 className={`${typography.h3} text-white mb-6 flex items-center gap-3`}>
+                <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                   <TrendingUp className="text-emerald-400" size={28} />
                   Comparable MENA Exits (Proof of Market)
                 </h3>
@@ -4986,12 +4778,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div key={idx} className={`${exit.highlight ? 'bg-emerald-500/20 border-emerald-400 border-2' : 'bg-white/5 border border-white/10'} rounded-xl p-5`}>
                       <div className="flex items-center justify-between mb-3">
                         <div>
-                          <p className={`${typography.h4} text-white`}>{exit.company}</p>
-                          <p className={`${typography.labelMicro} text-slate-400`}>Acquired by {exit.acquirer} ({exit.year})</p>
+                          <p className="text-lg font-black text-white">{exit.company}</p>
+                          <p className="text-xs text-slate-400">Acquired by {exit.acquirer} ({exit.year})</p>
                         </div>
                         <div className="text-right">
-                          <p className={`${typography.h3} text-emerald-400`}>{exit.value}</p>
-                          <p className={`${typography.labelMicro} text-slate-400`}>{exit.multiple}</p>
+                          <p className="text-2xl font-black text-emerald-400">{exit.value}</p>
+                          <p className="text-xs text-slate-400">{exit.multiple}</p>
                         </div>
                       </div>
                     </div>
@@ -5003,7 +4795,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 {/* Left: Timeline */}
                 <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
-                  <h3 className={`${typography.h3} text-white mb-6`}>Exit Timeline</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6">Exit Timeline</h3>
                   <div className="space-y-6">
                     {[
                       {
@@ -5022,8 +4814,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       },
                       {
                         milestone: 'Month 48-60',
-                        event: 'Strategic Exit',
-                        details: '$950M-1.4B valuation',
+                        event: 'Strategic Exit / IPO',
+                        details: '$200-400M valuation',
                         type: 'Target Exit',
                         color: 'emerald'
                       }
@@ -5034,9 +4826,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           item.color === 'purple' ? 'bg-purple-500' :
                           'bg-blue-500'
                         }`} />
-                        <p className={`${typography.labelMicro} text-slate-400 uppercase tracking-wider mb-1`}>{item.milestone}</p>
-                        <p className={`${typography.h4} text-white mb-1`}>{item.event}</p>
-                        <p className={`${typography.bodySmall} text-slate-300 mb-2`}>{item.details}</p>
+                        <p className="text-xs text-slate-400 uppercase tracking-wider mb-1">{item.milestone}</p>
+                        <p className="text-lg font-bold text-white mb-1">{item.event}</p>
+                        <p className="text-sm text-slate-300 mb-2">{item.details}</p>
                         <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
                           item.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-300' :
                           item.color === 'purple' ? 'bg-purple-500/20 text-purple-300' :
@@ -5051,13 +4843,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                 {/* Right: Why We're Attractive */}
                 <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
-                  <h3 className={`${typography.h3} text-white mb-6`}>Why Acquirers Will Pay Premium</h3>
+                  <h3 className="text-2xl font-bold text-white mb-6">Why Acquirers Will Pay Premium</h3>
                   <div className="space-y-4">
                     {[
                       {
                         icon: '🔒',
                         title: 'Network Effects Moat',
-                        desc: 'Both-sided lock-in: 5K merchants + 1.5M users by exit'
+                        desc: 'Both-sided lock-in: 15K merchants + 2M users by exit'
                       },
                       {
                         icon: '📊',
@@ -5067,7 +4859,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       {
                         icon: '🤝',
                         title: 'Merchant Relationships',
-                        desc: '5K merchants with exclusive revenue-share contracts by Year 5'
+                        desc: '5K+ merchants with exclusive revenue-share contracts'
                       },
                       {
                         icon: '🚀',
@@ -5076,10 +4868,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       }
                     ].map((item, idx) => (
                       <div key={idx} className="flex gap-4 items-start">
-                        <span className={`${typography.metricMedium} flex-shrink-0`}>{item.icon}</span>
+                        <span className="text-3xl flex-shrink-0">{item.icon}</span>
                         <div>
-                          <p className={`${typography.h4} text-white mb-1`}>{item.title}</p>
-                          <p className={`${typography.bodySmall} text-slate-300`}>{item.desc}</p>
+                          <p className="text-lg font-bold text-white mb-1">{item.title}</p>
+                          <p className="text-sm text-slate-300">{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -5089,41 +4881,41 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Investor Returns Panel - MOST IMPORTANT */}
               <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-2 border-emerald-400 rounded-2xl p-8">
-                <h3 className={`${typography.h2} text-white mb-6 flex items-center gap-3`}>
+                <h3 className="text-3xl font-black text-white mb-6 flex items-center gap-3">
                   <DollarSign className="text-emerald-400" size={32} />
-                  Pre-Seed Investor Returns ($400K SAFE, $5M Cap)
+                  Pre-Seed Investor Returns ($400K @ $3M Valuation)
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {[
                     {
                       scenario: 'Conservative',
                       event: 'Series A Exit (18mo)',
-                      ownership: '6.7%',
+                      ownership: '13.3%',
                       exitVal: '$12-15M',
-                      return: '2.0-2.5x',
-                      irr: '100-130% IRR',
+                      return: '4-5x',
+                      irr: '150-200% IRR',
                       color: 'blue',
-                      cashout: '$0.8-1.0M'
+                      cashout: '$1.6-2.0M'
                     },
                     {
                       scenario: 'Moderate',
                       event: 'Series B Exit (36mo)',
-                      ownership: '6.4%',
+                      ownership: '10.7%',
                       exitVal: '$45M',
-                      return: '7.2x',
-                      irr: '160% IRR',
+                      return: '15x',
+                      irr: '180% IRR',
                       color: 'purple',
-                      cashout: '$2.9M'
+                      cashout: '$4.8M'
                     },
                     {
                       scenario: 'Target',
                       event: 'Strategic Exit (48mo)',
-                      ownership: '4.0%',
-                      exitVal: '$950M-1.4B',
-                      return: '95-140x',
-                      irr: '350-400% IRR',
+                      ownership: '8.9%',
+                      exitVal: '$200-400M',
+                      return: '67-133x',
+                      irr: '250-350% IRR',
                       color: 'emerald',
-                      cashout: '$38-56M'
+                      cashout: '$17.8-35.6M'
                     }
                   ].map((item, idx) => (
                     <div key={idx} className={`${
@@ -5132,28 +4924,28 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       'bg-blue-500/20 border-blue-300 border'
                     } rounded-xl p-6`}>
                       <div className="text-center mb-4">
-                        <p className={`${typography.labelMicro} text-slate-300 uppercase tracking-wider mb-1`}>{item.scenario} Scenario</p>
-                        <p className={`${typography.h4} text-white mb-2`}>{item.event}</p>
+                        <p className="text-xs text-slate-300 uppercase tracking-wider mb-1">{item.scenario} Scenario</p>
+                        <p className="text-lg font-bold text-white mb-2">{item.event}</p>
                       </div>
                       <div className="space-y-3 text-center">
                         <div>
-                          <p className={typography.labelMicro}>Exit Valuation</p>
-                          <p className={`${typography.metricSmall} text-white`}>{item.exitVal}</p>
+                          <p className="text-xs text-slate-400">Exit Valuation</p>
+                          <p className="text-xl font-black text-white">{item.exitVal}</p>
                         </div>
                         <div>
-                          <p className={typography.labelMicro}>Investor Cash Out</p>
-                          <p className={`${typography.h3} text-emerald-300`}>{item.cashout}</p>
+                          <p className="text-xs text-slate-400">Investor Cash Out</p>
+                          <p className="text-2xl font-black text-emerald-300">{item.cashout}</p>
                         </div>
                         <div className="pt-3 border-t border-white/20">
-                          <p className={`${typography.metricMedium} text-white mb-1`}>{item.return}</p>
-                          <p className={`${typography.bodySmall} text-slate-300`}>{item.irr}</p>
+                          <p className="text-4xl font-black text-white mb-1">{item.return}</p>
+                          <p className="text-sm text-slate-300">{item.irr}</p>
                         </div>
                       </div>
                     </div>
                   ))}
                 </div>
                 <div className="mt-6 text-center">
-                  <p className={`${typography.bodySmall} text-slate-300`}>
+                  <p className="text-sm text-slate-300">
                     <span className="font-bold text-emerald-300">Exit multiple range:</span> 8-12x revenue (based on Careem 14x, Souq 3x, Mumzworld 5x average).
                     Ownership dilution assumes standard Series A (15% dilution) and Series B (20% dilution).
                   </p>
@@ -5163,9 +4955,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Bottom CTA */}
               <div className="mt-8 text-center">
                 <div className="inline-block bg-white/10 backdrop-blur border border-white/20 rounded-xl px-8 py-4">
-                  <p className={`${typography.h4} text-white`}>
+                  <p className="text-lg text-white">
                     <span className="font-bold text-emerald-400">Target Exit Window:</span> 48-60 months from pre-seed |{' '}
-                    <span className="font-bold text-emerald-400">Expected Return:</span> 95-140x for early investors
+                    <span className="font-bold text-emerald-400">Expected Return:</span> 67-133x for early investors
                   </p>
                 </div>
               </div>
@@ -5173,8 +4965,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 22: VISION ====================
-      case 22:
+      // ==================== SLIDE 21: VISION ====================
+      case 21:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-16 px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
@@ -5366,8 +5158,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 23: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
-      case 23:
+      // ==================== SLIDE 22: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
+      case 21:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -5542,7 +5334,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-400 font-medium">LTV:CAC ratio (1-month payback)</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-[#c9a227]/30">
-                    <p className="text-2xl font-black text-[#c9a227] mb-1">Q2 2026</p>
+                    <p className="text-2xl font-black text-[#c9a227] mb-1">Q1 2026</p>
                     <p className="text-sm text-slate-400 font-medium">Launch & lock the market before they react</p>
                   </div>
                 </div>
@@ -5552,7 +5344,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 24: COMPETITIVE MOAT ====================
+      // ==================== SLIDE 23: COMPETITIVE MOAT ====================
       case 24:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
@@ -5767,8 +5559,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 25: ROADMAP ====================
-      case 25:
+      // ==================== SLIDE 24: ROADMAP ====================
+      case 24:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -6072,8 +5864,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 26: TECHNOLOGY ====================
-      case 26:
+      // ==================== SLIDE 24: TECHNOLOGY ====================
+      case 25:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-white via-purple-50/20 to-white py-16 px-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -6083,12 +5875,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-6xl mx-auto relative z-10">
               <div className="text-center mb-16">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
-                  <p className={`${typography.labelEyebrow} text-purple-700`}>Tech Stack</p>
+                  <p className="text-xs font-black text-purple-700 uppercase tracking-wider">Tech Stack</p>
                 </div>
-                <h2 className={`${typography.h1} text-slate-900 mb-6`}>
+                <h2 className="text-6xl font-black text-slate-900 mb-6">
                   Built for <span className="text-purple-600">Scale</span>
                 </h2>
-                <p className={`${typography.h3} text-slate-600 max-w-3xl mx-auto`}>
+                <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
                   Modern, cloud-native architecture
                 </p>
               </div>
@@ -6117,12 +5909,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <div className="w-16 h-16 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
                         <Icon className="text-white" size={32} />
                       </div>
-                      <h3 className={`${typography.h3} text-slate-900 mb-6`}>{stack.layer}</h3>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-6">{stack.layer}</h3>
                       <div className="space-y-2">
                         {stack.tech.map((item, tidx) => (
                           <div key={tidx} className="flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-                            <p className={`${typography.body} text-slate-700`}>{item}</p>
+                            <p className="text-base text-slate-700">{item}</p>
                           </div>
                         ))}
                       </div>
@@ -6138,22 +5930,22 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <CreditCard className="text-white" size={32} />
                   </div>
                   <div>
-                    <h3 className={`${typography.h2} text-slate-900`}>Payment Intelligence Layer</h3>
-                    <p className={`${typography.h4} text-blue-600 font-semibold`}>Pre-Transaction Optimization</p>
+                    <h3 className="text-3xl font-bold text-slate-900">Payment Intelligence Layer</h3>
+                    <p className="text-lg text-blue-600 font-semibold">Pre-Transaction Optimization</p>
                   </div>
                 </div>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white rounded-xl p-6">
-                    <h4 className={`${typography.h4} text-slate-900 mb-3`}>Smart Routing</h4>
-                    <p className={`${typography.body} text-slate-600`}>Routes payments to best bank partner based on user's card issuer and merchant</p>
+                    <h4 className="text-xl font-bold text-slate-900 mb-3">Smart Routing</h4>
+                    <p className="text-base text-slate-600">Routes payments to best bank partner based on user's card issuer and merchant</p>
                   </div>
                   <div className="bg-white rounded-xl p-6">
-                    <h4 className={`${typography.h4} text-slate-900 mb-3`}>Personalized Offers</h4>
-                    <p className={`${typography.body} text-slate-600`}>Shows card-specific deals (e.g., "Extra 5% with Emirates NBD Visa")</p>
+                    <h4 className="text-xl font-bold text-slate-900 mb-3">Personalized Offers</h4>
+                    <p className="text-base text-slate-600">Shows card-specific deals (e.g., "Extra 5% with Emirates NBD Visa")</p>
                   </div>
                   <div className="bg-white rounded-xl p-6">
-                    <h4 className={`${typography.h4} text-slate-900 mb-3`}>Real-Time Analysis</h4>
-                    <p className={`${typography.body} text-slate-600`}>Analyzes payment method BEFORE checkout to maximize rewards and savings</p>
+                    <h4 className="text-xl font-bold text-slate-900 mb-3">Real-Time Analysis</h4>
+                    <p className="text-base text-slate-600">Analyzes payment method BEFORE checkout to maximize rewards and savings</p>
                   </div>
                 </div>
               </div>
@@ -6161,16 +5953,16 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="mt-8 bg-slate-900 rounded-2xl p-10 text-white">
                 <div className="grid md:grid-cols-3 gap-8 text-center">
                   <div>
-                    <p className={`${typography.metric} text-[#c9a227] mb-2`}>&lt;100ms</p>
-                    <p className={`${typography.h4} text-slate-300`}>Search latency</p>
+                    <p className="text-5xl font-black text-[#c9a227] mb-2">&lt;100ms</p>
+                    <p className="text-lg text-slate-300">Search latency</p>
                   </div>
                   <div>
-                    <p className={`${typography.metric} text-[#c9a227] mb-2`}>99.9%</p>
-                    <p className={`${typography.h4} text-slate-300`}>Uptime SLA</p>
+                    <p className="text-5xl font-black text-[#c9a227] mb-2">99.9%</p>
+                    <p className="text-lg text-slate-300">Uptime SLA</p>
                   </div>
                   <div>
-                    <p className={`${typography.metric} text-[#c9a227] mb-2`}>PCI-DSS</p>
-                    <p className={`${typography.h4} text-slate-300`}>Compliant payments</p>
+                    <p className="text-5xl font-black text-[#c9a227] mb-2">PCI-DSS</p>
+                    <p className="text-lg text-slate-300">Compliant payments</p>
                   </div>
                 </div>
               </div>
@@ -6178,8 +5970,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 27: QUESTIONS? ====================
-      case 27:
+      // ==================== SLIDE 25: QUESTIONS? ====================
+      case 26:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -6187,29 +5979,29 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-5xl mx-auto text-center relative z-10">
-              <div className={typography.metricHero}>❓</div>
-              <h1 className={`${typography.h1} text-slate-900 mb-8`}>
+              <div className="text-9xl mb-8">❓</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Questions?
               </h1>
-              <p className={`${typography.h2} text-slate-600 mb-12 max-w-3xl mx-auto`}>
+              <p className="text-3xl text-slate-600 mb-12 max-w-3xl mx-auto">
                 Let's discuss how Nuqta can transform local discovery in the GCC
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-                  <div className={typography.metricMedium}>📧</div>
-                  <p className={`${typography.labelEyebrow} text-slate-600 mb-2`}>Email</p>
-                  <p className={`${typography.h4} text-slate-900`}>rejaul@nuqtapp.com</p>
+                  <div className="text-4xl mb-4">📧</div>
+                  <p className="text-sm font-bold text-slate-600 uppercase mb-2">Email</p>
+                  <p className="text-xl font-bold text-slate-900">rejaul@nuqtapp.com</p>
                 </div>
                 <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-                  <div className={typography.metricMedium}>📱</div>
-                  <p className={`${typography.labelEyebrow} text-slate-600 mb-2`}>Phone</p>
-                  <p className={`${typography.h4} text-slate-900`}>+971 50 376 4345</p>
+                  <div className="text-4xl mb-4">📱</div>
+                  <p className="text-sm font-bold text-slate-600 uppercase mb-2">Phone</p>
+                  <p className="text-xl font-bold text-slate-900">+971 50 376 4345</p>
                 </div>
                 <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-xl transition-all">
-                  <div className={typography.metricMedium}>🌐</div>
-                  <p className={`${typography.labelEyebrow} text-slate-600 mb-2`}>Website</p>
-                  <p className={`${typography.h4} text-slate-900`}>www.nuqtapp.com</p>
+                  <div className="text-4xl mb-4">🌐</div>
+                  <p className="text-sm font-bold text-slate-600 uppercase mb-2">Website</p>
+                  <p className="text-xl font-bold text-slate-900">www.nuqtapp.com</p>
                 </div>
               </div>
 
@@ -6220,8 +6012,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 28: LET'S TALK ====================
-      case 28:
+      // ==================== SLIDE 26: LET'S TALK ====================
+      case 27:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -6229,31 +6021,31 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-5xl mx-auto text-center relative z-10">
-              <div className={typography.metricHero}>💬</div>
-              <h1 className={`${typography.h1} text-slate-900 mb-8`}>
+              <div className="text-9xl mb-8">💬</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Let's <span className="text-emerald-600">Talk</span>
               </h1>
 
               <div className="bg-white border-2 border-emerald-200 rounded-3xl p-12 mb-12 shadow-2xl">
-                <p className={`${typography.h2} text-slate-900 mb-6`}>
+                <p className="text-3xl sm:text-4xl font-black text-slate-900 mb-6">
                   Ready to revolutionize local shopping?
                 </p>
-                <p className={`${typography.h3} text-slate-600 mb-8 max-w-2xl mx-auto`}>
+                <p className="text-2xl text-slate-600 mb-8 max-w-2xl mx-auto">
                   Join us in building the future of local discovery in the GCC
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 border-2 border-emerald-200 rounded-2xl p-6">
-                    <p className={`${typography.h4} text-slate-900 mb-2`}>Pre-Seed Round</p>
-                    <p className={`${typography.metricMedium} text-emerald-600`}>$400K</p>
+                    <p className="text-lg font-bold text-slate-900 mb-2">Pre-Seed Round</p>
+                    <p className="text-4xl font-black text-emerald-600">$400K</p>
                   </div>
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-2xl p-6">
-                    <p className={`${typography.h4} text-slate-900 mb-2`}>Launch Timeline</p>
-                    <p className={`${typography.metricMedium} text-blue-600`}>7 Days</p>
+                    <p className="text-lg font-bold text-slate-900 mb-2">Launch Timeline</p>
+                    <p className="text-4xl font-black text-blue-600">7 Days</p>
                   </div>
                 </div>
 
-                <p className={`${typography.h4} text-slate-600`}>
+                <p className="text-xl text-slate-600">
                   📧 <strong>rejaul@nuqtapp.com</strong> • 📱 <strong>+971 50 376 4345</strong>
                 </p>
               </div>
@@ -6265,8 +6057,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 29: JOIN US ====================
-      case 29:
+      // ==================== SLIDE 27: JOIN US ====================
+      case 28:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -6274,38 +6066,38 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-5xl mx-auto text-center relative z-10">
-              <div className={typography.metricHero}>🚀</div>
-              <h1 className={`${typography.h1} text-slate-900 mb-8`}>
+              <div className="text-9xl mb-8">🚀</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Join <span className="text-[#c9a227]">Us</span>
               </h1>
 
-              <p className={`${typography.h2} text-slate-600 mb-12 max-w-3xl mx-auto`}>
+              <p className="text-3xl text-slate-600 mb-12 max-w-3xl mx-auto">
                 Be part of the journey to transform how 50M people discover local deals
               </p>
 
               <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-2xl text-white">
-                <h3 className={`${typography.h3} mb-8 text-[#c9a227]`}>The Opportunity</h3>
+                <h3 className="text-2xl font-bold mb-8 text-[#c9a227]">The Opportunity</h3>
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
                   <div>
-                    <p className={`${typography.metric} text-emerald-400 mb-2`}>$35B</p>
-                    <p className={`${typography.bodySmall} text-slate-300`}>GCC SAM</p>
+                    <p className="text-5xl font-black text-emerald-400 mb-2">$35B</p>
+                    <p className="text-sm text-slate-300">GCC SAM</p>
                   </div>
                   <div>
-                    <p className={`${typography.metric} text-blue-400 mb-2`}>30+</p>
-                    <p className={`${typography.bodySmall} text-slate-300`}>Signed LOIs</p>
+                    <p className="text-5xl font-black text-blue-400 mb-2">30+</p>
+                    <p className="text-sm text-slate-300">Signed LOIs</p>
                   </div>
                   <div>
-                    <p className={`${typography.metric} text-[#c9a227] mb-2`}>10x+</p>
-                    <p className={`${typography.bodySmall} text-slate-300`}>LTV:CAC Ratio</p>
+                    <p className="text-5xl font-black text-[#c9a227] mb-2">10x+</p>
+                    <p className="text-sm text-slate-300">LTV:CAC Ratio</p>
                   </div>
                 </div>
 
-                <p className={`${typography.h4} text-slate-300 mb-6`}>
-                  Launching in Q2 2026 • Profitable by Year 3 • Built for scale
+                <p className="text-xl text-slate-300 mb-6">
+                  Launching in Q1 2026 • Profitable from day one • Built for scale
                 </p>
 
                 <div className="border-t-2 border-white/10 pt-6">
-                  <p className={`${typography.h4} text-slate-300`}>
+                  <p className="text-lg text-slate-300">
                     📧 <strong className="text-white">rejaul@nuqtapp.com</strong>
                   </p>
                 </div>
@@ -6318,8 +6110,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 30: THANK YOU ====================
-      case 30:
+      // ==================== SLIDE 29: THANK YOU ====================
+      case 29:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 flex items-center justify-center p-8 relative overflow-hidden">
             {/* Background decoration */}
@@ -6327,22 +6119,22 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-pink-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-5xl mx-auto text-center relative z-10">
-              <div className={typography.metricHero}>🙏</div>
-              <h1 className={`${typography.h1} text-slate-900 mb-8`}>
+              <div className="text-9xl mb-8">🙏</div>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
                 Thank <span className="text-purple-600">You</span>
               </h1>
 
               <div className="bg-white border-2 border-purple-200 rounded-3xl p-12 mb-12 shadow-2xl">
-                <p className={`${typography.h2} text-slate-900 mb-6`}>
+                <p className="text-3xl font-bold text-slate-900 mb-6">
                   For your time and consideration
                 </p>
-                <p className={`${typography.h3} text-slate-600 mb-10 max-w-2xl mx-auto`}>
+                <p className="text-2xl text-slate-600 mb-10 max-w-2xl mx-auto">
                   We're building something special—and we'd love to have you as part of the journey
                 </p>
 
                 <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-8">
-                  <p className={`${typography.h4} text-slate-900 mb-4`}>Key Takeaway</p>
-                  <p className={`${typography.h3} text-slate-700 italic leading-relaxed`}>
+                  <p className="text-lg font-bold text-slate-900 mb-4">Key Takeaway</p>
+                  <p className="text-2xl text-slate-700 italic leading-relaxed">
                     "Nuqta makes finding the best local deals <span className="font-black text-purple-600">54x faster</span> than traditional search, while creating sustainable value for merchants and banks."
                   </p>
                 </div>
@@ -6350,13 +6142,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               <div className="flex items-center justify-center gap-8 mb-8">
                 <div className="text-center">
-                  <p className={`${typography.bodySmall} text-slate-600 mb-2`}>Contact</p>
-                  <p className={`${typography.h4} text-slate-900`}>rejaul@nuqtapp.com</p>
+                  <p className="text-sm text-slate-600 mb-2">Contact</p>
+                  <p className="text-lg font-bold text-slate-900">rejaul@nuqtapp.com</p>
                 </div>
                 <div className="w-1 h-12 bg-slate-300"></div>
                 <div className="text-center">
-                  <p className={`${typography.bodySmall} text-slate-600 mb-2`}>Website</p>
-                  <p className={`${typography.h4} text-slate-900`}>www.nuqtapp.com</p>
+                  <p className="text-sm text-slate-600 mb-2">Website</p>
+                  <p className="text-lg font-bold text-slate-900">www.nuqtapp.com</p>
                 </div>
               </div>
 
@@ -6367,8 +6159,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
           </div>
         );
 
-      // ==================== SLIDE 31: CONTACT INFO ====================
-      case 31:
+      // ==================== SLIDE 30: CONTACT INFO ====================
+      case 30:
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white flex items-center justify-center p-8">
             <div className="max-w-4xl mx-auto text-center">
@@ -6376,38 +6168,38 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <Image src="/nuqta-logo.png" alt="Nuqta" width={96} height={96} className="object-contain p-4" />
               </div>
 
-              <h1 className={`${typography.h1} text-slate-900 mb-4 tracking-tight`}>
+              <h1 className="text-7xl sm:text-8xl font-black text-slate-900 mb-4 tracking-tight">
                 Nuqta
               </h1>
 
-              <p className={`${typography.metricMedium} text-[#c9a227] font-bold mb-12`}>
+              <p className="text-4xl text-[#c9a227] font-bold mb-12">
                 Find Deals Before Google
               </p>
 
               <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-xl">
-                <p className={`${typography.h2} text-slate-900 mb-8`}>
+                <p className="text-3xl font-bold text-slate-900 mb-8">
                   Let's build the future of local discovery together
                 </p>
-                <div className={`space-y-6 ${typography.h3} text-slate-700`}>
+                <div className="space-y-6 text-2xl text-slate-700">
                   <div className="flex items-center justify-center gap-4">
-                    <span className={typography.metricMedium}>📧</span>
+                    <span className="text-3xl">📧</span>
                     <p className="font-semibold">rejaul@nuqtapp.com</p>
                   </div>
                   <div className="flex items-center justify-center gap-4">
-                    <span className={typography.metricMedium}>📱</span>
+                    <span className="text-3xl">📱</span>
                     <p className="font-semibold">+971 50 376 4345</p>
                   </div>
                   <div className="flex items-center justify-center gap-4">
-                    <span className={typography.metricMedium}>🌐</span>
+                    <span className="text-3xl">🌐</span>
                     <p className="font-semibold">www.nuqtapp.com</p>
                   </div>
                 </div>
               </div>
 
               <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-2xl p-6">
-                <p className={`${typography.h4} text-slate-700`}>
+                <p className="text-lg text-slate-700">
                   <span className="font-bold text-emerald-600">Pre-Seed Round: $400K</span> •
-                  <span className="font-bold text-blue-600"> Launch: Q2 2026</span> •
+                  <span className="font-bold text-blue-600"> Launch: Q1 2026</span> •
                   <span className="font-bold text-purple-600"> 30+ LOIs</span>
                 </p>
               </div>
