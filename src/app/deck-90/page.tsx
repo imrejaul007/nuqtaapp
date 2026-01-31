@@ -1,5 +1,5 @@
-import PitchDeck90SecondEnhanced from '@/components/PitchDeck90SecondEnhanced';
+import PitchDeck90SecondPremium from '@/components/PitchDeck90SecondPremium';
 
 export default function Deck90SecondPage() {
-  return <PitchDeck90SecondEnhanced />;
+  return <PitchDeck90SecondPremium />;
 }
