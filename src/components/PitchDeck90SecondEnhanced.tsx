@@ -108,7 +108,7 @@ const PitchDeck90SecondEnhanced = () => {
       // ==================== SLIDE 1: THE PROBLEM [0-15s] ====================
       case 1:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center p-8"`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-red-50 to-orange-50 flex items-center justify-center p-8`}>
             <div className="max-w-6xl w-full">
               {/* Timer */}
               <div className="text-center mb-8">
@@ -174,7 +174,7 @@ const PitchDeck90SecondEnhanced = () => {
       // ==================== SLIDE 2: WHAT NUQTA IS [15-30s] ====================
       case 2:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-8"`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center p-8`}>
             <div className="max-w-6xl w-full">
               {/* Timer */}
               <div className="text-center mb-8">
@@ -253,7 +253,7 @@ const PitchDeck90SecondEnhanced = () => {
       // ==================== SLIDE 3: WHY THIS WORKS [30-45s] ====================
       case 3:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-8"`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center p-8`}>
             <div className="max-w-6xl w-full">
               {/* Timer */}
               <div className="text-center mb-8">
@@ -352,7 +352,7 @@ const PitchDeck90SecondEnhanced = () => {
       // ==================== SLIDE 4: WHY GROUPON FAILED, WHY WE WIN [45-60s] ====================
       case 4:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-slate-900 to-purple-900 flex items-center justify-center p-8"`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-slate-900 to-purple-900 flex items-center justify-center p-8`}>
             <div className="max-w-6xl w-full">
               {/* Timer */}
               <div className="text-center mb-8">
@@ -434,7 +434,7 @@ const PitchDeck90SecondEnhanced = () => {
       // ==================== SLIDE 5: MOAT & TIMING [60-75s] ====================
       case 5:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-8"`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-8`}>
             <div className="max-w-6xl w-full">
               {/* Timer */}
               <div className="text-center mb-8">
@@ -533,7 +533,7 @@ const PitchDeck90SecondEnhanced = () => {
       // ==================== SLIDE 6: WHY INVEST NOW [75-90s] ====================
       case 6:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-purple-900 via-slate-900 to-purple-900 flex items-center justify-center p-8"`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-purple-900 via-slate-900 to-purple-900 flex items-center justify-center p-8`}>
             <div className="max-w-6xl w-full">
               {/* Timer */}
               <div className="text-center mb-8">
