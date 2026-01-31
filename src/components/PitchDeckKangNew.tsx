@@ -4681,10 +4681,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           borderRadius: '12px',
                           color: '#fff'
                         }}
-                        formatter={(value: any, name: string) => {
+                        formatter={(value: any, name?: string) => {
                           if (name === 'revenue') return [`$${value}M`, 'Revenue'];
                           if (name === 'ebitda') return [`$${value}M`, 'EBITDA'];
-                          return [value, name];
+                          return [value, name || ''];
                         }}
                       />
                       <Legend
