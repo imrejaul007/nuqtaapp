@@ -138,7 +138,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <p className={`${typography.labelEyebrow} text-white`}>Signed LOIs</p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>Q2 2026</p>
+                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>Feb 28, 2026</p>
                   <p className={`${typography.labelEyebrow} text-white`}>Launch</p>
                 </div>
               </div>
@@ -882,7 +882,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </p>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="bg-slate-800/50 border border-orange-500/30 rounded-xl p-4 text-center">
-                        <p className={`${typography.h3} font-black text-orange-400 mb-1`}>Q2 2026</p>
+                        <p className={`${typography.h3} font-black text-orange-400 mb-1`}>Feb 28, 2026</p>
                         <p className={`${typography.label} text-slate-400`}>Launch before competitors</p>
                       </div>
                       <div className="bg-slate-800/50 border border-red-500/30 rounded-xl p-4 text-center">
@@ -2196,7 +2196,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={24} />
                         <div>
                           <p className="text-lg font-bold text-slate-900 mb-1">First-Mover Speed</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">Q2 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">Feb 28, 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
                         </div>
                       </div>
                     </div>
@@ -2244,7 +2244,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-400 font-medium">Margin from day 1</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-blue-500/30">
-                    <p className="text-3xl font-black text-blue-400 mb-2">Q2 2026</p>
+                    <p className="text-3xl font-black text-blue-400 mb-2">Feb 28, 2026</p>
                     <p className="text-sm text-slate-400 font-medium">Launch & lock moat</p>
                   </div>
                 </div>
@@ -4124,7 +4124,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   Supply-Side <span className="text-emerald-600">Validation</span>
                 </h2>
                 <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  30+ signed merchant LOIs • $50K self-funded • MVP launching in 7 days
+                  30+ signed merchant LOIs • $50K self-funded • MVP launching Feb 28, 2026
                 </p>
               </div>
 
@@ -4151,7 +4151,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   },
                   {
                     label: "MVP Launch",
-                    value: "7 Days",
+                    value: "Feb 28",
                     desc: "Product ready to go live",
                     icon: Zap,
                     color: "emerald",
@@ -4519,7 +4519,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <AnimatedNumber value={400} prefix="$" suffix="K" duration={2000} />
                 </p>
                 <p className="text-2xl text-slate-700 max-w-2xl mx-auto mb-8">
-                  9-month runway to launch, prove H1 metrics, then raise Series A
+                  10-month runway to launch, prove H1 metrics, then raise Series A
                 </p>
 
                 {/* SAFE Structure */}
@@ -4820,7 +4820,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Year 1 GMV Footnote */}
               <div className="mt-4 text-center">
                 <p className="text-xs text-slate-400 italic">
-                  * Year 1 GMV based on 9-month operating period (Apr-Dec 2026) with avg 30K MAU, ramping from 5K → 50K users
+                  * Year 1 GMV based on 10-month operating period (Feb 28-Dec 2026) with avg 30K MAU, ramping from 5K → 50K users
                 </p>
               </div>
 
@@ -5542,7 +5542,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-400 font-medium">LTV:CAC ratio (1-month payback)</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-[#c9a227]/30">
-                    <p className="text-2xl font-black text-[#c9a227] mb-1">Q2 2026</p>
+                    <p className="text-2xl font-black text-[#c9a227] mb-1">Feb 28, 2026</p>
                     <p className="text-sm text-slate-400 font-medium">Launch & lock the market before they react</p>
                   </div>
                 </div>
@@ -6301,7 +6301,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 <p className={`${typography.h4} text-slate-300 mb-6`}>
-                  Launching in Q2 2026 • Profitable by Year 3 • Built for scale
+                  Launching Feb 28, 2026 • Profitable by Year 3 • Built for scale
                 </p>
 
                 <div className="border-t-2 border-white/10 pt-6">
@@ -6407,7 +6407,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-2xl p-6">
                 <p className={`${typography.h4} text-slate-700`}>
                   <span className="font-bold text-emerald-600">Pre-Seed Round: $400K</span> •
-                  <span className="font-bold text-blue-600"> Launch: Q2 2026</span> •
+                  <span className="font-bold text-blue-600"> Launch: Feb 28, 2026</span> •
                   <span className="font-bold text-purple-600"> 30+ LOIs</span>
                 </p>
               </div>
