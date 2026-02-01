@@ -92,7 +92,7 @@ export default function NuqtaInvestorOnePager() {
 
                 <div className="grid grid-cols-2 gap-2">
                   <div className="bg-[#0a1628]/20 backdrop-blur-sm text-[#0a1628] p-3 rounded-xl border-2 border-[#0a1628]/40 text-center">
-                    <p className="text-3xl font-black mb-1">$500K</p>
+                    <p className="text-3xl font-black mb-1">$400K</p>
                     <p className="text-xs font-bold uppercase">Raise</p>
                   </div>
                   <div className="bg-[#0a1628]/20 backdrop-blur-sm text-[#0a1628] p-3 rounded-xl border-2 border-[#0a1628]/40 text-center">
@@ -389,7 +389,7 @@ export default function NuqtaInvestorOnePager() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent"></div>
                   <div className="relative z-10">
                     <div className="text-center mb-4">
-                      <p className="text-7xl font-black text-[#0a1628] mb-2 leading-none drop-shadow-xl">$500K</p>
+                      <p className="text-7xl font-black text-[#0a1628] mb-2 leading-none drop-shadow-xl">$400K</p>
                       <p className="text-base text-[#0a1628] font-black uppercase tracking-wider">Pre-seed round</p>
                       <div className="mt-3 bg-[#0a1628]/20 backdrop-blur-sm rounded-lg px-3 py-2 inline-block border border-[#0a1628]/30">
                         <p className="text-xs text-[#0a1628] font-bold">CCS • $5M Cap • 20% Discount</p>
@@ -843,7 +843,7 @@ export default function NuqtaInvestorOnePager() {
                   </div>
                   <div className="bg-gradient-to-br from-[#0a1628] to-[#0d1d3a] text-white rounded-xl p-5 mb-3 shadow-xl border-2 border-[#0a1628]/50">
                     <p className="text-lg leading-snug font-black text-center mb-4">
-                      $500K → $150B opportunity
+                      $400K → $150B opportunity
                     </p>
                     <div className="grid grid-cols-2 gap-2 mb-3">
                       <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/40 rounded-lg p-3">

@@ -193,7 +193,7 @@ export default function LandingPage() {
             <div className="inline-flex flex-col items-center gap-4">
               <div className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] px-10 py-5 rounded-2xl shadow-2xl shadow-[#c9a227]/30 border-4 border-white/20 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                <p className="text-3xl font-black text-[#0a1628] relative z-10">Raising $500K Pre-Seed</p>
+                <p className="text-3xl font-black text-[#0a1628] relative z-10">Raising $400K Pre-Seed</p>
               </div>
               <div className="flex items-center gap-3 px-6 py-3 bg-slate-800/50 border-2 border-emerald-500/40 rounded-full backdrop-blur-sm">
                 <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
@@ -873,7 +873,7 @@ export default function LandingPage() {
             Join the <span className="bg-gradient-to-r from-[#c9a227] via-yellow-400 to-[#c9a227] bg-clip-text text-transparent">Next Chapter</span>
           </h2>
           <p className="text-xl sm:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto">
-            We're raising $500K to validate 30 signed merchants and hit 500 users in 90 days.
+            We're raising $400K to validate 30 signed merchants and hit 500 users in 90 days.
           </p>
 
           {/* Investment Snapshot */}
@@ -881,7 +881,7 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="text-left">
                 <p className="text-sm text-slate-400 mb-1">Raise Amount</p>
-                <p className="text-3xl font-black text-white">$500K</p>
+                <p className="text-3xl font-black text-white">$400K</p>
               </div>
               <div className="text-left">
                 <p className="text-sm text-slate-400 mb-1">Valuation Cap</p>
@@ -1053,7 +1053,7 @@ export default function LandingPage() {
             />
             <FAQItem
               question="Can I invest in Nuqta?"
-              answer="We're raising $500K on a $5M cap SAFE with 20% discount. If you're an accredited investor interested in our pre-seed round, check out our investment terms page or reach out via the data room."
+              answer="We're raising $400K on a $5M cap SAFE with 20% discount. If you're an accredited investor interested in our pre-seed round, check out our investment terms page or reach out via the data room."
               index={6}
             />
             <FAQItem
@@ -1299,7 +1299,7 @@ export default function LandingPage() {
                 </a>
                 <div className="text-emerald-500 flex items-center gap-1">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Raising $500K</span>
+                  <span>Raising $400K</span>
                 </div>
               </div>
             </div>

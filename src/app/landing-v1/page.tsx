@@ -554,7 +554,7 @@ export default function Home() {
                 <div className="space-y-2.5">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400 text-xs">Raising</span>
-                    <span className="text-white font-bold text-sm">$500K</span>
+                    <span className="text-white font-bold text-sm">$400K</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-400 text-xs">Instrument</span>
@@ -680,7 +680,7 @@ export default function Home() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
               {[
                 { value: '$4B', label: 'GCC Addressable Market', sub: 'Dining & retail', icon: '📊', source: 'GCC dining & retail spending, industry reports 2024' },
-                { value: '$500K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰', source: null },
+                { value: '$400K', label: 'Raising Now', sub: 'Pre-Seed (CCD)', icon: '💰', source: null },
                 { value: '$5M Cap', label: 'Valuation + 20% Discount', sub: 'Convertible note', icon: '📈', source: null },
                 { value: 'First', label: 'Neutral Intelligence Layer', sub: 'in GCC payments', icon: '🏆', source: null },
               ].map((item, idx) => (
@@ -1658,7 +1658,7 @@ export default function Home() {
                 <AnimatedSection delay={100}>
                   <div className="bg-gradient-to-br from-[#c9a227] to-[#f4d35e] rounded-2xl p-6 text-center">
                     <p className="text-[#0a1628] text-sm uppercase tracking-wider mb-1">Raising</p>
-                    <p className="text-[#0a1628] text-4xl font-bold">$500K</p>
+                    <p className="text-[#0a1628] text-4xl font-bold">$400K</p>
                   </div>
                 </AnimatedSection>
                 <AnimatedSection delay={150}>
@@ -2250,7 +2250,7 @@ export default function Home() {
                   { q: "What if users transact less?", a: "Then revenue per user drops — which is why we focus on daily spend categories, not assumptions." },
                   { q: "Low CAC assumption?", a: "Because we leverage: Merchant-led acquisition, on-premise discovery, and partnerships. Not paid ads alone." },
                   { q: "Why $5M cap?", a: "Cap reflects: Pre-revenue stage, realistic pre-seed valuation for GCC fintech, room for 20% discount on next round." },
-                  { q: "What if $500k isn't enough?", a: "Then we pivot scope, not burn. The goal is proof, not scale." },
+                  { q: "What if $400k isn't enough?", a: "Then we pivot scope, not burn. The goal is proof, not scale." },
                   { q: "Monthly burn?", a: "Kept intentionally lean (<$40k/month early)." },
                   { q: "Is 10k users enough?", a: "Yes — if repeat usage exists. Quality > quantity." },
                   { q: "Regulatory costs?", a: "We avoid stored value regulation by design. Legal budget is included." },

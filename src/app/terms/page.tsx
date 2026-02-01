@@ -89,7 +89,7 @@ export default function TermsPage() {
           <div className="bg-[#1a2a42] rounded-lg sm:rounded-xl p-4 sm:p-6 border border-[#c9a227]/30 text-left">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
               <div className="text-center">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">$500K</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">$400K</p>
                 <p className="text-xs sm:text-sm text-gray-400">Round Size</p>
               </div>
               <div className="text-center">
@@ -336,7 +336,7 @@ export default function TermsPage() {
                 </tr>
                 <tr className="border-b border-[#2a3a52]/50">
                   <td className="py-3 px-4 font-medium">Round Size</td>
-                  <td className="py-3 px-4 text-[#c9a227]">$500,000</td>
+                  <td className="py-3 px-4 text-[#c9a227]">$400,000</td>
                   <td className="py-3 px-4 text-gray-400">18-24 month runway to seed metrics</td>
                 </tr>
                 <tr className="border-b border-[#2a3a52]/50">

@@ -463,7 +463,7 @@ export default function InvestorMemo() {
             <div className="bg-[#0a1628] text-white rounded-lg p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 mb-3 sm:mb-4">
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-[#c9a227]">$500,000</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-[#c9a227]">$400,000</p>
                   <p className="text-gray-400 text-sm sm:text-base">Pre-Seed Round</p>
                 </div>
                 <div className="sm:text-right">

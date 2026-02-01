@@ -2172,7 +2172,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-400 flex-shrink-0">✓</span>
-                      <span className="text-gray-300"><strong className="text-white">$500K+</strong> monthly GMV (annualized $6M+)</span>
+                      <span className="text-gray-300"><strong className="text-white">$400K+</strong> monthly GMV (annualized $6M+)</span>
                     </li>
                   </ul>
                 </div>
