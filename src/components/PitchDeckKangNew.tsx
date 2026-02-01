@@ -491,7 +491,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-full mb-4 border border-[#c9a227]/30 shadow-lg">
-                  <span className={typography.h3}>🎯</span>
+                  <Target className="text-[#c9a227]" size={24} />
                   <p className={`${typography.bodySmall} font-bold text-[#c9a227] uppercase tracking-wider`}>Market Opportunity</p>
                 </div>
                 <h2 className={`${typography.h1} text-slate-900 mb-4 leading-tight`}>
@@ -607,7 +607,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-                          <span className={typography.h3}>🎯</span>
+                          <Target className="text-white" size={24} />
                         </div>
                         <div>
                           <h3 className={`${typography.h4} text-slate-900`}>Serviceable Addressable Market</h3>
@@ -629,7 +629,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
                         <div className="w-12 h-12 bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] rounded-xl flex items-center justify-center shadow-lg">
-                          <span className={typography.h3}>🚀</span>
+                          <Rocket className="text-white" size={24} />
                         </div>
                         <div>
                           <h3 className={`${typography.h4} text-slate-900`}>Serviceable Obtainable Market</h3>
@@ -651,7 +651,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <div className="space-y-2">
                         <div className="bg-gradient-to-r from-emerald-50 to-white border-l-3 border-emerald-500 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
-                            <p className={`${typography.labelMicro} font-bold text-emerald-700`}>🌱 Horizon 1 (M1-12)</p>
+                            <p className={`${typography.labelMicro} font-bold text-emerald-700 flex items-center gap-1.5`}><Sparkles size={14} className="text-emerald-700" /> Horizon 1 (M1-12)</p>
                             <p className={`${typography.bodyLarge} font-black text-emerald-600`}>$150M</p>
                           </div>
                           <p className={`${typography.labelMicro} text-slate-600`}>F&B • Grocery • Salons • Fashion • Fitness • Events (pop-ups, exhibitions)</p>
@@ -659,7 +659,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                         <div className="bg-gradient-to-r from-blue-50 to-white border-l-3 border-blue-500 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
-                            <p className={`${typography.labelMicro} font-bold text-blue-700`}>📈 Horizon 2 (M13-24)</p>
+                            <p className={`${typography.labelMicro} font-bold text-blue-700 flex items-center gap-1.5`}><TrendingUp size={14} className="text-blue-700" /> Horizon 2 (M13-24)</p>
                             <p className={`${typography.bodyLarge} font-black text-blue-600`}>$450M</p>
                           </div>
                           <p className={`${typography.labelMicro} text-slate-600`}>+ Entertainment (cinemas, gaming) • Home Services • Pet</p>
@@ -667,7 +667,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                         <div className="bg-gradient-to-r from-purple-50 to-white border-l-3 border-purple-500 rounded-lg p-3">
                           <div className="flex items-center justify-between mb-1">
-                            <p className={`${typography.labelMicro} font-bold text-purple-700`}>🌍 Horizon 3 (M25-36)</p>
+                            <p className={`${typography.labelMicro} font-bold text-purple-700 flex items-center gap-1.5`}><Globe size={14} className="text-purple-700" /> Horizon 3 (M25-36)</p>
                             <p className={`${typography.bodyLarge} font-black text-purple-600`}>$750M</p>
                           </div>
                           <p className={`${typography.labelMicro} text-slate-600`}>All UAE cities (Abu Dhabi • Sharjah • Ajman • RAK • Fujairah)</p>
@@ -2792,7 +2792,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {/* Business Benefits */}
                   <div className="bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-white border-2 border-emerald-500/30 rounded-3xl p-8">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
-                      🏪
+                      <Store className="text-white" size={28} />
                     </div>
                     <h4 className="text-2xl font-black text-slate-900 mb-4">For Businesses</h4>
                     <div className="space-y-3">
@@ -2852,7 +2852,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {/* Nuqta Benefits */}
                   <div className="bg-gradient-to-br from-[#c9a227]/10 via-[#c9a227]/5 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c9a227] to-[#b8922a] text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
-                      🚀
+                      <Rocket className="text-white" size={28} />
                     </div>
                     <h4 className="text-2xl font-black text-slate-900 mb-4">For Nuqta</h4>
                     <div className="space-y-3">
@@ -3988,9 +3988,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 50 Merchants</p>
                   </div>
                   <div className="space-y-2 mb-4">
-                    <p className="text-sm text-slate-700">✅ Walk into high-traffic cafes/salons/gyms</p>
-                    <p className="text-sm text-slate-700">✅ 30-second pitch: "Zero cost, bring new customers"</p>
-                    <p className="text-sm text-slate-700">✅ Event activation: Global Village (30 merchants in 1 weekend)</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Walk into high-traffic cafes/salons/gyms</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> 30-second pitch: "Zero cost, bring new customers"</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Event activation: Global Village (30 merchants in 1 weekend)</p>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-4">
                     <p className="text-sm font-semibold text-blue-700 mb-2">Results:</p>
@@ -4021,9 +4021,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 150 Merchants</p>
                   </div>
                   <div className="space-y-2 mb-4">
-                    <p className="text-sm text-slate-700">✅ Hire 2 BDMs (ex-Talabat/Careem partnerships)</p>
-                    <p className="text-sm text-slate-700">✅ Commission-driven: AED 200/merchant</p>
-                    <p className="text-sm text-slate-700">✅ Target: 25 meetings/week, 10 sign-ups/month each</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Hire 2 BDMs (ex-Talabat/Careem partnerships)</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Commission-driven: AED 200/merchant</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Target: 25 meetings/week, 10 sign-ups/month each</p>
                   </div>
                   <div className="bg-purple-50 rounded-lg p-4">
                     <p className="text-sm font-semibold text-purple-700 mb-2">Results:</p>
@@ -4054,9 +4054,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 300 Merchants</p>
                   </div>
                   <div className="space-y-2 mb-4">
-                    <p className="text-sm text-slate-700">✅ Self-serve platform: nuqtapp.com/merchants</p>
-                    <p className="text-sm text-slate-700">✅ Merchant referral program (AED 500 credit)</p>
-                    <p className="text-sm text-slate-700">✅ Marketplace effects: "Why doesn't MY cafe have Nuqta?"</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Self-serve platform: nuqtapp.com/merchants</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Merchant referral program (AED 500 credit)</p>
+                    <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Marketplace effects: "Why doesn't MY cafe have Nuqta?"</p>
                   </div>
                   <div className="bg-emerald-50 rounded-lg p-4">
                     <p className="text-sm font-semibold text-emerald-700 mb-2">Results:</p>
@@ -4089,7 +4089,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="text-center">
                     <p className="text-sm font-semibold text-blue-300 uppercase mb-2">Zero Paid Ads</p>
-                    <p className="text-5xl font-black text-emerald-400">✅</p>
+                    <div className="flex justify-center">
+                      <CheckCircle size={48} className="text-emerald-400" />
+                    </div>
                   </div>
                 </div>
                 <div className="mt-6 text-center">
@@ -4930,7 +4932,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     acquirers: ['Careem/Uber', 'Noon', 'Majid Al Futtaim'],
                     rationale: 'Want our merchant network + behavioral data to enhance their platforms',
                     color: 'from-emerald-500/20 to-green-500/20 border-emerald-500/40',
-                    icon: '🎯'
+                    icon: 'Target'
                   },
                   {
                     tier: 'Tier 2',
@@ -5069,7 +5071,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         desc: '5K merchants with exclusive revenue-share contracts by Year 5'
                       },
                       {
-                        icon: '🚀',
+                        icon: 'Rocket',
                         title: 'GCC Expansion Ready',
                         desc: 'Proven playbook to replicate in Saudi, Kuwait, Qatar'
                       }
@@ -5185,7 +5187,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Header */}
               <div className="text-center mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-500/10 rounded-full mb-4 border-2 border-purple-500/30 shadow-lg">
-                  <span className="text-2xl">🚀</span>
+                  <Rocket className="text-purple-600" size={24} />
                   <p className="text-sm font-black text-purple-700 uppercase tracking-wider">Long-term Vision</p>
                 </div>
                 <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black text-slate-900 mb-6 leading-tight">
@@ -5814,7 +5816,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {
                     phase: "Horizon 1 (H1)",
                     timeline: "~5 Months • Prove the Loop",
-                    emoji: "🚀",
+                    emoji: "Rocket",
                     title: "Core PMF Validation",
                     subtitle: "Dubai Marina/JBR Focus",
                     features: ["Launch F&B + Core Verticals", "290 merchants • 5.8K-10K MAU (baseline-stretch)", "Prove 25% D30 retention + LTV:CAC 10x+", "Validate coin-led rewards model"],
@@ -5828,7 +5830,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {
                     phase: "Horizon 2 (H2)",
                     timeline: "~2.5 Months • Scale Responsibly",
-                    emoji: "📈",
+                    emoji: "TrendingUp",
                     title: "Multi-Category Expansion",
                     subtitle: "Healthcare + Home Services",
                     features: ["Add 2 new categories", "Geographic expansion (Downtown, Business Bay)", "Platform tech (analytics, AI recommendations)", "Merchant WaaS pilots"],
@@ -5842,7 +5844,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {
                     phase: "Horizon 3 (H3)",
                     timeline: "~1.2 Years • Become Infrastructure",
-                    emoji: "🏙️",
+                    emoji: "Building2",
                     title: "UAE-Wide Platform",
                     subtitle: "Enterprise + Data Moats",
                     features: ["All 7 UAE cities coverage", "WaaS revenue (5+ clients)", "Government partnerships (2+)", "Data intelligence layer operational"],
@@ -5864,9 +5866,19 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         {/* Left: Phase Badge + Title */}
                         <div className="flex items-start gap-4 flex-1">
-                          {/* Badge with Emoji */}
+                          {/* Badge with Icon */}
                           <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${horizon.badgeBg} text-white flex flex-col items-center justify-center flex-shrink-0 shadow-lg`}>
-                            <span className="text-2xl leading-none">{horizon.emoji}</span>
+                            {(() => {
+                              const iconMap: { [key: string]: any } = {
+                                'Rocket': Rocket,
+                                'TrendingUp': TrendingUp,
+                                'Building2': Building2,
+                                'Trophy': Trophy,
+                                'Globe': Globe
+                              };
+                              const IconComponent = iconMap[horizon.emoji];
+                              return IconComponent ? <IconComponent size={28} className="text-white" /> : null;
+                            })()}
                           </div>
 
                           {/* Phase + Title */}
@@ -5921,7 +5933,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {
                     phase: "Phase 2",
                     timeline: "~1.2 Years Total",
-                    emoji: "🌍",
+                    emoji: "Globe",
                     title: "Qatar + Saudi Arabia",
                     subtitle: "Export Proven System",
                     features: ["🇶🇦 Qatar (3-4 months): Doha launch, QFC license, 50 merchants", "🇸🇦 Saudi Arabia (9-10 months): Riyadh → Jeddah → Dammam", "Parallel market entry strategy", "Leverage UAE playbook + local partnerships"],
@@ -5943,9 +5955,19 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         {/* Left: Phase Badge + Title */}
                         <div className="flex items-start gap-4 flex-1">
-                          {/* Badge with Emoji */}
+                          {/* Badge with Icon */}
                           <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${phase.badgeBg} text-white flex flex-col items-center justify-center flex-shrink-0 shadow-lg`}>
-                            <span className="text-2xl leading-none">{phase.emoji}</span>
+                            {(() => {
+                              const iconMap: { [key: string]: any } = {
+                                'Rocket': Rocket,
+                                'TrendingUp': TrendingUp,
+                                'Building2': Building2,
+                                'Trophy': Trophy,
+                                'Globe': Globe
+                              };
+                              const IconComponent = iconMap[phase.emoji];
+                              return IconComponent ? <IconComponent size={28} className="text-white" /> : null;
+                            })()}
                           </div>
 
                           {/* Phase + Title */}
@@ -6000,7 +6022,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {
                     phase: "Phase 3",
                     timeline: "~10 Months (Parallel Launch)",
-                    emoji: "🏆",
+                    emoji: "Trophy",
                     title: "Full GCC Infrastructure",
                     subtitle: "Exit-Ready Position",
                     features: ["🇰🇼🇧🇭🇴🇲 Parallel 3-country launch (institutional entry)", "Top-down strategy: govt partnerships + enterprise first", "Shared regional infrastructure (marginal cost 20%)", "Exit readiness: AED 420M revenue, 60% EBITDA, 300K MAU"],
@@ -6022,9 +6044,19 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         {/* Left: Phase Badge + Title */}
                         <div className="flex items-start gap-4 flex-1">
-                          {/* Badge with Emoji */}
+                          {/* Badge with Icon */}
                           <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${phase.badgeBg} text-white flex flex-col items-center justify-center flex-shrink-0 shadow-lg`}>
-                            <span className="text-2xl leading-none">{phase.emoji}</span>
+                            {(() => {
+                              const iconMap: { [key: string]: any } = {
+                                'Rocket': Rocket,
+                                'TrendingUp': TrendingUp,
+                                'Building2': Building2,
+                                'Trophy': Trophy,
+                                'Globe': Globe
+                              };
+                              const IconComponent = iconMap[phase.emoji];
+                              return IconComponent ? <IconComponent size={28} className="text-white" /> : null;
+                            })()}
                           </div>
 
                           {/* Phase + Title */}
@@ -6273,7 +6305,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-5xl mx-auto text-center relative z-10">
-              <div className={typography.metricHero}>🚀</div>
+              <div className="flex justify-center mb-8">
+                <Rocket size={96} className="text-[#c9a227]" />
+              </div>
               <h1 className={`${typography.h1} text-slate-900 mb-8`}>
                 Join <span className="text-[#c9a227]">Us</span>
               </h1>

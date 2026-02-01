@@ -2,6 +2,11 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import {
+  Search, Lock, CreditCard, DollarSign, Target,
+  TrendingUp, Store, Handshake, Frown, ShoppingCart,
+  User, Smartphone, Wallet, X, Zap, Star
+} from 'lucide-react';
 
 interface PitchDeckProps {
   isOpen: boolean;
@@ -131,8 +136,8 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
               {/* Left: Sara's profile */}
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-2xl p-6 border-2 border-blue-500/40">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-3xl">
-                    👩‍💼
+                  <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
+                    <User className="w-8 h-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white">Sara, 32</h3>
@@ -140,10 +145,10 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                 </div>
                 <div className="space-y-2 text-sm text-gray-300">
-                  <p>💳 Monthly shopping: <span className="font-bold text-white">AED 2,000</span></p>
-                  <p>🏪 Shops at: <span className="font-bold text-white">10 different stores</span></p>
-                  <p>💳 Uses: <span className="font-bold text-white">3 credit cards</span></p>
-                  <p>📱 Checks: <span className="font-bold text-white">5 cashback apps</span></p>
+                  <p className="flex items-center gap-2"><CreditCard className="w-4 h-4" /> Monthly shopping: <span className="font-bold text-white">AED 2,000</span></p>
+                  <p className="flex items-center gap-2"><Store className="w-4 h-4" /> Shops at: <span className="font-bold text-white">10 different stores</span></p>
+                  <p className="flex items-center gap-2"><Wallet className="w-4 h-4" /> Uses: <span className="font-bold text-white">3 credit cards</span></p>
+                  <p className="flex items-center gap-2"><Smartphone className="w-4 h-4" /> Checks: <span className="font-bold text-white">5 cashback apps</span></p>
                 </div>
               </div>
 
@@ -152,19 +157,19 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                 <h3 className="text-xl font-bold text-red-400 mb-4">Her Pain Points</h3>
                 <div className="space-y-3 text-sm text-gray-300">
                   <div className="flex items-start gap-2">
-                    <span className="text-red-400 mt-1">💸</span>
+                    <DollarSign className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                     <p><span className="font-bold text-red-300">Loses AED 150/month</span> in unclaimed rewards</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-red-400 mt-1">📱</span>
+                    <Smartphone className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                     <p>Checks 5 apps, <span className="font-bold text-white">forgets 60%</span> of cashback</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-red-400 mt-1">❌</span>
+                    <X className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                     <p><span className="font-bold text-white">No way to know</span> which card saves most</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <span className="text-red-400 mt-1">🤯</span>
+                    <Zap className="w-5 h-5 text-red-400 mt-1 flex-shrink-0" />
                     <p>Post-purchase tracking = <span className="font-bold text-white">passive loss</span></p>
                   </div>
                 </div>
@@ -233,7 +238,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                   {/* Trend 1 */}
                   <div className="bg-gradient-to-r from-blue-500/20 to-transparent rounded-xl p-4 border border-blue-500/40">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-3xl">📈</span>
+                      <TrendingUp className="w-8 h-8 text-blue-400 flex-shrink-0" />
                       <h4 className="text-lg font-bold text-blue-400">Digital Payment Boom</h4>
                     </div>
                     <p className="text-sm text-gray-300 ml-12">
@@ -245,7 +250,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                   {/* Trend 2 */}
                   <div className="bg-gradient-to-r from-green-500/20 to-transparent rounded-xl p-4 border border-green-500/40">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-3xl">🏪</span>
+                      <Store className="w-8 h-8 text-green-400 flex-shrink-0" />
                       <h4 className="text-lg font-bold text-green-400">D2C Brand Explosion</h4>
                     </div>
                     <p className="text-sm text-gray-300 ml-12">
@@ -257,7 +262,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                   {/* Trend 3 */}
                   <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-xl p-4 border border-[#c9a227]/40">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-3xl">🤝</span>
+                      <Handshake className="w-8 h-8 text-[#c9a227] flex-shrink-0" />
                       <h4 className="text-lg font-bold text-[#c9a227]">Super-App Validation</h4>
                     </div>
                     <p className="text-sm text-gray-300 ml-12">
@@ -314,7 +319,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
 
                 {/* Quadrant 1: Low Control, Low Rewards */}
                 <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/30 flex flex-col items-center justify-center text-center">
-                  <p className="text-2xl mb-2">😕</p>
+                  <Frown className="w-8 h-8 text-red-400 mb-2" />
                   <p className="text-sm font-bold text-red-400 mb-2">Cashback Apps</p>
                   <p className="text-xs text-gray-400">Entertainer, Smiles</p>
                   <p className="text-xs text-gray-500 mt-2">Post-purchase only</p>
@@ -322,7 +327,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
 
                 {/* Quadrant 2: Low Control, High Rewards */}
                 <div className="bg-orange-500/10 rounded-xl p-4 border border-orange-500/30 flex flex-col items-center justify-center text-center">
-                  <p className="text-2xl mb-2">💳</p>
+                  <CreditCard className="w-8 h-8 text-orange-400 mb-2" />
                   <p className="text-sm font-bold text-orange-400 mb-2">Credit Cards</p>
                   <p className="text-xs text-gray-400">Bank Rewards</p>
                   <p className="text-xs text-gray-500 mt-2">Good rewards, no discovery</p>
@@ -330,7 +335,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
 
                 {/* Quadrant 3: High Control, Low Rewards */}
                 <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/30 flex flex-col items-center justify-center text-center">
-                  <p className="text-2xl mb-2">🛒</p>
+                  <ShoppingCart className="w-8 h-8 text-blue-400 mb-2" />
                   <p className="text-sm font-bold text-blue-400 mb-2">Marketplaces</p>
                   <p className="text-xs text-gray-400">Noon, Amazon UAE</p>
                   <p className="text-xs text-gray-500 mt-2">Full control, minimal cashback</p>
@@ -341,7 +346,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0a1628] px-3 py-1 rounded-full">
                     <span className="text-xs font-bold text-[#c9a227]">WHITE SPACE</span>
                   </div>
-                  <p className="text-3xl mb-2">⭐</p>
+                  <Star className="w-10 h-10 text-[#c9a227] fill-[#c9a227] mb-2" />
                   <p className="text-lg font-black text-[#c9a227] mb-2">NUQTA</p>
                   <p className="text-xs text-gray-200 mb-2">Discovery-to-Purchase</p>
                   <p className="text-xs text-[#c9a227] font-bold">Full journey + Dual rewards</p>
@@ -379,7 +384,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-2xl font-black text-white">1</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-blue-400 mb-1">🔍 DISCOVER</h3>
+                    <h3 className="text-lg font-bold text-blue-400 mb-1 flex items-center gap-2"><Search className="w-5 h-5" /> DISCOVER</h3>
                     <p className="text-sm text-gray-300">Browse 30+ UAE brands • See products/services • Discover exclusive offers</p>
                   </div>
                   <span className="hidden md:block text-3xl text-[#c9a227]">↓</span>
@@ -391,7 +396,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-2xl font-black text-white">2</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-purple-400 mb-1">🔒 LOCK/BOOK</h3>
+                    <h3 className="text-lg font-bold text-purple-400 mb-1 flex items-center gap-2"><Lock className="w-5 h-5" /> LOCK/BOOK</h3>
                     <p className="text-sm text-gray-300">Book service OR lock product with partial payment • Choose delivery or store pickup</p>
                   </div>
                   <span className="hidden md:block text-3xl text-[#c9a227]">↓</span>
@@ -403,7 +408,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#c9a227] rounded-full flex items-center justify-center text-2xl font-black text-black">3</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-[#c9a227] mb-1">💳 PAY SMART</h3>
+                    <h3 className="text-lg font-bold text-[#c9a227] mb-1 flex items-center gap-2"><CreditCard className="w-5 h-5" /> PAY SMART</h3>
                     <p className="text-sm text-gray-300">"Use Emirates NBD, save AED 30" • AI payment routing across all cards</p>
                   </div>
                   <span className="hidden md:block text-3xl text-[#c9a227]">↓</span>
@@ -415,7 +420,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-2xl font-black text-white">4</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-green-400 mb-1">💰 EARN DOUBLE</h3>
+                    <h3 className="text-lg font-bold text-green-400 mb-1 flex items-center gap-2"><DollarSign className="w-5 h-5" /> EARN DOUBLE</h3>
                     <p className="text-sm text-gray-300">5-10% universal cashback + merchant branded coins • Stack both rewards</p>
                   </div>
                   <span className="hidden md:block text-3xl text-[#c9a227]">↓</span>
@@ -427,7 +432,7 @@ export default function PitchDeck10({ isOpen, onClose }: PitchDeckProps) {
                 <div className="flex items-center gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-pink-500 rounded-full flex items-center justify-center text-2xl font-black text-white">5</div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-bold text-pink-400 mb-1">🎯 UNLOCK PERKS</h3>
+                    <h3 className="text-lg font-bold text-pink-400 mb-1 flex items-center gap-2"><Target className="w-5 h-5" /> UNLOCK PERKS</h3>
                     <p className="text-sm text-gray-300">Visit 3 times → Unlock exclusive offers • Gamified loyalty</p>
                   </div>
                 </div>

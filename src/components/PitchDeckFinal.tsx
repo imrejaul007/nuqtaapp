@@ -114,12 +114,12 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
             {/* Key Metrics Bar */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6">
               <div className="text-center px-3 sm:px-4 py-2 bg-[#c9a227]/10 rounded-lg border border-[#c9a227]/30">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">$500K</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">$400K</p>
                 <p className="text-[10px] sm:text-xs text-gray-500">Raising</p>
               </div>
               <div className="w-px h-8 bg-gray-700" />
               <div className="text-center px-3 sm:px-4 py-2 bg-blue-500/10 rounded-lg border border-blue-500/30">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">$5M</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-blue-400">$5M USD</p>
                 <p className="text-[10px] sm:text-xs text-gray-500">Cap</p>
               </div>
               <div className="w-px h-8 bg-gray-700" />
@@ -556,8 +556,8 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-[#c9a227]/40 text-center">
                 <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">CAC</p>
                 <DataPoint
-                  value="$27"
-                  source="Conservative estimate: 50% merchant-led (near-zero), 50% paid ($30/user)"
+                  value="AED 35"
+                  source="Conservative estimate: 50% merchant-led (near-zero), 50% paid (AED 70/user)"
                   className="text-3xl sm:text-4xl font-black text-[#c9a227] block"
                 />
                 <p className="text-xs sm:text-sm text-gray-400 mt-2">acquisition cost</p>
@@ -566,8 +566,8 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-2 border-blue-500/40 text-center">
                 <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Payback</p>
                 <DataPoint
-                  value="3 mo"
-                  source="$27 CAC / $10 monthly ARPU = 2.7 months to break even"
+                  value="3.5 mo"
+                  source="AED 35 CAC / $10 monthly ARPU = 3.5 months to break even"
                   className="text-3xl sm:text-4xl font-black text-blue-400 block"
                 />
                 <p className="text-xs sm:text-sm text-gray-400 mt-2">to break even</p>
@@ -595,11 +595,11 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
                 <div className="text-center">
                   <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Raising</p>
-                  <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227]">$500K</p>
+                  <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227]">$400K</p>
                 </div>
                 <div className="text-center">
                   <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Valuation Cap</p>
-                  <p className="text-4xl sm:text-5xl md:text-6xl font-black text-white">$5M</p>
+                  <p className="text-4xl sm:text-5xl md:text-6xl font-black text-white">$5M USD</p>
                 </div>
                 <div className="text-center">
                   <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Discount</p>
@@ -1122,7 +1122,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
             </div>
 
             <p className="text-xs sm:text-sm text-gray-600">
-              Pre-Seed Round • $500K at $5M cap • 20% discount • Q2 2026 Launch
+              Pre-Seed Round • $400K USD at $5M USD cap • 20% discount • Q2 2026 Launch
             </p>
           </div>
         );

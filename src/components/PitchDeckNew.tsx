@@ -114,7 +114,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             {/* Key Metrics Bar (Enhanced) */}
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6">
               <div className="text-center px-3 sm:px-4 py-2 bg-[#c9a227]/10 rounded-lg border border-[#c9a227]/30">
-                <p className="text-lg sm:text-xl font-bold text-[#c9a227]">$500K</p>
+                <p className="text-lg sm:text-xl font-bold text-[#c9a227]">$400K</p>
                 <p className="text-xs sm:text-sm text-gray-500">Raising</p>
               </div>
               <div className="w-px h-8 bg-gray-700" />
@@ -669,8 +669,8 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 border-2 border-[#c9a227]/40 text-center">
                 <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">CAC</p>
                 <DataPoint
-                  value="$27"
-                  source="Conservative pre-launch estimate. Target: 50% merchant-led (near-zero CAC), 50% paid ($30/user)"
+                  value="AED 35"
+                  source="Conservative pre-launch estimate. Target: 50% merchant-led (near-zero CAC), 50% paid (AED 35/user)"
                   className="text-3xl sm:text-4xl font-black text-[#c9a227] block"
                 />
                 <p className="text-xs sm:text-sm text-gray-400 mt-2">customer acquisition cost</p>
@@ -679,8 +679,8 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 border-2 border-blue-500/40 text-center">
                 <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Payback</p>
                 <DataPoint
-                  value="3 mo"
-                  source="$27 CAC / $10 monthly ARPU = 2.7 months to break even"
+                  value="3.5 mo"
+                  source="AED 35 CAC / $10 monthly ARPU = 3.5 months to break even"
                   className="text-3xl sm:text-4xl font-black text-blue-400 block"
                 />
                 <p className="text-xs sm:text-sm text-gray-400 mt-2">to break even</p>
@@ -691,7 +691,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="bg-[#1a2a42]/50 rounded-xl p-4 max-w-4xl w-full border border-[#2a3a52]">
               <p className="text-sm font-bold mb-2 text-center">Economic Flow (Per User)</p>
               <div className="flex flex-wrap items-center justify-center gap-2 text-xs sm:text-sm">
-                <span className="bg-red-500/20 px-3 py-1 rounded-full">$27 CAC</span>
+                <span className="bg-red-500/20 px-3 py-1 rounded-full">AED 35 CAC</span>
                 <span className="text-gray-500">→</span>
                 <span className="bg-blue-500/20 px-3 py-1 rounded-full">$189 monthly GMV</span>
                 <span className="text-gray-500">→</span>
@@ -722,7 +722,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
                 <div className="text-center">
                   <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Raising</p>
-                  <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227]">$500K</p>
+                  <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227]">$400K</p>
                 </div>
                 <div className="text-center">
                   <p className="text-xs text-gray-400 mb-2 uppercase tracking-wide">Valuation Cap</p>
@@ -1589,7 +1589,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="bg-gradient-to-r from-green-500/20 to-green-500/5 rounded-xl p-3 border-2 border-green-500/40 max-w-4xl">
               <p className="text-center text-sm sm:text-base text-gray-300">
                 <span className="text-green-400 font-bold">Only Risk Left:</span> Proving unit economics in market.
-                <br/><span className="text-white font-semibold">$500K gives us 18-24 months runway to validate and scale.</span>
+                <br/><span className="text-white font-semibold">$400K gives us 18-24 months runway to validate and scale.</span>
               </p>
             </div>
           </div>
@@ -1989,7 +1989,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
           <div className="w-full max-w-6xl mx-auto min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-6 sm:py-8">
             <p className="text-[#c9a227] text-xs sm:text-sm md:text-base uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2">Fund Deployment</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">
-              Use of Funds: <span className="text-[#c9a227]">$500K</span>
+              Use of Funds: <span className="text-[#c9a227]">$400K</span>
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4 max-w-5xl w-full items-center">
@@ -2001,7 +2001,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-4xl sm:text-5xl mb-3">🔧</p>
                     <p className="text-3xl sm:text-4xl font-black text-blue-400 mb-2">40%</p>
                     <p className="text-sm sm:text-base font-bold mb-1">Product/MVP</p>
-                    <p className="text-[#c9a227] font-bold text-xl sm:text-2xl">$200K</p>
+                    <p className="text-[#c9a227] font-bold text-xl sm:text-2xl">$160K</p>
                   </div>
 
                   {/* BD 30% */}
@@ -2009,7 +2009,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-4xl sm:text-5xl mb-3">🤝</p>
                     <p className="text-3xl sm:text-4xl font-black text-green-400 mb-2">30%</p>
                     <p className="text-sm sm:text-base font-bold mb-1">Merchant BD</p>
-                    <p className="text-[#c9a227] font-bold text-xl sm:text-2xl">$150K</p>
+                    <p className="text-[#c9a227] font-bold text-xl sm:text-2xl">$120K</p>
                   </div>
 
                   {/* Team 20% */}
@@ -2017,7 +2017,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-4xl sm:text-5xl mb-3">👥</p>
                     <p className="text-3xl sm:text-4xl font-black text-purple-400 mb-2">20%</p>
                     <p className="text-sm sm:text-base font-bold mb-1">Team</p>
-                    <p className="text-[#c9a227] font-bold text-xl sm:text-2xl">$100K</p>
+                    <p className="text-[#c9a227] font-bold text-xl sm:text-2xl">$80K</p>
                   </div>
 
                   {/* Operations 10% */}
@@ -2025,7 +2025,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-4xl sm:text-5xl mb-3">⚙️</p>
                     <p className="text-3xl sm:text-4xl font-black text-[#c9a227] mb-2">10%</p>
                     <p className="text-sm sm:text-base font-bold mb-1">Operations</p>
-                    <p className="text-white font-bold text-xl sm:text-2xl">$50K</p>
+                    <p className="text-white font-bold text-xl sm:text-2xl">$40K</p>
                   </div>
                 </div>
               </div>
@@ -2036,7 +2036,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">🔧</span>
                     <div className="flex-1">
-                      <p className="font-bold text-base sm:text-lg mb-1">Product/MVP Development ($200K)</p>
+                      <p className="font-bold text-base sm:text-lg mb-1">Product/MVP Development ($160K)</p>
                       <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
                         <li>• Tech stack setup & infrastructure</li>
                         <li>• Mobile app development (iOS + Android)</li>
@@ -2051,7 +2051,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">🤝</span>
                     <div className="flex-1">
-                      <p className="font-bold text-base sm:text-lg mb-1">Merchant Acquisition ($150K)</p>
+                      <p className="font-bold text-base sm:text-lg mb-1">Merchant Acquisition ($120K)</p>
                       <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
                         <li>• BD team hire + commissions</li>
                         <li>• Pilot program incentives</li>
@@ -2065,7 +2065,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">👥</span>
                     <div className="flex-1">
-                      <p className="font-bold text-base sm:text-lg mb-1">Team Expansion ($100K)</p>
+                      <p className="font-bold text-base sm:text-lg mb-1">Team Expansion ($80K)</p>
                       <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
                         <li>• CTO hire (equity + cash)</li>
                         <li>• 1 senior developer</li>
@@ -2078,7 +2078,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">⚙️</span>
                     <div className="flex-1">
-                      <p className="font-bold text-base sm:text-lg mb-1">Operations/Legal ($50K)</p>
+                      <p className="font-bold text-base sm:text-lg mb-1">Operations/Legal ($40K)</p>
                       <ul className="text-xs sm:text-sm text-gray-400 space-y-1">
                         <li>• Licensing & compliance</li>
                         <li>• Legal setup & contracts</li>
@@ -2186,7 +2186,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <ul className="space-y-3 sm:space-y-4 text-xs sm:text-sm">
                     <li className="flex items-start gap-2">
                       <span className="text-green-400 flex-shrink-0">✓</span>
-                      <span className="text-gray-300">CAC &lt; $30 validated with real data</span>
+                      <span className="text-gray-300">CAC &lt; AED 35 validated with real data</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-400 flex-shrink-0">✓</span>
@@ -2226,7 +2226,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl p-4 border-2 border-[#c9a227]/40 max-w-3xl">
               <p className="text-center text-xs sm:text-sm text-gray-300">
                 <span className="text-[#c9a227] font-bold">Timeline:</span> 18 months from funding to Seed readiness
-                <br/><span className="text-white font-semibold">$500K gets you in early</span> before we prove these metrics and raise at 3-4x valuation
+                <br/><span className="text-white font-semibold">$400K gets you in early</span> before we prove these metrics and raise at 3-4x valuation
               </p>
             </div>
           </div>
@@ -2279,7 +2279,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             </div>
 
             <p className="text-xs sm:text-sm text-gray-600">
-              Pre-Seed Round • $500K at $5M cap • 20% discount • Q2 2026 Launch
+              Pre-Seed Round • $400K at $5M cap • 20% discount • Q2 2026 Launch
             </p>
           </div>
         );

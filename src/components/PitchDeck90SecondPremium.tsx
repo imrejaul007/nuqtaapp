@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, Clock, DollarSign, ArrowRight, Sparkles, Users, Store, Repeat } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, DollarSign, ArrowRight, Sparkles, Users, Store, Repeat, MapPin, CreditCard, Coins, Building2, Calendar, Rocket, ShoppingBag, AlertCircle, CheckCircle, Search, Gift, XCircle } from 'lucide-react';
 
 /**
  * 90-SECOND PREMIUM INVESTOR PITCH DECK
  *
  * Premium design with world-class visuals, animations, and polish
+ * Brand colors: #c9a227 (gold), #0a1628 (dark blue)
  */
 
 const PitchDeck90SecondPremium = () => {
@@ -45,11 +46,11 @@ const PitchDeck90SecondPremium = () => {
       // ==================== SLIDE 0: COVER ====================
       case 0:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-12 relative overflow-hidden`}>
             {/* Premium animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600 rounded-full blur-[120px] opacity-30 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-amber-600 rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-600 rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '2s' }} />
             </div>
 
@@ -60,8 +61,8 @@ const PitchDeck90SecondPremium = () => {
               {/* Logo with premium glow */}
               <div className="mb-16 animate-[fadeIn_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-amber-600 to-purple-600 blur-3xl opacity-50" />
-                  <h1 className="relative text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-amber-400 to-purple-400 leading-none mb-6 tracking-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] blur-3xl opacity-50" />
+                  <h1 className="relative text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] leading-none mb-6 tracking-tight">
                     NUQTA
                   </h1>
                 </div>
@@ -73,13 +74,13 @@ const PitchDeck90SecondPremium = () => {
               {/* Premium tagline card */}
               <div className="mb-16 animate-[slideUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-amber-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
                   <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-12 shadow-2xl">
                     <p className="text-5xl text-white font-black mb-4 leading-tight">
-                      Turning Everyday Spending<br />Into a <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Compounding Habit</span>
+                      Turning Everyday Spending<br />Into a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">Compounding Habit</span>
                     </p>
-                    <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-amber-500 mx-auto my-6 rounded-full" />
-                    <p className="text-2xl text-amber-400 font-bold">
+                    <div className="w-32 h-1 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] mx-auto my-6 rounded-full" />
+                    <p className="text-2xl text-[#c9a227] font-bold">
                       Habits Into Defensibility
                     </p>
                   </div>
@@ -89,24 +90,24 @@ const PitchDeck90SecondPremium = () => {
               {/* Premium stats cards */}
               <div className="grid grid-cols-3 gap-8 animate-[fadeIn_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { value: '$35B', label: 'UAE Offline Market', bgGlow: 'bg-purple-600', textColor: 'text-purple-400', icon: '🎯' },
-                  { value: '30+', label: 'Merchant LOIs Signed', bgGlow: 'bg-amber-600', textColor: 'text-amber-400', icon: '🏪' },
-                  { value: 'Feb 28', label: 'Launch Date 2026', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400', icon: '🚀' }
+                  { value: '$35B', label: 'UAE Offline Market*', bgGlow: 'bg-[#c9a227]', textColor: 'text-[#c9a227]', Icon: Target },
+                  { value: '30+', label: 'Merchant LOIs Signed', bgGlow: 'bg-[#c9a227]', textColor: 'text-[#c9a227]', Icon: Store },
+                  { value: 'Feb 28', label: 'Launch Date 2026', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400', Icon: Rocket }
                 ].map((stat, idx) => (
                   <div key={idx} className="relative group" style={{ animationDelay: `${0.6 + idx * 0.1}s` }}>
                     <div className={`absolute inset-0 ${stat.bgGlow} rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
                     <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-8 transform group-hover:scale-105 group-hover:-translate-y-2 transition-all shadow-xl">
-                      <p className="text-6xl mb-4">{stat.icon}</p>
-                      <p className={`text-6xl font-black ${stat.textColor} mb-3`}>{stat.value}</p>
+                      <stat.Icon size={60} className={stat.textColor} />
+                      <p className={`text-6xl font-black ${stat.textColor} mb-3 mt-4`}>{stat.value}</p>
                       <p className="text-slate-300 font-semibold text-lg">{stat.label}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Premium navigation hint */}
-              <p className="text-slate-400 text-lg mt-16 animate-pulse">
-                Press <kbd className="px-3 py-1 bg-white/10 border border-white/20 rounded-lg mx-2 font-mono">→</kbd> to begin
+              {/* Source citation */}
+              <p className="text-slate-500 text-sm mt-8 animate-[fadeIn_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
+                *Source: Euromonitor 2024, McKinsey GCC Retail Report
               </p>
             </div>
           </div>
@@ -140,17 +141,17 @@ const PitchDeck90SecondPremium = () => {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
                   <div className="relative bg-white/70 backdrop-blur-xl border-2 border-red-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <div className="text-6xl mb-6">😤</div>
+                    <AlertCircle size={64} className="text-red-600 mb-6" />
                     <h3 className="text-4xl font-black text-red-900 mb-8">Consumer Pain</h3>
                     <div className="space-y-6">
                       {[
-                        { icon: '💸', text: 'Paying full price everywhere' },
-                        { icon: '🎯', text: 'Missing hidden deals & promos' },
-                        { icon: '❌', text: 'Loyalty programs that never pay off' }
+                        { Icon: DollarSign, text: 'Paying full price everywhere' },
+                        { Icon: Target, text: 'Missing hidden deals & promos' },
+                        { Icon: XCircle, text: 'Loyalty programs that never pay off' }
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.4 + idx * 0.1}s` }}>
-                          <div className="text-4xl flex-shrink-0">{item.icon}</div>
-                          <p className="text-2xl text-slate-800 font-bold leading-tight pt-2">{item.text}</p>
+                          <item.Icon size={36} className="text-red-600 flex-shrink-0" />
+                          <p className="text-2xl text-slate-800 font-bold leading-tight pt-1">{item.text}</p>
                         </div>
                       ))}
                     </div>
@@ -161,17 +162,17 @@ const PitchDeck90SecondPremium = () => {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
                   <div className="relative bg-white/70 backdrop-blur-xl border-2 border-orange-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <div className="text-6xl mb-6">📉</div>
+                    <TrendingUp size={64} className="text-orange-600 mb-6 rotate-180" />
                     <h3 className="text-4xl font-black text-orange-900 mb-8">Merchant Pain</h3>
                     <div className="space-y-6">
                       {[
-                        { icon: '💰', text: '$1B+ lost to discount platforms' },
-                        { icon: '👻', text: 'One-time buyers vanish forever' },
-                        { icon: '🔥', text: 'CAC burning through margins' }
+                        { Icon: Coins, text: '$1B+ lost to discount platforms' },
+                        { Icon: Users, text: 'One-time buyers vanish forever' },
+                        { Icon: TrendingUp, text: 'CAC burning through margins' }
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
-                          <div className="text-4xl flex-shrink-0">{item.icon}</div>
-                          <p className="text-2xl text-slate-800 font-bold leading-tight pt-2">{item.text}</p>
+                          <item.Icon size={36} className="text-orange-600 flex-shrink-0" />
+                          <p className="text-2xl text-slate-800 font-bold leading-tight pt-1">{item.text}</p>
                         </div>
                       ))}
                     </div>
@@ -187,7 +188,7 @@ const PitchDeck90SecondPremium = () => {
                     <p className="text-4xl text-white font-black italic leading-relaxed">
                       "Everyone's hunting for value. Nobody's capturing habit."
                     </p>
-                    <div className="w-32 h-1 bg-gradient-to-r from-amber-400 to-orange-400 mx-auto mt-6 rounded-full" />
+                    <div className="w-32 h-1 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] mx-auto mt-6 rounded-full" />
                   </div>
                 </div>
               </div>
@@ -198,19 +199,19 @@ const PitchDeck90SecondPremium = () => {
       // ==================== SLIDE 2: WHAT NUQTA IS [15-30s] ====================
       case 2:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-purple-50 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-blue-50 flex items-center justify-center p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-purple-300 rounded-full blur-[120px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/3 right-1/3 w-[600px] h-[600px] bg-blue-300 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
+              <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-blue-300 rounded-full blur-[120px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/3 right-1/3 w-[600px] h-[600px] bg-slate-300 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
             </div>
 
             <div className="relative z-10 max-w-7xl w-full">
               {/* Premium headline */}
               <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 blur-3xl opacity-30" />
-                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-[#c9a227] blur-3xl opacity-30" />
+                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#c9a227] leading-tight">
                     Neutral Rewards + Payment Intelligence
                   </h1>
                 </div>
@@ -220,15 +221,15 @@ const PitchDeck90SecondPremium = () => {
               {/* Journey step cards */}
               <div className="grid grid-cols-4 gap-6 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: '🔍', title: 'Search', desc: 'Find best deals near you', bgGlow: 'bg-purple-600' },
-                  { icon: '🎯', title: 'Decide', desc: 'Compare & choose smart', bgGlow: 'bg-blue-600' },
-                  { icon: '💳', title: 'Pay', desc: 'Tap with Apple/Google Pay', bgGlow: 'bg-indigo-600' },
-                  { icon: '🎁', title: 'Earn', desc: 'Get neutral points every time', bgGlow: 'bg-violet-600' }
+                  { Icon: Search, title: 'Search', desc: 'Find best deals near you', bgGlow: 'bg-blue-600' },
+                  { Icon: Target, title: 'Decide', desc: 'Compare & choose smart', bgGlow: 'bg-[#c9a227]' },
+                  { Icon: CreditCard, title: 'Pay', desc: 'Tap with Apple/Google Pay', bgGlow: 'bg-indigo-600' },
+                  { Icon: Gift, title: 'Earn', desc: 'Get neutral points every time', bgGlow: 'bg-emerald-600' }
                 ].map((step, idx) => (
                   <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
                     <div className={`absolute inset-0 ${step.bgGlow} rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
                     <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-3xl p-8 shadow-xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-all">
-                      <div className="text-6xl mb-4">{step.icon}</div>
+                      <step.Icon size={60} className="text-slate-900 mb-4" />
                       <h3 className="text-3xl font-black text-slate-900 mb-3">{step.title}</h3>
                       <p className="text-lg text-slate-700 font-semibold leading-tight">{step.desc}</p>
                     </div>
@@ -240,21 +241,21 @@ const PitchDeck90SecondPremium = () => {
               <div className="grid grid-cols-3 gap-8 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
-                    icon: '⚡',
+                    Icon: Zap,
                     title: 'Neutral Points',
                     desc: 'No expiry, no merchant lock-in. Your points, your choice.',
-                    gradient: 'from-amber-500 to-orange-500',
-                    border: 'border-amber-200'
+                    gradient: 'from-[#c9a227] to-[#d4b03f]',
+                    border: 'border-[#c9a227]/30'
                   },
                   {
-                    icon: '🧠',
+                    Icon: Shield,
                     title: 'Payment Intel',
                     desc: 'See hidden fees, better cards, smarter payment routing.',
-                    gradient: 'from-purple-500 to-blue-500',
-                    border: 'border-purple-200'
+                    gradient: 'from-blue-500 to-blue-600',
+                    border: 'border-blue-200'
                   },
                   {
-                    icon: '🔁',
+                    Icon: Repeat,
                     title: 'Habit Loop',
                     desc: 'Every transaction builds your savings & our moat.',
                     gradient: 'from-emerald-500 to-teal-500',
@@ -264,7 +265,7 @@ const PitchDeck90SecondPremium = () => {
                   <div key={idx} className="relative group">
                     <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                     <div className={`relative bg-white/70 backdrop-blur-xl border-2 ${item.border} rounded-3xl p-10 shadow-2xl transform group-hover:scale-105 transition-all`}>
-                      <div className="text-6xl mb-6">{item.icon}</div>
+                      <item.Icon size={60} className="text-slate-900 mb-6" />
                       <h3 className="text-3xl font-black text-slate-900 mb-4">{item.title}</h3>
                       <p className="text-xl text-slate-700 font-semibold leading-tight">{item.desc}</p>
                     </div>
@@ -303,11 +304,11 @@ const PitchDeck90SecondPremium = () => {
                   {/* Flow cards in a circle */}
                   <div className="grid grid-cols-5 gap-6 items-center">
                     {[
-                      { icon: '👤', label: 'User Searches', bgGlow: 'bg-purple-600' },
-                      { icon: '→', label: '', isArrow: true },
-                      { icon: '🏪', label: 'Nuqta Routes', bgGlow: 'bg-emerald-600' },
-                      { icon: '→', label: '', isArrow: true },
-                      { icon: '💳', label: 'Payment Clears', bgGlow: 'bg-blue-600' }
+                      { Icon: Users, label: 'User Searches', bgGlow: 'bg-blue-600' },
+                      { isArrow: true },
+                      { Icon: Store, label: 'Nuqta Routes', bgGlow: 'bg-emerald-600' },
+                      { isArrow: true },
+                      { Icon: CreditCard, label: 'Payment Clears', bgGlow: 'bg-blue-600' }
                     ].map((step, idx) => (
                       step.isArrow ? (
                         <div key={idx} className="flex justify-center animate-[fadeIn_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
@@ -318,7 +319,7 @@ const PitchDeck90SecondPremium = () => {
                           <div className={`absolute inset-0 ${step.bgGlow} rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                           <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-full w-32 h-32 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all mx-auto">
                             <div className="text-center">
-                              <div className="text-5xl mb-2">{step.icon}</div>
+                              {step.Icon && <step.Icon size={48} className="text-slate-900" />}
                             </div>
                           </div>
                           <p className="text-center text-xl font-black text-slate-900 mt-4">{step.label}</p>
@@ -330,22 +331,22 @@ const PitchDeck90SecondPremium = () => {
                   {/* Second row */}
                   <div className="grid grid-cols-5 gap-6 items-center mt-6">
                     {[
-                      { icon: '←', label: '', isArrow: true },
-                      { icon: '🎁', label: 'Points Earned', bgGlow: 'bg-amber-600' },
-                      { icon: '←', label: '', isArrow: true },
-                      { icon: '💰', label: 'We Get Paid', bgGlow: 'bg-orange-600' },
-                      { icon: '', label: '' }
+                      { isArrow: true },
+                      { Icon: Gift, label: 'Points Earned', bgGlow: 'bg-[#c9a227]' },
+                      { isArrow: true },
+                      { Icon: Coins, label: 'We Get Paid', bgGlow: 'bg-[#c9a227]' },
+                      { empty: true }
                     ].map((step, idx) => (
                       step.isArrow ? (
                         <div key={idx} className="flex justify-center animate-[fadeIn_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
                           <ArrowRight size={60} className="text-slate-400 rotate-180" />
                         </div>
-                      ) : step.icon ? (
+                      ) : step.Icon ? (
                         <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
                           <div className={`absolute inset-0 ${step.bgGlow} rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                           <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-full w-32 h-32 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all mx-auto">
                             <div className="text-center">
-                              <div className="text-5xl mb-2">{step.icon}</div>
+                              <step.Icon size={48} className="text-slate-900" />
                             </div>
                           </div>
                           <p className="text-center text-xl font-black text-slate-900 mt-4">{step.label}</p>
@@ -359,10 +360,10 @@ const PitchDeck90SecondPremium = () => {
               {/* Benefit cards */}
               <div className="grid grid-cols-2 gap-8 animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                  <div className="relative bg-white/70 backdrop-blur-xl border-2 border-purple-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <div className="text-6xl mb-6">👥</div>
-                    <h3 className="text-4xl font-black text-purple-900 mb-6">For Users</h3>
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
+                  <div className="relative bg-white/70 backdrop-blur-xl border-2 border-blue-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
+                    <Users size={64} className="text-blue-600 mb-6" />
+                    <h3 className="text-4xl font-black text-blue-900 mb-6">For Users</h3>
                     <p className="text-2xl text-slate-800 font-bold leading-relaxed">
                       Save on every transaction. Build wealth through everyday spending. Zero effort required.
                     </p>
@@ -372,7 +373,7 @@ const PitchDeck90SecondPremium = () => {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
                   <div className="relative bg-white/70 backdrop-blur-xl border-2 border-emerald-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <div className="text-6xl mb-6">🏪</div>
+                    <Store size={64} className="text-emerald-600 mb-6" />
                     <h3 className="text-4xl font-black text-emerald-900 mb-6">For Merchants</h3>
                     <p className="text-2xl text-slate-800 font-bold leading-relaxed">
                       Loyal customers, not one-time bargain hunters. Predictable revenue, not margin erosion.
@@ -387,10 +388,10 @@ const PitchDeck90SecondPremium = () => {
       // ==================== SLIDE 4: GROUPON COMPARISON [45-60s] ====================
       case 4:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-950 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600 rounded-full blur-[120px] opacity-20 animate-pulse" />
+              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-20 animate-pulse" />
               <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-red-600 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
@@ -398,9 +399,9 @@ const PitchDeck90SecondPremium = () => {
               {/* Premium headline */}
               <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-red-600 blur-3xl opacity-40" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-emerald-400 blur-3xl opacity-40" />
                   <h1 className="relative text-8xl font-black text-white leading-tight">
-                    Discounts Decay. <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-emerald-400">Habits Compound.</span>
+                    Discounts Decay. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-emerald-400">Habits Compound.</span>
                   </h1>
                 </div>
                 <p className="text-3xl text-slate-300 font-bold mt-4">Why we're not another Groupon</p>
@@ -412,17 +413,17 @@ const PitchDeck90SecondPremium = () => {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-3xl blur-xl opacity-40" />
                   <div className="relative bg-white/5 backdrop-blur-xl border-2 border-red-500/30 rounded-3xl p-12 shadow-2xl">
-                    <div className="text-6xl mb-6">📉</div>
+                    <TrendingUp size={64} className="text-red-400 mb-6 rotate-180" />
                     <h3 className="text-5xl font-black text-red-400 mb-8">Groupon Model</h3>
                     <div className="space-y-6">
                       {[
-                        { icon: '❌', text: '50-70% discounts burn merchant margins', color: 'red' },
-                        { icon: '❌', text: 'One-time users never return', color: 'red' },
-                        { icon: '❌', text: 'Merchants lose money on every deal', color: 'red' },
-                        { icon: '❌', text: 'Value extraction, not creation', color: 'red' }
+                        { Icon: XCircle, text: '50-70% discounts burn merchant margins', color: 'red' },
+                        { Icon: XCircle, text: 'One-time users never return', color: 'red' },
+                        { Icon: XCircle, text: 'Merchants lose money on every deal', color: 'red' },
+                        { Icon: XCircle, text: 'Value extraction, not creation', color: 'red' }
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                          <div className="text-3xl flex-shrink-0">{item.icon}</div>
+                          <item.Icon size={32} className="text-red-400 flex-shrink-0" />
                           <p className="text-2xl text-slate-300 font-bold leading-tight pt-1">{item.text}</p>
                         </div>
                       ))}
@@ -434,17 +435,17 @@ const PitchDeck90SecondPremium = () => {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-3xl blur-xl opacity-50" />
                   <div className="relative bg-white/5 backdrop-blur-xl border-2 border-emerald-500/30 rounded-3xl p-12 shadow-2xl">
-                    <div className="text-6xl mb-6">🚀</div>
+                    <Rocket size={64} className="text-emerald-400 mb-6" />
                     <h3 className="text-5xl font-black text-emerald-400 mb-8">Nuqta Model</h3>
                     <div className="space-y-6">
                       {[
-                        { icon: '✅', text: '5-15% cashback from transaction fees', color: 'emerald' },
-                        { icon: '✅', text: 'Repeat customers build habits', color: 'emerald' },
-                        { icon: '✅', text: 'Merchants pay only on actual sales', color: 'emerald' },
-                        { icon: '✅', text: 'Win-win ecosystem that compounds', color: 'emerald' }
+                        { Icon: CheckCircle, text: '5-15% cashback from transaction fees', color: 'emerald' },
+                        { Icon: CheckCircle, text: 'Repeat customers build habits', color: 'emerald' },
+                        { Icon: CheckCircle, text: 'Merchants pay only on actual sales', color: 'emerald' },
+                        { Icon: CheckCircle, text: 'Win-win ecosystem that compounds', color: 'emerald' }
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.4 + idx * 0.1}s` }}>
-                          <div className="text-3xl flex-shrink-0">{item.icon}</div>
+                          <item.Icon size={32} className="text-emerald-400 flex-shrink-0" />
                           <p className="text-2xl text-slate-300 font-bold leading-tight pt-1">{item.text}</p>
                         </div>
                       ))}
@@ -456,11 +457,11 @@ const PitchDeck90SecondPremium = () => {
               {/* Premium insight card */}
               <div className="animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 rounded-3xl blur-xl opacity-50" />
-                  <div className="relative bg-gradient-to-r from-amber-900 to-orange-900 backdrop-blur-xl border-2 border-amber-400/30 rounded-3xl p-12 shadow-2xl text-center">
-                    <Sparkles size={64} className="text-amber-400 mx-auto mb-6" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] rounded-3xl blur-xl opacity-50" />
+                  <div className="relative bg-gradient-to-r from-[#0a1628] to-[#1a2638] backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-3xl p-12 shadow-2xl text-center">
+                    <Sparkles size={64} className="text-[#c9a227] mx-auto mb-6" />
                     <p className="text-4xl text-white font-black leading-relaxed">
-                      "We capture <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-300">transaction fees</span>, not merchant margins.<br />
+                      "We capture <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">transaction fees</span>, not merchant margins.<br />
                       That's the difference between a flash sale and a lasting business."
                     </p>
                   </div>
@@ -473,19 +474,19 @@ const PitchDeck90SecondPremium = () => {
       // ==================== SLIDE 5: MOAT & TIMING [60-75s] ====================
       case 5:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-blue-50 flex items-center justify-center p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
               <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-blue-300 rounded-full blur-[100px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/3 left-1/3 w-[500px] h-[500px] bg-purple-300 rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
+              <div className="absolute bottom-1/3 left-1/3 w-[500px] h-[500px] bg-[#c9a227] rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
             </div>
 
             <div className="relative z-10 max-w-7xl w-full">
               {/* Premium headline */}
               <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 blur-3xl opacity-30" />
-                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-[#c9a227] blur-3xl opacity-30" />
+                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#c9a227] leading-tight">
                     Structural Moat + 18-Month Window
                   </h1>
                 </div>
@@ -514,8 +515,8 @@ const PitchDeck90SecondPremium = () => {
                       'Hidden fee detection',
                       'Card optimization engine'
                     ],
-                    gradient: 'from-purple-500 to-purple-600',
-                    border: 'border-purple-200'
+                    gradient: 'from-[#c9a227] to-[#d4b03f]',
+                    border: 'border-[#c9a227]/30'
                   },
                   {
                     icon: TrendingUp,
@@ -537,8 +538,8 @@ const PitchDeck90SecondPremium = () => {
                       <div className="space-y-3">
                         {moat.points.map((point, pidx) => (
                           <div key={pidx} className="flex items-start gap-3">
-                            <div className="text-2xl flex-shrink-0">→</div>
-                            <p className="text-lg text-slate-800 font-semibold leading-tight pt-1">{point}</p>
+                            <ArrowRight size={24} className="text-slate-600 flex-shrink-0" />
+                            <p className="text-lg text-slate-800 font-semibold leading-tight pt-0.5">{point}</p>
                           </div>
                         ))}
                       </div>
@@ -556,24 +557,24 @@ const PitchDeck90SecondPremium = () => {
                       {/* Clock visualization */}
                       <div className="text-center">
                         <div className="relative inline-block">
-                          <div className="absolute inset-0 bg-amber-400 rounded-full blur-2xl opacity-40 animate-pulse" />
-                          <Clock size={160} className="relative text-amber-400 animate-pulse" />
+                          <div className="absolute inset-0 bg-[#c9a227] rounded-full blur-2xl opacity-40 animate-pulse" />
+                          <Calendar size={160} className="relative text-[#c9a227] animate-pulse" />
                         </div>
-                        <p className="text-6xl font-black text-amber-400 mt-6">18 Months</p>
+                        <p className="text-6xl font-black text-[#c9a227] mt-6">18 Months</p>
                         <p className="text-2xl text-slate-300 font-bold mt-2">Before competitors catch up</p>
                       </div>
 
                       {/* Timing points */}
                       <div className="space-y-6">
                         {[
-                          { icon: '✅', text: 'Digital payments hitting critical mass in UAE' },
-                          { icon: '✅', text: 'Merchants desperate for customer retention tools' },
-                          { icon: '✅', text: 'Consumers trained on rewards programs' },
-                          { icon: '⚡', text: 'First mover captures the habit-formation window' }
+                          { Icon: CheckCircle, text: 'Digital payments hitting critical mass in UAE' },
+                          { Icon: CheckCircle, text: 'Merchants desperate for customer retention tools' },
+                          { Icon: CheckCircle, text: 'Consumers trained on rewards programs' },
+                          { Icon: Zap, text: 'First mover captures the habit-formation window' }
                         ].map((item, idx) => (
                           <div key={idx} className="flex items-start gap-4">
-                            <div className="text-4xl flex-shrink-0">{item.icon}</div>
-                            <p className="text-2xl text-white font-bold leading-tight pt-2">{item.text}</p>
+                            <item.Icon size={36} className="text-[#c9a227] flex-shrink-0" />
+                            <p className="text-2xl text-white font-bold leading-tight pt-1">{item.text}</p>
                           </div>
                         ))}
                       </div>
@@ -588,20 +589,20 @@ const PitchDeck90SecondPremium = () => {
       // ==================== SLIDE 6: THE ASK [75-90s] ====================
       case 6:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-purple-950 via-slate-950 to-purple-950 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-12 relative overflow-hidden`}>
             {/* Premium animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-purple-600 rounded-full blur-[120px] opacity-30 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-amber-600 rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
             <div className="relative z-10 max-w-7xl w-full">
               {/* Premium headline */}
               <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-amber-600 blur-3xl opacity-40" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-3xl opacity-40" />
                   <h1 className="relative text-8xl font-black text-white leading-tight">
-                    Product Ready. <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Merchants Lined Up.</span>
+                    Product Ready. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">Merchants Lined Up.</span>
                   </h1>
                 </div>
                 <p className="text-3xl text-slate-300 font-bold mt-4">We just need fuel for the rocket</p>
@@ -610,15 +611,15 @@ const PitchDeck90SecondPremium = () => {
               {/* Readiness metrics */}
               <div className="grid grid-cols-3 gap-8 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: '✅', metric: '90%', label: 'Product Complete', desc: 'MVP ready for launch', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400' },
-                  { icon: '🏪', metric: '30+', label: 'Merchants Signed', desc: 'LOIs in hand', bgGlow: 'bg-purple-600', textColor: 'text-purple-400' },
-                  { icon: '💰', metric: '$35', label: 'Target CAC', desc: 'Validated & achievable', bgGlow: 'bg-blue-600', textColor: 'text-blue-400' }
+                  { Icon: CheckCircle, metric: '90%', label: 'Product Complete', desc: 'MVP ready for launch', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400' },
+                  { Icon: Store, metric: '30+', label: 'Merchants Signed', desc: 'LOIs in hand', bgGlow: 'bg-[#c9a227]', textColor: 'text-[#c9a227]' },
+                  { Icon: DollarSign, metric: 'AED 40', label: 'Target CAC', desc: 'Validated & achievable', bgGlow: 'bg-blue-600', textColor: 'text-blue-400' }
                 ].map((item, idx) => (
                   <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
                     <div className={`absolute inset-0 ${item.bgGlow} rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                     <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-10 shadow-2xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-all text-center">
-                      <div className="text-6xl mb-4">{item.icon}</div>
-                      <p className={`text-6xl font-black ${item.textColor} mb-3`}>{item.metric}</p>
+                      <item.Icon size={60} className={item.textColor} />
+                      <p className={`text-6xl font-black ${item.textColor} mb-3 mt-4`}>{item.metric}</p>
                       <p className="text-2xl text-white font-black mb-2">{item.label}</p>
                       <p className="text-lg text-slate-400 font-semibold">{item.desc}</p>
                     </div>
@@ -629,22 +630,25 @@ const PitchDeck90SecondPremium = () => {
               {/* The Ask card */}
               <div className="mb-12 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-600 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <div className="relative bg-gradient-to-r from-amber-500 to-orange-500 backdrop-blur-xl border-2 border-amber-400/50 rounded-3xl p-16 shadow-2xl text-center">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <div className="relative bg-gradient-to-r from-[#c9a227] to-[#d4b03f] backdrop-blur-xl border-2 border-[#c9a227]/50 rounded-3xl p-16 shadow-2xl text-center">
                     <Sparkles size={80} className="text-white mx-auto mb-8 animate-pulse" />
                     <h2 className="text-6xl font-black text-white mb-8">The Ask</h2>
                     <div className="grid grid-cols-3 gap-12 max-w-5xl mx-auto">
                       <div>
-                        <p className="text-2xl text-amber-100 font-bold mb-3">Raising</p>
-                        <p className="text-7xl font-black text-white">$400K</p>
+                        <p className="text-2xl text-[#0a1628] font-bold mb-3">Raising</p>
+                        <p className="text-7xl font-black text-white mb-2">$400K</p>
+                        <p className="text-xl text-[#0a1628] font-semibold">SAFE</p>
                       </div>
                       <div>
-                        <p className="text-2xl text-amber-100 font-bold mb-3">Valuation</p>
-                        <p className="text-7xl font-black text-white">$5M</p>
+                        <p className="text-2xl text-[#0a1628] font-bold mb-3">Valuation Cap</p>
+                        <p className="text-7xl font-black text-white mb-2">$5M</p>
+                        <p className="text-xl text-[#0a1628] font-semibold">USD</p>
                       </div>
                       <div>
-                        <p className="text-2xl text-amber-100 font-bold mb-3">Equity</p>
-                        <p className="text-7xl font-black text-white">20%</p>
+                        <p className="text-2xl text-[#0a1628] font-bold mb-3">Discount</p>
+                        <p className="text-7xl font-black text-white mb-2">20%</p>
+                        <p className="text-xl text-[#0a1628] font-semibold">on next round</p>
                       </div>
                     </div>
                     <div className="w-64 h-1 bg-white/50 mx-auto my-8 rounded-full" />
@@ -658,15 +662,15 @@ const PitchDeck90SecondPremium = () => {
               {/* Closing statement */}
               <div className="animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 rounded-3xl blur-xl opacity-40" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-3xl blur-xl opacity-40" />
                   <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-12 shadow-2xl text-center">
                     <p className="text-4xl text-white font-black italic leading-relaxed mb-6">
                       "The next unicorn won't come from building a better discount site.<br />
-                      It'll come from owning the <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">daily habit</span> of saving money."
+                      It'll come from owning the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">daily habit</span> of saving money."
                     </p>
                     <div className="flex items-center justify-center gap-8 mt-8">
-                      <Target size={48} className="text-purple-400" />
-                      <Repeat size={48} className="text-amber-400" />
+                      <Target size={48} className="text-blue-400" />
+                      <Repeat size={48} className="text-[#c9a227]" />
                       <TrendingUp size={48} className="text-emerald-400" />
                     </div>
                   </div>
@@ -679,7 +683,7 @@ const PitchDeck90SecondPremium = () => {
       // ==================== FALLBACK ====================
       default:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 to-purple-900 flex items-center justify-center">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#0a1628] to-[#1a2638] flex items-center justify-center">
             <div className="text-center">
               <p className="text-white text-6xl font-black mb-4">Slide {currentSlide + 1}</p>
               <p className="text-slate-400 text-2xl">Slide not found</p>
@@ -696,12 +700,12 @@ const PitchDeck90SecondPremium = () => {
       {/* Premium navigation bar */}
       <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50">
         <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-amber-600 rounded-full blur-xl opacity-50" />
-          <div className="relative bg-slate-900/95 backdrop-blur-2xl border-2 border-white/10 rounded-full px-10 py-5 flex items-center gap-6 shadow-2xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-full blur-xl opacity-50" />
+          <div className="relative bg-[#0a1628]/95 backdrop-blur-2xl border-2 border-white/10 rounded-full px-10 py-5 flex items-center gap-6 shadow-2xl">
             <button
               onClick={() => changeSlide(currentSlide - 1)}
               disabled={currentSlide === 0}
-              className="p-4 rounded-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
+              className="p-4 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
             >
               <ChevronLeft size={32} className="text-white" />
             </button>
@@ -713,7 +717,7 @@ const PitchDeck90SecondPremium = () => {
                   onClick={() => changeSlide(index)}
                   className={`transition-all rounded-full ${
                     index === currentSlide
-                      ? 'bg-gradient-to-r from-purple-500 via-amber-500 to-purple-500 w-16 h-4 shadow-lg shadow-purple-500/50'
+                      ? 'bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] w-16 h-4 shadow-lg shadow-[#c9a227]/50'
                       : 'bg-white/20 hover:bg-white/30 w-4 h-4'
                   }`}
                 />
@@ -723,7 +727,7 @@ const PitchDeck90SecondPremium = () => {
             <button
               onClick={() => changeSlide(currentSlide + 1)}
               disabled={currentSlide === totalSlides - 1}
-              className="p-4 rounded-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
+              className="p-4 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
             >
               <ChevronRight size={32} className="text-white" />
             </button>
@@ -732,44 +736,6 @@ const PitchDeck90SecondPremium = () => {
               <p className="text-white text-lg font-bold">
                 {currentSlide + 1} <span className="text-white/50">/</span> {totalSlides}
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Premium keyboard hints */}
-      <div className="fixed top-12 right-12 z-50">
-        <div className="relative group">
-          <div className="absolute inset-0 bg-purple-600 rounded-2xl blur-xl opacity-30" />
-          <div className="relative bg-slate-900/95 backdrop-blur-2xl border-2 border-white/10 rounded-2xl px-6 py-4 shadow-2xl">
-            <p className="text-amber-400 font-bold mb-3 text-sm uppercase tracking-wider">Keyboard Shortcuts</p>
-            <div className="space-y-2 text-slate-300 text-sm">
-              <p><kbd className="px-2 py-1 bg-white/10 rounded text-xs mr-2">←</kbd><kbd className="px-2 py-1 bg-white/10 rounded text-xs">→</kbd> Navigate</p>
-              <p><kbd className="px-3 py-1 bg-white/10 rounded text-xs">Space</kbd> Next slide</p>
-              <p><kbd className="px-3 py-1 bg-white/10 rounded text-xs">ESC</kbd> Reset</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Premium timer */}
-      <div className="fixed top-12 left-12 z-50">
-        <div className="relative group">
-          <div className="absolute inset-0 bg-amber-600 rounded-2xl blur-xl opacity-40" />
-          <div className="relative bg-gradient-to-r from-amber-500 to-orange-500 backdrop-blur-2xl border-2 border-amber-400/30 rounded-2xl px-8 py-5 shadow-2xl">
-            <div className="flex items-center gap-4">
-              <Clock size={32} className="text-white animate-pulse" />
-              <div>
-                <p className="text-white font-black text-xl">90-SECOND PITCH</p>
-                <p className="text-amber-100 text-sm">~13s per slide</p>
-              </div>
-            </div>
-            {/* Progress bar */}
-            <div className="mt-4 h-2 bg-white/20 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-white rounded-full transition-all duration-500 shadow-lg"
-                style={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
-              />
             </div>
           </div>
         </div>

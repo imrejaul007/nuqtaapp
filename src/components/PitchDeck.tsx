@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
+import { Brain, Wallet, Smartphone, Store, User, Gem, RotateCw, Search, Zap, BarChart3, Building2, Lightbulb, Building, FileText, Scale, CreditCard, Star, Target, Handshake, ClipboardList, Laptop } from 'lucide-react';
 
 interface PitchDeckProps {
   isOpen: boolean;
@@ -117,7 +118,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Key Metrics Bar */}
             <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 md:gap-8 lg:gap-16">
               <div className="text-center">
-                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227]">$500K</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227]">$400K</p>
                 <p className="text-[10px] sm:text-xs md:text-sm text-gray-500 uppercase tracking-wider">Raising</p>
               </div>
               <div className="w-px h-8 sm:h-10 md:h-12 bg-gray-700 hidden sm:block" />
@@ -144,7 +145,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             {/* Top Row - Most Important Metrics */}
             <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl w-full mb-4 sm:mb-6">
               <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border-2 border-[#c9a227]/40 text-center hover:scale-105 transition-transform">
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#c9a227] mb-1 sm:mb-2">$500K</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#c9a227] mb-1 sm:mb-2">$400K</div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-400 font-medium">Raising</div>
                 <div className="text-[10px] sm:text-xs text-gray-600 mt-1">Pre-Seed Round</div>
               </div>
@@ -162,7 +163,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border-2 border-purple-500/40 text-center hover:scale-105 transition-transform">
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-purple-400 mb-1 sm:mb-2">18-24mo</div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-400 font-medium">Runway</div>
-                <div className="text-[10px] sm:text-xs text-gray-600 mt-1">With $500K</div>
+                <div className="text-[10px] sm:text-xs text-gray-600 mt-1">With $400K</div>
               </div>
             </div>
 
@@ -288,22 +289,22 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               </p>
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 <div className="text-center">
-                  <span className="text-2xl sm:text-3xl md:text-4xl block mb-1 sm:mb-2">🧠</span>
+                  <div className="text-[#c9a227] flex justify-center mb-1 sm:mb-2"><Brain className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" /></div>
                   <p className="text-white font-bold text-xs sm:text-sm mb-0.5 sm:mb-1">Smart Pay</p>
                   <p className="text-gray-400 text-[10px] sm:text-xs">Best card/wallet</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-2xl sm:text-3xl md:text-4xl block mb-1 sm:mb-2">💰</span>
+                  <div className="text-[#c9a227] flex justify-center mb-1 sm:mb-2"><Wallet className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" /></div>
                   <p className="text-white font-bold text-xs sm:text-sm mb-0.5 sm:mb-1">Base Cashback</p>
                   <p className="text-gray-400 text-[10px] sm:text-xs">5% always</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-2xl sm:text-3xl md:text-4xl block mb-1 sm:mb-2">📱</span>
+                  <div className="text-[#c9a227] flex justify-center mb-1 sm:mb-2"><Smartphone className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" /></div>
                   <p className="text-white font-bold text-xs sm:text-sm mb-0.5 sm:mb-1">Social Bonus</p>
                   <p className="text-gray-400 text-[10px] sm:text-xs">+5% extra</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-2xl sm:text-3xl md:text-4xl block mb-1 sm:mb-2">🏪</span>
+                  <div className="text-[#c9a227] flex justify-center mb-1 sm:mb-2"><Store className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" /></div>
                   <p className="text-white font-bold text-xs sm:text-sm mb-0.5 sm:mb-1">For Merchants</p>
                   <p className="text-gray-400 text-[10px] sm:text-xs">15% commission</p>
                 </div>
@@ -354,21 +355,21 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl mb-4 sm:mb-6 md:mb-12">
               <div className="text-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl sm:text-5xl">🧠</span>
+                  <Brain className="w-10 h-10 sm:w-12 sm:h-12 text-[#c9a227]" />
                 </div>
                 <p className="text-xl sm:text-2xl font-bold mb-2">Intelligence</p>
                 <p className="text-gray-400 text-sm">Best payment method for every purchase</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl sm:text-5xl">💰</span>
+                  <Wallet className="w-10 h-10 sm:w-12 sm:h-12 text-[#c9a227]" />
                 </div>
                 <p className="text-xl sm:text-2xl font-bold mb-2">Cashback</p>
                 <p className="text-gray-400 text-sm">5-10% back instantly</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 bg-[#c9a227]/20 rounded-2xl flex items-center justify-center">
-                  <span className="text-4xl sm:text-5xl">🔥</span>
+                  <Zap className="w-10 h-10 sm:w-12 sm:h-12 text-[#c9a227]" />
                 </div>
                 <p className="text-xl sm:text-2xl font-bold mb-2">Social Rewards</p>
                 <p className="text-gray-400 text-sm">2x bonus for sharing</p>
@@ -433,19 +434,19 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 sm:mb-3 text-center">Example: AED 100 Restaurant Bill</h3>
               <div className="grid grid-cols-3 gap-2 sm:gap-3">
                 <div className="bg-[#1a2a42]/50 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-[#c9a227]/20 text-center">
-                  <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">🏪</div>
+                  <div className="flex justify-center mb-1 sm:mb-2"><Store className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227]" /></div>
                   <p className="text-gray-400 text-[10px] sm:text-xs mb-1">Merchant Pays</p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white">AED 15</p>
                   <p className="text-[9px] sm:text-[10px] text-gray-600 mt-0.5">(15% commission)</p>
                 </div>
                 <div className="bg-[#1a2a42]/50 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-[#c9a227]/20 text-center">
-                  <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">👤</div>
+                  <div className="flex justify-center mb-1 sm:mb-2"><User className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227]" /></div>
                   <p className="text-gray-400 text-[10px] sm:text-xs mb-1">User Gets</p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-bold text-[#c9a227]">AED 5-10</p>
                   <p className="text-[9px] sm:text-[10px] text-gray-600 mt-0.5">(+5% if shared)</p>
                 </div>
                 <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border-2 border-green-500/40 text-center">
-                  <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">💎</div>
+                  <div className="flex justify-center mb-1 sm:mb-2"><Gem className="w-6 h-6 sm:w-8 sm:h-8 text-green-400" /></div>
                   <p className="text-gray-400 text-[10px] sm:text-xs mb-1">Nuqta Profit</p>
                   <p className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">AED 5-10</p>
                   <p className="text-[9px] sm:text-[10px] text-gray-600 mt-0.5">(5-10% margin)</p>
@@ -471,16 +472,18 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4 md:gap-6 max-w-6xl w-full">
               {[
-                { num: '1', icon: '🔍', title: 'Discover', desc: 'Find merchants & browse offers' },
-                { num: '2', icon: '🧠', title: 'Smart Pay', desc: 'Get payment recommendation' },
-                { num: '3', icon: '💰', title: 'Earn Cashback', desc: '5% back instantly' },
-                { num: '4', icon: '📱', title: 'Share', desc: 'Post to social, earn +5%' },
-                { num: '5', icon: '🔄', title: 'Repeat', desc: 'Redeem anywhere, come back' },
-              ].map((step, idx) => (
+                { num: '1', icon: Search, title: 'Discover', desc: 'Find merchants & browse offers' },
+                { num: '2', icon: Brain, title: 'Smart Pay', desc: 'Get payment recommendation' },
+                { num: '3', icon: Wallet, title: 'Earn Cashback', desc: '5% back instantly' },
+                { num: '4', icon: Smartphone, title: 'Share', desc: 'Post to social, earn +5%' },
+                { num: '5', icon: RotateCw, title: 'Repeat', desc: 'Redeem anywhere, come back' },
+              ].map((step, idx) => {
+                const IconComponent = step.icon;
+                return (
                 <div key={idx} className="text-center relative">
                   <div className="relative inline-block mb-2 sm:mb-3">
                     <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-[#c9a227] to-[#a88a1e] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg shadow-[#c9a227]/20">
-                      <span className="text-2xl md:text-3xl">{step.icon}</span>
+                      <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-[#0a1628]" />
                     </div>
                     <span className="absolute -top-2 -right-2 w-6 h-6 bg-white text-[#0a1628] rounded-full text-xs font-bold flex items-center justify-center shadow-md">
                       {step.num}
@@ -494,7 +497,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                   )}
                 </div>
-              ))}
+              );
+              })}
             </div>
 
             {/* Social Sharing Growth Loop */}
@@ -517,18 +521,21 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-2 gap-6 md:gap-8 max-w-3xl">
               {[
-                { icon: '💳', title: 'Smart Pay Advisor', stat: 'Save 5-15%', desc: 'per transaction' },
-                { icon: '💰', title: 'Instant Cashback', stat: '5-10% back', desc: 'every purchase' },
-                { icon: '📱', title: 'Social Rewards', stat: '2x bonus', desc: 'share & earn' },
-                { icon: '⭐', title: 'Universal Points', stat: 'Redeem anywhere', desc: 'one currency' },
-              ].map((item, idx) => (
+                { icon: CreditCard, title: 'Smart Pay Advisor', stat: 'Save 5-15%', desc: 'per transaction' },
+                { icon: Wallet, title: 'Instant Cashback', stat: '5-10% back', desc: 'every purchase' },
+                { icon: Smartphone, title: 'Social Rewards', stat: '2x bonus', desc: 'share & earn' },
+                { icon: Star, title: 'Universal Points', stat: 'Redeem anywhere', desc: 'one currency' },
+              ].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
                 <div key={idx} className="bg-[#1a2a42]/50 backdrop-blur rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all">
-                  <span className="text-3xl sm:text-4xl mb-3 sm:mb-4 block">{item.icon}</span>
+                  <div className="mb-3 sm:mb-4"><IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-[#c9a227]" /></div>
                   <h3 className="font-bold text-base sm:text-lg mb-1">{item.title}</h3>
                   <p className="text-[#c9a227] font-bold text-lg sm:text-xl">{item.stat}</p>
                   <p className="text-gray-500 text-xs sm:text-sm">{item.desc}</p>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         );
@@ -544,18 +551,21 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl">
               {[
-                { icon: '📱', title: 'QR Loyalty', desc: 'No POS integration needed' },
-                { icon: '📊', title: 'Real Analytics', desc: 'Know your customers' },
-                { icon: '💰', title: 'Pay for Results', desc: 'No monthly fees' },
-              ].map((item, idx) => (
+                { icon: Smartphone, title: 'QR Loyalty', desc: 'No POS integration needed' },
+                { icon: BarChart3, title: 'Real Analytics', desc: 'Know your customers' },
+                { icon: Wallet, title: 'Pay for Results', desc: 'No monthly fees' },
+              ].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
                 <div key={idx} className="text-center">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-[#1a2a42] rounded-xl sm:rounded-2xl flex items-center justify-center border border-[#2a3a52]">
-                    <span className="text-4xl">{item.icon}</span>
+                    <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-[#c9a227]" />
                   </div>
                   <h3 className="font-bold text-lg mb-1">{item.title}</h3>
                   <p className="text-gray-400 text-sm">{item.desc}</p>
                 </div>
-              ))}
+              );
+              })}
             </div>
 
             <div className="mt-6 sm:mt-8 md:mt-12 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl sm:rounded-2xl p-4 sm:p-6 border-l-4 border-[#c9a227]">
@@ -726,37 +736,39 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 max-w-4xl w-full mb-3 sm:mb-4">
               {[
                 {
-                  icon: '📱',
+                  icon: Smartphone,
                   title: 'Digital Payment Explosion',
                   stat: '86%',
                   desc: 'UAE digital payment adoption in 2024 (up from 60% in 2020)',
                   source: 'Visa Back to Business Study 2024 & CBUAE Reports'
                 },
                 {
-                  icon: '💳',
+                  icon: CreditCard,
                   title: 'BNPL Boom',
                   stat: '$6.5B',
                   desc: 'MENA BNPL market size by 2028 (23% CAGR)',
                   source: 'Research and Markets - MENA BNPL Report 2024'
                 },
                 {
-                  icon: '🏦',
+                  icon: Building2,
                   title: 'Open Banking Coming',
                   stat: '2025-26',
                   desc: 'UAE open banking framework rollout underway',
                   source: 'CBUAE Financial Infrastructure Transformation Programme'
                 },
                 {
-                  icon: '🎯',
+                  icon: Target,
                   title: 'Rewards Gap',
                   stat: '5-10%',
                   desc: 'Cashback rates consumers expect (vs 1-3% banks offer)',
                   source: 'GCC consumer fintech adoption survey 2024'
                 },
-              ].map((item, idx) => (
+              ].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
                 <div key={idx} className="bg-[#1a2a42]/50 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-colors">
                   <div className="flex items-start gap-2 sm:gap-3">
-                    <span className="text-2xl sm:text-3xl flex-shrink-0">{item.icon}</span>
+                    <div className="flex-shrink-0"><IconComponent className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227]" /></div>
                     <div className="min-w-0 flex-1">
                       <div className="flex items-baseline gap-1 sm:gap-2 mb-0.5 sm:mb-1">
                         <h3 className="font-bold text-xs sm:text-sm">{item.title}</h3>
@@ -767,7 +779,8 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                   </div>
                 </div>
-              ))}
+              );
+              })}
             </div>
 
             {/* Key Insight */}
@@ -852,7 +865,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
                 <div className="mb-3">
                   <DataPoint
                     value="2-4mo"
-                    source="$27 CAC ÷ $7-14 monthly profit"
+                    source="AED 35 CAC ÷ AED 9-18 monthly profit"
                     className="text-4xl sm:text-5xl md:text-6xl font-black text-blue-400"
                   />
                 </div>
@@ -866,15 +879,15 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               <h3 className="text-center text-sm sm:text-base font-bold text-[#c9a227] mb-3 sm:mb-4">How It Works</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-center">
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-white mb-1">$27</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-white mb-1">AED 35</p>
                   <p className="text-xs text-gray-400">Customer Acquisition Cost</p>
                 </div>
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-[#c9a227] mb-1">$135</p>
-                  <p className="text-xs text-gray-400">Monthly GMV (5 × $27)</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-[#c9a227] mb-1">AED 175</p>
+                  <p className="text-xs text-gray-400">Monthly GMV (5 × AED 35)</p>
                 </div>
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">$7-14</p>
+                  <p className="text-2xl sm:text-3xl font-bold text-green-400 mb-1">AED 9-18</p>
                   <p className="text-xs text-gray-400">Monthly Profit</p>
                 </div>
               </div>
@@ -894,24 +907,27 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-3xl w-full mb-4 sm:mb-6">
               {[
-                { icon: '🤝', title: 'D2C Brand MOUs', status: '30+ signed', highlight: true, desc: 'Ready to onboard post-MVP launch' },
-                { icon: '📋', title: 'Waitlist Users', status: '200+', highlight: false, desc: 'Organic signups' },
-                { icon: '🏦', title: 'Bank Partnerships', status: 'In discussion', highlight: false, desc: 'Targeting all GCC banks' },
-                { icon: '💻', title: 'MVP Status', status: 'In development', highlight: false, desc: 'Q2 2026 launch target' },
-              ].map((item, idx) => (
+                { icon: Handshake, title: 'D2C Brand MOUs', status: '30+ signed', highlight: true, desc: 'Ready to onboard post-MVP launch' },
+                { icon: ClipboardList, title: 'Waitlist Users', status: '200+', highlight: false, desc: 'Organic signups' },
+                { icon: Building2, title: 'Bank Partnerships', status: 'In discussion', highlight: false, desc: 'Targeting all GCC banks' },
+                { icon: Laptop, title: 'MVP Status', status: 'In development', highlight: false, desc: 'Q2 2026 launch target' },
+              ].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
                 <div key={idx} className={`rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 border flex items-start gap-2 sm:gap-3 md:gap-4 ${
                   item.highlight
                     ? 'bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-[#c9a227] shadow-lg shadow-[#c9a227]/10'
                     : 'bg-[#1a2a42]/50 border-[#2a3a52]'
                 }`}>
-                  <span className="text-2xl sm:text-3xl md:text-4xl flex-shrink-0">{item.icon}</span>
+                  <div className="flex-shrink-0"><IconComponent className={`w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 ${item.highlight ? 'text-[#c9a227]' : 'text-gray-400'}`} /></div>
                   <div className="min-w-0 flex-1">
                     <p className="font-bold text-sm sm:text-base">{item.title}</p>
                     <p className={`text-xs sm:text-sm md:text-base font-bold ${item.highlight ? 'text-[#c9a227]' : 'text-[#c9a227]'}`}>{item.status}</p>
                     <p className="text-gray-500 text-[10px] sm:text-xs mt-0.5 sm:mt-1">{item.desc}</p>
                   </div>
                 </div>
-              ))}
+              );
+              })}
             </div>
 
             {/* Partnership Pipeline */}
@@ -1015,19 +1031,22 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-4xl w-full">
               {[
-                { icon: '🏢', title: 'Stable Jurisdiction', desc: 'Delaware or ADGM incorporation' },
-                { icon: '💡', title: 'IP Owned by Company', desc: 'All code, trademarks, trade secrets' },
-                { icon: '🏦', title: 'Fund Controls', desc: 'Proper corporate accounts' },
-                { icon: '📜', title: 'Founder Vesting', desc: '4-year vesting with cliff' },
-                { icon: '📊', title: 'Regular Reporting', desc: 'Monthly updates to investors' },
-                { icon: '⚖️', title: 'Board Governance', desc: 'Investor representation' },
-              ].map((item, idx) => (
+                { icon: Building, title: 'Stable Jurisdiction', desc: 'Delaware or ADGM incorporation' },
+                { icon: Lightbulb, title: 'IP Owned by Company', desc: 'All code, trademarks, trade secrets' },
+                { icon: Building2, title: 'Fund Controls', desc: 'Proper corporate accounts' },
+                { icon: FileText, title: 'Founder Vesting', desc: '4-year vesting with cliff' },
+                { icon: BarChart3, title: 'Regular Reporting', desc: 'Monthly updates to investors' },
+                { icon: Scale, title: 'Board Governance', desc: 'Investor representation' },
+              ].map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
                 <div key={idx} className="text-center">
-                  <span className="text-3xl sm:text-4xl mb-2 sm:mb-3 block">{item.icon}</span>
+                  <div className="flex justify-center mb-2 sm:mb-3"><IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-[#c9a227]" /></div>
                   <p className="font-bold text-sm sm:text-base mb-1">{item.title}</p>
                   <p className="text-gray-500 text-xs sm:text-sm">{item.desc}</p>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         );
@@ -1039,7 +1058,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <p className="text-[#c9a227] text-sm sm:text-base md:text-lg uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-4 md:mb-6">The Ask</p>
 
             <p className="text-[100px] md:text-[140px] lg:text-[180px] font-black text-[#c9a227] leading-none">
-              $500K
+              $400K
             </p>
 
             <div className="flex items-center justify-center gap-8 md:gap-16 my-8">
@@ -1058,10 +1077,10 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
               <p className="text-sm text-[#c9a227] font-bold mb-4 text-center uppercase tracking-wider">Use of Funds</p>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {[
-                  { pct: '50%', label: 'Team & Product', desc: 'Hire CTO + engineers, build MVP', amount: '$250K' },
-                  { pct: '30%', label: 'Merchant Acquisition', desc: '100 merchants, field sales', amount: '$150K' },
-                  { pct: '15%', label: 'User Acquisition', desc: '1,000 active users, marketing', amount: '$75K' },
-                  { pct: '5%', label: 'Operations', desc: 'Legal, accounting, infra', amount: '$25K' },
+                  { pct: '50%', label: 'Team & Product', desc: 'Hire CTO + engineers, build MVP', amount: '$200K' },
+                  { pct: '30%', label: 'Merchant Acquisition', desc: '100 merchants, field sales', amount: '$120K' },
+                  { pct: '15%', label: 'User Acquisition', desc: '1,000 active users, marketing', amount: '$60K' },
+                  { pct: '5%', label: 'Operations', desc: 'Legal, accounting, infra', amount: '$20K' },
                 ].map((item, idx) => (
                   <div key={idx} className="bg-[#1a2a42]/50 rounded-xl p-4 border border-[#2a3a52]">
                     <p className="text-2xl font-bold text-[#c9a227] mb-1">{item.pct}</p>
@@ -1120,7 +1139,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
             <p className="text-gray-500">rejaul@nuqtapp.com</p>
 
             <div className="flex items-center gap-8 mt-12 text-gray-600 text-sm">
-              <span>$500K Pre-Seed</span>
+              <span>$400K Pre-Seed</span>
               <span>•</span>
               <span>$5M Cap</span>
               <span>•</span>

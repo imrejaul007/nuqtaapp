@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, Clock, DollarSign, ArrowRight, Sparkles, Users, Store, Repeat } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, Clock, DollarSign, ArrowRight, Sparkles, Users, Store, Repeat, ShoppingCart, Search, CreditCard, CheckCircle, Coins, X, RefreshCw, Timer } from 'lucide-react';
 
 /**
  * 90-SECOND INVESTOR PITCH DECK
@@ -124,7 +124,10 @@ const PitchDeck90SecondEnhanced = () => {
               <div className="grid md:grid-cols-2 gap-8 mb-8">
                 {/* Consumer Pain */}
                 <div className="bg-white border-2 border-red-200 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-red-600 mb-4">🛒 Consumers Lose</h3>
+                  <div className="flex items-center gap-2 mb-4">
+                    <ShoppingCart className="text-red-600" size={28} />
+                    <h3 className="text-2xl font-bold text-red-600">Consumers Lose</h3>
+                  </div>
                   <div className="space-y-4">
                     <div className="bg-red-50 rounded-lg p-4">
                       <p className="text-lg font-semibold text-slate-900">AED 2.4B/Year Wasted</p>
@@ -143,7 +146,10 @@ const PitchDeck90SecondEnhanced = () => {
 
                 {/* Merchant Pain */}
                 <div className="bg-white border-2 border-orange-200 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-orange-600 mb-4">🏪 Merchants Burn Cash</h3>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Store className="text-orange-600" size={28} />
+                    <h3 className="text-2xl font-bold text-orange-600">Merchants Burn Cash</h3>
+                  </div>
                   <div className="space-y-4">
                     <div className="bg-orange-50 rounded-lg p-4">
                       <p className="text-lg font-semibold text-slate-900">AED 5K → 0 Loyalty</p>
@@ -193,7 +199,7 @@ const PitchDeck90SecondEnhanced = () => {
               <div className="grid md:grid-cols-4 gap-6 mb-8">
                 <div className="bg-white border-2 border-purple-200 rounded-2xl p-6 text-center">
                   <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <p className="text-3xl">🔍</p>
+                    <Search className="text-purple-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Search</h3>
                   <p className="text-sm text-slate-600">"Where should I eat?"</p>
@@ -202,7 +208,7 @@ const PitchDeck90SecondEnhanced = () => {
 
                 <div className="bg-white border-2 border-blue-200 rounded-2xl p-6 text-center">
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <p className="text-3xl">💳</p>
+                    <CreditCard className="text-blue-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Decide</h3>
                   <p className="text-sm text-slate-600">"Which card saves most?"</p>
@@ -211,7 +217,7 @@ const PitchDeck90SecondEnhanced = () => {
 
                 <div className="bg-white border-2 border-emerald-200 rounded-2xl p-6 text-center">
                   <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <p className="text-3xl">✅</p>
+                    <CheckCircle className="text-emerald-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Pay</h3>
                   <p className="text-sm text-slate-600">Use recommended method</p>
@@ -220,7 +226,7 @@ const PitchDeck90SecondEnhanced = () => {
 
                 <div className="bg-white border-2 border-amber-200 rounded-2xl p-6 text-center">
                   <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <p className="text-3xl">💰</p>
+                    <Coins className="text-amber-600" size={32} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">Earn</h3>
                   <p className="text-sm text-slate-600">Get Nuqta Coins instantly</p>
@@ -231,17 +237,23 @@ const PitchDeck90SecondEnhanced = () => {
               {/* Key differentiators */}
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-center">
-                  <p className="text-4xl mb-2">❌</p>
+                  <div className="flex justify-center mb-2">
+                    <X className="text-white" size={36} />
+                  </div>
                   <p className="text-white font-bold">No Coupons</p>
                   <p className="text-purple-100 text-sm mt-2">Real-time intelligence</p>
                 </div>
                 <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-center">
-                  <p className="text-4xl mb-2">❌</p>
+                  <div className="flex justify-center mb-2">
+                    <X className="text-white" size={36} />
+                  </div>
                   <p className="text-white font-bold">No Subscriptions</p>
                   <p className="text-blue-100 text-sm mt-2">Free for users</p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl p-6 text-center">
-                  <p className="text-4xl mb-2">✅</p>
+                  <div className="flex justify-center mb-2">
+                    <CheckCircle className="text-white" size={36} />
+                  </div>
                   <p className="text-white font-bold">Real Savings</p>
                   <p className="text-emerald-100 text-sm mt-2">On everyday spending</p>
                 </div>
@@ -315,7 +327,7 @@ const PitchDeck90SecondEnhanced = () => {
                   {/* Loop back */}
                   <div className="text-center flex-1">
                     <div className="w-24 h-24 bg-purple-100 border-2 border-purple-400 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <p className="text-3xl">🔄</p>
+                      <RefreshCw size={40} className="text-purple-600" />
                     </div>
                     <p className="font-bold text-slate-900">Repeat</p>
                     <p className="text-xs text-slate-600">Daily habit</p>
@@ -369,7 +381,10 @@ const PitchDeck90SecondEnhanced = () => {
                 {/* Groupon */}
                 <div className="bg-red-500/20 border-2 border-red-500/40 backdrop-blur-sm rounded-2xl p-8">
                   <div className="text-center mb-6">
-                    <h3 className="text-3xl font-black text-red-400 mb-2">❌ Groupon</h3>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <X className="text-red-400" size={28} />
+                      <h3 className="text-3xl font-black text-red-400">Groupon</h3>
+                    </div>
                     <p className="text-slate-300 text-lg">Sold Discounts</p>
                   </div>
 
@@ -396,7 +411,10 @@ const PitchDeck90SecondEnhanced = () => {
                 {/* Nuqta */}
                 <div className="bg-emerald-500/20 border-2 border-emerald-500/40 backdrop-blur-sm rounded-2xl p-8">
                   <div className="text-center mb-6">
-                    <h3 className="text-3xl font-black text-emerald-400 mb-2">✅ Nuqta</h3>
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <CheckCircle className="text-emerald-400" size={28} />
+                      <h3 className="text-3xl font-black text-emerald-400">Nuqta</h3>
+                    </div>
                     <p className="text-slate-300 text-lg">Builds Habits</p>
                   </div>
 
@@ -549,7 +567,9 @@ const PitchDeck90SecondEnhanced = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-emerald-500/20 border-2 border-emerald-500/40 backdrop-blur-sm rounded-2xl p-6">
                   <div className="text-center mb-4">
-                    <p className="text-5xl font-black text-emerald-400 mb-2">✅</p>
+                    <div className="flex justify-center mb-2">
+                      <CheckCircle className="text-emerald-400" size={48} />
+                    </div>
                     <h3 className="text-2xl font-bold text-white">Product Ready</h3>
                   </div>
                   <div className="space-y-2">
@@ -591,7 +611,7 @@ const PitchDeck90SecondEnhanced = () => {
 
                 <div className="bg-blue-500/20 border-2 border-blue-500/40 backdrop-blur-sm rounded-2xl p-6">
                   <div className="text-center mb-4">
-                    <p className="text-5xl font-black text-blue-400 mb-2">AED 40</p>
+                    <p className="text-5xl font-black text-blue-400 mb-2">AED 35</p>
                     <h3 className="text-2xl font-bold text-white">CAC Target</h3>
                   </div>
                   <div className="space-y-2">
@@ -707,9 +727,12 @@ const PitchDeck90SecondEnhanced = () => {
 
       {/* Timer hint */}
       <div className="fixed top-8 left-8 bg-amber-500/90 backdrop-blur-md border border-amber-600 rounded-lg px-4 py-2">
-        <p className="text-xs font-bold text-slate-900">
-          ⏱️ 90-Second Pitch | ~13sec per slide
-        </p>
+        <div className="flex items-center gap-2">
+          <Timer className="text-slate-900" size={16} />
+          <p className="text-xs font-bold text-slate-900">
+            90-Second Pitch | ~13sec per slide
+          </p>
+        </div>
       </div>
     </div>
   );
