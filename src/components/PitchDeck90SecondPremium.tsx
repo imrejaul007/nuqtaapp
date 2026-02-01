@@ -89,15 +89,15 @@ const PitchDeck90SecondPremium = () => {
               {/* Premium stats cards */}
               <div className="grid grid-cols-3 gap-8 animate-[fadeIn_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { value: '$35B', label: 'UAE Offline Market', color: 'purple', icon: '🎯' },
-                  { value: '30+', label: 'Merchant LOIs Signed', color: 'amber', icon: '🏪' },
-                  { value: 'Feb 28', label: 'Launch Date 2026', color: 'emerald', icon: '🚀' }
+                  { value: '$35B', label: 'UAE Offline Market', bgGlow: 'bg-purple-600', textColor: 'text-purple-400', icon: '🎯' },
+                  { value: '30+', label: 'Merchant LOIs Signed', bgGlow: 'bg-amber-600', textColor: 'text-amber-400', icon: '🏪' },
+                  { value: 'Feb 28', label: 'Launch Date 2026', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400', icon: '🚀' }
                 ].map((stat, idx) => (
                   <div key={idx} className="relative group" style={{ animationDelay: `${0.6 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 bg-${stat.color}-600 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
+                    <div className={`absolute inset-0 ${stat.bgGlow} rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
                     <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-8 transform group-hover:scale-105 group-hover:-translate-y-2 transition-all shadow-xl">
                       <p className="text-6xl mb-4">{stat.icon}</p>
-                      <p className={`text-6xl font-black text-${stat.color}-400 mb-3`}>{stat.value}</p>
+                      <p className={`text-6xl font-black ${stat.textColor} mb-3`}>{stat.value}</p>
                       <p className="text-slate-300 font-semibold text-lg">{stat.label}</p>
                     </div>
                   </div>
@@ -220,13 +220,13 @@ const PitchDeck90SecondPremium = () => {
               {/* Journey step cards */}
               <div className="grid grid-cols-4 gap-6 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: '🔍', title: 'Search', desc: 'Find best deals near you', color: 'purple' },
-                  { icon: '🎯', title: 'Decide', desc: 'Compare & choose smart', color: 'blue' },
-                  { icon: '💳', title: 'Pay', desc: 'Tap with Apple/Google Pay', color: 'indigo' },
-                  { icon: '🎁', title: 'Earn', desc: 'Get neutral points every time', color: 'violet' }
+                  { icon: '🔍', title: 'Search', desc: 'Find best deals near you', bgGlow: 'bg-purple-600' },
+                  { icon: '🎯', title: 'Decide', desc: 'Compare & choose smart', bgGlow: 'bg-blue-600' },
+                  { icon: '💳', title: 'Pay', desc: 'Tap with Apple/Google Pay', bgGlow: 'bg-indigo-600' },
+                  { icon: '🎁', title: 'Earn', desc: 'Get neutral points every time', bgGlow: 'bg-violet-600' }
                 ].map((step, idx) => (
                   <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 bg-${step.color}-600 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
+                    <div className={`absolute inset-0 ${step.bgGlow} rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
                     <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-3xl p-8 shadow-xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-all">
                       <div className="text-6xl mb-4">{step.icon}</div>
                       <h3 className="text-3xl font-black text-slate-900 mb-3">{step.title}</h3>
@@ -303,11 +303,11 @@ const PitchDeck90SecondPremium = () => {
                   {/* Flow cards in a circle */}
                   <div className="grid grid-cols-5 gap-6 items-center">
                     {[
-                      { icon: '👤', label: 'User Searches', color: 'purple' },
-                      { icon: '→', label: '', color: 'slate', isArrow: true },
-                      { icon: '🏪', label: 'Nuqta Routes', color: 'emerald' },
-                      { icon: '→', label: '', color: 'slate', isArrow: true },
-                      { icon: '💳', label: 'Payment Clears', color: 'blue' }
+                      { icon: '👤', label: 'User Searches', bgGlow: 'bg-purple-600' },
+                      { icon: '→', label: '', isArrow: true },
+                      { icon: '🏪', label: 'Nuqta Routes', bgGlow: 'bg-emerald-600' },
+                      { icon: '→', label: '', isArrow: true },
+                      { icon: '💳', label: 'Payment Clears', bgGlow: 'bg-blue-600' }
                     ].map((step, idx) => (
                       step.isArrow ? (
                         <div key={idx} className="flex justify-center animate-[fadeIn_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
@@ -315,7 +315,7 @@ const PitchDeck90SecondPremium = () => {
                         </div>
                       ) : (
                         <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                          <div className={`absolute inset-0 bg-${step.color}-600 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+                          <div className={`absolute inset-0 ${step.bgGlow} rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                           <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-full w-32 h-32 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all mx-auto">
                             <div className="text-center">
                               <div className="text-5xl mb-2">{step.icon}</div>
@@ -330,11 +330,11 @@ const PitchDeck90SecondPremium = () => {
                   {/* Second row */}
                   <div className="grid grid-cols-5 gap-6 items-center mt-6">
                     {[
-                      { icon: '←', label: '', color: 'slate', isArrow: true },
-                      { icon: '🎁', label: 'Points Earned', color: 'amber' },
-                      { icon: '←', label: '', color: 'slate', isArrow: true },
-                      { icon: '💰', label: 'We Get Paid', color: 'orange' },
-                      { icon: '', label: '', color: 'transparent' }
+                      { icon: '←', label: '', isArrow: true },
+                      { icon: '🎁', label: 'Points Earned', bgGlow: 'bg-amber-600' },
+                      { icon: '←', label: '', isArrow: true },
+                      { icon: '💰', label: 'We Get Paid', bgGlow: 'bg-orange-600' },
+                      { icon: '', label: '' }
                     ].map((step, idx) => (
                       step.isArrow ? (
                         <div key={idx} className="flex justify-center animate-[fadeIn_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
@@ -342,7 +342,7 @@ const PitchDeck90SecondPremium = () => {
                         </div>
                       ) : step.icon ? (
                         <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
-                          <div className={`absolute inset-0 bg-${step.color}-600 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+                          <div className={`absolute inset-0 ${step.bgGlow} rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                           <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-full w-32 h-32 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all mx-auto">
                             <div className="text-center">
                               <div className="text-5xl mb-2">{step.icon}</div>
@@ -610,15 +610,15 @@ const PitchDeck90SecondPremium = () => {
               {/* Readiness metrics */}
               <div className="grid grid-cols-3 gap-8 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: '✅', metric: '90%', label: 'Product Complete', desc: 'MVP ready for launch', color: 'emerald' },
-                  { icon: '🏪', metric: '30+', label: 'Merchants Signed', desc: 'LOIs in hand', color: 'purple' },
-                  { icon: '💰', metric: '$35', label: 'Target CAC', desc: 'Validated & achievable', color: 'blue' }
+                  { icon: '✅', metric: '90%', label: 'Product Complete', desc: 'MVP ready for launch', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400' },
+                  { icon: '🏪', metric: '30+', label: 'Merchants Signed', desc: 'LOIs in hand', bgGlow: 'bg-purple-600', textColor: 'text-purple-400' },
+                  { icon: '💰', metric: '$35', label: 'Target CAC', desc: 'Validated & achievable', bgGlow: 'bg-blue-600', textColor: 'text-blue-400' }
                 ].map((item, idx) => (
                   <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 bg-${item.color}-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+                    <div className={`absolute inset-0 ${item.bgGlow} rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
                     <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-10 shadow-2xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-all text-center">
                       <div className="text-6xl mb-4">{item.icon}</div>
-                      <p className={`text-6xl font-black text-${item.color}-400 mb-3`}>{item.metric}</p>
+                      <p className={`text-6xl font-black ${item.textColor} mb-3`}>{item.metric}</p>
                       <p className="text-2xl text-white font-black mb-2">{item.label}</p>
                       <p className="text-lg text-slate-400 font-semibold">{item.desc}</p>
                     </div>
