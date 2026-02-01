@@ -1,13 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, DollarSign, ArrowRight, Sparkles, Users, Store, Repeat, MapPin, CreditCard, Coins, Building2, Calendar, Rocket, ShoppingBag, AlertCircle, CheckCircle, Search, Gift, XCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, DollarSign, ArrowRight, Sparkles, Users, Store, Repeat, CreditCard, Coins, Calendar, Rocket, AlertCircle, CheckCircle, Search, Gift, XCircle } from 'lucide-react';
 
 /**
  * 90-SECOND PREMIUM INVESTOR PITCH DECK
  *
- * Premium design with world-class visuals, animations, and polish
- * Brand colors: #c9a227 (gold), #0a1628 (dark blue)
+ * Mobile-friendly design with brand colors: #c9a227 (gold), #0a1628 (dark blue)
  */
 
 const PitchDeck90SecondPremium = () => {
@@ -46,112 +45,112 @@ const PitchDeck90SecondPremium = () => {
       // ==================== SLIDE 0: COVER ====================
       case 0:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-12 relative overflow-hidden`}>
-            {/* Premium animated background */}
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
+            {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-600 rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-1/4 left-1/4 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-30 animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
             {/* Grid overlay */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
+            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] md:bg-[size:100px_100px]" />
 
-            <div className="relative z-10 text-center max-w-6xl w-full">
-              {/* Logo with premium glow */}
-              <div className="mb-16 animate-[fadeIn_0.8s_ease-out]">
+            <div className="relative z-10 text-center max-w-6xl w-full px-2">
+              {/* Logo */}
+              <div className="mb-8 sm:mb-12 md:mb-16 animate-[fadeIn_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] blur-3xl opacity-50" />
-                  <h1 className="relative text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] leading-none mb-6 tracking-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] blur-2xl md:blur-3xl opacity-50" />
+                  <h1 className="relative text-5xl sm:text-7xl md:text-9xl lg:text-[120px] font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] leading-none mb-3 sm:mb-6 tracking-tight">
                     NUQTA
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-300 font-semibold tracking-wide">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 font-semibold tracking-wide px-2">
                   The Everyday Savings Platform for the Middle East
                 </p>
               </div>
 
-              {/* Premium tagline card */}
-              <div className="mb-16 animate-[slideUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              {/* Tagline card */}
+              <div className="mb-8 sm:mb-12 md:mb-16 animate-[slideUp_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-12 shadow-2xl">
-                    <p className="text-5xl text-white font-black mb-4 leading-tight">
-                      Turning Everyday Spending<br />Into a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">Compounding Habit</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-2xl md:rounded-3xl blur-xl opacity-40" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white font-black mb-2 sm:mb-4 leading-tight">
+                      Turning Everyday Spending<br className="hidden sm:block" />
+                      <span className="sm:hidden"> </span>Into a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">Compounding Habit</span>
                     </p>
-                    <div className="w-32 h-1 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] mx-auto my-6 rounded-full" />
-                    <p className="text-2xl text-[#c9a227] font-bold">
+                    <div className="w-16 sm:w-24 md:w-32 h-1 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] mx-auto my-3 sm:my-4 md:my-6 rounded-full" />
+                    <p className="text-lg sm:text-xl md:text-2xl text-[#c9a227] font-bold">
                       Habits Into Defensibility
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Premium stats cards */}
-              <div className="grid grid-cols-3 gap-8 animate-[fadeIn_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+              {/* Stats cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 animate-[fadeIn_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { value: '$35B', label: 'UAE Offline Market*', bgGlow: 'bg-[#c9a227]', textColor: 'text-[#c9a227]', Icon: Target },
-                  { value: '30+', label: 'Merchant LOIs Signed', bgGlow: 'bg-[#c9a227]', textColor: 'text-[#c9a227]', Icon: Store },
-                  { value: 'Feb 28', label: 'Launch Date 2026', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400', Icon: Rocket }
+                  { value: '$35B', label: 'UAE Offline Market*', Icon: Target },
+                  { value: '30+', label: 'Merchant LOIs Signed', Icon: Store },
+                  { value: 'Feb 28', label: 'Launch Date 2026', Icon: Rocket }
                 ].map((stat, idx) => (
-                  <div key={idx} className="relative group" style={{ animationDelay: `${0.6 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 ${stat.bgGlow} rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
-                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl p-8 transform group-hover:scale-105 group-hover:-translate-y-2 transition-all shadow-xl">
-                      <stat.Icon size={60} className={stat.textColor} />
-                      <p className={`text-6xl font-black ${stat.textColor} mb-3 mt-4`}>{stat.value}</p>
-                      <p className="text-slate-300 font-semibold text-lg">{stat.label}</p>
+                  <div key={idx} className="relative group">
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-xl md:rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 transform group-hover:scale-105 transition-all shadow-xl">
+                      <stat.Icon size={36} className="text-[#c9a227] mx-auto sm:mx-0 md:w-[48px] md:h-[48px] lg:w-[60px] lg:h-[60px]" />
+                      <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227] mb-2 mt-3 sm:mt-4">{stat.value}</p>
+                      <p className="text-slate-300 font-semibold text-sm sm:text-base md:text-lg">{stat.label}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Source citation */}
-              <p className="text-slate-500 text-sm mt-8 animate-[fadeIn_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
+              <p className="text-slate-500 text-xs sm:text-sm mt-6 sm:mt-8 animate-[fadeIn_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 *Source: Euromonitor 2024, McKinsey GCC Retail Report
               </p>
             </div>
           </div>
         );
 
-      // ==================== SLIDE 1: THE PROBLEM [0-15s] ====================
+      // ==================== SLIDE 1: THE PROBLEM ====================
       case 1:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-red-50 flex items-center justify-center p-12 relative overflow-hidden`}>
-            {/* Animated background elements */}
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
+            {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-red-300 rounded-full blur-[100px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-orange-300 rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl w-full">
-              {/* Premium headline */}
-              <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-orange-600 blur-3xl opacity-30" />
-                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 leading-tight mb-4">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f] leading-tight mb-2 sm:mb-4">
                     Billions Lost. Zero Loyalty
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-700 font-bold mt-4">The broken commerce equation</p>
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">The broken commerce equation</p>
               </div>
 
-              {/* Pain cards side-by-side */}
-              <div className="grid grid-cols-2 gap-8 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              {/* Pain cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {/* Consumer Pain */}
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                  <div className="relative bg-white/70 backdrop-blur-xl border-2 border-red-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <AlertCircle size={64} className="text-red-600 mb-6" />
-                    <h3 className="text-4xl font-black text-red-900 mb-8">Consumer Pain</h3>
-                    <div className="space-y-6">
+                  <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <AlertCircle size={40} className="text-[#c9a227] mb-4 md:mb-6 md:w-[64px] md:h-[64px]" />
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#c9a227] mb-4 sm:mb-6 md:mb-8">Consumer Pain</h3>
+                    <div className="space-y-3 sm:space-y-4 md:space-y-6">
                       {[
                         { Icon: DollarSign, text: 'Paying full price everywhere' },
                         { Icon: Target, text: 'Missing hidden deals & promos' },
                         { Icon: XCircle, text: 'Loyalty programs that never pay off' }
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.4 + idx * 0.1}s` }}>
-                          <item.Icon size={36} className="text-red-600 flex-shrink-0" />
-                          <p className="text-2xl text-slate-800 font-bold leading-tight pt-1">{item.text}</p>
+                        <div key={idx} className="flex items-start gap-3 sm:gap-4">
+                          <item.Icon size={24} className="text-[#c9a227] flex-shrink-0 sm:w-[28px] sm:h-[28px] md:w-[36px] md:h-[36px]" />
+                          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-bold leading-tight">{item.text}</p>
                         </div>
                       ))}
                     </div>
@@ -160,19 +159,19 @@ const PitchDeck90SecondPremium = () => {
 
                 {/* Merchant Pain */}
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                  <div className="relative bg-white/70 backdrop-blur-xl border-2 border-orange-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <TrendingUp size={64} className="text-orange-600 mb-6 rotate-180" />
-                    <h3 className="text-4xl font-black text-orange-900 mb-8">Merchant Pain</h3>
-                    <div className="space-y-6">
+                  <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <TrendingUp size={40} className="text-[#c9a227] mb-4 md:mb-6 rotate-180 md:w-[64px] md:h-[64px]" />
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#c9a227] mb-4 sm:mb-6 md:mb-8">Merchant Pain</h3>
+                    <div className="space-y-3 sm:space-y-4 md:space-y-6">
                       {[
                         { Icon: Coins, text: '$1B+ lost to discount platforms' },
                         { Icon: Users, text: 'One-time buyers vanish forever' },
                         { Icon: TrendingUp, text: 'CAC burning through margins' }
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
-                          <item.Icon size={36} className="text-orange-600 flex-shrink-0" />
-                          <p className="text-2xl text-slate-800 font-bold leading-tight pt-1">{item.text}</p>
+                        <div key={idx} className="flex items-start gap-3 sm:gap-4">
+                          <item.Icon size={24} className="text-[#c9a227] flex-shrink-0 sm:w-[28px] sm:h-[28px] md:w-[36px] md:h-[36px]" />
+                          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-bold leading-tight">{item.text}</p>
                         </div>
                       ))}
                     </div>
@@ -180,15 +179,14 @@ const PitchDeck90SecondPremium = () => {
                 </div>
               </div>
 
-              {/* Premium quote card */}
+              {/* Quote card */}
               <div className="animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 rounded-3xl blur-xl opacity-50" />
-                  <div className="relative bg-gradient-to-r from-red-900 to-orange-900 backdrop-blur-xl border-2 border-white/20 rounded-3xl p-12 shadow-2xl text-center">
-                    <p className="text-4xl text-white font-black italic leading-relaxed">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-2xl md:rounded-3xl blur-xl opacity-50" />
+                  <div className="relative bg-gradient-to-r from-[#c9a227] to-[#d4b03f] backdrop-blur-xl border-2 border-white/20 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl text-center">
+                    <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#0a1628] font-black italic leading-relaxed">
                       "Everyone's hunting for value. Nobody's capturing habit."
                     </p>
-                    <div className="w-32 h-1 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] mx-auto mt-6 rounded-full" />
                   </div>
                 </div>
               </div>
@@ -196,78 +194,72 @@ const PitchDeck90SecondPremium = () => {
           </div>
         );
 
-      // ==================== SLIDE 2: WHAT NUQTA IS [15-30s] ====================
+      // ==================== SLIDE 2: WHAT NUQTA IS ====================
       case 2:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-blue-50 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-blue-300 rounded-full blur-[120px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/3 right-1/3 w-[600px] h-[600px] bg-slate-300 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
+              <div className="absolute top-1/3 left-1/3 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/3 right-1/3 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl w-full">
-              {/* Premium headline */}
-              <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-[#c9a227] blur-3xl opacity-30" />
-                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#c9a227] leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f] leading-tight">
                     Neutral Rewards + Payment Intelligence
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-700 font-bold mt-4">The complete consumer journey in one platform</p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">The complete consumer journey in one platform</p>
               </div>
 
               {/* Journey step cards */}
-              <div className="grid grid-cols-4 gap-6 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { Icon: Search, title: 'Search', desc: 'Find best deals near you', bgGlow: 'bg-blue-600' },
-                  { Icon: Target, title: 'Decide', desc: 'Compare & choose smart', bgGlow: 'bg-[#c9a227]' },
-                  { Icon: CreditCard, title: 'Pay', desc: 'Tap with Apple/Google Pay', bgGlow: 'bg-indigo-600' },
-                  { Icon: Gift, title: 'Earn', desc: 'Get neutral points every time', bgGlow: 'bg-emerald-600' }
+                  { Icon: Search, title: 'Search', desc: 'Find best deals near you' },
+                  { Icon: Target, title: 'Decide', desc: 'Compare & choose smart' },
+                  { Icon: CreditCard, title: 'Pay', desc: 'Tap with Apple/Google Pay' },
+                  { Icon: Gift, title: 'Earn', desc: 'Get neutral points every time' }
                 ].map((step, idx) => (
-                  <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 ${step.bgGlow} rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity`} />
-                    <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-3xl p-8 shadow-xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-all">
-                      <step.Icon size={60} className="text-slate-900 mb-4" />
-                      <h3 className="text-3xl font-black text-slate-900 mb-3">{step.title}</h3>
-                      <p className="text-lg text-slate-700 font-semibold leading-tight">{step.desc}</p>
+                  <div key={idx} className="relative group">
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-xl md:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-xl md:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl transform group-hover:scale-105 transition-all">
+                      <step.Icon size={32} className="text-[#c9a227] mb-2 sm:mb-4 md:w-[48px] md:h-[48px] lg:w-[60px] lg:h-[60px]" />
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-1 sm:mb-3">{step.title}</h3>
+                      <p className="text-xs sm:text-sm md:text-base lg:text-lg text-slate-400 font-semibold leading-tight">{step.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Differentiator cards */}
-              <div className="grid grid-cols-3 gap-8 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
                     Icon: Zap,
                     title: 'Neutral Points',
-                    desc: 'No expiry, no merchant lock-in. Your points, your choice.',
-                    gradient: 'from-[#c9a227] to-[#d4b03f]',
-                    border: 'border-[#c9a227]/30'
+                    desc: 'No expiry, no merchant lock-in. Your points, your choice.'
                   },
                   {
                     Icon: Shield,
                     title: 'Payment Intel',
-                    desc: 'See hidden fees, better cards, smarter payment routing.',
-                    gradient: 'from-blue-500 to-blue-600',
-                    border: 'border-blue-200'
+                    desc: 'See hidden fees, better cards, smarter payment routing.'
                   },
                   {
                     Icon: Repeat,
                     title: 'Habit Loop',
-                    desc: 'Every transaction builds your savings & our moat.',
-                    gradient: 'from-emerald-500 to-teal-500',
-                    border: 'border-emerald-200'
+                    desc: 'Every transaction builds your savings & our moat.'
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="relative group">
-                    <div className={`absolute inset-0 bg-gradient-to-r ${item.gradient} rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
-                    <div className={`relative bg-white/70 backdrop-blur-xl border-2 ${item.border} rounded-3xl p-10 shadow-2xl transform group-hover:scale-105 transition-all`}>
-                      <item.Icon size={60} className="text-slate-900 mb-6" />
-                      <h3 className="text-3xl font-black text-slate-900 mb-4">{item.title}</h3>
-                      <p className="text-xl text-slate-700 font-semibold leading-tight">{item.desc}</p>
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl transform group-hover:scale-105 transition-all">
+                      <item.Icon size={36} className="text-[#c9a227] mb-4 sm:mb-6 md:w-[48px] md:h-[48px] lg:w-[60px] lg:h-[60px]" />
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-2 sm:mb-4">{item.title}</h3>
+                      <p className="text-sm sm:text-base md:text-lg lg:text-xl text-slate-400 font-semibold leading-tight">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -276,53 +268,73 @@ const PitchDeck90SecondPremium = () => {
           </div>
         );
 
-      // ==================== SLIDE 3: WHY THIS WORKS [30-45s] ====================
+      // ==================== SLIDE 3: WHY THIS WORKS ====================
       case 3:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-50 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-emerald-300 rounded-full blur-[100px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-teal-300 rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl w-full">
-              {/* Premium headline */}
-              <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 blur-3xl opacity-30" />
-                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f] leading-tight">
                     Inside The Transaction Loop
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-700 font-bold mt-4">Why we sit at the point of maximum leverage</p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">Why we sit at the point of maximum leverage</p>
               </div>
 
-              {/* Transaction flow diagram */}
-              <div className="mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="relative">
-                  {/* Flow cards in a circle */}
+              {/* Transaction flow - Mobile: vertical, Desktop: horizontal */}
+              <div className="mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                {/* Mobile flow (vertical) */}
+                <div className="flex md:hidden flex-col items-center gap-3">
+                  {[
+                    { Icon: Users, label: 'User Searches' },
+                    { Icon: Store, label: 'Nuqta Routes' },
+                    { Icon: CreditCard, label: 'Payment Clears' },
+                    { Icon: Gift, label: 'Points Earned' },
+                    { Icon: Coins, label: 'We Get Paid' }
+                  ].map((step, idx) => (
+                    <React.Fragment key={idx}>
+                      <div className="relative group">
+                        <div className="absolute inset-0 bg-[#c9a227] rounded-full blur-lg opacity-40" />
+                        <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-full w-20 h-20 flex items-center justify-center shadow-xl">
+                          <step.Icon size={32} className="text-[#c9a227]" />
+                        </div>
+                      </div>
+                      <p className="text-base font-black text-white">{step.label}</p>
+                      {idx < 4 && <ArrowRight size={24} className="text-[#c9a227] rotate-90" />}
+                    </React.Fragment>
+                  ))}
+                </div>
+
+                {/* Desktop flow (horizontal) */}
+                <div className="hidden md:block">
                   <div className="grid grid-cols-5 gap-6 items-center">
                     {[
-                      { Icon: Users, label: 'User Searches', bgGlow: 'bg-blue-600' },
+                      { Icon: Users, label: 'User Searches' },
                       { isArrow: true },
-                      { Icon: Store, label: 'Nuqta Routes', bgGlow: 'bg-emerald-600' },
+                      { Icon: Store, label: 'Nuqta Routes' },
                       { isArrow: true },
-                      { Icon: CreditCard, label: 'Payment Clears', bgGlow: 'bg-blue-600' }
+                      { Icon: CreditCard, label: 'Payment Clears' }
                     ].map((step, idx) => (
                       step.isArrow ? (
-                        <div key={idx} className="flex justify-center animate-[fadeIn_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                          <ArrowRight size={60} className="text-slate-400" />
+                        <div key={idx} className="flex justify-center">
+                          <ArrowRight size={48} className="text-[#c9a227]" />
                         </div>
                       ) : (
-                        <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                          <div className={`absolute inset-0 ${step.bgGlow} rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
-                          <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-full w-32 h-32 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all mx-auto">
-                            <div className="text-center">
-                              {step.Icon && <step.Icon size={48} className="text-slate-900" />}
-                            </div>
+                        <div key={idx} className="relative group text-center">
+                          <div className="absolute inset-0 bg-[#c9a227] rounded-full blur-xl opacity-40" />
+                          <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-full w-24 lg:w-32 h-24 lg:h-32 flex items-center justify-center shadow-xl mx-auto">
+                            {step.Icon && <step.Icon size={48} className="text-[#c9a227]" />}
                           </div>
-                          <p className="text-center text-xl font-black text-slate-900 mt-4">{step.label}</p>
+                          <p className="text-lg lg:text-xl font-black text-white mt-4">{step.label}</p>
                         </div>
                       )
                     ))}
@@ -332,24 +344,22 @@ const PitchDeck90SecondPremium = () => {
                   <div className="grid grid-cols-5 gap-6 items-center mt-6">
                     {[
                       { isArrow: true },
-                      { Icon: Gift, label: 'Points Earned', bgGlow: 'bg-[#c9a227]' },
+                      { Icon: Gift, label: 'Points Earned' },
                       { isArrow: true },
-                      { Icon: Coins, label: 'We Get Paid', bgGlow: 'bg-[#c9a227]' },
+                      { Icon: Coins, label: 'We Get Paid' },
                       { empty: true }
                     ].map((step, idx) => (
                       step.isArrow ? (
-                        <div key={idx} className="flex justify-center animate-[fadeIn_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
-                          <ArrowRight size={60} className="text-slate-400 rotate-180" />
+                        <div key={idx} className="flex justify-center">
+                          <ArrowRight size={48} className="text-[#c9a227] rotate-180" />
                         </div>
                       ) : step.Icon ? (
-                        <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.5 + idx * 0.1}s` }}>
-                          <div className={`absolute inset-0 ${step.bgGlow} rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
-                          <div className="relative bg-white/70 backdrop-blur-xl border-2 border-white/40 rounded-full w-32 h-32 flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all mx-auto">
-                            <div className="text-center">
-                              <step.Icon size={48} className="text-slate-900" />
-                            </div>
+                        <div key={idx} className="relative group text-center">
+                          <div className="absolute inset-0 bg-[#c9a227] rounded-full blur-xl opacity-40" />
+                          <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-full w-24 lg:w-32 h-24 lg:h-32 flex items-center justify-center shadow-xl mx-auto">
+                            <step.Icon size={48} className="text-[#c9a227]" />
                           </div>
-                          <p className="text-center text-xl font-black text-slate-900 mt-4">{step.label}</p>
+                          <p className="text-lg lg:text-xl font-black text-white mt-4">{step.label}</p>
                         </div>
                       ) : <div key={idx} />
                     ))}
@@ -358,24 +368,24 @@ const PitchDeck90SecondPremium = () => {
               </div>
 
               {/* Benefit cards */}
-              <div className="grid grid-cols-2 gap-8 animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                  <div className="relative bg-white/70 backdrop-blur-xl border-2 border-blue-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <Users size={64} className="text-blue-600 mb-6" />
-                    <h3 className="text-4xl font-black text-blue-900 mb-6">For Users</h3>
-                    <p className="text-2xl text-slate-800 font-bold leading-relaxed">
+                  <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <Users size={40} className="text-[#c9a227] mb-4 sm:mb-6 md:w-[64px] md:h-[64px]" />
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#c9a227] mb-4 sm:mb-6">For Users</h3>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-bold leading-relaxed">
                       Save on every transaction. Build wealth through everyday spending. Zero effort required.
                     </p>
                   </div>
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-                  <div className="relative bg-white/70 backdrop-blur-xl border-2 border-emerald-200 rounded-3xl p-12 shadow-2xl transform group-hover:scale-105 transition-all">
-                    <Store size={64} className="text-emerald-600 mb-6" />
-                    <h3 className="text-4xl font-black text-emerald-900 mb-6">For Merchants</h3>
-                    <p className="text-2xl text-slate-800 font-bold leading-relaxed">
+                  <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <Store size={40} className="text-[#c9a227] mb-4 sm:mb-6 md:w-[64px] md:h-[64px]" />
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#c9a227] mb-4 sm:mb-6">For Merchants</h3>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-bold leading-relaxed">
                       Loyal customers, not one-time bargain hunters. Predictable revenue, not margin erosion.
                     </p>
                   </div>
@@ -385,46 +395,46 @@ const PitchDeck90SecondPremium = () => {
           </div>
         );
 
-      // ==================== SLIDE 4: GROUPON COMPARISON [45-60s] ====================
+      // ==================== SLIDE 4: GROUPON COMPARISON ====================
       case 4:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-red-600 rounded-full blur-[120px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-red-600 rounded-full blur-[80px] md:blur-[120px] opacity-15 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl w-full">
-              {/* Premium headline */}
-              <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-emerald-400 blur-3xl opacity-40" />
-                  <h1 className="relative text-8xl font-black text-white leading-tight">
-                    Discounts Decay. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-emerald-400">Habits Compound.</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white leading-tight">
+                    Discounts Decay. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">Habits Compound.</span>
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-300 font-bold mt-4">Why we're not another Groupon</p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">Why we're not another Groupon</p>
               </div>
 
               {/* Comparison cards */}
-              <div className="grid grid-cols-2 gap-8 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {/* Groupon */}
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 rounded-3xl blur-xl opacity-40" />
-                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-red-500/30 rounded-3xl p-12 shadow-2xl">
-                    <TrendingUp size={64} className="text-red-400 mb-6 rotate-180" />
-                    <h3 className="text-5xl font-black text-red-400 mb-8">Groupon Model</h3>
-                    <div className="space-y-6">
+                  <div className="absolute inset-0 bg-red-600 rounded-2xl md:rounded-3xl blur-xl opacity-30" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-red-500/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <TrendingUp size={40} className="text-red-400 mb-4 sm:mb-6 rotate-180 md:w-[64px] md:h-[64px]" />
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-red-400 mb-4 sm:mb-6 md:mb-8">Groupon Model</h3>
+                    <div className="space-y-3 sm:space-y-4 md:space-y-6">
                       {[
-                        { Icon: XCircle, text: '50-70% discounts burn merchant margins', color: 'red' },
-                        { Icon: XCircle, text: 'One-time users never return', color: 'red' },
-                        { Icon: XCircle, text: 'Merchants lose money on every deal', color: 'red' },
-                        { Icon: XCircle, text: 'Value extraction, not creation', color: 'red' }
+                        { text: '50-70% discounts burn merchant margins' },
+                        { text: 'One-time users never return' },
+                        { text: 'Merchants lose money on every deal' },
+                        { text: 'Value extraction, not creation' }
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                          <item.Icon size={32} className="text-red-400 flex-shrink-0" />
-                          <p className="text-2xl text-slate-300 font-bold leading-tight pt-1">{item.text}</p>
+                        <div key={idx} className="flex items-start gap-3 sm:gap-4">
+                          <XCircle size={24} className="text-red-400 flex-shrink-0 sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px]" />
+                          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-bold leading-tight">{item.text}</p>
                         </div>
                       ))}
                     </div>
@@ -433,20 +443,20 @@ const PitchDeck90SecondPremium = () => {
 
                 {/* Nuqta */}
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-700 rounded-3xl blur-xl opacity-50" />
-                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-emerald-500/30 rounded-3xl p-12 shadow-2xl">
-                    <Rocket size={64} className="text-emerald-400 mb-6" />
-                    <h3 className="text-5xl font-black text-emerald-400 mb-8">Nuqta Model</h3>
-                    <div className="space-y-6">
+                  <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-40" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <Rocket size={40} className="text-[#c9a227] mb-4 sm:mb-6 md:w-[64px] md:h-[64px]" />
+                    <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#c9a227] mb-4 sm:mb-6 md:mb-8">Nuqta Model</h3>
+                    <div className="space-y-3 sm:space-y-4 md:space-y-6">
                       {[
-                        { Icon: CheckCircle, text: '5-15% cashback from transaction fees', color: 'emerald' },
-                        { Icon: CheckCircle, text: 'Repeat customers build habits', color: 'emerald' },
-                        { Icon: CheckCircle, text: 'Merchants pay only on actual sales', color: 'emerald' },
-                        { Icon: CheckCircle, text: 'Win-win ecosystem that compounds', color: 'emerald' }
+                        { text: '5-15% cashback from transaction fees' },
+                        { text: 'Repeat customers build habits' },
+                        { text: 'Merchants pay only on actual sales' },
+                        { text: 'Win-win ecosystem that compounds' }
                       ].map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-4 animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.4 + idx * 0.1}s` }}>
-                          <item.Icon size={32} className="text-emerald-400 flex-shrink-0" />
-                          <p className="text-2xl text-slate-300 font-bold leading-tight pt-1">{item.text}</p>
+                        <div key={idx} className="flex items-start gap-3 sm:gap-4">
+                          <CheckCircle size={24} className="text-[#c9a227] flex-shrink-0 sm:w-[28px] sm:h-[28px] md:w-[32px] md:h-[32px]" />
+                          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-slate-300 font-bold leading-tight">{item.text}</p>
                         </div>
                       ))}
                     </div>
@@ -454,15 +464,15 @@ const PitchDeck90SecondPremium = () => {
                 </div>
               </div>
 
-              {/* Premium insight card */}
+              {/* Insight card */}
               <div className="animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] rounded-3xl blur-xl opacity-50" />
-                  <div className="relative bg-gradient-to-r from-[#0a1628] to-[#1a2638] backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-3xl p-12 shadow-2xl text-center">
-                    <Sparkles size={64} className="text-[#c9a227] mx-auto mb-6" />
-                    <p className="text-4xl text-white font-black leading-relaxed">
-                      "We capture <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">transaction fees</span>, not merchant margins.<br />
-                      That's the difference between a flash sale and a lasting business."
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-2xl md:rounded-3xl blur-xl opacity-50" />
+                  <div className="relative bg-gradient-to-r from-[#0a1628] to-[#1a2638] backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl text-center">
+                    <Sparkles size={40} className="text-[#c9a227] mx-auto mb-4 sm:mb-6 md:w-[64px] md:h-[64px]" />
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-4xl text-white font-black leading-relaxed">
+                      "We capture <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">transaction fees</span>, not merchant margins.<br className="hidden sm:block" />
+                      <span className="sm:hidden"> </span>That's the difference between a flash sale and a lasting business."
                     </p>
                   </div>
                 </div>
@@ -471,30 +481,30 @@ const PitchDeck90SecondPremium = () => {
           </div>
         );
 
-      // ==================== SLIDE 5: MOAT & TIMING [60-75s] ====================
+      // ==================== SLIDE 5: MOAT & TIMING ====================
       case 5:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-blue-50 via-slate-50 to-blue-50 flex items-center justify-center p-12 relative overflow-hidden`}>
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
             {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/3 right-1/3 w-[500px] h-[500px] bg-blue-300 rounded-full blur-[100px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/3 left-1/3 w-[500px] h-[500px] bg-[#c9a227] rounded-full blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
+              <div className="absolute top-1/3 right-1/3 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/3 left-1/3 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl w-full">
-              {/* Premium headline */}
-              <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-[#c9a227] blur-3xl opacity-30" />
-                  <h1 className="relative text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-[#c9a227] leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f] leading-tight">
                     Structural Moat + 18-Month Window
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-700 font-bold mt-4">Why now, and why us</p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">Why now, and why us</p>
               </div>
 
               {/* Moat cards */}
-              <div className="grid grid-cols-3 gap-8 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
                     icon: Shield,
@@ -503,9 +513,7 @@ const PitchDeck90SecondPremium = () => {
                       'More users → More merchant demand',
                       'More merchants → More user value',
                       'Virtuous cycle compounds daily'
-                    ],
-                    gradient: 'from-blue-500 to-blue-600',
-                    border: 'border-blue-200'
+                    ]
                   },
                   {
                     icon: DollarSign,
@@ -514,9 +522,7 @@ const PitchDeck90SecondPremium = () => {
                       'Payment routing intelligence',
                       'Hidden fee detection',
                       'Card optimization engine'
-                    ],
-                    gradient: 'from-[#c9a227] to-[#d4b03f]',
-                    border: 'border-[#c9a227]/30'
+                    ]
                   },
                   {
                     icon: TrendingUp,
@@ -525,21 +531,19 @@ const PitchDeck90SecondPremium = () => {
                       'Users check before every purchase',
                       'Behavioral lock-in > switching costs',
                       'Daily usage = daily compounding'
-                    ],
-                    gradient: 'from-emerald-500 to-emerald-600',
-                    border: 'border-emerald-200'
+                    ]
                   }
                 ].map((moat, idx) => (
-                  <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 bg-gradient-to-r ${moat.gradient} rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
-                    <div className={`relative bg-white/70 backdrop-blur-xl border-2 ${moat.border} rounded-3xl p-10 shadow-2xl transform group-hover:scale-105 transition-all h-full`}>
-                      <moat.icon size={64} className="text-slate-900 mb-6" />
-                      <h3 className="text-3xl font-black text-slate-900 mb-6">{moat.title}</h3>
-                      <div className="space-y-3">
+                  <div key={idx} className="relative group">
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl transform group-hover:scale-105 transition-all h-full">
+                      <moat.icon size={40} className="text-[#c9a227] mb-4 sm:mb-6 md:w-[64px] md:h-[64px]" />
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-4 sm:mb-6">{moat.title}</h3>
+                      <div className="space-y-2 sm:space-y-3">
                         {moat.points.map((point, pidx) => (
-                          <div key={pidx} className="flex items-start gap-3">
-                            <ArrowRight size={24} className="text-slate-600 flex-shrink-0" />
-                            <p className="text-lg text-slate-800 font-semibold leading-tight pt-0.5">{point}</p>
+                          <div key={pidx} className="flex items-start gap-2 sm:gap-3">
+                            <ArrowRight size={18} className="text-[#c9a227] flex-shrink-0 sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px]" />
+                            <p className="text-sm sm:text-base md:text-lg text-slate-300 font-semibold leading-tight">{point}</p>
                           </div>
                         ))}
                       </div>
@@ -551,30 +555,30 @@ const PitchDeck90SecondPremium = () => {
               {/* Timing window card */}
               <div className="animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-orange-600 to-red-600 rounded-3xl blur-xl opacity-50" />
-                  <div className="relative bg-gradient-to-r from-red-900 to-orange-900 backdrop-blur-xl border-2 border-orange-400/30 rounded-3xl p-12 shadow-2xl">
-                    <div className="grid grid-cols-2 gap-12 items-center">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-2xl md:rounded-3xl blur-xl opacity-40" />
+                  <div className="relative bg-gradient-to-r from-[#c9a227]/20 to-[#d4b03f]/20 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl">
+                    <div className="flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                       {/* Clock visualization */}
                       <div className="text-center">
                         <div className="relative inline-block">
                           <div className="absolute inset-0 bg-[#c9a227] rounded-full blur-2xl opacity-40 animate-pulse" />
-                          <Calendar size={160} className="relative text-[#c9a227] animate-pulse" />
+                          <Calendar size={80} className="relative text-[#c9a227] animate-pulse sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px]" />
                         </div>
-                        <p className="text-6xl font-black text-[#c9a227] mt-6">18 Months</p>
-                        <p className="text-2xl text-slate-300 font-bold mt-2">Before competitors catch up</p>
+                        <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227] mt-4 sm:mt-6">18 Months</p>
+                        <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-bold mt-2">Before competitors catch up</p>
                       </div>
 
                       {/* Timing points */}
-                      <div className="space-y-6">
+                      <div className="space-y-3 sm:space-y-4 md:space-y-6">
                         {[
                           { Icon: CheckCircle, text: 'Digital payments hitting critical mass in UAE' },
                           { Icon: CheckCircle, text: 'Merchants desperate for customer retention tools' },
                           { Icon: CheckCircle, text: 'Consumers trained on rewards programs' },
                           { Icon: Zap, text: 'First mover captures the habit-formation window' }
                         ].map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-4">
-                            <item.Icon size={36} className="text-[#c9a227] flex-shrink-0" />
-                            <p className="text-2xl text-white font-bold leading-tight pt-1">{item.text}</p>
+                          <div key={idx} className="flex items-start gap-3 sm:gap-4">
+                            <item.Icon size={24} className="text-[#c9a227] flex-shrink-0 sm:w-[28px] sm:h-[28px] md:w-[36px] md:h-[36px]" />
+                            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-bold leading-tight">{item.text}</p>
                           </div>
                         ))}
                       </div>
@@ -586,73 +590,73 @@ const PitchDeck90SecondPremium = () => {
           </div>
         );
 
-      // ==================== SLIDE 6: THE ASK [75-90s] ====================
+      // ==================== SLIDE 6: THE ASK ====================
       case 6:
         return (
-          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-12 relative overflow-hidden`}>
-            {/* Premium animated background */}
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
+            {/* Animated background */}
             <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#c9a227] rounded-full blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-30 animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[120px] opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
 
-            <div className="relative z-10 max-w-7xl w-full">
-              {/* Premium headline */}
-              <div className="text-center mb-16 animate-[slideDown_0.8s_ease-out]">
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
                 <div className="relative inline-block">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-3xl opacity-40" />
-                  <h1 className="relative text-8xl font-black text-white leading-tight">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-black text-white leading-tight">
                     Product Ready. <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">Merchants Lined Up.</span>
                   </h1>
                 </div>
-                <p className="text-3xl text-slate-300 font-bold mt-4">We just need fuel for the rocket</p>
+                <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">We just need fuel for the rocket</p>
               </div>
 
               {/* Readiness metrics */}
-              <div className="grid grid-cols-3 gap-8 mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { Icon: CheckCircle, metric: '90%', label: 'Product Complete', desc: 'MVP ready for launch', bgGlow: 'bg-emerald-600', textColor: 'text-emerald-400' },
-                  { Icon: Store, metric: '30+', label: 'Merchants Signed', desc: 'LOIs in hand', bgGlow: 'bg-[#c9a227]', textColor: 'text-[#c9a227]' },
-                  { Icon: DollarSign, metric: 'AED 40', label: 'Target CAC', desc: 'Validated & achievable', bgGlow: 'bg-blue-600', textColor: 'text-blue-400' }
+                  { Icon: CheckCircle, metric: '90%', label: 'Product Complete', desc: 'MVP ready for launch' },
+                  { Icon: Store, metric: '30+', label: 'Merchants Signed', desc: 'LOIs in hand' },
+                  { Icon: DollarSign, metric: 'AED 40', label: 'Target CAC', desc: 'Validated & achievable' }
                 ].map((item, idx) => (
-                  <div key={idx} className="relative group animate-[slideUp_0.6s_ease-out] opacity-0 [animation-fill-mode:forwards]" style={{ animationDelay: `${0.3 + idx * 0.1}s` }}>
-                    <div className={`absolute inset-0 ${item.bgGlow} rounded-3xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
-                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-10 shadow-2xl transform group-hover:scale-105 group-hover:-translate-y-2 transition-all text-center">
-                      <item.Icon size={60} className={item.textColor} />
-                      <p className={`text-6xl font-black ${item.textColor} mb-3 mt-4`}>{item.metric}</p>
-                      <p className="text-2xl text-white font-black mb-2">{item.label}</p>
-                      <p className="text-lg text-slate-400 font-semibold">{item.desc}</p>
+                  <div key={idx} className="relative group">
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-2xl md:rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl transform group-hover:scale-105 transition-all text-center">
+                      <item.Icon size={40} className="text-[#c9a227] mx-auto md:w-[60px] md:h-[60px]" />
+                      <p className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227] mb-2 mt-3 sm:mt-4">{item.metric}</p>
+                      <p className="text-lg sm:text-xl md:text-2xl text-white font-black mb-1 sm:mb-2">{item.label}</p>
+                      <p className="text-sm sm:text-base md:text-lg text-slate-400 font-semibold">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* The Ask card */}
-              <div className="mb-12 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="mb-6 sm:mb-8 md:mb-12 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <div className="relative bg-gradient-to-r from-[#c9a227] to-[#d4b03f] backdrop-blur-xl border-2 border-[#c9a227]/50 rounded-3xl p-16 shadow-2xl text-center">
-                    <Sparkles size={80} className="text-white mx-auto mb-8 animate-pulse" />
-                    <h2 className="text-6xl font-black text-white mb-8">The Ask</h2>
-                    <div className="grid grid-cols-3 gap-12 max-w-5xl mx-auto">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] rounded-2xl md:rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity" />
+                  <div className="relative bg-gradient-to-r from-[#c9a227] to-[#d4b03f] backdrop-blur-xl border-2 border-[#c9a227]/50 rounded-2xl md:rounded-3xl p-6 sm:p-10 md:p-16 shadow-2xl text-center">
+                    <Sparkles size={48} className="text-white mx-auto mb-4 sm:mb-6 md:mb-8 animate-pulse md:w-[64px] md:h-[64px] lg:w-[80px] lg:h-[80px]" />
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 sm:mb-8">The Ask</h2>
+                    <div className="grid grid-cols-3 gap-4 sm:gap-8 md:gap-12 max-w-5xl mx-auto">
                       <div>
-                        <p className="text-2xl text-[#0a1628] font-bold mb-3">Raising</p>
-                        <p className="text-7xl font-black text-white mb-2">$400K</p>
-                        <p className="text-xl text-[#0a1628] font-semibold">SAFE</p>
+                        <p className="text-sm sm:text-lg md:text-2xl text-[#0a1628] font-bold mb-1 sm:mb-3">Raising</p>
+                        <p className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-1 sm:mb-2">$400K</p>
+                        <p className="text-xs sm:text-base md:text-xl text-[#0a1628] font-semibold">SAFE</p>
                       </div>
                       <div>
-                        <p className="text-2xl text-[#0a1628] font-bold mb-3">Valuation Cap</p>
-                        <p className="text-7xl font-black text-white mb-2">$5M</p>
-                        <p className="text-xl text-[#0a1628] font-semibold">USD</p>
+                        <p className="text-sm sm:text-lg md:text-2xl text-[#0a1628] font-bold mb-1 sm:mb-3">Valuation Cap</p>
+                        <p className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-1 sm:mb-2">$5M</p>
+                        <p className="text-xs sm:text-base md:text-xl text-[#0a1628] font-semibold">USD</p>
                       </div>
                       <div>
-                        <p className="text-2xl text-[#0a1628] font-bold mb-3">Discount</p>
-                        <p className="text-7xl font-black text-white mb-2">20%</p>
-                        <p className="text-xl text-[#0a1628] font-semibold">on next round</p>
+                        <p className="text-sm sm:text-lg md:text-2xl text-[#0a1628] font-bold mb-1 sm:mb-3">Discount</p>
+                        <p className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-1 sm:mb-2">20%</p>
+                        <p className="text-xs sm:text-base md:text-xl text-[#0a1628] font-semibold">on next round</p>
                       </div>
                     </div>
-                    <div className="w-64 h-1 bg-white/50 mx-auto my-8 rounded-full" />
-                    <p className="text-3xl text-white font-bold">
+                    <div className="w-32 sm:w-48 md:w-64 h-1 bg-white/50 mx-auto my-4 sm:my-6 md:my-8 rounded-full" />
+                    <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-white font-bold px-2">
                       To fund launch, acquire first 10,000 users, and prove unit economics
                     </p>
                   </div>
@@ -662,16 +666,16 @@ const PitchDeck90SecondPremium = () => {
               {/* Closing statement */}
               <div className="animate-[slideUp_0.8s_ease-out_0.8s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-3xl blur-xl opacity-40" />
-                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-3xl p-12 shadow-2xl text-center">
-                    <p className="text-4xl text-white font-black italic leading-relaxed mb-6">
-                      "The next unicorn won't come from building a better discount site.<br />
-                      It'll come from owning the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">daily habit</span> of saving money."
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-2xl md:rounded-3xl blur-xl opacity-40" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-white/10 rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl text-center">
+                    <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-white font-black italic leading-relaxed mb-4 sm:mb-6">
+                      "The next unicorn won't come from building a better discount site.<br className="hidden md:block" />
+                      <span className="md:hidden"> </span>It'll come from owning the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f]">daily habit</span> of saving money."
                     </p>
-                    <div className="flex items-center justify-center gap-8 mt-8">
-                      <Target size={48} className="text-blue-400" />
-                      <Repeat size={48} className="text-[#c9a227]" />
-                      <TrendingUp size={48} className="text-emerald-400" />
+                    <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-6 md:mt-8">
+                      <Target size={32} className="text-[#c9a227] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]" />
+                      <Repeat size={32} className="text-[#c9a227] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]" />
+                      <TrendingUp size={32} className="text-[#c9a227] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]" />
                     </div>
                   </div>
                 </div>
@@ -685,8 +689,8 @@ const PitchDeck90SecondPremium = () => {
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#0a1628] to-[#1a2638] flex items-center justify-center">
             <div className="text-center">
-              <p className="text-white text-6xl font-black mb-4">Slide {currentSlide + 1}</p>
-              <p className="text-slate-400 text-2xl">Slide not found</p>
+              <p className="text-white text-4xl sm:text-6xl font-black mb-4">Slide {currentSlide + 1}</p>
+              <p className="text-slate-400 text-lg sm:text-2xl">Slide not found</p>
             </div>
           </div>
         );
@@ -697,49 +701,150 @@ const PitchDeck90SecondPremium = () => {
     <div className="relative">
       {renderSlide()}
 
-      {/* Premium navigation bar */}
-      <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50">
-        <div className="relative group">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] rounded-full blur-xl opacity-50" />
-          <div className="relative bg-[#0a1628]/95 backdrop-blur-2xl border-2 border-white/10 rounded-full px-10 py-5 flex items-center gap-6 shadow-2xl">
-            <button
-              onClick={() => changeSlide(currentSlide - 1)}
-              disabled={currentSlide === 0}
-              className="p-4 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
-            >
-              <ChevronLeft size={32} className="text-white" />
-            </button>
+      {/* Full Footer Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 z-50">
+        <div className="bg-[#0a1628]/95 backdrop-blur-2xl border-t-2 border-[#c9a227]/30">
+          {/* Slide Labels Navigation - Desktop */}
+          <div className="hidden md:block border-b border-white/10">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="flex items-center justify-between">
+                {[
+                  { label: 'Cover', shortLabel: 'Cover' },
+                  { label: 'Problem', shortLabel: 'Problem' },
+                  { label: 'Solution', shortLabel: 'Solution' },
+                  { label: 'How It Works', shortLabel: 'How' },
+                  { label: 'vs Groupon', shortLabel: 'Compare' },
+                  { label: 'Moat & Timing', shortLabel: 'Moat' },
+                  { label: 'The Ask', shortLabel: 'Ask' }
+                ].map((slide, index) => (
+                  <button
+                    key={index}
+                    onClick={() => changeSlide(index)}
+                    className={`flex-1 py-3 px-2 text-center transition-all border-b-2 ${
+                      index === currentSlide
+                        ? 'border-[#c9a227] text-[#c9a227] bg-[#c9a227]/10'
+                        : 'border-transparent text-slate-400 hover:text-white hover:bg-white/5'
+                    }`}
+                  >
+                    <span className="text-xs lg:text-sm font-bold uppercase tracking-wide">
+                      <span className="hidden lg:inline">{slide.label}</span>
+                      <span className="lg:hidden">{slide.shortLabel}</span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
 
-            <div className="flex items-center gap-4">
-              {Array.from({ length: totalSlides }).map((_, index) => (
+          {/* Mobile Slide Labels - Scrollable */}
+          <div className="md:hidden overflow-x-auto border-b border-white/10 scrollbar-hide">
+            <div className="flex min-w-max">
+              {[
+                'Cover',
+                'Problem',
+                'Solution',
+                'How',
+                'Compare',
+                'Moat',
+                'Ask'
+              ].map((label, index) => (
                 <button
                   key={index}
                   onClick={() => changeSlide(index)}
-                  className={`transition-all rounded-full ${
+                  className={`py-2 px-4 text-center transition-all border-b-2 whitespace-nowrap ${
                     index === currentSlide
-                      ? 'bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] w-16 h-4 shadow-lg shadow-[#c9a227]/50'
-                      : 'bg-white/20 hover:bg-white/30 w-4 h-4'
+                      ? 'border-[#c9a227] text-[#c9a227] bg-[#c9a227]/10'
+                      : 'border-transparent text-slate-400'
                   }`}
-                />
+                >
+                  <span className="text-xs font-bold uppercase tracking-wide">{label}</span>
+                </button>
               ))}
             </div>
+          </div>
 
-            <button
-              onClick={() => changeSlide(currentSlide + 1)}
-              disabled={currentSlide === totalSlides - 1}
-              className="p-4 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
-            >
-              <ChevronRight size={32} className="text-white" />
-            </button>
+          {/* Main Navigation Controls */}
+          <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
+            <div className="flex items-center justify-between gap-4">
+              {/* Left: Prev Button + Slide Counter */}
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={() => changeSlide(currentSlide - 1)}
+                  disabled={currentSlide === 0}
+                  className="p-2 sm:p-3 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
+                >
+                  <ChevronLeft size={20} className="text-white sm:w-[24px] sm:h-[24px]" />
+                </button>
+                <div className="hidden sm:block px-4 py-2 bg-white/10 rounded-full">
+                  <p className="text-white text-sm font-bold">
+                    {currentSlide + 1} <span className="text-white/50">/</span> {totalSlides}
+                  </p>
+                </div>
+              </div>
 
-            <div className="ml-6 px-6 py-3 bg-white/10 rounded-full">
-              <p className="text-white text-lg font-bold">
-                {currentSlide + 1} <span className="text-white/50">/</span> {totalSlides}
-              </p>
+              {/* Center: Dot Navigation */}
+              <div className="flex items-center gap-2 sm:gap-3">
+                {Array.from({ length: totalSlides }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => changeSlide(index)}
+                    className={`transition-all rounded-full ${
+                      index === currentSlide
+                        ? 'bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] w-6 sm:w-10 h-2 sm:h-3 shadow-lg shadow-[#c9a227]/50'
+                        : 'bg-white/20 hover:bg-white/40 w-2 sm:w-3 h-2 sm:h-3'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Right: Next Button + Quick Actions */}
+              <div className="flex items-center gap-3">
+                {/* Mobile slide counter */}
+                <div className="sm:hidden px-3 py-1 bg-white/10 rounded-full">
+                  <p className="text-white text-xs font-bold">
+                    {currentSlide + 1}/{totalSlides}
+                  </p>
+                </div>
+                <button
+                  onClick={() => changeSlide(currentSlide + 1)}
+                  disabled={currentSlide === totalSlides - 1}
+                  className="p-2 sm:p-3 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
+                >
+                  <ChevronRight size={20} className="text-white sm:w-[24px] sm:h-[24px]" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Brand Bar */}
+          <div className="border-t border-white/10 py-2 px-4">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
+              <p className="text-[#c9a227] text-xs sm:text-sm font-bold tracking-wider">NUQTA</p>
+              <p className="text-slate-500 text-xs hidden sm:block">The Everyday Savings Platform</p>
+              <p className="text-slate-500 text-xs">2026</p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Add padding to content so footer doesn't overlap */}
+      <style jsx global>{`
+        .min-h-screen {
+          padding-bottom: 140px !important;
+        }
+        @media (min-width: 768px) {
+          .min-h-screen {
+            padding-bottom: 160px !important;
+          }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
 
       {/* Custom animations */}
       <style jsx global>{`
@@ -754,6 +859,14 @@ const PitchDeck90SecondPremium = () => {
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-40px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        .min-h-screen {
+          min-height: calc(100vh - 140px) !important;
+        }
+        @media (min-width: 768px) {
+          .min-h-screen {
+            min-height: calc(100vh - 160px) !important;
+          }
         }
       `}</style>
     </div>
