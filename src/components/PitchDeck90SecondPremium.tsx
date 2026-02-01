@@ -701,38 +701,36 @@ const PitchDeck90SecondPremium = () => {
     <div className="relative">
       {renderSlide()}
 
-      {/* Full Footer Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 z-50">
-        <div className="bg-[#0a1628]/95 backdrop-blur-2xl border-t-2 border-[#c9a227]/30">
-          {/* Slide Labels Navigation - Desktop */}
+      {/* Slide Navigation - Positioned above global footer */}
+      <div className="fixed bottom-24 md:bottom-28 left-1/2 -translate-x-1/2 z-[60] w-[calc(100%-2rem)] max-w-4xl">
+        <div className="bg-[#0a1628]/95 backdrop-blur-2xl border-2 border-[#c9a227]/30 rounded-2xl shadow-2xl">
+          {/* Slide Labels - Desktop */}
           <div className="hidden md:block border-b border-white/10">
-            <div className="max-w-7xl mx-auto px-4">
-              <div className="flex items-center justify-between">
-                {[
-                  { label: 'Cover', shortLabel: 'Cover' },
-                  { label: 'Problem', shortLabel: 'Problem' },
-                  { label: 'Solution', shortLabel: 'Solution' },
-                  { label: 'How It Works', shortLabel: 'How' },
-                  { label: 'vs Groupon', shortLabel: 'Compare' },
-                  { label: 'Moat & Timing', shortLabel: 'Moat' },
-                  { label: 'The Ask', shortLabel: 'Ask' }
-                ].map((slide, index) => (
-                  <button
-                    key={index}
-                    onClick={() => changeSlide(index)}
-                    className={`flex-1 py-3 px-2 text-center transition-all border-b-2 ${
-                      index === currentSlide
-                        ? 'border-[#c9a227] text-[#c9a227] bg-[#c9a227]/10'
-                        : 'border-transparent text-slate-400 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    <span className="text-xs lg:text-sm font-bold uppercase tracking-wide">
-                      <span className="hidden lg:inline">{slide.label}</span>
-                      <span className="lg:hidden">{slide.shortLabel}</span>
-                    </span>
-                  </button>
-                ))}
-              </div>
+            <div className="flex items-center justify-between px-2">
+              {[
+                { label: 'Cover', shortLabel: 'Cover' },
+                { label: 'Problem', shortLabel: 'Problem' },
+                { label: 'Solution', shortLabel: 'Solution' },
+                { label: 'How It Works', shortLabel: 'How' },
+                { label: 'vs Groupon', shortLabel: 'Compare' },
+                { label: 'Moat & Timing', shortLabel: 'Moat' },
+                { label: 'The Ask', shortLabel: 'Ask' }
+              ].map((slide, index) => (
+                <button
+                  key={index}
+                  onClick={() => changeSlide(index)}
+                  className={`flex-1 py-2 px-1 text-center transition-all border-b-2 ${
+                    index === currentSlide
+                      ? 'border-[#c9a227] text-[#c9a227] bg-[#c9a227]/10'
+                      : 'border-transparent text-slate-400 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  <span className="text-xs font-bold uppercase tracking-wide">
+                    <span className="hidden lg:inline">{slide.label}</span>
+                    <span className="lg:hidden">{slide.shortLabel}</span>
+                  </span>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -751,7 +749,7 @@ const PitchDeck90SecondPremium = () => {
                 <button
                   key={index}
                   onClick={() => changeSlide(index)}
-                  className={`py-2 px-4 text-center transition-all border-b-2 whitespace-nowrap ${
+                  className={`py-2 px-3 text-center transition-all border-b-2 whitespace-nowrap ${
                     index === currentSlide
                       ? 'border-[#c9a227] text-[#c9a227] bg-[#c9a227]/10'
                       : 'border-transparent text-slate-400'
@@ -763,19 +761,19 @@ const PitchDeck90SecondPremium = () => {
             </div>
           </div>
 
-          {/* Main Navigation Controls */}
-          <div className="max-w-7xl mx-auto px-4 py-3 sm:py-4">
+          {/* Navigation Controls */}
+          <div className="px-4 py-3">
             <div className="flex items-center justify-between gap-4">
               {/* Left: Prev Button + Slide Counter */}
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => changeSlide(currentSlide - 1)}
                   disabled={currentSlide === 0}
-                  className="p-2 sm:p-3 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
+                  className="p-2 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
                 >
-                  <ChevronLeft size={20} className="text-white sm:w-[24px] sm:h-[24px]" />
+                  <ChevronLeft size={18} className="text-white" />
                 </button>
-                <div className="hidden sm:block px-4 py-2 bg-white/10 rounded-full">
+                <div className="hidden sm:block px-3 py-1 bg-white/10 rounded-full">
                   <p className="text-white text-sm font-bold">
                     {currentSlide + 1} <span className="text-white/50">/</span> {totalSlides}
                   </p>
@@ -783,24 +781,23 @@ const PitchDeck90SecondPremium = () => {
               </div>
 
               {/* Center: Dot Navigation */}
-              <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-2">
                 {Array.from({ length: totalSlides }).map((_, index) => (
                   <button
                     key={index}
                     onClick={() => changeSlide(index)}
                     className={`transition-all rounded-full ${
                       index === currentSlide
-                        ? 'bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] w-6 sm:w-10 h-2 sm:h-3 shadow-lg shadow-[#c9a227]/50'
-                        : 'bg-white/20 hover:bg-white/40 w-2 sm:w-3 h-2 sm:h-3'
+                        ? 'bg-gradient-to-r from-[#c9a227] via-[#d4b03f] to-[#c9a227] w-6 h-2 shadow-lg shadow-[#c9a227]/50'
+                        : 'bg-white/20 hover:bg-white/40 w-2 h-2'
                     }`}
                   />
                 ))}
               </div>
 
-              {/* Right: Next Button + Quick Actions */}
+              {/* Right: Next Button */}
               <div className="flex items-center gap-3">
-                {/* Mobile slide counter */}
-                <div className="sm:hidden px-3 py-1 bg-white/10 rounded-full">
+                <div className="sm:hidden px-2 py-1 bg-white/10 rounded-full">
                   <p className="text-white text-xs font-bold">
                     {currentSlide + 1}/{totalSlides}
                   </p>
@@ -808,35 +805,17 @@ const PitchDeck90SecondPremium = () => {
                 <button
                   onClick={() => changeSlide(currentSlide + 1)}
                   disabled={currentSlide === totalSlides - 1}
-                  className="p-2 sm:p-3 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
+                  className="p-2 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] hover:from-[#d4b03f] hover:to-[#c9a227] disabled:opacity-30 disabled:cursor-not-allowed transition-all transform hover:scale-110 active:scale-95 shadow-lg disabled:shadow-none"
                 >
-                  <ChevronRight size={20} className="text-white sm:w-[24px] sm:h-[24px]" />
+                  <ChevronRight size={18} className="text-white" />
                 </button>
               </div>
-            </div>
-          </div>
-
-          {/* Bottom Brand Bar */}
-          <div className="border-t border-white/10 py-2 px-4">
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <p className="text-[#c9a227] text-xs sm:text-sm font-bold tracking-wider">NUQTA</p>
-              <p className="text-slate-500 text-xs hidden sm:block">The Everyday Savings Platform</p>
-              <p className="text-slate-500 text-xs">2026</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Add padding to content so footer doesn't overlap */}
       <style jsx global>{`
-        .min-h-screen {
-          padding-bottom: 140px !important;
-        }
-        @media (min-width: 768px) {
-          .min-h-screen {
-            padding-bottom: 160px !important;
-          }
-        }
         .scrollbar-hide::-webkit-scrollbar {
           display: none;
         }
@@ -859,14 +838,6 @@ const PitchDeck90SecondPremium = () => {
         @keyframes slideDown {
           from { opacity: 0; transform: translateY(-40px); }
           to { opacity: 1; transform: translateY(0); }
-        }
-        .min-h-screen {
-          min-height: calc(100vh - 140px) !important;
-        }
-        @media (min-width: 768px) {
-          .min-h-screen {
-            min-height: calc(100vh - 160px) !important;
-          }
         }
       `}</style>
     </div>

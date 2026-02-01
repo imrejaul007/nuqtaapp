@@ -1,0 +1,338 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import {
+  ChevronUp,
+  ChevronDown,
+  FileText,
+  Presentation,
+  TrendingUp,
+  Map,
+  Users,
+  Building2,
+  Target,
+  Calendar,
+  DollarSign,
+  Rocket,
+  Briefcase,
+  Database,
+  CreditCard,
+  FileCheck,
+  Home,
+  Menu,
+  X
+} from 'lucide-react';
+
+/**
+ * GLOBAL FOOTER NAVIGATION
+ *
+ * Comprehensive footer with access to all pages and docs
+ * Brand colors: #c9a227 (gold), #0a1628 (dark blue)
+ */
+
+interface NavItem {
+  label: string;
+  href: string;
+  icon: React.ElementType;
+  description?: string;
+}
+
+interface NavCategory {
+  title: string;
+  items: NavItem[];
+}
+
+const navigationData: NavCategory[] = [
+  {
+    title: 'Pitch Decks',
+    items: [
+      { label: '90-Second Deck', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
+      { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: '31-slide comprehensive' },
+      { label: 'Deck Final', href: '/deck-final', icon: FileText, description: 'Final version' },
+      { label: 'Deck New', href: '/deck-new', icon: FileText, description: 'Updated deck' },
+      { label: 'Original Deck', href: '/deck', icon: FileText, description: 'Original version' },
+    ]
+  },
+  {
+    title: 'Strategy & Planning',
+    items: [
+      { label: 'Master Roadmap', href: '/master-roadmap', icon: Map, description: 'Full product roadmap' },
+      { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation strategy' },
+      { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp, description: 'Go-to-market plan' },
+      { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
+    ]
+  },
+  {
+    title: 'Horizons',
+    items: [
+      { label: 'H1 GTM', href: '/h1-gtm', icon: Target, description: 'Horizon 1 go-to-market' },
+      { label: 'H2 Strategy', href: '/h2-strategy', icon: TrendingUp, description: 'Horizon 2 strategy' },
+      { label: 'H2 GTM', href: '/h2-gtm', icon: Target, description: 'Horizon 2 go-to-market' },
+      { label: 'H3 Infrastructure', href: '/h3-infrastructure', icon: Building2, description: 'Horizon 3 infrastructure' },
+      { label: 'H3 GTM', href: '/h3-gtm', icon: Target, description: 'Horizon 3 go-to-market' },
+    ]
+  },
+  {
+    title: 'Phases',
+    items: [
+      { label: 'Phase 2', href: '/phase-2', icon: Calendar, description: 'Phase 2 overview' },
+      { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Target, description: 'Phase 2 go-to-market' },
+      { label: 'Phase 3', href: '/phase-3', icon: Calendar, description: 'Phase 3 overview' },
+      { label: 'Phase 3 GTM', href: '/phase-3-gtm', icon: Target, description: 'Phase 3 go-to-market' },
+    ]
+  },
+  {
+    title: 'Financial',
+    items: [
+      { label: 'Projections', href: '/financialprojection', icon: DollarSign, description: 'Financial forecasts' },
+      { label: 'Data Room', href: '/data-room', icon: Database, description: 'Investor data room' },
+      { label: 'Commitment', href: '/commitment', icon: FileCheck, description: 'Investment terms' },
+    ]
+  },
+  {
+    title: 'Merchants',
+    items: [
+      { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
+      { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
+      { label: 'User Card', href: '/card', icon: Users, description: 'User card view' },
+    ]
+  },
+  {
+    title: 'Other',
+    items: [
+      { label: 'Home', href: '/', icon: Home, description: 'Main landing page' },
+      { label: 'Landing V1', href: '/landing-v1', icon: Home, description: 'Landing version 1' },
+      { label: 'Terms', href: '/terms', icon: FileText, description: 'Terms of service' },
+    ]
+  }
+];
+
+const GlobalFooter = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href: string) => pathname === href;
+
+  return (
+    <>
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[60] md:hidden">
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+          <div className="absolute bottom-0 left-0 right-0 max-h-[80vh] overflow-y-auto bg-[#0a1628] border-t-2 border-[#c9a227]/30 rounded-t-3xl">
+            {/* Mobile Menu Header */}
+            <div className="sticky top-0 bg-[#0a1628] border-b border-white/10 p-4 flex items-center justify-between">
+              <h2 className="text-[#c9a227] font-bold text-lg">Navigation</h2>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 rounded-full bg-white/10 hover:bg-white/20"
+              >
+                <X size={20} className="text-white" />
+              </button>
+            </div>
+
+            {/* Mobile Menu Content */}
+            <div className="p-4 space-y-6">
+              {navigationData.map((category, catIdx) => (
+                <div key={catIdx}>
+                  <h3 className="text-[#c9a227] text-xs font-bold uppercase tracking-wider mb-3">{category.title}</h3>
+                  <div className="grid grid-cols-2 gap-2">
+                    {category.items.map((item, itemIdx) => (
+                      <Link
+                        key={itemIdx}
+                        href={item.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`flex items-center gap-2 p-3 rounded-xl transition-all ${
+                          isActive(item.href)
+                            ? 'bg-[#c9a227]/20 text-[#c9a227] border border-[#c9a227]/30'
+                            : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-transparent'
+                        }`}
+                      >
+                        <item.icon size={16} className="flex-shrink-0" />
+                        <span className="text-xs font-medium truncate">{item.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile Brand Bar */}
+            <div className="sticky bottom-0 bg-[#0a1628] border-t border-white/10 p-4">
+              <div className="flex items-center justify-between">
+                <p className="text-[#c9a227] text-sm font-bold tracking-wider">NUQTA</p>
+                <p className="text-slate-500 text-xs">The Everyday Savings Platform</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Footer */}
+      <footer className="fixed bottom-0 left-0 right-0 z-50">
+        <div className="bg-[#0a1628]/95 backdrop-blur-2xl border-t-2 border-[#c9a227]/30">
+
+          {/* Expanded Navigation - Desktop */}
+          {isExpanded && (
+            <div className="hidden md:block border-b border-white/10 max-h-[60vh] overflow-y-auto">
+              <div className="max-w-7xl mx-auto px-6 py-6">
+                <div className="grid grid-cols-4 lg:grid-cols-7 gap-6">
+                  {navigationData.map((category, catIdx) => (
+                    <div key={catIdx}>
+                      <h3 className="text-[#c9a227] text-xs font-bold uppercase tracking-wider mb-3">{category.title}</h3>
+                      <ul className="space-y-1">
+                        {category.items.map((item, itemIdx) => (
+                          <li key={itemIdx}>
+                            <Link
+                              href={item.href}
+                              className={`flex items-center gap-2 py-1.5 px-2 rounded-lg text-sm transition-all ${
+                                isActive(item.href)
+                                  ? 'bg-[#c9a227]/20 text-[#c9a227]'
+                                  : 'text-slate-400 hover:text-white hover:bg-white/5'
+                              }`}
+                            >
+                              <item.icon size={14} className="flex-shrink-0" />
+                              <span className="truncate">{item.label}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Quick Links Bar - Desktop */}
+          <div className="hidden md:block border-b border-white/10">
+            <div className="max-w-7xl mx-auto px-4">
+              <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-2">
+                {[
+                  { label: 'Home', href: '/' },
+                  { label: '90s Deck', href: '/deck-90' },
+                  { label: 'Full Deck', href: '/deck-kang' },
+                  { label: 'Roadmap', href: '/master-roadmap' },
+                  { label: 'GTM', href: '/gtm' },
+                  { label: 'Financials', href: '/financialprojection' },
+                  { label: 'Data Room', href: '/data-room' },
+                  { label: 'Memo', href: '/memo' },
+                  { label: 'Merchants', href: '/merchant-database' },
+                ].map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.href}
+                    className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                      isActive(link.href)
+                        ? 'bg-[#c9a227] text-[#0a1628]'
+                        : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Main Footer Bar */}
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex items-center justify-between gap-4">
+              {/* Left: Brand + Expand Button (Desktop) */}
+              <div className="flex items-center gap-4">
+                <Link href="/" className="text-[#c9a227] text-lg font-black tracking-wider hover:opacity-80 transition-opacity">
+                  NUQTA
+                </Link>
+
+                {/* Desktop Expand Button */}
+                <button
+                  onClick={() => setIsExpanded(!isExpanded)}
+                  className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition-all"
+                >
+                  <span className="text-xs font-medium">{isExpanded ? 'Less' : 'All Pages'}</span>
+                  {isExpanded ? <ChevronDown size={14} /> : <ChevronUp size={14} />}
+                </button>
+              </div>
+
+              {/* Center: Current Page Indicator */}
+              <div className="hidden sm:flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full">
+                <div className="w-2 h-2 rounded-full bg-[#c9a227] animate-pulse" />
+                <p className="text-slate-400 text-xs">
+                  {pathname === '/' ? 'Home' : pathname.replace('/', '').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                </p>
+              </div>
+
+              {/* Right: Actions */}
+              <div className="flex items-center gap-3">
+                {/* Quick Nav - Desktop */}
+                <div className="hidden lg:flex items-center gap-2">
+                  <Link
+                    href="/deck-90"
+                    className={`p-2 rounded-full transition-all ${
+                      isActive('/deck-90') ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                    title="90-Second Deck"
+                  >
+                    <Rocket size={18} />
+                  </Link>
+                  <Link
+                    href="/deck-kang"
+                    className={`p-2 rounded-full transition-all ${
+                      isActive('/deck-kang') ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                    title="Full Deck"
+                  >
+                    <Presentation size={18} />
+                  </Link>
+                  <Link
+                    href="/data-room"
+                    className={`p-2 rounded-full transition-all ${
+                      isActive('/data-room') ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                    title="Data Room"
+                  >
+                    <Database size={18} />
+                  </Link>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setIsMobileMenuOpen(true)}
+                  className="md:hidden p-2 rounded-full bg-gradient-to-r from-[#c9a227] to-[#d4b03f] text-white shadow-lg"
+                >
+                  <Menu size={20} />
+                </button>
+
+                {/* Year Badge */}
+                <div className="hidden sm:block px-3 py-1 bg-white/5 rounded-full">
+                  <p className="text-slate-500 text-xs">2026</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Spacer to prevent content from being hidden behind footer */}
+      <div className="h-24 md:h-28" />
+
+      <style jsx global>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </>
+  );
+};
+
+export default GlobalFooter;
