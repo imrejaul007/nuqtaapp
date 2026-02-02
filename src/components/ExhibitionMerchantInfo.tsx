@@ -103,7 +103,7 @@ const ExhibitionMerchantInfo = () => {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             {[
               { value: 'AED 500+', label: 'Minimum Customer Spend' },
-              { value: 'AED 100', label: 'Free Coins for Visitors' },
+              { value: 'AED 100', label: 'Event Coins (per event!)' },
               { value: '0', label: 'Upfront Cost' },
               { value: '5-7 Days', label: 'Event Duration' },
             ].map((stat, idx) => (
@@ -128,8 +128,8 @@ const ExhibitionMerchantInfo = () => {
             {
               step: '1',
               icon: Users,
-              title: 'Visitor Downloads App',
-              description: 'At the Nuqta booth, visitors download the app and get AED 100 Event Coins instantly'
+              title: 'Visitor Registers for Event',
+              description: 'At the Nuqta booth, ALL visitors (new AND existing users) get AED 100 Event Coins per event!'
             },
             {
               step: '2',

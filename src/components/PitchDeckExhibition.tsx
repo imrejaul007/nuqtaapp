@@ -51,7 +51,8 @@ import {
  * EXHIBITION PARTNERSHIP PITCH DECK
  *
  * For short-term events (5-7 days) without ticket integration:
- * - Download app at event → Get AED 100 Event Coins
+ * - Register for event → Get AED 100 Event Coins (NEW + EXISTING users!)
+ * - Fresh coins for every event (not just first time)
  * - Spend AED 500+ → Unlock coins
  * - Standard merchant terms (5-8% commission)
  *
@@ -120,9 +121,15 @@ const PitchDeckExhibition = () => {
               </p>
 
               {/* Existing users highlight */}
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500/20 border border-green-500/30 rounded-full mb-6 animate-[fadeIn_1s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500/20 border border-green-500/30 rounded-full mb-3 animate-[fadeIn_1s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <Wallet className="w-5 h-5 text-green-400" />
                 <span className="text-green-400 font-bold text-sm sm:text-base">500K+ Nuqta users already have coins to spend!</span>
+              </div>
+
+              {/* Event coins for everyone */}
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500/20 border border-purple-500/30 rounded-full mb-6 animate-[fadeIn_1s_ease-out_0.45s] opacity-0 [animation-fill-mode:forwards]">
+                <Gift className="w-5 h-5 text-purple-400" />
+                <span className="text-purple-400 font-bold text-sm sm:text-base">+ AED 100 Event Coins for EVERY visitor!</span>
               </div>
 
               {/* Event types */}
@@ -260,6 +267,18 @@ const PitchDeckExhibition = () => {
                 <p className="text-lg sm:text-xl text-slate-400 mt-4">And they have coins ready to spend at your event</p>
               </div>
 
+              {/* Universal benefit banner */}
+              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.15s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="bg-gradient-to-r from-purple-500/20 to-[#c9a227]/20 border-2 border-purple-500/40 rounded-2xl p-4 text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <Gift className="w-6 h-6 text-purple-400" />
+                    <span className="text-purple-400 font-black text-lg">EVERYONE GETS AED 100 EVENT COINS!</span>
+                    <Gift className="w-6 h-6 text-purple-400" />
+                  </div>
+                  <p className="text-white text-sm">New users AND existing users • Fresh coins for every event • Spend AED 500+ to unlock</p>
+                </div>
+              </div>
+
               {/* Two types of visitors */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {/* Existing Nuqta users */}
@@ -270,14 +289,14 @@ const PitchDeckExhibition = () => {
                       <Wallet className="w-8 h-8 text-green-400" />
                       <h3 className="text-white font-bold text-xl">Existing Nuqta Users</h3>
                     </div>
-                    <p className="text-green-400 text-sm font-semibold mb-3">Already have coins from GV, malls, restaurants...</p>
+                    <p className="text-green-400 text-sm font-semibold mb-3">Double benefit - existing coins + event coins!</p>
                     <ul className="space-y-3">
                       {[
                         'Already have Nuqta app installed',
                         'Already have Nuqta coins in wallet',
-                        'Can spend coins at your merchants',
-                        'Instant customers - no friction!',
-                        'Motivated to visit YOUR event'
+                        '+ Get AED 100 Event Coins (per event!)',
+                        'Can use BOTH coin types at merchants',
+                        'Super motivated to visit YOUR event'
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-slate-300">
                           <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
@@ -296,11 +315,11 @@ const PitchDeckExhibition = () => {
                       <Users className="w-8 h-8 text-[#c9a227]" />
                       <h3 className="text-white font-bold text-xl">New Visitors</h3>
                     </div>
-                    <p className="text-[#c9a227] text-sm font-semibold mb-3">First time using Nuqta? Even better!</p>
+                    <p className="text-[#c9a227] text-sm font-semibold mb-3">First time using Nuqta? Great start!</p>
                     <ul className="space-y-3">
                       {[
                         'Download app at event booth',
-                        'Get AED 100 in Event Coins free',
+                        'Get AED 100 Event Coins instantly',
                         'Spend AED 500+ → Coins unlock',
                         'Keep app for UAE-wide savings',
                         'Become long-term Nuqta user'
@@ -319,8 +338,8 @@ const PitchDeckExhibition = () => {
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-gradient-to-r from-green-500/20 to-[#c9a227]/20 border-2 border-green-500/30 rounded-2xl p-5">
                   <p className="text-white text-lg text-center">
-                    <span className="text-green-400 font-bold">Existing users</span> = instant customers with coins to spend<br />
-                    <span className="text-[#c9a227] font-bold">New users</span> = AED 500+ spend + join Nuqta network for future events
+                    <span className="text-green-400 font-bold">Existing users</span> = coins they have + AED 100 event coins<br />
+                    <span className="text-[#c9a227] font-bold">New users</span> = AED 100 event coins + join Nuqta network
                   </p>
                 </div>
               </div>
@@ -360,8 +379,8 @@ const PitchDeckExhibition = () => {
                   },
                   {
                     step: '2',
-                    title: 'Download & Register',
-                    desc: 'Quick signup, get AED 100 Event Coins instantly',
+                    title: 'Register for Event',
+                    desc: 'New or existing user? Everyone gets AED 100 Event Coins!',
                     icon: Download,
                     color: 'purple'
                   },
