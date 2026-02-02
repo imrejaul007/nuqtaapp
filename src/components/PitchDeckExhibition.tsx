@@ -115,9 +115,15 @@ const PitchDeckExhibition = () => {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-lg sm:text-xl md:text-2xl text-slate-400 mb-8 max-w-3xl mx-auto animate-[fadeIn_1s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-400 mb-4 max-w-3xl mx-auto animate-[fadeIn_1s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
                 Zero cost. Zero tech integration. Maximum impact.
               </p>
+
+              {/* Existing users highlight */}
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500/20 border border-green-500/30 rounded-full mb-6 animate-[fadeIn_1s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
+                <Wallet className="w-5 h-5 text-green-400" />
+                <span className="text-green-400 font-bold text-sm sm:text-base">500K+ Nuqta users already have coins to spend!</span>
+              </div>
 
               {/* Event types */}
               <div className="flex flex-wrap justify-center gap-3 mb-10 animate-[fadeIn_1s_ease-out_0.5s] opacity-0 [animation-fill-mode:forwards]">
@@ -243,34 +249,61 @@ const PitchDeckExhibition = () => {
 
             <div className="relative z-10 max-w-6xl w-full px-2">
               {/* Headline */}
-              <div className="text-center mb-8 sm:mb-10 animate-[slideDown_0.8s_ease-out]">
+              <div className="text-center mb-6 sm:mb-8 animate-[slideDown_0.8s_ease-out]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/30 rounded-full mb-4">
                   <Sparkles className="w-5 h-5 text-[#c9a227]" />
                   <span className="text-[#c9a227] font-semibold text-sm">The Solution</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                  <span className="text-[#c9a227]">AED 100 Free</span> Just For Downloading
+                  <span className="text-[#c9a227]">500K+ Users</span> Already Have Nuqta
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-4">Spend AED 500+ at any participating merchant to unlock</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-4">And they have coins ready to spend at your event</p>
               </div>
 
-              {/* The model */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
-                {/* For visitors */}
+              {/* Two types of visitors */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                {/* Existing Nuqta users */}
+                <div className="relative">
+                  <div className="absolute inset-0 bg-green-500/10 rounded-2xl blur-xl" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-green-500/30 rounded-2xl p-6 h-full">
+                    <div className="flex items-center gap-3 mb-4">
+                      <Wallet className="w-8 h-8 text-green-400" />
+                      <h3 className="text-white font-bold text-xl">Existing Nuqta Users</h3>
+                    </div>
+                    <p className="text-green-400 text-sm font-semibold mb-3">Already have coins from GV, malls, restaurants...</p>
+                    <ul className="space-y-3">
+                      {[
+                        'Already have Nuqta app installed',
+                        'Already have Nuqta coins in wallet',
+                        'Can spend coins at your merchants',
+                        'Instant customers - no friction!',
+                        'Motivated to visit YOUR event'
+                      ].map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-slate-300">
+                          <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* New visitors */}
                 <div className="relative">
                   <div className="absolute inset-0 bg-[#c9a227]/10 rounded-2xl blur-xl" />
                   <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl p-6 h-full">
                     <div className="flex items-center gap-3 mb-4">
                       <Users className="w-8 h-8 text-[#c9a227]" />
-                      <h3 className="text-white font-bold text-xl">For Visitors</h3>
+                      <h3 className="text-white font-bold text-xl">New Visitors</h3>
                     </div>
+                    <p className="text-[#c9a227] text-sm font-semibold mb-3">First time using Nuqta? Even better!</p>
                     <ul className="space-y-3">
                       {[
-                        'Download Nuqta app at event booth',
-                        'Get AED 100 in Event Coins instantly',
-                        'Shop at any participating merchant',
+                        'Download app at event booth',
+                        'Get AED 100 in Event Coins free',
                         'Spend AED 500+ → Coins unlock',
-                        'Use coins for discounts or cash back'
+                        'Keep app for UAE-wide savings',
+                        'Become long-term Nuqta user'
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-slate-300">
                           <CheckCircle className="w-5 h-5 text-[#c9a227] flex-shrink-0 mt-0.5" />
@@ -280,39 +313,14 @@ const PitchDeckExhibition = () => {
                     </ul>
                   </div>
                 </div>
-
-                {/* For merchants */}
-                <div className="relative">
-                  <div className="absolute inset-0 bg-purple-500/10 rounded-2xl blur-xl" />
-                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-purple-500/30 rounded-2xl p-6 h-full">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Store className="w-8 h-8 text-purple-400" />
-                      <h3 className="text-white font-bold text-xl">For Merchants</h3>
-                    </div>
-                    <ul className="space-y-3">
-                      {[
-                        'Zero upfront cost to join',
-                        'Only pay 5-8% on Nuqta-driven sales',
-                        'Customers motivated to spend AED 500+',
-                        'Real-time sales dashboard',
-                        'Works with existing setup'
-                      ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-slate-300">
-                          <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
               </div>
 
-              {/* Key differentiator */}
+              {/* Key insight */}
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 border border-[#c9a227]/30 rounded-2xl p-5 text-center">
-                  <p className="text-white text-lg">
-                    Coins expire at <span className="text-[#c9a227] font-bold">event end</span> →
-                    Creates urgency to <span className="text-[#c9a227] font-bold">spend now</span>
+                <div className="bg-gradient-to-r from-green-500/20 to-[#c9a227]/20 border-2 border-green-500/30 rounded-2xl p-5">
+                  <p className="text-white text-lg text-center">
+                    <span className="text-green-400 font-bold">Existing users</span> = instant customers with coins to spend<br />
+                    <span className="text-[#c9a227] font-bold">New users</span> = AED 500+ spend + join Nuqta network for future events
                   </p>
                 </div>
               </div>
@@ -435,7 +443,7 @@ const PitchDeckExhibition = () => {
 
             <div className="relative z-10 max-w-6xl w-full px-2">
               {/* Headline */}
-              <div className="text-center mb-8 animate-[slideDown_0.8s_ease-out]">
+              <div className="text-center mb-6 animate-[slideDown_0.8s_ease-out]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full mb-4">
                   <BarChart3 className="w-5 h-5 text-green-400" />
                   <span className="text-green-400 font-semibold text-sm">The Numbers</span>
@@ -445,45 +453,80 @@ const PitchDeckExhibition = () => {
                 </h1>
               </div>
 
-              {/* Math breakdown */}
-              <div className="relative mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-[#c9a227]/10 rounded-3xl blur-xl" />
-                <div className="relative bg-white/5 backdrop-blur-xl border-2 border-green-500/30 rounded-3xl p-6">
-                  {/* Funnel */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                    {[
-                      { label: 'Total Visitors', value: '100,000', icon: Users },
-                      { label: 'Download Nuqta', value: '15,000', sub: '15% conversion', icon: Download },
-                      { label: 'Spend AED 500+', value: '5,000', sub: '33% of downloads', icon: ShoppingBag },
-                      { label: 'Avg Spend', value: 'AED 600', icon: DollarSign }
-                    ].map((item, idx) => (
-                      <div key={idx} className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
-                        <item.icon className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                        <p className="text-slate-400 text-xs mb-1">{item.label}</p>
-                        <p className="text-2xl sm:text-3xl font-black text-white">{item.value}</p>
-                        {item.sub && <p className="text-slate-500 text-xs">{item.sub}</p>}
-                      </div>
-                    ))}
+              {/* Two streams of customers */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                {/* Existing users */}
+                <div className="bg-green-500/10 backdrop-blur-xl border-2 border-green-500/30 rounded-2xl p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Wallet className="w-6 h-6 text-green-400" />
+                    <h4 className="text-green-400 font-bold">Existing Nuqta Users</h4>
                   </div>
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Already have app</p>
+                      <p className="text-xl font-black text-green-400">10K+</p>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Have coins</p>
+                      <p className="text-xl font-black text-green-400">AED 50+</p>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Avg spend</p>
+                      <p className="text-xl font-black text-green-400">AED 400</p>
+                    </div>
+                  </div>
+                  <p className="text-green-400 text-sm text-center mt-3 font-semibold">GMV: AED 4M</p>
+                </div>
 
-                  {/* Revenue */}
-                  <div className="bg-black/30 rounded-2xl p-5">
-                    <p className="text-[#c9a227] font-bold text-center mb-4">Revenue Calculation</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                      <div className="p-4 bg-white/5 rounded-xl">
-                        <p className="text-slate-400 text-sm mb-1">GMV Tracked</p>
-                        <p className="text-2xl font-black text-green-400">AED 3M</p>
-                        <p className="text-slate-500 text-xs">5,000 × AED 600</p>
-                      </div>
-                      <div className="p-4 bg-white/5 rounded-xl">
-                        <p className="text-slate-400 text-sm mb-1">Nuqta Revenue (6%)</p>
-                        <p className="text-2xl font-black text-white">AED 180K</p>
-                      </div>
-                      <div className="p-4 bg-[#c9a227]/20 rounded-xl border border-[#c9a227]/30">
-                        <p className="text-slate-400 text-sm mb-1">Organizer Share (10%)</p>
-                        <p className="text-2xl font-black text-[#c9a227]">AED 18K</p>
-                        <p className="text-slate-500 text-xs">Passive revenue</p>
-                      </div>
+                {/* New users */}
+                <div className="bg-[#c9a227]/10 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-2xl p-5">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Download className="w-6 h-6 text-[#c9a227]" />
+                    <h4 className="text-[#c9a227] font-bold">New Downloads</h4>
+                  </div>
+                  <div className="grid grid-cols-3 gap-3 text-center">
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Download</p>
+                      <p className="text-xl font-black text-[#c9a227]">15K</p>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Spend 500+</p>
+                      <p className="text-xl font-black text-[#c9a227]">5K</p>
+                    </div>
+                    <div className="p-3 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Avg spend</p>
+                      <p className="text-xl font-black text-[#c9a227]">AED 600</p>
+                    </div>
+                  </div>
+                  <p className="text-[#c9a227] text-sm text-center mt-3 font-semibold">GMV: AED 3M</p>
+                </div>
+              </div>
+
+              {/* Combined Revenue */}
+              <div className="relative mb-6 animate-[fadeIn_0.8s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-[#c9a227]/10 rounded-2xl blur-xl" />
+                <div className="relative bg-black/30 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
+                  <p className="text-white font-bold text-center mb-4">Combined Revenue Impact</p>
+                  <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center">
+                    <div className="p-4 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Total GMV</p>
+                      <p className="text-2xl font-black text-white">AED 7M</p>
+                      <p className="text-slate-500 text-xs">4M + 3M</p>
+                    </div>
+                    <div className="p-4 bg-white/5 rounded-xl">
+                      <p className="text-slate-400 text-xs mb-1">Nuqta Revenue</p>
+                      <p className="text-2xl font-black text-white">AED 420K</p>
+                      <p className="text-slate-500 text-xs">6% commission</p>
+                    </div>
+                    <div className="p-4 bg-[#c9a227]/20 rounded-xl border border-[#c9a227]/30">
+                      <p className="text-slate-400 text-xs mb-1">Organizer Share</p>
+                      <p className="text-2xl font-black text-[#c9a227]">AED 42K</p>
+                      <p className="text-slate-500 text-xs">10% of Nuqta</p>
+                    </div>
+                    <div className="p-4 bg-green-500/20 rounded-xl border border-green-500/30">
+                      <p className="text-slate-400 text-xs mb-1">New Users Acquired</p>
+                      <p className="text-2xl font-black text-green-400">15,000</p>
+                      <p className="text-slate-500 text-xs">Long-term value</p>
                     </div>
                   </div>
                 </div>
@@ -491,9 +534,9 @@ const PitchDeckExhibition = () => {
 
               {/* Key insight */}
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-4 text-center">
+                <div className="bg-gradient-to-r from-green-500/10 to-[#c9a227]/10 border border-green-500/30 rounded-2xl p-4 text-center">
                   <p className="text-white font-semibold">
-                    Even at <span className="text-[#c9a227]">5% conversion</span>, you unlock <span className="text-[#c9a227]">AED 3M in tracked GMV</span> and happier merchants
+                    <span className="text-green-400">Existing users</span> bring coins + <span className="text-[#c9a227]">New users</span> spend AED 500+ = <span className="text-white font-black">AED 7M GMV</span>
                   </p>
                 </div>
               </div>
@@ -555,6 +598,13 @@ const PitchDeckExhibition = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-[fadeIn_0.8s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
+                    icon: Wallet,
+                    title: 'Ready Customers',
+                    value: '500K+',
+                    desc: 'Existing Nuqta users with coins to spend at YOUR event',
+                    highlight: true
+                  },
+                  {
                     icon: TrendingUp,
                     title: 'Higher Renewals',
                     value: '+30-50%',
@@ -591,23 +641,23 @@ const PitchDeckExhibition = () => {
                     desc: 'No upfront cost, no commitment'
                   },
                   {
-                    icon: Award,
-                    title: 'Differentiation',
-                    value: 'Unique',
-                    desc: 'Stand out from other exhibitions'
-                  },
-                  {
                     icon: Zap,
                     title: 'Quick Setup',
                     value: '24-48hrs',
                     desc: 'Go live before your event starts'
                   }
                 ].map((item, idx) => (
-                  <div key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:border-[#c9a227]/30 transition-all">
-                    <div className="w-10 h-10 rounded-xl bg-[#c9a227]/20 flex items-center justify-center mb-3">
-                      <item.icon className="w-5 h-5 text-[#c9a227]" />
+                  <div key={idx} className={`backdrop-blur-xl rounded-2xl p-5 transition-all ${
+                    (item as any).highlight
+                      ? 'bg-green-500/10 border-2 border-green-500/40 hover:border-green-500/60'
+                      : 'bg-white/5 border border-white/10 hover:border-[#c9a227]/30'
+                  }`}>
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center mb-3 ${
+                      (item as any).highlight ? 'bg-green-500/20' : 'bg-[#c9a227]/20'
+                    }`}>
+                      <item.icon className={`w-5 h-5 ${(item as any).highlight ? 'text-green-400' : 'text-[#c9a227]'}`} />
                     </div>
-                    <p className="text-[#c9a227] text-2xl font-black mb-1">{item.value}</p>
+                    <p className={`text-2xl font-black mb-1 ${(item as any).highlight ? 'text-green-400' : 'text-[#c9a227]'}`}>{item.value}</p>
                     <p className="text-white font-bold mb-1">{item.title}</p>
                     <p className="text-slate-400 text-sm">{item.desc}</p>
                   </div>
