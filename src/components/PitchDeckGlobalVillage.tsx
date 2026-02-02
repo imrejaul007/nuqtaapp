@@ -959,9 +959,9 @@ const PitchDeckGlobalVillage = () => {
                     <ul className="space-y-3">
                       {[
                         '+AED 80M GMV (conservative)',
+                        '10% of Nuqta\'s revenue share',
                         'Full spending analytics',
                         'Happier merchants',
-                        'Higher stall renewal rates',
                         'Zero investment'
                       ].map((item, idx) => (
                         <li key={idx} className="flex items-start gap-2 text-slate-300 text-sm">
@@ -971,7 +971,8 @@ const PitchDeckGlobalVillage = () => {
                       ))}
                     </ul>
                     <div className="mt-4 p-3 bg-[#00a651]/10 rounded-xl">
-                      <p className="text-[#00a651] font-bold text-center">GV Pays: AED 0</p>
+                      <p className="text-[#00a651] font-bold text-center">GV Earns: 10% of Nuqta Revenue</p>
+                      <p className="text-slate-400 text-xs text-center">~AED 25-90K per season</p>
                     </div>
                   </div>
                 </div>
@@ -1016,6 +1017,7 @@ const PitchDeckGlobalVillage = () => {
                     <ul className="space-y-3">
                       {[
                         'Share of merchant commission (~3%)',
+                        'Minus 10% to GV',
                         'Transaction processing fees',
                         'User engagement data (anonymized)'
                       ].map((item, idx) => (
@@ -1026,8 +1028,8 @@ const PitchDeckGlobalVillage = () => {
                       ))}
                     </ul>
                     <div className="mt-4 p-3 bg-[#c9a227]/10 rounded-xl">
-                      <p className="text-[#c9a227] font-bold text-center">Performance-Based Only</p>
-                      <p className="text-slate-400 text-xs text-center">We only earn when transactions happen</p>
+                      <p className="text-[#c9a227] font-bold text-center">We Share the Upside</p>
+                      <p className="text-slate-400 text-xs text-center">GV earns when we earn</p>
                     </div>
                   </div>
                 </div>
