@@ -63,6 +63,7 @@ const navigationData: NavCategory[] = [
       { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation strategy' },
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp, description: 'Go-to-market plan' },
       { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
+      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales guide' },
     ]
   },
   {
