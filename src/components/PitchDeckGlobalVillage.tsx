@@ -133,7 +133,7 @@ const PitchDeckGlobalVillage = () => {
               <div className="mb-8 sm:mb-12 md:mb-16 animate-[fadeIn_0.8s_ease-out]">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-6">
                   How Global Village Can<br className="hidden sm:block" />
-                  <span className="sm:hidden"> </span><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#00a651]">Add AED 80M+ to GMV</span>
+                  <span className="sm:hidden"> </span><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#00a651]">Unlock AED 200-400M in Tracked GMV</span>
                 </h1>
                 <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-medium">
                   Without any technology investment or operational burden
@@ -831,93 +831,98 @@ const PitchDeckGlobalVillage = () => {
 
             <div className="relative z-10 max-w-7xl w-full px-2">
               {/* Headline */}
-              <div className="text-center mb-8 sm:mb-10 animate-[slideDown_0.8s_ease-out]">
+              <div className="text-center mb-6 sm:mb-8 animate-[slideDown_0.8s_ease-out]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-full mb-4">
                   <BarChart3 className="w-5 h-5 text-green-400" />
                   <span className="text-green-400 font-semibold text-sm">The Numbers</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                  <span className="text-green-400">AED 80 Million</span> Extra GMV
+                  <span className="text-green-400">AED 200-400M</span> GMV Tracked
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-3">Conservative math, transparent assumptions</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-3">Every transaction through Nuqta, not just redemptions</p>
+              </div>
+
+              {/* Key insight - why all transactions */}
+              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.15s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-4 text-center">
+                  <p className="text-white font-semibold text-sm sm:text-base">
+                    Users scan <span className="text-[#c9a227]">every receipt</span> to earn coins → Nuqta tracks <span className="text-[#c9a227]">ALL spending</span>, not just redemptions
+                  </p>
+                </div>
               </div>
 
               {/* Main calculation */}
-              <div className="mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-[#c9a227]/20 rounded-3xl blur-xl" />
-                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-green-500/30 rounded-3xl p-6 sm:p-8">
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-green-500/30 rounded-3xl p-5 sm:p-6">
                     {/* Inputs with sources */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-5">
                       {[
-                        { label: 'GV Visitors/Season', value: '7M', note: 'GV official data', used: '1M (14%)' },
-                        { label: 'App Download Rate', value: '40%', note: 'Similar loyalty apps', used: '400K users' },
-                        { label: 'Extra Spend to Redeem', value: 'AED 200', note: 'To hit AED 300 min', used: 'Per redeemer' },
-                        { label: 'GMV Uplift', value: 'AED 80M', note: 'Conservative', used: '400K × AED 200' }
+                        { label: 'GV Total GMV/Season', value: '~AED 2B', note: '7M visitors × AED 300 avg' },
+                        { label: 'Nuqta Users', value: '500K-1M', note: '7-14% of visitors' },
+                        { label: 'Avg Spend/User', value: 'AED 400', note: 'Multiple visits' },
+                        { label: 'GMV Through Nuqta', value: 'AED 200-400M', note: '10-20% of total' }
                       ].map((item, idx) => (
-                        <div key={idx} className="text-center p-3 sm:p-4 bg-white/5 rounded-xl border border-white/10">
+                        <div key={idx} className="text-center p-3 bg-white/5 rounded-xl border border-white/10">
                           <p className="text-slate-400 text-xs mb-1">{item.label}</p>
-                          <p className="text-2xl sm:text-3xl font-black text-green-400">{item.value}</p>
+                          <p className="text-xl sm:text-2xl font-black text-green-400">{item.value}</p>
                           <p className="text-slate-500 text-xs">{item.note}</p>
-                          <p className="text-white text-xs mt-1 font-semibold">{item.used}</p>
                         </div>
                       ))}
                     </div>
 
-                    {/* Formula */}
-                    <div className="bg-black/30 rounded-2xl p-4 sm:p-6 text-center mb-6">
-                      <p className="text-slate-400 text-sm mb-2">The Conservative Formula</p>
-                      <p className="text-lg sm:text-xl md:text-2xl font-mono text-white">
-                        1M active users × 40% redeem × AED 200 extra = <span className="text-green-400 font-black">AED 80,000,000</span>
-                      </p>
-                      <p className="text-slate-500 text-xs mt-2">
-                        Note: Using only 14% of total visitors as "active users" is very conservative
-                      </p>
-                    </div>
-
-                    {/* Scenario table */}
-                    <div className="overflow-x-auto">
-                      <table className="w-full text-sm">
-                        <thead>
-                          <tr className="border-b border-white/10">
-                            <th className="text-left py-2 px-3 text-slate-400">Scenario</th>
-                            <th className="text-center py-2 px-3 text-slate-400">Active Users</th>
-                            <th className="text-center py-2 px-3 text-slate-400">Redemption</th>
-                            <th className="text-center py-2 px-3 text-slate-400">GMV Uplift</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr className="border-b border-white/5">
-                            <td className="py-2 px-3 text-red-400">Pessimistic</td>
-                            <td className="text-center py-2 px-3 text-white">500K</td>
-                            <td className="text-center py-2 px-3 text-white">20%</td>
-                            <td className="text-center py-2 px-3 text-red-400 font-bold">AED 20M</td>
-                          </tr>
-                          <tr className="border-b border-white/5 bg-green-500/5">
-                            <td className="py-2 px-3 text-green-400">Base Case</td>
-                            <td className="text-center py-2 px-3 text-white">1M</td>
-                            <td className="text-center py-2 px-3 text-white">40%</td>
-                            <td className="text-center py-2 px-3 text-green-400 font-bold">AED 80M</td>
-                          </tr>
-                          <tr>
-                            <td className="py-2 px-3 text-[#c9a227]">Optimistic</td>
-                            <td className="text-center py-2 px-3 text-white">2M</td>
-                            <td className="text-center py-2 px-3 text-white">50%</td>
-                            <td className="text-center py-2 px-3 text-[#c9a227] font-bold">AED 200M</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                    {/* Revenue breakdown */}
+                    <div className="bg-black/30 rounded-2xl p-4 sm:p-5">
+                      <p className="text-[#c9a227] font-bold text-center mb-3">Revenue from All Transactions</p>
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-sm">
+                          <thead>
+                            <tr className="border-b border-white/10">
+                              <th className="text-left py-2 px-2 text-slate-400">Scenario</th>
+                              <th className="text-center py-2 px-2 text-slate-400">GMV Tracked</th>
+                              <th className="text-center py-2 px-2 text-slate-400">Nuqta (3%)</th>
+                              <th className="text-center py-2 px-2 text-slate-400">GV Gets (10%)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr className="border-b border-white/5">
+                              <td className="py-2 px-2 text-red-400">Floor</td>
+                              <td className="text-center py-2 px-2 text-white">AED 100M</td>
+                              <td className="text-center py-2 px-2 text-white">AED 3M</td>
+                              <td className="text-center py-2 px-2 text-red-400 font-bold">AED 300K</td>
+                            </tr>
+                            <tr className="border-b border-white/5 bg-green-500/5">
+                              <td className="py-2 px-2 text-green-400">Base</td>
+                              <td className="text-center py-2 px-2 text-white">AED 250M</td>
+                              <td className="text-center py-2 px-2 text-white">AED 7.5M</td>
+                              <td className="text-center py-2 px-2 text-green-400 font-bold">AED 750K</td>
+                            </tr>
+                            <tr>
+                              <td className="py-2 px-2 text-[#c9a227]">Cap</td>
+                              <td className="text-center py-2 px-2 text-white">AED 500M</td>
+                              <td className="text-center py-2 px-2 text-white">AED 15M</td>
+                              <td className="text-center py-2 px-2 text-[#c9a227] font-bold">AED 1.5M</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Key insight */}
+              {/* Bottom insight */}
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-5 sm:p-6 text-center">
-                  <p className="text-lg sm:text-xl font-bold text-white">
-                    Even the <span className="text-red-400">pessimistic scenario</span> delivers <span className="text-[#c9a227]">AED 20M extra GMV</span> at zero cost to GV.
-                  </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
+                    <p className="text-green-400 font-bold text-lg sm:text-xl">GV Earns AED 300K-1.5M</p>
+                    <p className="text-slate-400 text-xs">10% of Nuqta revenue, zero investment</p>
+                  </div>
+                  <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-4 text-center">
+                    <p className="text-[#c9a227] font-bold text-lg sm:text-xl">+AED 80M GMV Uplift</p>
+                    <p className="text-slate-400 text-xs">Additional spending driven by coin mechanics</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1395,7 +1400,7 @@ const PitchDeckGlobalVillage = () => {
               <div className="mb-8 sm:mb-12 animate-[fadeIn_0.8s_ease-out]">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
                   One Partnership.<br className="hidden sm:block" />
-                  <span className="sm:hidden"> </span><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#00a651]">AED 80M+ Potential Upside.</span>
+                  <span className="sm:hidden"> </span><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#00a651]">AED 300K-1.5M Revenue for GV.</span>
                 </h1>
                 <p className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto">
                   Zero investment. Zero risk. Zero operational burden.<br className="hidden sm:block" />
