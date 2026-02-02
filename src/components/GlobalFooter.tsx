@@ -22,7 +22,8 @@ import {
   FileCheck,
   Home,
   Menu,
-  X
+  X,
+  Store
 } from 'lucide-react';
 
 /**
@@ -104,6 +105,8 @@ const navigationData: NavCategory[] = [
   {
     title: 'Merchants',
     items: [
+      { label: 'Merchant Deck', href: '/deck-merchant', icon: Store, description: 'Why join Nuqta' },
+      { label: 'Merchant Info', href: '/merchant-info', icon: FileText, description: 'Terms & benefits' },
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
       { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
       { label: 'User Card', href: '/card', icon: Users, description: 'User card view' },
