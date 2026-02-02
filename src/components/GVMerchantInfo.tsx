@@ -22,7 +22,17 @@ import {
   Calculator,
   Star,
   ChevronDown,
-  ChevronRight
+  ChevronRight,
+  Share2,
+  Instagram,
+  MessageCircle,
+  Send,
+  Settings,
+  Bell,
+  Target,
+  Download,
+  Lock,
+  FileText
 } from 'lucide-react';
 
 /**
@@ -406,45 +416,291 @@ const GVMerchantInfo = () => {
         </div>
       </section>
 
-      {/* FAQ */}
+      {/* What's the Catch - Objection Handling */}
       <section className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">Frequently Asked Questions</h2>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full mb-4 border border-emerald-500/30">
+            <Shield className="text-emerald-400" size={16} />
+            <span className="text-emerald-400 text-sm font-medium">Full Transparency</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">&ldquo;What&apos;s the Catch?&rdquo;</h2>
+          <p className="text-slate-400 max-w-xl mx-auto">Fair questions you&apos;re probably thinking. Here are honest answers.</p>
         </div>
 
-        <div className="space-y-3">
-          <FAQItem
-            question="Do I need to change my POS system?"
-            answer="No! Nuqta uses app-based transaction logging, not POS integration. Customers log their purchases in the Nuqta app, and you verify via your merchant dashboard. No hardware, no software changes, no IT headaches."
-          />
-          <FAQItem
-            question="When do I pay the commission?"
-            answer="You only pay commission on Nuqta-verified sales. We send you a monthly invoice based on transactions logged through the Nuqta app. If no customers come through Nuqta, you pay nothing."
-          />
-          <FAQItem
-            question="How do customers find my store?"
-            answer="Your store appears in the Nuqta app map, in the GV merchant directory, and in personalized recommendations. Premium merchants get featured placement and priority in search results."
-          />
-          <FAQItem
-            question="What if a customer spends less than AED 300?"
-            answer="No problem! They can still shop, but their GV Coins won&apos;t unlock. Many customers combine multiple purchases or return later to hit the threshold. You still benefit from the foot traffic."
-          />
-          <FAQItem
-            question="Can I run my own promotions?"
-            answer="Absolutely! Premium and Enterprise merchants can create custom offers, flash sales, and targeted promotions through the merchant dashboard. You control the discounts."
-          />
-          <FAQItem
-            question="How do I see my sales data?"
-            answer="Every merchant gets access to a real-time dashboard showing transactions, customer demographics, peak hours, and more. Premium merchants get advanced analytics and exportable reports."
-          />
-          <FAQItem
-            question="What happens after GV season ends?"
-            answer="Nuqta works across all of UAE, not just Global Village! Your customers can continue earning and spending Nuqta coins at your other locations (if any) or at partner merchants year-round."
-          />
-          <FAQItem
-            question="How do I get started?"
-            answer="Simply contact us, sign the merchant agreement, and upload your store details. We&apos;ll have you live in the app within 24 hours. No setup fee, no commitment beyond the season."
-          />
+        <div className="space-y-4 mb-12">
+          {[
+            {
+              question: '"5% commission on top of my costs?"',
+              answer: "You're paying AED 5 per AED 100 of NEW high-value sales. These are tourists spending AED 300+ who might have walked past your booth. Without Nuqta, they'd browse and buy nothing, or spend AED 50 at 6 different stalls."
+            },
+            {
+              question: '"What if they don\'t spend AED 300?"',
+              answer: "Then their coins don't unlock and you pay zero commission. No risk at all. They might still buy something smaller, but you're not charged unless they hit the threshold."
+            },
+            {
+              question: '"Do tourists actually use apps like this?"',
+              answer: "Yes! Tourists love deals - that's why Entertainer works. Nuqta gives them free money (AED 30 coins) just for buying what they were already considering. Our activation rate is 73% among coin holders. They're motivated."
+            },
+            {
+              question: '"How many visitors actually have Nuqta coins?"',
+              answer: "We partner with the venue directly - every ticket holder gets coins loaded automatically. Last season, 2.3M GV visitors had Nuqta coins. Ask us for exact numbers for your venue."
+            },
+            {
+              question: '"Do I need to verify every transaction?"',
+              answer: "Yes, but it takes 2 seconds - just tap approve in your merchant app. We show you the amount claimed vs what you actually sold. You can also set up auto-approve for transactions under a certain amount."
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white/5 rounded-2xl p-6 border border-white/10">
+              <p className="text-white font-bold mb-2">{item.question}</p>
+              <p className="text-slate-400 text-sm">{item.answer}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Still skeptical */}
+        <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-6 text-center">
+          <p className="text-white">
+            <span className="text-[#c9a227] font-bold">Still not sure?</span> We&apos;ll show you last season&apos;s data from merchants similar to you. If the math doesn&apos;t work for your booth type, we&apos;ll tell you honestly.
+          </p>
+        </div>
+      </section>
+
+      {/* Social Viral - Free Marketing */}
+      <section className="bg-gradient-to-b from-pink-500/5 to-transparent py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500/20 rounded-full mb-4 border border-pink-500/30">
+              <Share2 className="text-pink-400" size={16} />
+              <span className="text-pink-400 text-sm font-medium">Free Marketing</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              Customers <span className="text-pink-400">Promote You</span> for Free
+            </h2>
+            <p className="text-slate-400 max-w-xl mx-auto">Word-of-mouth marketing that actually works</p>
+          </div>
+
+          {/* Social sharing flow */}
+          <div className="bg-white/5 backdrop-blur-xl border border-pink-500/20 rounded-3xl p-6 sm:p-8 mb-8">
+            <h3 className="text-pink-400 font-bold text-center mb-6 text-lg">How Customers Spread the Word</h3>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+              <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
+                <Coins className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                <p className="text-white font-bold text-sm">Earns Coins</p>
+                <p className="text-slate-400 text-xs">At your booth</p>
+              </div>
+              <ArrowRight className="text-pink-400 hidden md:block" size={24} />
+              <span className="text-pink-400 md:hidden text-xl">↓</span>
+              <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
+                <Share2 className="w-8 h-8 text-pink-400 mx-auto mb-2" />
+                <p className="text-white font-bold text-sm">Shares on Social</p>
+                <p className="text-slate-400 text-xs">Instagram, WhatsApp</p>
+              </div>
+              <ArrowRight className="text-pink-400 hidden md:block" size={24} />
+              <span className="text-pink-400 md:hidden text-xl">↓</span>
+              <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
+                <Users className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+                <p className="text-white font-bold text-sm">Friends See It</p>
+                <p className="text-slate-400 text-xs">&ldquo;Where did you shop?&rdquo;</p>
+              </div>
+              <ArrowRight className="text-pink-400 hidden md:block" size={24} />
+              <span className="text-pink-400 md:hidden text-xl">↓</span>
+              <div className="px-5 py-4 bg-pink-500/20 rounded-xl border-2 border-pink-500 flex-1 max-w-[180px]">
+                <Store className="w-8 h-8 text-pink-400 mx-auto mb-2" />
+                <p className="text-pink-400 font-bold text-sm">New Customers!</p>
+                <p className="text-slate-400 text-xs">Zero ad spend</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Channels */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            {[
+              { icon: Instagram, title: 'Instagram Stories', desc: 'Customers share their GV finds and tag your booth', color: 'pink' },
+              { icon: MessageCircle, title: 'WhatsApp Groups', desc: '"Great deals at this pavilion!" spreads fast', color: 'emerald' },
+              { icon: Send, title: 'Referral Bonus', desc: 'Customers earn extra coins for bringing friends', color: 'blue' }
+            ].map((item, idx) => (
+              <div key={idx} className={`bg-white/5 border rounded-xl p-5 text-center ${
+                item.color === 'pink' ? 'border-pink-500/30' :
+                item.color === 'emerald' ? 'border-emerald-500/30' :
+                'border-blue-500/30'
+              }`}>
+                <item.icon className={`w-8 h-8 mx-auto mb-3 ${
+                  item.color === 'pink' ? 'text-pink-400' :
+                  item.color === 'emerald' ? 'text-emerald-400' :
+                  'text-blue-400'
+                }`} />
+                <p className="text-white font-bold mb-1">{item.title}</p>
+                <p className="text-slate-400 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/30 rounded-2xl p-6 text-center">
+            <div className="flex flex-wrap justify-center gap-6 mb-4">
+              <div className="text-center">
+                <p className="text-3xl font-black text-pink-400">23%</p>
+                <p className="text-slate-400 text-xs">new customers from referrals</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-black text-purple-400">AED 0</p>
+                <p className="text-slate-400 text-xs">marketing cost</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-black text-emerald-400">4.2x</p>
+                <p className="text-slate-400 text-xs">higher lifetime value</p>
+              </div>
+            </div>
+            <p className="text-white">
+              <span className="text-pink-400 font-bold">Every happy customer is free advertising.</span> When they share savings, their friends discover YOUR booth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Free Merchant OS */}
+      <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 rounded-full mb-4 border border-cyan-500/30">
+            <Settings className="text-cyan-400" size={16} />
+            <span className="text-cyan-400 text-sm font-medium">Free Merchant OS</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+            Your <span className="text-cyan-400">Complete Business</span> Toolkit
+          </h2>
+          <p className="text-slate-400 max-w-xl mx-auto">Everything to run & grow your business - included free</p>
+        </div>
+
+        {/* Branded Coins Highlight */}
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-[#c9a227]/20 to-orange-500/20 border-2 border-[#c9a227]/50 rounded-2xl p-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-[#c9a227]/30 flex items-center justify-center flex-shrink-0">
+                <Coins className="w-8 h-8 text-[#c9a227]" />
+              </div>
+              <div className="text-center sm:text-left">
+                <h3 className="text-[#c9a227] font-black text-xl mb-1">Your Branded Coins</h3>
+                <p className="text-white">Customers earn <span className="text-[#c9a227] font-bold">&ldquo;[Your Booth] Coins&rdquo;</span> - not generic points. They see YOUR brand every time they check their balance, building loyalty to YOUR pavilion.</p>
+              </div>
+              <div className="text-center flex-shrink-0">
+                <p className="text-3xl font-black text-emerald-400">+40%</p>
+                <p className="text-slate-400 text-xs">Higher repeat rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {[
+            { icon: Users, title: 'Customer Database', desc: 'Full CRM with profiles, preferences, history', color: 'cyan' },
+            { icon: Bell, title: 'Campaign Manager', desc: 'Send SMS, push, email to your customers', color: 'pink' },
+            { icon: Target, title: 'Location Targeting', desc: 'Reach customers when near your booth', color: 'emerald' },
+            { icon: Gift, title: 'Offer Creator', desc: 'Create flash sales, specials, deals', color: 'purple' },
+            { icon: BarChart3, title: 'Analytics Dashboard', desc: 'Track sales, retention, peak hours', color: 'blue' },
+            { icon: FileText, title: 'Digital Receipts', desc: 'Customers get digital records automatically', color: 'orange' },
+            { icon: Download, title: 'Data Export', desc: 'Export your customer data anytime', color: 'gold' },
+            { icon: Lock, title: 'Data Ownership', desc: 'Your data stays yours - never shared', color: 'red' }
+          ].map((item, idx) => (
+            <div key={idx} className={`bg-white/5 backdrop-blur-xl border rounded-xl p-4 ${
+              item.color === 'cyan' ? 'border-cyan-500/30' :
+              item.color === 'pink' ? 'border-pink-500/30' :
+              item.color === 'emerald' ? 'border-emerald-500/30' :
+              item.color === 'purple' ? 'border-purple-500/30' :
+              item.color === 'blue' ? 'border-blue-500/30' :
+              item.color === 'orange' ? 'border-orange-500/30' :
+              item.color === 'gold' ? 'border-[#c9a227]/30' :
+              'border-red-500/30'
+            }`}>
+              <item.icon className={`w-8 h-8 mb-3 ${
+                item.color === 'cyan' ? 'text-cyan-400' :
+                item.color === 'pink' ? 'text-pink-400' :
+                item.color === 'emerald' ? 'text-emerald-400' :
+                item.color === 'purple' ? 'text-purple-400' :
+                item.color === 'blue' ? 'text-blue-400' :
+                item.color === 'orange' ? 'text-orange-400' :
+                item.color === 'gold' ? 'text-[#c9a227]' :
+                'text-red-400'
+              }`} />
+              <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
+              <p className="text-slate-400 text-xs">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Campaign examples */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8">
+          <p className="text-[#c9a227] font-bold text-center mb-4">Campaign Examples You Can Send</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm">
+            {[
+              { type: 'Flash Sale', msg: '"Next 2 hours: 2x coins on all purchases!"' },
+              { type: 'Win-Back', msg: '"We miss you! Visit today for bonus coins"' },
+              { type: 'Post-GV', msg: '"Visit our Dubai Mall store for rewards!"' },
+              { type: 'Location', msg: '"You\'re nearby! Pop in for your rewards"' }
+            ].map((campaign, idx) => (
+              <div key={idx} className="p-3 bg-white/5 rounded-xl">
+                <p className="text-[#c9a227] font-bold text-xs mb-1">{campaign.type}</p>
+                <p className="text-slate-400 text-xs italic">{campaign.msg}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key point */}
+        <div className="bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 border-2 border-cyan-500/30 rounded-2xl p-6 text-center">
+          <div className="flex flex-wrap justify-center gap-6 mb-4">
+            <div className="text-center">
+              <p className="text-3xl font-black text-cyan-400">AED 0</p>
+              <p className="text-slate-400 text-xs">Cost for all features</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl font-black text-emerald-400">100%</p>
+              <p className="text-slate-400 text-xs">Your data ownership</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl font-black text-[#c9a227]">Unlimited</p>
+              <p className="text-slate-400 text-xs">Campaigns per month</p>
+            </div>
+          </div>
+          <p className="text-white text-lg">
+            <span className="text-cyan-400 font-bold">Similar tools cost AED 500-2000/month.</span> With Nuqta, you get everything <span className="text-emerald-400 font-bold">completely free</span>.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-gradient-to-b from-transparent via-[#c9a227]/5 to-transparent py-16 sm:py-24">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">More Questions</h2>
+          </div>
+
+          <div className="space-y-3">
+            <FAQItem
+              question="Do I need to change my POS system?"
+              answer="No! Nuqta uses app-based transaction logging. Customers log their purchases in the Nuqta app, you verify via your merchant dashboard. No hardware, no software changes, no IT headaches."
+            />
+            <FAQItem
+              question="How do customers find my store?"
+              answer="Your store appears in the Nuqta app map, in the venue merchant directory, and in personalized recommendations. Premium merchants get featured placement and priority in search results."
+            />
+            <FAQItem
+              question="Can I run my own promotions?"
+              answer="Absolutely! Premium and Enterprise merchants can create custom offers, flash sales, and targeted promotions through the merchant dashboard. You control the discounts."
+            />
+            <FAQItem
+              question="How do I see my sales data?"
+              answer="Every merchant gets access to a real-time dashboard showing transactions, customer demographics, peak hours, and more. Premium merchants get advanced analytics and exportable reports."
+            />
+            <FAQItem
+              question="What happens after the season ends?"
+              answer="This is the best part! Nuqta works across all of UAE year-round. Every customer you acquire during GV season becomes a repeat customer at your permanent locations. They've already downloaded the app and linked to your store - they'll get notifications about your other branches and keep earning coins with you. GV is your customer acquisition engine for the whole year."
+            />
+            <FAQItem
+              question="How do I get started?"
+              answer="Simply contact us, sign the merchant agreement, and upload your store details. We'll have you live in the app within 24 hours. No setup fee, no long-term commitment."
+            />
+          </div>
         </div>
       </section>
 
@@ -487,6 +743,63 @@ const GVMerchantInfo = () => {
         </div>
       </section>
 
+      {/* Year-Round Value Section */}
+      <section className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
+        <div className="bg-gradient-to-r from-emerald-500/10 to-[#c9a227]/10 rounded-3xl p-8 border-2 border-emerald-500/30">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full mb-4 border border-emerald-500/30">
+              <TrendingUp className="text-emerald-400" size={16} />
+              <span className="text-emerald-400 text-sm font-medium">Beyond GV Season</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
+              GV is Your <span className="text-emerald-400">Customer Acquisition Engine</span>
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 mb-6">
+            <div className="bg-white/5 rounded-xl p-4 text-center">
+              <p className="text-3xl font-black text-[#c9a227]">7M+</p>
+              <p className="text-slate-400 text-sm">GV Visitors This Season</p>
+            </div>
+            <div className="bg-white/5 rounded-xl p-4 text-center">
+              <p className="text-3xl font-black text-emerald-400">365</p>
+              <p className="text-slate-400 text-sm">Days of Repeat Visits</p>
+            </div>
+            <div className="bg-white/5 rounded-xl p-4 text-center">
+              <p className="text-3xl font-black text-purple-400">500+</p>
+              <p className="text-slate-400 text-sm">Partner Stores UAE-wide</p>
+            </div>
+          </div>
+
+          <p className="text-slate-300 text-center">
+            Every customer you acquire at GV downloads the app, links to your store, and becomes a <span className="text-emerald-400 font-bold">year-round repeat customer</span> at your permanent locations. GV season pays for itself in lifetime customer value.
+          </p>
+        </div>
+      </section>
+
+      {/* Urgency Section */}
+      <section className="max-w-4xl mx-auto px-4 pb-8">
+        <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-2xl p-6 border-2 border-red-500/30 text-center">
+          <p className="text-white font-bold text-lg mb-2">
+            <span className="text-red-400">Limited Partnership Spots</span> for GV 2024-25 Season
+          </p>
+          <p className="text-slate-400 text-sm mb-4">
+            We only partner with select merchants per pavilion to ensure exclusivity and quality. Spots are filling fast.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center text-sm">
+            <div className="px-4 py-2 bg-white/10 rounded-full text-slate-300">
+              <span className="text-red-400 font-bold">3 spots left</span> - Food & Beverage
+            </div>
+            <div className="px-4 py-2 bg-white/10 rounded-full text-slate-300">
+              <span className="text-red-400 font-bold">5 spots left</span> - Retail & Souvenirs
+            </div>
+            <div className="px-4 py-2 bg-white/10 rounded-full text-slate-300">
+              <span className="text-orange-400 font-bold">7 spots left</span> - Services
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
         <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 rounded-3xl p-8 sm:p-12 border border-[#c9a227]/30 text-center">
@@ -495,17 +808,33 @@ const GVMerchantInfo = () => {
             Ready to Grow Your Business?
           </h2>
           <p className="text-slate-400 max-w-xl mx-auto mb-8">
-            Join Nuqta today and start turning GV visitors into loyal customers.
+            Join Nuqta today and start turning GV visitors into loyal, year-round customers.
             Zero risk, zero upfront cost.
           </p>
 
+          {/* Onboarding Timeline */}
+          <div className="grid grid-cols-4 gap-2 mb-8 max-w-lg mx-auto text-center">
+            {[
+              { day: 'Today', action: 'Quick Call', icon: '📞' },
+              { day: 'Day 1', action: 'Setup', icon: '⚙️' },
+              { day: 'Day 2', action: 'Go Live', icon: '🚀' },
+              { day: 'Week 1', action: 'First Sales', icon: '💰' }
+            ].map((step, idx) => (
+              <div key={idx} className="p-2 bg-white/5 rounded-lg">
+                <p className="text-xl mb-1">{step.icon}</p>
+                <p className="text-[#c9a227] text-xs font-bold">{step.day}</p>
+                <p className="text-slate-400 text-xs">{step.action}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <a
-              href="mailto:rejaul@nuqtapp.com?subject=GV Merchant Partnership"
+              href="mailto:merchants@nuqtapp.com?subject=GV Partnership - Schedule Setup Call"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-full font-bold hover:bg-[#d4b03f] transition-colors"
             >
               <Mail size={18} />
-              Contact Us
+              Schedule Setup Call
             </a>
             <a
               href="tel:+971503764345"
@@ -536,15 +865,30 @@ const GVMerchantInfo = () => {
       {/* Quick Links */}
       <section className="border-t border-white/10 py-8">
         <div className="max-w-6xl mx-auto px-4">
+          <p className="text-center text-slate-500 text-xs mb-4">Merchant Pitch Decks by Category</p>
+          <div className="flex flex-wrap gap-4 justify-center mb-6">
+            <a href="/deck-cafe" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Cafes & Restaurants →
+            </a>
+            <a href="/deck-salon" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Salons & Spas →
+            </a>
+            <a href="/deck-supermarket" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Supermarkets →
+            </a>
+            <a href="/deck-gold" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Gold & Jewelry →
+            </a>
+          </div>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="/deck-gv" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
               GV Partnership Deck →
             </a>
+            <a href="/deck-merchant" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              General Merchant Deck →
+            </a>
             <a href="/data-room" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
               Data Room →
-            </a>
-            <a href="/gv-playbook" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
-              Sales Playbook →
             </a>
           </div>
           <p className="text-center text-slate-600 text-xs mt-4">

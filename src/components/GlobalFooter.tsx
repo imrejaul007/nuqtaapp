@@ -59,11 +59,9 @@ const navigationData: NavCategory[] = [
   {
     title: 'Partnerships',
     items: [
-      { label: 'GV Deck', href: '/deck-gv', icon: Building2, description: 'Global Village pitch' },
-      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales guide' },
-      { label: 'GV Merchants', href: '/gv-merchants', icon: Building2, description: 'GV merchant info' },
+      { label: 'GV Deck', href: '/deck-gv', icon: Building2, description: 'Global Village partnership pitch' },
+      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales team guide' },
       { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Event organizer pitch' },
-      { label: 'Event Merchants', href: '/exhibition-merchants', icon: Calendar, description: 'Event merchant info' },
     ]
   },
   {
@@ -105,11 +103,22 @@ const navigationData: NavCategory[] = [
   {
     title: 'Merchants',
     items: [
-      { label: 'Merchant Deck', href: '/deck-merchant', icon: Store, description: 'Why join Nuqta' },
-      { label: 'Merchant Info', href: '/merchant-info', icon: FileText, description: 'Terms & benefits' },
+      { label: 'Engine A Deck', href: '/deck-merchant', icon: Store, description: 'High-margin (cafes, salons)' },
+      { label: 'Engine A Info', href: '/merchant-info', icon: FileText, description: 'High-margin terms' },
+      { label: 'Engine B Deck', href: '/deck-merchant-b', icon: Building2, description: 'Low-margin (electronics, grocery)' },
+      { label: 'GV Merchants', href: '/gv-merchants', icon: Calendar, description: 'Event-based (GV booths)' },
+      { label: 'Event Merchants', href: '/exhibition-merchants', icon: Calendar, description: 'Event-based (exhibitions)' },
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
       { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
-      { label: 'User Card', href: '/card', icon: Users, description: 'User card view' },
+    ]
+  },
+  {
+    title: 'Niche Decks',
+    items: [
+      { label: 'Cafes & Restaurants', href: '/deck-cafe', icon: Store, description: 'F&B specific pitch' },
+      { label: 'Salons & Spas', href: '/deck-salon', icon: Users, description: 'Beauty/wellness pitch' },
+      { label: 'Supermarkets', href: '/deck-supermarket', icon: Building2, description: 'Grocery specific pitch' },
+      { label: 'Gold & Jewelry', href: '/deck-gold', icon: DollarSign, description: 'Jewelry store pitch' },
     ]
   },
   {

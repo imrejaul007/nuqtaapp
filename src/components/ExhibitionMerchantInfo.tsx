@@ -25,7 +25,16 @@ import {
   Calendar,
   Timer,
   Target,
-  Award
+  Award,
+  Share2,
+  Instagram,
+  MessageCircle,
+  Send,
+  Settings,
+  Bell,
+  Download,
+  Lock,
+  FileText
 } from 'lucide-react';
 
 /**
@@ -404,6 +413,209 @@ const ExhibitionMerchantInfo = () => {
         </div>
       </section>
 
+      {/* Social Viral - Free Marketing */}
+      <section className="bg-gradient-to-b from-pink-500/5 to-transparent py-16 sm:py-24">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500/20 rounded-full mb-4 border border-pink-500/30">
+              <Share2 className="text-pink-400" size={16} />
+              <span className="text-pink-400 text-sm font-medium">Free Marketing</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+              Customers <span className="text-pink-400">Promote You</span> for Free
+            </h2>
+            <p className="text-slate-400 max-w-xl mx-auto">Word-of-mouth marketing that actually works</p>
+          </div>
+
+          {/* Social sharing flow */}
+          <div className="bg-white/5 backdrop-blur-xl border border-pink-500/20 rounded-3xl p-6 sm:p-8 mb-8">
+            <h3 className="text-pink-400 font-bold text-center mb-6 text-lg">How Customers Spread the Word</h3>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+              <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
+                <Coins className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                <p className="text-white font-bold text-sm">Earns Coins</p>
+                <p className="text-slate-400 text-xs">At your booth</p>
+              </div>
+              <ArrowRight className="text-pink-400 hidden md:block" size={24} />
+              <span className="text-pink-400 md:hidden text-xl">↓</span>
+              <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
+                <Share2 className="w-8 h-8 text-pink-400 mx-auto mb-2" />
+                <p className="text-white font-bold text-sm">Shares on Social</p>
+                <p className="text-slate-400 text-xs">Instagram, WhatsApp</p>
+              </div>
+              <ArrowRight className="text-pink-400 hidden md:block" size={24} />
+              <span className="text-pink-400 md:hidden text-xl">↓</span>
+              <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
+                <Users className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+                <p className="text-white font-bold text-sm">Friends See It</p>
+                <p className="text-slate-400 text-xs">&ldquo;Where did you shop?&rdquo;</p>
+              </div>
+              <ArrowRight className="text-pink-400 hidden md:block" size={24} />
+              <span className="text-pink-400 md:hidden text-xl">↓</span>
+              <div className="px-5 py-4 bg-pink-500/20 rounded-xl border-2 border-pink-500 flex-1 max-w-[180px]">
+                <Store className="w-8 h-8 text-pink-400 mx-auto mb-2" />
+                <p className="text-pink-400 font-bold text-sm">New Customers!</p>
+                <p className="text-slate-400 text-xs">Zero ad spend</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Channels */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+            {[
+              { icon: Instagram, title: 'Instagram Stories', desc: 'Customers share event finds and tag your booth', color: 'pink' },
+              { icon: MessageCircle, title: 'WhatsApp Groups', desc: '"Great deals at this exhibition!" spreads fast', color: 'emerald' },
+              { icon: Send, title: 'Referral Bonus', desc: 'Customers earn extra coins for bringing friends', color: 'blue' }
+            ].map((item, idx) => (
+              <div key={idx} className={`bg-white/5 border rounded-xl p-5 text-center ${
+                item.color === 'pink' ? 'border-pink-500/30' :
+                item.color === 'emerald' ? 'border-emerald-500/30' :
+                'border-blue-500/30'
+              }`}>
+                <item.icon className={`w-8 h-8 mx-auto mb-3 ${
+                  item.color === 'pink' ? 'text-pink-400' :
+                  item.color === 'emerald' ? 'text-emerald-400' :
+                  'text-blue-400'
+                }`} />
+                <p className="text-white font-bold mb-1">{item.title}</p>
+                <p className="text-slate-400 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Stats */}
+          <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/30 rounded-2xl p-6 text-center">
+            <div className="flex flex-wrap justify-center gap-6 mb-4">
+              <div className="text-center">
+                <p className="text-3xl font-black text-pink-400">23%</p>
+                <p className="text-slate-400 text-xs">new customers from referrals</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-black text-purple-400">AED 0</p>
+                <p className="text-slate-400 text-xs">marketing cost</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-black text-emerald-400">4.2x</p>
+                <p className="text-slate-400 text-xs">higher lifetime value</p>
+              </div>
+            </div>
+            <p className="text-white">
+              <span className="text-pink-400 font-bold">Every happy customer is free advertising.</span> When they share savings, their friends discover YOUR booth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Free Merchant OS */}
+      <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 rounded-full mb-4 border border-cyan-500/30">
+            <Settings className="text-cyan-400" size={16} />
+            <span className="text-cyan-400 text-sm font-medium">Free Merchant OS</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+            Your <span className="text-cyan-400">Complete Business</span> Toolkit
+          </h2>
+          <p className="text-slate-400 max-w-xl mx-auto">Everything to run & grow your business - included free</p>
+        </div>
+
+        {/* Branded Coins Highlight */}
+        <div className="mb-8">
+          <div className="bg-gradient-to-r from-[#c9a227]/20 to-orange-500/20 border-2 border-[#c9a227]/50 rounded-2xl p-6">
+            <div className="flex flex-col sm:flex-row items-center gap-4">
+              <div className="w-16 h-16 rounded-full bg-[#c9a227]/30 flex items-center justify-center flex-shrink-0">
+                <Coins className="w-8 h-8 text-[#c9a227]" />
+              </div>
+              <div className="text-center sm:text-left">
+                <h3 className="text-[#c9a227] font-black text-xl mb-1">Your Branded Coins</h3>
+                <p className="text-white">Customers earn <span className="text-[#c9a227] font-bold">&ldquo;[Your Booth] Coins&rdquo;</span> - not generic points. They see YOUR brand every time they check their balance, building loyalty to YOUR booth.</p>
+              </div>
+              <div className="text-center flex-shrink-0">
+                <p className="text-3xl font-black text-emerald-400">+40%</p>
+                <p className="text-slate-400 text-xs">Higher repeat rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Features grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+          {[
+            { icon: Users, title: 'Customer Database', desc: 'Full CRM with profiles, preferences, history', color: 'cyan' },
+            { icon: Bell, title: 'Campaign Manager', desc: 'Send SMS, push, email to your customers', color: 'pink' },
+            { icon: Target, title: 'Location Targeting', desc: 'Reach customers when near your booth', color: 'emerald' },
+            { icon: Gift, title: 'Offer Creator', desc: 'Create flash sales, specials, deals', color: 'purple' },
+            { icon: BarChart3, title: 'Analytics Dashboard', desc: 'Track sales, retention, peak hours', color: 'blue' },
+            { icon: FileText, title: 'Digital Receipts', desc: 'Customers get digital records automatically', color: 'orange' },
+            { icon: Download, title: 'Data Export', desc: 'Export your customer data anytime', color: 'gold' },
+            { icon: Lock, title: 'Data Ownership', desc: 'Your data stays yours - never shared', color: 'red' }
+          ].map((item, idx) => (
+            <div key={idx} className={`bg-white/5 backdrop-blur-xl border rounded-xl p-4 ${
+              item.color === 'cyan' ? 'border-cyan-500/30' :
+              item.color === 'pink' ? 'border-pink-500/30' :
+              item.color === 'emerald' ? 'border-emerald-500/30' :
+              item.color === 'purple' ? 'border-purple-500/30' :
+              item.color === 'blue' ? 'border-blue-500/30' :
+              item.color === 'orange' ? 'border-orange-500/30' :
+              item.color === 'gold' ? 'border-[#c9a227]/30' :
+              'border-red-500/30'
+            }`}>
+              <item.icon className={`w-8 h-8 mb-3 ${
+                item.color === 'cyan' ? 'text-cyan-400' :
+                item.color === 'pink' ? 'text-pink-400' :
+                item.color === 'emerald' ? 'text-emerald-400' :
+                item.color === 'purple' ? 'text-purple-400' :
+                item.color === 'blue' ? 'text-blue-400' :
+                item.color === 'orange' ? 'text-orange-400' :
+                item.color === 'gold' ? 'text-[#c9a227]' :
+                'text-red-400'
+              }`} />
+              <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
+              <p className="text-slate-400 text-xs">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Campaign examples */}
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8">
+          <p className="text-[#c9a227] font-bold text-center mb-4">Campaign Examples You Can Send</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm">
+            {[
+              { type: 'Flash Sale', msg: '"Next 2 hours: 2x coins on all purchases!"' },
+              { type: 'Win-Back', msg: '"We miss you! Visit today for bonus coins"' },
+              { type: 'Post-Event', msg: '"Visit our main store for rewards!"' },
+              { type: 'Location', msg: '"You\'re nearby! Pop in for your rewards"' }
+            ].map((campaign, idx) => (
+              <div key={idx} className="p-3 bg-white/5 rounded-xl">
+                <p className="text-[#c9a227] font-bold text-xs mb-1">{campaign.type}</p>
+                <p className="text-slate-400 text-xs italic">{campaign.msg}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Key point */}
+        <div className="bg-gradient-to-r from-cyan-500/10 to-emerald-500/10 border-2 border-cyan-500/30 rounded-2xl p-6 text-center">
+          <div className="flex flex-wrap justify-center gap-6 mb-4">
+            <div className="text-center">
+              <p className="text-3xl font-black text-cyan-400">AED 0</p>
+              <p className="text-slate-400 text-xs">Cost for all features</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl font-black text-emerald-400">100%</p>
+              <p className="text-slate-400 text-xs">Your data ownership</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl font-black text-[#c9a227]">Unlimited</p>
+              <p className="text-slate-400 text-xs">Campaigns per month</p>
+            </div>
+          </div>
+          <p className="text-white text-lg">
+            <span className="text-cyan-400 font-bold">Similar tools cost AED 500-2000/month.</span> With Nuqta, you get everything <span className="text-emerald-400 font-bold">completely free</span>.
+          </p>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
         <div className="text-center mb-12">
@@ -446,6 +658,56 @@ const ExhibitionMerchantInfo = () => {
         </div>
       </section>
 
+      {/* Year-Round Value Section */}
+      <section className="max-w-4xl mx-auto px-4 py-16 sm:py-24">
+        <div className="bg-gradient-to-r from-emerald-500/10 to-[#c9a227]/10 rounded-3xl p-8 border-2 border-emerald-500/30">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 rounded-full mb-4 border border-emerald-500/30">
+              <TrendingUp className="text-emerald-400" size={16} />
+              <span className="text-emerald-400 text-sm font-medium">Beyond The Event</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
+              Events = <span className="text-emerald-400">Customer Acquisition</span>
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-4 mb-6">
+            <div className="bg-white/5 rounded-xl p-4 text-center">
+              <p className="text-3xl font-black text-[#c9a227]">5-7</p>
+              <p className="text-slate-400 text-sm">Days to Acquire</p>
+            </div>
+            <div className="bg-white/5 rounded-xl p-4 text-center">
+              <p className="text-3xl font-black text-emerald-400">365</p>
+              <p className="text-slate-400 text-sm">Days of Repeat Value</p>
+            </div>
+            <div className="bg-white/5 rounded-xl p-4 text-center">
+              <p className="text-3xl font-black text-purple-400">500+</p>
+              <p className="text-slate-400 text-sm">UAE Partner Stores</p>
+            </div>
+          </div>
+
+          <p className="text-slate-300 text-center">
+            Every customer you acquire at the event downloads the app and becomes part of your <span className="text-emerald-400 font-bold">year-round customer base</span>. They can visit your permanent locations anytime - the event is just the beginning.
+          </p>
+        </div>
+      </section>
+
+      {/* Urgency Section */}
+      <section className="max-w-4xl mx-auto px-4 pb-8">
+        <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-2xl p-6 border-2 border-red-500/30 text-center">
+          <p className="text-white font-bold text-lg mb-2">
+            <span className="text-red-400">Event Partnership Spots Are Limited</span>
+          </p>
+          <p className="text-slate-400 text-sm mb-4">
+            We limit partners per event to maintain exclusivity and quality. Book your spot before your competitors do.
+          </p>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full text-slate-300 text-sm">
+            <Timer className="text-orange-400" size={16} />
+            Events book up 2-3 weeks in advance
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="max-w-6xl mx-auto px-4 py-16 sm:py-24">
         <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 rounded-3xl p-8 sm:p-12 border border-[#c9a227]/30 text-center">
@@ -453,18 +715,34 @@ const ExhibitionMerchantInfo = () => {
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
             Got an Event Coming Up?
           </h2>
-          <p className="text-slate-400 max-w-xl mx-auto mb-8">
+          <p className="text-slate-400 max-w-xl mx-auto mb-6">
             Join Nuqta and turn your booth browsers into AED 500+ buyers.
             Zero risk, zero upfront cost.
           </p>
 
+          {/* Onboarding Timeline */}
+          <div className="grid grid-cols-4 gap-2 mb-8 max-w-lg mx-auto text-center">
+            {[
+              { day: 'Today', action: 'Quick Call', icon: '📞' },
+              { day: 'Day 1', action: 'Setup', icon: '⚙️' },
+              { day: 'Day 2', action: 'Go Live', icon: '🚀' },
+              { day: 'Event Day', action: 'Make Sales', icon: '💰' }
+            ].map((step, idx) => (
+              <div key={idx} className="p-2 bg-white/5 rounded-lg">
+                <p className="text-xl mb-1">{step.icon}</p>
+                <p className="text-[#c9a227] text-xs font-bold">{step.day}</p>
+                <p className="text-slate-400 text-xs">{step.action}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="flex flex-wrap gap-4 justify-center mb-8">
             <a
-              href="mailto:rejaul@nuqtapp.com?subject=Exhibition Merchant Partnership"
+              href="mailto:merchants@nuqtapp.com?subject=Exhibition Partnership - Schedule Setup Call"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-full font-bold hover:bg-[#d4b03f] transition-colors"
             >
               <Mail size={18} />
-              Contact Us
+              Schedule Setup Call
             </a>
             <a
               href="tel:+971503764345"
@@ -495,6 +773,21 @@ const ExhibitionMerchantInfo = () => {
       {/* Quick Links */}
       <section className="border-t border-white/10 py-8">
         <div className="max-w-6xl mx-auto px-4">
+          <p className="text-center text-slate-500 text-xs mb-4">Merchant Pitch Decks by Category</p>
+          <div className="flex flex-wrap gap-4 justify-center mb-6">
+            <a href="/deck-cafe" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Cafes & Restaurants →
+            </a>
+            <a href="/deck-salon" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Salons & Spas →
+            </a>
+            <a href="/deck-supermarket" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Supermarkets →
+            </a>
+            <a href="/deck-gold" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
+              Gold & Jewelry →
+            </a>
+          </div>
           <div className="flex flex-wrap gap-4 justify-center">
             <a href="/deck-exhibition" className="text-slate-400 text-sm hover:text-[#c9a227] transition-colors">
               Exhibition Partnership Deck →

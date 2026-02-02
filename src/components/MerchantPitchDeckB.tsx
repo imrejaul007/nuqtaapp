@@ -31,11 +31,14 @@ import {
   CreditCard,
   Phone,
   Mail,
+  Ticket,
+  Globe,
+  Building2,
+  Wallet,
   Share2,
   Instagram,
   MessageCircle,
   Send,
-  Database,
   Settings,
   FileText,
   Bell,
@@ -44,30 +47,31 @@ import {
 } from 'lucide-react';
 
 /**
- * MERCHANT PITCH DECK - ENGINE A (High-Margin Merchants)
+ * MERCHANT PITCH DECK - ENGINE B (Low-Margin Merchants)
  *
- * For merchants with HIGH MARGINS (40-70%) who can afford generous cashback:
- * - Restaurants & Cafes (60-70% margin)
- * - Salons & Spas (50-60% margin)
- * - Entertainment (50-70% margin)
- * - Boutique Retail (40-60% margin)
+ * For merchants with LOW MARGINS (5-20%) who cannot afford high cashback rates:
+ * - Supermarkets & Grocery (2-5% margin)
+ * - Gold & Jewelry (10-15% margin)
+ * - Electronics (5-10% margin)
+ * - Large Retail Chains
  *
- * Key features:
- * - Higher cashback: 5-10% (flexible)
- * - Higher commission: 15-20% total (AED 5-8 per AED 100)
- * - Regular loyalty model - customers earn coins on every purchase
+ * Key difference from Engine A (high-margin):
+ * - Lower cashback: 5% fixed (vs 5-10% for Engine A)
+ * - Lower commission: 5.5-8% total (vs 15-20% for Engine A)
+ * - Same loyalty model - customers earn coins on purchases
  * - NO minimum spend threshold (unlike event model)
+ * - PG fees shown separately (transparent billing)
  *
- * For LOW-margin merchants (supermarkets, electronics, gold), see Engine B.
- * For EVENT-based coin unlock model (GV, exhibitions), see GV Deck or Exhibition Deck.
+ * This is REGULAR loyalty like Engine A, just with margin-friendly rates.
+ * For EVENT-based coin unlock model, see GV Deck or Exhibition Deck.
  *
  * Brand colors: #c9a227 (gold), #0a1628 (dark blue)
  */
 
-const MerchantPitchDeck = () => {
+const MerchantPitchDeckB = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const totalSlides = 14; // Added: Social/Viral (slide 5), Merchant OS (slide 6), plus existing slides
+  const totalSlides = 14; // Added: Social/Viral (slide 5), Merchant OS (slide 6)
 
   const changeSlide = (newSlide: number) => {
     if (newSlide >= 0 && newSlide < totalSlides && !isTransitioning) {
@@ -104,33 +108,33 @@ const MerchantPitchDeck = () => {
             {/* Background effects */}
             <div className="absolute inset-0">
               <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#c9a227] rounded-full blur-[150px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full blur-[120px] opacity-15" />
+              <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500 rounded-full blur-[120px] opacity-15" />
             </div>
 
             <div className="relative z-10 max-w-5xl w-full text-center px-2">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-emerald-500/20 border border-[#c9a227]/30 rounded-full mb-6 animate-[fadeIn_1s_ease-out]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 border border-[#c9a227]/30 rounded-full mb-6 animate-[fadeIn_1s_ease-out]">
                 <Store className="w-4 h-4 text-[#c9a227]" />
-                <span className="text-[#c9a227] font-semibold text-sm">For Merchants</span>
+                <span className="text-[#c9a227] font-semibold text-sm">For Low-Margin & High-Volume Merchants</span>
               </div>
 
               {/* Main title */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6 animate-[slideDown_0.8s_ease-out]">
-                Stop Losing Customers<br />
-                <span className="bg-gradient-to-r from-[#c9a227] to-[#d4b03f] bg-clip-text text-transparent">Start Building Loyalty</span>
+                Turn Browsers Into<br />
+                <span className="bg-gradient-to-r from-[#c9a227] to-[#d4b03f] bg-clip-text text-transparent">High-Value Buyers</span>
               </h1>
 
               {/* Subtitle */}
               <p className="text-lg sm:text-xl md:text-2xl text-slate-400 mb-8 max-w-3xl mx-auto animate-[fadeIn_1s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
-                Get customers who come back again and again. Pay only when they do.
+                Build customer loyalty without cutting into your margins. Pay only when they buy.
               </p>
 
               {/* Key stats */}
               <div className="flex flex-wrap justify-center gap-4 mb-10 animate-[fadeIn_1s_ease-out_0.5s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   { value: 'AED 0', label: 'Upfront Cost' },
-                  { value: 'AED 5', label: 'Per AED 100 in Sales' },
-                  { value: '3x', label: 'More Repeat Visits' }
+                  { value: '5%', label: 'Fixed Cashback Rate' },
+                  { value: '500K+', label: 'Active Nuqta Users' }
                 ].map((stat, idx) => (
                   <div key={idx} className="px-5 py-3 bg-white/5 border border-white/10 rounded-xl text-center">
                     <p className="text-[#c9a227] text-xl sm:text-2xl font-black">{stat.value}</p>
@@ -150,9 +154,20 @@ const MerchantPitchDeck = () => {
                 </button>
               </div>
 
+              {/* Merchant types */}
+              <div className="mt-10 animate-[fadeIn_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards]">
+                <p className="text-slate-500 text-sm mb-3">Perfect for</p>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {['Supermarkets', 'Electronics', 'Gold & Jewelry', 'Retail Chains', 'Pharmacies', 'Grocery Stores'].map((venue, idx) => (
+                    <span key={idx} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-slate-300 text-sm">
+                      {venue}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               {/* Nuqta branding */}
-              <div className="mt-12 animate-[fadeIn_1s_ease-out_0.9s] opacity-0 [animation-fill-mode:forwards]">
-                <p className="text-slate-500 text-sm mb-2">Powered by</p>
+              <div className="mt-8 animate-[fadeIn_1s_ease-out_1.1s] opacity-0 [animation-fill-mode:forwards]">
                 <p className="text-[#c9a227] text-2xl font-black tracking-wider">NUQTA</p>
                 <p className="text-slate-400 text-xs">UAE&apos;s Everyday Savings Platform</p>
               </div>
@@ -176,7 +191,7 @@ const MerchantPitchDeck = () => {
                   <span className="text-red-400 font-semibold text-sm">The Problem</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                  Customers <span className="text-red-400">Never Come Back</span>
+                  Thin Margins, <span className="text-red-400">Can&apos;t Discount</span>
                 </h1>
               </div>
 
@@ -184,22 +199,22 @@ const MerchantPitchDeck = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
-                    stat: '80%',
-                    label: 'One-Time Visitors',
-                    desc: 'Most customers visit once and never return - you lose them forever',
-                    icon: Users
-                  },
-                  {
-                    stat: '5x',
-                    label: 'Cheaper to Retain',
-                    desc: 'Acquiring new customers costs 5x more than keeping existing ones',
+                    stat: '5-15%',
+                    label: 'Your Margin',
+                    desc: 'Supermarkets, electronics, gold - you operate on razor-thin margins. Every percentage matters.',
                     icon: DollarSign
                   },
                   {
-                    stat: '0',
-                    label: 'Customer Data',
-                    desc: 'No way to reach customers after they leave or know their preferences',
-                    icon: BarChart3
+                    stat: 'AED 80',
+                    label: 'Small Purchases',
+                    desc: 'Customers buy small. You need bigger baskets to make money, but how do you encourage that?',
+                    icon: Users
+                  },
+                  {
+                    stat: '10-20%',
+                    label: 'Can\'t Give Away',
+                    desc: 'Other loyalty apps want 10-20% cashback. That wipes out your entire profit. Not happening.',
+                    icon: Percent
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="relative">
@@ -218,7 +233,7 @@ const MerchantPitchDeck = () => {
               <div className="mt-8 animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 backdrop-blur-xl border border-red-500/20 rounded-2xl p-6 text-center">
                   <p className="text-white text-lg font-semibold">
-                    Without a loyalty system, you&apos;re stuck in an <span className="text-red-400 font-bold">endless cycle of acquiring new customers</span> instead of building a base of regulars who love your business.
+                    You need a loyalty solution that <span className="text-red-400 font-bold">works with your margins</span>, not against them. One that guarantees big-ticket sales.
                   </p>
                 </div>
               </div>
@@ -242,42 +257,42 @@ const MerchantPitchDeck = () => {
                   <span className="text-[#c9a227] font-semibold text-sm">The Solution</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
-                  Nuqta = <span className="text-[#c9a227]">Loyalty Made Simple</span>
+                  <span className="text-[#c9a227]">Loyalty That Protects</span> Your Margins
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-4">Customers earn coins at your store. They come back to spend them.</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-4">Fixed 5% cashback. Lower commission. Built for businesses like yours.</p>
               </div>
 
-              {/* The Loop */}
+              {/* The Magic */}
               <div className="relative mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227]/10 to-emerald-500/10 rounded-3xl blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 rounded-3xl blur-xl" />
                 <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-3xl p-6 sm:p-8">
-                  <h3 className="text-[#c9a227] font-bold text-center mb-6 text-xl">The Loyalty Loop</h3>
+                  <h3 className="text-[#c9a227] font-bold text-center mb-6 text-xl">How It Works</h3>
                   <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
                     <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[200px]">
+                      <Users className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+                      <p className="text-white font-bold">Customer Finds You</p>
+                      <p className="text-slate-400 text-sm">In Nuqta app</p>
+                    </div>
+                    <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
+                    <span className="text-[#c9a227] md:hidden text-xl">↓</span>
+                    <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[200px]">
                       <Store className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                      <p className="text-white font-bold">Customer Visits</p>
-                      <p className="text-slate-400 text-sm">Shops at your store</p>
+                      <p className="text-white font-bold">They Shop & Pay</p>
+                      <p className="text-slate-400 text-sm">Full price, no discount</p>
                     </div>
                     <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
                     <span className="text-[#c9a227] md:hidden text-xl">↓</span>
                     <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[200px]">
                       <Coins className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                      <p className="text-white font-bold">Earns Nuqta Coins</p>
-                      <p className="text-slate-400 text-sm">5-10% back in coins</p>
-                    </div>
-                    <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
-                    <span className="text-[#c9a227] md:hidden text-xl">↓</span>
-                    <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[200px]">
-                      <Gift className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                      <p className="text-white font-bold">Spends Coins</p>
-                      <p className="text-slate-400 text-sm">Uses coins for discounts</p>
+                      <p className="text-white font-bold">Earn 5% Coins</p>
+                      <p className="text-slate-400 text-sm">Fixed rate, simple</p>
                     </div>
                     <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
                     <span className="text-[#c9a227] md:hidden text-xl">↓</span>
                     <div className="px-5 py-4 bg-[#c9a227]/20 rounded-xl border-2 border-[#c9a227] flex-1 max-w-[200px]">
                       <Repeat className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                      <p className="text-[#c9a227] font-bold">Comes Back!</p>
-                      <p className="text-slate-400 text-sm">Now a loyal customer</p>
+                      <p className="text-[#c9a227] font-bold">They Come Back!</p>
+                      <p className="text-slate-400 text-sm">To spend their coins</p>
                     </div>
                   </div>
                 </div>
@@ -286,9 +301,9 @@ const MerchantPitchDeck = () => {
               {/* Benefits */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: Repeat, title: '3x More Visits', desc: 'Customers with coins come back 3x more often' },
-                  { icon: TrendingUp, title: 'Higher Spend', desc: 'Coin users spend 40% more per visit' },
-                  { icon: Heart, title: 'True Loyalty', desc: 'Build relationships, not just transactions' }
+                  { icon: DollarSign, title: 'Fixed 5% Cashback', desc: 'Simple, predictable. You always know the cost.' },
+                  { icon: Target, title: 'Repeat Customers', desc: 'They come back to spend coins at your store' },
+                  { icon: Wallet, title: 'Margin Protected', desc: 'Lower commission than high-margin merchant rates' }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white/5 border border-white/10 rounded-xl p-5 text-center">
                     <item.icon className="w-8 h-8 text-[#c9a227] mx-auto mb-3" />
@@ -314,7 +329,7 @@ const MerchantPitchDeck = () => {
               <div className="text-center mb-8 animate-[slideDown_0.8s_ease-out]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-full mb-4">
                   <Zap className="w-5 h-5 text-blue-400" />
-                  <span className="text-blue-400 font-semibold text-sm">How It Works</span>
+                  <span className="text-blue-400 font-semibold text-sm">Your Process</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
                   Simple <span className="text-blue-400">3-Step</span> Process
@@ -327,14 +342,14 @@ const MerchantPitchDeck = () => {
                   {
                     step: '1',
                     title: 'Customer Pays You',
-                    desc: 'Customer makes a purchase at your store as normal. No changes to your checkout.',
-                    icon: CreditCard,
+                    desc: 'Customer makes a purchase at your store as normal. No changes to checkout.',
+                    icon: Store,
                     color: 'blue'
                   },
                   {
                     step: '2',
                     title: 'They Log in Nuqta',
-                    desc: 'Customer logs purchase in 10 seconds. They\'re motivated - they get 5-10% back as coins!',
+                    desc: 'Customer logs purchase in 10 seconds. They get 5% back as coins!',
                     icon: Smartphone,
                     color: 'purple'
                   },
@@ -383,7 +398,7 @@ const MerchantPitchDeck = () => {
                     <Shield className="w-8 h-8 text-emerald-400 flex-shrink-0" />
                     <div>
                       <p className="text-white font-bold">No POS Changes</p>
-                      <p className="text-slate-400 text-sm">Keep using your existing system. Zero IT headaches.</p>
+                      <p className="text-slate-400 text-sm">Keep using your existing system. Zero IT hassle.</p>
                     </div>
                   </div>
                 </div>
@@ -392,18 +407,18 @@ const MerchantPitchDeck = () => {
                     <Clock className="w-8 h-8 text-[#c9a227] flex-shrink-0" />
                     <div>
                       <p className="text-white font-bold">Go Live in 24 Hours</p>
-                      <p className="text-slate-400 text-sm">Sign up today, start getting loyal customers tomorrow.</p>
+                      <p className="text-slate-400 text-sm">Sign up today, be on the app tomorrow.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Why customers log */}
+              {/* Why customers love it */}
               <div className="mt-6 animate-[fadeIn_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-5">
-                  <p className="text-purple-400 font-bold text-center mb-2">&ldquo;Will customers actually log their purchases?&rdquo;</p>
+                  <p className="text-purple-400 font-bold text-center mb-2">&ldquo;Why would customers use Nuqta?&rdquo;</p>
                   <p className="text-white text-center">
-                    <span className="font-bold">Yes!</span> They&apos;re getting 5-10% back as real money (coins). It&apos;s like cashback but better - they can use it at 500+ places. Our logging rate is <span className="text-[#c9a227] font-bold">92%</span> because the reward is worth it.
+                    <span className="font-bold">Because they get 5% back on every purchase!</span> Those coins can be spent at 500+ stores across the UAE. It&apos;s free money they would miss without Nuqta.
                   </p>
                 </div>
               </div>
@@ -435,10 +450,10 @@ const MerchantPitchDeck = () => {
               {/* Dashboard features */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: Users, title: 'Customer Profiles', desc: 'See who shops with you, how often, and what they spend', color: 'purple' },
-                  { icon: TrendingUp, title: 'Sales Analytics', desc: 'Track Nuqta-driven revenue vs regular sales', color: 'blue' },
-                  { icon: Repeat, title: 'Retention Metrics', desc: 'D7, D30, D90 retention rates for your customers', color: 'emerald' },
-                  { icon: Target, title: 'Campaign Tools', desc: 'Send targeted offers to bring customers back', color: 'gold' }
+                  { icon: Users, title: 'Customer Profiles', desc: 'See demographics, preferences, and spending patterns', color: 'purple' },
+                  { icon: TrendingUp, title: 'Peak Hours', desc: 'Know when customers spend most so you can staff accordingly', color: 'blue' },
+                  { icon: Globe, title: 'Location Data', desc: 'Which neighborhoods are your best customers from?', color: 'emerald' },
+                  { icon: Target, title: 'Conversion Rate', desc: 'Track how many Nuqta users become buyers', color: 'gold' }
                 ].map((item, idx) => (
                   <div key={idx} className={`bg-white/5 backdrop-blur-xl border rounded-2xl p-5 ${
                     item.color === 'gold' ? 'border-[#c9a227]/30' :
@@ -469,7 +484,7 @@ const MerchantPitchDeck = () => {
               <div className="mt-8 animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/30 rounded-2xl p-6 text-center">
                   <p className="text-white text-lg">
-                    <span className="text-purple-400 font-bold">Finally know your customers.</span> See patterns, send targeted offers, and build real relationships - not just transactions.
+                    <span className="text-purple-400 font-bold">For the first time ever,</span> know exactly who&apos;s shopping at your store - not just how much they spent.
                   </p>
                 </div>
               </div>
@@ -495,7 +510,7 @@ const MerchantPitchDeck = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
                   Customers <span className="text-pink-400">Promote You</span> for Free
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-4">Word-of-mouth marketing that actually works</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-4">Word-of-mouth marketing without paying for ads</p>
               </div>
 
               {/* Social sharing flow */}
@@ -507,7 +522,7 @@ const MerchantPitchDeck = () => {
                     <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
                       <Coins className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
                       <p className="text-white font-bold text-sm">Earns Coins</p>
-                      <p className="text-slate-400 text-xs">At your store</p>
+                      <p className="text-slate-400 text-xs">5% back on purchase</p>
                     </div>
                     <ArrowRight className="text-pink-400 hidden md:block" size={24} />
                     <span className="text-pink-400 md:hidden text-xl">↓</span>
@@ -521,7 +536,7 @@ const MerchantPitchDeck = () => {
                     <div className="px-5 py-4 bg-white/5 rounded-xl border border-white/10 flex-1 max-w-[180px]">
                       <Users className="w-8 h-8 text-purple-400 mx-auto mb-2" />
                       <p className="text-white font-bold text-sm">Friends See It</p>
-                      <p className="text-slate-400 text-xs">&ldquo;Where did you go?&rdquo;</p>
+                      <p className="text-slate-400 text-xs">&ldquo;Where did you shop?&rdquo;</p>
                     </div>
                     <ArrowRight className="text-pink-400 hidden md:block" size={24} />
                     <span className="text-pink-400 md:hidden text-xl">↓</span>
@@ -537,9 +552,9 @@ const MerchantPitchDeck = () => {
               {/* Channels */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 animate-[fadeIn_0.8s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: Instagram, title: 'Instagram Stories', desc: 'Customers share their coin earnings and tag your location', color: 'pink' },
-                  { icon: MessageCircle, title: 'WhatsApp Status', desc: 'Word spreads in group chats: "Check out this place!"', color: 'emerald' },
-                  { icon: Send, title: 'Referral Program', desc: 'Customers earn bonus coins for bringing friends', color: 'blue' }
+                  { icon: Instagram, title: 'Instagram Stories', desc: 'Customers share their savings and tag your store', color: 'pink' },
+                  { icon: MessageCircle, title: 'WhatsApp Groups', desc: '"Great deals at this store!" spreads fast', color: 'emerald' },
+                  { icon: Send, title: 'Referral Bonus', desc: 'Customers earn extra coins for bringing friends', color: 'blue' }
                 ].map((item, idx) => (
                   <div key={idx} className={`bg-white/5 border rounded-xl p-5 text-center ${
                     item.color === 'pink' ? 'border-pink-500/30' :
@@ -563,11 +578,11 @@ const MerchantPitchDeck = () => {
                   <div className="flex flex-wrap justify-center gap-6 mb-4">
                     <div className="text-center">
                       <p className="text-3xl font-black text-pink-400">23%</p>
-                      <p className="text-slate-400 text-xs">of new customers from referrals</p>
+                      <p className="text-slate-400 text-xs">new customers from referrals</p>
                     </div>
                     <div className="text-center">
                       <p className="text-3xl font-black text-purple-400">AED 0</p>
-                      <p className="text-slate-400 text-xs">marketing cost for these customers</p>
+                      <p className="text-slate-400 text-xs">marketing cost</p>
                     </div>
                     <div className="text-center">
                       <p className="text-3xl font-black text-emerald-400">4.2x</p>
@@ -575,7 +590,7 @@ const MerchantPitchDeck = () => {
                     </div>
                   </div>
                   <p className="text-white">
-                    <span className="text-pink-400 font-bold">Every happy customer is a billboard.</span> When they share their rewards, their entire social circle sees YOUR store.
+                    <span className="text-pink-400 font-bold">Every happy customer is free advertising.</span> When they share savings, their friends discover YOUR store.
                   </p>
                 </div>
               </div>
@@ -601,7 +616,7 @@ const MerchantPitchDeck = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
                   Your <span className="text-cyan-400">Complete Business</span> Toolkit
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-4">Everything you need to run & grow your business - included free</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-4">Everything to run & grow your business - included free</p>
               </div>
 
               {/* Branded Coins Highlight */}
@@ -626,14 +641,14 @@ const MerchantPitchDeck = () => {
               {/* Features grid */}
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { icon: Users, title: 'Customer Database', desc: 'Full CRM with profiles, preferences, visit history', color: 'cyan' },
-                  { icon: Bell, title: 'Campaign Manager', desc: 'Send SMS, push, email campaigns to your customers', color: 'pink' },
+                  { icon: Users, title: 'Customer Database', desc: 'Full CRM with profiles, preferences, history', color: 'cyan' },
+                  { icon: Bell, title: 'Campaign Manager', desc: 'Send SMS, push, email to your customers', color: 'pink' },
                   { icon: Target, title: 'Location Targeting', desc: 'Reach customers within 3km of your store', color: 'emerald' },
-                  { icon: Gift, title: 'Offer Creator', desc: 'Create flash sales, happy hours, birthday deals', color: 'purple' },
-                  { icon: BarChart3, title: 'Analytics Dashboard', desc: 'Track sales, retention, peak hours, trends', color: 'blue' },
-                  { icon: FileText, title: 'Digital Receipts', desc: 'No more paper - customers get digital records', color: 'orange' },
-                  { icon: Download, title: 'Data Export', desc: 'Export your customer data anytime - it\'s yours', color: 'gold' },
-                  { icon: Lock, title: 'Data Ownership', desc: 'Your data stays yours - never shared with competitors', color: 'red' }
+                  { icon: Gift, title: 'Offer Creator', desc: 'Create flash sales, specials, seasonal deals', color: 'purple' },
+                  { icon: BarChart3, title: 'Analytics Dashboard', desc: 'Track sales, retention, peak hours', color: 'blue' },
+                  { icon: FileText, title: 'Digital Receipts', desc: 'Customers get digital records automatically', color: 'orange' },
+                  { icon: Download, title: 'Data Export', desc: 'Export your customer data anytime', color: 'gold' },
+                  { icon: Lock, title: 'Data Ownership', desc: 'Your data stays yours - never shared', color: 'red' }
                 ].map((item, idx) => (
                   <div key={idx} className={`bg-white/5 backdrop-blur-xl border rounded-xl p-4 ${
                     item.color === 'cyan' ? 'border-cyan-500/30' :
@@ -667,10 +682,10 @@ const MerchantPitchDeck = () => {
                   <p className="text-[#c9a227] font-bold text-center mb-4">Campaign Examples You Can Send</p>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center text-sm">
                     {[
-                      { type: 'Birthday', msg: '"Happy Birthday! 2x coins today only!"' },
-                      { type: 'Win-Back', msg: '"We miss you! Visit this week for bonus coins"' },
-                      { type: 'Flash Sale', msg: '"Tonight only: 3x coins on all orders!"' },
-                      { type: 'Location', msg: '"You\'re nearby! Pop in for your rewards"' }
+                      { type: 'Weekly Special', msg: '"This week: 2x coins on all purchases!"' },
+                      { type: 'Win-Back', msg: '"We miss you! Visit for bonus coins"' },
+                      { type: 'New Arrivals', msg: '"Fresh stock! Earn coins on new items"' },
+                      { type: 'Location', msg: '"You\'re nearby! Pop in for rewards"' }
                     ].map((campaign, idx) => (
                       <div key={idx} className="p-3 bg-white/5 rounded-xl">
                         <p className="text-[#c9a227] font-bold text-xs mb-1">{campaign.type}</p>
@@ -699,7 +714,7 @@ const MerchantPitchDeck = () => {
                     </div>
                   </div>
                   <p className="text-white text-lg">
-                    <span className="text-cyan-400 font-bold">Similar tools cost AED 500-2000/month.</span> With Nuqta, you get the full business OS <span className="text-emerald-400 font-bold">completely free</span> - because we only succeed when you do.
+                    <span className="text-cyan-400 font-bold">Similar tools cost AED 500-2000/month.</span> With Nuqta, you get everything <span className="text-emerald-400 font-bold">completely free</span>.
                   </p>
                 </div>
               </div>
@@ -723,9 +738,9 @@ const MerchantPitchDeck = () => {
                   <span className="text-[#c9a227] font-semibold text-sm">Why Nuqta?</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-                  Not Another <span className="text-[#c9a227]">Discount App</span>
+                  Better Than <span className="text-[#c9a227]">Discounts</span>
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-4">Here&apos;s why Nuqta is different from Entertainer, Smiles, or Fazaa</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-4">Discount apps cost you money. Nuqta makes you money.</p>
               </div>
 
               {/* Comparison table */}
@@ -736,23 +751,23 @@ const MerchantPitchDeck = () => {
                   <div className="grid grid-cols-3 gap-2 p-4 bg-white/5 border-b border-white/10">
                     <div className="text-slate-400 font-bold text-sm"></div>
                     <div className="text-center">
-                      <p className="text-red-400 font-bold">Others</p>
-                      <p className="text-slate-500 text-xs">Entertainer, Smiles, etc.</p>
+                      <p className="text-red-400 font-bold">Discount Apps</p>
+                      <p className="text-slate-500 text-xs">Entertainer, etc.</p>
                     </div>
                     <div className="text-center">
                       <p className="text-[#c9a227] font-bold">Nuqta</p>
-                      <p className="text-slate-500 text-xs">Built for your growth</p>
+                      <p className="text-slate-500 text-xs">Smart incentive</p>
                     </div>
                   </div>
 
                   {/* Rows */}
                   {[
-                    { feature: 'Customer Intent', others: 'One-time deal hunters', nuqta: 'Loyal repeat customers', highlight: true },
-                    { feature: 'Your Margin', others: '50% off (you lose money)', nuqta: 'Full price, they earn coins', highlight: true },
-                    { feature: 'Customer Data', others: 'You get nothing', nuqta: 'Full profiles & insights', highlight: false },
-                    { feature: 'Repeat Business', others: 'They find next deal', nuqta: 'Coins bring them back', highlight: true },
-                    { feature: 'Your Cost', others: 'Heavy discounts', nuqta: 'AED 5-6 per AED 100', highlight: false },
-                    { feature: 'Brand Perception', others: 'Discount destination', nuqta: 'Premium with perks', highlight: false }
+                    { feature: 'Customer Price', others: '50% off (you lose)', nuqta: 'Full price, they get coins', highlight: true },
+                    { feature: 'Your Margin', others: 'Cut in half', nuqta: 'Stays intact', highlight: true },
+                    { feature: 'Customer Intent', others: 'Looking for deals', nuqta: 'Earning rewards', highlight: false },
+                    { feature: 'Your Cost', others: 'Heavy discounts', nuqta: '~7% total', highlight: false },
+                    { feature: 'Customer Data', others: 'Nothing', nuqta: 'Full insights', highlight: false },
+                    { feature: 'Repeat Visits', others: 'One-time bargain hunter', nuqta: '2.5x average returns', highlight: true }
                   ].map((row, idx) => (
                     <div key={idx} className={`grid grid-cols-3 gap-2 p-4 border-b border-white/5 ${row.highlight ? 'bg-[#c9a227]/5' : ''}`}>
                       <div className="text-white font-medium text-sm flex items-center">{row.feature}</div>
@@ -771,7 +786,7 @@ const MerchantPitchDeck = () => {
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-gradient-to-r from-[#c9a227]/10 to-emerald-500/10 border-2 border-[#c9a227]/30 rounded-2xl p-6 text-center">
                   <p className="text-white text-lg">
-                    <span className="text-[#c9a227] font-bold">The difference:</span> Entertainer customers want 50% off, then leave. <span className="text-emerald-400 font-bold">Nuqta customers pay full price, earn coins, and come back to spend them.</span>
+                    <span className="text-[#c9a227] font-bold">The difference:</span> Entertainer brings bargain hunters who spend AED 100 (you keep AED 50). <span className="text-emerald-400 font-bold">Nuqta brings loyal customers who pay full price and come back 2.5x more often.</span>
                   </p>
                 </div>
               </div>
@@ -797,31 +812,57 @@ const MerchantPitchDeck = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
                   &ldquo;What&apos;s the <span className="text-emerald-400">Catch</span>?&rdquo;
                 </h1>
-                <p className="text-lg sm:text-xl text-slate-400 mt-4">Fair questions you&apos;re probably thinking. Here are honest answers.</p>
+                <p className="text-lg sm:text-xl text-slate-400 mt-4">Fair questions. Honest answers.</p>
+              </div>
+
+              {/* Margin Math Visual */}
+              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.15s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="bg-gradient-to-r from-emerald-500/10 to-[#c9a227]/10 border-2 border-emerald-500/30 rounded-2xl p-5">
+                  <p className="text-emerald-400 font-bold text-center mb-3">Your Margin Math (Example: 8% Margin Business)</p>
+                  <div className="grid grid-cols-4 gap-2 text-center text-sm">
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <p className="text-slate-400 text-xs">Sale</p>
+                      <p className="text-white font-bold">AED 100</p>
+                    </div>
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <p className="text-slate-400 text-xs">Your Margin</p>
+                      <p className="text-emerald-400 font-bold">AED 8</p>
+                    </div>
+                    <div className="p-2 bg-white/5 rounded-lg">
+                      <p className="text-slate-400 text-xs">Nuqta Cost</p>
+                      <p className="text-[#c9a227] font-bold">AED 7</p>
+                    </div>
+                    <div className="p-2 bg-emerald-500/20 rounded-lg border border-emerald-500/30">
+                      <p className="text-slate-400 text-xs">You Keep</p>
+                      <p className="text-emerald-400 font-bold">AED 1 + Loyalty</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 text-xs text-center mt-3">That AED 1 net + 2.5x repeat visits = more profit than one-time shoppers</p>
+                </div>
               </div>
 
               {/* FAQ style */}
               <div className="space-y-4 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
-                    q: '"5-6% sounds like a lot on top of card fees"',
-                    a: "Think of it differently: You're paying AED 5-6 per AED 100 of EXTRA revenue. These are customers who wouldn't have come otherwise, or wouldn't have returned. It's not a cost on existing business - it's an investment in new loyal customers.",
+                    q: '"7% cost on 8% margin? I barely break even!"',
+                    a: "True for ONE transaction. But Nuqta customers visit 2.5x more often. On 3 visits: You earn AED 24 (8%×3), pay AED 21 (7%×3), keep AED 3 profit PLUS a loyal customer. Without Nuqta, that customer visits once and you earn AED 8 total.",
                     icon: DollarSign
                   },
                   {
-                    q: '"What if customers don\'t log their purchases?"',
-                    a: "They're highly motivated - they get 5-10% back as coins they can spend anywhere. Our logging rate is 92%. And if they don't log? You keep 100% of that sale anyway.",
+                    q: '"Can\'t I just compete on price instead?"',
+                    a: "Big retailers like Carrefour and LuLu have buying power you can't match. You can't out-discount them. But you CAN offer rewards + better service. Nuqta lets you compete on value, not price.",
+                    icon: Target
+                  },
+                  {
+                    q: '"Our products are price-transparent (electronics, gold)"',
+                    a: "Perfect! You can't discount, but Nuqta adds value without cutting your price. Customer pays full price to you, gets coins as a bonus. Your margin stays intact, they feel rewarded.",
                     icon: Smartphone
                   },
                   {
-                    q: '"Is my customer data safe?"',
-                    a: "Yes. All data is encrypted, hosted in UAE-compliant servers, and you own your customer relationships. We never share your customer data with competitors. You can export your data anytime.",
-                    icon: Shield
-                  },
-                  {
-                    q: '"How many Nuqta users are in MY area?"',
-                    a: "Ask us! We'll show you exactly how many active users are within 3km of your location, plus what categories they shop in. If the numbers don't work for your area yet, we'll tell you honestly.",
-                    icon: MapPin
+                    q: '"We already have a loyalty program"',
+                    a: "Most house programs give discounts you fund 100%. Nuqta's coins can be spent at 500+ stores, making them more valuable to customers. You pay 7% vs their 10-15% discount, and they're more motivated.",
+                    icon: Users
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5">
@@ -842,7 +883,7 @@ const MerchantPitchDeck = () => {
               <div className="mt-8 animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-5 text-center">
                   <p className="text-white">
-                    <span className="text-[#c9a227] font-bold">Still skeptical?</span> Start with our 3-month trial. If you don&apos;t see results, walk away. No contracts, no penalties, no hard feelings.
+                    <span className="text-[#c9a227] font-bold">Still not sure?</span> We&apos;ll show you data from similar merchants. If the numbers don&apos;t make sense for your business, we&apos;ll tell you honestly.
                   </p>
                 </div>
               </div>
@@ -866,12 +907,12 @@ const MerchantPitchDeck = () => {
                   <span className="text-[#c9a227] font-semibold text-sm">Simple Pricing</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-                  Pay <span className="text-[#c9a227]">Only On Results</span>
+                  Pay <span className="text-[#c9a227]">Only On Success</span>
                 </h1>
-                <p className="text-slate-400 text-lg mt-3">No upfront fees. No monthly subscription. No risk.</p>
+                <p className="text-slate-400 text-lg mt-3">No upfront fees. No monthly charges. Pay only when you sell.</p>
               </div>
 
-              {/* Pricing tiers - Updated to show AED per 100 */}
+              {/* Pricing tiers */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-white/5 rounded-2xl border border-white/10 p-6">
                   <h3 className="text-white font-bold text-xl mb-2">Standard</h3>
@@ -886,15 +927,15 @@ const MerchantPitchDeck = () => {
                 </div>
 
                 <div className="bg-gradient-to-b from-[#c9a227]/20 to-transparent rounded-2xl border-2 border-[#c9a227] p-6 relative">
-                  <div className="absolute top-0 right-0 bg-[#c9a227] text-[#0a1628] px-3 py-1 text-xs font-bold rounded-bl-xl">POPULAR</div>
+                  <div className="absolute top-0 right-0 bg-[#c9a227] text-[#0a1628] px-3 py-1 text-xs font-bold rounded-bl-xl">RECOMMENDED</div>
                   <h3 className="text-[#c9a227] font-bold text-xl mb-2">Premium</h3>
                   <p className="text-4xl font-black text-white mb-1">AED 6</p>
                   <p className="text-slate-400 text-sm mb-4">per AED 100 in Nuqta sales</p>
                   <ul className="space-y-2 text-slate-300 text-sm">
                     <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Everything in Standard</li>
                     <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Featured placement</li>
-                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Priority in search</li>
-                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Custom campaigns</li>
+                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Priority matching</li>
+                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Custom promotions</li>
                     <li className="flex items-center gap-2"><CheckCircle size={16} className="text-[#c9a227]" /> Dedicated support</li>
                   </ul>
                 </div>
@@ -902,47 +943,13 @@ const MerchantPitchDeck = () => {
                 <div className="bg-white/5 rounded-2xl border border-white/10 p-6">
                   <h3 className="text-white font-bold text-xl mb-2">Enterprise</h3>
                   <p className="text-4xl font-black text-white mb-1">Custom</p>
-                  <p className="text-slate-400 text-sm mb-4">for multi-location businesses</p>
+                  <p className="text-slate-400 text-sm mb-4">for pavilion operators</p>
                   <ul className="space-y-2 text-slate-300 text-sm">
                     <li className="flex items-center gap-2"><CheckCircle size={16} className="text-emerald-400" /> Volume discounts</li>
+                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-emerald-400" /> Multi-store dashboard</li>
                     <li className="flex items-center gap-2"><CheckCircle size={16} className="text-emerald-400" /> API access</li>
-                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-emerald-400" /> White-label options</li>
-                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-emerald-400" /> Account manager</li>
+                    <li className="flex items-center gap-2"><CheckCircle size={16} className="text-emerald-400" /> On-site training</li>
                   </ul>
-                </div>
-              </div>
-
-              {/* Clear cost breakdown */}
-              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-5">
-                  <p className="text-[#c9a227] font-bold text-center mb-4">Your Total Cost Breakdown (per AED 100 sale)</p>
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center mb-4">
-                    <div className="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20">
-                      <p className="text-emerald-400 font-bold text-lg">AED 5-10</p>
-                      <p className="text-slate-400 text-xs">Cashback to Customer</p>
-                      <p className="text-slate-500 text-xs">(You choose the rate)</p>
-                    </div>
-                    <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/20">
-                      <p className="text-[#c9a227] font-bold text-lg">AED 5-6</p>
-                      <p className="text-slate-400 text-xs">Nuqta Platform Fee</p>
-                      <p className="text-slate-500 text-xs">(Based on your plan)</p>
-                    </div>
-                    <div className="p-3 bg-white/10 rounded-xl border border-white/20">
-                      <p className="text-white font-bold text-lg">AED 10-16</p>
-                      <p className="text-slate-400 text-xs">Total Cost</p>
-                      <p className="text-slate-500 text-xs">(10-16% of Nuqta sales)</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-wrap justify-center gap-4 text-sm">
-                    <div className="px-4 py-2 bg-red-500/10 rounded-lg text-center">
-                      <p className="text-red-400">Entertainer</p>
-                      <p className="text-slate-400">AED 50 loss per AED 100</p>
-                    </div>
-                    <div className="px-4 py-2 bg-emerald-500/10 rounded-lg text-center">
-                      <p className="text-emerald-400">Nuqta</p>
-                      <p className="text-slate-400">AED 10-16 per AED 100</p>
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -950,7 +957,7 @@ const MerchantPitchDeck = () => {
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-5 text-center">
                   <p className="text-white text-lg">
-                    <span className="text-emerald-400 font-bold">Zero risk.</span> If customers don&apos;t come through Nuqta, you pay nothing. We only win when you win.
+                    <span className="text-emerald-400 font-bold">Zero risk.</span> If customers don&apos;t come through Nuqta, you pay nothing. Only pay when they buy.
                   </p>
                 </div>
               </div>
@@ -974,7 +981,7 @@ const MerchantPitchDeck = () => {
                   <span className="text-emerald-400 font-semibold text-sm">Real Numbers</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-                  Example: <span className="text-emerald-400">Coffee Shop</span>
+                  Example: <span className="text-emerald-400">Electronics Store</span>
                 </h1>
               </div>
 
@@ -985,10 +992,10 @@ const MerchantPitchDeck = () => {
                   {/* Scenario */}
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                     {[
-                      { label: 'Avg Order', value: 'AED 45' },
-                      { label: 'Monthly Nuqta Customers', value: '200' },
-                      { label: 'You Pay', value: 'AED 6/100' },
-                      { label: 'Repeat Rate', value: '3x' }
+                      { label: 'Avg Order', value: 'AED 150' },
+                      { label: 'Nuqta Customers/Month', value: '200' },
+                      { label: 'Repeat Rate', value: '2.5x' },
+                      { label: 'Your Margin', value: '8%' }
                     ].map((item, idx) => (
                       <div key={idx} className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
                         <p className="text-slate-400 text-xs mb-1">{item.label}</p>
@@ -1002,19 +1009,19 @@ const MerchantPitchDeck = () => {
                     <p className="text-[#c9a227] font-bold text-center mb-4">Your Monthly Results</p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
                       <div className="p-4 bg-white/5 rounded-xl">
-                        <p className="text-slate-400 text-sm mb-1">New Revenue from Nuqta</p>
-                        <p className="text-2xl font-black text-emerald-400">AED 27,000</p>
-                        <p className="text-slate-500 text-xs">200 × AED 45 × 3 visits</p>
+                        <p className="text-slate-400 text-sm mb-1">Revenue from Nuqta</p>
+                        <p className="text-2xl font-black text-emerald-400">AED 75,000</p>
+                        <p className="text-slate-500 text-xs">200 × AED 150 × 2.5 visits</p>
                       </div>
                       <div className="p-4 bg-white/5 rounded-xl">
-                        <p className="text-slate-400 text-sm mb-1">Your Investment</p>
-                        <p className="text-2xl font-black text-white">AED 1,620</p>
-                        <p className="text-slate-500 text-xs">AED 6 per AED 100</p>
+                        <p className="text-slate-400 text-sm mb-1">Your Total Cost</p>
+                        <p className="text-2xl font-black text-white">AED 5,250</p>
+                        <p className="text-slate-500 text-xs">~7% (5% cashback + 2% fee)</p>
                       </div>
                       <div className="p-4 bg-[#c9a227]/20 rounded-xl border border-[#c9a227]/30">
-                        <p className="text-slate-400 text-sm mb-1">You Keep</p>
-                        <p className="text-2xl font-black text-[#c9a227]">AED 25,380</p>
-                        <p className="text-slate-500 text-xs">Revenue you wouldn&apos;t have</p>
+                        <p className="text-slate-400 text-sm mb-1">Net Gain</p>
+                        <p className="text-2xl font-black text-[#c9a227]">AED 750+</p>
+                        <p className="text-slate-500 text-xs">8% margin - 7% cost = 1% net + repeat value</p>
                       </div>
                     </div>
                   </div>
@@ -1025,7 +1032,7 @@ const MerchantPitchDeck = () => {
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-4 text-center">
                   <p className="text-white font-semibold">
-                    Invest <span className="text-[#c9a227]">AED 1,620</span> to gain <span className="text-emerald-400">AED 27,000</span> in loyal customer revenue. That&apos;s a <span className="text-[#c9a227] font-black">17x return</span> on customers who now come back regularly.
+                    Even with <span className="text-[#c9a227]">8% margins</span>, you earn <span className="text-emerald-400">AED 75K in repeat revenue</span> at ~7% cost. The <span className="text-[#c9a227] font-black">2.5x repeat visits</span> mean customers who would shop once now come back again and again.
                   </p>
                 </div>
               </div>
@@ -1056,9 +1063,9 @@ const MerchantPitchDeck = () => {
               {/* Stats bar */}
               <div className="grid grid-cols-3 gap-4 mb-8 animate-[fadeIn_0.8s_ease-out_0.1s] opacity-0 [animation-fill-mode:forwards]">
                 {[
-                  { value: '92%', label: 'Transaction Logging Rate' },
-                  { value: '3.2x', label: 'Avg Repeat Visits' },
-                  { value: 'AED 180', label: 'Avg Monthly Spend/Customer' }
+                  { value: '2.5x', label: 'More Repeat Visits' },
+                  { value: '85%', label: 'Reward Claim Rate' },
+                  { value: '+23%', label: 'Basket Size Increase' }
                 ].map((stat, idx) => (
                   <div key={idx} className="text-center p-4 bg-white/5 rounded-xl border border-white/10">
                     <p className="text-2xl sm:text-3xl font-black text-[#c9a227]">{stat.value}</p>
@@ -1071,17 +1078,17 @@ const MerchantPitchDeck = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
-                    quote: "I was skeptical about another app, but the numbers don't lie. 65% of my Nuqta customers come back within 30 days. Before it was maybe 20%.",
-                    name: "Ahmed K.",
-                    business: "Specialty Coffee, JLT",
-                    stat: "3.2x repeat rate",
+                    quote: "Same customers who used to visit once a month now come 2-3 times. They want to earn and spend their coins. It's brilliant.",
+                    name: "Electronics Retailer",
+                    business: "Dubai",
+                    stat: "+150% visits",
                     verified: true
                   },
                   {
-                    quote: "The best part? Customers pay full price. With Entertainer I was giving 50% off. Now I give them coins and they actually spend more.",
-                    name: "Sarah M.",
-                    business: "Beauty Lounge, Marina",
-                    stat: "+40% avg ticket",
+                    quote: "With 6% margins, I can't discount. Nuqta lets me compete with big chains without cutting prices. The ~7% total cost is worth it for the loyalty.",
+                    name: "Supermarket Owner",
+                    business: "Abu Dhabi",
+                    stat: "Margin-safe",
                     verified: true
                   }
                 ].map((item, idx) => (
@@ -1116,7 +1123,7 @@ const MerchantPitchDeck = () => {
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-5 text-center">
                   <p className="text-white">
-                    <span className="text-[#c9a227] font-bold">Want to see merchants in your area?</span> We&apos;ll show you real numbers from similar businesses near you. Just ask.
+                    <span className="text-[#c9a227] font-bold">Want real data?</span> We&apos;ll show you numbers from merchants similar to you. Just ask.
                   </p>
                 </div>
               </div>
@@ -1133,48 +1140,48 @@ const MerchantPitchDeck = () => {
             </div>
 
             <div className="relative z-10 max-w-5xl w-full px-2">
+              {/* Urgency Banner */}
+              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.1s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border-2 border-red-500/30 rounded-2xl p-4 text-center">
+                  <p className="text-white font-bold">
+                    <span className="text-red-400">Limited spots:</span> Only onboarding 10 merchants per category this month
+                  </p>
+                  <p className="text-slate-400 text-xs mt-1">We limit partners to protect exclusivity and ensure quality support</p>
+                </div>
+              </div>
+
               {/* Headline */}
               <div className="text-center mb-8 animate-[slideDown_0.8s_ease-out]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/30 rounded-full mb-4">
                   <Rocket className="w-5 h-5 text-[#c9a227]" />
-                  <span className="text-[#c9a227] font-semibold text-sm">Timing Matters</span>
+                  <span className="text-[#c9a227] font-semibold text-sm">Growing Fast</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-                  Why <span className="text-[#c9a227]">Act Now</span>?
+                  Why <span className="text-[#c9a227]">Sign Up Now</span>?
                 </h1>
-              </div>
-
-              {/* Urgency banner */}
-              <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.1s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 border-2 border-red-500/30 rounded-2xl p-4 text-center">
-                  <p className="text-white font-bold">
-                    <span className="text-red-400">Only 5 spots left</span> for cafes/restaurants in your area this month
-                  </p>
-                  <p className="text-slate-400 text-sm mt-1">We limit merchants per category to ensure quality traffic for each partner</p>
-                </div>
               </div>
 
               {/* Reasons */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
-                    title: 'First-Mover Advantage',
-                    desc: 'Be THE loyalty option in your area. Only 3 restaurants have Nuqta nearby - be the 4th before competitors claim the spot.',
-                    icon: Rocket
+                    title: 'Category Exclusivity',
+                    desc: 'We limit competitors in each area. First to join gets priority over latecomers.',
+                    icon: Target
                   },
                   {
-                    title: '500K+ Active Users',
-                    desc: 'Growing 40% month-over-month. Users in your area are searching for places to earn - be there when they look.',
-                    icon: Users
-                  },
-                  {
-                    title: 'Founder Rates (Limited)',
-                    desc: 'Lock in current rates forever. When we raise prices for new merchants next quarter, yours stays the same.',
+                    title: 'Founder Rates Locked',
+                    desc: 'Current 7% total commission is promotional. Rates increase for new signups next quarter.',
                     icon: Percent
                   },
                   {
-                    title: '90-Day Risk-Free Trial',
-                    desc: 'See your first repeat customer within 7 days or walk away. No contracts, no penalties, no questions asked.',
+                    title: 'Instant 500K+ Exposure',
+                    desc: 'Active Nuqta users are already looking for stores like yours. Go live in 24 hours.',
+                    icon: Rocket
+                  },
+                  {
+                    title: 'Zero Risk Trial',
+                    desc: 'No upfront fees. No monthly charges. If it doesn\'t work in 30 days, walk away.',
                     icon: Shield
                   }
                 ].map((item, idx) => (
@@ -1192,11 +1199,11 @@ const MerchantPitchDeck = () => {
                 ))}
               </div>
 
-              {/* Fair message - not pushy */}
+              {/* Timeline */}
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-gradient-to-r from-[#c9a227]/10 to-emerald-500/10 border border-[#c9a227]/30 rounded-2xl p-6 text-center">
+                <div className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border border-[#c9a227]/30 rounded-2xl p-6 text-center">
                   <p className="text-white text-lg">
-                    <span className="text-[#c9a227] font-bold">No pressure.</span> We&apos;ll show you the user numbers in your area. If the math doesn&apos;t work yet, we&apos;ll tell you honestly and check back when it does.
+                    <span className="text-[#c9a227] font-bold">500K+ active users</span> are already earning rewards with Nuqta. How many pass your store daily without knowing you&apos;re on the app?
                   </p>
                 </div>
               </div>
@@ -1210,38 +1217,38 @@ const MerchantPitchDeck = () => {
           <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
             <div className="absolute inset-0">
               <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#c9a227] rounded-full blur-[150px] opacity-20 animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full blur-[120px] opacity-15" />
+              <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500 rounded-full blur-[120px] opacity-15" />
             </div>
 
             <div className="relative z-10 max-w-4xl w-full text-center px-2">
               {/* Headline */}
               <div className="animate-[slideDown_0.8s_ease-out]">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight mb-6">
-                  Ready to Build<br />
-                  <span className="bg-gradient-to-r from-[#c9a227] to-[#d4b03f] bg-clip-text text-transparent">Customer Loyalty</span>?
+                  Ready to Grow Revenue<br />
+                  <span className="bg-gradient-to-r from-[#c9a227] to-[#d4b03f] bg-clip-text text-transparent">Without Cutting Margins</span>?
                 </h1>
               </div>
 
               {/* Contact card */}
               <div className="relative mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227]/20 to-emerald-500/20 rounded-3xl blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 rounded-3xl blur-xl" />
                 <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-3xl p-8 sm:p-10">
                   <div className="w-20 h-20 rounded-full bg-[#c9a227]/20 flex items-center justify-center mx-auto mb-6">
                     <Handshake className="w-10 h-10 text-[#c9a227]" />
                   </div>
 
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Join Nuqta Today</h2>
-                  <p className="text-slate-400 mb-4">Start getting loyal customers in 24 hours</p>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Schedule Your Setup Call</h2>
+                  <p className="text-slate-400 mb-4">15-minute call → Live in 48 hours</p>
 
                   {/* Onboarding Timeline */}
                   <div className="grid grid-cols-4 gap-2 mb-6 text-center">
                     {[
-                      { day: 'Today', action: 'Sign Up', icon: '📝' },
-                      { day: 'Day 1', action: 'Setup Call', icon: '📞' },
+                      { day: 'Today', action: 'Quick Call', icon: '📞' },
+                      { day: 'Day 1', action: 'Account Setup', icon: '⚙️' },
                       { day: 'Day 2', action: 'Go Live', icon: '🚀' },
-                      { day: 'Day 7', action: 'First Repeat!', icon: '🎉' }
+                      { day: 'Week 1', action: 'First Results', icon: '📊' }
                     ].map((step, idx) => (
-                      <div key={idx} className="p-2">
+                      <div key={idx} className="p-2 bg-white/5 rounded-lg">
                         <p className="text-2xl mb-1">{step.icon}</p>
                         <p className="text-[#c9a227] text-xs font-bold">{step.day}</p>
                         <p className="text-slate-400 text-xs">{step.action}</p>
@@ -1250,7 +1257,7 @@ const MerchantPitchDeck = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
-                    <a href="mailto:merchants@nuqtapp.com" className="flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-full font-bold hover:bg-[#d4b03f] transition-colors">
+                    <a href="mailto:merchants@nuqtapp.com?subject=Setup Call - Low-Margin Merchant" className="flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-full font-bold hover:bg-[#d4b03f] transition-colors">
                       <Mail size={20} />
                       Schedule Setup Call
                     </a>
@@ -1261,7 +1268,7 @@ const MerchantPitchDeck = () => {
                   </div>
 
                   <div className="flex flex-wrap gap-3 justify-center">
-                    {['Zero upfront cost', '90-day trial', 'Cancel anytime'].map((item, idx) => (
+                    {['Zero upfront cost', 'Built for thin margins', '2.5x repeat visits'].map((item, idx) => (
                       <span key={idx} className="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold">
                         {item}
                       </span>
@@ -1368,4 +1375,4 @@ const MerchantPitchDeck = () => {
   );
 };
 
-export default MerchantPitchDeck;
+export default MerchantPitchDeckB;
