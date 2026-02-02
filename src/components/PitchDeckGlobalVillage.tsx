@@ -955,24 +955,26 @@ const PitchDeckGlobalVillage = () => {
                     <div className="w-12 h-12 rounded-xl bg-[#00a651]/20 flex items-center justify-center mb-4">
                       <Building2 className="w-6 h-6 text-[#00a651]" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#00a651] mb-4">GV Gets</h3>
-                    <ul className="space-y-3">
+                    <h3 className="text-xl font-bold text-[#00a651] mb-3">GV Gets</h3>
+                    <ul className="space-y-2">
                       {[
-                        '+AED 80M GMV (conservative)',
-                        '10% of Nuqta\'s revenue share',
-                        'Full spending analytics',
-                        'Happier merchants',
-                        'Zero investment'
+                        '+AED 80M GMV uplift',
+                        '10% of Nuqta\'s revenue',
+                        'Free marketing to 500K+ Nuqta users',
+                        'Higher merchant AOV (AED 300+ min)',
+                        'Nuqta users bring coins to spend at GV',
+                        'Real-time spending analytics',
+                        'Happier merchants = higher renewals',
+                        'Zero cost, zero risk'
                       ].map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-slate-300 text-sm">
-                          <CheckCircle className="w-4 h-4 text-[#00a651] mt-0.5 flex-shrink-0" />
+                        <li key={idx} className="flex items-start gap-2 text-slate-300 text-xs">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#00a651] mt-0.5 flex-shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-4 p-3 bg-[#00a651]/10 rounded-xl">
-                      <p className="text-[#00a651] font-bold text-center">GV Earns: 10% of Nuqta Revenue</p>
-                      <p className="text-slate-400 text-xs text-center">~AED 25-90K per season</p>
+                    <div className="mt-3 p-2 bg-[#00a651]/10 rounded-xl">
+                      <p className="text-[#00a651] font-bold text-center text-sm">All Upside, No Downside</p>
                     </div>
                   </div>
                 </div>
