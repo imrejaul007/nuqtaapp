@@ -51,6 +51,7 @@ const navigationData: NavCategory[] = [
       { label: '90-Second Deck', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
       { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: '31-slide comprehensive' },
       { label: 'GV Partnership', href: '/deck-gv', icon: Building2, description: 'Global Village pitch' },
+      { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Short-term events' },
       { label: 'Deck Final', href: '/deck-final', icon: FileText, description: 'Final version' },
       { label: 'Deck New', href: '/deck-new', icon: FileText, description: 'Updated deck' },
       { label: 'Original Deck', href: '/deck', icon: FileText, description: 'Original version' },
@@ -100,6 +101,7 @@ const navigationData: NavCategory[] = [
       { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
       { label: 'User Card', href: '/card', icon: Users, description: 'User card view' },
       { label: 'GV Merchants', href: '/gv-merchants', icon: Building2, description: 'GV merchant info' },
+      { label: 'Event Merchants', href: '/exhibition-merchants', icon: Calendar, description: 'Exhibition info' },
     ]
   },
   {
