@@ -203,13 +203,30 @@ const PitchDeckExhibition = () => {
                 ))}
               </div>
 
-              {/* Merchant pain */}
+              {/* The Chain Reaction Problem */}
               <div className="mt-8 animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 text-center">
-                  <p className="text-white text-lg sm:text-xl">
-                    Merchants pay <span className="text-red-400 font-bold">AED 10K-50K+</span> for booth space,
-                    but have <span className="text-red-400 font-bold">no guarantee</span> of ROI
-                  </p>
+                <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 backdrop-blur-xl border border-red-500/20 rounded-2xl p-6">
+                  <h4 className="text-red-400 font-bold text-center mb-4">The Chain Reaction Problem</h4>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
+                    <div className="px-4 py-2 bg-white/5 rounded-xl">
+                      <p className="text-white text-sm">Visitors don&apos;t buy</p>
+                    </div>
+                    <ArrowRight className="text-red-400 hidden sm:block" size={20} />
+                    <span className="text-red-400 sm:hidden">↓</span>
+                    <div className="px-4 py-2 bg-white/5 rounded-xl">
+                      <p className="text-white text-sm">Merchants lose money</p>
+                    </div>
+                    <ArrowRight className="text-red-400 hidden sm:block" size={20} />
+                    <span className="text-red-400 sm:hidden">↓</span>
+                    <div className="px-4 py-2 bg-white/5 rounded-xl">
+                      <p className="text-white text-sm">Merchants don&apos;t renew</p>
+                    </div>
+                    <ArrowRight className="text-red-400 hidden sm:block" size={20} />
+                    <span className="text-red-400 sm:hidden">↓</span>
+                    <div className="px-4 py-2 bg-red-500/20 rounded-xl border border-red-500/30">
+                      <p className="text-red-400 font-bold text-sm">You lose revenue</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -484,7 +501,7 @@ const PitchDeckExhibition = () => {
           </div>
         );
 
-      // ==================== SLIDE 5: WHAT YOU GET ====================
+      // ==================== SLIDE 5: THE GOLD MINE ====================
       case 5:
         return (
           <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
@@ -496,46 +513,76 @@ const PitchDeckExhibition = () => {
               {/* Headline */}
               <div className="text-center mb-8 animate-[slideDown_0.8s_ease-out]">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/30 rounded-full mb-4">
-                  <Gift className="w-5 h-5 text-[#c9a227]" />
-                  <span className="text-[#c9a227] font-semibold text-sm">Value Proposition</span>
+                  <Coins className="w-5 h-5 text-[#c9a227]" />
+                  <span className="text-[#c9a227] font-semibold text-sm">The Real Value</span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight">
-                  What <span className="text-[#c9a227]">You Get</span>
+                  Why This Is A <span className="text-[#c9a227]">Gold Mine</span> For You
                 </h1>
               </div>
 
+              {/* The Virtuous Cycle */}
+              <div className="mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227]/20 to-green-500/20 rounded-3xl blur-xl" />
+                  <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-3xl p-6">
+                    <h4 className="text-[#c9a227] font-bold text-center mb-5">The Virtuous Cycle</h4>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-center">
+                      <div className="px-4 py-3 bg-green-500/20 rounded-xl border border-green-500/30">
+                        <p className="text-green-400 font-bold text-sm">Visitors spend AED 500+</p>
+                      </div>
+                      <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
+                      <span className="text-[#c9a227] md:hidden text-xl">↓</span>
+                      <div className="px-4 py-3 bg-green-500/20 rounded-xl border border-green-500/30">
+                        <p className="text-green-400 font-bold text-sm">Merchants make money</p>
+                      </div>
+                      <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
+                      <span className="text-[#c9a227] md:hidden text-xl">↓</span>
+                      <div className="px-4 py-3 bg-green-500/20 rounded-xl border border-green-500/30">
+                        <p className="text-green-400 font-bold text-sm">Merchants are happy</p>
+                      </div>
+                      <ArrowRight className="text-[#c9a227] hidden md:block" size={24} />
+                      <span className="text-[#c9a227] md:hidden text-xl">↓</span>
+                      <div className="px-4 py-3 bg-[#c9a227]/30 rounded-xl border-2 border-[#c9a227]">
+                        <p className="text-[#c9a227] font-bold text-sm">They come back next year!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Benefits grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-[fadeIn_0.8s_ease-out_0.3s] opacity-0 [animation-fill-mode:forwards]">
                 {[
+                  {
+                    icon: TrendingUp,
+                    title: 'Higher Renewals',
+                    value: '+30-50%',
+                    desc: 'Happy merchants = higher booth renewal rates'
+                  },
                   {
                     icon: DollarSign,
                     title: 'Revenue Share',
                     value: '10%',
-                    desc: 'Of all Nuqta commission from your event'
+                    desc: 'Passive income from Nuqta commissions'
+                  },
+                  {
+                    icon: Store,
+                    title: 'Merchant ROI',
+                    value: '5-10x',
+                    desc: 'AED 500+ vs AED 50 impulse buys'
                   },
                   {
                     icon: BarChart3,
                     title: 'Spending Data',
                     value: 'Real-Time',
-                    desc: 'See who spends what, where, when'
-                  },
-                  {
-                    icon: Store,
-                    title: 'Happy Merchants',
-                    value: 'Higher AOV',
-                    desc: 'AED 500+ minimums = better ROI'
-                  },
-                  {
-                    icon: Users,
-                    title: 'User Acquisition',
-                    value: 'Free',
-                    desc: 'Visitors become Nuqta users at your event'
+                    desc: 'Prove value to merchants with data'
                   },
                   {
                     icon: Megaphone,
-                    title: 'Marketing',
-                    value: 'Co-Promotion',
-                    desc: 'We promote your event to Nuqta users'
+                    title: 'Free Marketing',
+                    value: '500K+',
+                    desc: 'Nuqta users see your event'
                   },
                   {
                     icon: Shield,
@@ -544,16 +591,16 @@ const PitchDeckExhibition = () => {
                     desc: 'No upfront cost, no commitment'
                   },
                   {
-                    icon: Zap,
-                    title: 'Quick Setup',
-                    value: '24-48hrs',
-                    desc: 'Go live before your event starts'
-                  },
-                  {
                     icon: Award,
                     title: 'Differentiation',
                     value: 'Unique',
                     desc: 'Stand out from other exhibitions'
+                  },
+                  {
+                    icon: Zap,
+                    title: 'Quick Setup',
+                    value: '24-48hrs',
+                    desc: 'Go live before your event starts'
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:border-[#c9a227]/30 transition-all">
@@ -738,23 +785,23 @@ const PitchDeckExhibition = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   {
-                    title: 'First Mover Advantage',
-                    desc: 'Be the first event in your category to offer this. Create buzz and differentiation.',
+                    title: 'Merchant Retention Crisis',
+                    desc: 'Exhibitors who don\'t make ROI don\'t come back. Nuqta guarantees they make money = they renew.',
+                    icon: TrendingUp
+                  },
+                  {
+                    title: 'Competitive Differentiation',
+                    desc: 'Be the first event in your category to offer this. Merchants will choose your event over competitors.',
                     icon: Award
                   },
                   {
-                    title: 'Merchant Demand',
-                    desc: 'Exhibitors are tired of paying high booth fees with uncertain ROI. This solves their pain.',
-                    icon: Store
+                    title: 'Prove Your Value',
+                    desc: 'Show merchants real data on how much visitors spent. No more "we hope it worked" conversations.',
+                    icon: BarChart3
                   },
                   {
-                    title: 'Growing Network',
-                    desc: 'Every event user stays in Nuqta ecosystem. Your event contributes to UAE-wide loyalty.',
-                    icon: Globe
-                  },
-                  {
-                    title: 'Zero Downside',
-                    desc: 'If it doesn\'t work, you\'ve lost nothing. If it does, you gain revenue + happy merchants.',
+                    title: 'Zero Risk Trial',
+                    desc: 'If it doesn\'t work, you\'ve lost nothing. If it does, you gain revenue + merchants who can\'t wait to come back.',
                     icon: Shield
                   }
                 ].map((item, idx) => (
@@ -772,11 +819,12 @@ const PitchDeckExhibition = () => {
                 ))}
               </div>
 
-              {/* CTA */}
+              {/* The Bottom Line */}
               <div className="animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
-                <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 border border-[#c9a227]/30 rounded-2xl p-6 text-center">
-                  <p className="text-white text-xl font-bold mb-2">Ready to make your next event unforgettable?</p>
-                  <p className="text-slate-400">Let&apos;s talk about how Nuqta can help.</p>
+                <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/20 border-2 border-[#c9a227]/30 rounded-2xl p-6 text-center">
+                  <p className="text-[#c9a227] font-bold mb-2">THE BOTTOM LINE</p>
+                  <p className="text-white text-xl font-bold mb-2">Happy merchants come back. Unhappy merchants don&apos;t.</p>
+                  <p className="text-slate-400">Nuqta makes your merchants happy. That&apos;s your gold mine.</p>
                 </div>
               </div>
             </div>
