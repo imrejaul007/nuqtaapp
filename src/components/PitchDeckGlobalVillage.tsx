@@ -574,10 +574,10 @@ const PitchDeckGlobalVillage = () => {
                     },
                     {
                       step: '4',
-                      title: 'Shop & Scan Receipt',
-                      desc: 'Buy anything, photo the receipt',
-                      icon: Camera,
-                      detail: 'No POS integration',
+                      title: 'Shop & Log in App',
+                      desc: 'Buy anything, log transaction in Nuqta',
+                      icon: Smartphone,
+                      detail: 'Instant verification',
                       color: 'orange'
                     },
                     {
@@ -635,7 +635,7 @@ const PitchDeckGlobalVillage = () => {
                 </div>
               </div>
 
-              {/* Key point - No POS */}
+              {/* Key point - App Based */}
               <div className="mt-8 animate-[slideUp_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl p-5 sm:p-6">
                   <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
@@ -643,9 +643,9 @@ const PitchDeckGlobalVillage = () => {
                       <ShieldCheck className="w-7 h-7 text-blue-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-lg mb-1">No POS Integration Required</h4>
+                      <h4 className="text-white font-bold text-lg mb-1">App-Based Transaction Logging</h4>
                       <p className="text-slate-400 text-sm">
-                        Users photo their receipts. Our AI reads the merchant name and amount. GV&apos;s POS stays completely untouched.
+                        Users log purchases through the Nuqta app. Merchants verify via their dashboard. No POS integration needed.
                       </p>
                     </div>
                   </div>
@@ -846,7 +846,7 @@ const PitchDeckGlobalVillage = () => {
               <div className="mb-6 animate-[fadeIn_0.8s_ease-out_0.15s] opacity-0 [animation-fill-mode:forwards]">
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-2xl p-4 text-center">
                   <p className="text-white font-semibold text-sm sm:text-base">
-                    Users scan <span className="text-[#c9a227]">every receipt</span> to earn coins → Nuqta tracks <span className="text-[#c9a227]">ALL spending</span>, not just redemptions
+                    Users log <span className="text-[#c9a227]">every purchase</span> to earn coins → Nuqta tracks <span className="text-[#c9a227]">ALL spending</span>, not just redemptions
                   </p>
                 </div>
               </div>
@@ -1210,7 +1210,7 @@ const PitchDeckGlobalVillage = () => {
                   },
                   {
                     risk: 'What if the tech fails?',
-                    mitigation: 'Receipt scanning works offline. Manual verification backup. We\'ve stress-tested for 10K concurrent users.',
+                    mitigation: 'App works offline with sync. Merchant dashboard has manual verification backup. We\'ve stress-tested for 10K concurrent users.',
                     icon: Zap
                   }
                 ].map((item, idx) => (

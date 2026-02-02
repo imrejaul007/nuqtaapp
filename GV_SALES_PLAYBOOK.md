@@ -66,7 +66,7 @@ THE OPPORTUNITY
 THE SOLUTION
 - Every ticket = GV Coins (AED 30 value)
 - Coins unlock on AED 300+ spend
-- Users scan every receipt → full spending data
+- Users log purchases via app → full spending data
 
 WHAT GV GETS
 ✓ AED 200-400M GMV tracked
@@ -116,7 +116,7 @@ Rejaul Karim | rejaul@nuqtapp.com | +971 50 376 4345
 > "This requires AED 0 budget. Let's sign LOI now, launch when ready. Or pilot in the last month as a test run for next season."
 
 **9. "We tried this before and it failed"**
-> "What went wrong? Our model is designed to avoid common failures - receipt scanning (no POS integration), coin expiry (no liability), revenue share (aligned incentives). Zero risk to try a different approach."
+> "What went wrong? Our model is designed to avoid common failures - app-based logging (no POS integration), coin expiry (no liability), revenue share (aligned incentives). Zero risk to try a different approach."
 
 **10. "We want exclusivity"**
 > "We can offer seasonal exclusivity - no competing winter events. You also get preferred 10% revenue share locked in forever as our first major partner. Full exclusivity would limit our ability to serve you well."

@@ -266,7 +266,7 @@ const GVSalesPlaybook = () => {
                 },
                 {
                   objection: "We tried this before and it failed",
-                  response: "What went wrong? Our model is designed to avoid common failures - receipt scanning (no POS integration), coin expiry (no liability), revenue share (aligned incentives). Zero risk to try a different approach."
+                  response: "What went wrong? Our model is designed to avoid common failures - app-based logging (no POS integration), coin expiry (no liability), revenue share (aligned incentives). Zero risk to try a different approach."
                 },
                 {
                   objection: "We want exclusivity",

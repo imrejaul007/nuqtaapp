@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import {
   Store,
-  Receipt,
+  Smartphone,
   Coins,
   TrendingUp,
   Shield,
@@ -135,9 +135,9 @@ const GVMerchantInfo = () => {
             },
             {
               step: '3',
-              icon: Receipt,
-              title: 'Customer Shows Receipt',
-              description: 'After purchase, customer scans their receipt in the Nuqta app'
+              icon: Smartphone,
+              title: 'Customer Logs Purchase',
+              description: 'After purchase, customer logs transaction in the Nuqta app'
             },
             {
               step: '4',
@@ -196,7 +196,7 @@ const GVMerchantInfo = () => {
               {
                 icon: Zap,
                 title: 'No POS Integration',
-                description: 'Receipt scanning means zero changes to your existing systems. Keep using what you know',
+                description: 'App-based transaction logging means zero changes to your existing systems. Keep using what you know',
                 highlight: 'No Tech Hassle'
               },
               {
@@ -415,11 +415,11 @@ const GVMerchantInfo = () => {
         <div className="space-y-3">
           <FAQItem
             question="Do I need to change my POS system?"
-            answer="No! Nuqta uses receipt scanning, not POS integration. Your customers simply show their receipt in the app after purchase. No hardware, no software changes, no IT headaches."
+            answer="No! Nuqta uses app-based transaction logging, not POS integration. Customers log their purchases in the Nuqta app, and you verify via your merchant dashboard. No hardware, no software changes, no IT headaches."
           />
           <FAQItem
             question="When do I pay the commission?"
-            answer="You only pay commission on Nuqta-verified sales. We send you a monthly invoice based on receipts scanned at your store. If no customers come through Nuqta, you pay nothing."
+            answer="You only pay commission on Nuqta-verified sales. We send you a monthly invoice based on transactions logged through the Nuqta app. If no customers come through Nuqta, you pay nothing."
           />
           <FAQItem
             question="How do customers find my store?"
