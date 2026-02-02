@@ -50,6 +50,7 @@ const navigationData: NavCategory[] = [
     items: [
       { label: '90-Second Deck', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
       { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: '31-slide comprehensive' },
+      { label: 'GV Partnership', href: '/deck-gv', icon: Building2, description: 'Global Village pitch' },
       { label: 'Deck Final', href: '/deck-final', icon: FileText, description: 'Final version' },
       { label: 'Deck New', href: '/deck-new', icon: FileText, description: 'Updated deck' },
       { label: 'Original Deck', href: '/deck', icon: FileText, description: 'Original version' },
@@ -218,6 +219,7 @@ const GlobalFooter = () => {
                   { label: 'Home', href: '/' },
                   { label: '90s Deck', href: '/deck-90' },
                   { label: 'Full Deck', href: '/deck-kang' },
+                  { label: 'GV Deck', href: '/deck-gv' },
                   { label: 'Roadmap', href: '/master-roadmap' },
                   { label: 'GTM', href: '/gtm' },
                   { label: 'Financials', href: '/financialprojection' },
