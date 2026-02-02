@@ -99,6 +99,7 @@ const navigationData: NavCategory[] = [
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
       { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
       { label: 'User Card', href: '/card', icon: Users, description: 'User card view' },
+      { label: 'GV Merchants', href: '/gv-merchants', icon: Building2, description: 'GV merchant info' },
     ]
   },
   {
