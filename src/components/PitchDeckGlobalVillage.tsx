@@ -308,7 +308,7 @@ const PitchDeckGlobalVillage = () => {
                       </div>
                       <div className="flex gap-2">
                         <div className="px-3 py-1.5 bg-white/10 rounded-full">
-                          <span className="text-slate-300 text-xs">rejaul@nuqta.ae</span>
+                          <span className="text-slate-300 text-xs">rejaul@nuqtapp.com</span>
                         </div>
                       </div>
                     </div>
@@ -1434,7 +1434,7 @@ const PitchDeckGlobalVillage = () => {
                         <span className="text-white font-bold">Rejaul Karim</span>
                       </div>
                       <div className="px-5 py-2.5 bg-white/20 backdrop-blur rounded-full">
-                        <span className="text-white font-bold">rejaul@nuqta.ae</span>
+                        <span className="text-white font-bold">rejaul@nuqtapp.com</span>
                       </div>
                       <div className="px-5 py-2.5 bg-white/20 backdrop-blur rounded-full">
                         <span className="text-white font-bold">+971 50 123 4567</span>
