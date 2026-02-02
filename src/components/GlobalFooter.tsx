@@ -50,11 +50,19 @@ const navigationData: NavCategory[] = [
     items: [
       { label: '90-Second Deck', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
       { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: '31-slide comprehensive' },
-      { label: 'GV Partnership', href: '/deck-gv', icon: Building2, description: 'Global Village pitch' },
-      { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Short-term events' },
       { label: 'Deck Final', href: '/deck-final', icon: FileText, description: 'Final version' },
       { label: 'Deck New', href: '/deck-new', icon: FileText, description: 'Updated deck' },
       { label: 'Original Deck', href: '/deck', icon: FileText, description: 'Original version' },
+    ]
+  },
+  {
+    title: 'Partnerships',
+    items: [
+      { label: 'GV Deck', href: '/deck-gv', icon: Building2, description: 'Global Village pitch' },
+      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales guide' },
+      { label: 'GV Merchants', href: '/gv-merchants', icon: Building2, description: 'GV merchant info' },
+      { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Event organizer pitch' },
+      { label: 'Event Merchants', href: '/exhibition-merchants', icon: Calendar, description: 'Event merchant info' },
     ]
   },
   {
@@ -64,7 +72,6 @@ const navigationData: NavCategory[] = [
       { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation strategy' },
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp, description: 'Go-to-market plan' },
       { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
-      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales guide' },
     ]
   },
   {
@@ -100,8 +107,6 @@ const navigationData: NavCategory[] = [
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
       { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
       { label: 'User Card', href: '/card', icon: Users, description: 'User card view' },
-      { label: 'GV Merchants', href: '/gv-merchants', icon: Building2, description: 'GV merchant info' },
-      { label: 'Event Merchants', href: '/exhibition-merchants', icon: Calendar, description: 'Exhibition info' },
     ]
   },
   {
@@ -224,11 +229,11 @@ const GlobalFooter = () => {
                   { label: '90s Deck', href: '/deck-90' },
                   { label: 'Full Deck', href: '/deck-kang' },
                   { label: 'GV Deck', href: '/deck-gv' },
+                  { label: 'Exhibition', href: '/deck-exhibition' },
                   { label: 'Roadmap', href: '/master-roadmap' },
                   { label: 'GTM', href: '/gtm' },
                   { label: 'Financials', href: '/financialprojection' },
                   { label: 'Data Room', href: '/data-room' },
-                  { label: 'Memo', href: '/memo' },
                   { label: 'Merchants', href: '/merchant-database' },
                 ].map((link, idx) => (
                   <Link
@@ -295,6 +300,24 @@ const GlobalFooter = () => {
                     title="Full Deck"
                   >
                     <Presentation size={18} />
+                  </Link>
+                  <Link
+                    href="/deck-gv"
+                    className={`p-2 rounded-full transition-all ${
+                      isActive('/deck-gv') ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                    title="GV Partnership Deck"
+                  >
+                    <Building2 size={18} />
+                  </Link>
+                  <Link
+                    href="/deck-exhibition"
+                    className={`p-2 rounded-full transition-all ${
+                      isActive('/deck-exhibition') ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                    }`}
+                    title="Exhibition Deck"
+                  >
+                    <Calendar size={18} />
                   </Link>
                   <Link
                     href="/data-room"
