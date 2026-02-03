@@ -35,7 +35,8 @@ import {
   Handshake,
   Crown,
   Calculator,
-  Mail
+  Mail,
+  Swords
 } from 'lucide-react';
 
 /**
@@ -77,6 +78,7 @@ const navigationData: NavCategory[] = [
     items: [
       { label: 'Master Roadmap', href: '/master-roadmap', icon: Map, description: 'Product roadmap' },
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp, description: 'Go-to-market' },
+      { label: 'Competitor Analysis', href: '/competitor-analysis', icon: Swords, description: 'Threats & defense' },
       { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation' },
       { label: 'H1 GTM', href: '/h1-gtm', icon: Target, description: 'Horizon 1' },
       { label: 'H2 Strategy', href: '/h2-strategy', icon: TrendingUp, description: 'Horizon 2' },
