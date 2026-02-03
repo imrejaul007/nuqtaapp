@@ -203,27 +203,38 @@ const exerciseScenarios = [
 ];
 
 // ============================================
-// PERFORMANCE-BASED EQUITY (NEW SHARE CREATION MODEL)
+// PERFORMANCE-BASED EQUITY (INVESTOR-FRIENDLY MODEL)
 // ============================================
-// Key Concept: Performance equity creates NEW shares, expanding the total pool
-// This rewards performers without diluting existing allocations unfairly
+// Key Concept: Performance equity creates NEW shares with STRICT CAPS and BOARD GOVERNANCE
+// Balanced approach: rewards performers while protecting investor interests
 
 const shareCreationModel = {
   initialTotalShares: 10000000, // Starting 10M shares
-  maxAnnualCreation: 500000, // Up to 500K new shares can be created per year
-  creationTriggers: ['Quarterly Performance', 'Funding Rounds', 'Major Milestones'],
-  founderCreationCap: '2% of new shares created per year',
-  teamCreationCap: '3% of new shares created per year',
+  lifetimeCap: 500000, // LIFETIME cap of 500K new shares (5% max dilution ever)
+  annualCap: 150000, // Max 150K new shares per year (1.5% dilution cap)
+  creationTriggers: ['Major Milestones Only', 'Board Approval Required'],
+  founderCreationCap: '1% lifetime (100K shares max)',
+  teamCreationCap: '4% lifetime (400K shares max)',
+  governance: 'Requires unanimous board approval including investor director',
+};
+
+const investorProtections = {
+  antiDilution: 'Broad-based weighted average anti-dilution for investors',
+  proRataRights: 'Investors can participate in ESOP expansion to maintain %',
+  boardApproval: 'All share creation requires board vote (includes investor seat)',
+  annualCap: 'Max 1.5% dilution from performance grants per year',
+  lifetimeCap: 'Max 5% total dilution from all performance share creation',
+  transparentReporting: 'Quarterly cap table updates shared with all shareholders',
 };
 
 const quarterlyShareCreation = {
-  frequency: 'Every Quarter',
-  reviewProcess: 'Board-approved based on company and individual performance',
+  frequency: 'Semi-Annual (every 6 months)',
+  reviewProcess: 'Board-approved with investor consent required',
   vestingForNewShares: '2-year vesting, 6-month cliff',
   categories: [
-    { category: 'Founder/CEO Performance', allocation: 30, maxShares: 150000 },
-    { category: 'Leadership Team', allocation: 30, maxShares: 150000 },
-    { category: 'All Employees', allocation: 40, maxShares: 200000 },
+    { category: 'Founder/CEO Performance', allocation: 20, maxShares: 100000, note: 'Lifetime cap' },
+    { category: 'Leadership Team', allocation: 30, maxShares: 150000, note: 'Lifetime cap' },
+    { category: 'All Employees', allocation: 50, maxShares: 250000, note: 'Lifetime cap' },
   ]
 };
 
@@ -251,108 +262,100 @@ const performanceTiers = [
   },
 ];
 
-// Founder quarterly share creation based on performance
+// Founder performance share creation (with investor-friendly caps)
 const founderShareCreation = {
   baseOwnership: '70% (7M shares)',
-  quarterlyCreation: 'Up to 50,000 NEW shares created per quarter',
-  annualMax: '200,000 new shares/year (2% dilution cap)',
+  lifetimeCap: '100,000 NEW shares max (1% dilution cap)',
+  annualMax: '50,000 new shares/year',
   triggers: [
-    { quarter: 'Q1', metric: 'User Growth Target', threshold: '110%+', newShares: '50,000', condition: 'MAU growth exceeds target by 10%+' },
-    { quarter: 'Q2', metric: 'Revenue Target', threshold: '110%+', newShares: '50,000', condition: 'MRR/ARR exceeds quarterly target' },
-    { quarter: 'Q3', metric: 'Merchant Acquisition', threshold: '110%+', newShares: '50,000', condition: 'New merchant signups exceed target' },
-    { quarter: 'Q4', metric: 'Annual Goals', threshold: '100%+', newShares: '50,000', condition: 'Overall annual targets achieved' },
+    { milestone: 'Series A Closed', newShares: '25,000', condition: '$1M+ raised at $10M+ valuation', boardApproval: true },
+    { milestone: 'MAU 100K Achieved', newShares: '25,000', condition: '100K monthly active users', boardApproval: true },
+    { milestone: 'Profitability', newShares: '25,000', condition: '3 consecutive profitable months', boardApproval: true },
+    { milestone: 'Series B / $10M ARR', newShares: '25,000', condition: '$5M+ raised OR $10M ARR', boardApproval: true },
   ],
-  fundingRoundBonus: [
-    { round: 'Pre-Seed', newShares: '100,000', condition: '$250K+ raised' },
-    { round: 'Seed', newShares: '150,000', condition: '$500K+ raised' },
-    { round: 'Series A', newShares: '200,000', condition: '$1M+ raised' },
-    { round: 'Series B+', newShares: '250,000', condition: '$5M+ raised' },
-  ],
+  governance: 'All founder grants require board approval with investor consent',
 };
 
 const rolePerformanceGrants = [
   {
     role: 'Founder/CEO',
     baseGrant: '70% (7M shares)',
-    performancePool: 'Up to 200K NEW shares/year',
+    performancePool: '100K NEW shares LIFETIME cap',
     triggers: [
-      { milestone: 'Quarterly Target 110%+', grant: 'NEW', shares: '50,000/quarter' },
-      { milestone: 'Funding Round Closed', grant: 'NEW', shares: '100K-250K' },
-      { milestone: 'Major Milestone (IPO prep, etc.)', grant: 'NEW', shares: '100,000' },
-      { milestone: 'Annual Goals Exceeded', grant: 'NEW', shares: '50,000 bonus' },
+      { milestone: 'Series A Closed ($1M+)', grant: 'NEW', shares: '25,000' },
+      { milestone: 'MAU 100K Achieved', grant: 'NEW', shares: '25,000' },
+      { milestone: 'Profitability (3 months)', grant: 'NEW', shares: '25,000' },
+      { milestone: 'Series B / $10M ARR', grant: 'NEW', shares: '25,000' },
     ],
-    notes: 'NEW shares are CREATED (not allocated) - founder earns more as company grows, aligned with value creation',
+    notes: 'Lifetime cap of 100K NEW shares (1% max dilution). All grants require board approval with investor consent.',
   },
   {
     role: 'Co-Founder/C-Suite',
     baseGrant: '1-5%',
-    performancePool: 'Up to 75K NEW shares/year',
+    performancePool: '50K NEW shares LIFETIME cap each',
     triggers: [
-      { milestone: 'Department OKRs 110%+', grant: 'NEW', shares: '25,000/quarter' },
-      { milestone: 'Revenue Target 125%+', grant: 'NEW', shares: '25,000 bonus' },
-      { milestone: 'Team Growth & Retention 95%+', grant: 'NEW', shares: '15,000' },
+      { milestone: 'Annual OKRs 120%+', grant: 'NEW', shares: '15,000/year' },
+      { milestone: 'Revenue Target 125%+', grant: 'NEW', shares: '10,000 bonus' },
+      { milestone: 'Key Milestone Achievement', grant: 'NEW', shares: '10,000' },
     ],
-    notes: 'NEW shares created quarterly based on department performance - vests over 2 years',
+    notes: 'Lifetime cap per executive. Board approval required. 2-year vesting on all new grants.',
   },
   {
     role: 'Department Heads',
     baseGrant: '0.25-1%',
-    performancePool: 'Up to 40K NEW shares/year',
+    performancePool: '25K NEW shares LIFETIME cap each',
     triggers: [
-      { milestone: 'Team OKRs 110%+', grant: 'NEW', shares: '10,000/quarter' },
-      { milestone: 'Cross-functional Impact', grant: 'NEW', shares: '10,000 bonus' },
-      { milestone: 'Exceptional Rating 2 consecutive Qs', grant: 'NEW', shares: '10,000' },
+      { milestone: 'Annual OKRs 120%+', grant: 'NEW', shares: '8,000/year' },
+      { milestone: 'Cross-functional Impact', grant: 'NEW', shares: '5,000 bonus' },
+      { milestone: 'Exceptional Rating (annual)', grant: 'NEW', shares: '5,000' },
     ],
-    notes: 'NEW shares created and issued quarterly - 2-year vesting, 6-month cliff',
+    notes: 'Lifetime cap per head. Board approval required. 2-year vesting, 6-month cliff.',
   },
   {
     role: 'Individual Contributors',
     baseGrant: '0.05-0.25%',
-    performancePool: 'Up to 20K NEW shares/year',
+    performancePool: '10K NEW shares LIFETIME cap each',
     triggers: [
-      { milestone: 'KPIs 125%+', grant: 'NEW', shares: '5,000/quarter' },
-      { milestone: 'High-Impact Project Delivery', grant: 'NEW', shares: '5,000 bonus' },
-      { milestone: 'Exceptional Rating', grant: 'NEW', shares: '5,000' },
+      { milestone: 'Annual KPIs 125%+', grant: 'NEW', shares: '3,000/year' },
+      { milestone: 'High-Impact Project', grant: 'NEW', shares: '2,000 bonus' },
+      { milestone: 'Exceptional Rating (annual)', grant: 'NEW', shares: '2,000' },
     ],
-    notes: 'Top 20% performers get NEW shares created each quarter - everyone can grow their stake',
+    notes: 'Lifetime cap per IC. Top 20% performers eligible. 2-year vesting, 6-month cliff.',
   },
 ];
 
 const companyMilestones = [
   {
-    milestone: 'H1 Targets (6 months)',
-    targets: ['250 merchants', '50K users', '$50K MRR'],
-    poolUnlock: '100,000 NEW shares CREATED',
-    distribution: 'Founder: 30K, Leadership: 30K, Team: 40K (pro-rata by performance)',
-    isNewShares: true,
-  },
-  {
     milestone: 'Series A Raise',
     targets: ['$1M+ raised', 'Valuation $10M+'],
-    poolUnlock: '250,000 NEW shares CREATED',
-    distribution: 'Founder: 75K, Leadership: 75K, All employees: 100K',
+    poolUnlock: '100,000 NEW shares (Board Approved)',
+    distribution: 'Founder: 25K, Leadership: 25K, All employees: 50K',
     isNewShares: true,
+    governance: 'Requires board approval',
   },
   {
     milestone: 'MAU 100K',
     targets: ['100,000 monthly active users'],
-    poolUnlock: '150,000 NEW shares CREATED',
-    distribution: 'Founder: 45K, Growth team: 60K, All others: 45K',
+    poolUnlock: '100,000 NEW shares (Board Approved)',
+    distribution: 'Founder: 25K, Growth team: 40K, All others: 35K',
     isNewShares: true,
+    governance: 'Requires board approval',
   },
   {
     milestone: 'Profitability',
     targets: ['3 consecutive months of profitability'],
-    poolUnlock: '300,000 NEW shares CREATED',
-    distribution: 'Founder: 90K, All employees: 210K (tenure-weighted)',
+    poolUnlock: '150,000 NEW shares (Board Approved)',
+    distribution: 'Founder: 25K, All employees: 125K (tenure-weighted)',
     isNewShares: true,
+    governance: 'Requires board approval',
   },
   {
     milestone: 'Series B / $10M ARR',
     targets: ['$5M+ raised OR $10M ARR'],
-    poolUnlock: '500,000 NEW shares CREATED',
-    distribution: 'Founder: 150K, Leadership: 150K, All team: 200K',
+    poolUnlock: '150,000 NEW shares (Board Approved)',
+    distribution: 'Founder: 25K, Leadership: 50K, All team: 75K',
     isNewShares: true,
+    governance: 'Requires board approval',
   },
 ];
 
@@ -398,19 +401,23 @@ const faqs = [
   },
   {
     q: 'How does performance-based share CREATION work?',
-    a: 'Unlike traditional ESOP where shares come from a fixed pool, we CREATE NEW SHARES when targets are hit. Every quarter, if you exceed 110% of your targets, new shares are created and granted to you. This means the pie grows as we all perform - founder, leadership, and every team member can earn more.',
+    a: 'We CREATE NEW SHARES when major milestones are hit, but with strict caps: 5% lifetime cap (500K shares max), 1.5% annual cap (150K/year). All share creation requires board approval with investor consent. This rewards performance while protecting all shareholders from excessive dilution.',
   },
   {
     q: 'Can I earn more equity than my initial grant?',
-    a: 'Yes! Through quarterly performance share creation, you can potentially earn 5-10x your initial grant over time. A Senior Engineer with 20K initial shares could have 140K+ shares after 3 years of consistent exceptional performance.',
+    a: 'Yes, but with reasonable limits. Each role has a lifetime cap: ICs can earn up to 10K NEW shares, Department Heads up to 25K, C-Suite up to 50K. A Senior Engineer with 20K initial shares could have ~46K shares after 4 years - a 130% increase while respecting investor-friendly caps.',
   },
   {
     q: 'When are NEW shares created and issued?',
-    a: 'Performance shares are reviewed quarterly and new shares are created/issued after board approval. Company milestone shares are created immediately when milestones are achieved. All performance shares vest over 2 years with a 6-month cliff.',
+    a: 'Performance shares are reviewed semi-annually (every 6 months) and require board approval with investor consent before issuance. Company milestone shares are created when milestones are achieved and verified by the board. All performance shares vest over 2 years with a 6-month cliff.',
   },
   {
     q: 'Does the founder also get performance shares?',
-    a: 'Yes! The founder earns up to 200K NEW shares per year through quarterly performance (50K/quarter if targets are exceeded) plus additional shares for funding rounds and major milestones. This aligns founder incentives with company performance.',
+    a: 'Yes, but capped at 100K NEW shares lifetime (1% dilution max). The founder earns 25K shares for each major milestone: Series A, MAU 100K, Profitability, and Series B/$10M ARR. All founder grants require board approval with investor consent.',
+  },
+  {
+    q: 'How are investor interests protected?',
+    a: 'Multiple protections: (1) 5% lifetime cap on all new share creation, (2) 1.5% annual cap, (3) Board approval required with investor director consent, (4) Anti-dilution provisions for investors, (5) Pro-rata rights to maintain ownership %, (6) Quarterly cap table reporting.',
   },
   {
     q: 'How are options taxed in UAE?',
@@ -702,86 +709,105 @@ const ESOPPage = () => {
         </div>
       </section>
 
-      {/* Performance-Based Equity - NEW SHARE CREATION MODEL */}
+      {/* Performance-Based Equity - INVESTOR-FRIENDLY MODEL */}
       <section className="py-12 px-4 border-b border-slate-800 bg-gradient-to-b from-amber-500/5 to-transparent">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-4">
               <Target className="w-4 h-4 text-amber-400" />
-              <span className="text-amber-400 font-medium text-sm">NEW Shares Created for Performance</span>
+              <span className="text-amber-400 font-medium text-sm">Performance Share Creation (Capped & Governed)</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black mb-2">
               <Award className="w-7 h-7 text-amber-400 inline mr-2" />
               Performance-Based Share Creation
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Hit targets → NEW shares are CREATED and issued to you. The pie grows as we grow.
+              Hit major milestones → NEW shares created with strict caps and board governance.
             </p>
           </div>
 
-          {/* Key Concept Callout */}
-          <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 border-2 border-[#c9a227]/50 rounded-2xl p-6 mb-10">
+          {/* Investor Protection Callout */}
+          <div className="bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 border-2 border-emerald-500/30 rounded-2xl p-6 mb-10">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-[#c9a227] rounded-xl flex items-center justify-center flex-shrink-0">
-                <Zap className="w-6 h-6 text-[#0a1628]" />
+              <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Scale className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-[#c9a227] mb-2">How This Works: Share Creation Model</h3>
+                <h3 className="text-xl font-bold text-emerald-400 mb-2">Investor-Friendly Governance</h3>
                 <p className="text-slate-300 mb-3">
-                  Unlike traditional ESOP where shares come from a fixed pool, at Nuqta we <strong className="text-white">CREATE NEW SHARES</strong> when performance targets are hit. This means:
+                  Our performance equity model includes <strong className="text-white">strict caps and board oversight</strong> to protect all shareholders:
                 </p>
-                <ul className="space-y-2 text-slate-300">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400" />
-                    <span><strong className="text-white">Founder earns more</strong> as company milestones are achieved</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400" />
-                    <span><strong className="text-white">Team earns more</strong> through quarterly performance grants</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-400" />
-                    <span><strong className="text-white">Everyone is aligned</strong> - we all benefit when we hit targets</span>
-                  </li>
-                </ul>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <ul className="space-y-2 text-slate-300">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                      <span><strong className="text-white">5% lifetime cap</strong> on all new share creation</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                      <span><strong className="text-white">1.5% annual cap</strong> on dilution from grants</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                      <span><strong className="text-white">Board approval</strong> required for all issuances</span>
+                    </li>
+                  </ul>
+                  <ul className="space-y-2 text-slate-300">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                      <span><strong className="text-white">Anti-dilution</strong> protection for investors</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                      <span><strong className="text-white">Pro-rata rights</strong> to maintain ownership %</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                      <span><strong className="text-white">Quarterly reporting</strong> on cap table changes</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Share Creation Overview */}
+          {/* Share Creation Overview - Updated with caps */}
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center">
               <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Coins className="w-6 h-6 text-amber-400" />
               </div>
-              <p className="text-3xl font-black text-amber-400">{shareCreationModel.maxAnnualCreation.toLocaleString()}</p>
-              <p className="text-slate-400 text-sm">Max NEW Shares Created/Year</p>
+              <p className="text-3xl font-black text-amber-400">{shareCreationModel.lifetimeCap.toLocaleString()}</p>
+              <p className="text-slate-400 text-sm">LIFETIME Cap on NEW Shares</p>
+              <p className="text-emerald-400 text-xs mt-1">Max 5% dilution ever</p>
             </div>
             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center">
               <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
                 <Calendar className="w-6 h-6 text-emerald-400" />
               </div>
-              <p className="text-3xl font-black text-emerald-400">Quarterly</p>
-              <p className="text-slate-400 text-sm">Performance Review & Creation</p>
+              <p className="text-3xl font-black text-emerald-400">{shareCreationModel.annualCap.toLocaleString()}</p>
+              <p className="text-slate-400 text-sm">Annual Cap on NEW Shares</p>
+              <p className="text-emerald-400 text-xs mt-1">Max 1.5% dilution/year</p>
             </div>
             <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center">
               <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
-                <TrendingUp className="w-6 h-6 text-cyan-400" />
+                <Scale className="w-6 h-6 text-cyan-400" />
               </div>
-              <p className="text-3xl font-black text-cyan-400">110%+</p>
-              <p className="text-slate-400 text-sm">Target Threshold for New Shares</p>
+              <p className="text-3xl font-black text-cyan-400">Board</p>
+              <p className="text-slate-400 text-sm">Approval Required</p>
+              <p className="text-cyan-400 text-xs mt-1">Including investor director</p>
             </div>
           </div>
 
-          {/* How Share Creation Works */}
+          {/* How Share Creation Works - Updated */}
           <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 mb-10">
-            <h3 className="text-xl font-bold text-white mb-4">How NEW Share Creation Works</h3>
+            <h3 className="text-xl font-bold text-white mb-4">How Performance Share Creation Works</h3>
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                { step: '1', title: 'Set Targets', desc: 'Quarterly OKRs set for company, team & individuals', icon: Target },
-                { step: '2', title: 'Exceed 110%+', desc: 'Hit 110%+ of your targets to qualify', icon: Zap },
-                { step: '3', title: 'Board Approval', desc: 'Performance reviewed & new shares approved', icon: BarChart3 },
-                { step: '4', title: 'NEW Shares Issued', desc: 'Brand new shares created and granted to you', icon: Award },
+                { step: '1', title: 'Major Milestone', desc: 'Company achieves Series A, MAU 100K, Profitability, etc.', icon: Target },
+                { step: '2', title: 'Board Review', desc: 'Board reviews milestone achievement and cap availability', icon: Scale },
+                { step: '3', title: 'Investor Consent', desc: 'Investor director approves share creation', icon: BarChart3 },
+                { step: '4', title: 'Capped Issuance', desc: 'NEW shares created within lifetime/annual caps', icon: Award },
               ].map((item, i) => (
                 <div key={i} className="text-center">
                   <div className="w-10 h-10 bg-[#c9a227]/20 rounded-full flex items-center justify-center mx-auto mb-2">
@@ -842,7 +868,7 @@ const ESOPPage = () => {
         </div>
       </section>
 
-      {/* Founder Performance Share Creation */}
+      {/* Founder Performance Share Creation - Capped */}
       <section className="py-12 px-4 border-b border-slate-800 bg-[#c9a227]/5">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
@@ -850,60 +876,62 @@ const ESOPPage = () => {
               <Star className="w-7 h-7 text-[#c9a227] inline mr-2" />
               Founder Performance Equity
             </h2>
-            <p className="text-slate-400">NEW shares created for founder when company milestones are hit</p>
+            <p className="text-slate-400">NEW shares created for founder at major milestones (capped at 100K lifetime)</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            {/* Quarterly Performance */}
-            <div className="bg-slate-800/50 border border-[#c9a227]/30 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-[#c9a227] mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                Quarterly Performance Grants
-              </h3>
-              <div className="space-y-3">
-                {founderShareCreation.triggers.map((trigger, i) => (
-                  <div key={i} className="bg-slate-900/50 border border-slate-700 rounded-xl p-3">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-white font-medium">{trigger.quarter}: {trigger.metric}</span>
-                      <span className="text-emerald-400 font-bold">+{trigger.newShares} NEW</span>
-                    </div>
-                    <p className="text-slate-400 text-xs">Threshold: {trigger.threshold} | {trigger.condition}</p>
-                  </div>
-                ))}
+          {/* Founder Cap Highlight */}
+          <div className="bg-slate-800/50 border-2 border-[#c9a227]/50 rounded-2xl p-6 mb-8">
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <p className="text-slate-400 text-sm">Lifetime Cap</p>
+                <p className="text-3xl font-black text-[#c9a227]">100,000</p>
+                <p className="text-slate-500 text-xs">NEW shares max</p>
               </div>
-              <div className="mt-4 p-3 bg-[#c9a227]/10 rounded-xl">
-                <p className="text-[#c9a227] text-sm font-medium">Annual Max: {founderShareCreation.annualMax}</p>
+              <div>
+                <p className="text-slate-400 text-sm">Max Dilution</p>
+                <p className="text-3xl font-black text-emerald-400">1%</p>
+                <p className="text-slate-500 text-xs">of total shares</p>
               </div>
-            </div>
-
-            {/* Funding Round Bonuses */}
-            <div className="bg-slate-800/50 border border-emerald-500/30 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2">
-                <Rocket className="w-5 h-5" />
-                Funding Round Bonuses
-              </h3>
-              <div className="space-y-3">
-                {founderShareCreation.fundingRoundBonus.map((round, i) => (
-                  <div key={i} className="bg-slate-900/50 border border-slate-700 rounded-xl p-3">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-white font-medium">{round.round}</span>
-                      <span className="text-emerald-400 font-bold">+{round.newShares} NEW</span>
-                    </div>
-                    <p className="text-slate-400 text-xs">{round.condition}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 p-3 bg-emerald-500/10 rounded-xl">
-                <p className="text-emerald-400 text-sm font-medium">Total possible: 700,000 NEW shares through Series B</p>
+              <div>
+                <p className="text-slate-400 text-sm">Governance</p>
+                <p className="text-3xl font-black text-cyan-400">Board</p>
+                <p className="text-slate-500 text-xs">approval required</p>
               </div>
             </div>
           </div>
 
-          {/* Founder Example */}
+          {/* Milestone-based Grants */}
+          <div className="bg-slate-800/50 border border-[#c9a227]/30 rounded-2xl p-6 mb-8">
+            <h3 className="text-lg font-bold text-[#c9a227] mb-4 flex items-center gap-2">
+              <Rocket className="w-5 h-5" />
+              Milestone-Based Founder Grants (Board Approved)
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4">
+              {founderShareCreation.triggers.map((trigger, i) => (
+                <div key={i} className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-white font-medium">{trigger.milestone}</span>
+                    <span className="text-emerald-400 font-bold">+{trigger.newShares} NEW</span>
+                  </div>
+                  <p className="text-slate-400 text-xs mb-2">{trigger.condition}</p>
+                  <div className="flex items-center gap-2">
+                    <Scale className="w-3 h-3 text-cyan-400" />
+                    <span className="text-cyan-400 text-xs">Board approval required</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 p-3 bg-[#c9a227]/10 rounded-xl flex justify-between items-center">
+              <p className="text-[#c9a227] text-sm font-medium">Lifetime Cap: {founderShareCreation.lifetimeCap}</p>
+              <p className="text-slate-400 text-xs">All 4 milestones = 100K shares max</p>
+            </div>
+          </div>
+
+          {/* Founder Example - Updated with caps */}
           <div className="bg-gradient-to-r from-[#c9a227]/10 to-amber-500/5 border border-[#c9a227]/30 rounded-2xl p-6">
             <h4 className="font-bold text-white mb-4 flex items-center gap-2">
               <Calculator className="w-5 h-5 text-[#c9a227]" />
-              Example: Founder Equity Growth Over 3 Years
+              Example: Founder Equity Over 4 Years (All Milestones Achieved)
             </h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
@@ -912,44 +940,48 @@ const ESOPPage = () => {
                   <span className="text-white font-bold">7,000,000 shares (70%)</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 1: Q1-Q4 Performance (4x 50K)</span>
-                  <span className="text-emerald-400 font-bold">+200,000 NEW</span>
+                  <span className="text-slate-400">Year 1: Series A Closed</span>
+                  <span className="text-emerald-400 font-bold">+25,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 1: Seed Round Closed</span>
-                  <span className="text-emerald-400 font-bold">+150,000 NEW</span>
+                  <span className="text-slate-400">Year 2: MAU 100K Achieved</span>
+                  <span className="text-emerald-400 font-bold">+25,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 2: Q1-Q4 Performance</span>
-                  <span className="text-emerald-400 font-bold">+200,000 NEW</span>
+                  <span className="text-slate-400">Year 3: Profitability</span>
+                  <span className="text-emerald-400 font-bold">+25,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 2: Series A Closed</span>
-                  <span className="text-emerald-400 font-bold">+200,000 NEW</span>
+                  <span className="text-slate-400">Year 4: Series B / $10M ARR</span>
+                  <span className="text-emerald-400 font-bold">+25,000 NEW</span>
                 </div>
-                <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 3: Performance + Milestones</span>
-                  <span className="text-emerald-400 font-bold">+300,000 NEW</span>
+                <div className="flex justify-between border-b border-amber-500/50 pb-2 bg-amber-500/10 px-2 rounded">
+                  <span className="text-amber-400 font-medium">LIFETIME CAP REACHED</span>
+                  <span className="text-amber-400 font-bold">100,000 total</span>
                 </div>
               </div>
               <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
-                <h5 className="font-bold text-[#c9a227] mb-3">Founder Total After 3 Years</h5>
+                <h5 className="font-bold text-[#c9a227] mb-3">Founder Total (Capped)</h5>
                 <div className="space-y-2">
                   <div className="flex justify-between">
+                    <span className="text-slate-400">Initial Shares</span>
+                    <span className="text-white font-bold">7,000,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">NEW Shares (Capped)</span>
+                    <span className="text-emerald-400 font-bold">+100,000</span>
+                  </div>
+                  <div className="flex justify-between">
                     <span className="text-slate-400">Total Shares</span>
-                    <span className="text-2xl font-black text-white">8,050,000</span>
+                    <span className="text-2xl font-black text-white">7,100,000</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">NEW Shares Earned</span>
-                    <span className="text-xl font-bold text-emerald-400">+1,050,000</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-slate-400">Growth</span>
-                    <span className="text-[#c9a227] font-bold">+15%</span>
+                    <span className="text-slate-400">Dilution to Others</span>
+                    <span className="text-cyan-400 font-bold">~1%</span>
                   </div>
                   <hr className="border-slate-700" />
-                  <p className="text-xs text-slate-500">
-                    *Ownership % depends on total shares created, but absolute value increases significantly
+                  <p className="text-xs text-emerald-400">
+                    ✓ Investor-friendly: capped dilution, board-approved
                   </p>
                 </div>
               </div>
@@ -1053,18 +1085,23 @@ const ESOPPage = () => {
             ))}
           </div>
 
-          {/* Total Milestone Shares */}
+          {/* Total Milestone Shares - Capped */}
           <div className="mt-6 bg-gradient-to-r from-pink-500/10 to-purple-500/10 border border-pink-500/30 rounded-2xl p-5 text-center">
-            <h4 className="text-lg font-bold text-white mb-2">Total NEW Shares from Milestones</h4>
-            <p className="text-4xl font-black text-pink-400 mb-2">1,300,000</p>
-            <p className="text-slate-400 text-sm">13% potential share pool expansion for achieving all milestones</p>
+            <h4 className="text-lg font-bold text-white mb-2">Total NEW Shares from All Milestones</h4>
+            <p className="text-4xl font-black text-pink-400 mb-2">500,000</p>
+            <p className="text-slate-400 text-sm">5% max dilution (lifetime cap) for achieving all milestones</p>
+            <div className="mt-3 flex justify-center gap-4 text-xs">
+              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full">✓ Board Approved</span>
+              <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full">✓ Investor Consent</span>
+              <span className="px-3 py-1 bg-amber-500/20 text-amber-400 rounded-full">✓ Capped Dilution</span>
+            </div>
           </div>
 
-          {/* Example Calculation - Team Member */}
+          {/* Example Calculation - Team Member (Capped) */}
           <div className="mt-8 bg-gradient-to-r from-amber-500/10 to-emerald-500/10 border border-amber-500/30 rounded-2xl p-6">
             <h4 className="font-bold text-white mb-4 flex items-center gap-2">
               <Calculator className="w-5 h-5 text-amber-400" />
-              Example: Senior Engineer - NEW Share Creation Journey
+              Example: Senior Engineer - Performance Journey (with Caps)
             </h4>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-3">
@@ -1073,48 +1110,51 @@ const ESOPPage = () => {
                   <span className="text-white font-bold">20,000 shares (0.2%)</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 1 Q1-Q4: KPIs 125%+ (4x 5K)</span>
-                  <span className="text-emerald-400 font-bold">+20,000 NEW</span>
+                  <span className="text-slate-400">Year 1: Annual KPIs 125%+</span>
+                  <span className="text-emerald-400 font-bold">+3,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 2 Q1-Q4: Outstanding (4x 5K)</span>
-                  <span className="text-emerald-400 font-bold">+20,000 NEW</span>
+                  <span className="text-slate-400">Year 2: Outstanding + Milestone</span>
+                  <span className="text-emerald-400 font-bold">+5,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
                   <span className="text-slate-400">Year 2: Promoted to Lead</span>
-                  <span className="text-cyan-400 font-bold">+25,000 NEW (promotion)</span>
+                  <span className="text-cyan-400 font-bold">+8,000 NEW (promotion)</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 3 Q1-Q4: As Lead (4x 10K)</span>
-                  <span className="text-emerald-400 font-bold">+40,000 NEW</span>
+                  <span className="text-slate-400">Year 3-4: As Lead (annual grants)</span>
+                  <span className="text-emerald-400 font-bold">+10,000 NEW</span>
                 </div>
-                <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Company Milestones (H1 + Series A)</span>
-                  <span className="text-pink-400 font-bold">+15,000 NEW</span>
+                <div className="flex justify-between border-b border-amber-500/50 pb-2 bg-amber-500/10 px-2 rounded">
+                  <span className="text-amber-400 font-medium">LIFETIME CAP (IC→Lead)</span>
+                  <span className="text-amber-400 font-bold">26,000 max</span>
                 </div>
               </div>
               <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
-                <h5 className="font-bold text-[#c9a227] mb-3">Total After 3 Years</h5>
+                <h5 className="font-bold text-[#c9a227] mb-3">Total After 4 Years</h5>
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-slate-400">Initial Shares</span>
                     <span className="text-white font-bold">20,000</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-slate-400">NEW Shares Created</span>
-                    <span className="text-emerald-400 font-bold">+120,000</span>
+                    <span className="text-slate-400">NEW Shares (Capped)</span>
+                    <span className="text-emerald-400 font-bold">+26,000</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Total Shares</span>
-                    <span className="text-2xl font-black text-white">140,000</span>
+                    <span className="text-2xl font-black text-white">46,000</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-slate-400">Growth from Initial</span>
-                    <span className="text-[#c9a227] font-bold">+600%!</span>
+                    <span className="text-[#c9a227] font-bold">+130%</span>
                   </div>
                   <hr className="border-slate-700" />
                   <p className="text-xs text-slate-500">
-                    At $10 exit price = AED 1,400,000 value (vs. AED 200,000 with just initial grant)
+                    At $10 exit = AED 460,000 value (vs. AED 200,000 initial)
+                  </p>
+                  <p className="text-xs text-emerald-400">
+                    ✓ Investor-friendly caps respected
                   </p>
                 </div>
               </div>
