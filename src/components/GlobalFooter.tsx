@@ -32,7 +32,8 @@ import {
   CheckSquare,
   Shield,
   Play,
-  Handshake
+  Handshake,
+  Crown
 } from 'lucide-react';
 
 /**
@@ -137,6 +138,7 @@ const navigationData: NavCategory[] = [
     title: 'Company',
     items: [
       { label: 'Home', href: '/', icon: Home, description: 'Landing page' },
+      { label: 'Executive Team', href: '/executive-team', icon: Crown, description: 'C-Suite analysis' },
       { label: 'Team', href: '/team', icon: Users, description: 'Our team' },
       { label: 'Join Us', href: '/join-us', icon: Users, description: 'CTO recruitment' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
