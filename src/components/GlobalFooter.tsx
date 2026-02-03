@@ -28,7 +28,8 @@ import {
   Coins,
   Settings,
   Scale,
-  Heart
+  Heart,
+  CheckSquare
 } from 'lucide-react';
 
 /**
@@ -130,6 +131,7 @@ const navigationData: NavCategory[] = [
     title: 'Company',
     items: [
       { label: 'Home', href: '/', icon: Home, description: 'Main landing page' },
+      { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project task tracker' },
       { label: 'Team', href: '/team', icon: Users, description: 'Our team & careers' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
       { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
@@ -246,6 +248,7 @@ const GlobalFooter = () => {
               <div className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-2">
                 {[
                   { label: 'Home', href: '/' },
+                  { label: 'Tasks', href: '/tasks' },
                   { label: '90s Deck', href: '/deck-90' },
                   { label: 'Full Deck', href: '/deck-kang' },
                   { label: 'GV Deck', href: '/deck-gv' },
