@@ -23,7 +23,12 @@ import {
   Home,
   Menu,
   X,
-  Store
+  Store,
+  BookOpen,
+  Coins,
+  Settings,
+  Scale,
+  Heart
 } from 'lucide-react';
 
 /**
@@ -122,10 +127,13 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
-    title: 'Other',
+    title: 'Company',
     items: [
       { label: 'Home', href: '/', icon: Home, description: 'Main landing page' },
-      { label: 'Landing V1', href: '/landing-v1', icon: Home, description: 'Landing version 1' },
+      { label: 'Team', href: '/team', icon: Users, description: 'Our team & careers' },
+      { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
+      { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
+      { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity & stock options' },
       { label: 'Terms', href: '/terms', icon: FileText, description: 'Terms of service' },
     ]
   }
@@ -247,6 +255,10 @@ const GlobalFooter = () => {
                   { label: 'Financials', href: '/financialprojection' },
                   { label: 'Data Room', href: '/data-room' },
                   { label: 'Merchants', href: '/merchant-database' },
+                  { label: 'Team', href: '/team' },
+                  { label: 'Operations', href: '/operations' },
+                  { label: 'Policies', href: '/policies' },
+                  { label: 'ESOP', href: '/esop' },
                 ].map((link, idx) => (
                   <Link
                     key={idx}
