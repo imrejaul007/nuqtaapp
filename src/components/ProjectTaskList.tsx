@@ -535,13 +535,13 @@ export default function ProjectTaskList() {
   const getPriorityColor = (priority: TaskPriority) => {
     switch (priority) {
       case 'critical':
-        return 'bg-red-100 text-red-800 border-red-200';
+        return 'bg-red-500/20 text-red-400 border-red-500/30';
       case 'high':
-        return 'bg-orange-100 text-orange-800 border-orange-200';
+        return 'bg-orange-500/20 text-orange-400 border-orange-500/30';
       case 'medium':
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
     }
   };
 
@@ -610,33 +610,33 @@ export default function ProjectTaskList() {
           </div>
 
           {/* Overall Progress */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mt-6">
-            <div className="md:col-span-2 bg-[#0d2137] rounded-xl p-6 border border-[#c9a227]/20">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 mt-6">
+            <div className="col-span-2 sm:col-span-4 lg:col-span-2 bg-[#0d2137] rounded-xl p-4 sm:p-6 border border-[#c9a227]/20">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-gray-400">Overall Progress</span>
-                <span className="text-2xl font-bold text-[#c9a227]">{overallProgress}%</span>
+                <span className="text-gray-400 text-sm sm:text-base">Overall Progress</span>
+                <span className="text-xl sm:text-2xl font-bold text-[#c9a227]">{overallProgress}%</span>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-3">
+              <div className="w-full bg-gray-700 rounded-full h-2 sm:h-3">
                 <div
-                  className="bg-gradient-to-r from-[#c9a227] to-[#e5c76b] h-3 rounded-full transition-all duration-500"
+                  className="bg-gradient-to-r from-[#c9a227] to-[#e5c76b] h-2 sm:h-3 rounded-full transition-all duration-500"
                   style={{ width: `${overallProgress}%` }}
                 />
               </div>
             </div>
 
-            <div className="bg-[#0d2137] rounded-xl p-4 border border-[#c9a227]/20 text-center">
-              <div className="text-3xl font-bold text-white">{stats.total}</div>
-              <div className="text-gray-400 text-sm">Total Tasks</div>
+            <div className="bg-[#0d2137] rounded-xl p-3 sm:p-4 border border-[#c9a227]/20 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-white">{stats.total}</div>
+              <div className="text-gray-400 text-xs sm:text-sm">Total</div>
             </div>
 
-            <div className="bg-[#0d2137] rounded-xl p-4 border border-green-500/20 text-center">
-              <div className="text-3xl font-bold text-green-500">{stats.completed}</div>
-              <div className="text-gray-400 text-sm">Completed</div>
+            <div className="bg-[#0d2137] rounded-xl p-3 sm:p-4 border border-green-500/20 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-green-500">{stats.completed}</div>
+              <div className="text-gray-400 text-xs sm:text-sm">Done</div>
             </div>
 
-            <div className="bg-[#0d2137] rounded-xl p-4 border border-amber-500/20 text-center">
-              <div className="text-3xl font-bold text-amber-500">{stats.inProgress}</div>
-              <div className="text-gray-400 text-sm">In Progress</div>
+            <div className="col-span-2 sm:col-span-1 bg-[#0d2137] rounded-xl p-3 sm:p-4 border border-amber-500/20 text-center">
+              <div className="text-2xl sm:text-3xl font-bold text-amber-500">{stats.inProgress}</div>
+              <div className="text-gray-400 text-xs sm:text-sm">In Progress</div>
             </div>
           </div>
         </div>
@@ -645,39 +645,39 @@ export default function ProjectTaskList() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Milestones */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <Rocket className="w-6 h-6 text-[#c9a227]" />
+        <section className="mb-8 sm:mb-12">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+            <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227]" />
             Launch Milestones
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {milestones.map((milestone, index) => (
               <div
                 key={milestone.id}
-                className={`bg-[#0d2137] rounded-xl p-6 border ${
+                className={`bg-[#0d2137] rounded-xl p-4 sm:p-6 border ${
                   milestone.status === 'in-progress'
                     ? 'border-[#c9a227]'
                     : 'border-gray-700'
                 }`}
               >
-                <div className="flex items-center gap-2 mb-3">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
+                <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                  <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${
                     milestone.status === 'completed'
                       ? 'bg-green-500'
                       : milestone.status === 'in-progress'
                       ? 'bg-[#c9a227]'
                       : 'bg-gray-600'
                   }`}>
-                    <span className="text-white font-bold">{index + 1}</span>
+                    <span className="text-white font-bold text-xs sm:text-sm">{index + 1}</span>
                   </div>
-                  <span className="text-gray-400 text-sm">{milestone.target}</span>
+                  <span className="text-gray-400 text-xs sm:text-sm">{milestone.target}</span>
                 </div>
-                <h3 className="text-white font-semibold mb-3">{milestone.title}</h3>
-                <ul className="space-y-2">
+                <h3 className="text-white font-semibold text-sm sm:text-base mb-2 sm:mb-3">{milestone.title}</h3>
+                <ul className="space-y-1 sm:space-y-2">
                   {milestone.items.map((item, i) => (
-                    <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
-                      <span className="text-[#c9a227] mt-1">•</span>
-                      {item}
+                    <li key={i} className="text-gray-400 text-xs sm:text-sm flex items-start gap-1 sm:gap-2">
+                      <span className="text-[#c9a227]">•</span>
+                      <span className="leading-tight">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -687,13 +687,13 @@ export default function ProjectTaskList() {
         </section>
 
         {/* Filters */}
-        <section className="mb-6 flex flex-wrap gap-4">
-          <div>
-            <label className="text-gray-400 text-sm block mb-1">Filter by Status</label>
+        <section className="mb-6 flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <div className="flex-1 sm:flex-none">
+            <label className="text-gray-400 text-xs sm:text-sm block mb-1">Filter by Status</label>
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value as TaskStatus | 'all')}
-              className="bg-[#0d2137] text-white rounded-lg px-4 py-2 border border-gray-700 focus:border-[#c9a227] focus:outline-none"
+              className="w-full sm:w-auto bg-[#0d2137] text-white rounded-lg px-3 sm:px-4 py-2 text-sm border border-gray-700 focus:border-[#c9a227] focus:outline-none"
             >
               <option value="all">All Status</option>
               <option value="pending">Pending</option>
@@ -702,12 +702,12 @@ export default function ProjectTaskList() {
               <option value="blocked">Blocked</option>
             </select>
           </div>
-          <div>
-            <label className="text-gray-400 text-sm block mb-1">Filter by Priority</label>
+          <div className="flex-1 sm:flex-none">
+            <label className="text-gray-400 text-xs sm:text-sm block mb-1">Filter by Priority</label>
             <select
               value={filterPriority}
               onChange={(e) => setFilterPriority(e.target.value as TaskPriority | 'all')}
-              className="bg-[#0d2137] text-white rounded-lg px-4 py-2 border border-gray-700 focus:border-[#c9a227] focus:outline-none"
+              className="w-full sm:w-auto bg-[#0d2137] text-white rounded-lg px-3 sm:px-4 py-2 text-sm border border-gray-700 focus:border-[#c9a227] focus:outline-none"
             >
               <option value="all">All Priorities</option>
               <option value="critical">Critical</option>
@@ -728,31 +728,31 @@ export default function ProjectTaskList() {
               {/* Category Header */}
               <button
                 onClick={() => toggleCategory(category.id)}
-                className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#0a1628]/50 transition-colors"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-[#0a1628]/50 transition-colors"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-[#c9a227]/10 rounded-lg flex items-center justify-center text-[#c9a227]">
+                <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#c9a227]/10 rounded-lg flex items-center justify-center text-[#c9a227] flex-shrink-0">
                     {category.icon}
                   </div>
-                  <div className="text-left">
-                    <h3 className="text-white font-semibold">{category.title}</h3>
-                    <p className="text-gray-400 text-sm">{category.description}</p>
+                  <div className="text-left min-w-0">
+                    <h3 className="text-white font-semibold text-sm sm:text-base truncate">{category.title}</h3>
+                    <p className="text-gray-400 text-xs sm:text-sm hidden sm:block">{category.description}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <div className="text-right mr-4">
-                    <div className="text-[#c9a227] font-semibold">{category.progress}%</div>
-                    <div className="w-24 bg-gray-700 rounded-full h-2 mt-1">
+                <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+                  <div className="text-right">
+                    <div className="text-[#c9a227] font-semibold text-sm sm:text-base">{category.progress}%</div>
+                    <div className="w-16 sm:w-24 bg-gray-700 rounded-full h-1.5 sm:h-2 mt-1">
                       <div
-                        className="bg-[#c9a227] h-2 rounded-full"
+                        className="bg-[#c9a227] h-1.5 sm:h-2 rounded-full"
                         style={{ width: `${category.progress}%` }}
                       />
                     </div>
                   </div>
                   {expandedCategories.includes(category.id) ? (
-                    <ChevronDown className="w-5 h-5 text-gray-400" />
+                    <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                   ) : (
-                    <ChevronRight className="w-5 h-5 text-gray-400" />
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                   )}
                 </div>
               </button>
@@ -782,17 +782,17 @@ export default function ProjectTaskList() {
                         {/* Task Header */}
                         <button
                           onClick={() => task.subtasks && toggleTask(task.id)}
-                          className="w-full px-6 py-4 flex items-center justify-between hover:bg-[#0a1628]/30 transition-colors"
+                          className="w-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between hover:bg-[#0a1628]/30 transition-colors"
                         >
-                          <div className="flex items-center gap-3">
-                            {getStatusIcon(task.status)}
-                            <span className="text-white">{task.title}</span>
-                            <span className={`text-xs px-2 py-1 rounded-full border ${getPriorityColor(task.priority)}`}>
+                          <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                            <div className="flex-shrink-0">{getStatusIcon(task.status)}</div>
+                            <span className="text-white text-sm sm:text-base truncate">{task.title}</span>
+                            <span className={`hidden sm:inline text-xs px-2 py-1 rounded-full border flex-shrink-0 ${getPriorityColor(task.priority)}`}>
                               {task.priority}
                             </span>
                           </div>
                           {task.subtasks && (
-                            <div className="flex items-center gap-2 text-gray-400 text-sm">
+                            <div className="flex items-center gap-2 text-gray-400 text-xs sm:text-sm flex-shrink-0">
                               <span>
                                 {filteredSubtasks?.filter(s => s.status === 'completed').length || 0}/
                                 {filteredSubtasks?.length || 0}
@@ -808,21 +808,21 @@ export default function ProjectTaskList() {
 
                         {/* Subtasks */}
                         {task.subtasks && expandedTasks.includes(task.id) && (
-                          <div className="bg-[#0a1628]/50 px-6 py-2">
+                          <div className="bg-[#0a1628]/50 px-4 sm:px-6 py-2">
                             {filteredSubtasks?.map(subtask => (
                               <div
                                 key={subtask.id}
-                                className="py-3 flex items-center justify-between border-b border-gray-700/30 last:border-b-0"
+                                className="py-2.5 sm:py-3 flex items-center justify-between border-b border-gray-700/30 last:border-b-0 gap-2"
                               >
-                                <div className="flex items-center gap-3">
-                                  {getStatusIcon(subtask.status)}
-                                  <span className={`${
+                                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+                                  <div className="flex-shrink-0">{getStatusIcon(subtask.status)}</div>
+                                  <span className={`text-xs sm:text-sm truncate ${
                                     subtask.status === 'completed' ? 'text-gray-500 line-through' : 'text-gray-300'
                                   }`}>
                                     {subtask.title}
                                   </span>
                                 </div>
-                                <span className={`text-xs px-2 py-1 rounded-full border ${getPriorityColor(subtask.priority)}`}>
+                                <span className={`text-xs px-2 py-0.5 sm:py-1 rounded-full border flex-shrink-0 ${getPriorityColor(subtask.priority)}`}>
                                   {subtask.priority}
                                 </span>
                               </div>
@@ -839,18 +839,18 @@ export default function ProjectTaskList() {
         </section>
 
         {/* Quick Actions */}
-        <section className="mt-12 bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 rounded-xl p-6 border border-[#c9a227]/20">
-          <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+        <section className="mt-8 sm:mt-12 bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 rounded-xl p-4 sm:p-6 border border-[#c9a227]/20">
+          <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
             <Zap className="w-5 h-5 text-[#c9a227]" />
             Priority Actions This Week
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             <div className="bg-[#0a1628] rounded-lg p-4">
               <div className="flex items-center gap-2 text-red-400 mb-2">
                 <AlertTriangle className="w-4 h-4" />
-                <span className="font-semibold">Critical</span>
+                <span className="font-semibold text-sm sm:text-base">Critical</span>
               </div>
-              <ul className="space-y-2 text-gray-300 text-sm">
+              <ul className="space-y-1.5 sm:space-y-2 text-gray-300 text-xs sm:text-sm">
                 <li>• Hire Technical Co-Founder</li>
                 <li>• Complete UAE company registration</li>
                 <li>• Sign first 10 merchant LOIs</li>
@@ -859,20 +859,20 @@ export default function ProjectTaskList() {
             <div className="bg-[#0a1628] rounded-lg p-4">
               <div className="flex items-center gap-2 text-orange-400 mb-2">
                 <Star className="w-4 h-4" />
-                <span className="font-semibold">High Priority</span>
+                <span className="font-semibold text-sm sm:text-base">High Priority</span>
               </div>
-              <ul className="space-y-2 text-gray-300 text-sm">
+              <ul className="space-y-1.5 sm:space-y-2 text-gray-300 text-xs sm:text-sm">
                 <li>• Start merchant outreach campaign</li>
                 <li>• Finalize investor target list</li>
                 <li>• Set up CRM system</li>
               </ul>
             </div>
-            <div className="bg-[#0a1628] rounded-lg p-4">
+            <div className="bg-[#0a1628] rounded-lg p-4 sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 text-blue-400 mb-2">
                 <Calendar className="w-4 h-4" />
-                <span className="font-semibold">This Month</span>
+                <span className="font-semibold text-sm sm:text-base">This Month</span>
               </div>
-              <ul className="space-y-2 text-gray-300 text-sm">
+              <ul className="space-y-1.5 sm:space-y-2 text-gray-300 text-xs sm:text-sm">
                 <li>• Complete brand guidelines</li>
                 <li>• Launch waitlist page</li>
                 <li>• Begin angel investor outreach</li>
@@ -882,31 +882,16 @@ export default function ProjectTaskList() {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-[#0a1628] border-t border-gray-800 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-gray-400 text-sm">
-              Last updated: {new Date().toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
-            </div>
-            <div className="flex gap-4">
-              <a href="/operations" className="text-[#c9a227] hover:text-[#e5c76b] text-sm">
-                Operations Manual
-              </a>
-              <a href="/team" className="text-[#c9a227] hover:text-[#e5c76b] text-sm">
-                Team
-              </a>
-              <a href="/esop" className="text-[#c9a227] hover:text-[#e5c76b] text-sm">
-                ESOP
-              </a>
-            </div>
-          </div>
+      {/* Last Updated - Simple footer info */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-24">
+        <div className="text-center text-gray-500 text-sm">
+          Last updated: {new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
