@@ -147,6 +147,7 @@ const navigationData: NavCategory[] = [
       { label: 'Home', href: '/', icon: Home, description: 'Landing page' },
       { label: 'Executive Team', href: '/executive-team', icon: Crown, description: 'C-Suite analysis' },
       { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target, description: 'Strategic plan' },
+      { label: 'Executive Issues', href: '/executive-issues', icon: Target, description: 'Critical analysis' },
       { label: 'Team', href: '/team', icon: Users, description: 'Our team' },
       { label: 'Join Us', href: '/join-us', icon: Users, description: 'CTO recruitment' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
