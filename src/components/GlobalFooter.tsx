@@ -33,7 +33,9 @@ import {
   Shield,
   Play,
   Handshake,
-  Crown
+  Crown,
+  Calculator,
+  Mail
 } from 'lucide-react';
 
 /**
@@ -64,6 +66,8 @@ const navigationData: NavCategory[] = [
       { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
       { label: 'Data Room', href: '/data-room', icon: Database, description: 'Due diligence docs' },
       { label: 'Financial Projections', href: '/financialprojection', icon: DollarSign, description: 'Forecasts' },
+      { label: 'Financial Models', href: '/financial-models', icon: Calculator, description: 'P&L & unit economics' },
+      { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail, description: 'Target list & templates' },
       { label: 'Investor FAQ', href: '/investor-faq', icon: FileText, description: 'Common questions' },
       { label: 'Commitment', href: '/commitment', icon: FileCheck, description: 'Investment terms' },
     ]
@@ -128,6 +132,7 @@ const navigationData: NavCategory[] = [
   {
     title: 'Legal & Compliance',
     items: [
+      { label: 'Legal Documents', href: '/legal-docs', icon: Scale, description: 'Contracts & templates' },
       { label: 'Licensing', href: '/licensing', icon: Shield, description: 'UAE compliance' },
       { label: 'Contracts', href: '/contracts', icon: FileText, description: 'MoU templates' },
       { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
