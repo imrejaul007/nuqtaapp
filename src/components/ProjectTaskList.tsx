@@ -50,10 +50,12 @@ interface Task {
   subtasks?: Task[];
 }
 
+type IconName = 'Code' | 'Briefcase' | 'DollarSign' | 'Shield' | 'TrendingUp' | 'Users' | 'FileText' | 'Settings';
+
 interface TaskCategory {
   id: string;
   title: string;
-  icon: React.ReactNode;
+  iconName: IconName;
   description: string;
   tasks: Task[];
   progress: number;
@@ -67,7 +69,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'product-development',
     title: 'Product Development',
-    icon: <Code className="w-6 h-6" />,
+    iconName: 'Code',
     description: 'Core app development and features',
     progress: 15,
     tasks: [
@@ -138,7 +140,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'business-development',
     title: 'Business Development',
-    icon: <Briefcase className="w-6 h-6" />,
+    iconName: 'Briefcase',
     description: 'Partnerships, merchants, and growth',
     progress: 35,
     tasks: [
@@ -189,7 +191,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'fundraising',
     title: 'Fundraising & Investment',
-    icon: <DollarSign className="w-6 h-6" />,
+    iconName: 'DollarSign',
     description: 'Investor relations and capital raising',
     progress: 40,
     tasks: [
@@ -227,7 +229,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'legal-compliance',
     title: 'Legal & Compliance',
-    icon: <Shield className="w-6 h-6" />,
+    iconName: 'Shield',
     description: 'Legal setup and regulatory compliance',
     progress: 20,
     tasks: [
@@ -263,7 +265,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'marketing',
     title: 'Marketing & Branding',
-    icon: <TrendingUp className="w-6 h-6" />,
+    iconName: 'TrendingUp',
     description: 'Brand building and user acquisition',
     progress: 25,
     tasks: [
@@ -299,7 +301,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'team-operations',
     title: 'Team & Operations',
-    icon: <Users className="w-6 h-6" />,
+    iconName: 'Users',
     description: 'Hiring and internal operations',
     progress: 45,
     tasks: [
@@ -347,7 +349,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'pitch-materials',
     title: 'Pitch & Sales Materials',
-    icon: <FileText className="w-6 h-6" />,
+    iconName: 'FileText',
     description: 'Decks, presentations, and collateral',
     progress: 85,
     tasks: [
@@ -395,7 +397,7 @@ const taskCategories: TaskCategory[] = [
   {
     id: 'website-cleanup',
     title: 'Website & Technical Cleanup',
-    icon: <Settings className="w-6 h-6" />,
+    iconName: 'Settings',
     description: 'Code quality and maintenance',
     progress: 60,
     tasks: [
@@ -486,6 +488,18 @@ const milestones = [
 // COMPONENT
 // ============================================
 
+// Icon mapping
+const iconMap: Record<IconName, React.ComponentType<{ className?: string }>> = {
+  Code,
+  Briefcase,
+  DollarSign,
+  Shield,
+  TrendingUp,
+  Users,
+  FileText,
+  Settings,
+};
+
 export default function ProjectTaskList() {
   const [expandedCategories, setExpandedCategories] = useState<string[]>(
     taskCategories.map(c => c.id)
@@ -493,6 +507,11 @@ export default function ProjectTaskList() {
   const [expandedTasks, setExpandedTasks] = useState<string[]>([]);
   const [filterStatus, setFilterStatus] = useState<TaskStatus | 'all'>('all');
   const [filterPriority, setFilterPriority] = useState<TaskPriority | 'all'>('all');
+
+  const renderCategoryIcon = (iconName: IconName) => {
+    const IconComponent = iconMap[iconName];
+    return <IconComponent className="w-6 h-6" />;
+  };
 
   const toggleCategory = (id: string) => {
     setExpandedCategories(prev =>
@@ -732,7 +751,7 @@ export default function ProjectTaskList() {
               >
                 <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#c9a227]/10 rounded-lg flex items-center justify-center text-[#c9a227] flex-shrink-0">
-                    {category.icon}
+                    {renderCategoryIcon(category.iconName)}
                   </div>
                   <div className="text-left min-w-0">
                     <h3 className="text-white font-semibold text-sm sm:text-base truncate">{category.title}</h3>
