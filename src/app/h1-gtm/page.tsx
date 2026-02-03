@@ -21,7 +21,7 @@ export default function H1GTMPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎯</span>
-              <span className="text-slate-300">Target: 10K MAU</span>
+              <span className="text-slate-300">Target: 5K MAU (Conservative)</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">📍</span>
@@ -328,8 +328,8 @@ export default function H1GTMPage() {
               <h3 className="text-xl font-bold text-white">User Metrics</h3>
               <div className="space-y-3">
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-emerald-300 uppercase mb-1">Monthly Active Users</p>
-                  <p className="text-3xl font-black text-emerald-400">10,000 MAU</p>
+                  <p className="text-sm font-semibold text-emerald-300 uppercase mb-1">Monthly Active Users (Conservative)</p>
+                  <p className="text-3xl font-black text-emerald-400">5,000 MAU</p>
                 </div>
                 <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-blue-300 uppercase mb-1">D30 Retention</p>

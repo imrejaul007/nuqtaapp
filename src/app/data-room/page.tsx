@@ -185,6 +185,7 @@ export default function DataRoomPage() {
               { icon: '📈', label: 'Unit Economics', href: '#unit-economics' },
               { icon: '💰', label: 'Financials', href: '#financials' },
               { icon: '⚖️', label: 'Governance', href: '#governance' },
+              { icon: '❓', label: 'FAQ', href: '#faq' },
             ].map((item) => (
               <a
                 key={item.label}
@@ -296,7 +297,7 @@ export default function DataRoomPage() {
                   Initial launch limited to Dubai in select high-frequency categories.
                 </p>
                 <p className="text-gray-300 mb-3">
-                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching January 28, 2026.</strong> 90-day validation plan: 500 users, AED 30K GMV, D30 retention ≥20%.
+                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching February 28, 2026.</strong> H1 targets: 5K MAU (conservative), 250 merchants minimum, 25% D30 retention.
                 </p>
                 <p className="text-[#c9a227] text-sm"><strong>Success metric:</strong> Validated repeat usage patterns and measurable merchant ROI</p>
               </div>
@@ -769,6 +770,197 @@ export default function DataRoomPage() {
                 Clear separation of founder personal finances from company operations.
                 Audit-ready documentation from inception.
               </p>
+            </div>
+          </DocItem>
+        </Folder>
+
+        {/* SECTION 7: INVESTOR FAQ */}
+        <Folder icon="❓" title="7. Investor FAQ" id="faq">
+          <DocItem number="25" title="What is the funding structure?">
+            <div className="space-y-4">
+              <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
+                <p className="font-bold text-emerald-400 mb-2">Tranched SAFE Structure</p>
+                <ul className="text-gray-300 text-sm space-y-2">
+                  <li><strong>Total Ask:</strong> $400K at $5M valuation cap (SAFE with 20% discount)</li>
+                  <li><strong>Tranche 1:</strong> $200K (AED 734K) - Immediately upon closing</li>
+                  <li><strong>Tranche 2:</strong> $200K (AED 734K) - Upon milestones: 10 live merchants, 1,000 MAU, CTO hired</li>
+                </ul>
+              </div>
+              <p className="text-gray-300 text-sm">
+                This structure protects investor capital while allowing the company to prove execution capability before receiving full funding.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="26" title="Why solo founder? What about co-founder risk?">
+            <div className="space-y-4">
+              <p className="text-gray-300">
+                The founder acknowledges that solo founder status is a key risk factor (65% higher failure rate vs co-founder teams).
+                This is addressed through a mandatory co-founder commitment:
+              </p>
+              <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                <p className="font-bold text-blue-400 mb-2">Co-Founder Hiring Plan</p>
+                <ul className="text-gray-300 text-sm space-y-2">
+                  <li><strong>Timeline:</strong> CTO/Co-founder hire within 90 days of funding</li>
+                  <li><strong>Equity:</strong> 15-25% equity allocation reserved</li>
+                  <li><strong>Profile:</strong> Technical co-founder with fintech/payments experience</li>
+                  <li><strong>Milestone:</strong> Part of Tranche 2 release conditions</li>
+                </ul>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Active outreach is underway. The founder has connections in UAE fintech ecosystem and is working with angel networks to identify candidates.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="27" title="What are the H1 targets and how were they set?">
+            <div className="space-y-4">
+              <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
+                <p className="font-bold text-[#c9a227] mb-2">Conservative H1 Targets (5 months)</p>
+                <ul className="text-gray-300 text-sm space-y-2">
+                  <li><strong>MAU:</strong> 5,000 users (conservative - benchmarked against UAE fintech launches)</li>
+                  <li><strong>Merchants:</strong> 250 minimum (validated through 30+ LOIs already secured)</li>
+                  <li><strong>Retention:</strong> 25% D30 retention (industry standard for rewards apps)</li>
+                  <li><strong>LTV:CAC:</strong> 10x ratio (healthy for consumer fintech)</li>
+                </ul>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Targets are deliberately conservative. Tabby UAE achieved 100K-200K users in 6 months. Our 5K target is 2.5-5% of their pace.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="28" title="How will funds be allocated?">
+            <div className="space-y-4">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30 text-center">
+                  <p className="text-2xl font-bold text-emerald-400">55%</p>
+                  <p className="text-xs text-gray-400">Marketing</p>
+                  <p className="text-xs text-gray-500">User & Merchant Acquisition</p>
+                </div>
+                <div className="bg-yellow-500/10 rounded-lg p-4 border border-yellow-500/30 text-center">
+                  <p className="text-2xl font-bold text-yellow-400">25%</p>
+                  <p className="text-xs text-gray-400">Salaries</p>
+                  <p className="text-xs text-gray-500">Founder, Co-founder, Key Hires</p>
+                </div>
+                <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30 text-center">
+                  <p className="text-2xl font-bold text-blue-400">20%</p>
+                  <p className="text-xs text-gray-400">Tech & Ops</p>
+                  <p className="text-xs text-gray-500">Infrastructure, Operations</p>
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Budget allocation is flexible and adjusts based on actual funding received. Marketing-heavy allocation reflects growth-stage priorities.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="29" title="What is the regulatory path for SVF license?">
+            <div className="space-y-4">
+              <p className="text-gray-300">
+                The Stored Value Facility (SVF) license is required for float interest revenue (approximately 10% of the financial model).
+              </p>
+              <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/30">
+                <p className="font-bold text-purple-400 mb-2">SVF License Strategy</p>
+                <ul className="text-gray-300 text-sm space-y-2">
+                  <li><strong>Timeline:</strong> 12-18 months for approval</li>
+                  <li><strong>Cost:</strong> AED 50-70K + legal fees</li>
+                  <li><strong>Capital:</strong> AED 5M minimum paid-up capital required</li>
+                  <li><strong>Fallback:</strong> If denied, model pivots to pure cashback (no stored value)</li>
+                </ul>
+              </div>
+              <p className="text-gray-300 text-sm">
+                Pre-application consultation with CBUAE planned within 6 months of funding. Model is viable without SVF revenue.
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="30" title="What are the key risks and mitigations?">
+            <div className="space-y-4">
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="text-left text-gray-400 border-b border-[#2a3a52]">
+                    <tr>
+                      <th className="pb-2">Risk</th>
+                      <th className="pb-2">Impact</th>
+                      <th className="pb-2">Mitigation</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-300">
+                    <tr className="border-b border-[#2a3a52]/50">
+                      <td className="py-2">Solo founder</td>
+                      <td className="py-2 text-red-400">High</td>
+                      <td className="py-2">90-day co-founder hire commitment</td>
+                    </tr>
+                    <tr className="border-b border-[#2a3a52]/50">
+                      <td className="py-2">Careem copies model</td>
+                      <td className="py-2 text-yellow-400">Medium</td>
+                      <td className="py-2">12-18 month head start, POS moat</td>
+                    </tr>
+                    <tr className="border-b border-[#2a3a52]/50">
+                      <td className="py-2">Series A market closes</td>
+                      <td className="py-2 text-red-400">High</td>
+                      <td className="py-2">Conservative burn, path to profitability</td>
+                    </tr>
+                    <tr className="border-b border-[#2a3a52]/50">
+                      <td className="py-2">SVF license denied</td>
+                      <td className="py-2 text-yellow-400">Medium</td>
+                      <td className="py-2">Model viable without float revenue</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2">Merchant churn &gt;20%</td>
+                      <td className="py-2 text-yellow-400">Medium</td>
+                      <td className="py-2">POS integration creates switching cost</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </DocItem>
+
+          <DocItem number="31" title="What is the expected return profile?">
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-[#1a2a42] rounded-lg p-4 border border-[#2a3a52]">
+                  <p className="text-xs text-gray-400 mb-1">Base Case (35% probability)</p>
+                  <p className="text-2xl font-bold text-emerald-400">120x</p>
+                  <p className="text-xs text-gray-500">$1.2B exit → $48M return</p>
+                </div>
+                <div className="bg-[#1a2a42] rounded-lg p-4 border border-[#2a3a52]">
+                  <p className="text-xs text-gray-400 mb-1">Conservative (15% probability)</p>
+                  <p className="text-2xl font-bold text-blue-400">95x</p>
+                  <p className="text-xs text-gray-500">$950M exit → $38M return</p>
+                </div>
+              </div>
+              <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/30">
+                <p className="font-bold text-red-400 mb-2">Failure Scenario (40% probability)</p>
+                <p className="text-gray-300 text-sm">
+                  Total loss of investment. Pre-seed venture investing carries significant risk.
+                  Only invest capital you can afford to lose entirely.
+                </p>
+              </div>
+              <p className="text-gray-300 text-sm">
+                <strong>Expected Value:</strong> ~$25M (62x blended return). Even at 50% of projections, returns remain attractive (47-71x).
+              </p>
+            </div>
+          </DocItem>
+
+          <DocItem number="32" title="What happens if projections are missed?">
+            <div className="space-y-4">
+              <p className="text-gray-300">
+                The financial model has been stress-tested with significant haircuts:
+              </p>
+              <div className="bg-[#1a2a42] rounded-lg p-4 border border-[#2a3a52]">
+                <p className="font-bold text-white mb-3">50% Miss Scenario</p>
+                <ul className="text-gray-300 text-sm space-y-2">
+                  <li>Year 5 Revenue: $59M (vs $118.5M target)</li>
+                  <li>Exit Valuation: $472-708M (8-12x multiple)</li>
+                  <li>Investor Return: <strong className="text-emerald-400">47-71x</strong></li>
+                </ul>
+                <p className="text-[#c9a227] text-sm mt-3">
+                  Still top-decile venture returns even with 50% execution miss.
+                </p>
+              </div>
             </div>
           </DocItem>
         </Folder>

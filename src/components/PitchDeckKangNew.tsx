@@ -4261,7 +4261,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {[
                     { milestone: "Month 1-2: Launch", date: "Weeks 1-8", tasks: ["Activate first 10-20 merchants", "Acquire 1,000 MAU", "Process AED 500K GMV", "Track D7 retention ≥30%"] },
                     { milestone: "Month 3-4: Scale", date: "Weeks 9-16", tasks: ["Scale to 5,000 MAU", "100 active merchants", "AED 5M GMV (cumulative to date)", "Measure D30 retention ≥25%"] },
-                    { milestone: "Month 5: H1 Exit Gate", date: "Week 20 Decision", tasks: ["Baseline: 5.8K MAU • Stretch: 10K MAU", "290 merchants live", "Baseline: AED 7.2M • Stretch: AED 10M GMV", "10x LTV:CAC validated, CAC ≤ AED 50"] }
+                    { milestone: "Month 5: H1 Exit Gate", date: "Launch: Feb 28, 2026", tasks: ["Conservative Target: 5K MAU", "250 merchants minimum", "Tranche 2: $200K at milestones", "10x LTV:CAC validated, CAC ≤ AED 50"] }
                   ].map((item, idx) => (
                     <div key={idx} className="text-center">
                       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white text-2xl font-black mb-4">
@@ -4279,43 +4279,41 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* H1 Dual-Target Framework */}
-                <div className="mt-8 mb-6 bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-xl p-6">
-                  <h5 className="text-lg font-bold text-amber-900 mb-3">💡 H1 Dual-Target Framework ($400K Funding)</h5>
-                  <div className="grid md:grid-cols-2 gap-6 text-sm text-amber-900">
+                <div className="mt-8 mb-6 bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-xl p-6">
+                  <h5 className="text-lg font-bold text-emerald-900 mb-3">💰 Tranched Funding Structure ($400K at $5M Cap)</h5>
+                  <div className="grid md:grid-cols-2 gap-6 text-sm text-emerald-900">
                     <div>
-                      <p className="font-bold text-blue-600 mb-2">Baseline (5.8K MAU) - 75% Probability</p>
-                      <p>Conservative execution: CAC AED 50 (realistic), 35% activation, 4x frequency. Achievable with solid execution.</p>
+                      <p className="font-bold text-blue-600 mb-2">Tranche 1: $200K (Immediately)</p>
+                      <p>Launch MVP, acquire first merchants, validate unit economics. Budget: 55% Marketing, 25% Salaries, 20% Tech/Ops.</p>
                     </div>
                     <div>
-                      <p className="font-bold text-emerald-600 mb-2">Stretch (10K MAU) - 40% Probability</p>
-                      <p>Optimized merchant-QR strategy: CAC AED 15, 50% activation, 6x frequency. Requires execution excellence.</p>
+                      <p className="font-bold text-emerald-600 mb-2">Tranche 2: $200K (At Milestones)</p>
+                      <p>Triggers: 10 live merchants, 1,000 MAU, CTO hired. Enables scale to 5K MAU and 250 merchants.</p>
                     </div>
                   </div>
-                  <p className="text-xs text-amber-800 mt-3">
-                    📊 Benchmark: Tabby UAE hit 100K-200K in 6 months. Our 10K = 5-10% of their pace — aggressive but defensible.
+                  <p className="text-xs text-emerald-800 mt-3">
+                    📊 Conservative target: 5K MAU • 250 merchants minimum • Launch: Feb 28, 2026
                   </p>
                 </div>
 
                 {/* H1 Gate Criteria */}
                 <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-2xl p-8">
-                  <h4 className="text-2xl font-bold text-slate-900 mb-6 text-center">H1 Exit Gate Targets</h4>
+                  <h4 className="text-2xl font-bold text-slate-900 mb-6 text-center">H1 Exit Gate Targets (Conservative)</h4>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
                       <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Growth Targets</h5>
                       <div className="space-y-3 text-sm text-slate-700">
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">MAU (Monthly Active Users)</p>
-                          <p className="font-bold text-blue-600">5,800 <span className="text-xs text-slate-500">(baseline)</span></p>
-                          <p className="font-bold text-emerald-600">10,000 <span className="text-xs text-slate-500">(stretch)</span></p>
+                          <p className="font-bold text-emerald-600">5,000 <span className="text-xs text-slate-500">(conservative target)</span></p>
                         </div>
                         <div>
-                          <p className="text-xs text-slate-500 uppercase mb-1">Cumulative GMV</p>
-                          <p className="font-bold text-blue-600">AED 7.2M <span className="text-xs text-slate-500">(baseline)</span></p>
-                          <p className="font-bold text-emerald-600">AED 10M <span className="text-xs text-slate-500">(stretch)</span></p>
+                          <p className="text-xs text-slate-500 uppercase mb-1">Launch Date</p>
+                          <p className="font-bold text-blue-600">Feb 28, 2026</p>
                         </div>
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">Merchants</p>
-                          <p className="font-bold text-blue-600">290 live merchants</p>
+                          <p className="font-bold text-blue-600">250 minimum</p>
                         </div>
                       </div>
                     </div>
@@ -5815,12 +5813,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     phase: "Horizon 1 (H1)",
-                    timeline: "~5 Months • Prove the Loop",
+                    timeline: "~5 Months • Launch Feb 28, 2026",
                     emoji: "Rocket",
                     title: "Core PMF Validation",
                     subtitle: "Dubai Marina/JBR Focus",
-                    features: ["Launch F&B + Core Verticals", "290 merchants • 5.8K-10K MAU (baseline-stretch)", "Prove 25% D30 retention + LTV:CAC 10x+", "Validate coin-led rewards model"],
-                    kpis: "290 merchants • 5.8K MAU (baseline) / 10K MAU (stretch) • AED 7.2M-10M GMV • 25% D30 • 10x LTV:CAC",
+                    features: ["Launch F&B + Core Verticals", "250 merchants • 5K MAU (conservative)", "Prove 25% D30 retention + LTV:CAC 10x+", "Validate coin-led rewards model"],
+                    kpis: "250 merchants min • 5K MAU (conservative) • $200K Tranche 1 + $200K at milestones",
                     status: "In Progress",
                     color: "emerald",
                     bgGradient: "from-emerald-500/10 via-emerald-500/5 to-white",

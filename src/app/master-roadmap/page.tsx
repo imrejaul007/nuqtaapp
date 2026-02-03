@@ -18,10 +18,10 @@ export default function MasterRoadmapPage() {
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[#c9a227] animate-pulse"></div>
-              <span className="text-slate-400">Complete Strategic Vision</span>
+              <span className="text-slate-400">Launch Date: Feb 28, 2026</span>
             </div>
             <div className="text-slate-400">•</div>
-            <div className="text-slate-400">January 29, 2026</div>
+            <div className="text-slate-400">Pre-Seed: $400K at $5M cap (Tranched)</div>
             <div className="text-slate-400">•</div>
             <a href="/deck-kang" className="text-[#c9a227] hover:text-white transition-colors font-semibold underline">
               View Investor Deck →
@@ -75,8 +75,9 @@ export default function MasterRoadmapPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
-              <h4 className="text-lg font-black text-blue-700 mb-3">H1 → H2 Gate</h4>
-              <p className="text-sm text-slate-700">10K MAU, 25% D30 retention, 250 merchants, AED 10M GMV, 10x LTV:CAC</p>
+              <h4 className="text-lg font-black text-blue-700 mb-3">H1 → H2 Gate (Conservative)</h4>
+              <p className="text-sm text-slate-700"><strong>5K MAU</strong> (conservative), 250 merchants (minimum), 25% D30 retention, 10x LTV:CAC</p>
+              <p className="text-xs text-blue-600 mt-2">Tranche 2 triggers: 10 merchants, 1K MAU, CTO hired</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
               <h4 className="text-lg font-black text-purple-700 mb-3">H2 → H3 Gate</h4>
@@ -109,9 +110,10 @@ export default function MasterRoadmapPage() {
               <div className="space-y-4">
                 <div className="bg-blue-50 rounded-xl p-4 border-2 border-blue-200">
                   <a href="/execution-plan" className="text-lg font-black text-blue-900 hover:text-blue-700 transition-colors">
-                    H1 (~5 Months): Prove the Loop →
+                    H1 (~5 Months): Prove the Loop → Launch: Feb 28, 2026
                   </a>
-                  <p className="text-sm text-slate-700 mt-2">10K MAU, 250 merchants, AED 10M GMV, 25% D30 retention</p>
+                  <p className="text-sm text-slate-700 mt-2"><strong>5K MAU</strong> (conservative), 250 merchants (minimum), 25% D30 retention</p>
+                  <p className="text-xs text-blue-600 mt-1">Funding: $200K Tranche 1 + $200K at milestones</p>
                 </div>
 
                 <div className="bg-purple-50 rounded-xl p-4 border-2 border-purple-200">

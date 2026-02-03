@@ -13,7 +13,8 @@ export default function MerchantDatabase() {
     { id: 'grocery', name: 'Grocery & Retail', icon: '🛒', count: 20 },
     { id: 'fitness', name: 'Fitness & Wellness', icon: '🏋️', count: 40 },
     { id: 'events', name: 'Events & Pop-ups', icon: '🎪', count: 10 },
-    { id: 'fashion', name: 'Fashion Retail', icon: '👗', count: 55 }
+    { id: 'fashion', name: 'Fashion Retail', icon: '👗', count: 55 },
+    { id: 'targets', name: 'Target Brands', icon: '🎯', count: 100 }
   ];
 
   return (
@@ -58,17 +59,20 @@ export default function MerchantDatabase() {
       {/* Commission Models Overview */}
       <div className="max-w-7xl mx-auto px-4 py-12">
         <h2 className="text-3xl font-black text-center mb-8 text-slate-800">
-          Two Commission Models (Category-Aware)
+          Three Commission Engines
         </h2>
+        <p className="text-center text-slate-600 mb-6">
+          <a href="/merchant-engines" className="text-indigo-600 hover:underline font-semibold">View full engine details →</a>
+        </p>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* Model 1: Growth & Loyalty */}
-          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-2xl p-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {/* Engine A: High-Margin */}
+          <div className="bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-300 rounded-2xl p-6">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-4xl">🚀</span>
+              <span className="text-3xl">🏪</span>
               <div>
-                <h3 className="text-2xl font-black text-emerald-900">Model 1: Growth & Loyalty</h3>
-                <p className="text-emerald-700 font-bold">15% Commission</p>
+                <h3 className="text-xl font-black text-emerald-900">ENGINE A</h3>
+                <p className="text-emerald-700 font-bold text-sm">15-20% Commission</p>
               </div>
             </div>
 
@@ -99,28 +103,24 @@ export default function MerchantDatabase() {
             </div>
           </div>
 
-          {/* Model 2: Transaction-Only */}
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-2xl p-8">
+          {/* Engine B: Low-Margin */}
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-300 rounded-2xl p-6">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-4xl">💳</span>
+              <span className="text-3xl">🛒</span>
               <div>
-                <h3 className="text-2xl font-black text-blue-900">Model 2: Transaction-Only</h3>
-                <p className="text-blue-700 font-bold">3-5% Fee + Brand Coins</p>
+                <h3 className="text-xl font-black text-blue-900">ENGINE B</h3>
+                <p className="text-blue-700 font-bold text-sm">5-8% Commission</p>
               </div>
             </div>
 
             <div className="space-y-3 mb-6">
               <div className="bg-white/60 rounded-lg p-3">
-                <p className="text-sm font-bold text-blue-900 mb-1">3-5% Transaction Fee</p>
-                <p className="text-xs text-slate-600">Nuqta payment processing & visibility</p>
+                <p className="text-sm font-bold text-blue-900 mb-1">5% Fixed Cashback</p>
+                <p className="text-xs text-slate-600">Brand Coins (merchant-specific)</p>
               </div>
               <div className="bg-white/60 rounded-lg p-3">
-                <p className="text-sm font-bold text-blue-900 mb-1">Brand Coins (Merchant-Issued)</p>
-                <p className="text-xs text-slate-600">1-3% merchant loyalty coins (redeemable only at that merchant)</p>
-              </div>
-              <div className="bg-white/60 rounded-lg p-3">
-                <p className="text-sm font-bold text-blue-900 mb-1">No Mandatory Cashback</p>
-                <p className="text-xs text-slate-600">Protects thin margins, forces repeat visits</p>
+                <p className="text-sm font-bold text-blue-900 mb-1">2.5-3% Nuqta Revenue</p>
+                <p className="text-xs text-slate-600">Lower rate, higher volume</p>
               </div>
             </div>
 
@@ -128,14 +128,40 @@ export default function MerchantDatabase() {
               <p className="text-sm font-bold text-blue-900 mb-2">✅ Who This Is For:</p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">🛒 Grocery</span>
-                <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">🏪 Convenience</span>
-                <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">💍 Gold/Jewellery</span>
+                <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">📱 Electronics</span>
+                <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">💍 Gold</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Engine C: Events */}
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-2xl p-6">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">🎪</span>
+              <div>
+                <h3 className="text-xl font-black text-purple-900">ENGINE C</h3>
+                <p className="text-purple-700 font-bold text-sm">Event Partnership</p>
               </div>
             </div>
 
-            <div className="mt-4 bg-amber-100 border border-amber-300 rounded-lg p-3">
-              <p className="text-xs font-bold text-amber-900 mb-1">⚠️ Gold Special Rule:</p>
-              <p className="text-xs text-amber-800">Commission applies ONLY to making charges, NOT gold value</p>
+            <div className="space-y-3 mb-6">
+              <div className="bg-white/60 rounded-lg p-3">
+                <p className="text-sm font-bold text-purple-900 mb-1">Event Coins</p>
+                <p className="text-xs text-slate-600">Locked until event attendance</p>
+              </div>
+              <div className="bg-white/60 rounded-lg p-3">
+                <p className="text-sm font-bold text-purple-900 mb-1">Min Spend AED 300-500</p>
+                <p className="text-xs text-slate-600">Unlocks coins for redemption</p>
+              </div>
+            </div>
+
+            <div className="border-t-2 border-purple-200 pt-4">
+              <p className="text-sm font-bold text-purple-900 mb-2">✅ Who This Is For:</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">🎪 Exhibitions</span>
+                <span className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">🎵 Festivals</span>
+                <span className="bg-purple-600 text-white text-xs px-3 py-1 rounded-full">🏢 Corporate</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1056,6 +1082,236 @@ export default function MerchantDatabase() {
             <div className="text-xs opacity-75 mt-2">Content amplifiers</div>
           </div>
         </div>
+
+        {/* Target Brands Section */}
+        {(activeCategory === 'all' || activeCategory === 'targets') && (
+          <div className="mb-12">
+            <div className="bg-gradient-to-r from-[#c9a227] to-amber-500 text-white rounded-2xl p-8 mb-6">
+              <h2 className="text-3xl font-black mb-2">🎯 TARGET BRAND PARTNERSHIPS (Phase 2+)</h2>
+              <p className="text-lg text-amber-100">Strategic enterprise partnerships for scale · Mixed Engines A/B/C</p>
+              <p className="text-sm text-amber-100 mt-2">
+                Major brands to approach after H1 proof of concept is established
+              </p>
+            </div>
+
+            {/* Giant Retailers */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-amber-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">🏬 Giant Retailers & Supermarkets</h3>
+                  <p className="text-sm text-slate-600">Engine B (5-8%) · High Volume Partners</p>
+                </div>
+                <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold">Engine B</span>
+              </div>
+              <div className="grid md:grid-cols-3 gap-4">
+                {['Carrefour (100+ UAE stores)', 'Lulu Hypermarket (200+ stores)', 'Spinneys (65+ stores)', 'Choithrams (35+ stores)', 'Union Coop (60+ stores)', 'Al Maya Supermarket', 'Géant (10+ stores)', 'Viva Supermarket', 'Waitrose', 'Aswaaq'].map(brand => (
+                  <div key={brand} className="bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* E-commerce & Digital */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-purple-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">🛒 E-commerce & Digital Partners</h3>
+                  <p className="text-sm text-slate-600">Voucher partnerships · Affiliate model</p>
+                </div>
+                <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-bold">Affiliate</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['Amazon.ae', 'Noon', 'Namshi', 'Ounass', 'Mumzworld', 'Sivvi', 'The Luxury Closet', 'Talabat', 'Deliveroo', 'Zomato', 'Instashop', 'Careem'].map(brand => (
+                  <div key={brand} className="bg-purple-50 px-4 py-2 rounded-lg border border-purple-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Fast Food & QSR Chains */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-red-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">🍔 Fast Food & QSR Giants</h3>
+                  <p className="text-sm text-slate-600">Engine A (15-20%) · High Frequency</p>
+                </div>
+                <span className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold">Engine A</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {["McDonald's (80+ stores)", 'KFC (120+ stores)', 'Pizza Hut (70+ stores)', "Domino's (100+ stores)", 'Burger King (50+ stores)', 'Subway (80+ stores)', "Wendy's", 'Five Guys', "Papa John's", 'Shake Shack', 'The Cheesecake Factory', "Chili's", "Applebee's", "P.F. Chang's", 'Texas Roadhouse', 'Elevation Burger'].map(brand => (
+                  <div key={brand} className="bg-red-50 px-4 py-2 rounded-lg border border-red-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Cafes & Coffee Chains */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-amber-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">☕ Coffee & Cafe Chains</h3>
+                  <p className="text-sm text-slate-600">Engine A (15-20%) · Daily Habit</p>
+                </div>
+                <span className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold">Engine A</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['Starbucks (170+ stores)', 'Costa Coffee (150+ stores)', 'Tim Hortons (90+ stores)', 'Dunkin (50+ stores)', 'Caribou Coffee', '% Arabica', 'Paul', 'Coffee Planet', 'The Coffee Club', 'Café Bateel', 'Urth Caffe', 'High Society'].map(brand => (
+                  <div key={brand} className="bg-amber-50 px-4 py-2 rounded-lg border border-amber-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Fashion & Retail */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-pink-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">👗 Fashion & Retail Chains</h3>
+                  <p className="text-sm text-slate-600">Engine A (15%) · High AOV</p>
+                </div>
+                <span className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold">Engine A</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['H&M', 'Zara', 'Max Fashion', 'Splash', 'Centrepoint', 'Lifestyle', 'Shoe Mart', 'Nike', 'Adidas', 'Puma', 'Aldo', 'Steve Madden', 'Bath & Body Works', 'Victoria\'s Secret', 'Sephora', 'Faces'].map(brand => (
+                  <div key={brand} className="bg-pink-50 px-4 py-2 rounded-lg border border-pink-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Health & Pharmacy */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-green-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">💊 Health & Pharmacy</h3>
+                  <p className="text-sm text-slate-600">Engine B (5-8%) · Essential Services</p>
+                </div>
+                <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold">Engine B</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['Boots Pharmacy', 'BinSina Pharmacy', 'Aster Pharmacy (180+)', 'Life Pharmacy (300+)', 'SuperCare Pharmacy', 'Health First', 'Medicom Pharmacy', 'Al Manara Pharmacy', 'Planet Pharmacy', 'GNC'].map(brand => (
+                  <div key={brand} className="bg-green-50 px-4 py-2 rounded-lg border border-green-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Electronics */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-blue-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">📱 Electronics & Tech</h3>
+                  <p className="text-sm text-slate-600">Engine B (5-8%) · High Value</p>
+                </div>
+                <span className="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-bold">Engine B</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['Sharaf DG (50+ stores)', 'Emax (30+ stores)', 'Jumbo Electronics', 'Virgin Megastore', 'Apple Store', 'Samsung Store', 'Huawei Store', 'Xiaomi Store', 'LG Showroom', 'Sony Store'].map(brand => (
+                  <div key={brand} className="bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Entertainment & Events */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-indigo-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">🎬 Entertainment & Events</h3>
+                  <p className="text-sm text-slate-600">Engine C (Event Model) · Acquisition Channel</p>
+                </div>
+                <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-bold">Engine C</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['VOX Cinemas (30+ screens)', 'Reel Cinemas', 'Novo Cinemas', 'Global Village', 'IMG Worlds of Adventure', 'Motiongate Dubai', 'Legoland Dubai', 'Dubai Parks', 'Ski Dubai', 'Dubai Aquarium', 'Wild Wadi', 'Kidzania', 'Bounce Dubai', 'Hub Zero'].map(brand => (
+                  <div key={brand} className="bg-indigo-50 px-4 py-2 rounded-lg border border-indigo-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Fitness & Sports */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-orange-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">🏋️ Fitness & Sports</h3>
+                  <p className="text-sm text-slate-600">Engine A (15-20%) · High Retention</p>
+                </div>
+                <span className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold">Engine A</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['Fitness First (25+ branches)', 'Gold\'s Gym', 'Fitness 360', 'GymNation', 'F45 Training', 'Orangetheory Fitness', 'Barry\'s Bootcamp', 'SoulCycle', 'Yoga House', 'Breathe Pilates', 'The Platform', 'Warehouse Gym'].map(brand => (
+                  <div key={brand} className="bg-orange-50 px-4 py-2 rounded-lg border border-orange-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Travel & Hospitality */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-cyan-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">✈️ Travel & Hospitality</h3>
+                  <p className="text-sm text-slate-600">Voucher partnerships · Premium segment</p>
+                </div>
+                <span className="bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-bold">Partnership</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['Marriott Hotels', 'Hilton Hotels', 'Rotana Hotels', 'Jumeirah Hotels', 'Address Hotels', 'Atlantis', 'Burj Al Arab', 'Emaar Hospitality', 'Emirates Holidays', 'Dnata Travel', 'Arabian Adventures', 'Big Bus Tours'].map(brand => (
+                  <div key={brand} className="bg-cyan-50 px-4 py-2 rounded-lg border border-cyan-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Service Providers */}
+            <div className="bg-white rounded-2xl p-6 mb-6 border-2 border-slate-200 shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h3 className="text-2xl font-black text-slate-800">🔧 Home Services & Auto</h3>
+                  <p className="text-sm text-slate-600">Engine A (15%) · Service-based</p>
+                </div>
+                <span className="bg-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-bold">Engine A</span>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {['ServiceMarket', 'Justlife', 'Maid Absolute', 'The Luxury Laundry', 'Champion Cleaners', 'Al Futtaim Auto', 'ENOC/EPPCO', 'ADNOC', 'Quick Fit', 'Dynatrade', 'Max Garage', 'Yellow Hat'].map(brand => (
+                  <div key={brand} className="bg-slate-50 px-4 py-2 rounded-lg border border-slate-200">
+                    <p className="text-sm text-slate-700">{brand}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Partnership Strategy */}
+            <div className="bg-gradient-to-br from-[#c9a227]/10 to-amber-100 border-2 border-[#c9a227] rounded-2xl p-6">
+              <h3 className="text-xl font-black text-[#c9a227] mb-4">Partnership Approach Strategy</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-white rounded-lg p-4">
+                  <p className="font-bold text-slate-800 mb-2">Phase 1: H1 (Now)</p>
+                  <p className="text-sm text-slate-600">Focus on independent merchants & small chains. Build proof of concept with 250 merchants.</p>
+                </div>
+                <div className="bg-white rounded-lg p-4">
+                  <p className="font-bold text-slate-800 mb-2">Phase 2: Post-H1</p>
+                  <p className="text-sm text-slate-600">Approach mid-tier chains with H1 data. Show GMV, retention, and user engagement metrics.</p>
+                </div>
+                <div className="bg-white rounded-lg p-4">
+                  <p className="font-bold text-slate-800 mb-2">Phase 3: Scale</p>
+                  <p className="text-sm text-slate-600">Enterprise partnerships with major brands. Custom integration, co-marketing, and exclusive deals.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Final CTA */}
         <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-2xl p-12 text-center">

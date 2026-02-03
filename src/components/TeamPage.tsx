@@ -94,7 +94,7 @@ const h1Team: Department[] = [
     icon: Briefcase,
     color: 'amber',
     description: 'Vision, strategy, and company direction',
-    mission: 'Set company direction, secure funding, build culture, and ensure all teams hit H1 goals: 10K MAU, 250 merchants, AED 10M GMV.',
+    mission: 'Set company direction, secure funding, build culture, and ensure all teams hit H1 goals: 5K MAU (conservative), 250 merchants minimum.',
     headRole: 'CEO',
     headcount: { h1: 2, full: 6 },
     budget: '30% of total (salaries + fundraising)',
@@ -140,25 +140,63 @@ const h1Team: Department[] = [
           'High EQ and ability to inspire teams'
         ],
         kpis: [
-          'Funding raised: Target $2M seed by H1 end',
-          'Key leadership hires: 4 critical roles filled in Month 1',
-          'H1 milestones: 10K MAU, 250 merchants, 25% D30',
+          'Co-founder/CTO hire: Within 90 days of funding',
+          'H1 milestones: 5K MAU (conservative), 250 merchants, 25% D30',
+          'Tranche 2 unlock: 10 merchants, 1K MAU, CTO hired',
           'Team eNPS score: >50',
-          'Runway: Maintain 18+ months'
+          'Runway: Maintain 12+ months on $200K Tranche 1'
         ],
         status: 'filled',
         compensation: 'Founder equity + nominal salary'
       },
       {
+        name: 'PRIORITY HIRE',
+        role: 'Co-Founder / CTO',
+        reportsTo: 'CEO',
+        directReports: ['Engineering Team', 'Product Design', 'DevOps'],
+        description: 'MANDATORY HIRE within 90 days of funding. Technical co-founder with fintech/payments experience to lead product development and ensure technical excellence. This is a Tranche 2 release condition. → Apply at /join-us',
+        responsibilities: [
+          'Own entire technical architecture and product roadmap',
+          'Lead development of mobile app (React Native) and backend (Node.js)',
+          'Build and scale engineering team from 2 to 10+ engineers',
+          'Ensure platform security, scalability, and 99.9% uptime',
+          'Drive technical due diligence for future funding rounds',
+          'Integrate payment systems and merchant POS solutions',
+          'Partner with CEO on product strategy and prioritization',
+          'Own technical hiring - senior engineers, DevOps, QA',
+          'Set engineering culture, coding standards, and processes',
+          'Weekly technical reviews and architecture discussions'
+        ],
+        requirements: [
+          '7+ years engineering with 3+ years in fintech/payments',
+          'Expert in React Native, TypeScript, Node.js, PostgreSQL',
+          'Experience building consumer mobile apps at scale (100K+ users)',
+          'Led engineering teams of 5+ people',
+          'Previous startup experience (founder or early employee)',
+          'UAE residency or willingness to relocate immediately',
+          'Arabic speaker a plus for merchant integrations'
+        ],
+        kpis: [
+          'Onboarding: Join within 90 days of funding close',
+          'MVP delivery: Launch by Feb 28, 2026',
+          'Engineering team: Scale to 4+ by Month 3',
+          'Platform uptime: 99.9%',
+          'Release velocity: 2+ releases per week'
+        ],
+        status: 'hiring',
+        priority: 'critical',
+        compensation: '15-25% equity + AED 40-60K/month (negotiable for right candidate)'
+      },
+      {
         name: 'Hiring',
-        role: 'Co-Founder / COO',
+        role: 'COO / Head of Operations',
         reportsTo: 'CEO',
         directReports: ['Operations', 'Finance/Admin', 'HR', 'Legal', 'Customer Support Lead'],
         description: 'The operator who makes things happen. Owns day-to-day execution, operational excellence, hiring, and ensures the machine runs smoothly while CEO focuses on vision and fundraising.',
         responsibilities: [
           'Own day-to-day operations across all departments',
           'Build and optimize all operational processes and SOPs',
-          'Lead hiring - job posts, screening, interviews, offers',
+          'Lead non-technical hiring - operations, support, sales',
           'Manage company budget, cash flow, vendor relationships',
           'Drive cross-functional alignment and remove blockers',
           'Handle key merchant/partner negotiations alongside Head of Merchants',
@@ -184,8 +222,8 @@ const h1Team: Department[] = [
           'Process: SOPs documented for all core functions'
         ],
         status: 'hiring',
-        priority: 'critical',
-        compensation: 'AED 35-50K/month + significant equity (co-founder level)'
+        priority: 'high',
+        compensation: 'AED 30-45K/month + equity (5-10%)'
       },
     ]
   },
@@ -377,7 +415,7 @@ const h1Team: Department[] = [
     icon: TrendingUp,
     color: 'pink',
     description: 'Driving user acquisition and retention',
-    mission: 'Acquire 10K MAU with ≥25% D30 retention and LTV:CAC ≥10x through viral loops, community, and organic channels. Be ruthlessly data-driven.',
+    mission: 'Acquire 5K MAU with ≥25% D30 retention and LTV:CAC ≥10x through viral loops, community, and organic channels. Be ruthlessly data-driven.',
     headRole: 'Head of Growth',
     headcount: { h1: 3, full: 10 },
     budget: '15% of total',
@@ -409,7 +447,7 @@ const h1Team: Department[] = [
         role: 'Head of Growth',
         reportsTo: 'CEO',
         directReports: ['Community Manager', 'Growth Analyst'],
-        description: 'Owns the 10K MAU goal. Architect of user acquisition and retention strategy. Obsessed with data, experiments, and finding scalable growth loops.',
+        description: 'Owns the 5K MAU goal. Architect of user acquisition and retention strategy. Obsessed with data, experiments, and finding scalable growth loops.',
         responsibilities: [
           'Define and execute comprehensive growth strategy',
           'Own all user acquisition and retention metrics',
@@ -724,10 +762,10 @@ const h1Team: Department[] = [
     icon: HandshakeIcon,
     color: 'emerald',
     description: 'Acquiring and delighting 250+ merchants',
-    mission: 'Onboard 250+ quality merchants with <5% churn. Create a compelling offer ecosystem that drives user engagement and transaction volume.',
+    mission: 'Onboard 250+ quality merchants with <5% churn. Create a compelling offer ecosystem that drives user engagement and transaction volume. Each Merchant Marketing Manager handles 15-20 businesses.',
     headRole: 'Head of Merchant Partnerships',
-    headcount: { h1: 3, full: 12 },
-    budget: '10% of total',
+    headcount: { h1: 4, full: 15 },
+    budget: '12% of total',
     workflow: [
       'Daily: Merchant outreach and follow-ups',
       'Daily: Respond to merchant inquiries <4 hours',
@@ -755,8 +793,8 @@ const h1Team: Department[] = [
         name: 'Hiring',
         role: 'Head of Merchant Partnerships',
         reportsTo: 'CEO',
-        directReports: ['Merchant Success Manager', 'Business Development Rep'],
-        description: 'Leads merchant acquisition and relationships. Owns the 250 merchant goal. Needs strong F&B and retail network in Dubai.',
+        directReports: ['Merchant Success Manager', 'Business Development Rep', 'Merchant Marketing Managers'],
+        description: 'Leads merchant acquisition and relationships. Owns the 250 merchant goal. Manages team of Merchant Marketing Managers (each handling 15-20 businesses). Needs strong F&B and retail network in Dubai.',
         responsibilities: [
           'Define merchant acquisition strategy and targets',
           'Build and manage merchant pipeline in CRM',
@@ -856,6 +894,63 @@ const h1Team: Department[] = [
         status: 'planned',
         priority: 'medium',
         compensation: 'AED 8-12K/month + equity + commission'
+      },
+      {
+        name: 'Hiring',
+        role: 'Merchant Marketing Manager',
+        reportsTo: 'Head of Merchant Partnerships',
+        directReports: ['Assigned Merchant Accounts (15-20 businesses)'],
+        description: 'Dedicated marketing manager assigned to 15-20 merchant businesses. Handles all marketing execution including online ads, offline materials, content creation, price engineering, and Nuqta branding at each store. Number of merchants per manager varies by package tier.',
+        responsibilities: [
+          // Online Marketing
+          'Manage Meta ads (Facebook/Instagram) for assigned merchants',
+          'Run WhatsApp marketing campaigns for merchant promotions',
+          'Setup and manage Google Shopping campaigns',
+          'Update and optimize Google My Business pages for all merchants',
+          'Create and manage store URLs with "Pay via Nuqta & earn cashback" messaging',
+          'Design and maintain merchant store pages on Nuqta platform',
+          // Offline Marketing
+          'Coordinate auto advertising (car wraps, taxi ads)',
+          'Manage bus advertising placements',
+          'Setup gate advertising at relevant venues',
+          // Content Creation
+          'Create Instagram/TikTok Reels for merchant promotions',
+          'Design and schedule social media posts',
+          'Coordinate UGC (User Generated Content) campaigns',
+          'Manage influencer marketing - both barter and paid partnerships',
+          // Price Engineering
+          'Implement dynamic pricing strategy (increase base price by 20%)',
+          'Configure Nuqta discounts to maintain perceived 20% savings',
+          'Monitor demand and adjust discounts (airplane model pricing)',
+          'Ensure price changes increase brand value perception',
+          // Nuqta Branding at Store
+          'Install Nuqta Board with QR code for in-store payments',
+          'Place "We Accept Nuqta" stickers on walls, doors, windows',
+          'Setup circle boards outside shop entrance',
+          'Ensure all branding says: "Pay with Nuqta & Earn cashback instantly"'
+        ],
+        requirements: [
+          '3+ years marketing experience with SMB clients',
+          'Hands-on experience with Meta Ads Manager and Google Ads',
+          'Content creation skills (basic video editing, graphic design)',
+          'Understanding of price psychology and promotions',
+          'Strong client relationship management',
+          'Arabic speaker preferred for merchant communication',
+          'Can manage multiple accounts simultaneously',
+          'Comfortable visiting stores for branding setup'
+        ],
+        kpis: [
+          'Merchants managed: 15-20 active accounts',
+          'Merchant satisfaction: >4.5/5 rating',
+          'Transaction growth: 20%+ MoM per merchant',
+          'Content output: 10+ posts/reels per merchant/month',
+          'Store branding compliance: 100% of merchants branded',
+          'Ad ROAS: >3x for paid campaigns',
+          'Google My Business: All merchants optimized and verified'
+        ],
+        status: 'hiring',
+        priority: 'high',
+        compensation: 'AED 15-22K/month + equity + performance bonus'
       },
     ]
   },
@@ -1249,7 +1344,7 @@ const TeamPage = () => {
             The <span className="text-[#c9a227]">People</span> Behind Nuqta
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-            {viewMode === 'h1' ? 'H1 lean team to prove the loop: 10K MAU, 250 merchants, AED 10M GMV.' : 'Full organization for scaling across UAE and GCC.'}
+            {viewMode === 'h1' ? 'H1 lean team to prove the loop: 5K MAU, 250 merchants, AED 10M GMV.' : 'Full organization for scaling across UAE and GCC.'}
             <br />Click any role for complete JD with responsibilities, requirements, and KPIs.
           </p>
 

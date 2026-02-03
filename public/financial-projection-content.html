@@ -1003,16 +1003,16 @@
                 <h2 class="section-title">Executive Dashboard</h2>
 
                 <div class="alert alert-success">
-                    <strong>🎯 H1 Target (~5 months, $400K USD):</strong> 5,800 MAU (baseline) • 10K MAU (stretch) • 290 Merchants • AED 7.2M GMV (baseline) / AED 10M GMV (stretch) • 25% D30 Retention • 10.3x LTV:CAC
+                    <strong>🎯 H1 Target (~5 months, $200K Tranche 1):</strong> 5,000 MAU (conservative) • 250 Merchants (minimum) • Launch: Feb 28, 2026 • Tranche 2 at milestones: 10 merchants, 1K MAU, CTO hired
                 </div>
 
                 <div class="alert alert-info" style="margin-top: 10px;">
-                    <strong>📊 Full Roadmap:</strong> H1 (5mo) → H2 (2.5mo: 75K MAU, AED 50M GMV) → H3 (14mo: 150K MAU, AED 200M GMV) |
+                    <strong>📊 Funding Structure:</strong> $400K total at $5M cap | Tranche 1: $200K (now) | Tranche 2: $200K (at milestones) |
                     <a href="/master-roadmap" style="color: #667eea; font-weight: 600; text-decoration: underline;">View Master Roadmap →</a>
                 </div>
 
                 <div class="alert alert-warning" style="margin-top: 10px; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b;">
-                    <strong>⚠️ Cost Disclaimer:</strong> Revenue projections shown are gross revenue. Payment processing fees (~2.5% of GMV = AED 180-250K for H1) will reduce net revenue. CAC assumptions (AED 35 baseline) require validation in first 90 days; realistic CAC likely AED 50-60 when including full merchant acquisition costs. All projections based on pre-launch assumptions.
+                    <strong>⚠️ Budget Allocation:</strong> 50-60% Marketing (user/merchant acquisition) | 20-30% Salaries (founder, co-founder, key hires) | 10-20% Tech/Ops. Flexible formula adjusts based on funding received. CAC assumptions (AED 35 baseline) require validation in first 90 days.
                 </div>
 
                 <h3 class="subsection-title">Key Performance Indicators</h3>
@@ -1325,46 +1325,48 @@
                 </div>
 
                 <h3 class="subsection-title">Budget Allocation & Cost Structure</h3>
+
+                <div class="alert alert-info" style="margin-bottom: 15px;">
+                    <strong>💰 Flexible Budget Formula:</strong> Budget allocation follows your preferences:<br>
+                    <strong>Marketing:</strong> 50-60% (User & Merchant Acquisition)<br>
+                    <strong>Salaries/Team:</strong> 20-30% (Founder, Co-founder, Key Hires)<br>
+                    <strong>Tech & Ops:</strong> 10-20% (Infrastructure, Operations, Rent)
+                </div>
+
                 <div class="assumptions-grid">
+                    <div class="assumption-card" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);">
+                        <label for="marketing-pct">Marketing Budget %</label>
+                        <input type="number" id="marketing-pct" value="55" step="5" min="0" max="100" oninput="updateAll()">
+                        <span class="unit">% of monthly budget (Target: 50-60%)</span>
+                    </div>
+
+                    <div class="assumption-card" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);">
+                        <label for="salary-pct">Salaries/Team Budget %</label>
+                        <input type="number" id="salary-pct" value="25" step="5" min="0" max="100" oninput="updateAll()">
+                        <span class="unit">% of monthly budget (Target: 20-30%)</span>
+                    </div>
+
+                    <div class="assumption-card" style="background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);">
+                        <label for="techops-pct">Tech & Ops Budget %</label>
+                        <input type="number" id="techops-pct" value="20" step="5" min="0" max="100" oninput="updateAll()">
+                        <span class="unit">% of monthly budget (Target: 10-20%)</span>
+                    </div>
+
                     <div class="assumption-card">
                         <label for="customer-acq-pct">Customer Acquisition % of Marketing</label>
-                        <input type="number" id="customer-acq-pct" value="40" step="5" min="0" max="100" oninput="updateAll()">
+                        <input type="number" id="customer-acq-pct" value="60" step="5" min="0" max="100" oninput="updateAll()">
                         <span class="unit">%</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="merchant-acq-pct">Merchant Acquisition % of Marketing</label>
-                        <input type="number" id="merchant-acq-pct" value="20" step="5" min="0" max="100" oninput="updateAll()">
+                        <input type="number" id="merchant-acq-pct" value="40" step="5" min="0" max="100" oninput="updateAll()">
                         <span class="unit">%</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="rent-fixed">Rent (Fixed Monthly)</label>
-                        <input type="number" id="rent-fixed" value="3000" step="500" oninput="updateAll()">
-                        <span class="unit">AED</span>
-                    </div>
-
-                    <div class="assumption-card">
-                        <label for="tech-min">Tech Budget (Minimum)</label>
-                        <input type="number" id="tech-min" value="10000" step="1000" oninput="updateAll()">
-                        <span class="unit">AED</span>
-                    </div>
-
-                    <div class="assumption-card">
-                        <label for="tech-max">Tech Budget (Maximum)</label>
-                        <input type="number" id="tech-max" value="30000" step="1000" oninput="updateAll()">
-                        <span class="unit">AED</span>
-                    </div>
-
-                    <div class="assumption-card">
-                        <label for="ops-min">Operations Budget (Minimum)</label>
-                        <input type="number" id="ops-min" value="5000" step="1000" oninput="updateAll()">
-                        <span class="unit">AED</span>
-                    </div>
-
-                    <div class="assumption-card">
-                        <label for="ops-max">Operations Budget (Maximum)</label>
-                        <input type="number" id="ops-max" value="20000" step="1000" oninput="updateAll()">
+                        <input type="number" id="rent-fixed" value="5000" step="500" oninput="updateAll()">
                         <span class="unit">AED</span>
                     </div>
 
@@ -1391,19 +1393,25 @@
                 </div>
 
                 <h3 class="subsection-title">Initial Funding & Cash</h3>
+                <div class="alert alert-success" style="margin-bottom: 15px; background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-left: 4px solid #10b981;">
+                    <strong>💰 Tranched Funding Structure:</strong><br>
+                    <strong>Tranche 1:</strong> $200K (AED 734K) - Immediately upon funding<br>
+                    <strong>Tranche 2:</strong> $200K (AED 734K) - Upon milestones: 10 live merchants, 1,000 MAU, CTO hired<br>
+                    <strong>Total Ask:</strong> $400K at $5M valuation cap (SAFE with 20% discount)
+                </div>
                 <div class="alert alert-info" style="margin-bottom: 15px;">
-                    <strong>💡 How It Works:</strong> Monthly Budget = Initial Budget ÷ Target Runway. Example: 500K ÷ 9 months = 55.6K/month. Increase "Initial Budget" or decrease "Target Runway" to get more monthly spending → more user acquisition.
+                    <strong>💡 How It Works:</strong> Monthly Budget = Initial Budget ÷ Target Runway. Formula is flexible - if you have more/less funding, allocations adjust automatically. Launch Date: <strong>Feb 28, 2026</strong>
                 </div>
                 <div class="assumptions-grid">
-                    <div class="assumption-card">
-                        <label for="initial-budget-aed">Total Initial Budget (Starting Cash)</label>
-                        <input type="number" id="initial-budget-aed" value="1468000" step="10000" oninput="updateAll()">
-                        <span class="unit">AED ($400K USD @ 3.67 rate - covers operations + payment fees + support + legal)</span>
+                    <div class="assumption-card" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);">
+                        <label for="initial-budget-aed">Tranche 1 Budget (Starting Cash)</label>
+                        <input type="number" id="initial-budget-aed" value="734000" step="10000" oninput="updateAll()">
+                        <span class="unit">AED ($200K USD @ 3.67 rate) - First tranche</span>
                     </div>
 
                     <div class="assumption-card">
                         <label for="runway-months">Target Runway</label>
-                        <input type="number" id="runway-months" value="6" step="1" min="1" oninput="updateAll()">
+                        <input type="number" id="runway-months" value="5" step="1" min="1" oninput="updateAll()">
                         <span class="unit">months</span>
                     </div>
                 </div>
@@ -1566,18 +1574,18 @@
                     <strong>📊 Data-Driven Progression:</strong> Phases advance when KPI targets are hit, not based on time. The model continues running each month until the next phase gate is achieved (or max months/cash depletion). Set gates below for H1→H2→H3→Phase2 transitions.
                 </div>
 
-                <h4 style="margin-top: 20px; color: #667eea; font-size: 1.1rem;">H1 → H2 Gate (Validate Categories)</h4>
+                <h4 style="margin-top: 20px; color: #667eea; font-size: 1.1rem;">H1 → H2 Gate (Validate Categories) - Conservative Targets</h4>
                 <div class="assumptions-grid">
-                    <div class="assumption-card">
+                    <div class="assumption-card" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);">
                         <label for="h2-gate-mau">MAU Target for H2</label>
-                        <input type="number" id="h2-gate-mau" value="10000" step="1000" min="0" oninput="updateAll()">
-                        <span class="unit">users</span>
+                        <input type="number" id="h2-gate-mau" value="5000" step="1000" min="0" oninput="updateAll()">
+                        <span class="unit">users (Conservative target)</span>
                     </div>
 
-                    <div class="assumption-card">
+                    <div class="assumption-card" style="background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);">
                         <label for="h2-gate-merchants">Merchants Target for H2</label>
                         <input type="number" id="h2-gate-merchants" value="250" step="10" min="0" oninput="updateAll()">
-                        <span class="unit">merchants</span>
+                        <span class="unit">merchants (Minimum target)</span>
                     </div>
 
                     <div class="assumption-card">
@@ -2290,7 +2298,7 @@
                 <h2 class="section-title">H1 Monthly Breakdown (Until Gate Hit)</h2>
 
                 <div class="alert alert-info">
-                    <strong>🎯 H1 Phase Gates:</strong> Advances to H2 when: 5K MAU • 125 Merchants • AED 5M GMV • 5x LTV:CAC
+                    <strong>🎯 H1 Phase Gates:</strong> Advances to H2 when: 5K MAU (conservative) • 250 Merchants (minimum) • Tranche 2 triggers at: 10 merchants, 1K MAU, CTO hired
                 </div>
 
                 <div class="alert alert-warning" style="background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); border-left: 4px solid #f59e0b; margin: 20px 0; padding: 20px; border-radius: 8px;">
@@ -4036,15 +4044,17 @@
             const expenseM11 = parseFloat(document.getElementById('expense-m11').value) || 0;
             const expenseM12 = parseFloat(document.getElementById('expense-m12').value) || 0;
 
-            // New budget allocation inputs
-            const customerAcqPct = parseFloat(document.getElementById('customer-acq-pct').value) || 40;
-            const merchantAcqPct = parseFloat(document.getElementById('merchant-acq-pct').value) || 20;
-            const rentFixed = parseFloat(document.getElementById('rent-fixed').value) || 3000;
-            const techMin = parseFloat(document.getElementById('tech-min').value) || 10000;
-            const techMax = parseFloat(document.getElementById('tech-max').value) || 30000;
-            const opsMin = parseFloat(document.getElementById('ops-min').value) || 5000;
-            const opsMax = parseFloat(document.getElementById('ops-max').value) || 20000;
+            // New percentage-based budget allocation inputs
+            const marketingPct = parseFloat(document.getElementById('marketing-pct').value) || 55;
+            const salaryPct = parseFloat(document.getElementById('salary-pct').value) || 25;
+            const techopsPct = parseFloat(document.getElementById('techops-pct').value) || 20;
+            const customerAcqPct = parseFloat(document.getElementById('customer-acq-pct').value) || 60;
+            const merchantAcqPct = parseFloat(document.getElementById('merchant-acq-pct').value) || 40;
+            const rentFixed = parseFloat(document.getElementById('rent-fixed').value) || 5000;
             const cam = parseFloat(document.getElementById('cam').value) || 1000;
+
+            // Log budget allocation percentages
+            console.log(`📊 Budget Allocation: Marketing ${marketingPct}%, Salaries ${salaryPct}%, Tech/Ops ${techopsPct}%`);
 
             // Calculate monthly budget from initial budget and target runway
             // This means: if you have 500K and want 5 months runway, you can spend 100K/month
@@ -4261,35 +4271,26 @@
 
                 surpluses.push(availableCash - minBuffer);
 
-                // STEP 3: Allocate Fixed Costs First (Priority 1)
-                // These are FIXED amounts that don't change with revenue
+                // STEP 3: PERCENTAGE-BASED BUDGET ALLOCATION
+                // Allocate based on user preferences: Marketing 50-60%, Salaries 20-30%, Tech/Ops 10-20%
 
-                // Rent multiplies per location
+                // Marketing Budget (50-60% of total - for user & merchant acquisition)
+                const marketingBudget = availableCash * (marketingPct / 100);
+                marketingBudgets.push(marketingBudget);
+
+                // Salary Budget (20-30% of total - founder, co-founder, key hires)
+                const salaryBudget = availableCash * (salaryPct / 100);
+
+                // Tech & Ops Budget (10-20% of total - infrastructure, operations)
+                const techopsBudget = availableCash * (techopsPct / 100);
+
+                // Rent is fixed per location
                 const rent = rentFixed * numLocations;
                 rentBudgets.push(rent);
 
-                // Tech is shared across locations (doesn't multiply)
-                // Scales based on business stage, not revenue
-                let techBudget;
-                if (month <= 3) {
-                    techBudget = techMin; // Early stage: minimum tech spend
-                } else if (month <= 12) {
-                    techBudget = Math.min(techMax, techMin * 1.5); // Growth stage: 1.5x
-                } else {
-                    techBudget = techMax; // Mature stage: maximum tech investment
-                }
-
-                // Operations multiply per location
-                // Scales based on business stage
-                let baseOpsBudget;
-                if (month <= 3) {
-                    baseOpsBudget = opsMin; // Early stage: minimum ops
-                } else if (month <= 12) {
-                    baseOpsBudget = Math.min(opsMax, opsMin * 1.3); // Growth stage: 1.3x
-                } else {
-                    baseOpsBudget = opsMax; // Mature stage: maximum ops efficiency
-                }
-                const opsBudget = baseOpsBudget * numLocations;
+                // Tech budget comes from techops allocation (minus rent)
+                const techBudget = Math.max(0, techopsBudget - rent) * 0.6; // 60% of remaining for tech
+                const opsBudget = Math.max(0, techopsBudget - rent) * 0.4; // 40% of remaining for ops
 
                 // Customer Support scales with MAU (actual business metric)
                 const currentMAUEstimate = i === 0 ? 0 : mauArray[i - 1];
@@ -4299,22 +4300,18 @@
                 techBudgets.push(techBudget);
                 opsBudgets.push(opsBudget);
 
-                // STEP 4: Calculate Total Fixed Expenses
-                const totalFixedExpenses = rent + techBudget + opsBudget + supportBudget;
-
-                // STEP 5: Calculate Marketing Budget = Available Cash - Fixed Expenses
-                // This is where revenue & funding provide "extra fuel"
-                const marketingBudget = Math.max(0, availableCash - totalFixedExpenses);
-                marketingBudgets.push(marketingBudget);
+                // STEP 4: Calculate Total Expenses
+                const totalFixedExpenses = rent + techBudget + opsBudget + supportBudget + salaryBudget;
 
                 // Log budget breakdown (every 3 months or when funding received)
-                if (month % 3 === 0 || newFunding[i] > 0) {
-                    console.log(`Month ${month} Budget: Cash=${(availableCash/1000).toFixed(0)}K, Fixed=${(totalFixedExpenses/1000).toFixed(0)}K, Marketing=${(marketingBudget/1000).toFixed(0)}K, Runway=${currentRunway.toFixed(1)}mo`);
+                if (month % 3 === 0 || newFunding[i] > 0 || month === 1) {
+                    console.log(`Month ${month} Budget: Total=${(availableCash/1000).toFixed(0)}K | Marketing=${(marketingBudget/1000).toFixed(0)}K (${marketingPct}%) | Salaries=${(salaryBudget/1000).toFixed(0)}K (${salaryPct}%) | Tech/Ops=${(techopsBudget/1000).toFixed(0)}K (${techopsPct}%)`);
                 }
 
                 // Track if budget was affected by low runway
                 budgetFrozenMonths.push(!hasMinimumRunway);
 
+                // Within Marketing: Split between customer and merchant acquisition
                 const customerAcqBudget = marketingBudget * (customerAcqPct / 100);
                 const merchantAcqBudget = marketingBudget * (merchantAcqPct / 100);
                 customerAcqBudgets.push(customerAcqBudget);
@@ -4385,7 +4382,7 @@
                 revenues.push(monthlyRevenue);
 
                 // Total expenses for this month (recurring + one-time)
-                const recurringExpenses = rent + techBudget + opsBudget + marketingBudget + supportBudget;
+                const recurringExpenses = rent + techBudget + opsBudget + marketingBudget + supportBudget + salaryBudget;
                 const totalExpense = recurringExpenses + oneTimeExpense;
                 totalExpenses.push(totalExpense);
 

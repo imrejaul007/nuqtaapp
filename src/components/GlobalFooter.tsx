@@ -29,7 +29,10 @@ import {
   Settings,
   Scale,
   Heart,
-  CheckSquare
+  CheckSquare,
+  Shield,
+  Play,
+  Handshake
 } from 'lucide-react';
 
 /**
@@ -53,90 +56,94 @@ interface NavCategory {
 
 const navigationData: NavCategory[] = [
   {
-    title: 'Pitch Decks',
+    title: 'Investors',
     items: [
-      { label: '90-Second Deck', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
-      { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: '31-slide comprehensive' },
-      { label: 'Deck Final', href: '/deck-final', icon: FileText, description: 'Final version' },
-      { label: 'Deck New', href: '/deck-new', icon: FileText, description: 'Updated deck' },
-      { label: 'Original Deck', href: '/deck', icon: FileText, description: 'Original version' },
-    ]
-  },
-  {
-    title: 'Partnerships',
-    items: [
-      { label: 'GV Deck', href: '/deck-gv', icon: Building2, description: 'Global Village partnership pitch' },
-      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales team guide' },
-      { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Event organizer pitch' },
-    ]
-  },
-  {
-    title: 'Strategy & Planning',
-    items: [
-      { label: 'Master Roadmap', href: '/master-roadmap', icon: Map, description: 'Full product roadmap' },
-      { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation strategy' },
-      { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp, description: 'Go-to-market plan' },
+      { label: '90-Second Pitch', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
+      { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: 'Comprehensive pitch' },
       { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
-    ]
-  },
-  {
-    title: 'Horizons',
-    items: [
-      { label: 'H1 GTM', href: '/h1-gtm', icon: Target, description: 'Horizon 1 go-to-market' },
-      { label: 'H2 Strategy', href: '/h2-strategy', icon: TrendingUp, description: 'Horizon 2 strategy' },
-      { label: 'H2 GTM', href: '/h2-gtm', icon: Target, description: 'Horizon 2 go-to-market' },
-      { label: 'H3 Infrastructure', href: '/h3-infrastructure', icon: Building2, description: 'Horizon 3 infrastructure' },
-      { label: 'H3 GTM', href: '/h3-gtm', icon: Target, description: 'Horizon 3 go-to-market' },
-    ]
-  },
-  {
-    title: 'Phases',
-    items: [
-      { label: 'Phase 2', href: '/phase-2', icon: Calendar, description: 'Phase 2 overview' },
-      { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Target, description: 'Phase 2 go-to-market' },
-      { label: 'Phase 3', href: '/phase-3', icon: Calendar, description: 'Phase 3 overview' },
-      { label: 'Phase 3 GTM', href: '/phase-3-gtm', icon: Target, description: 'Phase 3 go-to-market' },
-    ]
-  },
-  {
-    title: 'Financial',
-    items: [
-      { label: 'Projections', href: '/financialprojection', icon: DollarSign, description: 'Financial forecasts' },
-      { label: 'Data Room', href: '/data-room', icon: Database, description: 'Investor data room' },
+      { label: 'Data Room', href: '/data-room', icon: Database, description: 'Due diligence docs' },
+      { label: 'Financial Projections', href: '/financialprojection', icon: DollarSign, description: 'Forecasts' },
+      { label: 'Investor FAQ', href: '/investor-faq', icon: FileText, description: 'Common questions' },
       { label: 'Commitment', href: '/commitment', icon: FileCheck, description: 'Investment terms' },
+    ]
+  },
+  {
+    title: 'Strategy',
+    items: [
+      { label: 'Master Roadmap', href: '/master-roadmap', icon: Map, description: 'Product roadmap' },
+      { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp, description: 'Go-to-market' },
+      { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation' },
+      { label: 'H1 GTM', href: '/h1-gtm', icon: Target, description: 'Horizon 1' },
+      { label: 'H2 Strategy', href: '/h2-strategy', icon: TrendingUp, description: 'Horizon 2' },
+      { label: 'H3 Infrastructure', href: '/h3-infrastructure', icon: Building2, description: 'Horizon 3' },
+      { label: 'Phase 2', href: '/phase-2', icon: Calendar, description: 'Phase 2 plan' },
+      { label: 'Phase 3', href: '/phase-3', icon: Calendar, description: 'Phase 3 plan' },
     ]
   },
   {
     title: 'Merchants',
     items: [
-      { label: 'Engine A Deck', href: '/deck-merchant', icon: Store, description: 'High-margin (cafes, salons)' },
-      { label: 'Engine A Info', href: '/merchant-info', icon: FileText, description: 'High-margin terms' },
-      { label: 'Engine B Deck', href: '/deck-merchant-b', icon: Building2, description: 'Low-margin (electronics, grocery)' },
-      { label: 'GV Merchants', href: '/gv-merchants', icon: Calendar, description: 'Event-based (GV booths)' },
-      { label: 'Event Merchants', href: '/exhibition-merchants', icon: Calendar, description: 'Event-based (exhibitions)' },
+      { label: 'All 3 Engines', href: '/merchant-engines', icon: Settings, description: 'Engine overview' },
+      { label: 'Packages & Pricing', href: '/merchant-packages', icon: CreditCard, description: 'Pricing plans' },
+      { label: 'Partnership Tiers', href: '/partnership-tiers', icon: TrendingUp, description: 'Tier comparison' },
+      { label: 'Engine A (High-Margin)', href: '/deck-merchant', icon: Store, description: 'Cafes, salons' },
+      { label: 'Engine B (Low-Margin)', href: '/deck-merchant-b', icon: Building2, description: 'Electronics, grocery' },
+      { label: 'Business Playbook', href: '/business-playbook', icon: FileText, description: 'Execution guide' },
+      { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase, description: 'Scripts & objections' },
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
-      { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant details' },
     ]
   },
   {
-    title: 'Niche Decks',
+    title: 'Industry Decks',
     items: [
-      { label: 'Cafes & Restaurants', href: '/deck-cafe', icon: Store, description: 'F&B specific pitch' },
-      { label: 'Salons & Spas', href: '/deck-salon', icon: Users, description: 'Beauty/wellness pitch' },
-      { label: 'Supermarkets', href: '/deck-supermarket', icon: Building2, description: 'Grocery specific pitch' },
-      { label: 'Gold & Jewelry', href: '/deck-gold', icon: DollarSign, description: 'Jewelry store pitch' },
+      { label: 'Cafes & Restaurants', href: '/deck-cafe', icon: Store, description: 'F&B pitch' },
+      { label: 'Salons & Spas', href: '/deck-salon', icon: Users, description: 'Beauty pitch' },
+      { label: 'Supermarkets', href: '/deck-supermarket', icon: Building2, description: 'Grocery pitch' },
+      { label: 'Gold & Jewelry', href: '/deck-gold', icon: DollarSign, description: 'Jewelry pitch' },
+      { label: 'Universities', href: '/deck-university', icon: BookOpen, description: 'Student pitch' },
+      { label: 'Corporate', href: '/deck-corporate', icon: Briefcase, description: 'Employee rewards' },
+    ]
+  },
+  {
+    title: 'Events & Partnerships',
+    items: [
+      { label: 'Global Village Deck', href: '/deck-gv', icon: Building2, description: 'GV partnership' },
+      { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales guide' },
+      { label: 'GV Merchants', href: '/gv-merchants', icon: Store, description: 'GV merchant list' },
+      { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Event pitch' },
+      { label: 'Exhibition Merchants', href: '/exhibition-merchants', icon: Store, description: 'Event merchants' },
+      { label: 'Co-Partner Program', href: '/co-partner', icon: Handshake, description: 'Brand partnership' },
+    ]
+  },
+  {
+    title: 'Marketing',
+    items: [
+      { label: 'Marketing Plan', href: '/marketing-bible', icon: Target, description: 'Full playbook + brand' },
+      { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
+      { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },
+      { label: 'Press Kit', href: '/press-kit', icon: FileText, description: 'Media assets' },
+    ]
+  },
+  {
+    title: 'Legal & Compliance',
+    items: [
+      { label: 'Licensing', href: '/licensing', icon: Shield, description: 'UAE compliance' },
+      { label: 'Contracts', href: '/contracts', icon: FileText, description: 'MoU templates' },
+      { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
+      { label: 'Terms', href: '/terms', icon: FileText, description: 'Terms of service' },
     ]
   },
   {
     title: 'Company',
     items: [
-      { label: 'Home', href: '/', icon: Home, description: 'Main landing page' },
-      { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project task tracker' },
-      { label: 'Team', href: '/team', icon: Users, description: 'Our team & careers' },
+      { label: 'Home', href: '/', icon: Home, description: 'Landing page' },
+      { label: 'Team', href: '/team', icon: Users, description: 'Our team' },
+      { label: 'Join Us', href: '/join-us', icon: Users, description: 'CTO recruitment' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
-      { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
-      { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity & stock options' },
-      { label: 'Terms', href: '/terms', icon: FileText, description: 'Terms of service' },
+      { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity options' },
+      { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project tracker' },
+      { label: 'User Journey', href: '/user-journey', icon: Map, description: 'Onboarding flow' },
+      { label: 'Dashboard Preview', href: '/dashboard-preview', icon: Settings, description: 'UI designs' },
     ]
   }
 ];

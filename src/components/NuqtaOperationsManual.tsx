@@ -134,7 +134,7 @@ const roles = [
     ],
     kpis: [
       { metric: 'Funding raised', target: '$2M seed by H1 end' },
-      { metric: 'H1 milestones', target: '10K MAU, 250 merchants' },
+      { metric: 'H1 milestones', target: '5K MAU (conservative), 250 merchants' },
       { metric: 'Team eNPS', target: '>50' },
       { metric: 'Runway', target: '18+ months maintained' },
       { metric: 'Key hires', target: 'All critical roles filled Month 1' },
@@ -387,7 +387,7 @@ const roles = [
     status: 'hiring',
     priority: 'critical',
     compensation: 'AED 30-45K/month + equity',
-    summary: 'Owns 10K MAU goal. Architect of user acquisition and retention strategy.',
+    summary: 'Owns 5K MAU goal. Architect of user acquisition and retention strategy.',
     dailyTasks: [
       { time: '8:30 AM', task: 'Review daily metrics (DAU, retention, referrals)', duration: '30 min' },
       { time: '9:00 AM', task: 'Check experiment results', duration: '30 min' },

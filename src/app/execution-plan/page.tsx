@@ -18,10 +18,10 @@ export default function ExecutionPlanPage() {
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-              <span className="text-slate-400">Active Execution</span>
+              <span className="text-slate-400">Launch: Feb 28, 2026</span>
             </div>
             <div className="text-slate-400">•</div>
-            <div className="text-slate-400">Version 3.0 - January 29, 2026</div>
+            <div className="text-slate-400">$200K Tranche 1 + $200K at milestones</div>
             <div className="text-slate-400">•</div>
             <a href="/master-roadmap" className="text-[#c9a227] hover:text-white transition-colors font-semibold underline">
               ← Master Roadmap
@@ -55,7 +55,7 @@ export default function ExecutionPlanPage() {
         <section id="models" className="mb-20">
           <h2 className="text-4xl font-black text-slate-900 mb-8">1. The H1 2026 Commercial Models</h2>
           <p className="text-lg text-slate-600 mb-8">
-            To ensure scalability across 26 sub-categories, Nuqta operates two distinct engines based on merchant margin profiles.
+            To ensure scalability across 26 sub-categories, Nuqta operates three distinct engines based on merchant margin profiles and use cases.
           </p>
 
           {/* Engine A */}
@@ -186,6 +186,77 @@ export default function ExecutionPlanPage() {
               <div className="flex flex-wrap gap-2">
                 {['Grocery', 'Supermarkets', 'Gold', 'Fashion Chains'].map((sector) => (
                   <span key={sector} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">
+                    {sector}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Engine C */}
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8 mt-8">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="px-4 py-2 bg-amber-600 rounded-full">
+                <span className="text-white font-black text-sm">ENGINE C</span>
+              </div>
+              <h3 className="text-3xl font-black text-slate-900">The Event & Acquisition Model</h3>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 mb-6">
+              <p className="text-xl font-bold text-amber-700 mb-4">Event Partnership (Variable Commission)</p>
+              <div className="grid md:grid-cols-4 gap-4 mb-6">
+                <div className="border-2 border-amber-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-amber-600 mb-2">🎫</p>
+                  <p className="text-sm font-semibold text-slate-700">Event Coins</p>
+                  <p className="text-xs text-slate-500 mt-1">On ticket/registration</p>
+                </div>
+                <div className="border-2 border-purple-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-purple-600 mb-2">🔒</p>
+                  <p className="text-sm font-semibold text-slate-700">Locked Until</p>
+                  <p className="text-xs text-slate-500 mt-1">Event attendance</p>
+                </div>
+                <div className="border-2 border-emerald-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-emerald-600 mb-2">💰</p>
+                  <p className="text-sm font-semibold text-slate-700">Min Spend</p>
+                  <p className="text-xs text-slate-500 mt-1">AED 300-500 to unlock</p>
+                </div>
+                <div className="border-2 border-blue-200 rounded-xl p-4 text-center">
+                  <p className="text-3xl font-black text-blue-600 mb-2">🔄</p>
+                  <p className="text-sm font-semibold text-slate-700">Sponsor Coins</p>
+                  <p className="text-xs text-slate-500 mt-1">Brand partnerships</p>
+                </div>
+              </div>
+
+              <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-4 mb-4">
+                <p className="font-bold text-amber-800 mb-2">🎪 How It Works:</p>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• <span className="font-semibold">Step 1:</span> User buys ticket/registers → receives Event Coins (locked)</li>
+                  <li>• <span className="font-semibold">Step 2:</span> User attends event → coins unlock via QR check-in</li>
+                  <li>• <span className="font-semibold">Step 3:</span> User spends AED 300+ at event merchant → redeems coins</li>
+                  <li>• <span className="font-semibold">Result:</span> Higher footfall, higher AOV, repeat visitors via Brand Coins</li>
+                </ul>
+              </div>
+
+              <div className="bg-purple-50 border-2 border-purple-200 rounded-xl p-4">
+                <p className="font-bold text-purple-800 mb-2">💰 Example (Global Village):</p>
+                <ul className="text-sm text-slate-700 space-y-1">
+                  <li>• User gets AED 100 Event Coins on ticket purchase</li>
+                  <li>• User spends AED 500 at GV merchant → pays AED 400 cash + AED 100 coins</li>
+                  <li>• Merchant pays 12% commission → AED 40 to event, AED 20 to Nuqta</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-amber-600 text-white rounded-2xl p-6">
+              <p className="font-bold mb-2">💡 The Strategy:</p>
+              <p className="text-sm">Engine C is primarily an <span className="font-bold">acquisition channel</span>. Users acquired at events convert to Engine A/B usage for daily purchases.</p>
+            </div>
+
+            <div className="mt-6">
+              <p className="text-sm font-semibold text-slate-600 mb-2">Target Events:</p>
+              <div className="flex flex-wrap gap-2">
+                {['Global Village', 'Exhibitions', 'Corporate Events', 'College Fests', 'Festivals'].map((sector) => (
+                  <span key={sector} className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">
                     {sector}
                   </span>
                 ))}

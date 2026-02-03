@@ -20,16 +20,16 @@ export default function GTMMainPage() {
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
-              <span className="text-2xl">⏱️</span>
-              <span className="text-slate-300">~4 Years Total</span>
+              <span className="text-2xl">🚀</span>
+              <span className="text-slate-300">Launch: Feb 28, 2026</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">🌍</span>
-              <span className="text-slate-300">6 GCC Countries</span>
+              <span className="text-2xl">💵</span>
+              <span className="text-slate-300">$400K at $5M cap (Tranched)</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-2xl">💰</span>
-              <span className="text-[#c9a227] font-bold">AED 420M Revenue Exit</span>
+              <span className="text-2xl">🎯</span>
+              <span className="text-[#c9a227] font-bold">5K MAU • 250 Merchants (H1)</span>
             </div>
           </div>
         </div>
@@ -124,8 +124,8 @@ export default function GTMMainPage() {
                     </div>
                   </div>
                   <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
-                    <p className="text-xs font-semibold text-emerald-300 uppercase mb-1">Exit Target</p>
-                    <p className="text-lg font-black text-emerald-400">10K MAU • 25% D30</p>
+                    <p className="text-xs font-semibold text-emerald-300 uppercase mb-1">Exit Target (Conservative)</p>
+                    <p className="text-lg font-black text-emerald-400">5K MAU • 25% D30</p>
                   </div>
                 </div>
               </a>
