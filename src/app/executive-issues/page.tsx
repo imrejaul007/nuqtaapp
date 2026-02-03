@@ -109,7 +109,7 @@ export default function ExecutiveIssuesPage() {
             </div>
             <div className="text-right">
               <p className="text-[#c9a227] font-bold">NUQTA</p>
-              <p className="text-slate-500 text-xs">Critical Analysis - Feb 2025</p>
+              <p className="text-slate-500 text-xs">Critical Analysis - Feb 2026</p>
             </div>
           </div>
         </div>

@@ -3524,7 +3524,7 @@ export default function MarketingPlanPage() {
                   <h5 className="font-medium text-[#c9a227] mb-3">Press Release Boilerplate</h5>
                   <div className="text-sm text-gray-300 bg-black/20 rounded p-3">
                     <p><strong>About Nuqta</strong></p>
-                    <p className="mt-2">Nuqta is a UAE-based rewards platform that gives users instant cashback on everyday offline purchases. Founded in 2025, Nuqta partners with local cafes, restaurants, salons, and retailers to offer 5-10% cashback with zero subscription fees. The company's mission is to make smart spending accessible to everyone in the UAE.</p>
+                    <p className="mt-2">Nuqta is a UAE-based rewards platform that gives users instant cashback on everyday offline purchases. Founded in 2024, Nuqta partners with local cafes, restaurants, salons, and retailers to offer 5-10% cashback with zero subscription fees. The company's mission is to make smart spending accessible to everyone in the UAE.</p>
                     <p className="mt-2"><strong>Media Contact:</strong> press@nuqta.app</p>
                   </div>
                 </div>

@@ -771,7 +771,7 @@ export default function NuqtaMerchantOnePager() {
                       <p className="text-sm text-red-300 font-black text-center">⚡ First 50 partners: Premium listing + Featured placement</p>
                     </div>
                     <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 border border-emerald-500/40 rounded-lg p-3">
-                      <p className="text-sm text-emerald-300 font-black text-center">✓ Launching Q1 2025 • Pre-register now</p>
+                      <p className="text-sm text-emerald-300 font-black text-center">✓ Launching Q1 2026 • Pre-register now</p>
                     </div>
                   </div>
 

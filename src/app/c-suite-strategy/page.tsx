@@ -101,7 +101,7 @@ export default function CSuiteStrategyPage() {
             </div>
             <div className="text-right">
               <p className="text-[#c9a227] font-bold">NUQTA</p>
-              <p className="text-slate-500 text-xs">Executive Planning 2025-2026</p>
+              <p className="text-slate-500 text-xs">Executive Planning 2026-2026</p>
             </div>
           </div>
         </div>
@@ -164,23 +164,23 @@ function UnifiedStrategy() {
             </div>
           </div>
           <div>
-            <h3 className="text-white font-bold mb-3">2025-2026 North Star Metrics</h3>
+            <h3 className="text-white font-bold mb-3">2026-2026 North Star Metrics</h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <span className="text-slate-300">Active Users</span>
-                <span className="text-[#c9a227] font-bold">100,000 by Dec 2025</span>
+                <span className="text-[#c9a227] font-bold">100,000 by Dec 2026</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <span className="text-slate-300">Merchant Partners</span>
-                <span className="text-[#c9a227] font-bold">500 by Dec 2025</span>
+                <span className="text-[#c9a227] font-bold">500 by Dec 2026</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <span className="text-slate-300">Monthly GMV</span>
-                <span className="text-[#c9a227] font-bold">AED 10M by Dec 2025</span>
+                <span className="text-[#c9a227] font-bold">AED 10M by Dec 2026</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <span className="text-slate-300">Revenue Run Rate</span>
-                <span className="text-[#c9a227] font-bold">AED 5M ARR by Dec 2025</span>
+                <span className="text-[#c9a227] font-bold">AED 5M ARR by Dec 2026</span>
               </div>
             </div>
           </div>
@@ -191,7 +191,7 @@ function UnifiedStrategy() {
       <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
         <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
           <Rocket size={24} className="text-[#c9a227]" />
-          90-Day Launch Sprint (Q1 2025)
+          90-Day Launch Sprint (Q1 2026)
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
           <div className="p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-purple-500/5 border border-purple-500/30">
@@ -465,7 +465,7 @@ function CEOSection() {
         <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
           <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
             <Target size={20} className="text-purple-400" />
-            Q1 2025 CEO Priorities
+            Q1 2026 CEO Priorities
           </h3>
           <div className="space-y-4">
             {[
@@ -918,7 +918,7 @@ function CMOSection() {
       <div className="grid md:grid-cols-4 gap-4">
         {[
           { label: 'Monthly Active Users', value: '2,847', target: '10,000', trend: '+23%' },
-          { label: 'CAC', value: 'AED 15', target: '< AED 20', trend: '-12%' },
+          { label: 'CAC', value: 'AED 30', target: '< AED 35', trend: '-12%' },
           { label: 'Viral Coefficient', value: '1.2', target: '> 1.5', trend: '+0.1' },
           { label: 'App Store Rating', value: '4.6', target: '> 4.5', trend: 'Stable' },
         ].map((kpi, idx) => (
@@ -953,12 +953,12 @@ function CMOSection() {
             </thead>
             <tbody className="text-slate-300">
               {[
-                { channel: 'Referrals', users: '1,200', cac: 'AED 5', ltv: 'AED 180', roi: '36x', strategy: 'Double down - best channel' },
-                { channel: 'Instagram Ads', users: '650', cac: 'AED 18', ltv: 'AED 150', roi: '8.3x', strategy: 'Optimize creatives' },
-                { channel: 'Influencers', users: '420', cac: 'AED 22', ltv: 'AED 200', roi: '9x', strategy: 'Micro-influencer focus' },
-                { channel: 'Google Ads', users: '310', cac: 'AED 25', ltv: 'AED 140', roi: '5.6x', strategy: 'Reduce spend, test keywords' },
-                { channel: 'TikTok', users: '180', cac: 'AED 12', ltv: 'AED 120', roi: '10x', strategy: 'Scale aggressively' },
-                { channel: 'Organic/SEO', users: '87', cac: 'AED 0', ltv: 'AED 160', roi: '∞', strategy: 'Long-term content play' },
+                { channel: 'Referrals', users: '1,200', cac: 'AED 10', ltv: 'AED 504', roi: '50x', strategy: 'Double down - best channel' },
+                { channel: 'Instagram Ads', users: '650', cac: 'AED 35', ltv: 'AED 504', roi: '14x', strategy: 'Optimize creatives' },
+                { channel: 'Influencers', users: '420', cac: 'AED 40', ltv: 'AED 504', roi: '12x', strategy: 'Micro-influencer focus' },
+                { channel: 'Google Ads', users: '310', cac: 'AED 80', ltv: 'AED 504', roi: '6x', strategy: 'Reduce spend, test keywords' },
+                { channel: 'TikTok', users: '180', cac: 'AED 25', ltv: 'AED 504', roi: '20x', strategy: 'Scale aggressively' },
+                { channel: 'Organic/SEO', users: '87', cac: 'AED 0', ltv: 'AED 504', roi: '∞', strategy: 'Long-term content play' },
               ].map((item, idx) => (
                 <tr key={idx} className="border-b border-white/5 hover:bg-white/5">
                   <td className="p-3 font-medium text-white">{item.channel}</td>
@@ -1519,22 +1519,22 @@ function CFOSection() {
             <div className="p-4 bg-orange-500/10 rounded-xl border border-orange-500/30">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-slate-400">LTV : CAC Ratio</span>
-                <span className="text-3xl font-bold text-green-400">12:1</span>
+                <span className="text-3xl font-bold text-green-400">16.8:1</span>
               </div>
               <p className="text-slate-500 text-xs">Target: &gt; 3:1 | Industry avg: 3-5:1</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="p-3 bg-white/5 rounded-lg">
                 <p className="text-slate-400 text-xs">Customer Acquisition Cost</p>
-                <p className="text-white font-bold text-xl">AED 15</p>
+                <p className="text-white font-bold text-xl">AED 30</p>
               </div>
               <div className="p-3 bg-white/5 rounded-lg">
                 <p className="text-slate-400 text-xs">Lifetime Value</p>
-                <p className="text-white font-bold text-xl">AED 180</p>
+                <p className="text-white font-bold text-xl">AED 504</p>
               </div>
               <div className="p-3 bg-white/5 rounded-lg">
                 <p className="text-slate-400 text-xs">Avg Revenue/User/Mo</p>
-                <p className="text-white font-bold text-xl">AED 8</p>
+                <p className="text-white font-bold text-xl">AED 42</p>
               </div>
               <div className="p-3 bg-white/5 rounded-lg">
                 <p className="text-slate-400 text-xs">Avg User Lifespan</p>

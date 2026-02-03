@@ -149,7 +149,7 @@ export default function PressKitPage() {
                   are locked to individual accounts, Nuqta allows users to earn, gift, and receive reward coins from friends and family.
                 </p>
                 <p>
-                  Founded in 2025 and launching February 2026, Nuqta partners with 100+ UAE merchants across dining,
+                  Founded in 2024 and launching February 2026, Nuqta partners with 100+ UAE merchants across dining,
                   entertainment, wellness, and events. The platform bridges the gap between individual rewards and
                   social gifting, creating a new category in the $200B+ global loyalty market.
                 </p>
@@ -390,7 +390,7 @@ export default function PressKitPage() {
                   type: 'Partnership',
                 },
                 {
-                  date: 'December 10, 2025',
+                  date: 'January 5, 2026',
                   title: 'Nuqta Announces Event Engine for UAE Exhibitions',
                   excerpt: 'Dubai, UAE — The social rewards platform introduces its Event Engine, enabling exhibition organizers to offer coin rewards to attendees, driving engagement and return visits.',
                   type: 'Product',
@@ -441,7 +441,7 @@ export default function PressKitPage() {
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-bold text-[#c9a227]">Company Boilerplate</h3>
                 <button
-                  onClick={() => copyToClipboard(`Nuqta is the UAE's first social rewards platform that transforms everyday purchases into shareable experiences. Founded in 2025, Nuqta enables users to earn, gift, and receive reward coins from friends and family across 100+ merchant partners in dining, entertainment, wellness, and events. The platform operates on a sustainable commission model, aligning merchant success with user engagement. For more information, visit nuqta.ae.`, 99)}
+                  onClick={() => copyToClipboard(`Nuqta is the UAE's first social rewards platform that transforms everyday purchases into shareable experiences. Founded in 2024, Nuqta enables users to earn, gift, and receive reward coins from friends and family across 100+ merchant partners in dining, entertainment, wellness, and events. The platform operates on a sustainable commission model, aligning merchant success with user engagement. For more information, visit nuqta.ae.`, 99)}
                   className="flex items-center gap-2 text-sm text-gray-400 hover:text-white"
                 >
                   {copiedIndex === 99 ? <CheckCircle size={16} className="text-green-500" /> : <Copy size={16} />}
@@ -450,7 +450,7 @@ export default function PressKitPage() {
               </div>
               <p className="text-gray-300 italic">
                 "Nuqta is the UAE's first social rewards platform that transforms everyday purchases into shareable experiences.
-                Founded in 2025, Nuqta enables users to earn, gift, and receive reward coins from friends and family across
+                Founded in 2024, Nuqta enables users to earn, gift, and receive reward coins from friends and family across
                 100+ merchant partners in dining, entertainment, wellness, and events. The platform operates on a sustainable
                 commission model, aligning merchant success with user engagement. For more information, visit nuqta.ae."
               </p>
@@ -599,7 +599,7 @@ export default function PressKitPage() {
                   {[
                     ['Company Name', 'Nuqta (نقطة)'],
                     ['Meaning', '"Point" in Arabic - representing reward points and connection points'],
-                    ['Founded', '2025'],
+                    ['Founded', '2024'],
                     ['Launch Date', 'February 28, 2026'],
                     ['Headquarters', 'Dubai, UAE'],
                     ['Category', 'Social Rewards / Loyalty Platform'],
