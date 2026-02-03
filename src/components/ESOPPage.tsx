@@ -203,6 +203,118 @@ const exerciseScenarios = [
 ];
 
 // ============================================
+// PERFORMANCE-BASED EQUITY
+// ============================================
+const performanceEquityPool = {
+  totalReserved: 500000, // 5% of ESOP pool (500K shares) reserved for performance grants
+  annualBudget: 125000, // Roughly 125K shares per year for 4 years
+  categories: [
+    { category: 'Individual KPIs', allocation: 40, shares: 200000 },
+    { category: 'Team Milestones', allocation: 30, shares: 150000 },
+    { category: 'Company Targets', allocation: 30, shares: 150000 },
+  ]
+};
+
+const performanceTiers = [
+  {
+    tier: 'Exceeds Expectations',
+    threshold: '110-125%',
+    multiplier: '1.25x',
+    color: 'emerald',
+    description: 'Consistently exceeds targets across all KPIs',
+  },
+  {
+    tier: 'Outstanding',
+    threshold: '125-150%',
+    multiplier: '1.5x',
+    color: 'cyan',
+    description: 'Exceptional performance with significant business impact',
+  },
+  {
+    tier: 'Exceptional',
+    threshold: '150%+',
+    multiplier: '2x',
+    color: 'amber',
+    description: 'Transformational performance, game-changing contributions',
+  },
+];
+
+const rolePerformanceGrants = [
+  {
+    role: 'Founder/CEO',
+    baseGrant: 'N/A (70% ownership)',
+    performancePool: '1% additional',
+    triggers: [
+      { milestone: 'Series A Raised ($1M+)', grant: '0.25%', shares: '25,000' },
+      { milestone: 'MAU 100K+', grant: '0.25%', shares: '25,000' },
+      { milestone: 'Revenue $500K ARR', grant: '0.25%', shares: '25,000' },
+      { milestone: 'Profitability Achieved', grant: '0.25%', shares: '25,000' },
+    ],
+    notes: 'Founder performance equity is tied to major company milestones, not individual KPIs',
+  },
+  {
+    role: 'Co-Founder/C-Suite',
+    baseGrant: '1-5%',
+    performancePool: 'Up to 0.5%/year',
+    triggers: [
+      { milestone: 'Department OKRs 110%+', grant: '0.15%', shares: '15,000' },
+      { milestone: 'Revenue Target 125%+', grant: '0.2%', shares: '20,000' },
+      { milestone: 'Team Growth & Retention 95%+', grant: '0.15%', shares: '15,000' },
+    ],
+    notes: 'C-Suite performance grants based on department and company metrics',
+  },
+  {
+    role: 'Department Heads',
+    baseGrant: '0.25-1%',
+    performancePool: 'Up to 0.25%/year',
+    triggers: [
+      { milestone: 'Team OKRs 110%+', grant: '0.1%', shares: '10,000' },
+      { milestone: 'Cross-functional Impact', grant: '0.1%', shares: '10,000' },
+      { milestone: 'Exceptional Rating 2 consecutive quarters', grant: '0.05%', shares: '5,000' },
+    ],
+    notes: 'Performance grants vest over 2 years with 6-month cliff',
+  },
+  {
+    role: 'Individual Contributors',
+    baseGrant: '0.05-0.25%',
+    performancePool: 'Up to 0.1%/year',
+    triggers: [
+      { milestone: 'KPIs 125%+', grant: '0.05%', shares: '5,000' },
+      { milestone: 'High-Impact Project Delivery', grant: '0.03%', shares: '3,000' },
+      { milestone: 'Exceptional Rating', grant: '0.02%', shares: '2,000' },
+    ],
+    notes: 'Top 20% performers eligible for annual refresh grants',
+  },
+];
+
+const companyMilestones = [
+  {
+    milestone: 'H1 Targets (6 months)',
+    targets: ['250 merchants', '50K users', '$50K MRR'],
+    poolUnlock: '50,000 shares',
+    distribution: 'All employees pro-rata based on performance rating',
+  },
+  {
+    milestone: 'Series A Raise',
+    targets: ['$1M+ raised', 'Valuation $10M+'],
+    poolUnlock: '100,000 shares',
+    distribution: '25% to all employees, 75% to key contributors',
+  },
+  {
+    milestone: 'MAU 100K',
+    targets: ['100,000 monthly active users'],
+    poolUnlock: '75,000 shares',
+    distribution: 'Growth team 50%, all others 50%',
+  },
+  {
+    milestone: 'Profitability',
+    targets: ['3 consecutive months of profitability'],
+    poolUnlock: '150,000 shares',
+    distribution: 'All employees equally (tenure-weighted)',
+  },
+];
+
+// ============================================
 // FAQs
 // ============================================
 const faqs = [
@@ -241,6 +353,18 @@ const faqs = [
   {
     q: 'Are refresher grants given?',
     a: 'Yes! Top performers receive additional grants annually. This is separate from your initial grant and has its own 4-year vesting schedule.',
+  },
+  {
+    q: 'How do performance-based grants work?',
+    a: 'Performance grants are additional equity awarded when you exceed your targets. They are separate from your initial grant and have their own vesting schedule (typically 2 years with 6-month cliff). You earn these by exceeding KPIs, hitting team milestones, or when the company achieves major targets.',
+  },
+  {
+    q: 'Can I earn more equity than my initial grant?',
+    a: 'Absolutely! Performance grants can significantly increase your equity. Top performers can earn 50-100% additional equity over 4 years through consistent exceptional performance.',
+  },
+  {
+    q: 'When are performance grants awarded?',
+    a: 'Performance grants are reviewed quarterly and awarded semi-annually (every 6 months). Company milestone grants are awarded immediately upon achievement.',
   },
   {
     q: 'How are options taxed in UAE?',
@@ -527,6 +651,263 @@ const ESOPPage = () => {
               <p className="text-slate-300 text-sm">
                 After the cliff, you vest ~2.08% per month (1/48th of your grant). This means every month you stay, you earn more.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Performance-Based Equity - NEW SECTION */}
+      <section className="py-12 px-4 border-b border-slate-800 bg-gradient-to-b from-amber-500/5 to-transparent">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 rounded-full px-4 py-2 mb-4">
+              <Target className="w-4 h-4 text-amber-400" />
+              <span className="text-amber-400 font-medium text-sm">Earn More Equity</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black mb-2">
+              <Award className="w-7 h-7 text-amber-400 inline mr-2" />
+              Performance-Based Equity
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Exceed your targets. Earn more equity. Your initial grant is just the beginning.
+            </p>
+          </div>
+
+          {/* Performance Pool Overview */}
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
+            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Coins className="w-6 h-6 text-amber-400" />
+              </div>
+              <p className="text-3xl font-black text-amber-400">{performanceEquityPool.totalReserved.toLocaleString()}</p>
+              <p className="text-slate-400 text-sm">Shares Reserved for Performance</p>
+            </div>
+            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <Calendar className="w-6 h-6 text-emerald-400" />
+              </div>
+              <p className="text-3xl font-black text-emerald-400">{performanceEquityPool.annualBudget.toLocaleString()}</p>
+              <p className="text-slate-400 text-sm">Shares Available Per Year</p>
+            </div>
+            <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <TrendingUp className="w-6 h-6 text-cyan-400" />
+              </div>
+              <p className="text-3xl font-black text-cyan-400">2x</p>
+              <p className="text-slate-400 text-sm">Max Multiplier for Top Performers</p>
+            </div>
+          </div>
+
+          {/* How It Works */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 mb-10">
+            <h3 className="text-xl font-bold text-white mb-4">How Performance Equity Works</h3>
+            <div className="grid md:grid-cols-4 gap-4">
+              {[
+                { step: '1', title: 'Set Targets', desc: 'Quarterly OKRs and KPIs are set with your manager', icon: Target },
+                { step: '2', title: 'Perform', desc: 'Work hard to exceed your targets (110%+ of goal)', icon: Zap },
+                { step: '3', title: 'Review', desc: 'Quarterly performance reviews assess your achievement', icon: BarChart3 },
+                { step: '4', title: 'Earn Equity', desc: 'Performance grants awarded semi-annually to top performers', icon: Award },
+              ].map((item, i) => (
+                <div key={i} className="text-center">
+                  <div className="w-10 h-10 bg-[#c9a227]/20 rounded-full flex items-center justify-center mx-auto mb-2">
+                    <span className="text-[#c9a227] font-bold">{item.step}</span>
+                  </div>
+                  <item.icon className="w-6 h-6 text-slate-400 mx-auto mb-2" />
+                  <h4 className="font-bold text-white text-sm">{item.title}</h4>
+                  <p className="text-slate-400 text-xs">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Performance Tiers */}
+          <div className="mb-10">
+            <h3 className="text-xl font-bold text-white mb-4 text-center">Performance Tiers & Multipliers</h3>
+            <div className="grid md:grid-cols-3 gap-4">
+              {performanceTiers.map((tier, i) => {
+                const colorClasses = {
+                  emerald: 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400',
+                  cyan: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400',
+                  amber: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
+                };
+                return (
+                  <div key={i} className={`border rounded-2xl p-5 ${colorClasses[tier.color as keyof typeof colorClasses]}`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-bold text-white">{tier.tier}</h4>
+                      <span className="text-2xl font-black">{tier.multiplier}</span>
+                    </div>
+                    <p className="text-slate-400 text-sm mb-2">Target Achievement: {tier.threshold}</p>
+                    <p className="text-slate-300 text-sm">{tier.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Category Allocation */}
+          <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 mb-10">
+            <h3 className="text-xl font-bold text-white mb-4">Performance Pool Allocation</h3>
+            <div className="space-y-4">
+              {performanceEquityPool.categories.map((cat, i) => {
+                const colors = ['bg-cyan-500', 'bg-emerald-500', 'bg-amber-500'];
+                return (
+                  <div key={i}>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span className="text-slate-300">{cat.category}</span>
+                      <span className="font-bold text-white">{cat.allocation}% ({cat.shares.toLocaleString()} shares)</span>
+                    </div>
+                    <div className="h-3 bg-slate-700 rounded-full overflow-hidden">
+                      <div className={`h-full ${colors[i]} rounded-full`} style={{ width: `${cat.allocation}%` }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Grants by Role */}
+      <section className="py-12 px-4 border-b border-slate-800">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-black mb-2">
+              <Users className="w-7 h-7 text-cyan-400 inline mr-2" />
+              Performance Grants by Role
+            </h2>
+            <p className="text-slate-400">How each role can earn additional equity</p>
+          </div>
+
+          <div className="space-y-6">
+            {rolePerformanceGrants.map((role, i) => (
+              <div key={i} className={`bg-slate-800/50 border rounded-2xl p-6 ${i === 0 ? 'border-[#c9a227]/50 bg-[#c9a227]/5' : 'border-slate-700'}`}>
+                <div className="flex flex-wrap items-center gap-4 mb-4">
+                  <h3 className={`text-xl font-bold ${i === 0 ? 'text-[#c9a227]' : 'text-white'}`}>{role.role}</h3>
+                  <div className="flex gap-2">
+                    <span className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">Base: {role.baseGrant}</span>
+                    <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm">Performance: {role.performancePool}</span>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-4 mb-4">
+                  {role.triggers.map((trigger, j) => (
+                    <div key={j} className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
+                      <div className="flex items-start gap-2 mb-2">
+                        <Target className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                        <p className="text-slate-300 text-sm font-medium">{trigger.milestone}</p>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-500">Grant</span>
+                        <span className="text-[#c9a227] font-bold">{trigger.grant}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-500">Shares</span>
+                        <span className="text-emerald-400 font-bold">{trigger.shares}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <p className="text-slate-500 text-sm">
+                  <AlertTriangle className="w-4 h-4 text-amber-400 inline mr-1" />
+                  {role.notes}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Company Milestone Bonuses */}
+      <section className="py-12 px-4 border-b border-slate-800 bg-slate-900/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-black mb-2">
+              <Rocket className="w-7 h-7 text-pink-400 inline mr-2" />
+              Company Milestone Bonuses
+            </h2>
+            <p className="text-slate-400">When the company wins, everyone wins</p>
+          </div>
+
+          <div className="space-y-4">
+            {companyMilestones.map((ms, i) => (
+              <div key={i} className="bg-slate-800/50 border border-slate-700 rounded-2xl p-5">
+                <div className="flex flex-wrap items-center justify-between mb-3">
+                  <h3 className="text-lg font-bold text-white">{ms.milestone}</h3>
+                  <span className="px-4 py-1 bg-emerald-500/20 text-emerald-400 rounded-full font-bold">
+                    {ms.poolUnlock} unlock
+                  </span>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-slate-400 text-sm mb-2">Targets:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {ms.targets.map((target, j) => (
+                        <span key={j} className="px-3 py-1 bg-slate-700 text-slate-300 rounded-full text-sm">
+                          {target}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-slate-400 text-sm mb-2">Distribution:</p>
+                    <p className="text-slate-300 text-sm">{ms.distribution}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Example Calculation */}
+          <div className="mt-8 bg-gradient-to-r from-amber-500/10 to-emerald-500/10 border border-amber-500/30 rounded-2xl p-6">
+            <h4 className="font-bold text-white mb-4 flex items-center gap-2">
+              <Calculator className="w-5 h-5 text-amber-400" />
+              Example: Senior Engineer Performance Journey
+            </h4>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-3">
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-slate-400">Initial Grant (Day 1)</span>
+                  <span className="text-white font-bold">20,000 shares (0.2%)</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-slate-400">Year 1: Exceeds KPIs (125%)</span>
+                  <span className="text-emerald-400 font-bold">+5,000 shares</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-slate-400">Year 2: Outstanding + Milestone</span>
+                  <span className="text-emerald-400 font-bold">+8,000 shares</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-slate-400">Year 3: Promoted to Lead</span>
+                  <span className="text-cyan-400 font-bold">+15,000 shares (promotion)</span>
+                </div>
+                <div className="flex justify-between border-b border-slate-700 pb-2">
+                  <span className="text-slate-400">Company Milestone Bonuses</span>
+                  <span className="text-pink-400 font-bold">+3,000 shares</span>
+                </div>
+              </div>
+              <div className="bg-slate-900/50 border border-slate-700 rounded-xl p-4">
+                <h5 className="font-bold text-[#c9a227] mb-3">Total After 3 Years</h5>
+                <div className="space-y-2">
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Total Shares</span>
+                    <span className="text-2xl font-black text-white">51,000</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Equity %</span>
+                    <span className="text-xl font-bold text-[#c9a227]">0.51%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-slate-400">Increase from Initial</span>
+                    <span className="text-emerald-400 font-bold">+155%</span>
+                  </div>
+                  <hr className="border-slate-700" />
+                  <p className="text-xs text-slate-500">
+                    At $10 exit price = AED 510,000 value (vs. AED 200,000 with just initial grant)
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
