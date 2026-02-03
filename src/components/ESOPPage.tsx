@@ -1206,30 +1206,30 @@ const ESOPPage = () => {
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span className="text-slate-400">Shares exercised</span>
-                          <span className="text-white">{scenario.example.shares.toLocaleString()}</span>
+                          <span className="text-white">{(scenario.example as { shares: number }).shares.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-slate-400">Strike price</span>
-                          <span className="text-white">AED {scenario.example.strikePrice}</span>
+                          <span className="text-white">AED {(scenario.example as { strikePrice: number }).strikePrice}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-slate-400">Exit price</span>
-                          <span className="text-white">AED {scenario.example.exitPrice}</span>
+                          <span className="text-white">AED {(scenario.example as { exitPrice: number }).exitPrice}</span>
                         </div>
                         <hr className="border-slate-700" />
                         <div className="flex justify-between">
                           <span className="text-slate-400">You pay</span>
-                          <span className="text-red-400">-AED {scenario.example.exerciseCost.toLocaleString()}</span>
+                          <span className="text-red-400">-AED {(scenario.example as { exerciseCost: number }).exerciseCost.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-slate-400">Gross value</span>
-                          <span className="text-white">AED {scenario.example.grossValue.toLocaleString()}</span>
+                          <span className="text-white">AED {(scenario.example as { grossValue: number }).grossValue.toLocaleString()}</span>
                         </div>
                         <div className="flex justify-between font-bold">
                           <span className="text-emerald-400">Net value</span>
-                          <span className="text-emerald-400">AED {scenario.example.netValue.toLocaleString()}</span>
+                          <span className="text-emerald-400">AED {(scenario.example as { netValue: number }).netValue.toLocaleString()}</span>
                         </div>
-                        <p className="text-xs text-slate-500 mt-2">{scenario.example.taxNote}</p>
+                        <p className="text-xs text-slate-500 mt-2">{(scenario.example as { taxNote: string }).taxNote}</p>
                       </div>
                     </div>
                   )}
@@ -1240,17 +1240,17 @@ const ESOPPage = () => {
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span className="text-slate-400">Total grant</span>
-                          <span className="text-white">{scenario.example.totalShares.toLocaleString()} shares</span>
+                          <span className="text-white">{(scenario.example as { totalShares: number }).totalShares.toLocaleString()} shares</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-slate-400">Vested (50%)</span>
-                          <span className="text-emerald-400">{scenario.example.vestedShares.toLocaleString()} shares ✓</span>
+                          <span className="text-emerald-400">{(scenario.example as { vestedShares: number }).vestedShares.toLocaleString()} shares ✓</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-slate-400">Unvested (forfeited)</span>
-                          <span className="text-red-400">{scenario.example.unvestedShares.toLocaleString()} shares</span>
+                          <span className="text-red-400">{(scenario.example as { unvestedShares: number }).unvestedShares.toLocaleString()} shares</span>
                         </div>
-                        <p className="text-xs text-slate-500 mt-2">{scenario.example.note}</p>
+                        <p className="text-xs text-slate-500 mt-2">{(scenario.example as { note: string }).note}</p>
                       </div>
                     </div>
                   )}
