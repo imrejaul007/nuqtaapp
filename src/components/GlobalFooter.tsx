@@ -36,7 +36,10 @@ import {
   Crown,
   Calculator,
   Mail,
-  Swords
+  Swords,
+  Megaphone,
+  UserCircle,
+  Bot
 } from 'lucide-react';
 
 /**
@@ -139,6 +142,16 @@ const navigationData: NavCategory[] = [
       { label: 'Contracts', href: '/contracts', icon: FileText, description: 'MoU templates' },
       { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
       { label: 'Terms', href: '/terms', icon: FileText, description: 'Terms of service' },
+    ]
+  },
+  {
+    title: 'Agent Reports',
+    items: [
+      { label: 'CEO Report', href: '/ceo-report', icon: Crown, description: 'Vision & strategy' },
+      { label: 'COO Report', href: '/coo-report', icon: Settings, description: 'Operations' },
+      { label: 'CMO Report', href: '/cmo-report', icon: Megaphone, description: 'Marketing' },
+      { label: 'CHRO Report', href: '/chro-report', icon: UserCircle, description: 'People' },
+      { label: 'CFO Report', href: '/cfo-report', icon: Calculator, description: 'Finance' },
     ]
   },
   {
