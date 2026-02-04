@@ -1053,23 +1053,45 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
                 </div>
               </div>
 
-              {/* Hiring Plans */}
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="bg-[#1a2a42]/50 rounded-xl p-4 border border-[#2a3a52] text-center">
-                  <p className="text-3xl mb-2">👨‍💻</p>
-                  <p className="text-sm font-bold mb-1">CTO</p>
-                  <p className="text-xs text-gray-400">Hiring with funding</p>
+              {/* Team - Now Hired */}
+              <div className="mt-6">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
+                  <p className="text-green-400 font-bold text-sm">FULL TEAM HIRED & PRODUCT READY</p>
                 </div>
-                <div className="bg-[#1a2a42]/50 rounded-xl p-4 border border-[#2a3a52] text-center">
-                  <p className="text-3xl mb-2">🧑‍💼</p>
-                  <p className="text-sm font-bold mb-1">BD Lead</p>
-                  <p className="text-xs text-gray-400">Merchant acquisition</p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
+                    <p className="text-2xl mb-1">👨‍💻</p>
+                    <p className="text-sm font-bold text-green-400">CTO</p>
+                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  </div>
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
+                    <p className="text-2xl mb-1">📈</p>
+                    <p className="text-sm font-bold text-green-400">CMO</p>
+                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  </div>
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
+                    <p className="text-2xl mb-1">👥</p>
+                    <p className="text-sm font-bold text-green-400">CHRO</p>
+                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  </div>
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
+                    <p className="text-2xl mb-1">💻</p>
+                    <p className="text-sm font-bold text-green-400">2 Devs</p>
+                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  </div>
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
+                    <p className="text-2xl mb-1">🤝</p>
+                    <p className="text-sm font-bold text-green-400">BDA</p>
+                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  </div>
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
+                    <p className="text-2xl mb-1">🎨</p>
+                    <p className="text-sm font-bold text-green-400">Designer</p>
+                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  </div>
                 </div>
-                <div className="bg-[#1a2a42]/50 rounded-xl p-4 border border-[#2a3a52] text-center">
-                  <p className="text-3xl mb-2">👥</p>
-                  <p className="text-sm font-bold mb-1">2 Developers</p>
-                  <p className="text-xs text-gray-400">Mobile + Backend</p>
-                </div>
+                <p className="text-center text-sm text-[#c9a227] mt-4 font-medium">8 Team Members • Product 100% Ready • Launch Phase</p>
               </div>
             </div>
           </div>

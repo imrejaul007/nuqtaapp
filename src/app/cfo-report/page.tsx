@@ -1323,12 +1323,12 @@ export default function CFOReportPage() {
                   </thead>
                   <tbody>
                     {[
-                      { metric: 'Users', now: '847', q1: '5,000', q2: '15,000', q3: '35,000', q4: '75,000' },
-                      { metric: 'Merchants', now: '3', q1: '25', q2: '75', q3: '150', q4: '300' },
+                      { metric: 'Users', now: '0 (Beta)', q1: '5,000', q2: '15,000', q3: '35,000', q4: '75,000' },
+                      { metric: 'Merchants', now: '30 LOIs', q1: '25 Live', q2: '75', q3: '150', q4: '300' },
                       { metric: 'Monthly Revenue', now: '0', q1: 'AED 25K', q2: 'AED 75K', q3: 'AED 175K', q4: 'AED 375K' },
-                      { metric: 'Monthly Burn', now: 'AED 40K', q1: 'AED 80K', q2: 'AED 150K', q3: 'AED 200K', q4: 'AED 250K' },
-                      { metric: 'Net Burn', now: 'AED 40K', q1: 'AED 55K', q2: 'AED 75K', q3: 'AED 25K', q4: 'Break-even' },
-                      { metric: 'Team Size', now: '3', q1: '8', q2: '15', q3: '25', q4: '40' }
+                      { metric: 'Monthly Burn', now: 'AED 60K', q1: 'AED 80K', q2: 'AED 150K', q3: 'AED 200K', q4: 'AED 250K' },
+                      { metric: 'Net Burn', now: 'AED 60K', q1: 'AED 55K', q2: 'AED 75K', q3: 'AED 25K', q4: 'Break-even' },
+                      { metric: 'Team Size', now: '8', q1: '12', q2: '18', q3: '28', q4: '45' }
                     ].map((row) => (
                       <tr key={row.metric} className="border-b border-white/5">
                         <td className="py-3 px-4 text-slate-300">{row.metric}</td>

@@ -232,14 +232,13 @@ export default function CHROReportPage() {
               <div className="flex items-start gap-4">
                 <MessageSquare className="text-teal-400 flex-shrink-0" size={24} />
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-2">Opening Assessment</h4>
+                  <h4 className="text-lg font-bold text-white mb-2">Opening Assessment - UPDATED</h4>
                   <p className="text-slate-300 leading-relaxed">
-                    "Nuqta is at the most critical stage of company building - the founding team phase. Every hire
-                    you make in the next 6 months will define the DNA of your company for the next 10 years. At Uber,
-                    our first 20 hires in MENA became the leaders who built the entire region. But here's what I see:
-                    Nuqta has no hiring pipeline, no culture defined, no compensation framework, and the founding
-                    team is doing everything themselves. This is unsustainable. You need to hire 3-5 key people
-                    immediately - not to grow fast, but to survive. I'll show you exactly who to hire and how."
+                    "Incredible progress! The founding team has been successfully built with 8 members including
+                    CTO, CHRO, CMO, 2 Developers, BDA, and Graphic Designer. The product is 100% complete.
+                    Now the focus shifts to: 1) Defining company culture with the new team, 2) Creating
+                    compensation frameworks, 3) Building employer brand, and 4) Preparing for post-traction scaling.
+                    The CHRO hire is now leading people operations and can drive these initiatives."
                   </p>
                 </div>
               </div>
@@ -258,22 +257,24 @@ export default function CHROReportPage() {
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { area: 'Team Size', score: 25, status: 'critical', note: 'Severely understaffed' },
-                  { area: 'Hiring Pipeline', score: 10, status: 'critical', note: 'No active pipeline' },
-                  { area: 'Culture Definition', score: 20, status: 'critical', note: 'Undefined values/norms' },
-                  { area: 'Compensation', score: 30, status: 'poor', note: 'No formal structure' },
-                  { area: 'Employee Experience', score: 40, status: 'poor', note: 'Basic processes only' },
-                  { area: 'Documentation', score: 15, status: 'critical', note: 'Missing role clarity' },
-                  { area: 'Performance System', score: 10, status: 'critical', note: 'No formal reviews' },
-                  { area: 'Employer Brand', score: 5, status: 'critical', note: 'Unknown in market' }
+                  { area: 'Team Size', score: 100, status: 'excellent', note: '8 members hired' },
+                  { area: 'Hiring Pipeline', score: 90, status: 'excellent', note: 'All key roles filled' },
+                  { area: 'Culture Definition', score: 40, status: 'in-progress', note: 'CHRO now defining' },
+                  { area: 'Compensation', score: 50, status: 'in-progress', note: 'Framework in progress' },
+                  { area: 'Employee Experience', score: 60, status: 'good', note: 'Team onboarded' },
+                  { area: 'Documentation', score: 70, status: 'good', note: 'Roles clearly defined' },
+                  { area: 'Performance System', score: 30, status: 'in-progress', note: 'Setting up with CHRO' },
+                  { area: 'Employer Brand', score: 40, status: 'in-progress', note: 'CMO building presence' }
                 ].map((item) => (
                   <div key={item.area} className="bg-white/5 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-slate-300 text-sm">{item.area}</span>
                       <span className={`text-xs px-2 py-1 rounded-full ${
+                        item.status === 'excellent' ? 'bg-green-500/20 text-green-400' :
+                        item.status === 'good' ? 'bg-blue-500/20 text-blue-400' :
+                        item.status === 'in-progress' ? 'bg-yellow-500/20 text-yellow-400' :
                         item.status === 'critical' ? 'bg-red-500/20 text-red-400' :
-                        item.status === 'poor' ? 'bg-orange-500/20 text-orange-400' :
-                        'bg-yellow-500/20 text-yellow-400'
+                        'bg-orange-500/20 text-orange-400'
                       }`}>
                         {item.status.toUpperCase()}
                       </span>
@@ -285,9 +286,10 @@ export default function CHROReportPage() {
                     <div className="w-full bg-slate-700 rounded-full h-2 mt-2">
                       <div
                         className={`h-2 rounded-full ${
-                          item.score < 25 ? 'bg-red-500' :
-                          item.score < 50 ? 'bg-orange-500' :
-                          'bg-yellow-500'
+                          item.score >= 80 ? 'bg-green-500' :
+                          item.score >= 60 ? 'bg-blue-500' :
+                          item.score >= 40 ? 'bg-yellow-500' :
+                          'bg-orange-500'
                         }`}
                         style={{ width: `${item.score}%` }}
                       />
@@ -1195,12 +1197,12 @@ export default function CHROReportPage() {
               <h3 className="text-xl font-bold text-white mb-6">Team Health Metrics (Track Monthly)</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {[
-                  { metric: 'Team Size', current: '3', target: '8', icon: Users },
-                  { metric: 'eNPS Score', current: 'N/A', target: '50+', icon: Smile },
-                  { metric: 'Retention Rate', current: 'N/A', target: '95%', icon: UserCheck },
-                  { metric: '1:1 Completion', current: '0%', target: '100%', icon: MessageSquare },
-                  { metric: 'Onboarding Satisfaction', current: 'N/A', target: '4.5/5', icon: Star },
-                  { metric: 'Roles Documented', current: '0/8', target: '8/8', icon: Briefcase }
+                  { metric: 'Team Size', current: '8', target: '8', icon: Users },
+                  { metric: 'eNPS Score', current: 'Tracking', target: '50+', icon: Smile },
+                  { metric: 'Retention Rate', current: '100%', target: '95%', icon: UserCheck },
+                  { metric: '1:1 Completion', current: '50%', target: '100%', icon: MessageSquare },
+                  { metric: 'Onboarding Satisfaction', current: 'In Progress', target: '4.5/5', icon: Star },
+                  { metric: 'Roles Documented', current: '8/8', target: '8/8', icon: Briefcase }
                 ].map((item) => (
                   <div key={item.metric} className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center gap-3 mb-3">

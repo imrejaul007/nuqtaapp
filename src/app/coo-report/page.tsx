@@ -227,11 +227,11 @@ function OperationsDiagnosis() {
               { area: 'Merchant Onboarding Process', score: 60, status: 'Documented, not tested' },
               { area: 'Live Merchant Operations', score: 0, status: 'Zero merchants live' },
               { area: 'Payment Integration', score: 15, status: 'Not implemented' },
-              { area: 'Support Infrastructure', score: 20, status: 'No system in place' },
-              { area: 'Quality Assurance', score: 40, status: 'Checklist exists, not used' },
+              { area: 'Support Infrastructure', score: 40, status: 'CHRO setting up' },
+              { area: 'Quality Assurance', score: 60, status: 'Product ready for testing' },
               { area: 'Operational Playbooks', score: 85, status: 'Well documented' },
-              { area: 'Technology Stack', score: 30, status: 'Needs CTO to assess' },
-              { area: 'Team Capacity', score: 25, status: 'Severely understaffed' },
+              { area: 'Technology Stack', score: 100, status: 'CTO hired, product complete' },
+              { area: 'Team Capacity', score: 100, status: '8 team members hired' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-4">
                 <div className="w-48 text-slate-300 text-sm">{item.area}</div>
@@ -248,17 +248,17 @@ function OperationsDiagnosis() {
               </div>
             ))}
           </div>
-          <div className="p-6 bg-blue-500/10 rounded-xl border border-blue-500/30">
-            <h4 className="text-blue-400 font-bold mb-4">Overall Operations Grade</h4>
+          <div className="p-6 bg-green-500/10 rounded-xl border border-green-500/30">
+            <h4 className="text-green-400 font-bold mb-4">Overall Operations Grade</h4>
             <div className="flex items-center gap-4 mb-4">
-              <div className="text-5xl font-bold text-red-400">D</div>
+              <div className="text-5xl font-bold text-green-400">B+</div>
               <div>
-                <p className="text-white font-medium">Documentation: B+</p>
-                <p className="text-slate-400 text-sm">Execution: F</p>
+                <p className="text-white font-medium">Documentation: A</p>
+                <p className="text-slate-400 text-sm">Execution: Ready to Launch</p>
               </div>
             </div>
             <p className="text-slate-300 text-sm">
-              You have the playbooks but haven&apos;t run a single play. Operations is about doing, not documenting.
+              Full team hired (8 members), product 100% complete. Now executing on merchant conversion and launch.
             </p>
           </div>
         </div>
@@ -272,11 +272,11 @@ function OperationsDiagnosis() {
         </h3>
         <div className="space-y-4">
           {[
-            { stage: 'LOIs Signed', count: 30, pct: 100, issue: 'Good start, but LOIs expire' },
-            { stage: 'Contracts Sent', count: 0, pct: 0, issue: 'BLOCKER: No contracts sent' },
-            { stage: 'Contracts Signed', count: 0, pct: 0, issue: 'BLOCKER: Waiting on step above' },
-            { stage: 'Integration Complete', count: 0, pct: 0, issue: 'BLOCKER: No product to integrate' },
-            { stage: 'Training Done', count: 0, pct: 0, issue: 'BLOCKER: No merchants to train' },
+            { stage: 'LOIs Signed', count: 30, pct: 100, issue: 'Ready to convert' },
+            { stage: 'Contracts Sent', count: 10, pct: 33, issue: 'BDA actively sending' },
+            { stage: 'Contracts Signed', count: 5, pct: 17, issue: 'In progress' },
+            { stage: 'Integration Complete', count: 0, pct: 0, issue: 'Product ready, starting integration' },
+            { stage: 'Training Done', count: 0, pct: 0, issue: 'Starting post-integration' },
             { stage: 'Live & Transacting', count: 0, pct: 0, issue: 'CRITICAL: Zero revenue' },
           ].map((item, idx) => (
             <div key={idx} className="flex items-center gap-4 p-4 bg-white/5 rounded-xl">

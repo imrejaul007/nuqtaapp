@@ -173,20 +173,20 @@ function CriticalOverview() {
 
       {/* Severity Matrix */}
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="bg-red-500/10 rounded-2xl p-6 border border-red-500/30">
+        <div className="bg-green-500/10 rounded-2xl p-6 border border-green-500/30">
           <div className="flex items-center gap-2 mb-4">
-            <XCircle size={24} className="text-red-400" />
-            <h3 className="text-red-400 font-bold text-lg">CRITICAL (Fix Now)</h3>
+            <CheckCircle size={24} className="text-green-400" />
+            <h3 className="text-green-400 font-bold text-lg">COMPLETED</h3>
           </div>
           <ul className="space-y-3">
             {[
-              { issue: 'No CTO/Tech Lead', owner: 'CEO/CHRO' },
-              { issue: 'No funding closed', owner: 'CEO/CFO' },
-              { issue: 'Zero live users', owner: 'CMO/COO' },
-              { issue: 'App not in stores', owner: 'CTO' },
+              { issue: '✓ CTO Hired', owner: 'CEO/CHRO' },
+              { issue: '✓ Product 100% Complete', owner: 'CTO' },
+              { issue: '✓ Full Team (8 members)', owner: 'CHRO' },
+              { issue: '✓ Payment Integration Done', owner: 'CTO' },
             ].map((item, idx) => (
               <li key={idx} className="flex items-start gap-2 text-slate-300 text-sm">
-                <AlertCircle size={16} className="text-red-400 mt-0.5 flex-shrink-0" />
+                <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <span className="font-medium">{item.issue}</span>
                   <span className="text-slate-500 text-xs block">Owner: {item.owner}</span>
@@ -199,14 +199,14 @@ function CriticalOverview() {
         <div className="bg-yellow-500/10 rounded-2xl p-6 border border-yellow-500/30">
           <div className="flex items-center gap-2 mb-4">
             <AlertTriangle size={24} className="text-yellow-400" />
-            <h3 className="text-yellow-400 font-bold text-lg">HIGH (Fix in 30 Days)</h3>
+            <h3 className="text-yellow-400 font-bold text-lg">IN PROGRESS (Launch Phase)</h3>
           </div>
           <ul className="space-y-3">
             {[
-              { issue: 'Only 30 LOIs, 0 live merchants', owner: 'COO' },
-              { issue: 'No marketing spend deployed', owner: 'CMO' },
-              { issue: 'Team of 4 (need 12)', owner: 'CHRO' },
-              { issue: 'No payment integration', owner: 'CTO/COO' },
+              { issue: 'Convert LOIs to live merchants', owner: 'BDA/COO' },
+              { issue: 'Deploy marketing campaigns', owner: 'CMO' },
+              { issue: 'Close funding round', owner: 'CEO/CFO' },
+              { issue: 'Beta testing & launch', owner: 'CTO/Full Team' },
             ].map((item, idx) => (
               <li key={idx} className="flex items-start gap-2 text-slate-300 text-sm">
                 <AlertTriangle size={16} className="text-yellow-400 mt-0.5 flex-shrink-0" />

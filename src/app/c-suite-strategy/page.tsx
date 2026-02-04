@@ -1139,10 +1139,10 @@ function CHROSection() {
       {/* Team Overview */}
       <div className="grid md:grid-cols-4 gap-4">
         {[
-          { label: 'Current Team Size', value: '4', target: '12 by Q2' },
-          { label: 'Open Positions', value: '8', target: '0 by Month 3' },
-          { label: 'Offer Acceptance', value: '80%', target: '> 85%' },
-          { label: 'eNPS Score', value: 'N/A', target: '> 50' },
+          { label: 'Current Team Size', value: '8', target: '15 by Q2' },
+          { label: 'Open Positions', value: '0', target: 'Scaling post-traction' },
+          { label: 'Offer Acceptance', value: '100%', target: '> 85%' },
+          { label: 'eNPS Score', value: 'Tracking', target: '> 50' },
         ].map((kpi, idx) => (
           <div key={idx} className="bg-white/5 rounded-xl p-4 border border-white/10">
             <p className="text-slate-400 text-sm">{kpi.label}</p>

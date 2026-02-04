@@ -83,24 +83,24 @@ export default function IssueResolutionPage() {
     // ============================================
     {
       id: 'ceo-1',
-      title: 'Product Development at 25% - No Shippable MVP',
-      description: 'The app is not ready for users. This is the single biggest blocker preventing all other progress.',
+      title: 'Product Development - MVP COMPLETE',
+      description: 'Product is fully ready and built. Ready for testing and launch.',
       department: 'ceo',
       priority: 'critical',
-      status: 'in_progress',
+      status: 'completed',
       deadline: 'Feb 15, 2026',
-      owner: 'Founder + CTO',
+      owner: 'CTO + Dev Team',
       solution: [
-        'Define MVP scope: User search, merchant listing, QR scan, coin credit - NOTHING ELSE',
-        'Set hard deadline: Feb 15 for beta-ready app',
-        'Daily standups on development progress',
-        'Cut any feature that delays launch',
-        'Use no-code/low-code for non-core features'
+        '✅ MVP scope defined and executed',
+        '✅ All core features completed (search, QR, coins, merchant listing)',
+        '✅ Development team delivered on time',
+        '✅ Product ready for beta testing',
+        '→ Next: Launch beta testing with real users'
       ],
       metrics: [
-        'MVP feature completion %',
-        'Days until beta launch',
-        'Critical bugs count'
+        'MVP feature completion: 100%',
+        'Product status: Ready for launch',
+        'Critical bugs: Being addressed in testing'
       ]
     },
     {
@@ -178,16 +178,16 @@ export default function IssueResolutionPage() {
     // ============================================
     {
       id: 'coo-1',
-      title: 'Zero Live Merchants - 30 LOIs Not Converted',
-      description: '30+ LOIs signed but 0 merchants are live and transacting. LOIs are expiring.',
+      title: 'Merchant Conversion - BDA NOW EXECUTING',
+      description: '30+ LOIs signed. BDA now actively converting to live merchants with product ready.',
       department: 'coo',
       priority: 'critical',
-      status: 'not_started',
+      status: 'in_progress',
       deadline: 'Feb 10, 2026',
-      owner: 'Founder',
+      owner: 'BDA + Founder',
       solution: [
         'Pick 10 best LOI merchants for pilot',
-        'Call each personally - schedule onboarding',
+        'BDA to call each personally - schedule onboarding',
         'Send contracts within 24 hours of call',
         'Offer launch incentives (waived fees for 30 days)',
         'Complete onboarding in single 1-hour session',
@@ -203,24 +203,24 @@ export default function IssueResolutionPage() {
     },
     {
       id: 'coo-2',
-      title: 'No Payment Integration - Core Functionality Missing',
-      description: 'Payment system is at 15% completion. Cannot process transactions without this.',
+      title: 'Payment Integration - COMPLETE',
+      description: 'Payment system integrated as part of full product completion.',
       department: 'coo',
       priority: 'critical',
-      status: 'in_progress',
+      status: 'completed',
       deadline: 'Feb 12, 2026',
-      owner: 'CTO',
+      owner: 'CTO + Dev Team',
       solution: [
-        'Use Stripe UAE for MVP (fastest integration)',
-        'Implement simple QR-to-payment flow',
-        'Manual settlement for first 30 days if needed',
-        'No complex payment features in MVP',
-        'Add bank transfer as backup payment method'
+        '✅ Payment integration completed',
+        '✅ QR-to-payment flow implemented',
+        '✅ Core payment features ready',
+        '→ Next: Test with real transactions',
+        '→ Monitor payment failure rates post-launch'
       ],
       metrics: [
-        'Payment integration completion %',
-        'Test transactions successful',
-        'Payment failure rate'
+        'Payment integration: 100%',
+        'Test transactions: Ready to test',
+        'Payment failure rate: Monitor post-launch'
       ]
     },
     {
@@ -248,24 +248,25 @@ export default function IssueResolutionPage() {
     },
     {
       id: 'coo-4',
-      title: 'Team Capacity at 25% - Severely Understaffed',
-      description: 'Founder doing everything alone. No capacity to execute on multiple fronts.',
+      title: 'Team Capacity - FULLY STAFFED',
+      description: 'Full team hired: CTO, CHRO, CMO, 2 Developers, BDA, and Graphic Designer.',
       department: 'coo',
       priority: 'high',
-      status: 'not_started',
+      status: 'completed',
       deadline: 'Mar 15, 2026',
       owner: 'Founder',
       solution: [
-        'Hire part-time CTO immediately (3 days/week)',
-        'Find operations intern for merchant onboarding',
-        'Use Upwork for specific tasks (design, content)',
-        'Identify co-founder candidate',
-        'Delegate non-core tasks ruthlessly'
+        '✅ CTO hired - Technical leadership in place',
+        '✅ CHRO hired - People operations covered',
+        '✅ CMO hired - Marketing leadership in place',
+        '✅ 2 Developers hired - Dev capacity scaled',
+        '✅ BDA hired - Business development active',
+        '✅ Graphic Designer hired - Design capacity ready'
       ],
       metrics: [
-        'Key hires made',
-        'Hours founder spends on non-strategic tasks',
-        'Task completion rate'
+        'Key hires made: 7 team members',
+        'Team capacity: 100%',
+        'All critical roles filled'
       ],
       dependencies: ['chro-1']
     },
@@ -275,15 +276,15 @@ export default function IssueResolutionPage() {
     // ============================================
     {
       id: 'cmo-1',
-      title: 'Brand Awareness at 15% - Unknown in Market',
-      description: 'Near-zero market awareness. Target users don\'t know Nuqta exists.',
+      title: 'Brand Awareness Campaign - READY TO LAUNCH',
+      description: 'CMO and Graphic Designer hired. Ready to execute brand awareness strategy.',
       department: 'cmo',
       priority: 'high',
-      status: 'not_started',
+      status: 'in_progress',
       deadline: 'Mar 1, 2026',
-      owner: 'Founder + Marketing',
+      owner: 'CMO + Graphic Designer',
       solution: [
-        'Create Instagram + TikTok accounts TODAY',
+        'Create Instagram + TikTok accounts (launch week)',
         'Post 3x daily for 30 days (user tips, merchant features)',
         'Launch in-app referral program (give 50, get 50 coins)',
         'Partner with 5 micro-influencers (1K-10K followers)',
@@ -322,13 +323,13 @@ export default function IssueResolutionPage() {
     },
     {
       id: 'cmo-3',
-      title: 'No Influencer Strategy',
-      description: 'Zero influencer partnerships. Missing easy wins in UAE influencer market.',
+      title: 'Influencer Strategy - READY TO EXECUTE',
+      description: 'CMO to lead influencer outreach strategy with designer support for content.',
       department: 'cmo',
       priority: 'medium',
-      status: 'not_started',
+      status: 'in_progress',
       deadline: 'Mar 15, 2026',
-      owner: 'Marketing',
+      owner: 'CMO + Designer',
       solution: [
         'Identify 20 UAE food/lifestyle micro-influencers',
         'Offer free Nuqta coins (AED 500 value) for posts',
@@ -345,13 +346,13 @@ export default function IssueResolutionPage() {
     },
     {
       id: 'cmo-4',
-      title: 'No Community - Zero User Engagement',
-      description: 'No community exists. Users have no connection to brand or each other.',
+      title: 'Community Building - PLANNED',
+      description: 'CMO to build Nuqta user community post-launch.',
       department: 'cmo',
       priority: 'medium',
       status: 'not_started',
       deadline: 'Mar 30, 2026',
-      owner: 'Marketing',
+      owner: 'CMO',
       solution: [
         'Create "Nuqta Savers" WhatsApp community',
         'Launch weekly "Deal of the Week" content',
@@ -373,64 +374,64 @@ export default function IssueResolutionPage() {
     // ============================================
     {
       id: 'chro-1',
-      title: 'No CTO/Technical Co-founder',
-      description: 'Founder is non-technical and doing everything. Critical need for technical leadership.',
+      title: 'CTO Hired - COMPLETE',
+      description: 'Technical leadership secured. CTO is now leading the development team.',
       department: 'chro',
       priority: 'critical',
-      status: 'in_progress',
+      status: 'completed',
       deadline: 'Feb 28, 2026',
       owner: 'Founder',
       solution: [
-        'Post on LinkedIn, AngelList, Dubai startup groups',
-        'Offer 5-10% equity for fractional CTO',
-        'Interview 5 candidates this week',
-        'Look for: Startup experience, mobile, payments',
-        'Consider part-time (3 days) initially',
-        'Use technical advisors for interim'
+        '✅ CTO hired and onboarded',
+        '✅ Technical leadership in place',
+        '✅ Leading development team (2 developers)',
+        '✅ Product development completed under CTO leadership',
+        '→ Next: Scale team as needed post-launch'
       ],
       metrics: [
-        'CTO candidates interviewed',
-        'Offer acceptance',
-        'Time to first hire'
+        'CTO: Hired ✓',
+        'Technical team: 3 members (CTO + 2 devs)',
+        'Product: 100% complete'
       ]
     },
     {
       id: 'chro-2',
-      title: 'No Hiring Pipeline - Zero Candidates',
-      description: 'No active job postings, no candidates in pipeline, no recruitment process.',
+      title: 'Hiring Pipeline - ALL KEY ROLES FILLED',
+      description: 'Successfully hired full founding team: CTO, CHRO, CMO, 2 Developers, BDA, Graphic Designer.',
       department: 'chro',
       priority: 'high',
-      status: 'not_started',
+      status: 'completed',
       deadline: 'Mar 1, 2026',
-      owner: 'Founder',
+      owner: 'Founder + CHRO',
       solution: [
-        'Post 3 key roles on LinkedIn Jobs (free)',
-        'Add roles to AngelList, Bayt, Indeed',
-        'Reach out to personal network for referrals',
-        'Create simple Notion-based applicant tracker',
-        'Define interview process: Screen → Technical → Culture → Offer'
+        '✅ CTO hired - Technical leadership',
+        '✅ CHRO hired - People & operations',
+        '✅ CMO hired - Marketing & growth',
+        '✅ 2 Developers hired - Engineering capacity',
+        '✅ BDA hired - Business development',
+        '✅ Graphic Designer hired - Creative capacity',
+        '→ Next: Build bench for scaling post-traction'
       ],
       metrics: [
-        'Applications received',
-        'Candidates in pipeline',
-        'Interviews conducted',
-        'Offer acceptance rate'
+        'Total team members: 8 (including founder)',
+        'Key roles filled: 100%',
+        'Offer acceptance rate: Successful'
       ]
     },
     {
       id: 'chro-3',
-      title: 'Culture Undefined - No Values or Norms',
-      description: 'No defined company values, no culture documentation, no onboarding process.',
+      title: 'Culture Definition - CHRO TO LEAD',
+      description: 'CHRO to define company values and culture with full team now in place.',
       department: 'chro',
       priority: 'medium',
-      status: 'not_started',
+      status: 'in_progress',
       deadline: 'Mar 15, 2026',
-      owner: 'Founder',
+      owner: 'CHRO + Founder',
       solution: [
         'Define 5 core values (Ship Fast, User First, etc.)',
         'Write 1-page culture document',
         'Create simple onboarding checklist',
-        'Set up weekly team all-hands (even if just 2 people)',
+        'Set up weekly team all-hands (8 members now)',
         'Document decision-making process'
       ],
       metrics: [
@@ -441,16 +442,16 @@ export default function IssueResolutionPage() {
     },
     {
       id: 'chro-4',
-      title: 'No Compensation Framework',
-      description: 'No salary bands, no equity allocation plan, no benefits structure.',
+      title: 'Compensation Framework - CHRO TO FORMALIZE',
+      description: 'CHRO to create formal compensation structure for current and future hires.',
       department: 'chro',
       priority: 'medium',
-      status: 'not_started',
+      status: 'in_progress',
       deadline: 'Mar 30, 2026',
-      owner: 'Founder + CFO',
+      owner: 'CHRO + Founder',
       solution: [
         'Research UAE startup salary benchmarks',
-        'Create simple salary bands for 5 key roles',
+        'Create simple salary bands for all 8 roles',
         'Define ESOP pool (15-20% typical)',
         'Document vesting schedule (4-year, 1-year cliff)',
         'List basic benefits (health insurance, remote flexibility)'
@@ -458,7 +459,7 @@ export default function IssueResolutionPage() {
       metrics: [
         'Compensation framework documented',
         'Offer competitiveness vs market',
-        'Offer acceptance rate'
+        'Team satisfaction with comp'
       ],
       dependencies: ['cfo-3']
     },
@@ -769,15 +770,15 @@ export default function IssueResolutionPage() {
             <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-6">
               <h3 className="text-xl font-bold text-[#c9a227] mb-4 flex items-center gap-2">
                 <Zap className="w-5 h-5" />
-                Top 5 Actions This Week
+                Top 5 Actions This Week - LAUNCH PHASE
               </h3>
               <div className="space-y-4">
                 {[
-                  { action: 'Complete MVP and deploy beta app', owner: 'CTO/Founder', deadline: 'Feb 15' },
-                  { action: 'Convert 10 LOIs to live merchants', owner: 'Founder', deadline: 'Feb 10' },
-                  { action: 'Integrate payment system (Stripe)', owner: 'CTO', deadline: 'Feb 12' },
-                  { action: 'Hire fractional CTO', owner: 'Founder', deadline: 'Feb 28' },
-                  { action: 'Set up financial tracking (QuickBooks)', owner: 'Founder', deadline: 'Feb 20' },
+                  { action: 'Complete beta testing with team', owner: 'CTO + Dev Team', deadline: 'This week' },
+                  { action: 'Convert 10 LOIs to live merchants', owner: 'BDA + Founder', deadline: 'Feb 10' },
+                  { action: 'Launch social media presence (IG, TikTok)', owner: 'CMO + Designer', deadline: 'Feb 8' },
+                  { action: 'Set up financial tracking (QuickBooks)', owner: 'Founder', deadline: 'Feb 15' },
+                  { action: 'Onboard first 50 beta users', owner: 'Full Team', deadline: 'Feb 12' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
                     <div className="w-8 h-8 rounded-full bg-[#c9a227] flex items-center justify-center text-[#0a1628] font-bold">
@@ -997,25 +998,25 @@ export default function IssueResolutionPage() {
         {activeTab === 'action-plan' && (
           <div className="space-y-8">
             {/* Week 1 */}
-            <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 rounded-xl border border-red-500/30 p-6">
-              <h3 className="text-xl font-bold text-red-400 mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5" /> Week 1: Feb 4-10 (CRITICAL)
+            <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl border border-green-500/30 p-6">
+              <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5" /> Week 1: Feb 4-10 (TESTING & SOFT LAUNCH)
               </h3>
-              <p className="text-gray-400 mb-4">Focus: Ship MVP + Convert First Merchants</p>
+              <p className="text-gray-400 mb-4">Focus: Beta Testing + Merchant Conversion + Marketing Setup</p>
               <div className="space-y-3">
                 {[
-                  { task: 'Complete MVP features (search, QR, coins)', owner: 'CTO', dept: 'ceo' },
-                  { task: 'Deploy beta app to TestFlight/Play Store', owner: 'CTO', dept: 'ceo' },
-                  { task: 'Call top 10 LOI merchants, schedule onboarding', owner: 'Founder', dept: 'coo' },
-                  { task: 'Send contracts to 10 merchants', owner: 'Founder', dept: 'coo' },
-                  { task: 'Set up Stripe payment integration', owner: 'CTO', dept: 'coo' },
-                  { task: 'Post CTO job on LinkedIn + AngelList', owner: 'Founder', dept: 'chro' },
-                  { task: 'Set up QuickBooks and connect bank accounts', owner: 'Founder', dept: 'cfo' },
+                  { task: '✅ Product complete - Begin internal testing', owner: 'CTO + Devs', dept: 'ceo', done: true },
+                  { task: 'Deploy beta to TestFlight/Play Store', owner: 'CTO', dept: 'ceo', done: false },
+                  { task: 'Call top 10 LOI merchants, schedule onboarding', owner: 'BDA + Founder', dept: 'coo', done: false },
+                  { task: 'Send contracts to 10 merchants', owner: 'BDA', dept: 'coo', done: false },
+                  { task: 'Launch Instagram + TikTok accounts', owner: 'CMO + Designer', dept: 'cmo', done: false },
+                  { task: 'Create first week of social content', owner: 'Designer + CMO', dept: 'cmo', done: false },
+                  { task: 'Set up QuickBooks and connect bank accounts', owner: 'Founder', dept: 'cfo', done: false },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                    <input type="checkbox" className="w-5 h-5 rounded border-gray-600" />
+                  <div key={idx} className={`flex items-center gap-3 p-3 rounded-lg ${item.done ? 'bg-green-500/10' : 'bg-white/5'}`}>
+                    <input type="checkbox" className="w-5 h-5 rounded border-gray-600" defaultChecked={item.done} />
                     <div className="flex-1">
-                      <p className="text-white">{item.task}</p>
+                      <p className={item.done ? 'text-green-400' : 'text-white'}>{item.task}</p>
                       <p className="text-gray-500 text-sm">Owner: {item.owner}</p>
                     </div>
                     <span className="text-xs px-2 py-1 rounded bg-gray-800 text-gray-400">{item.dept.toUpperCase()}</span>
@@ -1025,20 +1026,20 @@ export default function IssueResolutionPage() {
             </div>
 
             {/* Week 2 */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-xl border border-orange-500/30 p-6">
-              <h3 className="text-xl font-bold text-orange-400 mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5" /> Week 2: Feb 11-17
+            <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl border border-blue-500/30 p-6">
+              <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5" /> Week 2: Feb 11-17 (PUBLIC BETA)
               </h3>
-              <p className="text-gray-400 mb-4">Focus: Launch Beta + Validate Traction</p>
+              <p className="text-gray-400 mb-4">Focus: Launch Public Beta + First Transactions</p>
               <div className="space-y-3">
                 {[
-                  { task: 'Go live with first 5 merchants', owner: 'Founder', dept: 'coo' },
-                  { task: 'Invite 50 beta users (friends/family)', owner: 'Founder', dept: 'ceo' },
-                  { task: 'Complete 10 test transactions', owner: 'CTO', dept: 'coo' },
-                  { task: 'Set up WhatsApp support channel', owner: 'Founder', dept: 'coo' },
-                  { task: 'Interview 5 CTO candidates', owner: 'Founder', dept: 'chro' },
+                  { task: 'Go live with first 5 merchants', owner: 'BDA + Founder', dept: 'coo' },
+                  { task: 'Invite 50 beta users (friends/family)', owner: 'Full Team', dept: 'ceo' },
+                  { task: 'Complete 10 test transactions', owner: 'CTO + Devs', dept: 'coo' },
+                  { task: 'Set up WhatsApp support channel', owner: 'CHRO', dept: 'coo' },
+                  { task: 'Launch first influencer partnerships', owner: 'CMO', dept: 'cmo' },
                   { task: 'Calculate exact cash runway', owner: 'Founder', dept: 'cfo' },
-                  { task: 'Create Instagram + TikTok accounts', owner: 'Marketing', dept: 'cmo' },
+                  { task: 'Post daily on social media', owner: 'CMO + Designer', dept: 'cmo' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
                     <input type="checkbox" className="w-5 h-5 rounded border-gray-600" />
@@ -1053,20 +1054,20 @@ export default function IssueResolutionPage() {
             </div>
 
             {/* Week 3 */}
-            <div className="bg-gradient-to-r from-yellow-500/10 to-green-500/10 rounded-xl border border-yellow-500/30 p-6">
-              <h3 className="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5" /> Week 3: Feb 18-24
+            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl border border-purple-500/30 p-6">
+              <h3 className="text-xl font-bold text-purple-400 mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5" /> Week 3: Feb 18-24 (SCALE)
               </h3>
-              <p className="text-gray-400 mb-4">Focus: Scale Merchants + Measure Metrics</p>
+              <p className="text-gray-400 mb-4">Focus: Scale Merchants + User Growth + Viral Mechanics</p>
               <div className="space-y-3">
                 {[
-                  { task: 'Onboard remaining 10 LOI merchants', owner: 'Founder', dept: 'coo' },
-                  { task: 'Reach 100 beta users', owner: 'Founder', dept: 'ceo' },
-                  { task: 'Implement referral program', owner: 'CTO', dept: 'cmo' },
-                  { task: 'Make CTO offer', owner: 'Founder', dept: 'chro' },
+                  { task: 'Onboard remaining 20 LOI merchants', owner: 'BDA', dept: 'coo' },
+                  { task: 'Reach 200 active users', owner: 'CMO + Full Team', dept: 'ceo' },
+                  { task: 'Implement referral program in app', owner: 'CTO + Devs', dept: 'cmo' },
+                  { task: 'Define company values & culture doc', owner: 'CHRO + Founder', dept: 'chro' },
                   { task: 'Start measuring real unit economics', owner: 'Founder', dept: 'cfo' },
                   { task: 'Create P&L from first 2 weeks data', owner: 'Founder', dept: 'cfo' },
-                  { task: 'Launch first influencer partnership', owner: 'Marketing', dept: 'cmo' },
+                  { task: 'Run paid social ads pilot (AED 500)', owner: 'CMO + Designer', dept: 'cmo' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
                     <input type="checkbox" className="w-5 h-5 rounded border-gray-600" />
@@ -1081,20 +1082,21 @@ export default function IssueResolutionPage() {
             </div>
 
             {/* Week 4 */}
-            <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl border border-green-500/30 p-6">
-              <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
-                <Calendar className="w-5 h-5" /> Week 4: Feb 25-Mar 3
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-yellow-500/10 rounded-xl border border-[#c9a227]/30 p-6">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-4 flex items-center gap-2">
+                <Calendar className="w-5 h-5" /> Week 4: Feb 25-Mar 3 (PROVE & FUNDRAISE)
               </h3>
-              <p className="text-gray-400 mb-4">Focus: Prove Model + Prepare Fundraise</p>
+              <p className="text-gray-400 mb-4">Focus: Prove Unit Economics + Prepare Pre-Seed Raise</p>
               <div className="space-y-3">
                 {[
-                  { task: 'Reach 500 users, 50 transactions', owner: 'Team', dept: 'ceo' },
-                  { task: 'Have 20+ live merchants', owner: 'Founder', dept: 'coo' },
-                  { task: 'CTO onboarded and productive', owner: 'Founder', dept: 'chro' },
+                  { task: 'Reach 500 users, 100 transactions', owner: 'Full Team', dept: 'ceo' },
+                  { task: 'Have 30+ live merchants', owner: 'BDA', dept: 'coo' },
+                  { task: 'Document team structure & roles', owner: 'CHRO', dept: 'chro' },
                   { task: 'Complete 3-year financial model', owner: 'Founder', dept: 'cfo' },
-                  { task: 'Update pitch deck with real traction', owner: 'Founder', dept: 'ceo' },
+                  { task: 'Update pitch deck with real traction', owner: 'Founder + Designer', dept: 'ceo' },
                   { task: 'Schedule 10 investor meetings', owner: 'Founder', dept: 'ceo' },
                   { task: 'Build data room for due diligence', owner: 'Founder', dept: 'cfo' },
+                  { task: 'Launch Nuqta Savers WhatsApp community', owner: 'CMO', dept: 'cmo' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
                     <input type="checkbox" className="w-5 h-5 rounded border-gray-600" />

@@ -150,11 +150,11 @@ const h1Team: Department[] = [
         compensation: 'Founder equity + nominal salary'
       },
       {
-        name: 'PRIORITY HIRE',
-        role: 'Co-Founder / CTO',
+        name: 'HIRED',
+        role: 'CTO (Chief Technology Officer)',
         reportsTo: 'CEO',
         directReports: ['Engineering Team', 'Product Design', 'DevOps'],
-        description: 'MANDATORY HIRE within 90 days of funding. Technical co-founder with fintech/payments experience to lead product development and ensure technical excellence. This is a Tranche 2 release condition. → Apply at /join-us',
+        description: '✅ HIRED - Technical leader with fintech/payments experience leading product development and ensuring technical excellence. Product is now 100% complete and ready for launch.',
         responsibilities: [
           'Own entire technical architecture and product roadmap',
           'Lead development of mobile app (React Native) and backend (Node.js)',
@@ -183,9 +183,63 @@ const h1Team: Department[] = [
           'Platform uptime: 99.9%',
           'Release velocity: 2+ releases per week'
         ],
-        status: 'hiring',
+        status: 'filled',
         priority: 'critical',
-        compensation: '15-25% equity + AED 40-60K/month (negotiable for right candidate)'
+        compensation: '15-25% equity + AED 40-60K/month'
+      },
+      {
+        name: 'HIRED',
+        role: 'CHRO (Chief Human Resources Officer)',
+        reportsTo: 'CEO',
+        directReports: ['HR', 'Operations', 'Admin'],
+        description: '✅ HIRED - People operations leader managing hiring, culture, and team development. Successfully built the full founding team.',
+        responsibilities: [
+          'Own all hiring and recruitment processes',
+          'Build and maintain company culture',
+          'Manage HR operations and compliance',
+          'Develop compensation frameworks',
+          'Run team onboarding and development'
+        ],
+        requirements: [
+          'HR and operations experience',
+          'Startup experience preferred',
+          'Strong people skills'
+        ],
+        kpis: [
+          'Team hiring: All key roles filled ✅',
+          'Team retention and satisfaction',
+          'Culture development'
+        ],
+        status: 'filled',
+        priority: 'high',
+        compensation: 'Equity + competitive salary'
+      },
+      {
+        name: 'HIRED',
+        role: 'CMO (Chief Marketing Officer)',
+        reportsTo: 'CEO',
+        directReports: ['Marketing Team', 'Designer'],
+        description: '✅ HIRED - Marketing leader with e-commerce background. Leading brand awareness, social media, and growth campaigns.',
+        responsibilities: [
+          'Own all marketing strategy and execution',
+          'Build brand awareness and social presence',
+          'Lead influencer partnerships',
+          'Drive user acquisition campaigns',
+          'Manage marketing team and designer'
+        ],
+        requirements: [
+          'Marketing and growth experience',
+          'Social media expertise',
+          'E-commerce background'
+        ],
+        kpis: [
+          'Social media followers',
+          'User acquisition cost',
+          'Brand awareness'
+        ],
+        status: 'filled',
+        priority: 'high',
+        compensation: 'Equity + competitive salary'
       },
       {
         name: 'Hiring',
