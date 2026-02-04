@@ -39,7 +39,8 @@ import {
   Swords,
   Megaphone,
   UserCircle,
-  Bot
+  Bot,
+  AlertTriangle
 } from 'lucide-react';
 
 /**
@@ -147,6 +148,7 @@ const navigationData: NavCategory[] = [
   {
     title: 'Agent Reports',
     items: [
+      { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle, description: 'Solve all issues' },
       { label: 'CEO Report', href: '/ceo-report', icon: Crown, description: 'Vision & strategy' },
       { label: 'COO Report', href: '/coo-report', icon: Settings, description: 'Operations' },
       { label: 'CMO Report', href: '/cmo-report', icon: Megaphone, description: 'Marketing' },
