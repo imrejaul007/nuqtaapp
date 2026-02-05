@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import {
   ArrowLeft,
   Megaphone,
@@ -104,6 +105,21 @@ import {
   Settings
 } from 'lucide-react';
 
+// Component to handle URL params
+function TabHandler({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
+  const searchParams = useSearchParams();
+  const validTabs = ['overview', 'brand', 'content', 'topics', 'viral', 'online', 'offline', 'influencer', 'email', 'campaigns', 'kpis', 'templates', 'budget', 'series', 'growth', 'social', 'segments', 'brandmarketing', 'adscampaigns', 'mediahub', 'events', 'aicontent'];
+
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam && validTabs.includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [searchParams, setActiveTab]);
+
+  return null;
+}
+
 export default function MarketingPlanPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
@@ -156,6 +172,11 @@ export default function MarketingPlanPage() {
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
+      {/* URL Tab Handler */}
+      <Suspense fallback={null}>
+        <TabHandler setActiveTab={setActiveTab} />
+      </Suspense>
+
       {/* Header */}
       <header className="bg-[#0a1628]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
