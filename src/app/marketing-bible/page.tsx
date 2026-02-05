@@ -103,6 +103,7 @@ export default function MarketingPlanPage() {
     { id: 'templates', label: 'Templates', icon: FileText },
     { id: 'budget', label: 'Budget', icon: DollarSign },
     { id: 'series', label: 'Content Series', icon: Film },
+    { id: 'growth', label: 'Growth Playbook', icon: TrendingUp },
   ];
 
   const copyToClipboard = (text: string, index: number) => {
@@ -4681,6 +4682,835 @@ export default function MarketingPlanPage() {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Growth Playbook Tab - Expert Marketing Strategy */}
+        {activeTab === 'growth' && (
+          <div className="space-y-8">
+            {/* Hero Section */}
+            <div className="bg-gradient-to-r from-emerald-500/20 to-cyan-500/20 rounded-xl p-8 border border-emerald-500/30">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 bg-emerald-500/20 px-4 py-2 rounded-full mb-4">
+                  <TrendingUp className="text-emerald-400" size={18} />
+                  <span className="text-emerald-400 font-medium">Expert Growth Strategy</span>
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">The Nuqta Growth Playbook</h3>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Built by analyzing 50+ successful UAE apps. This isn't theory—it's a battle-tested playbook
+                  for going from 0 to 10,000 users in the first 90 days.
+                </p>
+              </div>
+
+              {/* The Big Insight */}
+              <div className="bg-white/10 rounded-lg p-6 border border-emerald-500/50">
+                <div className="text-xs text-emerald-400 uppercase tracking-wider mb-2">The Core Insight</div>
+                <div className="text-xl font-bold text-white mb-3">
+                  "Users don't download apps. They solve problems. Lead with the problem, not the product."
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 mt-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-red-400">✗</div>
+                    <div className="text-sm text-gray-400 mt-1">"Download Nuqta for cashback"</div>
+                    <div className="text-xs text-red-400">Product-first (weak)</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-yellow-400">~</div>
+                    <div className="text-sm text-gray-400 mt-1">"Save money on your daily coffee"</div>
+                    <div className="text-xs text-yellow-400">Benefit-first (better)</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-400">✓</div>
+                    <div className="text-sm text-gray-400 mt-1">"Spending AED 900/month on coffee? Get 10% back"</div>
+                    <div className="text-xs text-green-400">Problem-first (best)</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 30-Day Launch Playbook */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
+                  <Calendar className="text-[#c9a227]" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#c9a227]">30-Day Launch Playbook</h3>
+                  <p className="text-gray-400 text-sm">Day-by-day actions from launch to 1,000 users</p>
+                </div>
+              </div>
+
+              {/* Week by Week */}
+              <div className="space-y-6">
+                {/* Week 1: Foundation */}
+                <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg p-5 border border-green-500/30">
+                  <h4 className="text-lg font-bold text-green-400 mb-1">Week 1: Foundation</h4>
+                  <p className="text-gray-400 text-sm mb-4">Goal: 100 users (friends, family, warm network)</p>
+                  <div className="grid md:grid-cols-7 gap-2">
+                    {[
+                      { day: 'D1', tasks: ['Launch social accounts', 'Post announcement', 'Personal outreach to 50 people'] },
+                      { day: 'D2', tasks: ['App Store live', 'WhatsApp broadcast', 'Team installs + reviews'] },
+                      { day: 'D3', tasks: ['First merchant QR live', 'Document first transaction', 'Post celebration video'] },
+                      { day: 'D4', tasks: ['Respond to all DMs', 'Fix Day 1-3 bugs', 'Call 10 users for feedback'] },
+                      { day: 'D5', tasks: ['Second batch merchants', 'Student group outreach', 'Create first UGC request'] },
+                      { day: 'D6', tasks: ['Micro-influencer DMs', 'Coffee shop partnerships', 'Friday prayer timing post'] },
+                      { day: 'D7', tasks: ['Week 1 metrics review', 'Adjust messaging', 'Plan Week 2'] },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3">
+                        <div className="text-green-400 font-bold text-sm mb-2">{item.day}</div>
+                        <ul className="text-xs text-gray-400 space-y-1">
+                          {item.tasks.map((task, tIdx) => (
+                            <li key={tIdx}>• {task}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Week 2: Traction */}
+                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-lg p-5 border border-blue-500/30">
+                  <h4 className="text-lg font-bold text-blue-400 mb-1">Week 2: Traction</h4>
+                  <p className="text-gray-400 text-sm mb-4">Goal: 300 users (expand beyond warm network)</p>
+                  <div className="grid md:grid-cols-7 gap-2">
+                    {[
+                      { day: 'D8', tasks: ['Launch referral program', 'First paid post', 'University visit scheduled'] },
+                      { day: 'D9', tasks: ['First influencer post', '5 merchants QR active', 'Email list started'] },
+                      { day: 'D10', tasks: ['WhatsApp community launch', 'Second content series', 'Merchant co-post'] },
+                      { day: 'D11', tasks: ['University table setup', 'Flyer distribution', 'Student ambassador signup'] },
+                      { day: 'D12', tasks: ['First treasure hunt', 'Push notification test', 'Review aggregation'] },
+                      { day: 'D13', tasks: ['Metro ad exploration', 'Weekend content batch', 'Merchant testimonial'] },
+                      { day: 'D14', tasks: ['Week 2 metrics', 'CAC calculation', 'Double down on winners'] },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3">
+                        <div className="text-blue-400 font-bold text-sm mb-2">{item.day}</div>
+                        <ul className="text-xs text-gray-400 space-y-1">
+                          {item.tasks.map((task, tIdx) => (
+                            <li key={tIdx}>• {task}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Week 3: Scale */}
+                <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-5 border border-purple-500/30">
+                  <h4 className="text-lg font-bold text-purple-400 mb-1">Week 3: Scale</h4>
+                  <p className="text-gray-400 text-sm mb-4">Goal: 600 users (viral loops activated)</p>
+                  <div className="grid md:grid-cols-7 gap-2">
+                    {[
+                      { day: 'D15', tasks: ['10 ambassadors active', 'Second influencer wave', 'Community event planned'] },
+                      { day: 'D16', tasks: ['15 merchants live', 'Area-specific campaign', 'PR outreach started'] },
+                      { day: 'D17', tasks: ['First community meetup', 'UGC contest launch', 'Feature in blog/podcast'] },
+                      { day: 'D18', tasks: ['Corporate outreach', 'Gym/salon partnerships', 'Retention campaign'] },
+                      { day: 'D19', tasks: ['Second treasure hunt', 'TikTok viral attempt', 'Merchant spotlight series'] },
+                      { day: 'D20', tasks: ['University expansion', 'Weekend warrior push', 'Merchant referral program'] },
+                      { day: 'D21', tasks: ['Week 3 metrics', 'Identify viral content', 'Scale what works'] },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3">
+                        <div className="text-purple-400 font-bold text-sm mb-2">{item.day}</div>
+                        <ul className="text-xs text-gray-400 space-y-1">
+                          {item.tasks.map((task, tIdx) => (
+                            <li key={tIdx}>• {task}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Week 4: Optimize */}
+                <div className="bg-gradient-to-r from-[#c9a227]/10 to-amber-500/10 rounded-lg p-5 border border-[#c9a227]/30">
+                  <h4 className="text-lg font-bold text-[#c9a227] mb-1">Week 4: Optimize</h4>
+                  <p className="text-gray-400 text-sm mb-4">Goal: 1,000 users (sustainable growth engine)</p>
+                  <div className="grid md:grid-cols-7 gap-2">
+                    {[
+                      { day: 'D22', tasks: ['30 merchants milestone', 'CAC analysis complete', 'Top channel identified'] },
+                      { day: 'D23', tasks: ['Ambassador competition', 'Merchant success stories', 'Retention analysis'] },
+                      { day: 'D24', tasks: ['Paid ads test (AED 500)', 'Second community meetup', 'Press coverage push'] },
+                      { day: 'D25', tasks: ['Corporate pilot secured', 'Neighborhood expansion', 'Win-back campaign'] },
+                      { day: 'D26', tasks: ['1,000 user milestone', 'Celebration content', 'Team reward'] },
+                      { day: 'D27', tasks: ['Month-end analysis', 'Best content compiled', 'Month 2 planning'] },
+                      { day: 'D28-30', tasks: ['Documentation', 'Process optimization', 'Scale preparation'] },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3">
+                        <div className="text-[#c9a227] font-bold text-sm mb-2">{item.day}</div>
+                        <ul className="text-xs text-gray-400 space-y-1">
+                          {item.tasks.map((task, tIdx) => (
+                            <li key={tIdx}>• {task}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Viral Growth Mechanics */}
+            <div className="bg-gradient-to-r from-pink-500/10 to-red-500/10 rounded-xl p-6 border border-pink-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
+                  <Zap className="text-pink-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-pink-400">Viral Growth Mechanics</h3>
+                  <p className="text-gray-400 text-sm">Built-in features that make users bring more users</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Referral Program */}
+                <div className="bg-white/5 rounded-lg p-5 border border-white/10">
+                  <h4 className="font-bold text-white mb-4 flex items-center gap-2">
+                    <Gift size={18} className="text-pink-400" />
+                    Referral Program: "Give 50, Get 50"
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="bg-pink-500/10 rounded-lg p-3">
+                      <div className="text-pink-400 text-sm font-medium mb-1">How It Works</div>
+                      <ul className="text-xs text-gray-400 space-y-1">
+                        <li>• You share your unique link</li>
+                        <li>• Friend downloads & makes first purchase</li>
+                        <li>• You BOTH get 50 Nuqta coins (AED 5 value)</li>
+                        <li>• No limit on referrals</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="text-white text-sm font-medium mb-1">Why 50 Coins?</div>
+                      <ul className="text-xs text-gray-400 space-y-1">
+                        <li>• AED 5 value = meaningful but not expensive</li>
+                        <li>• CAC equivalent: AED 5 (vs AED 30 paid ads)</li>
+                        <li>• Requires action (first purchase) = quality users</li>
+                      </ul>
+                    </div>
+                    <div className="bg-green-500/10 rounded-lg p-3">
+                      <div className="text-green-400 text-sm font-medium">Target: K-Factor 1.2</div>
+                      <div className="text-xs text-gray-400">Every 10 users bring 12 more users (viral growth)</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Gamification */}
+                <div className="bg-white/5 rounded-lg p-5 border border-white/10">
+                  <h4 className="font-bold text-white mb-4 flex items-center gap-2">
+                    <Trophy size={18} className="text-[#c9a227]" />
+                    Gamification: Savings Leaderboard
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="bg-[#c9a227]/10 rounded-lg p-3">
+                      <div className="text-[#c9a227] text-sm font-medium mb-1">Weekly Leaderboard</div>
+                      <ul className="text-xs text-gray-400 space-y-1">
+                        <li>• Top 10 savers of the week</li>
+                        <li>• #1 gets 500 bonus coins (AED 50)</li>
+                        <li>• #2-5 get 100 bonus coins each</li>
+                        <li>• Everyone in top 10 gets badge</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="text-white text-sm font-medium mb-1">Achievement Badges</div>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {['First Purchase', '5 Transactions', '10 Merchants', 'AED 100 Saved', 'Referral Champion', 'Community Star'].map((badge, idx) => (
+                          <span key={idx} className="text-xs bg-[#c9a227]/20 text-[#c9a227] px-2 py-1 rounded">{badge}</span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="bg-purple-500/10 rounded-lg p-3">
+                      <div className="text-purple-400 text-sm font-medium">Why Gamification?</div>
+                      <div className="text-xs text-gray-400">People will spend AED 100 to save AED 10 if it means winning</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Proof Triggers */}
+                <div className="bg-white/5 rounded-lg p-5 border border-white/10">
+                  <h4 className="font-bold text-white mb-4 flex items-center gap-2">
+                    <Users size={18} className="text-blue-400" />
+                    Social Proof Triggers
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      { trigger: 'After 1st transaction', message: '"You just joined 500+ Dubai savers!"' },
+                      { trigger: 'After saving AED 50', message: '"Share your savings milestone?"', share: true },
+                      { trigger: 'After 5 transactions', message: '"You're in the top 20% of Nuqta users!"' },
+                      { trigger: 'After referring 1', message: '"You could have earned AED 50 more..."', fomo: true },
+                      { trigger: 'Near merchant', message: '"12 people saved here today"' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-3 bg-white/5 p-2 rounded">
+                        <div className="w-24 text-xs text-gray-500">{item.trigger}</div>
+                        <div className="text-sm text-white flex-1">{item.message}</div>
+                        {item.share && <Share2 size={14} className="text-blue-400" />}
+                        {item.fomo && <AlertCircle size={14} className="text-amber-400" />}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* FOMO Mechanics */}
+                <div className="bg-white/5 rounded-lg p-5 border border-white/10">
+                  <h4 className="font-bold text-white mb-4 flex items-center gap-2">
+                    <AlertTriangle size={18} className="text-amber-400" />
+                    FOMO (Fear of Missing Out)
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      { tactic: 'Limited-Time Deals', example: '"This cafe: 15% cashback ONLY next 2 hours"' },
+                      { tactic: 'Expiring Coins', example: '"100 coins expire in 7 days - use them!"' },
+                      { tactic: 'Flash Sales', example: '"Double cashback Friday: 12PM-2PM only"' },
+                      { tactic: 'Low Stock Alert', example: '"Only 5 slots left for this exclusive deal"' },
+                      { tactic: 'Social Activity', example: '"Your friend just saved AED 25 at this cafe"' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-amber-500/10 rounded p-3">
+                        <div className="text-amber-400 text-xs font-medium">{item.tactic}</div>
+                        <div className="text-sm text-white mt-1">{item.example}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Guerrilla Marketing - UAE Specific */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-yellow-500/10 rounded-xl p-6 border border-orange-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center">
+                  <Lightbulb className="text-orange-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-orange-400">Guerrilla Marketing: UAE Edition</h3>
+                  <p className="text-gray-400 text-sm">Low-cost, high-impact tactics specific to Dubai culture</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  {
+                    title: 'The Coffee Shop Hack',
+                    cost: 'AED 0',
+                    impact: 'High',
+                    desc: 'Partner with 1 cafe. Put Nuqta QR on every table. Offer staff AED 5 per signup they generate.',
+                    why: 'Captive audience + social proof of seeing others scan'
+                  },
+                  {
+                    title: 'University Takeover',
+                    cost: 'AED 200',
+                    impact: 'Very High',
+                    desc: 'Set up table at university cafeteria. Give first 50 students AED 10 free coins. They become ambassadors.',
+                    why: 'Students talk. A lot. And they're budget-conscious.'
+                  },
+                  {
+                    title: 'Gym Mirror Stickers',
+                    cost: 'AED 50',
+                    impact: 'Medium',
+                    desc: 'Partner with gym. Small sticker on mirror: "Save on post-workout smoothies" with QR.',
+                    why: 'People look at mirrors. Every. Single. Rep.'
+                  },
+                  {
+                    title: 'Parking Lot Flyers',
+                    cost: 'AED 100',
+                    impact: 'Medium',
+                    desc: 'Flyers under windshield wipers at mall parking. "You spent AED X inside. Could have saved Y."',
+                    why: 'Direct targeting of people who just spent money'
+                  },
+                  {
+                    title: 'Elevator Pitch Cards',
+                    cost: 'AED 20',
+                    impact: 'Low-Med',
+                    desc: 'Business cards with QR in elevator buttons areas of residential towers.',
+                    why: 'Captive audience, 30-60 seconds of attention'
+                  },
+                  {
+                    title: 'Food Delivery Insert',
+                    cost: 'AED 0',
+                    impact: 'High',
+                    desc: 'Partner with merchant: Insert Nuqta flyer in every food delivery bag.',
+                    why: 'Reaches people already spending on food'
+                  },
+                  {
+                    title: 'Salon Waiting Area',
+                    cost: 'AED 0',
+                    impact: 'High',
+                    desc: 'QR code in salon waiting area. Women wait 15-30 mins with phone in hand.',
+                    why: 'Long dwell time + phone already in hand'
+                  },
+                  {
+                    title: 'Metro WiFi Landing',
+                    cost: 'AED 500',
+                    impact: 'Very High',
+                    desc: 'Sponsor free WiFi at metro stations. Landing page = Nuqta download.',
+                    why: '1M+ daily metro riders, 15-min captive commute'
+                  },
+                  {
+                    title: 'Community WhatsApp Drop',
+                    cost: 'AED 0',
+                    impact: 'Very High',
+                    desc: 'Join 20 existing community groups (Indian, Filipino, etc). Share value, not spam.',
+                    why: 'Direct access to targeted communities'
+                  },
+                ].map((tactic, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 border border-white/10">
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-bold text-white text-sm">{tactic.title}</h5>
+                      <div className="flex gap-2">
+                        <span className={`text-xs px-2 py-0.5 rounded ${tactic.cost === 'AED 0' ? 'bg-green-500/20 text-green-400' : 'bg-amber-500/20 text-amber-400'}`}>
+                          {tactic.cost}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-gray-400 mb-2">{tactic.desc}</p>
+                    <div className="text-xs text-orange-400 italic">💡 {tactic.why}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ambassador Program */}
+            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/10 rounded-xl p-6 border border-violet-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-violet-500/20 flex items-center justify-center">
+                  <Star className="text-violet-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-violet-400">Student Ambassador Program</h3>
+                  <p className="text-gray-400 text-sm">Turn students into your sales force</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-4">Program Structure</h4>
+                  <div className="space-y-3">
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <div className="text-violet-400 font-medium mb-2">Tier 1: Starter (0-25 signups)</div>
+                      <ul className="text-sm text-gray-400 space-y-1">
+                        <li>• AED 5 per verified signup</li>
+                        <li>• Free Nuqta coins (100 to start)</li>
+                        <li>• Ambassador badge on profile</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <div className="text-purple-400 font-medium mb-2">Tier 2: Champion (25-100 signups)</div>
+                      <ul className="text-sm text-gray-400 space-y-1">
+                        <li>• AED 7 per verified signup</li>
+                        <li>• Nuqta merch (t-shirt, bag)</li>
+                        <li>• Exclusive deals unlocked</li>
+                      </ul>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-4">
+                      <div className="text-[#c9a227] font-medium mb-2">Tier 3: Legend (100+ signups)</div>
+                      <ul className="text-sm text-gray-400 space-y-1">
+                        <li>• AED 10 per verified signup</li>
+                        <li>• Internship opportunity</li>
+                        <li>• LinkedIn recommendation</li>
+                        <li>• Cash bonus at milestones</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-white mb-3">Target Universities</h4>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { name: 'American University Dubai', students: '~3,000' },
+                        { name: 'University of Dubai', students: '~2,500' },
+                        { name: 'Heriot-Watt Dubai', students: '~4,000' },
+                        { name: 'Middlesex Dubai', students: '~3,500' },
+                        { name: 'BITS Pilani Dubai', students: '~2,000' },
+                        { name: 'Manipal Dubai', students: '~2,500' },
+                        { name: 'SP Jain', students: '~1,500' },
+                        { name: 'Amity Dubai', students: '~2,000' },
+                      ].map((uni, idx) => (
+                        <div key={idx} className="bg-white/5 p-2 rounded text-center">
+                          <div className="text-sm text-white">{uni.name}</div>
+                          <div className="text-xs text-violet-400">{uni.students}</div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-3 text-center text-sm text-gray-400">
+                      Total addressable: <span className="text-violet-400 font-bold">~20,000+ students</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-violet-500/10 rounded-lg p-4 border border-violet-500/30">
+                    <h4 className="font-bold text-violet-400 mb-2">Ambassador Toolkit</h4>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Unique referral link + QR code</li>
+                      <li>• Digital flyers (Instagram stories)</li>
+                      <li>• Printed flyers (50 per ambassador)</li>
+                      <li>• Script for pitching friends</li>
+                      <li>• WhatsApp broadcast template</li>
+                      <li>• Weekly competition updates</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Ambassador Economics */}
+              <div className="mt-6 bg-white/10 rounded-lg p-4 border border-violet-500/50">
+                <h4 className="font-bold text-white mb-3">Ambassador Unit Economics</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-violet-400">AED 25-30</div>
+                    <div className="text-sm text-gray-400">CAC via Ambassadors</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-400">AED 504</div>
+                    <div className="text-sm text-gray-400">12-month LTV</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-[#c9a227]">16.8x</div>
+                    <div className="text-sm text-gray-400">LTV:CAC Ratio</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-400">&lt;1 month</div>
+                    <div className="text-sm text-gray-400">Payback Period</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Merchant-Driven Growth */}
+            <div className="bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl p-6 border border-emerald-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center">
+                  <Store className="text-emerald-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-emerald-400">Merchant-Driven Growth</h3>
+                  <p className="text-gray-400 text-sm">How merchants become your best acquisition channel</p>
+                </div>
+              </div>
+
+              <div className="bg-white/10 rounded-lg p-4 mb-6 border border-emerald-500/50">
+                <div className="text-xs text-emerald-400 uppercase tracking-wider mb-2">The Flywheel</div>
+                <div className="flex items-center justify-center gap-4 text-sm text-gray-300 flex-wrap">
+                  <span>More Users</span>
+                  <span className="text-emerald-400">→</span>
+                  <span>Merchants Want In</span>
+                  <span className="text-emerald-400">→</span>
+                  <span>Better Deals</span>
+                  <span className="text-emerald-400">→</span>
+                  <span>More Users</span>
+                  <span className="text-emerald-400">→</span>
+                  <span className="text-[#c9a227]">∞ Growth Loop</span>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-4">Merchant Acquisition Tools</h4>
+                  <div className="space-y-3">
+                    {[
+                      {
+                        tool: 'QR Table Tents',
+                        desc: 'Every table has Nuqta QR. Every customer exposed.',
+                        install: 'Free for merchants, we print and deliver'
+                      },
+                      {
+                        tool: 'Counter Standee',
+                        desc: '"Pay with any method. Scan here for cashback."',
+                        install: 'A5 size acrylic stand provided free'
+                      },
+                      {
+                        tool: 'Window Sticker',
+                        desc: '"We're on Nuqta" badge builds credibility.',
+                        install: 'Premium sticker, signals quality merchant'
+                      },
+                      {
+                        tool: 'Receipt Insert',
+                        desc: 'Flyer with every receipt. Drives downloads.',
+                        install: 'Merchant adds to receipt printer tray'
+                      },
+                      {
+                        tool: 'Staff Incentive',
+                        desc: 'Staff earns AED 2 per signup they generate.',
+                        install: 'Tracked via unique staff codes'
+                      },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3">
+                        <div className="flex items-center justify-between">
+                          <div className="text-emerald-400 font-medium">{item.tool}</div>
+                        </div>
+                        <div className="text-sm text-gray-400 mt-1">{item.desc}</div>
+                        <div className="text-xs text-gray-500 mt-1 italic">Install: {item.install}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-white mb-3">Merchant Co-Marketing</h4>
+                    <ul className="text-sm text-gray-400 space-y-2">
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-emerald-400 mt-1" />
+                        <span><strong className="text-white">Joint social posts:</strong> We create, they share</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-emerald-400 mt-1" />
+                        <span><strong className="text-white">Featured merchant spotlight:</strong> Free PR for them</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-emerald-400 mt-1" />
+                        <span><strong className="text-white">Special event deals:</strong> Flash sales together</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-emerald-400 mt-1" />
+                        <span><strong className="text-white">Review aggregation:</strong> Build their online reputation</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
+                    <h4 className="font-bold text-emerald-400 mb-2">Merchant Referral Program</h4>
+                    <p className="text-sm text-gray-400 mb-2">
+                      Existing merchants refer new merchants. Both get:
+                    </p>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• 2 weeks zero commission</li>
+                      <li>• Featured placement in app</li>
+                      <li>• Social media spotlight post</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-white mb-2">Expected CAC from Merchants</h4>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-400">Merchant QR installations</span>
+                      <span className="text-emerald-400 font-bold">AED 10-15/user</span>
+                    </div>
+                    <div className="text-xs text-gray-500 mt-2">
+                      Lowest CAC channel. Merchant bears no cost, we get quality users.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Psychology-Based Messaging */}
+            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-cyan-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                  <Target className="text-cyan-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-cyan-400">Psychology-Based Messaging</h3>
+                  <p className="text-gray-400 text-sm">Behavioral triggers that drive action</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Pain Points */}
+                <div className="bg-white/5 rounded-lg p-5">
+                  <h4 className="font-bold text-red-400 mb-4 flex items-center gap-2">
+                    <AlertTriangle size={18} />
+                    Pain Point Messaging
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      {
+                        pain: 'Lost money',
+                        weak: 'Save money with Nuqta',
+                        strong: 'You left AED 200 on the table last month. Stop losing money.',
+                        trigger: 'Loss aversion'
+                      },
+                      {
+                        pain: 'Wasted effort',
+                        weak: 'Easy cashback app',
+                        strong: '15 different loyalty apps? One app. All your savings.',
+                        trigger: 'Simplification'
+                      },
+                      {
+                        pain: 'Missing out',
+                        weak: 'Join Nuqta today',
+                        strong: 'Your neighbors saved AED 3,000 this month. Did you?',
+                        trigger: 'Social proof'
+                      },
+                      {
+                        pain: 'Feeling stupid',
+                        weak: 'Smart savings',
+                        strong: 'Still paying full price? Smart people don\'t.',
+                        trigger: 'Identity'
+                      },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-cyan-400 font-medium text-sm">{item.pain}</span>
+                          <span className="text-xs text-gray-500 bg-white/10 px-2 py-0.5 rounded">{item.trigger}</span>
+                        </div>
+                        <div className="text-xs text-red-400 line-through mb-1">{item.weak}</div>
+                        <div className="text-sm text-white">{item.strong}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Emotional Triggers */}
+                <div className="bg-white/5 rounded-lg p-5">
+                  <h4 className="font-bold text-green-400 mb-4 flex items-center gap-2">
+                    <Heart size={18} />
+                    Emotional Triggers
+                  </h4>
+                  <div className="space-y-3">
+                    {[
+                      {
+                        emotion: 'Pride',
+                        message: '"I saved AED 500 this month" - Share your win',
+                        when: 'After milestone reached'
+                      },
+                      {
+                        emotion: 'Fear',
+                        message: '"Your coins expire in 3 days - use them!"',
+                        when: 'Coins about to expire'
+                      },
+                      {
+                        emotion: 'Greed',
+                        message: '"Double cashback for the next 2 hours only"',
+                        when: 'Flash sale'
+                      },
+                      {
+                        emotion: 'Belonging',
+                        message: '"Join 5,000 Dubai savers"',
+                        when: 'Signup page'
+                      },
+                      {
+                        emotion: 'Guilt',
+                        message: '"You could have saved AED 50 this week"',
+                        when: 'Re-engagement'
+                      },
+                      {
+                        emotion: 'Curiosity',
+                        message: '"See what others are saving on"',
+                        when: 'Explore page'
+                      },
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-3 bg-white/5 p-2 rounded">
+                        <div className="w-16 text-xs text-green-400 font-medium">{item.emotion}</div>
+                        <div className="flex-1 text-sm text-white">{item.message}</div>
+                        <div className="text-xs text-gray-500">{item.when}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* A/B Test Ideas */}
+              <div className="mt-6 bg-white/5 rounded-lg p-5">
+                <h4 className="font-bold text-white mb-4">A/B Test Headlines (Run These Week 1)</h4>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {[
+                    {
+                      version: 'A: Problem-first',
+                      headline: 'Stop leaving money behind',
+                      subhead: 'Get 5-10% back on every purchase'
+                    },
+                    {
+                      version: 'B: Benefit-first',
+                      headline: 'Instant cashback, any purchase',
+                      subhead: 'Join 5,000+ Dubai savers'
+                    },
+                    {
+                      version: 'C: Social proof',
+                      headline: 'Smart people use Nuqta',
+                      subhead: 'AED 50,000+ saved by Dubai residents'
+                    },
+                  ].map((test, idx) => (
+                    <div key={idx} className="bg-cyan-500/10 rounded-lg p-4 border border-cyan-500/30">
+                      <div className="text-cyan-400 text-xs font-medium mb-2">{test.version}</div>
+                      <div className="text-white font-bold mb-1">{test.headline}</div>
+                      <div className="text-sm text-gray-400">{test.subhead}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Channel Priority Matrix */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6">Channel Priority Matrix</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-3 px-2 text-gray-400">Channel</th>
+                      <th className="text-left py-3 px-2 text-gray-400">CAC</th>
+                      <th className="text-left py-3 px-2 text-gray-400">Volume</th>
+                      <th className="text-left py-3 px-2 text-gray-400">Quality</th>
+                      <th className="text-left py-3 px-2 text-gray-400">Priority</th>
+                      <th className="text-left py-3 px-2 text-gray-400">When</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-300">
+                    {[
+                      { channel: 'Merchant QR', cac: 'AED 10-15', volume: 'Medium', quality: 'Highest', priority: '🟢 P0', when: 'Day 1' },
+                      { channel: 'Word of Mouth', cac: 'AED 0', volume: 'Low', quality: 'Highest', priority: '🟢 P0', when: 'Always' },
+                      { channel: 'Referral Program', cac: 'AED 5', volume: 'High', quality: 'High', priority: '🟢 P0', when: 'Day 8' },
+                      { channel: 'Student Ambassadors', cac: 'AED 25-30', volume: 'High', quality: 'Medium', priority: '🟡 P1', when: 'Week 2' },
+                      { channel: 'Micro-Influencers', cac: 'AED 40-50', volume: 'Medium', quality: 'Medium', priority: '🟡 P1', when: 'Week 2' },
+                      { channel: 'Community Groups', cac: 'AED 5-10', volume: 'Medium', quality: 'High', priority: '🟡 P1', when: 'Week 2' },
+                      { channel: 'Meta Ads', cac: 'AED 60-80', volume: 'Very High', quality: 'Low', priority: '🟠 P2', when: 'Month 2' },
+                      { channel: 'Google Ads', cac: 'AED 80-100', volume: 'Medium', quality: 'High', priority: '🟠 P2', when: 'Month 2' },
+                      { channel: 'TikTok Ads', cac: 'AED 50-70', volume: 'High', quality: 'Low', priority: '🟠 P2', when: 'Month 2' },
+                      { channel: 'PR/Press', cac: 'AED 0-500', volume: 'Low', quality: 'High', priority: '🔴 P3', when: 'Month 3' },
+                    ].map((row, idx) => (
+                      <tr key={idx} className="border-b border-white/5">
+                        <td className="py-3 px-2 font-medium text-white">{row.channel}</td>
+                        <td className="py-3 px-2">{row.cac}</td>
+                        <td className="py-3 px-2">{row.volume}</td>
+                        <td className="py-3 px-2">{row.quality}</td>
+                        <td className="py-3 px-2">{row.priority}</td>
+                        <td className="py-3 px-2 text-gray-500">{row.when}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 text-xs text-gray-500">
+                P0 = Launch immediately | P1 = Within first month | P2 = After 1,000 users | P3 = After 5,000 users
+              </div>
+            </div>
+
+            {/* Success Metrics Dashboard */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-amber-500/10 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6">Growth Success Metrics</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { metric: 'Day 7', users: '100', transactions: '50', merchants: '5', viral: '0.8' },
+                  { metric: 'Day 14', users: '300', transactions: '200', merchants: '10', viral: '1.0' },
+                  { metric: 'Day 21', users: '600', transactions: '500', merchants: '20', viral: '1.1' },
+                  { metric: 'Day 30', users: '1,000', transactions: '1,000', merchants: '30', viral: '1.2' },
+                ].map((target, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4">
+                    <div className="text-[#c9a227] font-bold text-lg mb-3">{target.metric}</div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Users</span>
+                        <span className="text-white font-medium">{target.users}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Transactions</span>
+                        <span className="text-white font-medium">{target.transactions}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Merchants</span>
+                        <span className="text-white font-medium">{target.merchants}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">K-Factor</span>
+                        <span className={`font-medium ${parseFloat(target.viral) >= 1 ? 'text-green-400' : 'text-yellow-400'}`}>{target.viral}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 text-center text-sm text-gray-400">
+                K-Factor ≥1.0 means viral growth (each user brings at least 1 more user)
+              </div>
+            </div>
+
           </div>
         )}
 
