@@ -87,7 +87,17 @@ import {
   ShoppingCart,
   Landmark,
   Building,
-  UserPlus
+  UserPlus,
+  Rocket,
+  QrCode,
+  Ticket,
+  Music,
+  Gamepad2,
+  Clapperboard,
+  Package,
+  BadgeCheck,
+  Award,
+  Calculator
 } from 'lucide-react';
 
 export default function MarketingPlanPage() {
@@ -116,6 +126,10 @@ export default function MarketingPlanPage() {
     { id: 'growth', label: 'Growth Playbook', icon: TrendingUp },
     { id: 'social', label: 'Social & Community', icon: MessageCircle },
     { id: 'segments', label: 'Segmented Acquisition', icon: Layers },
+    { id: 'brandmarketing', label: 'Brand Marketing', icon: Building2 },
+    { id: 'adscampaigns', label: 'Ad Campaigns', icon: Rocket },
+    { id: 'mediahub', label: 'Media Hub', icon: Video },
+    { id: 'events', label: 'Events & Markets', icon: Trophy },
   ];
 
   const copyToClipboard = (text: string, index: number) => {
@@ -7271,6 +7285,758 @@ export default function MarketingPlanPage() {
               </div>
             </div>
 
+          </div>
+        )}
+
+        {/* Brand Marketing Services Tab */}
+        {activeTab === 'brandmarketing' && (
+          <div className="space-y-8">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 rounded-2xl p-8 border border-[#c9a227]/30">
+              <h2 className="text-3xl font-bold text-white mb-4">Brand Marketing by Nuqta</h2>
+              <p className="text-xl text-gray-300 mb-4">Marketing & Business Development Services for Merchants</p>
+              <div className="bg-white/10 rounded-lg p-4">
+                <div className="text-[#c9a227] font-bold mb-2">Why We Do This</div>
+                <p className="text-gray-300">Indirectly promote Nuqta via merchants. When merchants succeed, Nuqta wins. We become their marketing partner, not just a payment app.</p>
+              </div>
+            </div>
+
+            {/* Marketing Manager Structure */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Users size={24} />
+                Marketing Manager Structure
+              </h3>
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-lg p-6 border border-blue-500/30">
+                <div className="text-center mb-6">
+                  <div className="text-4xl font-bold text-blue-400">1 Manager : 20 Merchants</div>
+                  <p className="text-gray-400 mt-2">Each marketing manager handles 20 business accounts</p>
+                </div>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {[
+                    { role: 'Account Management', tasks: 'Weekly check-ins, performance reviews' },
+                    { role: 'Campaign Planning', tasks: 'Monthly campaign calendar' },
+                    { role: 'Content Coordination', tasks: 'Ensure content delivery' },
+                    { role: 'ROI Reporting', tasks: 'Monthly performance reports' },
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white/5 rounded-lg p-4 text-center">
+                      <div className="text-white font-bold text-sm mb-2">{item.role}</div>
+                      <div className="text-gray-400 text-xs">{item.tasks}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Online Marketing Services */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <Monitor size={24} />
+                Online Marketing Services
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="bg-gradient-to-r from-blue-600/20 to-blue-400/20 rounded-lg p-4 border border-blue-500/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <Facebook className="text-blue-400" size={24} />
+                      <div className="text-white font-bold">Meta Ads</div>
+                    </div>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Facebook & Instagram campaigns</li>
+                      <li>• Targeted local audience</li>
+                      <li>• Retargeting website visitors</li>
+                      <li>• Lookalike audience creation</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-to-r from-green-600/20 to-green-400/20 rounded-lg p-4 border border-green-500/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MessageCircle className="text-green-400" size={24} />
+                      <div className="text-white font-bold">WhatsApp Marketing</div>
+                    </div>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Broadcast campaigns</li>
+                      <li>• Catalog sharing</li>
+                      <li>• Customer engagement</li>
+                      <li>• Order updates & promotions</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-gradient-to-r from-red-600/20 to-orange-400/20 rounded-lg p-4 border border-red-500/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <ShoppingCart className="text-red-400" size={24} />
+                      <div className="text-white font-bold">Google Shopping</div>
+                    </div>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Product listing ads</li>
+                      <li>• Shopping campaigns</li>
+                      <li>• Local inventory ads</li>
+                      <li>• Performance Max campaigns</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-to-r from-yellow-600/20 to-yellow-400/20 rounded-lg p-4 border border-yellow-500/30">
+                    <div className="flex items-center gap-3 mb-3">
+                      <MapPin className="text-yellow-400" size={24} />
+                      <div className="text-white font-bold">Google My Business</div>
+                    </div>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Profile optimization</li>
+                      <li>• Store URL update</li>
+                      <li>• "Pay via Nuqta & earn cashback" badge</li>
+                      <li>• Review management</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Offline Marketing Services */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2">
+                <MapPin size={24} />
+                Offline Marketing Services
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { type: 'Auto Ads', icon: '🚗', desc: 'Taxi & ride-share branding', cost: 'AED 500-2000/month' },
+                  { type: 'Bus Ads', icon: '🚌', desc: 'Bus shelter & bus body ads', cost: 'AED 3000-10000/month' },
+                  { type: 'Gate Ads', icon: '🚧', desc: 'Building & community gates', cost: 'AED 1000-5000/month' },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-4xl mb-3">{item.icon}</div>
+                    <div className="text-white font-bold mb-1">{item.type}</div>
+                    <div className="text-gray-400 text-sm mb-2">{item.desc}</div>
+                    <div className="text-purple-400 text-xs">{item.cost}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Content Services */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+                <Camera size={24} />
+                Content Creation Services
+              </h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { type: 'Reels', desc: '15-60 sec videos', freq: '4x/month', icon: Video },
+                  { type: 'Posts', desc: 'Static graphics', freq: '8x/month', icon: Image },
+                  { type: 'UGC', desc: 'User-generated content', freq: 'Ongoing', icon: Users },
+                  { type: 'Influencer', desc: 'Barter & paid collabs', freq: '2x/month', icon: Star },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-gradient-to-b from-pink-500/10 to-purple-500/10 rounded-lg p-4 border border-pink-500/30">
+                    <item.icon className="text-pink-400 mb-3" size={28} />
+                    <div className="text-white font-bold mb-1">{item.type}</div>
+                    <div className="text-gray-400 text-sm">{item.desc}</div>
+                    <div className="text-pink-400 text-xs mt-2">{item.freq}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Price Engineering Strategy */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-orange-500/20 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <DollarSign size={24} />
+                Price Engineering Strategy
+              </h3>
+              <div className="bg-white/10 rounded-lg p-6 mb-6">
+                <div className="text-center mb-6">
+                  <div className="text-2xl font-bold text-white mb-2">The 20% Strategy</div>
+                  <p className="text-gray-400">Increase perceived value while maintaining margins</p>
+                </div>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-3xl mb-2">📈</div>
+                    <div className="text-white font-bold">Step 1</div>
+                    <div className="text-gray-400 text-sm">Update menu prices +20%</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-3xl mb-2">🎁</div>
+                    <div className="text-white font-bold">Step 2</div>
+                    <div className="text-gray-400 text-sm">Offer 20% Nuqta discount</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-3xl mb-2">⭐</div>
+                    <div className="text-white font-bold">Step 3</div>
+                    <div className="text-gray-400 text-sm">Brand value increases</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-3xl mb-2">🔁</div>
+                    <div className="text-white font-bold">Step 4</div>
+                    <div className="text-gray-400 text-sm">Nuqta users stay loyal</div>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                <div className="text-blue-400 font-bold mb-2">Dynamic Pricing (Airline Model)</div>
+                <p className="text-gray-400 text-sm">Based on demand, discount can increase or decrease. Peak hours = lower discount. Off-peak = higher discount. Creates urgency and optimizes revenue.</p>
+              </div>
+            </div>
+
+            {/* Nuqta Board & Materials */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-cyan-400 mb-6 flex items-center gap-2">
+                <QrCode size={24} />
+                Nuqta Board & In-Store Materials
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-4">Physical Materials</h4>
+                  <div className="space-y-3">
+                    {[
+                      { item: 'QR Code Stand', desc: 'Pay at store via Nuqta', placement: 'Counter/Checkout' },
+                      { item: 'Wall Sticker', desc: 'We Accept Nuqta', placement: 'Door/Window' },
+                      { item: 'Circle Board', desc: 'Outdoor store signage', placement: 'Outside shop' },
+                      { item: 'Table Tent', desc: 'Scan & pay with Nuqta', placement: 'Tables/Counter' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3 flex items-center justify-between">
+                        <div>
+                          <div className="text-white font-medium">{item.item}</div>
+                          <div className="text-gray-400 text-xs">{item.desc}</div>
+                        </div>
+                        <div className="text-cyan-400 text-xs">{item.placement}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-4">Message Variations</h4>
+                  <div className="space-y-3">
+                    {[
+                      'We Accept Nuqta',
+                      'Pay with Nuqta & Earn Cashback Instantly',
+                      'Use Nuqta and Get Instant Cashback',
+                      'Nuqta Accepted Here - Save on Every Purchase',
+                    ].map((msg, idx) => (
+                      <div key={idx} className="bg-[#c9a227]/10 rounded-lg p-3 border border-[#c9a227]/30">
+                        <div className="text-[#c9a227] font-medium text-sm">{msg}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Merchant Verified Badge Levels */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <BadgeCheck size={24} />
+                Merchant Verified Badge Levels
+              </h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { level: 'Verified', color: 'text-gray-400', bg: 'bg-gray-500/20', border: 'border-gray-500/30', req: 'Completed onboarding', benefits: 'Basic badge, listed in app' },
+                  { level: 'Trusted', color: 'text-blue-400', bg: 'bg-blue-500/20', border: 'border-blue-500/30', req: '50+ transactions, 4+ rating', benefits: 'Trust badge, priority support' },
+                  { level: 'Nuqta Preferred', color: 'text-purple-400', bg: 'bg-purple-500/20', border: 'border-purple-500/30', req: '200+ transactions, top 20%', benefits: 'Featured placement, marketing support' },
+                  { level: 'Nuqta Signature', color: 'text-[#c9a227]', bg: 'bg-[#c9a227]/20', border: 'border-[#c9a227]/30', req: 'Exclusive partnership', benefits: 'Premium features, co-branded campaigns' },
+                ].map((badge, idx) => (
+                  <div key={idx} className={`${badge.bg} rounded-lg p-4 border ${badge.border}`}>
+                    <div className={`${badge.color} font-bold text-lg mb-3 flex items-center gap-2`}>
+                      <BadgeCheck size={20} />
+                      {badge.level}
+                    </div>
+                    <div className="space-y-2">
+                      <div>
+                        <div className="text-xs text-gray-500 uppercase">Requirements</div>
+                        <div className="text-gray-300 text-sm">{badge.req}</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-gray-500 uppercase">Benefits</div>
+                        <div className="text-gray-300 text-sm">{badge.benefits}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Ad Campaigns Tab */}
+        {activeTab === 'adscampaigns' && (
+          <div className="space-y-8">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-2xl p-8 border border-red-500/30">
+              <h2 className="text-3xl font-bold text-white mb-4">Ad Campaigns Strategy</h2>
+              <p className="text-xl text-gray-300">Complete campaign playbook for merchant and user acquisition</p>
+            </div>
+
+            {/* Merchant Campaigns */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-2">
+                <Store size={24} />
+                Merchant Acquisition Campaigns
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { headline: 'Increase Your Revenue', subtext: 'With No Upfront Cost', hook: 'Zero investment, pure profit', cta: 'Join Free Today' },
+                  { headline: 'Increase Your AOV', subtext: 'Average Order Value +30%', hook: 'Customers spend more with cashback', cta: 'Learn How' },
+                  { headline: 'Reach Your Audience', subtext: 'Target Local Customers', hook: 'We bring customers to your door', cta: 'Get Started' },
+                ].map((campaign, idx) => (
+                  <div key={idx} className="bg-gradient-to-b from-blue-500/10 to-purple-500/10 rounded-lg p-5 border border-blue-500/30">
+                    <div className="text-blue-400 font-bold text-lg mb-1">{campaign.headline}</div>
+                    <div className="text-white mb-3">{campaign.subtext}</div>
+                    <div className="text-gray-400 text-sm mb-4">Hook: {campaign.hook}</div>
+                    <div className="bg-[#c9a227] text-black text-center py-2 rounded font-bold text-sm">{campaign.cta}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* User Acquisition Campaigns */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <Users size={24} />
+                User Acquisition Campaigns
+              </h3>
+
+              {/* Win Big Campaign */}
+              <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/20 rounded-lg p-6 border border-[#c9a227]/30 mb-6">
+                <div className="text-[#c9a227] font-bold text-xl mb-4">Pay with Nuqta & Win Big!</div>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {[
+                    { prize: 'Car', value: 'AED 150,000', freq: 'Yearly Grand Prize' },
+                    { prize: 'iPhone 16 Pro', value: 'AED 5,000', freq: 'Monthly Draw' },
+                    { prize: 'AED 10,000 Cash', value: 'Direct Credit', freq: 'Weekly Draw' },
+                    { prize: 'Free Shopping', value: 'AED 1,000', freq: 'Daily Winner' },
+                  ].map((prize, idx) => (
+                    <div key={idx} className="bg-white/10 rounded-lg p-4 text-center">
+                      <div className="text-3xl mb-2">{idx === 0 ? '🚗' : idx === 1 ? '📱' : idx === 2 ? '💰' : '🛍️'}</div>
+                      <div className="text-white font-bold">{prize.prize}</div>
+                      <div className="text-[#c9a227] text-sm">{prize.value}</div>
+                      <div className="text-gray-400 text-xs mt-1">{prize.freq}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Calculate Savings Campaign */}
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg p-6 border border-green-500/30 mb-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <Calculator className="text-green-400" size={28} />
+                  <div>
+                    <div className="text-green-400 font-bold text-xl">Calculate Your Savings</div>
+                    <div className="text-gray-400">Upload bills, see how much you could have saved</div>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="text-white font-bold mb-2">Step 1: Upload</div>
+                    <div className="text-gray-400 text-sm">Upload your bills on the app</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="text-white font-bold mb-2">Step 2: Calculate</div>
+                    <div className="text-gray-400 text-sm">See how much you would have saved with Nuqta</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <div className="text-white font-bold mb-2">Step 3: Earn</div>
+                    <div className="text-gray-400 text-sm">Share video on social media & earn cashback (Max AED 300)</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Smart People Campaign */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-6 border border-purple-500/30">
+                  <div className="text-purple-400 font-bold text-xl mb-3">Smart People Use Nuqta</div>
+                  <p className="text-gray-400 mb-4">Position Nuqta as the smart choice for savvy shoppers</p>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• Testimonials from professionals</li>
+                    <li>• Savings calculations in ads</li>
+                    <li>• Before/after spending comparisons</li>
+                  </ul>
+                </div>
+                <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-lg p-6 border border-orange-500/30">
+                  <div className="text-orange-400 font-bold text-xl mb-3">Nuqta Cash Hunting</div>
+                  <p className="text-gray-400 mb-4">Gamified treasure hunt for cashback</p>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• Hidden QR codes at partner locations</li>
+                    <li>• Scan to win instant cashback</li>
+                    <li>• Leaderboard for top hunters</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Campaign Ideas */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-pink-400 mb-6 flex items-center gap-2">
+                <Sparkles size={24} />
+                Special Campaign Concepts
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { name: 'Co-Partner Packaging', desc: 'Nuqta branding on partner product packaging', type: 'Awareness' },
+                  { name: 'Street Signaling', desc: 'Street teams with Nuqta branded materials', type: 'Activation' },
+                  { name: '15% First Order', desc: 'Experience luxury at your fingertips', type: 'Conversion' },
+                  { name: 'Singing Competition', desc: 'Nuqta Got Talent - win Nuqta coins', type: 'Engagement' },
+                  { name: 'Dance Challenge', desc: 'TikTok dance challenge with prizes', type: 'Viral' },
+                  { name: 'Quiz Nights', desc: 'Trivia at partner venues', type: 'Community' },
+                  { name: 'Sports Tournaments', desc: 'Sponsor local cricket, football', type: 'Sponsorship' },
+                  { name: 'Social Experiments', desc: 'Give winner Nuqta coin - viral content', type: 'Content' },
+                  { name: 'Tech Reviews', desc: 'Partner with tech influencers', type: 'Influencer' },
+                ].map((campaign, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="text-white font-bold">{campaign.name}</div>
+                      <span className="text-xs bg-pink-500/20 text-pink-400 px-2 py-1 rounded">{campaign.type}</span>
+                    </div>
+                    <div className="text-gray-400 text-sm">{campaign.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Media Hub Tab */}
+        {activeTab === 'mediahub' && (
+          <div className="space-y-8">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl p-8 border border-purple-500/30">
+              <h2 className="text-3xl font-bold text-white mb-4">Media Hub Strategy</h2>
+              <p className="text-xl text-gray-300">Content production across entertainment, sports, and lifestyle verticals</p>
+            </div>
+
+            {/* Short Films & Entertainment */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-red-400 mb-6 flex items-center gap-2">
+                <Clapperboard size={24} />
+                Short Films & Entertainment
+              </h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { type: 'Short Films', content: 'Drama, comedy, slice of life', freq: '2x/month' },
+                  { type: 'Story Lab', content: 'AI-generated stories, superhero, animals', freq: '4x/month' },
+                  { type: 'Indian Cartoons', content: 'Animated podcast style', freq: '2x/month' },
+                  { type: 'Business Series', content: 'Entrepreneur interviews', freq: '1x/week' },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-red-500/10 rounded-lg p-4 border border-red-500/30">
+                    <div className="text-red-400 font-bold mb-2">{item.type}</div>
+                    <div className="text-gray-400 text-sm mb-2">{item.content}</div>
+                    <div className="text-xs text-gray-500">{item.freq}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Sports Content */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <Trophy size={24} />
+                Sports Content
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-4">News & Analysis</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['Football', 'Cricket', 'WWE', 'Kabaddi'].map((sport, idx) => (
+                      <div key={idx} className="bg-green-500/10 rounded-lg p-3 text-center border border-green-500/30">
+                        <div className="text-green-400 font-bold">{sport}</div>
+                        <div className="text-gray-400 text-xs">News, analysis, facts</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-4">Community Games</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['Gully Cricket', 'Carrom', 'Badminton', 'Padel', 'Footsal', 'Gaming'].map((game, idx) => (
+                      <div key={idx} className="bg-blue-500/10 rounded-lg p-3 text-center border border-blue-500/30">
+                        <div className="text-blue-400 font-bold text-sm">{game}</div>
+                        <div className="text-gray-400 text-xs">Local tournaments</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Podcast & IP Content */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2">
+                <Mic size={24} />
+                Podcast & IP Content
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-purple-500/10 rounded-lg p-5 border border-purple-500/30">
+                  <div className="text-purple-400 font-bold text-lg mb-3">Podcasts</div>
+                  <ul className="text-sm text-gray-400 space-y-2">
+                    <li>• Marketing Case Studies</li>
+                    <li>• Business Interviews</li>
+                    <li>• AI-generated content (20 languages)</li>
+                    <li>• Tech Reviews</li>
+                  </ul>
+                </div>
+                <div className="bg-pink-500/10 rounded-lg p-5 border border-pink-500/30">
+                  <div className="text-pink-400 font-bold text-lg mb-3">Music & Parody</div>
+                  <ul className="text-sm text-gray-400 space-y-2">
+                    <li>• Music video parodies</li>
+                    <li>• Trending sound remixes</li>
+                    <li>• Original jingles</li>
+                    <li>• Cultural music content</li>
+                  </ul>
+                </div>
+                <div className="bg-orange-500/10 rounded-lg p-5 border border-orange-500/30">
+                  <div className="text-orange-400 font-bold text-lg mb-3">Meme & Viral</div>
+                  <ul className="text-sm text-gray-400 space-y-2">
+                    <li>• AI meme style content</li>
+                    <li>• Viral explanation hooks</li>
+                    <li>• Trending topic takes</li>
+                    <li>• Food content & reviews</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Account Strategy */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-500/30">
+              <h3 className="text-xl font-bold text-blue-400 mb-6 flex items-center gap-2">
+                <Instagram size={24} />
+                Multi-Account Social Strategy
+              </h3>
+              <div className="bg-white/10 rounded-lg p-4 mb-6">
+                <div className="text-white font-bold mb-2">Strategy: One Account Per Niche</div>
+                <p className="text-gray-400 text-sm">Create dedicated accounts for each content vertical to maximize engagement and reach specific audiences.</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Niche-Based Accounts</h4>
+                  <div className="space-y-2">
+                    {[
+                      '@NuqtaFoodies - Food deals & reviews',
+                      '@NuqtaSavers - Budget tips & savings',
+                      '@NuqtaBeauty - Salon & spa deals',
+                      '@NuqtaSports - Sports news & events',
+                      '@NuqtaMemes - Viral meme content',
+                      '@NuqtaDeals - Daily deals alerts',
+                    ].map((account, idx) => (
+                      <div key={idx} className="bg-white/5 rounded p-2 text-sm text-gray-300">{account}</div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-3">Language-Based Accounts</h4>
+                  <div className="space-y-2">
+                    {[
+                      '@NuqtaHindi - Hindi content',
+                      '@NuqtaUrdu - Urdu content',
+                      '@NuqtaArabic - Arabic content',
+                      '@NuqtaFilipino - Tagalog content',
+                      '@NuqtaMalayalam - Malayalam content',
+                      '@NuqtaTamil - Tamil content',
+                    ].map((account, idx) => (
+                      <div key={idx} className="bg-white/5 rounded p-2 text-sm text-gray-300">{account}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Types */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-cyan-400 mb-6">Content Production Matrix</h3>
+              <div className="grid md:grid-cols-5 gap-4">
+                {[
+                  { type: 'Photo', formats: 'Static posts, carousels', icon: Image },
+                  { type: 'Video', formats: 'Reels, stories, long-form', icon: Video },
+                  { type: 'Reviews', formats: 'Product & merchant reviews', icon: Star },
+                  { type: 'UGC', formats: 'User-generated content', icon: Users },
+                  { type: 'Hero or Trash', formats: 'Product verdict series', icon: Trophy },
+                ].map((content, idx) => (
+                  <div key={idx} className="bg-cyan-500/10 rounded-lg p-4 text-center border border-cyan-500/30">
+                    <content.icon className="text-cyan-400 mx-auto mb-2" size={28} />
+                    <div className="text-white font-bold">{content.type}</div>
+                    <div className="text-gray-400 text-xs mt-1">{content.formats}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* WhatsApp Groups Strategy */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <MessageCircle size={24} />
+                WhatsApp Community Groups
+              </h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { name: 'Dubai Deals', desc: 'Daily deal alerts', members: 'Target: 5K' },
+                  { name: 'College Offers', desc: 'Student discounts', members: 'Target: 3K' },
+                  { name: 'Night Life', desc: 'Club & bar deals', members: 'Target: 2K' },
+                  { name: 'Girls Gang', desc: 'Beauty & salon deals', members: 'Target: 3K' },
+                ].map((group, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-green-400 font-bold mb-1">{group.name}</div>
+                    <div className="text-gray-400 text-sm">{group.desc}</div>
+                    <div className="text-xs text-green-400/70 mt-2">{group.members}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Events & Markets Tab */}
+        {activeTab === 'events' && (
+          <div className="space-y-8">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/20 rounded-2xl p-8 border border-[#c9a227]/30">
+              <h2 className="text-3xl font-bold text-white mb-4">Events & Flea Markets</h2>
+              <p className="text-xl text-gray-300">Offline activation through markets, events, and signature experiences</p>
+            </div>
+
+            {/* Flea Market Strategy */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-orange-400 mb-6 flex items-center gap-2">
+                <Store size={24} />
+                Nuqta Flea Market
+              </h3>
+              <div className="bg-orange-500/10 rounded-lg p-4 mb-6 border border-orange-500/30">
+                <div className="text-orange-400 font-bold text-lg mb-2">Goal: Nuqta Adoption</div>
+                <p className="text-gray-400">Create physical marketplaces where Nuqta is the primary payment method, driving app downloads and transactions.</p>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-4">Locations</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[
+                      { loc: 'Mall', icon: '🏬' },
+                      { loc: 'Society', icon: '🏘️' },
+                      { loc: 'Hall', icon: '🎪' },
+                      { loc: 'College', icon: '🎓' },
+                      { loc: 'Park', icon: '🌳' },
+                      { loc: 'Beach', icon: '🏖️' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3 flex items-center gap-2">
+                        <span className="text-2xl">{item.icon}</span>
+                        <span className="text-white">{item.loc}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold text-white mb-4">Rules & Structure</h4>
+                  <div className="space-y-3">
+                    <div className="bg-green-500/10 rounded-lg p-3 border border-green-500/30">
+                      <div className="text-green-400 font-bold">Nuqta Payment Only</div>
+                      <div className="text-gray-400 text-sm">50% off + Cashback for Nuqta users</div>
+                    </div>
+                    <div className="bg-red-500/10 rounded-lg p-3 border border-red-500/30">
+                      <div className="text-red-400 font-bold">Other Payment = No Discount</div>
+                      <div className="text-gray-400 text-sm">Creates strong incentive to download</div>
+                    </div>
+                    <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
+                      <div className="text-blue-400 font-bold">Commission Model</div>
+                      <div className="text-gray-400 text-sm">Merchants register with commission structure</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Signature Events */}
+            <div className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl p-6 border border-purple-500/30">
+              <h3 className="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2">
+                <Ticket size={24} />
+                Signature Events (Monthly)
+              </h3>
+              <div className="bg-white/10 rounded-lg p-4 mb-6">
+                <div className="text-white font-bold mb-2">Event Booking Strategy</div>
+                <div className="grid md:grid-cols-3 gap-4 mt-4">
+                  <div className="bg-purple-500/20 rounded-lg p-3 text-center">
+                    <div className="text-purple-400 font-bold">20% Off</div>
+                    <div className="text-gray-400 text-sm">On ticket price</div>
+                  </div>
+                  <div className="bg-[#c9a227]/20 rounded-lg p-3 text-center">
+                    <div className="text-[#c9a227] font-bold">30% Cashback</div>
+                    <div className="text-gray-400 text-sm">In Nuqta Coin</div>
+                  </div>
+                  <div className="bg-pink-500/20 rounded-lg p-3 text-center">
+                    <div className="text-pink-400 font-bold">10% Brand Coin</div>
+                    <div className="text-gray-400 text-sm">Available at event</div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { event: 'Music Night', icon: '🎵', desc: 'Live performances, DJ nights' },
+                  { event: 'Sports Screening', icon: '⚽', desc: 'Match viewing parties' },
+                  { event: 'Stand-up Comedy', icon: '🎤', desc: 'Local & international comics' },
+                  { event: 'College Sports Fest', icon: '🏆', desc: 'University tournaments' },
+                ].map((event, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-4xl mb-3">{event.icon}</div>
+                    <div className="text-white font-bold mb-1">{event.event}</div>
+                    <div className="text-gray-400 text-sm">{event.desc}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
+                <div className="text-[#c9a227] font-bold text-center">Ticket Booking Only Via Nuqta App</div>
+                <p className="text-gray-400 text-sm text-center mt-2">Creates exclusive access and drives app downloads</p>
+              </div>
+            </div>
+
+            {/* Event Calendar */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Calendar size={24} />
+                Annual Event Calendar
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { month: 'February', event: 'Launch Celebration Night', type: 'Music' },
+                  { month: 'March', event: 'Ramadan Iftar Experience', type: 'Cultural' },
+                  { month: 'April', event: 'IPL Screening Party', type: 'Sports' },
+                  { month: 'May', event: 'Stand-up Comedy Night', type: 'Comedy' },
+                  { month: 'June', event: 'Summer Beach Party', type: 'Music' },
+                  { month: 'July', event: 'Gaming Tournament', type: 'Sports' },
+                  { month: 'August', event: 'Back to School Fest', type: 'College' },
+                  { month: 'September', event: 'Football Season Opener', type: 'Sports' },
+                  { month: 'October', event: 'Diwali Celebration', type: 'Cultural' },
+                  { month: 'November', event: 'Filipino Fiesta', type: 'Cultural' },
+                  { month: 'December', event: 'Year End Gala', type: 'Music' },
+                  { month: 'January', event: 'New Year Health Fest', type: 'Wellness' },
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 flex items-center gap-4">
+                    <div className="text-[#c9a227] font-bold w-24">{item.month}</div>
+                    <div className="flex-1">
+                      <div className="text-white font-medium">{item.event}</div>
+                      <div className="text-gray-400 text-xs">{item.type}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Competition Events */}
+            <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-xl font-bold text-green-400 mb-6 flex items-center gap-2">
+                <Trophy size={24} />
+                Competition Events
+              </h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { comp: 'Singing Competition', prize: 'AED 5,000 Nuqta Coins', participants: '100+' },
+                  { comp: 'Dance Challenge', prize: 'AED 3,000 Nuqta Coins', participants: '200+' },
+                  { comp: 'Quiz Night', prize: 'AED 2,000 Nuqta Coins', participants: '50 teams' },
+                  { comp: 'Gully Cricket', prize: 'AED 10,000 Nuqta Coins', participants: '16 teams' },
+                  { comp: 'Gaming Tournament', prize: 'AED 5,000 Nuqta Coins', participants: '64 players' },
+                  { comp: 'Food Challenge', prize: 'AED 1,000 Nuqta Coins', participants: '20 contestants' },
+                ].map((comp, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4">
+                    <div className="text-white font-bold mb-2">{comp.comp}</div>
+                    <div className="flex items-center justify-between">
+                      <div className="text-[#c9a227] text-sm">{comp.prize}</div>
+                      <div className="text-gray-400 text-xs">{comp.participants}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
