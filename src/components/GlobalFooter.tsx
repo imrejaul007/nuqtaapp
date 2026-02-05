@@ -40,7 +40,8 @@ import {
   Megaphone,
   UserCircle,
   Bot,
-  AlertTriangle
+  AlertTriangle,
+  Video
 } from 'lucide-react';
 
 /**
@@ -130,6 +131,7 @@ const navigationData: NavCategory[] = [
     title: 'Marketing',
     items: [
       { label: 'Marketing Plan', href: '/marketing-bible', icon: Target, description: 'Full playbook + brand' },
+      { label: 'Social Content', href: '/social-content-strategy', icon: Video, description: '4 content series' },
       { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
       { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },
       { label: 'Press Kit', href: '/press-kit', icon: FileText, description: 'Media assets' },
