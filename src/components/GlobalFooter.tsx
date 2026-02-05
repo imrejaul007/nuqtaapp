@@ -163,6 +163,7 @@ const navigationData: NavCategory[] = [
   {
     title: 'Agent Reports',
     items: [
+      { label: 'C-Suite Operations', href: '/c-suite-operations', icon: Settings, description: 'Operating manuals & MoM' },
       { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown, description: 'Execution playbook' },
       { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle, description: 'Solve all issues' },
       { label: 'CEO Report', href: '/ceo-report', icon: Crown, description: 'Vision & strategy' },
