@@ -76,7 +76,8 @@ import {
   AlertTriangle,
   PhoneCall,
   Repeat,
-  Timer
+  Timer,
+  Briefcase
 } from 'lucide-react';
 
 export default function MarketingPlanPage() {
@@ -4105,6 +4106,343 @@ export default function MarketingPlanPage() {
                         {item}
                       </div>
                     ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Series 5: Regional Culture Discovery */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-6 border border-orange-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center">
+                  <Globe className="text-orange-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-orange-400">Series 5: Culture Discovery in UAE</h3>
+                  <p className="text-gray-400">Discover Best of Each Culture | 1x per week per culture</p>
+                </div>
+              </div>
+
+              <p className="text-gray-300 mb-6">
+                UAE is home to 200+ nationalities. This series celebrates each community by discovering
+                the best restaurants, shops, and experiences from their culture - all with Nuqta deals!
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                {[
+                  { culture: 'Indian', flag: '🇮🇳', episodes: [
+                    'Best Indian Street Food in Karama',
+                    'Authentic South Indian in Bur Dubai',
+                    'Indian Grocery Stores with Nuqta Deals',
+                    'Bollywood Night Spots on Budget',
+                    'Festival Special: Diwali Shopping Guide'
+                  ]},
+                  { culture: 'Filipino', flag: '🇵🇭', episodes: [
+                    'Filipino Restaurants in Al Rigga',
+                    'Jollibee vs Local - Taste Test',
+                    'Filipino Grocery Stores',
+                    'Karaoke Nights with Nuqta',
+                    'Fiesta Weekend Deals'
+                  ]},
+                  { culture: 'Pakistani', flag: '🇵🇰', episodes: [
+                    'Best Biryani Spots in Dubai',
+                    'Pakistani Sweets & Desserts',
+                    'Cricket Viewing Cafes',
+                    'Meena Bazaar Hidden Gems',
+                    'Eid Shopping Guide'
+                  ]},
+                  { culture: 'Arab', flag: '🇦🇪', episodes: [
+                    'Best Shawarma Spots',
+                    'Lebanese Fine Dining on Budget',
+                    'Egyptian Street Food',
+                    'Jordanian Mansaf Experience',
+                    'Ramadan Iftar Deals'
+                  ]},
+                  { culture: 'Russian/CIS', flag: '🇷🇺', episodes: [
+                    'Russian Restaurants in JBR',
+                    'Eastern European Grocery Stores',
+                    'Spa & Wellness Russian Style',
+                    'New Year Celebrations',
+                    'Beach Clubs Popular with CIS'
+                  ]},
+                  { culture: 'African', flag: '🌍', episodes: [
+                    'Ethiopian Coffee Culture',
+                    'Nigerian Jollof Rice Battle',
+                    'South African Braai Spots',
+                    'African Hair Salons & Beauty',
+                    'African Grocery Discoveries'
+                  ]},
+                  { culture: 'Chinese', flag: '🇨🇳', episodes: [
+                    'Authentic Chinese in Dragon Mart',
+                    'Dim Sum Deals',
+                    'Chinese New Year Specials',
+                    'Hot Pot Restaurants',
+                    'Chinese Supermarket Tour'
+                  ]},
+                  { culture: 'British/European', flag: '🇬🇧', episodes: [
+                    'British Pubs with Deals',
+                    'French Bakeries & Cafes',
+                    'Italian Family Restaurants',
+                    'German Brunch Spots',
+                    'European Grocery Stores'
+                  ]},
+                  { culture: 'Latin American', flag: '🌎', episodes: [
+                    'Mexican Restaurants in Dubai',
+                    'Brazilian BBQ Spots',
+                    'Colombian Coffee Houses',
+                    'Salsa Night Venues',
+                    'Latin Grocery Finds'
+                  ]},
+                ].map((item, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                      <span className="text-2xl">{item.flag}</span>
+                      {item.culture}
+                    </h4>
+                    <ul className="space-y-1">
+                      {item.episodes.map((ep, epIdx) => (
+                        <li key={epIdx} className="text-xs text-gray-400 flex items-start gap-1">
+                          <span className="text-orange-400">•</span> {ep}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-orange-400 mb-2">Why This Works</h4>
+                  <ul className="text-sm text-gray-400 space-y-1">
+                    <li>• UAE = 200+ nationalities, each is a micro-community</li>
+                    <li>• People LOVE content about their culture</li>
+                    <li>• High share rate within community groups</li>
+                    <li>• Builds merchant partnerships in niche areas</li>
+                    <li>• Creates loyal community segments</li>
+                  </ul>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-orange-400 mb-2">Hashtag Strategy</h4>
+                  <div className="flex flex-wrap gap-1">
+                    {['#NuqtaDiscovers', '#IndianInDubai', '#FilipinoUAE', '#PakistaniDubai', '#ArabFood', '#RussianDubai', '#AfricanInUAE', '#ChineseFood', '#ExpatLife', '#DubaiCommunity'].map((tag, idx) => (
+                      <span key={idx} className="text-xs bg-orange-500/20 text-orange-400 px-2 py-1 rounded">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Community Building Strategy */}
+            <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl p-6 border border-pink-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
+                  <Users className="text-pink-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-pink-400">Community Building Strategy</h3>
+                  <p className="text-gray-400">Country-wise, Culture-wise, Profession-wise Communities</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                {/* Country-wise Communities */}
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                    <Globe size={18} className="text-pink-400" />
+                    Country-wise Groups
+                  </h4>
+                  <ul className="space-y-2 text-sm">
+                    {[
+                      { name: 'Nuqta Indian Community', members: '5K target' },
+                      { name: 'Nuqta Filipino Savers', members: '3K target' },
+                      { name: 'Nuqta Pakistani Hub', members: '3K target' },
+                      { name: 'Nuqta Arab Community', members: '4K target' },
+                      { name: 'Nuqta Russian Expats', members: '2K target' },
+                      { name: 'Nuqta African Network', members: '2K target' },
+                    ].map((group, idx) => (
+                      <li key={idx} className="flex justify-between items-center text-gray-300 bg-white/5 p-2 rounded">
+                        <span>{group.name}</span>
+                        <span className="text-xs text-pink-400">{group.members}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Profession-wise Communities */}
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                    <Briefcase size={18} className="text-pink-400" />
+                    Profession-wise Groups
+                  </h4>
+                  <ul className="space-y-2 text-sm">
+                    {[
+                      { name: 'Nuqta Healthcare Workers', members: '2K target' },
+                      { name: 'Nuqta Teachers & Educators', members: '2K target' },
+                      { name: 'Nuqta IT Professionals', members: '3K target' },
+                      { name: 'Nuqta Hospitality Staff', members: '3K target' },
+                      { name: 'Nuqta Students UAE', members: '5K target' },
+                      { name: 'Nuqta Freelancers', members: '2K target' },
+                    ].map((group, idx) => (
+                      <li key={idx} className="flex justify-between items-center text-gray-300 bg-white/5 p-2 rounded">
+                        <span>{group.name}</span>
+                        <span className="text-xs text-pink-400">{group.members}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Interest-based Communities */}
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                    <Heart size={18} className="text-pink-400" />
+                    Interest-based Groups
+                  </h4>
+                  <ul className="space-y-2 text-sm">
+                    {[
+                      { name: 'Nuqta Foodies Dubai', members: '5K target' },
+                      { name: 'Nuqta Fitness Savers', members: '2K target' },
+                      { name: 'Nuqta Family Budgeters', members: '3K target' },
+                      { name: 'Nuqta Beauty & Wellness', members: '2K target' },
+                      { name: 'Nuqta Weekend Explorers', members: '3K target' },
+                      { name: 'Nuqta Smart Shoppers', members: '4K target' },
+                    ].map((group, idx) => (
+                      <li key={idx} className="flex justify-between items-center text-gray-300 bg-white/5 p-2 rounded">
+                        <span>{group.name}</span>
+                        <span className="text-xs text-pink-400">{group.members}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              {/* Community Platforms */}
+              <div className="bg-white/5 rounded-lg p-4 mb-6">
+                <h4 className="font-bold text-white mb-3">Platform Strategy</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  {[
+                    { platform: 'WhatsApp Groups', icon: '💬', use: 'Primary community hub', limit: '256 per group, create multiple' },
+                    { platform: 'Telegram Channels', icon: '📢', use: 'Broadcast deals', limit: 'Unlimited subscribers' },
+                    { platform: 'Facebook Groups', icon: '👥', use: 'Discussion & UGC', limit: 'Good for older demographics' },
+                    { platform: 'Discord Server', icon: '🎮', use: 'Tech-savvy users', limit: 'IT professionals, gamers' },
+                  ].map((item, idx) => (
+                    <div key={idx} className="text-center p-3 bg-white/5 rounded-lg">
+                      <div className="text-3xl mb-2">{item.icon}</div>
+                      <div className="text-white font-medium text-sm">{item.platform}</div>
+                      <div className="text-xs text-gray-400">{item.use}</div>
+                      <div className="text-xs text-pink-400 mt-1">{item.limit}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Monthly Community Events */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-amber-500/10 rounded-xl p-6 border border-[#c9a227]/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
+                  <Calendar className="text-[#c9a227]" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#c9a227]">Monthly Community Events</h3>
+                  <p className="text-gray-400">One event per month to bring Nuqta users together</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Event Calendar (Year 1)</h4>
+                  <div className="space-y-2">
+                    {[
+                      { month: 'Feb', event: 'Launch Party - Founding Users Meetup', venue: 'Partner Cafe' },
+                      { month: 'Mar', event: 'Nuqta Savers Brunch (Ramadan prep)', venue: 'Restaurant Partner' },
+                      { month: 'Apr', event: 'Eid Celebration Meetup', venue: 'Mall Partner' },
+                      { month: 'May', event: 'Nuqta Fitness Challenge Finale', venue: 'Gym Partner' },
+                      { month: 'Jun', event: 'Summer Savings Workshop', venue: 'Co-working Space' },
+                      { month: 'Jul', event: 'Kids Summer Camp Partner Event', venue: 'Activity Center' },
+                      { month: 'Aug', event: 'Back to School Savings Fair', venue: 'Mall Partner' },
+                      { month: 'Sep', event: 'Foodie Festival Crawl', venue: 'Multiple Restaurants' },
+                      { month: 'Oct', event: 'Diwali Celebration Night', venue: 'Indian Restaurant' },
+                      { month: 'Nov', event: 'Filipino Community Fiesta', venue: 'Filipino Restaurant' },
+                      { month: 'Dec', event: 'Year End Celebration Party', venue: 'Premium Venue' },
+                      { month: 'Jan', event: 'New Year Savings Resolution', venue: 'Partner Cafe' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-3 text-sm bg-white/5 p-2 rounded">
+                        <span className="text-[#c9a227] font-bold w-10">{item.month}</span>
+                        <span className="text-white flex-1">{item.event}</span>
+                        <span className="text-gray-500 text-xs">{item.venue}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-[#c9a227] mb-3">Event Format</h4>
+                    <ul className="text-sm text-gray-400 space-y-2">
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <span><strong className="text-white">Free entry</strong> for Nuqta app users</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <span><strong className="text-white">Exclusive deals</strong> from venue partner</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <span><strong className="text-white">Nuqta coin giveaways</strong> at every event</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <span><strong className="text-white">User testimonials</strong> recorded for content</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Check size={14} className="text-[#c9a227] mt-1 flex-shrink-0" />
+                        <span><strong className="text-white">Photo booth</strong> with Nuqta branding</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-[#c9a227] mb-3">Event KPIs</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { metric: '50+', label: 'Attendees/event' },
+                        { metric: '20+', label: 'New signups' },
+                        { metric: '10+', label: 'UGC posts' },
+                        { metric: '1', label: 'Merchant partner' },
+                      ].map((kpi, idx) => (
+                        <div key={idx} className="text-center bg-[#c9a227]/10 p-2 rounded">
+                          <div className="text-[#c9a227] font-bold text-lg">{kpi.metric}</div>
+                          <div className="text-gray-400 text-xs">{kpi.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h4 className="font-bold text-[#c9a227] mb-3">Budget per Event</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between text-gray-300">
+                        <span>Venue (partner - free/discounted)</span>
+                        <span className="text-green-400">AED 0-500</span>
+                      </div>
+                      <div className="flex justify-between text-gray-300">
+                        <span>Nuqta coin giveaways</span>
+                        <span>AED 500</span>
+                      </div>
+                      <div className="flex justify-between text-gray-300">
+                        <span>Photo booth & branding</span>
+                        <span>AED 300</span>
+                      </div>
+                      <div className="flex justify-between text-gray-300">
+                        <span>Refreshments top-up</span>
+                        <span>AED 200</span>
+                      </div>
+                      <div className="flex justify-between text-white font-bold border-t border-white/10 pt-2 mt-2">
+                        <span>Total per event</span>
+                        <span className="text-[#c9a227]">AED 1,000-1,500</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
