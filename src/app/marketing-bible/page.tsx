@@ -2969,32 +2969,45 @@ export default function MarketingPlanPage() {
                 ))}
               </div>
 
-              {/* First Transaction Offer */}
+              {/* First Transaction Offer - SIMPLIFIED */}
               <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/20 rounded-lg p-4 border border-[#c9a227]/30">
                 <div className="flex items-center gap-3 mb-3">
                   <Gift className="text-[#c9a227]" size={20} />
-                  <h5 className="font-bold text-[#c9a227]">First Transaction Bonus Campaign</h5>
+                  <h5 className="font-bold text-[#c9a227]">First Transaction Campaign (Simplified)</h5>
                 </div>
+
+                {/* The One Clear Message */}
+                <div className="bg-white/10 rounded-lg p-4 mb-4 text-center border border-[#c9a227]/50">
+                  <div className="text-xs text-[#c9a227] uppercase tracking-wider mb-2">One Clear Message</div>
+                  <div className="text-3xl font-bold text-white mb-2">
+                    "Your first coffee is on us. Literally."
+                  </div>
+                  <div className="text-gray-400 text-sm">
+                    Simple, memorable, easy to explain. No complicated offers.
+                  </div>
+                </div>
+
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <div className="text-2xl font-bold text-white mb-2">
-                      "Shop & Earn AED 50 on Your First Transaction!"
-                    </div>
+                    <h6 className="font-medium text-white mb-2">How It Works</h6>
                     <ul className="text-sm text-gray-400 space-y-1">
-                      <li>• New user downloads app</li>
-                      <li>• Makes first purchase at any partner</li>
-                      <li>• Gets AED 50 bonus coins instantly</li>
-                      <li>• Can use on next purchase</li>
+                      <li>1. Download Nuqta app</li>
+                      <li>2. Make your first purchase anywhere</li>
+                      <li>3. Get AED 50 bonus coins instantly</li>
+                      <li>4. Use them on your next visit</li>
                     </ul>
+                    <div className="mt-3 p-2 bg-green-500/10 rounded text-sm text-green-400">
+                      Result: First coffee paid by Nuqta. Second coffee = loyal customer.
+                    </div>
                   </div>
                   <div className="bg-white/5 rounded-lg p-3">
-                    <div className="text-sm text-gray-400 mb-2">Ad Copy Variations:</div>
+                    <div className="text-sm text-gray-400 mb-2">Simple Ad Copy (use these):</div>
                     <div className="space-y-2">
                       {[
-                        '🎁 Your first purchase = AED 50 FREE!',
-                        '💰 Shop once, earn AED 50 instantly',
-                        '🚀 Start with AED 50 on us!',
-                        '✨ First transaction bonus: AED 50 coins',
+                        '"Your first coffee is on us"',
+                        '"We\'ll pay for your first purchase"',
+                        '"AED 50 waiting for you. Just shop once."',
+                        '"Free money. First transaction. Done."',
                       ].map((copy, idx) => (
                         <div key={idx} className="text-sm text-white bg-white/5 p-2 rounded">
                           {copy}
@@ -3025,10 +3038,44 @@ export default function MarketingPlanPage() {
                   <div className="text-2xl font-bold text-white mb-4">
                     "Don't Give Discounts. Give YOUR Branded Coins. Build Loyalty."
                   </div>
+                  <div className="text-[#c9a227] font-medium mb-3">
+                    One-liner for BDA: "Discounts create bargain hunters. Branded coins create loyal customers."
+                  </div>
                   <div className="text-gray-400 max-w-2xl mx-auto">
                     Discounts train customers to wait for sales. Branded coins bring them back
                     to YOUR store to redeem. That's the difference between a one-time sale and a loyal customer.
                   </div>
+                </div>
+              </div>
+
+              {/* Story-Based Examples (more powerful than templates) */}
+              <div className="bg-white/5 rounded-lg p-4 mb-6">
+                <h5 className="font-bold text-white mb-3">Story-Based Merchant Content (Better than Templates)</h5>
+                <p className="text-gray-400 text-sm mb-4">Stories beat templates. Use these narrative approaches:</p>
+                <div className="grid md:grid-cols-3 gap-4">
+                  {[
+                    {
+                      weak: '"X Shop on Nuqta"',
+                      strong: '"Ahmed\'s cafe was struggling with one-time customers. Then he switched from 10% discounts to branded coins. Now 40% return within 7 days."',
+                      type: 'Transformation Story'
+                    },
+                    {
+                      weak: '"Get X% cashback"',
+                      strong: '"What if your morning karak earned you enough for a free one every week? That\'s not a discount - that\'s a coffee subscription you didn\'t know you had."',
+                      type: 'Reframe Story'
+                    },
+                    {
+                      weak: '"Shop X from Nuqta"',
+                      strong: '"This salon owner stopped giving discounts. Her customers didn\'t complain - they started coming MORE often. Here\'s what she did differently..."',
+                      type: 'Curiosity Story'
+                    },
+                  ].map((item, idx) => (
+                    <div key={idx} className="bg-white/5 p-3 rounded">
+                      <div className="text-xs text-red-400 line-through mb-2">Weak: {item.weak}</div>
+                      <div className="text-sm text-green-300 mb-2">Strong: {item.strong}</div>
+                      <div className="text-xs text-[#c9a227]">{item.type}</div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -3872,95 +3919,103 @@ export default function MarketingPlanPage() {
           </div>
         )}
 
-        {/* Content Series Tab - 4 Social Media Series */}
+        {/* Content Series Tab - 5 Social Media Series */}
         {activeTab === 'series' && (
           <div className="space-y-8">
-            {/* Series Overview */}
+            {/* Series Overview - Refined */}
             <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 rounded-xl p-6 border border-[#c9a227]/30">
-              <h3 className="text-2xl font-bold text-[#c9a227] mb-4">4 Content Series Strategy</h3>
-              <p className="text-gray-300 mb-6">
-                Four distinct social media series designed to build brand awareness, showcase app features,
-                discover local deals, and create viral engagement through interactive challenges.
-              </p>
-              <div className="grid md:grid-cols-4 gap-4">
+              <h3 className="text-2xl font-bold text-[#c9a227] mb-2">5 Content Series Strategy</h3>
+              <p className="text-gray-400 text-sm mb-4">Refined from rough ideas into strategic content pillars</p>
+              <div className="grid md:grid-cols-5 gap-3">
                 {[
-                  { name: 'How Much You Save', freq: '3x/week', format: 'Street Interview' },
-                  { name: 'Did You Know?', freq: '2x/week', format: 'Podcast Style' },
-                  { name: 'Nuqta Discovers', freq: '2x/week', format: 'Discovery Vlog' },
-                  { name: 'Deal Finder Challenge', freq: '1x/week', format: 'Treasure Hunt' },
+                  { name: 'Dubai Family Budget', freq: '3x/week', format: 'Street Interview', why: 'Relatable, emotional, shareable' },
+                  { name: 'Nuqta Insider', freq: '2x/week', format: '60-sec Tips', why: 'Educational, builds product knowledge' },
+                  { name: 'Hidden Gems UAE', freq: '2x/week', format: 'Discovery Vlog', why: 'Travel content, showcases merchants' },
+                  { name: 'Nuqta Treasure Hunt', freq: '1x/week', format: 'Gamified Challenge', why: 'Viral potential, drives engagement' },
+                  { name: 'Taste of Home', freq: '1x/week', format: 'Culture Series', why: 'Targets communities, high share rate' },
                 ].map((series, idx) => (
-                  <div key={idx} className="bg-white/5 rounded-lg p-4 text-center">
-                    <div className="text-[#c9a227] font-bold mb-1">{series.name}</div>
-                    <div className="text-sm text-gray-400">{series.freq}</div>
-                    <div className="text-xs text-gray-500">{series.format}</div>
+                  <div key={idx} className="bg-white/5 rounded-lg p-3 text-center">
+                    <div className="text-[#c9a227] font-bold text-sm mb-1">{series.name}</div>
+                    <div className="text-xs text-gray-400">{series.freq}</div>
+                    <div className="text-xs text-gray-500 mt-1">{series.format}</div>
+                    <div className="text-xs text-green-400/70 mt-2 italic">{series.why}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Series 1: How Much You Save */}
+            {/* Series 1: Dubai Family Budget (refined from "How Much You Save") */}
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                   <DollarSign className="text-green-400" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-green-400">Series 1: How Much You Save</h3>
-                  <p className="text-gray-400">Family Savings Series | Street Interview Format | 3x per week</p>
+                  <h3 className="text-xl font-bold text-green-400">Series 1: Dubai Family Budget</h3>
+                  <p className="text-gray-400 text-sm">Real families share monthly costs, we show savings potential | 3x/week</p>
+                </div>
+              </div>
+
+              {/* The Hook */}
+              <div className="bg-green-500/10 rounded-lg p-4 mb-6 border border-green-500/30">
+                <div className="text-xs text-green-400 uppercase tracking-wider mb-1">The Hook</div>
+                <div className="text-white font-medium">
+                  "We ask real Dubai families: How much do you spend monthly? Then we show them exactly how much they could save with Nuqta."
+                </div>
+                <div className="text-gray-400 text-sm mt-2">
+                  Why it works: People love seeing real numbers. It's relatable, emotional, and highly shareable.
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-white mb-3">Episode Ideas (10)</h4>
+                  <h4 className="font-bold text-white mb-3">Episode Concepts</h4>
                   <div className="space-y-2">
                     {[
-                      'Ep 1: Family of 4 - Monthly Grocery Savings',
-                      'Ep 2: Coffee Lovers - Daily Cafe Spending',
-                      'Ep 3: Students - University Area Deals',
-                      'Ep 4: Expat Family - School & Kids Activities',
-                      'Ep 5: Young Professionals - Weekend Dining',
-                      'Ep 6: Fitness Enthusiasts - Gym & Health Food',
-                      'Ep 7: Foodies - Restaurant Week Challenge',
-                      'Ep 8: Beauty & Wellness - Salon Savings',
-                      'Ep 9: Entertainment - Movies & Activities',
-                      'Ep 10: Monthly Recap - Best Savings Stories',
+                      { title: 'The Grocery Family', desc: 'Family of 4 spends AED 3,500/month on groceries' },
+                      { title: 'The Coffee Addict', desc: 'Young professional - AED 900/month on coffee' },
+                      { title: 'The University Student', desc: 'Student budget breakdown in Knowledge Village' },
+                      { title: 'The New Parents', desc: 'Baby expenses that add up fast' },
+                      { title: 'The Foodie Couple', desc: 'Date nights costing AED 2,000/month' },
+                      { title: 'The Fitness Journey', desc: 'Gym, supplements, healthy food costs' },
+                      { title: 'The Weekend Warriors', desc: 'Entertainment & activities budget' },
+                      { title: 'The Beauty Budget', desc: 'Salon visits, skincare, self-care' },
                     ].map((ep, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 p-2 rounded">
-                        <Check size={14} className="text-green-400 flex-shrink-0" />
-                        {ep}
+                      <div key={idx} className="bg-white/5 p-2 rounded">
+                        <div className="text-sm text-white font-medium">{ep.title}</div>
+                        <div className="text-xs text-gray-400">{ep.desc}</div>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-bold text-white mb-2">Production Requirements</h4>
+                    <h4 className="font-bold text-white mb-2">Video Format (60-90 sec)</h4>
                     <ul className="text-sm text-gray-400 space-y-1">
-                      <li>• Mobile phone with good camera</li>
-                      <li>• Wireless microphone for street audio</li>
-                      <li>• Nuqta branded backdrop/banner</li>
-                      <li>• Release forms for interviewees</li>
-                      <li>• Location: Malls, supermarkets, cafes</li>
+                      <li>1. Hook: "How much do you spend on [X] monthly?"</li>
+                      <li>2. Street interview: Real person shares their number</li>
+                      <li>3. Calculator overlay: Show potential savings with Nuqta</li>
+                      <li>4. Reaction shot: Their face when they see the savings</li>
+                      <li>5. CTA: "Download Nuqta. Start saving today."</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-white mb-2">KPIs</h4>
+                    <h4 className="font-bold text-white mb-2">Target KPIs</h4>
                     <div className="grid grid-cols-2 gap-2 text-sm">
                       <div className="bg-green-500/10 p-2 rounded">
-                        <div className="text-green-400 font-bold">10K+</div>
+                        <div className="text-green-400 font-bold">15K+</div>
                         <div className="text-gray-400">Views/episode</div>
                       </div>
                       <div className="bg-green-500/10 p-2 rounded">
-                        <div className="text-green-400 font-bold">5%+</div>
-                        <div className="text-gray-400">Engagement rate</div>
+                        <div className="text-green-400 font-bold">8%+</div>
+                        <div className="text-gray-400">Share rate</div>
                       </div>
                     </div>
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-2">Hashtags</h4>
                     <div className="flex flex-wrap gap-1">
-                      {['#NuqtaSavings', '#UAESavings', '#FamilyBudget', '#SaveWithNuqta', '#DubaiDeals'].map((tag, idx) => (
+                      {['#DubaiBudget', '#UAEFamilies', '#MoneySavingTips', '#DubaiLife', '#NuqtaSavings'].map((tag, idx) => (
                         <span key={idx} className="text-xs bg-[#c9a227]/20 text-[#c9a227] px-2 py-1 rounded">{tag}</span>
                       ))}
                     </div>
@@ -3969,37 +4024,46 @@ export default function MarketingPlanPage() {
               </div>
             </div>
 
-            {/* Series 2: Did You Know? */}
+            {/* Series 2: Nuqta Insider (refined from "Did You Know") */}
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                   <Mic className="text-blue-400" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-blue-400">Series 2: Did You Know?</h3>
-                  <p className="text-gray-400">App Features Podcast | Talk Show Style | 2x per week</p>
+                  <h3 className="text-xl font-bold text-blue-400">Series 2: Nuqta Insider</h3>
+                  <p className="text-gray-400 text-sm">Quick 60-sec tips about hidden app features | 2x/week</p>
+                </div>
+              </div>
+
+              {/* The Hook */}
+              <div className="bg-blue-500/10 rounded-lg p-4 mb-6 border border-blue-500/30">
+                <div className="text-xs text-blue-400 uppercase tracking-wider mb-1">The Hook</div>
+                <div className="text-white font-medium">
+                  "Did you know you can [feature] with Nuqta? Here's how in 60 seconds..."
+                </div>
+                <div className="text-gray-400 text-sm mt-2">
+                  Why it works: Educational content builds product knowledge. Users discover features they didn't know existed.
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h4 className="font-bold text-white mb-3">Episode Ideas (10)</h4>
+                  <h4 className="font-bold text-white mb-3">Episode Concepts</h4>
                   <div className="space-y-2">
                     {[
-                      'Ep 1: Track All Your Cashback in One Place',
-                      'Ep 2: Find Merchants Near You with Map View',
-                      'Ep 3: Nuqta Coins - How They Work',
-                      'Ep 4: Family Sharing - Split Rewards',
-                      'Ep 5: QR Scan - Instant Cashback',
-                      'Ep 6: Hidden Deals Feature',
-                      'Ep 7: Savings Goals & Targets',
-                      'Ep 8: Refer Friends - Earn Together',
-                      'Ep 9: Notification Settings for Best Deals',
-                      'Ep 10: Pro Tips from Power Users',
+                      { tip: 'Track all your cashback in one dashboard', hook: 'Stop checking multiple apps' },
+                      { tip: 'Find the nearest deals with map view', hook: 'Never miss a deal nearby' },
+                      { tip: 'Stack coins from multiple purchases', hook: 'Your coins never expire' },
+                      { tip: 'Share rewards with family members', hook: 'Family savings multiplied' },
+                      { tip: 'Get notified when your favorite shop has deals', hook: 'Be first to know' },
+                      { tip: 'Set savings goals and track progress', hook: 'Gamify your savings' },
+                      { tip: 'Refer friends and both earn AED 10', hook: 'Literally free money' },
+                      { tip: 'See your total lifetime savings', hook: 'The number that motivates' },
                     ].map((ep, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 p-2 rounded">
-                        <Check size={14} className="text-blue-400 flex-shrink-0" />
-                        {ep}
+                      <div key={idx} className="bg-white/5 p-2 rounded">
+                        <div className="text-sm text-white font-medium">{ep.tip}</div>
+                        <div className="text-xs text-blue-400">Hook: "{ep.hook}"</div>
                       </div>
                     ))}
                   </div>
@@ -4412,7 +4476,7 @@ export default function MarketingPlanPage() {
               </div>
             </div>
 
-            {/* Community Building Strategy */}
+            {/* Community Building Strategy - PHASED APPROACH */}
             <div className="bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-xl p-6 border border-pink-500/30">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
@@ -4420,75 +4484,65 @@ export default function MarketingPlanPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-pink-400">Community Building Strategy</h3>
-                  <p className="text-gray-400">Country-wise, Culture-wise, Profession-wise Communities</p>
+                  <p className="text-gray-400">Phased approach: Don't build everything at once</p>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                {/* Country-wise Communities */}
-                <div className="bg-white/5 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                    <Globe size={18} className="text-pink-400" />
-                    Country-wise Groups
-                  </h4>
+              {/* Phased Approach - KEY INSIGHT */}
+              <div className="bg-white/10 rounded-lg p-4 mb-6 border border-pink-500/30">
+                <div className="text-xs text-pink-400 uppercase tracking-wider mb-2">Strategic Insight</div>
+                <div className="text-white font-medium mb-2">Don't launch 20 communities at once. Start with 2-3, prove it works, then expand.</div>
+                <div className="text-gray-400 text-sm">Each community needs active management. Better to have 3 thriving groups than 10 dead ones.</div>
+              </div>
+
+              {/* Phase 1, 2, 3 */}
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/30">
+                  <div className="text-green-400 font-bold mb-2">Phase 1: Launch (0-1K users)</div>
+                  <div className="text-xs text-gray-400 mb-3">Start with 3 communities max</div>
                   <ul className="space-y-2 text-sm">
                     {[
-                      { name: 'Nuqta Indian Community', members: '5K target' },
-                      { name: 'Nuqta Filipino Savers', members: '3K target' },
-                      { name: 'Nuqta Pakistani Hub', members: '3K target' },
-                      { name: 'Nuqta Arab Community', members: '4K target' },
-                      { name: 'Nuqta Russian Expats', members: '2K target' },
-                      { name: 'Nuqta African Network', members: '2K target' },
+                      { name: 'Nuqta Foodies Dubai', why: 'Interest-based, high engagement' },
+                      { name: 'Nuqta Indian Community', why: 'Largest expat group in UAE' },
+                      { name: 'Nuqta Students UAE', why: 'High engagement, low CAC' },
                     ].map((group, idx) => (
-                      <li key={idx} className="flex justify-between items-center text-gray-300 bg-white/5 p-2 rounded">
-                        <span>{group.name}</span>
-                        <span className="text-xs text-pink-400">{group.members}</span>
+                      <li key={idx} className="bg-white/5 p-2 rounded">
+                        <div className="text-white text-sm">{group.name}</div>
+                        <div className="text-xs text-green-400">{group.why}</div>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Profession-wise Communities */}
-                <div className="bg-white/5 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                    <Briefcase size={18} className="text-pink-400" />
-                    Profession-wise Groups
-                  </h4>
+                <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                  <div className="text-blue-400 font-bold mb-2">Phase 2: Scale (1K-5K users)</div>
+                  <div className="text-xs text-gray-400 mb-3">Add profession-based groups</div>
                   <ul className="space-y-2 text-sm">
                     {[
-                      { name: 'Nuqta Healthcare Workers', members: '2K target' },
-                      { name: 'Nuqta Teachers & Educators', members: '2K target' },
-                      { name: 'Nuqta IT Professionals', members: '3K target' },
-                      { name: 'Nuqta Hospitality Staff', members: '3K target' },
-                      { name: 'Nuqta Students UAE', members: '5K target' },
-                      { name: 'Nuqta Freelancers', members: '2K target' },
+                      { name: 'Nuqta Healthcare Workers', why: 'Hospital cafeterias as partners' },
+                      { name: 'Nuqta Teachers & Educators', why: 'School area merchants' },
+                      { name: 'Nuqta IT Professionals', why: 'Tech parks, cafes' },
                     ].map((group, idx) => (
-                      <li key={idx} className="flex justify-between items-center text-gray-300 bg-white/5 p-2 rounded">
-                        <span>{group.name}</span>
-                        <span className="text-xs text-pink-400">{group.members}</span>
+                      <li key={idx} className="bg-white/5 p-2 rounded">
+                        <div className="text-white text-sm">{group.name}</div>
+                        <div className="text-xs text-blue-400">{group.why}</div>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                {/* Interest-based Communities */}
-                <div className="bg-white/5 rounded-lg p-4">
-                  <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                    <Heart size={18} className="text-pink-400" />
-                    Interest-based Groups
-                  </h4>
+                <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/30">
+                  <div className="text-purple-400 font-bold mb-2">Phase 3: Expand (5K+ users)</div>
+                  <div className="text-xs text-gray-400 mb-3">Country-wise communities</div>
                   <ul className="space-y-2 text-sm">
                     {[
-                      { name: 'Nuqta Foodies Dubai', members: '5K target' },
-                      { name: 'Nuqta Fitness Savers', members: '2K target' },
-                      { name: 'Nuqta Family Budgeters', members: '3K target' },
-                      { name: 'Nuqta Beauty & Wellness', members: '2K target' },
-                      { name: 'Nuqta Weekend Explorers', members: '3K target' },
-                      { name: 'Nuqta Smart Shoppers', members: '4K target' },
+                      { name: 'Nuqta Filipino Savers', why: '2nd largest expat group' },
+                      { name: 'Nuqta Pakistani Hub', why: 'Deira, Karama merchants' },
+                      { name: 'Nuqta Arab Community', why: 'Local Emirati focus' },
                     ].map((group, idx) => (
-                      <li key={idx} className="flex justify-between items-center text-gray-300 bg-white/5 p-2 rounded">
-                        <span>{group.name}</span>
-                        <span className="text-xs text-pink-400">{group.members}</span>
+                      <li key={idx} className="bg-white/5 p-2 rounded">
+                        <div className="text-white text-sm">{group.name}</div>
+                        <div className="text-xs text-purple-400">{group.why}</div>
                       </li>
                     ))}
                   </ul>
