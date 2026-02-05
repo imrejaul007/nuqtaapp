@@ -77,6 +77,7 @@ const navigationData: NavCategory[] = [
       { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail, description: 'Target list & templates' },
       { label: 'Investor FAQ', href: '/investor-faq', icon: FileText, description: 'Common questions' },
       { label: 'Commitment', href: '/commitment', icon: FileCheck, description: 'Investment terms' },
+      { label: 'Funding Documents', href: '/funding-docs', icon: Briefcase, description: 'Cap table, SAFE, LOIs' },
     ]
   },
   {
