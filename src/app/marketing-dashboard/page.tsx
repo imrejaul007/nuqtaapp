@@ -60,7 +60,7 @@ import {
 } from 'lucide-react';
 
 export default function MarketingDashboardPage() {
-  const [activeTab, setActiveTab] = useState<'dashboard' | 'strategy' | 'content' | 'channels' | 'campaigns' | 'community' | 'execution'>('dashboard');
+  const [activeTab, setActiveTab] = useState<'dashboard' | 'bible' | 'strategy' | 'content' | 'channels' | 'campaigns' | 'community' | 'execution'>('dashboard');
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   // Launch countdown
@@ -81,12 +81,38 @@ export default function MarketingDashboardPage() {
   // Main navigation tabs
   const mainTabs = [
     { id: 'dashboard', label: 'Dashboard', icon: Target },
+    { id: 'bible', label: 'Marketing Bible', icon: FileText },
     { id: 'strategy', label: 'Strategy', icon: Layers },
     { id: 'content', label: 'Content', icon: Video },
     { id: 'channels', label: 'Channels', icon: Globe },
     { id: 'campaigns', label: 'Campaigns', icon: Megaphone },
     { id: 'community', label: 'Community', icon: Users },
     { id: 'execution', label: 'Execution', icon: Rocket },
+  ];
+
+  // All Marketing Bible sections (21 tabs)
+  const marketingBibleSections = [
+    { id: 'overview', name: 'Overview', icon: Target, desc: 'Complete marketing strategy overview', color: 'blue' },
+    { id: 'brand', name: 'Brand Guidelines', icon: Palette, desc: 'Logo, colors, typography, voice', color: 'purple' },
+    { id: 'segments', name: 'Segmented Acquisition', icon: Layers, desc: 'Community, profession, merchant targeting', color: 'green' },
+    { id: 'content', name: 'Content Calendar', icon: Calendar, desc: 'Weekly and monthly content plan', color: 'orange' },
+    { id: 'series', name: 'Content Series', icon: Film, desc: 'Dubai Budget, Nuqta Insider, Discovery, Deal Finder, Culture', color: 'red' },
+    { id: 'topics', name: '200+ Topics', icon: Hash, desc: 'Ready-to-use content topic ideas', color: 'pink' },
+    { id: 'viral', name: 'Viral Hooks', icon: Zap, desc: 'Proven hooks library for engagement', color: 'yellow' },
+    { id: 'social', name: 'Social & Community', icon: MessageCircle, desc: 'Social media and community strategy', color: 'blue' },
+    { id: 'online', name: 'Online Ads', icon: Monitor, desc: 'Meta, Google, TikTok ad strategies', color: 'blue' },
+    { id: 'offline', name: 'Offline Ads', icon: MapPin, desc: 'Auto, bus, gate, elevator ads', color: 'green' },
+    { id: 'influencer', name: 'Influencers', icon: Star, desc: 'Nano, micro, macro influencer strategy', color: 'yellow' },
+    { id: 'email', name: 'Email Marketing', icon: Mail, desc: 'Automation and campaign sequences', color: 'blue' },
+    { id: 'campaigns', name: 'Campaigns', icon: Megaphone, desc: 'User and merchant campaign ideas', color: 'red' },
+    { id: 'adscampaigns', name: 'Ad Campaigns', icon: Rocket, desc: 'Win Big, Calculate Savings, Cash Hunting', color: 'red' },
+    { id: 'brandmarketing', name: 'Brand Marketing', icon: Building2, desc: 'Price engineering, QR codes, badges', color: 'purple' },
+    { id: 'mediahub', name: 'Media Hub', icon: Play, desc: 'Short films, sports, podcasts, multi-language', color: 'pink' },
+    { id: 'events', name: 'Events & Markets', icon: Ticket, desc: 'Flea markets, signature events, competitions', color: 'orange' },
+    { id: 'kpis', name: 'KPIs & Testing', icon: BarChart3, desc: 'Metrics, A/B testing, analytics', color: 'blue' },
+    { id: 'templates', name: 'Templates', icon: FileText, desc: 'Ready-to-use content templates', color: 'gray' },
+    { id: 'budget', name: 'Budget', icon: DollarSign, desc: 'AED 75K allocation across channels', color: 'green' },
+    { id: 'growth', name: 'Growth Playbook', icon: TrendingUp, desc: 'Scaling strategies and tactics', color: 'blue' },
   ];
 
   // Today's priority tasks
@@ -628,6 +654,91 @@ export default function MarketingDashboardPage() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Marketing Bible Tab - All 21 Sections */}
+        {activeTab === 'bible' && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 rounded-xl p-6 border border-[#c9a227]/30 mb-6">
+              <div className="flex items-center justify-between flex-wrap gap-4">
+                <div>
+                  <h2 className="text-xl font-bold text-white mb-2">Marketing Bible - Complete Plan</h2>
+                  <p className="text-gray-400">All 21 sections of your comprehensive marketing strategy</p>
+                </div>
+                <Link
+                  href="/marketing-bible"
+                  className="bg-[#c9a227] hover:bg-[#b8922a] text-black px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition-colors"
+                >
+                  <ExternalLink size={20} />
+                  Open Full Bible
+                </Link>
+              </div>
+            </div>
+
+            {/* Bible Sections Grid */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {marketingBibleSections.map((section) => (
+                <Link
+                  key={section.id}
+                  href={`/marketing-bible?tab=${section.id}`}
+                  className={`bg-white/5 rounded-xl p-5 border border-white/10 hover:border-[#c9a227]/50 transition-all group`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                      section.color === 'red' ? 'bg-red-500/20' :
+                      section.color === 'blue' ? 'bg-blue-500/20' :
+                      section.color === 'green' ? 'bg-green-500/20' :
+                      section.color === 'yellow' ? 'bg-yellow-500/20' :
+                      section.color === 'purple' ? 'bg-purple-500/20' :
+                      section.color === 'pink' ? 'bg-pink-500/20' :
+                      section.color === 'orange' ? 'bg-orange-500/20' :
+                      'bg-gray-500/20'
+                    }`}>
+                      <section.icon size={24} className={
+                        section.color === 'red' ? 'text-red-400' :
+                        section.color === 'blue' ? 'text-blue-400' :
+                        section.color === 'green' ? 'text-green-400' :
+                        section.color === 'yellow' ? 'text-yellow-400' :
+                        section.color === 'purple' ? 'text-purple-400' :
+                        section.color === 'pink' ? 'text-pink-400' :
+                        section.color === 'orange' ? 'text-orange-400' :
+                        'text-gray-400'
+                      } />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-white font-bold group-hover:text-[#c9a227] transition-colors">{section.name}</div>
+                      <div className="text-gray-400 text-sm mt-1">{section.desc}</div>
+                    </div>
+                    <ChevronRight size={20} className="text-gray-500 group-hover:text-[#c9a227] flex-shrink-0" />
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Quick Links to Related Pages */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10 mt-8">
+              <h3 className="text-lg font-bold text-white mb-4">Related Playbooks & Guides</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                {[
+                  { name: 'CMO 90-Day Playbook', href: '/cmo-playbook', icon: Calendar, desc: 'Week-by-week execution' },
+                  { name: 'Merchant Playbook', href: '/merchant-playbook', icon: Store, desc: 'Merchant operations guide' },
+                  { name: 'CMO Agent Report', href: '/cmo-report', icon: FileText, desc: 'AI marketing analysis' },
+                ].map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href={item.href}
+                    className="flex items-center gap-3 p-4 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                  >
+                    <item.icon size={20} className="text-[#c9a227]" />
+                    <div>
+                      <div className="text-white font-medium group-hover:text-[#c9a227]">{item.name}</div>
+                      <div className="text-gray-400 text-xs">{item.desc}</div>
+                    </div>
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
