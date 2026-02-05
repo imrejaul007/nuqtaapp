@@ -234,15 +234,13 @@ export default function CFOReportPage() {
               <div className="flex items-start gap-4">
                 <MessageSquare className="text-emerald-400 flex-shrink-0" size={24} />
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-2">Opening Assessment</h4>
+                  <h4 className="text-lg font-bold text-white mb-2">Opening Assessment (Feb 2026)</h4>
                   <p className="text-slate-300 leading-relaxed">
-                    "Let me be direct: Nuqta is in a dangerous financial position. Not because the business model is
-                    bad - it's actually quite compelling - but because there's no financial infrastructure. No proper
-                    P&L, no cash flow forecasting, no unit economics dashboard, and most critically, no clear path
-                    to the next funding milestone. I've seen companies with great products fail because they ran out
-                    of runway before proving their model. That's what we need to prevent. In this report, I'll show
-                    you exactly how much runway you have, what metrics matter, and how to position for a successful
-                    seed round in 6 months."
+                    "Significant progress made: Product 100% complete, team of 8 hired, March 1 launch set.
+                    Financial position has improved with clear unit economics (LTV:CAC 16.8x), comprehensive
+                    financial models, and active investor outreach (50+ pipeline). Now entering critical phase:
+                    close seed round (AED 2-3M) to fuel launch growth. First revenue expected within 30 days
+                    of launch. Focus: close funding, hit first revenue milestones, prove unit economics with real data."
                   </p>
                 </div>
               </div>
@@ -261,22 +259,23 @@ export default function CFOReportPage() {
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { area: 'Cash Position', score: 35, status: 'poor', note: 'Limited runway remaining' },
-                  { area: 'Revenue Model', score: 40, status: 'poor', note: 'Unclear monetization' },
-                  { area: 'Unit Economics', score: 30, status: 'poor', note: 'Not properly measured' },
-                  { area: 'Financial Controls', score: 15, status: 'critical', note: 'No proper accounting' },
-                  { area: 'Forecasting', score: 10, status: 'critical', note: 'No financial model' },
-                  { area: 'Investor Readiness', score: 25, status: 'critical', note: 'Not prepared for DD' },
-                  { area: 'Burn Rate Mgmt', score: 40, status: 'poor', note: 'Spending not optimized' },
-                  { area: 'Revenue Tracking', score: 20, status: 'critical', note: 'Manual tracking only' }
+                  { area: 'Unit Economics', score: 90, status: 'strong', note: 'LTV:CAC 16.8x proven' },
+                  { area: 'Financial Models', score: 85, status: 'strong', note: 'Complete P&L projections' },
+                  { area: 'Investor Pipeline', score: 75, status: 'good', note: '50+ investors targeted' },
+                  { area: 'Revenue Model', score: 80, status: 'good', note: 'Clear 5-7% commission' },
+                  { area: 'Burn Management', score: 70, status: 'good', note: 'Team optimized at 8' },
+                  { area: 'Funding Progress', score: 45, status: 'building', note: 'Active outreach, no close' },
+                  { area: 'Cash Position', score: 50, status: 'building', note: 'Runway until April' },
+                  { area: 'First Revenue', score: 30, status: 'pending', note: 'Expected March 2026' }
                 ].map((item) => (
                   <div key={item.area} className="bg-white/5 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-slate-300 text-sm">{item.area}</span>
                       <span className={`text-xs px-2 py-1 rounded-full ${
-                        item.status === 'critical' ? 'bg-red-500/20 text-red-400' :
-                        item.status === 'poor' ? 'bg-orange-500/20 text-orange-400' :
-                        'bg-yellow-500/20 text-yellow-400'
+                        item.status === 'strong' ? 'bg-green-500/20 text-green-400' :
+                        item.status === 'good' ? 'bg-blue-500/20 text-blue-400' :
+                        item.status === 'building' ? 'bg-yellow-500/20 text-yellow-400' :
+                        'bg-orange-500/20 text-orange-400'
                       }`}>
                         {item.status.toUpperCase()}
                       </span>
@@ -288,9 +287,10 @@ export default function CFOReportPage() {
                     <div className="w-full bg-slate-700 rounded-full h-2 mt-2">
                       <div
                         className={`h-2 rounded-full ${
-                          item.score < 25 ? 'bg-red-500' :
-                          item.score < 50 ? 'bg-orange-500' :
-                          'bg-yellow-500'
+                          item.score >= 80 ? 'bg-green-500' :
+                          item.score >= 60 ? 'bg-blue-500' :
+                          item.score >= 40 ? 'bg-yellow-500' :
+                          'bg-orange-500'
                         }`}
                         style={{ width: `${item.score}%` }}
                       />
@@ -299,10 +299,10 @@ export default function CFOReportPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-                <p className="text-red-400 font-bold">Overall Financial Health: 27/100 (CRITICAL)</p>
+              <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                <p className="text-green-400 font-bold">Overall Financial Health: 66/100 (LAUNCH READY)</p>
                 <p className="text-slate-400 text-sm mt-1">
-                  Financial infrastructure is severely lacking. Immediate action needed on multiple fronts.
+                  Strong unit economics, complete financial models. Focus: close seed round and hit first revenue milestones.
                 </p>
               </div>
             </div>

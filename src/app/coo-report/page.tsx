@@ -194,9 +194,9 @@ function AgentProfile() {
           <div>
             <h3 className="text-yellow-400 font-bold text-lg mb-2">My Assessment Summary</h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-              &ldquo;You have 30+ LOIs but zero live merchants. That&apos;s like having 30 signed contracts for a restaurant
-              but never opening the doors. LOIs are promises. Live merchants are reality. Your #1 operational priority
-              is converting 10 LOIs to live, transacting merchants within 7 days. Everything else is secondary.&rdquo;
+              &ldquo;Product is 100% complete, team of 8 is hired, March 1 launch is set. You have 30+ LOIs ready to convert.
+              The next 23 days are critical for operations. Your #1 priority: Convert 10+ LOIs to live merchants before launch.
+              Your BDA is actively working on this. Support infrastructure and merchant success processes must be ready by Day 1.&rdquo;
             </p>
           </div>
         </div>
@@ -224,14 +224,14 @@ function OperationsDiagnosis() {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-4">
             {[
-              { area: 'Merchant Onboarding Process', score: 60, status: 'Documented, not tested' },
-              { area: 'Live Merchant Operations', score: 0, status: 'Zero merchants live' },
-              { area: 'Payment Integration', score: 15, status: 'Not implemented' },
-              { area: 'Support Infrastructure', score: 40, status: 'CHRO setting up' },
-              { area: 'Quality Assurance', score: 60, status: 'Product ready for testing' },
-              { area: 'Operational Playbooks', score: 85, status: 'Well documented' },
-              { area: 'Technology Stack', score: 100, status: 'CTO hired, product complete' },
-              { area: 'Team Capacity', score: 100, status: '8 team members hired' },
+              { area: 'Product Complete', score: 100, status: '100% ready' },
+              { area: 'Team Capacity', score: 100, status: '8 members hired' },
+              { area: 'Merchant Onboarding Process', score: 80, status: 'Documented, BDA executing' },
+              { area: 'LOI Conversion', score: 30, status: 'In progress (30 LOIs)' },
+              { area: 'Payment Integration', score: 85, status: 'Integrated in product' },
+              { area: 'Support Infrastructure', score: 50, status: 'CHRO setting up' },
+              { area: 'Operational Playbooks', score: 90, status: 'Comprehensive' },
+              { area: 'Launch Readiness', score: 85, status: 'March 1 on track' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-4">
                 <div className="w-48 text-slate-300 text-sm">{item.area}</div>
@@ -251,14 +251,14 @@ function OperationsDiagnosis() {
           <div className="p-6 bg-green-500/10 rounded-xl border border-green-500/30">
             <h4 className="text-green-400 font-bold mb-4">Overall Operations Grade</h4>
             <div className="flex items-center gap-4 mb-4">
-              <div className="text-5xl font-bold text-green-400">B+</div>
+              <div className="text-5xl font-bold text-green-400">A-</div>
               <div>
-                <p className="text-white font-medium">Documentation: A</p>
-                <p className="text-slate-400 text-sm">Execution: Ready to Launch</p>
+                <p className="text-white font-medium">Readiness: A</p>
+                <p className="text-slate-400 text-sm">Execution: 23 Days to Launch</p>
               </div>
             </div>
             <p className="text-slate-300 text-sm">
-              Full team hired (8 members), product 100% complete. Now executing on merchant conversion and launch.
+              Full team (8), product complete, BDA converting merchants. Focus: 10+ live merchants + support infrastructure by March 1.
             </p>
           </div>
         </div>
@@ -364,74 +364,74 @@ function ProblemsIdentified() {
       <div className="space-y-6">
         {[
           {
-            title: 'CRITICAL: Zero Live Merchants',
-            severity: 'CRITICAL',
-            rootCause: 'No product to integrate, no urgency to convert LOIs, waiting for "perfect" launch',
+            title: 'HIGH: Convert LOIs to Live Merchants',
+            severity: 'HIGH',
+            rootCause: 'Product now complete, BDA actively converting, need 10+ by March 1',
             symptoms: [
-              '30 LOIs collecting dust',
-              'Merchant enthusiasm fading over time',
-              'No real-world operational data',
-              'Cannot validate unit economics'
+              '30+ LOIs ready to convert',
+              'BDA actively sending contracts',
+              'Need merchant training & integration',
+              'Must hit 10+ live by launch'
             ],
-            impact: 'Without merchants, there is no business. LOIs are not customers.',
-            solution: 'Convert 10 LOIs to live within 7 days using manual workarounds if needed',
+            impact: 'Launch without merchants = poor user experience. Critical for Day 1 success.',
+            solution: 'BDA executing 7-day activation sprint. Target: 10+ live by Feb 28.',
             ownership: 100
           },
           {
-            title: 'CRITICAL: No Payment Infrastructure',
-            severity: 'CRITICAL',
-            rootCause: 'Technical dependency on CTO hire, possibly underestimating complexity',
+            title: 'HIGH: Support Infrastructure Needed',
+            severity: 'HIGH',
+            rootCause: 'CHRO setting up, needs to be ready before March 1 launch',
             symptoms: [
-              'No payment gateway selected',
-              'No POS integration partner',
-              'No transaction processing capability',
-              'Cannot collect merchant commissions'
+              'Ticketing system needed',
+              'FAQ/knowledge base in progress',
+              'WhatsApp Business to set up',
+              'SLA targets to define'
             ],
-            impact: 'Cannot generate revenue. The entire business model is blocked.',
-            solution: 'Use Stripe/PayTabs as interim. Manual reconciliation until automated.',
+            impact: 'First user/merchant issues on launch day need immediate response.',
+            solution: 'CHRO completing setup by Feb 25. Freshdesk + WhatsApp Business + FAQ.',
             ownership: 80
           },
           {
-            title: 'HIGH: No Support Infrastructure',
-            severity: 'HIGH',
-            rootCause: 'Prioritizing planning over operational readiness',
-            symptoms: [
-              'No ticketing system',
-              'No FAQ or knowledge base',
-              'No phone/WhatsApp support line',
-              'No escalation matrix'
-            ],
-            impact: 'First merchant or user issue will create bad PR and churn.',
-            solution: 'Set up Zendesk/Freshdesk + WhatsApp Business in 2 days',
-            ownership: 100
-          },
-          {
-            title: 'HIGH: Understaffed Operations',
-            severity: 'HIGH',
-            rootCause: 'No funding to hire, trying to do everything with 4 people',
-            symptoms: [
-              'CEO doing ops tasks',
-              'No dedicated merchant success manager',
-              'No customer support staff',
-              'No field operations capability'
-            ],
-            impact: 'Cannot scale. Current team is already stretched.',
-            solution: 'Hire 3 ops staff immediately: 1 merchant success, 2 support',
-            ownership: 70
-          },
-          {
-            title: 'MEDIUM: Geographic Spread Risk',
+            title: 'MEDIUM: Merchant Training Program',
             severity: 'MEDIUM',
-            rootCause: 'Trying to cover all of Dubai vs focusing on density',
+            rootCause: 'Staff at merchant locations need to know how Nuqta works',
+            symptoms: [
+              'Training materials needed',
+              'QR code placement guides',
+              'Quick reference cards',
+              'Staff onboarding checklist'
+            ],
+            impact: 'Untrained staff = failed transactions = bad user experience.',
+            solution: 'Create training kit. 30-min per merchant. Complete before go-live.',
+            ownership: 90
+          },
+          {
+            title: 'MEDIUM: Geographic Density Strategy',
+            severity: 'MEDIUM',
+            rootCause: 'Need concentration in 3 key areas for user value',
             symptoms: [
               'LOIs spread across Dubai',
-              'No geographic concentration',
-              'Difficult to serve all areas',
-              'Users won\'t find merchants nearby'
+              'Need density for user value',
+              'Focus: Marina, JBR, Downtown',
+              'Prioritize high-traffic locations'
             ],
-            impact: 'Bad user experience. Users need density, not spread.',
-            solution: 'Focus on 3 areas only: Marina, JBR, Downtown. Density wins.',
+            impact: 'Users need 5+ nearby merchants to see value.',
+            solution: 'Prioritize Marina (5), JBR (3), Downtown (2) for first 10 merchants.',
             ownership: 90
+          },
+          {
+            title: 'MEDIUM: Day 1 Operations Readiness',
+            severity: 'MEDIUM',
+            rootCause: 'Launch day operations checklist needs to be ready',
+            symptoms: [
+              'On-call support schedule',
+              'Escalation procedures',
+              'Real-time monitoring',
+              'Emergency contacts'
+            ],
+            impact: 'Launch day issues need immediate response capability.',
+            solution: 'Operations runbook complete by Feb 28. Full team on-call March 1.',
+            ownership: 100
           },
         ].map((problem, idx) => (
           <div key={idx} className={`rounded-2xl p-6 border ${
@@ -896,16 +896,15 @@ function OperationsMetrics() {
           <div>
             <h3 className="text-blue-400 font-bold text-xl mb-3">Final Message from Agent Marcus Thompson</h3>
             <p className="text-slate-300 leading-relaxed mb-4">
-              &ldquo;Operations is not about perfection - it&apos;s about execution. You can have the best processes
-              documented, but if they&apos;re not being used with real merchants and real users, they&apos;re worthless.
+              &ldquo;You&apos;ve made exceptional progress. Product complete, team hired, launch date set.
+              Now it&apos;s about operational execution. The next 23 days will define your launch success.
             </p>
             <p className="text-slate-300 leading-relaxed mb-4">
-              Your playbooks are excellent. Your documentation is thorough. But documentation doesn&apos;t generate revenue.
-              Live merchants do. Get 10 merchants live this week. You&apos;ll learn more in those 7 days than you have
-              in the last 6 months of planning.
+              Three things matter: 1) 10+ live merchants by Feb 28, 2) Support infrastructure ready by Feb 25,
+              3) Operations team on full alert for March 1. Your BDA is already converting LOIs. Keep the pressure on.
             </p>
             <p className="text-white font-bold text-lg">
-              Stop documenting. Start operating. The playbook improves by running it, not writing it.&rdquo;
+              March 1 is the moment of truth. Execute flawlessly. Every merchant live is a win.&rdquo;
             </p>
           </div>
         </div>

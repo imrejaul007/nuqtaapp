@@ -298,10 +298,10 @@ export default function CHROReportPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-                <p className="text-red-400 font-bold">Overall People Health: 19/100 (CRITICAL)</p>
+              <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                <p className="text-green-400 font-bold">Overall People Health: 65/100 (TEAM READY)</p>
                 <p className="text-slate-400 text-sm mt-1">
-                  The company lacks basic HR infrastructure. Founders are stretched too thin.
+                  Full founding team of 8 members hired. CHRO now building culture and HR infrastructure for March 1 launch.
                 </p>
               </div>
             </div>
@@ -314,23 +314,23 @@ export default function CHROReportPage() {
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <h5 className="text-teal-400 font-bold">Current Team (Estimated)</h5>
+                  <h5 className="text-teal-400 font-bold">Current Team (8 Members)</h5>
                   <div className="space-y-2">
                     {[
-                      { role: 'Founders/Leadership', count: 2, capacity: 'Overloaded 150%+' },
-                      { role: 'Product/Tech', count: 1, capacity: 'Critical gap' },
-                      { role: 'Operations', count: 0, capacity: 'Founders doing this' },
-                      { role: 'Marketing', count: 0, capacity: 'Founders doing this' },
-                      { role: 'Sales/BD', count: 0, capacity: 'Founders doing this' },
-                      { role: 'Support', count: 0, capacity: 'No dedicated resource' }
+                      { role: 'C-Suite (CEO, CTO, CHRO, CMO)', count: 4, capacity: 'Complete' },
+                      { role: 'Development', count: 2, capacity: 'Full stack covered' },
+                      { role: 'Business Development', count: 1, capacity: 'Converting merchants' },
+                      { role: 'Design', count: 1, capacity: 'Brand & content' },
+                      { role: 'Operations', count: 0, capacity: 'Post-launch hire' },
+                      { role: 'Support', count: 0, capacity: 'Post-launch hire' }
                     ].map((item) => (
                       <div key={item.role} className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                         <span className="text-slate-300">{item.role}</span>
                         <div className="flex items-center gap-3">
                           <span className="text-white font-bold">{item.count}</span>
                           <span className={`text-xs ${
-                            item.capacity.includes('Critical') || item.capacity.includes('Overloaded')
-                              ? 'text-red-400' : 'text-slate-500'
+                            item.capacity === 'Complete' || item.capacity.includes('covered')
+                              ? 'text-green-400' : 'text-slate-500'
                           }`}>
                             {item.capacity}
                           </span>
@@ -341,10 +341,10 @@ export default function CHROReportPage() {
                 </div>
                 <div className="space-y-4">
                   <h5 className="text-teal-400 font-bold">Immediate Needs Assessment</h5>
-                  <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-                    <p className="text-red-400 font-bold mb-2">Team Size Gap</p>
+                  <div className="p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                    <p className="text-green-400 font-bold mb-2">Team Complete ✓</p>
                     <p className="text-slate-400 text-sm">
-                      Current: ~3 people | Needed for current stage: 8-10 people
+                      Current: 8 people | Ready for launch phase
                     </p>
                     <p className="text-slate-400 text-sm mt-2">
                       The founders are doing the work of 8 people. This is not sustainable and explains

@@ -187,8 +187,8 @@ function AgentProfile() {
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Report Generated</p>
-              <p className="text-white font-bold">February 4, 2026</p>
-              <p className="text-slate-500 text-xs mt-1">Based on full codebase analysis</p>
+              <p className="text-white font-bold">February 6, 2026</p>
+              <p className="text-slate-500 text-xs mt-1">Launch: March 1 (23 days)</p>
             </div>
           </div>
         </div>
@@ -246,10 +246,10 @@ function AgentProfile() {
           <div>
             <h3 className="text-yellow-400 font-bold text-lg mb-2">My Key Message to the Founder</h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-              &ldquo;You have built an impressive strategic foundation - the business model is sound, the market timing is right,
-              and your unit economics look promising on paper. However, you are suffering from what I call &apos;Preparation Paralysis&apos; -
-              over-planning without execution. In my 20 years, I&apos;ve seen more startups die from perfecting their deck than from
-              launching too early. Your #1 priority must shift from planning to shipping. Everything else is secondary.&rdquo;
+              &ldquo;You&apos;ve made remarkable progress - product is 100% complete, team of 8 is hired, and March 1 launch is set.
+              You&apos;ve moved from &apos;Preparation Paralysis&apos; to &apos;Launch Mode&apos;. Now the focus shifts to three things:
+              1) Close funding to fuel growth, 2) Convert LOIs to live merchants, 3) Execute flawless launch marketing.
+              The next 23 days will define your first year. Execute with urgency.&rdquo;
             </p>
           </div>
         </div>
@@ -281,12 +281,12 @@ function CurrentDiagnosis() {
             {[
               { area: 'Vision & Strategy', score: 95, status: 'Excellent', color: 'green' },
               { area: 'Business Model', score: 90, status: 'Strong', color: 'green' },
-              { area: 'Market Timing', score: 85, status: 'Good', color: 'green' },
+              { area: 'Market Timing', score: 90, status: 'Perfect Timing', color: 'green' },
               { area: 'Documentation', score: 98, status: 'Comprehensive', color: 'green' },
               { area: 'Product Development', score: 100, status: 'COMPLETE', color: 'green' },
-              { area: 'User Traction', score: 10, status: 'Beta Ready', color: 'yellow' },
-              { area: 'Team Size', score: 100, status: '8 Members', color: 'green' },
-              { area: 'Funding Status', score: 30, status: 'Raising', color: 'yellow' },
+              { area: 'Team Hired', score: 100, status: '8 Members', color: 'green' },
+              { area: 'Launch Readiness', score: 85, status: 'March 1 Set', color: 'green' },
+              { area: 'Funding Status', score: 40, status: 'Active Outreach', color: 'yellow' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-center gap-4">
                 <div className="w-40 text-slate-300">{item.area}</div>
@@ -311,15 +311,15 @@ function CurrentDiagnosis() {
           <div className="p-6 bg-green-500/10 rounded-xl border border-green-500/30">
             <h4 className="text-green-400 font-bold mb-4">Overall Assessment</h4>
             <div className="flex items-center gap-4 mb-4">
-              <div className="text-5xl font-bold text-green-400">A-</div>
+              <div className="text-5xl font-bold text-green-400">A</div>
               <div>
                 <p className="text-white font-medium">Potential: A+</p>
-                <p className="text-slate-400 text-sm">Current Execution: A-</p>
+                <p className="text-slate-400 text-sm">Launch Ready: A</p>
               </div>
             </div>
             <p className="text-slate-300 text-sm">
-              Massive improvement! Product complete, full team hired (8 members).
-              Now entering launch phase. Focus on traction and fundraising.
+              Exceptional progress! Product 100% complete, 8-member team hired, March 1 launch set.
+              Now in final 23-day sprint. Focus: funding close + merchant activation.
             </p>
           </div>
         </div>
@@ -334,12 +334,12 @@ function CurrentDiagnosis() {
           </h3>
           <ul className="space-y-3">
             {[
+              { item: 'Product 100% complete', detail: 'Full app ready for launch, no blockers' },
+              { item: 'Full team hired (8 people)', detail: 'CEO, CTO, CHRO, CMO, 2 Devs, BDA, Designer' },
+              { item: 'March 1 launch date set', detail: 'Public commitment creates accountability' },
               { item: 'Merchant-funded model', detail: 'Sustainable from Day 1, no VC subsidy needed' },
-              { item: 'Clear unit economics', detail: 'LTV:CAC of 16.8x is top-tier for consumer' },
-              { item: 'UAE market focus', detail: 'Right market size, right timing' },
-              { item: 'Two-engine strategy', detail: 'Smart approach to different merchant margins' },
-              { item: 'Comprehensive planning', detail: '200+ docs show strategic depth' },
-              { item: 'LOI traction', detail: '30+ signed shows merchant interest' },
+              { item: 'LTV:CAC of 16.8x', detail: 'Top-tier unit economics for consumer' },
+              { item: '30+ LOIs signed', detail: 'Ready to convert to live merchants' },
             ].map((point, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <CheckCircle size={16} className="text-green-400 mt-1 flex-shrink-0" />
@@ -359,12 +359,12 @@ function CurrentDiagnosis() {
           </h3>
           <ul className="space-y-3">
             {[
-              { item: 'Beta users needed', detail: 'Product ready, need first users' },
-              { item: 'Merchant conversion', detail: 'Convert LOIs to live merchants' },
-              { item: 'Close funding round', detail: 'Investor outreach in progress' },
-              { item: 'Launch marketing', detail: 'CMO ready to execute campaigns' },
-              { item: 'First transactions', detail: 'Validate unit economics with real data' },
-              { item: 'Scale operations', detail: 'Full team ready to execute' },
+              { item: 'Close seed round', detail: 'AED 2-3M needed, active investor outreach' },
+              { item: 'Convert 10+ LOIs to live', detail: 'BDA actively converting, target by Feb 15' },
+              { item: 'Execute launch marketing', detail: 'CMO running 14-day pre-launch campaign' },
+              { item: 'First 100 beta users', detail: 'Founders Circle sign-ups in progress' },
+              { item: 'First transactions', detail: 'Validate unit economics pre-launch' },
+              { item: 'Finalize investor pipeline', detail: '50+ investors targeted, close top 5' },
             ].map((point, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <Target size={16} className="text-yellow-400 mt-1 flex-shrink-0" />
@@ -385,28 +385,28 @@ function CurrentDiagnosis() {
           CEO-Specific Assessment
         </h3>
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-4 bg-white/5 rounded-xl">
-            <h4 className="text-purple-400 font-bold mb-3">Time Allocation Problem</h4>
+          <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
+            <h4 className="text-green-400 font-bold mb-3">Time Allocation ✓ Improved</h4>
             <p className="text-slate-300 text-sm mb-4">
-              Based on your output (200+ docs), you&apos;re spending 70%+ on planning/documentation.
-              A CEO at this stage should spend 70%+ on fundraising and hiring.
+              Shifted from planning mode to execution mode. Now focused on
+              fundraising, merchant activation, and launch preparation.
             </p>
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-400">Current: Planning</span>
-                <span className="text-red-400">70%</span>
+                <span className="text-slate-400">Fundraising</span>
+                <span className="text-green-400">40%</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-400">Should be: Fundraising</span>
-                <span className="text-green-400">50%</span>
+                <span className="text-slate-400">Launch Execution</span>
+                <span className="text-green-400">40%</span>
               </div>
             </div>
           </div>
-          <div className="p-4 bg-white/5 rounded-xl">
-            <h4 className="text-purple-400 font-bold mb-3">Fundraising Status</h4>
+          <div className="p-4 bg-yellow-500/10 rounded-xl border border-yellow-500/30">
+            <h4 className="text-yellow-400 font-bold mb-3">Fundraising Status</h4>
             <p className="text-slate-300 text-sm mb-4">
-              You have investor materials ready but no closed round.
-              This suggests either insufficient investor activity or poor conversion.
+              Active investor outreach with 50+ targets. Need to close
+              seed round before or shortly after March 1 launch.
             </p>
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm">
@@ -414,15 +414,15 @@ function CurrentDiagnosis() {
                 <span className="text-white">AED 2-3M</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-400">Closed</span>
-                <span className="text-red-400">AED 0</span>
+                <span className="text-slate-400">Pipeline</span>
+                <span className="text-yellow-400">50+ investors</span>
               </div>
             </div>
           </div>
           <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
             <h4 className="text-green-400 font-bold mb-3">Leadership Team ✓</h4>
             <p className="text-slate-300 text-sm mb-4">
-              Full founding team now in place with 8 members including
+              Full founding team in place with 8 members including
               CTO, CHRO, CMO, 2 Developers, BDA, and Graphic Designer.
             </p>
             <div className="space-y-2">
@@ -461,82 +461,82 @@ function ProblemsIdentified() {
         {[
           {
             id: 1,
-            title: 'CRITICAL: No Funding Closed',
-            severity: 'CRITICAL',
-            timeToImpact: 'Immediate',
-            rootCause: 'Insufficient investor engagement, perfectionism in preparation, lack of urgency',
+            title: 'HIGH: Funding Round Not Closed',
+            severity: 'HIGH',
+            timeToImpact: '30 days',
+            rootCause: 'Active outreach in progress, need to accelerate close before/after launch',
             symptoms: [
-              'Zero capital raised despite complete investor materials',
-              'Unable to hire key positions',
-              'Cannot execute marketing or growth plans',
-              'Runway approaching zero'
+              'No capital raised yet despite 50+ investor pipeline',
+              'Marketing budget constrained',
+              'Cannot scale team post-launch',
+              'Need runway for growth phase'
             ],
-            businessImpact: 'Company will fail within 2-3 months without funding. Cannot hire, cannot market, cannot build.',
+            businessImpact: 'Post-launch growth will be limited without capital. Must close by March 15.',
             ceoOwnership: 100,
-            dependencies: ['None - this is purely CEO responsibility']
+            dependencies: ['None - CEO priority #1']
           },
           {
             id: 2,
-            title: 'CRITICAL: No Technical Leadership',
-            severity: 'CRITICAL',
-            timeToImpact: '2 weeks',
-            rootCause: 'Delayed hiring, possibly compensation constraints, no technical co-founder from start',
+            title: 'HIGH: LOI Conversion Rate',
+            severity: 'HIGH',
+            timeToImpact: '23 days (Launch)',
+            rootCause: 'Need to convert LOIs to live merchants before March 1 launch',
             symptoms: [
-              'Product development paralyzed',
-              'Cannot respond to market feedback',
-              'Over-reliance on planning vs building',
-              'Technical debt accumulating before launch'
+              '30+ LOIs but only starting conversion',
+              'Need 10+ live merchants for launch',
+              'BDA actively working on this',
+              'Time pressure to execute'
             ],
-            businessImpact: 'Cannot ship product. Cannot iterate. Competitors will outpace.',
-            ceoOwnership: 80,
-            dependencies: ['Funding (for salary)', 'CHRO (for process)']
+            businessImpact: 'Launch without merchants = poor user experience. Target: 10+ live by March 1.',
+            ceoOwnership: 70,
+            dependencies: ['BDA execution', 'Product integration']
           },
           {
             id: 3,
-            title: 'HIGH: Preparation Paralysis',
-            severity: 'HIGH',
-            timeToImpact: 'Ongoing',
-            rootCause: 'Fear of failure, perfectionism, lack of pressure/accountability',
+            title: 'MEDIUM: Pre-Launch Marketing Execution',
+            severity: 'MEDIUM',
+            timeToImpact: '23 days',
+            rootCause: 'Need to build anticipation and Founders Circle before launch',
             symptoms: [
-              '200+ strategy documents',
-              'Zero live users',
-              'Zero revenue',
-              'LOIs not converted to live merchants'
+              '14-day pre-launch sprint starting',
+              'Need 100 users in Founders Circle',
+              'Influencer partnerships to activate',
+              'Content calendar to execute'
             ],
-            businessImpact: 'Competitors shipping while you plan. Market window closing. Investor patience exhausting.',
-            ceoOwnership: 100,
-            dependencies: ['None - this is mindset/behavior change']
+            businessImpact: 'Weak launch without pre-built audience. CMO executing playbook.',
+            ceoOwnership: 40,
+            dependencies: ['CMO execution', 'Marketing budget']
           },
           {
             id: 4,
-            title: 'HIGH: No Board/Advisory Structure',
-            severity: 'HIGH',
-            timeToImpact: '1 month',
-            rootCause: 'Early stage mentality, not prioritizing governance',
+            title: 'MEDIUM: Advisory Board Setup',
+            severity: 'MEDIUM',
+            timeToImpact: '60 days',
+            rootCause: 'No formal advisory structure yet, needed for investor confidence',
             symptoms: [
-              'All decisions made by single founder',
-              'No external accountability',
-              'No experienced guidance',
-              'Blind spots multiplying'
+              'All decisions made by C-suite only',
+              'No external advisors',
+              'Missing industry expertise',
+              'Investors will ask about governance'
             ],
-            businessImpact: 'Investors will want governance. Strategic mistakes without validation. Founder burnout risk.',
+            businessImpact: 'Investors want to see advisors. Strategic guidance missing.',
             ceoOwnership: 100,
-            dependencies: ['None']
+            dependencies: ['Post-launch priority']
           },
           {
             id: 5,
-            title: 'MEDIUM: No Strategic Partnerships Closed',
+            title: 'MEDIUM: Strategic Partnerships',
             severity: 'MEDIUM',
-            timeToImpact: '3 months',
-            rootCause: 'Waiting for product, not leveraging LOIs into deeper relationships',
+            timeToImpact: '90 days',
+            rootCause: 'Global Village and anchor brands in discussion, not closed',
             symptoms: [
-              'Global Village partnership in discussion but not closed',
-              'No anchor brand partnerships',
-              'No strategic investors'
+              'Global Village partnership pending',
+              'No major brand partnerships',
+              'Need anchor merchants for credibility'
             ],
-            businessImpact: 'Missing brand validation, distribution channels, and strategic capital.',
+            businessImpact: 'Missing brand validation and distribution. Priority post-launch.',
             ceoOwnership: 90,
-            dependencies: ['Product launch (to demonstrate value)']
+            dependencies: ['Successful launch (to demonstrate value)']
           },
         ].map((problem) => (
           <div key={problem.id} className={`rounded-2xl p-6 border ${
@@ -901,14 +901,14 @@ function SuccessMetrics() {
       {/* KPI Dashboard */}
       <div className="grid md:grid-cols-4 gap-4">
         {[
-          { metric: 'Capital Raised', current: 'AED 0', target: 'AED 2.5M', deadline: '30 days', status: 'red' },
-          { metric: 'CTO Hired', current: 'No', target: 'Yes', deadline: '7 days', status: 'red' },
-          { metric: 'Team Size', current: '4', target: '12', deadline: '60 days', status: 'yellow' },
-          { metric: 'App Launched', current: 'No', target: 'Yes', deadline: '14 days', status: 'red' },
-          { metric: 'Live Users', current: '0', target: '1,000', deadline: '30 days', status: 'red' },
-          { metric: 'Live Merchants', current: '0', target: '50', deadline: '30 days', status: 'red' },
-          { metric: 'First Revenue', current: 'AED 0', target: 'AED 10K', deadline: '30 days', status: 'red' },
-          { metric: 'Board Formed', current: 'No', target: 'Yes', deadline: '45 days', status: 'yellow' },
+          { metric: 'Product Complete', current: '100%', target: '100%', deadline: 'Done', status: 'green' },
+          { metric: 'Team Hired', current: '8', target: '8', deadline: 'Done', status: 'green' },
+          { metric: 'Launch Date', current: 'Mar 1', target: 'Mar 1', deadline: '23 days', status: 'green' },
+          { metric: 'Capital Raised', current: 'AED 0', target: 'AED 2.5M', deadline: 'Mar 15', status: 'yellow' },
+          { metric: 'Live Merchants', current: '0', target: '10+', deadline: 'Mar 1', status: 'yellow' },
+          { metric: 'Founders Circle', current: '0', target: '100', deadline: 'Mar 1', status: 'yellow' },
+          { metric: 'First Revenue', current: 'AED 0', target: 'AED 10K', deadline: 'Mar 15', status: 'yellow' },
+          { metric: 'Investor Pipeline', current: '50+', target: 'Close 5', deadline: 'Mar 30', status: 'yellow' },
         ].map((kpi, idx) => (
           <div key={idx} className={`p-4 rounded-xl border ${
             kpi.status === 'red' ? 'bg-red-500/10 border-red-500/30' :
@@ -998,16 +998,16 @@ function SuccessMetrics() {
           <div>
             <h3 className="text-purple-400 font-bold text-xl mb-3">Final Message from Agent Sarah Chen</h3>
             <p className="text-slate-300 leading-relaxed mb-4">
-              &ldquo;I&apos;ve seen hundreds of startups. The ones that succeed aren&apos;t the ones with the best plans -
-              they&apos;re the ones that execute relentlessly. You have done the planning. Now it&apos;s time to run.
+              &ldquo;You&apos;ve made exceptional progress. Product complete, team hired, launch date set.
+              You&apos;ve broken through the &apos;preparation paralysis&apos; and are now in execution mode.
             </p>
             <p className="text-slate-300 leading-relaxed mb-4">
-              Your business model is sound. Your market timing is good. Your unit economics look promising.
-              But none of that matters if you don&apos;t ship. Every day you wait, a competitor gets closer.
-              Every week without users, your LOIs get colder. Every month without funding, your runway shrinks.
+              The next 23 days are critical. Three things matter: 1) Close at least one investor before launch
+              to create momentum, 2) Get 10+ merchants live so users have places to transact,
+              3) Build the Founders Circle to 100 users for Day 1 traction.
             </p>
             <p className="text-white font-bold text-lg">
-              Stop preparing. Start shipping. The market will tell you what to do next.&rdquo;
+              March 1 is your moment. Execute flawlessly. The market is waiting.&rdquo;
             </p>
           </div>
         </div>

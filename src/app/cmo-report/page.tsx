@@ -234,13 +234,13 @@ export default function CMOReportPage() {
               <div className="flex items-start gap-4">
                 <MessageSquare className="text-pink-400 flex-shrink-0" size={24} />
                 <div>
-                  <h4 className="text-lg font-bold text-white mb-2">Opening Assessment</h4>
+                  <h4 className="text-lg font-bold text-white mb-2">Opening Assessment (Feb 2026)</h4>
                   <p className="text-slate-300 leading-relaxed">
-                    "Nuqta has a fundamentally strong value proposition - rewarding loyalty in a market where consumers are discount-fatigued.
-                    However, I see a critical marketing gap: we're trying to grow without a clear brand identity or viral mechanics.
-                    In my experience at Noon, we grew 5x not through paid ads, but through creating moments that people wanted to share.
-                    Nuqta needs its 'Yellow Friday' - a signature moment that defines the brand. I'll outline exactly how we achieve
-                    10,000 users through smart, low-budget guerrilla marketing combined with strategic influencer partnerships."
+                    "The CMO is now hired and executing. Product is 100% complete, team of 8 is in place, March 1 launch is set.
+                    The 14-day pre-launch campaign is now underway. We're building the Founders Circle (target: 100 users),
+                    activating influencer partnerships, and creating anticipation for launch. The Marketing Bible is complete with
+                    21 sections, content calendar, and campaign playbooks. This is our 'Yellow Friday' moment - March 1 launch.
+                    Focus: Founders Circle signups, influencer content, social media buildup, and launch day viral moments."
                   </p>
                 </div>
               </div>
@@ -259,22 +259,23 @@ export default function CMOReportPage() {
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { area: 'Brand Awareness', score: 15, status: 'critical', note: 'Near zero market awareness' },
-                  { area: 'Organic Growth', score: 20, status: 'critical', note: 'No viral mechanics in place' },
-                  { area: 'Content Strategy', score: 25, status: 'poor', note: 'Inconsistent social presence' },
-                  { area: 'User Acquisition', score: 10, status: 'critical', note: 'No active campaigns' },
-                  { area: 'Retention Marketing', score: 30, status: 'poor', note: 'Basic push notifications only' },
-                  { area: 'Referral Program', score: 35, status: 'poor', note: 'Exists but not optimized' },
-                  { area: 'Influencer Marketing', score: 0, status: 'critical', note: 'No influencer strategy' },
-                  { area: 'Community Building', score: 10, status: 'critical', note: 'No community exists' }
+                  { area: 'Brand Strategy', score: 90, status: 'strong', note: 'Complete Marketing Bible' },
+                  { area: 'Content Calendar', score: 85, status: 'strong', note: '200+ topics ready' },
+                  { area: 'Launch Campaign', score: 80, status: 'good', note: '14-day sprint active' },
+                  { area: 'Influencer Strategy', score: 75, status: 'good', note: 'Partnerships in progress' },
+                  { area: 'Founders Circle', score: 40, status: 'building', note: 'Target: 100 users' },
+                  { area: 'Social Presence', score: 50, status: 'building', note: 'Accounts active, growing' },
+                  { area: 'Referral Program', score: 70, status: 'good', note: 'Ready in product' },
+                  { area: 'Community Building', score: 35, status: 'starting', note: 'WhatsApp groups forming' }
                 ].map((item) => (
                   <div key={item.area} className="bg-white/5 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-slate-300 text-sm">{item.area}</span>
                       <span className={`text-xs px-2 py-1 rounded-full ${
-                        item.status === 'critical' ? 'bg-red-500/20 text-red-400' :
-                        item.status === 'poor' ? 'bg-orange-500/20 text-orange-400' :
-                        'bg-yellow-500/20 text-yellow-400'
+                        item.status === 'strong' ? 'bg-green-500/20 text-green-400' :
+                        item.status === 'good' ? 'bg-blue-500/20 text-blue-400' :
+                        item.status === 'building' ? 'bg-yellow-500/20 text-yellow-400' :
+                        'bg-orange-500/20 text-orange-400'
                       }`}>
                         {item.status.toUpperCase()}
                       </span>
@@ -286,9 +287,10 @@ export default function CMOReportPage() {
                     <div className="w-full bg-slate-700 rounded-full h-2 mt-2">
                       <div
                         className={`h-2 rounded-full ${
-                          item.score < 25 ? 'bg-red-500' :
-                          item.score < 50 ? 'bg-orange-500' :
-                          'bg-yellow-500'
+                          item.score >= 80 ? 'bg-green-500' :
+                          item.score >= 60 ? 'bg-blue-500' :
+                          item.score >= 40 ? 'bg-yellow-500' :
+                          'bg-orange-500'
                         }`}
                         style={{ width: `${item.score}%` }}
                       />
@@ -297,10 +299,10 @@ export default function CMOReportPage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 p-4 bg-red-500/10 border border-red-500/30 rounded-lg">
-                <p className="text-red-400 font-bold">Overall Marketing Health: 18/100 (CRITICAL)</p>
+              <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
+                <p className="text-green-400 font-bold">Overall Marketing Health: 66/100 (LAUNCH READY)</p>
                 <p className="text-slate-400 text-sm mt-1">
-                  Marketing infrastructure is severely underdeveloped. Immediate action required on all fronts.
+                  Marketing infrastructure in place. CMO executing 14-day pre-launch campaign. Focus on Founders Circle and launch execution.
                 </p>
               </div>
             </div>
