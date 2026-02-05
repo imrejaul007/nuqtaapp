@@ -68,6 +68,8 @@ const navigationData: NavCategory[] = [
     items: [
       { label: '90-Second Pitch', href: '/deck-90', icon: Rocket, description: 'Quick investor pitch' },
       { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: 'Comprehensive pitch' },
+      { label: 'Final Deck', href: '/deck-final', icon: Presentation, description: 'Final pitch version' },
+      { label: 'New Deck', href: '/deck-new', icon: Presentation, description: 'Latest deck' },
       { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
       { label: 'Data Room', href: '/data-room', icon: Database, description: 'Due diligence docs' },
       { label: 'Financial Projections', href: '/financialprojection', icon: DollarSign, description: 'Forecasts' },
@@ -85,10 +87,14 @@ const navigationData: NavCategory[] = [
       { label: 'Competitor Analysis', href: '/competitor-analysis', icon: Swords, description: 'Threats & defense' },
       { label: 'Execution Plan', href: '/execution-plan', icon: Target, description: 'Implementation' },
       { label: 'H1 GTM', href: '/h1-gtm', icon: Target, description: 'Horizon 1' },
+      { label: 'H2 GTM', href: '/h2-gtm', icon: Target, description: 'Horizon 2 GTM' },
       { label: 'H2 Strategy', href: '/h2-strategy', icon: TrendingUp, description: 'Horizon 2' },
+      { label: 'H3 GTM', href: '/h3-gtm', icon: Target, description: 'Horizon 3 GTM' },
       { label: 'H3 Infrastructure', href: '/h3-infrastructure', icon: Building2, description: 'Horizon 3' },
       { label: 'Phase 2', href: '/phase-2', icon: Calendar, description: 'Phase 2 plan' },
+      { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Calendar, description: 'Phase 2 GTM' },
       { label: 'Phase 3', href: '/phase-3', icon: Calendar, description: 'Phase 3 plan' },
+      { label: 'Phase 3 GTM', href: '/phase-3-gtm', icon: Calendar, description: 'Phase 3 GTM' },
     ]
   },
   {
@@ -103,6 +109,8 @@ const navigationData: NavCategory[] = [
       { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase, description: 'Scripts & objections' },
       { label: 'Merchant Playbook', href: '/merchant-playbook', icon: Target, description: 'Full operations guide' },
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
+      { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant benefits' },
+      { label: 'Merchant Info', href: '/merchant-info', icon: FileText, description: 'Merchant details' },
     ]
   },
   {
@@ -163,6 +171,15 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
+    title: 'Product',
+    items: [
+      { label: 'Nuqta Card', href: '/card', icon: CreditCard, description: 'User card' },
+      { label: 'User Journey', href: '/user-journey', icon: Map, description: 'Onboarding flow' },
+      { label: 'Dashboard Preview', href: '/dashboard-preview', icon: Settings, description: 'UI designs' },
+      { label: 'Landing Page V1', href: '/landing-v1', icon: Home, description: 'Website v1' },
+    ]
+  },
+  {
     title: 'Company',
     items: [
       { label: 'Home', href: '/', icon: Home, description: 'Landing page' },
@@ -174,8 +191,6 @@ const navigationData: NavCategory[] = [
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
       { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity options' },
       { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project tracker' },
-      { label: 'User Journey', href: '/user-journey', icon: Map, description: 'Onboarding flow' },
-      { label: 'Dashboard Preview', href: '/dashboard-preview', icon: Settings, description: 'UI designs' },
     ]
   }
 ];
