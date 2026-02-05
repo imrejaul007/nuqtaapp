@@ -139,6 +139,7 @@ const navigationData: NavCategory[] = [
     title: 'Marketing',
     items: [
       { label: 'Marketing Dashboard', href: '/marketing-dashboard', icon: Target, description: 'Command center' },
+      { label: 'Execution Guide', href: '/marketing-execution', icon: CheckSquare, description: 'Step-by-step execution' },
       { label: '14-Day Launch Sprint', href: '/launch-sprint', icon: Rocket, description: 'Pre-launch execution' },
       { label: 'First 100 Users', href: '/user-acquisition', icon: Users, description: 'User acquisition' },
       { label: 'First 10 Merchants', href: '/merchant-acquisition', icon: Store, description: 'Merchant sales' },

@@ -338,6 +338,17 @@ export default function MarketingDashboardPage() {
   // Execution sections
   const executionSections = [
     {
+      title: 'Step-by-Step Guide',
+      icon: FileText,
+      color: 'purple',
+      items: [
+        { name: 'Full Execution Guide', href: '/marketing-execution', desc: 'Complete step-by-step plan', status: 'active' },
+        { name: 'Optimized Team Structure', href: '/marketing-execution', desc: '3-8 person teams', status: 'active' },
+        { name: 'Phase 1-3 Breakdown', href: '/marketing-execution', desc: 'Week-by-week tasks', status: 'active' },
+        { name: 'Daily Routines', href: '/marketing-execution', desc: 'What to do every day', status: 'active' },
+      ]
+    },
+    {
       title: 'Launch Execution',
       icon: Rocket,
       color: 'red',
