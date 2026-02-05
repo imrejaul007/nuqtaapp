@@ -130,8 +130,12 @@ const navigationData: NavCategory[] = [
   {
     title: 'Marketing',
     items: [
-      { label: 'CMO Playbook', href: '/cmo-playbook', icon: Megaphone, description: '90-day execution plan' },
-      { label: 'Marketing Plan', href: '/marketing-bible', icon: Target, description: 'Full playbook + series' },
+      { label: 'Marketing Dashboard', href: '/marketing-dashboard', icon: Target, description: 'Command center' },
+      { label: '14-Day Launch Sprint', href: '/launch-sprint', icon: Rocket, description: 'Pre-launch execution' },
+      { label: 'First 100 Users', href: '/user-acquisition', icon: Users, description: 'User acquisition' },
+      { label: 'First 10 Merchants', href: '/merchant-acquisition', icon: Store, description: 'Merchant sales' },
+      { label: 'CMO Playbook', href: '/cmo-playbook', icon: Megaphone, description: '90-day plan' },
+      { label: 'Marketing Plan', href: '/marketing-bible', icon: FileText, description: 'Full playbook' },
       { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
       { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },
       { label: 'Press Kit', href: '/press-kit', icon: FileText, description: 'Media assets' },
