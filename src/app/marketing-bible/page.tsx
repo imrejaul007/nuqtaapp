@@ -101,6 +101,7 @@ export default function MarketingPlanPage() {
     { id: 'kpis', label: 'KPIs & Testing', icon: BarChart3 },
     { id: 'templates', label: 'Templates', icon: FileText },
     { id: 'budget', label: 'Budget', icon: DollarSign },
+    { id: 'series', label: 'Content Series', icon: Film },
   ];
 
   const copyToClipboard = (text: string, index: number) => {
@@ -3684,6 +3685,427 @@ export default function MarketingPlanPage() {
                   <div className="text-2xl font-bold text-green-400">6:1</div>
                   <div className="text-sm">LTV:CAC Ratio</div>
                   <div className="text-xs text-gray-500">Healthy unit economics</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Content Series Tab - 4 Social Media Series */}
+        {activeTab === 'series' && (
+          <div className="space-y-8">
+            {/* Series Overview */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/20 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-2xl font-bold text-[#c9a227] mb-4">4 Content Series Strategy</h3>
+              <p className="text-gray-300 mb-6">
+                Four distinct social media series designed to build brand awareness, showcase app features,
+                discover local deals, and create viral engagement through interactive challenges.
+              </p>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { name: 'How Much You Save', freq: '3x/week', format: 'Street Interview' },
+                  { name: 'Did You Know?', freq: '2x/week', format: 'Podcast Style' },
+                  { name: 'Nuqta Discovers', freq: '2x/week', format: 'Discovery Vlog' },
+                  { name: 'Deal Finder Challenge', freq: '1x/week', format: 'Treasure Hunt' },
+                ].map((series, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 text-center">
+                    <div className="text-[#c9a227] font-bold mb-1">{series.name}</div>
+                    <div className="text-sm text-gray-400">{series.freq}</div>
+                    <div className="text-xs text-gray-500">{series.format}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Series 1: How Much You Save */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
+                  <DollarSign className="text-green-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-green-400">Series 1: How Much You Save</h3>
+                  <p className="text-gray-400">Family Savings Series | Street Interview Format | 3x per week</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Episode Ideas (10)</h4>
+                  <div className="space-y-2">
+                    {[
+                      'Ep 1: Family of 4 - Monthly Grocery Savings',
+                      'Ep 2: Coffee Lovers - Daily Cafe Spending',
+                      'Ep 3: Students - University Area Deals',
+                      'Ep 4: Expat Family - School & Kids Activities',
+                      'Ep 5: Young Professionals - Weekend Dining',
+                      'Ep 6: Fitness Enthusiasts - Gym & Health Food',
+                      'Ep 7: Foodies - Restaurant Week Challenge',
+                      'Ep 8: Beauty & Wellness - Salon Savings',
+                      'Ep 9: Entertainment - Movies & Activities',
+                      'Ep 10: Monthly Recap - Best Savings Stories',
+                    ].map((ep, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 p-2 rounded">
+                        <Check size={14} className="text-green-400 flex-shrink-0" />
+                        {ep}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Production Requirements</h4>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Mobile phone with good camera</li>
+                      <li>• Wireless microphone for street audio</li>
+                      <li>• Nuqta branded backdrop/banner</li>
+                      <li>• Release forms for interviewees</li>
+                      <li>• Location: Malls, supermarkets, cafes</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">KPIs</h4>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div className="bg-green-500/10 p-2 rounded">
+                        <div className="text-green-400 font-bold">10K+</div>
+                        <div className="text-gray-400">Views/episode</div>
+                      </div>
+                      <div className="bg-green-500/10 p-2 rounded">
+                        <div className="text-green-400 font-bold">5%+</div>
+                        <div className="text-gray-400">Engagement rate</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Hashtags</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {['#NuqtaSavings', '#UAESavings', '#FamilyBudget', '#SaveWithNuqta', '#DubaiDeals'].map((tag, idx) => (
+                        <span key={idx} className="text-xs bg-[#c9a227]/20 text-[#c9a227] px-2 py-1 rounded">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Series 2: Did You Know? */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
+                  <Mic className="text-blue-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-blue-400">Series 2: Did You Know?</h3>
+                  <p className="text-gray-400">App Features Podcast | Talk Show Style | 2x per week</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Episode Ideas (10)</h4>
+                  <div className="space-y-2">
+                    {[
+                      'Ep 1: Track All Your Cashback in One Place',
+                      'Ep 2: Find Merchants Near You with Map View',
+                      'Ep 3: Nuqta Coins - How They Work',
+                      'Ep 4: Family Sharing - Split Rewards',
+                      'Ep 5: QR Scan - Instant Cashback',
+                      'Ep 6: Hidden Deals Feature',
+                      'Ep 7: Savings Goals & Targets',
+                      'Ep 8: Refer Friends - Earn Together',
+                      'Ep 9: Notification Settings for Best Deals',
+                      'Ep 10: Pro Tips from Power Users',
+                    ].map((ep, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 p-2 rounded">
+                        <Check size={14} className="text-blue-400 flex-shrink-0" />
+                        {ep}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Production Requirements</h4>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Ring light setup for consistent lighting</li>
+                      <li>• Quality microphone (podcast style)</li>
+                      <li>• Screen recording for app demos</li>
+                      <li>• Branded intro/outro animations</li>
+                      <li>• Cozy studio corner setup</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">KPIs</h4>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div className="bg-blue-500/10 p-2 rounded">
+                        <div className="text-blue-400 font-bold">5K+</div>
+                        <div className="text-gray-400">Views/episode</div>
+                      </div>
+                      <div className="bg-blue-500/10 p-2 rounded">
+                        <div className="text-blue-400 font-bold">100+</div>
+                        <div className="text-gray-400">App downloads</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Hashtags</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {['#DidYouKnow', '#NuqtaTips', '#AppHacks', '#SaveSmart', '#NuqtaFeatures'].map((tag, idx) => (
+                        <span key={idx} className="text-xs bg-[#c9a227]/20 text-[#c9a227] px-2 py-1 rounded">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Series 3: Nuqta Discovers */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
+                  <MapPin className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-purple-400">Series 3: Nuqta Discovers</h3>
+                  <p className="text-gray-400">Location & Deals Discovery | Vlog Style | 2x per week</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Episode Ideas (10)</h4>
+                  <div className="space-y-2">
+                    {[
+                      'Ep 1: Dubai Marina - Hidden Cafe Gems',
+                      'Ep 2: Al Quoz - Art District Food Scene',
+                      'Ep 3: JBR - Beach Day on a Budget',
+                      'Ep 4: Mall of Emirates - Best Value Finds',
+                      'Ep 5: Deira - Traditional Market Deals',
+                      'Ep 6: Business Bay - Lunch Spots Under AED 30',
+                      'Ep 7: Jumeirah - Brunch Without Breaking Bank',
+                      'Ep 8: Silicon Oasis - Student-Friendly Spots',
+                      'Ep 9: Downtown - Date Night Deals',
+                      'Ep 10: Global Village - Festival Savings Guide',
+                    ].map((ep, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 p-2 rounded">
+                        <Check size={14} className="text-purple-400 flex-shrink-0" />
+                        {ep}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Production Requirements</h4>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>• Gimbal for smooth walking shots</li>
+                      <li>• Wide-angle lens for location shots</li>
+                      <li>• Portable battery pack</li>
+                      <li>• Location permissions from merchants</li>
+                      <li>• Transportation for location hopping</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">KPIs</h4>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div className="bg-purple-500/10 p-2 rounded">
+                        <div className="text-purple-400 font-bold">15K+</div>
+                        <div className="text-gray-400">Views/episode</div>
+                      </div>
+                      <div className="bg-purple-500/10 p-2 rounded">
+                        <div className="text-purple-400 font-bold">500+</div>
+                        <div className="text-gray-400">Saves/shares</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Hashtags</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {['#NuqtaDiscovers', '#DubaiHiddenGems', '#UAEFoodie', '#DubaiOnBudget', '#ExploreDubai'].map((tag, idx) => (
+                        <span key={idx} className="text-xs bg-[#c9a227]/20 text-[#c9a227] px-2 py-1 rounded">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Series 4: Deal Finder Challenge */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
+                  <Trophy className="text-[#c9a227]" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-[#c9a227]">Series 4: Deal Finder Challenge</h3>
+                  <p className="text-gray-400">Hide & Seek Coin Card | Treasure Hunt | 1x per week</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Episode Ideas (10)</h4>
+                  <div className="space-y-2">
+                    {[
+                      'Ep 1: Mall of Emirates - First Card Hunt!',
+                      'Ep 2: Dubai Mall - Level Up the Stakes',
+                      'Ep 3: JBR Beach - Outdoor Challenge',
+                      'Ep 4: Global Village - Festival Hunt',
+                      'Ep 5: Citywalk - Urban Treasure',
+                      'Ep 6: Ibn Battuta Mall - History Hunt',
+                      'Ep 7: La Mer - Beach Day Prize',
+                      'Ep 8: Al Seef - Heritage Area Search',
+                      'Ep 9: Dragon Mart - Mega Mall Mission',
+                      'Ep 10: Grand Finale - AED 1000 Card!',
+                    ].map((ep, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300 bg-white/5 p-2 rounded">
+                        <Check size={14} className="text-[#c9a227] flex-shrink-0" />
+                        {ep}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-bold text-white mb-2">How It Works</h4>
+                    <ul className="text-sm text-gray-400 space-y-1">
+                      <li>1. Hide Nuqta coin card at location</li>
+                      <li>2. Post clues on social media</li>
+                      <li>3. First finder wins the card value</li>
+                      <li>4. Winner must have Nuqta app installed</li>
+                      <li>5. Document the reveal for content</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">KPIs</h4>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div className="bg-[#c9a227]/10 p-2 rounded">
+                        <div className="text-[#c9a227] font-bold">50K+</div>
+                        <div className="text-gray-400">Views/episode</div>
+                      </div>
+                      <div className="bg-[#c9a227]/10 p-2 rounded">
+                        <div className="text-[#c9a227] font-bold">1000+</div>
+                        <div className="text-gray-400">New followers</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-2">Hashtags</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {['#NuqtaChallenge', '#DealFinder', '#TreasureHunt', '#WinWithNuqta', '#NuqtaCoinCard'].map((tag, idx) => (
+                        <span key={idx} className="text-xs bg-[#c9a227]/20 text-[#c9a227] px-2 py-1 rounded">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Weekly Content Calendar */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-blue-500/10 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6">Weekly Content Calendar</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-3 px-2 text-gray-400">Day</th>
+                      <th className="text-left py-3 px-2 text-gray-400">Series</th>
+                      <th className="text-left py-3 px-2 text-gray-400">Platform</th>
+                      <th className="text-left py-3 px-2 text-gray-400">Time</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-300">
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Sunday</td>
+                      <td className="py-3 px-2"><span className="text-green-400">How Much You Save</span></td>
+                      <td className="py-3 px-2">Instagram Reels, TikTok</td>
+                      <td className="py-3 px-2">7:00 PM</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Monday</td>
+                      <td className="py-3 px-2"><span className="text-blue-400">Did You Know?</span></td>
+                      <td className="py-3 px-2">Instagram, YouTube Shorts</td>
+                      <td className="py-3 px-2">12:00 PM</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Tuesday</td>
+                      <td className="py-3 px-2"><span className="text-purple-400">Nuqta Discovers</span></td>
+                      <td className="py-3 px-2">Instagram Reels, TikTok</td>
+                      <td className="py-3 px-2">6:00 PM</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Wednesday</td>
+                      <td className="py-3 px-2"><span className="text-green-400">How Much You Save</span></td>
+                      <td className="py-3 px-2">Instagram Reels, TikTok</td>
+                      <td className="py-3 px-2">7:00 PM</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Thursday</td>
+                      <td className="py-3 px-2"><span className="text-blue-400">Did You Know?</span></td>
+                      <td className="py-3 px-2">Instagram, YouTube Shorts</td>
+                      <td className="py-3 px-2">12:00 PM</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Friday</td>
+                      <td className="py-3 px-2"><span className="text-[#c9a227]">Deal Finder Challenge</span></td>
+                      <td className="py-3 px-2">All Platforms</td>
+                      <td className="py-3 px-2">10:00 AM</td>
+                    </tr>
+                    <tr className="border-b border-white/5">
+                      <td className="py-3 px-2 font-medium">Saturday</td>
+                      <td className="py-3 px-2">
+                        <span className="text-green-400">Savings</span> + <span className="text-purple-400">Discovers</span>
+                      </td>
+                      <td className="py-3 px-2">Instagram Reels, TikTok</td>
+                      <td className="py-3 px-2">5:00 PM</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-gray-500 text-xs mt-4">Total: 8 posts per week across all series</p>
+            </div>
+
+            {/* Launch Checklist */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-white mb-6">Series Launch Checklist</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-[#c9a227] mb-3">Pre-Launch (Week 1)</h4>
+                  <div className="space-y-2">
+                    {[
+                      'Create dedicated Instagram account',
+                      'Create TikTok account',
+                      'Design series thumbnails & branding',
+                      'Write first 4 scripts (one per series)',
+                      'Scout first 3 locations',
+                      'Order Nuqta coin cards for giveaways',
+                      'Set up content calendar in scheduling tool',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                        <div className="w-5 h-5 rounded border border-gray-600 flex-shrink-0" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#c9a227] mb-3">Launch Week (Week 2)</h4>
+                  <div className="space-y-2">
+                    {[
+                      'Post teaser announcing all 4 series',
+                      'Launch "How Much You Save" Ep 1',
+                      'Launch "Did You Know?" Ep 1',
+                      'Launch "Nuqta Discovers" Ep 1',
+                      'Announce first Deal Finder Challenge',
+                      'Engage with all comments within 1 hour',
+                      'Track metrics daily and adjust',
+                    ].map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
+                        <div className="w-5 h-5 rounded border border-gray-600 flex-shrink-0" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
