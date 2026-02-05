@@ -97,7 +97,11 @@ import {
   Package,
   BadgeCheck,
   Award,
-  Calculator
+  Calculator,
+  Bot,
+  Headphones,
+  Volume2,
+  Settings
 } from 'lucide-react';
 
 export default function MarketingPlanPage() {
@@ -130,6 +134,7 @@ export default function MarketingPlanPage() {
     { id: 'adscampaigns', label: 'Ad Campaigns', icon: Rocket },
     { id: 'mediahub', label: 'Media Hub', icon: Video },
     { id: 'events', label: 'Events & Markets', icon: Trophy },
+    { id: 'aicontent', label: 'AI Content', icon: Bot },
   ];
 
   const copyToClipboard = (text: string, index: number) => {
@@ -8035,6 +8040,561 @@ export default function MarketingPlanPage() {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* AI Content Tab */}
+        {activeTab === 'aicontent' && (
+          <div className="space-y-8">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-16 h-16 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                  <Bot className="text-purple-400" size={32} />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">AI-Generated Podcast Content</h2>
+                  <p className="text-gray-400">Multi-language, niche-specific podcast-style content to promote Nuqta</p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-4 gap-4 mt-6">
+                <div className="bg-white/10 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-purple-400">20+</div>
+                  <div className="text-gray-400 text-sm">Languages</div>
+                </div>
+                <div className="bg-white/10 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-blue-400">50+</div>
+                  <div className="text-gray-400 text-sm">Niche Topics</div>
+                </div>
+                <div className="bg-white/10 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-green-400">500+</div>
+                  <div className="text-gray-400 text-sm">Episodes/Month</div>
+                </div>
+                <div className="bg-white/10 rounded-lg p-4 text-center">
+                  <div className="text-3xl font-bold text-[#c9a227]">24/7</div>
+                  <div className="text-gray-400 text-sm">Content Generation</div>
+                </div>
+              </div>
+            </div>
+
+            {/* AI Content Strategy */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Lightbulb size={24} />
+                AI Podcast Content Strategy
+              </h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="bg-purple-500/10 rounded-lg p-4 border border-purple-500/30">
+                    <div className="text-purple-400 font-bold mb-2">Direct Promotion Content</div>
+                    <ul className="text-gray-400 text-sm space-y-2">
+                      <li>• "How Nuqta saves UAE families AED 500/month"</li>
+                      <li>• "Nuqta vs competitors - why we're different"</li>
+                      <li>• "Meet the Nuqta team - founders story"</li>
+                      <li>• "Step-by-step: Getting 30% cashback at restaurants"</li>
+                      <li>• "Why 1000+ merchants chose Nuqta"</li>
+                    </ul>
+                  </div>
+                  <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                    <div className="text-blue-400 font-bold mb-2">Indirect Promotion Content</div>
+                    <ul className="text-gray-400 text-sm space-y-2">
+                      <li>• "Best ways to save money in Dubai 2026"</li>
+                      <li>• "Hidden gems: cheap eats in UAE"</li>
+                      <li>• "Smart shopping tips for expats"</li>
+                      <li>• "How to stretch your salary in UAE"</li>
+                      <li>• "Monthly budget planning for UAE residents"</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/30">
+                    <div className="text-green-400 font-bold mb-2">Educational Content</div>
+                    <ul className="text-gray-400 text-sm space-y-2">
+                      <li>• "Understanding cashback apps in UAE"</li>
+                      <li>• "Loyalty programs decoded"</li>
+                      <li>• "Smart dining: maximize restaurant rewards"</li>
+                      <li>• "Salon savings: beauty on a budget"</li>
+                      <li>• "Grocery hacks for UAE families"</li>
+                    </ul>
+                  </div>
+                  <div className="bg-orange-500/10 rounded-lg p-4 border border-orange-500/30">
+                    <div className="text-orange-400 font-bold mb-2">Community Stories</div>
+                    <ul className="text-gray-400 text-sm space-y-2">
+                      <li>• "Indian expat saves AED 2000/month with Nuqta"</li>
+                      <li>• "Filipino family's smart shopping journey"</li>
+                      <li>• "Pakistani community's favorite Nuqta deals"</li>
+                      <li>• "Arab family traditions and modern savings"</li>
+                      <li>• "Student life: surviving Dubai on budget"</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Language-Specific Podcasts */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Languages size={24} />
+                Multi-Language Podcast Channels
+              </h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { lang: 'Hindi', flag: '🇮🇳', channel: 'Nuqta Hindi', topics: 'Bollywood, cricket, desi deals', audience: '1.5M Indians in UAE' },
+                  { lang: 'Malayalam', flag: '🇮🇳', channel: 'Nuqta Malayalam', topics: 'Kerala community, gold, restaurants', audience: '800K Malayalis' },
+                  { lang: 'Tamil', flag: '🇮🇳', channel: 'Nuqta Tamil', topics: 'South Indian food, culture, savings', audience: '500K Tamils' },
+                  { lang: 'Telugu', flag: '🇮🇳', channel: 'Nuqta Telugu', topics: 'Tech community, IT savings tips', audience: '400K Telugu speakers' },
+                  { lang: 'Tagalog', flag: '🇵🇭', channel: 'Nuqta Filipino', topics: 'OFW savings, remittance, kabayan deals', audience: '700K Filipinos' },
+                  { lang: 'Urdu', flag: '🇵🇰', channel: 'Nuqta Urdu', topics: 'Halal deals, family savings, Pakistani food', audience: '1.2M Pakistanis' },
+                  { lang: 'Arabic', flag: '🇦🇪', channel: 'Nuqta Arabic', topics: 'Local culture, Emirati deals, Arabic lifestyle', audience: '1M Arabs' },
+                  { lang: 'Bengali', flag: '🇧🇩', channel: 'Nuqta Bangla', topics: 'Bangladeshi community, worker savings', audience: '400K Bangladeshis' },
+                  { lang: 'Nepali', flag: '🇳🇵', channel: 'Nuqta Nepali', topics: 'Worker community, budget tips', audience: '300K Nepalis' },
+                  { lang: 'Sinhala', flag: '🇱🇰', channel: 'Nuqta Sinhala', topics: 'Sri Lankan deals, community events', audience: '200K Sri Lankans' },
+                  { lang: 'English', flag: '🇬🇧', channel: 'Nuqta Global', topics: 'Western expats, professionals, lifestyle', audience: '500K Western expats' },
+                  { lang: 'Russian', flag: '🇷🇺', channel: 'Nuqta Russian', topics: 'CIS community, luxury deals', audience: '100K Russians' },
+                  { lang: 'Chinese', flag: '🇨🇳', channel: 'Nuqta Chinese', topics: 'Business community, trading tips', audience: '200K Chinese' },
+                  { lang: 'French', flag: '🇫🇷', channel: 'Nuqta French', topics: 'African French speakers, lifestyle', audience: '150K French speakers' },
+                  { lang: 'Persian', flag: '🇮🇷', channel: 'Nuqta Farsi', topics: 'Iranian community, gold, restaurants', audience: '400K Iranians' },
+                  { lang: 'Turkish', flag: '🇹🇷', channel: 'Nuqta Turkish', topics: 'Turkish business, food, culture', audience: '50K Turks' },
+                ].map((lang, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-colors">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">{lang.flag}</span>
+                      <div className="text-white font-bold">{lang.lang}</div>
+                    </div>
+                    <div className="text-[#c9a227] text-sm font-medium mb-1">{lang.channel}</div>
+                    <div className="text-gray-400 text-xs mb-2">{lang.topics}</div>
+                    <div className="text-gray-500 text-xs">{lang.audience}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Niche Podcast Categories */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Headphones size={24} />
+                Niche Podcast Categories
+              </h3>
+              <div className="grid md:grid-cols-3 gap-6">
+                {[
+                  {
+                    category: 'Food & Dining',
+                    icon: '🍽️',
+                    color: 'red',
+                    topics: [
+                      'Best cheap eats in Dubai',
+                      'Restaurant reviews with savings tips',
+                      'Hidden food gems under AED 30',
+                      'Cuisine guides by nationality',
+                      'Meal prep savings vs eating out'
+                    ]
+                  },
+                  {
+                    category: 'Beauty & Wellness',
+                    icon: '💅',
+                    color: 'pink',
+                    topics: [
+                      'Salon savings secrets',
+                      'Spa deals in UAE',
+                      'Beauty on a budget',
+                      'Gym membership hacks',
+                      'Self-care without overspending'
+                    ]
+                  },
+                  {
+                    category: 'Shopping & Retail',
+                    icon: '🛍️',
+                    color: 'blue',
+                    topics: [
+                      'Mall shopping savings',
+                      'Best time to shop in UAE',
+                      'Electronics deals decoded',
+                      'Seasonal sale strategies',
+                      'Brand vs quality savings'
+                    ]
+                  },
+                  {
+                    category: 'Family & Kids',
+                    icon: '👨‍👩‍👧‍👦',
+                    color: 'green',
+                    topics: [
+                      'Family outing savings',
+                      'Kids activities on budget',
+                      'School supplies deals',
+                      'Family dining specials',
+                      'Entertainment for less'
+                    ]
+                  },
+                  {
+                    category: 'Students & Youth',
+                    icon: '🎓',
+                    color: 'yellow',
+                    topics: [
+                      'Student budget survival guide',
+                      'University area deals',
+                      'Part-time job + savings',
+                      'Textbook and supplies savings',
+                      'Social life on a budget'
+                    ]
+                  },
+                  {
+                    category: 'Professional Life',
+                    icon: '💼',
+                    color: 'purple',
+                    topics: [
+                      'Office lunch savings',
+                      'Business casual on budget',
+                      'Networking without overspending',
+                      'Work commute savings',
+                      'Professional development deals'
+                    ]
+                  },
+                  {
+                    category: 'Healthcare',
+                    icon: '🏥',
+                    color: 'teal',
+                    topics: [
+                      'Medical savings tips',
+                      'Pharmacy deals in UAE',
+                      'Insurance optimization',
+                      'Wellness checkup savings',
+                      'Mental health resources'
+                    ]
+                  },
+                  {
+                    category: 'Entertainment',
+                    icon: '🎬',
+                    color: 'orange',
+                    topics: [
+                      'Movie deals and offers',
+                      'Concert and event savings',
+                      'Weekend activities on budget',
+                      'Theme park hacks',
+                      'Staycation deals'
+                    ]
+                  },
+                  {
+                    category: 'Travel & Transport',
+                    icon: '✈️',
+                    color: 'cyan',
+                    topics: [
+                      'Road trip savings UAE',
+                      'Public transport hacks',
+                      'Fuel savings tips',
+                      'Weekend getaway deals',
+                      'Airport and travel savings'
+                    ]
+                  },
+                ].map((niche, idx) => (
+                  <div key={idx} className={`bg-${niche.color}-500/10 rounded-lg p-4 border border-${niche.color}-500/20`}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-3xl">{niche.icon}</span>
+                      <div className="text-white font-bold">{niche.category}</div>
+                    </div>
+                    <ul className="text-gray-400 text-sm space-y-1">
+                      {niche.topics.map((topic, topicIdx) => (
+                        <li key={topicIdx} className="flex items-start gap-2">
+                          <span className="text-[#c9a227]">•</span>
+                          {topic}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* AI Production Pipeline */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <RefreshCw size={24} />
+                AI Content Production Pipeline
+              </h3>
+              <div className="grid md:grid-cols-5 gap-4">
+                {[
+                  { step: 1, title: 'Topic Selection', desc: 'AI analyzes trending topics in each community', icon: Lightbulb },
+                  { step: 2, title: 'Script Generation', desc: 'ChatGPT/Claude creates podcast scripts', icon: FileText },
+                  { step: 3, title: 'Voice Synthesis', desc: 'ElevenLabs generates native voices', icon: Volume2 },
+                  { step: 4, title: 'Audio Production', desc: 'AI adds music, effects, and mastering', icon: Headphones },
+                  { step: 5, title: 'Distribution', desc: 'Auto-publish to all podcast platforms', icon: Share2 },
+                ].map((step) => (
+                  <div key={step.step} className="bg-white/5 rounded-lg p-4 text-center relative">
+                    <div className="w-10 h-10 rounded-full bg-[#c9a227]/20 flex items-center justify-center mx-auto mb-3">
+                      <step.icon className="text-[#c9a227]" size={20} />
+                    </div>
+                    <div className="text-[#c9a227] font-bold mb-1">Step {step.step}</div>
+                    <div className="text-white font-medium text-sm mb-1">{step.title}</div>
+                    <div className="text-gray-400 text-xs">{step.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Episode Formats */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Mic size={24} />
+                Podcast Episode Formats
+              </h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  {
+                    format: 'Quick Tips',
+                    duration: '3-5 min',
+                    style: 'Single host, rapid-fire tips',
+                    example: '"5 ways to save at restaurants today"',
+                    frequency: 'Daily'
+                  },
+                  {
+                    format: 'Deep Dives',
+                    duration: '15-20 min',
+                    style: 'Detailed exploration of one topic',
+                    example: '"Complete guide to grocery savings in UAE"',
+                    frequency: '2x/week'
+                  },
+                  {
+                    format: 'Conversations',
+                    duration: '25-30 min',
+                    style: 'Two AI hosts discussing topics',
+                    example: '"Our favorite deals this month"',
+                    frequency: 'Weekly'
+                  },
+                  {
+                    format: 'Community Stories',
+                    duration: '10-15 min',
+                    style: 'Dramatized user success stories',
+                    example: '"How Priya saved AED 3000 for her wedding"',
+                    frequency: '2x/week'
+                  },
+                  {
+                    format: 'News & Updates',
+                    duration: '5-8 min',
+                    style: 'Latest deals, new merchants, app updates',
+                    example: '"This week in Nuqta: 15 new restaurants"',
+                    frequency: 'Daily'
+                  },
+                  {
+                    format: 'Expert Advice',
+                    duration: '20-25 min',
+                    style: 'Financial tips and money management',
+                    example: '"Budgeting 101 for UAE expats"',
+                    frequency: 'Weekly'
+                  },
+                  {
+                    format: 'Culture Corner',
+                    duration: '15-20 min',
+                    style: 'Cultural events, festivals, traditions',
+                    example: '"Celebrating Diwali on a budget in Dubai"',
+                    frequency: 'Weekly'
+                  },
+                  {
+                    format: 'Q&A Sessions',
+                    duration: '10-15 min',
+                    style: 'Answering common user questions',
+                    example: '"You asked: How does Nuqta Coin work?"',
+                    frequency: '3x/week'
+                  },
+                ].map((format, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4">
+                    <div className="text-white font-bold mb-2">{format.format}</div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <Clock size={14} className="text-[#c9a227]" />
+                      <span className="text-gray-400 text-sm">{format.duration}</span>
+                    </div>
+                    <div className="text-gray-400 text-sm mb-2">{format.style}</div>
+                    <div className="text-[#c9a227] text-xs italic mb-2">"{format.example}"</div>
+                    <div className="bg-purple-500/20 text-purple-400 text-xs px-2 py-1 rounded inline-block">{format.frequency}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Distribution Platforms */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Globe size={24} />
+                Distribution Platforms
+              </h3>
+              <div className="grid md:grid-cols-6 gap-4">
+                {[
+                  { platform: 'Spotify', icon: '🎵', priority: 'Primary', reach: 'Global' },
+                  { platform: 'Apple Podcasts', icon: '🎧', priority: 'Primary', reach: 'Global' },
+                  { platform: 'YouTube', icon: '📺', priority: 'Primary', reach: 'Global' },
+                  { platform: 'Google Podcasts', icon: '🔊', priority: 'Primary', reach: 'Global' },
+                  { platform: 'Amazon Music', icon: '🎶', priority: 'Secondary', reach: 'Global' },
+                  { platform: 'SoundCloud', icon: '☁️', priority: 'Secondary', reach: 'Creators' },
+                  { platform: 'Gaana', icon: '🇮🇳', priority: 'Regional', reach: 'India' },
+                  { platform: 'JioSaavn', icon: '🇮🇳', priority: 'Regional', reach: 'India' },
+                  { platform: 'Anghami', icon: '🇦🇪', priority: 'Regional', reach: 'MENA' },
+                  { platform: 'TikTok', icon: '📱', priority: 'Clips', reach: 'Youth' },
+                  { platform: 'Instagram Reels', icon: '📸', priority: 'Clips', reach: 'All' },
+                  { platform: 'WhatsApp Status', icon: '💬', priority: 'Viral', reach: 'Direct' },
+                ].map((platform, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-3 text-center">
+                    <div className="text-2xl mb-2">{platform.icon}</div>
+                    <div className="text-white font-medium text-sm">{platform.platform}</div>
+                    <div className="text-[#c9a227] text-xs">{platform.priority}</div>
+                    <div className="text-gray-500 text-xs">{platform.reach}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Sample Scripts */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <FileText size={24} />
+                Sample AI Podcast Scripts
+              </h3>
+              <div className="space-y-6">
+                {/* Hindi Script Example */}
+                <div className="bg-white/5 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🇮🇳</span>
+                    <div className="text-white font-bold">Hindi Episode: "Dubai mein paisa kaise bachaye"</div>
+                  </div>
+                  <div className="bg-black/30 rounded-lg p-4 text-sm">
+                    <p className="text-gray-300 italic mb-4">
+                      "Namaste doston! Aaj hum baat karenge Dubai mein paise bachane ke 5 secret tips ke baare mein.
+                      Kya aap jaante hain ki ek average Indian family Dubai mein mahine ke 2000-3000 dirhams bcha sakti hai sirf smart shopping se?
+                      <br/><br/>
+                      Tip number 1: Cashback apps ka use karein. Nuqta jaisi apps aapko restaurants mein 30% tak cashback deti hain.
+                      Sochiye - agar aap hafte mein 200 dirhams khaane pe kharchte hain, toh aap 60 dirhams bcha sakte hain!
+                      <br/><br/>
+                      [Continues with savings tips, naturally mentioning Nuqta benefits...]"
+                    </p>
+                    <div className="text-[#c9a227] text-xs">Duration: 8 minutes | Format: Quick Tips | Nuqta Mentions: 4</div>
+                  </div>
+                </div>
+
+                {/* Tagalog Script Example */}
+                <div className="bg-white/5 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🇵🇭</span>
+                    <div className="text-white font-bold">Tagalog Episode: "Paano mag-ipon sa Dubai bilang OFW"</div>
+                  </div>
+                  <div className="bg-black/30 rounded-lg p-4 text-sm">
+                    <p className="text-gray-300 italic mb-4">
+                      "Magandang araw mga kabayan! Alam niyo ba na maraming OFW ang nakaka-save ng hanggang 1000 dirhams kada buwan gamit ang mga simpleng tips na ito?
+                      <br/><br/>
+                      Una, gamitin ang cashback apps para sa lahat ng binibili mo. Halimbawa, kung kumakain ka sa restaurant at gumamit ng Nuqta app, makakakuha ka ng 30% cashback sa bill mo!
+                      <br/><br/>
+                      Pangalawa, hintayin ang sale seasons. Sa Dubai, ang pinakamagandang oras para mamili ay tuwing DSF at DSS...
+                      <br/><br/>
+                      [Continues with practical OFW savings advice, naturally integrating Nuqta]"
+                    </p>
+                    <div className="text-[#c9a227] text-xs">Duration: 12 minutes | Format: Deep Dive | Nuqta Mentions: 5</div>
+                  </div>
+                </div>
+
+                {/* Arabic Script Example */}
+                <div className="bg-white/5 rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xl">🇦🇪</span>
+                    <div className="text-white font-bold">Arabic Episode: "كيف توفر المال في الإمارات"</div>
+                  </div>
+                  <div className="bg-black/30 rounded-lg p-4 text-sm">
+                    <p className="text-gray-300 italic mb-4">
+                      "مرحباً بكم! اليوم سنتحدث عن أفضل طرق التوفير في الإمارات. هل تعلم أن العائلة الإماراتية يمكنها توفير آلاف الدراهم سنوياً؟
+                      <br/><br/>
+                      أولاً، استخدم تطبيقات الكاشباك مثل نقطة. عند الشراء من المطاعم والمحلات، تحصل على 30% كاشباك!
+                      <br/><br/>
+                      [Continues with UAE-specific savings tips...]"
+                    </p>
+                    <div className="text-[#c9a227] text-xs">Duration: 10 minutes | Format: Tips | Nuqta Mentions: 3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Content Calendar */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Calendar size={24} />
+                Weekly AI Podcast Production Schedule
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-3 px-4 text-gray-400">Day</th>
+                      <th className="text-left py-3 px-4 text-gray-400">Hindi</th>
+                      <th className="text-left py-3 px-4 text-gray-400">Tagalog</th>
+                      <th className="text-left py-3 px-4 text-gray-400">Arabic</th>
+                      <th className="text-left py-3 px-4 text-gray-400">Urdu</th>
+                      <th className="text-left py-3 px-4 text-gray-400">English</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { day: 'Monday', hindi: 'Quick Tips', tagalog: 'OFW Savings', arabic: 'عروض الأسبوع', urdu: 'Budget Tips', english: 'Deal Alerts' },
+                      { day: 'Tuesday', hindi: 'Restaurant Guide', tagalog: 'Kabayan Stories', arabic: 'مطاعم جديدة', urdu: 'Food Deals', english: 'Dining Out' },
+                      { day: 'Wednesday', hindi: 'Deep Dive', tagalog: 'Deep Dive', arabic: 'تعمق', urdu: 'Deep Dive', english: 'Deep Dive' },
+                      { day: 'Thursday', hindi: 'User Stories', tagalog: 'User Stories', arabic: 'قصص المستخدمين', urdu: 'User Stories', english: 'User Stories' },
+                      { day: 'Friday', hindi: 'Weekend Deals', tagalog: 'Weekend Plans', arabic: 'عروض نهاية الأسبوع', urdu: 'Weekend Deals', english: 'Weekend Guide' },
+                      { day: 'Saturday', hindi: 'Shopping Tips', tagalog: 'Shopping Tips', arabic: 'نصائح التسوق', urdu: 'Shopping Guide', english: 'Shopping Tips' },
+                      { day: 'Sunday', hindi: 'Week Recap', tagalog: 'Week Recap', arabic: 'ملخص الأسبوع', urdu: 'Week Recap', english: 'Week Recap' },
+                    ].map((row, idx) => (
+                      <tr key={idx} className="border-b border-white/5">
+                        <td className="py-3 px-4 text-white font-medium">{row.day}</td>
+                        <td className="py-3 px-4 text-gray-400">{row.hindi}</td>
+                        <td className="py-3 px-4 text-gray-400">{row.tagalog}</td>
+                        <td className="py-3 px-4 text-gray-400">{row.arabic}</td>
+                        <td className="py-3 px-4 text-gray-400">{row.urdu}</td>
+                        <td className="py-3 px-4 text-gray-400">{row.english}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-4 text-center text-gray-400 text-sm">
+                Total: 35 episodes per week × 20 languages = <span className="text-[#c9a227] font-bold">700 podcast episodes weekly</span>
+              </div>
+            </div>
+
+            {/* Tools & Technology */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6 flex items-center gap-2">
+                <Settings size={24} />
+                AI Tools & Technology Stack
+              </h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                {[
+                  { tool: 'ChatGPT-4/Claude', use: 'Script generation', cost: 'API usage' },
+                  { tool: 'ElevenLabs', use: 'Voice synthesis (20+ languages)', cost: '$99/mo' },
+                  { tool: 'Descript', use: 'Audio editing & production', cost: '$24/mo' },
+                  { tool: 'Podbean/Anchor', use: 'Podcast hosting & distribution', cost: '$9/mo' },
+                  { tool: 'Canva Pro', use: 'Podcast artwork & thumbnails', cost: '$12/mo' },
+                  { tool: 'Zapier', use: 'Automation & scheduling', cost: '$20/mo' },
+                  { tool: 'Google Cloud TTS', use: 'Backup voice synthesis', cost: 'Pay per use' },
+                  { tool: 'Whisper API', use: 'Transcription for SEO', cost: 'Pay per use' },
+                ].map((tool, idx) => (
+                  <div key={idx} className="bg-white/5 rounded-lg p-4">
+                    <div className="text-white font-bold">{tool.tool}</div>
+                    <div className="text-gray-400 text-sm">{tool.use}</div>
+                    <div className="text-[#c9a227] text-xs mt-2">{tool.cost}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
+                <div className="text-center">
+                  <div className="text-[#c9a227] font-bold text-lg">Estimated Monthly Cost: AED 800-1200</div>
+                  <div className="text-gray-400 text-sm">For 500+ podcast episodes across 20 languages</div>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-[#c9a227]/20 rounded-xl p-6 border border-purple-500/30 text-center">
+              <Bot className="text-purple-400 mx-auto mb-4" size={48} />
+              <h3 className="text-xl font-bold text-white mb-2">Ready to Launch AI Podcast Network?</h3>
+              <p className="text-gray-400 mb-4">Reach millions of UAE residents in their native language with automated, scalable content</p>
+              <div className="flex items-center justify-center gap-4">
+                <div className="bg-purple-500/20 text-purple-400 px-4 py-2 rounded-lg text-sm">20 Languages</div>
+                <div className="bg-blue-500/20 text-blue-400 px-4 py-2 rounded-lg text-sm">500+ Episodes/Month</div>
+                <div className="bg-green-500/20 text-green-400 px-4 py-2 rounded-lg text-sm">100% Automated</div>
               </div>
             </div>
           </div>

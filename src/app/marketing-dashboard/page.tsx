@@ -56,7 +56,8 @@ import {
   Briefcase,
   Phone,
   PenTool,
-  Image
+  Image,
+  Bot
 } from 'lucide-react';
 
 export default function MarketingDashboardPage() {
@@ -109,6 +110,7 @@ export default function MarketingDashboardPage() {
     { id: 'brandmarketing', name: 'Brand Marketing', icon: Building2, desc: 'Price engineering, QR codes, badges', color: 'purple' },
     { id: 'mediahub', name: 'Media Hub', icon: Play, desc: 'Short films, sports, podcasts, multi-language', color: 'pink' },
     { id: 'events', name: 'Events & Markets', icon: Ticket, desc: 'Flea markets, signature events, competitions', color: 'orange' },
+    { id: 'aicontent', name: 'AI Content', icon: Bot, desc: 'Multi-language AI podcast network (20 languages)', color: 'purple' },
     { id: 'kpis', name: 'KPIs & Testing', icon: BarChart3, desc: 'Metrics, A/B testing, analytics', color: 'blue' },
     { id: 'templates', name: 'Templates', icon: FileText, desc: 'Ready-to-use content templates', color: 'gray' },
     { id: 'budget', name: 'Budget', icon: DollarSign, desc: 'AED 75K allocation across channels', color: 'green' },
