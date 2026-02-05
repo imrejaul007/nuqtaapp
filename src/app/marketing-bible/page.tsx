@@ -104,6 +104,7 @@ export default function MarketingPlanPage() {
     { id: 'budget', label: 'Budget', icon: DollarSign },
     { id: 'series', label: 'Content Series', icon: Film },
     { id: 'growth', label: 'Growth Playbook', icon: TrendingUp },
+    { id: 'social', label: 'Social & Community', icon: MessageCircle },
   ];
 
   const copyToClipboard = (text: string, index: number) => {
@@ -5508,6 +5509,604 @@ export default function MarketingPlanPage() {
               </div>
               <div className="mt-4 text-center text-sm text-gray-400">
                 K-Factor ≥1.0 means viral growth (each user brings at least 1 more user)
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* Social & Community Tab - Multiple Accounts Strategy */}
+        {activeTab === 'social' && (
+          <div className="space-y-8">
+            {/* Hero Section */}
+            <div className="bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-xl p-8 border border-pink-500/30">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 bg-pink-500/20 px-4 py-2 rounded-full mb-4">
+                  <MessageCircle className="text-pink-400" size={18} />
+                  <span className="text-pink-400 font-medium">Multi-Account Strategy</span>
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">Social Accounts & Community Plan</h3>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  Different accounts for different purposes. Each account targets a specific audience
+                  and serves a unique role in the marketing funnel.
+                </p>
+              </div>
+
+              {/* The Strategy */}
+              <div className="bg-white/10 rounded-lg p-6 border border-pink-500/50">
+                <div className="text-xs text-pink-400 uppercase tracking-wider mb-2">The Multi-Account Strategy</div>
+                <div className="text-xl font-bold text-white mb-3">
+                  "One brand, multiple voices. Each account speaks to a different audience."
+                </div>
+                <div className="grid md:grid-cols-3 gap-4 mt-4 text-sm">
+                  <div className="bg-white/5 rounded-lg p-3">
+                    <div className="text-pink-400 font-bold">Main Brand Account</div>
+                    <div className="text-gray-400">Official announcements, brand building, trust</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-3">
+                    <div className="text-purple-400 font-bold">Content Series Accounts</div>
+                    <div className="text-gray-400">Niche content, specific audience, viral potential</div>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-3">
+                    <div className="text-blue-400 font-bold">Community Groups</div>
+                    <div className="text-gray-400">Direct engagement, deals, word-of-mouth</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Instagram Accounts Strategy */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                  <Instagram className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Instagram Accounts (4 Total)</h3>
+                  <p className="text-gray-400 text-sm">Different accounts for different purposes</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Main Brand Account */}
+                <div className="bg-gradient-to-br from-[#c9a227]/20 to-amber-500/10 rounded-lg p-5 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-[#c9a227] flex items-center justify-center text-[#0a1628] font-bold text-sm">N</div>
+                    <div>
+                      <div className="text-[#c9a227] font-bold">@nuqta.ae</div>
+                      <div className="text-xs text-gray-400">Main Brand Account</div>
+                    </div>
+                  </div>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <div className="text-gray-400">Purpose:</div>
+                      <div className="text-white">Official brand voice, announcements, partnerships, trust building</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400">Content:</div>
+                      <ul className="text-gray-300 space-y-1 mt-1">
+                        <li>• New merchant announcements</li>
+                        <li>• User milestones & celebrations</li>
+                        <li>• Feature updates & app tips</li>
+                        <li>• Partnership announcements</li>
+                        <li>• Team & behind-the-scenes</li>
+                      </ul>
+                    </div>
+                    <div className="flex gap-4">
+                      <div><span className="text-gray-400">Frequency:</span> <span className="text-[#c9a227]">1x/day</span></div>
+                      <div><span className="text-gray-400">Tone:</span> <span className="text-[#c9a227]">Professional</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dubai Budget Account */}
+                <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/10 rounded-lg p-5 border border-green-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-sm">💰</div>
+                    <div>
+                      <div className="text-green-400 font-bold">@dubaibudget</div>
+                      <div className="text-xs text-gray-400">Dubai Family Budget Series</div>
+                    </div>
+                  </div>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <div className="text-gray-400">Purpose:</div>
+                      <div className="text-white">Street interviews about money, savings content, relatable finance</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400">Content:</div>
+                      <ul className="text-gray-300 space-y-1 mt-1">
+                        <li>• "How much do you spend monthly?"</li>
+                        <li>• Real family budget breakdowns</li>
+                        <li>• Savings tips & hacks</li>
+                        <li>• Cost comparison content</li>
+                        <li>• Reaction videos to prices</li>
+                      </ul>
+                    </div>
+                    <div className="flex gap-4">
+                      <div><span className="text-gray-400">Frequency:</span> <span className="text-green-400">3x/week</span></div>
+                      <div><span className="text-gray-400">Tone:</span> <span className="text-green-400">Casual, fun</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hidden Gems Account */}
+                <div className="bg-gradient-to-br from-purple-500/20 to-violet-500/10 rounded-lg p-5 border border-purple-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white font-bold text-sm">📍</div>
+                    <div>
+                      <div className="text-purple-400 font-bold">@hiddengems.dubai</div>
+                      <div className="text-xs text-gray-400">Discovery & Locations Series</div>
+                    </div>
+                  </div>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <div className="text-gray-400">Purpose:</div>
+                      <div className="text-white">Discover hidden spots, cafes, restaurants, experiences in Dubai</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400">Content:</div>
+                      <ul className="text-gray-300 space-y-1 mt-1">
+                        <li>• "Did you know this exists?"</li>
+                        <li>• Hidden cafes & restaurants</li>
+                        <li>• Area-by-area guides</li>
+                        <li>• Budget-friendly experiences</li>
+                        <li>• Before/after transformation</li>
+                      </ul>
+                    </div>
+                    <div className="flex gap-4">
+                      <div><span className="text-gray-400">Frequency:</span> <span className="text-purple-400">2x/week</span></div>
+                      <div><span className="text-gray-400">Tone:</span> <span className="text-purple-400">Explorer</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Culture Account */}
+                <div className="bg-gradient-to-br from-orange-500/20 to-red-500/10 rounded-lg p-5 border border-orange-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center text-white font-bold text-sm">🌍</div>
+                    <div>
+                      <div className="text-orange-400 font-bold">@tasteofhome.uae</div>
+                      <div className="text-xs text-gray-400">Culture Discovery Series</div>
+                    </div>
+                  </div>
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <div className="text-gray-400">Purpose:</div>
+                      <div className="text-white">Celebrate each community in UAE - Indian, Filipino, Pakistani, etc.</div>
+                    </div>
+                    <div>
+                      <div className="text-gray-400">Content:</div>
+                      <ul className="text-gray-300 space-y-1 mt-1">
+                        <li>• Best Indian food in Dubai</li>
+                        <li>• Filipino community spots</li>
+                        <li>• Pakistani restaurants guide</li>
+                        <li>• Cultural celebrations & festivals</li>
+                        <li>• Community stories & features</li>
+                      </ul>
+                    </div>
+                    <div className="flex gap-4">
+                      <div><span className="text-gray-400">Frequency:</span> <span className="text-orange-400">1x/week</span></div>
+                      <div><span className="text-gray-400">Tone:</span> <span className="text-orange-400">Warm, community</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* TikTok Accounts Strategy */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center border-2 border-cyan-400">
+                  <Music2 className="text-cyan-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">TikTok Accounts (3 Total)</h3>
+                  <p className="text-gray-400 text-sm">Viral content with different angles</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4">
+                {/* Main TikTok */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-full bg-[#c9a227] flex items-center justify-center text-[#0a1628] font-bold text-xs">N</div>
+                    <div className="text-[#c9a227] font-bold text-sm">@nuqta.ae</div>
+                  </div>
+                  <div className="text-xs text-gray-400 mb-2">Main Brand</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>• App demos & tutorials</li>
+                    <li>• User testimonials</li>
+                    <li>• Trending sound remixes</li>
+                    <li>• Brand challenges</li>
+                  </ul>
+                  <div className="mt-3 text-xs"><span className="text-gray-400">Post:</span> <span className="text-white">Daily</span></div>
+                </div>
+
+                {/* Street Interview TikTok */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-xs">💰</div>
+                    <div className="text-green-400 font-bold text-sm">@dubaiprices</div>
+                  </div>
+                  <div className="text-xs text-gray-400 mb-2">Street Interviews</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>• "How much is your rent?"</li>
+                    <li>• Price reactions</li>
+                    <li>• Budget breakdowns</li>
+                    <li>• Savings reveals</li>
+                  </ul>
+                  <div className="mt-3 text-xs"><span className="text-gray-400">Post:</span> <span className="text-white">3x/week</span></div>
+                </div>
+
+                {/* Challenge TikTok */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-full bg-[#c9a227] flex items-center justify-center text-[#0a1628] font-bold text-xs">🏆</div>
+                    <div className="text-[#c9a227] font-bold text-sm">@nuqtahunt</div>
+                  </div>
+                  <div className="text-xs text-gray-400 mb-2">Treasure Hunt Series</div>
+                  <ul className="text-xs text-gray-300 space-y-1">
+                    <li>• Hidden coin card hunts</li>
+                    <li>• Challenge clues</li>
+                    <li>• Winner reveals</li>
+                    <li>• Prize giveaways</li>
+                  </ul>
+                  <div className="mt-3 text-xs"><span className="text-gray-400">Post:</span> <span className="text-white">1x/week</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* YouTube Strategy */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center">
+                  <Youtube className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">YouTube (1 Channel + Shorts)</h3>
+                  <p className="text-gray-400 text-sm">Long-form trust building + Shorts for reach</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-red-400 mb-3">Nuqta UAE (Main Channel)</h4>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div><strong className="text-white">Long-form (5-15 min):</strong></div>
+                    <ul className="space-y-1 ml-4">
+                      <li>• Complete app walkthrough</li>
+                      <li>• Monthly savings challenges</li>
+                      <li>• Merchant feature documentaries</li>
+                      <li>• "I tried saving for 30 days"</li>
+                      <li>• Community stories deep dives</li>
+                    </ul>
+                  </div>
+                  <div className="mt-3 text-xs"><span className="text-gray-400">Frequency:</span> <span className="text-red-400">1x/week</span></div>
+                </div>
+
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-red-400 mb-3">YouTube Shorts Strategy</h4>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div><strong className="text-white">Repurpose from:</strong></div>
+                    <ul className="space-y-1 ml-4">
+                      <li>• TikTok best performers</li>
+                      <li>• Instagram Reels clips</li>
+                      <li>• Street interview highlights</li>
+                      <li>• Quick tips (under 60 sec)</li>
+                      <li>• Merchant spotlights</li>
+                    </ul>
+                  </div>
+                  <div className="mt-3 text-xs"><span className="text-gray-400">Frequency:</span> <span className="text-red-400">Daily</span></div>
+                </div>
+              </div>
+            </div>
+
+            {/* WhatsApp Communities */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
+                  <MessageCircle className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-green-400">WhatsApp Communities (6 Groups)</h3>
+                  <p className="text-gray-400 text-sm">Direct engagement, deals, word-of-mouth growth</p>
+                </div>
+              </div>
+
+              {/* Launch Order */}
+              <div className="bg-white/10 rounded-lg p-4 mb-6 border border-green-500/50">
+                <div className="text-xs text-green-400 uppercase tracking-wider mb-2">Launch Order Strategy</div>
+                <div className="text-white font-medium">Start with 3 groups, add 1 new group every 2 weeks based on demand.</div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4 mb-6">
+                {/* Phase 1 Groups */}
+                {[
+                  {
+                    name: 'Nuqta Deals UAE 🔥',
+                    purpose: 'Daily deals, flash sales, exclusive offers',
+                    audience: 'All users wanting deals',
+                    phase: 1,
+                    rules: ['No spam', 'Deals only', 'Admin posts only'],
+                    posts: 'Admin posts 3x/day',
+                    color: 'green'
+                  },
+                  {
+                    name: 'Nuqta Foodies Dubai 🍽️',
+                    purpose: 'F&B recommendations, restaurant reviews, food deals',
+                    audience: 'Food lovers, dining out crowd',
+                    phase: 1,
+                    rules: ['Food content only', 'Share your finds', 'Be helpful'],
+                    posts: 'Community + Admin posts',
+                    color: 'green'
+                  },
+                  {
+                    name: 'Nuqta Students UAE 📚',
+                    purpose: 'Student-friendly deals, budget tips, campus meetups',
+                    audience: 'University students',
+                    phase: 1,
+                    rules: ['Student verified', 'Share student hacks', 'Help each other'],
+                    posts: 'Community + Ambassador posts',
+                    color: 'green'
+                  },
+                  {
+                    name: 'Nuqta Indian Community 🇮🇳',
+                    purpose: 'Indian restaurants, cultural events, community deals',
+                    audience: 'Indian expats in UAE',
+                    phase: 2,
+                    rules: ['Respect all', 'Indian-focused content', 'Festival updates'],
+                    posts: 'Community-driven',
+                    color: 'blue'
+                  },
+                  {
+                    name: 'Nuqta Filipino Hub 🇵🇭',
+                    purpose: 'Filipino restaurants, OFW deals, community events',
+                    audience: 'Filipino community in UAE',
+                    phase: 2,
+                    rules: ['Kabayan support', 'Share deals', 'Community events'],
+                    posts: 'Community-driven',
+                    color: 'blue'
+                  },
+                  {
+                    name: 'Nuqta VIP Savers 👑',
+                    purpose: 'Top savers, exclusive early access, feedback group',
+                    audience: 'Power users (top 100 savers)',
+                    phase: 3,
+                    rules: ['Invite only', 'Feedback welcome', 'Early access'],
+                    posts: 'Exclusive content',
+                    color: 'purple'
+                  },
+                ].map((group, idx) => (
+                  <div key={idx} className={`bg-white/5 rounded-lg p-4 border ${
+                    group.color === 'green' ? 'border-green-500/30' :
+                    group.color === 'blue' ? 'border-blue-500/30' : 'border-purple-500/30'
+                  }`}>
+                    <div className="flex items-center justify-between mb-2">
+                      <div className={`text-sm font-bold ${
+                        group.color === 'green' ? 'text-green-400' :
+                        group.color === 'blue' ? 'text-blue-400' : 'text-purple-400'
+                      }`}>{group.name}</div>
+                      <span className={`text-xs px-2 py-0.5 rounded ${
+                        group.phase === 1 ? 'bg-green-500/20 text-green-400' :
+                        group.phase === 2 ? 'bg-blue-500/20 text-blue-400' : 'bg-purple-500/20 text-purple-400'
+                      }`}>Phase {group.phase}</span>
+                    </div>
+                    <div className="text-xs text-gray-400 mb-2">{group.purpose}</div>
+                    <div className="text-xs text-gray-500 mb-2">Audience: {group.audience}</div>
+                    <div className="text-xs text-gray-500">Posts: {group.posts}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* WhatsApp Management */}
+              <div className="bg-white/5 rounded-lg p-4">
+                <h4 className="font-bold text-white mb-3">WhatsApp Management Rules</h4>
+                <div className="grid md:grid-cols-3 gap-4 text-sm">
+                  <div>
+                    <div className="text-green-400 font-medium mb-2">Do's</div>
+                    <ul className="text-gray-400 space-y-1 text-xs">
+                      <li>✓ Post deals at fixed times (9AM, 1PM, 7PM)</li>
+                      <li>✓ Respond to questions within 1 hour</li>
+                      <li>✓ Welcome new members personally</li>
+                      <li>✓ Share exclusive deals first</li>
+                      <li>✓ Celebrate community wins</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="text-red-400 font-medium mb-2">Don'ts</div>
+                    <ul className="text-gray-400 space-y-1 text-xs">
+                      <li>✗ Post more than 5x/day</li>
+                      <li>✗ Ignore member messages</li>
+                      <li>✗ Allow spam or self-promotion</li>
+                      <li>✗ Share same content across all groups</li>
+                      <li>✗ Let group go inactive (3+ days silent)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="text-[#c9a227] font-medium mb-2">Engagement Tactics</div>
+                    <ul className="text-gray-400 space-y-1 text-xs">
+                      <li>• Weekly polls ("Best cafe this week?")</li>
+                      <li>• Member spotlights (top saver of week)</li>
+                      <li>• Flash deal countdowns</li>
+                      <li>• Ask for recommendations</li>
+                      <li>• Share user-submitted photos</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Telegram Channels */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center">
+                  <Send className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-blue-400">Telegram Channels (2 Channels)</h3>
+                  <p className="text-gray-400 text-sm">Broadcast-only for deals and announcements</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-blue-400 mb-3">Nuqta Deals (Broadcast)</h4>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• <strong>Purpose:</strong> One-way deal announcements</li>
+                    <li>• <strong>Content:</strong> Flash sales, new merchants, limited offers</li>
+                    <li>• <strong>Frequency:</strong> 2-3 posts/day max</li>
+                    <li>• <strong>Advantage:</strong> Unlimited subscribers, no 256 limit</li>
+                    <li>• <strong>Link:</strong> t.me/nuqtadeals</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h4 className="font-bold text-blue-400 mb-3">Nuqta Alerts (Urgent)</h4>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li>• <strong>Purpose:</strong> Time-sensitive notifications only</li>
+                    <li>• <strong>Content:</strong> Flash deals expiring soon, events today</li>
+                    <li>• <strong>Frequency:</strong> 1 post/day max (only urgent)</li>
+                    <li>• <strong>Advantage:</strong> High open rate, notifications enabled</li>
+                    <li>• <strong>Link:</strong> t.me/nuqtaalerts</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Cross-Platform Content Calendar */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6">Weekly Cross-Platform Calendar</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      <th className="text-left py-2 px-2 text-gray-400">Day</th>
+                      <th className="text-left py-2 px-2 text-gray-400">@nuqta.ae (IG)</th>
+                      <th className="text-left py-2 px-2 text-gray-400">@dubaibudget (IG)</th>
+                      <th className="text-left py-2 px-2 text-gray-400">TikTok</th>
+                      <th className="text-left py-2 px-2 text-gray-400">WhatsApp</th>
+                      <th className="text-left py-2 px-2 text-gray-400">Telegram</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-300">
+                    {[
+                      { day: 'Sunday', main: 'Week recap + new merchants', budget: 'Street interview', tiktok: 'Budget interview', whatsapp: 'Week deals preview', telegram: 'Weekly summary' },
+                      { day: 'Monday', main: 'Money Monday tip', budget: '-', tiktok: 'Quick tip', whatsapp: 'Morning deal', telegram: 'Flash deal' },
+                      { day: 'Tuesday', main: 'Merchant spotlight', budget: 'Cost comparison', tiktok: 'POV money', whatsapp: 'F&B deal', telegram: '-' },
+                      { day: 'Wednesday', main: 'App feature', budget: '-', tiktok: 'Tutorial', whatsapp: 'Midweek deal', telegram: 'Flash deal' },
+                      { day: 'Thursday', main: 'User story', budget: 'Family budget', tiktok: 'Street interview', whatsapp: 'Weekend preview', telegram: '-' },
+                      { day: 'Friday', main: 'Weekend deals', budget: '-', tiktok: 'Treasure hunt', whatsapp: 'Flash deals 🔥', telegram: 'Weekend deals' },
+                      { day: 'Saturday', main: 'Community post', budget: 'Savings reveal', tiktok: 'Hunt winner', whatsapp: 'Community poll', telegram: '-' },
+                    ].map((row, idx) => (
+                      <tr key={idx} className="border-b border-white/5">
+                        <td className="py-2 px-2 font-medium text-white">{row.day}</td>
+                        <td className="py-2 px-2">{row.main}</td>
+                        <td className="py-2 px-2">{row.budget}</td>
+                        <td className="py-2 px-2">{row.tiktok}</td>
+                        <td className="py-2 px-2">{row.whatsapp}</td>
+                        <td className="py-2 px-2">{row.telegram}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Account Management Summary */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-amber-500/10 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-xl font-bold text-[#c9a227] mb-6">Account Summary & Resources</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-bold text-white mb-3">Total Accounts to Manage</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between p-2 bg-white/5 rounded">
+                      <span className="text-gray-400">Instagram</span>
+                      <span className="text-white font-bold">4 accounts</span>
+                    </div>
+                    <div className="flex justify-between p-2 bg-white/5 rounded">
+                      <span className="text-gray-400">TikTok</span>
+                      <span className="text-white font-bold">3 accounts</span>
+                    </div>
+                    <div className="flex justify-between p-2 bg-white/5 rounded">
+                      <span className="text-gray-400">YouTube</span>
+                      <span className="text-white font-bold">1 channel</span>
+                    </div>
+                    <div className="flex justify-between p-2 bg-white/5 rounded">
+                      <span className="text-gray-400">WhatsApp Groups</span>
+                      <span className="text-white font-bold">6 groups (phased)</span>
+                    </div>
+                    <div className="flex justify-between p-2 bg-white/5 rounded">
+                      <span className="text-gray-400">Telegram Channels</span>
+                      <span className="text-white font-bold">2 channels</span>
+                    </div>
+                    <div className="flex justify-between p-2 bg-[#c9a227]/20 rounded border border-[#c9a227]/30">
+                      <span className="text-[#c9a227]">Total</span>
+                      <span className="text-[#c9a227] font-bold">16 accounts/groups</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-white mb-3">Team Required</h4>
+                  <div className="space-y-3 text-sm">
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="text-[#c9a227] font-medium">CMO</div>
+                      <div className="text-gray-400 text-xs">Strategy, main accounts, influencer outreach</div>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="text-[#c9a227] font-medium">Graphic Designer</div>
+                      <div className="text-gray-400 text-xs">Visual content, templates, video editing</div>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="text-[#c9a227] font-medium">Content Creator (Part-time)</div>
+                      <div className="text-gray-400 text-xs">Street interviews, vlog content - hire freelance</div>
+                    </div>
+                    <div className="bg-white/5 rounded-lg p-3">
+                      <div className="text-[#c9a227] font-medium">Community Manager (Future)</div>
+                      <div className="text-gray-400 text-xs">WhatsApp/Telegram management - hire at 5K users</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Launch Priority */}
+              <div className="mt-6 bg-white/10 rounded-lg p-4 border border-[#c9a227]/50">
+                <h4 className="font-bold text-[#c9a227] mb-3">Launch Priority Order</h4>
+                <div className="grid md:grid-cols-4 gap-4 text-sm">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-green-400">Week 1</div>
+                    <ul className="text-xs text-gray-400 mt-2 space-y-1">
+                      <li>@nuqta.ae (IG + TikTok)</li>
+                      <li>WhatsApp Deals group</li>
+                      <li>Telegram Deals channel</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-400">Week 2</div>
+                    <ul className="text-xs text-gray-400 mt-2 space-y-1">
+                      <li>@dubaibudget (IG)</li>
+                      <li>@dubaiprices (TikTok)</li>
+                      <li>WhatsApp Foodies group</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-400">Week 3</div>
+                    <ul className="text-xs text-gray-400 mt-2 space-y-1">
+                      <li>@hiddengems.dubai (IG)</li>
+                      <li>WhatsApp Students group</li>
+                      <li>YouTube channel</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-[#c9a227]">Week 4+</div>
+                    <ul className="text-xs text-gray-400 mt-2 space-y-1">
+                      <li>@tasteofhome.uae (IG)</li>
+                      <li>Community WhatsApp groups</li>
+                      <li>VIP group (at 1K users)</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
 
