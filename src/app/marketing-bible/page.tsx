@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import {
@@ -106,16 +106,17 @@ import {
 } from 'lucide-react';
 
 // Component to handle URL params
-function TabHandler({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
+function TabHandler({ onTabChange }: { onTabChange: (tab: string) => void }) {
   const searchParams = useSearchParams();
-  const validTabs = ['overview', 'brand', 'content', 'topics', 'viral', 'online', 'offline', 'influencer', 'email', 'campaigns', 'kpis', 'templates', 'budget', 'series', 'growth', 'social', 'segments', 'brandmarketing', 'adscampaigns', 'mediahub', 'events', 'aicontent'];
 
   useEffect(() => {
     const tabParam = searchParams.get('tab');
+    const validTabs = ['overview', 'brand', 'content', 'topics', 'viral', 'online', 'offline', 'influencer', 'email', 'campaigns', 'kpis', 'templates', 'budget', 'series', 'growth', 'social', 'segments', 'brandmarketing', 'adscampaigns', 'mediahub', 'events', 'aicontent'];
+
     if (tabParam && validTabs.includes(tabParam)) {
-      setActiveTab(tabParam);
+      onTabChange(tabParam);
     }
-  }, [searchParams, setActiveTab]);
+  }, [searchParams, onTabChange]);
 
   return null;
 }
@@ -127,6 +128,11 @@ export default function MarketingPlanPage() {
 
   const [activeContentPillar, setActiveContentPillar] = useState('all');
   const [activeMonth, setActiveMonth] = useState('march');
+
+  // Memoized callback for tab changes from URL
+  const handleTabChange = useCallback((tab: string) => {
+    setActiveTab(tab);
+  }, []);
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Target },
@@ -174,7 +180,7 @@ export default function MarketingPlanPage() {
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* URL Tab Handler */}
       <Suspense fallback={null}>
-        <TabHandler setActiveTab={setActiveTab} />
+        <TabHandler onTabChange={handleTabChange} />
       </Suspense>
 
       {/* Header */}
