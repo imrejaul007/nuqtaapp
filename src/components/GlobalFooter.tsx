@@ -101,6 +101,7 @@ const navigationData: NavCategory[] = [
       { label: 'Engine B (Low-Margin)', href: '/deck-merchant-b', icon: Building2, description: 'Electronics, grocery' },
       { label: 'Business Playbook', href: '/business-playbook', icon: FileText, description: 'Execution guide' },
       { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase, description: 'Scripts & objections' },
+      { label: 'Merchant Playbook', href: '/merchant-playbook', icon: Target, description: 'Full operations guide' },
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
     ]
   },
@@ -129,6 +130,7 @@ const navigationData: NavCategory[] = [
   {
     title: 'Marketing',
     items: [
+      { label: 'CMO Playbook', href: '/cmo-playbook', icon: Megaphone, description: '90-day execution plan' },
       { label: 'Marketing Plan', href: '/marketing-bible', icon: Target, description: 'Full playbook + series' },
       { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
       { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },

@@ -77,7 +77,17 @@ import {
   PhoneCall,
   Repeat,
   Timer,
-  Briefcase
+  Briefcase,
+  Layers,
+  Flag,
+  Utensils,
+  Scissors,
+  Dumbbell,
+  Stethoscope,
+  ShoppingCart,
+  Landmark,
+  Building,
+  UserPlus
 } from 'lucide-react';
 
 export default function MarketingPlanPage() {
@@ -105,6 +115,7 @@ export default function MarketingPlanPage() {
     { id: 'series', label: 'Content Series', icon: Film },
     { id: 'growth', label: 'Growth Playbook', icon: TrendingUp },
     { id: 'social', label: 'Social & Community', icon: MessageCircle },
+    { id: 'segments', label: 'Segmented Acquisition', icon: Layers },
   ];
 
   const copyToClipboard = (text: string, index: number) => {
@@ -4934,7 +4945,7 @@ export default function MarketingPlanPage() {
                     {[
                       { trigger: 'After 1st transaction', message: '"You just joined 500+ Dubai savers!"' },
                       { trigger: 'After saving AED 50', message: '"Share your savings milestone?"', share: true },
-                      { trigger: 'After 5 transactions', message: '"You're in the top 20% of Nuqta users!"' },
+                      { trigger: 'After 5 transactions', message: '"You are in the top 20% of Nuqta users!"' },
                       { trigger: 'After referring 1', message: '"You could have earned AED 50 more..."', fomo: true },
                       { trigger: 'Near merchant', message: '"12 people saved here today"' },
                     ].map((item, idx) => (
@@ -4998,7 +5009,7 @@ export default function MarketingPlanPage() {
                     cost: 'AED 200',
                     impact: 'Very High',
                     desc: 'Set up table at university cafeteria. Give first 50 students AED 10 free coins. They become ambassadors.',
-                    why: 'Students talk. A lot. And they're budget-conscious.'
+                    why: 'Students talk. A lot. And they are budget-conscious.'
                   },
                   {
                     title: 'Gym Mirror Stickers',
@@ -5217,7 +5228,7 @@ export default function MarketingPlanPage() {
                       },
                       {
                         tool: 'Window Sticker',
-                        desc: '"We're on Nuqta" badge builds credibility.',
+                        desc: '"We are on Nuqta" badge builds credibility.',
                         install: 'Premium sticker, signals quality merchant'
                       },
                       {
@@ -6106,6 +6117,1156 @@ export default function MarketingPlanPage() {
                       <li>VIP group (at 1K users)</li>
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* Segmented Acquisition Tab - Different Strategies for Different Target Groups */}
+        {activeTab === 'segments' && (
+          <div className="space-y-8">
+            {/* Hero Section */}
+            <div className="bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-xl p-8 border border-indigo-500/30">
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center gap-2 bg-indigo-500/20 px-4 py-2 rounded-full mb-4">
+                  <Layers className="text-indigo-400" size={18} />
+                  <span className="text-indigo-400 font-medium">Hyper-Targeted Acquisition</span>
+                </div>
+                <h3 className="text-3xl font-bold text-white mb-2">Segmented Acquisition Playbook</h3>
+                <p className="text-gray-400 max-w-3xl mx-auto">
+                  UAE is the world's most diverse market - 200+ nationalities. One message doesn't fit all.
+                  This playbook gives you specific channels, messaging, content, and tactics for each segment.
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mt-8">
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <Globe className="text-green-400 mx-auto mb-2" size={28} />
+                  <div className="text-2xl font-bold text-white">8</div>
+                  <div className="text-sm text-gray-400">Community Segments</div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <Briefcase className="text-blue-400 mx-auto mb-2" size={28} />
+                  <div className="text-2xl font-bold text-white">6</div>
+                  <div className="text-sm text-gray-400">Profession Segments</div>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4 text-center">
+                  <Store className="text-purple-400 mx-auto mb-2" size={28} />
+                  <div className="text-2xl font-bold text-white">7</div>
+                  <div className="text-sm text-gray-400">Merchant Categories</div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 1: COMMUNITY-BASED ACQUISITION */}
+            <div className="bg-gradient-to-br from-[#0a1628] to-[#1a2a4a] rounded-xl p-8 border border-[#c9a227]/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-green-500/20 p-3 rounded-lg">
+                  <Globe className="text-green-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Community-Based Acquisition</h3>
+                  <p className="text-gray-400">Different strategies for UAE's major expat communities</p>
+                </div>
+              </div>
+
+              {/* Indian Community */}
+              <div className="mb-8 bg-orange-500/10 rounded-xl p-6 border border-orange-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <Flag className="text-orange-400" size={24} />
+                  <h4 className="text-xl font-bold text-orange-400">🇮🇳 Indian Community (3.5M+ in UAE)</h4>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <MessageCircle size={16} className="text-green-400" />
+                      Channels
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• WhatsApp groups (primary)</li>
+                      <li>• Instagram (@nuqta.india.uae)</li>
+                      <li>• YouTube (Hindi content)</li>
+                      <li>• ShareChat & Moj</li>
+                      <li>• Indian supermarkets</li>
+                      <li>• Temple/Gurudwara boards</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Mic size={16} className="text-blue-400" />
+                      Messaging Hooks
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• "Paisa wasool deals" (Value for money)</li>
+                      <li>• "Ghar jaisa khana, Dubai mein"</li>
+                      <li>• "Savings = More remittance home"</li>
+                      <li>• "Desi deals for desi people"</li>
+                      <li>• Festival-based: Diwali, Holi, Eid</li>
+                      <li>• Cricket season tie-ins (IPL, WC)</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Film size={16} className="text-purple-400" />
+                      Content Strategy
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Hindi/Hinglish captions</li>
+                      <li>• South Indian food features</li>
+                      <li>• "Karol Bagh in Karama" series</li>
+                      <li>• Price comparisons (India vs UAE)</li>
+                      <li>• Worker hostel deals</li>
+                      <li>• Family dining features</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Target size={16} className="text-red-400" />
+                      Acquisition Tactics
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Lulu/Nesto/Al Maya partnerships</li>
+                      <li>• Blue-collar area flyering</li>
+                      <li>• Indian restaurant promos</li>
+                      <li>• Auto-driver referral program</li>
+                      <li>• Community event sponsorship</li>
+                      <li>• Indian newspaper ads (Gulf News)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4 bg-orange-500/20 rounded-lg p-3">
+                  <p className="text-sm text-orange-300">
+                    <strong>Key Insight:</strong> Indian community is highly price-sensitive and values family deals.
+                    WhatsApp is king - one viral deal can spread through 50+ groups in a day. Focus on Karama, Bur Dubai,
+                    Deira, Sharjah for maximum penetration.
+                  </p>
+                </div>
+              </div>
+
+              {/* Filipino Community */}
+              <div className="mb-8 bg-blue-500/10 rounded-xl p-6 border border-blue-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <Flag className="text-blue-400" size={24} />
+                  <h4 className="text-xl font-bold text-blue-400">🇵🇭 Filipino Community (700K+ in UAE)</h4>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <MessageCircle size={16} className="text-green-400" />
+                      Channels
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Facebook Groups (PRIMARY)</li>
+                      <li>• TikTok (huge reach)</li>
+                      <li>• Viber communities</li>
+                      <li>• Filipino Times</li>
+                      <li>• OWWA/POLO events</li>
+                      <li>• Church communities</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Mic size={16} className="text-blue-400" />
+                      Messaging Hooks
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• "Sulit na deals!" (Worth it!)</li>
+                      <li>• "Tipid tips para sa pamilya"</li>
+                      <li>• "Padala savings" (Remittance)</li>
+                      <li>• "Kababayan deals"</li>
+                      <li>• Fiesta season promos</li>
+                      <li>• "Masarap at mura" (Tasty & cheap)</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Film size={16} className="text-purple-400" />
+                      Content Strategy
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Tagalog/Taglish content</li>
+                      <li>• Filipino resto features</li>
+                      <li>• "Pinoy in Dubai" series</li>
+                      <li>• Jollibee/Chowking alternatives</li>
+                      <li>• Karaoke venue deals</li>
+                      <li>• Salo-salo (gathering) spots</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Target size={16} className="text-red-400" />
+                      Acquisition Tactics
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Facebook group partnerships</li>
+                      <li>• Nurse/hospital referrals</li>
+                      <li>• Filipino mall activations</li>
+                      <li>• Sunday church flyers</li>
+                      <li>• Balikbayan box shops</li>
+                      <li>• OFW community leaders</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4 bg-blue-500/20 rounded-lg p-3">
+                  <p className="text-sm text-blue-300">
+                    <strong>Key Insight:</strong> Filipinos are the MOST social media active community in UAE.
+                    Facebook is essential (not optional). They love sharing deals and are extremely loyal to brands
+                    that speak their language. Satwa, Al Rigga, Karama are hotspots.
+                  </p>
+                </div>
+              </div>
+
+              {/* Pakistani Community */}
+              <div className="mb-8 bg-green-500/10 rounded-xl p-6 border border-green-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <Flag className="text-green-400" size={24} />
+                  <h4 className="text-xl font-bold text-green-400">🇵🇰 Pakistani Community (1.5M+ in UAE)</h4>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <MessageCircle size={16} className="text-green-400" />
+                      Channels
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• WhatsApp groups</li>
+                      <li>• YouTube (Urdu content)</li>
+                      <li>• TikTok Pakistan</li>
+                      <li>• Khaleej Times Urdu</li>
+                      <li>• Mosque community boards</li>
+                      <li>• Pakistani restaurants</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Mic size={16} className="text-blue-400" />
+                      Messaging Hooks
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• "Zabardast savings"</li>
+                      <li>• "Desi deals, firangi prices"</li>
+                      <li>• "Biryani se lekar chai tak"</li>
+                      <li>• Family iftar specials</li>
+                      <li>• Cricket match screenings</li>
+                      <li>• "Apna paisa, apni marzi"</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Film size={16} className="text-purple-400" />
+                      Content Strategy
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Urdu captions & voiceover</li>
+                      <li>• Pakistani food trails</li>
+                      <li>• "Mini Pakistan in UAE"</li>
+                      <li>• Karachi street food finds</li>
+                      <li>• BBQ & tikka deals</li>
+                      <li>• Ramadan suhoor spots</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Target size={16} className="text-red-400" />
+                      Acquisition Tactics
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Pakistani supermarket flyers</li>
+                      <li>• Auto showroom partnerships</li>
+                      <li>• Pakistani restaurant deals</li>
+                      <li>• Labor camp activations</li>
+                      <li>• Jumma (Friday) flyers</li>
+                      <li>• Pakistani business events</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4 bg-green-500/20 rounded-lg p-3">
+                  <p className="text-sm text-green-300">
+                    <strong>Key Insight:</strong> Pakistani community overlaps heavily with Indian community in preferences
+                    but responds better to Urdu content. Strong word-of-mouth culture. Focus on Sharjah Industrial Area,
+                    Al Quoz, and Deira for blue-collar; JLT, Marina for professionals.
+                  </p>
+                </div>
+              </div>
+
+              {/* Arab Community */}
+              <div className="mb-8 bg-[#c9a227]/10 rounded-xl p-6 border border-[#c9a227]/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <Flag className="text-[#c9a227]" size={24} />
+                  <h4 className="text-xl font-bold text-[#c9a227]">🇦🇪 Arab Community (Emirati + Arab Expats)</h4>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <MessageCircle size={16} className="text-green-400" />
+                      Channels
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Snapchat (PRIMARY)</li>
+                      <li>• Instagram (Arabic)</li>
+                      <li>• Twitter/X (Arabic)</li>
+                      <li>• TikTok Arabic</li>
+                      <li>• Majlis gatherings</li>
+                      <li>• Local influencers</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Mic size={16} className="text-blue-400" />
+                      Messaging Hooks
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• "عروض حصرية" (Exclusive offers)</li>
+                      <li>• Quality over price messaging</li>
+                      <li>• Family & gathering focus</li>
+                      <li>• Premium experience emphasis</li>
+                      <li>• Ramadan & Eid specials</li>
+                      <li>• "Made for UAE" positioning</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Film size={16} className="text-purple-400" />
+                      Content Strategy
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Arabic-first content</li>
+                      <li>• Emirati cuisine features</li>
+                      <li>• Family restaurant reviews</li>
+                      <li>• Hidden Emirati gems</li>
+                      <li>• Heritage area deals</li>
+                      <li>• VIP/exclusive tone</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Target size={16} className="text-red-400" />
+                      Acquisition Tactics
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Arabic influencer collabs</li>
+                      <li>• Government entity partnerships</li>
+                      <li>• University activations</li>
+                      <li>• Premium mall activations</li>
+                      <li>• Ramadan tent sponsorships</li>
+                      <li>• Ladies-only events</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4 bg-[#c9a227]/20 rounded-lg p-3">
+                  <p className="text-sm text-[#c9a227]">
+                    <strong>Key Insight:</strong> Arabs (especially Emiratis) prefer quality and exclusivity messaging over
+                    discount messaging. Never position as "cheap" - position as "smart" or "exclusive." Snapchat is the
+                    dominant platform. Family gatherings are key decision moments.
+                  </p>
+                </div>
+              </div>
+
+              {/* Russian/CIS Community */}
+              <div className="mb-8 bg-red-500/10 rounded-xl p-6 border border-red-500/30">
+                <div className="flex items-center gap-3 mb-4">
+                  <Flag className="text-red-400" size={24} />
+                  <h4 className="text-xl font-bold text-red-400">🇷🇺 Russian/CIS Community (Growing Fast)</h4>
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <MessageCircle size={16} className="text-green-400" />
+                      Channels
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Telegram (PRIMARY)</li>
+                      <li>• VK (VKontakte)</li>
+                      <li>• Instagram Russian</li>
+                      <li>• Russian radio stations</li>
+                      <li>• Russian supermarkets</li>
+                      <li>• Russian schools/clubs</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Mic size={16} className="text-blue-400" />
+                      Messaging Hooks
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• "Скидки для своих" (Discounts for us)</li>
+                      <li>• Quality European standards</li>
+                      <li>• "Как дома" (Like home)</li>
+                      <li>• Lifestyle upgrade focus</li>
+                      <li>• New Year & holidays</li>
+                      <li>• Russian cuisine finds</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Film size={16} className="text-purple-400" />
+                      Content Strategy
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Russian captions/voiceover</li>
+                      <li>• European restaurant features</li>
+                      <li>• Beach club deals</li>
+                      <li>• Brunch culture content</li>
+                      <li>• Spa & wellness deals</li>
+                      <li>• JBR/Marina lifestyle</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-white/5 rounded-lg p-4">
+                    <h5 className="font-bold text-white mb-2 flex items-center gap-2">
+                      <Target size={16} className="text-red-400" />
+                      Acquisition Tactics
+                    </h5>
+                    <ul className="text-sm text-gray-300 space-y-1">
+                      <li>• Telegram channel partnerships</li>
+                      <li>• Russian events sponsorship</li>
+                      <li>• Beach club activations</li>
+                      <li>• Russian beauty salons</li>
+                      <li>• Dubai Marina focus</li>
+                      <li>• Real estate partnerships</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-4 bg-red-500/20 rounded-lg p-3">
+                  <p className="text-sm text-red-300">
+                    <strong>Key Insight:</strong> Russian community has grown 5x since 2022. They're concentrated in
+                    JBR, Marina, Business Bay. Higher spending power - focus on lifestyle and quality, not budget.
+                    Telegram is essential - many have 50+ active group chats.
+                  </p>
+                </div>
+              </div>
+
+              {/* Other Communities - Compact */}
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* African Community */}
+                <div className="bg-yellow-500/10 rounded-xl p-5 border border-yellow-500/30">
+                  <h4 className="text-lg font-bold text-yellow-400 mb-3">🌍 African Community</h4>
+                  <div className="text-sm text-gray-300 space-y-2">
+                    <p><strong>Channels:</strong> WhatsApp, Facebook, Community events</p>
+                    <p><strong>Hotspots:</strong> Deira, Naif, Dragon Mart</p>
+                    <p><strong>Hooks:</strong> Family deals, hometown food, community gatherings</p>
+                    <p><strong>Key:</strong> Word-of-mouth is everything. One community leader = 500 users</p>
+                  </div>
+                </div>
+
+                {/* Chinese Community */}
+                <div className="bg-red-600/10 rounded-xl p-5 border border-red-600/30">
+                  <h4 className="text-lg font-bold text-red-400 mb-3">🇨🇳 Chinese Community</h4>
+                  <div className="text-sm text-gray-300 space-y-2">
+                    <p><strong>Channels:</strong> WeChat (PRIMARY), Xiaohongshu, Douyin</p>
+                    <p><strong>Hotspots:</strong> Dragon Mart, JLT, Discovery Gardens</p>
+                    <p><strong>Hooks:</strong> Chinese restaurant deals, business networking</p>
+                    <p><strong>Key:</strong> Need WeChat mini-program eventually. Very insular community.</p>
+                  </div>
+                </div>
+
+                {/* British/Western Community */}
+                <div className="bg-blue-600/10 rounded-xl p-5 border border-blue-600/30">
+                  <h4 className="text-lg font-bold text-blue-400 mb-3">🇬🇧 British/Western Expats</h4>
+                  <div className="text-sm text-gray-300 space-y-2">
+                    <p><strong>Channels:</strong> Instagram, LinkedIn, Entertainer competitor</p>
+                    <p><strong>Hotspots:</strong> Marina, JBR, Springs, Ranches</p>
+                    <p><strong>Hooks:</strong> Brunch deals, ladies' nights, family activities</p>
+                    <p><strong>Key:</strong> They already use Entertainer. Beat them on UX & merchant variety.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 2: PROFESSION-BASED ACQUISITION */}
+            <div className="bg-gradient-to-br from-[#0a1628] to-[#1a2a4a] rounded-xl p-8 border border-blue-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-blue-500/20 p-3 rounded-lg">
+                  <Briefcase className="text-blue-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Profession-Based Acquisition</h3>
+                  <p className="text-gray-400">Tailored strategies for different job sectors</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Students */}
+                <div className="bg-purple-500/10 rounded-xl p-6 border border-purple-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <GraduationCap className="text-purple-400" size={24} />
+                    <h4 className="text-xl font-bold text-purple-400">🎓 Students (University & College)</h4>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Channels</h5>
+                      <p className="text-sm text-gray-300">Instagram, TikTok, University WhatsApp groups, Campus ambassadors, Snapchat</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Messaging</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• "Broke student? Not anymore 💰"</li>
+                        <li>• "Eat like a king on a student budget"</li>
+                        <li>• "Free food hack every student needs"</li>
+                        <li>• "Your allowance just doubled"</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Acquisition Tactics</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• Campus ambassador program (paid in credits)</li>
+                        <li>• University orientation sponsorship</li>
+                        <li>• Student ID verification = extra rewards</li>
+                        <li>• Exam season "brain food" deals</li>
+                        <li>• Study café partnerships</li>
+                      </ul>
+                    </div>
+                    <div className="bg-purple-500/20 rounded-lg p-3">
+                      <p className="text-xs text-purple-300">
+                        <strong>Target Unis:</strong> AUS, UAEU, AUD, Heriot-Watt, Middlesex, University of Dubai,
+                        Manipal, Bits Pilani, Amity
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Healthcare Workers */}
+                <div className="bg-green-500/10 rounded-xl p-6 border border-green-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Stethoscope className="text-green-400" size={24} />
+                    <h4 className="text-xl font-bold text-green-400">🏥 Healthcare Workers</h4>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Channels</h5>
+                      <p className="text-sm text-gray-300">Hospital WhatsApp groups, DHA/DOH communities, Nursing associations, LinkedIn Healthcare UAE</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Messaging</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• "You save lives. We save you money."</li>
+                        <li>• "Healthcare heroes deserve deals"</li>
+                        <li>• "Night shift? 24/7 deals for you"</li>
+                        <li>• "Your break just got better"</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Acquisition Tactics</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• Hospital cafeteria partnerships</li>
+                        <li>• Nurse referral program (they're networked!)</li>
+                        <li>• DHA license verification = VIP tier</li>
+                        <li>• Night shift meal deal partnerships</li>
+                        <li>• Healthcare worker appreciation days</li>
+                      </ul>
+                    </div>
+                    <div className="bg-green-500/20 rounded-lg p-3">
+                      <p className="text-xs text-green-300">
+                        <strong>Target Hospitals:</strong> Cleveland Clinic, Mediclinic, NMC, Aster, Al Zahra,
+                        Burjeel, Saudi German, Thumbay
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* IT/Tech Professionals */}
+                <div className="bg-cyan-500/10 rounded-xl p-6 border border-cyan-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Monitor className="text-cyan-400" size={24} />
+                    <h4 className="text-xl font-bold text-cyan-400">💻 IT & Tech Professionals</h4>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Channels</h5>
+                      <p className="text-sm text-gray-300">LinkedIn, Twitter/X, Discord, Tech meetup groups, Reddit UAE, Product Hunt</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Messaging</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• "Finally, an app that doesn't suck"</li>
+                        <li>• "Optimized savings. No bloat."</li>
+                        <li>• "Built by devs who get it"</li>
+                        <li>• "Your ROI on lunch just improved"</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Acquisition Tactics</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• Tech meetup sponsorship (AWS, Google Dev)</li>
+                        <li>• Free zone office activations (DMCC, DWTC)</li>
+                        <li>• Startup ecosystem partnerships</li>
+                        <li>• Developer-focused landing page</li>
+                        <li>• API access for early adopters</li>
+                      </ul>
+                    </div>
+                    <div className="bg-cyan-500/20 rounded-lg p-3">
+                      <p className="text-xs text-cyan-300">
+                        <strong>Target Areas:</strong> DIFC, Dubai Internet City, Dubai Silicon Oasis,
+                        Knowledge Village, DTEC, Area 2071
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Teachers & Educators */}
+                <div className="bg-yellow-500/10 rounded-xl p-6 border border-yellow-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Users className="text-yellow-400" size={24} />
+                    <h4 className="text-xl font-bold text-yellow-400">👩‍🏫 Teachers & Educators</h4>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Channels</h5>
+                      <p className="text-sm text-gray-300">Teacher WhatsApp groups, KHDA communities, School parent networks, Education conferences</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Messaging</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• "Teachers deserve treats too"</li>
+                        <li>• "Your salary, maximized"</li>
+                        <li>• "After-school rewards"</li>
+                        <li>• "Teacher's pet prices"</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Acquisition Tactics</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• School staff room flyers</li>
+                        <li>• Teacher appreciation week promos</li>
+                        <li>• Education conference booths</li>
+                        <li>• Parent network referrals</li>
+                        <li>• Summer break travel deals</li>
+                      </ul>
+                    </div>
+                    <div className="bg-yellow-500/20 rounded-lg p-3">
+                      <p className="text-xs text-yellow-300">
+                        <strong>Target Schools:</strong> GEMS network, Taaleem, Aldar Education,
+                        Brighton College, Dubai College, JESS
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Blue Collar Workers */}
+                <div className="bg-orange-500/10 rounded-xl p-6 border border-orange-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Building className="text-orange-400" size={24} />
+                    <h4 className="text-xl font-bold text-orange-400">🔧 Blue Collar Workers</h4>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Channels</h5>
+                      <p className="text-sm text-gray-300">Labor camp activations, Salary day flyering, Indian/Pakistani grocery stores, Bus stops</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Messaging</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• "More money to send home"</li>
+                        <li>• "Stretch your dirhams"</li>
+                        <li>• "Friday treat for less"</li>
+                        <li>• Simple, visual, multilingual</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Acquisition Tactics</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• Labor camp WiFi partnerships</li>
+                        <li>• Salary day (25th-1st) blitzes</li>
+                        <li>• Friday afternoon activations</li>
+                        <li>• Exchange house partnerships</li>
+                        <li>• Group deal features</li>
+                      </ul>
+                    </div>
+                    <div className="bg-orange-500/20 rounded-lg p-3">
+                      <p className="text-xs text-orange-300">
+                        <strong>Target Areas:</strong> Sonapur, Al Quoz Industrial, Jebel Ali,
+                        Sharjah Industrial Area, Ajman Industrial
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Real Estate & Sales */}
+                <div className="bg-[#c9a227]/10 rounded-xl p-6 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Landmark className="text-[#c9a227]" size={24} />
+                    <h4 className="text-xl font-bold text-[#c9a227]">🏢 Real Estate & Sales Pros</h4>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Channels</h5>
+                      <p className="text-sm text-gray-300">LinkedIn, Agent WhatsApp groups, Property exhibitions, Real estate office visits</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Messaging</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• "Close deals over great meals"</li>
+                        <li>• "Client meeting? We've got you"</li>
+                        <li>• "Commission earned = treats deserved"</li>
+                        <li>• "Network smarter, not harder"</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white mb-2">Acquisition Tactics</h5>
+                      <ul className="text-sm text-gray-300 space-y-1">
+                        <li>• Agency office partnerships</li>
+                        <li>• Client entertainment deals</li>
+                        <li>• Cityscape exhibition presence</li>
+                        <li>• B2B referral program</li>
+                        <li>• Co-branded client gifts</li>
+                      </ul>
+                    </div>
+                    <div className="bg-[#c9a227]/20 rounded-lg p-3">
+                      <p className="text-xs text-[#c9a227]">
+                        <strong>Target Agencies:</strong> Emaar, DAMAC, Betterhomes, Allsopp & Allsopp,
+                        Haus & Haus, Driven Properties
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 3: MERCHANT CATEGORY ACQUISITION */}
+            <div className="bg-gradient-to-br from-[#0a1628] to-[#1a2a4a] rounded-xl p-8 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-purple-500/20 p-3 rounded-lg">
+                  <Store className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Merchant Category Acquisition</h3>
+                  <p className="text-gray-400">Different pitch & approach for each merchant type</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* F&B Restaurants */}
+                <div className="bg-red-500/10 rounded-xl p-5 border border-red-500/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Utensils className="text-red-400" size={22} />
+                    <h4 className="text-lg font-bold text-red-400">🍽️ F&B / Restaurants</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">Empty tables 2-5pm, weekday slowness, new customer acquisition cost</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Fill empty seats during slow hours. You set the terms."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Walk-in during slow hours</li>
+                        <li>• Show competitor deals nearby</li>
+                        <li>• Offer time-limited promos</li>
+                        <li>• Start with weekday lunch deals</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">20-30% off, 2-5pm only, dine-in only, min spend AED 50</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Salons & Spas */}
+                <div className="bg-pink-500/10 rounded-xl p-5 border border-pink-500/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Scissors className="text-pink-400" size={22} />
+                    <h4 className="text-lg font-bold text-pink-400">💇 Salons & Spas</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">Sunday-Tuesday empty, last-minute cancellations, new client acquisition</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Turn no-shows into paid appointments. Guaranteed new clients."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Target owners, not front desk</li>
+                        <li>• Offer free trial period</li>
+                        <li>• Focus on weekday slots</li>
+                        <li>• Show Instagram reach potential</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">25% off Sun-Tue, specific services only, booking required</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Gyms & Fitness */}
+                <div className="bg-green-500/10 rounded-xl p-5 border border-green-500/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Dumbbell className="text-green-400" size={22} />
+                    <h4 className="text-lg font-bold text-green-400">🏋️ Gyms & Fitness</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">January rush then dropoff, membership churn, class fill rates</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Fill empty class slots. Convert trial users to members."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Focus on boutique studios</li>
+                        <li>• Offer class pass deals</li>
+                        <li>• Target post-Jan slowdown</li>
+                        <li>• Co-market healthy lifestyle</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">Free trial class, 20% off first month, off-peak hours</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Healthcare & Clinics */}
+                <div className="bg-blue-500/10 rounded-xl p-5 border border-blue-500/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Stethoscope className="text-blue-400" size={22} />
+                    <h4 className="text-lg font-bold text-blue-400">🏥 Healthcare & Clinics</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">Cash-pay patient acquisition, insurance dependency, elective procedure promotion</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Attract cash-pay patients. Promote elective services legally."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Focus on dental, optical, derma</li>
+                        <li>• Checkup/screening packages</li>
+                        <li>• Respect medical advertising laws</li>
+                        <li>• Partner on wellness content</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">Package deals (cleaning + checkup), screening discounts</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Retail & Shopping */}
+                <div className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <ShoppingCart className="text-purple-400" size={22} />
+                    <h4 className="text-lg font-bold text-purple-400">🛍️ Retail & Shopping</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">Online competition, footfall decline, inventory clearance</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Drive footfall. Clear inventory. Beat online competition."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Target independent boutiques</li>
+                        <li>• Seasonal clearance partnerships</li>
+                        <li>• Exclusive in-store only deals</li>
+                        <li>• Co-create limited offers</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">In-store only, min spend, specific categories</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Entertainment & Activities */}
+                <div className="bg-[#c9a227]/10 rounded-xl p-5 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Film className="text-[#c9a227]" size={22} />
+                    <h4 className="text-lg font-bold text-[#c9a227]">🎢 Entertainment & Activities</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">Weekday emptiness, summer slowdown, group booking dependency</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Fill weekday slots. Attract families. Drive repeat visits."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Target escape rooms, bowling, karting</li>
+                        <li>• Family package deals</li>
+                        <li>• Birthday party partnerships</li>
+                        <li>• Summer campaign tie-ins</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">Weekday discounts, family bundles, birthday freebies</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Coffee Shops & Cafés */}
+                <div className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Coffee className="text-amber-400" size={22} />
+                    <h4 className="text-lg font-bold text-amber-400">☕ Coffee Shops & Cafés</h4>
+                  </div>
+
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <h5 className="font-semibold text-white">Pain Points</h5>
+                      <p className="text-gray-400">Post-morning lull, differentiation from Starbucks, student market</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Value Prop</h5>
+                      <p className="text-gray-400">"Become the local favorite. Fill afternoon tables."</p>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Pitch Approach</h5>
+                      <ul className="text-gray-400 space-y-1">
+                        <li>• Independent cafés first</li>
+                        <li>• Study spot positioning</li>
+                        <li>• Afternoon happy hour concept</li>
+                        <li>• Instagram-worthy content collab</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 className="font-semibold text-white">Ideal Deal Structure</h5>
+                      <p className="text-gray-400">2-5pm specials, combo deals, loyalty program</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Merchant Acquisition Priorities */}
+              <div className="mt-8 bg-white/5 rounded-xl p-6 border border-white/20">
+                <h4 className="text-xl font-bold text-white mb-4">Merchant Acquisition Priorities</h4>
+                <div className="grid md:grid-cols-4 gap-4">
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-green-400 mb-2">Phase 1</div>
+                    <div className="text-sm text-gray-400">Launch (Month 1-2)</div>
+                    <ul className="text-sm text-white mt-3 space-y-1">
+                      <li>• F&B (50 merchants)</li>
+                      <li>• Cafés (30 merchants)</li>
+                      <li>• Quick wins only</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-blue-400 mb-2">Phase 2</div>
+                    <div className="text-sm text-gray-400">Growth (Month 3-4)</div>
+                    <ul className="text-sm text-white mt-3 space-y-1">
+                      <li>• Salons (40 merchants)</li>
+                      <li>• Gyms (20 merchants)</li>
+                      <li>• Entertainment (15)</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-purple-400 mb-2">Phase 3</div>
+                    <div className="text-sm text-gray-400">Scale (Month 5-6)</div>
+                    <ul className="text-sm text-white mt-3 space-y-1">
+                      <li>• Healthcare (25)</li>
+                      <li>• Retail (30)</li>
+                      <li>• Premium dining (20)</li>
+                    </ul>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-bold text-[#c9a227] mb-2">Phase 4</div>
+                    <div className="text-sm text-gray-400">Dominate (Month 7+)</div>
+                    <ul className="text-sm text-white mt-3 space-y-1">
+                      <li>• Chain partnerships</li>
+                      <li>• Exclusive deals</li>
+                      <li>• Category leaders</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION 4: ACQUISITION TRACKING MATRIX */}
+            <div className="bg-gradient-to-br from-[#0a1628] to-[#1a2a4a] rounded-xl p-8 border border-[#c9a227]/30">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="bg-[#c9a227]/20 p-3 rounded-lg">
+                  <BarChart3 className="text-[#c9a227]" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Segment Performance Tracking</h3>
+                  <p className="text-gray-400">How to measure success across segments</p>
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-white/20">
+                      <th className="text-left py-3 px-4 text-[#c9a227]">Segment</th>
+                      <th className="text-left py-3 px-4 text-[#c9a227]">Primary KPI</th>
+                      <th className="text-left py-3 px-4 text-[#c9a227]">Target CAC</th>
+                      <th className="text-left py-3 px-4 text-[#c9a227]">Expected LTV</th>
+                      <th className="text-left py-3 px-4 text-[#c9a227]">Viral Coefficient</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-gray-300">
+                    <tr className="border-b border-white/10">
+                      <td className="py-3 px-4">Indian Community</td>
+                      <td className="py-3 px-4">WhatsApp group joins</td>
+                      <td className="py-3 px-4 text-green-400">AED 2-5</td>
+                      <td className="py-3 px-4">AED 150+</td>
+                      <td className="py-3 px-4 text-green-400">1.5-2.0</td>
+                    </tr>
+                    <tr className="border-b border-white/10">
+                      <td className="py-3 px-4">Filipino Community</td>
+                      <td className="py-3 px-4">Facebook group shares</td>
+                      <td className="py-3 px-4 text-green-400">AED 3-6</td>
+                      <td className="py-3 px-4">AED 180+</td>
+                      <td className="py-3 px-4 text-green-400">1.8-2.5</td>
+                    </tr>
+                    <tr className="border-b border-white/10">
+                      <td className="py-3 px-4">Arab Community</td>
+                      <td className="py-3 px-4">App downloads</td>
+                      <td className="py-3 px-4 text-yellow-400">AED 8-15</td>
+                      <td className="py-3 px-4">AED 300+</td>
+                      <td className="py-3 px-4">1.2-1.5</td>
+                    </tr>
+                    <tr className="border-b border-white/10">
+                      <td className="py-3 px-4">Students</td>
+                      <td className="py-3 px-4">Campus sign-ups</td>
+                      <td className="py-3 px-4 text-green-400">AED 1-3</td>
+                      <td className="py-3 px-4">AED 80</td>
+                      <td className="py-3 px-4 text-green-400">2.0-3.0</td>
+                    </tr>
+                    <tr className="border-b border-white/10">
+                      <td className="py-3 px-4">Healthcare Workers</td>
+                      <td className="py-3 px-4">Referral rate</td>
+                      <td className="py-3 px-4 text-yellow-400">AED 5-10</td>
+                      <td className="py-3 px-4">AED 250+</td>
+                      <td className="py-3 px-4 text-green-400">1.6-2.0</td>
+                    </tr>
+                    <tr className="border-b border-white/10">
+                      <td className="py-3 px-4">F&B Merchants</td>
+                      <td className="py-3 px-4">Monthly active deals</td>
+                      <td className="py-3 px-4 text-yellow-400">AED 50-100</td>
+                      <td className="py-3 px-4">AED 2,000+</td>
+                      <td className="py-3 px-4">1.3-1.5</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 grid md:grid-cols-3 gap-4">
+                <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/30">
+                  <h5 className="font-bold text-green-400 mb-2">High-Viral Segments</h5>
+                  <p className="text-sm text-gray-400">Students, Filipino, Indian communities have highest viral coefficients. Invest heavily in referral mechanics for these groups.</p>
+                </div>
+                <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
+                  <h5 className="font-bold text-[#c9a227] mb-2">High-LTV Segments</h5>
+                  <p className="text-sm text-gray-400">Arab community and merchants have highest lifetime value. Worth higher acquisition cost for long-term revenue.</p>
+                </div>
+                <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                  <h5 className="font-bold text-blue-400 mb-2">Quick-Win Segments</h5>
+                  <p className="text-sm text-gray-400">Students and Indian community offer lowest CAC. Perfect for launch phase volume and social proof building.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Implementation Checklist */}
+            <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+              <h4 className="text-xl font-bold text-white mb-4">Implementation Checklist</h4>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h5 className="font-semibold text-[#c9a227] mb-3">Before Launch</h5>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Create segment-specific landing pages (Arabic, Hindi, Tagalog)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Prepare community-specific WhatsApp/Telegram groups</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Design merchant pitch decks for each category</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Set up tracking UTMs for each segment campaign</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-[#c9a227] mb-3">Week 1-2</h5>
+                  <ul className="text-sm text-gray-300 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Launch Indian community campaign (WhatsApp groups)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Activate student ambassador program at 3 universities</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Onboard 20 F&B merchants in Karama/Bur Dubai</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <div className="w-4 h-4 border border-gray-500 rounded mt-0.5"></div>
+                      <span>Launch Filipino Facebook group campaign</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
