@@ -158,6 +158,7 @@ const navigationData: NavCategory[] = [
   {
     title: 'Events & Partnerships',
     items: [
+      { label: 'Brand Partnerships', href: '/brand-partnerships', icon: Handshake, description: 'Biz dev & co-partners' },
       { label: 'Global Village Deck', href: '/deck-gv', icon: Building2, description: 'GV partnership' },
       { label: 'GV Playbook', href: '/gv-playbook', icon: Target, description: 'GV sales guide' },
       { label: 'GV Merchants', href: '/gv-merchants', icon: Store, description: 'GV merchant list' },
