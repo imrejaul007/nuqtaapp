@@ -40,7 +40,8 @@ import {
   Megaphone,
   UserCircle,
   Bot,
-  AlertTriangle
+  AlertTriangle,
+  Smartphone
 } from 'lucide-react';
 
 /**
@@ -152,6 +153,10 @@ const navigationData: NavCategory[] = [
       { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
       { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },
       { label: 'Press Kit', href: '/press-kit', icon: FileText, description: 'Media assets' },
+      { label: 'Content Calendar', href: '/content-calendar', icon: Calendar, description: '30-day schedule' },
+      { label: 'Influencer List', href: '/influencer-list', icon: Users, description: 'UAE influencers' },
+      { label: 'PR Launch Plan', href: '/pr-launch', icon: Megaphone, description: 'Media strategy' },
+      { label: 'App Store Copy', href: '/app-store-copy', icon: Smartphone, description: 'iOS & Android' },
     ]
   },
   {
@@ -196,6 +201,10 @@ const navigationData: NavCategory[] = [
       { label: 'Team', href: '/team', icon: Users, description: 'Our team' },
       { label: 'Join Us', href: '/join-us', icon: Users, description: 'CTO recruitment' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
+      { label: 'Support Templates', href: '/support-templates', icon: Mail, description: 'Response templates' },
+      { label: 'Merchant Pipeline', href: '/merchant-pipeline', icon: Target, description: 'First 10 merchants' },
+      { label: 'QR Design Specs', href: '/qr-design-specs', icon: FileText, description: 'Print materials' },
+      { label: 'Launch Readiness', href: '/launch-readiness', icon: Rocket, description: 'Gap analysis' },
       { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity options' },
       { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project tracker' },
     ]
