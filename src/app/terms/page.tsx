@@ -138,7 +138,7 @@ export default function TermsPage() {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
-                  <span><strong>60+ Merchant Network</strong> — 30+ signed LOIs, 30 in pipeline attacking $45B GCC market</span>
+                  <span><strong>60+ Merchant Network</strong> — 32 signed LOIs, 30 in pipeline attacking $45B GCC market</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
@@ -146,7 +146,7 @@ export default function TermsPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
-                  <span><strong>7-Day Launch</strong> — MVP goes live January 28, 2026 (execution signal, not just planning)</span>
+                  <span><strong>Launch</strong> — MVP goes live March 1, 2026 (execution signal, not just planning)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-[#c9a227] mt-1">•</span>
@@ -165,7 +165,7 @@ export default function TermsPage() {
         <TermCard number="2" question="Merchant Momentum Signal">
           <div className="text-gray-300 leading-relaxed space-y-4">
             <p>
-              60+ merchant network (30+ signed LOIs, 30 in pipeline) represents real market validation. These aren&apos;t verbal
+              60+ merchant network (32 signed LOIs, 30 in pipeline) represents real market validation. These aren&apos;t verbal
               commitments or expressions of interest — these are signed agreements where merchants have
               committed to list deals and pay 15% commission.
             </p>

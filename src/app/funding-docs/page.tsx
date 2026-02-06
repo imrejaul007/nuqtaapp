@@ -74,8 +74,8 @@ export default function FundingDocsPage() {
             </div>
           </div>
           <div className="flex items-center gap-4 text-sm">
-            <span className="px-3 py-1 bg-[#c9a227]/20 text-[#c9a227] rounded-full">Seed Round: AED 2-3M</span>
-            <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">Pre-Money: AED 10M</span>
+            <span className="px-3 py-1 bg-[#c9a227]/20 text-[#c9a227] rounded-full">SAFE Round: $400K</span>
+            <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">Valuation Cap: $5M</span>
             <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">Target Close: March 2026</span>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function FundingDocsPage() {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
-        {activeTab === 'overview' && <OverviewSection />}
+        {activeTab === 'overview' && <OverviewSection onNavigate={setActiveTab} />}
         {activeTab === 'captable' && <CapTableSection />}
         {activeTab === 'safe' && <SAFESection />}
         {activeTab === 'usefunds' && <UseFundsSection />}
@@ -122,33 +122,33 @@ export default function FundingDocsPage() {
 // ============================================
 // OVERVIEW SECTION
 // ============================================
-function OverviewSection() {
+function OverviewSection({ onNavigate }: { onNavigate: (tab: string) => void }) {
   return (
     <div className="space-y-8">
       {/* Funding Summary */}
       <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-2xl p-8 border border-[#c9a227]/30">
-        <h2 className="text-2xl font-bold text-white mb-6">Seed Round Summary</h2>
+        <h2 className="text-2xl font-bold text-white mb-6">SAFE Round Summary</h2>
 
         <div className="grid md:grid-cols-4 gap-6">
           <div className="p-4 bg-white/5 rounded-xl">
             <p className="text-slate-400 text-sm">Target Raise</p>
-            <p className="text-3xl font-bold text-[#c9a227]">AED 2.5M</p>
-            <p className="text-slate-500 text-xs mt-1">~USD 680K</p>
+            <p className="text-3xl font-bold text-[#c9a227]">$400K</p>
+            <p className="text-slate-500 text-xs mt-1">~AED 1.47M</p>
           </div>
           <div className="p-4 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-sm">Pre-Money Valuation</p>
-            <p className="text-3xl font-bold text-white">AED 10M</p>
-            <p className="text-slate-500 text-xs mt-1">~USD 2.7M</p>
+            <p className="text-slate-400 text-sm">Valuation Cap</p>
+            <p className="text-3xl font-bold text-white">$5M</p>
+            <p className="text-slate-500 text-xs mt-1">~AED 18.4M</p>
           </div>
           <div className="p-4 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-sm">Equity Offered</p>
+            <p className="text-slate-400 text-sm">Discount</p>
             <p className="text-3xl font-bold text-white">20%</p>
-            <p className="text-slate-500 text-xs mt-1">Post-money</p>
+            <p className="text-slate-500 text-xs mt-1">On next round</p>
           </div>
           <div className="p-4 bg-white/5 rounded-xl">
             <p className="text-slate-400 text-sm">Minimum Ticket</p>
-            <p className="text-3xl font-bold text-white">AED 100K</p>
-            <p className="text-slate-500 text-xs mt-1">~USD 27K</p>
+            <p className="text-3xl font-bold text-white">$25K</p>
+            <p className="text-slate-500 text-xs mt-1">~AED 92K</p>
           </div>
         </div>
       </div>
@@ -162,22 +162,22 @@ function OverviewSection() {
 
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { doc: 'Pitch Deck (90-Second)', status: 'complete', link: '/deck-90' },
-            { doc: 'Full Investor Deck', status: 'complete', link: '/deck-kang' },
-            { doc: 'Investment Memo', status: 'complete', link: '/memo' },
-            { doc: 'Financial Projections', status: 'complete', link: '/financialprojection' },
-            { doc: 'Financial Models (P&L)', status: 'complete', link: '/financial-models' },
-            { doc: 'Data Room', status: 'complete', link: '/data-room' },
-            { doc: 'Competitor Analysis', status: 'complete', link: '/competitor-analysis' },
-            { doc: 'Investor FAQ', status: 'complete', link: '/investor-faq' },
-            { doc: 'Cap Table', status: 'complete', link: '#captable' },
-            { doc: 'SAFE Agreement', status: 'complete', link: '#safe' },
-            { doc: 'Use of Funds', status: 'complete', link: '#usefunds' },
-            { doc: 'LOI Evidence', status: 'complete', link: '#loi' },
-            { doc: 'Term Sheet', status: 'complete', link: '#termsheet' },
-            { doc: 'Team Bios', status: 'complete', link: '#team' },
-            { doc: 'Product Demo Video', status: 'pending', link: null },
-            { doc: 'Customer Testimonials', status: 'pending', link: null },
+            { doc: 'Pitch Deck (90-Second)', status: 'complete', link: '/deck-90', isExternal: true },
+            { doc: 'Full Investor Deck', status: 'complete', link: '/deck-kang', isExternal: true },
+            { doc: 'Investment Memo', status: 'complete', link: '/memo', isExternal: true },
+            { doc: 'Financial Projections', status: 'complete', link: '/financialprojection', isExternal: true },
+            { doc: 'Financial Models (P&L)', status: 'complete', link: '/financial-models', isExternal: true },
+            { doc: 'Data Room', status: 'complete', link: '/data-room', isExternal: true },
+            { doc: 'Competitor Analysis', status: 'complete', link: '/competitor-analysis', isExternal: true },
+            { doc: 'Investor FAQ', status: 'complete', link: '/investor-faq', isExternal: true },
+            { doc: 'Cap Table', status: 'complete', link: 'captable', isExternal: false },
+            { doc: 'SAFE Agreement', status: 'complete', link: 'safe', isExternal: false },
+            { doc: 'Use of Funds', status: 'complete', link: 'usefunds', isExternal: false },
+            { doc: 'LOI Evidence', status: 'complete', link: 'loi', isExternal: false },
+            { doc: 'Term Sheet', status: 'complete', link: 'termsheet', isExternal: false },
+            { doc: 'Team Bios', status: 'complete', link: 'team', isExternal: false },
+            { doc: 'Product Demo Video', status: 'pending', link: null, isExternal: false },
+            { doc: 'Customer Testimonials', status: 'pending', link: null, isExternal: false },
           ].map((item, idx) => (
             <div key={idx} className={`flex items-center justify-between p-4 rounded-xl ${
               item.status === 'complete' ? 'bg-green-500/10 border border-green-500/30' : 'bg-yellow-500/10 border border-yellow-500/30'
@@ -190,8 +190,11 @@ function OverviewSection() {
                 )}
                 <span className="text-white">{item.doc}</span>
               </div>
-              {item.link && (
+              {item.link && item.isExternal && (
                 <a href={item.link} className="text-[#c9a227] text-sm hover:underline">View</a>
+              )}
+              {item.link && !item.isExternal && (
+                <button onClick={() => onNavigate(item.link)} className="text-[#c9a227] text-sm hover:underline">View</button>
               )}
             </div>
           ))}
@@ -295,10 +298,10 @@ function CapTableSection() {
       <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
         <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
           <PieChart className="text-green-400" />
-          Pro-Forma Cap Table (Post-Seed)
+          Pro-Forma Cap Table (Post-SAFE Conversion)
         </h2>
 
-        <p className="text-slate-400 mb-6">Assuming AED 2.5M raise at AED 10M pre-money valuation (AED 12.5M post-money)</p>
+        <p className="text-slate-400 mb-6">Assuming $400K SAFE converts at $5M cap (8% ownership at conversion)</p>
 
         <div className="overflow-x-auto">
           <table className="w-full">
@@ -316,29 +319,29 @@ function CapTableSection() {
                 <td className="py-4 px-4 text-white font-medium">Founder (CEO)</td>
                 <td className="py-4 px-4 text-right text-slate-400">85%</td>
                 <td className="py-4 px-4 text-right text-white">8,500,000</td>
-                <td className="py-4 px-4 text-right text-[#c9a227] font-bold">68%</td>
-                <td className="py-4 px-4 text-right text-green-400">8,500,000</td>
+                <td className="py-4 px-4 text-right text-[#c9a227] font-bold">78%</td>
+                <td className="py-4 px-4 text-right text-green-400">3,900,000</td>
               </tr>
               <tr className="hover:bg-white/5">
                 <td className="py-4 px-4 text-white font-medium">ESOP Pool</td>
                 <td className="py-4 px-4 text-right text-slate-400">15%</td>
                 <td className="py-4 px-4 text-right text-white">1,500,000</td>
-                <td className="py-4 px-4 text-right text-[#c9a227] font-bold">12%</td>
-                <td className="py-4 px-4 text-right text-green-400">1,500,000</td>
+                <td className="py-4 px-4 text-right text-[#c9a227] font-bold">14%</td>
+                <td className="py-4 px-4 text-right text-green-400">700,000</td>
               </tr>
               <tr className="hover:bg-white/5 bg-green-500/5">
-                <td className="py-4 px-4 text-green-400 font-medium">Seed Investors (New)</td>
+                <td className="py-4 px-4 text-green-400 font-medium">SAFE Investors (New)</td>
                 <td className="py-4 px-4 text-right text-slate-400">0%</td>
-                <td className="py-4 px-4 text-right text-white">2,500,000</td>
-                <td className="py-4 px-4 text-right text-green-400 font-bold">20%</td>
-                <td className="py-4 px-4 text-right text-green-400">2,500,000</td>
+                <td className="py-4 px-4 text-right text-white">800,000</td>
+                <td className="py-4 px-4 text-right text-green-400 font-bold">8%</td>
+                <td className="py-4 px-4 text-right text-green-400">400,000</td>
               </tr>
               <tr className="bg-[#c9a227]/10">
                 <td className="py-4 px-4 text-white font-bold">Total</td>
                 <td className="py-4 px-4 text-right text-slate-400">100%</td>
-                <td className="py-4 px-4 text-right text-white font-bold">12,500,000</td>
+                <td className="py-4 px-4 text-right text-white font-bold">10,800,000</td>
                 <td className="py-4 px-4 text-right text-[#c9a227] font-bold">100%</td>
-                <td className="py-4 px-4 text-right text-green-400 font-bold">12,500,000</td>
+                <td className="py-4 px-4 text-right text-green-400 font-bold">5,400,000</td>
               </tr>
             </tbody>
           </table>
@@ -348,14 +351,14 @@ function CapTableSection() {
         <div className="mt-8">
           <h4 className="text-white font-bold mb-4">Ownership Visualization</h4>
           <div className="flex rounded-xl overflow-hidden h-12">
-            <div className="bg-purple-500 flex items-center justify-center text-white text-sm font-bold" style={{ width: '68%' }}>
-              Founder 68%
+            <div className="bg-purple-500 flex items-center justify-center text-white text-sm font-bold" style={{ width: '78%' }}>
+              Founder 78%
             </div>
-            <div className="bg-green-500 flex items-center justify-center text-white text-sm font-bold" style={{ width: '12%' }}>
-              ESOP
+            <div className="bg-green-500 flex items-center justify-center text-white text-sm font-bold" style={{ width: '14%' }}>
+              ESOP 14%
             </div>
-            <div className="bg-[#c9a227] flex items-center justify-center text-[#0a1628] text-sm font-bold" style={{ width: '20%' }}>
-              Seed 20%
+            <div className="bg-[#c9a227] flex items-center justify-center text-[#0a1628] text-sm font-bold" style={{ width: '8%' }}>
+              SAFE 8%
             </div>
           </div>
         </div>
@@ -373,7 +376,7 @@ function CapTableSection() {
                 <th className="text-right py-3 px-4 text-slate-400">Raise</th>
                 <th className="text-right py-3 px-4 text-slate-400">Pre-Money</th>
                 <th className="text-right py-3 px-4 text-slate-400">Founder %</th>
-                <th className="text-right py-3 px-4 text-slate-400">Seed %</th>
+                <th className="text-right py-3 px-4 text-slate-400">SAFE %</th>
                 <th className="text-right py-3 px-4 text-slate-400">Series A %</th>
               </tr>
             </thead>
@@ -387,20 +390,20 @@ function CapTableSection() {
                 <td className="py-3 px-4 text-right text-slate-500">-</td>
               </tr>
               <tr className="bg-green-500/5">
-                <td className="py-3 px-4 text-green-400">Post-Seed</td>
-                <td className="py-3 px-4 text-right text-slate-300">AED 2.5M</td>
-                <td className="py-3 px-4 text-right text-slate-300">AED 10M</td>
-                <td className="py-3 px-4 text-right text-purple-400">68%</td>
-                <td className="py-3 px-4 text-right text-green-400">20%</td>
+                <td className="py-3 px-4 text-green-400">Post-SAFE</td>
+                <td className="py-3 px-4 text-right text-slate-300">$400K</td>
+                <td className="py-3 px-4 text-right text-slate-300">$5M cap</td>
+                <td className="py-3 px-4 text-right text-purple-400">78%</td>
+                <td className="py-3 px-4 text-right text-green-400">8%</td>
                 <td className="py-3 px-4 text-right text-slate-500">-</td>
               </tr>
               <tr>
                 <td className="py-3 px-4 text-blue-400">Post-Series A (Est.)</td>
-                <td className="py-3 px-4 text-right text-slate-300">AED 15M</td>
-                <td className="py-3 px-4 text-right text-slate-300">AED 50M</td>
-                <td className="py-3 px-4 text-right text-purple-400">52%</td>
-                <td className="py-3 px-4 text-right text-green-400">15%</td>
-                <td className="py-3 px-4 text-right text-blue-400">23%</td>
+                <td className="py-3 px-4 text-right text-slate-300">$3M</td>
+                <td className="py-3 px-4 text-right text-slate-300">$15M</td>
+                <td className="py-3 px-4 text-right text-purple-400">62%</td>
+                <td className="py-3 px-4 text-right text-green-400">6%</td>
+                <td className="py-3 px-4 text-right text-blue-400">20%</td>
               </tr>
             </tbody>
           </table>
@@ -437,25 +440,25 @@ function SAFESection() {
           <div className="space-y-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Valuation Cap</p>
-              <p className="text-2xl font-bold text-[#c9a227]">AED 12.5M Post-Money</p>
-              <p className="text-slate-500 text-xs mt-1">~USD 3.4M</p>
+              <p className="text-2xl font-bold text-[#c9a227]">$5M Post-Money</p>
+              <p className="text-slate-500 text-xs mt-1">~AED 18.4M</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Discount</p>
-              <p className="text-2xl font-bold text-white">None</p>
-              <p className="text-slate-500 text-xs mt-1">Cap-only SAFE</p>
+              <p className="text-2xl font-bold text-white">20%</p>
+              <p className="text-slate-500 text-xs mt-1">On next priced round</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Pro-Rata Rights</p>
               <p className="text-2xl font-bold text-green-400">Yes</p>
-              <p className="text-slate-500 text-xs mt-1">For investments &gt; AED 250K</p>
+              <p className="text-slate-500 text-xs mt-1">For investments &gt; $50K</p>
             </div>
           </div>
           <div className="space-y-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Minimum Investment</p>
-              <p className="text-2xl font-bold text-white">AED 100,000</p>
-              <p className="text-slate-500 text-xs mt-1">~USD 27K</p>
+              <p className="text-2xl font-bold text-white">$25,000</p>
+              <p className="text-slate-500 text-xs mt-1">~AED 92K</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">SAFE Type</p>
@@ -598,11 +601,11 @@ Title:`}
             },
             {
               q: 'Why Post-Money SAFE instead of Pre-Money?',
-              a: 'Post-Money SAFEs are clearer for both parties. You know exactly what percentage you will own (Purchase Amount / Post-Money Cap). With AED 100K at AED 12.5M cap, you get exactly 0.8%.'
+              a: 'Post-Money SAFEs are clearer for both parties. You know exactly what percentage you will own (Purchase Amount / Post-Money Cap). With $50K at $5M cap, you get exactly 1%.'
             },
             {
               q: 'What are my pro-rata rights?',
-              a: 'For investments above AED 250K, you have the right to invest in future rounds to maintain your ownership percentage. This protects against dilution.'
+              a: 'For investments above $50K, you have the right to invest in future rounds to maintain your ownership percentage. This protects against dilution.'
             },
             {
               q: 'Is my investment protected?',
@@ -630,25 +633,25 @@ function UseFundsSection() {
       <div className="bg-gradient-to-r from-green-500/20 to-green-500/10 rounded-2xl p-8 border border-green-500/30">
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
           <DollarSign className="text-green-400" />
-          Use of Funds - AED 2.5M Seed Round
+          Use of Funds - $400K SAFE Round
         </h2>
         <p className="text-slate-300">
-          18-month runway to achieve key milestones: 50,000 users, 200 merchants, AED 2M GMV/month,
-          and Series A readiness. Every dirham allocated to growth and sustainability.
+          12-18 month runway to achieve key milestones: 25,000 users, 100 merchants, AED 1M GMV/month,
+          and Series A readiness. Every dollar allocated to growth and sustainability.
         </p>
       </div>
 
       {/* Allocation Breakdown */}
       <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
-        <h3 className="text-xl font-bold text-white mb-6">Fund Allocation (18 Months)</h3>
+        <h3 className="text-xl font-bold text-white mb-6">Fund Allocation (12-18 Months)</h3>
 
         <div className="space-y-4">
           {[
-            { category: 'Marketing & User Acquisition', amount: 875000, percentage: 35, color: 'pink', items: ['Digital advertising (Meta, TikTok, Google)', 'Influencer partnerships', 'Referral program rewards', 'Brand campaigns', 'PR & communications'] },
-            { category: 'Product & Technology', amount: 625000, percentage: 25, color: 'blue', items: ['Additional engineers (2-3)', 'Infrastructure scaling', 'Security & compliance', 'Feature development', 'Mobile app enhancements'] },
-            { category: 'Team Expansion', amount: 500000, percentage: 20, color: 'purple', items: ['Operations manager', 'Customer success (2)', 'Sales team (2)', 'Data analyst', 'Recruitment costs'] },
-            { category: 'Operations & Support', amount: 375000, percentage: 15, color: 'orange', items: ['Office space', 'Customer support tools', 'Legal & accounting', 'Insurance', 'Travel & events'] },
-            { category: 'Reserve / Buffer', amount: 125000, percentage: 5, color: 'slate', items: ['Emergency fund', 'Opportunistic investments', 'Currency fluctuation buffer'] },
+            { category: 'Marketing & User Acquisition', amount: 140000, percentage: 35, color: 'pink', items: ['Digital advertising (Meta, TikTok, Google)', 'Influencer partnerships', 'Referral program rewards', 'Brand campaigns', 'PR & communications'] },
+            { category: 'Product & Technology', amount: 100000, percentage: 25, color: 'blue', items: ['Additional engineers (1-2)', 'Infrastructure scaling', 'Security & compliance', 'Feature development', 'Mobile app enhancements'] },
+            { category: 'Team Expansion', amount: 80000, percentage: 20, color: 'purple', items: ['Operations support', 'Customer success', 'Merchant acquisition support', 'Recruitment costs'] },
+            { category: 'Operations & Support', amount: 60000, percentage: 15, color: 'orange', items: ['Office space', 'Customer support tools', 'Legal & accounting', 'Insurance', 'Travel & events'] },
+            { category: 'Reserve / Buffer', amount: 20000, percentage: 5, color: 'slate', items: ['Emergency fund', 'Opportunistic investments', 'Currency fluctuation buffer'] },
           ].map((item, idx) => (
             <div key={idx} className={`p-6 rounded-xl border bg-${item.color}-500/10 border-${item.color}-500/30`}>
               <div className="flex items-center justify-between mb-4">
@@ -657,8 +660,8 @@ function UseFundsSection() {
                   <p className="text-slate-400 text-sm">{item.percentage}% of total raise</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-2xl font-bold text-white">AED {item.amount.toLocaleString()}</p>
-                  <p className="text-slate-500 text-sm">~USD {Math.round(item.amount / 3.67).toLocaleString()}</p>
+                  <p className="text-2xl font-bold text-white">${item.amount.toLocaleString()}</p>
+                  <p className="text-slate-500 text-sm">~AED {Math.round(item.amount * 3.67).toLocaleString()}</p>
                 </div>
               </div>
               <div className="w-full bg-white/10 rounded-full h-3 mb-4">
@@ -692,10 +695,8 @@ function UseFundsSection() {
 
         <div className="space-y-4">
           {[
-            { milestone: 'Tranche 1: Launch', amount: 'AED 500K', trigger: 'At closing', targets: ['Complete team hiring', 'Launch marketing campaign', '1,000 users, 20 merchants'], timeline: 'Month 1-3' },
-            { milestone: 'Tranche 2: Traction', amount: 'AED 750K', trigger: '5,000 users + 50 merchants', targets: ['Scale marketing spend', 'Hire operations team', 'Achieve AED 100K GMV/month'], timeline: 'Month 4-6' },
-            { milestone: 'Tranche 3: Growth', amount: 'AED 750K', trigger: '15,000 users + 100 merchants', targets: ['Expand to Abu Dhabi', 'Launch corporate program', 'Achieve AED 500K GMV/month'], timeline: 'Month 7-12' },
-            { milestone: 'Tranche 4: Scale', amount: 'AED 500K', trigger: '35,000 users + 150 merchants', targets: ['Prepare Series A materials', 'Achieve profitability path', 'Reach AED 1M GMV/month'], timeline: 'Month 13-18' },
+            { milestone: 'Tranche 1: Launch', amount: '$200K', trigger: 'At closing', targets: ['Complete team hiring', 'Launch marketing campaign', '1,000 users, 10 merchants'], timeline: 'Month 1-3' },
+            { milestone: 'Tranche 2: Traction', amount: '$200K', trigger: '10 live merchants + 1,000 MAU + CTO hired', targets: ['Scale marketing spend', 'Achieve AED 50K GMV/month', 'Prove unit economics'], timeline: 'Month 4-6' },
           ].map((tranche, idx) => (
             <div key={idx} className="p-4 bg-white/5 rounded-xl border border-white/10">
               <div className="flex items-center justify-between mb-3">
@@ -765,7 +766,7 @@ function LOISection() {
           Letters of Intent (LOI) Evidence
         </h2>
         <p className="text-slate-300">
-          30+ merchants have signed Letters of Intent to join Nuqta upon launch. These LOIs represent
+          32 merchants have signed Letters of Intent to join Nuqta upon launch. These LOIs represent
           committed merchant interest and validate our go-to-market strategy.
         </p>
 
@@ -997,7 +998,7 @@ function TermSheetSection() {
       <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-2xl p-8 border border-[#c9a227]/30">
         <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
           <Briefcase className="text-[#c9a227]" />
-          Term Sheet - Seed Round
+          Term Sheet - SAFE Round
         </h2>
         <p className="text-slate-300">
           Non-binding summary of proposed investment terms. Final terms subject to due diligence
@@ -1011,7 +1012,7 @@ function TermSheetSection() {
           <div className="text-center mb-8 pb-6 border-b border-white/10">
             <h3 className="text-2xl font-bold text-[#c9a227]">NUQTA TECHNOLOGY L.L.C.</h3>
             <p className="text-white text-lg mt-2">TERM SHEET</p>
-            <p className="text-slate-400">Seed Financing</p>
+            <p className="text-slate-400">SAFE Financing</p>
             <p className="text-slate-500 text-sm mt-2">February 2026</p>
           </div>
 
@@ -1022,12 +1023,12 @@ function TermSheetSection() {
               <div className="grid md:grid-cols-2 gap-4">
                 {[
                   { label: 'Security Type', value: 'SAFE (Simple Agreement for Future Equity)' },
-                  { label: 'Total Raise', value: 'AED 2,500,000 (USD ~680,000)' },
-                  { label: 'Post-Money Valuation Cap', value: 'AED 12,500,000 (USD ~3,400,000)' },
-                  { label: 'Minimum Investment', value: 'AED 100,000 (USD ~27,000)' },
-                  { label: 'Maximum Investment', value: 'AED 500,000 per investor' },
-                  { label: 'Discount Rate', value: 'N/A (Cap-only SAFE)' },
-                  { label: 'Pro-Rata Rights', value: 'Yes, for investments > AED 250,000' },
+                  { label: 'Total Raise', value: '$400,000 (AED ~1,470,000)' },
+                  { label: 'Post-Money Valuation Cap', value: '$5,000,000 (AED ~18,400,000)' },
+                  { label: 'Minimum Investment', value: '$25,000 (AED ~92,000)' },
+                  { label: 'Maximum Investment', value: '$100,000 per investor' },
+                  { label: 'Discount Rate', value: '20% on next priced round' },
+                  { label: 'Pro-Rata Rights', value: 'Yes, for investments > $50,000' },
                   { label: 'MFN Clause', value: 'Yes' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex justify-between p-3 bg-white/5 rounded-lg">
@@ -1043,11 +1044,11 @@ function TermSheetSection() {
               <h4 className="text-[#c9a227] font-bold text-lg mb-4 pb-2 border-b border-[#c9a227]/30">USE OF PROCEEDS</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 {[
-                  { category: 'Marketing & User Acquisition', percentage: '35%', amount: 'AED 875,000' },
-                  { category: 'Product & Technology', percentage: '25%', amount: 'AED 625,000' },
-                  { category: 'Team Expansion', percentage: '20%', amount: 'AED 500,000' },
-                  { category: 'Operations & Support', percentage: '15%', amount: 'AED 375,000' },
-                  { category: 'Reserve / Buffer', percentage: '5%', amount: 'AED 125,000' },
+                  { category: 'Marketing & User Acquisition', percentage: '35%', amount: '$140,000' },
+                  { category: 'Product & Technology', percentage: '25%', amount: '$100,000' },
+                  { category: 'Team Expansion', percentage: '20%', amount: '$80,000' },
+                  { category: 'Operations & Support', percentage: '15%', amount: '$60,000' },
+                  { category: 'Reserve / Buffer', percentage: '5%', amount: '$20,000' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex justify-between p-3 bg-white/5 rounded-lg">
                     <span className="text-slate-400">{item.category}</span>
@@ -1059,13 +1060,13 @@ function TermSheetSection() {
 
             {/* Key Milestones */}
             <div>
-              <h4 className="text-[#c9a227] font-bold text-lg mb-4 pb-2 border-b border-[#c9a227]/30">KEY MILESTONES (18 MONTHS)</h4>
+              <h4 className="text-[#c9a227] font-bold text-lg mb-4 pb-2 border-b border-[#c9a227]/30">KEY MILESTONES (12-18 MONTHS)</h4>
               <div className="space-y-3">
                 {[
-                  { milestone: 'Month 3', target: '5,000 users, 30 merchants, AED 100K GMV/month' },
-                  { milestone: 'Month 6', target: '15,000 users, 75 merchants, AED 350K GMV/month' },
-                  { milestone: 'Month 12', target: '35,000 users, 150 merchants, AED 1M GMV/month' },
-                  { milestone: 'Month 18', target: '50,000 users, 200 merchants, AED 2M GMV/month, Series A ready' },
+                  { milestone: 'Month 3', target: '1,000 users, 10 merchants live, first transactions' },
+                  { milestone: 'Month 6', target: '5,000 users, 30 merchants, AED 100K GMV/month' },
+                  { milestone: 'Month 12', target: '25,000 users, 100 merchants, AED 500K GMV/month' },
+                  { milestone: 'Month 18', target: '50,000 users, 150 merchants, AED 1M GMV/month, Series A ready' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
                     <span className="text-[#c9a227] font-bold w-24">{item.milestone}</span>
@@ -1081,7 +1082,7 @@ function TermSheetSection() {
               <div className="space-y-3">
                 {[
                   { right: 'Information Rights', detail: 'Quarterly financial reports, annual audited statements' },
-                  { right: 'Pro-Rata Rights', detail: 'Right to participate in future rounds (for investments > AED 250K)' },
+                  { right: 'Pro-Rata Rights', detail: 'Right to participate in future rounds (for investments > $50K)' },
                   { right: 'MFN Protection', detail: 'Automatic upgrade if better terms offered to later SAFE investors' },
                   { right: 'Conversion', detail: 'Automatic conversion at next priced equity round or liquidity event' },
                 ].map((item, idx) => (

@@ -194,7 +194,7 @@ function AgentProfile() {
           <div>
             <h3 className="text-yellow-400 font-bold text-lg mb-2">My Assessment Summary</h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-              &ldquo;Product is 100% complete, team of 8 is hired, March 1 launch is set. You have 30+ LOIs ready to convert.
+              &ldquo;Product is 100% complete, team of 8 is hired, March 1 launch is set. You have 32 LOIs ready to convert.
               The next 23 days are critical for operations. Your #1 priority: Convert 10+ LOIs to live merchants before launch.
               Your BDA is actively working on this. Support infrastructure and merchant success processes must be ready by Day 1.&rdquo;
             </p>
@@ -227,7 +227,7 @@ function OperationsDiagnosis() {
               { area: 'Product Complete', score: 100, status: '100% ready' },
               { area: 'Team Capacity', score: 100, status: '8 members hired' },
               { area: 'Merchant Onboarding Process', score: 80, status: 'Documented, BDA executing' },
-              { area: 'LOI Conversion', score: 30, status: 'In progress (30 LOIs)' },
+              { area: 'LOI Conversion', score: 30, status: 'In progress (32 LOIs)' },
               { area: 'Payment Integration', score: 85, status: 'Integrated in product' },
               { area: 'Support Infrastructure', score: 50, status: 'CHRO setting up' },
               { area: 'Operational Playbooks', score: 90, status: 'Comprehensive' },
@@ -272,7 +272,7 @@ function OperationsDiagnosis() {
         </h3>
         <div className="space-y-4">
           {[
-            { stage: 'LOIs Signed', count: 30, pct: 100, issue: 'Ready to convert' },
+            { stage: 'LOIs Signed', count: 32, pct: 100, issue: 'Ready to convert' },
             { stage: 'Contracts Sent', count: 10, pct: 33, issue: 'BDA actively sending' },
             { stage: 'Contracts Signed', count: 5, pct: 17, issue: 'In progress' },
             { stage: 'Integration Complete', count: 0, pct: 0, issue: 'Product ready, starting integration' },
@@ -299,7 +299,7 @@ function OperationsDiagnosis() {
         <div className="mt-6 p-4 bg-red-500/10 rounded-xl border border-red-500/30">
           <p className="text-red-400 font-bold">Conversion Rate: 0%</p>
           <p className="text-slate-300 text-sm mt-1">
-            30 LOIs with 0 conversions = complete operational failure. Target: 33% conversion (10 live merchants)
+            32 LOIs with 0 conversions = complete operational failure. Target: 33% conversion (10 live merchants)
           </p>
         </div>
       </div>
@@ -368,7 +368,7 @@ function ProblemsIdentified() {
             severity: 'HIGH',
             rootCause: 'Product now complete, BDA actively converting, need 10+ by March 1',
             symptoms: [
-              '30+ LOIs ready to convert',
+              '32 LOIs ready to convert',
               'BDA actively sending contracts',
               'Need merchant training & integration',
               'Must hit 10+ live by launch'
@@ -501,7 +501,7 @@ function OperationalSolutions() {
               day: 'Day 1',
               title: 'Prioritize & Contact',
               tasks: [
-                'Rank all 30 LOIs by: ease of integration, foot traffic, brand value',
+                'Rank all 32 LOIs by: ease of integration, foot traffic, brand value',
                 'Select top 15 (target 10, assume 30% dropout)',
                 'Call each personally - TODAY. Not email, call.',
                 'Schedule in-person visits for Day 2-3'
@@ -719,7 +719,7 @@ function ExecutionPlaybook() {
             theme: 'Merchant Activation Blitz',
             focus: '10 Merchants Live',
             tasks: [
-              { task: 'Call all 30 LOI merchants', status: 'critical' },
+              { task: 'Call all 32 LOI merchants', status: 'critical' },
               { task: 'Sign 12+ contracts', status: 'critical' },
               { task: 'Set up QR codes & listings', status: 'critical' },
               { task: 'Train merchant staff', status: 'critical' },

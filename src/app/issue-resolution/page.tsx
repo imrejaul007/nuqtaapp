@@ -110,7 +110,7 @@ export default function IssueResolutionPage() {
       department: 'ceo',
       priority: 'critical',
       status: 'not_started',
-      deadline: 'Feb 28, 2026',
+      deadline: 'March 1, 2026',
       owner: 'Founder',
       solution: [
         'Launch to 50 beta users immediately after MVP',
@@ -179,7 +179,7 @@ export default function IssueResolutionPage() {
     {
       id: 'coo-1',
       title: 'Merchant Conversion - BDA NOW EXECUTING',
-      description: '30+ LOIs signed. BDA now actively converting to live merchants with product ready.',
+      description: '32 LOIs signed. BDA now actively converting to live merchants with product ready.',
       department: 'coo',
       priority: 'critical',
       status: 'in_progress',
@@ -379,7 +379,7 @@ export default function IssueResolutionPage() {
       department: 'chro',
       priority: 'critical',
       status: 'completed',
-      deadline: 'Feb 28, 2026',
+      deadline: 'March 1, 2026',
       owner: 'Founder',
       solution: [
         '✅ CTO hired and onboarded',
@@ -1061,7 +1061,7 @@ export default function IssueResolutionPage() {
               <p className="text-gray-400 mb-4">Focus: Scale Merchants + User Growth + Viral Mechanics</p>
               <div className="space-y-3">
                 {[
-                  { task: 'Onboard remaining 20 LOI merchants', owner: 'BDA', dept: 'coo' },
+                  { task: 'Onboard remaining 22 LOI merchants', owner: 'BDA', dept: 'coo' },
                   { task: 'Reach 200 active users', owner: 'CMO + Full Team', dept: 'ceo' },
                   { task: 'Implement referral program in app', owner: 'CTO + Devs', dept: 'cmo' },
                   { task: 'Define company values & culture doc', owner: 'CHRO + Founder', dept: 'chro' },

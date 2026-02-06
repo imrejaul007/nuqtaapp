@@ -1195,7 +1195,7 @@ export default function CMOReportPage() {
               <h3 className="text-xl font-bold text-white mb-6">30-Day Targets</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { metric: 'Total Users', target: '10,000', current: '847', status: 'building' },
+                  { metric: 'Total Users', target: '10,000', current: '0', status: 'pre-launch' },
                   { metric: 'Instagram Followers', target: '5,000', current: '0', status: 'starting' },
                   { metric: 'TikTok Followers', target: '2,500', current: '0', status: 'starting' },
                   { metric: 'Active Influencers', target: '50', current: '0', status: 'recruiting' },

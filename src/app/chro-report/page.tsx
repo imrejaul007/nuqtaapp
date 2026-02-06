@@ -380,10 +380,10 @@ export default function CHROReportPage() {
                   </thead>
                   <tbody>
                     {[
-                      { skill: 'Merchant Acquisition', current: 0, needed: 2, priority: 'P0' },
-                      { skill: 'Operations Manager', current: 0, needed: 1, priority: 'P0' },
-                      { skill: 'Full-Stack Developer', current: 0.5, needed: 2, priority: 'P1' },
-                      { skill: 'Content/Social Media', current: 0, needed: 1, priority: 'P1' },
+                      { skill: 'Merchant Acquisition (BDA)', current: 1, needed: 1, priority: 'P0' },
+                      { skill: 'Operations Manager', current: 1, needed: 1, priority: 'P0' },
+                      { skill: 'Full-Stack Developer', current: 2, needed: 2, priority: 'P1' },
+                      { skill: 'Content/Social Media', current: 1, needed: 1, priority: 'P1' },
                       { skill: 'Customer Support', current: 0, needed: 1, priority: 'P1' },
                       { skill: 'Data/Analytics', current: 0, needed: 1, priority: 'P2' },
                       { skill: 'Finance/Admin', current: 0.5, needed: 1, priority: 'P2' }

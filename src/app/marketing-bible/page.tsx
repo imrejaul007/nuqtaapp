@@ -197,7 +197,7 @@ export default function MarketingPlanPage() {
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-400">
               <Clock size={16} />
-              <span>Launch: Feb 28, 2026</span>
+              <span>Launch: March 1, 2026</span>
             </div>
           </div>
         </div>

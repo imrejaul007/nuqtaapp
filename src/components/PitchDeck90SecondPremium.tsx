@@ -90,8 +90,8 @@ const PitchDeck90SecondPremium = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-8 animate-[fadeIn_0.8s_ease-out_0.4s] opacity-0 [animation-fill-mode:forwards]">
                 {[
                   { value: '$35B', label: 'UAE Offline Market*', Icon: Target },
-                  { value: '30+', label: 'Merchant LOIs Signed', Icon: Store },
-                  { value: 'Feb 28', label: 'Launch Date 2026', Icon: Rocket }
+                  { value: '32', label: 'Merchant LOIs Signed', Icon: Store },
+                  { value: 'Mar 1', label: 'Launch Date 2026', Icon: Rocket }
                 ].map((stat, idx) => (
                   <div key={idx} className="relative group">
                     <div className="absolute inset-0 bg-[#c9a227] rounded-xl md:rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />

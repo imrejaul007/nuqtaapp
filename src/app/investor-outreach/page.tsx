@@ -115,9 +115,9 @@ I'm Rejaul, founder of Nuqta. Given BECO's success with Careem and focus on cons
 **The Opportunity:** UAE consumers spend AED 180B annually on local services but earn nothing back. We're building the rewards layer for offline commerce - think "Careem Pay meets The Entertainer."
 
 **Why Now:**
-- 30+ signed merchant LOIs (cafes, salons across Dubai Marina, Downtown)
-- Launching January 28, 2026
-- 18x LTV:CAC ratio (merchant-funded, no VC subsidy burn)
+- 32 signed merchant LOIs (cafes, salons across Dubai Marina, Downtown)
+- Launching March 1, 2026
+- 16.8x LTV:CAC ratio (merchant-funded, no VC subsidy burn)
 
 **The BECO Fit:**
 - Careem proved UAE consumers adopt rewards/loyalty
@@ -161,9 +161,9 @@ Congratulations on Tamara's continued growth - you've proven GCC consumers want 
 While Tamara/Tabby solve "how to pay," Nuqta solves "why to return." Users earn 5-10% cashback at any partner merchant, creating a loyalty network effect.
 
 **Traction:**
-- 30+ signed merchant LOIs
-- Launching Jan 28, 2026 in Dubai
-- 18x LTV:CAC (merchant-funded model)
+- 32 signed merchant LOIs
+- Launching March 1, 2026 in Dubai
+- 16.8x LTV:CAC (merchant-funded model)
 
 **Nuwa Synergy:**
 - Tamara/Tabby merchants could offer Nuqta coins as additional incentive
@@ -210,9 +210,9 @@ Users search for local businesses (cafes, salons, gyms), earn 5-10% cashback on 
 - Pre-seed stage is your sweet spot
 
 **Traction:**
-- 30+ merchant LOIs signed
-- Launching Jan 28, 2026
-- AED 30 blended CAC, AED 504 LTV (18x ratio)
+- 32 merchant LOIs signed
+- Launching March 1, 2026
+- AED 30 blended CAC, AED 504 LTV (16.8x ratio)
 
 Raising $400K on $5M cap. Shorooq's early-stage expertise + merchant network would accelerate our launch.
 
@@ -251,8 +251,8 @@ Your work with Mumzworld and Eyewa shows Global Ventures understands UAE consume
 - Merchants: Pay 15% commission only on sales (vs AED 200+ Google Ads CAC)
 
 **Why This Works:**
-- 30+ signed merchant LOIs (supply locked)
-- Launching Jan 28, 2026
+- 32 signed merchant LOIs (supply locked)
+- Launching March 1, 2026
 - $45B GCC serviceable market
 
 **Global Ventures Fit:**
@@ -300,7 +300,7 @@ Wamda's POSRocket and Carriage investments show deep understanding of UAE mercha
 - Carriage restaurants could offer Nuqta coins for dine-in
 - Same SMB segment, complementary solutions
 
-**Traction:** 30+ signed LOIs, launching Jan 28.
+**Traction:** 32 signed LOIs, launching March 1.
 
 Raising $400K. Would love to discuss how Nuqta fits Wamda's merchant ecosystem thesis.
 
@@ -339,7 +339,7 @@ Users search "coffee near me" → see cashback offers → earn 5-10% back on pur
 - Daily use case (food, coffee, services)
 - Gamified coins system
 
-**Traction:** 30+ merchants, launching Jan 28, 18x LTV:CAC.
+**Traction:** 32 merchants, launching March 1, 16.8x LTV:CAC.
 
 Raising $400K pre-seed. Would value MEVP's consumer engagement expertise.
 
@@ -368,7 +368,7 @@ Rejaul`
 
 Hi Ryaan,
 
-I'm building Nuqta - the rewards platform for UAE offline commerce. With 30+ signed merchant LOIs and Jan 28 launch, we're looking for strategic accelerator support.
+I'm building Nuqta - the rewards platform for UAE offline commerce. With 32 signed merchant LOIs and March 1 launch, we're looking for strategic accelerator support.
 
 **Why Flat6Labs:**
 - Abu Dhabi corporate connections for enterprise merchants
@@ -376,8 +376,8 @@ I'm building Nuqta - the rewards platform for UAE offline commerce. With 30+ sig
 - Regional expansion expertise
 
 **What We Bring:**
-- Validated merchant demand (30+ LOIs)
-- Clear unit economics (18x LTV:CAC)
+- Validated merchant demand (32 LOIs)
+- Clear unit economics (16.8x LTV:CAC)
 - Ready to launch MVP
 
 Is Nuqta a fit for your upcoming cycle? Happy to share our deck.
@@ -410,8 +410,8 @@ Hi Hub71 Team,
 I'm applying with Nuqta - a rewards platform for UAE offline commerce.
 
 **Quick Stats:**
-- 30+ signed merchant LOIs
-- Launching Jan 28, 2026
+- 32 signed merchant LOIs
+- Launching March 1, 2026
 - $45B GCC target market
 
 **Hub71 Value:**
@@ -466,7 +466,7 @@ Your Sarwa users save for the future. Nuqta helps them save on today's coffee, l
 - Ziina payments could integrate Nuqta coins
 - Same "smart money" positioning
 
-**Traction:** 30+ merchants, Jan 28 launch, 18x LTV:CAC.
+**Traction:** 32 merchants, March 1 launch, 16.8x LTV:CAC.
 
 Raising $400K. Would love to discuss portfolio synergies.
 
@@ -494,14 +494,14 @@ Rejaul`
 
 Hi Jamil,
 
-I'm building Nuqta - rewards platform for offline commerce. Launching UAE Jan 28, with GCC expansion planned for 2027.
+I'm building Nuqta - rewards platform for offline commerce. Launching UAE March 1, with GCC expansion planned for 2027.
 
 **Oman Opportunity:**
 - Same merchant categories (cafes, salons, retail)
 - Similar consumer behavior to UAE
 - Plus VC's local expertise = faster Oman entry
 
-**Current Traction:** 30+ UAE merchants, 18x LTV:CAC.
+**Current Traction:** 32 UAE merchants, 16.8x LTV:CAC.
 
 Would love to discuss how Plus VC could support our GCC expansion thesis.
 
@@ -536,8 +536,8 @@ Sawari's Elmenus and Paymob investments show you understand F&B discovery and pa
 Think Elmenus discovery with Paymob-style merchant monetization, plus consumer rewards.
 
 **UAE Focus First:**
-- 30+ merchants signed
-- Jan 28 launch
+- 32 merchants signed
+- March 1 launch
 - GCC expansion planned
 
 Would value Sawari's MENA scaling expertise.
@@ -572,7 +572,7 @@ Algebra's MoneyFellows investment shows you believe in helping MENA consumers sa
 **MoneyFellows = Save together**
 **Nuqta = Save on every purchase**
 
-Both serve the "smart saver" consumer. 30+ UAE merchants signed, launching Jan 28.
+Both serve the "smart saver" consumer. 32 UAE merchants signed, launching March 1.
 
 Would love to discuss the savings/rewards thesis.
 
@@ -608,7 +608,7 @@ Dear DAI Network,
 I'm seeking angel investment for Nuqta - the rewards platform for UAE offline commerce.
 
 **Opportunity:** $45B GCC market, no unified loyalty solution
-**Traction:** 30+ signed merchant LOIs, launching Jan 28
+**Traction:** 32 signed merchant LOIs, launching March 1
 **Ask:** Part of $400K round, $25K-100K checks welcome
 
 **Why Angels:**
@@ -645,8 +645,8 @@ Hi MENA Angels team,
 
 Building Nuqta - rewards platform starting UAE, expanding GCC. Looking for angels with regional merchant connections.
 
-**UAE Launch:** Jan 28, 2026
-**Traction:** 30+ merchants, 18x LTV:CAC
+**UAE Launch:** March 1, 2026
+**Traction:** 32 merchants, 16.8x LTV:CAC
 **GCC Vision:** Qatar, KSA by 2027
 
 Seeking $400K, angel checks of $50K-200K.
@@ -681,7 +681,7 @@ Given Seed Group's work bringing global retail to UAE, I wanted to share Nuqta -
 
 **The Gap:** International brands entering UAE lack local loyalty programs. Nuqta provides plug-and-play rewards.
 
-**Traction:** 30+ local merchants signed, launching Jan 28.
+**Traction:** 32 local merchants signed, launching March 1.
 
 **Your Value:** Introductions to Seed Group's retail portfolio could accelerate our enterprise tier.
 
@@ -716,7 +716,7 @@ You built Aramex into a regional logistics champion. I'm building the regional l
 **Nuqta = Unified rewards across GCC merchants**
 Just as Aramex connected regional logistics, Nuqta connects regional loyalty.
 
-**Traction:** 30+ UAE merchants, expanding GCC.
+**Traction:** 32 UAE merchants, expanding GCC.
 
 **Your Insight:** Would value your perspective on regional scaling. Also, Aramex's SMB merchants could benefit from Nuqta loyalty.
 
@@ -1049,7 +1049,7 @@ Hi Sharif,
 - UAE has no unified offline rewards (like Rakuten/Honey for local services)
 - We're building it: Search, Save, Earn
 
-**Traction:** 30+ merchants, Jan 28 launch, 18x LTV:CAC.
+**Traction:** 32 merchants, March 1 launch, 16.8x LTV:CAC.
 
 Would love to be part of the 500 MENA portfolio.
 
@@ -1086,7 +1086,7 @@ Applying with Nuqta - the rewards platform for GCC offline commerce.
 - Network for GCC expansion
 - Credibility for enterprise merchants
 
-**Traction:** 30+ merchants, launching Jan 28, $45B TAM.
+**Traction:** 32 merchants, launching March 1, $45B TAM.
 
 Full application submitted via portal.
 
@@ -1122,7 +1122,7 @@ Applying for your Retail Tech vertical with Nuqta - rewards platform for offline
 - We provide turnkey rewards infrastructure
 - Pilot opportunities with your network
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Interested in upcoming batch + corporate intros.
 
@@ -1154,7 +1154,7 @@ Applying with Nuqta for consideration in relevant programs.
 
 **Quick Stats:**
 - GCC rewards platform
-- 30+ merchants, Jan 28 launch
+- 32 merchants, March 1 launch
 - $45B market
 
 Will submit full application via portal.
@@ -1366,7 +1366,7 @@ STV's Foodics investment shows you understand F&B merchant needs. I'm building t
 Users discover restaurants, earn cashback. Merchants pay only on sales.
 
 **KSA Expansion:**
-- UAE launch Jan 2026
+- UAE launch March 2026
 - KSA entry planned 2027
 - STV could accelerate KSA timeline
 
@@ -1396,7 +1396,7 @@ Rejaul`
 
 Hi Abdullah,
 
-Building Nuqta - rewards platform launching UAE Jan 2026, targeting KSA by 2027.
+Building Nuqta - rewards platform launching UAE March 2026, targeting KSA by 2027.
 
 **Impact46 Value:**
 - KSA market entry expertise
@@ -1475,8 +1475,8 @@ You backed The Entertainer and saw the UAE loyalty market validated with a $100M
 - Limited merchant network → Open platform anyone can join
 
 **Why Now:**
-- 30+ merchants signed, launching Jan 28
-- 18x LTV:CAC (sustainable unit economics)
+- 32 merchants signed, launching March 1
+- 16.8x LTV:CAC (sustainable unit economics)
 - Same UAE market you know well
 
 Would love to share how we're evolving the loyalty playbook you helped create.
@@ -1514,7 +1514,7 @@ Smiles excels at telecom rewards. Nuqta extends that to everyday merchant transa
 - Cross-promotion: Smiles points ↔ Nuqta coins
 - Data on off-telco spending behavior
 
-**Our Traction:** 30+ merchants, Jan 28 launch.
+**Our Traction:** 32 merchants, March 1 launch.
 
 Open to strategic partnership or investment discussion.
 
@@ -1583,7 +1583,7 @@ You backed Honey to a $4B PayPal exit. I'm applying the same playbook to offline
 
 The offline market is 3x larger and completely unaddressed in GCC.
 
-**Traction:** 30+ merchants, Jan 28 launch, $45B TAM.
+**Traction:** 32 merchants, March 1 launch, $45B TAM.
 
 Would love to discuss the GCC offline rewards opportunity.
 
@@ -1658,7 +1658,7 @@ STV backed Foodics because you understand F&B merchant needs. I'm building the l
 - Nuqta handles loyalty & rewards
 - Same 30,000+ merchant segment
 
-**Nuqta Traction:** 30+ merchants signed, mostly F&B. Jan 28 launch.
+**Nuqta Traction:** 32 merchants signed, mostly F&B. March 1 launch.
 
 Would love to discuss how Nuqta fits the Foodics ecosystem thesis.
 
@@ -1694,7 +1694,7 @@ POSRocket solves the POS problem for UAE SMBs. But those merchants still lack lo
 - Nuqta handles rewards/loyalty
 - Same SMB merchant base
 
-**Our Traction:** 30+ merchants, Jan 28 launch.
+**Our Traction:** 32 merchants, March 1 launch.
 
 Would love to discuss POSRocket integration and investment.
 
@@ -1762,7 +1762,7 @@ You backed Square to $40B+ because you saw SMB commerce opportunity. MENA is the
 
 Same thesis: help small merchants compete with big chains via technology.
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Would love to discuss MENA SMB opportunity.
 
@@ -1798,7 +1798,7 @@ You invested in Paymob because you understand MENA merchant payments. I'm buildi
 - Nuqta provides rewards on those transactions
 - Merchants get complete commerce stack
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Interested in integration and investment discussion.
 
@@ -1874,7 +1874,7 @@ You backed Sary to supply restaurants and groceries. Those merchants have anothe
 - Nuqta: Supplies customers to merchants
 - Complete merchant success stack
 
-**Traction:** 30+ F&B merchants signed.
+**Traction:** 32 F&B merchants signed.
 
 Would love to discuss synergies.
 
@@ -1979,7 +1979,7 @@ Noon dominates online commerce. Nuqta can extend your ecosystem to offline.
 - Offline earnings redeemable on Noon
 - Drive Noon usage through offline touchpoints
 
-**Our Traction:** 30+ merchants, Jan 28 launch.
+**Our Traction:** 32 merchants, March 1 launch.
 
 Interested in strategic partnership or investment discussion.
 
@@ -2048,7 +2048,7 @@ You invested in Careem and saw $3.1B exit. Careem proved UAE consumers love rewa
 
 Same consumer psychology, broader application.
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Would love to discuss the UAE rewards opportunity.
 
@@ -2119,7 +2119,7 @@ Groupon pioneered local commerce deals but the model wasn't sustainable. Nuqta f
 
 Same local commerce market, sustainable model.
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Would love to discuss the evolved local commerce opportunity.
 
@@ -2152,7 +2152,7 @@ You invested in Cobone during the daily deals era. The MENA local commerce marke
 **Then:** Daily deals, one-time transactions
 **Now:** Cashback rewards, ongoing engagement
 
-**Nuqta Traction:** 30+ merchants, 18x LTV:CAC.
+**Nuqta Traction:** 32 merchants, 16.8x LTV:CAC.
 
 Would love to discuss the evolved opportunity.
 
@@ -2187,7 +2187,7 @@ You've invested in online cashback. The offline opportunity is larger, especiall
 - Online cashback doesn't work for offline
 - Nuqta bridges that gap
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Would love to discuss offline cashback opportunity.
 
@@ -2260,7 +2260,7 @@ You backed Fivestars and saw the SMB loyalty opportunity. I'm building the MENA 
 
 Users earn everywhere, creating stickiness no single merchant can.
 
-**Traction:** 30+ merchants, Jan 28 launch.
+**Traction:** 32 merchants, March 1 launch.
 
 Would love to discuss MENA loyalty opportunity.
 
@@ -2293,7 +2293,7 @@ You backed Punchh for restaurant loyalty. I'm building loyalty for the restauran
 **Punchh:** Enterprise chains with big budgets
 **Nuqta:** SMB restaurants with zero budget
 
-**Traction:** 30+ independent F&B merchants, Jan 28 launch.
+**Traction:** 32 independent F&B merchants, March 1 launch.
 
 Would love to discuss the SMB restaurant loyalty opportunity.
 
@@ -2354,9 +2354,9 @@ I'm Rejaul, founder of Nuqta. Given [Fund Name]'s investments in [relevant portf
 - QR-based system works with any payment method
 
 **Traction:**
-- 30+ signed merchant LOIs (Dubai Marina, Downtown, JBR)
-- Launching January 28, 2026
-- 18x LTV:CAC ratio (merchant-funded, no VC subsidy burn)
+- 32 signed merchant LOIs (Dubai Marina, Downtown, JBR)
+- Launching March 1, 2026
+- 16.8x LTV:CAC ratio (merchant-funded, no VC subsidy burn)
 
 **The [Fund Name] Fit:**
 - [Specific portfolio synergy]
@@ -2390,9 +2390,9 @@ Saw your investment in [company/background]. I'm building something in similar t
 Think "Honey for offline" - users search for cafes/salons/gyms and earn instant rewards.
 
 **Quick Stats:**
-- 30+ merchants signed
-- Jan 28 launch
-- 18x LTV:CAC
+- 32 merchants signed
+- March 1 launch
+- 16.8x LTV:CAC
 
 Raising $400K, taking $25K-100K angel checks. Would value 15 minutes to share more.
 
@@ -2461,14 +2461,14 @@ We're building rewards infrastructure for GCC retail - users search for business
 - Our stage/geography matches their thesis
 
 **Our traction:**
-- 30+ signed merchant LOIs
-- Launching Jan 28, 2026
+- 32 signed merchant LOIs
+- Launching March 1, 2026
 - Raising $400K pre-seed
 
 Would you feel comfortable making an introduction? Here's a forwardable blurb:
 
 ---
-"Hi [Investor], introducing Rejaul Karim, founder of Nuqta. They're building a cashback platform for GCC offline commerce - 30+ merchants signed, launching end of Jan. Given your interest in [area], thought this might be relevant. I'll let Rejaul share more directly."
+"Hi [Investor], introducing Rejaul Karim, founder of Nuqta. They're building a cashback platform for GCC offline commerce - 32 merchants signed, launching March 1. Given your interest in [area], thought this might be relevant. I'll let Rejaul share more directly."
 ---
 
 Thanks for considering!
@@ -2493,7 +2493,7 @@ Following up on my email from [X days ago]. I know inboxes get busy.
 - [New traction point 1]
 - [New traction point 2]
 
-Still would love 20 minutes to share our deck. If now isn't right, happy to circle back after our Jan 28 launch with live data.
+Still would love 20 minutes to share our deck. If now isn't right, happy to circle back after our March 1 launch with live data.
 
 Best,
 Rejaul`,
@@ -2513,7 +2513,7 @@ Rejaul`,
 
 Last follow-up - I know timing may not be right.
 
-**We're launching Jan 28.** If you'd like to see live traction data instead of projections, I'll send an update in February.
+**We're launching March 1.** If you'd like to see live traction data instead of projections, I'll send an update in February.
 
 Either way, appreciate you reading this far.
 

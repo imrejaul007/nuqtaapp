@@ -239,7 +239,7 @@ export default function CFOReportPage() {
                     "Significant progress made: Product 100% complete, team of 8 hired, March 1 launch set.
                     Financial position has improved with clear unit economics (LTV:CAC 16.8x), comprehensive
                     financial models, and active investor outreach (50+ pipeline). Now entering critical phase:
-                    close seed round (AED 2-3M) to fuel launch growth. First revenue expected within 30 days
+                    close SAFE round ($400K at $5M cap) to fuel launch growth. First revenue expected within 30 days
                     of launch. Focus: close funding, hit first revenue milestones, prove unit economics with real data."
                   </p>
                 </div>
@@ -302,7 +302,7 @@ export default function CFOReportPage() {
               <div className="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg">
                 <p className="text-green-400 font-bold">Overall Financial Health: 66/100 (LAUNCH READY)</p>
                 <p className="text-slate-400 text-sm mt-1">
-                  Strong unit economics, complete financial models. Focus: close seed round and hit first revenue milestones.
+                  Strong unit economics, complete financial models. Focus: close SAFE round ($400K) and hit first revenue milestones.
                 </p>
               </div>
             </div>
@@ -355,9 +355,9 @@ export default function CFOReportPage() {
                   <div className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between">
                       <span className="text-slate-400">Total Users</span>
-                      <span className="text-xl font-bold text-white">~847</span>
+                      <span className="text-xl font-bold text-white">0 (Pre-launch)</span>
                     </div>
-                    <p className="text-slate-500 text-sm mt-1">Not yet monetized</p>
+                    <p className="text-slate-500 text-sm mt-1">Launch: March 1, 2026</p>
                   </div>
                   <div className="p-4 bg-white/5 rounded-lg">
                     <div className="flex items-center justify-between">
@@ -513,7 +513,7 @@ export default function CFOReportPage() {
                 impact: 'Company could run out of cash in 4-5 months',
                 details: [
                   'Estimated 4-5 months of runway at current burn',
-                  'Zero revenue being generated despite 847 users',
+                  'Zero revenue being generated (pre-launch)',
                   'Planned team expansion will accelerate burn by 2-3x',
                   'No path to revenue without merchant activation',
                   'Fundraising typically takes 3-6 months'
@@ -904,94 +904,94 @@ export default function CFOReportPage() {
               </div>
             </div>
 
-            {/* Solution 4: Seed Round Prep */}
+            {/* Solution 4: SAFE Round Prep */}
             <div className="bg-white/5 rounded-xl border border-yellow-500/30 p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center">
                   <Landmark className="text-white" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">Solution 4: Seed Round Preparation</h3>
-                  <p className="text-yellow-400">Target: AED 3-5M (USD 800K-1.3M) by Q3 2026</p>
+                  <h3 className="text-xl font-bold text-white">Solution 4: SAFE Round Preparation</h3>
+                  <p className="text-yellow-400">Target: $400K at $5M cap - SAFE Round Q1 2026</p>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="p-4 bg-white/5 rounded-lg">
-                    <h5 className="text-yellow-400 font-bold mb-3">Seed Round Terms (Target)</h5>
+                    <h5 className="text-yellow-400 font-bold mb-3">SAFE Round Terms (Target)</h5>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-slate-400">Round Size</span>
-                        <span className="text-white">AED 3-5M ($800K-1.3M)</span>
+                        <span className="text-white">$400K (AED 1.47M)</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Pre-Money Valuation</span>
-                        <span className="text-white">AED 15-20M ($4-5M)</span>
+                        <span className="text-slate-400">Valuation Cap</span>
+                        <span className="text-white">$5M (AED 18.4M)</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-400">Dilution</span>
-                        <span className="text-white">15-20%</span>
+                        <span className="text-slate-400">Discount</span>
+                        <span className="text-white">20%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-400">Instrument</span>
-                        <span className="text-white">Priced equity (preferred)</span>
+                        <span className="text-white">Post-Money SAFE (YC)</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-slate-400">Target Close</span>
-                        <span className="text-yellow-400">Q3 2026</span>
+                        <span className="text-yellow-400">Q1 2026</span>
                       </div>
                     </div>
                   </div>
                   <div className="p-4 bg-white/5 rounded-lg">
-                    <h5 className="text-yellow-400 font-bold mb-3">Milestones Needed for Seed</h5>
+                    <h5 className="text-yellow-400 font-bold mb-3">Milestones to Close Round</h5>
                     <ul className="space-y-2 text-slate-300 text-sm">
                       <li className="flex items-start gap-2">
                         <Target className="text-yellow-400 mt-0.5 flex-shrink-0" size={14} />
-                        <span><strong>10,000+ users</strong> (proves demand)</span>
+                        <span><strong>March 1 launch</strong> (execution proof)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Target className="text-yellow-400 mt-0.5 flex-shrink-0" size={14} />
-                        <span><strong>50+ active merchants</strong> (supply side)</span>
+                        <span><strong>10+ live merchants</strong> (supply side)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Target className="text-yellow-400 mt-0.5 flex-shrink-0" size={14} />
-                        <span><strong>AED 50K+ MRR</strong> (proves monetization)</span>
+                        <span><strong>First transactions</strong> (proves model)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Target className="text-yellow-400 mt-0.5 flex-shrink-0" size={14} />
-                        <span><strong>Proven unit economics</strong> (LTV:CAC data)</span>
+                        <span><strong>32 LOIs signed</strong> (pipeline ready)</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <Target className="text-yellow-400 mt-0.5 flex-shrink-0" size={14} />
-                        <span><strong>Strong team</strong> (key hires in place)</span>
+                        <span><strong>Strong team (8)</strong> (execution capacity)</span>
                       </li>
                     </ul>
                   </div>
                 </div>
 
                 <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                  <h5 className="text-yellow-400 font-bold mb-2">Use of Funds (Seed Round)</h5>
+                  <h5 className="text-yellow-400 font-bold mb-2">Use of Funds ($400K SAFE Round)</h5>
                   <div className="grid md:grid-cols-5 gap-4 mt-3">
                     <div className="text-center">
-                      <p className="text-white font-bold">40%</p>
-                      <p className="text-slate-400 text-xs">Team (hiring)</p>
+                      <p className="text-white font-bold">35%</p>
+                      <p className="text-slate-400 text-xs">Marketing ($140K)</p>
                     </div>
                     <div className="text-center">
                       <p className="text-white font-bold">25%</p>
-                      <p className="text-slate-400 text-xs">Marketing/Growth</p>
+                      <p className="text-slate-400 text-xs">Technology ($100K)</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-white font-bold">20%</p>
+                      <p className="text-slate-400 text-xs">Team ($80K)</p>
                     </div>
                     <div className="text-center">
                       <p className="text-white font-bold">15%</p>
-                      <p className="text-slate-400 text-xs">Product/Tech</p>
+                      <p className="text-slate-400 text-xs">Operations ($60K)</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-white font-bold">10%</p>
-                      <p className="text-slate-400 text-xs">Operations</p>
-                    </div>
-                    <div className="text-center">
-                      <p className="text-white font-bold">10%</p>
-                      <p className="text-slate-400 text-xs">Buffer/G&A</p>
+                      <p className="text-white font-bold">5%</p>
+                      <p className="text-slate-400 text-xs">Reserve ($20K)</p>
                     </div>
                   </div>
                 </div>
@@ -1324,7 +1324,7 @@ export default function CFOReportPage() {
                   <tbody>
                     {[
                       { metric: 'Users', now: '0 (Beta)', q1: '5,000', q2: '15,000', q3: '35,000', q4: '75,000' },
-                      { metric: 'Merchants', now: '30 LOIs', q1: '25 Live', q2: '75', q3: '150', q4: '300' },
+                      { metric: 'Merchants', now: '32 LOIs', q1: '25 Live', q2: '75', q3: '150', q4: '300' },
                       { metric: 'Monthly Revenue', now: '0', q1: 'AED 25K', q2: 'AED 75K', q3: 'AED 175K', q4: 'AED 375K' },
                       { metric: 'Monthly Burn', now: 'AED 60K', q1: 'AED 80K', q2: 'AED 150K', q3: 'AED 200K', q4: 'AED 250K' },
                       { metric: 'Net Burn', now: 'AED 60K', q1: 'AED 55K', q2: 'AED 75K', q3: 'AED 25K', q4: 'Break-even' },
@@ -1359,11 +1359,11 @@ export default function CFOReportPage() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="w-24 text-right">
-                    <span className="text-yellow-400 font-medium">Q3 2026</span>
+                    <span className="text-yellow-400 font-medium">Q1 2026</span>
                   </div>
                   <div className="flex-1 p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
-                    <p className="text-white font-bold">Seed Round</p>
-                    <p className="text-slate-400 text-sm">AED 3-5M • VC + Angels • 18 months runway</p>
+                    <p className="text-white font-bold">SAFE Round</p>
+                    <p className="text-slate-400 text-sm">$400K at $5M cap • Angels + VCs • 12-18 months runway</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

@@ -907,7 +907,7 @@ export default function PitchDeck({ isOpen, onClose }: PitchDeckProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 md:gap-6 max-w-3xl w-full mb-4 sm:mb-6">
               {[
-                { icon: Handshake, title: 'D2C Brand MOUs', status: '30+ signed', highlight: true, desc: 'Ready to onboard post-MVP launch' },
+                { icon: Handshake, title: 'D2C Brand MOUs', status: '32 signed', highlight: true, desc: 'Ready to onboard post-MVP launch' },
                 { icon: ClipboardList, title: 'Waitlist Users', status: '200+', highlight: false, desc: 'Organic signups' },
                 { icon: Building2, title: 'Bank Partnerships', status: 'In discussion', highlight: false, desc: 'Targeting all GCC banks' },
                 { icon: Laptop, title: 'MVP Status', status: 'In development', highlight: false, desc: 'Q2 2026 launch target' },

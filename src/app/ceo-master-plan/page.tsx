@@ -170,7 +170,7 @@ function ExecutiveSummary() {
           { label: 'Product Status', value: '100%', subtitle: 'Complete', color: 'green', icon: CheckCircle },
           { label: 'Team Size', value: '8', subtitle: 'Members', color: 'green', icon: Users },
           { label: 'Days to Launch', value: '23', subtitle: 'March 1, 2026', color: 'yellow', icon: Calendar },
-          { label: 'LOIs Signed', value: '30+', subtitle: 'Ready to convert', color: 'blue', icon: Store },
+          { label: 'LOIs Signed', value: '32', subtitle: 'Ready to convert', color: 'blue', icon: Store },
         ].map((stat, idx) => (
           <div key={idx} className={`p-6 rounded-xl border ${
             stat.color === 'green' ? 'bg-green-500/10 border-green-500/30' :
@@ -412,7 +412,7 @@ function CurrentSituation() {
               'Full team of 8 members hired',
               'Marketing Bible with 21 sections complete',
               'Financial models and projections done',
-              '30+ merchant LOIs signed',
+              '32 merchant LOIs signed',
               'Investor materials (5+ deck versions) ready',
               '50+ investor pipeline identified',
               'March 1 launch date publicly committed',
@@ -708,7 +708,7 @@ function WeekByWeekPlan() {
             theme: 'Merchant Activation Sprint',
             kpi: '5 merchants signed, 50 Founders Circle',
             tasks: [
-              { task: 'BDA calls all 30 LOI merchants', owner: 'BDA', status: 'priority' },
+              { task: 'BDA calls all 32 LOI merchants', owner: 'BDA', status: 'priority' },
               { task: 'Send contracts to top 10', owner: 'BDA', status: 'priority' },
               { task: 'CEO investor meetings (3)', owner: 'CEO', status: 'priority' },
               { task: 'Launch Founders Circle signup', owner: 'CMO', status: 'priority' },
@@ -879,7 +879,7 @@ function SuccessMetrics() {
                 { item: '1,000 active users', critical: true },
                 { item: '25 merchants live', critical: true },
                 { item: 'AED 50K GMV', critical: false },
-                { item: 'Seed round closed', critical: true },
+                { item: 'SAFE round closed', critical: true },
               ]
             },
             {

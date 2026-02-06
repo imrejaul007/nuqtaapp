@@ -18,7 +18,7 @@ export default function MasterRoadmapPage() {
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-[#c9a227] animate-pulse"></div>
-              <span className="text-slate-400">Launch Date: Feb 28, 2026</span>
+              <span className="text-slate-400">Launch Date: March 1, 2026</span>
             </div>
             <div className="text-slate-400">•</div>
             <div className="text-slate-400">Pre-Seed: $400K at $5M cap (Tranched)</div>
@@ -110,7 +110,7 @@ export default function MasterRoadmapPage() {
               <div className="space-y-4">
                 <div className="bg-blue-50 rounded-xl p-4 border-2 border-blue-200">
                   <a href="/execution-plan" className="text-lg font-black text-blue-900 hover:text-blue-700 transition-colors">
-                    H1 (~5 Months): Prove the Loop → Launch: Feb 28, 2026
+                    H1 (~5 Months): Prove the Loop → Launch: March 1, 2026
                   </a>
                   <p className="text-sm text-slate-700 mt-2"><strong>5K MAU</strong> (conservative), 250 merchants (minimum), 25% D30 retention</p>
                   <p className="text-xs text-blue-600 mt-1">Funding: $200K Tranche 1 + $200K at milestones</p>
@@ -257,7 +257,7 @@ export default function MasterRoadmapPage() {
                   <td className="p-3 font-bold">M1-5</td>
                   <td className="p-3">Phase 1, H1</td>
                   <td className="p-3 text-center">AED 10M</td>
-                  <td className="p-3 text-center">AED 500K</td>
+                  <td className="p-3 text-center">$400K SAFE</td>
                   <td className="p-3 text-center">Break-even</td>
                   <td className="p-3 text-center">7</td>
                 </tr>
@@ -265,7 +265,7 @@ export default function MasterRoadmapPage() {
                   <td className="p-3 font-bold">M6-8</td>
                   <td className="p-3">Phase 1, H2</td>
                   <td className="p-3 text-center">AED 50M</td>
-                  <td className="p-3 text-center">AED 2.5M</td>
+                  <td className="p-3 text-center">$1.5M Series A</td>
                   <td className="p-3 text-center">10%</td>
                   <td className="p-3 text-center">15</td>
                 </tr>

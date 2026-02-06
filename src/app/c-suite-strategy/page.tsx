@@ -204,7 +204,7 @@ function UnifiedStrategy() {
             <ul className="space-y-2 text-slate-300 text-sm">
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-purple-400 mt-0.5 flex-shrink-0" />
-                <span>Complete seed fundraising (AED 2-3M)</span>
+                <span>Complete SAFE fundraising ($400K at $5M cap)</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-purple-400 mt-0.5 flex-shrink-0" />
@@ -314,7 +314,7 @@ function UnifiedStrategy() {
                 </td>
                 <td className="p-4">Fundraising & Vision</td>
                 <td className="p-4">Capital Raised</td>
-                <td className="p-4 text-white font-medium">AED 2-3M Seed</td>
+                <td className="p-4 text-white font-medium">$400K SAFE</td>
                 <td className="p-4 text-sm">CFO (financials), CMO (traction)</td>
               </tr>
               <tr className="border-b border-white/5 hover:bg-white/5">
@@ -469,7 +469,7 @@ function CEOSection() {
           </h3>
           <div className="space-y-4">
             {[
-              { priority: 'Close Seed Round', target: 'AED 2-3M', status: 'active', progress: 40 },
+              { priority: 'Close SAFE Round', target: '$400K at $5M cap', status: 'active', progress: 40 },
               { priority: 'Sign Anchor Partners', target: '3 Major Brands', status: 'active', progress: 20 },
               { priority: 'Hire CTO', target: 'World-class', status: 'active', progress: 30 },
               { priority: 'Board Formation', target: '3 Members', status: 'pending', progress: 0 },
@@ -498,9 +498,9 @@ function CEOSection() {
           </h3>
           <div className="space-y-4">
             <div className="p-4 bg-purple-500/10 rounded-xl border border-purple-500/30">
-              <p className="text-purple-400 font-bold mb-2">Seed Round Target</p>
-              <p className="text-3xl font-bold text-white">AED 2-3M</p>
-              <p className="text-slate-400 text-sm mt-1">Pre-money: AED 8-10M</p>
+              <p className="text-purple-400 font-bold mb-2">SAFE Round Target</p>
+              <p className="text-3xl font-bold text-white">$400K</p>
+              <p className="text-slate-400 text-sm mt-1">Valuation Cap: $5M</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               <div className="p-3 bg-white/5 rounded-lg">
@@ -917,7 +917,7 @@ function CMOSection() {
       {/* Marketing KPIs */}
       <div className="grid md:grid-cols-4 gap-4">
         {[
-          { label: 'Monthly Active Users', value: '2,847', target: '10,000', trend: '+23%' },
+          { label: 'Monthly Active Users', value: '0', target: '10,000', trend: 'Pre-launch' },
           { label: 'CAC', value: 'AED 30', target: '< AED 35', trend: '-12%' },
           { label: 'Viral Coefficient', value: '1.2', target: '> 1.5', trend: '+0.1' },
           { label: 'App Store Rating', value: '4.6', target: '> 4.5', trend: 'Stable' },
@@ -1581,17 +1581,17 @@ function CFOSection() {
       <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
         <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
           <PieChart size={20} className="text-orange-400" />
-          Q1 Budget Allocation (Post-Seed: AED 2.5M)
+          Q1 Budget Allocation (Post-SAFE: $400K)
         </h3>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <div className="space-y-3">
               {[
-                { category: 'Salaries & HR', pct: 45, amount: 'AED 507K', detail: 'Team of 12' },
-                { category: 'Marketing & UA', pct: 20, amount: 'AED 225K', detail: 'Growth campaigns' },
-                { category: 'Technology & Infra', pct: 15, amount: 'AED 169K', detail: 'AWS, tools, dev' },
-                { category: 'Operations', pct: 10, amount: 'AED 113K', detail: 'Office, legal, admin' },
-                { category: 'Contingency', pct: 10, amount: 'AED 113K', detail: 'Buffer for unknowns' },
+                { category: 'Marketing & UA', pct: 35, amount: '$140K', detail: 'Growth campaigns' },
+                { category: 'Technology & Infra', pct: 25, amount: '$100K', detail: 'AWS, tools, dev' },
+                { category: 'Team & HR', pct: 20, amount: '$80K', detail: 'Key hires' },
+                { category: 'Operations', pct: 15, amount: '$60K', detail: 'Office, legal, admin' },
+                { category: 'Contingency', pct: 5, amount: '$20K', detail: 'Buffer for unknowns' },
               ].map((item, idx) => (
                 <div key={idx} className="p-3 bg-white/5 rounded-lg">
                   <div className="flex items-center justify-between mb-1">
@@ -1613,19 +1613,19 @@ function CFOSection() {
           </div>
           <div>
             <div className="p-4 bg-orange-500/10 rounded-xl border border-orange-500/30 mb-4">
-              <p className="text-orange-400 font-bold mb-2">Seed Round Usage</p>
+              <p className="text-orange-400 font-bold mb-2">SAFE Round Usage</p>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-300">18-month runway</span>
-                  <span className="text-white font-medium">AED 2.0M</span>
+                  <span className="text-slate-300">Tranche 1 (Closing)</span>
+                  <span className="text-white font-medium">$200K</span>
                 </div>
                 <div className="flex justify-between text-sm">
-                  <span className="text-slate-300">Growth reserve</span>
-                  <span className="text-white font-medium">AED 500K</span>
+                  <span className="text-slate-300">Tranche 2 (Milestones)</span>
+                  <span className="text-white font-medium">$200K</span>
                 </div>
                 <div className="flex justify-between text-sm border-t border-white/10 pt-2">
-                  <span className="text-orange-400 font-bold">Total Seed</span>
-                  <span className="text-orange-400 font-bold">AED 2.5M</span>
+                  <span className="text-orange-400 font-bold">Total SAFE</span>
+                  <span className="text-orange-400 font-bold">$400K</span>
                 </div>
               </div>
             </div>

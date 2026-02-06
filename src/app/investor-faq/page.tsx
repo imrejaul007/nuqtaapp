@@ -112,7 +112,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What traction do you have?',
-          answer: 'Pre-launch traction: 1) LOIs from 25+ merchants across F&B, beauty, retail, 2) Partnership discussions with Global Village (3M visitors/season), 3) Fully functional MVP in development, 4) 500+ pre-launch waitlist signups. Launch target: Feb 28, 2026.',
+          answer: 'Pre-launch traction: 1) LOIs from 32 merchants across F&B, beauty, retail, 2) Partnership discussions with Global Village (3M visitors/season), 3) Fully functional MVP (100% complete), 4) 500+ pre-launch waitlist signups. Launch target: March 1, 2026.',
         },
         {
           question: 'What\'s your TAM/SAM/SOM?',
@@ -149,7 +149,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What\'s your runway with this raise?',
-          answer: '12-15 months runway to hit H1 targets (5K MAU, 250 merchants). This gets us to metrics required for Seed round ($2-3M at $15-20M valuation). Conservative burn: $30-35K/month. We reach cash flow positive within Phase 1 at sufficient scale.',
+          answer: '12-15 months runway to hit H1 targets (5K MAU, 250 merchants). SAFE round: $400K at $5M valuation cap with 20% discount. Conservative burn: $30-35K/month. We reach cash flow positive within Phase 1 at sufficient scale.',
         },
         {
           question: 'What keeps you up at night?',
@@ -198,7 +198,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What valuation do you expect at Series A?',
-          answer: 'Target Series A: $2-3M at $15-20M valuation (3-4x from SAFE cap). Trigger metrics: 75K MAU, 500 merchants, AED 50M GMV, 30% D30 retention. Expected timing: 12-18 months post-launch. This implies ~10% dilution for SAFE investors at conversion.',
+          answer: 'Target Series A: AED 15-25M at AED 60-80M valuation (6-8x from seed). Trigger metrics: 75K MAU, 500 merchants, AED 50M GMV, 30% D30 retention. Expected timing: 12-18 months post-launch. This implies ~15-20% dilution at Series A.',
         },
         {
           question: 'What\'s your GCC expansion plan?',
@@ -210,7 +210,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What are the key milestones to watch?',
-          answer: 'Next 12 months: 1) Launch (Feb 28, 2026), 2) 1K MAU + 10 merchants = Tranche 2, 3) 5K MAU + 250 merchants = H1 complete, 4) CTO hired, 5) First profitable month, 6) Series A discussions. We\'ll provide monthly investor updates on all metrics.',
+          answer: 'Next 12 months: 1) Launch (March 1, 2026), 2) 1K MAU + 10 merchants = Tranche 2, 3) 5K MAU + 250 merchants = H1 complete, 4) CTO hired, 5) First profitable month, 6) Series A discussions. We\'ll provide monthly investor updates on all metrics.',
         },
       ]
     },

@@ -147,7 +147,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Key Stats Row - Updated with 18x LTV:CAC */}
+          {/* Key Stats Row - Updated with 16.8x LTV:CAC */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
             <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#c9a227]/20 transition-all backdrop-blur-sm">
               <p className="text-5xl font-black text-[#c9a227] mb-2">
@@ -156,11 +156,11 @@ export default function LandingPage() {
               <p className="text-xs font-bold text-white uppercase tracking-wider">GCC TAM</p>
             </div>
             <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
-              <p className="text-5xl font-black text-emerald-400 mb-2">18x</p>
+              <p className="text-5xl font-black text-emerald-400 mb-2">16.8x</p>
               <p className="text-xs font-bold text-white uppercase tracking-wider">LTV:CAC</p>
             </div>
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
-              <p className="text-5xl font-black text-blue-400 mb-2">30+</p>
+              <p className="text-5xl font-black text-blue-400 mb-2">32</p>
               <p className="text-xs font-bold text-white uppercase tracking-wider">Signed LOIs</p>
             </div>
             <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
@@ -206,9 +206,9 @@ export default function LandingPage() {
           <div className="bg-gradient-to-r from-emerald-500/20 via-emerald-500/10 to-emerald-500/20 border-2 border-emerald-500/40 rounded-2xl p-6 max-w-2xl mx-auto backdrop-blur-sm">
             <div className="flex items-center justify-center gap-3 mb-2">
               <Clock className="w-6 h-6 text-emerald-400" />
-              <p className="text-2xl font-bold text-emerald-300">Launching January 28, 2026</p>
+              <p className="text-2xl font-bold text-emerald-300">Launching March 1, 2026</p>
             </div>
-            <p className="text-slate-300">MVP goes live in 7 days. 5 merchants Week 1, scale to 30 by Month 2.</p>
+            <p className="text-slate-300">MVP goes live March 1. 5 merchants Week 1, scale to 30 by Month 2.</p>
           </div>
         </div>
 
@@ -632,7 +632,7 @@ export default function LandingPage() {
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Traction</p>
             <h2 className="text-4xl sm:text-5xl font-black mb-4">
-              30+ Signed LOIs. <span className="text-emerald-400">30 More in Pipeline.</span>
+              32 Signed LOIs. <span className="text-emerald-400">30 More in Pipeline.</span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
               60+ merchant network across Dubai Marina, Downtown, and JBR. Attacking a $45B GCC market.
@@ -643,7 +643,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 text-center">
               <TrendingUp className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-              <p className="text-5xl font-black text-emerald-400 mb-2">30+</p>
+              <p className="text-5xl font-black text-emerald-400 mb-2">32</p>
               <p className="text-sm text-slate-300">Signed Merchant LOIs</p>
             </div>
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 text-center">
@@ -671,7 +671,7 @@ export default function LandingPage() {
                 <p className="text-3xl mb-3">✅</p>
                 <p className="font-bold text-slate-200 mb-2">Market Validation</p>
                 <p className="text-sm text-slate-400">
-                  30+ signed LOIs = merchants believe in ROI. Signed commitment to list deals and pay 15% commission on sales.
+                  32 signed LOIs = merchants believe in ROI. Signed commitment to list deals and pay 15% commission on sales.
                 </p>
               </div>
               <div className="bg-slate-800/50 rounded-lg p-6">
@@ -698,7 +698,7 @@ export default function LandingPage() {
               <div className="flex items-center gap-4 bg-red-500/10 border-l-4 border-red-500 rounded-lg p-4">
                 <Clock className="w-8 h-8 text-red-400 flex-shrink-0" />
                 <div className="flex-1">
-                  <p className="font-bold text-red-300">7-Day Launch (January 28, 2026)</p>
+                  <p className="font-bold text-red-300">Launch Day (March 1, 2026)</p>
                   <p className="text-sm text-slate-400">MVP goes live with 5 merchants, 100 users, AED 5-10K GMV target</p>
                 </div>
               </div>
@@ -962,7 +962,7 @@ export default function LandingPage() {
                 <p className="text-[#c9a227] font-semibold mb-4">Founder & CEO</p>
                 <p className="text-slate-300 leading-relaxed mb-4">
                   Building Nuqta to solve a problem I've experienced firsthand: leaving money on the table with every offline purchase.
-                  With 30 signed merchant LOIs and launching in 7 days, we're proving that rewards-led commerce intelligence isn't just
+                  With 32 signed merchant LOIs and launching March 1, we're proving that rewards-led commerce intelligence isn't just
                   a vision—it's execution.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -1032,7 +1032,7 @@ export default function LandingPage() {
               index={1}
             />
             <FAQItem
-              question="What's the 30+ signed LOIs mean for investors?"
+              question="What's the 32 signed LOIs mean for investors?"
               answer="These aren't verbal commitments—they're signed agreements from merchants across Dubai Marina, Downtown, and JBR. With 30 more in pipeline, we're building a 60+ merchant network. This de-risks the supply side before we even launch, giving us immediate access to a $45B GCC market."
               index={2}
             />
@@ -1058,7 +1058,7 @@ export default function LandingPage() {
             />
             <FAQItem
               question="When does Nuqta launch?"
-              answer="January 28, 2026—in 7 days. Week 1 target: 5 merchants live, 100 users, AED 5-10K GMV. We're building in public and moving fast."
+              answer="March 1, 2026. Week 1 target: 5 merchants live, 100 users, AED 5-10K GMV. We're building in public and moving fast."
               index={7}
             />
           </div>
@@ -1273,7 +1273,7 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <p className="text-slate-500 text-xs uppercase tracking-wider mb-1">Launch Date</p>
-                  <p className="text-emerald-400 font-bold text-sm">January 28, 2026</p>
+                  <p className="text-emerald-400 font-bold text-sm">March 1, 2026</p>
                   <p className="text-slate-500 text-xs">7 days to go</p>
                 </li>
               </ul>
@@ -1285,7 +1285,7 @@ export default function LandingPage() {
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="text-slate-500 text-sm text-center md:text-left">
                 <p className="mb-1">© 2026 Nuqta. All rights reserved.</p>
-                <p className="text-xs text-slate-600">Rewards-Led Commerce Intelligence Platform • $150B GCC TAM • 18x LTV:CAC</p>
+                <p className="text-xs text-slate-600">Rewards-Led Commerce Intelligence Platform • $150B GCC TAM • 16.8x LTV:CAC</p>
               </div>
               <div className="flex flex-wrap gap-6 justify-center text-xs">
                 <Link href="/terms" className="text-slate-500 hover:text-[#c9a227] transition-colors">

@@ -338,7 +338,7 @@ function CEOManual() {
           </div>
           <div className="p-4 bg-white/5 rounded-xl">
             <p className="text-slate-400 text-sm">Key Metric</p>
-            <p className="text-white font-bold">AED 2-3M Raised</p>
+            <p className="text-white font-bold">$400K SAFE Raised</p>
           </div>
         </div>
       </div>
@@ -539,7 +539,7 @@ function CEOManual() {
 
         <div className="grid md:grid-cols-4 gap-4">
           {[
-            { metric: 'Capital Raised', current: 'AED 0', target: 'AED 2.5M', deadline: 'Mar 15', status: 'yellow' },
+            { metric: 'Capital Raised', current: '$0', target: '$400K', deadline: 'Mar 15', status: 'yellow' },
             { metric: 'Investor Meetings/Week', current: '0', target: '5+', deadline: 'Weekly', status: 'yellow' },
             { metric: 'Live Merchants', current: '0', target: '10+', deadline: 'Mar 1', status: 'red' },
             { metric: 'Team Alignment Score', current: '85%', target: '90%+', deadline: 'Ongoing', status: 'green' },

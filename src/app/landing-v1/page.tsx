@@ -1824,7 +1824,7 @@ export default function Home() {
                     <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30 flex items-center gap-3">
                       <span className="text-2xl">🤝</span>
                       <div>
-                        <p className="font-semibold text-white">30+ D2C Brand MOUs</p>
+                        <p className="font-semibold text-white">32 D2C Brand MOUs</p>
                         <p className="text-xs text-gray-400">Ready to onboard post-MVP launch</p>
                       </div>
                     </div>

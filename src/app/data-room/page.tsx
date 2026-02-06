@@ -297,7 +297,7 @@ export default function DataRoomPage() {
                   Initial launch limited to Dubai in select high-frequency categories.
                 </p>
                 <p className="text-gray-300 mb-3">
-                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching February 28, 2026.</strong> H1 targets: 5K MAU (conservative), 250 merchants minimum, 25% D30 retention.
+                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching March 1, 2026.</strong> H1 targets: 5K MAU (conservative), 250 merchants minimum, 25% D30 retention.
                 </p>
                 <p className="text-[#c9a227] text-sm"><strong>Success metric:</strong> Validated repeat usage patterns and measurable merchant ROI</p>
               </div>
@@ -456,7 +456,7 @@ export default function DataRoomPage() {
 
           <DocItem number="10" title="Merchant Strategy & LOIs">
             <p className="mb-4">
-              30+ signed merchant LOIs with 30 more in pipeline (60+ merchant network) across Dubai Marina, Downtown, and JBR.
+              32 signed merchant LOIs with 30 more in pipeline (60+ merchant network) across Dubai Marina, Downtown, and JBR.
               Merchant categories: cafes, salons, gyms, retail attacking a $45B GCC market (SAM).
               Target: 50-100 merchants by Month 3.
             </p>
@@ -575,7 +575,7 @@ export default function DataRoomPage() {
 
           <DocItem number="14" title="Market Opportunity & Revenue Model">
             <p className="mb-4">
-              60+ merchant network (30+ signed LOIs, 30 in pipeline) attacking a $45B GCC market.
+              60+ merchant network (32 signed LOIs, 30 in pipeline) attacking a $45B GCC market.
               Commission rate: 15% on completed transactions.
             </p>
             <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
@@ -819,7 +819,7 @@ export default function DataRoomPage() {
                 <p className="font-bold text-[#c9a227] mb-2">Conservative H1 Targets (5 months)</p>
                 <ul className="text-gray-300 text-sm space-y-2">
                   <li><strong>MAU:</strong> 5,000 users (conservative - benchmarked against UAE fintech launches)</li>
-                  <li><strong>Merchants:</strong> 250 minimum (validated through 30+ LOIs already secured)</li>
+                  <li><strong>Merchants:</strong> 250 minimum (validated through 32 LOIs already secured)</li>
                   <li><strong>Retention:</strong> 25% D30 retention (industry standard for rewards apps)</li>
                   <li><strong>LTV:CAC:</strong> 10x ratio (healthy for consumer fintech)</li>
                 </ul>

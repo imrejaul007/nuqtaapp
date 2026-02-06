@@ -339,7 +339,7 @@ function CurrentDiagnosis() {
               { item: 'March 1 launch date set', detail: 'Public commitment creates accountability' },
               { item: 'Merchant-funded model', detail: 'Sustainable from Day 1, no VC subsidy needed' },
               { item: 'LTV:CAC of 16.8x', detail: 'Top-tier unit economics for consumer' },
-              { item: '30+ LOIs signed', detail: 'Ready to convert to live merchants' },
+              { item: '32 LOIs signed', detail: 'Ready to convert to live merchants' },
             ].map((point, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <CheckCircle size={16} className="text-green-400 mt-1 flex-shrink-0" />
@@ -359,7 +359,7 @@ function CurrentDiagnosis() {
           </h3>
           <ul className="space-y-3">
             {[
-              { item: 'Close seed round', detail: 'AED 2-3M needed, active investor outreach' },
+              { item: 'Close SAFE round', detail: '$400K at $5M cap, active investor outreach' },
               { item: 'Convert 10+ LOIs to live', detail: 'BDA actively converting, target by Feb 15' },
               { item: 'Execute launch marketing', detail: 'CMO running 14-day pre-launch campaign' },
               { item: 'First 100 beta users', detail: 'Founders Circle sign-ups in progress' },
@@ -406,12 +406,12 @@ function CurrentDiagnosis() {
             <h4 className="text-yellow-400 font-bold mb-3">Fundraising Status</h4>
             <p className="text-slate-300 text-sm mb-4">
               Active investor outreach with 50+ targets. Need to close
-              seed round before or shortly after March 1 launch.
+              SAFE round before or shortly after March 1 launch.
             </p>
             <div className="space-y-2">
               <div className="flex items-center justify-between text-sm">
                 <span className="text-slate-400">Target</span>
-                <span className="text-white">AED 2-3M</span>
+                <span className="text-white">$400K at $5M cap</span>
               </div>
               <div className="flex items-center justify-between text-sm">
                 <span className="text-slate-400">Pipeline</span>
@@ -482,7 +482,7 @@ function ProblemsIdentified() {
             timeToImpact: '23 days (Launch)',
             rootCause: 'Need to convert LOIs to live merchants before March 1 launch',
             symptoms: [
-              '30+ LOIs but only starting conversion',
+              '32 LOIs but only starting conversion',
               'Need 10+ live merchants for launch',
               'BDA actively working on this',
               'Time pressure to execute'
@@ -631,8 +631,8 @@ function StrategicSolutions() {
               { step: 'Day 11-14', action: 'Close first check. Use FOMO to accelerate others. "We have our lead, filling remaining allocation."', outcome: 'AED 1M+ closed' },
             ],
             keyInsight: 'Investors follow other investors. Close one, and the rest will follow. Your first investor is worth 10x in signaling value.',
-            tradeoffs: 'May need to accept lower valuation (AED 6-8M vs AED 10M) or higher discount (25% vs 20%) for speed. Worth it.',
-            successCriteria: 'AED 1M+ closed within 14 days'
+            tradeoffs: 'May need to accept lower cap ($4M vs $5M) or higher discount (25% vs 20%) for speed. Worth it.',
+            successCriteria: '$200K+ closed within 14 days'
           },
           {
             problem: 'No Technical Leadership',
@@ -904,7 +904,7 @@ function SuccessMetrics() {
           { metric: 'Product Complete', current: '100%', target: '100%', deadline: 'Done', status: 'green' },
           { metric: 'Team Hired', current: '8', target: '8', deadline: 'Done', status: 'green' },
           { metric: 'Launch Date', current: 'Mar 1', target: 'Mar 1', deadline: '23 days', status: 'green' },
-          { metric: 'Capital Raised', current: 'AED 0', target: 'AED 2.5M', deadline: 'Mar 15', status: 'yellow' },
+          { metric: 'Capital Raised', current: '$0', target: '$400K', deadline: 'Mar 15', status: 'yellow' },
           { metric: 'Live Merchants', current: '0', target: '10+', deadline: 'Mar 1', status: 'yellow' },
           { metric: 'Founders Circle', current: '0', target: '100', deadline: 'Mar 1', status: 'yellow' },
           { metric: 'First Revenue', current: 'AED 0', target: 'AED 10K', deadline: 'Mar 15', status: 'yellow' },
@@ -936,7 +936,7 @@ function SuccessMetrics() {
             {
               period: '30 Days',
               milestones: [
-                { item: 'Seed round closed (AED 2M+)', critical: true },
+                { item: 'SAFE round closed ($400K)', critical: true },
                 { item: 'CTO hired and onboarded', critical: true },
                 { item: 'App live in App Store', critical: true },
                 { item: '1,000 active users', critical: false },

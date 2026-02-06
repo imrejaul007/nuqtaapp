@@ -21,7 +21,7 @@ export default function GTMMainPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-2xl">🚀</span>
-              <span className="text-slate-300">Launch: Feb 28, 2026</span>
+              <span className="text-slate-300">Launch: March 1, 2026</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">💵</span>

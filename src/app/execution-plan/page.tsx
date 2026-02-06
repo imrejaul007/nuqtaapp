@@ -18,7 +18,7 @@ export default function ExecutionPlanPage() {
           <div className="mt-8 flex flex-wrap items-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-              <span className="text-slate-400">Launch: Feb 28, 2026</span>
+              <span className="text-slate-400">Launch: March 1, 2026</span>
             </div>
             <div className="text-slate-400">•</div>
             <div className="text-slate-400">$200K Tranche 1 + $200K at milestones</div>

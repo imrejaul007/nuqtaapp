@@ -88,11 +88,11 @@ const PitchDeck90SecondEnhanced = () => {
                   <p className="text-sm text-slate-300">UAE Offline Market</p>
                 </div>
                 <div className="bg-amber-500/20 border border-amber-500/40 rounded-xl p-4">
-                  <p className="text-4xl font-black text-amber-400 mb-1">30+</p>
+                  <p className="text-4xl font-black text-amber-400 mb-1">32</p>
                   <p className="text-sm text-slate-300">Merchant LOIs Signed</p>
                 </div>
                 <div className="bg-emerald-500/20 border border-emerald-500/40 rounded-xl p-4">
-                  <p className="text-4xl font-black text-emerald-400 mb-1">Feb 28</p>
+                  <p className="text-4xl font-black text-emerald-400 mb-1">Mar 1</p>
                   <p className="text-sm text-slate-300">Launch Date 2026</p>
                 </div>
               </div>
@@ -575,7 +575,7 @@ const PitchDeck90SecondEnhanced = () => {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full" />
-                      <p className="text-emerald-200 text-sm">MVP launching Feb 28</p>
+                      <p className="text-emerald-200 text-sm">MVP launching March 1</p>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-emerald-400 rounded-full" />

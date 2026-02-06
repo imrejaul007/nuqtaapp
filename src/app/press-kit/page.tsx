@@ -126,7 +126,7 @@ export default function PressKitPage() {
             {/* Quick Stats */}
             <div className="grid md:grid-cols-4 gap-6">
               {[
-                { label: 'Launch Date', value: 'Feb 28, 2026', icon: Calendar },
+                { label: 'Launch Date', value: 'March 1, 2026', icon: Calendar },
                 { label: 'Target MAU', value: '5,000+', icon: Users },
                 { label: 'Merchant Partners', value: '100+', icon: Building2 },
                 { label: 'Valuation Cap', value: '$5M', icon: TrendingUp },
@@ -370,7 +370,7 @@ export default function PressKitPage() {
             <div className="space-y-6">
               {[
                 {
-                  date: 'February 28, 2026',
+                  date: 'March 1, 2026',
                   title: 'Nuqta Launches UAE\'s First Social Rewards Platform',
                   excerpt: 'Dubai, UAE — Nuqta, the innovative social rewards platform, officially launches today with 100+ merchant partners across the UAE. The platform introduces a new way to earn, gift, and share rewards with friends and family.',
                   type: 'Launch',
@@ -600,7 +600,7 @@ export default function PressKitPage() {
                     ['Company Name', 'Nuqta (نقطة)'],
                     ['Meaning', '"Point" in Arabic - representing reward points and connection points'],
                     ['Founded', '2024'],
-                    ['Launch Date', 'February 28, 2026'],
+                    ['Launch Date', 'March 1, 2026'],
                     ['Headquarters', 'Dubai, UAE'],
                     ['Category', 'Social Rewards / Loyalty Platform'],
                     ['Website', 'nuqta.ae'],

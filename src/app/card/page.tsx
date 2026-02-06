@@ -671,7 +671,7 @@ export default function NuqtaInvestorOnePager() {
                   <h3 className="text-sm font-bold text-emerald-400 uppercase tracking-wide mb-3">🎯 Pre-Launch Traction</h3>
                   <div className="grid grid-cols-3 gap-2 mb-3">
                     <div className="bg-[#0a1628]/50 rounded-lg p-3 text-center border border-emerald-500/30">
-                      <p className="text-3xl font-black text-white mb-1">30+</p>
+                      <p className="text-3xl font-black text-white mb-1">32</p>
                       <p className="text-xs text-slate-300 font-semibold">Signed LOIs</p>
                       <p className="text-xs text-emerald-400">Ready</p>
                     </div>

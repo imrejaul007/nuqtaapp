@@ -134,11 +134,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <p className={`${typography.labelEyebrow} text-white`}>LTV:CAC</p>
                 </div>
                 <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metric} text-blue-400 mb-2`}>30+</p>
+                  <p className={`${typography.metric} text-blue-400 mb-2`}>32</p>
                   <p className={`${typography.labelEyebrow} text-white`}>Signed LOIs</p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>Feb 28, 2026</p>
+                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>March 1, 2026</p>
                   <p className={`${typography.labelEyebrow} text-white`}>Launch</p>
                 </div>
               </div>
@@ -882,7 +882,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </p>
                     <div className="grid md:grid-cols-3 gap-4">
                       <div className="bg-slate-800/50 border border-orange-500/30 rounded-xl p-4 text-center">
-                        <p className={`${typography.h3} font-black text-orange-400 mb-1`}>Feb 28, 2026</p>
+                        <p className={`${typography.h3} font-black text-orange-400 mb-1`}>March 1, 2026</p>
                         <p className={`${typography.label} text-slate-400`}>Launch before competitors</p>
                       </div>
                       <div className="bg-slate-800/50 border border-red-500/30 rounded-xl p-4 text-center">
@@ -2196,7 +2196,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         <CheckCircle2 className="text-blue-600 mt-1 flex-shrink-0" size={24} />
                         <div>
                           <p className="text-lg font-bold text-slate-900 mb-1">First-Mover Speed</p>
-                          <p className="text-sm text-slate-600 leading-relaxed">Feb 28, 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
+                          <p className="text-sm text-slate-600 leading-relaxed">March 1, 2026 launch. Competitors would need 12-18 months to pivot. We'll have the behavioral moat by then.</p>
                         </div>
                       </div>
                     </div>
@@ -2244,7 +2244,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-400 font-medium">Margin from day 1</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-blue-500/30">
-                    <p className="text-3xl font-black text-blue-400 mb-2">Feb 28, 2026</p>
+                    <p className="text-3xl font-black text-blue-400 mb-2">March 1, 2026</p>
                     <p className="text-sm text-slate-400 font-medium">Launch & lock moat</p>
                   </div>
                 </div>
@@ -4125,7 +4125,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   Supply-Side <span className="text-emerald-600">Validation</span>
                 </h2>
                 <p className="text-2xl text-slate-600 max-w-3xl mx-auto">
-                  30+ signed merchant LOIs • $50K self-funded • MVP launching Feb 28, 2026
+                  32 signed merchant LOIs • $50K self-funded • MVP launching March 1, 2026
                 </p>
               </div>
 
@@ -4134,25 +4134,25 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     label: "Signed Merchants",
-                    value: "30+",
+                    value: "32",
                     desc: "LOIs with revenue-share terms",
                     icon: Store,
                     color: "blue",
-                    trend: [5, 8, 12, 18, 22, 28, 30],
+                    trend: [5, 8, 12, 18, 22, 28, 32],
                     trendLabel: "Supply ✓"
                   },
                   {
                     label: "Core Team",
-                    value: "6",
+                    value: "8",
                     desc: "Complementary skill sets",
                     icon: Target,
                     color: "purple",
-                    trend: [1, 1, 2, 3, 4, 5, 6],
+                    trend: [1, 1, 2, 3, 5, 7, 8],
                     trendLabel: "Assembled"
                   },
                   {
                     label: "MVP Launch",
-                    value: "Feb 28",
+                    value: "Mar 1",
                     desc: "Product ready to go live",
                     icon: Zap,
                     color: "emerald",
@@ -4227,19 +4227,19 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Pre-Launch Readiness: Supply Side Validated</h3>
                     <p className="text-lg text-slate-700 mb-4">
-                      <span className="font-bold text-emerald-600">30+ signed merchant LOIs</span> with revenue-share agreements across Dubai Marina, Downtown, and JBR (F&B, Beauty, Fashion, Fitness).
-                      <span className="font-bold text-blue-600"> 6-person founding team</span> assembled with complementary skills (CEO, CHRO, CMO, CTO, Designer, BDA).
+                      <span className="font-bold text-emerald-600">32 signed merchant LOIs</span> with revenue-share agreements across Dubai Marina, Downtown, and JBR (F&B, Beauty, Fashion, Fitness).
+                      <span className="font-bold text-blue-600"> 8-person founding team</span> assembled with complementary skills (CEO, CHRO, CMO, CTO, Designer, BDA).
                       <span className="font-bold text-purple-600"> $50K self-funded</span> demonstrates founder commitment.
                       Attacking a <span className="font-bold text-emerald-600">$35B GCC SAM</span> across F&B, Beauty, Fashion, and Fitness.
                     </p>
                     <div className="grid md:grid-cols-4 gap-4">
                       <div className="bg-white rounded-lg p-4">
                         <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Signed LOIs</p>
-                        <p className="text-2xl font-black text-blue-600">30+</p>
+                        <p className="text-2xl font-black text-blue-600">32</p>
                       </div>
                       <div className="bg-white rounded-lg p-4">
                         <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Core Team</p>
-                        <p className="text-2xl font-black text-purple-600">6</p>
+                        <p className="text-2xl font-black text-purple-600">8</p>
                       </div>
                       <div className="bg-white rounded-lg p-4">
                         <p className="text-sm font-semibold text-slate-600 uppercase mb-1">Self-Funded</p>
@@ -4261,7 +4261,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   {[
                     { milestone: "Month 1-2: Launch", date: "Weeks 1-8", tasks: ["Activate first 10-20 merchants", "Acquire 1,000 MAU", "Process AED 500K GMV", "Track D7 retention ≥30%"] },
                     { milestone: "Month 3-4: Scale", date: "Weeks 9-16", tasks: ["Scale to 5,000 MAU", "100 active merchants", "AED 5M GMV (cumulative to date)", "Measure D30 retention ≥25%"] },
-                    { milestone: "Month 5: H1 Exit Gate", date: "Launch: Feb 28, 2026", tasks: ["Conservative Target: 5K MAU", "250 merchants minimum", "Tranche 2: $200K at milestones", "10x LTV:CAC validated, CAC ≤ AED 50"] }
+                    { milestone: "Month 5: H1 Exit Gate", date: "Launch: March 1, 2026", tasks: ["Conservative Target: 5K MAU", "250 merchants minimum", "Tranche 2: $200K at milestones", "10x LTV:CAC validated, CAC ≤ AED 50"] }
                   ].map((item, idx) => (
                     <div key={idx} className="text-center">
                       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white text-2xl font-black mb-4">
@@ -4292,7 +4292,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                   </div>
                   <p className="text-xs text-emerald-800 mt-3">
-                    📊 Conservative target: 5K MAU • 250 merchants minimum • Launch: Feb 28, 2026
+                    📊 Conservative target: 5K MAU • 250 merchants minimum • Launch: March 1, 2026
                   </p>
                 </div>
 
@@ -4309,7 +4309,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         </div>
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">Launch Date</p>
-                          <p className="font-bold text-blue-600">Feb 28, 2026</p>
+                          <p className="font-bold text-blue-600">March 1, 2026</p>
                         </div>
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">Merchants</p>
@@ -4819,7 +4819,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Year 1 GMV Footnote */}
               <div className="mt-4 text-center">
                 <p className="text-xs text-slate-400 italic">
-                  * Year 1 GMV based on 10-month operating period (Feb 28-Dec 2026) with avg 24K MAU, ramping from 2K → 50K users, avg 3.6 txn/month × $27
+                  * Year 1 GMV based on 10-month operating period (Mar 1-Dec 2026) with avg 24K MAU, ramping from 2K → 50K users, avg 3.6 txn/month × $27
                 </p>
               </div>
 
@@ -5541,7 +5541,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-sm text-slate-400 font-medium">LTV:CAC ratio (1-month payback)</p>
                   </div>
                   <div className="bg-white/5 rounded-xl p-4 border border-[#c9a227]/30">
-                    <p className="text-2xl font-black text-[#c9a227] mb-1">Feb 28, 2026</p>
+                    <p className="text-2xl font-black text-[#c9a227] mb-1">March 1, 2026</p>
                     <p className="text-sm text-slate-400 font-medium">Launch & lock the market before they react</p>
                   </div>
                 </div>
@@ -5813,7 +5813,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     phase: "Horizon 1 (H1)",
-                    timeline: "~5 Months • Launch Feb 28, 2026",
+                    timeline: "~5 Months • Launch March 1, 2026",
                     emoji: "Rocket",
                     title: "Core PMF Validation",
                     subtitle: "Dubai Marina/JBR Focus",
@@ -6332,7 +6332,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 <p className={`${typography.h4} text-slate-300 mb-6`}>
-                  Launching Feb 28, 2026 • Profitable by Year 3 • Built for scale
+                  Launching March 1, 2026 • Profitable by Year 3 • Built for scale
                 </p>
 
                 <div className="border-t-2 border-white/10 pt-6">
@@ -6438,8 +6438,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-200 rounded-2xl p-6">
                 <p className={`${typography.h4} text-slate-700`}>
                   <span className="font-bold text-emerald-600">Pre-Seed Round: $400K</span> •
-                  <span className="font-bold text-blue-600"> Launch: Feb 28, 2026</span> •
-                  <span className="font-bold text-purple-600"> 30+ LOIs</span>
+                  <span className="font-bold text-blue-600"> Launch: March 1, 2026</span> •
+                  <span className="font-bold text-purple-600"> 32 LOIs</span>
                 </p>
               </div>
             </div>

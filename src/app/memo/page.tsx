@@ -116,7 +116,7 @@ export default function InvestorMemo() {
                 <p className="text-sm sm:text-base text-gray-700 leading-relaxed italic">
                   "Nuqta is Google Maps meets cashback for offline shopping. We show users where to find the best deals nearby,
                   then reward them 10% back for visiting. Merchants only pay when customers walk through their doors.
-                  30+ merchants signed, launching in 7 days."
+                  32 merchants signed, launching March 1."
                 </p>
               </div>
 
@@ -164,7 +164,7 @@ export default function InvestorMemo() {
             <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3">
               <strong>Search. Save. Earn.</strong> Nuqta provides instant cashback (5-10%) on every offline
               purchase — cafes, salons, gyms, and more. Users search, discover, and save. Merchants get
-              performance-based customer acquisition with proven ROI. With 30+ signed LOIs and launching in 7 days,
+              performance-based customer acquisition with proven ROI. With 32 signed LOIs and launching March 1,
               we're building the neutral infrastructure that connects a $45B GCC market, starting with Dubai's
               offline economy.
             </p>
@@ -177,15 +177,15 @@ export default function InvestorMemo() {
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-[#c9a227]">▸</span>
-                  <span><strong>18x LTV:CAC ratio</strong> (world-class unit economics)</span>
+                  <span><strong>16.8x LTV:CAC ratio</strong> (world-class unit economics)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-[#c9a227]">▸</span>
-                  <span><strong>30+ merchants signed</strong> (60+ total network)</span>
+                  <span><strong>32 merchants signed</strong> (60+ total network)</span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="text-[#c9a227]">▸</span>
-                  <span><strong>7-day launch timeline</strong> (Jan 28, 2026)</span>
+                  <span><strong>March 1 launch</strong> (March 1, 2026)</span>
                 </div>
               </div>
             </div>
@@ -432,11 +432,11 @@ export default function InvestorMemo() {
               Current Stage
             </h2>
             <div className="bg-blue-50 border-l-4 border-blue-500 p-3 sm:p-4 rounded-r-lg">
-              <p className="font-semibold text-blue-900 mb-2 text-sm sm:text-base">7-Day Launch (January 28, 2026)</p>
+              <p className="font-semibold text-blue-900 mb-2 text-sm sm:text-base">March 1 Launch (March 1, 2026)</p>
               <ul className="text-xs sm:text-sm text-blue-800 space-y-1.5 sm:space-y-2">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
-                  <span><strong>60+ Merchant Network</strong> — 30+ signed LOIs, 30 in pipeline across Dubai Marina, Downtown, and JBR</span>
+                  <span><strong>60+ Merchant Network</strong> — 32 signed LOIs, 30 in pipeline across Dubai Marina, Downtown, and JBR</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
@@ -444,11 +444,11 @@ export default function InvestorMemo() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
-                  <span><strong>18x LTV:CAC Ratio</strong> — Profitable unit economics from Day 1 (AED 540 LTV ÷ AED 30 CAC)</span>
+                  <span><strong>16.8x LTV:CAC Ratio</strong> — Profitable unit economics from Day 1 (AED 540 LTV ÷ AED 30 CAC)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-0.5">✓</span>
-                  <span><strong>Launch Timeline: January 28, 2026</strong> (5 merchants live Week 1, scale to 30 by Month 2)</span>
+                  <span><strong>Launch Timeline: March 1, 2026</strong> (5 merchants live Week 1, scale to 30 by Month 2)</span>
                 </li>
               </ul>
             </div>

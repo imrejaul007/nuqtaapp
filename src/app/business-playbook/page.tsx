@@ -97,7 +97,7 @@ function OverviewTab() {
           { label: 'H1 Merchant Target', value: '250', sub: 'Live merchants' },
           { label: 'H1 User Target', value: '5K', sub: 'MAU (conservative)' },
           { label: 'Commission Model', value: '5-20%', sub: 'Based on margin' },
-          { label: 'Launch Date', value: 'Feb 28', sub: '2026' },
+          { label: 'Launch Date', value: 'March 1', sub: '2026' },
         ].map((stat, i) => (
           <div key={i} className="bg-white/5 rounded-xl p-5 text-center">
             <p className="text-3xl font-black text-[#c9a227]">{stat.value}</p>
@@ -115,7 +115,7 @@ function OverviewTab() {
             <h3 className="font-bold text-white mb-3">Must Do (Critical Path)</h3>
             <ul className="space-y-2">
               {[
-                'App launch (Feb 28, 2026)',
+                'App launch (March 1, 2026)',
                 'Payment gateway integration (Razorpay)',
                 '50 merchant soft launch (pre-Feb)',
                 'College MoU (3-5 universities)',

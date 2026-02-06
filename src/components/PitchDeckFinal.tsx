@@ -835,7 +835,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-xl sm:rounded-2xl p-6 border-2 border-green-500/40">
                 <div className="text-5xl mb-4">🤝</div>
                 <DataPoint
-                  value="30+"
+                  value="32"
                   source="Signed MOUs with UAE D2C brands across categories: F&B, fashion, beauty, wellness"
                   className="text-4xl sm:text-5xl font-black text-green-400 block mb-2"
                 />

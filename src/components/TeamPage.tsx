@@ -178,7 +178,7 @@ const h1Team: Department[] = [
         ],
         kpis: [
           'Onboarding: Join within 90 days of funding close',
-          'MVP delivery: Launch by Feb 28, 2026',
+          'MVP delivery: Launch by March 1, 2026',
           'Engineering team: Scale to 4+ by Month 3',
           'Platform uptime: 99.9%',
           'Release velocity: 2+ releases per week'

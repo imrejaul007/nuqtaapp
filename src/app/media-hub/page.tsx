@@ -681,7 +681,7 @@ function CampaignsTab() {
           <Zap className="w-8 h-8 text-emerald-400" />
           <div>
             <h3 className="text-2xl font-black text-emerald-400">Launch Campaign</h3>
-            <p className="text-slate-400">Feb 28, 2026 - App Launch</p>
+            <p className="text-slate-400">March 1, 2026 - App Launch</p>
           </div>
         </div>
 

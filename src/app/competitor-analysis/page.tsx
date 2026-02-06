@@ -1914,7 +1914,7 @@ export default function CompetitorAnalysisPage() {
                       <td className="text-center py-3 px-4 text-white">800K</td>
                       <td className="text-center py-3 px-4 text-white">1.5M</td>
                       <td className="text-center py-3 px-4 text-white">2M+</td>
-                      <td className="text-center py-3 px-4 text-[#c9a227]">847</td>
+                      <td className="text-center py-3 px-4 text-[#c9a227]">0 (Pre-launch)</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 text-gray-300">Merchant Count</td>

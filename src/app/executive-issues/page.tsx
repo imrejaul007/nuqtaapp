@@ -306,7 +306,7 @@ function CriticalOverview() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={14} className="text-green-400 mt-0.5" />
-                <span><strong>Merchant interest</strong> - 30+ LOIs shows demand</span>
+                <span><strong>Merchant interest</strong> - 32 LOIs shows demand</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={14} className="text-green-400 mt-0.5" />
@@ -396,7 +396,7 @@ function CriticalOverview() {
             <tbody className="text-slate-300 text-sm">
               {[
                 { blocked: 'App Development', by: 'No CTO', impact: 'Cannot launch', resolution: 'Hire CTO or contract agency' },
-                { blocked: 'Hiring Team', by: 'No Funding', impact: 'Cannot scale', resolution: 'Close seed round ASAP' },
+                { blocked: 'Hiring Team', by: 'No Funding', impact: 'Cannot scale', resolution: 'Close SAFE round ASAP' },
                 { blocked: 'Marketing Spend', by: 'No Budget', impact: 'No user acquisition', resolution: 'Bootstrap + seed funding' },
                 { blocked: 'Merchant Go-Live', by: 'No App', impact: 'LOIs expire', resolution: 'Ship MVP in 2 weeks' },
                 { blocked: 'Revenue', by: 'No Users', impact: 'No proof of concept', resolution: 'Launch beta immediately' },
@@ -699,7 +699,7 @@ function COOAnalysis() {
             {
               issue: 'LOIs Are Not Merchants',
               severity: 'CRITICAL',
-              reality: 'You have 30+ LOIs but ZERO live merchants. An LOI is a piece of paper. A live merchant is revenue.',
+              reality: 'You have 32 LOIs but ZERO live merchants. An LOI is a piece of paper. A live merchant is revenue.',
               gap: 'LOI → Signed Contract → Integration → Training → Go-Live. You haven\'t completed this journey ONCE.',
               risk: 'LOIs expire. Merchant enthusiasm fades. Competitors can steal them while you\'re "preparing".'
             },
@@ -1260,7 +1260,7 @@ function CFOAnalysis() {
             {
               issue: 'Fundraising Delay = Dilution',
               severity: 'HIGH',
-              numbers: 'Target: AED 2.5M at AED 10M pre. Each month delay: likely 10-15% more dilution.',
+              numbers: 'Target: $400K at $5M cap SAFE. Each month delay: likely 10-15% more dilution.',
               risk: 'Desperate founders accept worse terms. You lose leverage daily.',
               action: 'Close in 14 days at current terms, or accept lower valuation for speed.'
             },
@@ -1379,8 +1379,8 @@ function CFOAnalysis() {
           <div className="p-4 bg-yellow-500/10 rounded-xl border border-yellow-500/30">
             <h4 className="text-yellow-400 font-bold mb-3">Scenario B: Hold for Terms</h4>
             <ul className="space-y-2 text-slate-300 text-sm">
-              <li><strong>Raise:</strong> AED 2.5M</li>
-              <li><strong>Valuation:</strong> AED 10M pre</li>
+              <li><strong>Raise:</strong> $400K</li>
+              <li><strong>Valuation:</strong> $5M cap SAFE</li>
               <li><strong>Timeline:</strong> 30-60 days</li>
               <li><strong>Dilution:</strong> 20%</li>
               <li><strong>Runway:</strong> 14 months</li>

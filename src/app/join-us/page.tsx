@@ -252,7 +252,7 @@ export default function JoinUsPage() {
                 { week: 'Week 1-2', title: 'Onboarding', tasks: ['Deep dive on product spec', 'Meet key stakeholders', 'Review tech decisions'] },
                 { week: 'Week 3-4', title: 'Architecture', tasks: ['Finalize tech stack', 'Set up infrastructure', 'Hire first engineer'] },
                 { week: 'Week 5-8', title: 'Build', tasks: ['MVP development sprint', 'POS integration POC', 'Core app features'] },
-                { week: 'Week 9-12', title: 'Launch', tasks: ['Beta with 10 merchants', 'Feb 28 public launch', 'Scale team to 4+'] },
+                { week: 'Week 9-12', title: 'Launch', tasks: ['Beta with 10 merchants', 'March 1 public launch', 'Scale team to 4+'] },
               ].map((phase, i) => (
                 <div key={i} className="relative pl-12">
                   <div className="absolute left-2 w-4 h-4 bg-[#c9a227] rounded-full border-4 border-[#0a1628]"></div>
@@ -299,7 +299,7 @@ export default function JoinUsPage() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-slate-500">Launch Date</span>
-                  <span className="text-white font-bold">Feb 28, 2026</span>
+                  <span className="text-white font-bold">March 1, 2026</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-slate-500">H1 Target</span>
