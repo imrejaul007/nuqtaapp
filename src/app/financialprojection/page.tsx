@@ -95,12 +95,14 @@ interface Assumptions {
   h3GateRetention: number;
 }
 
-// Default assumptions
+// Default assumptions - ALIGNED WITH OFFICIAL DOCUMENTS
+// Source: funding-docs, memo, homepage
+// LTV:CAC target: 16.8x (AED 504 LTV / AED 30 CAC)
 const defaultAssumptions: Assumptions = {
   aov: 100,
   frequency: 4,
-  cac: 35,
-  retentionMonths: 24,
+  cac: 30, // Official: AED 30 blended CAC
+  retentionMonths: 14, // 14 months retention → LTV ~AED 493 ≈ official AED 504
   activationRate: 40,
   userChurn: 5,
 
@@ -120,17 +122,20 @@ const defaultAssumptions: Assumptions = {
   b2bCommission: 3,
   b2bGmvPct: 5,
 
-  marketingPct: 55,
-  salaryPct: 25,
-  techOpsPct: 20,
-  customerAcqPct: 60,
-  merchantAcqPct: 40,
+  // Budget allocation: aligned with Use of Funds ($400K SAFE)
+  // Marketing 35%, Tech 25%, Team 20%, Ops 15%, Reserve 5%
+  // For monthly budget: Marketing + Customer Acq combined
+  marketingPct: 35, // 35% of budget goes to marketing
+  salaryPct: 20, // 20% team (matches Use of Funds)
+  techOpsPct: 40, // 25% tech + 15% ops = 40% combined
+  customerAcqPct: 70, // 70% of marketing for customer acquisition
+  merchantAcqPct: 30, // 30% of marketing for merchant acquisition
   rentFixed: 5000,
 
   merchantChurn: 5,
   cam: 100,
 
-  initialBudget: 734000,
+  initialBudget: 734000, // Tranche 1: $200K × 3.67 = AED 734K
   runwayMonths: 5,
 
   h2GateMau: 5000,
