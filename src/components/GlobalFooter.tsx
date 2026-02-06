@@ -142,34 +142,54 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
-    title: 'Marketing',
+    title: 'Marketing Hub',
     items: [
-      { label: 'Marketing Dashboard', href: '/marketing-dashboard', icon: Target, description: 'Command center' },
-      { label: 'Execution Guide', href: '/marketing-execution', icon: CheckSquare, description: 'Step-by-step execution' },
-      { label: '14-Day Launch Sprint', href: '/launch-sprint', icon: Rocket, description: 'Pre-launch execution' },
+      { label: '⭐ Marketing Hub', href: '/marketing-hub', icon: Megaphone, description: 'START HERE - All resources' },
+      { label: 'CMO Playbook', href: '/cmo-playbook', icon: Crown, description: '90-day master plan' },
+      { label: 'Brand Voice Guide', href: '/brand-voice', icon: MessageSquare, description: 'Tone & messaging' },
+      { label: 'Customer Journeys', href: '/customer-journeys', icon: Map, description: '6 persona maps' },
+    ]
+  },
+  {
+    title: 'Launch & Execution',
+    items: [
+      { label: '14-Day Launch Sprint', href: '/launch-sprint', icon: Rocket, description: 'Day-by-day plan' },
+      { label: 'Execution Guide', href: '/marketing-execution', icon: CheckSquare, description: 'Step-by-step' },
+      { label: 'PR Launch Plan', href: '/pr-launch', icon: Megaphone, description: 'Media strategy' },
       { label: 'First 100 Users', href: '/user-acquisition', icon: Users, description: 'User acquisition' },
       { label: 'First 10 Merchants', href: '/merchant-acquisition', icon: Store, description: 'Merchant sales' },
-      { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Target, description: 'Acquisition campaigns' },
-      { label: 'CMO Playbook', href: '/cmo-playbook', icon: Megaphone, description: '90-day plan' },
-      { label: 'Marketing Plan', href: '/marketing-bible', icon: FileText, description: 'Full playbook' },
-      { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
-      { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },
-      { label: 'Press Kit', href: '/press-kit', icon: FileText, description: 'Media assets' },
+    ]
+  },
+  {
+    title: 'Content & Templates',
+    items: [
+      { label: 'Content Strategy', href: '/content-strategy', icon: TrendingUp, description: '18-month plan' },
       { label: 'Content Calendar', href: '/content-calendar', icon: Calendar, description: '30-day schedule' },
-      { label: 'Influencer List', href: '/influencer-list', icon: Users, description: 'UAE influencers' },
-      { label: 'PR Launch Plan', href: '/pr-launch', icon: Megaphone, description: 'Media strategy' },
-      { label: 'App Store Copy', href: '/app-store-copy', icon: Smartphone, description: 'iOS & Android' },
-      { label: 'Explainer Video', href: '/explainer-video', icon: Play, description: 'Video scripts' },
       { label: 'Email Templates', href: '/email-templates', icon: Mail, description: '20+ templates' },
       { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare, description: '25+ templates' },
-      { label: 'Content Strategy', href: '/content-strategy', icon: TrendingUp, description: 'Long-term plan' },
+      { label: 'App Store Copy', href: '/app-store-copy', icon: Smartphone, description: 'iOS & Android' },
+      { label: 'Explainer Video', href: '/explainer-video', icon: Play, description: 'Video scripts' },
+    ]
+  },
+  {
+    title: 'Campaigns',
+    items: [
+      { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar, description: '12 UAE campaigns' },
       { label: 'Big Win Campaigns', href: '/big-win-campaigns', icon: Target, description: 'Car, iPhone prizes' },
       { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Play, description: 'Video challenges' },
+      { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Store, description: 'Acquisition campaigns' },
+      { label: 'Gamification', href: '/gamification', icon: Target, description: 'Tiers & badges' },
+    ]
+  },
+  {
+    title: 'Channels & Media',
+    items: [
+      { label: 'Media Hub', href: '/media-hub', icon: Play, description: 'Influencer strategy' },
+      { label: 'Influencer List', href: '/influencer-list', icon: Users, description: 'UAE influencers' },
+      { label: 'Press Kit', href: '/press-kit', icon: FileText, description: 'Media assets' },
       { label: 'Niche Content', href: '/niche-content', icon: Target, description: 'Category accounts' },
       { label: 'Media Properties', href: '/media-properties', icon: Play, description: 'Podcasts & IP' },
-      { label: 'Agency Pages', href: '/agency-pages', icon: Store, description: 'Category landing' },
-      { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar, description: '12 UAE campaigns' },
-      { label: 'Brand Voice', href: '/brand-voice', icon: MessageSquare, description: 'Tone guidelines' },
+      { label: 'Agency Pages', href: '/agency-pages', icon: Store, description: 'Landing pages' },
     ]
   },
   {
@@ -203,8 +223,6 @@ const navigationData: NavCategory[] = [
       { label: 'User Journey', href: '/user-journey', icon: Map, description: 'Onboarding flow' },
       { label: 'Dashboard Preview', href: '/dashboard-preview', icon: Settings, description: 'UI designs' },
       { label: 'Landing Page V1', href: '/landing-v1', icon: Home, description: 'Website v1' },
-      { label: 'Gamification', href: '/gamification', icon: Target, description: 'Tiers & badges' },
-      { label: 'Customer Journeys', href: '/customer-journeys', icon: Map, description: '6 persona journeys' },
       { label: 'Analytics Dashboard', href: '/analytics-dashboard', icon: TrendingUp, description: 'KPI specs' },
     ]
   },
@@ -336,20 +354,17 @@ const GlobalFooter = () => {
                 {[
                   { label: 'Home', href: '/' },
                   { label: 'Tasks', href: '/tasks' },
+                  { label: '⭐ Marketing Hub', href: '/marketing-hub' },
                   { label: '90s Deck', href: '/deck-90' },
                   { label: 'Full Deck', href: '/deck-kang' },
                   { label: 'GV Deck', href: '/deck-gv' },
-                  { label: 'Exhibition', href: '/deck-exhibition' },
                   { label: 'Roadmap', href: '/master-roadmap' },
                   { label: 'GTM', href: '/gtm' },
                   { label: 'Financials', href: '/financialprojection' },
                   { label: 'Data Room', href: '/data-room' },
                   { label: 'Merchants', href: '/merchant-database' },
-                  { label: 'Team', href: '/team' },
                   { label: 'Operations', href: '/operations' },
                   { label: 'SOPs', href: '/sop' },
-                  { label: 'Policies', href: '/policies' },
-                  { label: 'ESOP', href: '/esop' },
                 ].map((link, idx) => (
                   <Link
                     key={idx}
