@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import GlobalHeader from "@/components/GlobalHeader";
 import GlobalFooter from "@/components/GlobalFooter";
 
 const inter = Inter({
@@ -41,9 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased bg-[#0a1628]`}>
+        <GlobalHeader />
         {children}
-        <GlobalFooter />
       </body>
     </html>
   );
