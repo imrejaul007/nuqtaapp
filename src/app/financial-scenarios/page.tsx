@@ -783,8 +783,8 @@ function MultiRoundScenario() {
             <p className="text-slate-500 text-xs">At full scale</p>
           </div>
           <div className="p-3 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-xs">Target Exit</p>
-            <p className="text-xl sm:text-2xl font-bold text-purple-400">$100M+</p>
+            <p className="text-slate-400 text-xs">Target Exit (15x ARR)</p>
+            <p className="text-xl sm:text-2xl font-bold text-purple-400">$500M+</p>
             <p className="text-slate-500 text-xs">5-7 year horizon</p>
           </div>
           <div className="p-3 bg-white/5 rounded-xl">
@@ -979,11 +979,39 @@ function MultiRoundScenario() {
           <span className="px-2 py-1 bg-green-500/20 text-green-400 rounded">🟢 Series A Phase</span>
         </div>
 
-        <div className="mt-6 p-4 bg-green-500/10 rounded-xl border border-green-500/30">
-          <p className="text-green-400 font-bold">Path to $100M+ Valuation</p>
-          <p className="text-slate-400 text-sm mt-1">
-            At AED 15M revenue/month (AED 180M/year = ~$49M), with 8x revenue multiple = <strong className="text-green-400">$390M valuation</strong>.
-            Founder 55% stake = <strong className="text-green-400">$215M</strong>. Break-even at Month 6, highly profitable by Year 3.
+        <div className="mt-6 space-y-4">
+          <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
+            <p className="text-green-400 font-bold mb-3">Path to $500M+ Valuation (Conservative)</p>
+            <div className="grid sm:grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="text-slate-400">Month 36 Revenue:</p>
+                <p className="text-white font-bold">AED 15M/month = AED 180M/year (~$49M ARR)</p>
+              </div>
+              <div>
+                <p className="text-slate-400">Revenue Multiple (High-growth fintech):</p>
+                <p className="text-white font-bold">10-20x ARR (Careem was 20x+)</p>
+              </div>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR (Conservative)</p>
+              <p className="text-2xl font-bold text-white">$490M</p>
+              <p className="text-green-400 text-sm">Founder 55% = $270M</p>
+            </div>
+            <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
+              <p className="text-green-400 text-xs">At 15x ARR (Realistic)</p>
+              <p className="text-2xl font-bold text-green-400">$735M</p>
+              <p className="text-green-400 text-sm">Founder 55% = $404M</p>
+            </div>
+            <div className="p-4 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR (Strategic Exit)</p>
+              <p className="text-2xl font-bold text-[#c9a227]">$980M</p>
+              <p className="text-[#c9a227] text-sm">Founder 55% = $539M</p>
+            </div>
+          </div>
+          <p className="text-slate-500 text-xs">
+            * Comparable: Careem sold at 20x+ revenue. Tabby valued at 25x ARR. High-growth GCC fintechs command premium multiples.
           </p>
         </div>
       </div>
