@@ -162,6 +162,11 @@ const navigationData: NavCategory[] = [
       { label: 'Email Templates', href: '/email-templates', icon: Mail, description: '20+ templates' },
       { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare, description: '25+ templates' },
       { label: 'Content Strategy', href: '/content-strategy', icon: TrendingUp, description: 'Long-term plan' },
+      { label: 'Big Win Campaigns', href: '/big-win-campaigns', icon: Target, description: 'Car, iPhone prizes' },
+      { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Play, description: 'Video challenges' },
+      { label: 'Niche Content', href: '/niche-content', icon: Target, description: 'Category accounts' },
+      { label: 'Media Properties', href: '/media-properties', icon: Play, description: 'Podcasts & IP' },
+      { label: 'Agency Pages', href: '/agency-pages', icon: Store, description: 'Category landing' },
     ]
   },
   {
