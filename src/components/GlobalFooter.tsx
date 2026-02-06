@@ -258,6 +258,16 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
+    title: 'People & HR',
+    items: [
+      { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Users, description: 'People strategy' },
+      { label: 'Team Planning', href: '/team-planning', icon: Users, description: 'Org chart & roles' },
+      { label: 'HR Operations', href: '/hr-operations', icon: FileText, description: 'Policies & onboarding' },
+      { label: 'Compensation Guide', href: '/compensation-guide', icon: DollarSign, description: 'Salary & ESOP' },
+      { label: 'Performance System', href: '/performance-management', icon: Target, description: 'OKRs & reviews' },
+    ]
+  },
+  {
     title: 'Product',
     items: [
       { label: 'Nuqta Card', href: '/card', icon: CreditCard, description: 'User card' },
