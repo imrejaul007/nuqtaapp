@@ -927,6 +927,68 @@ function FleetStallsTab() {
         </div>
       </div>
 
+      {/* Zero CAC Strategy */}
+      <div className="bg-gradient-to-br from-green-500/10 to-teal-500/10 border border-green-500/30 rounded-2xl p-8">
+        <h3 className="text-2xl font-black text-white mb-4 flex items-center gap-2">
+          🎯 Zero CAC User Acquisition Strategy
+        </h3>
+        <p className="text-slate-300 mb-6">
+          100 influencer/founder Co-Partners = Millions of organic users at AED 0 CAC
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4">
+            <h4 className="text-red-400 font-bold mb-3">❌ Traditional Model</h4>
+            <ul className="space-y-2 text-slate-400 text-sm">
+              <li>• Pay AED 15-50 per user (ads)</li>
+              <li>• One-time transaction</li>
+              <li>• User forgets brand</li>
+              <li>• High churn rate</li>
+            </ul>
+          </div>
+          <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4">
+            <h4 className="text-green-400 font-bold mb-3">✅ Co-Partner Model</h4>
+            <ul className="space-y-2 text-slate-300 text-sm">
+              <li>• AED 0 CAC</li>
+              <li>• Lifetime content stream</li>
+              <li>• Users follow founder journey</li>
+              <li>• Deep loyalty (trust transfer)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white/5 rounded-xl p-6">
+          <h4 className="text-white font-bold mb-4">The Math: 100 Influencer Co-Partners</h4>
+          <div className="grid md:grid-cols-4 gap-4 text-center">
+            <div>
+              <p className="text-3xl font-black text-green-400">100</p>
+              <p className="text-slate-400 text-sm">Co-Partners</p>
+            </div>
+            <div>
+              <p className="text-3xl font-black text-blue-400">1-5M</p>
+              <p className="text-slate-400 text-sm">Potential Reach</p>
+            </div>
+            <div>
+              <p className="text-3xl font-black text-purple-400">100K+</p>
+              <p className="text-slate-400 text-sm">Daily Impressions</p>
+            </div>
+            <div>
+              <p className="text-3xl font-black text-[#c9a227]">AED 0</p>
+              <p className="text-slate-400 text-sm">CAC</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 bg-slate-800/50 rounded-lg p-4">
+          <p className="text-slate-300 text-sm">
+            <span className="text-green-400 font-bold">How it works:</span> Each founder creates daily content
+            about their business journey. Every post shows Nuqta payment/QR. Their followers see Nuqta
+            daily for free. 5% convert = thousands of users at AED 0 CAC. The AED 50K investment
+            generates revenue anyway - marketing is a bonus!
+          </p>
+        </div>
+      </div>
+
       {/* Influencer Partnership */}
       <div className="bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/30 rounded-2xl p-8 text-center">
         <h3 className="text-2xl font-black text-white mb-4">🌟 Influencer & Founder Partnerships</h3>
