@@ -618,14 +618,23 @@ export default function MerchantPlaybookPage() {
             <ArrowLeft size={20} />
             <span>Back to Home</span>
           </Link>
-          <div className="flex items-center gap-4 mb-4">
-            <div className="bg-[#c9a227]/20 p-3 rounded-xl">
-              <Store className="w-8 h-8 text-[#c9a227]" />
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-4">
+              <div className="bg-[#c9a227]/20 p-3 rounded-xl">
+                <Store className="w-8 h-8 text-[#c9a227]" />
+              </div>
+              <div>
+                <h1 className="text-4xl font-black">Merchant Operations Playbook</h1>
+                <p className="text-gray-400 mt-1">Complete guide from acquisition to ongoing success</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-4xl font-black">Merchant Operations Playbook</h1>
-              <p className="text-gray-400 mt-1">Complete guide from acquisition to ongoing success</p>
-            </div>
+            <Link
+              href="/merchant-onboarding"
+              className="hidden md:flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#c9a227] to-[#d4af37] hover:from-[#d4af37] hover:to-[#e8c547] text-black font-bold rounded-xl transition-all shadow-lg shadow-[#c9a227]/20"
+            >
+              <UserCheck size={20} />
+              Start Onboarding
+            </Link>
           </div>
         </div>
       </header>
@@ -705,6 +714,52 @@ export default function MerchantPlaybookPage() {
               </div>
             </div>
 
+            {/* Merchant Onboarding CTA */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-xl p-6 border border-green-500/30">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-2xl bg-green-500/20 flex items-center justify-center">
+                    <UserCheck className="text-green-400" size={32} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Ready to Onboard a Merchant?</h3>
+                    <p className="text-gray-400 mt-1">Complete the 5-step onboarding process to get merchants live on Nuqta</p>
+                  </div>
+                </div>
+                <Link
+                  href="/merchant-onboarding"
+                  className="flex items-center gap-2 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-green-500/20 whitespace-nowrap"
+                >
+                  <Rocket size={20} />
+                  Start Onboarding Flow
+                  <ChevronRight size={20} />
+                </Link>
+              </div>
+            </div>
+
+            {/* SOP Hub CTA */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-xl p-6 border border-blue-500/30">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center">
+                    <ClipboardList className="text-blue-400" size={32} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Standard Operating Procedures</h3>
+                    <p className="text-gray-400 mt-1">Step-by-step procedures for acquisition, onboarding, marketing, support & finance</p>
+                  </div>
+                </div>
+                <Link
+                  href="/sop"
+                  className="flex items-center gap-2 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-all shadow-lg shadow-blue-500/20 whitespace-nowrap"
+                >
+                  <FileText size={20} />
+                  View All SOPs
+                  <ChevronRight size={20} />
+                </Link>
+              </div>
+            </div>
+
             {/* Merchant Lifecycle Overview */}
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-bold text-white mb-6">Merchant Lifecycle Overview</h3>
@@ -759,6 +814,37 @@ export default function MerchantPlaybookPage() {
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-white mb-2">Category-Specific Playbooks</h2>
               <p className="text-gray-400">Complete pitch decks and strategies for each merchant type</p>
+            </div>
+
+            {/* Full Playbook Links */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 rounded-xl p-6 border border-[#c9a227]/30 mb-8">
+              <h3 className="text-xl font-bold text-white mb-4">📚 Full Category Playbooks (Complete Sales Guides)</h3>
+              <p className="text-gray-400 text-sm mb-4">Each playbook includes industry overview, custom Nuqta services, pitch scripts, ROI calculators, objection handling, and closing techniques.</p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                {[
+                  { name: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Utensils, color: 'orange', engine: 'A' },
+                  { name: 'Salon & Spa', href: '/playbook-salon', icon: Scissors, color: 'pink', engine: 'A' },
+                  { name: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell, color: 'green', engine: 'A' },
+                  { name: 'Fashion & Retail', href: '/playbook-fashion', icon: ShoppingBag, color: 'purple', engine: 'A' },
+                  { name: 'Entertainment', href: '/playbook-entertainment', icon: Film, color: 'fuchsia', engine: 'A/C' },
+                  { name: 'Supermarket', href: '/playbook-supermarket', icon: Store, color: 'emerald', engine: 'B' },
+                  { name: 'Gold & Jewelry', href: '/playbook-gold', icon: Star, color: 'amber', engine: 'B' },
+                  { name: 'Electronics', href: '/playbook-electronics', icon: Settings, color: 'cyan', engine: 'B' },
+                  { name: 'Pharmacy', href: '/playbook-pharmacy', icon: Stethoscope, color: 'red', engine: 'B' },
+                ].map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href={item.href}
+                    className={`flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#c9a227]/50 transition-all group`}
+                  >
+                    <item.icon className="text-[#c9a227] group-hover:scale-110 transition-transform" size={24} />
+                    <span className="text-white text-sm font-medium text-center">{item.name}</span>
+                    <span className={`text-xs px-2 py-0.5 rounded-full ${item.engine === 'A' ? 'bg-green-500/20 text-green-400' : item.engine === 'B' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-purple-500/20 text-purple-400'}`}>
+                      Engine {item.engine}
+                    </span>
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* Category Selector */}

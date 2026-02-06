@@ -112,6 +112,8 @@ const navigationData: NavCategory[] = [
       { label: 'Merchant Database', href: '/merchant-database', icon: Database, description: 'All merchants' },
       { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard, description: 'Merchant benefits' },
       { label: 'Merchant Info', href: '/merchant-info', icon: FileText, description: 'Merchant details' },
+      { label: 'SOPs', href: '/sop', icon: CheckSquare, description: 'Standard procedures' },
+      { label: 'Merchant Onboarding', href: '/merchant-onboarding', icon: Users, description: 'Onboarding flow' },
     ]
   },
   {
@@ -144,6 +146,7 @@ const navigationData: NavCategory[] = [
       { label: '14-Day Launch Sprint', href: '/launch-sprint', icon: Rocket, description: 'Pre-launch execution' },
       { label: 'First 100 Users', href: '/user-acquisition', icon: Users, description: 'User acquisition' },
       { label: 'First 10 Merchants', href: '/merchant-acquisition', icon: Store, description: 'Merchant sales' },
+      { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Target, description: 'Acquisition campaigns' },
       { label: 'CMO Playbook', href: '/cmo-playbook', icon: Megaphone, description: '90-day plan' },
       { label: 'Marketing Plan', href: '/marketing-bible', icon: FileText, description: 'Full playbook' },
       { label: 'Campaigns', href: '/campaigns', icon: Target, description: 'Campaign strategies' },
@@ -318,6 +321,7 @@ const GlobalFooter = () => {
                   { label: 'Merchants', href: '/merchant-database' },
                   { label: 'Team', href: '/team' },
                   { label: 'Operations', href: '/operations' },
+                  { label: 'SOPs', href: '/sop' },
                   { label: 'Policies', href: '/policies' },
                   { label: 'ESOP', href: '/esop' },
                 ].map((link, idx) => (
