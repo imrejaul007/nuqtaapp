@@ -179,6 +179,16 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
+    title: 'CMO Operations',
+    items: [
+      { label: 'CMO Operations Manual', href: '/cmo-operations', icon: Settings, description: 'Budget & approvals' },
+      { label: 'Hiring Playbook', href: '/hiring-playbook', icon: Users, description: 'JDs & salaries' },
+      { label: 'KPI Tracking', href: '/kpi-tracking', icon: BarChart3, description: 'Metrics & benchmarks' },
+      { label: 'Vendor Directory', href: '/vendor-directory', icon: Building2, description: 'Partners & RFPs' },
+      { label: 'Week 5-12 Plan', href: '/execution-plan-extended', icon: Calendar, description: 'Daily tasks' },
+    ]
+  },
+  {
     title: 'Launch & Execution',
     items: [
       { label: '14-Day Launch Sprint', href: '/launch-sprint', icon: Rocket, description: 'Day-by-day plan' },
