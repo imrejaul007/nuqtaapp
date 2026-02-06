@@ -138,6 +138,7 @@ const navigationData: NavCategory[] = [
       { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Calendar, description: 'Event pitch' },
       { label: 'Exhibition Merchants', href: '/exhibition-merchants', icon: Store, description: 'Event merchants' },
       { label: 'Co-Partner Program', href: '/co-partner', icon: Handshake, description: 'Brand partnership' },
+      { label: 'Partnership Playbook', href: '/partnerships', icon: Handshake, description: '8 partnership types' },
     ]
   },
   {
@@ -167,6 +168,8 @@ const navigationData: NavCategory[] = [
       { label: 'Niche Content', href: '/niche-content', icon: Target, description: 'Category accounts' },
       { label: 'Media Properties', href: '/media-properties', icon: Play, description: 'Podcasts & IP' },
       { label: 'Agency Pages', href: '/agency-pages', icon: Store, description: 'Category landing' },
+      { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar, description: '12 UAE campaigns' },
+      { label: 'Brand Voice', href: '/brand-voice', icon: MessageSquare, description: 'Tone guidelines' },
     ]
   },
   {
@@ -177,6 +180,7 @@ const navigationData: NavCategory[] = [
       { label: 'Contracts', href: '/contracts', icon: FileText, description: 'MoU templates' },
       { label: 'Policies', href: '/policies', icon: Scale, description: 'Employee handbook' },
       { label: 'Terms', href: '/terms', icon: FileText, description: 'Terms of service' },
+      { label: 'Crisis Communication', href: '/crisis-communication', icon: AlertTriangle, description: 'Crisis playbook' },
     ]
   },
   {
@@ -199,6 +203,9 @@ const navigationData: NavCategory[] = [
       { label: 'User Journey', href: '/user-journey', icon: Map, description: 'Onboarding flow' },
       { label: 'Dashboard Preview', href: '/dashboard-preview', icon: Settings, description: 'UI designs' },
       { label: 'Landing Page V1', href: '/landing-v1', icon: Home, description: 'Website v1' },
+      { label: 'Gamification', href: '/gamification', icon: Target, description: 'Tiers & badges' },
+      { label: 'Customer Journeys', href: '/customer-journeys', icon: Map, description: '6 persona journeys' },
+      { label: 'Analytics Dashboard', href: '/analytics-dashboard', icon: TrendingUp, description: 'KPI specs' },
     ]
   },
   {
