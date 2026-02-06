@@ -235,12 +235,18 @@ function BootstrapScenario() {
         </div>
       </div>
 
-      {/* Monthly P&L */}
+      {/* Monthly P&L with MoM Growth */}
       <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
         <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
           <BarChart3 className="text-orange-400" size={20} />
-          Bootstrap P&L Projection (Monthly)
+          Bootstrap P&L Projection (Month-on-Month Growth)
         </h3>
+
+        <div className="mb-4 p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
+          <p className="text-orange-300 text-sm">
+            <strong>Budget Rule:</strong> Fixed costs (AED 7K) + 40% of previous month revenue reinvested into marketing/growth
+          </p>
+        </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -251,21 +257,26 @@ function BootstrapScenario() {
                 <th className="text-right py-3 px-2 text-slate-400">Merchants</th>
                 <th className="text-right py-3 px-2 text-slate-400">GMV</th>
                 <th className="text-right py-3 px-2 text-slate-400">Revenue</th>
-                <th className="text-right py-3 px-2 text-slate-400">Costs</th>
+                <th className="text-right py-3 px-2 text-slate-400">Fixed</th>
+                <th className="text-right py-3 px-2 text-slate-400">Reinvest</th>
+                <th className="text-right py-3 px-2 text-slate-400">Total Cost</th>
                 <th className="text-right py-3 px-2 text-slate-400">Net</th>
-                <th className="text-right py-3 px-2 text-slate-400">Cash Left</th>
+                <th className="text-right py-3 px-2 text-slate-400">Cash</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                { month: 'M1', users: 50, merchants: 3, gmv: 5000, revenue: 750, costs: 10000, net: -9250, cash: 40750 },
-                { month: 'M2', users: 150, merchants: 5, gmv: 15000, revenue: 2250, costs: 10000, net: -7750, cash: 33000 },
-                { month: 'M3', users: 400, merchants: 8, gmv: 40000, revenue: 6000, costs: 12000, net: -6000, cash: 27000 },
-                { month: 'M4', users: 800, merchants: 12, gmv: 80000, revenue: 12000, costs: 12000, net: 0, cash: 27000 },
-                { month: 'M5', users: 1500, merchants: 18, gmv: 150000, revenue: 22500, costs: 15000, net: 7500, cash: 34500 },
-                { month: 'M6', users: 2500, merchants: 25, gmv: 250000, revenue: 37500, costs: 18000, net: 19500, cash: 54000 },
-                { month: 'M9', users: 5000, merchants: 40, gmv: 500000, revenue: 75000, costs: 30000, net: 45000, cash: 150000 },
-                { month: 'M12', users: 10000, merchants: 60, gmv: 1000000, revenue: 150000, costs: 50000, net: 100000, cash: 400000 },
+                // Month | Users | Merchants | GMV | Revenue (15% take) | Fixed Costs | Reinvest (40% of prev rev) | Total Cost | Net | Cash
+                { month: 'M1', users: 50, merchants: 3, gmv: 5000, revenue: 750, fixed: 7000, reinvest: 3000, total: 10000, net: -9250, cash: 40750, note: 'Launch spend' },
+                { month: 'M2', users: 150, merchants: 5, gmv: 15000, revenue: 2250, fixed: 7000, reinvest: 300, total: 7300, net: -5050, cash: 35700, note: '40% of M1 rev' },
+                { month: 'M3', users: 400, merchants: 8, gmv: 40000, revenue: 6000, fixed: 7000, reinvest: 900, total: 7900, net: -1900, cash: 33800, note: '40% of M2 rev' },
+                { month: 'M4', users: 700, merchants: 10, gmv: 70000, revenue: 10500, fixed: 7000, reinvest: 2400, total: 9400, net: 1100, cash: 34900, note: 'Break-even!' },
+                { month: 'M5', users: 1100, merchants: 14, gmv: 110000, revenue: 16500, fixed: 7000, reinvest: 4200, total: 11200, net: 5300, cash: 40200, note: 'Profitable' },
+                { month: 'M6', users: 1700, merchants: 18, gmv: 170000, revenue: 25500, fixed: 8000, reinvest: 6600, total: 14600, net: 10900, cash: 51100, note: '+1 contractor' },
+                { month: 'M7', users: 2400, merchants: 22, gmv: 240000, revenue: 36000, fixed: 8000, reinvest: 10200, total: 18200, net: 17800, cash: 68900, note: 'Scaling' },
+                { month: 'M8', users: 3300, merchants: 27, gmv: 330000, revenue: 49500, fixed: 8000, reinvest: 14400, total: 22400, net: 27100, cash: 96000, note: 'Compounding' },
+                { month: 'M9', users: 4500, merchants: 32, gmv: 450000, revenue: 67500, fixed: 10000, reinvest: 19800, total: 29800, net: 37700, cash: 133700, note: '+1 more hire' },
+                { month: 'M12', users: 10000, merchants: 50, gmv: 1000000, revenue: 150000, fixed: 15000, reinvest: 50000, total: 65000, net: 85000, cash: 350000, note: '3-person team' },
               ].map((row) => (
                 <tr key={row.month} className={row.net >= 0 ? 'bg-green-500/5' : ''}>
                   <td className="py-3 px-2 text-white font-medium">{row.month}</td>
@@ -273,7 +284,9 @@ function BootstrapScenario() {
                   <td className="py-3 px-2 text-right text-slate-300">{row.merchants}</td>
                   <td className="py-3 px-2 text-right text-slate-300">AED {row.gmv.toLocaleString()}</td>
                   <td className="py-3 px-2 text-right text-green-400">AED {row.revenue.toLocaleString()}</td>
-                  <td className="py-3 px-2 text-right text-red-400">AED {row.costs.toLocaleString()}</td>
+                  <td className="py-3 px-2 text-right text-slate-400">AED {row.fixed.toLocaleString()}</td>
+                  <td className="py-3 px-2 text-right text-blue-400">AED {row.reinvest.toLocaleString()}</td>
+                  <td className="py-3 px-2 text-right text-red-400">AED {row.total.toLocaleString()}</td>
                   <td className={`py-3 px-2 text-right font-bold ${row.net >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                     AED {row.net.toLocaleString()}
                   </td>
@@ -286,12 +299,20 @@ function BootstrapScenario() {
           </table>
         </div>
 
-        <div className="mt-6 p-4 bg-orange-500/10 rounded-xl border border-orange-500/30">
-          <p className="text-orange-400 font-bold">Break-even: Month 4</p>
-          <p className="text-slate-400 text-sm mt-1">
-            Requires hitting 800 users, 12 merchants, AED 80K GMV by Month 4 to survive.
-            <strong className="text-orange-300"> Zero margin for error.</strong>
-          </p>
+        <div className="mt-4 grid sm:grid-cols-2 gap-4">
+          <div className="p-4 bg-orange-500/10 rounded-xl border border-orange-500/30">
+            <p className="text-orange-400 font-bold">Break-even: Month 4</p>
+            <p className="text-slate-400 text-sm mt-1">
+              First profit at Month 4. Revenue reinvestment compounds growth.
+              <strong className="text-orange-300"> Zero margin for error.</strong>
+            </p>
+          </div>
+          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+            <p className="text-white font-bold">Growth Formula</p>
+            <p className="text-slate-400 text-sm mt-1">
+              40% of revenue → marketing → more users → more revenue → compound growth
+            </p>
+          </div>
         </div>
       </div>
 
@@ -514,12 +535,18 @@ function SafeOnlyScenario() {
         </div>
       </div>
 
-      {/* Monthly P&L */}
+      {/* Monthly P&L with MoM Growth */}
       <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
         <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
           <BarChart3 className="text-blue-400" size={20} />
-          SAFE-Only P&L Projection
+          SAFE-Only P&L (Month-on-Month Growth)
         </h3>
+
+        <div className="mb-4 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+          <p className="text-blue-300 text-sm">
+            <strong>Budget Rule:</strong> Fixed ops (AED 50K base, scaling with team) + 35% of revenue reinvested into marketing/growth
+          </p>
+        </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -527,50 +554,71 @@ function SafeOnlyScenario() {
               <tr className="border-b border-white/10">
                 <th className="text-left py-3 px-2 text-slate-400">Month</th>
                 <th className="text-right py-3 px-2 text-slate-400">Users</th>
-                <th className="text-right py-3 px-2 text-slate-400">Merchants</th>
+                <th className="text-right py-3 px-2 text-slate-400">Merch</th>
                 <th className="text-right py-3 px-2 text-slate-400">GMV</th>
                 <th className="text-right py-3 px-2 text-slate-400">Revenue</th>
-                <th className="text-right py-3 px-2 text-slate-400">Costs</th>
+                <th className="text-right py-3 px-2 text-slate-400">Team Cost</th>
+                <th className="text-right py-3 px-2 text-slate-400">Marketing</th>
+                <th className="text-right py-3 px-2 text-slate-400">Ops</th>
+                <th className="text-right py-3 px-2 text-slate-400">Total</th>
                 <th className="text-right py-3 px-2 text-slate-400">Net</th>
-                <th className="text-right py-3 px-2 text-slate-400">Cash Left</th>
+                <th className="text-right py-3 px-2 text-slate-400">Cash</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                { month: 'M1', users: 500, merchants: 10, gmv: 50000, revenue: 7500, costs: 80000, net: -72500, cash: 1397500 },
-                { month: 'M3', users: 3000, merchants: 30, gmv: 300000, revenue: 45000, costs: 100000, net: -55000, cash: 1200000 },
-                { month: 'M6', users: 10000, merchants: 60, gmv: 800000, revenue: 120000, costs: 150000, net: -30000, cash: 950000 },
-                { month: 'M9', users: 18000, merchants: 85, gmv: 1500000, revenue: 225000, costs: 180000, net: 45000, cash: 850000 },
-                { month: 'M12', users: 25000, merchants: 100, gmv: 2500000, revenue: 375000, costs: 200000, net: 175000, cash: 1000000 },
-                { month: 'M15', users: 35000, merchants: 120, gmv: 4000000, revenue: 600000, costs: 250000, net: 350000, cash: 1500000 },
-                { month: 'M18', users: 50000, merchants: 150, gmv: 6000000, revenue: 900000, costs: 300000, net: 600000, cash: 2500000 },
-                { month: 'M24', users: 80000, merchants: 200, gmv: 10000000, revenue: 1500000, costs: 400000, net: 1100000, cash: 6000000 },
+                // Budget allocation: Team (fixed) + Marketing (35% of rev or min 20K) + Ops (15K base)
+                { month: 'M1', users: 500, merchants: 10, gmv: 50, revenue: 7.5, team: 45, mktg: 25, ops: 15, total: 85, net: -77.5, cash: 1392, note: '8-person team' },
+                { month: 'M2', users: 1200, merchants: 15, gmv: 120, revenue: 18, team: 45, mktg: 20, ops: 15, total: 80, net: -62, cash: 1330, note: 'Growing' },
+                { month: 'M3', users: 2500, merchants: 22, gmv: 250, revenue: 37.5, team: 50, mktg: 25, ops: 15, total: 90, net: -52.5, cash: 1278, note: '+1 hire' },
+                { month: 'M4', users: 4500, merchants: 32, gmv: 450, revenue: 67.5, team: 50, mktg: 30, ops: 15, total: 95, net: -27.5, cash: 1250, note: 'Scaling' },
+                { month: 'M5', users: 7000, merchants: 45, gmv: 700, revenue: 105, team: 55, mktg: 40, ops: 15, total: 110, net: -5, cash: 1245, note: '+1 hire' },
+                { month: 'M6', users: 10000, merchants: 55, gmv: 1000, revenue: 150, team: 60, mktg: 55, ops: 18, total: 133, net: 17, cash: 1262, note: 'Break-even zone' },
+                { month: 'M7', users: 13000, merchants: 65, gmv: 1300, revenue: 195, team: 65, mktg: 70, ops: 18, total: 153, net: 42, cash: 1304, note: '+1 hire' },
+                { month: 'M8', users: 16500, merchants: 75, gmv: 1650, revenue: 248, team: 70, mktg: 85, ops: 20, total: 175, net: 73, cash: 1377, note: 'Profitable' },
+                { month: 'M9', users: 20000, merchants: 85, gmv: 2000, revenue: 300, team: 75, mktg: 105, ops: 22, total: 202, net: 98, cash: 1475, note: 'Compounding' },
+                { month: 'M12', users: 35000, merchants: 110, gmv: 3500, revenue: 525, team: 90, mktg: 180, ops: 28, total: 298, net: 227, cash: 2000, note: '15-person team' },
+                { month: 'M18', users: 60000, merchants: 160, gmv: 6000, revenue: 900, team: 120, mktg: 315, ops: 40, total: 475, net: 425, cash: 3500, note: '20-person team' },
               ].map((row) => (
                 <tr key={row.month} className={row.net >= 0 ? 'bg-green-500/5' : ''}>
                   <td className="py-3 px-2 text-white font-medium">{row.month}</td>
                   <td className="py-3 px-2 text-right text-slate-300">{row.users.toLocaleString()}</td>
                   <td className="py-3 px-2 text-right text-slate-300">{row.merchants}</td>
-                  <td className="py-3 px-2 text-right text-slate-300">AED {(row.gmv / 1000).toFixed(0)}K</td>
-                  <td className="py-3 px-2 text-right text-green-400">AED {(row.revenue / 1000).toFixed(0)}K</td>
-                  <td className="py-3 px-2 text-right text-red-400">AED {(row.costs / 1000).toFixed(0)}K</td>
+                  <td className="py-3 px-2 text-right text-slate-300">{row.gmv}K</td>
+                  <td className="py-3 px-2 text-right text-green-400">{row.revenue}K</td>
+                  <td className="py-3 px-2 text-right text-purple-400">{row.team}K</td>
+                  <td className="py-3 px-2 text-right text-blue-400">{row.mktg}K</td>
+                  <td className="py-3 px-2 text-right text-slate-400">{row.ops}K</td>
+                  <td className="py-3 px-2 text-right text-red-400">{row.total}K</td>
                   <td className={`py-3 px-2 text-right font-bold ${row.net >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                    AED {(row.net / 1000).toFixed(0)}K
+                    {row.net >= 0 ? '+' : ''}{row.net}K
                   </td>
-                  <td className="py-3 px-2 text-right text-white">
-                    AED {(row.cash / 1000000).toFixed(1)}M
-                  </td>
+                  <td className="py-3 px-2 text-right text-white">{(row.cash/1000).toFixed(1)}M</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <div className="mt-6 p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
-          <p className="text-blue-400 font-bold">Break-even: Month 9</p>
-          <p className="text-slate-400 text-sm mt-1">
-            First profitable month at Month 9. By Month 18, generating AED 600K/month profit.
-            Sustainable business without further funding.
-          </p>
+        <div className="mt-4 grid sm:grid-cols-3 gap-4">
+          <div className="p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
+            <p className="text-blue-400 font-bold">Break-even: Month 6</p>
+            <p className="text-slate-400 text-sm mt-1">
+              Revenue covers costs. Every month after = profit.
+            </p>
+          </div>
+          <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+            <p className="text-white font-bold">Reinvestment Strategy</p>
+            <p className="text-slate-400 text-sm mt-1">
+              35% of revenue → marketing to fuel compound growth
+            </p>
+          </div>
+          <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
+            <p className="text-green-400 font-bold">Month 18 Profit</p>
+            <p className="text-slate-400 text-sm mt-1">
+              AED 425K/month net profit. Self-sustaining.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -854,12 +902,19 @@ function MultiRoundScenario() {
         </div>
       </div>
 
-      {/* Financial Projections */}
+      {/* Financial Projections with MoM Growth */}
       <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
         <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
           <BarChart3 className="text-green-400" size={20} />
-          Multi-Round P&L Projection
+          Multi-Round P&L (Month-on-Month with Funding Tranches)
         </h3>
+
+        <div className="mb-4 p-3 bg-green-500/10 rounded-lg border border-green-500/20">
+          <p className="text-green-300 text-sm">
+            <strong>Budget Rule:</strong> Post each round, 40% to marketing, 35% to team scaling, 15% ops, 10% reserve.
+            Marketing spend = 50% of revenue + base allocation from raise.
+          </p>
+        </div>
 
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -867,43 +922,68 @@ function MultiRoundScenario() {
               <tr className="border-b border-white/10">
                 <th className="text-left py-3 px-2 text-slate-400">Period</th>
                 <th className="text-right py-3 px-2 text-slate-400">Users</th>
-                <th className="text-right py-3 px-2 text-slate-400">Merchants</th>
+                <th className="text-right py-3 px-2 text-slate-400">Merch</th>
                 <th className="text-right py-3 px-2 text-slate-400">GMV/mo</th>
-                <th className="text-right py-3 px-2 text-slate-400">Revenue/mo</th>
-                <th className="text-right py-3 px-2 text-slate-400">Burn/mo</th>
+                <th className="text-right py-3 px-2 text-slate-400">Revenue</th>
                 <th className="text-right py-3 px-2 text-slate-400">Team</th>
-                <th className="text-right py-3 px-2 text-slate-400">Markets</th>
+                <th className="text-right py-3 px-2 text-slate-400">Mktg</th>
+                <th className="text-right py-3 px-2 text-slate-400">Ops</th>
+                <th className="text-right py-3 px-2 text-slate-400">Total</th>
+                <th className="text-right py-3 px-2 text-slate-400">Net</th>
+                <th className="text-right py-3 px-2 text-slate-400">Cash</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                { period: 'Q2 2026', users: 5000, merchants: 30, gmv: 500, revenue: 75, burn: 100, team: 10, markets: 'Dubai' },
-                { period: 'Q4 2026', users: 50000, merchants: 150, gmv: 5000, revenue: 750, burn: 300, team: 25, markets: 'UAE' },
-                { period: 'Q2 2027', users: 120000, merchants: 300, gmv: 12000, revenue: 1800, burn: 500, team: 45, markets: 'UAE + Qatar' },
-                { period: 'Q4 2027', users: 250000, merchants: 500, gmv: 25000, revenue: 3750, burn: 700, team: 70, markets: 'GCC' },
-                { period: 'Q2 2028', users: 500000, merchants: 800, gmv: 50000, revenue: 7500, burn: 600, team: 100, markets: 'GCC' },
-                { period: 'Q4 2028', users: 800000, merchants: 1200, gmv: 80000, revenue: 12000, burn: 500, team: 120, markets: 'GCC + MENA' },
+                // SAFE Phase ($400K = AED 1.47M)
+                { period: 'M1 (SAFE)', users: 1000, merchants: 15, gmv: 100, revenue: 15, team: 55, mktg: 40, ops: 18, total: 113, net: -98, cash: 1372, phase: 'safe' },
+                { period: 'M3', users: 5000, merchants: 35, gmv: 500, revenue: 75, team: 65, mktg: 55, ops: 20, total: 140, net: -65, cash: 1180, phase: 'safe' },
+                { period: 'M6', users: 15000, merchants: 70, gmv: 1500, revenue: 225, team: 80, mktg: 110, ops: 25, total: 215, net: 10, cash: 1000, phase: 'safe' },
+                { period: 'M9 (Seed)', users: 35000, merchants: 120, gmv: 3500, revenue: 525, team: 150, mktg: 250, ops: 45, total: 445, net: 80, cash: 8350, phase: 'seed' },
+                // Seed Phase ($2M = AED 7.35M) - Total: AED 8.35M in bank
+                { period: 'M12', users: 70000, merchants: 180, gmv: 7000, revenue: 1050, team: 280, mktg: 480, ops: 70, total: 830, net: 220, cash: 8900, phase: 'seed' },
+                { period: 'M15', users: 120000, merchants: 280, gmv: 12000, revenue: 1800, team: 400, mktg: 700, ops: 100, total: 1200, net: 600, cash: 10500, phase: 'seed' },
+                { period: 'M18 (Ser A)', users: 200000, merchants: 400, gmv: 20000, revenue: 3000, team: 600, mktg: 1200, ops: 150, total: 1950, net: 1050, cash: 32000, phase: 'seriesA' },
+                // Series A Phase ($6M = AED 22M) - Total: AED 32M+ in bank
+                { period: 'M24', users: 400000, merchants: 700, gmv: 40000, revenue: 6000, team: 900, mktg: 2000, ops: 250, total: 3150, net: 2850, cash: 45000, phase: 'seriesA' },
+                { period: 'M30', users: 650000, merchants: 1000, gmv: 65000, revenue: 9750, team: 1100, mktg: 2500, ops: 300, total: 3900, net: 5850, cash: 70000, phase: 'seriesA' },
+                { period: 'M36', users: 1000000, merchants: 1500, gmv: 100000, revenue: 15000, team: 1300, mktg: 3000, ops: 400, total: 4700, net: 10300, cash: 120000, phase: 'seriesA' },
               ].map((row) => (
-                <tr key={row.period}>
+                <tr key={row.period} className={
+                  row.phase === 'safe' ? 'bg-yellow-500/5' :
+                  row.phase === 'seed' ? 'bg-blue-500/5' :
+                  'bg-green-500/5'
+                }>
                   <td className="py-3 px-2 text-white font-medium">{row.period}</td>
                   <td className="py-3 px-2 text-right text-slate-300">{row.users.toLocaleString()}</td>
                   <td className="py-3 px-2 text-right text-slate-300">{row.merchants}</td>
-                  <td className="py-3 px-2 text-right text-slate-300">AED {row.gmv}K</td>
-                  <td className="py-3 px-2 text-right text-green-400">AED {row.revenue}K</td>
-                  <td className="py-3 px-2 text-right text-red-400">AED {row.burn}K</td>
-                  <td className="py-3 px-2 text-right text-blue-400">{row.team}</td>
-                  <td className="py-3 px-2 text-right text-purple-400">{row.markets}</td>
+                  <td className="py-3 px-2 text-right text-slate-300">{row.gmv.toLocaleString()}K</td>
+                  <td className="py-3 px-2 text-right text-green-400">{row.revenue.toLocaleString()}K</td>
+                  <td className="py-3 px-2 text-right text-purple-400">{row.team}K</td>
+                  <td className="py-3 px-2 text-right text-blue-400">{row.mktg}K</td>
+                  <td className="py-3 px-2 text-right text-slate-400">{row.ops}K</td>
+                  <td className="py-3 px-2 text-right text-red-400">{row.total.toLocaleString()}K</td>
+                  <td className={`py-3 px-2 text-right font-bold ${row.net >= 0 ? 'text-green-400' : 'text-red-400'}`}>
+                    {row.net >= 0 ? '+' : ''}{row.net.toLocaleString()}K
+                  </td>
+                  <td className="py-3 px-2 text-right text-white">{(row.cash/1000).toFixed(0)}M</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
+        <div className="mt-4 flex flex-wrap gap-2 text-xs">
+          <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded">🟡 SAFE Phase</span>
+          <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded">🔵 Seed Phase</span>
+          <span className="px-2 py-1 bg-green-500/20 text-green-400 rounded">🟢 Series A Phase</span>
+        </div>
+
         <div className="mt-6 p-4 bg-green-500/10 rounded-xl border border-green-500/30">
           <p className="text-green-400 font-bold">Path to $100M+ Valuation</p>
           <p className="text-slate-400 text-sm mt-1">
-            At AED 12M revenue/month (AED 144M/year = ~$40M), with 8x revenue multiple = $320M valuation.
-            Founder 55% stake = <strong className="text-green-400">$176M</strong>.
+            At AED 15M revenue/month (AED 180M/year = ~$49M), with 8x revenue multiple = <strong className="text-green-400">$390M valuation</strong>.
+            Founder 55% stake = <strong className="text-green-400">$215M</strong>. Break-even at Month 6, highly profitable by Year 3.
           </p>
         </div>
       </div>
