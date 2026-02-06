@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import {
   AlertTriangle, Shield, Phone, Clock, Users, MessageCircle,
   FileText, CheckCircle, XCircle, AlertCircle, Zap, Eye,
-  Radio, Mail, Smartphone, Globe, Copy, Check, ChevronDown, ChevronUp
+  Radio, Mail, Smartphone, Globe, Copy, Check, ChevronDown, ChevronUp, Bell
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
