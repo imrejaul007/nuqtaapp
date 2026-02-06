@@ -161,6 +161,7 @@ const navigationData: NavCategory[] = [
       { label: 'Explainer Video', href: '/explainer-video', icon: Play, description: 'Video scripts' },
       { label: 'Email Templates', href: '/email-templates', icon: Mail, description: '20+ templates' },
       { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare, description: '25+ templates' },
+      { label: 'Content Strategy', href: '/content-strategy', icon: TrendingUp, description: 'Long-term plan' },
     ]
   },
   {
