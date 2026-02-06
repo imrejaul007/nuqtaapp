@@ -410,6 +410,133 @@ function BootstrapScenario() {
         </div>
       </div>
 
+      {/* Exit Valuation Projections */}
+      <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <TrendingUp className="text-orange-400" size={20} />
+          Exit Valuation Projections (Bootstrap Path)
+        </h3>
+
+        <div className="mb-4 p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
+          <p className="text-orange-300 text-sm">
+            <strong>Valuation Logic:</strong> High-growth fintech in GCC commands 10-20x ARR multiples.
+            100% founder ownership means all value accrues to you.
+          </p>
+        </div>
+
+        {/* Year 1 Projections */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-orange-400 mb-3">Year 1 (Month 12)</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 1.8M/year</p>
+              <p className="text-slate-500 text-xs">~$490K ARR (AED 150K × 12)</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Monthly Profit</p>
+              <p className="text-2xl font-bold text-green-400">AED 85K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 350K</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$4.9M</p>
+              <p className="text-green-400 text-sm">Founder 100% = $4.9M</p>
+            </div>
+            <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30">
+              <p className="text-orange-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-orange-400">$7.4M</p>
+              <p className="text-orange-400 text-sm">Founder 100% = $7.4M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$9.8M</p>
+              <p className="text-[#c9a227] text-sm">Founder 100% = $9.8M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Year 2 Projections */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-orange-400 mb-3">Year 2 (Month 24)</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 6M/year</p>
+              <p className="text-slate-500 text-xs">~$1.6M ARR (3x Y1 growth)</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Monthly Profit</p>
+              <p className="text-2xl font-bold text-green-400">AED 250K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 2M+</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$16M</p>
+              <p className="text-green-400 text-sm">Founder 100% = $16M</p>
+            </div>
+            <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30">
+              <p className="text-orange-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-orange-400">$24M</p>
+              <p className="text-orange-400 text-sm">Founder 100% = $24M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$32M</p>
+              <p className="text-[#c9a227] text-sm">Founder 100% = $32M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Year 3 Projections */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-orange-400 mb-3">Year 3 (Month 36)</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 15M/year</p>
+              <p className="text-slate-500 text-xs">~$4.1M ARR (2.5x Y2 growth)</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Monthly Profit</p>
+              <p className="text-2xl font-bold text-green-400">AED 600K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 8M+</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$41M</p>
+              <p className="text-green-400 text-sm">Founder 100% = $41M</p>
+            </div>
+            <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30">
+              <p className="text-orange-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-orange-400">$62M</p>
+              <p className="text-orange-400 text-sm">Founder 100% = $62M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$82M</p>
+              <p className="text-[#c9a227] text-sm">Founder 100% = $82M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Growth Summary */}
+        <div className="p-4 bg-orange-500/10 rounded-xl border border-orange-500/30">
+          <p className="text-orange-400 font-bold mb-2">Bootstrap Exit Advantage</p>
+          <p className="text-slate-300 text-sm">
+            <strong>100% ownership</strong> means slower absolute growth but higher personal returns per dollar of revenue.
+            A $41M valuation at Year 3 with 100% ownership = $41M for you.
+            Compare: $490M Multi-Round valuation at 55% = $270M, but required $8.4M in fundraising.
+          </p>
+        </div>
+      </div>
+
       {/* Verdict */}
       <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl p-6 border border-orange-500/30">
         <h3 className="text-xl font-bold text-white mb-4">Bootstrap Verdict</h3>
@@ -715,6 +842,133 @@ function SafeOnlyScenario() {
         </div>
       </div>
 
+      {/* Exit Valuation Projections */}
+      <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <TrendingUp className="text-blue-400" size={20} />
+          Exit Valuation Projections (SAFE-Only Path)
+        </h3>
+
+        <div className="mb-4 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+          <p className="text-blue-300 text-sm">
+            <strong>Valuation Logic:</strong> 92% founder ownership post-SAFE. High-growth fintech = 10-20x ARR.
+            Sustainable, profitable business commands premium valuation at exit.
+          </p>
+        </div>
+
+        {/* Year 1 Projections */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-blue-400 mb-3">Year 1 (Month 12)</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 6.3M/year</p>
+              <p className="text-slate-500 text-xs">~$1.7M ARR (AED 525K × 12)</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Monthly Profit</p>
+              <p className="text-2xl font-bold text-green-400">AED 227K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 2M</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$17M</p>
+              <p className="text-green-400 text-sm">Founder 92% = $15.6M</p>
+            </div>
+            <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
+              <p className="text-blue-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-blue-400">$26M</p>
+              <p className="text-blue-400 text-sm">Founder 92% = $23.9M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$34M</p>
+              <p className="text-[#c9a227] text-sm">Founder 92% = $31.3M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Year 2 Projections (Month 18 + 6) */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-blue-400 mb-3">Year 2 (Month 24)</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 14.4M/year</p>
+              <p className="text-slate-500 text-xs">~$3.9M ARR (2.3x Y1 growth)</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Monthly Profit</p>
+              <p className="text-2xl font-bold text-green-400">AED 550K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 6M+</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$39M</p>
+              <p className="text-green-400 text-sm">Founder 92% = $35.9M</p>
+            </div>
+            <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
+              <p className="text-blue-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-blue-400">$59M</p>
+              <p className="text-blue-400 text-sm">Founder 92% = $54.3M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$78M</p>
+              <p className="text-[#c9a227] text-sm">Founder 92% = $71.8M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Year 3 Projections */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-blue-400 mb-3">Year 3 (Month 36)</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 28.8M/year</p>
+              <p className="text-slate-500 text-xs">~$7.8M ARR (2x Y2 growth)</p>
+            </div>
+            <div className="p-4 bg-white/5 rounded-xl">
+              <p className="text-slate-400 text-sm">Monthly Profit</p>
+              <p className="text-2xl font-bold text-green-400">AED 1.1M</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 15M+</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$78M</p>
+              <p className="text-green-400 text-sm">Founder 92% = $71.8M</p>
+            </div>
+            <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
+              <p className="text-blue-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-blue-400">$117M</p>
+              <p className="text-blue-400 text-sm">Founder 92% = $107.6M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$156M</p>
+              <p className="text-[#c9a227] text-sm">Founder 92% = $143.5M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Growth Summary */}
+        <div className="p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
+          <p className="text-blue-400 font-bold mb-2">SAFE-Only Exit Advantage</p>
+          <p className="text-slate-300 text-sm">
+            <strong>92% ownership</strong> with profitable, sustainable growth = maximum control + strong returns.
+            A $117M valuation at Year 3 (15x ARR) with 92% ownership = $107.6M for you.
+            Lower risk, no VC pressure, and freedom to exit on your terms.
+          </p>
+        </div>
+      </div>
+
       {/* Verdict */}
       <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl p-6 border border-blue-500/30">
         <h3 className="text-xl font-bold text-white mb-4">SAFE-Only Verdict</h3>
@@ -981,39 +1235,136 @@ function MultiRoundScenario() {
 
         <div className="mt-6 space-y-4">
           <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
-            <p className="text-green-400 font-bold mb-3">Path to $500M+ Valuation (Conservative)</p>
-            <div className="grid sm:grid-cols-2 gap-4 text-sm">
-              <div>
-                <p className="text-slate-400">Month 36 Revenue:</p>
-                <p className="text-white font-bold">AED 15M/month = AED 180M/year (~$49M ARR)</p>
-              </div>
-              <div>
-                <p className="text-slate-400">Revenue Multiple (High-growth fintech):</p>
-                <p className="text-white font-bold">10-20x ARR (Careem was 20x+)</p>
-              </div>
+            <p className="text-green-400 font-bold mb-3">Valuation Logic</p>
+            <p className="text-slate-300 text-sm">
+              High-growth GCC fintech = 10-20x ARR multiples. Careem sold at 20x+. Tabby valued at 25x ARR.
+              55% founder ownership post-Series A means significant returns at scale.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Year-by-Year Exit Valuation Projections */}
+      <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <TrendingUp className="text-green-400" size={20} />
+          Exit Valuation Projections (Multi-Round Path)
+        </h3>
+
+        {/* Year 1 Projections (Post-SAFE, Pre-Seed) */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-yellow-400 mb-3">Year 1 (Month 12) - Post-SAFE</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-yellow-500/5 rounded-xl border border-yellow-500/20">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 12.6M/year</p>
+              <p className="text-slate-500 text-xs">~$3.4M ARR (AED 1.05M × 12)</p>
+            </div>
+            <div className="p-4 bg-yellow-500/5 rounded-xl border border-yellow-500/20">
+              <p className="text-slate-400 text-sm">Founder Ownership</p>
+              <p className="text-2xl font-bold text-yellow-400">78%</p>
+              <p className="text-slate-500 text-xs">Post-SAFE conversion</p>
             </div>
           </div>
-          <div className="grid sm:grid-cols-3 gap-4">
-            <div className="p-4 bg-white/5 rounded-xl border border-white/10">
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$34M</p>
+              <p className="text-yellow-400 text-sm">Founder 78% = $26.5M</p>
+            </div>
+            <div className="p-3 bg-yellow-500/10 rounded-xl border border-yellow-500/30">
+              <p className="text-yellow-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-yellow-400">$51M</p>
+              <p className="text-yellow-400 text-sm">Founder 78% = $39.8M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$68M</p>
+              <p className="text-[#c9a227] text-sm">Founder 78% = $53M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Year 2 Projections (Post-Seed) */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-blue-400 mb-3">Year 2 (Month 24) - Post-Seed</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-blue-500/5 rounded-xl border border-blue-500/20">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 72M/year</p>
+              <p className="text-slate-500 text-xs">~$19.6M ARR (AED 6M × 12)</p>
+            </div>
+            <div className="p-4 bg-blue-500/5 rounded-xl border border-blue-500/20">
+              <p className="text-slate-400 text-sm">Founder Ownership</p>
+              <p className="text-2xl font-bold text-blue-400">66%</p>
+              <p className="text-slate-500 text-xs">Post-Seed dilution</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-slate-400 text-xs">At 10x ARR</p>
+              <p className="text-xl font-bold text-white">$196M</p>
+              <p className="text-blue-400 text-sm">Founder 66% = $129M</p>
+            </div>
+            <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
+              <p className="text-blue-400 text-xs">At 15x ARR</p>
+              <p className="text-xl font-bold text-blue-400">$294M</p>
+              <p className="text-blue-400 text-sm">Founder 66% = $194M</p>
+            </div>
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+              <p className="text-[#c9a227] text-xs">At 20x ARR</p>
+              <p className="text-xl font-bold text-[#c9a227]">$392M</p>
+              <p className="text-[#c9a227] text-sm">Founder 66% = $259M</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Year 3 Projections (Post-Series A) */}
+        <div className="mb-6">
+          <h4 className="text-lg font-bold text-green-400 mb-3">Year 3 (Month 36) - Post-Series A</h4>
+          <div className="grid sm:grid-cols-2 gap-4 mb-4">
+            <div className="p-4 bg-green-500/5 rounded-xl border border-green-500/20">
+              <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
+              <p className="text-2xl font-bold text-white">AED 180M/year</p>
+              <p className="text-slate-500 text-xs">~$49M ARR (AED 15M × 12)</p>
+            </div>
+            <div className="p-4 bg-green-500/5 rounded-xl border border-green-500/20">
+              <p className="text-slate-400 text-sm">Founder Ownership</p>
+              <p className="text-2xl font-bold text-green-400">55%</p>
+              <p className="text-slate-500 text-xs">Post-Series A dilution</p>
+            </div>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-3">
+            <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR (Conservative)</p>
               <p className="text-2xl font-bold text-white">$490M</p>
               <p className="text-green-400 text-sm">Founder 55% = $270M</p>
             </div>
-            <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
+            <div className="p-3 bg-green-500/10 rounded-xl border border-green-500/30">
               <p className="text-green-400 text-xs">At 15x ARR (Realistic)</p>
               <p className="text-2xl font-bold text-green-400">$735M</p>
               <p className="text-green-400 text-sm">Founder 55% = $404M</p>
             </div>
-            <div className="p-4 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
+            <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR (Strategic Exit)</p>
               <p className="text-2xl font-bold text-[#c9a227]">$980M</p>
               <p className="text-[#c9a227] text-sm">Founder 55% = $539M</p>
             </div>
           </div>
-          <p className="text-slate-500 text-xs">
-            * Comparable: Careem sold at 20x+ revenue. Tabby valued at 25x ARR. High-growth GCC fintechs command premium multiples.
+        </div>
+
+        {/* Growth Summary */}
+        <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
+          <p className="text-green-400 font-bold mb-2">Multi-Round Exit Advantage</p>
+          <p className="text-slate-300 text-sm">
+            <strong>Maximum growth = maximum absolute returns.</strong> Despite 45% dilution, a $735M exit at 15x ARR
+            = $404M for founder (55%). This is 3.8x more than SAFE-Only ($107.6M) and 6.5x more than Bootstrap ($62M).
+            Aggressive funding enables aggressive scaling and market dominance.
           </p>
         </div>
+        <p className="text-slate-500 text-xs mt-4">
+          * Comparable: Careem sold at 20x+ revenue. Tabby valued at 25x ARR. High-growth GCC fintechs command premium multiples.
+        </p>
       </div>
 
       {/* Team Scaling */}
