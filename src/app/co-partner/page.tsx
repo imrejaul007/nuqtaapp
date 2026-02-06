@@ -16,11 +16,28 @@ import {
   ChevronRight,
   Star,
   Zap,
-  BarChart3
+  BarChart3,
+  Megaphone,
+  QrCode,
+  Store,
+  Truck,
+  Package,
+  Coffee,
+  Shirt,
+  Heart,
+  BadgeCheck,
+  Award,
+  Crown,
+  MapPin,
+  Globe,
+  Camera,
+  Play,
+  MessageSquare,
+  ShoppingCart
 } from 'lucide-react';
 
 export default function CoPartnerPage() {
-  const [activeTab, setActiveTab] = useState<'overview' | 'model' | 'verticals' | 'process' | 'faq'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'model' | 'verticals' | 'marketing' | 'fleet' | 'process' | 'faq'>('overview');
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -62,7 +79,9 @@ export default function CoPartnerPage() {
             {[
               { id: 'overview', label: 'Overview', icon: Target },
               { id: 'model', label: 'Investment Model', icon: DollarSign },
-              { id: 'verticals', label: 'Available Verticals', icon: Building2 },
+              { id: 'verticals', label: 'Brand Verticals', icon: Building2 },
+              { id: 'marketing', label: 'Marketing & Pricing', icon: Megaphone },
+              { id: 'fleet', label: 'Fleet Stalls', icon: Truck },
               { id: 'process', label: 'Process', icon: Calendar },
               { id: 'faq', label: 'FAQ', icon: Shield },
             ].map((tab) => (
@@ -88,6 +107,8 @@ export default function CoPartnerPage() {
         {activeTab === 'overview' && <OverviewTab />}
         {activeTab === 'model' && <ModelTab />}
         {activeTab === 'verticals' && <VerticalsTab />}
+        {activeTab === 'marketing' && <MarketingTab />}
+        {activeTab === 'fleet' && <FleetStallsTab />}
         {activeTab === 'process' && <ProcessTab />}
         {activeTab === 'faq' && <FAQTab />}
       </div>
@@ -540,6 +561,386 @@ function VerticalsTab() {
           Propose a New Vertical
           <ChevronRight className="w-4 h-4" />
         </a>
+      </div>
+    </div>
+  );
+}
+
+// ============================================
+// MARKETING TAB - Merchant Marketing & Price Engineering
+// ============================================
+function MarketingTab() {
+  const marketingServices = {
+    online: [
+      { name: 'Meta Ads', desc: 'Facebook & Instagram campaigns', icon: Globe },
+      { name: 'WhatsApp Marketing', desc: 'Broadcast lists & catalogs', icon: MessageSquare },
+      { name: 'Google Shopping', desc: 'Product listings & ads', icon: ShoppingCart },
+      { name: 'Google My Business', desc: 'Profile optimization & SEO', icon: MapPin }
+    ],
+    offline: [
+      { name: 'Auto Advertising', desc: 'Car wraps, taxi & rideshare ads', icon: Truck },
+      { name: 'Bus Advertising', desc: 'Bus shelter & wrap campaigns', icon: Truck },
+      { name: 'Gate Branding', desc: 'Society & building entrance ads', icon: Building2 }
+    ],
+    content: [
+      { name: 'Reels & Videos', desc: 'Short-form video content', icon: Play },
+      { name: 'UGC Creation', desc: 'User-generated campaigns', icon: Camera },
+      { name: 'Influencer Marketing', desc: 'Barter & paid collabs', icon: Star }
+    ]
+  };
+
+  const badgeLevels = [
+    { level: 'Verified', color: 'blue', icon: BadgeCheck, requirements: ['Active account', 'Valid docs', '10+ transactions'] },
+    { level: 'Trusted', color: 'green', icon: Award, requirements: ['3+ months active', '50+ transactions', '4.0+ rating'] },
+    { level: 'Nuqta Preferred', color: 'purple', icon: Star, requirements: ['6+ months', '200+ transactions', '4.5+ rating'] },
+    { level: 'Nuqta Signature', color: 'amber', icon: Crown, requirements: ['12+ months', '500+ transactions', '4.8+ rating'] }
+  ];
+
+  return (
+    <div className="space-y-8">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-black text-white mb-2">Marketing Services & Price Engineering</h2>
+        <p className="text-slate-400">How we market merchants & the pricing strategy</p>
+      </div>
+
+      {/* Why We Do This */}
+      <div className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/30 rounded-2xl p-8">
+        <h3 className="text-2xl font-black text-white mb-4">Indirect Nuqta Promotion</h3>
+        <p className="text-slate-300 mb-6">
+          We market merchants extensively. Every merchant touchpoint becomes a Nuqta promotion.
+          Users see &ldquo;Pay with Nuqta & Earn Cashback&rdquo; everywhere the merchant is advertised.
+        </p>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-white/5 rounded-lg p-4 text-center">
+            <Users className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+            <p className="text-white font-bold">1:20 Ratio</p>
+            <p className="text-slate-400 text-sm">1 Marketing Manager per 20 merchants</p>
+          </div>
+          <div className="bg-white/5 rounded-lg p-4 text-center">
+            <TrendingUp className="w-8 h-8 text-green-400 mx-auto mb-2" />
+            <p className="text-white font-bold">Merchant Funded</p>
+            <p className="text-slate-400 text-sm">Merchants pay for their own ads</p>
+          </div>
+          <div className="bg-white/5 rounded-lg p-4 text-center">
+            <Target className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+            <p className="text-white font-bold">Nuqta Branded</p>
+            <p className="text-slate-400 text-sm">All ads feature Nuqta integration</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Marketing Channels */}
+      <div className="bg-slate-800/30 rounded-xl p-8">
+        <h3 className="text-xl font-bold text-white mb-6">Marketing Channels We Manage</h3>
+
+        <div className="space-y-6">
+          <div>
+            <h4 className="text-[#c9a227] font-bold mb-3 flex items-center gap-2">
+              <Globe className="w-5 h-5" /> Online Marketing
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              {marketingServices.online.map((s, i) => (
+                <div key={i} className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 flex items-center gap-3">
+                  <s.icon className="w-5 h-5 text-blue-400" />
+                  <div>
+                    <p className="text-white font-medium">{s.name}</p>
+                    <p className="text-slate-400 text-xs">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-[#c9a227] font-bold mb-3 flex items-center gap-2">
+              <Building2 className="w-5 h-5" /> Offline Marketing
+            </h4>
+            <div className="grid md:grid-cols-3 gap-3">
+              {marketingServices.offline.map((s, i) => (
+                <div key={i} className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-3 flex items-center gap-3">
+                  <s.icon className="w-5 h-5 text-orange-400" />
+                  <div>
+                    <p className="text-white font-medium">{s.name}</p>
+                    <p className="text-slate-400 text-xs">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-[#c9a227] font-bold mb-3 flex items-center gap-2">
+              <Camera className="w-5 h-5" /> Content Creation
+            </h4>
+            <div className="grid md:grid-cols-3 gap-3">
+              {marketingServices.content.map((s, i) => (
+                <div key={i} className="bg-pink-500/10 border border-pink-500/20 rounded-lg p-3 flex items-center gap-3">
+                  <s.icon className="w-5 h-5 text-pink-400" />
+                  <div>
+                    <p className="text-white font-medium">{s.name}</p>
+                    <p className="text-slate-400 text-xs">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Price Engineering */}
+      <div className="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-2xl p-8">
+        <h3 className="text-2xl font-black text-white mb-4 flex items-center gap-2">
+          <Percent className="w-6 h-6 text-green-400" /> Price Engineering Strategy
+        </h3>
+        <p className="text-slate-300 mb-6">Airplane-model dynamic pricing to maximize brand value & Nuqta loyalty</p>
+
+        <div className="grid md:grid-cols-4 gap-4 mb-6">
+          {[
+            { step: 1, action: 'Increase base price +20%', reason: 'Creates room for discounts' },
+            { step: 2, action: 'Offer 20% Nuqta discount', reason: 'Users feel exclusive value' },
+            { step: 3, action: 'Maintain brand value', reason: 'Higher price = premium feel' },
+            { step: 4, action: 'Nuqta users stay loyal', reason: 'They get exclusive access' }
+          ].map((s) => (
+            <div key={s.step} className="bg-white/5 rounded-lg p-4">
+              <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center font-bold mb-2">
+                {s.step}
+              </div>
+              <p className="text-white font-medium text-sm">{s.action}</p>
+              <p className="text-slate-400 text-xs">{s.reason}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="bg-white/5 rounded-lg p-4">
+          <p className="text-green-400 font-bold mb-2">Dynamic Discount Range: 5% - 30%</p>
+          <div className="flex items-center gap-4">
+            <span className="text-slate-400 text-sm">Low demand</span>
+            <div className="flex-1 h-3 bg-gradient-to-r from-green-500 via-yellow-500 to-red-500 rounded-full" />
+            <span className="text-slate-400 text-sm">High demand</span>
+          </div>
+          <p className="text-slate-400 text-xs mt-2">Like airline pricing - discounts adjust based on demand</p>
+        </div>
+      </div>
+
+      {/* Nuqta Boards */}
+      <div className="bg-slate-800/30 rounded-xl p-8">
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <QrCode className="w-6 h-6 text-[#c9a227]" /> Nuqta In-Store Boards
+        </h3>
+
+        <div className="grid md:grid-cols-3 gap-4 mb-6">
+          {[
+            { type: 'QR Code Board', desc: 'QR to pay at store counter', place: 'Checkout area' },
+            { type: 'Wall Sticker', desc: 'Stickers for walls/doors/windows', place: 'High visibility' },
+            { type: 'Circle Board', desc: 'Outdoor circular signage', place: 'Shop entrance' }
+          ].map((b, i) => (
+            <div key={i} className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4 text-center">
+              <QrCode className="w-10 h-10 text-[#c9a227] mx-auto mb-2" />
+              <p className="text-white font-bold">{b.type}</p>
+              <p className="text-slate-400 text-sm">{b.desc}</p>
+              <p className="text-[#c9a227] text-xs mt-1">📍 {b.place}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-slate-400 text-sm font-medium">Board Messages:</p>
+          {['We Accept Nuqta', 'Pay with Nuqta & Earn Cashback Instantly', 'Use Nuqta and Get Instant Cashback'].map((msg, i) => (
+            <div key={i} className="bg-[#c9a227]/10 border border-[#c9a227]/20 rounded-lg p-3">
+              <p className="text-white font-medium">&ldquo;{msg}&rdquo;</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Merchant Badge Levels */}
+      <div className="bg-slate-800/30 rounded-xl p-8">
+        <h3 className="text-xl font-bold text-white mb-6">Merchant Verification Badges</h3>
+        <div className="grid md:grid-cols-4 gap-4">
+          {badgeLevels.map((badge, i) => (
+            <div key={i} className={`bg-${badge.color}-500/10 border border-${badge.color}-500/30 rounded-xl p-4`}>
+              <div className="flex items-center gap-2 mb-3">
+                <badge.icon className={`w-6 h-6 text-${badge.color}-400`} />
+                <span className={`text-${badge.color}-400 font-bold`}>{badge.level}</span>
+              </div>
+              <div className="space-y-1">
+                {badge.requirements.map((req, j) => (
+                  <div key={j} className="flex items-center gap-2 text-xs text-slate-400">
+                    <CheckCircle2 className="w-3 h-3 text-green-400" />
+                    <span>{req}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================
+// FLEET STALLS TAB - Pop-up Sales & Product Categories
+// ============================================
+function FleetStallsTab() {
+  const productCategories = [
+    {
+      category: 'Food',
+      icon: '🍔',
+      color: 'orange',
+      types: ['Food Truck', 'Momos', 'Burgers & Sliders', 'Pizza', 'Chaat', 'Desserts', 'Homemade Pickles', 'Bakery']
+    },
+    {
+      category: 'Drinks',
+      icon: '🧋',
+      color: 'cyan',
+      types: ['Mocktails', 'Fresh Juice & Sugarcane', 'Coconut Water', 'Bubble Tea/Boba', 'Cold Brew Coffee', 'Energy Drinks']
+    },
+    {
+      category: 'Fashion & Accessories',
+      icon: '👗',
+      color: 'pink',
+      types: ['Handmade Jewelry', 'Streetwear/Oversized Tees', 'Perfumes & Attars', 'Home Fragrance', 'Organic Skincare', 'Accessories', 'Merchandise', 'Footwear']
+    },
+    {
+      category: 'Lifestyle',
+      icon: '🎁',
+      color: 'purple',
+      types: ['Gifting', 'Pet Care', 'Baby & Kids Essentials']
+    }
+  ];
+
+  return (
+    <div className="space-y-8">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl font-black text-white mb-2">Fleet Stalls Program</h2>
+        <p className="text-slate-400">Pop-up sales at malls, events, universities & societies</p>
+      </div>
+
+      {/* Sales Channels */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-6">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-[#c9a227]/20 rounded-xl flex items-center justify-center">
+              <Store className="w-6 h-6 text-[#c9a227]" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">Nuqta App</h3>
+              <p className="text-slate-400">Primary digital sales channel</p>
+            </div>
+          </div>
+          <ul className="space-y-2 text-slate-300 text-sm">
+            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400" />All products listed in app</li>
+            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400" />10-15% Nuqta Coin cashback</li>
+            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400" />Delivery & pickup options</li>
+          </ul>
+        </div>
+
+        <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-6">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center">
+              <Truck className="w-6 h-6 text-orange-400" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-white">Fleet Stalls</h3>
+              <p className="text-slate-400">Physical pop-up presence</p>
+            </div>
+          </div>
+          <ul className="space-y-2 text-slate-300 text-sm">
+            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400" />Weekend pop-ups (Fri-Sun)</li>
+            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400" />Multiple locations simultaneously</li>
+            <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-400" />Accept Nuqta payments</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Locations */}
+      <div className="bg-slate-800/30 rounded-xl p-8">
+        <h3 className="text-xl font-bold text-white mb-6">Stall Locations</h3>
+        <div className="grid md:grid-cols-4 gap-4">
+          {[
+            { name: 'Malls', desc: 'High footfall shopping centers', icon: ShoppingCart },
+            { name: 'Events', desc: 'Festivals, exhibitions, concerts', icon: Calendar },
+            { name: 'Universities', desc: 'Campus food courts & events', icon: Building2 },
+            { name: 'Societies', desc: 'Residential community markets', icon: Building2 }
+          ].map((loc, i) => (
+            <div key={i} className="bg-white/5 rounded-xl p-4 text-center">
+              <loc.icon className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+              <p className="text-white font-bold">{loc.name}</p>
+              <p className="text-slate-400 text-xs">{loc.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Product Categories */}
+      <div className="bg-slate-800/30 rounded-xl p-8">
+        <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+          <Package className="w-6 h-6 text-[#c9a227]" /> Co-Partner Product Categories
+        </h3>
+        <p className="text-slate-400 mb-6">
+          We want to partner with famous influencers and young founders in these categories:
+        </p>
+
+        <div className="space-y-6">
+          {productCategories.map((cat, i) => (
+            <div key={i} className={`bg-${cat.color}-500/10 border border-${cat.color}-500/20 rounded-xl p-6`}>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">{cat.icon}</span>
+                <h4 className="text-xl font-bold text-white">{cat.category}</h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {cat.types.map((type, j) => (
+                  <span key={j} className="bg-white/10 text-slate-300 px-3 py-1 rounded-full text-sm">
+                    {type}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Revenue Model for Fleet */}
+      <div className="bg-gradient-to-br from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-2xl p-8">
+        <h3 className="text-xl font-bold text-white mb-6">Fleet Stall Revenue Model</h3>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white/5 rounded-lg p-4">
+            <p className="text-blue-400 font-bold mb-2">For Nuqta</p>
+            <p className="text-white">General Merchant + Privilege Model</p>
+            <p className="text-slate-400 text-sm">0% commission for Co-Partner brands</p>
+          </div>
+          <div className="bg-white/5 rounded-lg p-4">
+            <p className="text-green-400 font-bold mb-2">For Users</p>
+            <p className="text-white">10-15% Nuqta Coins</p>
+            <p className="text-slate-400 text-sm">Exclusive access to Co-Partner products</p>
+          </div>
+          <div className="bg-white/5 rounded-lg p-4">
+            <p className="text-purple-400 font-bold mb-2">For Co-Partner</p>
+            <ul className="text-slate-300 text-sm space-y-1">
+              <li>• Nuqta investment</li>
+              <li>• Office space</li>
+              <li>• Marketing support</li>
+              <li>• Finance & salary</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Influencer Partnership */}
+      <div className="bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/30 rounded-2xl p-8 text-center">
+        <h3 className="text-2xl font-black text-white mb-4">🌟 Influencer & Founder Partnerships</h3>
+        <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+          We want to partner with famous regional influencers and young entrepreneurial founders
+          who can build authentic content about their business journey while selling via Nuqta.
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {['Partner with famous influencers', 'Collaborate with young founders', 'Build authentic ambassadors', 'Content-first partnerships'].map((goal, i) => (
+            <span key={i} className="bg-pink-500/20 text-pink-300 px-4 py-2 rounded-full text-sm">
+              {goal}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );
