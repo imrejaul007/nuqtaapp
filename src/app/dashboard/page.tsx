@@ -168,6 +168,7 @@ const sections: Section[] = [
     bgColor: 'from-[#c9a227]/10 to-[#c9a227]/5',
     borderColor: 'border-[#c9a227]/30',
     links: [
+      { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
       { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle },
       { label: 'CEO Report', href: '/ceo-agent', icon: Crown },

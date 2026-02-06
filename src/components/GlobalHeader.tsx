@@ -151,6 +151,7 @@ const navigationData: NavCategory[] = [
     icon: Crown,
     color: 'text-[#c9a227]',
     items: [
+      { label: '3-Year Domination Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
       { label: 'CEO Report', href: '/ceo-agent', icon: Bot },
       { label: 'COO Report', href: '/coo-agent', icon: Settings },

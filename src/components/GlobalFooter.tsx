@@ -109,10 +109,10 @@ const footerSections: FooterSection[] = [
   {
     title: 'C-Suite & Team',
     links: [
+      { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
       { label: 'Issue Resolution', href: '/issue-resolution', icon: Target },
       { label: 'Team & Roles', href: '/team', icon: Users },
-      { label: 'HR Operations', href: '/hr-operations', icon: Heart },
     ]
   },
   {
