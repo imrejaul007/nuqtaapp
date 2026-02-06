@@ -904,13 +904,6 @@ const platformIcons: Record<string, React.ElementType> = {
   all: Sparkles,
 };
 
-const typeIcons: Record<string, React.ElementType> = {
-  reel: Video,
-  post: Image,
-  story: Clock,
-  carousel: Layers,
-};
-
 const Layers = ({ className, size }: { className?: string; size?: number }) => (
   <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
@@ -918,6 +911,13 @@ const Layers = ({ className, size }: { className?: string; size?: number }) => (
     <polyline points="2 12 12 17 22 12"></polyline>
   </svg>
 );
+
+const typeIcons: Record<string, React.ElementType> = {
+  reel: Video,
+  post: Image,
+  story: Clock,
+  carousel: Layers,
+};
 
 export default function ContentCalendarPage() {
   const [selectedWeek, setSelectedWeek] = useState(1);
