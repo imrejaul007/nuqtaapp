@@ -260,11 +260,12 @@ const navigationData: NavCategory[] = [
   {
     title: 'People & HR',
     items: [
-      { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Users, description: 'People strategy' },
-      { label: 'Team Planning', href: '/team-planning', icon: Users, description: 'Org chart & roles' },
+      { label: 'Full Team & Roles', href: '/team', icon: Users, description: 'Org chart & all JDs' },
+      { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Target, description: 'People strategy' },
       { label: 'HR Operations', href: '/hr-operations', icon: FileText, description: 'Policies & onboarding' },
-      { label: 'Compensation Guide', href: '/compensation-guide', icon: DollarSign, description: 'Salary & ESOP' },
-      { label: 'Performance System', href: '/performance-management', icon: Target, description: 'OKRs & reviews' },
+      { label: 'Compensation Guide', href: '/compensation-guide', icon: DollarSign, description: 'Salary & benefits' },
+      { label: 'Performance System', href: '/performance-management', icon: BarChart3, description: 'OKRs & reviews' },
+      { label: 'ESOP Program', href: '/esop', icon: Coins, description: 'Equity options' },
     ]
   },
   {
@@ -284,12 +285,10 @@ const navigationData: NavCategory[] = [
       { label: 'Executive Team', href: '/executive-team', icon: Crown, description: 'C-Suite analysis' },
       { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target, description: 'Strategic plan' },
       { label: 'Executive Issues', href: '/executive-issues', icon: Target, description: 'Critical analysis' },
-      { label: 'Team', href: '/team', icon: Users, description: 'Our team' },
-      { label: 'Join Us', href: '/join-us', icon: Users, description: 'CTO recruitment' },
+      { label: 'Join Us', href: '/join-us', icon: Users, description: 'Careers & CTO' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
       { label: 'Merchant Pipeline', href: '/merchant-pipeline', icon: Target, description: 'First 10 merchants' },
       { label: 'QR Design Specs', href: '/qr-design-specs', icon: FileText, description: 'Print materials' },
-      { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity options' },
       { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project tracker' },
     ]
   }
