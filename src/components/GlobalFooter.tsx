@@ -41,7 +41,8 @@ import {
   UserCircle,
   Bot,
   AlertTriangle,
-  Smartphone
+  Smartphone,
+  MessageSquare
 } from 'lucide-react';
 
 /**
@@ -157,6 +158,9 @@ const navigationData: NavCategory[] = [
       { label: 'Influencer List', href: '/influencer-list', icon: Users, description: 'UAE influencers' },
       { label: 'PR Launch Plan', href: '/pr-launch', icon: Megaphone, description: 'Media strategy' },
       { label: 'App Store Copy', href: '/app-store-copy', icon: Smartphone, description: 'iOS & Android' },
+      { label: 'Explainer Video', href: '/explainer-video', icon: Play, description: 'Video scripts' },
+      { label: 'Email Templates', href: '/email-templates', icon: Mail, description: '20+ templates' },
+      { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare, description: '25+ templates' },
     ]
   },
   {

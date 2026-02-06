@@ -191,9 +191,9 @@ const launchChecklist: ChecklistCategory[] = [
       { id: 'mk7', task: 'Influencer Partnership List', status: 'done', owner: 'Marketing', priority: 'medium', link: '/influencer-list', notes: '23 UAE influencers listed' },
       { id: 'mk8', task: 'PR Launch Plan', status: 'done', owner: 'Marketing', priority: 'medium', link: '/pr-launch', notes: 'Full PR strategy ready' },
       { id: 'mk9', task: 'App Store Screenshots & Description', status: 'done', owner: 'Marketing', priority: 'high', link: '/app-store-copy', notes: 'iOS & Android copy ready' },
-      { id: 'mk10', task: 'Explainer Video', status: 'pending', owner: 'Marketing', priority: 'medium' },
-      { id: 'mk11', task: 'Email Marketing Setup (Mailchimp/etc)', status: 'pending', owner: 'Marketing', priority: 'medium' },
-      { id: 'mk12', task: 'SMS Marketing Setup', status: 'pending', owner: 'Marketing', priority: 'medium' },
+      { id: 'mk10', task: 'Explainer Video Script', status: 'done', owner: 'Marketing', priority: 'medium', link: '/explainer-video', notes: '3 video scripts + storyboards' },
+      { id: 'mk11', task: 'Email Marketing Templates', status: 'done', owner: 'Marketing', priority: 'medium', link: '/email-templates', notes: '20+ email templates ready' },
+      { id: 'mk12', task: 'SMS Marketing Templates', status: 'done', owner: 'Marketing', priority: 'medium', link: '/sms-templates', notes: '25+ SMS templates ready' },
     ]
   },
   {
