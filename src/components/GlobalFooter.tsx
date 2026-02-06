@@ -42,7 +42,17 @@ import {
   Bot,
   AlertTriangle,
   Smartphone,
-  MessageSquare
+  MessageSquare,
+  Coffee,
+  Scissors,
+  ShoppingCart,
+  Gem,
+  Dumbbell,
+  Pill,
+  Shirt,
+  Film,
+  BarChart3,
+  LineChart
 } from 'lucide-react';
 
 /**
@@ -72,10 +82,12 @@ const navigationData: NavCategory[] = [
       { label: 'Full Deck', href: '/deck-kang', icon: Presentation, description: 'Comprehensive pitch' },
       { label: 'Final Deck', href: '/deck-final', icon: Presentation, description: 'Final pitch version' },
       { label: 'New Deck', href: '/deck-new', icon: Presentation, description: 'Latest deck' },
+      { label: 'All Decks', href: '/deck', icon: Presentation, description: 'Deck overview' },
       { label: 'Investment Memo', href: '/memo', icon: Briefcase, description: 'Investor memo' },
       { label: 'Data Room', href: '/data-room', icon: Database, description: 'Due diligence docs' },
       { label: 'Financial Projections', href: '/financialprojection', icon: DollarSign, description: 'Forecasts' },
       { label: 'Financial Models', href: '/financial-models', icon: Calculator, description: 'P&L & unit economics' },
+      { label: 'Financial Scenarios', href: '/financial-scenarios', icon: LineChart, description: 'Growth scenarios' },
       { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail, description: 'Target list & templates' },
       { label: 'Investor FAQ', href: '/investor-faq', icon: FileText, description: 'Common questions' },
       { label: 'Commitment', href: '/commitment', icon: FileCheck, description: 'Investment terms' },
@@ -121,12 +133,26 @@ const navigationData: NavCategory[] = [
   {
     title: 'Industry Decks',
     items: [
-      { label: 'Cafes & Restaurants', href: '/deck-cafe', icon: Store, description: 'F&B pitch' },
-      { label: 'Salons & Spas', href: '/deck-salon', icon: Users, description: 'Beauty pitch' },
-      { label: 'Supermarkets', href: '/deck-supermarket', icon: Building2, description: 'Grocery pitch' },
-      { label: 'Gold & Jewelry', href: '/deck-gold', icon: DollarSign, description: 'Jewelry pitch' },
+      { label: 'Cafes & Restaurants', href: '/deck-cafe', icon: Coffee, description: 'F&B pitch' },
+      { label: 'Salons & Spas', href: '/deck-salon', icon: Scissors, description: 'Beauty pitch' },
+      { label: 'Supermarkets', href: '/deck-supermarket', icon: ShoppingCart, description: 'Grocery pitch' },
+      { label: 'Gold & Jewelry', href: '/deck-gold', icon: Gem, description: 'Jewelry pitch' },
       { label: 'Universities', href: '/deck-university', icon: BookOpen, description: 'Student pitch' },
       { label: 'Corporate', href: '/deck-corporate', icon: Briefcase, description: 'Employee rewards' },
+    ]
+  },
+  {
+    title: 'Industry Playbooks',
+    items: [
+      { label: 'Cafe Playbook', href: '/playbook-cafe', icon: Coffee, description: 'F&B execution' },
+      { label: 'Salon Playbook', href: '/playbook-salon', icon: Scissors, description: 'Beauty execution' },
+      { label: 'Supermarket Playbook', href: '/playbook-supermarket', icon: ShoppingCart, description: 'Grocery execution' },
+      { label: 'Gold Playbook', href: '/playbook-gold', icon: Gem, description: 'Jewelry execution' },
+      { label: 'Electronics Playbook', href: '/playbook-electronics', icon: Smartphone, description: 'Electronics execution' },
+      { label: 'Fashion Playbook', href: '/playbook-fashion', icon: Shirt, description: 'Fashion execution' },
+      { label: 'Gym Playbook', href: '/playbook-gym', icon: Dumbbell, description: 'Fitness execution' },
+      { label: 'Pharmacy Playbook', href: '/playbook-pharmacy', icon: Pill, description: 'Pharmacy execution' },
+      { label: 'Entertainment Playbook', href: '/playbook-entertainment', icon: Film, description: 'Entertainment execution' },
     ]
   },
   {
@@ -142,10 +168,12 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
-    title: 'Marketing Hub',
+    title: '⭐ Marketing Hub',
     items: [
-      { label: '⭐ Marketing Hub', href: '/marketing-hub', icon: Megaphone, description: 'START HERE - All resources' },
+      { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone, description: 'START HERE - All resources' },
+      { label: 'Marketing Dashboard', href: '/marketing-dashboard', icon: BarChart3, description: 'Campaign metrics' },
       { label: 'CMO Playbook', href: '/cmo-playbook', icon: Crown, description: '90-day master plan' },
+      { label: 'Marketing Bible', href: '/marketing-bible', icon: BookOpen, description: 'Full marketing plan' },
       { label: 'Brand Voice Guide', href: '/brand-voice', icon: MessageSquare, description: 'Tone & messaging' },
       { label: 'Customer Journeys', href: '/customer-journeys', icon: Map, description: '6 persona maps' },
     ]
@@ -158,6 +186,7 @@ const navigationData: NavCategory[] = [
       { label: 'PR Launch Plan', href: '/pr-launch', icon: Megaphone, description: 'Media strategy' },
       { label: 'First 100 Users', href: '/user-acquisition', icon: Users, description: 'User acquisition' },
       { label: 'First 10 Merchants', href: '/merchant-acquisition', icon: Store, description: 'Merchant sales' },
+      { label: 'Launch Readiness', href: '/launch-readiness', icon: Rocket, description: 'Gap analysis' },
     ]
   },
   {
@@ -167,6 +196,7 @@ const navigationData: NavCategory[] = [
       { label: 'Content Calendar', href: '/content-calendar', icon: Calendar, description: '30-day schedule' },
       { label: 'Email Templates', href: '/email-templates', icon: Mail, description: '20+ templates' },
       { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare, description: '25+ templates' },
+      { label: 'Support Templates', href: '/support-templates', icon: Heart, description: 'Response templates' },
       { label: 'App Store Copy', href: '/app-store-copy', icon: Smartphone, description: 'iOS & Android' },
       { label: 'Explainer Video', href: '/explainer-video', icon: Play, description: 'Video scripts' },
     ]
@@ -174,6 +204,7 @@ const navigationData: NavCategory[] = [
   {
     title: 'Campaigns',
     items: [
+      { label: 'All Campaigns', href: '/campaigns', icon: Target, description: 'Campaign overview' },
       { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar, description: '12 UAE campaigns' },
       { label: 'Big Win Campaigns', href: '/big-win-campaigns', icon: Target, description: 'Car, iPhone prizes' },
       { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Play, description: 'Video challenges' },
@@ -204,7 +235,7 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
-    title: 'Agent Reports',
+    title: 'C-Suite Reports',
     items: [
       { label: 'C-Suite Operations', href: '/c-suite-operations', icon: Settings, description: 'Operating manuals & MoM' },
       { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown, description: 'Execution playbook' },
@@ -223,7 +254,7 @@ const navigationData: NavCategory[] = [
       { label: 'User Journey', href: '/user-journey', icon: Map, description: 'Onboarding flow' },
       { label: 'Dashboard Preview', href: '/dashboard-preview', icon: Settings, description: 'UI designs' },
       { label: 'Landing Page V1', href: '/landing-v1', icon: Home, description: 'Website v1' },
-      { label: 'Analytics Dashboard', href: '/analytics-dashboard', icon: TrendingUp, description: 'KPI specs' },
+      { label: 'Analytics Dashboard', href: '/analytics-dashboard', icon: BarChart3, description: 'KPI specs' },
     ]
   },
   {
@@ -236,10 +267,8 @@ const navigationData: NavCategory[] = [
       { label: 'Team', href: '/team', icon: Users, description: 'Our team' },
       { label: 'Join Us', href: '/join-us', icon: Users, description: 'CTO recruitment' },
       { label: 'Operations', href: '/operations', icon: Settings, description: 'Operations manual' },
-      { label: 'Support Templates', href: '/support-templates', icon: Mail, description: 'Response templates' },
       { label: 'Merchant Pipeline', href: '/merchant-pipeline', icon: Target, description: 'First 10 merchants' },
       { label: 'QR Design Specs', href: '/qr-design-specs', icon: FileText, description: 'Print materials' },
-      { label: 'Launch Readiness', href: '/launch-readiness', icon: Rocket, description: 'Gap analysis' },
       { label: 'ESOP', href: '/esop', icon: Coins, description: 'Equity options' },
       { label: 'Task List', href: '/tasks', icon: CheckSquare, description: 'Project tracker' },
     ]
@@ -354,8 +383,8 @@ const GlobalFooter = () => {
                 {[
                   { label: 'Home', href: '/' },
                   { label: 'Tasks', href: '/tasks' },
-                  { label: '⭐ Marketing Hub', href: '/marketing-hub' },
-                  { label: '90s Deck', href: '/deck-90' },
+                  { label: '⭐ Marketing', href: '/marketing-hub' },
+                  { label: 'Decks', href: '/deck-90' },
                   { label: 'Full Deck', href: '/deck-kang' },
                   { label: 'GV Deck', href: '/deck-gv' },
                   { label: 'Roadmap', href: '/master-roadmap' },
@@ -363,8 +392,9 @@ const GlobalFooter = () => {
                   { label: 'Financials', href: '/financialprojection' },
                   { label: 'Data Room', href: '/data-room' },
                   { label: 'Merchants', href: '/merchant-database' },
-                  { label: 'Operations', href: '/operations' },
+                  { label: 'Playbooks', href: '/playbook-cafe' },
                   { label: 'SOPs', href: '/sop' },
+                  { label: 'C-Suite', href: '/c-suite-operations' },
                 ].map((link, idx) => (
                   <Link
                     key={idx}
