@@ -63,28 +63,28 @@ export default function FundingDocsPage() {
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0a1628] via-[#1a2d4a] to-[#0a1628] border-b border-[#c9a227]/30">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
-              <DollarSign size={32} className="text-[#0a1628]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center flex-shrink-0">
+              <DollarSign size={24} className="text-[#0a1628] sm:w-8 sm:h-8" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Funding Documents Center</h1>
-              <p className="text-slate-400">Investor-Ready Documentation Package</p>
+              <h1 className="text-2xl sm:text-3xl font-bold">Funding Documents Center</h1>
+              <p className="text-slate-400 text-sm sm:text-base">Investor-Ready Documentation Package</p>
             </div>
           </div>
-          <div className="flex items-center gap-4 text-sm">
-            <span className="px-3 py-1 bg-[#c9a227]/20 text-[#c9a227] rounded-full">SAFE Round: $400K</span>
-            <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full">Valuation Cap: $5M</span>
-            <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">Target Close: March 2026</span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm">
+            <span className="px-2 sm:px-3 py-1 bg-[#c9a227]/20 text-[#c9a227] rounded-full">SAFE: $400K</span>
+            <span className="px-2 sm:px-3 py-1 bg-green-500/20 text-green-400 rounded-full">Cap: $5M</span>
+            <span className="px-2 sm:px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full">Close: Mar 2026</span>
           </div>
         </div>
       </div>
 
       {/* Tab Navigation */}
       <div className="border-b border-white/10 sticky top-0 bg-[#0a1628]/95 backdrop-blur-xl z-40">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex gap-1 overflow-x-auto py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex gap-1 overflow-x-auto py-2 scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -104,7 +104,7 @@ export default function FundingDocsPage() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-6 py-8 space-y-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-6 sm:space-y-8">
         {activeTab === 'overview' && <OverviewSection onNavigate={setActiveTab} />}
         {activeTab === 'captable' && <CapTableSection />}
         {activeTab === 'safe' && <SAFESection />}
@@ -129,25 +129,25 @@ function OverviewSection({ onNavigate }: { onNavigate: (tab: string) => void }) 
       <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-2xl p-8 border border-[#c9a227]/30">
         <h2 className="text-2xl font-bold text-white mb-6">SAFE Round Summary</h2>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          <div className="p-4 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-sm">Target Raise</p>
-            <p className="text-3xl font-bold text-[#c9a227]">$400K</p>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
+          <div className="p-3 sm:p-4 bg-white/5 rounded-xl">
+            <p className="text-slate-400 text-xs sm:text-sm">Target Raise</p>
+            <p className="text-2xl sm:text-3xl font-bold text-[#c9a227]">$400K</p>
             <p className="text-slate-500 text-xs mt-1">~AED 1.47M</p>
           </div>
-          <div className="p-4 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-sm">Valuation Cap</p>
-            <p className="text-3xl font-bold text-white">$5M</p>
+          <div className="p-3 sm:p-4 bg-white/5 rounded-xl">
+            <p className="text-slate-400 text-xs sm:text-sm">Valuation Cap</p>
+            <p className="text-2xl sm:text-3xl font-bold text-white">$5M</p>
             <p className="text-slate-500 text-xs mt-1">~AED 18.4M</p>
           </div>
-          <div className="p-4 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-sm">Discount</p>
-            <p className="text-3xl font-bold text-white">20%</p>
+          <div className="p-3 sm:p-4 bg-white/5 rounded-xl">
+            <p className="text-slate-400 text-xs sm:text-sm">Discount</p>
+            <p className="text-2xl sm:text-3xl font-bold text-white">20%</p>
             <p className="text-slate-500 text-xs mt-1">On next round</p>
           </div>
-          <div className="p-4 bg-white/5 rounded-xl">
-            <p className="text-slate-400 text-sm">Minimum Ticket</p>
-            <p className="text-3xl font-bold text-white">$25K</p>
+          <div className="p-3 sm:p-4 bg-white/5 rounded-xl">
+            <p className="text-slate-400 text-xs sm:text-sm">Min Ticket</p>
+            <p className="text-2xl sm:text-3xl font-bold text-white">$25K</p>
             <p className="text-slate-500 text-xs mt-1">~AED 92K</p>
           </div>
         </div>
@@ -160,7 +160,7 @@ function OverviewSection({ onNavigate }: { onNavigate: (tab: string) => void }) 
           Investor Document Checklist
         </h3>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           {[
             { doc: 'Pitch Deck (90-Second)', status: 'complete', link: '/deck-90', isExternal: true },
             { doc: 'Full Investor Deck', status: 'complete', link: '/deck-kang', isExternal: true },
@@ -1020,7 +1020,7 @@ function TermSheetSection() {
             {/* Investment Terms */}
             <div>
               <h4 className="text-[#c9a227] font-bold text-lg mb-4 pb-2 border-b border-[#c9a227]/30">INVESTMENT TERMS</h4>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { label: 'Security Type', value: 'SAFE (Simple Agreement for Future Equity)' },
                   { label: 'Total Raise', value: '$400,000 (AED ~1,470,000)' },
@@ -1042,7 +1042,7 @@ function TermSheetSection() {
             {/* Use of Proceeds */}
             <div>
               <h4 className="text-[#c9a227] font-bold text-lg mb-4 pb-2 border-b border-[#c9a227]/30">USE OF PROCEEDS</h4>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { category: 'Marketing & User Acquisition', percentage: '35%', amount: '$140,000' },
                   { category: 'Product & Technology', percentage: '25%', amount: '$100,000' },

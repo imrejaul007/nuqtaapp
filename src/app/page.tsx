@@ -122,7 +122,7 @@ export default function LandingPage() {
           {/* Logo with glow effect */}
           <div className="mb-8 inline-flex items-center justify-center relative">
             <div className="absolute inset-0 bg-[#c9a227]/20 blur-2xl rounded-full scale-150" />
-            <h1 className="text-7xl sm:text-8xl md:text-9xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl relative z-10">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl relative z-10">
               Nuqta
             </h1>
           </div>
@@ -131,7 +131,7 @@ export default function LandingPage() {
           <div className="space-y-6 mb-8">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] blur-xl opacity-30" />
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white relative z-10">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white relative z-10">
                 Search. Save. Earn.
               </h2>
             </div>
@@ -140,7 +140,7 @@ export default function LandingPage() {
           {/* Value Proposition */}
           <div className="max-w-4xl mx-auto mb-12">
             <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 border-2 border-[#c9a227]/30 rounded-2xl p-8 backdrop-blur-sm">
-              <p className="text-2xl sm:text-3xl text-white leading-relaxed">
+              <p className="text-xl sm:text-2xl md:text-3xl text-white leading-relaxed">
                 <span className="text-[#c9a227] font-black">10% offline cashback</span> on every purchase —{' '}
                 <span className="font-semibold">5x better than credit cards</span>
               </p>
@@ -148,23 +148,23 @@ export default function LandingPage() {
           </div>
 
           {/* Key Stats Row - Updated with 16.8x LTV:CAC */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto mb-12">
             <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#c9a227]/20 transition-all backdrop-blur-sm">
-              <p className="text-5xl font-black text-[#c9a227] mb-2">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-black text-[#c9a227] mb-2">
                 <AnimatedCounter end={150} prefix="$" suffix="B" duration={2000} />
               </p>
               <p className="text-xs font-bold text-white uppercase tracking-wider">GCC TAM</p>
             </div>
             <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
-              <p className="text-5xl font-black text-emerald-400 mb-2">16.8x</p>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-black text-emerald-400 mb-2">16.8x</p>
               <p className="text-xs font-bold text-white uppercase tracking-wider">LTV:CAC</p>
             </div>
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
-              <p className="text-5xl font-black text-blue-400 mb-2">32</p>
+              <p className="text-3xl sm:text-4xl md:text-5xl font-black text-blue-400 mb-2">32</p>
               <p className="text-xs font-bold text-white uppercase tracking-wider">Signed LOIs</p>
             </div>
             <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
-              <p className="text-4xl font-black text-purple-400 mb-2">Q1 2026</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-black text-purple-400 mb-2">Q1 2026</p>
               <p className="text-xs font-bold text-white uppercase tracking-wider">Launch</p>
             </div>
           </div>
@@ -223,7 +223,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Problem</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Users Leave <span className="text-red-500">AED 2.4B</span> on the Table
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -292,7 +292,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Other Side</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Merchants Burn <span className="text-red-500">AED 200+</span> Per Customer
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -386,7 +386,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">How Nuqta Works</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Search → Save → Earn
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -483,7 +483,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Numbers</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Profitable from <span className="text-emerald-400">Day One</span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -631,7 +631,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Traction</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               32 Signed LOIs. <span className="text-emerald-400">30 More in Pipeline.</span>
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -726,7 +726,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">Competition</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Why Can't <span className="text-red-500">Noon/Careem</span> Do This?
             </h2>
             <p className="text-xl text-slate-400 max-w-3xl mx-auto">
@@ -735,8 +735,10 @@ export default function LandingPage() {
           </div>
 
           {/* Competitive Matrix */}
-          <div className="overflow-x-auto mb-12">
-            <table className="w-full border-collapse bg-slate-800/50 rounded-2xl overflow-hidden">
+          <div className="relative mb-12">
+            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-slate-800/50 pb-2">
+              <div className="sm:hidden absolute right-0 top-0 h-full w-8 bg-gradient-to-l from-[#0a1628] to-transparent pointer-events-none z-10" />
+              <table className="w-full border-collapse bg-slate-800/50 rounded-2xl overflow-hidden min-w-[640px]">
               <thead>
                 <tr className="bg-slate-700">
                   <th className="text-left p-4 text-slate-300 font-bold">Feature</th>
@@ -805,7 +807,8 @@ export default function LandingPage() {
                   <td className="text-center p-4 text-yellow-400 text-2xl">~</td>
                 </tr>
               </tbody>
-            </table>
+              </table>
+            </div>
           </div>
 
           {/* Why They Won't Compete */}
@@ -869,7 +872,7 @@ export default function LandingPage() {
       {/* CTA Section */}
       <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-br from-[#0d1d3a] to-[#0a1628]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-6">
             Join the <span className="bg-gradient-to-r from-[#c9a227] via-yellow-400 to-[#c9a227] bg-clip-text text-transparent">Next Chapter</span>
           </h2>
           <p className="text-xl sm:text-2xl text-slate-400 mb-12 max-w-2xl mx-auto">
@@ -936,7 +939,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">The Founder</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Building in Public
             </h2>
           </div>
@@ -970,7 +973,7 @@ export default function LandingPage() {
                     href="https://www.linkedin.com/in/rejaul-karim"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium"
+                    className="px-4 py-2.5 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium min-h-[44px] flex items-center"
                   >
                     Connect on LinkedIn
                   </a>
@@ -978,7 +981,7 @@ export default function LandingPage() {
                     href="https://twitter.com/rejaulkarim"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm font-medium"
+                    className="px-4 py-2.5 sm:py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg transition-colors text-sm font-medium min-h-[44px] flex items-center"
                   >
                     Follow on Twitter
                   </a>
@@ -1012,7 +1015,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm uppercase tracking-wider text-[#c9a227] font-bold mb-3">FAQ</p>
-            <h2 className="text-4xl sm:text-5xl font-black mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">
               Common Questions
             </h2>
             <p className="text-xl text-slate-400">

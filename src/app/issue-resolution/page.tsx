@@ -644,25 +644,25 @@ export default function IssueResolutionPage() {
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0a1628] via-[#1a2d4a] to-[#0a1628] border-b border-[#c9a227]/20">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-red-500/20 rounded-xl">
-                <AlertTriangle className="w-8 h-8 text-red-400" />
+        <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 bg-red-500/20 rounded-xl flex-shrink-0">
+                <AlertTriangle className="w-6 h-6 sm:w-8 sm:h-8 text-red-400" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold">Issue Resolution Tracker</h1>
-                <p className="text-gray-400">C-Suite Agent Issues → Actionable Solutions</p>
+                <h1 className="text-2xl sm:text-3xl font-bold">Issue Resolution Tracker</h1>
+                <p className="text-gray-400 text-sm sm:text-base">C-Suite Issues → Solutions</p>
               </div>
             </div>
-            <div className="text-right">
-              <p className="text-[#c9a227] font-bold text-xl">{issues.length} Issues</p>
-              <p className="text-gray-400 text-sm">{criticalIssues.length} Critical • {inProgressIssues.length} In Progress</p>
+            <div className="text-left sm:text-right w-full sm:w-auto flex sm:block items-center justify-between">
+              <p className="text-[#c9a227] font-bold text-lg sm:text-xl">{issues.length} Issues</p>
+              <p className="text-gray-400 text-xs sm:text-sm">{criticalIssues.length} Critical • {inProgressIssues.length} In Progress</p>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3 mb-6">
             {departments.map(dept => {
               const deptIssues = issues.filter(i => i.department === dept.id as Department);
               const critical = deptIssues.filter(i => i.priority === 'critical').length;

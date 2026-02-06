@@ -64,27 +64,29 @@ export default function CEOReportPage() {
     <div className="min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2a4a] to-[#0a1628]">
       {/* Header */}
       <div className="bg-gradient-to-r from-purple-900/50 to-purple-800/30 border-b border-purple-500/30">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex items-start gap-6">
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center shadow-xl">
-              <Crown size={48} className="text-white" />
+        <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+          <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+            <div className="w-16 h-16 sm:w-24 sm:h-24 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center shadow-xl flex-shrink-0">
+              <Crown size={32} className="text-white sm:w-12 sm:h-12" />
             </div>
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <h1 className="text-3xl font-bold text-white">CEO Strategic Report</h1>
-                <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
+            <div className="flex-1 min-w-0">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2">
+                <h1 className="text-2xl sm:text-3xl font-bold text-white">CEO Strategic Report</h1>
+                <span className="px-2 sm:px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs sm:text-sm border border-purple-500/30">
                   Agent Report
                 </span>
               </div>
-              <p className="text-purple-300 text-lg">AI Agent: Sarah Chen • 20+ Years Executive Experience</p>
-              <p className="text-slate-400 mt-2">Former CEO of 3 startups • 2 successful exits • $500M+ raised</p>
+              <p className="text-purple-300 text-sm sm:text-lg">AI Agent: Sarah Chen • 20+ Years Experience</p>
+              <p className="text-slate-400 mt-1 sm:mt-2 text-xs sm:text-base">Former CEO of 3 startups • 2 exits • $500M+ raised</p>
             </div>
-            <div className="text-right">
-              <p className="text-purple-400 font-bold text-xl">NUQTA</p>
-              <p className="text-slate-500 text-sm">Analysis Date: Feb 2026</p>
-              <div className="mt-2 flex items-center gap-2 justify-end">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-green-400 text-sm">Report Complete</span>
+            <div className="text-left sm:text-right w-full sm:w-auto mt-2 sm:mt-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-purple-500/20">
+              <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-2">
+                <p className="text-purple-400 font-bold text-lg sm:text-xl">NUQTA</p>
+                <p className="text-slate-500 text-xs sm:text-sm">Feb 2026</p>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  <span className="text-green-400 text-xs sm:text-sm">Complete</span>
+                </div>
               </div>
             </div>
           </div>
@@ -132,7 +134,7 @@ function AgentProfile() {
     <div className="space-y-8">
       {/* Agent Card */}
       <div className="bg-gradient-to-r from-purple-500/10 to-purple-500/5 rounded-2xl p-8 border border-purple-500/30">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           <div className="md:col-span-2">
             <h2 className="text-2xl font-bold text-purple-400 mb-4">Agent Profile: Sarah Chen</h2>
             <p className="text-slate-300 leading-relaxed mb-6">
@@ -140,9 +142,9 @@ function AgentProfile() {
               in the Middle East and Asia. My analysis is based on patterns from 500+ startup case studies,
               100+ successful fundraises, and deep expertise in the UAE business ecosystem.
             </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="p-4 bg-white/5 rounded-xl">
-                <p className="text-purple-400 font-bold mb-2">Core Expertise</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-3 sm:p-4 bg-white/5 rounded-xl">
+                <p className="text-purple-400 font-bold mb-2 text-sm sm:text-base">Core Expertise</p>
                 <ul className="text-slate-300 text-sm space-y-1">
                   <li>• Vision & Strategy Development</li>
                   <li>• Seed to Series C Fundraising</li>
