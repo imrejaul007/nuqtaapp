@@ -87,7 +87,7 @@ interface SOPCategory {
 const visionStatement = {
   mission: "Become the #1 rewards and payment intelligence platform in the GCC",
   vision: "Every transaction in the GCC earns rewards. Every payment is optimized.",
-  northStar: "1 Million Monthly Active Users by Year 5",
+  northStar: "5 Million MAU | 100K Merchants | AED 6B GMV by Year 5",
   values: [
     { icon: Zap, label: "Speed", description: "Move fast, ship weekly" },
     { icon: Heart, label: "Customer First", description: "Build what users need" },
@@ -99,214 +99,214 @@ const visionStatement = {
 const yearPlans: YearPlan[] = [
   {
     year: 1,
-    theme: "UAE Launch & Foundation",
-    tagline: "Build the machine that builds the company",
+    theme: "UAE Blitzscale",
+    tagline: "100K users, 2,500 merchants - Dominate Dubai",
     color: "text-blue-400",
     borderColor: "border-blue-500/30",
     bgColor: "from-blue-500/10 to-blue-600/5",
     keyMetrics: [
-      { label: "MAU Target", value: "10,000", icon: Users },
-      { label: "Merchants", value: "250", icon: Store },
-      { label: "GMV", value: "AED 12M", icon: DollarSign },
-      { label: "Revenue", value: "AED 960K", icon: TrendingUp },
-      { label: "Team Size", value: "15-20", icon: Users },
-      { label: "CAC Target", value: "<AED 15", icon: Target },
+      { label: "MAU Target", value: "100,000", icon: Users },
+      { label: "Merchants", value: "2,500", icon: Store },
+      { label: "GMV", value: "AED 120M", icon: DollarSign },
+      { label: "Revenue", value: "AED 9.6M", icon: TrendingUp },
+      { label: "Team Size", value: "50+", icon: Users },
+      { label: "EBITDA", value: "AED 1M", icon: Target },
     ],
     milestones: [
       {
         quarter: "Q1 2026",
-        title: "Foundation & MVP",
-        metrics: ["1,000 beta users", "50 pilot merchants", "Core app live"],
-        teamActions: ["Hire COO", "Hire CMO", "Complete core engineering"],
+        title: "Aggressive Launch",
+        metrics: ["25,000 users", "500 merchants", "App live", "AED 800K MRR"],
+        teamActions: ["Full C-Suite hired", "20-person sales army", "Engineering 10+"],
         status: "current"
       },
       {
         quarter: "Q2 2026",
-        title: "Soft Launch",
-        metrics: ["3,000 users", "100 merchants", "First partnerships live"],
-        teamActions: ["Sales team (3 BDMs)", "Customer success hire", "Marketing specialist"],
+        title: "Dubai Domination",
+        metrics: ["50,000 users", "1,200 merchants", "AED 1.5M MRR", "All major malls"],
+        teamActions: ["40 person team", "5 bank partnerships", "PR blitz"],
         status: "upcoming"
       },
       {
         quarter: "Q3 2026",
-        title: "Market Validation",
-        metrics: ["6,000 users", "175 merchants", "Product-market fit signals"],
-        teamActions: ["Engineering expansion", "Operations manager", "QA lead"],
+        title: "UAE Expansion",
+        metrics: ["75,000 users", "1,800 merchants", "Abu Dhabi live", "AED 2.2M MRR"],
+        teamActions: ["Abu Dhabi + Sharjah teams", "Marketing machine", "B2B sales launch"],
         status: "upcoming"
       },
       {
         quarter: "Q4 2026",
-        title: "Scale Ready",
-        metrics: ["10,000 MAU", "250 merchants", "Series A ready"],
-        teamActions: ["Full marketing team", "Partnerships lead", "Finance hire"],
+        title: "Category Leader",
+        metrics: ["100,000 MAU", "2,500 merchants", "AED 10M GMV/mo", "Series A ready"],
+        teamActions: ["50+ team", "Regional HQ", "KSA prep begins"],
         status: "upcoming"
       }
     ],
     teamGrowth: [
-      { role: "CEO", count: 1, timing: "Filled" },
-      { role: "COO", count: 1, timing: "Q1 2026" },
-      { role: "CMO", count: 1, timing: "Q1 2026" },
-      { role: "Engineering", count: 5, timing: "Q1-Q2 2026" },
-      { role: "Sales/BDMs", count: 4, timing: "Q2 2026" },
-      { role: "Marketing", count: 3, timing: "Q2-Q3 2026" },
-      { role: "Operations", count: 2, timing: "Q3 2026" },
-      { role: "Customer Success", count: 2, timing: "Q3-Q4 2026" },
+      { role: "Executive", count: 2, timing: "Q1 2026" },
+      { role: "Engineering", count: 4, timing: "Q1-Q2 2026" },
+      { role: "Product & Design", count: 2, timing: "Q1 2026" },
+      { role: "Growth & Marketing", count: 3, timing: "Q2 2026" },
+      { role: "Merchant Success", count: 4, timing: "Q2-Q3 2026" },
+      { role: "Customer Support", count: 2, timing: "Q3 2026" },
+      { role: "Finance & Admin", count: 1, timing: "Q3 2026" },
     ],
     keyInitiatives: [
       "Launch beta with 50 pilot merchants across 5 industries",
       "Secure first 3 strategic partnerships (BNPL, bank, mall)",
-      "Build and validate unit economics",
+      "Build and validate unit economics (16.8x LTV:CAC)",
       "Establish brand presence in Dubai",
       "Create operational SOPs for all functions",
-      "Achieve product-market fit signals",
+      "Achieve product-market fit signals (D30 retention >25%)",
       "Prepare Series A materials and data room",
+      "Break-even by Q4 2026",
     ],
     risks: [
       "Slow merchant adoption - mitigate with incentive programs",
-      "User acquisition cost exceeds budget - focus on referrals",
+      "User acquisition cost exceeds AED 30 - focus on referrals & merchant QR",
       "Key hire delays - maintain pipeline, use contractors",
       "Technical debt - weekly code reviews, CI/CD pipeline",
     ]
   },
   {
     year: 2,
-    theme: "UAE Dominance & GCC Entry",
-    tagline: "Own Dubai, prepare for the Gulf",
+    theme: "UAE + KSA Takeover",
+    tagline: "500K users, 10K merchants - Two Markets Dominated",
     color: "text-purple-400",
     borderColor: "border-purple-500/30",
     bgColor: "from-purple-500/10 to-purple-600/5",
     keyMetrics: [
-      { label: "MAU Target", value: "200,000", icon: Users },
-      { label: "Merchants", value: "3,000", icon: Store },
-      { label: "GMV", value: "AED 240M", icon: DollarSign },
-      { label: "Revenue", value: "AED 19.2M", icon: TrendingUp },
-      { label: "Team Size", value: "45-55", icon: Users },
-      { label: "Markets", value: "UAE + KSA Prep", icon: Globe },
+      { label: "MAU Target", value: "500,000", icon: Users },
+      { label: "Merchants", value: "10,000", icon: Store },
+      { label: "GMV", value: "AED 600M", icon: DollarSign },
+      { label: "Revenue", value: "AED 48M", icon: TrendingUp },
+      { label: "EBITDA", value: "AED 14.4M", icon: Target },
+      { label: "Margin", value: "30%", icon: BarChart3 },
     ],
     milestones: [
       {
         quarter: "Q1 2027",
-        title: "Series A Close",
-        metrics: ["25,000 MAU", "500 merchants", "Series A closed"],
-        teamActions: ["Double engineering", "Regional expansion team", "HR lead hire"],
+        title: "Series A Scale",
+        metrics: ["150,000 MAU", "4,000 merchants", "Series A $15-25M", "AED 25M GMV/mo"],
+        teamActions: ["Team to 80", "KSA legal entity", "Engineering 25+"],
         status: "upcoming"
       },
       {
         quarter: "Q2 2027",
-        title: "Dubai Saturation",
-        metrics: ["75,000 MAU", "1,200 merchants", "All Dubai zones covered"],
-        teamActions: ["Full sales org", "Dedicated partnerships team", "Data team"],
+        title: "KSA Launch",
+        metrics: ["250,000 MAU", "6,000 merchants", "Riyadh + Jeddah live", "AED 40M GMV/mo"],
+        teamActions: ["KSA team of 20", "Local partnerships", "Arabic-first product"],
         status: "upcoming"
       },
       {
         quarter: "Q3 2027",
-        title: "Abu Dhabi + Northern Emirates",
-        metrics: ["125,000 MAU", "2,000 merchants", "Full UAE coverage"],
-        teamActions: ["Abu Dhabi team", "Northern Emirates rep", "Expanded support"],
+        title: "Full UAE + KSA",
+        metrics: ["350,000 MAU", "8,000 merchants", "All major cities", "AED 55M GMV/mo"],
+        teamActions: ["Team: 100+", "Dammam + smaller cities", "B2B launch"],
         status: "upcoming"
       },
       {
         quarter: "Q4 2027",
-        title: "KSA Preparation",
-        metrics: ["200,000 MAU", "3,000 merchants", "KSA licensing done"],
-        teamActions: ["KSA GM hired", "Riyadh office setup", "Legal & compliance"],
+        title: "Market Leader",
+        metrics: ["500,000 MAU", "10,000 merchants", "AED 70M GMV/mo", "30% EBITDA"],
+        teamActions: ["Team: 120", "Series B prep", "GCC expansion planning"],
         status: "upcoming"
       }
     ],
     teamGrowth: [
-      { role: "C-Suite", count: 5, timing: "Full team" },
+      { role: "Executive", count: 6, timing: "Full C-Suite" },
       { role: "Engineering", count: 15, timing: "Q1-Q2 2027" },
-      { role: "Sales/BDMs", count: 12, timing: "Throughout" },
-      { role: "Marketing", count: 8, timing: "Q1-Q2 2027" },
-      { role: "Operations", count: 6, timing: "Throughout" },
-      { role: "Customer Success", count: 5, timing: "Q2-Q3 2027" },
-      { role: "KSA Team", count: 4, timing: "Q4 2027" },
+      { role: "Product & Design", count: 8, timing: "Throughout" },
+      { role: "Growth & Marketing", count: 12, timing: "Q1-Q2 2027" },
+      { role: "Merchant Success", count: 15, timing: "Throughout" },
+      { role: "Customer Support", count: 10, timing: "Q2-Q3 2027" },
+      { role: "Finance & Admin", count: 4, timing: "Q2 2027" },
     ],
     keyInitiatives: [
       "Close Series A funding ($5-10M)",
-      "Achieve 10% market penetration in Dubai",
+      "5x user growth: 10K → 50K MAU",
+      "4x merchant growth: 250 → 1,000",
+      "Achieve 60% gross margin (up from 50%)",
       "Launch in Abu Dhabi and Northern Emirates",
       "Secure 5+ enterprise partnerships",
       "Build AI/ML recommendation engine",
-      "Establish KSA legal entity and licensing",
-      "Create playbooks for GCC expansion",
-      "Achieve profitability in core business",
+      "Achieve EBITDA positive (10% margin)",
     ],
     risks: [
       "Series A timing - multiple term sheets, strong metrics",
       "Competition intensifies - double down on UX and partnerships",
       "UAE market slower than expected - expand verticals",
-      "KSA regulatory complexity - hire local experts early",
+      "Gross margin compression - optimize payment processing",
     ]
   },
   {
     year: 3,
-    theme: "GCC Expansion",
-    tagline: "From UAE leader to GCC powerhouse",
+    theme: "GCC Dominance",
+    tagline: "1.5M users, 30K merchants - The GCC Platform",
     color: "text-[#c9a227]",
     borderColor: "border-[#c9a227]/30",
     bgColor: "from-[#c9a227]/10 to-[#c9a227]/5",
     keyMetrics: [
-      { label: "MAU Target", value: "500,000+", icon: Users },
-      { label: "Merchants", value: "7,500", icon: Store },
-      { label: "GMV", value: "AED 600M", icon: DollarSign },
-      { label: "Revenue", value: "AED 48M", icon: TrendingUp },
-      { label: "Team Size", value: "90-110", icon: Users },
-      { label: "Markets", value: "UAE + KSA + 1", icon: Globe },
+      { label: "MAU Target", value: "1,500,000", icon: Users },
+      { label: "Merchants", value: "30,000", icon: Store },
+      { label: "GMV", value: "AED 1.8B", icon: DollarSign },
+      { label: "Revenue", value: "AED 144M", icon: TrendingUp },
+      { label: "EBITDA", value: "AED 57.6M", icon: Target },
+      { label: "Margin", value: "40%", icon: BarChart3 },
     ],
     milestones: [
       {
         quarter: "Q1 2028",
-        title: "KSA Launch",
-        metrics: ["50,000 KSA users", "500 KSA merchants", "Riyadh + Jeddah live"],
-        teamActions: ["Full KSA team (15)", "Dammam expansion", "Local partnerships"],
+        title: "Series B Close",
+        metrics: ["700,000 MAU", "15,000 merchants", "Series B $50-75M", "AED 100M GMV/mo"],
+        teamActions: ["Team: 150", "Qatar + Bahrain licenses", "Regional HQ"],
         status: "upcoming"
       },
       {
         quarter: "Q2 2028",
-        title: "Series B Preparation",
-        metrics: ["300,000 MAU total", "4,500 merchants", "Strong unit economics"],
-        teamActions: ["Investor relations", "Data room update", "Board advisory"],
+        title: "Qatar + Bahrain Launch",
+        metrics: ["900,000 MAU", "20,000 merchants", "4 countries live", "AED 120M GMV/mo"],
+        teamActions: ["Qatar team (15)", "Bahrain team (10)", "GCC-wide marketing"],
         status: "upcoming"
       },
       {
         quarter: "Q3 2028",
-        title: "Third Market Entry",
-        metrics: ["400,000 MAU", "6,000 merchants", "Qatar or Bahrain live"],
-        teamActions: ["Third market GM", "Regional operations", "Localization team"],
+        title: "Kuwait + Oman Entry",
+        metrics: ["1,200,000 MAU", "25,000 merchants", "Full GCC presence", "AED 140M GMV/mo"],
+        teamActions: ["Kuwait + Oman teams", "Enterprise deals", "Team: 180"],
         status: "upcoming"
       },
       {
         quarter: "Q4 2028",
-        title: "Series B Close",
-        metrics: ["500,000+ MAU", "7,500 merchants", "Series B closed"],
-        teamActions: ["100+ employees", "Regional HQ Dubai", "GCC leadership team"],
+        title: "GCC Champion",
+        metrics: ["1,500,000 MAU", "30,000 merchants", "AED 150M GMV/mo", "40% EBITDA"],
+        teamActions: ["Team: 200+", "IPO prep begins", "India/MENA expansion research"],
         status: "upcoming"
       }
     ],
     teamGrowth: [
-      { role: "C-Suite + VPs", count: 10, timing: "Full leadership" },
-      { role: "Engineering", count: 30, timing: "Throughout" },
-      { role: "Sales/BDMs", count: 25, timing: "By market" },
-      { role: "Marketing", count: 15, timing: "Regional teams" },
-      { role: "Operations", count: 12, timing: "Throughout" },
-      { role: "Customer Success", count: 10, timing: "By market" },
-      { role: "KSA + Qatar", count: 25, timing: "Q1-Q3 2028" },
+      { role: "Executive + VPs", count: 10, timing: "Full leadership" },
+      { role: "Engineering", count: 25, timing: "Throughout" },
+      { role: "Product & Design", count: 12, timing: "Throughout" },
+      { role: "Growth & Marketing", count: 18, timing: "Regional teams" },
+      { role: "Merchant Success", count: 20, timing: "By market" },
+      { role: "Customer Support", count: 15, timing: "By market" },
+      { role: "Finance & Admin", count: 10, timing: "Q2 2028" },
     ],
     keyInitiatives: [
-      "Launch and scale in KSA (Riyadh, Jeddah, Dammam)",
-      "Enter third GCC market (Qatar or Bahrain)",
+      "4x user growth: 50K → 200K MAU",
+      "3x merchant growth: 1K → 3K",
       "Close Series B funding ($20-30M)",
+      "Launch in KSA (Riyadh, Jeddah)",
+      "Achieve 70% gross margin",
       "Build regional partnerships with major banks",
-      "Launch B2B enterprise product",
-      "Achieve EBITDA positive at group level",
-      "Establish Dubai as regional HQ",
-      "Create M&A capability for acqui-hires",
+      "Launch B2B enterprise product (WaaS)",
+      "Achieve 30% EBITDA margin",
     ],
     risks: [
       "Multi-market complexity - strong local GMs, centralized tech",
       "Series B market conditions - maintain strong growth metrics",
-      "Currency risk - multi-currency treasury management",
+      "KSA regulatory complexity - hire local experts early",
       "Talent competition - employer branding, equity compensation",
     ]
   }
@@ -396,11 +396,59 @@ const sopCategories: SOPCategory[] = [
   }
 ];
 
+// AGGRESSIVE DOMINATION TARGETS - Capture every merchant in the region
+// UAE: 200K+ SMEs, Dubai: 50K+ retail, GCC Total: 500K+ merchants
+// Vision: Become the payment rails for ALL GCC transactions
 const financialProjections = {
-  year1: { revenue: "960K", costs: "2.5M", burn: "1.54M", runway: "18 months" },
-  year2: { revenue: "19.2M", costs: "15M", ebitda: "4.2M", margin: "22%" },
-  year3: { revenue: "48M", costs: "35M", ebitda: "13M", margin: "27%" },
-  year5: { revenue: "115.2M", gmv: "1.44B", ebitda: "57.6M", margin: "50%" }
+  year1: {
+    mau: "100,000", merchants: "2,500", gmv: "120M", revenue: "9.6M",
+    cogs: "3.8M", grossProfit: "5.8M", opex: "4.8M", ebitda: "1M",
+    grossMargin: "60%", ebitdaMargin: "10%"
+  },
+  year2: {
+    mau: "500,000", merchants: "10,000", gmv: "600M", revenue: "48M",
+    cogs: "14.4M", grossProfit: "33.6M", opex: "19.2M", ebitda: "14.4M",
+    grossMargin: "70%", ebitdaMargin: "30%"
+  },
+  year3: {
+    mau: "1,500,000", merchants: "30,000", gmv: "1.8B", revenue: "144M",
+    cogs: "36M", grossProfit: "108M", opex: "50.4M", ebitda: "57.6M",
+    grossMargin: "75%", ebitdaMargin: "40%"
+  },
+  year4: {
+    mau: "3,000,000", merchants: "60,000", gmv: "3.6B", revenue: "288M",
+    cogs: "57.6M", grossProfit: "230.4M", opex: "86.4M", ebitda: "144M",
+    grossMargin: "80%", ebitdaMargin: "50%"
+  },
+  year5: {
+    mau: "5,000,000", merchants: "100,000", gmv: "6B", revenue: "480M",
+    cogs: "72M", grossProfit: "408M", opex: "120M", ebitda: "288M",
+    grossMargin: "85%", ebitdaMargin: "60%"
+  }
+};
+
+// Revenue streams breakdown (% of total revenue)
+const revenueStreams = {
+  merchantCommissions: { pct: 70, desc: "5-12% of transaction value" },
+  subscriptionFees: { pct: 15, desc: "AED 199-999/month per merchant" },
+  premiumFeatures: { pct: 10, desc: "AED 29/month user premium" },
+  dataInsights: { pct: 5, desc: "B2B data partnerships" }
+};
+
+// Unit economics
+const unitEconomics = {
+  userCAC: "AED 5-30 blended",
+  userLTV: "AED 120-504",
+  ltvCacRatio: "16.8x - 24x",
+  paybackPeriod: "<2 months",
+  avgTransactions: "8/month",
+  avgTransactionValue: "AED 75",
+  monthlyGMVPerUser: "AED 600",
+  annualGMVPerUser: "AED 7,200",
+  merchantCAC: "AED 200",
+  merchantLTV: "AED 4,800",
+  merchantChurn: "5%/month",
+  takeRate: "8%"
 };
 
 const qualityFramework = [
@@ -851,101 +899,245 @@ export default function ThreeYearPlanPage() {
         {/* Finance Tab */}
         {activeTab === 'finance' && (
           <div className="space-y-8">
-            {/* Financial Summary */}
+            {/* 5-Year P&L Projections */}
             <div className="bg-gradient-to-br from-green-500/10 to-green-600/5 border-2 border-green-500/30 rounded-2xl p-6">
               <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-2">
                 <DollarSign className="text-green-400" size={24} />
-                Financial Projections
+                5-Year Financial Projections (Base Case)
               </h3>
-              <div className="grid md:grid-cols-4 gap-6">
-                {/* Year 1 */}
-                <div className="bg-slate-900/50 rounded-xl p-5">
-                  <h4 className="text-blue-400 font-bold mb-3">Year 1</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Revenue</span>
-                      <span className="text-white font-bold">AED {financialProjections.year1.revenue}</span>
+
+              {/* Comprehensive Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left text-slate-400 py-3 px-2">Metric</th>
+                      <th className="text-right text-blue-400 py-3 px-2">Year 1</th>
+                      <th className="text-right text-purple-400 py-3 px-2">Year 2</th>
+                      <th className="text-right text-[#c9a227] py-3 px-2">Year 3</th>
+                      <th className="text-right text-cyan-400 py-3 px-2">Year 4</th>
+                      <th className="text-right text-green-400 py-3 px-2">Year 5</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-white">
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">MAU</td>
+                      <td className="py-2 px-2 text-right font-bold">{financialProjections.year1.mau}</td>
+                      <td className="py-2 px-2 text-right font-bold">{financialProjections.year2.mau}</td>
+                      <td className="py-2 px-2 text-right font-bold">{financialProjections.year3.mau}</td>
+                      <td className="py-2 px-2 text-right font-bold">{financialProjections.year4.mau}</td>
+                      <td className="py-2 px-2 text-right font-bold">{financialProjections.year5.mau}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">Merchants</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year1.merchants}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year2.merchants}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year3.merchants}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year4.merchants}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year5.merchants}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800 bg-slate-800/30">
+                      <td className="py-2 px-2 text-[#c9a227] font-bold">GMV</td>
+                      <td className="py-2 px-2 text-right font-bold">AED {financialProjections.year1.gmv}</td>
+                      <td className="py-2 px-2 text-right font-bold">AED {financialProjections.year2.gmv}</td>
+                      <td className="py-2 px-2 text-right font-bold">AED {financialProjections.year3.gmv}</td>
+                      <td className="py-2 px-2 text-right font-bold">AED {financialProjections.year4.gmv}</td>
+                      <td className="py-2 px-2 text-right font-bold">AED {financialProjections.year5.gmv}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">Revenue</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year1.revenue}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year2.revenue}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year3.revenue}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year4.revenue}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year5.revenue}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">COGS</td>
+                      <td className="py-2 px-2 text-right text-red-400">AED {financialProjections.year1.cogs}</td>
+                      <td className="py-2 px-2 text-right text-red-400">AED {financialProjections.year2.cogs}</td>
+                      <td className="py-2 px-2 text-right text-red-400">AED {financialProjections.year3.cogs}</td>
+                      <td className="py-2 px-2 text-right text-red-400">AED {financialProjections.year4.cogs}</td>
+                      <td className="py-2 px-2 text-right text-red-400">AED {financialProjections.year5.cogs}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">Gross Profit</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year1.grossProfit}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year2.grossProfit}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year3.grossProfit}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year4.grossProfit}</td>
+                      <td className="py-2 px-2 text-right">AED {financialProjections.year5.grossProfit}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">OpEx</td>
+                      <td className="py-2 px-2 text-right text-amber-400">AED {financialProjections.year1.opex}</td>
+                      <td className="py-2 px-2 text-right text-amber-400">AED {financialProjections.year2.opex}</td>
+                      <td className="py-2 px-2 text-right text-amber-400">AED {financialProjections.year3.opex}</td>
+                      <td className="py-2 px-2 text-right text-amber-400">AED {financialProjections.year4.opex}</td>
+                      <td className="py-2 px-2 text-right text-amber-400">AED {financialProjections.year5.opex}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800 bg-green-500/10">
+                      <td className="py-2 px-2 text-green-400 font-bold">EBITDA</td>
+                      <td className="py-2 px-2 text-right font-bold text-red-400">AED {financialProjections.year1.ebitda}</td>
+                      <td className="py-2 px-2 text-right font-bold text-green-400">AED {financialProjections.year2.ebitda}</td>
+                      <td className="py-2 px-2 text-right font-bold text-green-400">AED {financialProjections.year3.ebitda}</td>
+                      <td className="py-2 px-2 text-right font-bold text-green-400">AED {financialProjections.year4.ebitda}</td>
+                      <td className="py-2 px-2 text-right font-bold text-green-400">AED {financialProjections.year5.ebitda}</td>
+                    </tr>
+                    <tr className="border-b border-slate-800">
+                      <td className="py-2 px-2 text-slate-400">Gross Margin</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year1.grossMargin}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year2.grossMargin}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year3.grossMargin}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year4.grossMargin}</td>
+                      <td className="py-2 px-2 text-right">{financialProjections.year5.grossMargin}</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2 px-2 text-slate-400">EBITDA Margin</td>
+                      <td className="py-2 px-2 text-right text-red-400">{financialProjections.year1.ebitdaMargin}</td>
+                      <td className="py-2 px-2 text-right text-green-400">{financialProjections.year2.ebitdaMargin}</td>
+                      <td className="py-2 px-2 text-right text-green-400">{financialProjections.year3.ebitdaMargin}</td>
+                      <td className="py-2 px-2 text-right text-green-400">{financialProjections.year4.ebitdaMargin}</td>
+                      <td className="py-2 px-2 text-right text-green-400">{financialProjections.year5.ebitdaMargin}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Growth Multipliers */}
+              <div className="mt-6 grid grid-cols-4 gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center">
+                  <p className="text-slate-400 text-xs">Y1→Y2 Growth</p>
+                  <p className="text-2xl font-black text-blue-400">5x</p>
+                  <p className="text-slate-500 text-xs">Users</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center">
+                  <p className="text-slate-400 text-xs">Y2→Y3 Growth</p>
+                  <p className="text-2xl font-black text-purple-400">4x</p>
+                  <p className="text-slate-500 text-xs">Users</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center">
+                  <p className="text-slate-400 text-xs">Y3→Y4 Growth</p>
+                  <p className="text-2xl font-black text-[#c9a227]">2.5x</p>
+                  <p className="text-slate-500 text-xs">Users</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center">
+                  <p className="text-slate-400 text-xs">Y4→Y5 Growth</p>
+                  <p className="text-2xl font-black text-green-400">2x</p>
+                  <p className="text-slate-500 text-xs">Users</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Revenue Streams Breakdown */}
+            <div className="bg-slate-800/50 rounded-2xl p-6">
+              <h3 className="text-2xl font-black text-white mb-6">Revenue Streams (Year 5 Breakdown)</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-blue-400 font-bold">Merchant Commissions</span>
+                    <span className="text-2xl font-black text-white">{revenueStreams.merchantCommissions.pct}%</span>
+                  </div>
+                  <p className="text-slate-400 text-sm">{revenueStreams.merchantCommissions.desc}</p>
+                  <p className="text-blue-400 font-bold mt-2">AED 80.6M</p>
+                </div>
+                <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-purple-400 font-bold">Subscription Fees</span>
+                    <span className="text-2xl font-black text-white">{revenueStreams.subscriptionFees.pct}%</span>
+                  </div>
+                  <p className="text-slate-400 text-sm">{revenueStreams.subscriptionFees.desc}</p>
+                  <p className="text-purple-400 font-bold mt-2">AED 17.3M</p>
+                </div>
+                <div className="bg-pink-500/10 border border-pink-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-pink-400 font-bold">Premium Features</span>
+                    <span className="text-2xl font-black text-white">{revenueStreams.premiumFeatures.pct}%</span>
+                  </div>
+                  <p className="text-slate-400 text-sm">{revenueStreams.premiumFeatures.desc}</p>
+                  <p className="text-pink-400 font-bold mt-2">AED 11.5M</p>
+                </div>
+                <div className="bg-cyan-500/10 border border-cyan-500/30 rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-cyan-400 font-bold">Data & Insights</span>
+                    <span className="text-2xl font-black text-white">{revenueStreams.dataInsights.pct}%</span>
+                  </div>
+                  <p className="text-slate-400 text-sm">{revenueStreams.dataInsights.desc}</p>
+                  <p className="text-cyan-400 font-bold mt-2">AED 5.8M</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Unit Economics */}
+            <div className="bg-slate-800/50 rounded-2xl p-6">
+              <h3 className="text-2xl font-black text-white mb-6">Proven Unit Economics</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* User Economics */}
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5">
+                  <h4 className="text-blue-400 font-bold mb-4 flex items-center gap-2">
+                    <Users size={20} /> User Unit Economics
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">CAC (Blended)</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.userCAC}</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Costs</span>
-                      <span className="text-red-400 font-bold">AED {financialProjections.year1.costs}</span>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">LTV</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.userLTV}</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Net Burn</span>
-                      <span className="text-amber-400 font-bold">AED {financialProjections.year1.burn}</span>
+                    <div className="bg-green-500/20 rounded-lg p-3">
+                      <p className="text-green-400 text-xs">LTV:CAC Ratio</p>
+                      <p className="text-xl font-black text-green-400">{unitEconomics.ltvCacRatio}</p>
                     </div>
-                    <div className="flex justify-between pt-2 border-t border-slate-700">
-                      <span className="text-slate-400">Runway</span>
-                      <span className="text-green-400 font-bold">{financialProjections.year1.runway}</span>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">Payback</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.paybackPeriod}</p>
+                    </div>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">Avg Transactions</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.avgTransactions}</p>
+                    </div>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">Avg Order Value</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.avgTransactionValue}</p>
+                    </div>
+                    <div className="bg-[#c9a227]/20 rounded-lg p-3">
+                      <p className="text-[#c9a227] text-xs">Monthly GMV/User</p>
+                      <p className="text-xl font-black text-[#c9a227]">{unitEconomics.monthlyGMVPerUser}</p>
+                    </div>
+                    <div className="bg-[#c9a227]/20 rounded-lg p-3">
+                      <p className="text-[#c9a227] text-xs">Annual GMV/User</p>
+                      <p className="text-xl font-black text-[#c9a227]">{unitEconomics.annualGMVPerUser}</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Year 2 */}
-                <div className="bg-slate-900/50 rounded-xl p-5">
-                  <h4 className="text-purple-400 font-bold mb-3">Year 2</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Revenue</span>
-                      <span className="text-white font-bold">AED {financialProjections.year2.revenue}</span>
+                {/* Merchant Economics */}
+                <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-5">
+                  <h4 className="text-green-400 font-bold mb-4 flex items-center gap-2">
+                    <Store size={20} /> Merchant Unit Economics
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">CAC per Merchant</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.merchantCAC}</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Costs</span>
-                      <span className="text-slate-300 font-bold">AED {financialProjections.year2.costs}</span>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">LTV per Merchant</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.merchantLTV}</p>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">EBITDA</span>
-                      <span className="text-green-400 font-bold">AED {financialProjections.year2.ebitda}</span>
+                    <div className="bg-green-500/20 rounded-lg p-3">
+                      <p className="text-green-400 text-xs">LTV:CAC Ratio</p>
+                      <p className="text-xl font-black text-green-400">24x</p>
                     </div>
-                    <div className="flex justify-between pt-2 border-t border-slate-700">
-                      <span className="text-slate-400">Margin</span>
-                      <span className="text-green-400 font-bold">{financialProjections.year2.margin}</span>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <p className="text-slate-400 text-xs">Churn Rate</p>
+                      <p className="text-xl font-black text-white">{unitEconomics.merchantChurn}</p>
                     </div>
-                  </div>
-                </div>
-
-                {/* Year 3 */}
-                <div className="bg-slate-900/50 rounded-xl p-5">
-                  <h4 className="text-[#c9a227] font-bold mb-3">Year 3</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Revenue</span>
-                      <span className="text-white font-bold">AED {financialProjections.year3.revenue}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Costs</span>
-                      <span className="text-slate-300 font-bold">AED {financialProjections.year3.costs}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">EBITDA</span>
-                      <span className="text-green-400 font-bold">AED {financialProjections.year3.ebitda}</span>
-                    </div>
-                    <div className="flex justify-between pt-2 border-t border-slate-700">
-                      <span className="text-slate-400">Margin</span>
-                      <span className="text-green-400 font-bold">{financialProjections.year3.margin}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Year 5 Target */}
-                <div className="bg-gradient-to-br from-green-500/20 to-green-600/10 rounded-xl p-5 border border-green-500/30">
-                  <h4 className="text-green-400 font-bold mb-3">Year 5 (Target)</h4>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Revenue</span>
-                      <span className="text-white font-bold">AED {financialProjections.year5.revenue}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">GMV</span>
-                      <span className="text-[#c9a227] font-bold">AED {financialProjections.year5.gmv}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">EBITDA</span>
-                      <span className="text-green-400 font-bold">AED {financialProjections.year5.ebitda}</span>
-                    </div>
-                    <div className="flex justify-between pt-2 border-t border-green-500/30">
-                      <span className="text-slate-400">Margin</span>
-                      <span className="text-green-400 font-bold">{financialProjections.year5.margin}</span>
+                    <div className="bg-[#c9a227]/20 rounded-lg p-3 col-span-2">
+                      <p className="text-[#c9a227] text-xs">Blended Take Rate</p>
+                      <p className="text-2xl font-black text-[#c9a227]">{unitEconomics.takeRate}</p>
                     </div>
                   </div>
                 </div>
@@ -958,49 +1150,60 @@ export default function ThreeYearPlanPage() {
                 <Briefcase className="text-blue-400" size={24} />
                 Funding Roadmap
               </h3>
-              <div className="grid md:grid-cols-3 gap-4">
+              <div className="grid md:grid-cols-4 gap-4">
                 {[
-                  { round: "Pre-Seed", amount: "$500K - $1M", timing: "Q1 2026", status: "Active", use: "MVP, Beta Launch, Core Team" },
-                  { round: "Series A", amount: "$5M - $10M", timing: "Q4 2026 / Q1 2027", status: "Planned", use: "UAE Scale, GCC Prep, Team to 50" },
-                  { round: "Series B", amount: "$20M - $30M", timing: "Q4 2028", status: "Projected", use: "GCC Expansion, 100+ Team, Profitability" },
+                  { round: "Pre-Seed/SAFE", amount: "$400K", timing: "Q1 2026", status: "Active", use: "MVP, Beta Launch, Core Team", valuation: "$5M cap" },
+                  { round: "Seed", amount: "$1-2M", timing: "Q3 2026", status: "Planned", use: "Scale to 50K users, 300 merchants", valuation: "$15-20M" },
+                  { round: "Series A", amount: "$5-10M", timing: "Q1 2027", status: "Projected", use: "UAE dominance, Team to 70", valuation: "$50-75M" },
+                  { round: "Series B", amount: "$20-30M", timing: "Q2 2028", status: "Vision", use: "GCC expansion, 200K users", valuation: "$150-250M" },
                 ].map((round) => (
                   <div key={round.round} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700">
                     <div className="flex items-center justify-between mb-3">
-                      <h4 className="text-white font-bold text-lg">{round.round}</h4>
+                      <h4 className="text-white font-bold">{round.round}</h4>
                       <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${
                         round.status === 'Active' ? 'bg-[#c9a227]/20 text-[#c9a227]' :
                         round.status === 'Planned' ? 'bg-blue-500/20 text-blue-400' :
+                        round.status === 'Projected' ? 'bg-purple-500/20 text-purple-400' :
                         'bg-slate-700 text-slate-400'
                       }`}>{round.status}</span>
                     </div>
                     <p className="text-2xl font-black text-green-400 mb-1">{round.amount}</p>
-                    <p className="text-slate-400 text-sm mb-3">{round.timing}</p>
-                    <p className="text-slate-500 text-sm">Use: {round.use}</p>
+                    <p className="text-slate-400 text-sm mb-1">{round.timing}</p>
+                    <p className="text-[#c9a227] text-xs mb-2">{round.valuation}</p>
+                    <p className="text-slate-500 text-xs">{round.use}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Unit Economics */}
-            <div className="bg-slate-800/50 rounded-2xl p-6">
-              <h3 className="text-2xl font-black text-white mb-6">Unit Economics Target</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  { metric: "CAC", value: "<AED 15", status: "Target" },
-                  { metric: "LTV", value: ">AED 150", status: "Target" },
-                  { metric: "LTV:CAC", value: ">10:1", status: "Target" },
-                  { metric: "Payback", value: "<3 months", status: "Target" },
-                  { metric: "Take Rate", value: "8%", status: "Model" },
-                  { metric: "Gross Margin", value: ">70%", status: "Target" },
-                  { metric: "Merchant Churn", value: "<5%/mo", status: "Target" },
-                  { metric: "User Retention", value: ">40% M3", status: "Target" },
-                ].map((item) => (
-                  <div key={item.metric} className="bg-slate-900/50 rounded-xl p-4 text-center">
-                    <p className="text-slate-400 text-sm">{item.metric}</p>
-                    <p className="text-2xl font-black text-white">{item.value}</p>
-                    <p className="text-green-400 text-xs">{item.status}</p>
+            {/* Scenario Analysis */}
+            <div className="bg-gradient-to-br from-purple-500/10 to-purple-600/5 border border-purple-500/30 rounded-2xl p-6">
+              <h3 className="text-2xl font-black text-white mb-6">Year 5 Scenario Analysis</h3>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-amber-500/30">
+                  <h4 className="text-amber-400 font-bold mb-3">Conservative (0.7x)</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">700,000</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 80.6M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-amber-400 font-bold">AED 40.3M</span></div>
                   </div>
-                ))}
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-green-500/30">
+                  <h4 className="text-green-400 font-bold mb-3">Base Case (1.0x)</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">1,000,000</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 115.2M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-green-400 font-bold">AED 57.6M</span></div>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/30">
+                  <h4 className="text-blue-400 font-bold mb-3">Optimistic (1.4x)</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">1,400,000</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 161.3M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-blue-400 font-bold">AED 80.6M</span></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
