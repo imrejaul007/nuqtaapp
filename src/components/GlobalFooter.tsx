@@ -57,7 +57,8 @@ import {
   QrCode,
   Headphones,
   PenTool,
-  Share2
+  Share2,
+  Sparkles
 } from 'lucide-react';
 
 /**
@@ -211,6 +212,14 @@ const navigationData: NavCategory[] = [
       { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
       { label: 'CHRO Analysis', href: '/chro-analysis', icon: Heart },
       { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
+    ]
+  },
+  {
+    title: 'Products',
+    icon: Sparkles,
+    color: 'text-emerald-400',
+    items: [
+      { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
     ]
   },
   {

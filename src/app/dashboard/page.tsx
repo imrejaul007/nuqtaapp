@@ -59,7 +59,8 @@ import {
   Share2,
   TrendingDown,
   Bot,
-  CreditCard
+  CreditCard,
+  Sparkles
 } from 'lucide-react';
 
 interface QuickAction {
@@ -235,6 +236,16 @@ const sections: Section[] = [
       { label: 'CMO Agent', href: '/cmo-agent', icon: Bot },
       { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
       { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
+    ]
+  },
+  {
+    title: 'Products & Revenue',
+    icon: Sparkles,
+    color: 'text-emerald-400',
+    bgColor: 'from-emerald-500/10 to-emerald-600/5',
+    borderColor: 'border-emerald-500/30',
+    links: [
+      { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
     ]
   },
   {
