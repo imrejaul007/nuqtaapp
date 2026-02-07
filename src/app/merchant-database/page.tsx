@@ -1050,11 +1050,11 @@ export default function MerchantDatabase() {
           <div className="mt-8 bg-emerald-500/20 border-2 border-emerald-400 rounded-xl p-6 text-center">
             <p className="text-xl font-bold mb-2">🎯 H1 Exit Gate Success Criteria:</p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div>✅ 250+ merchants live</div>
+              <div>✅ 1,500+ merchants live</div>
               <div>✅ 90%+ retention</div>
               <div>✅ 6+ transactions/merchant/week</div>
-              <div>✅ 5,800-10,000 MAU</div>
-              <div>✅ AED 7.2M-10M GMV</div>
+              <div>✅ 50,000 MAU</div>
+              <div>✅ AED 25M GMV</div>
             </div>
           </div>
         </div>
@@ -1298,7 +1298,7 @@ export default function MerchantDatabase() {
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                   <p className="font-bold text-white mb-2">Phase 1: H1 (Now)</p>
-                  <p className="text-sm text-slate-600">Focus on independent merchants & small chains. Build proof of concept with 250 merchants.</p>
+                  <p className="text-sm text-slate-600">Focus on independent merchants & small chains. Build proof of concept with 1,500 merchants.</p>
                 </div>
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                   <p className="font-bold text-white mb-2">Phase 2: Post-H1</p>

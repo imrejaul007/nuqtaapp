@@ -912,7 +912,7 @@ export default function CMOReportPage() {
           <div className="space-y-8">
             <div className="bg-pink-500/10 border border-pink-500/30 rounded-xl p-6">
               <h3 className="text-xl font-bold text-pink-400 mb-2">30-Day Marketing Blitz Playbook</h3>
-              <p className="text-slate-400">Week-by-week execution plan to reach 10,000 users</p>
+              <p className="text-slate-400">Week-by-week execution plan to reach 50,000 users</p>
             </div>
 
             {/* Week 1 */}
@@ -1124,7 +1124,7 @@ export default function CMOReportPage() {
                       'Final push: Triple referral bonus weekend',
                       'Announce "Top Hunter of the Month" winners',
                       'Close Golden Week with gratitude post featuring community',
-                      'Hit 10,000 users milestone 🎉',
+                      'Hit 50,000 users milestone 🎉',
                       'Compile learnings for Month 2 strategy'
                     ]
                   }
@@ -1335,7 +1335,7 @@ export default function CMOReportPage() {
                     <li className="p-2 bg-white/5 rounded">What content got the most engagement?</li>
                     <li className="p-2 bg-white/5 rounded">Which influencers drove actual downloads?</li>
                     <li className="p-2 bg-white/5 rounded">What's our best-performing referral source?</li>
-                    <li className="p-2 bg-white/5 rounded">Are we on track for 10K users?</li>
+                    <li className="p-2 bg-white/5 rounded">Are we on track for 50K users?</li>
                     <li className="p-2 bg-white/5 rounded">What's not working that we should stop?</li>
                   </ul>
                 </div>

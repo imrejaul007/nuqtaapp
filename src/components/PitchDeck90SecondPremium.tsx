@@ -657,7 +657,7 @@ const PitchDeck90SecondPremium = () => {
                     </div>
                     <div className="w-32 sm:w-48 md:w-64 h-1 bg-white/50 mx-auto my-4 sm:my-6 md:my-8 rounded-full" />
                     <p className="text-base sm:text-xl md:text-2xl lg:text-3xl text-white font-bold px-2">
-                      To fund launch, acquire first 10,000 users, and prove unit economics
+                      To fund launch, acquire first 50,000 users, and prove unit economics
                     </p>
                   </div>
                 </div>

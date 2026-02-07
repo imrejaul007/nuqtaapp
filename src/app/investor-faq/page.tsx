@@ -45,7 +45,7 @@ export default function InvestorFAQPage() {
       questions: [
         {
           question: 'What are the investment terms?',
-          answer: 'We are raising $400K at a $5M post-money valuation cap via SAFE (Simple Agreement for Future Equity). The investment is tranched: $200K at signing, $200K upon hitting milestones (10 merchants, 1K MAU, CTO hired).',
+          answer: 'We are raising $400K at a $5M post-money valuation cap via SAFE (Simple Agreement for Future Equity). The investment is tranched: $200K at signing, $200K upon hitting milestones (500 merchants, 25K MAU, CTO hired).',
           links: [{ label: 'View Full Terms', href: '/commitment' }]
         },
         {
@@ -83,7 +83,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What are your unit economics?',
-          answer: 'Target metrics at scale: Customer Acquisition Cost (CAC): AED 15-25, Lifetime Value (LTV): AED 300+, LTV:CAC ratio: 10x+. Per transaction: Average transaction AED 75, Commission 15% = AED 11.25 revenue, User reward cost AED 3, Net margin per transaction: AED 8.25 (73%).',
+          answer: 'Target metrics at scale: Customer Acquisition Cost (CAC): AED 25-30 blended, Lifetime Value (LTV): AED 504, LTV:CAC ratio: 16.8x. Per transaction: Average transaction AED 75, Commission 15% = AED 11.25 revenue, User reward cost AED 3, Net margin per transaction: AED 8.25 (73%).',
           links: [{ label: 'Full Financial Model', href: '/financialprojection' }]
         },
         {
@@ -140,7 +140,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What\'s your hiring plan?',
-          answer: 'Phase 1 (Pre-launch): CTO, 2 developers. Phase 2 (H1): 5 merchant sales reps, 1 ops manager. Phase 3 (H2): Marketing lead, data analyst, customer support (3). Total team by end of Year 1: ~15 people. Lean but sufficient for 5K MAU target.',
+          answer: 'Phase 1 (Pre-launch): CTO, 2 developers. Phase 2 (H1): 15 merchant sales reps, 3 ops managers. Phase 3 (H2): Marketing team (5), data analyst (2), customer support (8). Total team by end of Year 1: 70 people. Aggressive scaling for 50K MAU target.',
           links: [{ label: 'CTO Role', href: '/join-us' }]
         },
         {
@@ -149,7 +149,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What\'s your runway with this raise?',
-          answer: '12-15 months runway to hit H1 targets (5K MAU, 250 merchants). SAFE round: $400K at $5M valuation cap with 20% discount. Conservative burn: $30-35K/month. We reach cash flow positive within Phase 1 at sufficient scale.',
+          answer: '12-15 months runway to hit H1 targets (50K MAU, 1,500 merchants). SAFE round: $400K at $5M valuation cap with 20% discount. Aggressive burn: $50-60K/month with larger team. We reach break-even by Year 1 end at scale.',
         },
         {
           question: 'What keeps you up at night?',
@@ -198,7 +198,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What valuation do you expect at Series A?',
-          answer: 'Target Series A: AED 15-25M at AED 60-80M valuation (6-8x from seed). Trigger metrics: 75K MAU, 500 merchants, AED 50M GMV, 30% D30 retention. Expected timing: 12-18 months post-launch. This implies ~15-20% dilution at Series A.',
+          answer: 'Target Series A: AED 15-25M at AED 60-80M valuation (6-8x from seed). Trigger metrics: 100K MAU, 2,500 merchants, AED 120M GMV, 30% D30 retention. Expected timing: 12-18 months post-launch. This implies ~15-20% dilution at Series A.',
         },
         {
           question: 'What\'s your GCC expansion plan?',
@@ -210,7 +210,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What are the key milestones to watch?',
-          answer: 'Next 12 months: 1) Launch (March 1, 2026), 2) 1K MAU + 10 merchants = Tranche 2, 3) 5K MAU + 250 merchants = H1 complete, 4) CTO hired, 5) First profitable month, 6) Series A discussions. We\'ll provide monthly investor updates on all metrics.',
+          answer: 'Next 12 months: 1) Launch (March 1, 2026), 2) 25K MAU + 500 merchants = Tranche 2, 3) 50K MAU + 1,500 merchants = H1 complete, 4) CTO hired, 5) First profitable month, 6) Series A discussions. We\'ll provide monthly investor updates on all metrics.',
         },
       ]
     },

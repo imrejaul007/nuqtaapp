@@ -949,8 +949,8 @@ function SuccessMetrics() {
             {
               period: '60 Days',
               milestones: [
-                { item: '5,000 active users', critical: true },
-                { item: '100 merchants live', critical: true },
+                { item: '25,000 active users', critical: true },
+                { item: '500 merchants live', critical: true },
                 { item: 'AED 50K MRR', critical: false },
                 { item: 'Team of 10+', critical: false },
                 { item: 'Board formally established', critical: true },
@@ -960,8 +960,8 @@ function SuccessMetrics() {
             {
               period: '90 Days',
               milestones: [
-                { item: '10,000 active users', critical: true },
-                { item: '200 merchants live', critical: true },
+                { item: '50,000 active users', critical: true },
+                { item: '1,500 merchants live', critical: true },
                 { item: 'AED 100K MRR', critical: false },
                 { item: 'Positive unit economics proven', critical: true },
                 { item: 'Series A conversations active', critical: false },

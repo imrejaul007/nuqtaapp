@@ -636,7 +636,7 @@ function UseFundsSection() {
           Use of Funds - $400K SAFE Round
         </h2>
         <p className="text-slate-300">
-          12-18 month runway to achieve key milestones: 25,000 users, 100 merchants, AED 1M GMV/month,
+          12-18 month runway to achieve key milestones: 50,000 users, 1,500 merchants, AED 25M GMV/month,
           and Series A readiness. Every dollar allocated to growth and sustainability.
         </p>
       </div>
@@ -695,8 +695,8 @@ function UseFundsSection() {
 
         <div className="space-y-4">
           {[
-            { milestone: 'Tranche 1: Launch', amount: '$200K', trigger: 'At closing', targets: ['Complete team hiring', 'Launch marketing campaign', '1,000 users, 10 merchants'], timeline: 'Month 1-3' },
-            { milestone: 'Tranche 2: Traction', amount: '$200K', trigger: '10 live merchants + 1,000 MAU + CTO hired', targets: ['Scale marketing spend', 'Achieve AED 50K GMV/month', 'Prove unit economics'], timeline: 'Month 4-6' },
+            { milestone: 'Tranche 1: Launch', amount: '$200K', trigger: 'At closing', targets: ['Complete team hiring', 'Launch marketing campaign', '25,000 users, 500 merchants'], timeline: 'Month 1-3' },
+            { milestone: 'Tranche 2: Traction', amount: '$200K', trigger: '500 live merchants + 25,000 MAU + CTO hired', targets: ['Scale marketing spend', 'Achieve AED 10M GMV/month', 'Prove unit economics'], timeline: 'Month 4-6' },
           ].map((tranche, idx) => (
             <div key={idx} className="p-4 bg-white/5 rounded-xl border border-white/10">
               <div className="flex items-center justify-between mb-3">
@@ -1063,10 +1063,10 @@ function TermSheetSection() {
               <h4 className="text-[#c9a227] font-bold text-lg mb-4 pb-2 border-b border-[#c9a227]/30">KEY MILESTONES (12-18 MONTHS)</h4>
               <div className="space-y-3">
                 {[
-                  { milestone: 'Month 3', target: '1,000 users, 10 merchants live, first transactions' },
-                  { milestone: 'Month 6', target: '5,000 users, 30 merchants, AED 100K GMV/month' },
-                  { milestone: 'Month 12', target: '25,000 users, 100 merchants, AED 500K GMV/month' },
-                  { milestone: 'Month 18', target: '50,000 users, 150 merchants, AED 1M GMV/month, Series A ready' },
+                  { milestone: 'Month 3', target: '25,000 users, 500 merchants live, first transactions' },
+                  { milestone: 'Month 6', target: '50,000 users, 1,500 merchants, AED 25M GMV/month' },
+                  { milestone: 'Month 12', target: '100,000 users, 2,500 merchants, AED 10M GMV/month' },
+                  { milestone: 'Month 18', target: '200,000 users, 5,000 merchants, AED 50M GMV/month, Series A ready' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-4 p-3 bg-white/5 rounded-lg">
                     <span className="text-[#c9a227] font-bold w-24">{item.milestone}</span>

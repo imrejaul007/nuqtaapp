@@ -944,7 +944,7 @@ const ESOPPage = () => {
                   <span className="text-emerald-400 font-bold">+25,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">
-                  <span className="text-slate-400">Year 2: MAU 100K Achieved</span>
+                  <span className="text-slate-400">Year 2: MAU 500K Achieved</span>
                   <span className="text-emerald-400 font-bold">+25,000 NEW</span>
                 </div>
                 <div className="flex justify-between border-b border-slate-700 pb-2">

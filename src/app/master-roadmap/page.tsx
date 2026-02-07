@@ -75,17 +75,17 @@ export default function MasterRoadmapPage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
-              <h4 className="text-lg font-black text-blue-700 mb-3">H1 → H2 Gate (Conservative)</h4>
-              <p className="text-sm text-slate-700"><strong>5K MAU</strong> (conservative), 250 merchants (minimum), 25% D30 retention, 10x LTV:CAC</p>
-              <p className="text-xs text-blue-600 mt-2">Tranche 2 triggers: 10 merchants, 1K MAU, CTO hired</p>
+              <h4 className="text-lg font-black text-blue-700 mb-3">H1 → H2 Gate (Aggressive)</h4>
+              <p className="text-sm text-slate-700"><strong>50K MAU</strong> (aggressive), 1,500 merchants, 30% D30 retention, 16x LTV:CAC</p>
+              <p className="text-xs text-blue-600 mt-2">Tranche 2 triggers: 500 merchants, 25K MAU, CTO hired</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
               <h4 className="text-lg font-black text-purple-700 mb-3">H2 → H3 Gate</h4>
-              <p className="text-sm text-slate-700">75K MAU, 30% D30 retention, 40% multi-category users, 40% merchants running campaigns</p>
+              <p className="text-sm text-slate-700">250K MAU, 30% D30 retention, 40% multi-category users, 40% merchants running campaigns</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-emerald-200">
               <h4 className="text-lg font-black text-emerald-700 mb-3">H3 → Phase 2 Gate</h4>
-              <p className="text-sm text-slate-700">150K MAU, ≤8% churn, 30% EBITDA, 5 WaaS clients, 25% B2B revenue</p>
+              <p className="text-sm text-slate-700">500K MAU, ≤8% churn, 30% EBITDA, 5 WaaS clients, 25% B2B revenue</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-orange-200">
               <h4 className="text-lg font-black text-orange-700 mb-3">Phase 2 → Phase 3 Gate</h4>
@@ -112,7 +112,7 @@ export default function MasterRoadmapPage() {
                   <a href="/execution-plan" className="text-lg font-black text-blue-900 hover:text-blue-700 transition-colors">
                     H1 (~5 Months): Prove the Loop → Launch: March 1, 2026
                   </a>
-                  <p className="text-sm text-slate-700 mt-2"><strong>5K MAU</strong> (conservative), 250 merchants (minimum), 25% D30 retention</p>
+                  <p className="text-sm text-slate-700 mt-2"><strong>50K MAU</strong> (aggressive), 1,500 merchants, 30% D30 retention</p>
                   <p className="text-xs text-blue-600 mt-1">Funding: $200K Tranche 1 + $200K at milestones</p>
                 </div>
 
@@ -120,14 +120,14 @@ export default function MasterRoadmapPage() {
                   <a href="/h2-strategy" className="text-lg font-black text-purple-900 hover:text-purple-700 transition-colors">
                     H2 (~2.5 Months): Scale Categories →
                   </a>
-                  <p className="text-sm text-slate-700 mt-2">75K MAU, 500 merchants, AED 50M GMV, 30% D30 retention, 40% multi-category</p>
+                  <p className="text-sm text-slate-700 mt-2">250K MAU, 5,000 merchants, AED 100M GMV, 30% D30 retention, 40% multi-category</p>
                 </div>
 
                 <div className="bg-emerald-50 rounded-xl p-4 border-2 border-emerald-200">
                   <a href="/h3-infrastructure" className="text-lg font-black text-emerald-900 hover:text-emerald-700 transition-colors">
                     H3 (~1.2 Years): B2B Infrastructure →
                   </a>
-                  <p className="text-sm text-slate-700 mt-2">150K MAU, 1K merchants, AED 200M GMV, 5 WaaS clients, 30% EBITDA, 40% GMV + 30% WaaS + 30% Data</p>
+                  <p className="text-sm text-slate-700 mt-2">500K MAU, 10K merchants, AED 300M GMV, 5 WaaS clients, 30% EBITDA, 40% GMV + 30% WaaS + 30% Data</p>
                 </div>
               </div>
             </div>

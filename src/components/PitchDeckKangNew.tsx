@@ -3546,7 +3546,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="mt-4 space-y-2 text-sm text-slate-700">
                       <p>• <span className="font-bold">AED 2</span> - Device fingerprinting API (Seon/Fingerprint.com)</p>
                       <p>• <span className="font-bold">AED 1.5</span> - Manual review queue (first 6 months)</p>
-                      <p>• <span className="font-bold">AED 1</span> - Behavioral ML detection (post-5K MAU)</p>
+                      <p>• <span className="font-bold">AED 1</span> - Behavioral ML detection (post-50K MAU)</p>
                       <p>• <span className="font-bold">AED 0.5</span> - KYC/identity verification tools</p>
                     </div>
                   </div>
@@ -3845,7 +3845,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-4">
                       <p className="text-sm font-semibold text-emerald-700 uppercase mb-1">Activation</p>
-                      <p className="text-2xl font-black text-emerald-600">5,000 MAU</p>
+                      <p className="text-2xl font-black text-emerald-600">50,000 MAU</p>
                     </div>
                     <div className="bg-blue-50 border-l-4 border-blue-500 rounded-lg p-4">
                       <p className="text-sm font-semibold text-blue-700 uppercase mb-1">Retention</p>
@@ -3904,7 +3904,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <h3 className="text-2xl font-bold text-white mb-4">Geographic Expansion Rule</h3>
                 <p className="text-lg text-slate-300 max-w-4xl mx-auto">
                   <span className="font-bold text-[#c9a227]">Density before breadth:</span> Own Marina + Downtown Dubai
-                  (50 merchants, 5K users, 35% repeat rate) before launching Abu Dhabi. One city at a time, proven economics first.
+                  (500 merchants, 50K users, 35% repeat rate) before launching Abu Dhabi. One city at a time, proven economics first.
                 </p>
               </div>
 
@@ -4027,8 +4027,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="bg-purple-50 rounded-lg p-4">
                     <p className="text-sm font-semibold text-purple-700 mb-2">Results:</p>
-                    <p className="text-sm text-slate-700">• 150 merchants signed</p>
-                    <p className="text-sm text-slate-700">• 15,000 users acquired</p>
+                    <p className="text-sm text-slate-700">• 500 merchants signed</p>
+                    <p className="text-sm text-slate-700">• 25,000 users acquired</p>
                     <p className="text-sm text-slate-700">• <span className="font-bold text-purple-600">CAC: AED 8.4</span></p>
                     <p className="text-sm text-slate-700">• Cost: AED 126,000</p>
                   </div>
@@ -4051,7 +4051,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="mb-4">
                     <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Timeline:</span> Month 7-12</p>
-                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 300 Merchants</p>
+                    <p className="text-sm text-slate-600 mb-2"><span className="font-semibold">Target:</span> 1,000 Merchants</p>
                   </div>
                   <div className="space-y-2 mb-4">
                     <p className="text-sm text-slate-700 flex items-center gap-2"><CheckCircle size={16} className="text-emerald-600 flex-shrink-0" /> Self-serve platform: nuqtapp.com/merchants</p>
@@ -4060,8 +4060,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <div className="bg-emerald-50 rounded-lg p-4">
                     <p className="text-sm font-semibold text-emerald-700 mb-2">Results:</p>
-                    <p className="text-sm text-slate-700">• 300 merchants signed</p>
-                    <p className="text-sm text-slate-700">• 30,000 users acquired</p>
+                    <p className="text-sm text-slate-700">• 1,000 merchants signed</p>
+                    <p className="text-sm text-slate-700">• 50,000 users acquired</p>
                     <p className="text-sm text-slate-700">• <span className="font-bold text-emerald-600">CAC: AED 5</span></p>
                     <p className="text-sm text-slate-700">• Cost: AED 150,000</p>
                   </div>
@@ -4259,9 +4259,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">H1 2026: Prove the Loop (~5 Months)</h3>
                 <div className="grid md:grid-cols-3 gap-8">
                   {[
-                    { milestone: "Month 1-2: Launch", date: "Weeks 1-8", tasks: ["Activate first 10-20 merchants", "Acquire 1,000 MAU", "Process AED 500K GMV", "Track D7 retention ≥30%"] },
-                    { milestone: "Month 3-4: Scale", date: "Weeks 9-16", tasks: ["Scale to 5,000 MAU", "100 active merchants", "AED 5M GMV (cumulative to date)", "Measure D30 retention ≥25%"] },
-                    { milestone: "Month 5: H1 Exit Gate", date: "Launch: March 1, 2026", tasks: ["Conservative Target: 5K MAU", "250 merchants minimum", "Tranche 2: $200K at milestones", "10x LTV:CAC validated, CAC ≤ AED 50"] }
+                    { milestone: "Month 1-2: Launch", date: "Weeks 1-8", tasks: ["Activate first 100 merchants", "Acquire 10,000 MAU", "Process AED 2M GMV", "Track D7 retention ≥30%"] },
+                    { milestone: "Month 3-4: Scale", date: "Weeks 9-16", tasks: ["Scale to 35,000 MAU", "800 active merchants", "AED 15M GMV (cumulative to date)", "Measure D30 retention ≥25%"] },
+                    { milestone: "Month 5-6: H1 Exit Gate", date: "Launch: March 1, 2026", tasks: ["Aggressive Target: 50K MAU", "1,500 merchants", "Tranche 2: $200K at milestones", "16x LTV:CAC validated, CAC ≤ AED 30"] }
                   ].map((item, idx) => (
                     <div key={idx} className="text-center">
                       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white text-2xl font-black mb-4">
@@ -4288,24 +4288,24 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                     <div>
                       <p className="font-bold text-emerald-600 mb-2">Tranche 2: $200K (At Milestones)</p>
-                      <p>Triggers: 10 live merchants, 1,000 MAU, CTO hired. Enables scale to 5K MAU and 250 merchants.</p>
+                      <p>Triggers: 500 live merchants, 25,000 MAU, CTO hired. Enables scale to 50K MAU and 1,500 merchants.</p>
                     </div>
                   </div>
                   <p className="text-xs text-emerald-800 mt-3">
-                    📊 Conservative target: 5K MAU • 250 merchants minimum • Launch: March 1, 2026
+                    📊 Aggressive target: 50K MAU • 1,500 merchants • Launch: March 1, 2026
                   </p>
                 </div>
 
                 {/* H1 Gate Criteria */}
                 <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-2xl p-8">
-                  <h4 className="text-2xl font-bold text-slate-900 mb-6 text-center">H1 Exit Gate Targets (Conservative)</h4>
+                  <h4 className="text-2xl font-bold text-slate-900 mb-6 text-center">H1 Exit Gate Targets (Aggressive)</h4>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
                       <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Growth Targets</h5>
                       <div className="space-y-3 text-sm text-slate-700">
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">MAU (Monthly Active Users)</p>
-                          <p className="font-bold text-emerald-600">5,000 <span className="text-xs text-slate-500">(conservative target)</span></p>
+                          <p className="font-bold text-emerald-600">50,000 <span className="text-xs text-slate-500">(aggressive target)</span></p>
                         </div>
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">Launch Date</p>
@@ -4313,30 +4313,30 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         </div>
                         <div>
                           <p className="text-xs text-slate-500 uppercase mb-1">Merchants</p>
-                          <p className="font-bold text-blue-600">250 minimum</p>
+                          <p className="font-bold text-blue-600">1,500</p>
                         </div>
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6 border-2 border-emerald-200">
                       <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Unit Economics</h5>
                       <div className="space-y-2 text-sm text-slate-700">
-                        <p>✓ <span className="font-bold text-emerald-600">10x LTV:CAC ratio</span></p>
-                        <p>✓ <span className="font-bold text-emerald-600">CAC ≤ AED 40</span></p>
-                        <p>✓ <span className="font-bold text-emerald-600">40%+ activation</span></p>
+                        <p>✓ <span className="font-bold text-emerald-600">16x LTV:CAC ratio</span></p>
+                        <p>✓ <span className="font-bold text-emerald-600">CAC ≤ AED 30</span></p>
+                        <p>✓ <span className="font-bold text-emerald-600">50%+ activation</span></p>
                       </div>
                     </div>
                     <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
                       <h5 className="text-sm font-bold text-slate-600 uppercase mb-3">Retention</h5>
                       <div className="space-y-2 text-sm text-slate-700">
-                        <p>✓ <span className="font-bold text-purple-600">D30 ≥ 25%</span></p>
-                        <p>✓ <span className="font-bold text-purple-600">4+ trans/month</span></p>
-                        <p>✓ <span className="font-bold text-purple-600">Merchant NPS ≥40</span></p>
+                        <p>✓ <span className="font-bold text-purple-600">D30 ≥ 30%</span></p>
+                        <p>✓ <span className="font-bold text-purple-600">6+ trans/month</span></p>
+                        <p>✓ <span className="font-bold text-purple-600">Merchant NPS ≥50</span></p>
                       </div>
                     </div>
                   </div>
                   <div className="mt-6 text-center">
                     <p className="text-lg text-slate-700">
-                      <span className="font-bold text-emerald-600">Pass all gates</span> → Scale to H2 (75K MAU, 3 categories) in 2.5 months
+                      <span className="font-bold text-emerald-600">Pass all gates</span> → Scale to H2 (250K MAU, 5 categories) in 6 months
                     </p>
                   </div>
                 </div>
@@ -4880,8 +4880,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                   <div className="mt-6 pt-4 border-t border-white/20">
                     <p className={`${typography.labelMicro} text-slate-400 mb-2`}>Exit Valuation Range (8-12x revenue):</p>
-                    <p className={`${typography.metricMedium} text-emerald-400`}>$950M - $1.42B</p>
-                    <p className={`${typography.labelMicro} text-slate-500 mt-1`}>Based on Year 5 revenue of $118.5M</p>
+                    <p className={`${typography.metricMedium} text-emerald-400`}>$800M - $1.2B</p>
+                    <p className={`${typography.labelMicro} text-slate-500 mt-1`}>Based on Year 5 revenue of AED 480M ($130M)</p>
                   </div>
                 </div>
               </div>
@@ -4889,10 +4889,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Bottom Note */}
               <div className="mt-8 bg-amber-500/10 border border-amber-500/30 rounded-xl p-6">
                 <p className="text-sm text-amber-200">
-                  <span className="font-bold">📊 Key Assumptions:</span> Revenue based on 7.5% blended take rate across merchant transactions.
+                  <span className="font-bold">📊 Key Assumptions:</span> Revenue based on 8% blended take rate across merchant transactions (5-15% by engine).
                   Gross margin assumes payment processing costs (2.5% of GMV) and support costs (AED 2/MAU).
-                  EBITDA excludes stock-based compensation. Path to profitability assumes successful Series A ($2-3M) and Series B ($10M) fundraising.
-                  All figures in USD, exchange rate: 3.67 AED/USD.
+                  EBITDA excludes stock-based compensation. Path to profitability assumes successful Series A ($15-25M) and Series B ($50-75M) fundraising.
+                  All figures in AED unless specified. Exchange rate: 3.67 AED/USD.
                 </p>
               </div>
             </div>
@@ -5817,8 +5817,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     emoji: "Rocket",
                     title: "Core PMF Validation",
                     subtitle: "Dubai Marina/JBR Focus",
-                    features: ["Launch F&B + Core Verticals", "250 merchants • 5K MAU (conservative)", "Prove 25% D30 retention + LTV:CAC 10x+", "Validate coin-led rewards model"],
-                    kpis: "250 merchants min • 5K MAU (conservative) • $200K Tranche 1 + $200K at milestones",
+                    features: ["Launch F&B + Core Verticals", "1,500 merchants • 50K MAU (aggressive)", "Prove 30% D30 retention + LTV:CAC 16x+", "Validate coin-led rewards model"],
+                    kpis: "1,500 merchants • 50K MAU (aggressive) • $200K Tranche 1 + $200K at milestones",
                     status: "In Progress",
                     color: "emerald",
                     bgGradient: "from-emerald-500/10 via-emerald-500/5 to-white",
@@ -5832,7 +5832,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     title: "Multi-Category Expansion",
                     subtitle: "Healthcare + Home Services",
                     features: ["Add 2 new categories", "Geographic expansion (Downtown, Business Bay)", "Platform tech (analytics, AI recommendations)", "Merchant WaaS pilots"],
-                    kpis: "500 merchants • 75K MAU • AED 75M GMV • 30% D30 retention",
+                    kpis: "5,000 merchants • 250K MAU • AED 100M GMV • 30% D30 retention",
                     status: "Planned",
                     color: "blue",
                     bgGradient: "from-blue-500/10 via-blue-500/5 to-white",
@@ -5846,7 +5846,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     title: "UAE-Wide Platform",
                     subtitle: "Enterprise + Data Moats",
                     features: ["All 7 UAE cities coverage", "WaaS revenue (5+ clients)", "Government partnerships (2+)", "Data intelligence layer operational"],
-                    kpis: "1,500 merchants • 150K MAU • AED 180M GMV • 30% EBITDA",
+                    kpis: "10,000 merchants • 500K MAU • AED 300M GMV • 30% EBITDA",
                     status: "Planned",
                     color: "purple",
                     bgGradient: "from-purple-500/10 via-purple-500/5 to-white",

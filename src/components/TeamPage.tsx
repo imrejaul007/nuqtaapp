@@ -94,7 +94,7 @@ const h1Team: Department[] = [
     icon: Briefcase,
     color: 'amber',
     description: 'Vision, strategy, and company direction',
-    mission: 'Set company direction, secure funding, build culture, and ensure all teams hit H1 goals: 5K MAU (conservative), 250 merchants minimum.',
+    mission: 'Set company direction, secure funding, build culture, and ensure all teams hit H1 goals: 50K MAU (aggressive), 1,500 merchants minimum.',
     headRole: 'CEO',
     headcount: { h1: 2, full: 6 },
     budget: '30% of total (salaries + fundraising)',
@@ -141,8 +141,8 @@ const h1Team: Department[] = [
         ],
         kpis: [
           'Co-founder/CTO hire: Within 90 days of funding',
-          'H1 milestones: 5K MAU (conservative), 250 merchants, 25% D30',
-          'Tranche 2 unlock: 10 merchants, 1K MAU, CTO hired',
+          'H1 milestones: 50K MAU (aggressive), 1,500 merchants, 30% D30',
+          'Tranche 2 unlock: 500 merchants, 25K MAU, CTO hired',
           'Team eNPS score: >50',
           'Runway: Maintain 12+ months on $200K Tranche 1'
         ],
@@ -262,7 +262,7 @@ const h1Team: Department[] = [
         requirements: [
           '5+ years operations/GM leadership in startups',
           'Strong UAE/Dubai business network (critical)',
-          'Experience scaling teams from 5 to 50+ people',
+          'Experience scaling teams from 5 to 70+ people',
           'Arabic speaker strongly preferred',
           'Hands-on operator - can work across all functions',
           'Strong financial acumen and budget management',
@@ -469,7 +469,7 @@ const h1Team: Department[] = [
     icon: TrendingUp,
     color: 'pink',
     description: 'Driving user acquisition and retention',
-    mission: 'Acquire 5K MAU with ≥25% D30 retention and LTV:CAC ≥10x through viral loops, community, and organic channels. Be ruthlessly data-driven.',
+    mission: 'Acquire 50K MAU with ≥30% D30 retention and LTV:CAC ≥16x through viral loops, community, and organic channels. Be ruthlessly data-driven.',
     headRole: 'Head of Growth',
     headcount: { h1: 3, full: 10 },
     budget: '15% of total',
@@ -501,7 +501,7 @@ const h1Team: Department[] = [
         role: 'Head of Growth',
         reportsTo: 'CEO',
         directReports: ['Community Manager', 'Growth Analyst'],
-        description: 'Owns the 5K MAU goal. Architect of user acquisition and retention strategy. Obsessed with data, experiments, and finding scalable growth loops.',
+        description: 'Owns the 50K MAU goal. Architect of user acquisition and retention strategy. Obsessed with data, experiments, and finding scalable growth loops.',
         responsibilities: [
           'Define and execute comprehensive growth strategy',
           'Own all user acquisition and retention metrics',
@@ -529,8 +529,8 @@ const h1Team: Department[] = [
           'D7 retention: ≥30%',
           'D30 retention: ≥25%',
           'Referral rate: ≥20% of users refer',
-          'CAC: <AED 15',
-          'LTV:CAC: ≥10x'
+          'CAC: ≤AED 30 blended',
+          'LTV:CAC: ≥16x'
         ],
         status: 'hiring',
         priority: 'critical',
@@ -815,8 +815,8 @@ const h1Team: Department[] = [
     name: 'Merchant Success',
     icon: HandshakeIcon,
     color: 'emerald',
-    description: 'Acquiring and delighting 250+ merchants',
-    mission: 'Onboard 250+ quality merchants with <5% churn. Create a compelling offer ecosystem that drives user engagement and transaction volume. Each Merchant Marketing Manager handles 15-20 businesses.',
+    description: 'Acquiring and delighting 1,500+ merchants',
+    mission: 'Onboard 1,500+ quality merchants with <5% churn. Create a compelling offer ecosystem that drives user engagement and transaction volume. Each Merchant Marketing Manager handles 15-20 businesses.',
     headRole: 'Head of Merchant Partnerships',
     headcount: { h1: 4, full: 15 },
     budget: '12% of total',
@@ -1398,7 +1398,7 @@ const TeamPage = () => {
             The <span className="text-[#c9a227]">People</span> Behind Nuqta
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto mb-8">
-            {viewMode === 'h1' ? 'H1 lean team to prove the loop: 5K MAU, 250 merchants, AED 10M GMV.' : 'Full organization for scaling across UAE and GCC.'}
+            {viewMode === 'h1' ? 'H1 aggressive team to dominate: 50K MAU, 1,500 merchants, AED 25M GMV.' : 'Full organization for scaling across UAE and GCC.'}
             <br />Click any role for complete JD with responsibilities, requirements, and KPIs.
           </p>
 

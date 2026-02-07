@@ -599,8 +599,8 @@ export default function MarketingExecutionPage() {
                   </div>
                 </div>
                 <ul className="space-y-2 text-sm text-gray-300">
-                  <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> Scale to 10,000 users</li>
-                  <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> 100+ merchants</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> Scale to 50,000 users</li>
+                  <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> 500+ merchants</li>
                   <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> Launch AI podcasts</li>
                   <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> First signature event</li>
                   <li className="flex items-center gap-2"><CheckCircle2 size={14} className="text-purple-400" /> Press coverage</li>

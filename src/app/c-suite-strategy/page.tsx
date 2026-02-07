@@ -238,11 +238,11 @@ function UnifiedStrategy() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-blue-400 mt-0.5 flex-shrink-0" />
-                <span>Onboard 100 merchants</span>
+                <span>Onboard 500 merchants</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-blue-400 mt-0.5 flex-shrink-0" />
-                <span>Beta test with 1,000 users</span>
+                <span>Beta test with 5,000 users</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-blue-400 mt-0.5 flex-shrink-0" />
@@ -268,11 +268,11 @@ function UnifiedStrategy() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
-                <span>Acquire 10,000 users</span>
+                <span>Acquire 50,000 users</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />
-                <span>200 merchants live</span>
+                <span>1,500 merchants live</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle size={16} className="text-green-400 mt-0.5 flex-shrink-0" />

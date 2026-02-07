@@ -630,7 +630,7 @@ function SafeOnlyScenario() {
             <ul className="space-y-2 text-sm">
               {[
                 'Use SAFE to prove model & hit product-market fit',
-                'Scale to 25K users, 100 merchants',
+                'Scale to 50K users, 1,500 merchants',
                 'Hit AED 500K+ GMV/month',
                 'Reach break-even on revenue',
                 'Never raise again - grow on profits'
@@ -808,7 +808,7 @@ function SafeOnlyScenario() {
             {
               month: 'Month 6',
               milestone: 'Product-Market Fit Proven',
-              metrics: '10K users, 60 merchants, 20% D30 retention, AED 120K revenue/month',
+              metrics: '50K users, 1,500 merchants, 30% D30 retention, AED 2M revenue/month',
               action: 'Stop experimenting, double down on what works'
             },
             {
@@ -820,13 +820,13 @@ function SafeOnlyScenario() {
             {
               month: 'Month 12',
               milestone: 'Sustainable Growth',
-              metrics: '25K users, 100 merchants, AED 375K revenue/month',
+              metrics: '100K users, 2,500 merchants, AED 8M revenue/month',
               action: 'Reinvest all profits into growth'
             },
             {
               month: 'Month 18',
               milestone: 'Market Leader in Dubai',
-              metrics: '50K users, 150 merchants, AED 900K revenue/month',
+              metrics: '200K users, 5,000 merchants, AED 20M revenue/month',
               action: 'Consider organic GCC expansion (Abu Dhabi first)'
             },
           ].map((item, idx) => (
@@ -1189,19 +1189,19 @@ function MultiRoundScenario() {
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                // SAFE Phase ($400K = AED 1.47M)
-                { period: 'M1 (SAFE)', users: 1000, merchants: 15, gmv: 100, revenue: 15, team: 55, mktg: 40, ops: 18, total: 113, net: -98, cash: 1372, phase: 'safe' },
-                { period: 'M3', users: 5000, merchants: 35, gmv: 500, revenue: 75, team: 65, mktg: 55, ops: 20, total: 140, net: -65, cash: 1180, phase: 'safe' },
-                { period: 'M6', users: 15000, merchants: 70, gmv: 1500, revenue: 225, team: 80, mktg: 110, ops: 25, total: 215, net: 10, cash: 1000, phase: 'safe' },
-                { period: 'M9 (Seed)', users: 35000, merchants: 120, gmv: 3500, revenue: 525, team: 150, mktg: 250, ops: 45, total: 445, net: 80, cash: 8350, phase: 'seed' },
-                // Seed Phase ($2M = AED 7.35M) - Total: AED 8.35M in bank
-                { period: 'M12', users: 70000, merchants: 180, gmv: 7000, revenue: 1050, team: 280, mktg: 480, ops: 70, total: 830, net: 220, cash: 8900, phase: 'seed' },
-                { period: 'M15', users: 120000, merchants: 280, gmv: 12000, revenue: 1800, team: 400, mktg: 700, ops: 100, total: 1200, net: 600, cash: 10500, phase: 'seed' },
-                { period: 'M18 (Ser A)', users: 200000, merchants: 400, gmv: 20000, revenue: 3000, team: 600, mktg: 1200, ops: 150, total: 1950, net: 1050, cash: 32000, phase: 'seriesA' },
-                // Series A Phase ($6M = AED 22M) - Total: AED 32M+ in bank
-                { period: 'M24', users: 400000, merchants: 700, gmv: 40000, revenue: 6000, team: 900, mktg: 2000, ops: 250, total: 3150, net: 2850, cash: 45000, phase: 'seriesA' },
-                { period: 'M30', users: 650000, merchants: 1000, gmv: 65000, revenue: 9750, team: 1100, mktg: 2500, ops: 300, total: 3900, net: 5850, cash: 70000, phase: 'seriesA' },
-                { period: 'M36', users: 1000000, merchants: 1500, gmv: 100000, revenue: 15000, team: 1300, mktg: 3000, ops: 400, total: 4700, net: 10300, cash: 120000, phase: 'seriesA' },
+                // SAFE Phase ($400K = AED 1.47M) - AGGRESSIVE TARGETS
+                { period: 'M1 (SAFE)', users: 5000, merchants: 100, gmv: 500, revenue: 40, team: 55, mktg: 40, ops: 18, total: 113, net: -73, cash: 1400, phase: 'safe' },
+                { period: 'M3', users: 25000, merchants: 500, gmv: 2500, revenue: 200, team: 65, mktg: 55, ops: 20, total: 140, net: 60, cash: 1300, phase: 'safe' },
+                { period: 'M6 (H1 Exit)', users: 50000, merchants: 1500, gmv: 5000, revenue: 400, team: 80, mktg: 110, ops: 25, total: 215, net: 185, cash: 1200, phase: 'safe' },
+                { period: 'M9 (Seed)', users: 75000, merchants: 2000, gmv: 7500, revenue: 600, team: 150, mktg: 250, ops: 45, total: 445, net: 155, cash: 9500, phase: 'seed' },
+                // Seed Phase ($2-3M = AED 9M) - Total: AED 10M+ in bank
+                { period: 'M12 (Y1)', users: 100000, merchants: 2500, gmv: 10000, revenue: 800, team: 280, mktg: 480, ops: 70, total: 830, net: -30, cash: 9000, phase: 'seed' },
+                { period: 'M15', users: 200000, merchants: 4000, gmv: 20000, revenue: 1600, team: 400, mktg: 700, ops: 100, total: 1200, net: 400, cash: 10000, phase: 'seed' },
+                { period: 'M18 (Ser A)', users: 350000, merchants: 6000, gmv: 35000, revenue: 2800, team: 600, mktg: 1200, ops: 150, total: 1950, net: 850, cash: 75000, phase: 'seriesA' },
+                // Series A Phase ($15-25M = AED 70M) - Total: AED 75M+ in bank
+                { period: 'M24 (Y2)', users: 500000, merchants: 10000, gmv: 50000, revenue: 4000, team: 900, mktg: 2000, ops: 250, total: 3150, net: 850, cash: 80000, phase: 'seriesA' },
+                { period: 'M30', users: 1000000, merchants: 20000, gmv: 100000, revenue: 8000, team: 1100, mktg: 2500, ops: 300, total: 3900, net: 4100, cash: 150000, phase: 'seriesA' },
+                { period: 'M36 (Y3)', users: 1500000, merchants: 30000, gmv: 150000, revenue: 12000, team: 1300, mktg: 3000, ops: 400, total: 4700, net: 7300, cash: 250000, phase: 'seriesA' },
               ].map((row) => (
                 <tr key={row.period} className={
                   row.phase === 'safe' ? 'bg-yellow-500/5' :

@@ -303,7 +303,7 @@ export default function JoinUsPage() {
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-slate-500">H1 Target</span>
-                  <span className="text-white font-bold">5K MAU, 250 merchants</span>
+                  <span className="text-white font-bold">50K MAU, 1,500 merchants</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-slate-500">Base Case Exit</span>

@@ -47,13 +47,13 @@ export default function HiringPlaybookPage() {
       responsibilities: [
         'Plan and execute paid media strategy across all channels',
         'Manage monthly ad spend of AED 50-150K',
-        'Achieve target CAC of <AED 15 for app downloads',
+        'Achieve target blended CAC of ≤AED 30 for app downloads',
         'Build and optimize conversion funnels',
         'A/B test creatives, audiences, and landing pages',
         'Weekly performance reporting to CMO',
         'Collaborate with creative team on ad assets'
       ],
-      kpis: ['CAC < AED 15', 'ROAS > 3x', '50K downloads/month', 'CVR > 5%'],
+      kpis: ['CAC ≤ AED 30 blended', 'ROAS > 3x', '50K downloads/month', 'CVR > 5%'],
       interviewFocus: ['Campaign case studies', 'Budget management examples', 'Attribution knowledge', 'Tool proficiency test'],
       redFlags: ['No app experience', 'Only B2B background', 'Cannot explain attribution', 'No budget proof']
     },

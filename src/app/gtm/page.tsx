@@ -29,7 +29,7 @@ export default function GTMMainPage() {
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎯</span>
-              <span className="text-[#c9a227] font-bold">5K MAU • 250 Merchants (H1)</span>
+              <span className="text-[#c9a227] font-bold">H1: 50K MAU → Year 1: 100K MAU</span>
             </div>
           </div>
         </div>
@@ -107,25 +107,25 @@ export default function GTMMainPage() {
                     <div className="text-4xl">🚀</div>
                     <ArrowRight className="text-emerald-400 group-hover:translate-x-1 transition-transform" size={24} />
                   </div>
-                  <h3 className="text-2xl font-black text-emerald-300 mb-2">H1: Prove The Loop</h3>
-                  <p className="text-sm text-slate-400 mb-4">~5 Months • Dubai Marina + JBR</p>
+                  <h3 className="text-2xl font-black text-emerald-300 mb-2">H1: UAE Blitzscale</h3>
+                  <p className="text-sm text-slate-400 mb-4">~6 Months • Dubai + Abu Dhabi</p>
                   <div className="space-y-2 text-sm text-slate-300 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-emerald-400 mt-0.5" />
-                      <span>Merchant QR (≤AED 15 CAC)</span>
+                      <span>Multi-channel merchant blitz</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-emerald-400 mt-0.5" />
-                      <span>Student Ambassadors (≤AED 30)</span>
+                      <span>50+ Student Ambassadors</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-emerald-400 mt-0.5" />
-                      <span>Daily habit loops (8+ sessions/mo)</span>
+                      <span>Viral social loops activation</span>
                     </div>
                   </div>
                   <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
-                    <p className="text-xs font-semibold text-emerald-300 uppercase mb-1">Exit Target (Conservative)</p>
-                    <p className="text-lg font-black text-emerald-400">5K MAU • 25% D30</p>
+                    <p className="text-xs font-semibold text-emerald-300 uppercase mb-1">Exit Target (Aggressive)</p>
+                    <p className="text-lg font-black text-emerald-400">50K MAU • 30% D30</p>
                   </div>
                 </div>
               </a>
@@ -137,25 +137,25 @@ export default function GTMMainPage() {
                     <div className="text-4xl">🔷</div>
                     <ArrowRight className="text-blue-400 group-hover:translate-x-1 transition-transform" size={24} />
                   </div>
-                  <h3 className="text-2xl font-black text-blue-300 mb-2">H2: Category Scale</h3>
-                  <p className="text-sm text-slate-400 mb-4">~2.5 Months • Multi-Category</p>
+                  <h3 className="text-2xl font-black text-blue-300 mb-2">H2: UAE Scale</h3>
+                  <p className="text-sm text-slate-400 mb-4">~6 Months • Full Emirates</p>
                   <div className="space-y-2 text-sm text-slate-300 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-blue-400 mt-0.5" />
-                      <span>Healthcare + Home Services</span>
+                      <span>Full UAE coverage (all 7 Emirates)</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-blue-400 mt-0.5" />
-                      <span>Same 3-channel playbook</span>
+                      <span>All industry categories live</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-blue-400 mt-0.5" />
-                      <span>Abu Dhabi + JLT expansion</span>
+                      <span>Chain partnerships at scale</span>
                     </div>
                   </div>
                   <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
                     <p className="text-xs font-semibold text-blue-300 uppercase mb-1">Exit Target</p>
-                    <p className="text-lg font-black text-blue-400">75K MAU • 40% Multi-Cat</p>
+                    <p className="text-lg font-black text-blue-400">250K MAU • 5K Merchants</p>
                   </div>
                 </div>
               </a>
@@ -167,25 +167,25 @@ export default function GTMMainPage() {
                     <div className="text-4xl">🟣</div>
                     <ArrowRight className="text-purple-400 group-hover:translate-x-1 transition-transform" size={24} />
                   </div>
-                  <h3 className="text-2xl font-black text-purple-300 mb-2">H3: B2B Platform</h3>
-                  <p className="text-sm text-slate-400 mb-4">~1.2 Years • Infrastructure Play</p>
+                  <h3 className="text-2xl font-black text-purple-300 mb-2">H3: UAE Domination</h3>
+                  <p className="text-sm text-slate-400 mb-4">~12 Months • Full UAE Market Control</p>
                   <div className="space-y-2 text-sm text-slate-300 mb-4">
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-purple-400 mt-0.5" />
-                      <span>40% GMV + 30% WaaS + 30% Data</span>
+                      <span>UAE market leader (all 7 Emirates)</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-purple-400 mt-0.5" />
-                      <span>5 WaaS partnerships (banks/fintechs)</span>
+                      <span>WaaS + B2B platform revenue</span>
                     </div>
                     <div className="flex items-start gap-2">
                       <CheckCircle2 size={16} className="text-purple-400 mt-0.5" />
-                      <span>Digital ads unlocked (proven UE)</span>
+                      <span>Series A ready metrics</span>
                     </div>
                   </div>
                   <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
                     <p className="text-xs font-semibold text-purple-300 uppercase mb-1">Exit Target</p>
-                    <p className="text-lg font-black text-purple-400">150K MAU • 30% EBITDA</p>
+                    <p className="text-lg font-black text-purple-400">500K MAU • 40% EBITDA</p>
                   </div>
                 </div>
               </a>
@@ -275,19 +275,21 @@ export default function GTMMainPage() {
                 </div>
               </div>
 
+              {/* Phase 3 adds 80K MAU from Kuwait+Bahrain+Oman. Cumulative after H3 (500K) + Phase 2 (100K) + Phase 3 (80K) = 680K */}
+              {/* But Year 3 target is 1.5M, Year 5 is 5M - Phase 3 completion represents ~Year 3 milestone */}
               <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <div>
-                    <p className="text-xs text-[#c9a227] uppercase mb-1">Total Users</p>
-                    <p className="text-2xl font-black text-[#d4ab2c]">300K MAU</p>
+                    <p className="text-xs text-[#c9a227] uppercase mb-1">GCC Total Users</p>
+                    <p className="text-2xl font-black text-[#d4ab2c]">1.5M MAU</p>
                   </div>
                   <div>
                     <p className="text-xs text-[#c9a227] uppercase mb-1">Annual Revenue</p>
-                    <p className="text-2xl font-black text-[#d4ab2c]">AED 420M</p>
+                    <p className="text-2xl font-black text-[#d4ab2c]">AED 144M</p>
                   </div>
                   <div>
                     <p className="text-xs text-[#c9a227] uppercase mb-1">Exit Valuation</p>
-                    <p className="text-2xl font-black text-[#d4ab2c]">$800M-$2.3B</p>
+                    <p className="text-2xl font-black text-[#d4ab2c]">$800M-$1.2B</p>
                   </div>
                 </div>
               </div>
@@ -348,36 +350,36 @@ export default function GTMMainPage() {
           </div>
         </div>
 
-        {/* Final Metrics Summary */}
+        {/* Final Metrics Summary - Aligned with 3-Year Domination Plan */}
         <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/10 border-2 border-[#c9a227]/40 rounded-2xl p-8">
           <div className="flex items-center gap-3 mb-6">
             <Trophy size={32} className="text-[#c9a227]" />
-            <h2 className="text-3xl font-black text-[#c9a227]">🏆 Exit-Ready Metrics (End State)</h2>
+            <h2 className="text-3xl font-black text-[#c9a227]">🏆 3-Year Domination Targets</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
               <Users size={32} className="text-blue-400 mx-auto mb-3" />
-              <p className="text-xs text-slate-400 uppercase mb-2">Total MAU</p>
-              <p className="text-4xl font-black text-blue-400">300K+</p>
+              <p className="text-xs text-slate-400 uppercase mb-2">Year 3 MAU</p>
+              <p className="text-4xl font-black text-blue-400">1.5M+</p>
               <p className="text-xs text-slate-500 mt-2">All 6 GCC countries</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
               <DollarSign size={32} className="text-[#c9a227] mx-auto mb-3" />
-              <p className="text-xs text-slate-400 uppercase mb-2">Annual Revenue</p>
-              <p className="text-4xl font-black text-[#d4ab2c]">AED 420M</p>
-              <p className="text-xs text-slate-500 mt-2">60% EBITDA margin</p>
+              <p className="text-xs text-slate-400 uppercase mb-2">Year 3 Revenue</p>
+              <p className="text-4xl font-black text-[#d4ab2c]">AED 144M</p>
+              <p className="text-xs text-slate-500 mt-2">40% EBITDA margin</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
               <Building2 size={32} className="text-purple-400 mx-auto mb-3" />
-              <p className="text-xs text-slate-400 uppercase mb-2">Revenue Mix</p>
-              <p className="text-2xl font-black text-purple-400">40/30/30</p>
-              <p className="text-xs text-slate-500 mt-2">GMV/WaaS/Data split</p>
+              <p className="text-xs text-slate-400 uppercase mb-2">Year 3 Merchants</p>
+              <p className="text-2xl font-black text-purple-400">30,000+</p>
+              <p className="text-xs text-slate-500 mt-2">Across all categories</p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 text-center">
               <Sparkles size={32} className="text-emerald-400 mx-auto mb-3" />
-              <p className="text-xs text-slate-400 uppercase mb-2">Exit Valuation</p>
-              <p className="text-3xl font-black text-emerald-400">$800M+</p>
-              <p className="text-xs text-slate-500 mt-2">Conservative 6x ARR</p>
+              <p className="text-xs text-slate-400 uppercase mb-2">Year 5 Revenue</p>
+              <p className="text-3xl font-black text-emerald-400">AED 480M</p>
+              <p className="text-xs text-slate-500 mt-2">60% EBITDA margin</p>
             </div>
           </div>
         </div>

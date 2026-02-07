@@ -78,84 +78,85 @@ export default function FinancialModelsPage() {
     },
   };
 
-  // P&L Projections by Year
+  // P&L Projections by Year - AGGRESSIVE DOMINATION TARGETS
+  // Aligned with 3-Year Domination Master Plan
   const pnlData = [
     {
       year: 'Year 1',
-      users: Math.round(10000 * mult),
-      merchants: Math.round(250 * mult),
-      gmv: Math.round(12000000 * mult),
-      revenue: Math.round(960000 * mult),
-      cogs: Math.round(480000 * mult),
-      grossProfit: Math.round(480000 * mult),
-      opex: Math.round(720000 * mult),
-      ebitda: Math.round(-240000 * mult),
-      grossMargin: 50,
-      ebitdaMargin: -25,
-    },
-    {
-      year: 'Year 2',
-      users: Math.round(50000 * mult),
-      merchants: Math.round(1000 * mult),
-      gmv: Math.round(72000000 * mult),
-      revenue: Math.round(5760000 * mult),
-      cogs: Math.round(2304000 * mult),
-      grossProfit: Math.round(3456000 * mult),
-      opex: Math.round(2880000 * mult),
-      ebitda: Math.round(576000 * mult),
+      users: Math.round(100000 * mult),        // 100K users - UAE Blitzscale
+      merchants: Math.round(2500 * mult),       // 2,500 merchants
+      gmv: Math.round(120000000 * mult),        // AED 120M GMV
+      revenue: Math.round(9600000 * mult),      // AED 9.6M revenue (8% take rate)
+      cogs: Math.round(3840000 * mult),         // 40% COGS
+      grossProfit: Math.round(5760000 * mult),  // 60% gross margin
+      opex: Math.round(4800000 * mult),         // 50% opex ratio
+      ebitda: Math.round(960000 * mult),        // AED 960K EBITDA
       grossMargin: 60,
       ebitdaMargin: 10,
     },
     {
-      year: 'Year 3',
-      users: Math.round(200000 * mult),
-      merchants: Math.round(3000 * mult),
-      gmv: Math.round(288000000 * mult),
-      revenue: Math.round(23040000 * mult),
-      cogs: Math.round(6912000 * mult),
-      grossProfit: Math.round(16128000 * mult),
-      opex: Math.round(9216000 * mult),
-      ebitda: Math.round(6912000 * mult),
+      year: 'Year 2',
+      users: Math.round(500000 * mult),         // 500K users - GCC Expansion
+      merchants: Math.round(10000 * mult),      // 10,000 merchants
+      gmv: Math.round(600000000 * mult),        // AED 600M GMV
+      revenue: Math.round(48000000 * mult),     // AED 48M revenue
+      cogs: Math.round(14400000 * mult),        // 30% COGS
+      grossProfit: Math.round(33600000 * mult), // 70% gross margin
+      opex: Math.round(19200000 * mult),        // 40% opex ratio
+      ebitda: Math.round(14400000 * mult),      // AED 14.4M EBITDA
       grossMargin: 70,
       ebitdaMargin: 30,
     },
     {
-      year: 'Year 4',
-      users: Math.round(500000 * mult),
-      merchants: Math.round(7500 * mult),
-      gmv: Math.round(720000000 * mult),
-      revenue: Math.round(57600000 * mult),
-      cogs: Math.round(14400000 * mult),
-      grossProfit: Math.round(43200000 * mult),
-      opex: Math.round(20160000 * mult),
-      ebitda: Math.round(23040000 * mult),
+      year: 'Year 3',
+      users: Math.round(1500000 * mult),        // 1.5M users - Regional Leader
+      merchants: Math.round(30000 * mult),      // 30,000 merchants
+      gmv: Math.round(1800000000 * mult),       // AED 1.8B GMV
+      revenue: Math.round(144000000 * mult),    // AED 144M revenue
+      cogs: Math.round(36000000 * mult),        // 25% COGS
+      grossProfit: Math.round(108000000 * mult),// 75% gross margin
+      opex: Math.round(50400000 * mult),        // 35% opex ratio
+      ebitda: Math.round(57600000 * mult),      // AED 57.6M EBITDA
       grossMargin: 75,
       ebitdaMargin: 40,
     },
     {
-      year: 'Year 5',
-      users: Math.round(1000000 * mult),
-      merchants: Math.round(15000 * mult),
-      gmv: Math.round(1440000000 * mult),
-      revenue: Math.round(115200000 * mult),
-      cogs: Math.round(23040000 * mult),
-      grossProfit: Math.round(92160000 * mult),
-      opex: Math.round(34560000 * mult),
-      ebitda: Math.round(57600000 * mult),
+      year: 'Year 4',
+      users: Math.round(3000000 * mult),        // 3M users - Market Dominance
+      merchants: Math.round(60000 * mult),      // 60,000 merchants
+      gmv: Math.round(3600000000 * mult),       // AED 3.6B GMV
+      revenue: Math.round(288000000 * mult),    // AED 288M revenue
+      cogs: Math.round(57600000 * mult),        // 20% COGS
+      grossProfit: Math.round(230400000 * mult),// 80% gross margin
+      opex: Math.round(86400000 * mult),        // 30% opex ratio
+      ebitda: Math.round(144000000 * mult),     // AED 144M EBITDA
       grossMargin: 80,
       ebitdaMargin: 50,
     },
+    {
+      year: 'Year 5',
+      users: Math.round(5000000 * mult),        // 5M users - Complete Domination
+      merchants: Math.round(100000 * mult),     // 100,000 merchants
+      gmv: Math.round(6000000000 * mult),       // AED 6B GMV
+      revenue: Math.round(480000000 * mult),    // AED 480M revenue
+      cogs: Math.round(72000000 * mult),        // 15% COGS
+      grossProfit: Math.round(408000000 * mult),// 85% gross margin
+      opex: Math.round(120000000 * mult),       // 25% opex ratio
+      ebitda: Math.round(288000000 * mult),     // AED 288M EBITDA
+      grossMargin: 85,
+      ebitdaMargin: 60,
+    },
   ];
 
-  // Revenue Streams
+  // Revenue Streams - Updated for Aggressive Domination Targets
   const revenueStreams = [
     {
       name: 'Merchant Commissions',
       description: 'Transaction-based commission on GMV processed through Nuqta',
       percentage: 70,
-      year1: Math.round(672000 * mult),
-      year3: Math.round(16128000 * mult),
-      year5: Math.round(80640000 * mult),
+      year1: Math.round(6720000 * mult),        // 70% of 9.6M
+      year3: Math.round(100800000 * mult),      // 70% of 144M
+      year5: Math.round(336000000 * mult),      // 70% of 480M
       model: '5-12% of transaction value',
       color: 'emerald',
     },
@@ -163,9 +164,9 @@ export default function FinancialModelsPage() {
       name: 'Subscription Fees',
       description: 'Monthly/annual subscription packages for merchants',
       percentage: 15,
-      year1: Math.round(144000 * mult),
-      year3: Math.round(3456000 * mult),
-      year5: Math.round(17280000 * mult),
+      year1: Math.round(1440000 * mult),        // 15% of 9.6M
+      year3: Math.round(21600000 * mult),       // 15% of 144M
+      year5: Math.round(72000000 * mult),       // 15% of 480M
       model: 'AED 199-999/month per merchant',
       color: 'blue',
     },
@@ -173,9 +174,9 @@ export default function FinancialModelsPage() {
       name: 'Premium Features',
       description: 'User premium subscriptions and advanced merchant tools',
       percentage: 10,
-      year1: Math.round(96000 * mult),
-      year3: Math.round(2304000 * mult),
-      year5: Math.round(11520000 * mult),
+      year1: Math.round(960000 * mult),         // 10% of 9.6M
+      year3: Math.round(14400000 * mult),       // 10% of 144M
+      year5: Math.round(48000000 * mult),       // 10% of 480M
       model: 'AED 29/month user premium + merchant add-ons',
       color: 'purple',
     },
@@ -183,9 +184,9 @@ export default function FinancialModelsPage() {
       name: 'Data & Insights',
       description: 'Anonymized spending analytics sold to brands/research firms',
       percentage: 5,
-      year1: Math.round(48000 * mult),
-      year3: Math.round(1152000 * mult),
-      year5: Math.round(5760000 * mult),
+      year1: Math.round(480000 * mult),         // 5% of 9.6M
+      year3: Math.round(7200000 * mult),        // 5% of 144M
+      year5: Math.round(24000000 * mult),       // 5% of 480M
       model: 'B2B data partnerships',
       color: 'orange',
     },
@@ -555,38 +556,38 @@ export default function FinancialModelsPage() {
               </div>
             </div>
 
-            {/* Key Assumptions */}
+            {/* Key Assumptions - Aggressive Domination Strategy */}
             <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700">
               <div className="flex items-center gap-2 mb-4">
                 <Info className="w-5 h-5 text-blue-400" />
-                <h4 className="text-lg font-semibold">Key Assumptions</h4>
+                <h4 className="text-lg font-semibold">Key Assumptions - Domination Targets</h4>
               </div>
               <div className="grid md:grid-cols-3 gap-6 text-sm">
                 <div>
-                  <p className="text-[#c9a227] font-medium mb-2">Growth</p>
+                  <p className="text-[#c9a227] font-medium mb-2">Aggressive Growth</p>
                   <ul className="space-y-1 text-gray-400">
-                    <li>• 5x user growth Y1→Y2</li>
-                    <li>• 4x user growth Y2→Y3</li>
-                    <li>• 2.5x user growth Y3→Y4→Y5</li>
-                    <li>• Merchant growth tracks users</li>
+                    <li>• 5x user growth Y1→Y2 (100K→500K)</li>
+                    <li>• 3x user growth Y2→Y3 (500K→1.5M)</li>
+                    <li>• 2x user growth Y3→Y4 (1.5M→3M)</li>
+                    <li>• 1.67x user growth Y4→Y5 (3M→5M)</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-[#c9a227] font-medium mb-2">Revenue</p>
+                  <p className="text-[#c9a227] font-medium mb-2">Revenue Model</p>
                   <ul className="space-y-1 text-gray-400">
                     <li>• 8% blended take rate on GMV</li>
-                    <li>• AED 600/user/month GMV</li>
-                    <li>• AED 50K/merchant/month GMV</li>
+                    <li>• AED 100/user/month GMV avg</li>
+                    <li>• AED 60K/merchant/month GMV</li>
                     <li>• 70/15/10/5 revenue mix</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-[#c9a227] font-medium mb-2">Margins</p>
+                  <p className="text-[#c9a227] font-medium mb-2">Margin Expansion</p>
                   <ul className="space-y-1 text-gray-400">
-                    <li>• Gross margin: 50%→80%</li>
-                    <li>• Operating leverage over time</li>
-                    <li>• EBITDA positive by Year 2</li>
-                    <li>• 50% EBITDA margin by Year 5</li>
+                    <li>• Gross margin: 60%→85%</li>
+                    <li>• Strong operating leverage</li>
+                    <li>• EBITDA positive by Year 1</li>
+                    <li>• 60% EBITDA margin by Year 5</li>
                   </ul>
                 </div>
               </div>
@@ -813,13 +814,15 @@ export default function FinancialModelsPage() {
                   </thead>
                   <tbody>
                     {[
-                      { dept: 'Executive', y1: 2, y3: 6, y5: 10, cost: 'AED 50K' },
-                      { dept: 'Engineering', y1: 4, y3: 15, y5: 35, cost: 'AED 35K' },
-                      { dept: 'Product & Design', y1: 2, y3: 8, y5: 15, cost: 'AED 30K' },
-                      { dept: 'Growth & Marketing', y1: 3, y3: 12, y5: 25, cost: 'AED 25K' },
-                      { dept: 'Merchant Success', y1: 4, y3: 15, y5: 40, cost: 'AED 20K' },
-                      { dept: 'Customer Support', y1: 2, y3: 10, y5: 30, cost: 'AED 12K' },
-                      { dept: 'Finance & Admin', y1: 1, y3: 4, y5: 10, cost: 'AED 25K' },
+                      { dept: 'Executive (C-Suite)', y1: 5, y3: 10, y5: 15, cost: 'AED 60K' },
+                      { dept: 'Engineering', y1: 15, y3: 50, y5: 120, cost: 'AED 40K' },
+                      { dept: 'Product & Design', y1: 6, y3: 20, y5: 45, cost: 'AED 35K' },
+                      { dept: 'Growth & Marketing', y1: 10, y3: 35, y5: 80, cost: 'AED 28K' },
+                      { dept: 'Merchant Success', y1: 15, y3: 60, y5: 150, cost: 'AED 22K' },
+                      { dept: 'Customer Support', y1: 8, y3: 40, y5: 100, cost: 'AED 15K' },
+                      { dept: 'Finance & Admin', y1: 4, y3: 15, y5: 40, cost: 'AED 28K' },
+                      { dept: 'Data & Analytics', y1: 3, y3: 15, y5: 40, cost: 'AED 35K' },
+                      { dept: 'Operations', y1: 4, y3: 25, y5: 60, cost: 'AED 20K' },
                     ].map((row, idx) => (
                       <tr key={idx} className="border-t border-gray-800">
                         <td className="p-4 text-white font-medium">{row.dept}</td>
@@ -831,9 +834,9 @@ export default function FinancialModelsPage() {
                     ))}
                     <tr className="border-t border-gray-800 bg-[#c9a227]/10">
                       <td className="p-4 text-[#c9a227] font-bold">Total Headcount</td>
-                      <td className="p-4 text-center text-[#c9a227] font-bold">18</td>
                       <td className="p-4 text-center text-[#c9a227] font-bold">70</td>
-                      <td className="p-4 text-center text-[#c9a227] font-bold">165</td>
+                      <td className="p-4 text-center text-[#c9a227] font-bold">270</td>
+                      <td className="p-4 text-center text-[#c9a227] font-bold">650</td>
                       <td className="p-4 text-right text-[#c9a227] font-bold">-</td>
                     </tr>
                   </tbody>
@@ -846,14 +849,14 @@ export default function FinancialModelsPage() {
         {/* Scenarios Tab */}
         {activeTab === 'scenarios' && (
           <div className="space-y-8">
-            {/* Scenario Comparison */}
+            {/* Scenario Comparison - Aligned with Domination Targets */}
             <div className="grid md:grid-cols-3 gap-6">
               {(['conservative', 'base', 'optimistic'] as const).map((s) => {
                 const data = scenarioData[s];
                 const year5 = {
-                  users: Math.round(1000000 * data.multiplier),
-                  revenue: Math.round(115200000 * data.multiplier),
-                  ebitda: Math.round(57600000 * data.multiplier),
+                  users: Math.round(5000000 * data.multiplier),      // 5M base target
+                  revenue: Math.round(480000000 * data.multiplier),   // AED 480M base
+                  ebitda: Math.round(288000000 * data.multiplier),    // AED 288M base (60% margin)
                 };
                 return (
                   <div
@@ -915,14 +918,14 @@ export default function FinancialModelsPage() {
                   </thead>
                   <tbody>
                     {[
-                      { driver: 'User Growth Rate', cons: '3x YoY', base: '4x YoY', opt: '5x YoY' },
-                      { driver: 'Merchant Growth Rate', cons: '2.5x YoY', base: '3.5x YoY', opt: '4.5x YoY' },
+                      { driver: 'User Growth Rate', cons: '2x YoY', base: '3x YoY', opt: '5x YoY' },
+                      { driver: 'Merchant Growth Rate', cons: '2x YoY', base: '3x YoY', opt: '4x YoY' },
                       { driver: 'User Retention (D30)', cons: '20%', base: '25%', opt: '30%' },
                       { driver: 'Merchant Churn', cons: '7%/mo', base: '5%/mo', opt: '3%/mo' },
                       { driver: 'Take Rate', cons: '6%', base: '8%', opt: '10%' },
-                      { driver: 'CAC', cons: 'AED 8', base: 'AED 5', opt: 'AED 3' },
+                      { driver: 'CAC', cons: 'AED 40', base: 'AED 30', opt: 'AED 20' },
                       { driver: 'Avg Transaction Value', cons: 'AED 60', base: 'AED 75', opt: 'AED 90' },
-                      { driver: 'Transactions/User/Month', cons: '6', base: '8', opt: '10' },
+                      { driver: 'Monthly GMV/User', cons: 'AED 80', base: 'AED 100', opt: 'AED 120' },
                     ].map((row, idx) => (
                       <tr key={idx} className="border-t border-gray-800">
                         <td className="p-4 text-white font-medium">{row.driver}</td>

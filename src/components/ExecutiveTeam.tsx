@@ -219,7 +219,7 @@ const executiveTeam: ExecutiveRole[] = [
       bonus: 'Milestone-based tied to fundraising and growth'
     },
     hiringPriority: 'critical',
-    nuqtaContext: 'As Nuqta\'s founder, the CEO has built the vision of transforming everyday spending into meaningful rewards. The immediate focus is securing Series A funding, building the executive team, and achieving H1 milestones of 10K MAU and 250+ merchants. The CEO\'s unique understanding of the UAE market and relationships with investors and partners are critical competitive advantages.'
+    nuqtaContext: 'As Nuqta\'s founder, the CEO has built the vision of transforming everyday spending into meaningful rewards. The immediate focus is securing Series A funding, building the executive team, and achieving H1 milestones of 50K MAU and 1,500+ merchants. The CEO\'s unique understanding of the UAE market and relationships with investors and partners are critical competitive advantages.'
   },
   {
     title: 'Chief Operating Officer',
@@ -229,7 +229,7 @@ const executiveTeam: ExecutiveRole[] = [
     color: 'blue',
     tagline: 'Execution Excellence & Scale Engine',
     primaryFocus: 'Operational excellence, execution, and cross-functional alignment',
-    description: 'The COO is the operator who makes things happen. Owns day-to-day execution across all departments, ensures the machine runs smoothly, and removes blockers so teams can focus on their work. While the CEO focuses on vision and fundraising, the COO focuses on execution and results. Critical hire for scaling from 10 to 50+ people.',
+    description: 'The COO is the operator who makes things happen. Owns day-to-day execution across all departments, ensures the machine runs smoothly, and removes blockers so teams can focus on their work. While the CEO focuses on vision and fundraising, the COO focuses on execution and results. Critical hire for scaling from 10 to 70 people (Year 1 target).',
     strategicPriorities: [
       {
         priority: 'Operational Foundation',
@@ -238,7 +238,7 @@ const executiveTeam: ExecutiveRole[] = [
       },
       {
         priority: 'Team Scaling',
-        description: 'Lead non-technical hiring to grow from 15 to 50+ team members',
+        description: 'Lead non-technical hiring to grow from 15 to 70 team members',
         timeline: 'H1-H2 2026'
       },
       {
@@ -359,7 +359,7 @@ const executiveTeam: ExecutiveRole[] = [
       },
       {
         priority: 'User Acquisition Engine',
-        description: 'Build scalable acquisition channels achieving CAC <AED 15',
+        description: 'Build scalable acquisition channels achieving CAC ≤AED 30 blended',
         timeline: 'H1 2026'
       },
       {
@@ -648,7 +648,7 @@ const executiveTeam: ExecutiveRole[] = [
       { metric: 'Budget Variance', target: '<5% from plan', frequency: 'Monthly' },
       { metric: 'Financial Close', target: '<5 business days monthly close', frequency: 'Monthly' },
       { metric: 'Fundraising Support', target: 'Data room ready in <2 weeks', frequency: 'As needed' },
-      { metric: 'Unit Economics', target: 'LTV:CAC >10x', frequency: 'Monthly' },
+      { metric: 'Unit Economics', target: 'LTV:CAC ≥16x', frequency: 'Monthly' },
       { metric: 'Collections', target: '<30 day average AR', frequency: 'Monthly' },
       { metric: 'Audit Readiness', target: 'Clean audit with no material findings', frequency: 'Annually' }
     ],

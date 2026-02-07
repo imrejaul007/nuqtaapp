@@ -42,7 +42,7 @@ export default function PerformanceManagementPage() {
         example: {
           objective: 'Build a performance marketing engine that drives efficient growth',
           keyResults: [
-            'Achieve CAC below AED 15 for app installs',
+            'Achieve blended CAC below AED 30 for app installs',
             'Reach 50K downloads per month',
             'Attain ROAS of 4x on paid campaigns',
             'Launch and optimize 3 new acquisition channels'

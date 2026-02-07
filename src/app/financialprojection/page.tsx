@@ -904,7 +904,7 @@ function DashboardTab({ metrics, assumptions }: { metrics: ReturnType<typeof cal
             H1 Target (~5 months, $200K Tranche 1)
           </p>
           <p className="text-slate-300 text-sm mt-1">
-            5,000 MAU (conservative) • 250 Merchants (minimum) • Launch: Feb 28, 2026
+            50,000 MAU (aggressive) • 1,500 Merchants • Launch: March 1, 2026
           </p>
         </div>
 
@@ -1607,7 +1607,7 @@ function AssumptionsTab({
             <p className="text-green-400 font-bold">Tranched Funding Structure</p>
             <p className="text-slate-300 text-sm mt-1">
               <strong>Tranche 1:</strong> $200K (AED 734K) - Immediately upon funding<br />
-              <strong>Tranche 2:</strong> $200K (AED 734K) - Upon milestones: 10 live merchants, 1,000 MAU, CTO hired<br />
+              <strong>Tranche 2:</strong> $200K (AED 734K) - Upon milestones: 500 live merchants, 25,000 MAU, CTO hired<br />
               <strong>Total Ask:</strong> $400K at $5M valuation cap (SAFE with 20% discount)
             </p>
           </div>

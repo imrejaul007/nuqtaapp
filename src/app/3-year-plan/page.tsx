@@ -109,7 +109,7 @@ const yearPlans: YearPlan[] = [
       { label: "Merchants", value: "2,500", icon: Store },
       { label: "GMV", value: "AED 120M", icon: DollarSign },
       { label: "Revenue", value: "AED 9.6M", icon: TrendingUp },
-      { label: "Team Size", value: "50+", icon: Users },
+      { label: "Team Size", value: "70", icon: Users },
       { label: "EBITDA", value: "AED 1M", icon: Target },
     ],
     milestones: [
@@ -124,7 +124,7 @@ const yearPlans: YearPlan[] = [
         quarter: "Q2 2026",
         title: "Dubai Domination",
         metrics: ["50,000 users", "1,200 merchants", "AED 1.5M MRR", "All major malls"],
-        teamActions: ["40 person team", "5 bank partnerships", "PR blitz"],
+        teamActions: ["50 person team", "5 bank partnerships", "PR blitz"],
         status: "upcoming"
       },
       {
@@ -138,7 +138,7 @@ const yearPlans: YearPlan[] = [
         quarter: "Q4 2026",
         title: "Category Leader",
         metrics: ["100,000 MAU", "2,500 merchants", "AED 10M GMV/mo", "Series A ready"],
-        teamActions: ["50+ team", "Regional HQ", "KSA prep begins"],
+        teamActions: ["70 person team", "Regional HQ", "KSA prep begins"],
         status: "upcoming"
       }
     ],
@@ -402,7 +402,7 @@ const sopCategories: SOPCategory[] = [
 const financialProjections = {
   year1: {
     mau: "100,000", merchants: "2,500", gmv: "120M", revenue: "9.6M",
-    cogs: "3.8M", grossProfit: "5.8M", opex: "4.8M", ebitda: "1M",
+    cogs: "3.84M", grossProfit: "5.76M", opex: "4.8M", ebitda: "0.96M",
     grossMargin: "60%", ebitdaMargin: "10%"
   },
   year2: {
@@ -436,19 +436,21 @@ const revenueStreams = {
 };
 
 // Unit economics
+// Take rate varies by engine: Engine A (F&B/Lifestyle) = 15%, Engine B (Retail/Grocery) = 5%
+// Blended 8% assumes weighted mix: ~40% Engine A, ~60% Engine B
 const unitEconomics = {
   userCAC: "AED 5-30 blended",
-  userLTV: "AED 120-504",
-  ltvCacRatio: "16.8x - 24x",
+  userLTV: "AED 504",
+  ltvCacRatio: "16.8x",
   paybackPeriod: "<2 months",
-  avgTransactions: "8/month",
+  avgTransactions: "1.3/month",
   avgTransactionValue: "AED 75",
-  monthlyGMVPerUser: "AED 600",
-  annualGMVPerUser: "AED 7,200",
+  monthlyGMVPerUser: "AED 100",
+  annualGMVPerUser: "AED 1,200",
   merchantCAC: "AED 200",
   merchantLTV: "AED 4,800",
   merchantChurn: "5%/month",
-  takeRate: "8%"
+  takeRate: "8% blended (5-15% by engine)"
 };
 
 const qualityFramework = [
@@ -802,12 +804,13 @@ export default function ThreeYearPlanPage() {
                 Headcount Growth Projection
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                {/* Headcount aligned with Financial Models - aggressive scaling for 5M users / AED 480M revenue target */}
                 {[
                   { year: "Now", count: "3-5", color: "text-slate-400" },
-                  { year: "End Y1", count: "15-20", color: "text-blue-400" },
-                  { year: "End Y2", count: "45-55", color: "text-purple-400" },
-                  { year: "End Y3", count: "90-110", color: "text-[#c9a227]" },
-                  { year: "End Y5", count: "165+", color: "text-green-400" },
+                  { year: "End Y1", count: "70", color: "text-blue-400" },
+                  { year: "End Y2", count: "160", color: "text-purple-400" },
+                  { year: "End Y3", count: "270", color: "text-[#c9a227]" },
+                  { year: "End Y5", count: "650", color: "text-green-400" },
                 ].map((item) => (
                   <div key={item.year} className="text-center p-4 bg-slate-900/50 rounded-xl">
                     <p className="text-slate-400 text-sm">{item.year}</p>
@@ -820,17 +823,18 @@ export default function ThreeYearPlanPage() {
 
             {/* Department Breakdown */}
             <div className="bg-slate-800/50 rounded-2xl p-6">
-              <h3 className="text-2xl font-black text-white mb-6">Department Structure (Year 3)</h3>
+              {/* Department breakdown aligned with 270 total headcount for Year 3 */}
+              <h3 className="text-2xl font-black text-white mb-6">Department Structure (Year 3) - Total: 270</h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {[
-                  { dept: "Engineering", count: 30, icon: Settings, color: "text-blue-400" },
-                  { dept: "Sales & BD", count: 25, icon: Target, color: "text-green-400" },
-                  { dept: "Marketing", count: 15, icon: Megaphone, color: "text-pink-400" },
-                  { dept: "Operations", count: 12, icon: Building2, color: "text-purple-400" },
-                  { dept: "Customer Success", count: 10, icon: Heart, color: "text-red-400" },
-                  { dept: "C-Suite & Leadership", count: 10, icon: Crown, color: "text-[#c9a227]" },
-                  { dept: "Finance & Legal", count: 5, icon: DollarSign, color: "text-cyan-400" },
-                  { dept: "HR & Admin", count: 5, icon: Users, color: "text-amber-400" },
+                  { dept: "Engineering & Product", count: 80, icon: Settings, color: "text-blue-400" },
+                  { dept: "Merchant Success", count: 60, icon: Target, color: "text-green-400" },
+                  { dept: "Growth & Marketing", count: 35, icon: Megaphone, color: "text-pink-400" },
+                  { dept: "Customer Support", count: 40, icon: Heart, color: "text-red-400" },
+                  { dept: "Operations", count: 25, icon: Building2, color: "text-purple-400" },
+                  { dept: "Data & Analytics", count: 15, icon: Crown, color: "text-[#c9a227]" },
+                  { dept: "Finance & Admin", count: 10, icon: DollarSign, color: "text-cyan-400" },
+                  { dept: "HR & Leadership", count: 5, icon: Users, color: "text-amber-400" },
                 ].map((dept) => (
                   <div key={dept.dept} className="bg-slate-900/50 rounded-xl p-4">
                     <dept.icon className={dept.color} size={24} />
@@ -1152,10 +1156,10 @@ export default function ThreeYearPlanPage() {
               </h3>
               <div className="grid md:grid-cols-4 gap-4">
                 {[
-                  { round: "Pre-Seed/SAFE", amount: "$400K", timing: "Q1 2026", status: "Active", use: "MVP, Beta Launch, Core Team", valuation: "$5M cap" },
-                  { round: "Seed", amount: "$1-2M", timing: "Q3 2026", status: "Planned", use: "Scale to 50K users, 300 merchants", valuation: "$15-20M" },
-                  { round: "Series A", amount: "$5-10M", timing: "Q1 2027", status: "Projected", use: "UAE dominance, Team to 70", valuation: "$50-75M" },
-                  { round: "Series B", amount: "$20-30M", timing: "Q2 2028", status: "Vision", use: "GCC expansion, 200K users", valuation: "$150-250M" },
+                  { round: "Pre-Seed/SAFE", amount: "$400K", timing: "Q1 2026", status: "Active", use: "Launch, 50K MAU, 1,500 merchants", valuation: "$5M cap" },
+                  { round: "Seed", amount: "$2-3M", timing: "Q4 2026", status: "Planned", use: "Scale to 100K MAU, 2,500 merchants", valuation: "$20-30M" },
+                  { round: "Series A", amount: "$15-25M", timing: "Q2 2027", status: "Projected", use: "500K MAU, KSA expansion, Team to 120", valuation: "$80-120M" },
+                  { round: "Series B", amount: "$50-75M", timing: "Q2 2028", status: "Vision", use: "1.5M MAU, Full GCC, Team to 270", valuation: "$300-500M" },
                 ].map((round) => (
                   <div key={round.round} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700">
                     <div className="flex items-center justify-between mb-3">
@@ -1183,25 +1187,25 @@ export default function ThreeYearPlanPage() {
                 <div className="bg-slate-900/50 rounded-xl p-5 border border-amber-500/30">
                   <h4 className="text-amber-400 font-bold mb-3">Conservative (0.7x)</h4>
                   <div className="space-y-2">
-                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">700,000</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 80.6M</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-amber-400 font-bold">AED 40.3M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">3,500,000</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 336M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-amber-400 font-bold">AED 202M</span></div>
                   </div>
                 </div>
                 <div className="bg-slate-900/50 rounded-xl p-5 border border-green-500/30">
                   <h4 className="text-green-400 font-bold mb-3">Base Case (1.0x)</h4>
                   <div className="space-y-2">
-                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">1,000,000</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 115.2M</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-green-400 font-bold">AED 57.6M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">5,000,000</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 480M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-green-400 font-bold">AED 288M</span></div>
                   </div>
                 </div>
                 <div className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/30">
-                  <h4 className="text-blue-400 font-bold mb-3">Optimistic (1.4x)</h4>
+                  <h4 className="text-blue-400 font-bold mb-3">Optimistic (1.3x)</h4>
                   <div className="space-y-2">
-                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">1,400,000</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 161.3M</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-blue-400 font-bold">AED 80.6M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Users</span><span className="text-white font-bold">6,500,000</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Revenue</span><span className="text-white font-bold">AED 624M</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">EBITDA</span><span className="text-blue-400 font-bold">AED 374M</span></div>
                   </div>
                 </div>
               </div>

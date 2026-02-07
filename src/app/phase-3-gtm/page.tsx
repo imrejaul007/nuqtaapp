@@ -423,7 +423,7 @@ export default function Phase3GTMPage() {
               <div className="space-y-1 text-xs text-slate-400">
                 <p>• Digital ads launched</p>
                 <p>• 50+ merchants/country</p>
-                <p>• Hit 5K MAU each</p>
+                <p>• Hit 15K MAU each</p>
               </div>
             </div>
 
@@ -552,19 +552,19 @@ export default function Phase3GTMPage() {
               <div className="text-4xl mb-2">🚀</div>
               <p className="text-lg font-bold text-emerald-300">H1</p>
               <p className="text-sm text-slate-400">~5 months</p>
-              <p className="text-xs text-slate-500 mt-1">5K MAU</p>
+              <p className="text-xs text-slate-500 mt-1">50K MAU</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-2">🔷</div>
               <p className="text-lg font-bold text-blue-300">H2</p>
               <p className="text-sm text-slate-400">~2.5 months</p>
-              <p className="text-xs text-slate-500 mt-1">75K MAU</p>
+              <p className="text-xs text-slate-500 mt-1">250K MAU</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-2">🟣</div>
               <p className="text-lg font-bold text-purple-300">H3</p>
               <p className="text-sm text-slate-400">~1.2 years</p>
-              <p className="text-xs text-slate-500 mt-1">150K MAU</p>
+              <p className="text-xs text-slate-500 mt-1">500K MAU</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-2">🌍</div>

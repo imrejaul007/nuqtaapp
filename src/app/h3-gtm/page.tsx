@@ -21,7 +21,7 @@ export default function H3GTMPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎯</span>
-              <span className="text-slate-300">Target: 150K MAU</span>
+              <span className="text-slate-300">Target: 500K MAU</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🏢</span>

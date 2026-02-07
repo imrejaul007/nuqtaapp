@@ -88,10 +88,10 @@ export default function H2StrategyPage() {
               <div className="bg-emerald-50 border-2 border-emerald-200 rounded-xl p-6">
                 <p className="text-sm font-black text-emerald-700 mb-3">✅ PRODUCT-MARKET FIT</p>
                 <ul className="text-sm text-slate-700 space-y-2">
-                  <li>• 10,000 active users</li>
-                  <li>• AED 2M GMV</li>
+                  <li>• 50,000 active users</li>
+                  <li>• AED 25M GMV</li>
                   <li>• 30% D30 retention</li>
-                  <li>• 250+ merchants live</li>
+                  <li>• 1,500+ merchants live</li>
                 </ul>
               </div>
 
@@ -443,7 +443,7 @@ export default function H2StrategyPage() {
                   </div>
                   <span className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-black">COMPLETE</span>
                 </div>
-                <p className="text-sm text-slate-700">10,000 users, 250 merchants, AED 2M GMV</p>
+                <p className="text-sm text-slate-700">50,000 users, 1,500 merchants, AED 25M GMV</p>
               </div>
 
               {/* Abu Dhabi */}
@@ -540,7 +540,7 @@ export default function H2StrategyPage() {
               <div className="bg-white border-2 border-purple-200 rounded-xl p-4 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-black text-slate-900">Merchant Success Lead (Month 8)</p>
-                  <p className="text-xs text-slate-600">Onboarding, training, retention for 250+ merchants</p>
+                  <p className="text-xs text-slate-600">Onboarding, training, retention for 1,500+ merchants</p>
                 </div>
                 <span className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-black">OPS</span>
               </div>

@@ -187,11 +187,11 @@ export default function Phase2GTMPage() {
                 </div>
                 <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
                   <p className="font-bold text-blue-300 mb-1">Scale to Target</p>
-                  <p>• Expand to 50 merchants<br />• Hit 5K MAU milestone<br />• D30 retention ≥ 25%</p>
+                  <p>• Expand to 500 merchants<br />• Hit 50K MAU milestone<br />• D30 retention ≥ 30%</p>
                 </div>
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3">
                   <p className="font-bold text-[#c9a227] mb-1">Unit Economics Proof</p>
-                  <p>• CAC ≤ AED 40 validated<br />• LTV:CAC ≥ 10x proven<br />• Ready for KSA replication</p>
+                  <p>• CAC ≤ AED 30 validated<br />• LTV:CAC ≥ 16x proven<br />• Ready for KSA replication</p>
                 </div>
               </div>
             </div>

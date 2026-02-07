@@ -21,7 +21,7 @@ export default function H2GTMPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎯</span>
-              <span className="text-slate-300">Target: 75K MAU</span>
+              <span className="text-slate-300">Target: 250K MAU</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🏥</span>
@@ -390,7 +390,7 @@ export default function H2GTMPage() {
               <div className="space-y-3">
                 <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-blue-300 uppercase mb-1">Monthly Active Users</p>
-                  <p className="text-3xl font-black text-blue-400">75,000 MAU</p>
+                  <p className="text-3xl font-black text-blue-400">250,000 MAU</p>
                 </div>
                 <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-purple-300 uppercase mb-1">D30 Retention</p>
@@ -407,7 +407,7 @@ export default function H2GTMPage() {
               <div className="space-y-3">
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-[#c9a227] uppercase mb-1">Merchants Live</p>
-                  <p className="text-3xl font-black text-[#d4ab2c]">500+</p>
+                  <p className="text-3xl font-black text-[#d4ab2c]">5,000+</p>
                   <p className="text-xs text-slate-400 mt-1">Across all 3 categories</p>
                 </div>
                 <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">

@@ -297,7 +297,7 @@ export default function DataRoomPage() {
                   Initial launch limited to Dubai in select high-frequency categories.
                 </p>
                 <p className="text-gray-300 mb-3">
-                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching March 1, 2026.</strong> H1 targets: 5K MAU (conservative), 250 merchants minimum, 25% D30 retention.
+                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching March 1, 2026.</strong> H1 targets: 50K MAU (aggressive), 1,500 merchants, 30% D30 retention.
                 </p>
                 <p className="text-[#c9a227] text-sm"><strong>Success metric:</strong> Validated repeat usage patterns and measurable merchant ROI</p>
               </div>
@@ -783,7 +783,7 @@ export default function DataRoomPage() {
                 <ul className="text-gray-300 text-sm space-y-2">
                   <li><strong>Total Ask:</strong> $400K at $5M valuation cap (SAFE with 20% discount)</li>
                   <li><strong>Tranche 1:</strong> $200K (AED 734K) - Immediately upon closing</li>
-                  <li><strong>Tranche 2:</strong> $200K (AED 734K) - Upon milestones: 10 live merchants, 1,000 MAU, CTO hired</li>
+                  <li><strong>Tranche 2:</strong> $200K (AED 734K) - Upon milestones: 500 live merchants, 25,000 MAU, CTO hired</li>
                 </ul>
               </div>
               <p className="text-gray-300 text-sm">
@@ -816,16 +816,16 @@ export default function DataRoomPage() {
           <DocItem number="27" title="What are the H1 targets and how were they set?">
             <div className="space-y-4">
               <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
-                <p className="font-bold text-[#c9a227] mb-2">Conservative H1 Targets (5 months)</p>
+                <p className="font-bold text-[#c9a227] mb-2">Aggressive H1 Targets (6 months)</p>
                 <ul className="text-gray-300 text-sm space-y-2">
-                  <li><strong>MAU:</strong> 5,000 users (conservative - benchmarked against UAE fintech launches)</li>
-                  <li><strong>Merchants:</strong> 250 minimum (validated through 32 LOIs already secured)</li>
-                  <li><strong>Retention:</strong> 25% D30 retention (industry standard for rewards apps)</li>
-                  <li><strong>LTV:CAC:</strong> 10x ratio (healthy for consumer fintech)</li>
+                  <li><strong>MAU:</strong> 50,000 users (aggressive - matching Tabby UAE trajectory)</li>
+                  <li><strong>Merchants:</strong> 1,500 (validated through 32 LOIs already secured, aggressive scale)</li>
+                  <li><strong>Retention:</strong> 30% D30 retention (above industry standard for rewards apps)</li>
+                  <li><strong>LTV:CAC:</strong> 16x ratio (excellent for consumer fintech)</li>
                 </ul>
               </div>
               <p className="text-gray-300 text-sm">
-                Targets are deliberately conservative. Tabby UAE achieved 100K-200K users in 6 months. Our 5K target is 2.5-5% of their pace.
+                Targets are aggressive to match domination strategy. Tabby UAE achieved 100K-200K users in 6 months. Our 50K target is 25-50% of their pace.
               </p>
             </div>
           </DocItem>
@@ -953,9 +953,9 @@ export default function DataRoomPage() {
               <div className="bg-[#1a2a42] rounded-lg p-4 border border-[#2a3a52]">
                 <p className="font-bold text-white mb-3">50% Miss Scenario</p>
                 <ul className="text-gray-300 text-sm space-y-2">
-                  <li>Year 5 Revenue: $59M (vs $118.5M target)</li>
-                  <li>Exit Valuation: $472-708M (8-12x multiple)</li>
-                  <li>Investor Return: <strong className="text-emerald-400">47-71x</strong></li>
+                  <li>Year 5 Revenue: AED 240M (vs AED 480M target)</li>
+                  <li>Exit Valuation: $400-600M (8-12x multiple)</li>
+                  <li>Investor Return: <strong className="text-emerald-400">40-60x</strong></li>
                 </ul>
                 <p className="text-[#c9a227] text-sm mt-3">
                   Still top-decile venture returns even with 50% execution miss.

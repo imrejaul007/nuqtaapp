@@ -21,7 +21,7 @@ export default function H1GTMPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-8 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-2xl">🎯</span>
-              <span className="text-slate-300">Target: 5K MAU (Conservative)</span>
+              <span className="text-slate-300">Target: 50K MAU (Aggressive)</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">📍</span>
@@ -81,7 +81,7 @@ export default function H1GTMPage() {
                 Own Marina/Downtown before expanding cities. One neighborhood at a time.
               </p>
               <div className="mt-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-3">
-                <p className="text-sm text-emerald-200">50 merchants + 5K users before Abu Dhabi</p>
+                <p className="text-sm text-emerald-200">500 merchants + 50K users before Abu Dhabi</p>
               </div>
             </div>
           </div>
@@ -256,7 +256,7 @@ export default function H1GTMPage() {
             <div className="grid md:grid-cols-3 gap-4">
               <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
                 <p className="text-sm font-semibold text-emerald-300 uppercase mb-1">Activation</p>
-                <p className="text-3xl font-black text-emerald-400">5,000 MAU</p>
+                <p className="text-3xl font-black text-emerald-400">50,000 MAU</p>
               </div>
               <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
                 <p className="text-sm font-semibold text-blue-300 uppercase mb-1">Retention</p>
@@ -315,7 +315,7 @@ export default function H1GTMPage() {
           <h2 className="text-3xl font-bold text-[#c9a227] mb-4 text-center">📍 Geographic Expansion Rule</h2>
           <p className="text-lg text-slate-300 max-w-5xl mx-auto text-center leading-relaxed">
             <span className="font-bold text-white">Density before breadth:</span> Own Marina + Downtown Dubai
-            (50 merchants, 5K users, 35% repeat rate) before launching Abu Dhabi. One city at a time, proven economics first.
+            (500 merchants, 50K users, 35% repeat rate) before launching Abu Dhabi. One city at a time, proven economics first.
           </p>
         </div>
 
@@ -328,8 +328,8 @@ export default function H1GTMPage() {
               <h3 className="text-xl font-bold text-white">User Metrics</h3>
               <div className="space-y-3">
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
-                  <p className="text-sm font-semibold text-emerald-300 uppercase mb-1">Monthly Active Users (Conservative)</p>
-                  <p className="text-3xl font-black text-emerald-400">5,000 MAU</p>
+                  <p className="text-sm font-semibold text-emerald-300 uppercase mb-1">Monthly Active Users (Aggressive)</p>
+                  <p className="text-3xl font-black text-emerald-400">50,000 MAU</p>
                 </div>
                 <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-blue-300 uppercase mb-1">D30 Retention</p>
@@ -346,7 +346,7 @@ export default function H1GTMPage() {
               <div className="space-y-3">
                 <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-[#c9a227] uppercase mb-1">Merchants Live</p>
-                  <p className="text-3xl font-black text-[#d4ab2c]">250+</p>
+                  <p className="text-3xl font-black text-[#d4ab2c]">1,500+</p>
                 </div>
                 <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4">
                   <p className="text-sm font-semibold text-emerald-300 uppercase mb-1">GMV</p>

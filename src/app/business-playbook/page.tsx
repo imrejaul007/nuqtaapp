@@ -94,8 +94,8 @@ function OverviewTab() {
       {/* Quick Stats */}
       <div className="grid md:grid-cols-4 gap-4">
         {[
-          { label: 'H1 Merchant Target', value: '250', sub: 'Live merchants' },
-          { label: 'H1 User Target', value: '5K', sub: 'MAU (conservative)' },
+          { label: 'H1 Merchant Target', value: '1,500', sub: 'Live merchants' },
+          { label: 'H1 User Target', value: '50K', sub: 'MAU (aggressive)' },
           { label: 'Commission Model', value: '5-20%', sub: 'Based on margin' },
           { label: 'Launch Date', value: 'March 1', sub: '2026' },
         ].map((stat, i) => (

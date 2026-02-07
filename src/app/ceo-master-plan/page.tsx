@@ -276,7 +276,7 @@ function ExecutiveSummary() {
             { metric: 'LTV', value: 'AED 504', target: 'AED 300+', status: 'excellent' },
             { metric: 'CAC', value: 'AED 30', target: 'AED 50', status: 'good' },
             { metric: 'AOV', value: 'AED 100', target: 'AED 80+', status: 'good' },
-            { metric: 'Take Rate', value: '7.5%', target: '5-10%', status: 'optimal' },
+            { metric: 'Take Rate', value: '8%', target: '5-15%', status: 'optimal' },
           ].map((item, idx) => (
             <div key={idx} className="text-center">
               <p className="text-3xl font-bold text-white">{item.value}</p>
@@ -894,8 +894,8 @@ function SuccessMetrics() {
             {
               period: 'Month 3 (May)',
               milestones: [
-                { item: '10,000 active users', critical: true },
-                { item: '100 merchants live', critical: true },
+                { item: '50,000 active users', critical: true },
+                { item: '1,500 merchants live', critical: true },
                 { item: 'AED 500K GMV', critical: false },
                 { item: 'Series A prep started', critical: false },
               ]

@@ -585,10 +585,10 @@ export default function ExecutionPlanPage() {
 
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                '✅ 50 merchants live',
-                '✅ 1,000 active users',
-                '✅ AED 100K GMV',
-                '✅ 20%+ D30 retention'
+                '✅ 500 merchants live',
+                '✅ 25,000 active users',
+                '✅ AED 10M GMV',
+                '✅ 25%+ D30 retention'
               ].map((metric, i) => (
                 <div key={i} className="bg-blue-100 rounded-xl p-3 text-center">
                   <p className="text-sm font-bold text-blue-800">{metric}</p>
@@ -605,32 +605,32 @@ export default function ExecutionPlanPage() {
               </div>
               <div>
                 <h3 className="text-2xl font-black text-slate-900">Month 3-4: The "Grocery Anchor" Integration</h3>
-                <p className="text-sm text-slate-600">Sign Carrefour or Lulu for Engine B</p>
+                <p className="text-sm text-slate-600">Sign Carrefour or Lulu for Engine B + Chain Expansion</p>
               </div>
             </div>
 
             <div className="bg-white rounded-2xl p-6 border border-purple-200 mb-4">
               <p className="font-bold text-purple-700 mb-3">Goal:</p>
-              <p className="text-slate-700 mb-4">"Nuqta becomes a 'Daily Utility' app, not just an occasional reward app."</p>
+              <p className="text-slate-700 mb-4">&quot;Nuqta becomes a &apos;Daily Utility&apos; app, not just an occasional reward app.&quot;</p>
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase mb-2">Chains</p>
-                  <p className="text-sm text-slate-700">5 grocery (Brand Coins) + 4 QSR (15% commission)</p>
+                  <p className="text-sm text-slate-700">10+ grocery chains + 15+ QSR chains + All major salons</p>
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase mb-2">Outcome</p>
-                  <p className="text-sm text-slate-700">150 merchants, 5K users, AED 500K GMV</p>
+                  <p className="text-sm text-slate-700">800 merchants, 25K users, AED 10M GMV</p>
                 </div>
               </div>
             </div>
 
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                '✅ 9 chain partnerships',
-                '✅ 5,000 active users',
-                '✅ AED 500K GMV',
-                '✅ 15%+ repeat rate'
+                '✅ 25+ chain partnerships',
+                '✅ 25,000 active users',
+                '✅ AED 10M GMV',
+                '✅ 20%+ repeat rate'
               ].map((metric, i) => (
                 <div key={i} className="bg-purple-100 rounded-xl p-3 text-center">
                   <p className="text-sm font-bold text-purple-800">{metric}</p>
@@ -647,32 +647,32 @@ export default function ExecutionPlanPage() {
               </div>
               <div>
                 <h3 className="text-2xl font-black text-slate-900">Month 5-6: The "Social Viral" Scale</h3>
-                <p className="text-sm text-slate-600">Activate the 5% Social Reward at scale</p>
+                <p className="text-sm text-slate-600">Activate the 5% Social Reward at scale + Influencer Blitz</p>
               </div>
             </div>
 
             <div className="bg-white rounded-2xl p-6 border border-emerald-200 mb-4">
               <p className="font-bold text-emerald-700 mb-3">Goal:</p>
-              <p className="text-slate-700 mb-4">"Your feed becomes flooded with Nuqta-verified recommendations, driving organic user growth to 10K+."</p>
+              <p className="text-slate-700 mb-4">&quot;Your feed becomes flooded with Nuqta-verified recommendations, driving organic user growth to 50K+.&quot;</p>
 
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase mb-2">Focus</p>
-                  <p className="text-sm text-slate-700">Fashion Boutiques + Pop-ups + 10 micro-influencers</p>
+                  <p className="text-sm text-slate-700">Fashion + Events + Pop-ups + 50 micro-influencers</p>
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-500 uppercase mb-2">Outcome</p>
-                  <p className="text-sm text-slate-700">250 merchants, 10K users, AED 2M GMV</p>
+                  <p className="text-sm text-slate-700">1,500 merchants, 50K users, AED 25M GMV</p>
                 </div>
               </div>
             </div>
 
             <div className="grid md:grid-cols-4 gap-4">
               {[
-                '✅ 250+ merchants live',
-                '✅ 10,000 active users',
-                '✅ AED 2M GMV',
-                '✅ 30% social share rate'
+                '✅ 1,500+ merchants live',
+                '✅ 50,000 active users',
+                '✅ AED 25M GMV',
+                '✅ 35% social share rate'
               ].map((metric, i) => (
                 <div key={i} className="bg-emerald-100 rounded-xl p-3 text-center">
                   <p className="text-sm font-bold text-emerald-800">{metric}</p>
@@ -842,7 +842,7 @@ export default function ExecutionPlanPage() {
                   </div>
                 </div>
                 <div className="mt-4 bg-red-600 text-white rounded-lg p-3">
-                  <p className="font-bold text-sm">Expected: 150 merchants + 5K users + AED 300K GMV in 16 days</p>
+                  <p className="font-bold text-sm">Expected: 500 merchants + 25K users + AED 5M GMV in 16 days</p>
                 </div>
               </div>
             </div>
@@ -1018,8 +1018,8 @@ export default function ExecutionPlanPage() {
             <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-2xl p-6">
               <p className="text-lg font-black mb-2">✅ Strategic Value Beyond ROI:</p>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div>• 150 merchants onboarded</div>
-                <div>• 5,000 users acquired (CAC = AED 24 vs AED 50 industry avg)</div>
+                <div>• 500 merchants onboarded</div>
+                <div>• 25,000 users acquired (CAC = AED 24 vs AED 50 industry avg)</div>
                 <div>• 500K+ social impressions</div>
               </div>
             </div>
@@ -1030,9 +1030,9 @@ export default function ExecutionPlanPage() {
         <section id="metrics" className="mb-20">
           <h2 className="text-4xl font-black text-slate-900 mb-8">6. Critical Success Metrics (H1 2026)</h2>
 
-          {/* Merchant Metrics */}
+          {/* Merchant Metrics - Aggressive H1 Targets */}
           <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 mb-8">
-            <h3 className="text-2xl font-black text-slate-900 mb-6">Merchant Metrics</h3>
+            <h3 className="text-2xl font-black text-slate-900 mb-6">Merchant Metrics (H1 Aggressive Targets)</h3>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-slate-100">
@@ -1045,13 +1045,13 @@ export default function ExecutionPlanPage() {
                 </thead>
                 <tbody className="divide-y divide-slate-200">
                   {[
-                    { label: 'Total Merchants', m2: '50', m4: '150', m6: '250+' },
-                    { label: 'F&B', m2: '20', m4: '60', m6: '100+' },
-                    { label: 'Salons', m2: '10', m4: '30', m6: '50+' },
-                    { label: 'Grocery', m2: '5', m4: '15', m6: '20+' },
-                    { label: 'Fitness', m2: '5', m4: '15', m6: '25+' },
-                    { label: 'Fashion', m2: '5', m4: '15', m6: '30+' },
-                    { label: 'Events', m2: '5', m4: '15', m6: '25+' },
+                    { label: 'Total Merchants', m2: '200', m4: '800', m6: '1,500+' },
+                    { label: 'F&B', m2: '80', m4: '300', m6: '500+' },
+                    { label: 'Salons', m2: '40', m4: '150', m6: '300+' },
+                    { label: 'Grocery', m2: '20', m4: '100', m6: '200+' },
+                    { label: 'Fitness', m2: '20', m4: '80', m6: '150+' },
+                    { label: 'Fashion', m2: '20', m4: '100', m6: '200+' },
+                    { label: 'Events', m2: '20', m4: '70', m6: '150+' },
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-slate-50">
                       <td className="p-3 font-semibold text-slate-700">{row.label}</td>
@@ -1065,14 +1065,14 @@ export default function ExecutionPlanPage() {
             </div>
           </div>
 
-          {/* Financial Metrics */}
+          {/* Financial Metrics - Aggressive H1 Targets */}
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-300 rounded-3xl p-8">
-            <h3 className="text-2xl font-black text-slate-900 mb-6">Financial Metrics</h3>
+            <h3 className="text-2xl font-black text-slate-900 mb-6">Financial Metrics (Aggressive Targets)</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { label: 'GMV', m2: 'AED 100K', m4: 'AED 500K', m6: 'AED 2M+', color: 'blue' },
-                { label: 'Revenue', m2: 'AED 5K', m4: 'AED 25K', m6: 'AED 100K+', color: 'emerald' },
-                { label: 'LTV:CAC', m2: '3:1', m4: '5:1', m6: '10:1+', color: 'purple' },
+                { label: 'GMV', m2: 'AED 2M', m4: 'AED 10M', m6: 'AED 25M+', color: 'blue' },
+                { label: 'Revenue', m2: 'AED 160K', m4: 'AED 800K', m6: 'AED 2M+', color: 'emerald' },
+                { label: 'LTV:CAC', m2: '5:1', m4: '10:1', m6: '20:1+', color: 'purple' },
               ].map((metric, i) => (
                 <div key={i} className={`bg-white border-2 border-${metric.color}-200 rounded-2xl p-6`}>
                   <p className={`text-lg font-black text-${metric.color}-700 mb-4`}>{metric.label}</p>
@@ -1124,39 +1124,45 @@ export default function ExecutionPlanPage() {
               </div>
             </div>
 
-            {/* KPI Gate to H2 */}
+            {/* KPI Gate to H2 - Aggressive Targets */}
             <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 rounded-3xl p-8">
-              <h2 className="text-3xl font-black text-slate-900 mb-6">🎯 H1 → H2 KPI Gate</h2>
+              <h2 className="text-3xl font-black text-slate-900 mb-6">🎯 H1 → H2 KPI Gate (Aggressive)</h2>
               <p className="text-sm text-slate-600 mb-6">Must achieve ALL metrics for 2 consecutive months to advance:</p>
               <div className="space-y-3">
                 <div className="bg-white rounded-xl p-4 border-l-4 border-purple-500">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-slate-700">Monthly Active Users</span>
-                    <span className="text-lg font-black text-purple-600">10,000+</span>
+                    <span className="text-lg font-black text-purple-600">50,000+</span>
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border-l-4 border-blue-500">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-slate-700">D30 Retention</span>
-                    <span className="text-lg font-black text-blue-600">≥25%</span>
+                    <span className="text-lg font-black text-blue-600">≥30%</span>
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border-l-4 border-emerald-500">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-slate-700">Merchant Churn</span>
-                    <span className="text-lg font-black text-emerald-600">≤10%</span>
+                    <span className="text-lg font-black text-emerald-600">≤5%</span>
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 border-l-4 border-amber-500">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-slate-700">Active Merchants</span>
-                    <span className="text-lg font-black text-amber-600">250+</span>
+                    <span className="text-lg font-black text-amber-600">1,500+</span>
+                  </div>
+                </div>
+                <div className="bg-white rounded-xl p-4 border-l-4 border-red-500">
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-700">Monthly GMV</span>
+                    <span className="text-lg font-black text-red-600">AED 25M+</span>
                   </div>
                 </div>
               </div>
               <div className="mt-6 bg-purple-100 rounded-xl p-4">
-                <p className="text-xs font-bold text-purple-900 mb-1">Early Acceleration Rule:</p>
-                <p className="text-xs text-purple-800">If KPIs exceed thresholds by 20%+ for 2 months → advance to H2 immediately</p>
+                <p className="text-xs font-bold text-purple-900 mb-1">Domination Acceleration Rule:</p>
+                <p className="text-xs text-purple-800">If KPIs exceed thresholds by 20%+ for 2 months → advance to H2 immediately with expanded budget</p>
               </div>
             </div>
           </div>

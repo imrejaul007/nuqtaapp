@@ -99,8 +99,8 @@ const strategyPhases: StrategyPhase[] = [
     id: 'phase-2',
     name: 'Growth (Month 4-9)',
     duration: '6 months',
-    focus: 'Scale to 10,000 Users + Retention Optimization',
-    kpis: ['10,000 active users', '200 merchants', '20% D30 retention', 'CAC < AED 30'],
+    focus: 'Scale to 50,000 Users + Retention Optimization',
+    kpis: ['50,000 active users', '1,500 merchants', '30% D30 retention', 'CAC < AED 30'],
     channels: ['Instagram', 'TikTok', 'YouTube', 'Influencers', 'Google Ads'],
     content: [
       'Weekly savings challenges',
@@ -116,7 +116,7 @@ const strategyPhases: StrategyPhase[] = [
     name: 'Maturity (Month 10-18)',
     duration: '9 months',
     focus: 'Market Leadership + 50,000 Users',
-    kpis: ['50,000 active users', '500 merchants', '35% D90 retention', 'CAC < AED 15'],
+    kpis: ['50,000 active users', '1,500 merchants', '35% D90 retention', 'CAC ≤ AED 30 blended'],
     channels: ['All digital', 'TV/Radio', 'Outdoor', 'Events', 'PR'],
     content: [
       'Brand campaigns',

@@ -1495,8 +1495,8 @@ export default function CompetitorAnalysisPage() {
                 <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/30">
                   <h4 className="text-red-400 font-semibold mb-3">Q1-Q2: Foundation</h4>
                   <ul className="space-y-2 text-sm text-gray-300">
-                    <li>• Sign 250+ merchants</li>
-                    <li>• Achieve 10K MAU</li>
+                    <li>• Sign 1,500+ merchants</li>
+                    <li>• Achieve 50K MAU</li>
                     <li>• Prove unit economics</li>
                     <li>• Build core engagement loops</li>
                   </ul>
