@@ -229,6 +229,7 @@ const sections: Section[] = [
       { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown },
       { label: 'COO Agent', href: '/coo-agent', icon: Bot },
       { label: 'CFO Agent', href: '/cfo-agent', icon: Bot },
+      { label: 'Legal & Compliance', href: '/legal-compliance', icon: Scale },
       { label: 'CMO Agent', href: '/cmo-agent', icon: Bot },
       { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
       { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
