@@ -189,6 +189,7 @@ const navigationData: NavCategory[] = [
     icon: Crown,
     color: 'text-[#c9a227]',
     items: [
+      { label: 'Future Ambition', href: '/future-ambition', icon: Globe },
       { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
       { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },

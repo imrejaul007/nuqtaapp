@@ -219,6 +219,7 @@ const sections: Section[] = [
     bgColor: 'from-[#c9a227]/10 to-[#c9a227]/5',
     borderColor: 'border-[#c9a227]/30',
     links: [
+      { label: 'Future Ambition', href: '/future-ambition', icon: Globe },
       { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
       { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },
