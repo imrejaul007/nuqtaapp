@@ -204,6 +204,8 @@ const navigationData: NavCategory[] = [
       { label: 'CFO Agent', href: '/cfo-agent', icon: Bot },
       { label: 'CFO Analysis', href: '/cfo-analysis', icon: Calculator },
       { label: 'Legal & Compliance', href: '/legal-compliance', icon: Scale },
+      { label: 'License Preparation', href: '/license-preparation', icon: ClipboardList },
+      { label: 'Legal Documents', href: '/legal-documents', icon: FileText },
       { label: 'CMO Agent', href: '/cmo-agent', icon: Bot },
       { label: 'CMO Analysis', href: '/cmo-analysis', icon: Megaphone },
       { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
