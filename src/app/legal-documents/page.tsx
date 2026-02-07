@@ -6653,6 +6653,2001 @@ IMPORTANT:
 
 QUESTIONS?
 Contact: privacy@nuqtaapp.com`
+  },
+  {
+    id: 'pdpl-ropa',
+    title: 'PDPL - Record of Processing Activities (ROPA)',
+    category: 'Data Protection',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'Required record of all personal data processing activities under UAE PDPL.',
+    content: `RECORD OF PROCESSING ACTIVITIES (ROPA)
+NUQTA TECHNOLOGY L.L.C.
+
+Article 7 - UAE PDPL Compliance
+Version: 1.0
+Last Updated: _______________
+Maintained By: Data Protection Officer
+
+═══════════════════════════════════════════════════════════════════
+
+1. CONTROLLER INFORMATION
+
+Organization: Nuqta Technology L.L.C.
+Trade License: [Number]
+Address: Dubai, UAE
+Contact: privacy@nuqtaapp.com
+DPO: [Name/Role]
+DPO Contact: dpo@nuqtaapp.com
+
+═══════════════════════════════════════════════════════════════════
+
+2. PROCESSING ACTIVITY REGISTER
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 1: USER REGISTRATION & ACCOUNT MANAGEMENT
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-001
+Department: Product / Engineering
+Process Owner: CTO
+
+Purpose of Processing:
+• Create and manage user accounts
+• Enable login and authentication
+• Provide platform services
+
+Legal Basis: Contract performance (Article 5.1)
+
+Categories of Data Subjects:
+• App users (consumers)
+
+Categories of Personal Data:
+• Name
+• Email address
+• Phone number
+• Password (hashed)
+• Profile photo (optional)
+• Device identifiers
+
+Retention Period: Duration of account + 2 years
+
+Recipients:
+• Internal: Product, Engineering, Support teams
+• External: AWS (hosting), Firebase (auth)
+
+International Transfers:
+• AWS servers in UAE / Bahrain region
+• Firebase (US) - Standard Contractual Clauses in place
+
+Security Measures:
+• Encryption at rest (AES-256)
+• Encryption in transit (TLS 1.3)
+• Access controls (role-based)
+• MFA for admin access
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 2: TRANSACTION PROCESSING
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-002
+Department: Product / Finance
+Process Owner: CFO
+
+Purpose of Processing:
+• Record user transactions at merchants
+• Calculate and award points
+• Enable transaction history
+
+Legal Basis: Contract performance
+
+Categories of Data Subjects:
+• App users (consumers)
+• Merchants
+
+Categories of Personal Data:
+• Transaction amount
+• Date/time
+• Merchant details
+• Points earned
+• Payment method (last 4 digits only)
+
+Retention Period: 7 years (tax/legal compliance)
+
+Recipients:
+• Internal: Finance, Product teams
+• External: Payment processors (Stripe), Merchants (limited)
+
+International Transfers:
+• Stripe (US) - Standard Contractual Clauses
+
+Security Measures:
+• PCI-DSS compliant payment processing
+• Tokenization of card data
+• Transaction logs encrypted
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 3: MARKETING & COMMUNICATIONS
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-003
+Department: Marketing
+Process Owner: CMO
+
+Purpose of Processing:
+• Send promotional offers
+• Push notifications
+• Email marketing
+• Personalized recommendations
+
+Legal Basis: Consent (explicit opt-in)
+
+Categories of Data Subjects:
+• App users who opted in
+
+Categories of Personal Data:
+• Name
+• Email address
+• Push notification tokens
+• Marketing preferences
+• Engagement history
+
+Retention Period: Until consent withdrawn + 30 days
+
+Recipients:
+• Internal: Marketing team
+• External: Email service provider, Push notification service
+
+International Transfers:
+• Email provider (with adequate safeguards)
+
+Security Measures:
+• Consent records maintained
+• Unsubscribe mechanism
+• Preference center
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 4: CUSTOMER SUPPORT
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-004
+Department: Operations / Support
+Process Owner: COO
+
+Purpose of Processing:
+• Respond to inquiries
+• Resolve issues
+• Maintain support history
+
+Legal Basis: Contract performance, Legitimate interest
+
+Categories of Data Subjects:
+• Users, Merchants with support queries
+
+Categories of Personal Data:
+• Contact information
+• Support ticket content
+• Communication history
+• Account details (as needed)
+
+Retention Period: 3 years from ticket closure
+
+Recipients:
+• Internal: Support team
+• External: Support platform (Intercom/Zendesk)
+
+Security Measures:
+• Access restricted to support staff
+• Ticket data encrypted
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 5: ANALYTICS & IMPROVEMENT
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-005
+Department: Product / Data
+Process Owner: CTO
+
+Purpose of Processing:
+• Improve app performance
+• Understand user behavior
+• Develop new features
+
+Legal Basis: Legitimate interest
+
+Categories of Data Subjects:
+• All app users
+
+Categories of Personal Data:
+• Device information
+• App usage patterns
+• Feature interactions
+• Crash logs
+• Performance metrics
+
+Retention Period: 26 months (aggregated indefinitely)
+
+Recipients:
+• Internal: Product, Engineering teams
+• External: Analytics providers (Firebase, Mixpanel)
+
+Security Measures:
+• Data anonymization where possible
+• Aggregation for reporting
+• No individual tracking without consent
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 6: MERCHANT MANAGEMENT
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-006
+Department: Operations / Sales
+Process Owner: COO
+
+Purpose of Processing:
+• Onboard merchant partners
+• Manage merchant accounts
+• Process merchant payments
+
+Legal Basis: Contract performance
+
+Categories of Data Subjects:
+• Merchant representatives
+• Business owners
+
+Categories of Personal Data:
+• Contact person name
+• Business email/phone
+• Trade license details
+• Bank account details
+• Business address
+
+Retention Period: Duration of partnership + 7 years
+
+Recipients:
+• Internal: Sales, Finance, Operations
+• External: Banking partners
+
+Security Measures:
+• Secure merchant portal
+• Document encryption
+• Access controls
+
+─────────────────────────────────────────────────────────────────
+ACTIVITY 7: EMPLOYEE DATA
+─────────────────────────────────────────────────────────────────
+
+Reference ID: PA-007
+Department: HR
+Process Owner: CHRO
+
+Purpose of Processing:
+• Employment administration
+• Payroll processing
+• Visa/immigration
+
+Legal Basis: Contract performance, Legal obligation
+
+Categories of Data Subjects:
+• Employees, Contractors
+
+Categories of Personal Data:
+• Full name
+• Emirates ID / Passport
+• Contact details
+• Salary information
+• Bank details
+• Performance records
+
+Retention Period: Employment + 7 years
+
+Recipients:
+• Internal: HR, Finance
+• External: MOHRE, Banks, Insurance
+
+Security Measures:
+• HR system access controls
+• Encrypted storage
+• Need-to-know access
+
+═══════════════════════════════════════════════════════════════════
+
+3. SUMMARY TABLE
+
+┌─────────┬──────────────────────┬─────────────────┬──────────────┐
+│ Ref     │ Activity             │ Legal Basis     │ Retention    │
+├─────────┼──────────────────────┼─────────────────┼──────────────┤
+│ PA-001  │ User Registration    │ Contract        │ Account + 2y │
+│ PA-002  │ Transactions         │ Contract        │ 7 years      │
+│ PA-003  │ Marketing            │ Consent         │ Until revoke │
+│ PA-004  │ Customer Support     │ Contract/LI     │ 3 years      │
+│ PA-005  │ Analytics            │ Legitimate Int  │ 26 months    │
+│ PA-006  │ Merchant Mgmt        │ Contract        │ +7 years     │
+│ PA-007  │ Employee Data        │ Contract/Legal  │ +7 years     │
+└─────────┴──────────────────────┴─────────────────┴──────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+4. REVIEW & MAINTENANCE
+
+This ROPA shall be:
+• Reviewed quarterly
+• Updated when new processing activities are added
+• Updated when existing activities change
+• Available to supervisory authority upon request
+
+Last Review: _______________
+Next Review: _______________
+Approved By: _______________`
+  },
+  {
+    id: 'pdpl-dpia',
+    title: 'PDPL - Data Protection Impact Assessment (DPIA)',
+    category: 'Data Protection',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'DPIA template for high-risk processing activities under UAE PDPL.',
+    content: `DATA PROTECTION IMPACT ASSESSMENT (DPIA)
+NUQTA TECHNOLOGY L.L.C.
+
+Article 8 - UAE PDPL Compliance
+
+═══════════════════════════════════════════════════════════════════
+
+PART A: ASSESSMENT INFORMATION
+
+Project/Processing Name: _______________
+Assessment Date: _______________
+Prepared By: _______________
+Process Owner: _______________
+DPO Review Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+PART B: NEED FOR DPIA
+
+A DPIA is required when processing is likely to result in HIGH RISK to individuals.
+
+Does the processing involve any of the following?
+[ ] Systematic and extensive profiling with significant effects
+[ ] Large-scale processing of sensitive data
+[ ] Large-scale, systematic monitoring of public areas
+[ ] Automated decision-making with legal/significant effects
+[ ] Processing of children's data at scale
+[ ] Processing that could result in physical harm
+[ ] Combination of data sets from different sources
+[ ] Use of new technologies
+
+If ANY box is checked, a full DPIA is recommended.
+
+═══════════════════════════════════════════════════════════════════
+
+PART C: PROCESSING DESCRIPTION
+
+1. NATURE OF PROCESSING
+
+What will you do with the personal data?
+_______________________________________________________________
+_______________________________________________________________
+
+How will data be collected?
+_______________________________________________________________
+
+How will data be stored?
+_______________________________________________________________
+
+Who will have access?
+_______________________________________________________________
+
+2. SCOPE OF PROCESSING
+
+Categories of data subjects: _______________
+Approximate number of data subjects: _______________
+Categories of personal data: _______________
+Geographic scope: _______________
+Duration of processing: _______________
+
+3. CONTEXT OF PROCESSING
+
+Relationship with data subjects: _______________
+Level of control data subjects have: _______________
+Data subjects' expectations: _______________
+Prior experience with this processing: _______________
+
+4. PURPOSE OF PROCESSING
+
+Why are you processing the data?
+_______________________________________________________________
+
+What is the intended outcome?
+_______________________________________________________________
+
+Benefits to the organization: _______________
+Benefits to data subjects: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+PART D: NECESSITY & PROPORTIONALITY
+
+1. LEGAL BASIS
+
+What is the legal basis for processing?
+[ ] Consent
+[ ] Contract performance
+[ ] Legal obligation
+[ ] Vital interests
+[ ] Public interest
+[ ] Legitimate interests
+
+If Legitimate Interests, describe: _______________
+
+2. NECESSITY
+
+Is the processing necessary for the stated purpose?
+[ ] Yes - cannot achieve purpose otherwise
+[ ] Partially - alternatives exist but less effective
+[ ] No - alternatives available
+
+Explain: _______________
+
+3. PROPORTIONALITY
+
+Is the amount of data collected proportionate?
+[ ] Yes - minimum necessary
+[ ] No - collecting more than needed
+
+Actions to minimize data: _______________
+
+4. DATA QUALITY
+
+How will you ensure data accuracy? _______________
+How can data subjects update their data? _______________
+
+5. DATA RETENTION
+
+How long will data be kept? _______________
+Justification for retention period: _______________
+Process for deletion: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+PART E: RISK ASSESSMENT
+
+For each risk, assess:
+• LIKELIHOOD: Low (1), Medium (2), High (3)
+• SEVERITY: Low (1), Medium (2), High (3)
+• RISK LEVEL: L x S = Score
+
+─────────────────────────────────────────────────────────────────
+RISK 1: Unauthorized Access
+─────────────────────────────────────────────────────────────────
+Description: Third party gains access to personal data
+Likelihood: [ ] Low [ ] Medium [ ] High
+Severity: [ ] Low [ ] Medium [ ] High
+Risk Level: _______________
+
+Current Controls:
+_______________________________________________________________
+
+Additional Controls Needed:
+_______________________________________________________________
+
+─────────────────────────────────────────────────────────────────
+RISK 2: Data Breach
+─────────────────────────────────────────────────────────────────
+Description: Personal data exposed due to security incident
+Likelihood: [ ] Low [ ] Medium [ ] High
+Severity: [ ] Low [ ] Medium [ ] High
+Risk Level: _______________
+
+Current Controls:
+_______________________________________________________________
+
+Additional Controls Needed:
+_______________________________________________________________
+
+─────────────────────────────────────────────────────────────────
+RISK 3: Excessive Data Collection
+─────────────────────────────────────────────────────────────────
+Description: More data collected than necessary
+Likelihood: [ ] Low [ ] Medium [ ] High
+Severity: [ ] Low [ ] Medium [ ] High
+Risk Level: _______________
+
+Current Controls:
+_______________________________________________________________
+
+Additional Controls Needed:
+_______________________________________________________________
+
+─────────────────────────────────────────────────────────────────
+RISK 4: Inaccurate Data
+─────────────────────────────────────────────────────────────────
+Description: Personal data is incorrect or outdated
+Likelihood: [ ] Low [ ] Medium [ ] High
+Severity: [ ] Low [ ] Medium [ ] High
+Risk Level: _______________
+
+Current Controls:
+_______________________________________________________________
+
+Additional Controls Needed:
+_______________________________________________________________
+
+─────────────────────────────────────────────────────────────────
+RISK 5: Non-compliance with Data Subject Rights
+─────────────────────────────────────────────────────────────────
+Description: Failure to respond to access/deletion requests
+Likelihood: [ ] Low [ ] Medium [ ] High
+Severity: [ ] Low [ ] Medium [ ] High
+Risk Level: _______________
+
+Current Controls:
+_______________________________________________________________
+
+Additional Controls Needed:
+_______________________________________________________________
+
+═══════════════════════════════════════════════════════════════════
+
+PART F: RISK MITIGATION
+
+┌─────────────────────────┬──────────┬───────────────┬───────────┐
+│ Risk                    │ Level    │ Mitigation    │ Residual  │
+├─────────────────────────┼──────────┼───────────────┼───────────┤
+│                         │          │               │           │
+│                         │          │               │           │
+│                         │          │               │           │
+└─────────────────────────┴──────────┴───────────────┴───────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+PART G: APPROVAL
+
+OVERALL RISK ASSESSMENT:
+[ ] Low - Processing may proceed
+[ ] Medium - Processing may proceed with controls
+[ ] High - Processing requires additional approval
+[ ] Very High - Consider consulting supervisory authority
+
+DPO REVIEW:
+Comments: _______________________________________________________________
+
+Recommendation: [ ] Approve [ ] Conditional Approval [ ] Reject
+
+DPO Signature: _________________________
+Date: _______________
+
+PROCESS OWNER SIGN-OFF:
+I confirm the mitigations will be implemented.
+
+Signature: _________________________
+Date: _______________
+
+EXECUTIVE APPROVAL (if required):
+Signature: _________________________
+Name: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+PART H: REVIEW
+
+This DPIA will be reviewed:
+[ ] Annually
+[ ] When processing changes materially
+[ ] When new risks are identified
+[ ] Following an incident
+
+Next Review Date: _______________`
+  },
+  {
+    id: 'data-breach-plan',
+    title: 'Data Breach Response Plan',
+    category: 'Data Protection',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'Incident response plan for personal data breaches under UAE PDPL.',
+    content: `DATA BREACH RESPONSE PLAN
+NUQTA TECHNOLOGY L.L.C.
+
+Article 18 - UAE PDPL Compliance
+Version: 1.0
+
+═══════════════════════════════════════════════════════════════════
+
+1. PURPOSE & SCOPE
+
+This plan establishes procedures for detecting, responding to, and recovering from personal data breaches in compliance with UAE PDPL requirements.
+
+Scope:
+• All personal data processed by Nuqta
+• All employees, contractors, and third-party processors
+• All systems, applications, and databases
+
+PDPL Requirement: Report to UAE Data Office within 72 hours.
+
+═══════════════════════════════════════════════════════════════════
+
+2. BREACH RESPONSE TEAM
+
+┌─────────────────────────┬─────────────────┬──────────────────────┐
+│ Role                    │ Name            │ Contact              │
+├─────────────────────────┼─────────────────┼──────────────────────┤
+│ Incident Commander      │ CEO             │ [Phone]              │
+│ Data Protection Officer │ [DPO Name]      │ dpo@nuqtaapp.com     │
+│ Technical Lead          │ CTO             │ [Phone]              │
+│ Legal Counsel           │ [Lawyer]        │ [Phone]              │
+│ Communications Lead     │ CMO             │ [Phone]              │
+│ HR Lead                 │ CHRO            │ [Phone]              │
+└─────────────────────────┴─────────────────┴──────────────────────┘
+
+24/7 Emergency: [Phone Number]
+Email: security@nuqtaapp.com
+
+═══════════════════════════════════════════════════════════════════
+
+3. WHAT IS A DATA BREACH?
+
+A personal data breach is:
+• Unauthorized access to personal data
+• Unauthorized disclosure of personal data
+• Loss of personal data
+• Destruction of personal data (unauthorized)
+• Alteration of personal data (unauthorized)
+
+Examples:
+• Hacker gains access to user database
+• Employee sends data to wrong recipient
+• Laptop with unencrypted data stolen
+• Ransomware encrypts database
+• Cloud misconfiguration exposes data
+• Insider theft of customer data
+
+═══════════════════════════════════════════════════════════════════
+
+4. BREACH SEVERITY LEVELS
+
+┌──────────────┬─────────────────────────────────────────────────┐
+│ Level        │ Description                                     │
+├──────────────┼─────────────────────────────────────────────────┤
+│ CRITICAL     │ - Large-scale breach (>10,000 records)          │
+│              │ - Sensitive data (financial, health)            │
+│              │ - High risk of harm to individuals              │
+│              │ - Regulatory notification required              │
+├──────────────┼─────────────────────────────────────────────────┤
+│ HIGH         │ - Medium-scale breach (1,000-10,000 records)    │
+│              │ - Personal data with some sensitivity           │
+│              │ - Moderate risk of harm                         │
+├──────────────┼─────────────────────────────────────────────────┤
+│ MEDIUM       │ - Small-scale breach (<1,000 records)           │
+│              │ - Basic personal data only                      │
+│              │ - Low risk of harm                              │
+├──────────────┼─────────────────────────────────────────────────┤
+│ LOW          │ - Minimal data affected                         │
+│              │ - Encrypted data or quick containment           │
+│              │ - No harm expected                              │
+└──────────────┴─────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+5. RESPONSE PHASES
+
+─────────────────────────────────────────────────────────────────
+PHASE 1: DETECTION & REPORTING (0-1 Hour)
+─────────────────────────────────────────────────────────────────
+
+Anyone who detects or suspects a breach must:
+
+1. IMMEDIATELY report to:
+   • Security team: security@nuqtaapp.com
+   • DPO: dpo@nuqtaapp.com
+   • Phone: [Emergency Number]
+
+2. DO NOT:
+   • Attempt to investigate alone
+   • Modify or delete evidence
+   • Discuss externally
+   • Shut down systems (unless instructed)
+
+3. DOCUMENT:
+   • Time of discovery
+   • How discovered
+   • Initial observations
+   • Systems/data affected (if known)
+
+─────────────────────────────────────────────────────────────────
+PHASE 2: INITIAL ASSESSMENT (1-4 Hours)
+─────────────────────────────────────────────────────────────────
+
+DPO + Technical Lead will:
+
+1. Confirm if breach occurred
+2. Identify:
+   • What data is affected?
+   • How many records?
+   • Who is affected?
+   • How did it happen?
+   • Is it ongoing?
+
+3. Assign severity level
+4. Activate Breach Response Team if MEDIUM+
+5. Document findings
+
+ASSESSMENT CHECKLIST:
+☐ Type of data compromised
+☐ Number of individuals affected
+☐ Geographic scope
+☐ Attack vector/cause
+☐ Systems affected
+☐ Evidence of exfiltration
+☐ Ongoing access
+
+─────────────────────────────────────────────────────────────────
+PHASE 3: CONTAINMENT (Immediate)
+─────────────────────────────────────────────────────────────────
+
+Technical Lead will:
+
+1. Stop ongoing breach:
+   ☐ Revoke compromised credentials
+   ☐ Isolate affected systems
+   ☐ Block suspicious IPs
+   ☐ Disable compromised accounts
+
+2. Preserve evidence:
+   ☐ Create system images
+   ☐ Preserve logs
+   ☐ Document timeline
+   ☐ Secure physical evidence
+
+3. Prevent spread:
+   ☐ Check for lateral movement
+   ☐ Verify backup integrity
+   ☐ Monitor for additional indicators
+
+─────────────────────────────────────────────────────────────────
+PHASE 4: NOTIFICATION (Within 72 Hours)
+─────────────────────────────────────────────────────────────────
+
+A. REGULATORY NOTIFICATION (if required)
+
+Notify UAE Data Office if breach:
+• Poses risk to individuals' rights
+• Involves sensitive data
+• Is large-scale
+• Involves cross-border data
+
+Notification must include:
+☐ Nature of the breach
+☐ Categories and number affected
+☐ Name and contact of DPO
+☐ Likely consequences
+☐ Measures taken/proposed
+
+Submit via: [UAE Data Office Portal]
+Deadline: 72 hours from awareness
+
+B. INDIVIDUAL NOTIFICATION (if required)
+
+Notify affected individuals if:
+• High risk to their rights and freedoms
+• Direct communication possible
+
+Notification must include:
+☐ Description of breach
+☐ DPO contact details
+☐ Likely consequences
+☐ Measures taken
+☐ Recommendations for protection
+
+Method: Email, in-app notification, SMS
+
+C. OTHER NOTIFICATIONS
+
+Consider notifying:
+☐ Law enforcement (if criminal)
+☐ Cyber insurance provider
+☐ Payment processor (if payment data)
+☐ Affected business partners
+☐ Board of directors
+
+─────────────────────────────────────────────────────────────────
+PHASE 5: ERADICATION & RECOVERY
+─────────────────────────────────────────────────────────────────
+
+Technical Lead will:
+
+1. Remove threat:
+   ☐ Eliminate malware
+   ☐ Close vulnerabilities
+   ☐ Reset all credentials
+   ☐ Patch affected systems
+
+2. Restore systems:
+   ☐ Restore from clean backups
+   ☐ Verify system integrity
+   ☐ Re-enable services gradually
+   ☐ Enhanced monitoring
+
+3. Validate security:
+   ☐ Penetration testing
+   ☐ Vulnerability scan
+   ☐ Security configuration review
+
+─────────────────────────────────────────────────────────────────
+PHASE 6: POST-INCIDENT (Within 30 Days)
+─────────────────────────────────────────────────────────────────
+
+1. ROOT CAUSE ANALYSIS
+   • What failed?
+   • How could it have been prevented?
+   • What controls were bypassed?
+
+2. LESSONS LEARNED MEETING
+   • All stakeholders present
+   • Document findings
+   • Identify improvements
+
+3. POST-INCIDENT REPORT
+   • Executive summary
+   • Timeline
+   • Impact assessment
+   • Response evaluation
+   • Recommendations
+
+4. IMPLEMENT IMPROVEMENTS
+   • Update policies
+   • Enhance controls
+   • Additional training
+   • Update this plan
+
+═══════════════════════════════════════════════════════════════════
+
+6. BREACH REGISTER
+
+All breaches must be documented:
+
+┌──────────┬────────────┬────────────┬──────────────┬────────────┐
+│ Ref      │ Date       │ Type       │ Records      │ Notified   │
+├──────────┼────────────┼────────────┼──────────────┼────────────┤
+│          │            │            │              │            │
+└──────────┴────────────┴────────────┴──────────────┴────────────┘
+
+Maintain records for minimum 5 years.
+
+═══════════════════════════════════════════════════════════════════
+
+7. COMMUNICATION TEMPLATES
+
+INTERNAL NOTIFICATION:
+Subject: [CONFIDENTIAL] Security Incident - [Date]
+
+A potential data security incident has been detected.
+Status: [Investigating / Contained / Resolved]
+Impact: [Brief description]
+Actions: [What staff should do/not do]
+Next update: [Time]
+
+Contact: security@nuqtaapp.com
+
+─────────────────────────────────────────────────────────────────
+
+AFFECTED INDIVIDUAL NOTIFICATION:
+Subject: Important Information About Your Nuqta Account
+
+Dear [Name],
+
+We are writing to inform you of a data security incident that may have affected your personal information.
+
+What happened: [Description]
+When: [Date]
+Data affected: [Categories]
+What we're doing: [Actions taken]
+What you can do: [Recommendations]
+
+We apologize for any concern this may cause. If you have questions, please contact privacy@nuqtaapp.com.
+
+Sincerely,
+Nuqta Security Team
+
+═══════════════════════════════════════════════════════════════════
+
+8. TESTING & TRAINING
+
+This plan shall be:
+• Tested annually via tabletop exercise
+• Updated after each incident
+• Included in employee security training
+• Reviewed with key vendors
+
+Last Test: _______________
+Next Test: _______________
+
+Approved by: _______________
+Date: _______________`
+  },
+  {
+    id: 'dpo-appointment',
+    title: 'Data Protection Officer Appointment',
+    category: 'Data Protection',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'DPO appointment letter and role description under UAE PDPL.',
+    content: `DATA PROTECTION OFFICER APPOINTMENT
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 1: DPO APPOINTMENT LETTER
+
+[On Company Letterhead]
+
+Date: _______________
+
+To: [DPO Name]
+[Position/Department]
+
+Subject: Appointment as Data Protection Officer
+
+Dear [Name],
+
+Following the requirements of UAE Federal Decree-Law No. 45 of 2021 (Personal Data Protection Law), we are pleased to appoint you as the Data Protection Officer (DPO) of Nuqta Technology L.L.C., effective [Date].
+
+1. APPOINTMENT DETAILS
+
+Position: Data Protection Officer
+Reports to: CEO (for administrative purposes)
+Independence: DPO reports directly to highest management on DPO matters
+Term: Indefinite (subject to review)
+
+2. RESPONSIBILITIES
+
+As DPO, you will be responsible for:
+
+A. COMPLIANCE MONITORING
+• Monitor compliance with UAE PDPL
+• Conduct regular data protection audits
+• Review data processing activities
+• Maintain the Record of Processing Activities (ROPA)
+
+B. ADVISORY ROLE
+• Advise management on data protection obligations
+• Provide guidance on Data Protection Impact Assessments (DPIAs)
+• Review data protection clauses in contracts
+• Advise on privacy by design implementation
+
+C. TRAINING & AWARENESS
+• Develop and deliver data protection training
+• Raise awareness among employees
+• Create data protection guidelines and procedures
+
+D. DATA SUBJECT REQUESTS
+• Receive and manage data subject access requests
+• Ensure timely response to rights requests
+• Maintain records of requests and responses
+
+E. REGULATORY LIAISON
+• Serve as contact point for UAE Data Office
+• Manage regulatory communications
+• Coordinate breach notifications
+
+F. INCIDENT RESPONSE
+• Lead data breach response
+• Coordinate breach investigations
+• Ensure timely regulatory notifications
+
+3. AUTHORITY
+
+You are granted authority to:
+• Access all personal data and processing operations
+• Access all relevant departments and systems
+• Report directly to the CEO on DPO matters
+• Allocate resources for data protection activities
+• Engage external expertise when necessary
+
+4. INDEPENDENCE
+
+As per PDPL requirements:
+• You shall not receive instructions regarding the exercise of DPO tasks
+• You shall not be dismissed or penalized for performing DPO duties
+• You may raise concerns directly to the CEO/Board
+• Conflicts of interest must be avoided
+
+5. RESOURCES
+
+The Company will provide:
+• Time allocation: [X%] of your working time
+• Budget for training and certifications
+• Access to legal advice when needed
+• Administrative support as required
+
+6. CONTACT INFORMATION
+
+Your DPO contact details for publication:
+Email: dpo@nuqtaapp.com
+Address: [Company Address]
+
+These details will be:
+• Published on our website
+• Included in our privacy policy
+• Provided to the UAE Data Office
+• Communicated to employees
+
+7. CONFIDENTIALITY
+
+You must maintain confidentiality regarding:
+• Personal data accessed in your role
+• Security vulnerabilities discovered
+• Individual complaints received
+• Ongoing investigations
+
+8. ACCEPTANCE
+
+Please sign below to confirm your acceptance of this appointment.
+
+For Nuqta Technology L.L.C.:
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _______________
+
+ACCEPTANCE:
+
+I accept the appointment as Data Protection Officer and confirm my understanding of the responsibilities outlined above.
+
+Signature: _________________________
+Name: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 2: DPO JOB DESCRIPTION
+
+POSITION: Data Protection Officer
+DEPARTMENT: Legal & Compliance
+REPORTS TO: CEO
+LOCATION: Dubai, UAE
+
+PURPOSE:
+Ensure Nuqta Technology L.L.C. complies with UAE PDPL and data protection best practices, protect the privacy rights of data subjects, and minimize data protection risks.
+
+KEY RESPONSIBILITIES:
+
+1. Compliance (40%)
+• Develop and maintain data protection policies
+• Monitor processing activities for compliance
+• Conduct privacy audits and assessments
+• Maintain ROPA and documentation
+• Review new projects for privacy implications
+
+2. Advisory (25%)
+• Advise on DPIAs for high-risk processing
+• Review data sharing arrangements
+• Provide guidance on lawful processing
+• Support privacy by design implementation
+• Review third-party contracts for data protection
+
+3. Operations (20%)
+• Manage data subject requests (access, deletion, etc.)
+• Coordinate data breach response
+• Handle privacy complaints
+• Liaise with regulatory authorities
+• Manage vendor data protection assessments
+
+4. Training (15%)
+• Develop training programs
+• Conduct awareness sessions
+• Create guidelines and toolkits
+• Update materials for regulatory changes
+
+QUALIFICATIONS:
+
+Required:
+• Degree in law, IT, or related field
+• 3+ years data protection/privacy experience
+• Knowledge of UAE PDPL
+• Understanding of information security principles
+• Excellent communication skills
+• Arabic language proficiency (preferred)
+
+Preferred:
+• CIPP/E, CIPP/A, or CIPM certification
+• Experience with GDPR compliance
+• Experience in technology/fintech sector
+• Legal qualification
+
+SKILLS:
+• Strong analytical abilities
+• Attention to detail
+• Ability to work independently
+• Stakeholder management
+• Report writing
+• Project management
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 3: DPO NOTIFICATION TO REGULATOR
+
+[To be submitted to UAE Data Office]
+
+NOTIFICATION OF DATA PROTECTION OFFICER APPOINTMENT
+
+Controller Details:
+Organization: Nuqta Technology L.L.C.
+Trade License: [Number]
+Address: Dubai, UAE
+Industry: Technology / E-Commerce
+
+DPO Details:
+Name: _______________
+Email: dpo@nuqtaapp.com
+Phone: _______________
+Qualifications: _______________
+Appointment Date: _______________
+
+Confirmation:
+☐ DPO has been provided with adequate resources
+☐ DPO has direct access to senior management
+☐ DPO operates independently
+☐ Contact details published on website
+
+Submitted by:
+Name: Rejaul Karim
+Position: CEO
+Date: _______________
+Signature: _________________________`
+  },
+  {
+    id: 'aml-kyc-procedures',
+    title: 'AML - KYC/CDD Procedures',
+    category: 'Compliance',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'Know Your Customer and Customer Due Diligence procedures for AML compliance.',
+    content: `KNOW YOUR CUSTOMER (KYC) / CUSTOMER DUE DILIGENCE (CDD)
+PROCEDURES MANUAL
+
+NUQTA TECHNOLOGY L.L.C.
+Version: 1.0
+
+═══════════════════════════════════════════════════════════════════
+
+1. OVERVIEW
+
+This document establishes KYC/CDD procedures for Nuqta in compliance with:
+• UAE Federal Decree-Law No. 20 of 2018 (AML Law)
+• CBUAE Regulations
+• FATF Recommendations
+
+═══════════════════════════════════════════════════════════════════
+
+2. CUSTOMER RISK CATEGORIES
+
+2.1 RISK CLASSIFICATION
+
+┌──────────────┬─────────────────────────────────────────────────┐
+│ Risk Level   │ Characteristics                                 │
+├──────────────┼─────────────────────────────────────────────────┤
+│ LOW          │ - UAE residents with verified Emirates ID       │
+│              │ - Low transaction volumes                       │
+│              │ - Standard consumer transactions                │
+├──────────────┼─────────────────────────────────────────────────┤
+│ MEDIUM       │ - GCC residents                                 │
+│              │ - Moderate transaction volumes                  │
+│              │ - Business accounts (small merchants)           │
+├──────────────┼─────────────────────────────────────────────────┤
+│ HIGH         │ - Non-GCC residents                             │
+│              │ - High transaction volumes                      │
+│              │ - PEPs or associates                            │
+│              │ - High-risk countries                           │
+│              │ - Unusual activity patterns                     │
+└──────────────┴─────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+3. USER ONBOARDING - KYC PROCEDURES
+
+3.1 SIMPLIFIED DUE DILIGENCE (SDD) - Low Risk
+
+Applicable to: Standard app users with basic features
+
+Required Information:
+☐ Full name
+☐ Email address
+☐ Phone number (verified via OTP)
+☐ Date of birth (age verification)
+
+Verification Method:
+• Phone verification via OTP
+• Email verification via link
+• Age confirmation (18+)
+
+Daily Transaction Limit: AED 1,000
+Monthly Limit: AED 5,000
+Features: Basic points earning, standard rewards
+
+─────────────────────────────────────────────────────────────────
+
+3.2 STANDARD DUE DILIGENCE (CDD) - Medium Risk
+
+Applicable to: Users wanting higher limits or card linking
+
+Required Information:
+☐ Full legal name (as per ID)
+☐ Date of birth
+☐ Nationality
+☐ Emirates ID number
+☐ Residential address
+
+Verification Method:
+• Emirates ID verification (via ICP integration or document upload)
+• Selfie with ID (liveness check)
+• Address verification (Emirates ID address or utility bill)
+
+Verification Criteria:
+• Name matches across documents
+• Photo matches selfie
+• ID is valid (not expired)
+• No signs of tampering
+
+Daily Transaction Limit: AED 10,000
+Monthly Limit: AED 50,000
+Features: Card linking, higher redemptions, premium offers
+
+─────────────────────────────────────────────────────────────────
+
+3.3 ENHANCED DUE DILIGENCE (EDD) - High Risk
+
+Applicable to: High-value users, PEPs, high-risk indicators
+
+Required Information:
+All CDD requirements plus:
+☐ Proof of income / Source of funds
+☐ Employer details
+☐ Purpose of account
+☐ Expected transaction pattern
+
+Additional Verification:
+• Source of funds documentation
+• Additional identity documents (passport)
+• Professional reference (for high-value merchants)
+• Enhanced screening against sanctions lists
+• Management approval required
+
+Ongoing Monitoring:
+• Transaction monitoring with lower thresholds
+• Periodic review (every 6 months)
+• Relationship manager assigned
+
+═══════════════════════════════════════════════════════════════════
+
+4. MERCHANT ONBOARDING - KYC PROCEDURES
+
+4.1 REQUIRED DOCUMENTS
+
+Business Documents:
+☐ Trade License (valid, clear copy)
+☐ Memorandum of Association
+☐ Certificate of Incorporation (if applicable)
+☐ Chamber of Commerce membership (if applicable)
+
+Owner/Director Documents:
+☐ Passport copies (all owners with >25% stake)
+☐ Emirates ID (all UAE-based owners)
+☐ Proof of address
+☐ Visa copy (if applicable)
+
+Business Information:
+☐ Business description
+☐ Website/social media
+☐ Expected transaction volumes
+☐ Physical location(s)
+☐ Bank account details
+
+4.2 VERIFICATION STEPS
+
+Step 1: Document Collection
+• Collect all required documents via secure portal
+• Check document validity and clarity
+
+Step 2: Identity Verification
+• Verify owner identity against documents
+• Screen against sanctions lists
+• PEP screening for owners/directors
+
+Step 3: Business Verification
+• Verify trade license with DET
+• Physical location verification (for tier 2+)
+• Website/social media verification
+• Bank account verification
+
+Step 4: Risk Assessment
+• Assign risk rating
+• Determine appropriate limits
+• Document assessment rationale
+
+Step 5: Approval
+• Operations team approval (standard)
+• Compliance approval (medium/high risk)
+• CEO approval (high-risk cases)
+
+═══════════════════════════════════════════════════════════════════
+
+5. SANCTIONS SCREENING
+
+5.1 SCREENING REQUIREMENTS
+
+All users and merchants must be screened against:
+• UN Security Council Sanctions Lists
+• UAE Local Terrorist List
+• OFAC SDN List (for US nexus)
+• EU Sanctions (for EU nexus)
+• Other relevant sanctions lists
+
+5.2 SCREENING TRIGGERS
+
+Initial Screening:
+• At onboarding
+• Before account activation
+
+Ongoing Screening:
+• Daily batch screening against updated lists
+• When customer information changes
+• When new sanctions are published
+
+5.3 MATCH HANDLING
+
+Potential Match:
+1. Account placed on hold
+2. Enhanced verification conducted
+3. Compliance Officer review
+4. True match: Reject and report
+5. False positive: Document and release
+
+═══════════════════════════════════════════════════════════════════
+
+6. PEP (POLITICALLY EXPOSED PERSONS) SCREENING
+
+6.1 PEP DEFINITION
+
+Politically Exposed Persons include:
+• Heads of state/government
+• Senior politicians
+• Senior government officials
+• Judicial/military leaders
+• Senior executives of state-owned enterprises
+• Senior political party officials
+• Family members of above
+• Close associates of above
+
+6.2 PEP PROCEDURES
+
+Identification:
+• Screen at onboarding
+• Self-declaration during registration
+• Ongoing screening updates
+
+If PEP Identified:
+1. Automatic EDD required
+2. Senior management approval for onboarding
+3. Source of wealth verification
+4. Enhanced ongoing monitoring
+5. Annual relationship review
+
+═══════════════════════════════════════════════════════════════════
+
+7. ONGOING MONITORING
+
+7.1 TRANSACTION MONITORING
+
+Automated alerts for:
+• Transactions exceeding user profile
+• Multiple transactions just below thresholds
+• Unusual geographic patterns
+• Rapid points earning/redemption
+• Dormant account suddenly active
+
+7.2 PERIODIC REVIEWS
+
+Low Risk: Every 3 years
+Medium Risk: Every 2 years
+High Risk: Annually
+
+Review Includes:
+• Verify information still current
+• Check for adverse media
+• Sanctions/PEP rescreening
+• Transaction pattern analysis
+• Risk rating reassessment
+
+═══════════════════════════════════════════════════════════════════
+
+8. RECORD KEEPING
+
+Maintain records for minimum 5 years after relationship end:
+• Customer identification documents
+• Verification records
+• Transaction records
+• Correspondence
+• Risk assessments
+• SAR filings
+
+═══════════════════════════════════════════════════════════════════
+
+9. RED FLAGS
+
+Watch for these indicators:
+• Reluctance to provide information
+• Inconsistent information
+• Unusual transaction patterns
+• Structuring (breaking up transactions)
+• Connections to high-risk jurisdictions
+• Adverse media coverage
+• Mismatched business type and transactions
+• Rapid velocity of points earning
+• Multiple accounts with same identifiers
+
+═══════════════════════════════════════════════════════════════════
+
+10. ESCALATION
+
+All concerns should be escalated to:
+
+Level 1: Operations Team
+• Resolve standard verification issues
+
+Level 2: Compliance Officer
+• Complex cases
+• Potential sanctions matches
+• PEP determinations
+
+Level 3: MLRO
+• SAR decisions
+• High-risk approvals
+• Regulatory communications
+
+Level 4: CEO
+• Relationship terminations
+• Policy exceptions
+• Significant risk decisions`
+  },
+  {
+    id: 'aml-sar-procedures',
+    title: 'AML - SAR Filing Procedures',
+    category: 'Compliance',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'Suspicious Activity Report (SAR) filing procedures for UAE compliance.',
+    content: `SUSPICIOUS ACTIVITY REPORT (SAR) FILING PROCEDURES
+
+NUQTA TECHNOLOGY L.L.C.
+MLRO Manual - Section 5
+
+═══════════════════════════════════════════════════════════════════
+
+1. OVERVIEW
+
+This document establishes procedures for identifying, investigating, and reporting suspicious activities to the UAE Financial Intelligence Unit (FIU) via the goAML system.
+
+Regulatory Basis:
+• Federal Decree-Law No. 20 of 2018
+• Cabinet Decision No. 10 of 2019
+• CBUAE Guidelines
+
+═══════════════════════════════════════════════════════════════════
+
+2. WHEN TO FILE A SAR
+
+2.1 MANDATORY REPORTING
+
+A SAR MUST be filed when:
+• Reasonable grounds exist to suspect funds are proceeds of crime
+• There is suspicion of money laundering
+• There is suspicion of terrorist financing
+• Customer behavior is inconsistent with their profile
+• Transaction has no apparent economic purpose
+
+2.2 EXAMPLES OF SUSPICIOUS ACTIVITY
+
+Transaction-Based:
+• Transactions inconsistent with customer profile
+• Structuring to avoid thresholds
+• Rapid movement of funds (in and out quickly)
+• Transactions with high-risk jurisdictions
+• Multiple accounts used unusually
+• Large cash transactions (for cash-accepting merchants)
+
+Behavior-Based:
+• Reluctance to provide information
+• False or inconsistent information
+• Attempts to avoid record-keeping
+• Excessive concern about reporting
+• Unusual interest in internal controls
+
+Account-Based:
+• Dormant account suddenly active
+• Account used by others
+• Multiple accounts with similar characteristics
+• Business transactions inconsistent with stated purpose
+
+Platform-Specific (Nuqta):
+• Rapid points accumulation through fraudulent transactions
+• Collusion between user and merchant
+• Points earned at rates impossible through normal activity
+• Redemption patterns suggesting fraud
+• Multiple accounts linked to same individual
+
+═══════════════════════════════════════════════════════════════════
+
+3. SAR PROCESS FLOW
+
+┌─────────────────────────────────────────────────────────────────┐
+│  DETECTION                                                       │
+│  • Automated alert triggered                                     │
+│  • Employee observation                                          │
+│  • External tip-off                                              │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  INTERNAL REPORT                                                 │
+│  • Employee completes Internal Suspicious Activity Report        │
+│  • Submit to Compliance within 24 hours                          │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  COMPLIANCE REVIEW                                               │
+│  • Gather additional information                                 │
+│  • Review account history                                        │
+│  • Document analysis                                             │
+│  • Determine if reportable                                       │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  MLRO DECISION                                                   │
+│  • Review compliance analysis                                    │
+│  • Make filing decision                                          │
+│  • Approve SAR content if filing                                 │
+└─────────────────────────────────────────────────────────────────┘
+                              ↓
+┌─────────────────────────────────────────────────────────────────┐
+│  goAML SUBMISSION                                                │
+│  • MLRO files via goAML portal                                   │
+│  • Retain confirmation                                           │
+│  • Log in SAR register                                           │
+└─────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+4. INTERNAL SUSPICIOUS ACTIVITY REPORT
+
+Complete this form for any suspicious activity:
+
+─────────────────────────────────────────────────────────────────
+INTERNAL SAR FORM
+─────────────────────────────────────────────────────────────────
+
+Report Number: ISAR-[YYYY]-[XXX]
+Date: _______________
+Reported By: _______________
+Department: _______________
+
+SUBJECT INFORMATION:
+
+[ ] User [ ] Merchant [ ] Other
+
+Name: _______________
+Account ID: _______________
+Emirates ID/Passport: _______________
+Phone: _______________
+Email: _______________
+Account Status: [ ] Active [ ] Suspended [ ] Closed
+
+SUSPICIOUS ACTIVITY DETAILS:
+
+Date(s) of activity: _______________
+Description of activity:
+_______________________________________________________________
+_______________________________________________________________
+_______________________________________________________________
+
+Why is this suspicious?
+_______________________________________________________________
+_______________________________________________________________
+
+Transactions involved:
+┌────────────┬─────────────┬────────────┬────────────────────────┐
+│ Date       │ Amount      │ Type       │ Details                │
+├────────────┼─────────────┼────────────┼────────────────────────┤
+│            │             │            │                        │
+│            │             │            │                        │
+│            │             │            │                        │
+└────────────┴─────────────┴────────────┴────────────────────────┘
+
+Supporting documents attached:
+☐ Transaction records
+☐ Account history
+☐ Communication records
+☐ KYC documents
+☐ Other: _______________
+
+Reporter Signature: _________________________
+Date: _______________
+
+─────────────────────────────────────────────────────────────────
+COMPLIANCE REVIEW (To be completed by Compliance)
+─────────────────────────────────────────────────────────────────
+
+Reviewed By: _______________
+Date: _______________
+
+Additional investigation conducted:
+_______________________________________________________________
+
+Recommendation:
+[ ] File SAR - Sufficient grounds for suspicion
+[ ] No SAR - Explained activity, document rationale
+[ ] Need more information from: _______________
+
+Rationale:
+_______________________________________________________________
+
+Signature: _________________________
+
+─────────────────────────────────────────────────────────────────
+MLRO DECISION
+─────────────────────────────────────────────────────────────────
+
+Decision: [ ] File SAR [ ] Do Not File
+
+If not filing, rationale:
+_______________________________________________________________
+
+If filing:
+goAML Reference: _______________
+Filing Date: _______________
+
+MLRO Signature: _________________________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+5. goAML FILING GUIDE
+
+5.1 ACCESS
+
+Portal: https://www.goaml.ae
+Login: [MLRO Credentials]
+Support: goAML helpdesk
+
+5.2 SAR CONTENT REQUIREMENTS
+
+The SAR must include:
+• Subject identification details
+• Description of suspicious activity
+• Why it is suspicious
+• Relevant dates
+• Amounts involved
+• Supporting documentation
+• Reporting entity details
+
+5.3 FILING TIMELINE
+
+• File as soon as suspicion is formed
+• Maximum: Within 3 working days of suspicion
+• Immediate: If related to terrorism financing
+
+5.4 SUPPLEMENTAL REPORTS
+
+If additional information becomes available:
+• File supplemental SAR referencing original
+• Update timeline
+• Add new details
+
+═══════════════════════════════════════════════════════════════════
+
+6. TIPPING OFF PROHIBITION
+
+CRITICAL: It is a criminal offense to:
+• Inform the subject that a SAR has been filed
+• Inform anyone that might tip off the subject
+• Disclose that an investigation is underway
+
+Penalties: Imprisonment and/or fines
+
+Permitted:
+• Discussing with legal counsel
+• Sharing with other compliance staff (need-to-know)
+• Responding to FIU inquiries
+
+═══════════════════════════════════════════════════════════════════
+
+7. RECORD KEEPING
+
+Maintain for minimum 5 years:
+• Copy of all SARs filed
+• Supporting documentation
+• Internal reports (filed and not filed)
+• Decision rationale
+• FIU correspondence
+
+Location: Secure, restricted access
+Format: Electronic and/or hard copy
+
+═══════════════════════════════════════════════════════════════════
+
+8. SAR REGISTER
+
+Maintain a register of all SARs:
+
+┌─────────┬───────────┬──────────┬──────────┬─────────┬──────────┐
+│ Ref     │ Date      │ Subject  │ Activity │ Status  │ goAML #  │
+├─────────┼───────────┼──────────┼──────────┼─────────┼──────────┤
+│         │           │          │          │         │          │
+└─────────┴───────────┴──────────┴──────────┴─────────┴──────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+9. MLRO RESPONSIBILITIES
+
+The MLRO must:
+• Review all internal reports promptly
+• Make filing decisions within 3 days
+• Maintain the SAR register
+• Respond to FIU inquiries
+• Report statistics to management
+• Train staff on suspicious activity
+• Conduct periodic quality reviews
+
+═══════════════════════════════════════════════════════════════════
+
+10. QUALITY METRICS
+
+Track and report:
+• Number of internal reports received
+• Number of SARs filed
+• Average time to file
+• FIU feedback received
+• Staff training completion
+
+Report to: CEO, Board (quarterly)`
+  },
+  {
+    id: 'mlro-appointment',
+    title: 'MLRO Appointment Letter',
+    category: 'Compliance',
+    status: 'draft',
+    lastUpdated: 'Feb 8, 2026',
+    description: 'Money Laundering Reporting Officer appointment under UAE AML regulations.',
+    content: `MONEY LAUNDERING REPORTING OFFICER (MLRO)
+APPOINTMENT LETTER
+
+═══════════════════════════════════════════════════════════════════
+
+[On Company Letterhead]
+
+Date: _______________
+
+To: [MLRO Name]
+[Position/Department]
+
+Subject: Appointment as Money Laundering Reporting Officer (MLRO)
+
+Dear [Name],
+
+In accordance with Federal Decree-Law No. 20 of 2018 and Cabinet Decision No. 10 of 2019, we are pleased to appoint you as the Money Laundering Reporting Officer (MLRO) of Nuqta Technology L.L.C., effective [Date].
+
+═══════════════════════════════════════════════════════════════════
+
+1. APPOINTMENT DETAILS
+
+Position: Money Laundering Reporting Officer (MLRO)
+Also known as: Compliance Officer
+Department: Legal & Compliance
+Reports to: CEO
+Location: Dubai, UAE
+
+Note: This may be a dual role with other compliance functions or a dedicated role depending on company size.
+
+═══════════════════════════════════════════════════════════════════
+
+2. KEY RESPONSIBILITIES
+
+A. SUSPICIOUS ACTIVITY REPORTING
+• Receive internal suspicious activity reports
+• Investigate and assess reports
+• Decide on SAR filings to FIU
+• File SARs via goAML portal
+• Maintain SAR records and register
+
+B. COMPLIANCE PROGRAM
+• Develop and maintain AML/CFT policies
+• Implement KYC/CDD procedures
+• Conduct AML risk assessments
+• Monitor transaction patterns
+• Ensure regulatory compliance
+
+C. TRAINING & AWARENESS
+• Design AML training program
+• Conduct staff training sessions
+• Raise AML awareness
+• Update training for regulatory changes
+
+D. REGULATORY LIAISON
+• Primary contact for FIU
+• Respond to regulatory inquiries
+• Submit required reports
+• Attend regulatory briefings
+
+E. REPORTING TO MANAGEMENT
+• Report AML statistics to CEO/Board
+• Escalate significant issues
+• Recommend policy changes
+• Report on compliance status
+
+═══════════════════════════════════════════════════════════════════
+
+3. AUTHORITY
+
+As MLRO, you are granted authority to:
+• Access all transaction data and records
+• Access customer files and KYC documents
+• Request information from any department
+• Suspend suspicious transactions
+• Escalate matters directly to CEO
+• Engage external expertise when needed
+• File SARs without requiring approval
+
+═══════════════════════════════════════════════════════════════════
+
+4. INDEPENDENCE
+
+• You may not be prevented from performing MLRO duties
+• You may not be penalized for good-faith reporting
+• You have direct access to the CEO and Board
+• You operate independently in SAR decisions
+
+═══════════════════════════════════════════════════════════════════
+
+5. RESOURCES
+
+The Company will provide:
+• Time allocation: [Percentage/Hours] for MLRO duties
+• Access to compliance tools and systems
+• Budget for training and certifications
+• goAML access credentials
+• External legal/compliance support as needed
+
+═══════════════════════════════════════════════════════════════════
+
+6. QUALIFICATIONS
+
+You have been selected based on your:
+• Knowledge of AML/CFT regulations
+• Understanding of our business operations
+• Seniority and authority within the organization
+• Integrity and independence
+• Relevant qualifications/experience
+
+Required Training:
+☐ goAML system training
+☐ UAE AML Law training
+☐ CBUAE requirements training
+☐ Annual refresher training
+
+═══════════════════════════════════════════════════════════════════
+
+7. CONFIDENTIALITY
+
+You must maintain strict confidentiality regarding:
+• SAR filings and content
+• Ongoing investigations
+• FIU communications
+• Internal suspicious activity reports
+
+Breach of confidentiality (tipping off) is a criminal offense.
+
+═══════════════════════════════════════════════════════════════════
+
+8. NOTIFICATION
+
+Your appointment will be notified to:
+☐ CBUAE (if required for our license type)
+☐ Senior Management
+☐ Board of Directors
+☐ Relevant staff
+
+═══════════════════════════════════════════════════════════════════
+
+9. CONTACT DETAILS
+
+Your official MLRO contact information:
+Email: compliance@nuqtaapp.com
+Phone: [Direct Line]
+
+This information will be:
+• Communicated to all staff
+• Used for regulatory correspondence
+• Available for FIU contact
+
+═══════════════════════════════════════════════════════════════════
+
+10. TERM AND REVIEW
+
+Term: Indefinite (until resignation or removal)
+Review: Annual performance review
+Succession: Deputy MLRO to be designated
+
+═══════════════════════════════════════════════════════════════════
+
+SIGNATURES
+
+For Nuqta Technology L.L.C.:
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _______________
+
+ACCEPTANCE:
+
+I accept the appointment as MLRO and confirm my understanding of the responsibilities and obligations outlined above.
+
+Signature: _________________________
+Name: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+APPENDIX: MLRO DECLARATION
+
+I, [MLRO Name], hereby declare that:
+
+1. I have read and understood the UAE AML/CFT laws and regulations.
+
+2. I have the necessary knowledge and experience to perform the MLRO role.
+
+3. I commit to:
+   • Fulfilling all MLRO responsibilities diligently
+   • Maintaining confidentiality of all sensitive information
+   • Filing SARs promptly when required
+   • Reporting to management as required
+   • Staying updated on regulatory changes
+   • Acting with integrity and independence
+
+4. I have no conflicts of interest that would prevent me from performing this role effectively.
+
+5. I will immediately notify the CEO if any circumstances arise that may affect my ability to perform this role.
+
+Signature: _________________________
+Name: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+NOTIFICATION TO REGULATOR (if required)
+
+[Template for regulatory notification]
+
+To: [Relevant Authority]
+
+Subject: Notification of MLRO Appointment
+
+We hereby notify you that [MLRO Name] has been appointed as the Money Laundering Reporting Officer of Nuqta Technology L.L.C., effective [Date].
+
+Contact Details:
+Name: _______________
+Position: MLRO
+Email: compliance@nuqtaapp.com
+Phone: _______________
+
+Submitted by:
+Name: Rejaul Karim
+Position: CEO
+Date: _______________
+Signature: _________________________
+
+Company Stamp: [Affix]`
   }
 ];
 
