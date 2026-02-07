@@ -643,7 +643,7 @@ export default function CHROAnalysisPage() {
                     who chose to join this mission. My job is to help them thrive, grow, and build something extraordinary together.
                     Culture is not a perk - it&apos;s the operating system. We&apos;ve built it intentionally, and we will protect it fiercely.&rdquo;
                   </p>
-                  <p className="text-[#c9a227] text-sm mt-2 font-medium">— Elena Rodriguez, CHRO (23 years exp, 3 unicorns, 5000+ hires)</p>
+                  <p className="text-[#c9a227] text-sm mt-2 font-medium">— Nuqta CHRO</p>
                 </div>
               </div>
             </div>
