@@ -7,7 +7,7 @@ import { SectionHeader, MetricCard, FeatureCard, FlowStep, ComparisonPanel, Char
 import { typography, colors, spacing, decorative } from '@/constants/design-tokens';
 import { chartColors, chartTheme, formatCurrency, formatPercentage, formatPieLabel } from '@/constants/chart-config';
 import { useCounterAnimation } from '@/hooks/useCounterAnimation';
-import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, TrendingDown, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link as LinkIcon, Coins, User, CheckCircle, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus, Repeat, AlertCircle, AlertTriangle, Clock, Smartphone, Shield, Rocket } from 'lucide-react';
+import { Search, Lock, CreditCard, DollarSign, Gift, TrendingUp, TrendingDown, Store, Handshake, Building2, Megaphone, Users, BarChart3, Globe, Target, ShoppingBag, Ban, Link as LinkIcon, Coins, User, CheckCircle, CheckCircle2, Sparkles, Package, Calendar, ArrowRight, Briefcase, GraduationCap, Video, Shirt, ShoppingCart, PartyPopper, Trophy, MapPin, Zap, Palette, UserPlus, Repeat, AlertCircle, AlertTriangle, Clock, Smartphone, Shield, Rocket, Crown, Settings } from 'lucide-react';
 
 interface PitchDeckProps {
   isOpen: boolean;
