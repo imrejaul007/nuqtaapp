@@ -96,7 +96,7 @@ We're deeply sorry this happened. Your trust is our priority, and we're committe
 If you have questions, contact our dedicated support line: [number]
 
 Sincerely,
-[CEO Name]
+Rejaul Karim
 CEO, Nuqta`
         },
         {
@@ -438,12 +438,12 @@ The Nuqta Team`
   ];
 
   const crisisTeam = [
-    { role: 'Crisis Lead', name: '[CEO Name]', contact: '+971-XX-XXX-XXXX', backup: '[COO Name]', responsibilities: 'Final decision authority, external spokesperson, regulatory liaison' },
-    { role: 'Communications Lead', name: '[Head of Marketing]', contact: '+971-XX-XXX-XXXX', backup: '[PR Manager]', responsibilities: 'All external communications, media relations, social media' },
-    { role: 'Technical Lead', name: '[CTO/VP Engineering]', contact: '+971-XX-XXX-XXXX', backup: '[Senior Engineer]', responsibilities: 'Technical investigation, system recovery, root cause analysis' },
-    { role: 'Legal Lead', name: '[General Counsel]', contact: '+971-XX-XXX-XXXX', backup: '[External Law Firm]', responsibilities: 'Legal advice, regulatory compliance, documentation' },
-    { role: 'Customer Success Lead', name: '[Head of CS]', contact: '+971-XX-XXX-XXXX', backup: '[Senior CS Manager]', responsibilities: 'User communications, support team coordination, individual escalations' },
-    { role: 'Finance Lead', name: '[CFO]', contact: '+971-XX-XXX-XXXX', backup: '[Finance Director]', responsibilities: 'Financial impact assessment, insurance claims, vendor payments' }
+    { role: 'Crisis Lead', name: 'Rejaul Karim', contact: 'CEO', backup: 'Gyandeep Bordoloi (COO)', responsibilities: 'Final decision authority, external spokesperson, regulatory liaison' },
+    { role: 'Communications Lead', name: 'Sarbajit Bhatacharjee', contact: 'CMO', backup: 'PR Manager', responsibilities: 'All external communications, media relations, social media' },
+    { role: 'Technical Lead', name: 'Deep Tednu Kuri', contact: 'CTO', backup: 'Senior Engineer', responsibilities: 'Technical investigation, system recovery, root cause analysis' },
+    { role: 'Legal Lead', name: 'External Counsel', contact: 'Legal', backup: 'Law Firm on Retainer', responsibilities: 'Legal advice, regulatory compliance, documentation' },
+    { role: 'Customer Success Lead', name: 'CS Lead', contact: 'Support', backup: 'Senior CS Manager', responsibilities: 'User communications, support team coordination, individual escalations' },
+    { role: 'Finance Lead', name: 'Finance Officer', contact: 'Finance', backup: 'Finance Director', responsibilities: 'Financial impact assessment, insurance claims, vendor payments' }
   ];
 
   const severityColors = {

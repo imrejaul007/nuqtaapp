@@ -563,7 +563,7 @@ executed as of the date first written above.
 COMPANY:
 NUQTA TECHNOLOGY L.L.C.
 By: ________________________
-Name: [CEO Name]
+Name: Rejaul Karim
 Title: Chief Executive Officer
 
 INVESTOR:
