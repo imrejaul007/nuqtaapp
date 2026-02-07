@@ -39,7 +39,7 @@ import {
 /**
  * COO AGENT REPORT
  *
- * AI Agent: Marcus Thompson (22 years experience)
+ * AI Agent: Gyandeep Bordoloi (22 years experience)
  * Background: Former COO at Careem, scaled ops from 0 to 10,000+ driver-partners
  * Expertise: Operations, Merchant Success, Process Excellence, Scaling
  */
@@ -74,7 +74,7 @@ export default function COOReportPage() {
                   Agent Report
                 </span>
               </div>
-              <p className="text-blue-300 text-lg">AI Agent: Marcus Thompson • 22 Years Operations Experience</p>
+              <p className="text-blue-300 text-lg">AI Agent: Gyandeep Bordoloi • 22 Years Operations Experience</p>
               <p className="text-slate-400 mt-2">Former COO at Careem • Scaled 0 to 10,000+ partners • Expert in marketplace ops</p>
             </div>
             <div className="text-right">
@@ -129,7 +129,7 @@ function AgentProfile() {
       <div className="bg-gradient-to-r from-blue-500/10 to-blue-500/5 rounded-2xl p-8 border border-blue-500/30">
         <div className="grid md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold text-blue-400 mb-4">Agent Profile: Marcus Thompson</h2>
+            <h2 className="text-2xl font-bold text-blue-400 mb-4">Agent Profile: Gyandeep Bordoloi</h2>
             <p className="text-slate-300 leading-relaxed mb-6">
               I&apos;m an AI agent modeled on 22 years of operations leadership in high-growth marketplaces and consumer platforms.
               My experience includes scaling Careem&apos;s operations across MENA, building merchant networks from scratch,
@@ -891,7 +891,7 @@ function OperationsMetrics() {
         <div className="flex items-start gap-4">
           <Settings size={32} className="text-blue-400 flex-shrink-0" />
           <div>
-            <h3 className="text-blue-400 font-bold text-xl mb-3">Final Message from Agent Marcus Thompson</h3>
+            <h3 className="text-blue-400 font-bold text-xl mb-3">Final Message from Agent Gyandeep Bordoloi</h3>
             <p className="text-slate-300 leading-relaxed mb-4">
               &ldquo;You&apos;ve made exceptional progress. Product complete, team hired, launch date set.
               Now it&apos;s about operational execution. The next 23 days will define your launch success.

@@ -42,7 +42,7 @@ import {
 /**
  * CMO AGENT REPORT
  *
- * AI Agent: Priya Sharma (21 years experience)
+ * AI Agent: Sarbajit Bhatacharjee (21 years experience)
  * Background: Former CMO at Noon.com, built brand from 0 to household name
  * Expertise: Brand Building, Growth Marketing, Viral Campaigns, Community Building
  *
@@ -79,7 +79,7 @@ export default function CMOReportPage() {
                   Agent Report
                 </span>
               </div>
-              <p className="text-pink-300 text-lg">AI Agent: Priya Sharma • 21 Years Marketing Experience</p>
+              <p className="text-pink-300 text-lg">AI Agent: Sarbajit Bhatacharjee • 21 Years Marketing Experience</p>
               <p className="text-slate-400 mt-2">Former CMO at Noon.com • Built brand 0→household name • $200M+ marketing budgets managed</p>
             </div>
             <div className="text-right">
@@ -127,7 +127,7 @@ export default function CMOReportPage() {
                   PS
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold text-white mb-2">Priya Sharma</h2>
+                  <h2 className="text-3xl font-bold text-white mb-2">Sarbajit Bhatacharjee</h2>
                   <p className="text-pink-400 text-lg mb-4">Chief Marketing Officer AI Agent</p>
                   <div className="grid grid-cols-3 gap-4">
                     <div className="bg-white/5 rounded-lg p-3 text-center">

@@ -223,8 +223,8 @@ const executiveTeam: ExecutiveRole[] = [
   },
   {
     title: 'Chief Operating Officer',
-    name: 'PRIORITY HIRE',
-    status: 'hiring',
+    name: 'Gyandeep Bordoloi',
+    status: 'filled',
     icon: Settings,
     color: 'blue',
     tagline: 'Execution Excellence & Scale Engine',
@@ -335,8 +335,8 @@ const executiveTeam: ExecutiveRole[] = [
       { day: 'Friday', activities: ['All-hands', 'Week retrospective', 'Next week prep'] }
     ],
     compensation: {
-      salary: 'AED 35-50K/month',
-      equity: '3-6%',
+      salary: 'AED 30-45K/month',
+      equity: '5-10%',
       bonus: 'Quarterly based on OKR achievement'
     },
     hiringPriority: 'critical',
@@ -344,8 +344,8 @@ const executiveTeam: ExecutiveRole[] = [
   },
   {
     title: 'Chief Marketing Officer',
-    name: 'PRIORITY HIRE',
-    status: 'hiring',
+    name: 'Sarbajit Bhatacharjee',
+    status: 'filled',
     icon: Megaphone,
     color: 'orange',
     tagline: 'Brand Builder & Growth Accelerator',
@@ -464,8 +464,8 @@ const executiveTeam: ExecutiveRole[] = [
   },
   {
     title: 'Chief Human Resources Officer',
-    name: 'PLANNED HIRE',
-    status: 'planned',
+    name: 'FILLED',
+    status: 'filled',
     icon: Heart,
     color: 'pink',
     tagline: 'Culture Architect & Talent Magnet',

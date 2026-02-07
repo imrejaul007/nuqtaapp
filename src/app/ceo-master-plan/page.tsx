@@ -363,7 +363,7 @@ function CurrentSituation() {
         <div className="grid md:grid-cols-4 gap-4">
           {[
             { role: 'CEO', name: 'Founder', focus: 'Strategy, Fundraising, Partnerships', icon: Crown, color: 'yellow' },
-            { role: 'CTO', name: 'Hired', focus: 'Product, Technology, Engineering', icon: Settings, color: 'blue' },
+            { role: 'CTO', name: 'Deep Tednu Kuri', focus: 'Product, Technology, Engineering', icon: Settings, color: 'blue' },
             { role: 'CMO', name: 'Hired', focus: 'Marketing, Brand, Growth', icon: Megaphone, color: 'pink' },
             { role: 'CHRO', name: 'Hired', focus: 'People, Culture, HR', icon: UserCircle, color: 'teal' },
             { role: 'Developer 1', name: 'Hired', focus: 'Frontend Development', icon: Settings, color: 'purple' },

@@ -37,14 +37,14 @@ export default function CHROMasterPlanPage() {
       priority: 'Critical',
       roles: [
         { title: 'CEO/Founder', status: 'Filled', department: 'Executive' },
-        { title: 'CTO/Tech Lead', status: 'Hiring', department: 'Technology' },
-        { title: 'CMO', status: 'Hiring', department: 'Marketing' },
-        { title: 'Performance Marketing Lead', status: 'Hiring', department: 'Marketing' },
+        { title: 'CTO', status: 'Filled', department: 'Technology' },
+        { title: 'CHRO', status: 'Filled', department: 'Executive' },
+        { title: 'CMO', status: 'Filled', department: 'Marketing' },
         { title: 'Content & Social Lead', status: 'Hiring', department: 'Marketing' },
         { title: 'Full-Stack Developer', status: 'Hiring', department: 'Technology' },
         { title: 'Mobile Developer', status: 'Hiring', department: 'Technology' },
-        { title: 'Operations Manager', status: 'Hiring', department: 'Operations' },
-        { title: 'Merchant Sales Lead', status: 'Hiring', department: 'Sales' }
+        { title: 'COO', status: 'Hiring', department: 'Operations' },
+        { title: 'Head of Merchant Partnerships', status: 'Hiring', department: 'Merchants' }
       ]
     },
     {
@@ -97,60 +97,53 @@ export default function CHROMasterPlanPage() {
 
   const departmentStructure = [
     {
-      name: 'Executive',
+      name: 'Executive & Leadership',
       head: 'CEO',
-      headcount: { current: 1, target: 3 },
+      headcount: { current: 4, target: 5 },
       color: 'purple',
-      roles: ['CEO', 'COO (M9)', 'CFO Fractional (M9)']
+      roles: ['CEO (Filled)', 'CTO (Filled)', 'CHRO (Filled)', 'CMO (Filled)', 'COO (Hiring)']
     },
     {
-      name: 'Technology',
+      name: 'Product & Engineering',
       head: 'CTO',
-      headcount: { current: 0, target: 10 },
+      headcount: { current: 1, target: 4 },
       color: 'blue',
-      roles: ['CTO', 'Full-Stack Dev (2)', 'Mobile Dev (2)', 'Backend Dev (2)', 'QA Engineer', 'DevOps', 'UX Designer']
+      roles: ['CTO (Filled)', 'Lead Full-Stack Engineer (Hiring)', 'Senior Mobile Engineer (Hiring)', 'UI/UX Designer (Hiring)', 'Backend Engineer (Planned)']
     },
     {
-      name: 'Marketing',
-      head: 'CMO',
-      headcount: { current: 0, target: 10 },
+      name: 'Growth & Analytics',
+      head: 'Head of Growth',
+      headcount: { current: 0, target: 3 },
       color: 'pink',
-      roles: ['CMO', 'Performance Lead', 'Content Lead', 'Influencer Manager', 'Brand Manager', 'Community Manager', 'Creative Designer (2)', 'PR Manager', 'Marketing Coordinator']
+      roles: ['Head of Growth (Hiring)', 'Community & Ambassador Manager (Hiring)', 'Growth Analyst (Planned)']
     },
     {
-      name: 'Sales',
-      head: 'Sales Director',
-      headcount: { current: 0, target: 8 },
-      color: 'green',
-      roles: ['Sales Director', 'Merchant Sales Lead', 'Sales Reps (4)', 'Regional Managers (2)']
-    },
-    {
-      name: 'Operations',
-      head: 'Operations Manager',
-      headcount: { current: 0, target: 4 },
+      name: 'Marketing & Brand',
+      head: 'CMO',
+      headcount: { current: 1, target: 5 },
       color: 'orange',
-      roles: ['Operations Manager', 'Operations Associates (2)', 'Logistics Coordinator']
+      roles: ['CMO (Filled)', 'Content & Social Media Manager (Hiring)', 'Creative Designer (Hiring)', 'Video Content Creator (Planned)', 'Performance Marketer (Planned)']
+    },
+    {
+      name: 'Merchant Success',
+      head: 'Head of Merchant Partnerships',
+      headcount: { current: 0, target: 4 },
+      color: 'green',
+      roles: ['Head of Merchant Partnerships (Hiring)', 'Merchant Success Manager (Hiring)', 'Merchant Marketing Manager (Hiring)', 'Business Development Rep (Planned)']
+    },
+    {
+      name: 'Operations & Finance',
+      head: 'COO',
+      headcount: { current: 0, target: 1 },
+      color: 'slate',
+      roles: ['Finance & Admin Coordinator (Planned)']
     },
     {
       name: 'Customer Support',
-      head: 'Support Lead',
-      headcount: { current: 0, target: 6 },
+      head: 'Customer Support Lead',
+      headcount: { current: 0, target: 1 },
       color: 'cyan',
-      roles: ['Support Lead', 'Support Agents (4)', 'Support Quality Analyst']
-    },
-    {
-      name: 'Finance & HR',
-      head: 'Finance Manager',
-      headcount: { current: 0, target: 4 },
-      color: 'yellow',
-      roles: ['Finance Manager', 'Accountant', 'HR Manager', 'Office Admin']
-    },
-    {
-      name: 'Analytics & Product',
-      head: 'Product Manager',
-      headcount: { current: 0, target: 3 },
-      color: 'indigo',
-      roles: ['Product Manager', 'Data Analyst', 'Business Analyst']
+      roles: ['Customer Support Lead (Planned)']
     }
   ];
 

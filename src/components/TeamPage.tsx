@@ -45,7 +45,7 @@ import {
 /**
  * NUQTA COMPLETE TEAM STRUCTURE
  * =============================
- * H1 Team: Lean startup to prove the loop (~18 people)
+ * H1 Team: Lean startup to prove the loop (~20 people)
  * Full Team: Complete org for scaling (~80+ people)
  *
  * Every role includes:
@@ -1405,7 +1405,7 @@ const TeamPage = () => {
           {/* View Toggle */}
           <div className="flex justify-center gap-4 mb-8">
             <button onClick={() => setViewMode('h1')} className={`px-6 py-3 rounded-xl font-bold transition-all ${viewMode === 'h1' ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}`}>
-              <div className="flex items-center gap-2"><Rocket className="w-5 h-5" /><span>H1 Team (~18)</span></div>
+              <div className="flex items-center gap-2"><Rocket className="w-5 h-5" /><span>H1 Team (~20)</span></div>
             </button>
             <button onClick={() => setViewMode('full')} className={`px-6 py-3 rounded-xl font-bold transition-all ${viewMode === 'full' ? 'bg-[#c9a227] text-[#0a1628]' : 'bg-slate-800 text-slate-400 hover:bg-slate-700'}`}>
               <div className="flex items-center gap-2"><Users className="w-5 h-5" /><span>Full Team (~80)</span></div>
