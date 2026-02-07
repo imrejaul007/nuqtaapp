@@ -12,7 +12,7 @@ import { ChevronLeft, ChevronRight, TrendingUp, Zap, Target, Shield, DollarSign,
 const PitchDeck90SecondPremium = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const totalSlides = 7;
+  const totalSlides = 8;
 
   const changeSlide = (newSlide: number) => {
     if (newSlide >= 0 && newSlide < totalSlides && !isTransitioning) {
@@ -590,8 +590,74 @@ const PitchDeck90SecondPremium = () => {
           </div>
         );
 
-      // ==================== SLIDE 6: THE ASK ====================
+      // ==================== SLIDE 6: THE TEAM ====================
       case 6:
+        return (
+          <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
+            {/* Animated background */}
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" />
+              <div className="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-[#c9a227] rounded-full blur-[80px] md:blur-[100px] opacity-20 animate-pulse" style={{ animationDelay: '1s' }} />
+            </div>
+
+            <div className="relative z-10 max-w-7xl w-full px-2">
+              {/* Headline */}
+              <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-[slideDown_0.8s_ease-out]">
+                <div className="relative inline-block">
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4b03f] blur-2xl md:blur-3xl opacity-40" />
+                  <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-[#d4b03f] leading-tight">
+                    Built by Operators
+                  </h1>
+                </div>
+                <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-slate-300 font-bold mt-2 sm:mt-4">Full C-Suite team ready to execute</p>
+              </div>
+
+              {/* Team grid */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12 animate-[fadeIn_0.8s_ease-out_0.2s] opacity-0 [animation-fill-mode:forwards]">
+                {[
+                  { role: 'CEO', name: 'Rejaul Karim', desc: 'Founder & Visionary' },
+                  { role: 'CTO', name: 'Deep Tednu Kuri', desc: 'Tech & Product' },
+                  { role: 'CMO', name: 'Sarbajit Bhatacharjee', desc: 'Marketing & Growth' },
+                  { role: 'COO', name: 'Gyandeep Bordoloi', desc: 'Operations & Scale' },
+                  { role: 'CHRO', name: 'Filled', desc: 'People & Culture' }
+                ].map((member, idx) => (
+                  <div key={idx} className="relative group">
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-xl md:rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-xl transform group-hover:scale-105 transition-all text-center h-full">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-[#c9a227] to-[#d4b03f] mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                        <span className="text-white font-black text-lg sm:text-xl md:text-2xl">{member.role.charAt(0)}</span>
+                      </div>
+                      <p className="text-[#c9a227] font-black text-sm sm:text-base md:text-lg mb-1">{member.role}</p>
+                      <p className="text-white font-bold text-xs sm:text-sm md:text-base mb-1 leading-tight">{member.name}</p>
+                      <p className="text-slate-400 text-xs sm:text-sm">{member.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Team stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 animate-[slideUp_0.8s_ease-out_0.6s] opacity-0 [animation-fill-mode:forwards]">
+                {[
+                  { value: '8', label: 'Team Members' },
+                  { value: '5/5', label: 'C-Suite Filled' },
+                  { value: '70+', label: 'Years Combined Exp' },
+                  { value: '100%', label: 'Launch Ready' }
+                ].map((stat, idx) => (
+                  <div key={idx} className="relative group">
+                    <div className="absolute inset-0 bg-[#c9a227] rounded-xl md:rounded-2xl blur-lg opacity-30" />
+                    <div className="relative bg-white/5 backdrop-blur-xl border-2 border-[#c9a227]/30 rounded-xl md:rounded-2xl p-4 sm:p-6 shadow-xl text-center">
+                      <p className="text-3xl sm:text-4xl md:text-5xl font-black text-[#c9a227] mb-1">{stat.value}</p>
+                      <p className="text-slate-300 font-semibold text-xs sm:text-sm md:text-base">{stat.label}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      // ==================== SLIDE 7: THE ASK ====================
+      case 7:
         return (
           <div className={`${slideClass} w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2638] to-[#0a1628] flex items-center justify-center p-4 sm:p-6 md:p-12 relative overflow-hidden`}>
             {/* Animated background */}
@@ -714,6 +780,7 @@ const PitchDeck90SecondPremium = () => {
                 { label: 'How It Works', shortLabel: 'How' },
                 { label: 'vs Groupon', shortLabel: 'Compare' },
                 { label: 'Moat & Timing', shortLabel: 'Moat' },
+                { label: 'Team', shortLabel: 'Team' },
                 { label: 'The Ask', shortLabel: 'Ask' }
               ].map((slide, index) => (
                 <button
@@ -744,6 +811,7 @@ const PitchDeck90SecondPremium = () => {
                 'How',
                 'Compare',
                 'Moat',
+                'Team',
                 'Ask'
               ].map((label, index) => (
                 <button

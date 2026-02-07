@@ -129,7 +129,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
               <div className="w-px h-8 bg-gray-700" />
               <div className="text-center px-3 sm:px-4 py-2 bg-purple-500/10 rounded-lg border border-purple-500/30">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-400">Q2 2026</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-400">March 1, 2026</p>
                 <p className="text-xs sm:text-sm text-gray-500">Launch</p>
               </div>
             </div>
@@ -243,7 +243,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <div>
                     <p className="text-xs sm:text-sm text-[#c9a227] mb-2 uppercase tracking-wide">SAM (Serviceable Addressable Market)</p>
                     <DataPoint
-                      value="$4B"
+                      value="$35B"
                       source="UAE D2C + Local retail spending: ~3% of $150B GCC total (Dubai Chamber of Commerce 2024)"
                       className="text-4xl sm:text-5xl md:text-6xl font-black text-[#c9a227] block mb-2"
                     />
@@ -259,8 +259,8 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
                   <div>
                     <p className="text-xs sm:text-sm text-green-400 mb-2 uppercase tracking-wide">SOM (Serviceable Obtainable Market)</p>
                     <DataPoint
-                      value="$120M"
-                      source="3% market share of $4B SAM within 3 years (conservative penetration target)"
+                      value="$1.05B"
+                      source="3% market share of $35B SAM within 3 years (conservative penetration target)"
                       className="text-4xl sm:text-5xl md:text-6xl font-black text-green-400 block mb-2"
                     />
                     <p className="text-sm sm:text-base text-gray-300">3% market share in 3 years</p>
@@ -273,7 +273,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="mt-6 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-xl p-4 border-2 border-[#c9a227]/40 max-w-2xl">
               <p className="text-center text-xs sm:text-sm text-gray-300">
                 <span className="text-[#c9a227] font-bold">Translation:</span> Capturing just 3% of UAE D2C market =
-                <span className="text-white font-semibold"> $120M annual GMV</span> in 3 years
+                <span className="text-white font-semibold"> $1.05B annual GMV</span> in 3 years
               </p>
             </div>
           </div>
@@ -748,7 +748,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-[#1a2a42]/50 rounded-xl p-3 sm:p-4 border-2 border-[#c9a227]/30 text-center">
                 <div className="text-4xl mb-3">🚀</div>
                 <h3 className="font-bold text-base sm:text-lg mb-2">Fast-Growing Market</h3>
-                <p className="text-xs sm:text-sm text-gray-400">$4B UAE addressable market with 86% digital payment adoption</p>
+                <p className="text-xs sm:text-sm text-gray-400">$35B UAE addressable market with 86% digital payment adoption</p>
               </div>
 
               <div className="bg-[#1a2a42]/50 rounded-xl p-3 sm:p-4 border-2 border-[#c9a227]/30 text-center">
@@ -1936,47 +1936,41 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Core Team Already In Place */}
               <div className="mt-6">
-                <p className="text-sm text-[#c9a227] text-center mb-3 font-bold">✅ Core Team (Already In Place):</p>
+                <p className="text-sm text-[#c9a227] text-center mb-3 font-bold">✅ Full C-Suite Team (Already In Place):</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                  <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-lg p-3 border-2 border-[#c9a227]/40 text-center">
+                    <p className="text-sm font-bold text-[#c9a227]">CEO</p>
+                    <p className="text-xs text-white font-semibold">Rejaul Karim</p>
+                    <p className="text-xs text-gray-400">Founder & Vision</p>
+                  </div>
+                  <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 rounded-lg p-3 border-2 border-emerald-500/40 text-center">
+                    <p className="text-sm font-bold text-emerald-400">CTO</p>
+                    <p className="text-xs text-white font-semibold">Deep Tednu Kuri</p>
+                    <p className="text-xs text-gray-400">Tech & Product</p>
+                  </div>
                   <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-lg p-3 border-2 border-purple-500/40 text-center">
-                    <p className="text-2xl mb-1">👩‍💼</p>
-                    <p className="text-sm font-bold text-white">CHRO</p>
-                    <p className="text-xs text-gray-300">3 years experience</p>
-                    <p className="text-xs text-purple-400 mt-1">Ex-Founder (EdTech)</p>
+                    <p className="text-sm font-bold text-purple-400">CMO</p>
+                    <p className="text-xs text-white font-semibold">Sarbajit Bhatacharjee</p>
+                    <p className="text-xs text-gray-400">Marketing & Growth</p>
                   </div>
                   <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 rounded-lg p-3 border-2 border-blue-500/40 text-center">
-                    <p className="text-2xl mb-1">📈</p>
-                    <p className="text-sm font-bold text-white">CMO</p>
-                    <p className="text-xs text-gray-300">5 years experience</p>
-                    <p className="text-xs text-blue-400 mt-1">Ex-Founder (E-commerce)</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-green-500/20 to-green-500/5 rounded-lg p-3 border-2 border-green-500/40 text-center">
-                    <p className="text-2xl mb-1">💻</p>
-                    <p className="text-sm font-bold text-white">2 Full-Time Devs</p>
-                    <p className="text-xs text-gray-300">3 years + 1 year exp</p>
-                    <p className="text-xs text-green-400 mt-1">Mobile + Backend</p>
+                    <p className="text-sm font-bold text-blue-400">COO</p>
+                    <p className="text-xs text-white font-semibold">Gyandeep Bordoloi</p>
+                    <p className="text-xs text-gray-400">Operations & Scale</p>
                   </div>
                   <div className="bg-gradient-to-br from-pink-500/20 to-pink-500/5 rounded-lg p-3 border-2 border-pink-500/40 text-center">
-                    <p className="text-2xl mb-1">🎨</p>
-                    <p className="text-sm font-bold text-white">Graphic Designer</p>
-                    <p className="text-xs text-gray-300">3 years experience</p>
-                    <p className="text-xs text-pink-400 mt-1">Brand & Product Design</p>
+                    <p className="text-sm font-bold text-pink-400">CHRO</p>
+                    <p className="text-xs text-white font-semibold">Filled</p>
+                    <p className="text-xs text-gray-400">People & Culture</p>
                   </div>
                   <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 rounded-lg p-3 border-2 border-orange-500/40 text-center">
-                    <p className="text-2xl mb-1">🤝</p>
-                    <p className="text-sm font-bold text-white">BDA</p>
-                    <p className="text-xs text-gray-300">2 years experience</p>
-                    <p className="text-xs text-orange-400 mt-1">Merchant Partnerships</p>
-                  </div>
-                  <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 rounded-lg p-3 border-2 border-[#c9a227]/40 text-center">
-                    <p className="text-2xl mb-1">👨‍💻</p>
-                    <p className="text-sm font-bold text-white">CEO (Rejaul)</p>
-                    <p className="text-xs text-gray-300">Ex-CTO + Marketer</p>
-                    <p className="text-xs text-[#c9a227] mt-1">Builder + Grower</p>
+                    <p className="text-sm font-bold text-orange-400">+3 More</p>
+                    <p className="text-xs text-white font-semibold">Dev, BDA, Design</p>
+                    <p className="text-xs text-gray-400">Core Team</p>
                   </div>
                 </div>
                 <p className="text-center text-xs text-gray-400 mt-3">
-                  <span className="text-[#c9a227] font-bold">Team Risk = Zero.</span> Full execution team already assembled and working.
+                  <span className="text-[#c9a227] font-bold">5/5 C-Suite Filled.</span> 8-member team ready for March 1, 2026 launch.
                 </p>
               </div>
             </div>
@@ -2093,7 +2087,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="mt-6 bg-[#1a2a42]/50 rounded-xl p-4 max-w-4xl w-full border border-[#2a3a52]">
               <div className="flex items-center justify-between text-xs sm:text-sm">
                 <div className="text-center">
-                  <p className="text-green-400 font-bold mb-1">Q2 2026</p>
+                  <p className="text-green-400 font-bold mb-1">March 1, 2026</p>
                   <p className="text-gray-400">MVP Launch</p>
                 </div>
                 <div className="flex-1 h-px bg-gradient-to-r from-green-500 via-[#c9a227] to-blue-500 mx-4"></div>
@@ -2279,7 +2273,7 @@ export default function PitchDeckNew({ isOpen, onClose }: PitchDeckProps) {
             </div>
 
             <p className="text-xs sm:text-sm text-gray-600">
-              Pre-Seed Round • $400K at $5M cap • 20% discount • Q2 2026 Launch
+              Pre-Seed Round • $400K at $5M cap • 20% discount • March 1, 2026 Launch
             </p>
           </div>
         );

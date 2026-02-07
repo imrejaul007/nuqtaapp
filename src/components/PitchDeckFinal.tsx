@@ -129,7 +129,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               </div>
               <div className="w-px h-8 bg-gray-700" />
               <div className="text-center px-3 sm:px-4 py-2 bg-purple-500/10 rounded-lg border border-purple-500/30">
-                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-400">Q2 2026</p>
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-400">March 1, 2026</p>
                 <p className="text-[10px] sm:text-xs text-gray-500">Launch</p>
               </div>
             </div>
@@ -866,7 +866,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               {/* Launch Target */}
               <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 rounded-xl sm:rounded-2xl p-6 border-2 border-purple-500/40">
                 <div className="text-5xl mb-4">🚀</div>
-                <p className="text-4xl sm:text-5xl font-black text-purple-400 mb-2">Q2 2026</p>
+                <p className="text-4xl sm:text-5xl font-black text-purple-400 mb-2">March 1, 2026</p>
                 <p className="text-base sm:text-lg font-semibold mb-2">MVP Launch</p>
                 <p className="text-xs sm:text-sm text-gray-400">Dubai launch target with 100+ merchants live</p>
               </div>
@@ -1057,41 +1057,41 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               <div className="mt-6">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                  <p className="text-green-400 font-bold text-sm">FULL TEAM HIRED & PRODUCT READY</p>
+                  <p className="text-green-400 font-bold text-sm">FULL C-SUITE HIRED & PRODUCT READY</p>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="bg-[#c9a227]/10 rounded-xl p-3 border border-[#c9a227]/30 text-center">
+                    <p className="text-sm font-bold text-[#c9a227]">CEO</p>
+                    <p className="text-xs text-white font-semibold">Rejaul Karim</p>
+                    <p className="text-xs text-gray-400">Founder</p>
+                  </div>
                   <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
-                    <p className="text-2xl mb-1">👨‍💻</p>
                     <p className="text-sm font-bold text-green-400">CTO</p>
-                    <p className="text-xs text-gray-400">✓ Hired</p>
+                    <p className="text-xs text-white font-semibold">Deep Tednu Kuri</p>
+                    <p className="text-xs text-gray-400">Tech & Product</p>
                   </div>
                   <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
-                    <p className="text-2xl mb-1">📈</p>
                     <p className="text-sm font-bold text-green-400">CMO</p>
-                    <p className="text-xs text-gray-400">✓ Hired</p>
+                    <p className="text-xs text-white font-semibold">Sarbajit Bhatacharjee</p>
+                    <p className="text-xs text-gray-400">Marketing</p>
                   </div>
                   <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
-                    <p className="text-2xl mb-1">👥</p>
+                    <p className="text-sm font-bold text-green-400">COO</p>
+                    <p className="text-xs text-white font-semibold">Gyandeep Bordoloi</p>
+                    <p className="text-xs text-gray-400">Operations</p>
+                  </div>
+                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
                     <p className="text-sm font-bold text-green-400">CHRO</p>
-                    <p className="text-xs text-gray-400">✓ Hired</p>
+                    <p className="text-xs text-white font-semibold">Filled</p>
+                    <p className="text-xs text-gray-400">People & Culture</p>
                   </div>
-                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
-                    <p className="text-2xl mb-1">💻</p>
-                    <p className="text-sm font-bold text-green-400">2 Devs</p>
-                    <p className="text-xs text-gray-400">✓ Hired</p>
-                  </div>
-                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
-                    <p className="text-2xl mb-1">🤝</p>
-                    <p className="text-sm font-bold text-green-400">BDA</p>
-                    <p className="text-xs text-gray-400">✓ Hired</p>
-                  </div>
-                  <div className="bg-green-500/10 rounded-xl p-3 border border-green-500/30 text-center">
-                    <p className="text-2xl mb-1">🎨</p>
-                    <p className="text-sm font-bold text-green-400">Designer</p>
-                    <p className="text-xs text-gray-400">✓ Hired</p>
+                  <div className="bg-blue-500/10 rounded-xl p-3 border border-blue-500/30 text-center">
+                    <p className="text-sm font-bold text-blue-400">+3 More</p>
+                    <p className="text-xs text-white font-semibold">Dev, BDA, Design</p>
+                    <p className="text-xs text-gray-400">Core Team</p>
                   </div>
                 </div>
-                <p className="text-center text-sm text-[#c9a227] mt-4 font-medium">8 Team Members • Product 100% Ready • Launch Phase</p>
+                <p className="text-center text-sm text-[#c9a227] mt-4 font-medium">8 Team Members • 5/5 C-Suite • March 1, 2026 Launch</p>
               </div>
             </div>
           </div>
@@ -1144,7 +1144,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
             </div>
 
             <p className="text-xs sm:text-sm text-gray-600">
-              Pre-Seed Round • $400K USD at $5M USD cap • 20% discount • Q2 2026 Launch
+              Pre-Seed Round • $400K USD at $5M USD cap • 20% discount • March 1, 2026 Launch
             </p>
           </div>
         );

@@ -228,7 +228,7 @@ const PitchDeckGlobalVillage = () => {
                       {[
                         { icon: Globe, text: 'Based in Dubai, UAE' },
                         { icon: Target, text: 'Focused on GCC retail & hospitality' },
-                        { icon: Rocket, text: 'Launching February 2026' }
+                        { icon: Rocket, text: 'Launching March 1, 2026' }
                       ].map((item, idx) => (
                         <div key={idx} className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">

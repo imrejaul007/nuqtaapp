@@ -4429,19 +4429,21 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <h3 className={`${typography.h2} text-slate-900 mb-8 text-center`}>Core Team</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
-                    { title: "CHRO", desc: "Ex Co-Founder of EdTech company", icon: Users, color: "blue", exp: "HR & Operations" },
-                    { title: "CMO", desc: "Ex Co-Founder of e-commerce app", icon: Megaphone, color: "purple", exp: "Marketing & Growth" },
-                    { title: "CTO", desc: "4 years engineering experience", icon: Zap, color: "emerald", exp: "Tech & Product" },
-                    { title: "Graphic Designer", desc: "Brand & Visual Design Lead", icon: Palette, color: "orange", exp: "UI/UX Design" },
-                    { title: "BDA", desc: "Business Development & Partnerships", icon: Handshake, color: "pink", exp: "Merchant Relations" }
+                    { title: "CEO", name: "Rejaul Karim", desc: "Founder & Vision", icon: Crown, color: "gold", exp: "Strategy & Fundraising" },
+                    { title: "CTO", name: "Deep Tednu Kuri", desc: "4 years engineering experience", icon: Zap, color: "emerald", exp: "Tech & Product" },
+                    { title: "CMO", name: "Sarbajit Bhatacharjee", desc: "Ex Co-Founder of e-commerce app", icon: Megaphone, color: "purple", exp: "Marketing & Growth" },
+                    { title: "COO", name: "Gyandeep Bordoloi", desc: "Operations & Execution", icon: Settings, color: "blue", exp: "Operations & Scale" },
+                    { title: "CHRO", name: "Filled", desc: "Ex Co-Founder of EdTech company", icon: Users, color: "pink", exp: "HR & Culture" }
                   ].map((member, idx) => {
                     const Icon = member.icon;
-                    const iconBg = member.color === "blue" ? "bg-blue-100 text-blue-600" :
+                    const iconBg = member.color === "gold" ? "bg-[#c9a227]/20 text-[#c9a227]" :
+                                   member.color === "blue" ? "bg-blue-100 text-blue-600" :
                                    member.color === "purple" ? "bg-purple-100 text-purple-600" :
                                    member.color === "emerald" ? "bg-emerald-100 text-emerald-600" :
                                    member.color === "orange" ? "bg-orange-100 text-orange-600" :
                                    "bg-pink-100 text-pink-600";
-                    const borderColor = member.color === "blue" ? "border-blue-200" :
+                    const borderColor = member.color === "gold" ? "border-[#c9a227]/30" :
+                                       member.color === "blue" ? "border-blue-200" :
                                        member.color === "purple" ? "border-purple-200" :
                                        member.color === "emerald" ? "border-emerald-200" :
                                        member.color === "orange" ? "border-orange-200" :
@@ -4453,8 +4455,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           <Icon size={28} />
                         </div>
                         <h4 className="text-xl font-black text-slate-900 mb-1">{member.title}</h4>
-                        <p className="text-sm font-semibold text-[#c9a227] mb-2">{member.exp}</p>
-                        <p className="text-sm text-slate-600">{member.desc}</p>
+                        <p className="text-base font-bold text-[#c9a227] mb-1">{member.name}</p>
+                        <p className="text-sm font-semibold text-slate-500 mb-2">{member.exp}</p>
+                        <p className="text-xs text-slate-600">{member.desc}</p>
                       </div>
                     );
                   })}
