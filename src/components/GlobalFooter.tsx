@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -29,105 +29,162 @@ import {
   Heart,
   BarChart3,
   Calendar,
-  ExternalLink,
-  Layers
+  Layers,
+  Briefcase,
+  Map,
+  Dumbbell,
+  MessageSquare,
+  CheckSquare,
+  CreditCard,
+  Bot,
+  AlertTriangle,
+  Search,
+  X,
+  Calculator
 } from 'lucide-react';
 
 /**
- * GLOBAL FOOTER NAVIGATION - Simplified & Organized
- * Works with GlobalHeader for complete navigation coverage
+ * GLOBAL FOOTER - Complete Navigation Hub
+ * All navigation is here - no floating header
  */
 
-interface FooterLink {
+interface NavItem {
   label: string;
   href: string;
   icon: React.ElementType;
 }
 
-interface FooterSection {
+interface NavCategory {
   title: string;
-  links: FooterLink[];
+  icon: React.ElementType;
+  color: string;
+  items: NavItem[];
 }
 
-const footerSections: FooterSection[] = [
+// Complete navigation data
+const navigationData: NavCategory[] = [
   {
     title: 'Investors',
-    links: [
+    icon: Briefcase,
+    color: 'text-blue-400',
+    items: [
       { label: '90-Second Pitch', href: '/deck-90', icon: Rocket },
-      { label: 'Full Deck', href: '/deck-kang', icon: Presentation },
+      { label: 'Full Pitch Deck', href: '/deck-kang', icon: Presentation },
+      { label: 'All Decks', href: '/deck', icon: Presentation },
       { label: 'Data Room', href: '/data-room', icon: Database },
-      { label: 'Financial Models', href: '/financial-models', icon: DollarSign },
+      { label: 'Financial Models', href: '/financial-models', icon: Calculator },
+      { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail },
       { label: 'Investor FAQ', href: '/investor-faq', icon: FileText },
+      { label: 'Funding Documents', href: '/funding-docs', icon: Briefcase },
     ]
   },
   {
-    title: 'Strategy & GTM',
-    links: [
-      { label: 'Master Roadmap', href: '/master-roadmap', icon: Target },
+    title: 'Strategy',
+    icon: Target,
+    color: 'text-purple-400',
+    items: [
+      { label: 'Master Roadmap', href: '/master-roadmap', icon: Map },
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp },
       { label: 'Competitor Analysis', href: '/competitor-analysis', icon: BarChart3 },
-      { label: 'Execution Plan', href: '/execution-plan', icon: Calendar },
+      { label: 'Execution Plan', href: '/execution-plan', icon: Target },
+      { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Calendar },
+      { label: 'Phase 3 GTM', href: '/phase-3-gtm', icon: Calendar },
     ]
   },
   {
     title: 'Merchants',
-    links: [
-      { label: 'Merchant Engines', href: '/merchant-engines', icon: Settings },
-      { label: 'Packages & Pricing', href: '/merchant-packages', icon: Store },
+    icon: Store,
+    color: 'text-green-400',
+    items: [
+      { label: 'All 3 Engines', href: '/merchant-engines', icon: Settings },
+      { label: 'Packages & Pricing', href: '/merchant-packages', icon: CreditCard },
       { label: 'Merchant Playbook', href: '/merchant-playbook', icon: BookOpen },
-      { label: 'Sales Kit', href: '/sales-kit', icon: Target },
-      { label: 'SOPs', href: '/sop', icon: FileText },
+      { label: 'Merchant Database', href: '/merchant-database', icon: Database },
+      { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase },
+      { label: 'SOPs', href: '/sop', icon: CheckSquare },
+      { label: 'Onboarding', href: '/merchant-onboarding', icon: Users },
     ]
   },
   {
     title: 'Industries',
-    links: [
-      { label: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Coffee },
-      { label: 'Salon & Spa', href: '/playbook-salon', icon: Scissors },
+    icon: Building2,
+    color: 'text-amber-400',
+    items: [
+      { label: 'Cafe Deck & Playbook', href: '/playbook-cafe', icon: Coffee },
+      { label: 'Salon Deck & Playbook', href: '/playbook-salon', icon: Scissors },
       { label: 'Supermarket', href: '/playbook-supermarket', icon: ShoppingCart },
       { label: 'Gold & Jewelry', href: '/playbook-gold', icon: Gem },
+      { label: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell },
+      { label: 'University', href: '/deck-university', icon: BookOpen },
+      { label: 'Corporate', href: '/deck-corporate', icon: Briefcase },
     ]
   },
   {
     title: 'Marketing',
-    links: [
+    icon: Megaphone,
+    color: 'text-pink-400',
+    items: [
       { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone },
       { label: 'CMO Playbook', href: '/cmo-playbook', icon: BookOpen },
+      { label: 'Brand Voice', href: '/brand-voice', icon: MessageSquare },
       { label: 'Campaigns', href: '/seasonal-campaigns', icon: Calendar },
       { label: 'Influencer List', href: '/influencer-list', icon: Users },
+      { label: 'Press Kit', href: '/press-kit', icon: FileText },
+      { label: 'Content Templates', href: '/email-templates', icon: Mail },
     ]
   },
   {
     title: 'Partnerships',
-    links: [
+    icon: Handshake,
+    color: 'text-cyan-400',
+    items: [
       { label: 'Partnership Playbook', href: '/partnerships', icon: Handshake },
       { label: '4-Level Framework', href: '/partnership-framework', icon: Layers },
       { label: 'Co-Partner Program', href: '/co-partner', icon: Users },
       { label: 'Global Village', href: '/deck-gv', icon: Building2 },
+      { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Presentation },
     ]
   },
   {
-    title: 'C-Suite & Team',
-    links: [
-      { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
+    title: 'C-Suite',
+    icon: Crown,
+    color: 'text-[#c9a227]',
+    items: [
+      { label: '3-Year Domination Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
-      { label: 'Issue Resolution', href: '/issue-resolution', icon: Target },
-      { label: 'Team & Roles', href: '/team', icon: Users },
+      { label: 'CEO Report', href: '/ceo-agent', icon: Bot },
+      { label: 'COO Report', href: '/coo-agent', icon: Settings },
+      { label: 'CFO Report', href: '/cfo-agent', icon: DollarSign },
+      { label: 'CMO Report', href: '/cmo-agent', icon: Megaphone },
+      { label: 'CHRO Report', href: '/chro-agent', icon: Heart },
+      { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle },
     ]
   },
   {
-    title: 'Legal & Company',
-    links: [
-      { label: 'Contracts', href: '/contracts', icon: FileText },
-      { label: 'Policies', href: '/policies', icon: Scale },
+    title: 'Company',
+    icon: Building2,
+    color: 'text-slate-300',
+    items: [
+      { label: 'Team', href: '/team', icon: Users },
       { label: 'Operations', href: '/operations', icon: Settings },
-      { label: 'Contact', href: '/join-us', icon: Mail },
+      { label: 'Tasks', href: '/tasks', icon: CheckSquare },
+      { label: 'Legal & Policies', href: '/policies', icon: Scale },
+      { label: 'Contracts', href: '/contracts', icon: FileText },
+      { label: 'HR Operations', href: '/hr-operations', icon: Heart },
     ]
   },
 ];
 
+// All searchable pages
+const allPages = [
+  { label: 'Home', href: '/', icon: Home },
+  { label: 'Dashboard', href: '/dashboard', icon: BarChart3 },
+  ...navigationData.flatMap(cat => cat.items),
+];
+
 const quickLinks = [
   { label: 'Home', href: '/', icon: Home },
+  { label: 'Dashboard', href: '/dashboard', icon: BarChart3 },
   { label: 'Pitch Deck', href: '/deck-90', icon: Rocket },
   { label: 'Data Room', href: '/data-room', icon: Database },
   { label: 'GTM', href: '/gtm', icon: TrendingUp },
@@ -140,113 +197,222 @@ const quickLinks = [
 const GlobalFooter = () => {
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchRef = useRef<HTMLInputElement>(null);
+
+  // Filter pages based on search
+  const filteredPages = allPages.filter(page =>
+    page.label.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Focus search input when opened
+  useEffect(() => {
+    if (searchOpen && searchRef.current) {
+      searchRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  // Keyboard shortcut for search (Cmd/Ctrl + K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setSearchOpen(true);
+      }
+      if (e.key === 'Escape') {
+        setSearchOpen(false);
+        setSearchQuery('');
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   return (
-    <footer className="bg-[#0a1628] border-t border-[#c9a227]/30">
-      {/* Quick Links Bar */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-3">
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
-            <span className="text-slate-500 text-xs font-medium whitespace-nowrap">Quick:</span>
-            {quickLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
-                  isActive(link.href)
-                    ? 'bg-[#c9a227] text-black'
-                    : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
-                }`}
+    <>
+      {/* Search Modal */}
+      {searchOpen && (
+        <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-start justify-center pt-20 px-4">
+          <div className="w-full max-w-2xl bg-[#0a1628] border border-[#c9a227]/30 rounded-2xl shadow-2xl overflow-hidden">
+            {/* Search Input */}
+            <div className="flex items-center gap-3 px-4 py-4 border-b border-white/10">
+              <Search className="text-[#c9a227]" size={20} />
+              <input
+                ref={searchRef}
+                type="text"
+                placeholder="Search pages..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1 bg-transparent text-white text-lg placeholder:text-slate-500 outline-none"
+              />
+              <button
+                onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
+                className="text-slate-400 hover:text-white text-sm flex items-center gap-1"
               >
-                <link.icon size={12} />
-                <span>{link.label}</span>
-              </Link>
+                <X size={16} />
+                ESC
+              </button>
+            </div>
+
+            {/* Search Results */}
+            <div className="max-h-96 overflow-y-auto py-2">
+              {filteredPages.length > 0 ? (
+                filteredPages.slice(0, 12).map((page) => (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
+                    className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-[#c9a227]/10 hover:text-white transition-all"
+                  >
+                    <page.icon size={18} className="text-[#c9a227]" />
+                    <span>{page.label}</span>
+                    <span className="ml-auto text-xs text-slate-500">{page.href}</span>
+                  </Link>
+                ))
+              ) : (
+                <div className="px-4 py-8 text-center text-slate-500">
+                  No pages found for &ldquo;{searchQuery}&rdquo;
+                </div>
+              )}
+            </div>
+
+            {/* Quick Categories */}
+            {!searchQuery && (
+              <div className="border-t border-white/10 px-4 py-3">
+                <p className="text-xs text-slate-500 mb-2">Quick Access</p>
+                <div className="flex flex-wrap gap-2">
+                  {navigationData.slice(0, 4).map((cat) => (
+                    <button
+                      key={cat.title}
+                      onClick={() => setSearchQuery(cat.title.toLowerCase())}
+                      className={`flex items-center gap-1.5 px-2.5 py-1.5 bg-white/5 rounded-lg text-xs ${cat.color} hover:bg-white/10 transition-all`}
+                    >
+                      <cat.icon size={12} />
+                      <span>{cat.title}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      <footer className="bg-[#0a1628] border-t border-[#c9a227]/30">
+        {/* Search Bar */}
+        <div className="border-b border-white/10 bg-slate-900/50">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-400 hover:text-white hover:border-[#c9a227]/50 transition-all"
+            >
+              <Search size={18} />
+              <span>Search all pages...</span>
+              <kbd className="text-xs bg-white/10 px-2 py-1 rounded ml-2">Cmd+K</kbd>
+            </button>
+          </div>
+        </div>
+
+        {/* Quick Links Bar */}
+        <div className="border-b border-white/10">
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+              <span className="text-slate-500 text-xs font-medium whitespace-nowrap">Quick:</span>
+              {quickLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                    isActive(link.href)
+                      ? 'bg-[#c9a227] text-black'
+                      : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  <link.icon size={12} />
+                  <span>{link.label}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Main Footer Grid - All Categories */}
+        <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
+            {navigationData.map((category) => (
+              <div key={category.title}>
+                <h4 className={`text-xs font-bold uppercase tracking-wider mb-4 flex items-center gap-2 ${category.color}`}>
+                  <category.icon size={14} />
+                  {category.title}
+                </h4>
+                <ul className="space-y-2">
+                  {category.items.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className={`flex items-center gap-2 text-sm transition-all ${
+                          isActive(link.href)
+                            ? 'text-[#c9a227]'
+                            : 'text-slate-400 hover:text-white'
+                        }`}
+                      >
+                        <link.icon size={12} />
+                        <span>{link.label}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Main Footer Grid */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-[#c9a227] text-xs font-bold uppercase tracking-wider mb-4">
-                {section.title}
-              </h4>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className={`flex items-center gap-2 text-sm transition-all ${
-                        isActive(link.href)
-                          ? 'text-[#c9a227]'
-                          : 'text-slate-400 hover:text-white'
-                      }`}
-                    >
-                      <link.icon size={14} />
-                      <span>{link.label}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* Logo & Copyright */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
-                <span className="text-black font-black text-sm">N</span>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-4 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              {/* Logo & Copyright */}
+              <div className="flex items-center gap-3">
+                <Link href="/dashboard" className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
+                    <span className="text-black font-black text-lg">N</span>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">Nuqta</p>
+                    <p className="text-slate-500 text-xs">Dubai&apos;s Rewards Revolution</p>
+                  </div>
+                </Link>
               </div>
-              <div>
-                <p className="text-white font-bold">Nuqta</p>
-                <p className="text-slate-500 text-xs">Dubai&apos;s Rewards Revolution</p>
+
+              {/* Links */}
+              <div className="flex items-center gap-6 text-sm">
+                <Link href="/terms" className="text-slate-400 hover:text-white transition-colors">
+                  Terms
+                </Link>
+                <Link href="/policies" className="text-slate-400 hover:text-white transition-colors">
+                  Privacy
+                </Link>
+                <a
+                  href="mailto:hello@nuqtaapp.com"
+                  className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
+                >
+                  <Mail size={14} />
+                  Contact
+                </a>
               </div>
-            </div>
 
-            {/* Links */}
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="/terms" className="text-slate-400 hover:text-white transition-colors">
-                Terms
-              </Link>
-              <Link href="/policies" className="text-slate-400 hover:text-white transition-colors">
-                Privacy
-              </Link>
-              <a
-                href="mailto:hello@nuqtaapp.com"
-                className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
-              >
-                <Mail size={14} />
-                Contact
-              </a>
-            </div>
-
-            {/* Year & Credit */}
-            <div className="flex items-center gap-2 text-slate-500 text-xs">
-              <span>© 2026 Nuqta</span>
-              <span>•</span>
-              <span>Made in Dubai</span>
+              {/* Year & Credit */}
+              <div className="flex items-center gap-2 text-slate-500 text-xs">
+                <span>© 2026 Nuqta</span>
+                <span>•</span>
+                <span>Made in Dubai</span>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Current Page Indicator (Floating) */}
-      <div className="fixed bottom-4 left-4 z-50 hidden lg:flex items-center gap-2 bg-[#0a1628]/90 backdrop-blur border border-[#c9a227]/30 rounded-full px-3 py-2">
-        <div className="w-2 h-2 rounded-full bg-[#c9a227] animate-pulse" />
-        <span className="text-slate-400 text-xs">Page:</span>
-        <span className="text-white text-xs font-medium">
-          {pathname === '/' ? 'Home' : pathname.split('/').pop()?.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-        </span>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
 
