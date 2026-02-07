@@ -1636,6 +1636,1455 @@ Date: _____________________________
 ANNEX 1: DESCRIPTION OF PROCESSING
 ANNEX 2: TECHNICAL AND ORGANIZATIONAL MEASURES
 ANNEX 3: LIST OF APPROVED SUB-PROCESSORS`
+  },
+  {
+    id: 'security-measures',
+    title: 'Security Measures Document',
+    category: 'Security & Compliance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Comprehensive security measures and technical safeguards implemented by Nuqta.',
+    content: `NUQTA TECHNOLOGY L.L.C.
+SECURITY MEASURES DOCUMENT
+
+Version: 1.0
+Classification: CONFIDENTIAL
+Last Updated: February 7, 2026
+
+═══════════════════════════════════════════════════════════════════
+
+1. EXECUTIVE SUMMARY
+
+This document outlines the technical and organizational security measures implemented by Nuqta Technology L.L.C. ("Nuqta") to protect user data, ensure platform integrity, and maintain compliance with UAE data protection regulations (PDPL) and industry best practices.
+
+═══════════════════════════════════════════════════════════════════
+
+2. ORGANIZATIONAL SECURITY
+
+2.1 Security Governance
+• Chief Technology Officer (CTO) responsible for security oversight
+• Security reviews conducted quarterly
+• Annual third-party security audits
+• Security incident response team established
+
+2.2 Personnel Security
+• Background checks for all employees with data access
+• Mandatory security awareness training (annual)
+• Confidentiality agreements signed by all personnel
+• Role-based access control (RBAC) implemented
+• Immediate access revocation upon termination
+
+2.3 Security Policies
+• Information Security Policy
+• Acceptable Use Policy
+• Data Classification Policy
+• Incident Response Policy
+• Business Continuity Plan
+• Disaster Recovery Plan
+
+═══════════════════════════════════════════════════════════════════
+
+3. TECHNICAL SECURITY MEASURES
+
+3.1 Data Encryption
+
+AT REST:
+• AES-256 encryption for all stored data
+• Encrypted database storage (AWS RDS encryption)
+• Encrypted file storage (AWS S3 server-side encryption)
+• Encryption keys managed via AWS KMS
+• Key rotation every 12 months
+
+IN TRANSIT:
+• TLS 1.3 for all API communications
+• HTTPS enforced for all web traffic (HSTS enabled)
+• Certificate pinning in mobile applications
+• Secure WebSocket connections for real-time features
+
+3.2 Access Control
+
+AUTHENTICATION:
+• Multi-factor authentication (MFA) for admin access
+• OAuth 2.0 / JWT token-based authentication for users
+• Secure password requirements (minimum 8 characters, complexity rules)
+• Account lockout after 5 failed attempts
+• Session timeout after 30 minutes of inactivity
+
+AUTHORIZATION:
+• Role-based access control (RBAC)
+• Principle of least privilege
+• Separate production and development environments
+• Admin actions logged and audited
+
+3.3 Network Security
+• AWS Virtual Private Cloud (VPC) isolation
+• Web Application Firewall (WAF) protection
+• DDoS protection via AWS Shield
+• Intrusion detection systems (IDS)
+• Network segmentation between services
+• Private subnets for databases
+• Bastion hosts for secure access
+
+3.4 Application Security
+
+SECURE DEVELOPMENT:
+• Secure coding guidelines followed
+• OWASP Top 10 vulnerability testing
+• Static code analysis (SAST) in CI/CD pipeline
+• Dependency vulnerability scanning
+• Code review requirements for all changes
+
+PROTECTION MEASURES:
+• Input validation and sanitization
+• SQL injection prevention (parameterized queries)
+• XSS protection (Content Security Policy)
+• CSRF token protection
+• Rate limiting on APIs
+• Request size limits
+
+3.5 Infrastructure Security
+• Cloud infrastructure on AWS (UAE region where available)
+• Automated security patching
+• Container security scanning
+• Infrastructure as Code (IaC) for consistent deployments
+• Immutable infrastructure approach
+• Secrets management via AWS Secrets Manager
+
+═══════════════════════════════════════════════════════════════════
+
+4. DATA PROTECTION
+
+4.1 Personal Data Handling
+• Data minimization principle applied
+• Pseudonymization of sensitive data
+• Tokenization of payment data (no card storage)
+• Data retention policies enforced
+• Secure data deletion procedures
+
+4.2 Data Classification
+┌──────────────────┬─────────────────────────────────────────────┐
+│ Classification   │ Examples                                    │
+├──────────────────┼─────────────────────────────────────────────┤
+│ CONFIDENTIAL     │ User PII, transaction data, API keys        │
+│ INTERNAL         │ Business metrics, internal docs             │
+│ PUBLIC           │ Marketing materials, public website         │
+└──────────────────┴─────────────────────────────────────────────┘
+
+4.3 Third-Party Data Processing
+• Data processing agreements with all vendors
+• Security assessments before vendor engagement
+• Approved vendor list maintained
+• No data sharing without explicit consent
+
+═══════════════════════════════════════════════════════════════════
+
+5. MONITORING & LOGGING
+
+5.1 Logging
+• Centralized log management (AWS CloudWatch)
+• Application logs retained for 12 months
+• Security logs retained for 24 months
+• Audit trails for all admin actions
+• Log integrity monitoring
+
+5.2 Monitoring
+• 24/7 infrastructure monitoring
+• Real-time alerting for security events
+• Anomaly detection for unusual patterns
+• Performance monitoring and alerting
+• Uptime monitoring (99.9% SLA target)
+
+5.3 Logged Events Include:
+• User authentication attempts
+• Access to sensitive data
+• Administrative actions
+• API requests and responses
+• System errors and exceptions
+• Security events
+
+═══════════════════════════════════════════════════════════════════
+
+6. INCIDENT RESPONSE
+
+6.1 Incident Classification
+┌──────────────┬────────────────────────────────────────────────┐
+│ Severity     │ Description                                    │
+├──────────────┼────────────────────────────────────────────────┤
+│ CRITICAL     │ Data breach, system compromise                 │
+│ HIGH         │ Security vulnerability exploited               │
+│ MEDIUM       │ Potential security issue identified            │
+│ LOW          │ Minor security concern                         │
+└──────────────┴────────────────────────────────────────────────┘
+
+6.2 Response Procedures
+1. DETECTION: Automated alerts or manual identification
+2. ASSESSMENT: Severity classification within 1 hour
+3. CONTAINMENT: Immediate action to limit impact
+4. ERADICATION: Remove threat from environment
+5. RECOVERY: Restore normal operations
+6. LESSONS LEARNED: Post-incident review
+
+6.3 Notification
+• TDRA notification within 72 hours for data breaches
+• User notification if personal data affected
+• CEO and CTO immediately notified for Critical/High
+• Incident reports documented and retained
+
+═══════════════════════════════════════════════════════════════════
+
+7. BUSINESS CONTINUITY
+
+7.1 Backup Strategy
+• Automated daily backups
+• Point-in-time recovery capability
+• Cross-region backup replication
+• Monthly backup restoration testing
+• 30-day backup retention
+
+7.2 Disaster Recovery
+• Recovery Time Objective (RTO): 4 hours
+• Recovery Point Objective (RPO): 1 hour
+• Multi-AZ deployment for high availability
+• Documented DR procedures
+• Annual DR testing
+
+═══════════════════════════════════════════════════════════════════
+
+8. PHYSICAL SECURITY
+
+8.1 Cloud Provider (AWS)
+• SOC 2 Type II certified
+• ISO 27001 certified
+• Physical access controls
+• 24/7 security monitoring
+• Environmental controls
+
+8.2 Office Security
+• Access control to office premises
+• Visitor registration
+• Clean desk policy
+• Secure document disposal
+• Device encryption required
+
+═══════════════════════════════════════════════════════════════════
+
+9. COMPLIANCE
+
+9.1 Regulatory Compliance
+• UAE PDPL (Federal Decree-Law No. 45 of 2021)
+• CBUAE regulations (payment processing)
+• PCI-DSS (via payment processor)
+• Apple App Store & Google Play policies
+
+9.2 Security Certifications (Planned)
+• ISO 27001 (target: Year 2)
+• SOC 2 Type II (target: Year 2)
+• PCI-DSS Level 4 (via processor)
+
+═══════════════════════════════════════════════════════════════════
+
+10. SECURITY CONTACTS
+
+Security Team: security@nuqtaapp.com
+Data Protection: privacy@nuqtaapp.com
+Incident Reporting: security@nuqtaapp.com
+
+Responsible Disclosure Program:
+We encourage responsible disclosure of security vulnerabilities.
+Contact: security@nuqtaapp.com
+Response Time: Within 48 hours
+
+═══════════════════════════════════════════════════════════════════
+
+Document Owner: Chief Technology Officer
+Review Frequency: Quarterly
+Next Review: May 2026
+
+═══════════════════════════════════════════════════════════════════
+
+APPENDIX A: SECURITY ARCHITECTURE DIAGRAM (Separate Document)
+APPENDIX B: VENDOR SECURITY ASSESSMENTS (Separate Document)
+APPENDIX C: PENETRATION TEST RESULTS (Separate Document)`
+  },
+  {
+    id: 'cookie-policy',
+    title: 'Cookie Policy',
+    category: 'User Policies',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Policy explaining use of cookies and similar technologies on Nuqta platforms.',
+    content: `NUQTA COOKIE POLICY
+
+Last Updated: February 7, 2026
+Effective Date: [Launch Date]
+
+═══════════════════════════════════════════════════════════════════
+
+1. INTRODUCTION
+
+This Cookie Policy explains how Nuqta Technology L.L.C. ("Nuqta," "we," "us," or "our") uses cookies and similar tracking technologies when you visit our website at www.nuqtaapp.com or use our mobile application (collectively, the "Platform").
+
+This policy should be read together with our Privacy Policy, which provides detailed information about how we process your personal data.
+
+═══════════════════════════════════════════════════════════════════
+
+2. WHAT ARE COOKIES?
+
+Cookies are small text files that are stored on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work more efficiently and provide information to the site owners.
+
+Similar technologies include:
+• Web beacons (pixel tags)
+• Local storage
+• Mobile device identifiers
+• Software development kits (SDKs)
+
+═══════════════════════════════════════════════════════════════════
+
+3. TYPES OF COOKIES WE USE
+
+3.1 STRICTLY NECESSARY COOKIES
+These cookies are essential for the Platform to function. You cannot opt out of these cookies.
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Cookie Name         │ Purpose                                 │
+├─────────────────────┼─────────────────────────────────────────┤
+│ session_id          │ Maintains your login session            │
+│ csrf_token          │ Security - prevents cross-site attacks  │
+│ cookie_consent      │ Stores your cookie preferences          │
+│ device_id           │ Device identification for security      │
+└─────────────────────┴─────────────────────────────────────────┘
+
+3.2 PERFORMANCE COOKIES
+These cookies help us understand how visitors use our Platform.
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Cookie Name         │ Purpose                                 │
+├─────────────────────┼─────────────────────────────────────────┤
+│ _ga                 │ Google Analytics - visitor statistics   │
+│ _gid                │ Google Analytics - session tracking     │
+│ analytics_session   │ Internal analytics                      │
+└─────────────────────┴─────────────────────────────────────────┘
+
+3.3 FUNCTIONALITY COOKIES
+These cookies remember your preferences and choices.
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Cookie Name         │ Purpose                                 │
+├─────────────────────┼─────────────────────────────────────────┤
+│ language            │ Stores your language preference         │
+│ user_preferences    │ Remembers display settings              │
+│ recent_merchants    │ Recently viewed merchants               │
+└─────────────────────┴─────────────────────────────────────────┘
+
+3.4 MARKETING COOKIES
+These cookies are used for advertising and retargeting.
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Cookie Name         │ Purpose                                 │
+├─────────────────────┼─────────────────────────────────────────┤
+│ _fbp                │ Facebook Pixel - ad targeting           │
+│ _gcl_au             │ Google Ads conversion tracking          │
+│ snapchat_pixel      │ Snapchat ad measurement                 │
+│ tiktok_pixel        │ TikTok ad measurement                   │
+└─────────────────────┴─────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+4. COOKIE RETENTION
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Cookie Type         │ Retention Period                        │
+├─────────────────────┼─────────────────────────────────────────┤
+│ Session Cookies     │ Deleted when you close your browser     │
+│ Persistent Cookies  │ Up to 24 months                         │
+│ Analytics Cookies   │ 26 months                               │
+│ Marketing Cookies   │ 12 months                               │
+└─────────────────────┴─────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+5. MOBILE APP TRACKING
+
+Our mobile application uses:
+• Device identifiers (IDFA for iOS, GAID for Android)
+• Mobile analytics SDKs
+• Push notification tokens
+• Location data (with your permission)
+
+You can control these through your device settings:
+• iOS: Settings > Privacy > Tracking
+• Android: Settings > Privacy > Ads
+
+═══════════════════════════════════════════════════════════════════
+
+6. MANAGING COOKIES
+
+6.1 Cookie Consent Banner
+When you first visit our Platform, you will see a cookie consent banner allowing you to accept or customize cookie preferences.
+
+6.2 Browser Settings
+You can control cookies through your browser settings:
+
+• Chrome: Settings > Privacy and security > Cookies
+• Safari: Preferences > Privacy > Cookies
+• Firefox: Options > Privacy & Security > Cookies
+• Edge: Settings > Privacy > Cookies
+
+Note: Blocking all cookies may affect Platform functionality.
+
+6.3 Opt-Out Links
+• Google Analytics: https://tools.google.com/dlpage/gaoptout
+• Facebook: https://www.facebook.com/settings?tab=ads
+• Google Ads: https://adssettings.google.com
+
+═══════════════════════════════════════════════════════════════════
+
+7. THIRD-PARTY COOKIES
+
+We use services from third parties who may set their own cookies:
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Provider            │ Purpose                                 │
+├─────────────────────┼─────────────────────────────────────────┤
+│ Google Analytics    │ Website analytics                       │
+│ Facebook            │ Social features and advertising         │
+│ Google Ads          │ Advertising                             │
+│ Snapchat            │ Advertising                             │
+│ TikTok              │ Advertising                             │
+│ Hotjar              │ User experience analytics               │
+│ Intercom            │ Customer support chat                   │
+└─────────────────────┴─────────────────────────────────────────┘
+
+These third parties have their own privacy policies governing their use of cookies.
+
+═══════════════════════════════════════════════════════════════════
+
+8. DO NOT TRACK
+
+Some browsers have a "Do Not Track" (DNT) feature. We currently do not respond to DNT signals, but you can use the cookie management options described above.
+
+═══════════════════════════════════════════════════════════════════
+
+9. UPDATES TO THIS POLICY
+
+We may update this Cookie Policy from time to time. The "Last Updated" date at the top indicates when changes were made. Continued use of the Platform after changes constitutes acceptance.
+
+═══════════════════════════════════════════════════════════════════
+
+10. CONTACT US
+
+For questions about this Cookie Policy:
+
+Nuqta Technology L.L.C.
+Email: privacy@nuqtaapp.com
+Website: www.nuqtaapp.com/privacy
+
+Data Protection Officer: privacy@nuqtaapp.com`
+  },
+  {
+    id: 'acceptable-use',
+    title: 'Acceptable Use Policy',
+    category: 'User Policies',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Policy governing acceptable use of the Nuqta platform by users and merchants.',
+    content: `NUQTA ACCEPTABLE USE POLICY
+
+Last Updated: February 7, 2026
+Effective Date: [Launch Date]
+
+═══════════════════════════════════════════════════════════════════
+
+1. INTRODUCTION
+
+This Acceptable Use Policy ("AUP") governs your use of the Nuqta platform, mobile application, and related services (collectively, the "Platform"). By using the Platform, you agree to comply with this AUP.
+
+This policy applies to all users, including individual users, merchant partners, and any third parties accessing the Platform.
+
+═══════════════════════════════════════════════════════════════════
+
+2. PROHIBITED ACTIVITIES
+
+You agree NOT to use the Platform to:
+
+2.1 FRAUDULENT ACTIVITIES
+✗ Create fake accounts or multiple accounts for point manipulation
+✗ Submit fraudulent transactions or false receipts
+✗ Manipulate the points system through unauthorized means
+✗ Engage in collusion with merchants to generate fake points
+✗ Use bots, scripts, or automated tools to game the system
+✗ Attempt to redeem points you did not legitimately earn
+
+2.2 ILLEGAL ACTIVITIES
+✗ Violate any applicable laws or regulations (UAE or otherwise)
+✗ Facilitate money laundering or terrorist financing
+✗ Process transactions for illegal goods or services
+✗ Evade taxes or regulatory requirements
+✗ Engage in any form of corruption or bribery
+
+2.3 HARMFUL CONTENT
+✗ Post or share content that is offensive, defamatory, or discriminatory
+✗ Upload malware, viruses, or malicious code
+✗ Share content that promotes violence or illegal activities
+✗ Infringe on intellectual property rights
+✗ Share another person's personal information without consent
+
+2.4 SECURITY VIOLATIONS
+✗ Attempt to gain unauthorized access to accounts or systems
+✗ Probe, scan, or test vulnerabilities without authorization
+✗ Interfere with or disrupt the Platform's operation
+✗ Bypass security measures or authentication
+✗ Collect user data without authorization
+
+2.5 SPAM AND ABUSE
+✗ Send unsolicited messages to other users
+✗ Use the Platform for unauthorized advertising
+✗ Create fake reviews or ratings
+✗ Harass, threaten, or abuse other users
+✗ Impersonate other users or Nuqta staff
+
+═══════════════════════════════════════════════════════════════════
+
+3. MERCHANT-SPECIFIC RULES
+
+Merchant partners additionally agree NOT to:
+
+3.1 POINT MANIPULATION
+✗ Issue points without genuine transactions
+✗ Inflate transaction amounts for point benefits
+✗ Collude with users for fraudulent point generation
+✗ Fail to honor legitimate point redemptions
+
+3.2 BUSINESS PRACTICES
+✗ Misrepresent products, services, or pricing
+✗ Engage in discriminatory practices
+✗ Violate consumer protection laws
+✗ Use customer data for unauthorized purposes
+✗ Operate without required licenses
+
+3.3 QUALITY STANDARDS
+✗ Provide materially different goods than advertised
+✗ Refuse service to legitimate customers
+✗ Fail to maintain minimum service standards
+✗ Engage in price gouging or unfair practices
+
+═══════════════════════════════════════════════════════════════════
+
+4. PERMITTED USE
+
+You MAY use the Platform to:
+
+✓ Create one personal account per individual
+✓ Earn points through legitimate transactions
+✓ Redeem points according to program rules
+✓ Discover and engage with merchant partners
+✓ Share your genuine experiences and reviews
+✓ Participate in promotions and campaigns
+✓ Refer friends (one referral per unique individual)
+✓ Contact customer support for assistance
+
+═══════════════════════════════════════════════════════════════════
+
+5. ENFORCEMENT
+
+5.1 MONITORING
+Nuqta reserves the right to monitor Platform activity to ensure compliance with this AUP. This includes automated fraud detection systems.
+
+5.2 INVESTIGATION
+We may investigate suspected violations and cooperate with law enforcement when required.
+
+5.3 CONSEQUENCES
+Violations of this AUP may result in:
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Violation Level     │ Potential Action                        │
+├─────────────────────┼─────────────────────────────────────────┤
+│ Minor               │ Warning, education                      │
+│ Moderate            │ Points forfeiture, temporary suspension │
+│ Severe              │ Permanent ban, legal action             │
+│ Criminal            │ Reporting to authorities                │
+└─────────────────────┴─────────────────────────────────────────┘
+
+5.4 APPEALS
+If you believe action was taken in error, you may appeal by contacting compliance@nuqtaapp.com within 14 days.
+
+═══════════════════════════════════════════════════════════════════
+
+6. REPORTING VIOLATIONS
+
+If you become aware of any violation of this AUP, please report it to:
+
+Email: abuse@nuqtaapp.com
+In-App: Settings > Report a Problem > Policy Violation
+
+All reports are reviewed, and reporters may remain anonymous.
+
+═══════════════════════════════════════════════════════════════════
+
+7. UPDATES
+
+We may update this AUP from time to time. Material changes will be communicated via email or in-app notification. Continued use after changes constitutes acceptance.
+
+═══════════════════════════════════════════════════════════════════
+
+8. CONTACT
+
+For questions about this policy:
+
+Nuqta Technology L.L.C.
+Email: compliance@nuqtaapp.com
+Website: www.nuqtaapp.com`
+  },
+  {
+    id: 'refund-policy',
+    title: 'Points & Refund Policy',
+    category: 'User Policies',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Policy covering Nuqta points, redemptions, refunds, and related terms.',
+    content: `NUQTA POINTS & REFUND POLICY
+
+Last Updated: February 7, 2026
+Effective Date: [Launch Date]
+
+═══════════════════════════════════════════════════════════════════
+
+1. INTRODUCTION
+
+This Points & Refund Policy explains how Nuqta points work, including earning, redemption, expiration, and our refund procedures. By participating in the Nuqta rewards program, you agree to these terms.
+
+═══════════════════════════════════════════════════════════════════
+
+2. NUQTA POINTS OVERVIEW
+
+2.1 WHAT ARE NUQTA POINTS?
+Nuqta points are loyalty rewards earned through qualifying purchases at participating merchants. Points have no cash value and cannot be exchanged for currency.
+
+2.2 POINT VALUE
+• 1 Nuqta Point = 0.01 AED in redemption value
+• 100 Points = 1 AED redemption value
+• Points are promotional credits, not currency
+
+═══════════════════════════════════════════════════════════════════
+
+3. EARNING POINTS
+
+3.1 STANDARD EARNING
+• Base rate: 1% of transaction value (1 point per 1 AED spent)
+• Bonus points may apply during promotions
+• Earning rate may vary by merchant and tier
+
+3.2 EARNING REQUIREMENTS
+✓ Transaction at participating merchant
+✓ QR code scanned or card linked transaction
+✓ Receipt validated (if required)
+✓ Account in good standing
+✓ Transaction above minimum threshold (5 AED)
+
+3.3 WHEN POINTS ARE CREDITED
+• Standard transactions: Within 24 hours
+• Large transactions (>1000 AED): Within 72 hours
+• Points are "pending" until transaction is confirmed
+
+3.4 TRANSACTIONS THAT DO NOT EARN POINTS
+✗ Cash advances or financial transactions
+✗ Gift card purchases
+✗ Utility payments
+✗ Government fees and fines
+✗ Gambling transactions
+✗ Refunded transactions
+✗ Fraudulent transactions
+
+═══════════════════════════════════════════════════════════════════
+
+4. REDEMPTION
+
+4.1 MINIMUM REDEMPTION
+• Minimum points for redemption: 500 points (5 AED value)
+• Maximum redemption per transaction: 50% of transaction value
+
+4.2 HOW TO REDEEM
+1. Select "Redeem Points" in the app
+2. Choose participating merchant
+3. Select redemption amount
+4. Show QR code to merchant
+5. Redemption confirmed instantly
+
+4.3 REDEMPTION RESTRICTIONS
+• Only at participating redemption merchants
+• Cannot be combined with certain promotions
+• Subject to merchant acceptance
+• Redemptions are final
+
+═══════════════════════════════════════════════════════════════════
+
+5. POINT EXPIRATION
+
+5.1 STANDARD EXPIRATION
+• Points expire 24 months after earning
+• Expiration date shown in app for each batch
+
+5.2 ACTIVITY EXTENSION
+• Account activity extends expiration
+• Qualifying activity: earn or redeem points
+• Extension: 24 months from last activity
+
+5.3 ACCOUNT INACTIVITY
+• Warning at 18 months of inactivity
+• Final reminder at 23 months
+• Points forfeited at 24 months
+
+5.4 EXCEPTIONS
+• Promotional/bonus points may have shorter expiration
+• Expiration terms stated at time of earning
+
+═══════════════════════════════════════════════════════════════════
+
+6. REFUNDS FOR PURCHASES
+
+6.1 MERCHANT REFUNDS
+When you receive a refund from a merchant:
+• Points earned from that transaction will be deducted
+• Deduction occurs within 72 hours of refund
+• You will be notified of the adjustment
+
+6.2 IF POINTS ALREADY REDEEMED
+If you received a refund for a transaction and have already redeemed those points:
+• Points will be deducted from your balance
+• If balance is insufficient, balance may go negative
+• Negative balance must be restored before future redemptions
+
+═══════════════════════════════════════════════════════════════════
+
+7. PREMIUM MEMBERSHIP REFUNDS
+
+7.1 NUQTA PREMIUM/VIP SUBSCRIPTIONS
+• Monthly subscriptions: No refunds for partial months
+• Annual subscriptions: Pro-rated refund for unused months (minus 30% admin fee)
+• Refund requests within 7 days: Full refund available
+• Benefits used: Deducted from refund value
+
+7.2 HOW TO REQUEST
+Email: support@nuqtaapp.com
+Subject: "Premium Refund Request"
+Include: Account email, subscription date, reason
+
+═══════════════════════════════════════════════════════════════════
+
+8. DISPUTED TRANSACTIONS
+
+8.1 MISSING POINTS
+If you believe you should have received points:
+1. Check transaction history in app
+2. Wait 72 hours for processing
+3. Submit dispute with proof of purchase
+4. Resolution within 14 business days
+
+8.2 REQUIRED DOCUMENTATION
+• Original receipt (photo or scan)
+• Date and time of transaction
+• Merchant name and location
+• Transaction amount
+
+8.3 DISPUTE RESOLUTION
+• Valid claims: Points credited within 7 days
+• Invalid claims: Explanation provided
+• Appeals: Escalate to compliance@nuqtaapp.com
+
+═══════════════════════════════════════════════════════════════════
+
+9. POINT FORFEITURE
+
+Points may be forfeited without compensation if:
+
+• Account terminated for Terms of Service violation
+• Fraudulent activity detected
+• Points earned through manipulation or abuse
+• Account holder deceased (unless transferred to heir)
+• Account abandoned for 24+ months
+
+═══════════════════════════════════════════════════════════════════
+
+10. PROGRAM CHANGES
+
+10.1 MODIFICATIONS
+Nuqta reserves the right to modify the points program, including:
+• Point earning rates
+• Redemption values
+• Expiration terms
+• Participating merchants
+
+10.2 NOTICE
+• Material changes: 30 days advance notice
+• Emergency changes: Immediate with explanation
+• Notice via: Email and in-app notification
+
+10.3 POINT PROTECTION
+Points earned before program changes remain valid under original terms for 90 days after notification.
+
+═══════════════════════════════════════════════════════════════════
+
+11. CONTACT US
+
+For points or refund inquiries:
+
+Customer Support:
+Email: support@nuqtaapp.com
+In-App: Settings > Help > Contact Support
+Response Time: Within 24 hours
+
+Disputes/Escalations:
+Email: disputes@nuqtaapp.com
+Response Time: Within 72 hours
+
+═══════════════════════════════════════════════════════════════════
+
+Nuqta Technology L.L.C.
+Dubai, United Arab Emirates
+www.nuqtaapp.com`
+  },
+  {
+    id: 'nda-template',
+    title: 'Non-Disclosure Agreement (NDA)',
+    category: 'Business Contracts',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Template NDA for employees, contractors, and business discussions.',
+    content: `NON-DISCLOSURE AGREEMENT
+
+This Non-Disclosure Agreement ("Agreement") is entered into as of _____________ ("Effective Date")
+
+BETWEEN:
+
+NUQTA TECHNOLOGY L.L.C.
+A limited liability company registered in Dubai, UAE
+Trade License No: [Number]
+Address: [Address], Dubai, UAE
+("Disclosing Party" or "Nuqta")
+
+AND:
+
+[RECIPIENT NAME]
+[Company/Individual]
+[Address]
+("Receiving Party")
+
+Collectively referred to as the "Parties" and individually as a "Party."
+
+═══════════════════════════════════════════════════════════════════
+
+RECITALS
+
+WHEREAS, Nuqta possesses certain confidential and proprietary information relating to its business, technology, and operations;
+
+WHEREAS, the Receiving Party desires to receive certain Confidential Information for the purpose of [PURPOSE - e.g., "evaluating a potential business relationship," "providing services," "employment discussions"];
+
+NOW, THEREFORE, in consideration of the mutual covenants contained herein, the Parties agree as follows:
+
+═══════════════════════════════════════════════════════════════════
+
+1. DEFINITION OF CONFIDENTIAL INFORMATION
+
+1.1 "Confidential Information" means any and all information disclosed by Nuqta to the Receiving Party, whether orally, in writing, or by any other means, that is:
+
+(a) Marked as "Confidential," "Proprietary," or similar designation; or
+(b) By its nature would reasonably be understood to be confidential; or
+(c) Disclosed under circumstances indicating its confidential nature.
+
+1.2 Confidential Information includes, but is not limited to:
+• Business plans, strategies, and roadmaps
+• Financial information, projections, and models
+• Technology, source code, and algorithms
+• Product plans and features
+• Customer and merchant data
+• Marketing strategies and analytics
+• Pricing and revenue models
+• Investor presentations and term sheets
+• Employee and compensation information
+• Trade secrets and know-how
+• Any information relating to the Nuqta platform
+
+═══════════════════════════════════════════════════════════════════
+
+2. EXCLUSIONS
+
+2.1 Confidential Information does not include information that:
+
+(a) Was publicly known at the time of disclosure;
+(b) Becomes publicly known through no fault of the Receiving Party;
+(c) Was in the Receiving Party's possession before disclosure, as evidenced by written records;
+(d) Is independently developed by the Receiving Party without use of Confidential Information;
+(e) Is rightfully obtained from a third party without breach of any confidentiality obligation.
+
+═══════════════════════════════════════════════════════════════════
+
+3. OBLIGATIONS
+
+3.1 The Receiving Party agrees to:
+
+(a) Hold all Confidential Information in strict confidence;
+(b) Use Confidential Information only for the Purpose stated above;
+(c) Not disclose Confidential Information to any third party without prior written consent;
+(d) Limit internal disclosure to employees/contractors with a need to know;
+(e) Ensure all recipients are bound by confidentiality obligations at least as protective as this Agreement;
+(f) Protect Confidential Information with at least the same degree of care used to protect its own confidential information, but no less than reasonable care;
+(g) Promptly notify Nuqta of any unauthorized disclosure or use.
+
+═══════════════════════════════════════════════════════════════════
+
+4. PERMITTED DISCLOSURES
+
+4.1 The Receiving Party may disclose Confidential Information if required by law, regulation, or court order, provided that:
+
+(a) Prompt written notice is given to Nuqta (where legally permitted);
+(b) Reasonable assistance is provided to Nuqta to seek a protective order;
+(c) Only the minimum necessary information is disclosed.
+
+═══════════════════════════════════════════════════════════════════
+
+5. OWNERSHIP
+
+5.1 All Confidential Information remains the sole property of Nuqta.
+
+5.2 No license or rights to any intellectual property are granted under this Agreement.
+
+5.3 The Receiving Party acquires no rights to use Confidential Information except as expressly permitted.
+
+═══════════════════════════════════════════════════════════════════
+
+6. RETURN OR DESTRUCTION
+
+6.1 Upon Nuqta's request or termination of this Agreement, the Receiving Party shall:
+
+(a) Promptly return all Confidential Information and copies; OR
+(b) Destroy all Confidential Information and certify destruction in writing.
+
+6.2 Notwithstanding the above, the Receiving Party may retain copies as required by law or internal backup procedures, subject to ongoing confidentiality obligations.
+
+═══════════════════════════════════════════════════════════════════
+
+7. TERM AND TERMINATION
+
+7.1 This Agreement is effective from the Effective Date and continues for [TERM - e.g., "2 years"] unless terminated earlier.
+
+7.2 Either Party may terminate this Agreement with 30 days written notice.
+
+7.3 Confidentiality obligations survive termination for a period of [SURVIVAL PERIOD - e.g., "5 years"] from the date of disclosure.
+
+7.4 For trade secrets, obligations continue for as long as the information remains a trade secret.
+
+═══════════════════════════════════════════════════════════════════
+
+8. REMEDIES
+
+8.1 The Receiving Party acknowledges that breach of this Agreement may cause irreparable harm for which monetary damages are inadequate.
+
+8.2 Nuqta shall be entitled to seek injunctive relief, specific performance, and other equitable remedies without the need to post bond.
+
+8.3 Such remedies are in addition to any other remedies available at law or in equity.
+
+═══════════════════════════════════════════════════════════════════
+
+9. NO WARRANTY
+
+9.1 Confidential Information is provided "AS IS" without warranty of any kind.
+
+9.2 Nuqta makes no representations regarding accuracy, completeness, or fitness for any purpose.
+
+═══════════════════════════════════════════════════════════════════
+
+10. NO OBLIGATION
+
+10.1 This Agreement does not obligate either Party to:
+(a) Enter into any further agreement;
+(b) Proceed with any transaction or relationship;
+(c) Disclose any particular information.
+
+═══════════════════════════════════════════════════════════════════
+
+11. GENERAL PROVISIONS
+
+11.1 Governing Law: This Agreement shall be governed by the laws of the United Arab Emirates, without regard to conflicts of law principles.
+
+11.2 Jurisdiction: The courts of Dubai, UAE shall have exclusive jurisdiction over any disputes arising from this Agreement.
+
+11.3 Entire Agreement: This Agreement constitutes the entire agreement regarding Confidential Information and supersedes all prior negotiations and understandings.
+
+11.4 Amendment: This Agreement may only be amended in writing signed by both Parties.
+
+11.5 Assignment: The Receiving Party may not assign this Agreement without Nuqta's prior written consent.
+
+11.6 Severability: If any provision is found unenforceable, the remaining provisions shall continue in effect.
+
+11.7 Waiver: Failure to enforce any provision does not constitute a waiver of that provision.
+
+11.8 Counterparts: This Agreement may be executed in counterparts, each of which shall be deemed an original.
+
+═══════════════════════════════════════════════════════════════════
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.
+
+NUQTA TECHNOLOGY L.L.C.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+
+[RECEIVING PARTY]
+
+Signature: _________________________
+Name: ____________________________
+Title: ____________________________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+SCHEDULE A: DESCRIPTION OF PURPOSE
+[Describe the specific purpose for which Confidential Information is being disclosed]
+
+SCHEDULE B: SPECIFIC CONFIDENTIAL INFORMATION
+[If applicable, list specific categories or items of Confidential Information covered]`
+  },
+  {
+    id: 'ip-assignment',
+    title: 'Intellectual Property Assignment',
+    category: 'Employment',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Agreement assigning IP rights from employees/contractors to the company.',
+    content: `INTELLECTUAL PROPERTY ASSIGNMENT AGREEMENT
+
+This Intellectual Property Assignment Agreement ("Agreement") is entered into as of _____________ ("Effective Date")
+
+BETWEEN:
+
+NUQTA TECHNOLOGY L.L.C.
+Trade License No: [Number]
+Address: Dubai, UAE
+("Company")
+
+AND:
+
+[ASSIGNOR NAME]
+Emirates ID: [Number]
+Address: [Address]
+("Assignor")
+
+═══════════════════════════════════════════════════════════════════
+
+RECITALS
+
+WHEREAS, the Assignor is [an employee of / a contractor providing services to] the Company;
+
+WHEREAS, the Assignor may create, develop, or contribute to intellectual property during the course of their [employment / engagement];
+
+WHEREAS, the Parties wish to clarify ownership of such intellectual property;
+
+NOW, THEREFORE, in consideration of [the Assignor's employment / the fees paid for services] and other good and valuable consideration, the Parties agree as follows:
+
+═══════════════════════════════════════════════════════════════════
+
+1. DEFINITIONS
+
+1.1 "Intellectual Property" or "IP" means all intellectual property rights, including:
+• Patents and patent applications
+• Copyrights and moral rights
+• Trademarks and service marks
+• Trade secrets and know-how
+• Designs (registered and unregistered)
+• Database rights
+• Domain names
+• All other proprietary rights
+
+1.2 "Work Product" means all works, inventions, developments, improvements, designs, code, documentation, and other materials created, developed, or contributed to by the Assignor:
+(a) During the course of [employment / engagement] with the Company;
+(b) Using Company resources, facilities, or information;
+(c) Relating to Company business or actual/anticipated products; or
+(d) Resulting from tasks assigned by the Company.
+
+═══════════════════════════════════════════════════════════════════
+
+2. ASSIGNMENT OF INTELLECTUAL PROPERTY
+
+2.1 Present Assignment
+The Assignor hereby irrevocably assigns, transfers, and conveys to the Company all right, title, and interest in and to:
+(a) All Work Product;
+(b) All Intellectual Property in the Work Product; and
+(c) All claims for damages by reason of past, present, or future infringement.
+
+2.2 Future Assignment
+The Assignor agrees to promptly disclose and assign all future Work Product to the Company as it is created.
+
+2.3 Scope
+This assignment includes all rights worldwide, for the full term of protection, including all renewals and extensions.
+
+═══════════════════════════════════════════════════════════════════
+
+3. MORAL RIGHTS
+
+3.1 To the extent permitted by law, the Assignor waives all moral rights in the Work Product, including:
+(a) Right of attribution;
+(b) Right of integrity;
+(c) Right to object to derogatory treatment.
+
+3.2 The Assignor consents to the Company's use, modification, and exploitation of Work Product without attribution.
+
+═══════════════════════════════════════════════════════════════════
+
+4. WORK FOR HIRE
+
+4.1 To the extent applicable, all Work Product shall be considered "work made for hire" as defined by applicable law.
+
+4.2 If any Work Product does not qualify as work for hire, it is hereby assigned to the Company under Section 2.
+
+═══════════════════════════════════════════════════════════════════
+
+5. FURTHER ASSURANCES
+
+5.1 The Assignor agrees to:
+(a) Execute any documents necessary to perfect, register, or enforce the Company's IP rights;
+(b) Provide reasonable assistance in any IP-related proceedings;
+(c) Not challenge the Company's ownership of Work Product.
+
+5.2 Power of Attorney
+The Assignor hereby irrevocably appoints the Company as attorney-in-fact to execute any documents if the Assignor is unavailable, unwilling, or unable to do so.
+
+═══════════════════════════════════════════════════════════════════
+
+6. PRIOR INVENTIONS
+
+6.1 The Assignor has disclosed in Schedule A all prior inventions, works, or IP that:
+(a) Were created before this Agreement; and
+(b) Are relevant to the Company's business.
+
+6.2 Such prior IP is excluded from this Agreement, provided it is listed in Schedule A.
+
+6.3 If no items are listed, the Assignor represents there is no prior IP to exclude.
+
+═══════════════════════════════════════════════════════════════════
+
+7. NO LICENSE BACK
+
+7.1 The Assignor retains no rights to use Work Product except as authorized by the Company.
+
+7.2 Any permitted use is subject to the Company's prior written consent.
+
+═══════════════════════════════════════════════════════════════════
+
+8. CONFIDENTIALITY
+
+8.1 All Work Product is Confidential Information of the Company.
+
+8.2 The Assignor agrees to maintain confidentiality in accordance with [the Employment Agreement / NDA / Contractor Agreement].
+
+═══════════════════════════════════════════════════════════════════
+
+9. REPRESENTATIONS AND WARRANTIES
+
+9.1 The Assignor represents and warrants that:
+(a) The Assignor has full right and authority to enter into this Agreement;
+(b) Work Product is original and does not infringe third-party rights;
+(c) No prior assignment or encumbrance of Work Product exists;
+(d) All prior IP is disclosed in Schedule A.
+
+═══════════════════════════════════════════════════════════════════
+
+10. TERM
+
+10.1 This Agreement is effective from the Effective Date and continues throughout the Assignor's [employment / engagement] and indefinitely thereafter for Work Product created during that period.
+
+═══════════════════════════════════════════════════════════════════
+
+11. GENERAL PROVISIONS
+
+11.1 Governing Law: UAE law governs this Agreement.
+
+11.2 Jurisdiction: Dubai courts have exclusive jurisdiction.
+
+11.3 Entire Agreement: This Agreement constitutes the entire agreement on this subject matter.
+
+11.4 Amendment: Amendments must be in writing and signed by both Parties.
+
+11.5 Severability: Invalid provisions shall be modified to the minimum extent necessary.
+
+11.6 Counterparts: This Agreement may be executed in counterparts.
+
+═══════════════════════════════════════════════════════════════════
+
+IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date.
+
+NUQTA TECHNOLOGY L.L.C.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+
+ASSIGNOR
+
+Signature: _________________________
+Name: ____________________________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+SCHEDULE A: PRIOR INVENTIONS
+
+The following prior inventions, works, or IP created before this Agreement are excluded:
+
+1. ________________________________________________________________
+   Description: ___________________________________________________
+   Date Created: __________________________________________________
+
+2. ________________________________________________________________
+   Description: ___________________________________________________
+   Date Created: __________________________________________________
+
+3. ________________________________________________________________
+   Description: ___________________________________________________
+   Date Created: __________________________________________________
+
+☐ Check here if no prior inventions to disclose
+
+Assignor Initials: _______`
+  },
+  {
+    id: 'service-level',
+    title: 'Service Level Agreement (SLA)',
+    category: 'Business Contracts',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'SLA template for merchant partners defining service standards.',
+    content: `SERVICE LEVEL AGREEMENT
+
+Between Nuqta Technology L.L.C. and Merchant Partners
+
+Version: 1.0
+Effective Date: [Date]
+
+═══════════════════════════════════════════════════════════════════
+
+1. INTRODUCTION
+
+This Service Level Agreement ("SLA") defines the service standards, responsibilities, and metrics for the Nuqta platform as provided to merchant partners ("Merchants").
+
+This SLA is incorporated into and forms part of the Merchant Partner Agreement.
+
+═══════════════════════════════════════════════════════════════════
+
+2. SERVICE DESCRIPTION
+
+Nuqta provides the following services to Merchants:
+
+2.1 CORE SERVICES
+• Merchant Portal (web dashboard)
+• QR Code generation and management
+• Transaction processing
+• Points issuance system
+• Analytics and reporting
+• Customer support
+
+2.2 OPTIONAL SERVICES
+• Premium analytics package
+• Marketing campaign tools
+• Custom integrations (API)
+• Dedicated account management
+
+═══════════════════════════════════════════════════════════════════
+
+3. SERVICE AVAILABILITY
+
+3.1 UPTIME COMMITMENT
+
+┌─────────────────────┬─────────────┬────────────────────────────┐
+│ Service             │ Target      │ Maximum Downtime/Month     │
+├─────────────────────┼─────────────┼────────────────────────────┤
+│ Transaction System  │ 99.9%       │ 43 minutes                 │
+│ Merchant Portal     │ 99.5%       │ 3.6 hours                  │
+│ API Services        │ 99.9%       │ 43 minutes                 │
+│ Analytics Dashboard │ 99.0%       │ 7.3 hours                  │
+└─────────────────────┴─────────────┴────────────────────────────┘
+
+3.2 MEASUREMENT PERIOD
+• Uptime calculated on a monthly basis
+• Measured from 00:00 to 23:59 UTC on each day
+
+3.3 EXCLUSIONS
+The following are excluded from uptime calculations:
+• Scheduled maintenance (with 48-hour notice)
+• Emergency maintenance for security issues
+• Force majeure events
+• Issues caused by Merchant's equipment or connectivity
+• Third-party service failures beyond Nuqta's control
+
+═══════════════════════════════════════════════════════════════════
+
+4. PERFORMANCE METRICS
+
+4.1 TRANSACTION PROCESSING
+
+┌─────────────────────────────┬─────────────────────────────────┐
+│ Metric                      │ Target                          │
+├─────────────────────────────┼─────────────────────────────────┤
+│ QR scan to confirmation     │ < 3 seconds (95th percentile)   │
+│ Points credit to user       │ < 24 hours                      │
+│ Transaction recording       │ Real-time                       │
+│ Receipt validation          │ < 2 minutes                     │
+└─────────────────────────────┴─────────────────────────────────┘
+
+4.2 PORTAL PERFORMANCE
+
+┌─────────────────────────────┬─────────────────────────────────┐
+│ Metric                      │ Target                          │
+├─────────────────────────────┼─────────────────────────────────┤
+│ Page load time              │ < 3 seconds                     │
+│ Report generation           │ < 30 seconds                    │
+│ Dashboard refresh           │ < 5 seconds                     │
+│ Export functionality        │ < 60 seconds                    │
+└─────────────────────────────┴─────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+5. SUPPORT SERVICES
+
+5.1 SUPPORT CHANNELS
+
+┌─────────────────────┬─────────────────────────────────────────┐
+│ Channel             │ Availability                            │
+├─────────────────────┼─────────────────────────────────────────┤
+│ Email Support       │ 24/7 (response within SLA)              │
+│ Phone Support       │ 9 AM - 9 PM GST (Sun-Thu)               │
+│ In-Portal Chat      │ 9 AM - 6 PM GST (Sun-Thu)               │
+│ Emergency Hotline   │ 24/7 (critical issues only)             │
+└─────────────────────┴─────────────────────────────────────────┘
+
+5.2 RESPONSE TIME TARGETS
+
+┌───────────────┬──────────────────────┬───────────────────────┐
+│ Priority      │ First Response       │ Resolution Target     │
+├───────────────┼──────────────────────┼───────────────────────┤
+│ CRITICAL      │ 30 minutes           │ 4 hours               │
+│ HIGH          │ 2 hours              │ 24 hours              │
+│ MEDIUM        │ 8 hours              │ 72 hours              │
+│ LOW           │ 24 hours             │ 7 business days       │
+└───────────────┴──────────────────────┴───────────────────────┘
+
+5.3 PRIORITY DEFINITIONS
+
+CRITICAL: System down, unable to process transactions
+HIGH: Major functionality impaired, significant business impact
+MEDIUM: Partial functionality issue, workaround available
+LOW: Minor issue, cosmetic, feature request
+
+═══════════════════════════════════════════════════════════════════
+
+6. DATA AND REPORTING
+
+6.1 DATA AVAILABILITY
+• Transaction data: Real-time
+• Analytics data: Updated every 4 hours
+• Historical reports: Available for 24 months
+• Data export: CSV, Excel, PDF formats
+
+6.2 REPORTING
+• Monthly performance reports by email
+• Real-time dashboard access
+• Custom report builder (Premium tier)
+
+═══════════════════════════════════════════════════════════════════
+
+7. MAINTENANCE
+
+7.1 SCHEDULED MAINTENANCE
+• Preferred window: 2 AM - 6 AM GST
+• Minimum notice: 48 hours
+• Maximum duration: 4 hours
+• Frequency: Maximum once per week
+
+7.2 EMERGENCY MAINTENANCE
+• For security or critical issues
+• Notice: As soon as possible
+• Post-incident report within 48 hours
+
+═══════════════════════════════════════════════════════════════════
+
+8. SERVICE CREDITS
+
+8.1 ELIGIBILITY
+Service credits apply when Nuqta fails to meet SLA targets due to causes within its control.
+
+8.2 CREDIT SCHEDULE
+
+┌─────────────────────────────┬─────────────────────────────────┐
+│ Monthly Uptime              │ Credit (% of monthly fee)       │
+├─────────────────────────────┼─────────────────────────────────┤
+│ 99.0% - 99.89%              │ 10%                             │
+│ 98.0% - 98.99%              │ 20%                             │
+│ 95.0% - 97.99%              │ 30%                             │
+│ Below 95.0%                 │ 50%                             │
+└─────────────────────────────┴─────────────────────────────────┘
+
+8.3 CREDIT PROCESS
+• Request within 30 days of incident
+• Submit via merchants@nuqtaapp.com
+• Credit applied to next invoice
+• Maximum credit: 50% of monthly fee
+
+═══════════════════════════════════════════════════════════════════
+
+9. MERCHANT RESPONSIBILITIES
+
+9.1 The Merchant agrees to:
+• Maintain adequate internet connectivity
+• Train staff on QR code procedures
+• Keep Merchant Portal credentials secure
+• Report issues promptly
+• Provide accurate business information
+• Comply with operating procedures
+
+═══════════════════════════════════════════════════════════════════
+
+10. ESCALATION PROCESS
+
+10.1 ESCALATION LEVELS
+
+Level 1: Support Team
+Email: support@nuqtaapp.com
+
+Level 2: Support Manager
+Email: escalations@nuqtaapp.com
+Trigger: Unresolved after 24 hours
+
+Level 3: Head of Merchants
+Email: merchants@nuqtaapp.com
+Trigger: Unresolved after 72 hours
+
+Level 4: Executive Team
+Email: executive@nuqtaapp.com
+Trigger: Critical business impact
+
+═══════════════════════════════════════════════════════════════════
+
+11. REVIEW AND UPDATES
+
+11.1 This SLA is reviewed quarterly.
+
+11.2 Changes will be communicated 30 days in advance.
+
+11.3 Continued use after changes constitutes acceptance.
+
+═══════════════════════════════════════════════════════════════════
+
+CONTACT INFORMATION
+
+Merchant Support: merchants@nuqtaapp.com
+Technical Support: support@nuqtaapp.com
+Emergency Hotline: [Phone Number]
+
+Nuqta Technology L.L.C.
+Dubai, UAE
+www.nuqtaapp.com`
   }
 ];
 
