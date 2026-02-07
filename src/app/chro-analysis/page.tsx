@@ -136,7 +136,7 @@ const currentTeam = [
   { role: 'CEO/Founder', name: 'Rejaul Karim', status: 'FILLED', department: 'Executive' },
   { role: 'CTO', name: 'Deep Tednu Kuri', status: 'FILLED', department: 'Technology' },
   { role: 'CMO', name: 'Sarbajit Bhatacharjee', status: 'FILLED', department: 'Marketing' },
-  { role: 'CHRO', name: 'Elena Rodriguez', status: 'FILLED', department: 'People' },
+  { role: 'CHRO', name: 'Filled', status: 'FILLED', department: 'People' },
   { role: 'COO', name: 'Gyandeep Bordoloi', status: 'FILLED', department: 'Operations' },
   { role: 'Head of Merchants', name: 'Filled', status: 'FILLED', department: 'Sales' },
   { role: 'Customer Support Lead', name: 'Filled', status: 'FILLED', department: 'Support' },
