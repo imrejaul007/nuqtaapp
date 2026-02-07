@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Rocket,
   Presentation,
@@ -279,63 +280,73 @@ const sections: Section[] = [
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#0a1628]">
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
         {/* Hero */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/50 rounded-full mb-4">
-            <Zap className="text-[#c9a227]" size={16} />
-            <span className="text-[#c9a227] text-sm font-bold">Command Center</span>
+        <div className="text-center mb-8 sm:mb-12">
+          {/* Logo */}
+          <div className="flex justify-center mb-4 sm:mb-6">
+            <Image
+              src="/images/nuqta-logo.png"
+              alt="Nuqta"
+              width={80}
+              height={80}
+              className="w-16 h-16 sm:w-20 sm:h-20"
+            />
           </div>
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227]/20 border border-[#c9a227]/50 rounded-full mb-3 sm:mb-4">
+            <Zap className="text-[#c9a227]" size={14} />
+            <span className="text-[#c9a227] text-xs sm:text-sm font-bold">Command Center</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-3 sm:mb-4">
             Nuqta <span className="text-[#c9a227]">Dashboard</span>
           </h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto px-4">
             Everything you need in one place. Find any document, deck, or resource instantly.
           </p>
         </div>
 
         {/* Quick Actions */}
-        <div className="mb-12">
-          <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-            <Star className="text-[#c9a227]" size={20} />
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+            <Star className="text-[#c9a227]" size={18} />
             Quick Actions
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {quickActions.map((action) => (
               <Link
                 key={action.href}
                 href={action.href}
-                className="group bg-slate-800/50 border border-slate-700 rounded-xl p-4 hover:border-[#c9a227]/50 hover:bg-slate-800 transition-all"
+                className="group bg-slate-800/50 border border-slate-700 rounded-xl p-3 sm:p-4 hover:border-[#c9a227]/50 hover:bg-slate-800 transition-all"
               >
-                <action.icon className={`${action.color} mb-3`} size={28} />
-                <h3 className="text-white font-bold text-sm mb-1">{action.label}</h3>
-                <p className="text-slate-500 text-xs">{action.description}</p>
-                <ArrowRight className="text-slate-600 group-hover:text-[#c9a227] mt-2 transition-colors" size={16} />
+                <action.icon className={`${action.color} mb-2 sm:mb-3`} size={24} />
+                <h3 className="text-white font-bold text-xs sm:text-sm mb-0.5 sm:mb-1 line-clamp-1">{action.label}</h3>
+                <p className="text-slate-500 text-[10px] sm:text-xs line-clamp-2">{action.description}</p>
+                <ArrowRight className="text-slate-600 group-hover:text-[#c9a227] mt-1.5 sm:mt-2 transition-colors" size={14} />
               </Link>
             ))}
           </div>
         </div>
 
         {/* All Sections */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {sections.map((section) => (
             <div
               key={section.title}
-              className={`bg-gradient-to-br ${section.bgColor} border ${section.borderColor} rounded-2xl p-6`}
+              className={`bg-gradient-to-br ${section.bgColor} border ${section.borderColor} rounded-xl sm:rounded-2xl p-4 sm:p-6`}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <section.icon className={section.color} size={24} />
-                <h3 className={`text-lg font-bold ${section.color}`}>{section.title}</h3>
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <section.icon className={section.color} size={20} />
+                <h3 className={`text-sm sm:text-lg font-bold ${section.color}`}>{section.title}</h3>
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
                 {section.links.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="flex items-center gap-2 px-3 py-2 bg-slate-900/50 hover:bg-slate-800 rounded-lg text-sm text-slate-300 hover:text-white transition-all"
+                    className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 bg-slate-900/50 hover:bg-slate-800 rounded-lg text-xs sm:text-sm text-slate-300 hover:text-white transition-all"
                   >
-                    <link.icon size={14} className="text-slate-500" />
-                    <span>{link.label}</span>
+                    <link.icon size={12} className="text-slate-500 flex-shrink-0" />
+                    <span className="truncate">{link.label}</span>
                   </Link>
                 ))}
               </div>
@@ -344,29 +355,29 @@ export default function DashboardPage() {
         </div>
 
         {/* Stats */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-5 text-center">
-            <div className="text-3xl font-black text-white">130+</div>
-            <div className="text-blue-400 text-sm">Total Pages</div>
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3 sm:p-5 text-center">
+            <div className="text-2xl sm:text-3xl font-black text-white">140+</div>
+            <div className="text-blue-400 text-xs sm:text-sm">Total Pages</div>
           </div>
-          <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-5 text-center">
-            <div className="text-3xl font-black text-white">8</div>
-            <div className="text-green-400 text-sm">Main Categories</div>
+          <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-3 sm:p-5 text-center">
+            <div className="text-2xl sm:text-3xl font-black text-white">9</div>
+            <div className="text-green-400 text-xs sm:text-sm">Main Categories</div>
           </div>
-          <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-5 text-center">
-            <div className="text-3xl font-black text-white">21</div>
-            <div className="text-purple-400 text-sm">Partnership Types</div>
+          <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-3 sm:p-5 text-center">
+            <div className="text-2xl sm:text-3xl font-black text-white">21</div>
+            <div className="text-purple-400 text-xs sm:text-sm">Partnership Types</div>
           </div>
-          <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-5 text-center">
-            <div className="text-3xl font-black text-white">9</div>
-            <div className="text-[#c9a227] text-sm">Industry Playbooks</div>
+          <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-3 sm:p-5 text-center">
+            <div className="text-2xl sm:text-3xl font-black text-white">9</div>
+            <div className="text-[#c9a227] text-xs sm:text-sm">Industry Playbooks</div>
           </div>
         </div>
 
         {/* Help Text */}
-        <div className="mt-12 text-center">
-          <p className="text-slate-500 text-sm">
-            Use <kbd className="px-2 py-1 bg-slate-800 rounded text-xs">⌘K</kbd> or <kbd className="px-2 py-1 bg-slate-800 rounded text-xs">Ctrl+K</kbd> to search anywhere
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="text-slate-500 text-xs sm:text-sm">
+            Use <kbd className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-slate-800 rounded text-[10px] sm:text-xs">⌘K</kbd> or <kbd className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-slate-800 rounded text-[10px] sm:text-xs">Ctrl+K</kbd> to search anywhere
           </p>
         </div>
       </main>

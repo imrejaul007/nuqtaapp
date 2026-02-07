@@ -2681,69 +2681,70 @@ Rejaul`,
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0a1628] via-[#1a2d4a] to-[#0a1628] border-b border-[#c9a227]/20">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-4">
-              <div className="p-3 bg-[#c9a227]/20 rounded-xl">
-                <Target className="w-8 h-8 text-[#c9a227]" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4 sm:mb-6">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 bg-[#c9a227]/20 rounded-lg sm:rounded-xl">
+                <Target className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227]" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold">Investor Outreach Database</h1>
-                <p className="text-gray-400">{investors.length} Investors • Contact Details • Custom Emails • Alignment Strategies</p>
+                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Investor Outreach Database</h1>
+                <p className="text-xs sm:text-sm text-gray-400">{investors.length} Investors • Contact Details • Custom Emails</p>
               </div>
             </div>
-            <div className="text-right hidden md:block">
-              <p className="text-[#c9a227] font-bold text-xl">$400K Round</p>
-              <p className="text-gray-400 text-sm">$5M Cap • 20% Discount</p>
+            <div className="text-left sm:text-right">
+              <p className="text-[#c9a227] font-bold text-lg sm:text-xl">$400K Round</p>
+              <p className="text-gray-400 text-xs sm:text-sm">$5M Cap • 20% Discount</p>
             </div>
           </div>
 
           {/* Stats Row */}
-          <div className="grid grid-cols-2 md:grid-cols-7 gap-3 mb-6">
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-white">{investorStats.total}</p>
-              <p className="text-xs text-gray-400">Total Investors</p>
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+              <p className="text-lg sm:text-2xl font-bold text-white">{investorStats.total}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">Total</p>
             </div>
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-red-400">{investorStats.highPriority}</p>
-              <p className="text-xs text-gray-400">High Priority</p>
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+              <p className="text-lg sm:text-2xl font-bold text-red-400">{investorStats.highPriority}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">High Priority</p>
             </div>
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-blue-400">{investorStats.byType.vc}</p>
-              <p className="text-xs text-gray-400">VC Funds</p>
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center">
+              <p className="text-lg sm:text-2xl font-bold text-blue-400">{investorStats.byType.vc}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">VC Funds</p>
             </div>
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-purple-400">{investorStats.byType.angel}</p>
-              <p className="text-xs text-gray-400">Angels</p>
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center hidden sm:block">
+              <p className="text-lg sm:text-2xl font-bold text-purple-400">{investorStats.byType.angel}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">Angels</p>
             </div>
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-pink-400">{investorStats.byType.familyOffice}</p>
-              <p className="text-xs text-gray-400">Family Offices</p>
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center hidden lg:block">
+              <p className="text-lg sm:text-2xl font-bold text-pink-400">{investorStats.byType.familyOffice}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">Family Offices</p>
             </div>
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-green-400">{investorStats.byType.corporate}</p>
-              <p className="text-xs text-gray-400">Corporate VC</p>
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center hidden lg:block">
+              <p className="text-lg sm:text-2xl font-bold text-green-400">{investorStats.byType.corporate}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">Corporate VC</p>
             </div>
-            <div className="bg-gray-800/50 rounded-lg p-3 text-center">
-              <p className="text-2xl font-bold text-yellow-400">{investorStats.byType.accelerator + investorStats.byType.government}</p>
-              <p className="text-xs text-gray-400">Accelerators</p>
+            <div className="bg-gray-800/50 rounded-lg p-2 sm:p-3 text-center hidden lg:block">
+              <p className="text-lg sm:text-2xl font-bold text-yellow-400">{investorStats.byType.accelerator + investorStats.byType.government}</p>
+              <p className="text-[10px] sm:text-xs text-gray-400">Accelerators</p>
             </div>
           </div>
 
           {/* Tabs */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 overflow-x-auto pb-1">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+                className={`flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 rounded-lg transition-all text-xs sm:text-sm whitespace-nowrap ${
                   activeTab === tab.id
                     ? 'bg-[#c9a227] text-[#0a1628] font-bold'
                     : 'bg-gray-800/50 text-gray-400 hover:text-white hover:bg-gray-800'
                 }`}
               >
-                <tab.icon className="w-4 h-4" />
-                {tab.label}
+                <tab.icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
               </button>
             ))}
           </div>
@@ -2751,7 +2752,7 @@ Rejaul`,
       </div>
 
       {/* Content */}
-      <main className="max-w-7xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         {/* Target List Tab */}
         {activeTab === 'target-list' && (
           <div className="space-y-6">

@@ -300,45 +300,45 @@ const GlobalFooter = () => {
     <>
       {/* Search Modal */}
       {searchOpen && (
-        <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-start justify-center pt-20 px-4">
-          <div className="w-full max-w-2xl bg-[#0a1628] border border-[#c9a227]/30 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-[200] bg-black/80 backdrop-blur-sm flex items-start justify-center pt-12 sm:pt-20 px-3 sm:px-4">
+          <div className="w-full max-w-2xl bg-[#0a1628] border border-[#c9a227]/30 rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden">
             {/* Search Input */}
-            <div className="flex items-center gap-3 px-4 py-4 border-b border-white/10">
-              <Search className="text-[#c9a227]" size={20} />
+            <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-3 sm:py-4 border-b border-white/10">
+              <Search className="text-[#c9a227]" size={18} />
               <input
                 ref={searchRef}
                 type="text"
                 placeholder="Search pages..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 bg-transparent text-white text-lg placeholder:text-slate-500 outline-none"
+                className="flex-1 bg-transparent text-white text-base sm:text-lg placeholder:text-slate-500 outline-none"
               />
               <button
                 onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
-                className="text-slate-400 hover:text-white text-sm flex items-center gap-1"
+                className="text-slate-400 hover:text-white text-xs sm:text-sm flex items-center gap-1"
               >
-                <X size={16} />
-                ESC
+                <X size={14} />
+                <span className="hidden sm:inline">ESC</span>
               </button>
             </div>
 
             {/* Search Results */}
-            <div className="max-h-96 overflow-y-auto py-2">
+            <div className="max-h-64 sm:max-h-96 overflow-y-auto py-2">
               {filteredPages.length > 0 ? (
                 filteredPages.slice(0, 12).map((page) => (
                   <Link
                     key={page.href}
                     href={page.href}
                     onClick={() => { setSearchOpen(false); setSearchQuery(''); }}
-                    className="flex items-center gap-3 px-4 py-3 text-slate-300 hover:bg-[#c9a227]/10 hover:text-white transition-all"
+                    className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 text-slate-300 hover:bg-[#c9a227]/10 hover:text-white transition-all"
                   >
-                    <page.icon size={18} className="text-[#c9a227]" />
-                    <span>{page.label}</span>
-                    <span className="ml-auto text-xs text-slate-500">{page.href}</span>
+                    <page.icon size={16} className="text-[#c9a227] flex-shrink-0" />
+                    <span className="text-sm sm:text-base truncate">{page.label}</span>
+                    <span className="ml-auto text-[10px] sm:text-xs text-slate-500 hidden sm:block">{page.href}</span>
                   </Link>
                 ))
               ) : (
-                <div className="px-4 py-8 text-center text-slate-500">
+                <div className="px-4 py-6 sm:py-8 text-center text-slate-500 text-sm">
                   No pages found for &ldquo;{searchQuery}&rdquo;
                 </div>
               )}
@@ -369,34 +369,34 @@ const GlobalFooter = () => {
       <footer className="bg-[#0a1628] border-t border-[#c9a227]/30">
         {/* Search Bar */}
         <div className="border-b border-white/10 bg-slate-900/50">
-          <div className="max-w-7xl mx-auto px-4 py-4">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-3 sm:py-4">
             <button
               onClick={() => setSearchOpen(true)}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-slate-400 hover:text-white hover:border-[#c9a227]/50 transition-all"
+              className="w-full flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-slate-400 hover:text-white hover:border-[#c9a227]/50 transition-all text-sm sm:text-base"
             >
-              <Search size={18} />
+              <Search size={16} />
               <span>Search all pages...</span>
-              <kbd className="text-xs bg-white/10 px-2 py-1 rounded ml-2">Cmd+K</kbd>
+              <kbd className="text-[10px] sm:text-xs bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded ml-1 sm:ml-2 hidden sm:block">Cmd+K</kbd>
             </button>
           </div>
         </div>
 
         {/* Quick Links Bar */}
         <div className="border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 py-3">
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
-              <span className="text-slate-500 text-xs font-medium whitespace-nowrap">Quick:</span>
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide pb-1">
+              <span className="text-slate-500 text-[10px] sm:text-xs font-medium whitespace-nowrap">Quick:</span>
               {quickLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                  className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-medium whitespace-nowrap transition-all ${
                     isActive(link.href)
                       ? 'bg-[#c9a227] text-black'
                       : 'bg-white/5 text-slate-400 hover:bg-white/10 hover:text-white'
                   }`}
                 >
-                  <link.icon size={12} />
+                  <link.icon size={10} className="sm:w-3 sm:h-3" />
                   <span>{link.label}</span>
                 </Link>
               ))}
@@ -405,27 +405,27 @@ const GlobalFooter = () => {
         </div>
 
         {/* Main Footer Grid - All Categories */}
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4 sm:gap-6 lg:gap-8">
             {navigationData.map((category) => (
               <div key={category.title}>
-                <h4 className={`text-xs font-bold uppercase tracking-wider mb-4 flex items-center gap-2 ${category.color}`}>
-                  <category.icon size={14} />
+                <h4 className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-4 flex items-center gap-1.5 sm:gap-2 ${category.color}`}>
+                  <category.icon size={12} />
                   {category.title}
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-1 sm:space-y-2">
                   {category.items.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className={`flex items-center gap-2 text-sm transition-all ${
+                        className={`flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-sm transition-all ${
                           isActive(link.href)
                             ? 'text-[#c9a227]'
                             : 'text-slate-400 hover:text-white'
                         }`}
                       >
-                        <link.icon size={12} />
-                        <span>{link.label}</span>
+                        <link.icon size={10} className="flex-shrink-0" />
+                        <span className="truncate">{link.label}</span>
                       </Link>
                     </li>
                   ))}
@@ -437,23 +437,23 @@ const GlobalFooter = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10">
-          <div className="max-w-7xl mx-auto px-4 py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
               {/* Logo & Copyright */}
-              <div className="flex items-center gap-3">
-                <Link href="/dashboard" className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
-                    <span className="text-black font-black text-lg">N</span>
+              <div className="flex items-center gap-2 sm:gap-3">
+                <Link href="/dashboard" className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
+                    <span className="text-black font-black text-sm sm:text-lg">N</span>
                   </div>
                   <div>
-                    <p className="text-white font-bold text-lg">Nuqta</p>
-                    <p className="text-slate-500 text-xs">Dubai&apos;s Rewards Revolution</p>
+                    <p className="text-white font-bold text-sm sm:text-lg">Nuqta</p>
+                    <p className="text-slate-500 text-[10px] sm:text-xs">Dubai&apos;s Rewards Revolution</p>
                   </div>
                 </Link>
               </div>
 
               {/* Links */}
-              <div className="flex items-center gap-6 text-sm">
+              <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
                 <Link href="/terms" className="text-slate-400 hover:text-white transition-colors">
                   Terms
                 </Link>
@@ -464,13 +464,13 @@ const GlobalFooter = () => {
                   href="mailto:hello@nuqtaapp.com"
                   className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
                 >
-                  <Mail size={14} />
+                  <Mail size={12} />
                   Contact
                 </a>
               </div>
 
               {/* Year & Credit */}
-              <div className="flex items-center gap-2 text-slate-500 text-xs">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-slate-500 text-[10px] sm:text-xs">
                 <span>© 2026 Nuqta</span>
                 <span>•</span>
                 <span>Made in Dubai</span>

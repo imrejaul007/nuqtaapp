@@ -1,30 +1,52 @@
 'use client';
 
-import { Trophy, Users, DollarSign, Building2, Globe, TrendingUp, Zap, Crown, Target, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Trophy, Users, DollarSign, Building2, Globe, TrendingUp, Zap, Crown, Target, Sparkles, ArrowRight, CheckCircle2, Home } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
 export default function FutureAmbitionPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2a42] to-[#0a1628] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 space-y-8 sm:space-y-12 lg:space-y-16">
+
+        {/* Header with Logo */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          <Link href="/dashboard" className="flex-shrink-0">
+            <Image
+              src="/images/nuqta-logo.png"
+              alt="Nuqta"
+              width={40}
+              height={40}
+              className="w-8 h-8 sm:w-10 sm:h-10"
+            />
+          </Link>
+          <Link
+            href="/dashboard"
+            className="flex items-center gap-1.5 text-slate-400 hover:text-[#c9a227] transition-colors text-sm"
+          >
+            <Home size={14} />
+            <span className="hidden sm:inline">Dashboard</span>
+          </Link>
+        </div>
 
         {/* Hero Section */}
-        <div className="space-y-6 text-center">
-          <div className="inline-block px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-sm font-bold">
+        <div className="space-y-4 sm:space-y-6 text-center">
+          <div className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full text-[#c9a227] text-xs sm:text-sm font-bold">
             THE FUTURE OF NUQTA
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">
             From Loyalty App to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c9a227] to-yellow-500">Financial Infrastructure</span>
           </h1>
-          <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-            "What happens when Nuqta becomes the default way people pay across the GCC? Here's the math on regional dominance."
+          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed px-2">
+            &quot;What happens when Nuqta becomes the default way people pay across the GCC? Here&apos;s the math on regional dominance.&quot;
           </p>
         </div>
 
         {/* GCC Market Overview */}
-        <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 border-2 border-slate-700 rounded-2xl p-8">
-          <h2 className="text-3xl font-black mb-6 text-slate-100">The GCC Retail Market Opportunity</h2>
-          <div className="grid md:grid-cols-6 gap-4 mb-8">
+        <div className="bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-slate-700 sm:border-2 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-black mb-4 sm:mb-6 text-slate-100">The GCC Retail Market Opportunity</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8">
             {[
               { flag: '🇦🇪', country: 'UAE', pop: '10M', spend: '$70B' },
               { flag: '🇸🇦', country: 'Saudi', pop: '36M', spend: '$120B' },
@@ -33,128 +55,128 @@ export default function FutureAmbitionPage() {
               { flag: '🇧🇭', country: 'Bahrain', pop: '1.7M', spend: '$8B' },
               { flag: '🇴🇲', country: 'Oman', pop: '5M', spend: '$12B' },
             ].map((c, i) => (
-              <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-                <div className="text-3xl mb-2">{c.flag}</div>
-                <p className="font-bold text-white">{c.country}</p>
-                <p className="text-xs text-slate-400">{c.pop} population</p>
-                <p className="text-sm font-bold text-[#c9a227] mt-2">{c.spend}/year</p>
+              <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl p-3 sm:p-4 text-center">
+                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">{c.flag}</div>
+                <p className="font-bold text-white text-sm sm:text-base">{c.country}</p>
+                <p className="text-[10px] sm:text-xs text-slate-400">{c.pop} population</p>
+                <p className="text-xs sm:text-sm font-bold text-[#c9a227] mt-1 sm:mt-2">{c.spend}/year</p>
               </div>
             ))}
           </div>
-          <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-6 text-center">
-            <p className="text-sm text-[#c9a227] uppercase mb-2">Total GCC Retail Market</p>
-            <p className="text-5xl font-black text-[#d4ab2c]">$250 Billion</p>
-            <p className="text-slate-400 mt-2">60 million consumers • Annual retail transactions</p>
+          <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center">
+            <p className="text-xs sm:text-sm text-[#c9a227] uppercase mb-1 sm:mb-2">Total GCC Retail Market</p>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#d4ab2c]">$250 Billion</p>
+            <p className="text-slate-400 mt-1 sm:mt-2 text-xs sm:text-sm">60 million consumers • Annual retail transactions</p>
           </div>
         </div>
 
         {/* Scenario Cards */}
-        <div className="space-y-8">
-          <h2 className="text-4xl font-black text-center">Market Penetration Scenarios</h2>
+        <div className="space-y-6 sm:space-y-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-center">Market Penetration Scenarios</h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* 20% Scenario */}
-            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border-2 border-blue-500/40 rounded-2xl p-6">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-500/20 border border-blue-500/40 mb-4">
-                  <span className="text-2xl font-black text-blue-400">20%</span>
+            <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border border-blue-500/40 sm:border-2 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+              <div className="text-center mb-4 sm:mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-blue-500/20 border border-blue-500/40 mb-3 sm:mb-4">
+                  <span className="text-lg sm:text-2xl font-black text-blue-400">20%</span>
                 </div>
-                <h3 className="text-2xl font-black text-blue-300">Regional Player</h3>
-                <p className="text-sm text-slate-400 mt-1">Year 5 Target</p>
+                <h3 className="text-xl sm:text-2xl font-black text-blue-300">Regional Player</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mt-1">Year 5 Target</p>
               </div>
-              <div className="space-y-4">
-                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                  <p className="text-xs text-blue-300 uppercase mb-1">GMV Through Nuqta</p>
-                  <p className="text-2xl font-black text-blue-400">$50 Billion</p>
-                  <p className="text-xs text-slate-400">AED 184 Billion annually</p>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-blue-300 uppercase mb-1">GMV Through Nuqta</p>
+                  <p className="text-xl sm:text-2xl font-black text-blue-400">$50 Billion</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400">AED 184 Billion annually</p>
                 </div>
-                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                  <p className="text-xs text-blue-300 uppercase mb-1">Annual Revenue (8%)</p>
-                  <p className="text-2xl font-black text-blue-400">$4 Billion</p>
-                  <p className="text-xs text-slate-400">AED 14.7 Billion</p>
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-blue-300 uppercase mb-1">Annual Revenue (8%)</p>
+                  <p className="text-xl sm:text-2xl font-black text-blue-400">$4 Billion</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400">AED 14.7 Billion</p>
                 </div>
-                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                  <p className="text-xs text-blue-300 uppercase mb-1">Active Users</p>
-                  <p className="text-2xl font-black text-blue-400">12 Million</p>
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-blue-300 uppercase mb-1">Active Users</p>
+                  <p className="text-xl sm:text-2xl font-black text-blue-400">12 Million</p>
                 </div>
-                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                  <p className="text-xs text-blue-300 uppercase mb-1">Valuation (10x)</p>
-                  <p className="text-2xl font-black text-blue-400">$40 Billion</p>
+                <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-blue-300 uppercase mb-1">Valuation (10x)</p>
+                  <p className="text-xl sm:text-2xl font-black text-blue-400">$40 Billion</p>
                 </div>
               </div>
-              <div className="mt-6 text-center">
-                <p className="text-sm text-slate-300">Comparable to: <span className="text-blue-400 font-bold">Careem at peak</span></p>
+              <div className="mt-4 sm:mt-6 text-center">
+                <p className="text-xs sm:text-sm text-slate-300">Comparable to: <span className="text-blue-400 font-bold">Careem at peak</span></p>
               </div>
             </div>
 
             {/* 50% Scenario */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-2xl p-6 transform scale-105 shadow-2xl">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="px-3 py-1 bg-purple-500 text-white text-xs font-bold rounded-full">AMBITIOUS TARGET</span>
+            <div className="relative bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:scale-105 shadow-2xl">
+              <div className="absolute -top-2.5 sm:-top-3 left-1/2 -translate-x-1/2">
+                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-purple-500 text-white text-[10px] sm:text-xs font-bold rounded-full whitespace-nowrap">AMBITIOUS TARGET</span>
               </div>
-              <div className="text-center mb-6 mt-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-500/20 border border-purple-500/40 mb-4">
-                  <span className="text-2xl font-black text-purple-400">50%</span>
+              <div className="text-center mb-4 sm:mb-6 mt-2 sm:mt-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-purple-500/20 border border-purple-500/40 mb-3 sm:mb-4">
+                  <span className="text-lg sm:text-2xl font-black text-purple-400">50%</span>
                 </div>
-                <h3 className="text-2xl font-black text-purple-300">Market Leader</h3>
-                <p className="text-sm text-slate-400 mt-1">Year 7-8 Vision</p>
+                <h3 className="text-xl sm:text-2xl font-black text-purple-300">Market Leader</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mt-1">Year 7-8 Vision</p>
               </div>
-              <div className="space-y-4">
-                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-                  <p className="text-xs text-purple-300 uppercase mb-1">GMV Through Nuqta</p>
-                  <p className="text-2xl font-black text-purple-400">$125 Billion</p>
-                  <p className="text-xs text-slate-400">AED 460 Billion annually</p>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-purple-300 uppercase mb-1">GMV Through Nuqta</p>
+                  <p className="text-xl sm:text-2xl font-black text-purple-400">$125 Billion</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400">AED 460 Billion annually</p>
                 </div>
-                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-                  <p className="text-xs text-purple-300 uppercase mb-1">Annual Revenue (8%)</p>
-                  <p className="text-2xl font-black text-purple-400">$10 Billion</p>
-                  <p className="text-xs text-slate-400">AED 36.8 Billion</p>
+                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-purple-300 uppercase mb-1">Annual Revenue (8%)</p>
+                  <p className="text-xl sm:text-2xl font-black text-purple-400">$10 Billion</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400">AED 36.8 Billion</p>
                 </div>
-                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-                  <p className="text-xs text-purple-300 uppercase mb-1">Active Users</p>
-                  <p className="text-2xl font-black text-purple-400">20 Million</p>
+                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-purple-300 uppercase mb-1">Active Users</p>
+                  <p className="text-xl sm:text-2xl font-black text-purple-400">20 Million</p>
                 </div>
-                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-4">
-                  <p className="text-xs text-purple-300 uppercase mb-1">Valuation (10x)</p>
-                  <p className="text-2xl font-black text-purple-400">$100 Billion</p>
+                <div className="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-purple-300 uppercase mb-1">Valuation (10x)</p>
+                  <p className="text-xl sm:text-2xl font-black text-purple-400">$100 Billion</p>
                 </div>
               </div>
-              <div className="mt-6 text-center">
-                <p className="text-sm text-slate-300">Comparable to: <span className="text-purple-400 font-bold">Stripe / Uber</span></p>
+              <div className="mt-4 sm:mt-6 text-center">
+                <p className="text-xs sm:text-sm text-slate-300">Comparable to: <span className="text-purple-400 font-bold">Stripe / Uber</span></p>
               </div>
             </div>
 
             {/* 80% Scenario */}
-            <div className="bg-gradient-to-br from-[#c9a227]/30 to-yellow-800/20 border-2 border-[#c9a227]/40 rounded-2xl p-6">
-              <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#c9a227]/20 border border-[#c9a227]/40 mb-4">
-                  <span className="text-2xl font-black text-[#c9a227]">80%</span>
+            <div className="bg-gradient-to-br from-[#c9a227]/30 to-yellow-800/20 border border-[#c9a227]/40 sm:border-2 rounded-xl sm:rounded-2xl p-4 sm:p-6 sm:col-span-2 lg:col-span-1">
+              <div className="text-center mb-4 sm:mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#c9a227]/20 border border-[#c9a227]/40 mb-3 sm:mb-4">
+                  <span className="text-lg sm:text-2xl font-black text-[#c9a227]">80%</span>
                 </div>
-                <h3 className="text-2xl font-black text-[#c9a227]">Total Dominance</h3>
-                <p className="text-sm text-slate-400 mt-1">10+ Year Vision</p>
+                <h3 className="text-xl sm:text-2xl font-black text-[#c9a227]">Total Dominance</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mt-1">10+ Year Vision</p>
               </div>
-              <div className="space-y-4">
-                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
-                  <p className="text-xs text-[#c9a227] uppercase mb-1">GMV Through Nuqta</p>
-                  <p className="text-2xl font-black text-[#d4ab2c]">$200 Billion</p>
-                  <p className="text-xs text-slate-400">AED 735 Billion annually</p>
+              <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-3 lg:space-y-4">
+                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-[#c9a227] uppercase mb-1">GMV Through Nuqta</p>
+                  <p className="text-xl sm:text-2xl font-black text-[#d4ab2c]">$200 Billion</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400 hidden sm:block">AED 735 Billion annually</p>
                 </div>
-                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
-                  <p className="text-xs text-[#c9a227] uppercase mb-1">Annual Revenue (8%)</p>
-                  <p className="text-2xl font-black text-[#d4ab2c]">$16 Billion</p>
-                  <p className="text-xs text-slate-400">AED 58.8 Billion</p>
+                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-[#c9a227] uppercase mb-1">Annual Revenue (8%)</p>
+                  <p className="text-xl sm:text-2xl font-black text-[#d4ab2c]">$16 Billion</p>
+                  <p className="text-[10px] sm:text-xs text-slate-400 hidden sm:block">AED 58.8 Billion</p>
                 </div>
-                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
-                  <p className="text-xs text-[#c9a227] uppercase mb-1">Active Users</p>
-                  <p className="text-2xl font-black text-[#d4ab2c]">30+ Million</p>
+                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-[#c9a227] uppercase mb-1">Active Users</p>
+                  <p className="text-xl sm:text-2xl font-black text-[#d4ab2c]">30+ Million</p>
                 </div>
-                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-4">
-                  <p className="text-xs text-[#c9a227] uppercase mb-1">Valuation (10x)</p>
-                  <p className="text-2xl font-black text-[#d4ab2c]">$160 Billion</p>
+                <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-lg p-3 sm:p-4">
+                  <p className="text-[10px] sm:text-xs text-[#c9a227] uppercase mb-1">Valuation (10x)</p>
+                  <p className="text-xl sm:text-2xl font-black text-[#d4ab2c]">$160 Billion</p>
                 </div>
               </div>
-              <div className="mt-6 text-center">
-                <p className="text-sm text-slate-300">Comparable to: <span className="text-[#c9a227] font-bold">Alipay / Visa</span></p>
+              <div className="mt-4 sm:mt-6 text-center">
+                <p className="text-xs sm:text-sm text-slate-300">Comparable to: <span className="text-[#c9a227] font-bold">Alipay / Visa</span></p>
               </div>
             </div>
           </div>
