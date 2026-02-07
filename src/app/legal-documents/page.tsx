@@ -4608,6 +4608,2051 @@ Typical Timeline:
 • Medical Test: 1-2 days
 • Emirates ID: 5-7 working days
 • Visa Stamping: 2-3 working days`
+  },
+  {
+    id: 'insurance-requirements',
+    title: 'Insurance Requirements & Coverage',
+    category: 'Risk Management',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Complete insurance requirements and coverage specifications for Nuqta.',
+    content: `NUQTA TECHNOLOGY L.L.C.
+INSURANCE REQUIREMENTS & COVERAGE DOCUMENT
+
+═══════════════════════════════════════════════════════════════════
+
+1. MANDATORY INSURANCE
+
+1.1 EMPLOYEE HEALTH INSURANCE (DHA Requirement)
+Status: REQUIRED before visa processing
+Provider: [To be selected]
+Coverage: Essential Benefits Plan (EBP) minimum
+
+Required Coverage:
+• In-patient hospitalization
+• Out-patient services
+• Emergency services
+• Maternity (where applicable)
+• Chronic disease management
+• Preventive care
+
+Employees to Cover:
+┌─────────────────────────┬─────────────────────────────────────┐
+│ Name                    │ Position                            │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Rejaul Karim            │ CEO                                 │
+│ Deep Tednu Kuri         │ CTO                                 │
+│ Sarbajit Bhatacharjee   │ CMO                                 │
+│ Gyandeep Bordoloi       │ COO                                 │
+│ [Additional employees]  │ [Positions]                         │
+└─────────────────────────┴─────────────────────────────────────┘
+
+Estimated Annual Premium: AED 2,000 - 5,000 per employee
+Total (8 employees): AED 16,000 - 40,000 per year
+
+Recommended Providers:
+• Daman (National Health Insurance Company)
+• Oman Insurance
+• AXA Gulf
+• MetLife
+• ADNIC
+
+═══════════════════════════════════════════════════════════════════
+
+2. RECOMMENDED BUSINESS INSURANCE
+
+2.1 PROFESSIONAL INDEMNITY / ERRORS & OMISSIONS
+Purpose: Protects against claims of negligence in professional services
+Coverage Amount: AED 1,000,000 - 5,000,000
+Annual Premium: AED 5,000 - 15,000
+
+Covers:
+• Errors in app functionality causing user loss
+• Data breach claims
+• Failure to deliver promised services
+• Negligent advice or recommendations
+
+2.2 CYBER LIABILITY INSURANCE
+Purpose: Protection against cyber incidents and data breaches
+Coverage Amount: AED 2,000,000 - 10,000,000
+Annual Premium: AED 10,000 - 30,000
+
+Covers:
+• Data breach response costs
+• Notification expenses
+• Credit monitoring for affected users
+• Legal defense costs
+• Regulatory fines and penalties
+• Business interruption from cyber events
+• Ransomware payments (where legal)
+• Forensic investigation costs
+
+CRITICAL for Nuqta given:
+• Personal data of 50,000+ users (target)
+• Transaction data
+• Payment processing involvement
+
+2.3 DIRECTORS & OFFICERS (D&O) LIABILITY
+Purpose: Protects executives from personal liability
+Coverage Amount: AED 1,000,000 - 5,000,000
+Annual Premium: AED 8,000 - 25,000
+
+Covers:
+• Wrongful acts in management capacity
+• Breach of fiduciary duty claims
+• Regulatory investigations
+• Employment practices claims
+• Investor lawsuits
+
+Recommended before Series A funding.
+
+2.4 GENERAL LIABILITY / PUBLIC LIABILITY
+Purpose: Third-party injury or property damage
+Coverage Amount: AED 500,000 - 2,000,000
+Annual Premium: AED 3,000 - 8,000
+
+Covers:
+• Bodily injury claims
+• Property damage
+• Personal injury (libel, slander)
+• Office visitor injuries
+
+2.5 OFFICE CONTENTS / PROPERTY INSURANCE
+Purpose: Protect office equipment and contents
+Coverage Amount: Based on asset value
+Annual Premium: AED 1,000 - 5,000
+
+Covers:
+• Computers and equipment
+• Furniture
+• Fire and flood damage
+• Theft
+• Natural disasters
+
+═══════════════════════════════════════════════════════════════════
+
+3. INSURANCE PRIORITY MATRIX
+
+┌──────────────────────────┬──────────────┬─────────────────────┐
+│ Insurance Type           │ Priority     │ Timeline            │
+├──────────────────────────┼──────────────┼─────────────────────┤
+│ Employee Health          │ MANDATORY    │ Before visa         │
+│ Cyber Liability          │ CRITICAL     │ Before launch       │
+│ Professional Indemnity   │ HIGH         │ Before launch       │
+│ D&O Liability            │ HIGH         │ Before Series A     │
+│ General Liability        │ MEDIUM       │ Before office       │
+│ Office Contents          │ MEDIUM       │ After office setup  │
+└──────────────────────────┴──────────────┴─────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+4. INSURANCE BROKER CONTACTS
+
+Recommended Insurance Brokers in UAE:
+
+1. Marsh Emirates
+   Contact: +971 4 212 4500
+   Email: dubai@marsh.com
+   Specialty: Tech companies, cyber
+
+2. Aon UAE
+   Contact: +971 4 363 4555
+   Email: dubai@aon.ae
+   Specialty: Startups, D&O
+
+3. Willis Towers Watson
+   Contact: +971 4 436 1000
+   Email: dubai@willistowerswatson.com
+   Specialty: Professional indemnity
+
+4. Lockton MENA
+   Contact: +971 4 399 2377
+   Email: dubai@lockton.com
+   Specialty: SME packages
+
+═══════════════════════════════════════════════════════════════════
+
+5. INSURANCE APPLICATION REQUIREMENTS
+
+Documents needed for insurance applications:
+
+COMPANY DOCUMENTS:
+☐ Trade License
+☐ Certificate of Incorporation
+☐ Company profile / business description
+☐ Financial statements (if available)
+☐ Revenue projections
+☐ Employee list
+
+TECHNICAL INFORMATION (for Cyber Insurance):
+☐ IT infrastructure overview
+☐ Data protection measures
+☐ Security certifications (if any)
+☐ Previous incidents (if any)
+☐ Third-party security audit results
+
+CLAIMS HISTORY:
+☐ Previous insurance policies
+☐ Claims made in past 5 years
+☐ Pending claims or litigation
+
+═══════════════════════════════════════════════════════════════════
+
+6. ANNUAL INSURANCE BUDGET ESTIMATE
+
+Year 1 (Launch Phase):
+┌──────────────────────────┬─────────────────────────────────────┐
+│ Insurance Type           │ Estimated Annual Premium (AED)      │
+├──────────────────────────┼─────────────────────────────────────┤
+│ Employee Health (8)      │ 24,000 - 40,000                     │
+│ Cyber Liability          │ 15,000 - 25,000                     │
+│ Professional Indemnity   │ 8,000 - 12,000                      │
+│ General Liability        │ 5,000 - 8,000                       │
+├──────────────────────────┼─────────────────────────────────────┤
+│ TOTAL YEAR 1             │ 52,000 - 85,000                     │
+└──────────────────────────┴─────────────────────────────────────┘
+
+Year 2 (Post Series A):
+Add D&O Liability: +15,000 - 25,000
+Increased limits: +20% across policies`
+  },
+  {
+    id: 'trademark-registration',
+    title: 'Trademark Registration Package',
+    category: 'Intellectual Property',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Complete trademark registration documents and process for UAE and GCC.',
+    content: `NUQTA TRADEMARK REGISTRATION PACKAGE
+
+═══════════════════════════════════════════════════════════════════
+
+1. TRADEMARK OVERVIEW
+
+Marks to Register:
+┌─────────────────────────┬─────────────────────────────────────┐
+│ Mark                    │ Type                                │
+├─────────────────────────┼─────────────────────────────────────┤
+│ NUQTA                   │ Word Mark (Arabic & English)        │
+│ نقطة                    │ Arabic Word Mark                    │
+│ [Logo]                  │ Device Mark (Logo)                  │
+│ NUQTA + Logo            │ Combined Mark                       │
+└─────────────────────────┴─────────────────────────────────────┘
+
+Classes to Register (Nice Classification):
+• Class 9: Mobile applications, software
+• Class 35: Advertising, business services, loyalty programs
+• Class 36: Financial services, payment processing
+• Class 42: Technology services, SaaS
+
+═══════════════════════════════════════════════════════════════════
+
+2. UAE TRADEMARK REGISTRATION
+
+Filing Authority: Ministry of Economy (MoE) - UAE
+Online Portal: https://www.economy.gov.ae
+
+STEP-BY-STEP PROCESS:
+
+Step 1: Trademark Search
+• Search UAE trademark database
+• Check for similar/identical marks
+• Cost: AED 50 - 100 (online search)
+• Recommended: Professional search (AED 500-1,000)
+
+Step 2: Application Preparation
+Documents Required:
+☐ Trademark application form
+☐ Clear representation of the mark (JPEG/PNG)
+☐ Power of Attorney (if using agent)
+☐ Trade License copy
+☐ List of goods/services
+☐ Priority document (if claiming priority)
+
+Step 3: File Application
+• Submit online or through agent
+• Pay filing fees
+
+Step 4: Examination
+• Examiner reviews application
+• May raise objections
+• Timeline: 2-4 months
+
+Step 5: Publication
+• Published in Official Gazette
+• 30-day opposition period
+• Publication fee applies
+
+Step 6: Registration
+• If no opposition, certificate issued
+• Timeline: 6-12 months total
+
+Step 7: Renewal
+• Every 10 years from filing date
+• 6-month grace period with penalty
+
+═══════════════════════════════════════════════════════════════════
+
+3. UAE TRADEMARK FEES (2026)
+
+┌─────────────────────────────────┬─────────────────────────────┐
+│ Fee Type                        │ Amount (AED)                │
+├─────────────────────────────────┼─────────────────────────────┤
+│ Filing fee (per class)          │ 1,000                       │
+│ Examination fee (per class)     │ 400                         │
+│ Publication fee                 │ 3,000                       │
+│ Registration fee                │ 1,000                       │
+│ Agent/Attorney fees             │ 3,000 - 5,000               │
+├─────────────────────────────────┼─────────────────────────────┤
+│ TOTAL (per class)               │ 8,400 - 10,400              │
+│ TOTAL (4 classes)               │ 33,600 - 41,600             │
+└─────────────────────────────────┴─────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+4. GCC TRADEMARK REGISTRATION
+
+Options:
+A) Individual Filing in Each GCC Country
+B) GCC Trademark (Single Application)
+
+GCC TRADEMARK (Recommended):
+• Single application covers all 6 GCC countries
+• Filed through Saudi Patent Office (SAIP)
+• Cost-effective for regional protection
+
+GCC Member States:
+• Saudi Arabia
+• UAE
+• Kuwait
+• Bahrain
+• Qatar
+• Oman
+
+GCC Trademark Fees (approximate):
+Filing: SAR 10,000 per class
+Total with agent: SAR 30,000 - 50,000 (4 classes)
+
+═══════════════════════════════════════════════════════════════════
+
+5. TRADEMARK APPLICATION FORM
+
+TRADEMARK APPLICATION
+Ministry of Economy - UAE
+
+Applicant Information:
+Company Name: Nuqta Technology L.L.C.
+Trade License No: [Number]
+Address: [Office Address], Dubai, UAE
+Phone: [Number]
+Email: legal@nuqtaapp.com
+
+Representative (if any):
+Agent Name: [Trademark Agent Name]
+Agent License: [Number]
+POA Date: [Date]
+
+Mark Details:
+Mark Type: [ ] Word [ ] Device [ ] Combined
+Mark: NUQTA / نقطة
+Colors Claimed: Gold (#c9a227), Dark Blue (#0a1628)
+Description: The mark consists of the word "NUQTA" in stylized letters with a dot motif
+
+Classes Applied For:
+[ ] Class 9: Computer software; mobile applications for rewards and loyalty programs; downloadable software for managing customer loyalty programs
+[ ] Class 35: Advertising services; business management; loyalty program management; customer relationship management services
+[ ] Class 36: Financial services; payment processing services; electronic funds transfer
+[ ] Class 42: Software as a service (SaaS); platform as a service (PaaS); cloud computing services
+
+Priority Claim: [ ] Yes [ ] No
+Priority Country: _______________
+Priority Date: _______________
+Priority Number: _______________
+
+Declaration:
+I/We declare that the above information is true and correct, and that I/we are entitled to use and register the trademark.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+6. POWER OF ATTORNEY FOR TRADEMARK AGENT
+
+POWER OF ATTORNEY
+
+We, Nuqta Technology L.L.C., a company organized under the laws of UAE, hereby appoint:
+
+[TRADEMARK AGENT NAME]
+License No: [Number]
+Address: [Address]
+
+As our lawful attorney to:
+• File trademark applications in our name
+• Prosecute applications through registration
+• Respond to official actions and objections
+• Renew trademark registrations
+• Take any necessary action to protect our trademark rights
+
+This Power of Attorney is valid for all trademark matters in [UAE / GCC Countries].
+
+For Nuqta Technology L.L.C.:
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+Company Stamp: [Affix]
+
+[Notarization and legalization required for some countries]
+
+═══════════════════════════════════════════════════════════════════
+
+7. TRADEMARK AGENTS - RECOMMENDED
+
+UAE:
+1. Al Tamimi & Company
+   Contact: +971 4 364 1641
+   Specialty: Full-service IP
+
+2. Cedar White Bradley
+   Contact: +971 4 381 6888
+   Specialty: Trademark prosecution
+
+3. Rouse
+   Contact: +971 4 365 3001
+   Specialty: Tech IP
+
+4. Saba IP
+   Contact: +971 4 327 8470
+   Specialty: GCC coverage
+
+═══════════════════════════════════════════════════════════════════
+
+8. TRADEMARK MONITORING & ENFORCEMENT
+
+Post-Registration Actions:
+• Monitor for infringing applications
+• Watch service subscription (AED 1,000-2,000/year)
+• Domain name monitoring
+• Social media monitoring
+
+Enforcement Actions (if needed):
+• Cease and desist letters
+• Opposition proceedings
+• Cancellation actions
+• Civil litigation
+• Criminal complaints (for counterfeiting)`
+  },
+  {
+    id: 'office-lease',
+    title: 'Office Lease Agreement Template',
+    category: 'Property & Facilities',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Template lease agreement for office space in Dubai.',
+    content: `OFFICE LEASE AGREEMENT
+
+This Lease Agreement ("Agreement") is made on _______________
+
+BETWEEN:
+
+LANDLORD:
+[Landlord Name]
+[Company/Individual]
+[Address]
+(hereinafter "Landlord")
+
+AND:
+
+TENANT:
+Nuqta Technology L.L.C.
+Trade License No: [Number]
+Represented by: Rejaul Karim, CEO
+(hereinafter "Tenant")
+
+═══════════════════════════════════════════════════════════════════
+
+1. PREMISES
+
+1.1 The Landlord agrees to lease to the Tenant the following premises:
+
+Property Type: Office Space
+Building Name: _______________
+Unit Number: _______________
+Floor: _______________
+Area: _______________ sq. ft. / sq. m.
+Location: _______________
+Emirate: Dubai, UAE
+
+1.2 The premises shall be used exclusively for general office purposes consistent with the Tenant's trade license activities.
+
+═══════════════════════════════════════════════════════════════════
+
+2. TERM
+
+2.1 Lease Term: _______________ year(s)
+2.2 Commencement Date: _______________
+2.3 Expiry Date: _______________
+2.4 Renewal: Subject to mutual agreement and market rent adjustment
+
+═══════════════════════════════════════════════════════════════════
+
+3. RENT
+
+3.1 Annual Rent: AED _______________
+3.2 Payment Schedule:
+    [ ] One payment (full year)
+    [ ] Two payments (semi-annual)
+    [ ] Four payments (quarterly)
+    [ ] Twelve payments (monthly)
+
+3.3 Payment Dates: _______________
+3.4 Payment Method: [ ] Cheque [ ] Bank Transfer
+
+3.5 Post-dated cheques to be provided:
+    Cheque 1: AED _______________ dated _______________
+    Cheque 2: AED _______________ dated _______________
+    [Additional as needed]
+
+═══════════════════════════════════════════════════════════════════
+
+4. SECURITY DEPOSIT
+
+4.1 Amount: AED _______________ (typically 5% of annual rent)
+4.2 Purpose: Security for performance of Tenant's obligations
+4.3 Return: Within 30 days of lease end, less deductions for damages
+4.4 No Interest: Deposit is non-interest bearing
+
+═══════════════════════════════════════════════════════════════════
+
+5. SERVICE CHARGES
+
+5.1 Annual Service Charge: AED _______________
+5.2 Includes: Building maintenance, common areas, security, cleaning
+5.3 Payment: [ ] Included in rent [ ] Separate payment
+5.4 Adjustments: Subject to annual review
+
+═══════════════════════════════════════════════════════════════════
+
+6. UTILITIES
+
+6.1 Electricity: [ ] Tenant [ ] Landlord [ ] Included
+6.2 Water: [ ] Tenant [ ] Landlord [ ] Included
+6.3 Internet: Tenant's responsibility
+6.4 DEWA Account: To be registered in Tenant's name
+
+═══════════════════════════════════════════════════════════════════
+
+7. LANDLORD'S OBLIGATIONS
+
+The Landlord shall:
+7.1 Deliver premises in good condition
+7.2 Maintain structural elements of the building
+7.3 Provide access to common areas
+7.4 Ensure building code compliance
+7.5 Maintain building insurance
+7.6 Provide parking spaces: _______________ (if applicable)
+
+═══════════════════════════════════════════════════════════════════
+
+8. TENANT'S OBLIGATIONS
+
+The Tenant shall:
+8.1 Pay rent and service charges on time
+8.2 Maintain premises in good condition
+8.3 Not make structural alterations without consent
+8.4 Not assign or sublet without consent
+8.5 Comply with building rules
+8.6 Obtain necessary permits and licenses
+8.7 Maintain contents insurance
+8.8 Return premises in original condition (normal wear excepted)
+
+═══════════════════════════════════════════════════════════════════
+
+9. FIT-OUT
+
+9.1 Tenant may fit-out premises subject to:
+    • Landlord's prior written approval
+    • Building management guidelines
+    • Civil defense requirements
+    • Municipality approvals
+
+9.2 Fit-out period: _______________ days (rent-free if applicable)
+9.3 Reinstatement: [ ] Required [ ] Not required upon expiry
+
+═══════════════════════════════════════════════════════════════════
+
+10. EJARI REGISTRATION
+
+10.1 This Agreement shall be registered with Ejari (Dubai Land Department)
+10.2 Registration fee: Tenant's responsibility
+10.3 Timeline: Within 30 days of signing
+10.4 Required for: Trade license, visa processing
+
+═══════════════════════════════════════════════════════════════════
+
+11. TERMINATION
+
+11.1 Expiry: Agreement terminates on Expiry Date unless renewed
+11.2 Early Termination by Tenant:
+     • [X] months written notice required
+     • Early termination fee: [X] months rent
+
+11.3 Termination by Landlord:
+     • 12 months notice for personal use (per Dubai law)
+     • Immediate for material breach (after cure period)
+
+11.4 Upon Termination:
+     • Vacate premises
+     • Return keys
+     • Clear all dues
+     • Remove belongings
+
+═══════════════════════════════════════════════════════════════════
+
+12. DISPUTE RESOLUTION
+
+12.1 Governing Law: Laws of Dubai, UAE
+12.2 Jurisdiction: Rental Disputes Center (RDC), Dubai
+12.3 Mediation: Parties agree to attempt mediation before litigation
+
+═══════════════════════════════════════════════════════════════════
+
+13. GENERAL PROVISIONS
+
+13.1 Entire Agreement: This constitutes the entire agreement
+13.2 Amendments: Must be in writing signed by both parties
+13.3 Notices: In writing to addresses above
+13.4 Severability: Invalid provisions do not affect others
+
+═══════════════════════════════════════════════════════════════════
+
+SIGNATURES
+
+LANDLORD:
+Signature: _________________________
+Name: _______________
+Title: _______________
+Date: _______________
+
+TENANT:
+Nuqta Technology L.L.C.
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _______________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+ATTACHMENTS:
+☐ Floor plan
+☐ Building rules
+☐ Landlord's trade license
+☐ Title deed / ownership proof
+☐ Tenant's trade license
+☐ Post-dated cheques`
+  },
+  {
+    id: 'vendor-agreement',
+    title: 'Vendor/Supplier Agreement',
+    category: 'Business Contracts',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Template agreement for engaging vendors and service providers.',
+    content: `VENDOR/SUPPLIER AGREEMENT
+
+This Agreement ("Agreement") is entered into as of _______________
+
+BETWEEN:
+
+NUQTA TECHNOLOGY L.L.C.
+Trade License No: [Number]
+Address: Dubai, UAE
+("Company" or "Client")
+
+AND:
+
+[VENDOR NAME]
+[Registration/License No]
+Address: _______________
+("Vendor" or "Supplier")
+
+═══════════════════════════════════════════════════════════════════
+
+1. SERVICES / PRODUCTS
+
+1.1 The Vendor agrees to provide the following:
+
+[ ] PRODUCTS:
+Description: _______________
+Specifications: _______________
+Quantity: _______________
+
+[ ] SERVICES:
+Description: _______________
+Scope of Work: _______________
+Deliverables: _______________
+
+1.2 Detailed specifications are set forth in Schedule A.
+
+═══════════════════════════════════════════════════════════════════
+
+2. TERM
+
+2.1 Effective Date: _______________
+2.2 Term: [ ] One-time [ ] ___ months [ ] ___ year(s)
+2.3 Renewal: [ ] Automatic [ ] Mutual agreement
+2.4 Termination Notice: ___ days written notice
+
+═══════════════════════════════════════════════════════════════════
+
+3. PRICING AND PAYMENT
+
+3.1 Total Price / Rate:
+[ ] Fixed Price: AED/USD _______________
+[ ] Hourly Rate: AED/USD _______________ per hour
+[ ] Monthly Retainer: AED/USD _______________ per month
+[ ] Per Unit: AED/USD _______________ per _______________
+
+3.2 Payment Terms:
+[ ] Net 30 days from invoice
+[ ] Net 60 days from invoice
+[ ] Upon delivery
+[ ] Milestone-based (see Schedule B)
+[ ] Advance: ___% upfront, ___% on completion
+
+3.3 Payment Method: [ ] Bank Transfer [ ] Cheque
+3.4 Currency: [ ] AED [ ] USD
+3.5 Late Payment: ___% per month on overdue amounts
+
+3.6 Invoicing:
+• Submit invoices to: finance@nuqtaapp.com
+• Include: PO number, description, bank details
+
+═══════════════════════════════════════════════════════════════════
+
+4. DELIVERY
+
+4.1 Delivery Date(s): _______________
+4.2 Delivery Location: _______________
+4.3 Shipping Terms: [ ] FOB Origin [ ] FOB Destination [ ] N/A
+4.4 Risk of Loss: Passes upon delivery and acceptance
+
+4.5 Acceptance:
+• Company has ___ days to inspect and accept
+• Rejection must be in writing with reasons
+• Vendor shall remedy defects within ___ days
+
+═══════════════════════════════════════════════════════════════════
+
+5. WARRANTIES
+
+5.1 Vendor warrants that:
+(a) Products/services will conform to specifications
+(b) Products/services will be free from defects
+(c) Products/services will be fit for intended purpose
+(d) Vendor has right to provide products/services
+(e) Products/services do not infringe third-party IP
+(f) Vendor will comply with all applicable laws
+
+5.2 Warranty Period: ___ months from acceptance
+
+5.3 Warranty Remedy: Repair, replace, or refund at Company's option
+
+═══════════════════════════════════════════════════════════════════
+
+6. INTELLECTUAL PROPERTY
+
+6.1 Pre-Existing IP: Each party retains its pre-existing IP.
+
+6.2 Work Product: All work product created specifically for Company shall be Company's property.
+
+6.3 License Grant: Vendor grants Company a perpetual, royalty-free license to use any Vendor IP incorporated in deliverables.
+
+═══════════════════════════════════════════════════════════════════
+
+7. CONFIDENTIALITY
+
+7.1 Both parties agree to maintain confidentiality of all non-public information shared under this Agreement.
+
+7.2 Obligations continue for 3 years after termination.
+
+7.3 Standard carve-outs for public information, independent development, and legally required disclosures apply.
+
+═══════════════════════════════════════════════════════════════════
+
+8. DATA PROTECTION
+
+8.1 If Vendor processes personal data on Company's behalf:
+(a) Vendor shall comply with UAE PDPL
+(b) Vendor shall sign a Data Processing Agreement
+(c) Vendor shall implement appropriate security measures
+(d) Vendor shall not transfer data without consent
+
+═══════════════════════════════════════════════════════════════════
+
+9. INSURANCE
+
+9.1 Vendor shall maintain:
+(a) General liability insurance: AED _______________
+(b) Professional indemnity (if applicable): AED _______________
+(c) Worker's compensation (as required by law)
+
+9.2 Evidence of insurance upon request.
+
+═══════════════════════════════════════════════════════════════════
+
+10. INDEMNIFICATION
+
+10.1 Vendor shall indemnify Company against claims arising from:
+(a) Vendor's breach of this Agreement
+(b) Vendor's negligence or willful misconduct
+(c) Vendor's violation of law
+(d) IP infringement claims related to deliverables
+
+═══════════════════════════════════════════════════════════════════
+
+11. LIMITATION OF LIABILITY
+
+11.1 Neither party shall be liable for indirect, incidental, or consequential damages.
+
+11.2 Maximum liability: Total fees paid/payable in the 12 months preceding the claim.
+
+11.3 Exclusions: Indemnification, confidentiality breach, gross negligence do not have liability caps.
+
+═══════════════════════════════════════════════════════════════════
+
+12. TERMINATION
+
+12.1 For Convenience: Either party may terminate with ___ days written notice.
+
+12.2 For Cause: Immediate termination for material breach uncured after ___ days notice.
+
+12.3 Effect: Upon termination:
+(a) Payment for work completed
+(b) Return of confidential information
+(c) Transition assistance (if applicable)
+
+═══════════════════════════════════════════════════════════════════
+
+13. GENERAL PROVISIONS
+
+13.1 Independent Contractor: Vendor is an independent contractor, not an employee.
+
+13.2 Assignment: No assignment without written consent.
+
+13.3 Subcontracting: Not permitted without written consent.
+
+13.4 Force Majeure: Neither party liable for delays due to events beyond reasonable control.
+
+13.5 Governing Law: Laws of the UAE.
+
+13.6 Dispute Resolution: DIAC Arbitration in Dubai.
+
+13.7 Entire Agreement: This Agreement supersedes all prior negotiations.
+
+13.8 Amendments: Must be in writing signed by both parties.
+
+═══════════════════════════════════════════════════════════════════
+
+SIGNATURES
+
+COMPANY:
+Nuqta Technology L.L.C.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _______________
+Company Stamp: [Affix]
+
+VENDOR:
+[Vendor Name]
+
+Signature: _________________________
+Name: _______________
+Title: _______________
+Date: _______________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+SCHEDULE A: SPECIFICATIONS
+[Detailed product/service specifications]
+
+SCHEDULE B: PAYMENT MILESTONES
+[If applicable]
+
+SCHEDULE C: KEY PERSONNEL
+[If applicable]`
+  },
+  {
+    id: 'due-diligence',
+    title: 'Due Diligence Checklist (Investor)',
+    category: 'Investment Documents',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Complete due diligence checklist for investor fundraising.',
+    content: `NUQTA TECHNOLOGY L.L.C.
+INVESTOR DUE DILIGENCE CHECKLIST
+
+Prepared for: [Investor Name]
+Date: _______________
+Version: 1.0
+
+═══════════════════════════════════════════════════════════════════
+
+1. CORPORATE DOCUMENTS
+
+1.1 Formation Documents
+☐ Trade License (current)
+☐ Certificate of Incorporation
+☐ Memorandum of Association (MOA)
+☐ Amendments to MOA (if any)
+☐ Certificate of Good Standing
+
+1.2 Corporate Governance
+☐ Shareholder resolutions
+☐ Board/Manager resolutions
+☐ Shareholder register
+☐ Share certificates
+☐ Share transfer documents (if any)
+☐ Organizational chart
+
+1.3 Ownership Structure
+☐ Cap table (fully diluted)
+☐ ESOP/option pool details
+☐ Convertible securities outstanding
+☐ Side letters or special rights
+☐ Beneficial ownership declaration
+
+═══════════════════════════════════════════════════════════════════
+
+2. FINANCIAL INFORMATION
+
+2.1 Historical Financials
+☐ Financial statements (audited if available)
+   - Year 1: _______________
+   - Year 2: _______________
+☐ Management accounts (current YTD)
+☐ Bank statements (12 months)
+☐ Tax returns filed
+
+2.2 Financial Projections
+☐ 3-5 year financial model
+☐ Key assumptions documented
+☐ Revenue projections
+☐ Unit economics
+☐ Burn rate analysis
+☐ Runway calculation
+
+2.3 Current Financial Position
+☐ Cash position
+☐ Accounts receivable aging
+☐ Accounts payable
+☐ Outstanding debt/loans
+☐ Contingent liabilities
+
+═══════════════════════════════════════════════════════════════════
+
+3. BUSINESS & OPERATIONS
+
+3.1 Business Model
+☐ Pitch deck (current)
+☐ Business plan
+☐ Go-to-market strategy
+☐ Competitive analysis
+☐ Market sizing
+☐ Customer acquisition strategy
+
+3.2 Product/Technology
+☐ Product roadmap
+☐ Technology architecture overview
+☐ IP portfolio (patents, trademarks)
+☐ Source code ownership
+☐ Third-party technology dependencies
+☐ Security audit reports
+
+3.3 Customers/Merchants
+☐ Customer/merchant list
+☐ Key account details
+☐ Revenue concentration
+☐ Churn metrics
+☐ Customer acquisition cost (CAC)
+☐ Lifetime value (LTV)
+☐ NPS/satisfaction scores
+
+3.4 Key Metrics
+☐ User metrics (MAU, DAU, growth)
+☐ Transaction metrics
+☐ Engagement metrics
+☐ Revenue metrics
+☐ KPI dashboard
+
+═══════════════════════════════════════════════════════════════════
+
+4. LEGAL & COMPLIANCE
+
+4.1 Contracts
+☐ Material contracts list
+☐ Merchant agreements (template + key deals)
+☐ Vendor/supplier agreements
+☐ Partnership agreements
+☐ Technology licenses
+
+4.2 Intellectual Property
+☐ Trademark registrations/applications
+☐ Domain name ownership
+☐ IP assignment agreements
+☐ Open source license compliance
+☐ Third-party IP licenses
+
+4.3 Regulatory & Compliance
+☐ Licenses and permits required
+☐ PDPL compliance documentation
+☐ AML/CFT policy and compliance
+☐ Consumer protection compliance
+☐ CBUAE regulatory status
+☐ Data processing agreements
+
+4.4 Litigation
+☐ Pending litigation list
+☐ Threatened claims
+☐ Past significant disputes
+☐ Regulatory investigations
+
+═══════════════════════════════════════════════════════════════════
+
+5. EMPLOYMENT & TEAM
+
+5.1 Team Structure
+☐ Org chart
+☐ Executive team bios
+☐ Key personnel list
+☐ Employee headcount by function
+☐ Contractor list
+
+5.2 Employment Documents
+☐ Employment contract templates
+☐ Key employee contracts
+☐ Non-compete/non-solicit agreements
+☐ IP assignment agreements
+☐ ESOP plan and grants
+
+5.3 HR Policies
+☐ Employee handbook
+☐ Compensation structure
+☐ Benefits summary
+☐ Pending HR issues
+
+═══════════════════════════════════════════════════════════════════
+
+6. INSURANCE & RISK
+
+6.1 Insurance
+☐ Insurance policies summary
+   - General liability
+   - D&O
+   - Cyber liability
+   - Professional indemnity
+   - Employee health
+☐ Claims history
+
+6.2 Risk Factors
+☐ Key risk register
+☐ Business continuity plan
+☐ Disaster recovery plan
+
+═══════════════════════════════════════════════════════════════════
+
+7. TECHNOLOGY & SECURITY
+
+7.1 Technical Documentation
+☐ System architecture diagram
+☐ Infrastructure overview
+☐ Database schema (high-level)
+☐ API documentation
+☐ Third-party integrations
+
+7.2 Security
+☐ Security policy
+☐ Penetration test results
+☐ SOC 2 / ISO 27001 status
+☐ Incident response plan
+☐ Data backup procedures
+☐ Access control documentation
+
+7.3 Development
+☐ Development process documentation
+☐ Code repository access (for technical DD)
+☐ Test coverage metrics
+☐ Deployment procedures
+
+═══════════════════════════════════════════════════════════════════
+
+8. DATA ROOM STRUCTURE
+
+Recommended folder structure:
+
+📁 1. Corporate
+   📁 1.1 Formation Documents
+   📁 1.2 Governance
+   📁 1.3 Cap Table
+
+📁 2. Financial
+   📁 2.1 Historical
+   📁 2.2 Projections
+   📁 2.3 Current Position
+
+📁 3. Business
+   📁 3.1 Pitch Materials
+   📁 3.2 Product
+   📁 3.3 Metrics
+
+📁 4. Legal
+   📁 4.1 Contracts
+   📁 4.2 IP
+   📁 4.3 Compliance
+   📁 4.4 Litigation
+
+📁 5. Team
+   📁 5.1 Org Structure
+   📁 5.2 Employment
+   📁 5.3 ESOP
+
+📁 6. Insurance & Risk
+
+📁 7. Technology
+   📁 7.1 Architecture
+   📁 7.2 Security
+   📁 7.3 Development
+
+═══════════════════════════════════════════════════════════════════
+
+9. DOCUMENT STATUS TRACKER
+
+┌──────────────────────────┬──────────┬────────────┬─────────────┐
+│ Document                 │ Status   │ Owner      │ Notes       │
+├──────────────────────────┼──────────┼────────────┼─────────────┤
+│ Trade License            │ Ready    │ CEO        │             │
+│ MOA                      │ Ready    │ Legal      │             │
+│ Cap Table                │ Ready    │ CEO        │             │
+│ Financial Statements     │ Pending  │ CFO        │ Q1 2026     │
+│ Financial Model          │ Ready    │ CFO        │             │
+│ Pitch Deck               │ Ready    │ CEO        │             │
+│ Merchant Agreements      │ Ready    │ COO        │             │
+│ Employee Contracts       │ Ready    │ HR         │             │
+│ Security Audit           │ Pending  │ CTO        │ Schedule    │
+│ [Add more rows]          │          │            │             │
+└──────────────────────────┴──────────┴────────────┴─────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+10. DD CONTACT POINTS
+
+CEO: Rejaul Karim - rejaul@nuqtaapp.com
+CFO: [Name] - finance@nuqtaapp.com
+CTO: Deep Tednu Kuri - tech@nuqtaapp.com
+Legal: legal@nuqtaapp.com
+
+Data Room Access: [Link to be provided]
+Access expires: [Date]`
+  },
+  {
+    id: 'board-meeting-minutes',
+    title: 'Board/Manager Meeting Minutes',
+    category: 'Corporate Governance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Template for recording meeting minutes and decisions.',
+    content: `MINUTES OF MEETING
+NUQTA TECHNOLOGY L.L.C.
+
+═══════════════════════════════════════════════════════════════════
+
+MEETING DETAILS
+
+Meeting Type: [ ] Manager's Meeting [ ] Shareholder Meeting
+Meeting No: _______________
+Date: _______________
+Time: _______________ to _______________
+Location: [ ] Dubai Office [ ] Video Conference
+
+═══════════════════════════════════════════════════════════════════
+
+ATTENDEES
+
+Present:
+☐ Rejaul Karim - CEO & Manager (Chair)
+☐ Deep Tednu Kuri - CTO
+☐ Sarbajit Bhatacharjee - CMO
+☐ Gyandeep Bordoloi - COO
+☐ _______________
+☐ _______________
+
+Absent with Apologies:
+☐ _______________
+
+Guests/Invitees:
+☐ _______________
+
+Quorum: [ ] Yes [ ] No
+
+═══════════════════════════════════════════════════════════════════
+
+AGENDA
+
+1. Opening and Quorum
+2. Approval of Previous Minutes
+3. _______________
+4. _______________
+5. _______________
+6. Any Other Business
+7. Date of Next Meeting
+8. Adjournment
+
+═══════════════════════════════════════════════════════════════════
+
+MINUTES
+
+1. OPENING AND QUORUM
+
+The meeting was called to order at _______________ by Rejaul Karim.
+A quorum was confirmed present.
+
+─────────────────────────────────────────────────────────────────
+
+2. APPROVAL OF PREVIOUS MINUTES
+
+Minutes of the meeting dated _______________ were reviewed.
+
+RESOLUTION: The minutes were approved as presented.
+Proposed by: _______________
+Seconded by: _______________
+Vote: [ ] Unanimous [ ] Majority
+
+─────────────────────────────────────────────────────────────────
+
+3. [AGENDA ITEM]
+
+Discussion:
+_______________________________________________________________
+_______________________________________________________________
+_______________________________________________________________
+
+RESOLUTION: _______________________________________________
+Proposed by: _______________
+Seconded by: _______________
+Vote: [ ] Unanimous [ ] Majority [ ] Opposed: _______________
+
+Action Items:
+┌─────────────────────────┬─────────────┬─────────────────────────┐
+│ Action                  │ Responsible │ Due Date                │
+├─────────────────────────┼─────────────┼─────────────────────────┤
+│                         │             │                         │
+│                         │             │                         │
+└─────────────────────────┴─────────────┴─────────────────────────┘
+
+─────────────────────────────────────────────────────────────────
+
+4. [AGENDA ITEM]
+
+Discussion:
+_______________________________________________________________
+_______________________________________________________________
+
+RESOLUTION: _______________________________________________
+Vote: [ ] Unanimous [ ] Majority
+
+Action Items:
+┌─────────────────────────┬─────────────┬─────────────────────────┐
+│ Action                  │ Responsible │ Due Date                │
+├─────────────────────────┼─────────────┼─────────────────────────┤
+│                         │             │                         │
+└─────────────────────────┴─────────────┴─────────────────────────┘
+
+─────────────────────────────────────────────────────────────────
+
+5. FINANCIAL UPDATE
+
+[If applicable]
+
+Revenue YTD: AED _______________
+Expenses YTD: AED _______________
+Cash Position: AED _______________
+Runway: _______________ months
+
+─────────────────────────────────────────────────────────────────
+
+6. ANY OTHER BUSINESS
+
+_______________________________________________________________
+_______________________________________________________________
+
+─────────────────────────────────────────────────────────────────
+
+7. DATE OF NEXT MEETING
+
+The next meeting will be held on _______________ at _______________.
+
+─────────────────────────────────────────────────────────────────
+
+8. ADJOURNMENT
+
+There being no further business, the meeting was adjourned at _______________.
+
+═══════════════════════════════════════════════════════════════════
+
+ACTION ITEMS SUMMARY
+
+┌────┬─────────────────────────┬─────────────┬───────────┬────────┐
+│ #  │ Action                  │ Responsible │ Due Date  │ Status │
+├────┼─────────────────────────┼─────────────┼───────────┼────────┤
+│ 1  │                         │             │           │        │
+│ 2  │                         │             │           │        │
+│ 3  │                         │             │           │        │
+│ 4  │                         │             │           │        │
+│ 5  │                         │             │           │        │
+└────┴─────────────────────────┴─────────────┴───────────┴────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+SIGNATURES
+
+Minutes Prepared By:
+Signature: _________________________
+Name: _______________
+Title: _______________
+Date: _______________
+
+Approved By (Chair):
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO & Manager
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+ATTACHMENTS
+☐ Presentation slides
+☐ Financial reports
+☐ Proposals reviewed
+☐ Other: _______________`
+  },
+  {
+    id: 'termination-letter',
+    title: 'Employment Termination Documents',
+    category: 'Employment',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Templates for employment termination, resignation, and exit process.',
+    content: `EMPLOYMENT TERMINATION DOCUMENTS
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 1: TERMINATION LETTER (BY EMPLOYER)
+
+[On Company Letterhead]
+
+Date: _______________
+
+To:
+[Employee Name]
+[Address]
+
+Subject: Termination of Employment
+
+Dear [Employee Name],
+
+This letter serves as formal notice of the termination of your employment with Nuqta Technology L.L.C., effective _______________.
+
+1. REASON FOR TERMINATION
+
+[ ] End of probation period - performance not meeting requirements
+[ ] Redundancy / Position elimination
+[ ] Business restructuring
+[ ] Performance issues (after documented improvement plan)
+[ ] Misconduct
+[ ] Mutual agreement
+[ ] Contract completion (fixed-term)
+
+2. LAST WORKING DAY
+
+Your last working day will be: _______________
+
+[ ] You are required to work during the notice period
+[ ] You are placed on garden leave during the notice period
+[ ] Payment in lieu of notice will be provided
+
+3. FINAL SETTLEMENT
+
+Your final settlement will include:
+
+Basic salary (pro-rated): AED _______________
+Accrued annual leave (___ days): AED _______________
+Notice period payment: AED _______________
+End of service gratuity: AED _______________
+Other allowances: AED _______________
+Deductions: AED _______________
+─────────────────────────────────────────
+TOTAL: AED _______________
+
+Payment will be made within 14 days of your last working day.
+
+4. EXIT REQUIREMENTS
+
+Please complete the following before your last day:
+☐ Return company laptop and equipment
+☐ Return access cards and keys
+☐ Complete knowledge transfer
+☐ Submit final reports
+☐ Return any company property
+☐ Exit interview
+
+5. VISA CANCELLATION
+
+[ ] Your visa will be cancelled. You have 30 days to transfer or exit UAE.
+[ ] Company will assist with visa transfer if you have a new employer.
+
+Required for visa cancellation:
+☐ Original passport
+☐ Emirates ID
+☐ Last salary certificate
+
+6. REFERENCES
+
+[ ] Company will provide a reference upon request
+[ ] Experience certificate will be provided
+
+7. CONFIDENTIALITY
+
+Your obligations under the confidentiality agreement remain in effect.
+
+8. NON-COMPETE
+
+[If applicable] Your non-compete obligations per your employment contract remain in effect for ___ months.
+
+We wish you success in your future endeavors.
+
+Sincerely,
+
+Signature: _________________________
+Name: _______________
+Title: _______________
+Date: _______________
+
+ACKNOWLEDGMENT:
+
+I acknowledge receipt of this termination letter.
+
+Employee Signature: _________________________
+Name: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 2: RESIGNATION ACCEPTANCE LETTER
+
+[On Company Letterhead]
+
+Date: _______________
+
+To:
+[Employee Name]
+[Position]
+
+Subject: Acceptance of Resignation
+
+Dear [Employee Name],
+
+This letter confirms receipt and acceptance of your resignation letter dated _______________.
+
+1. LAST WORKING DAY
+
+Your last working day will be: _______________
+
+Notice period required: ___ days
+Notice period served: ___ days
+[ ] Full notice served
+[ ] Early release granted
+[ ] Payment in lieu of notice deducted
+
+2. FINAL SETTLEMENT
+
+[Same structure as termination letter]
+
+3. EXIT REQUIREMENTS
+
+[Same structure as termination letter]
+
+4. APPRECIATION
+
+We appreciate your contributions during your time at Nuqta and wish you success in your future career.
+
+Sincerely,
+
+Signature: _________________________
+Name: _______________
+Title: HR Manager / CEO
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 3: EXPERIENCE CERTIFICATE
+
+[On Company Letterhead]
+
+Date: _______________
+
+TO WHOM IT MAY CONCERN
+
+EXPERIENCE CERTIFICATE
+
+This is to certify that [EMPLOYEE NAME], holding passport number [Number], was employed with Nuqta Technology L.L.C. from _______________ to _______________.
+
+Position(s) held:
+• [Job Title] (From ___ to ___)
+• [Previous Title if promoted] (From ___ to ___)
+
+During their employment, [he/she] was responsible for:
+• [Key responsibility 1]
+• [Key responsibility 2]
+• [Key responsibility 3]
+
+[He/She] left the company due to [resignation / end of contract / mutual agreement].
+
+We found [him/her] to be [positive attributes - e.g., dedicated, professional, reliable].
+
+We wish [him/her] success in future endeavors.
+
+For Nuqta Technology L.L.C.:
+
+Signature: _________________________
+Name: _______________
+Title: HR Manager / CEO
+Date: _______________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 4: END OF SERVICE GRATUITY CALCULATION
+
+EMPLOYEE DETAILS:
+Name: _______________
+Position: _______________
+Start Date: _______________
+End Date: _______________
+Total Service: ___ years, ___ months
+
+SALARY (Last drawn):
+Basic Salary: AED _______________
+
+CALCULATION:
+
+For first 5 years of service:
+21 days x (Basic Salary ÷ 30) x ___ years = AED _______________
+
+For years after 5:
+30 days x (Basic Salary ÷ 30) x ___ years = AED _______________
+
+TOTAL GRATUITY: AED _______________
+
+Deductions (if applicable):
+[ ] Prorated for partial year: _______________
+[ ] Resignation before 1 year: No gratuity
+[ ] Resignation 1-3 years: 1/3 of calculated amount
+[ ] Resignation 3-5 years: 2/3 of calculated amount
+[ ] Resignation after 5 years: Full amount
+[ ] Termination: Full amount
+
+FINAL GRATUITY PAYABLE: AED _______________
+
+Calculated by: _______________
+Verified by: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 5: EXIT INTERVIEW FORM
+
+Employee Name: _______________
+Position: _______________
+Department: _______________
+Manager: _______________
+Exit Date: _______________
+
+1. Why are you leaving?
+[ ] Better opportunity
+[ ] Career change
+[ ] Compensation
+[ ] Work-life balance
+[ ] Management issues
+[ ] Relocation
+[ ] Personal reasons
+[ ] Other: _______________
+
+2. What did you enjoy most about working here?
+_______________________________________________________________
+
+3. What could be improved?
+_______________________________________________________________
+
+4. How was your relationship with your manager?
+[ ] Excellent [ ] Good [ ] Fair [ ] Poor
+Comments: _______________
+
+5. Would you recommend Nuqta as an employer?
+[ ] Yes [ ] No [ ] Maybe
+Comments: _______________
+
+6. Would you consider returning in the future?
+[ ] Yes [ ] No [ ] Maybe
+
+7. Any suggestions for the company?
+_______________________________________________________________
+
+Conducted by: _______________
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+EXIT CHECKLIST
+
+Employee: _______________ Date: _______________
+
+☐ Resignation/termination letter signed
+☐ Exit interview completed
+☐ Knowledge transfer completed
+☐ Laptop returned (Asset #: ___)
+☐ Mobile phone returned (if company)
+☐ Access cards returned
+☐ Keys returned
+☐ Company credit card cancelled
+☐ Email access revoked
+☐ System access revoked
+☐ Final paycheck processed
+☐ Experience certificate issued
+☐ Visa cancellation initiated
+☐ Emirates ID returned to employee
+
+HR Sign-off: _______________
+IT Sign-off: _______________
+Finance Sign-off: _______________
+Manager Sign-off: _______________`
+  },
+  {
+    id: 'website-legal',
+    title: 'Website Legal Pages',
+    category: 'Digital Policies',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Legal pages for Nuqta website - Disclaimer, Copyright, Accessibility.',
+    content: `NUQTA WEBSITE LEGAL PAGES
+
+═══════════════════════════════════════════════════════════════════
+
+PAGE 1: WEBSITE DISCLAIMER
+
+DISCLAIMER
+
+Last Updated: February 7, 2026
+
+The information provided on the Nuqta website (www.nuqtaapp.com) and mobile application is for general informational purposes only.
+
+1. NO WARRANTIES
+All information is provided "as is" without warranty of any kind. Nuqta makes no representations or warranties about the accuracy, reliability, or completeness of the content.
+
+2. NOT PROFESSIONAL ADVICE
+The content does not constitute financial, legal, or professional advice. Users should consult appropriate professionals for specific guidance.
+
+3. THIRD-PARTY LINKS
+Our website may contain links to third-party websites. We are not responsible for the content, privacy practices, or accuracy of external sites.
+
+4. POINTS PROGRAM
+Information about the Nuqta points program is subject to our Terms of Service. Points values, earning rates, and redemption terms may change without notice.
+
+5. FORWARD-LOOKING STATEMENTS
+Any projections or forward-looking statements are based on current expectations and involve risks and uncertainties. Actual results may differ.
+
+6. MERCHANT INFORMATION
+Information about merchant partners is provided for convenience. Nuqta does not guarantee merchant availability, pricing, or service quality.
+
+7. LIMITATION OF LIABILITY
+Nuqta shall not be liable for any damages arising from the use of this website or reliance on its content.
+
+8. CHANGES
+We reserve the right to modify this disclaimer at any time.
+
+Contact: legal@nuqtaapp.com
+
+═══════════════════════════════════════════════════════════════════
+
+PAGE 2: COPYRIGHT NOTICE
+
+COPYRIGHT NOTICE
+
+© 2026 Nuqta Technology L.L.C. All Rights Reserved.
+
+1. OWNERSHIP
+All content on this website, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, and software, is the property of Nuqta Technology L.L.C. or its content suppliers and is protected by UAE and international copyright laws.
+
+2. TRADEMARKS
+"NUQTA," "نقطة," the Nuqta logo, and related marks are trademarks of Nuqta Technology L.L.C. Use of these trademarks without express written permission is prohibited.
+
+3. PERMITTED USE
+You may:
+• View and print content for personal, non-commercial use
+• Share links to our website
+• Quote brief excerpts with proper attribution
+
+4. PROHIBITED USE
+You may not:
+• Reproduce, distribute, or republish content without permission
+• Modify or create derivative works
+• Use content for commercial purposes without a license
+• Remove copyright or trademark notices
+• Frame or embed our content without permission
+
+5. USER-GENERATED CONTENT
+By submitting content to Nuqta (reviews, feedback, etc.), you grant us a non-exclusive, royalty-free license to use, reproduce, and display such content.
+
+6. DMCA / TAKEDOWN REQUESTS
+If you believe content infringes your copyright, contact:
+Email: legal@nuqtaapp.com
+Subject: Copyright Infringement Notice
+
+Include:
+• Description of the copyrighted work
+• Location of the allegedly infringing content
+• Your contact information
+• Statement of good faith belief
+• Statement of accuracy under penalty of perjury
+• Your signature
+
+7. CONTACT
+For licensing inquiries: legal@nuqtaapp.com
+
+═══════════════════════════════════════════════════════════════════
+
+PAGE 3: ACCESSIBILITY STATEMENT
+
+ACCESSIBILITY STATEMENT
+
+Nuqta Technology L.L.C. is committed to ensuring digital accessibility for people with disabilities.
+
+1. OUR COMMITMENT
+We strive to make our website and mobile application accessible to all users, regardless of ability or technology used.
+
+2. ACCESSIBILITY STANDARDS
+We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards.
+
+3. ACCESSIBILITY FEATURES
+Our platforms include:
+• Alternative text for images
+• Keyboard navigation support
+• Screen reader compatibility
+• Resizable text
+• Sufficient color contrast
+• Clear navigation structure
+• Form labels and instructions
+
+4. MOBILE ACCESSIBILITY
+Our mobile app is designed to work with:
+• VoiceOver (iOS)
+• TalkBack (Android)
+• Dynamic Type / Font scaling
+• Reduced Motion settings
+
+5. ONGOING EFFORTS
+We continuously work to improve accessibility by:
+• Regular accessibility audits
+• User feedback integration
+• Staff training on accessibility
+• Testing with assistive technologies
+
+6. KNOWN LIMITATIONS
+We are actively working to address:
+• [List any known accessibility issues]
+• [Expected resolution timeline]
+
+7. FEEDBACK
+If you encounter accessibility barriers or have suggestions:
+
+Email: accessibility@nuqtaapp.com
+Phone: [Number]
+
+Please provide:
+• Description of the issue
+• Page/feature affected
+• Assistive technology used (if any)
+• Your contact information
+
+We aim to respond within 3 business days.
+
+8. THIRD-PARTY CONTENT
+Some third-party content or features may not be fully accessible. We work with our partners to improve accessibility.
+
+9. ALTERNATIVE FORMATS
+If you need information in an alternative format, please contact us.
+
+Last reviewed: February 7, 2026
+Next review: August 2026
+
+═══════════════════════════════════════════════════════════════════
+
+PAGE 4: SOCIAL MEDIA POLICY (External-facing)
+
+SOCIAL MEDIA GUIDELINES
+
+For Nuqta's Official Social Media Channels
+
+1. OUR CHANNELS
+Official Nuqta accounts:
+• Instagram: @nuqtaapp
+• TikTok: @nuqtaapp
+• Twitter/X: @nuqtaapp
+• LinkedIn: Nuqta Technology
+• Facebook: Nuqtaapp
+
+2. ENGAGEMENT POLICY
+• We aim to respond to comments and messages within 24 hours
+• Responses during business hours (Sun-Thu, 9 AM-6 PM GST)
+• For urgent issues, contact support@nuqtaapp.com
+
+3. COMMUNITY GUIDELINES
+We welcome constructive feedback but may remove:
+• Spam or commercial solicitation
+• Offensive, discriminatory, or hateful content
+• Personal attacks or harassment
+• False or misleading information
+• Content violating others' privacy
+• Illegal content
+
+4. USER CONTENT
+By tagging us or using #Nuqta, you grant us permission to share your content. We will credit the original creator.
+
+5. PROMOTIONS
+Official promotions are announced through our verified channels. Be wary of fake accounts or scams.
+
+6. OPINIONS
+Views expressed by Nuqta team members on personal accounts are their own and do not represent official company positions.
+
+7. REPORT ISSUES
+To report fake accounts or concerning content:
+Email: social@nuqtaapp.com`
+  },
+  {
+    id: 'app-store-policies',
+    title: 'App Store Compliance Documents',
+    category: 'Digital Policies',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Privacy policy and terms formatted for App Store and Play Store requirements.',
+    content: `APP STORE COMPLIANCE DOCUMENTS
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 1: APP STORE PRIVACY LABEL DATA
+
+Apple App Store Privacy Details:
+
+DATA LINKED TO YOU:
+┌─────────────────────────┬─────────────────────────────────────┐
+│ Data Type               │ Purpose                             │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Contact Info            │                                     │
+│ - Email Address         │ Account, App Functionality          │
+│ - Phone Number          │ Account, App Functionality          │
+│ - Name                  │ Account, Personalization            │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Identifiers             │                                     │
+│ - User ID               │ Account, Analytics                  │
+│ - Device ID             │ Analytics, Fraud Prevention         │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Location                │                                     │
+│ - Coarse Location       │ App Functionality (nearby merchants)│
+├─────────────────────────┼─────────────────────────────────────┤
+│ Usage Data              │                                     │
+│ - Product Interaction   │ Analytics, Personalization          │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Purchases               │                                     │
+│ - Purchase History      │ App Functionality, Analytics        │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Financial Info          │                                     │
+│ - Payment Info          │ App Functionality (linked cards)    │
+└─────────────────────────┴─────────────────────────────────────┘
+
+DATA USED TO TRACK YOU:
+☐ Device ID (for ad attribution only with consent)
+
+DATA NOT COLLECTED:
+• Health & Fitness
+• Sensitive Info
+• Contacts (address book)
+• Browsing History
+• Search History
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 2: GOOGLE PLAY DATA SAFETY
+
+Data Safety Form Responses:
+
+DOES YOUR APP COLLECT OR SHARE USER DATA?
+Yes
+
+DATA TYPES COLLECTED:
+┌─────────────────────────┬───────────┬───────────┬─────────────┐
+│ Data Type               │ Collected │ Shared    │ Purpose     │
+├─────────────────────────┼───────────┼───────────┼─────────────┤
+│ Name                    │ Yes       │ No        │ Account     │
+│ Email                   │ Yes       │ No        │ Account     │
+│ Phone                   │ Yes       │ No        │ Account     │
+│ Approximate location    │ Yes       │ No        │ Features    │
+│ Purchase history        │ Yes       │ No        │ Features    │
+│ App interactions        │ Yes       │ No        │ Analytics   │
+│ Crash logs              │ Yes       │ No        │ App support │
+│ Device IDs              │ Yes       │ No        │ Analytics   │
+└─────────────────────────┴───────────┴───────────┴─────────────┘
+
+SECURITY PRACTICES:
+☑ Data is encrypted in transit
+☑ You can request that data be deleted
+☑ Data is transferred securely
+
+DATA DELETION:
+Users can request account and data deletion through:
+• In-app: Settings > Account > Delete Account
+• Email: privacy@nuqtaapp.com
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 3: MOBILE APP PRIVACY POLICY (SHORT FORM)
+
+NUQTA PRIVACY POLICY
+
+This policy explains how we handle your data.
+
+WHAT WE COLLECT:
+• Account info (name, email, phone)
+• Transaction history
+• App usage data
+• Device information
+• Location (with permission)
+
+WHY WE COLLECT IT:
+• To provide the rewards service
+• To show nearby merchants
+• To improve the app
+• To prevent fraud
+
+WHO WE SHARE WITH:
+• Merchants (only your transaction at their store)
+• Analytics providers (anonymized data)
+• Payment processors (for card linking)
+• Legal authorities (if required by law)
+
+YOUR RIGHTS:
+• Access your data
+• Correct your data
+• Delete your account
+• Opt out of marketing
+• Withdraw consent
+
+DATA SECURITY:
+• Encryption in transit and at rest
+• Secure servers in UAE
+• Regular security audits
+
+CONTACT US:
+privacy@nuqtaapp.com
+
+Full Privacy Policy: www.nuqtaapp.com/privacy
+Last Updated: February 7, 2026
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 4: APP STORE LISTING COMPLIANCE
+
+Required Disclosures in App Description:
+
+1. SUBSCRIPTION DISCLOSURE (if applicable):
+"Nuqta Premium subscription unlocks exclusive rewards and benefits. Subscriptions are charged monthly/annually to your iTunes/Play Store account. Auto-renewal may be turned off in Account Settings. No cancellation of current subscription during active period."
+
+2. IN-APP PURCHASES:
+"This app offers in-app purchases for premium features."
+
+3. AGE RATING JUSTIFICATION:
+• Age Rating: 4+ (iOS) / Everyone (Android)
+• No mature content
+• No violence
+• No gambling mechanics (points are not redeemable for cash)
+
+4. PERMISSIONS EXPLANATION:
+• Location: To show nearby merchants and offers
+• Camera: To scan QR codes at merchants
+• Notifications: To alert you about points and offers
+• Photos: To upload profile picture or receipts
+
+5. THIRD-PARTY SERVICES:
+• Firebase Analytics
+• Google Maps
+• Payment gateways
+
+6. SUPPORT URL:
+www.nuqtaapp.com/support
+
+7. PRIVACY POLICY URL:
+www.nuqtaapp.com/privacy
+
+8. TERMS OF SERVICE URL:
+www.nuqtaapp.com/terms
+
+═══════════════════════════════════════════════════════════════════
+
+DOCUMENT 5: ACCOUNT DELETION INSTRUCTIONS
+
+(Required by Apple App Store)
+
+HOW TO DELETE YOUR NUQTA ACCOUNT
+
+Option 1: In-App Deletion
+1. Open the Nuqta app
+2. Go to Settings (gear icon)
+3. Tap "Account"
+4. Tap "Delete Account"
+5. Confirm your password
+6. Tap "Permanently Delete"
+7. Your account will be deleted within 7 days
+
+Option 2: Email Request
+1. Send email to: privacy@nuqtaapp.com
+2. Subject: "Account Deletion Request"
+3. Include: Your registered email address
+4. We will process within 7 days
+
+WHAT GETS DELETED:
+• Your profile information
+• Transaction history
+• Points balance (will be forfeited)
+• Preferences and settings
+• Linked payment methods
+
+WHAT WE RETAIN:
+• Transaction records (for legal/tax compliance) - anonymized
+• Aggregated analytics data (cannot identify you)
+
+IMPORTANT:
+• Points cannot be recovered after deletion
+• Pending redemptions will be cancelled
+• You can create a new account with the same email after 30 days
+
+QUESTIONS?
+Contact: privacy@nuqtaapp.com`
   }
 ];
 
