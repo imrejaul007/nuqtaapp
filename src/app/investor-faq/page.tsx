@@ -116,7 +116,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What\'s your TAM/SAM/SOM?',
-          answer: 'TAM (UAE retail market): $60B annually. SAM (addressable categories): $15B. SOM (Year 3 target): $500M GMV = $50M revenue at 10% blended take rate. Conservative capture of 3.3% of addressable market.',
+          answer: 'TAM (UAE retail market): $60B annually. SAM (addressable categories): $15B. SOM (Year 3 target): AED 1.8B GMV = AED 144M revenue at 8% blended take rate. Conservative capture of 3.3% of addressable market.',
         },
         {
           question: 'Who are your competitors?',

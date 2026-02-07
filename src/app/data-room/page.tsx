@@ -602,7 +602,7 @@ export default function DataRoomPage() {
               <p className="font-semibold text-white mb-2">Revenue Scaling Path</p>
               <p className="text-gray-300 text-sm">
                 Month 1-3: 30 merchants activated, conservative GMV ramp-up. Month 4-6: 60+ merchants activated
-                as pipeline converts. 1% market penetration at maturity = $340M GMV opportunity × 15% = $51M annual revenue potential.
+                as pipeline converts. 1% market penetration at maturity = AED 1.8B GMV opportunity × 8% = AED 144M annual revenue potential (Year 3 target).
               </p>
             </div>
           </DocItem>

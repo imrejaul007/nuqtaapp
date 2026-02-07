@@ -271,8 +271,8 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
                     <div>
                       <p className="text-xs sm:text-sm text-green-400 mb-2 uppercase tracking-wide">Dubai SOM (3 Years)</p>
                       <DataPoint
-                        value="$1.35B"
-                        source="3% market penetration in Dubai within 3 years (Phase 1). At 15% commission: $202M revenue potential"
+                        value="AED 1.8B"
+                        source="3% market penetration in Dubai within 3 years (Phase 1). At 8% take rate: AED 144M revenue potential"
                         className="text-4xl sm:text-5xl md:text-6xl font-black text-green-400 block mb-2"
                       />
                       <p className="text-sm sm:text-base text-gray-300">Annual GMV target in Dubai</p>
@@ -285,7 +285,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
 
             <p className="mt-6 text-center text-xs sm:text-sm text-gray-400 max-w-3xl">
               <span className="text-[#c9a227] font-bold">The Opportunity:</span> Massive untapped GCC market with zero viable solutions.
-              3% Dubai capture = $1.35B GMV → $202M revenue.
+              3% Dubai capture = AED 1.8B GMV → AED 144M revenue.
             </p>
           </div>
         );
