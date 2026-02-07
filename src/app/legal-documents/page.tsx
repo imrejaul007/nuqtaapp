@@ -3085,6 +3085,1529 @@ Emergency Hotline: [Phone Number]
 Nuqta Technology L.L.C.
 Dubai, UAE
 www.nuqtaapp.com`
+  },
+  {
+    id: 'shareholder-resolution',
+    title: 'Shareholder Resolution Template',
+    category: 'Corporate Governance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Template for shareholder resolutions for major company decisions.',
+    content: `SHAREHOLDER RESOLUTION
+NUQTA TECHNOLOGY L.L.C.
+
+Resolution No: [SR-2026-XXX]
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+WRITTEN RESOLUTION OF THE SOLE SHAREHOLDER / SHAREHOLDERS
+OF
+NUQTA TECHNOLOGY L.L.C.
+(Trade License No: [Number])
+
+═══════════════════════════════════════════════════════════════════
+
+The undersigned, being [the sole shareholder / all the shareholders] of Nuqta Technology L.L.C. (the "Company"), hereby adopt the following resolution(s) effective as of the date set forth above:
+
+═══════════════════════════════════════════════════════════════════
+
+RESOLUTION 1: [TITLE - e.g., APPOINTMENT OF MANAGER]
+
+WHEREAS, [background/reason for resolution];
+
+NOW, THEREFORE, BE IT RESOLVED THAT:
+
+1.1 [Specific resolution detail]
+1.2 [Additional detail if needed]
+1.3 [Further detail if needed]
+
+═══════════════════════════════════════════════════════════════════
+
+RESOLUTION 2: [TITLE - e.g., CAPITAL INCREASE]
+
+WHEREAS, [background/reason];
+
+NOW, THEREFORE, BE IT RESOLVED THAT:
+
+2.1 [Specific resolution detail]
+2.2 [Additional detail if needed]
+
+═══════════════════════════════════════════════════════════════════
+
+GENERAL AUTHORIZATIONS
+
+BE IT FURTHER RESOLVED THAT:
+
+• The Manager(s) of the Company are authorized to take all actions necessary to implement the above resolution(s);
+
+• The Manager(s) are authorized to execute any documents, certificates, or filings required to give effect to the above resolution(s);
+
+• Any actions taken prior to this resolution that are consistent with the above are hereby ratified and approved.
+
+═══════════════════════════════════════════════════════════════════
+
+SHAREHOLDER SIGNATURES
+
+Shareholder: Rejaul Karim
+Share Percentage: 100%
+Signature: _________________________
+Date: _____________________________
+
+[If multiple shareholders, add signature blocks for each]
+
+═══════════════════════════════════════════════════════════════════
+
+COMMON RESOLUTION TYPES - TEMPLATES
+
+─────────────────────────────────────────────────────────────────
+
+A. APPOINTMENT OF MANAGER/DIRECTOR
+
+RESOLVED THAT [Name], holding [Nationality] passport number [Number], is hereby appointed as [Title] of the Company, effective [Date], with the following authorities:
+• [List specific authorities]
+• [Banking authority]
+• [Signing authority]
+
+─────────────────────────────────────────────────────────────────
+
+B. BANK ACCOUNT OPENING
+
+RESOLVED THAT the Company shall open a corporate bank account with [Bank Name], and that the following individuals are authorized signatories:
+• [Name 1] - [Single/Joint] signatory authority
+• [Name 2] - [Single/Joint] signatory authority
+
+Transaction limits:
+• Single signature up to: AED [Amount]
+• Dual signature required above: AED [Amount]
+
+─────────────────────────────────────────────────────────────────
+
+C. CAPITAL INCREASE
+
+RESOLVED THAT the authorized share capital of the Company shall be increased from AED [Current Amount] to AED [New Amount], and that such increase shall be:
+• Contributed by [Shareholder Name]: AED [Amount]
+• In the form of: [Cash/Kind/Retained Earnings]
+• The MOA shall be amended accordingly
+
+─────────────────────────────────────────────────────────────────
+
+D. SHARE TRANSFER
+
+RESOLVED THAT [Transferor Name] shall transfer [Number] shares ([Percentage]%) to [Transferee Name] for a consideration of AED [Amount], subject to:
+• Completion of share transfer documentation
+• Amendment of MOA
+• Regulatory approvals
+
+─────────────────────────────────────────────────────────────────
+
+E. APPROVAL OF INVESTMENT/FUNDING
+
+RESOLVED THAT the Company is authorized to:
+• Accept investment of AED/USD [Amount] from [Investor Name]
+• Issue [Type of instrument - e.g., SAFE, Convertible Note, Equity]
+• Terms as per the attached term sheet dated [Date]
+• The CEO is authorized to negotiate and execute final documents
+
+─────────────────────────────────────────────────────────────────
+
+F. APPROVAL OF MAJOR CONTRACT
+
+RESOLVED THAT the Company is authorized to enter into a [Type] agreement with [Party Name] for [Purpose], with a value of approximately AED [Amount], substantially in the form reviewed by the shareholders.
+
+─────────────────────────────────────────────────────────────────
+
+G. APPROVAL OF EMPLOYEE STOCK OPTION PLAN (ESOP)
+
+RESOLVED THAT an Employee Stock Option Plan is hereby established, reserving [Percentage]% of the Company's fully diluted equity for employee grants, pursuant to the terms of the ESOP document dated [Date].
+
+═══════════════════════════════════════════════════════════════════
+
+CERTIFICATION
+
+I, the undersigned, being the [Manager/Secretary] of Nuqta Technology L.L.C., hereby certify that:
+
+1. The above is a true and correct copy of the resolution(s) duly adopted by the shareholder(s) of the Company;
+2. The resolution(s) remain in full force and effect as of the date hereof;
+3. The resolution(s) have not been amended, modified, or rescinded.
+
+Certified By: _________________________
+Name: Rejaul Karim
+Title: CEO & Manager
+Date: _____________________________
+Company Stamp: [Affix]`
+  },
+  {
+    id: 'board-resolution',
+    title: 'Board/Manager Resolution Template',
+    category: 'Corporate Governance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Template for management/board resolutions for operational decisions.',
+    content: `MANAGER'S RESOLUTION
+NUQTA TECHNOLOGY L.L.C.
+
+Resolution No: [MR-2026-XXX]
+Date: _______________
+
+═══════════════════════════════════════════════════════════════════
+
+RESOLUTION OF THE MANAGER(S) OF
+NUQTA TECHNOLOGY L.L.C.
+(Trade License No: [Number])
+
+═══════════════════════════════════════════════════════════════════
+
+A meeting of the Manager(s) of Nuqta Technology L.L.C. (the "Company") was duly held on [Date] at [Time] at [Location / Via Video Conference].
+
+PRESENT:
+• Rejaul Karim - CEO & Manager (Chairman)
+• [Other managers if applicable]
+
+QUORUM:
+A quorum being present, the following resolutions were unanimously adopted:
+
+═══════════════════════════════════════════════════════════════════
+
+RESOLUTION 1: [TITLE]
+
+IT IS RESOLVED THAT:
+
+[Resolution details]
+
+═══════════════════════════════════════════════════════════════════
+
+RESOLUTION 2: [TITLE]
+
+IT IS RESOLVED THAT:
+
+[Resolution details]
+
+═══════════════════════════════════════════════════════════════════
+
+GENERAL AUTHORITIES
+
+IT IS FURTHER RESOLVED THAT:
+
+• The CEO is authorized to execute all documents necessary to implement the above resolutions;
+• Any officer of the Company is authorized to certify copies of this resolution;
+• Actions taken in furtherance of this resolution prior to its formal adoption are ratified.
+
+═══════════════════════════════════════════════════════════════════
+
+ADJOURNMENT
+
+There being no further business, the meeting was adjourned.
+
+═══════════════════════════════════════════════════════════════════
+
+SIGNATURES
+
+Chairman:
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO & Manager
+Date: _____________________________
+
+[Additional Manager Signatures if applicable]
+
+═══════════════════════════════════════════════════════════════════
+
+COMMON OPERATIONAL RESOLUTIONS
+
+─────────────────────────────────────────────────────────────────
+
+A. HIRING KEY EMPLOYEE
+
+RESOLVED THAT [Name] is hereby employed as [Title] of the Company, effective [Date], with:
+• Base Salary: AED [Amount] per annum
+• Probation Period: [X] months
+• Benefits: As per Employee Handbook
+• ESOP Grant: [Number] options (if applicable)
+
+The CEO is authorized to execute the employment contract.
+
+─────────────────────────────────────────────────────────────────
+
+B. VENDOR/SUPPLIER AGREEMENT
+
+RESOLVED THAT the Company is authorized to enter into an agreement with [Vendor Name] for [Services/Products] at an estimated cost of AED [Amount] per [month/year/project].
+
+─────────────────────────────────────────────────────────────────
+
+C. OFFICE LEASE
+
+RESOLVED THAT the Company shall enter into a lease agreement for office space at [Location], for a term of [X] years, at a rent of AED [Amount] per annum, plus applicable fees and deposits.
+
+─────────────────────────────────────────────────────────────────
+
+D. TECHNOLOGY/SOFTWARE PURCHASE
+
+RESOLVED THAT the Company is authorized to purchase/subscribe to [Software/Service] from [Provider] at an annual cost of USD/AED [Amount], for use in the Company's operations.
+
+─────────────────────────────────────────────────────────────────
+
+E. MARKETING CAMPAIGN APPROVAL
+
+RESOLVED THAT a marketing budget of AED [Amount] is approved for [Campaign Name/Period], to be managed by the CMO in accordance with the marketing plan presented.
+
+─────────────────────────────────────────────────────────────────
+
+F. DELEGATION OF AUTHORITY
+
+RESOLVED THAT [Name], [Title], is hereby delegated the following authorities:
+• Execute contracts up to AED [Amount]
+• Approve expenses up to AED [Amount]
+• Represent the Company in [specific matters]
+
+Subject to the overall supervision of the CEO.
+
+─────────────────────────────────────────────────────────────────
+
+G. POLICY ADOPTION
+
+RESOLVED THAT the [Policy Name] dated [Date], as presented to the Manager(s), is hereby adopted as an official policy of the Company, effective [Date].
+
+═══════════════════════════════════════════════════════════════════
+
+CERTIFICATION
+
+This is to certify that the above resolutions were duly adopted at a properly convened meeting of the Manager(s) of Nuqta Technology L.L.C. and remain in full force and effect.
+
+Company Stamp: [Affix]`
+  },
+  {
+    id: 'power-of-attorney',
+    title: 'Power of Attorney (POA)',
+    category: 'Corporate Governance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'General and specific POA templates for company representation.',
+    content: `POWER OF ATTORNEY
+
+═══════════════════════════════════════════════════════════════════
+
+GENERAL POWER OF ATTORNEY
+
+Know all persons by these presents that:
+
+NUQTA TECHNOLOGY L.L.C.
+Trade License No: [Number]
+Registered Address: Dubai, UAE
+(hereinafter "the Principal" or "the Company")
+
+Represented by its Manager: Rejaul Karim
+
+HEREBY APPOINTS:
+
+[ATTORNEY NAME]
+Nationality: [Nationality]
+Passport No: [Number]
+Emirates ID: [Number]
+Address: [Address]
+(hereinafter "the Attorney")
+
+═══════════════════════════════════════════════════════════════════
+
+SCOPE OF AUTHORITY
+
+The Attorney is authorized to act on behalf of the Company in the following matters:
+
+☐ GENERAL AUTHORITY (Check all that apply)
+
+[ ] Full authority to represent the Company in all matters
+[ ] Limited authority as specified below
+
+☐ SPECIFIC AUTHORITIES:
+
+GOVERNMENT & REGULATORY:
+[ ] Represent the Company before DET (Department of Economy & Tourism)
+[ ] Represent the Company before MOHRE (Ministry of Human Resources)
+[ ] Represent the Company before Immigration authorities
+[ ] Apply for, renew, and amend trade license
+[ ] Apply for, renew, and cancel employee visas
+[ ] Submit applications to TDRA (Telecommunications Authority)
+[ ] Represent before Federal Tax Authority (FTA)
+[ ] Represent before any UAE government department
+
+BANKING:
+[ ] Open bank accounts
+[ ] Operate existing bank accounts
+[ ] Sign checks up to AED [Amount]
+[ ] Request bank facilities and loans
+[ ] Access safe deposit boxes
+[ ] Close bank accounts
+
+LEGAL & CONTRACTS:
+[ ] Sign contracts on behalf of the Company up to AED [Amount]
+[ ] Appear before courts on behalf of the Company
+[ ] Engage lawyers and legal representatives
+[ ] File and respond to legal claims
+[ ] Sign settlement agreements
+
+PROPERTY & ASSETS:
+[ ] Sign tenancy contracts (Ejari)
+[ ] Purchase or sell company assets
+[ ] Manage company properties
+
+EMPLOYMENT:
+[ ] Sign employment contracts
+[ ] Terminate employment contracts
+[ ] Represent in labor disputes
+
+═══════════════════════════════════════════════════════════════════
+
+DURATION
+
+This Power of Attorney shall be effective from [Start Date] and shall:
+
+[ ] Remain valid until revoked in writing
+[ ] Expire on [End Date]
+[ ] Be valid for one (1) year from the date of notarization
+
+═══════════════════════════════════════════════════════════════════
+
+LIMITATIONS
+
+The Attorney is NOT authorized to:
+• Transfer shares or ownership of the Company
+• Amend the Memorandum of Association
+• Sell or dispose of the entire business
+• Bind the Company to obligations exceeding AED [Amount]
+• [Add specific limitations]
+
+═══════════════════════════════════════════════════════════════════
+
+SUBSTITUTION
+
+The Attorney:
+
+[ ] May NOT delegate or substitute this authority
+[ ] May delegate to [Specific person(s)]
+[ ] May delegate at their discretion
+
+═══════════════════════════════════════════════════════════════════
+
+REVOCATION
+
+This Power of Attorney may be revoked at any time by written notice from the Principal to the Attorney. Such revocation shall be effective upon:
+• Written notice to the Attorney, and
+• Notification to relevant third parties who have relied on this POA
+
+═══════════════════════════════════════════════════════════════════
+
+PRINCIPAL'S DECLARATION
+
+I, the undersigned, acting as Manager of Nuqta Technology L.L.C., declare that:
+
+1. I have the authority to grant this Power of Attorney on behalf of the Company;
+2. This POA is granted in accordance with the Company's Memorandum of Association;
+3. A shareholder resolution authorizing this POA was passed on [Date] (if required);
+4. The Attorney named herein is authorized to act within the scope defined above.
+
+═══════════════════════════════════════════════════════════════════
+
+SIGNATURES
+
+PRINCIPAL:
+Nuqta Technology L.L.C.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO & Manager
+Date: _____________________________
+Company Stamp: [Affix]
+
+ATTORNEY (Acceptance):
+
+I, [Attorney Name], hereby accept this appointment and agree to act in accordance with the authorities and limitations set forth herein.
+
+Signature: _________________________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+NOTARIZATION
+
+[Space for notary public attestation]
+
+Notary Public: _________________________
+Seal: [Notary Seal]
+Date: _____________________________
+Place: Dubai, UAE
+
+═══════════════════════════════════════════════════════════════════
+
+ATTESTATION (If required for use outside UAE)
+
+Ministry of Foreign Affairs: _________________________
+Embassy/Consulate: _________________________
+
+═══════════════════════════════════════════════════════════════════
+
+NOTE: This document should be executed in Arabic for official use in UAE government departments. An English translation may be attached.`
+  },
+  {
+    id: 'bank-documents',
+    title: 'Bank Account Opening Documents',
+    category: 'Banking & Finance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Complete package of documents required for corporate bank account opening.',
+    content: `CORPORATE BANK ACCOUNT OPENING PACKAGE
+NUQTA TECHNOLOGY L.L.C.
+
+═══════════════════════════════════════════════════════════════════
+
+1. DOCUMENT CHECKLIST FOR BANK ACCOUNT OPENING
+
+Required documents for opening a corporate bank account in UAE:
+
+COMPANY DOCUMENTS:
+☐ Trade License (certified copy)
+☐ Certificate of Incorporation
+☐ Memorandum of Association (certified copy)
+☐ Share Certificate(s)
+☐ Certificate of Good Standing (if older than 1 year)
+☐ Shareholder Resolution authorizing account opening
+☐ Manager Resolution authorizing signatories
+
+SHAREHOLDER DOCUMENTS:
+☐ Passport copies (all shareholders)
+☐ Emirates ID copies (all shareholders resident in UAE)
+☐ Proof of address (utility bill / bank statement)
+☐ Source of funds documentation
+
+SIGNATORY DOCUMENTS:
+☐ Passport copies (all signatories)
+☐ Emirates ID copies (all signatories)
+☐ Board/Manager Resolution appointing signatories
+☐ Specimen signature cards
+
+BUSINESS INFORMATION:
+☐ Business plan / Company profile
+☐ Expected transaction volumes
+☐ Major customers / suppliers
+☐ Website information
+
+═══════════════════════════════════════════════════════════════════
+
+2. SHAREHOLDER RESOLUTION - BANK ACCOUNT
+
+SHAREHOLDER RESOLUTION
+NUQTA TECHNOLOGY L.L.C.
+
+Resolution No: SR-2026-BANK
+Date: _______________
+
+RESOLVED THAT:
+
+1. The Company shall open a corporate current account with [BANK NAME], Dubai Branch.
+
+2. The following individuals are appointed as authorized signatories:
+
+   a) Rejaul Karim (CEO)
+      - Authority: Single signatory for all transactions
+      - Emirates ID: [Number]
+      - Passport: [Number]
+
+   b) [Name] ([Title])
+      - Authority: Joint signatory with any other signatory
+      - Emirates ID: [Number]
+      - Passport: [Number]
+
+3. Signing Mandate:
+   - Transactions up to AED 100,000: Single signature (Rejaul Karim)
+   - Transactions above AED 100,000: Any two signatories jointly
+   - International transfers: Any two signatories jointly
+
+4. The authorized signatories may:
+   - Deposit and withdraw funds
+   - Issue checks and demand drafts
+   - Request bank statements and certificates
+   - Operate internet/mobile banking
+   - Apply for additional banking facilities
+   - Close accounts (with shareholder approval)
+
+5. This resolution supersedes any previous banking resolutions.
+
+SHAREHOLDER:
+Signature: _________________________
+Name: Rejaul Karim
+Shareholding: 100%
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+3. COMPANY PROFILE FOR BANKS
+
+COMPANY PROFILE
+
+Company Name: Nuqta Technology L.L.C.
+Trade Name: NUQTA
+License Number: [Number]
+Date of Incorporation: [Date]
+
+BUSINESS OVERVIEW:
+Nuqta is a technology company operating a rewards and loyalty platform connecting consumers with merchants in the UAE. Users earn points through everyday purchases and redeem them for rewards.
+
+BUSINESS MODEL:
+• B2B: Merchant subscription fees for platform access
+• Commission: Percentage of transaction value
+• Advertising: Targeted promotional placements
+
+EXPECTED MONTHLY TRANSACTIONS:
+
+Year 1 Projections:
+┌─────────────────────────┬─────────────────────────────────────┐
+│ Transaction Type        │ Monthly Volume (AED)                │
+├─────────────────────────┼─────────────────────────────────────┤
+│ Incoming - Investment   │ 500,000 - 2,000,000 (periodic)      │
+│ Incoming - Revenue      │ 50,000 - 200,000                    │
+│ Outgoing - Salaries     │ 150,000 - 300,000                   │
+│ Outgoing - Vendors      │ 50,000 - 150,000                    │
+│ Outgoing - Marketing    │ 50,000 - 200,000                    │
+└─────────────────────────┴─────────────────────────────────────┘
+
+MAJOR ANTICIPATED CUSTOMERS:
+• Retail merchants (restaurants, cafes, retail stores)
+• E-commerce platforms
+• Corporate partners
+
+MAJOR ANTICIPATED SUPPLIERS:
+• AWS (cloud services)
+• Marketing agencies
+• Technology vendors
+• Office landlord
+
+SOURCE OF FUNDS:
+• Initial capital: Founder investment
+• Operational funds: Revenue from operations
+• Growth capital: Venture capital investment
+
+INTERNATIONAL TRANSACTIONS:
+• Incoming: Potential international investor funds
+• Outgoing: Technology service providers (AWS, software)
+
+═══════════════════════════════════════════════════════════════════
+
+4. ACCOUNT OPERATING INSTRUCTIONS
+
+STANDING INSTRUCTIONS
+
+Account Name: NUQTA TECHNOLOGY L.L.C.
+Account Number: [To be assigned]
+
+1. GENERAL INSTRUCTIONS
+   - Maintain minimum balance as per bank requirements
+   - All correspondence to: legal@nuqta.io
+   - Statements: Monthly by email
+   - Checkbook: Issue upon request
+
+2. PAYMENT INSTRUCTIONS
+
+   Salary Payments:
+   - Process via WPS (Wage Protection System)
+   - Authorized by: CEO or CFO
+   - Day: 28th of each month
+
+   Vendor Payments:
+   - Standard payment terms: 30 days
+   - Authorized by: Per signing mandate
+
+   International Transfers:
+   - Currency: USD, EUR, GBP, INR
+   - Purpose: Service payments, technology subscriptions
+
+3. INTERNET BANKING
+   - Activate for authorized signatories
+   - Transaction limits: Per signing mandate
+   - Alerts: All transactions above AED 10,000
+
+4. ADDITIONAL SERVICES REQUESTED
+   - Corporate credit card (for CEO)
+   - Foreign currency account (USD)
+   - Trade finance facilities (future)
+
+═══════════════════════════════════════════════════════════════════
+
+5. SPECIMEN SIGNATURE CARD
+
+NUQTA TECHNOLOGY L.L.C.
+SPECIMEN SIGNATURE CARD
+
+Account Number: _______________
+
+Signatory 1:
+Name: Rejaul Karim
+Designation: CEO
+Signature: _______________  _______________  _______________
+           (Sign three times)
+
+Signatory 2:
+Name: _______________
+Designation: _______________
+Signature: _______________  _______________  _______________
+
+Signatory 3:
+Name: _______________
+Designation: _______________
+Signature: _______________  _______________  _______________
+
+Verified By: _______________
+Date: _______________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+BANK CONTACT INFORMATION
+
+Recommended Banks for Startups in UAE:
+• Emirates NBD - Business Banking
+• RAKBANK - Business Plus Account
+• Mashreq Bank - Neo Biz
+• Commercial Bank of Dubai - Business Account
+• First Abu Dhabi Bank - Business Account
+
+Note: Account opening typically takes 2-4 weeks. Some banks may request additional documentation or interviews.`
+  },
+  {
+    id: 'safe-agreement',
+    title: 'SAFE Agreement (Investor)',
+    category: 'Investment Documents',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Simple Agreement for Future Equity for angel/seed investors.',
+    content: `SIMPLE AGREEMENT FOR FUTURE EQUITY (SAFE)
+
+THIS CERTIFIES THAT in exchange for the payment by [INVESTOR NAME] (the "Investor") of [AMOUNT] (the "Purchase Amount") on or about [DATE], Nuqta Technology L.L.C., a limited liability company organized under the laws of the United Arab Emirates (the "Company"), issues to the Investor the right to certain shares of the Company's equity, subject to the terms set forth below.
+
+═══════════════════════════════════════════════════════════════════
+
+1. EVENTS
+
+(a) Equity Financing
+If there is an Equity Financing before the termination of this SAFE, on the initial closing of such Equity Financing, this SAFE will automatically convert into the number of shares of Safe Preferred Stock equal to the Purchase Amount divided by the Conversion Price.
+
+In connection with the automatic conversion of this SAFE into shares of Safe Preferred Stock, the Investor will execute and deliver to the Company all of the transaction documents related to the Equity Financing.
+
+(b) Liquidity Event
+If there is a Liquidity Event before the termination of this SAFE, this SAFE will automatically be entitled to receive a portion of Proceeds equal to the greater of:
+(i) the Purchase Amount; or
+(ii) the amount payable on the number of shares of Common Stock equal to the Purchase Amount divided by the Liquidity Price.
+
+(c) Dissolution Event
+If there is a Dissolution Event before the termination of this SAFE, the Investor will be entitled to receive a portion of Proceeds equal to the Purchase Amount, due and payable to the Investor immediately prior to, or concurrent with, the consummation of the Dissolution Event.
+
+═══════════════════════════════════════════════════════════════════
+
+2. DEFINITIONS
+
+"Conversion Price" means the price per share equal to:
+
+[ ] Option 1 - Valuation Cap Only:
+    The Valuation Cap divided by the Company Capitalization.
+
+[ ] Option 2 - Discount Only:
+    The price per share of the Standard Preferred Stock sold in the Equity Financing multiplied by the Discount Rate.
+
+[ ] Option 3 - Valuation Cap and Discount (whichever results in lower price):
+    The lower of:
+    (a) the Valuation Cap divided by the Company Capitalization; or
+    (b) the price per share of the Standard Preferred Stock sold in the Equity Financing multiplied by the Discount Rate.
+
+"Valuation Cap" means USD [AMOUNT].
+
+"Discount Rate" means [PERCENTAGE]% (e.g., 80% = 20% discount).
+
+"Company Capitalization" means the sum of:
+(a) all shares of capital stock issued and outstanding immediately prior to the Equity Financing;
+(b) all shares of capital stock issuable upon conversion of outstanding convertible securities;
+(c) all shares reserved for issuance under equity incentive plans.
+
+"Equity Financing" means a bona fide transaction or series of transactions with the principal purpose of raising capital, pursuant to which the Company issues and sells Preferred Stock at a fixed valuation.
+
+"Liquidity Event" means a Change of Control or an Initial Public Offering.
+
+"Liquidity Price" means the price per share equal to:
+The Valuation Cap divided by the Liquidity Capitalization.
+
+"Safe Preferred Stock" means shares of Preferred Stock issued to Investor in an Equity Financing with identical rights, privileges, preferences and restrictions as the Standard Preferred Stock, except that the per share liquidation preference and conversion price shall be equal to the Conversion Price.
+
+═══════════════════════════════════════════════════════════════════
+
+3. COMPANY REPRESENTATIONS
+
+The Company represents and warrants that:
+
+(a) The Company is duly organized and validly existing under the laws of the UAE.
+
+(b) The execution and delivery of this SAFE has been duly authorized by the Company.
+
+(c) This SAFE constitutes a valid and binding obligation of the Company.
+
+(d) The performance of this SAFE does not violate any existing agreement to which the Company is a party.
+
+═══════════════════════════════════════════════════════════════════
+
+4. INVESTOR REPRESENTATIONS
+
+The Investor represents and warrants that:
+
+(a) The Investor has full legal capacity to enter into this SAFE.
+
+(b) The Investor is an accredited investor as defined under applicable law.
+
+(c) The Investor is acquiring this SAFE for investment purposes only, not with a view to resale.
+
+(d) The Investor understands that this SAFE involves substantial risk and that the Investor could lose the entire investment.
+
+(e) The Investor has had an opportunity to ask questions and receive answers concerning the Company.
+
+═══════════════════════════════════════════════════════════════════
+
+5. MISCELLANEOUS
+
+(a) Information Rights
+As long as this SAFE is outstanding, the Company shall provide the Investor with:
+• Annual financial statements (within 120 days of year end)
+• Quarterly financial updates (within 45 days of quarter end)
+• Notice of any Equity Financing, Liquidity Event, or Dissolution Event
+
+(b) Pro-Rata Rights
+The Investor shall have the right to participate in future Equity Financings on a pro-rata basis, calculated based on the Investor's ownership percentage.
+
+(c) MFN (Most Favored Nation)
+If the Company issues any future SAFEs with more favorable terms (lower valuation cap, higher discount), the Investor may elect to adopt those terms.
+
+(d) Amendments
+This SAFE may only be amended with the written consent of both the Company and the Investor.
+
+(e) Governing Law
+This SAFE shall be governed by the laws of the United Arab Emirates, without regard to conflicts of law principles.
+
+(f) Dispute Resolution
+Any dispute arising from this SAFE shall be resolved by arbitration in Dubai under DIAC rules.
+
+(g) No Employment Rights
+This SAFE does not entitle the Investor to any employment, management, or directorship rights.
+
+═══════════════════════════════════════════════════════════════════
+
+6. SIGNATURES
+
+IN WITNESS WHEREOF, the undersigned have caused this SAFE to be duly executed.
+
+COMPANY:
+Nuqta Technology L.L.C.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+
+INVESTOR:
+[Investor Name]
+
+Signature: _________________________
+Name: _____________________________
+Title (if entity): _____________________________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+SCHEDULE A: INVESTMENT DETAILS
+
+Investor Name: ___________________________
+Investor Address: ___________________________
+Investor Email: ___________________________
+Investment Amount: USD ___________________________
+Valuation Cap: USD ___________________________
+Discount Rate: ___________________________%
+Date of Investment: ___________________________
+Wire Transfer Details: [Attached]`
+  },
+  {
+    id: 'convertible-note',
+    title: 'Convertible Note Agreement',
+    category: 'Investment Documents',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Convertible promissory note for early-stage investment.',
+    content: `CONVERTIBLE PROMISSORY NOTE
+
+Principal Amount: USD [AMOUNT]
+Issue Date: [DATE]
+Maturity Date: [DATE - typically 18-24 months from issue]
+
+═══════════════════════════════════════════════════════════════════
+
+FOR VALUE RECEIVED, Nuqta Technology L.L.C., a limited liability company organized under the laws of the United Arab Emirates (the "Company"), promises to pay to [INVESTOR NAME] (the "Holder"), or its assigns, the principal sum of [AMOUNT] UNITED STATES DOLLARS (USD [AMOUNT]), together with accrued interest, subject to the terms and conditions set forth herein.
+
+═══════════════════════════════════════════════════════════════════
+
+1. INTEREST
+
+1.1 Interest Rate
+This Note shall bear interest at a rate of [X]% per annum (the "Interest Rate"), calculated on a 365-day year basis.
+
+1.2 Accrual
+Interest shall accrue from the Issue Date and shall be compounded annually.
+
+1.3 Payment
+Accrued interest shall be payable only upon conversion or repayment of this Note.
+
+═══════════════════════════════════════════════════════════════════
+
+2. CONVERSION
+
+2.1 Automatic Conversion - Qualified Financing
+Upon the closing of a Qualified Financing, the outstanding principal and accrued interest of this Note shall automatically convert into shares of the equity securities issued in such Qualified Financing at the Conversion Price.
+
+"Qualified Financing" means an equity financing in which the Company raises at least USD [AMOUNT - e.g., $1,000,000] in gross proceeds (excluding conversion of this Note and any other convertible securities).
+
+2.2 Conversion Price
+The Conversion Price shall be the lower of:
+(a) [DISCOUNT]% of the price per share paid by investors in the Qualified Financing (the "Discount Price"); or
+(b) The price per share derived from dividing the Valuation Cap by the Company's fully diluted capitalization immediately prior to the Qualified Financing (the "Cap Price").
+
+"Valuation Cap" means USD [AMOUNT].
+
+2.3 Optional Conversion - Non-Qualified Financing
+If the Company raises equity financing that does not constitute a Qualified Financing, the Holder may elect to convert this Note at the Cap Price.
+
+2.4 Optional Conversion at Maturity
+If this Note has not been converted by the Maturity Date, the Holder may elect to:
+(a) Convert the outstanding principal and accrued interest at the Cap Price; or
+(b) Demand repayment of the outstanding principal and accrued interest.
+
+2.5 Conversion upon Change of Control
+Upon a Change of Control, the Holder may elect to:
+(a) Convert at the Cap Price immediately prior to such Change of Control; or
+(b) Receive repayment of [1.5x / 2x] the outstanding principal plus accrued interest.
+
+═══════════════════════════════════════════════════════════════════
+
+3. REPAYMENT
+
+3.1 Maturity
+Unless earlier converted, the outstanding principal and accrued interest shall be due and payable on the Maturity Date.
+
+3.2 Prepayment
+The Company may not prepay this Note without the Holder's written consent.
+
+3.3 No Demand
+The Holder may not demand repayment before the Maturity Date except as provided in Section 2.5 or upon an Event of Default.
+
+═══════════════════════════════════════════════════════════════════
+
+4. EVENTS OF DEFAULT
+
+The following shall constitute Events of Default:
+
+4.1 Failure to pay any amount due under this Note within 10 days of the due date;
+
+4.2 Breach of any material covenant or representation that remains uncured for 30 days after notice;
+
+4.3 Bankruptcy, insolvency, or dissolution of the Company;
+
+4.4 Sale of all or substantially all of the Company's assets without consent.
+
+Upon an Event of Default, the Holder may declare all amounts immediately due and payable.
+
+═══════════════════════════════════════════════════════════════════
+
+5. REPRESENTATIONS AND WARRANTIES
+
+5.1 Company Representations
+The Company represents and warrants that:
+(a) It is duly organized and in good standing;
+(b) It has the authority to enter into this Note;
+(c) This Note is a valid and binding obligation;
+(d) No consent or approval is required for execution.
+
+5.2 Holder Representations
+The Holder represents and warrants that:
+(a) The Holder is an accredited investor;
+(b) The Holder is acquiring this Note for investment purposes;
+(c) The Holder understands the risks of this investment;
+(d) The Holder has had opportunity to conduct due diligence.
+
+═══════════════════════════════════════════════════════════════════
+
+6. COVENANTS
+
+While this Note is outstanding, the Company agrees to:
+
+6.1 Provide quarterly financial updates to the Holder;
+
+6.2 Maintain adequate insurance;
+
+6.3 Comply with all applicable laws;
+
+6.4 Not incur additional indebtedness that is senior to this Note without consent;
+
+6.5 Not pay dividends or make distributions without consent;
+
+6.6 Notify the Holder of any material adverse change.
+
+═══════════════════════════════════════════════════════════════════
+
+7. MISCELLANEOUS
+
+7.1 Amendments
+This Note may only be amended with written consent of both parties.
+
+7.2 Waiver
+No waiver shall be effective unless in writing.
+
+7.3 Notices
+All notices shall be in writing to the addresses set forth below.
+
+7.4 Governing Law
+This Note shall be governed by the laws of the UAE.
+
+7.5 Dispute Resolution
+Disputes shall be resolved by arbitration in Dubai under DIAC rules.
+
+7.6 Successors
+This Note shall bind and benefit the parties and their successors and assigns.
+
+7.7 Severability
+If any provision is invalid, the remaining provisions shall continue in effect.
+
+═══════════════════════════════════════════════════════════════════
+
+8. SIGNATURES
+
+IN WITNESS WHEREOF, the Company has executed this Convertible Promissory Note as of the Issue Date.
+
+COMPANY:
+Nuqta Technology L.L.C.
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+
+ACKNOWLEDGED AND AGREED:
+HOLDER:
+
+Signature: _________________________
+Name: _____________________________
+Address: _________________________
+Email: _________________________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+SCHEDULE OF KEY TERMS
+
+Principal Amount: USD _______________
+Interest Rate: _______________% per annum
+Maturity Date: _______________ (__ months from Issue Date)
+Valuation Cap: USD _______________
+Discount Rate: _______________%
+Qualified Financing Threshold: USD _______________`
+  },
+  {
+    id: 'compliance-declaration',
+    title: 'Compliance Declaration Forms',
+    category: 'Regulatory Compliance',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Various compliance declarations required for UAE regulations.',
+    content: `COMPLIANCE DECLARATION FORMS
+NUQTA TECHNOLOGY L.L.C.
+
+═══════════════════════════════════════════════════════════════════
+
+FORM 1: BENEFICIAL OWNERSHIP DECLARATION
+(Required for AML/CFT Compliance)
+
+═══════════════════════════════════════════════════════════════════
+
+DECLARATION OF BENEFICIAL OWNERSHIP
+
+I, the undersigned, being the [Manager / Authorized Representative] of Nuqta Technology L.L.C. (Trade License No: [Number]), hereby declare and confirm the following:
+
+1. BENEFICIAL OWNERS
+
+The following individuals are the beneficial owners of the Company, each owning or controlling more than 25% of the shares or voting rights:
+
+┌─────────────────────┬─────────────┬────────────┬───────────────┐
+│ Name                │ Nationality │ Ownership  │ ID Number     │
+├─────────────────────┼─────────────┼────────────┼───────────────┤
+│ Rejaul Karim        │ Indian      │ 100%       │ [Emirates ID] │
+├─────────────────────┼─────────────┼────────────┼───────────────┤
+│                     │             │            │               │
+└─────────────────────┴─────────────┴────────────┴───────────────┘
+
+2. CONTROL STRUCTURE
+
+[ ] The Company is directly owned by the individuals listed above
+[ ] The Company is owned through intermediate entities (structure attached)
+
+3. NO HIDDEN OWNERSHIP
+
+I confirm that:
+• The beneficial ownership information provided is complete and accurate
+• There are no nominee arrangements or hidden ownership structures
+• No other person exercises control over the Company through any means
+
+4. POLITICALLY EXPOSED PERSONS (PEP)
+
+[ ] None of the beneficial owners are Politically Exposed Persons
+[ ] The following beneficial owner(s) are PEPs: _______________
+
+5. SOURCE OF FUNDS
+
+The source of funds for the beneficial owners is:
+[ ] Employment income
+[ ] Business profits
+[ ] Inheritance
+[ ] Investment returns
+[ ] Other: _______________
+
+6. UNDERTAKING
+
+I undertake to notify the relevant authorities within 15 days of any change in beneficial ownership.
+
+Declared by:
+Signature: _________________________
+Name: Rejaul Karim
+Position: CEO & Manager
+Date: _____________________________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+FORM 2: PDPL COMPLIANCE DECLARATION
+(Personal Data Protection Law)
+
+═══════════════════════════════════════════════════════════════════
+
+DECLARATION OF PDPL COMPLIANCE
+
+Company: Nuqta Technology L.L.C.
+Trade License: [Number]
+Date: _______________
+
+I hereby declare that Nuqta Technology L.L.C. has implemented the following measures to comply with UAE Federal Decree-Law No. 45 of 2021 (Personal Data Protection Law):
+
+1. DATA GOVERNANCE
+[ ] Appointed a Data Protection Officer or responsible person
+   Name: _______________
+   Email: privacy@nuqtaapp.com
+
+[ ] Established data processing policies and procedures
+[ ] Maintains records of processing activities
+[ ] Implemented data classification system
+
+2. LEGAL BASIS FOR PROCESSING
+[ ] Identified legal basis for all personal data processing activities
+[ ] Documented purposes for data collection
+[ ] Implemented consent management mechanisms
+
+3. DATA SUBJECT RIGHTS
+[ ] Established procedures for handling data subject requests
+[ ] Can respond to requests within required timeframes
+[ ] Provides transparent privacy notices
+
+4. DATA SECURITY
+[ ] Implemented appropriate technical security measures
+[ ] Implemented organizational security measures
+[ ] Maintains data breach response procedures
+[ ] Conducts regular security assessments
+
+5. THIRD-PARTY MANAGEMENT
+[ ] Uses approved data processing agreements with processors
+[ ] Assesses third-party security before engagement
+[ ] Maintains list of sub-processors
+
+6. CROSS-BORDER TRANSFERS
+[ ] Data is processed only within UAE
+[ ] Data transferred internationally with appropriate safeguards:
+    _______________
+
+7. TRAINING
+[ ] Staff trained on data protection obligations
+[ ] Training conducted: [Date]
+[ ] Training to be repeated: [Frequency]
+
+I confirm that the above information is accurate and that the Company is committed to ongoing PDPL compliance.
+
+Signed:
+Signature: _________________________
+Name: Rejaul Karim
+Position: CEO
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+FORM 3: VAT COMPLIANCE DECLARATION
+(Federal Tax Authority)
+
+═══════════════════════════════════════════════════════════════════
+
+VAT COMPLIANCE DECLARATION
+
+Tax Registration Number (TRN): [Number]
+Tax Period: _______________
+
+I, the undersigned, being the authorized representative of Nuqta Technology L.L.C., hereby declare that:
+
+1. All VAT returns filed for the above period are complete and accurate
+2. All VAT collected has been properly accounted for
+3. All input VAT claimed is supported by valid tax invoices
+4. Records are maintained as required under the Tax Procedures Law
+5. The company is in compliance with all VAT obligations
+
+Declared by:
+Signature: _________________________
+Name: _______________
+Position: _______________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+FORM 4: AML/CFT COMPLIANCE ATTESTATION
+
+═══════════════════════════════════════════════════════════════════
+
+AML/CFT COMPLIANCE ATTESTATION
+
+I, Rejaul Karim, CEO of Nuqta Technology L.L.C., hereby attest that:
+
+1. The Company has adopted and implemented an AML/CFT policy in accordance with UAE laws and regulations.
+
+2. The policy includes:
+   [ ] Customer Due Diligence (CDD) procedures
+   [ ] Enhanced Due Diligence (EDD) for high-risk customers
+   [ ] Transaction monitoring procedures
+   [ ] Suspicious Activity Report (SAR) filing procedures
+   [ ] Record-keeping requirements
+   [ ] Employee training program
+
+3. The Company has appointed a Compliance Officer:
+   Name: _______________
+   Contact: compliance@nuqtaapp.com
+
+4. No transactions have been processed that the Company knows or suspects to be related to money laundering or terrorist financing.
+
+5. The Company will report any suspicious activities to the UAE Financial Intelligence Unit (FIU) as required.
+
+Signature: _________________________
+Name: Rejaul Karim
+Position: CEO
+Date: _____________________________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+FORM 5: SANCTIONS COMPLIANCE DECLARATION
+
+═══════════════════════════════════════════════════════════════════
+
+SANCTIONS COMPLIANCE DECLARATION
+
+Nuqta Technology L.L.C. hereby declares that:
+
+1. The Company does not engage in business with any individuals, entities, or countries subject to:
+   • UN Security Council Sanctions
+   • UAE Local Terrorist List
+   • US OFAC Sanctions (to the extent applicable)
+   • EU Sanctions (to the extent applicable)
+
+2. The Company screens all:
+   [ ] Customers
+   [ ] Merchants
+   [ ] Vendors
+   [ ] Business partners
+
+   Against applicable sanctions lists before onboarding.
+
+3. The Company will immediately terminate any relationship if a party is found to be sanctioned.
+
+4. The Company does not facilitate transactions that would violate applicable sanctions laws.
+
+Declared by:
+Signature: _________________________
+Name: Rejaul Karim
+Position: CEO
+Date: _____________________________`
+  },
+  {
+    id: 'visa-documents',
+    title: 'Employee Visa Application Documents',
+    category: 'Employment & Immigration',
+    status: 'draft',
+    lastUpdated: 'Feb 7, 2026',
+    description: 'Complete documentation package for employee visa applications.',
+    content: `EMPLOYEE VISA APPLICATION PACKAGE
+NUQTA TECHNOLOGY L.L.C.
+
+═══════════════════════════════════════════════════════════════════
+
+1. VISA APPLICATION CHECKLIST
+
+For each employee visa application, prepare the following:
+
+FROM COMPANY:
+☐ Trade License (certified copy)
+☐ Immigration Card copy
+☐ Establishment Card copy
+☐ Company Memorandum of Association
+☐ Office Ejari (tenancy contract)
+☐ Job Offer Letter (signed)
+☐ Employment Contract (MOHRE standard form)
+☐ Company authorization letter
+
+FROM EMPLOYEE:
+☐ Passport copy (valid 6+ months, color copy)
+☐ Passport-size photos (white background, 4 copies)
+☐ Educational certificates (attested)
+☐ Previous UAE visa copy (if applicable)
+☐ Police clearance certificate (some categories)
+☐ Medical fitness test results (after entry)
+☐ Emirates ID application (after visa stamping)
+
+═══════════════════════════════════════════════════════════════════
+
+2. JOB OFFER LETTER TEMPLATE
+
+[On Company Letterhead]
+
+Date: _______________
+
+OFFER OF EMPLOYMENT
+
+Dear [EMPLOYEE NAME],
+
+We are pleased to offer you the position of [JOB TITLE] at Nuqta Technology L.L.C. subject to the following terms:
+
+1. POSITION
+   Title: [Job Title]
+   Department: [Department]
+   Reporting to: [Manager Name/Title]
+   Start Date: [Date]
+
+2. COMPENSATION
+   Basic Salary: AED [Amount] per month
+   Housing Allowance: AED [Amount] per month
+   Transportation Allowance: AED [Amount] per month
+   Total Monthly Package: AED [Amount]
+
+3. BENEFITS
+   • Annual leave: 30 calendar days
+   • Sick leave: As per UAE Labor Law
+   • Health insurance: Provided by Company
+   • Air ticket: Annual return ticket to home country
+   • End of service: As per UAE Labor Law
+
+4. PROBATION
+   Duration: 6 months
+   Notice during probation: 14 days
+
+5. WORKING HOURS
+   Sunday to Thursday: 9:00 AM to 6:00 PM
+   Friday/Saturday: Off
+
+6. VISA SPONSORSHIP
+   The Company will sponsor your UAE employment visa.
+   All visa and Emirates ID costs will be borne by the Company.
+
+7. CONDITIONS
+   This offer is contingent upon:
+   • Successful background verification
+   • Medical fitness clearance
+   • Valid travel documents
+   • Educational certificate attestation
+
+Please sign below to accept this offer. This letter is valid for 14 days.
+
+For Nuqta Technology L.L.C.:
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Date: _____________________________
+
+ACCEPTANCE
+
+I, [Employee Name], accept this offer of employment and the terms outlined above.
+
+Signature: _________________________
+Date: _____________________________
+
+═══════════════════════════════════════════════════════════════════
+
+3. EMPLOYMENT CONTRACT (MOHRE FORMAT - KEY TERMS)
+
+Note: Use the official MOHRE standard employment contract. Key terms to specify:
+
+CONTRACT TYPE:
+[ ] Unlimited (standard)
+[ ] Limited (fixed term): _____ years
+
+SALARY BREAKDOWN (AED per month):
+Basic Salary: _______________
+Housing Allowance: _______________
+Transportation: _______________
+Other Allowances: _______________
+TOTAL: _______________
+
+WORKING HOURS:
+Normal: 8 hours per day, 48 hours per week
+Ramadan: 6 hours per day
+
+LEAVE ENTITLEMENTS:
+Annual Leave: 30 days after 1 year (2 days per month before)
+Sick Leave: As per Labor Law (15 days full, 30 days half, 45 unpaid)
+Maternity Leave: 60 days (45 full pay + 15 half pay)
+
+NOTICE PERIOD:
+During Probation: 14 days
+After Probation: 30 days
+
+END OF SERVICE GRATUITY:
+• 21 days salary per year for first 5 years
+• 30 days salary per year after 5 years
+• Maximum: 2 years total salary
+
+═══════════════════════════════════════════════════════════════════
+
+4. COMPANY AUTHORIZATION LETTER
+
+[On Company Letterhead]
+
+Date: _______________
+To: General Directorate of Residency and Foreigners Affairs (GDRFA) - Dubai
+
+Subject: Authorization for Employee Visa Processing
+
+Dear Sir/Madam,
+
+We, Nuqta Technology L.L.C. (Trade License No: [Number]), hereby authorize and request the processing of an employment visa for the following individual:
+
+EMPLOYEE DETAILS:
+Full Name: _______________
+Nationality: _______________
+Passport Number: _______________
+Passport Expiry: _______________
+Position: _______________
+Monthly Salary: AED _______________
+
+AUTHORIZATION:
+We confirm that:
+1. The above individual has been offered employment at our company
+2. We take full responsibility for the employee during their stay in UAE
+3. All visa and Emirates ID costs will be borne by the company
+4. The employment contract has been approved by MOHRE
+
+We request you to kindly process the employment visa at your earliest convenience.
+
+Sincerely,
+
+Signature: _________________________
+Name: Rejaul Karim
+Title: CEO
+Company Stamp: [Affix]
+
+Contact: legal@nuqta.io
+Phone: [Number]
+
+═══════════════════════════════════════════════════════════════════
+
+5. SALARY CERTIFICATE
+
+[On Company Letterhead]
+
+Date: _______________
+
+TO WHOM IT MAY CONCERN
+
+SALARY CERTIFICATE
+
+This is to certify that [EMPLOYEE NAME], holding passport number [Number], is employed with Nuqta Technology L.L.C. since [Date] in the capacity of [Job Title].
+
+Their current monthly compensation is as follows:
+
+Basic Salary:           AED _______________
+Housing Allowance:      AED _______________
+Transportation:         AED _______________
+Other Allowances:       AED _______________
+─────────────────────────────────────────
+Total Monthly Salary:   AED _______________
+
+Annual Package:         AED _______________
+
+This certificate is issued upon the employee's request for [Purpose: Bank Account / Visa / Other].
+
+For Nuqta Technology L.L.C.:
+
+Signature: _________________________
+Name: _______________
+Title: HR Manager / CEO
+Date: _____________________________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+6. NO OBJECTION CERTIFICATE (NOC)
+
+[On Company Letterhead]
+
+Date: _______________
+
+NO OBJECTION CERTIFICATE
+
+This is to certify that Nuqta Technology L.L.C. has no objection to our employee:
+
+Name: _______________
+Position: _______________
+Passport No: _______________
+Visa No: _______________
+
+For the following purpose:
+
+[ ] Opening a personal bank account
+[ ] Applying for a driving license
+[ ] Sponsoring dependents
+[ ] Part-time work (specify): _______________
+[ ] Travel to [Country] from [Date] to [Date]
+[ ] Other: _______________
+
+This NOC is valid for [30 / 60 / 90] days from the date of issue.
+
+For Nuqta Technology L.L.C.:
+
+Signature: _________________________
+Name: _______________
+Title: _______________
+Date: _____________________________
+Company Stamp: [Affix]
+
+═══════════════════════════════════════════════════════════════════
+
+VISA PROCESSING CONTACTS
+
+GDRFA Dubai: 800 5111
+MOHRE: 80060
+SEHA (Medical): 800 50
+ICP (Emirates ID): 600 522222
+
+Online Portals:
+• MOHRE: www.mohre.gov.ae
+• ICP: www.icp.gov.ae
+• GDRFA: www.gdrfad.gov.ae
+
+Typical Timeline:
+• Entry Permit: 2-3 working days
+• Status Change: 3-5 working days
+• Medical Test: 1-2 days
+• Emirates ID: 5-7 working days
+• Visa Stamping: 2-3 working days`
   }
 ];
 
