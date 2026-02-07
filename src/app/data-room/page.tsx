@@ -297,7 +297,7 @@ export default function DataRoomPage() {
                   Initial launch limited to Dubai in select high-frequency categories.
                 </p>
                 <p className="text-gray-300 mb-3">
-                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching March 1, 2026.</strong> H1 targets: 50K MAU (aggressive), 1,500 merchants, 30% D30 retention.
+                  <strong className="text-[#c9a227]">Phase 1 (MVP) launching March 1, 2026.</strong> Year 1 targets: 100K MAU, 2,500 merchants, 30% D30 retention.
                 </p>
                 <p className="text-[#c9a227] text-sm"><strong>Success metric:</strong> Validated repeat usage patterns and measurable merchant ROI</p>
               </div>
@@ -510,7 +510,7 @@ export default function DataRoomPage() {
           <DocItem number="12" title="Channel-Specific Economics">
             <p className="mb-4">
               CAC by channel: Merchant QR (AED 10-15), Student Ambassadors (AED 25-30), Digital (AED 60-80).
-              18x blended LTV:CAC ratio.
+              16.8x blended LTV:CAC ratio.
             </p>
             <div className="overflow-x-auto my-4">
               <table className="w-full text-sm">
@@ -818,8 +818,8 @@ export default function DataRoomPage() {
               <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
                 <p className="font-bold text-[#c9a227] mb-2">Aggressive H1 Targets (6 months)</p>
                 <ul className="text-gray-300 text-sm space-y-2">
-                  <li><strong>MAU:</strong> 50,000 users (aggressive - matching Tabby UAE trajectory)</li>
-                  <li><strong>Merchants:</strong> 1,500 (validated through 32 LOIs already secured, aggressive scale)</li>
+                  <li><strong>MAU:</strong> 50,000 users (H1 target - matching Tabby UAE trajectory)</li>
+                  <li><strong>Merchants:</strong> 1,500 (H1 target - validated through 32 LOIs already secured)</li>
                   <li><strong>Retention:</strong> 30% D30 retention (above industry standard for rewards apps)</li>
                   <li><strong>LTV:CAC:</strong> 16x ratio (excellent for consumer fintech)</li>
                 </ul>

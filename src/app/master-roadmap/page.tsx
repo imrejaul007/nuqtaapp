@@ -76,7 +76,7 @@ export default function MasterRoadmapPage() {
           <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
               <h4 className="text-lg font-black text-blue-700 mb-3">H1 → H2 Gate (Aggressive)</h4>
-              <p className="text-sm text-slate-700"><strong>50K MAU</strong> (aggressive), 1,500 merchants, 30% D30 retention, 16x LTV:CAC</p>
+              <p className="text-sm text-slate-700"><strong>50K MAU</strong>, 1,500 merchants, 30% D30 retention, 16.8x LTV:CAC</p>
               <p className="text-xs text-blue-600 mt-2">Tranche 2 triggers: 500 merchants, 25K MAU, CTO hired</p>
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-purple-200">
@@ -112,7 +112,7 @@ export default function MasterRoadmapPage() {
                   <a href="/execution-plan" className="text-lg font-black text-blue-900 hover:text-blue-700 transition-colors">
                     H1 (~5 Months): Prove the Loop → Launch: March 1, 2026
                   </a>
-                  <p className="text-sm text-slate-700 mt-2"><strong>50K MAU</strong> (aggressive), 1,500 merchants, 30% D30 retention</p>
+                  <p className="text-sm text-slate-700 mt-2"><strong>50K MAU</strong>, 1,500 merchants, 30% D30 retention</p>
                   <p className="text-xs text-blue-600 mt-1">Funding: $200K Tranche 1 + $200K at milestones</p>
                 </div>
 

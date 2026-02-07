@@ -130,7 +130,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <p className={`${typography.labelEyebrow} text-white`}>GCC SAM</p>
                 </div>
                 <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metric} text-emerald-400 mb-2`}>10x</p>
+                  <p className={`${typography.metric} text-emerald-400 mb-2`}>16.8x</p>
                   <p className={`${typography.labelEyebrow} text-white`}>LTV:CAC</p>
                 </div>
                 <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
@@ -4636,7 +4636,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   Financial Projections
                 </h2>
                 <p className={`${typography.bodyLarge} text-slate-300 max-w-3xl mx-auto`}>
-                  Path from $400K pre-seed to $118.5M revenue with 55% EBITDA margin by Year 5
+                  Path from $400K pre-seed to AED 480M revenue with 60% EBITDA margin by Year 5
                 </p>
               </div>
 
@@ -4646,11 +4646,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="h-80">
                   <ResponsiveContainer width="100%" height="100%">
                     <AreaChart data={[
-                      { year: 'Year 1', revenue: 1.8, ebitda: -1.5, label: '$1.8M' },
-                      { year: 'Year 2', revenue: 7.1, ebitda: -0.5, label: '$7.1M' },
-                      { year: 'Year 3', revenue: 20.8, ebitda: 5.2, label: '$20.8M' },
-                      { year: 'Year 4', revenue: 51.6, ebitda: 20.6, label: '$51.6M' },
-                      { year: 'Year 5', revenue: 118.5, ebitda: 65.3, label: '$118.5M' }
+                      { year: 'Year 1', revenue: 9.6, ebitda: 1.0, label: 'AED 9.6M' },
+                      { year: 'Year 2', revenue: 48, ebitda: 12, label: 'AED 48M' },
+                      { year: 'Year 3', revenue: 144, ebitda: 57.6, label: 'AED 144M' },
+                      { year: 'Year 4', revenue: 288, ebitda: 144, label: 'AED 288M' },
+                      { year: 'Year 5', revenue: 480, ebitda: 288, label: 'AED 480M' }
                     ]}>
                       <defs>
                         <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
@@ -4671,7 +4671,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <YAxis
                         stroke="#94a3b8"
                         style={{ fontSize: '12px' }}
-                        tickFormatter={(value) => `$${value}M`}
+                        tickFormatter={(value) => `AED ${value}M`}
                       />
                       <Tooltip
                         contentStyle={{
@@ -4681,8 +4681,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           color: '#fff'
                         }}
                         formatter={(value: any, name?: string) => {
-                          if (name === 'revenue') return [`$${value}M`, 'Revenue'];
-                          if (name === 'ebitda') return [`$${value}M`, 'EBITDA'];
+                          if (name === 'revenue') return [`AED ${value}M`, 'Revenue'];
+                          if (name === 'ebitda') return [`AED ${value}M`, 'EBITDA'];
                           return [value, name || ''];
                         }}
                       />
@@ -4718,57 +4718,57 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {[
                   {
                     year: 'Year 1',
-                    period: '10 Months',
-                    revenue: '$1.9M',
-                    ebitda: '-83%',
-                    margin: 'Investment Phase',
-                    merchants: '500',
-                    mau: '50K',
-                    gmv: '$25.5M',
-                    color: 'from-red-500/20 to-orange-500/20 border-red-500/40'
+                    period: 'Launch',
+                    revenue: 'AED 9.6M',
+                    ebitda: '+10%',
+                    margin: 'Profitable from Y1',
+                    merchants: '2,500',
+                    mau: '100K',
+                    gmv: 'AED 120M',
+                    color: 'from-emerald-500/20 to-green-500/20 border-emerald-500/40'
                   },
                   {
                     year: 'Year 2',
                     period: 'Growth',
-                    revenue: '$7.1M',
-                    ebitda: '-7%',
-                    margin: 'Near Break-even',
-                    merchants: '1,200',
-                    mau: '150K',
-                    gmv: '$95M',
-                    color: 'from-orange-500/20 to-yellow-500/20 border-orange-500/40'
+                    revenue: 'AED 48M',
+                    ebitda: '+25%',
+                    margin: 'Scaling',
+                    merchants: '10,000',
+                    mau: '500K',
+                    gmv: 'AED 600M',
+                    color: 'from-green-500/20 to-emerald-500/20 border-green-500/40'
                   },
                   {
                     year: 'Year 3',
                     period: 'Expansion',
-                    revenue: '$20.8M',
-                    ebitda: '+25%',
-                    margin: 'Profitable',
-                    merchants: '2,500',
-                    mau: '350K',
-                    gmv: '$277M',
-                    color: 'from-emerald-500/20 to-green-500/20 border-emerald-500/40'
+                    revenue: 'AED 144M',
+                    ebitda: '+40%',
+                    margin: 'UAE Leader',
+                    merchants: '30,000',
+                    mau: '1.5M',
+                    gmv: 'AED 1.8B',
+                    color: 'from-emerald-500/20 to-teal-500/20 border-emerald-500/40'
                   },
                   {
                     year: 'Year 4',
-                    period: 'UAE Leader',
-                    revenue: '$51.6M',
-                    ebitda: '+40%',
-                    margin: 'Market Leader',
-                    merchants: '5,000',
-                    mau: '750K',
-                    gmv: '$688M',
+                    period: 'GCC Expansion',
+                    revenue: 'AED 288M',
+                    ebitda: '+50%',
+                    margin: 'Regional Leader',
+                    merchants: '60,000',
+                    mau: '3M',
+                    gmv: 'AED 3.6B',
                     color: 'from-blue-500/20 to-indigo-500/20 border-blue-500/40'
                   },
                   {
                     year: 'Year 5',
-                    period: 'GCC Expansion',
-                    revenue: '$118.5M',
-                    ebitda: '+55%',
-                    margin: 'Exit Ready',
-                    merchants: '5K',
-                    mau: '1.5M',
-                    gmv: '$1.58B',
+                    period: 'Exit Ready',
+                    revenue: 'AED 480M',
+                    ebitda: '+60%',
+                    margin: 'Market Dominant',
+                    merchants: '100K',
+                    mau: '5M',
+                    gmv: 'AED 6B',
                     color: 'from-indigo-500/20 to-purple-500/20 border-indigo-500/40'
                   }
                 ].map((item, idx) => (
@@ -4819,7 +4819,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Year 1 GMV Footnote */}
               <div className="mt-4 text-center">
                 <p className="text-xs text-slate-400 italic">
-                  * Year 1 GMV based on 10-month operating period (Mar 1-Dec 2026) with avg 24K MAU, ramping from 2K → 50K users, avg 3.6 txn/month × $27
+                  * GMV calculated as: MAU × AED 100/month average spend × 12 months. Revenue = GMV × 8% blended take rate. All figures in AED.
                 </p>
               </div>
 
@@ -4834,27 +4834,27 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="space-y-3 text-sm">
                     <div className="flex justify-between">
                       <span className="text-slate-300">Blended Take Rate:</span>
-                      <span className="text-white font-bold">7.5%</span>
+                      <span className="text-white font-bold">8%</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-300">Gross Margin:</span>
-                      <span className="text-white font-bold">92%</span>
+                      <span className="text-white font-bold">60% → 85%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">Transaction Frequency:</span>
-                      <span className="text-white font-bold">4x → 5x/month</span>
+                      <span className="text-slate-300">GMV per User:</span>
+                      <span className="text-white font-bold">AED 100/month</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">AOV Growth:</span>
-                      <span className="text-white font-bold">AED 100 → AED 130</span>
+                      <span className="text-slate-300">LTV:CAC Ratio:</span>
+                      <span className="text-white font-bold">16.8x</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-300">Merchant Retention:</span>
                       <span className="text-white font-bold">85% → 95%</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">User LTV:</span>
-                      <span className="text-white font-bold">AED 360 → AED 468</span>
+                      <span className="text-slate-300">EBITDA Margin:</span>
+                      <span className="text-white font-bold">10% → 60%</span>
                     </div>
                   </div>
                 </div>
@@ -4867,9 +4867,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </h3>
                   <div className="space-y-4">
                     {[
-                      { phase: 'Year 1-2', status: 'Investment Phase', desc: 'Validate model, build merchant network, achieve break-even', color: 'orange' },
-                      { phase: 'Year 3', status: 'Profitable', desc: '+25% EBITDA, proven unit economics, 350K users', color: 'emerald' },
-                      { phase: 'Year 4-5', status: 'Scale & Expand', desc: '40-55% EBITDA, UAE leader, GCC expansion', color: 'blue' }
+                      { phase: 'Year 1', status: 'Profitable Launch', desc: '10% EBITDA, 100K MAU, AED 9.6M revenue', color: 'emerald' },
+                      { phase: 'Year 2-3', status: 'Scale & Expand', desc: '25-40% EBITDA, 1.5M MAU, AED 144M revenue', color: 'blue' },
+                      { phase: 'Year 4-5', status: 'Market Dominant', desc: '50-60% EBITDA, 5M MAU, AED 480M revenue', color: 'purple' }
                     ].map((item, idx) => (
                       <div key={idx} className={`border-l-4 border-${item.color}-500 pl-4`}>
                         <p className="text-sm font-bold text-white">{item.phase}: {item.status}</p>
@@ -4880,7 +4880,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
                   <div className="mt-6 pt-4 border-t border-white/20">
                     <p className={`${typography.labelMicro} text-slate-400 mb-2`}>Exit Valuation Range (8-12x revenue):</p>
-                    <p className={`${typography.metricMedium} text-emerald-400`}>$800M - $1.2B</p>
+                    <p className={`${typography.metricMedium} text-emerald-400`}>$1B - $1.6B</p>
                     <p className={`${typography.labelMicro} text-slate-500 mt-1`}>Based on Year 5 revenue of AED 480M ($130M)</p>
                   </div>
                 </div>
@@ -4889,10 +4889,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               {/* Bottom Note */}
               <div className="mt-8 bg-amber-500/10 border border-amber-500/30 rounded-xl p-6">
                 <p className="text-sm text-amber-200">
-                  <span className="font-bold">📊 Key Assumptions:</span> Revenue based on 8% blended take rate across merchant transactions (5-15% by engine).
-                  Gross margin assumes payment processing costs (2.5% of GMV) and support costs (AED 2/MAU).
-                  EBITDA excludes stock-based compensation. Path to profitability assumes successful Series A ($15-25M) and Series B ($50-75M) fundraising.
-                  All figures in AED unless specified. Exchange rate: 3.67 AED/USD.
+                  <span className="font-bold">📊 Key Assumptions:</span> GMV = MAU × AED 100/month × 12. Revenue = GMV × 8% blended take rate.
+                  Gross margin expands 60%→85% with scale. EBITDA margin expands 10%→60% over 5 years.
+                  LTV:CAC ratio of 16.8x validated. All figures in AED. Exchange rate: 3.67 AED/USD.
                 </p>
               </div>
             </div>
@@ -5056,7 +5055,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       {
                         icon: '🔒',
                         title: 'Network Effects Moat',
-                        desc: 'Both-sided lock-in: 5K merchants + 1.5M users by exit'
+                        desc: 'Both-sided lock-in: 100K merchants + 5M users by exit'
                       },
                       {
                         icon: '📊',
@@ -5066,7 +5065,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       {
                         icon: '🤝',
                         title: 'Merchant Relationships',
-                        desc: '5K merchants with exclusive revenue-share contracts by Year 5'
+                        desc: '100K merchants with exclusive revenue-share contracts by Year 5'
                       },
                       {
                         icon: 'Rocket',
@@ -5118,11 +5117,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       scenario: 'Target',
                       event: 'Strategic Exit (48mo)',
                       ownership: '4.0%',
-                      exitVal: '$950M-1.4B',
-                      return: '95-140x',
-                      irr: '350-400% IRR',
+                      exitVal: '$1B-1.6B',
+                      return: '100-160x',
+                      irr: '350-450% IRR',
                       color: 'emerald',
-                      cashout: '$38-56M'
+                      cashout: '$40-64M'
                     }
                   ].map((item, idx) => (
                     <div key={idx} className={`${
@@ -5243,27 +5242,27 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       </div>
                       <div className="grid md:grid-cols-3 gap-4">
                         <div className="bg-gradient-to-br from-emerald-50 to-white border border-emerald-200 rounded-xl p-4">
-                          <p className="text-xs text-emerald-600 font-bold uppercase mb-2">Dubai (Y1-3)</p>
+                          <p className="text-xs text-emerald-600 font-bold uppercase mb-2">Year 1</p>
                           <div className="space-y-1">
-                            <p className="text-sm text-slate-700">• 5,000 merchants</p>
-                            <p className="text-sm text-slate-700">• 500K users</p>
-                            <p className="text-sm text-slate-700">• AED 500M GMV</p>
+                            <p className="text-sm text-slate-700">• 2,500 merchants</p>
+                            <p className="text-sm text-slate-700">• 100K users</p>
+                            <p className="text-sm text-slate-700">• AED 120M GMV</p>
                           </div>
                         </div>
                         <div className="bg-gradient-to-br from-blue-50 to-white border border-blue-200 rounded-xl p-4">
-                          <p className="text-xs text-blue-600 font-bold uppercase mb-2">Qatar + KSA (Y4-5)</p>
+                          <p className="text-xs text-blue-600 font-bold uppercase mb-2">Year 2-3</p>
                           <div className="space-y-1">
-                            <p className="text-sm text-slate-700">• 15,000 merchants</p>
-                            <p className="text-sm text-slate-700">• 2M users</p>
-                            <p className="text-sm text-slate-700">• AED 2B GMV</p>
+                            <p className="text-sm text-slate-700">• 30,000 merchants</p>
+                            <p className="text-sm text-slate-700">• 1.5M users</p>
+                            <p className="text-sm text-slate-700">• AED 1.8B GMV</p>
                           </div>
                         </div>
                         <div className="bg-gradient-to-br from-purple-50 to-white border border-purple-200 rounded-xl p-4">
-                          <p className="text-xs text-purple-600 font-bold uppercase mb-2">Full GCC (Y6+)</p>
+                          <p className="text-xs text-purple-600 font-bold uppercase mb-2">Year 4-5</p>
                           <div className="space-y-1">
-                            <p className="text-sm text-slate-700">• 25,000+ merchants</p>
-                            <p className="text-sm text-slate-700">• 5M+ users</p>
-                            <p className="text-sm text-slate-700">• AED 5B+ GMV</p>
+                            <p className="text-sm text-slate-700">• 100,000 merchants</p>
+                            <p className="text-sm text-slate-700">• 5M users</p>
+                            <p className="text-sm text-slate-700">• AED 6B GMV</p>
                           </div>
                         </div>
                       </div>
@@ -5812,13 +5811,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {/* Phase 1 Horizons */}
                 {[
                   {
-                    phase: "Horizon 1 (H1)",
-                    timeline: "~5 Months • Launch March 1, 2026",
+                    phase: "Year 1",
+                    timeline: "Launch March 1, 2026",
                     emoji: "Rocket",
                     title: "Core PMF Validation",
-                    subtitle: "Dubai Marina/JBR Focus",
-                    features: ["Launch F&B + Core Verticals", "1,500 merchants • 50K MAU (aggressive)", "Prove 30% D30 retention + LTV:CAC 16x+", "Validate coin-led rewards model"],
-                    kpis: "1,500 merchants • 50K MAU (aggressive) • $200K Tranche 1 + $200K at milestones",
+                    subtitle: "Dubai Launch",
+                    features: ["Launch F&B + Core Verticals", "2,500 merchants • 100K MAU", "Prove 30% D30 retention + LTV:CAC 16.8x", "AED 9.6M Revenue • 10% EBITDA"],
+                    kpis: "2,500 merchants • 100K MAU • AED 120M GMV • AED 9.6M revenue",
                     status: "In Progress",
                     color: "emerald",
                     bgGradient: "from-emerald-500/10 via-emerald-500/5 to-white",
@@ -5826,13 +5825,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-emerald-500 to-emerald-600"
                   },
                   {
-                    phase: "Horizon 2 (H2)",
-                    timeline: "~2.5 Months • Scale Responsibly",
+                    phase: "Year 2",
+                    timeline: "Scale & Expand",
                     emoji: "TrendingUp",
                     title: "Multi-Category Expansion",
-                    subtitle: "Healthcare + Home Services",
-                    features: ["Add 2 new categories", "Geographic expansion (Downtown, Business Bay)", "Platform tech (analytics, AI recommendations)", "Merchant WaaS pilots"],
-                    kpis: "5,000 merchants • 250K MAU • AED 100M GMV • 30% D30 retention",
+                    subtitle: "UAE Growth",
+                    features: ["All 7 UAE cities coverage", "10,000 merchants • 500K MAU", "Platform tech (analytics, AI recommendations)", "AED 48M Revenue • 25% EBITDA"],
+                    kpis: "10,000 merchants • 500K MAU • AED 600M GMV • AED 48M revenue",
                     status: "Planned",
                     color: "blue",
                     bgGradient: "from-blue-500/10 via-blue-500/5 to-white",
@@ -5840,13 +5839,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     badgeBg: "from-blue-500 to-blue-600"
                   },
                   {
-                    phase: "Horizon 3 (H3)",
-                    timeline: "~1.2 Years • Become Infrastructure",
+                    phase: "Year 3",
+                    timeline: "UAE Market Leader",
                     emoji: "Building2",
-                    title: "UAE-Wide Platform",
-                    subtitle: "Enterprise + Data Moats",
-                    features: ["All 7 UAE cities coverage", "WaaS revenue (5+ clients)", "Government partnerships (2+)", "Data intelligence layer operational"],
-                    kpis: "10,000 merchants • 500K MAU • AED 300M GMV • 30% EBITDA",
+                    title: "Market Dominance",
+                    subtitle: "Regional Expansion Prep",
+                    features: ["30,000 merchants • 1.5M MAU", "WaaS revenue (5+ clients)", "Government partnerships (2+)", "AED 144M Revenue • 40% EBITDA"],
+                    kpis: "30,000 merchants • 1.5M MAU • AED 1.8B GMV • AED 144M revenue",
                     status: "Planned",
                     color: "purple",
                     bgGradient: "from-purple-500/10 via-purple-500/5 to-white",
@@ -5929,13 +5928,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {/* Phase 2 Details */}
                 {[
                   {
-                    phase: "Phase 2",
-                    timeline: "~1.2 Years Total",
+                    phase: "Year 4",
+                    timeline: "GCC Expansion",
                     emoji: "Globe",
                     title: "Qatar + Saudi Arabia",
-                    subtitle: "Export Proven System",
-                    features: ["🇶🇦 Qatar (3-4 months): Doha launch, QFC license, 50 merchants", "🇸🇦 Saudi Arabia (9-10 months): Riyadh → Jeddah → Dammam", "Parallel market entry strategy", "Leverage UAE playbook + local partnerships"],
-                    kpis: "2,500 merchants • 200K MAU • AED 300M GMV • 3 countries live",
+                    subtitle: "Regional Leader",
+                    features: ["🇶🇦 Qatar launch + 🇸🇦 Saudi Arabia expansion", "60,000 merchants • 3M MAU", "AED 3.6B GMV • AED 288M Revenue", "50% EBITDA margin"],
+                    kpis: "60,000 merchants • 3M MAU • AED 3.6B GMV • AED 288M revenue",
                     status: "Planned",
                     color: "blue",
                     bgGradient: "from-blue-600/10 via-blue-600/5 to-white",
@@ -6006,11 +6005,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-2xl p-6 border-2 border-[#c9a227]/40 mt-8">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#c9a227] to-[#d4ab2c] text-[#0a1628] flex items-center justify-center text-xl font-black shadow-lg">
-                      3
+                      5
                     </div>
                     <div>
-                      <h3 className="text-2xl font-black text-slate-900">Phase 3: Full GCC Coverage</h3>
-                      <p className="text-sm text-slate-600 font-bold">~10 Months • Kuwait + Bahrain + Oman (Parallel) • 2029-2030</p>
+                      <h3 className="text-2xl font-black text-slate-900">Year 5: Full GCC Coverage</h3>
+                      <p className="text-sm text-slate-600 font-bold">Kuwait + Bahrain + Oman • Exit Ready</p>
                     </div>
                   </div>
                 </div>
@@ -6018,13 +6017,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 {/* Phase 3 Details */}
                 {[
                   {
-                    phase: "Phase 3",
-                    timeline: "~10 Months (Parallel Launch)",
+                    phase: "Year 5",
+                    timeline: "Exit Ready",
                     emoji: "Trophy",
                     title: "Full GCC Infrastructure",
-                    subtitle: "Exit-Ready Position",
-                    features: ["🇰🇼🇧🇭🇴🇲 Parallel 3-country launch (institutional entry)", "Top-down strategy: govt partnerships + enterprise first", "Shared regional infrastructure (marginal cost 20%)", "Exit readiness: AED 420M revenue, 60% EBITDA, 300K MAU"],
-                    kpis: "3,000 merchants • 300K MAU • AED 420M revenue • Exit: $800M-$2.3B",
+                    subtitle: "Market Dominant Position",
+                    features: ["🇰🇼🇧🇭🇴🇲 Full GCC coverage (6 countries)", "100,000 merchants • 5M MAU", "AED 6B GMV • AED 480M Revenue", "60% EBITDA margin • Exit: $1B-$1.6B"],
+                    kpis: "100,000 merchants • 5M MAU • AED 6B GMV • AED 480M revenue",
                     status: "Planned",
                     color: "amber",
                     bgGradient: "from-[#c9a227]/10 via-[#c9a227]/5 to-white",
@@ -6094,8 +6093,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Bottom CTA Banner */}
               <div className="mt-12 bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-3xl p-8 text-center shadow-xl">
-                <p className="text-3xl lg:text-4xl font-black mb-3">From Dubai beta to GCC market leader in 6 years</p>
-                <p className="text-lg font-medium opacity-90">3 Phases. 3 Horizons. 25,000+ merchants. AED 5B+ GMV.</p>
+                <p className="text-3xl lg:text-4xl font-black mb-3">From Dubai launch to GCC market leader in 5 years</p>
+                <p className="text-lg font-medium opacity-90">5 Years. 100,000+ merchants. 5M MAU. AED 6B GMV. AED 480M Revenue.</p>
               </div>
             </div>
           </div>
@@ -6326,13 +6325,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className={`${typography.bodySmall} text-slate-300`}>Signed LOIs</p>
                   </div>
                   <div>
-                    <p className={`${typography.metric} text-[#c9a227] mb-2`}>10x+</p>
+                    <p className={`${typography.metric} text-[#c9a227] mb-2`}>16.8x</p>
                     <p className={`${typography.bodySmall} text-slate-300`}>LTV:CAC Ratio</p>
                   </div>
                 </div>
 
                 <p className={`${typography.h4} text-slate-300 mb-6`}>
-                  Launching March 1, 2026 • Profitable by Year 3 • Built for scale
+                  Launching March 1, 2026 • Profitable from Year 1 • Built for scale
                 </p>
 
                 <div className="border-t-2 border-white/10 pt-6">

@@ -149,7 +149,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What\'s your runway with this raise?',
-          answer: '12-15 months runway to hit H1 targets (50K MAU, 1,500 merchants). SAFE round: $400K at $5M valuation cap with 20% discount. Aggressive burn: $50-60K/month with larger team. We reach break-even by Year 1 end at scale.',
+          answer: '12-15 months runway to hit Year 1 targets (100K MAU, 2,500 merchants). SAFE round: $400K at $5M valuation cap with 20% discount. Aggressive burn: $50-60K/month with larger team. We reach break-even by Year 1 end at scale.',
         },
         {
           question: 'What keeps you up at night?',

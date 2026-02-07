@@ -636,7 +636,7 @@ function UseFundsSection() {
           Use of Funds - $400K SAFE Round
         </h2>
         <p className="text-slate-300">
-          12-18 month runway to achieve key milestones: 50,000 users, 1,500 merchants, AED 25M GMV/month,
+          12-18 month runway to achieve key milestones: 100,000 users, 2,500 merchants, AED 120M GMV,
           and Series A readiness. Every dollar allocated to growth and sustainability.
         </p>
       </div>
