@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   BarChart3,
   TrendingUp,
@@ -76,8 +75,6 @@ export default function DashboardPreviewPage() {
         {activeTab === 'admin' && <AdminPanel />}
         {activeTab === 'user' && <UserApp />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

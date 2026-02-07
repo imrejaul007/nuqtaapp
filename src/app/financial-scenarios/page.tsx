@@ -23,7 +23,6 @@ import {
   LineChart,
   Calculator
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * THREE FINANCIAL SCENARIOS
@@ -138,8 +137,6 @@ export default function FinancialScenariosPage() {
         {/* Comparison Table */}
         <ComparisonTable activeScenario={activeScenario} />
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

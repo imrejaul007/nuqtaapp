@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   FileText,
   Shield,
@@ -1016,8 +1015,6 @@ Contact: dpo@nuqta.ae`
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

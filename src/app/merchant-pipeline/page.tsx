@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Store,
@@ -696,8 +695,6 @@ export default function MerchantPipelinePage() {
           </div>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

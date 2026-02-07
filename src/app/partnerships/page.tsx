@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Handshake,
@@ -2489,8 +2488,6 @@ export default function PartnershipsPage() {
           </div>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

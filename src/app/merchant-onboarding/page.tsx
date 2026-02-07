@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -313,8 +312,6 @@ export default function MerchantOnboardingPage() {
             </div>
           </div>
         </main>
-
-        <GlobalFooter />
       </div>
     );
   }
@@ -997,8 +994,6 @@ export default function MerchantOnboardingPage() {
           </p>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

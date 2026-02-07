@@ -7,7 +7,6 @@ import {
   ChevronDown, ChevronUp, Copy, Check, AlertTriangle, Zap,
   Building, GraduationCap, Globe, Heart
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 export default function HiringPlaybookPage() {
   const [expandedRole, setExpandedRole] = useState<string | null>('performance');
@@ -637,8 +636,6 @@ ${role.kpis.map(k => `• ${k}`).join('\n')}
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

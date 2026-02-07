@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Target,
@@ -1517,8 +1516,6 @@ export default function CMOPlaybookPage() {
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

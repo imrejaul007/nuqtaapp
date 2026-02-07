@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Shield,
   Building2,
@@ -74,8 +73,6 @@ export default function LicensingPage() {
         {activeTab === 'bnpl' && <BNPLTab />}
         {activeTab === 'timeline' && <TimelineTab />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

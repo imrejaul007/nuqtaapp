@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Calendar,
@@ -1225,8 +1224,6 @@ export default function ContentCalendarPage() {
           </div>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

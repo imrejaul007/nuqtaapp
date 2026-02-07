@@ -7,7 +7,6 @@ import {
   ChevronDown, ChevronUp, Copy, Check, UserPlus, Briefcase,
   GraduationCap, MessageSquare, BarChart3, Globe, Rocket, Crown
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 export default function CHROMasterPlanPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('vision');
@@ -606,8 +605,6 @@ export default function CHROMasterPlanPage() {
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

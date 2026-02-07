@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Instagram,
@@ -878,8 +877,6 @@ Nuqta Partnerships`}
           </div>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

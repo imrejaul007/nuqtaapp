@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   CheckCircle2,
@@ -665,8 +664,6 @@ export default function LaunchReadinessPage() {
           </div>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

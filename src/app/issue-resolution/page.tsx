@@ -37,7 +37,6 @@ import {
   Timer,
   Award
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * ISSUE RESOLUTION TRACKER
@@ -1112,8 +1111,6 @@ export default function IssueResolutionPage() {
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

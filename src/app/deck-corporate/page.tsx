@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Building2,
   Users,
@@ -64,7 +63,6 @@ export default function CorporateDeckPage() {
         {currentSlide === 9 && <CTASlide />}
       </div>
 
-      <GlobalFooter />
     </div>
   );
 }

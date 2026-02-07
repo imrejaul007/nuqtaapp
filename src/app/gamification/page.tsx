@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Trophy,
@@ -541,8 +540,6 @@ export default function GamificationPage() {
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

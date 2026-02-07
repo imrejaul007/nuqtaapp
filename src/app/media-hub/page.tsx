@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Play,
   Camera,
@@ -77,8 +76,6 @@ export default function MediaHubPage() {
         {activeTab === 'campaigns' && <CampaignsTab />}
         {activeTab === 'metrics' && <MetricsTab />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

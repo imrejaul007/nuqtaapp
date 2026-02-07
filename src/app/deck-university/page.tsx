@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   GraduationCap,
   Users,
@@ -63,7 +62,6 @@ export default function UniversityDeckPage() {
         {currentSlide === 8 && <CTASlide />}
       </div>
 
-      <GlobalFooter />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Smartphone,
   Download,
@@ -76,8 +75,6 @@ export default function UserJourneyPage() {
         {activeTab === 'engagement' && <EngagementTab />}
         {activeTab === 'retention' && <RetentionTab />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

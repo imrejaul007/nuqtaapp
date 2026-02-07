@@ -37,7 +37,6 @@ import {
   Map,
   Database
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 // ============================================================================
 // TYPE DEFINITIONS
@@ -1309,8 +1308,6 @@ export default function ThreeYearPlanPage() {
           <p>Last Updated: February 2026 • Confidential</p>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

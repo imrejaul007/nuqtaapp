@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Copy,
@@ -1190,8 +1189,6 @@ export default function SupportTemplatesPage() {
           </div>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

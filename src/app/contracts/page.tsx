@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   FileText,
   Download,
@@ -81,8 +80,6 @@ export default function ContractsPage() {
         {activeTab === 'corporate' && <CorporateTemplate copyToClipboard={copyToClipboard} copiedSection={copiedSection} />}
         {activeTab === 'copartner' && <CoPartnerTemplate copyToClipboard={copyToClipboard} copiedSection={copiedSection} />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   DollarSign,
   PieChart,
@@ -113,8 +112,6 @@ export default function FundingDocsPage() {
         {activeTab === 'termsheet' && <TermSheetSection />}
         {activeTab === 'team' && <TeamBiosSection />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Target,
   Shield,
@@ -2098,8 +2097,6 @@ export default function CompetitorAnalysisPage() {
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

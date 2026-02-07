@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Users,
   Building2,
@@ -3419,8 +3418,6 @@ Rejaul`,
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

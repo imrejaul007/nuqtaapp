@@ -61,7 +61,6 @@ import {
   Bot,
   CreditCard
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 interface QuickAction {
   label: string;
@@ -381,8 +380,6 @@ export default function DashboardPage() {
           </p>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

@@ -42,7 +42,6 @@ import {
   MessageSquare,
   Briefcase
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * EXECUTIVE ISSUES & STRATEGY ANALYSIS
@@ -144,8 +143,6 @@ export default function ExecutiveIssuesPage() {
         {activeTab === 'chro' && <CHROAnalysis />}
         {activeTab === 'cfo' && <CFOAnalysis />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

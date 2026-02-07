@@ -7,7 +7,6 @@ import {
   ChevronDown, ChevronUp, Copy, Check, Clock, Shield, Target,
   Zap, Award, ExternalLink, Search
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 export default function VendorDirectoryPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>('agencies');
@@ -661,8 +660,6 @@ Q&A Deadline: [Date]`;
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

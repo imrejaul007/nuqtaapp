@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   ArrowRight,
@@ -569,8 +568,6 @@ export default function PartnershipFrameworkPage() {
           </Link>
         </div>
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

@@ -44,7 +44,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased bg-[#0a1628]`}>
         <GlobalHeader />
-        {children}
+        <main className="pt-14 sm:pt-16 min-h-screen">
+          {children}
+        </main>
+        <GlobalFooter />
       </body>
     </html>
   );

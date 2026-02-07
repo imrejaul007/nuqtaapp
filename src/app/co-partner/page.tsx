@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Handshake,
   DollarSign,
@@ -112,8 +111,6 @@ export default function CoPartnerPage() {
         {activeTab === 'process' && <ProcessTab />}
         {activeTab === 'faq' && <FAQTab />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

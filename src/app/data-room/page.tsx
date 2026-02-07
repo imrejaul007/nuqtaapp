@@ -284,10 +284,10 @@ export default function DataRoomPage() {
         {/* SECTION 2: PRODUCT */}
         <Folder icon="💻" title="2. Product" id="product">
           <DocItem number="5" title="Product Roadmap">
-            <div className="space-y-6">
-              <div className="bg-[#1a2a42] rounded-lg p-4 border-l-4 border-blue-500">
-                <div className="flex items-center justify-between mb-2">
-                  <p className="font-bold text-blue-400">Phase 1: Foundation (Months 1-6)</p>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 border-l-4 border-blue-500">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2 gap-1 sm:gap-2">
+                  <p className="font-bold text-blue-400 text-sm sm:text-base">Phase 1: Foundation (Months 1-6)</p>
                   <Status status="in-progress" />
                 </div>
                 <p className="text-gray-300 mb-3">
@@ -302,18 +302,18 @@ export default function DataRoomPage() {
                 <p className="text-[#c9a227] text-sm"><strong>Success metric:</strong> Validated repeat usage patterns and measurable merchant ROI</p>
               </div>
 
-              <div className="bg-[#1a2a42] rounded-lg p-4 border-l-4 border-yellow-500">
-                <p className="font-bold text-yellow-400 mb-2">Phase 2: Expansion (Months 6-12)</p>
-                <p className="text-gray-300">
+              <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 border-l-4 border-yellow-500">
+                <p className="font-bold text-yellow-400 mb-2 text-sm sm:text-base">Phase 2: Expansion (Months 6-12)</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Scale merchant network to 500+ locations. Expand into grocery and daily essentials categories.
                   Deepen BNPL provider integrations with direct API connections. Introduce loyalty tiers and
                   streak-based engagement mechanics. Enhance recommendation engine with behavioral signals.
                 </p>
               </div>
 
-              <div className="bg-[#1a2a42] rounded-lg p-4 border-l-4 border-green-500">
-                <p className="font-bold text-green-400 mb-2">Phase 3: Platform Maturity (Months 12-24)</p>
-                <p className="text-gray-300">
+              <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 border-l-4 border-green-500">
+                <p className="font-bold text-green-400 mb-2 text-sm sm:text-base">Phase 3: Platform Maturity (Months 12-24)</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Multi-city expansion across UAE and initial GCC markets. Bank partnership integrations
                   for deeper card intelligence. Advanced ML-powered payment recommendations. Enterprise
                   merchant tools and analytics platform.
@@ -323,22 +323,22 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="6" title="MVP Definition">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               The MVP is intentionally constrained to validate core hypotheses before investing in complexity.
               We are building just enough to prove that users will repeatedly engage with payment recommendations
               and that merchants will pay for customer loyalty tools.
             </p>
-            <div className="grid md:grid-cols-2 gap-4 mt-4">
-              <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/30">
-                <p className="font-bold text-green-400 mb-3">Included in MVP</p>
-                <p className="text-gray-300 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
+              <div className="bg-green-500/10 rounded-lg p-3 sm:p-4 border border-green-500/30">
+                <p className="font-bold text-green-400 mb-2 sm:mb-3 text-sm sm:text-base">Included in MVP</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Payment recommendation engine (rules-based), universal rewards wallet, visit-based
                   loyalty tracking, merchant QR tools, and manual offer curation system.
                 </p>
               </div>
-              <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/30">
-                <p className="font-bold text-red-400 mb-3">Excluded from MVP</p>
-                <p className="text-gray-300 text-sm">
+              <div className="bg-red-500/10 rounded-lg p-3 sm:p-4 border border-red-500/30">
+                <p className="font-bold text-red-400 mb-2 sm:mb-3 text-sm sm:text-base">Excluded from MVP</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Deep POS integrations, advanced ML models, direct bank API connections,
                   and cross-border rewards functionality.
                 </p>
@@ -347,35 +347,35 @@ export default function DataRoomPage() {
             </DocItem>
 
           <DocItem number="7" title="Technical Architecture">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               The technical architecture prioritizes security, scalability, and compliance while remaining
               lean enough for a pre-seed stage company. We are not over-engineering for hypothetical scale.
             </p>
-            <div className="grid md:grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mt-3 sm:mt-4">
               <div>
-                <p className="font-semibold text-white mb-2">Frontend</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Frontend</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Native mobile applications for iOS and Android with a responsive web dashboard for merchants.
                   Clean, performant UI prioritizing transaction speed and minimal friction.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-white mb-2">Backend</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Backend</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Cloud-based microservices architecture with a dedicated rules engine for recommendations.
                   Event-driven transaction processing with comprehensive audit logging.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-white mb-2">Data Handling</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Data Handling</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   No card numbers stored. Tokenized user identifiers with minimal PII collection.
                   Privacy-first design that complies with regional data protection requirements.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-white mb-2">Security</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Security</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Role-based access controls, encrypted data at rest and in transit,
                   and compliance-aware architecture designed for financial services adjacent applications.
                 </p>
@@ -387,31 +387,31 @@ export default function DataRoomPage() {
         {/* SECTION 3: MARKET & STRATEGY */}
         <Folder icon="📊" title="3. Market & Strategy" id="market">
           <DocItem number="8" title="Market Sizing">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               Our market analysis focuses on realistic capture rather than inflated TAM figures.
               We are building for the GCC, starting with UAE, and our assumptions reflect actual
               payment volumes and merchant economics.
             </p>
-            <div className="space-y-4 mt-4">
-              <div className="bg-[#1a2a42] rounded-lg p-4">
-                <p className="font-bold text-[#c9a227] mb-2">Total Addressable Market (GCC)</p>
-                <p className="text-gray-300 text-sm">
+            <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
+              <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4">
+                <p className="font-bold text-[#c9a227] mb-1.5 sm:mb-2 text-sm sm:text-base">Total Addressable Market (GCC)</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   GCC consumer spending exceeds <DataPoint value="$600B" source="IMF GCC Economic Outlook, World Bank regional data" className="text-gray-300" /> annually across high card penetration markets.
                   Our infrastructure layer can theoretically touch all digital transactions that involve
                   payment decisions or loyalty mechanics.
                 </p>
               </div>
-              <div className="bg-[#1a2a42] rounded-lg p-4">
-                <p className="font-bold text-[#c9a227] mb-2">Serviceable Addressable Market (UAE + KSA)</p>
-                <p className="text-gray-300 text-sm">
+              <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4">
+                <p className="font-bold text-[#c9a227] mb-1.5 sm:mb-2 text-sm sm:text-base">Serviceable Addressable Market (UAE + KSA)</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Approximately <DataPoint value="5M" source="Central Bank of UAE, banking penetration data" className="text-gray-300" /> active digital consumers in UAE and urban KSA represent <DataPoint value="$40-50B" source="Central Bank of UAE, Visa & Mastercard regional reports" className="text-gray-300" />{' '}
                   in addressable transaction volume. These are users who actively use multiple payment
                   methods and are receptive to optimization tools.
                 </p>
               </div>
-              <div className="bg-[#1a2a42] rounded-lg p-4">
-                <p className="font-bold text-[#c9a227] mb-2">Serviceable Obtainable Market (Initial Target)</p>
-                <p className="text-gray-300 text-sm">
+              <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4">
+                <p className="font-bold text-[#c9a227] mb-1.5 sm:mb-2 text-sm sm:text-base">Serviceable Obtainable Market (Initial Target)</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   High-frequency daily categories in Dubai: cafes, grocery, salons, pharmacies, and clinics.
                   These verticals have repeat purchase behavior that rewards loyalty investment and supports
                   our city-by-city expansion strategy.
@@ -421,31 +421,31 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="9" title="Go-to-Market Strategy">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               Our GTM strategy prioritizes depth over breadth. We are not attempting to boil the ocean
               with a nationwide launch. Instead, we focus on concentrated geographic and vertical expansion
               that builds genuine network effects.
             </p>
-            <div className="space-y-4 mt-4">
+            <div className="space-y-3 sm:space-y-4 mt-3 sm:mt-4">
               <div>
-                <p className="font-semibold text-white mb-2">Phase 1: Merchant-Led Acquisition</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Phase 1: Merchant-Led Acquisition</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   On-counter QR codes drive organic user acquisition. Staff-assisted onboarding reduces
                   friction. Loyal customers become natural referral sources. This approach inverts typical
                   consumer app acquisition costs.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-white mb-2">Phase 2: Habit Formation</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Phase 2: Habit Formation</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   The Smart Pay Advisor creates the engagement hook — users open the app to check payment
                   recommendations before purchasing. Monthly savings summaries and streak rewards reinforce
                   habitual usage patterns.
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-white mb-2">Phase 3: Partnership Leverage</p>
-                <p className="text-gray-300 text-sm">
+                <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Phase 3: Partnership Leverage</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   BNPL referral partnerships expand reach without acquisition cost. Fintech co-marketing
                   agreements access established user bases. Local ecosystem partnerships provide distribution
                   leverage.
@@ -480,26 +480,26 @@ export default function DataRoomPage() {
         {/* SECTION 4: UNIT ECONOMICS */}
         <Folder icon="📈" title="4. Unit Economics" id="unit-economics">
           <DocItem number="11" title="LTV & CAC Breakdown">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               Customer acquisition cost (AED 30) vs lifetime value (AED 504) across channels.
               Includes payback period calculation (&lt;1 month) and cohort retention assumptions.
             </p>
-            <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
-              <div className="grid md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div>
-                  <p className="text-2xl font-bold text-[#c9a227]">AED 30</p>
-                  <p className="text-gray-400 text-sm">Blended CAC</p>
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 30</p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm">Blended CAC</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#c9a227]">AED 504</p>
-                  <p className="text-gray-400 text-sm">Lifetime Value</p>
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 504</p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm">Lifetime Value</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#c9a227]">&lt;1 Month</p>
-                  <p className="text-gray-400 text-sm">Payback Period</p>
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">&lt;1 Month</p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm">Payback Period</p>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-300 text-xs sm:text-sm">
                 LTV calculation based on 24-month customer lifetime, 8 transactions/month average frequency,
                 and blended take rate across merchant commissions and BNPL referrals. Cohort retention
                 assumptions factor in 65% Month 3 retention declining to 30% Month 12 retention.
@@ -508,39 +508,39 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="12" title="Channel-Specific Economics">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               CAC by channel: Merchant QR (AED 10-15), Student Ambassadors (AED 25-30), Digital (AED 60-80).
               16.8x blended LTV:CAC ratio.
             </p>
-            <div className="overflow-x-auto my-4">
-              <table className="w-full text-sm">
+            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 my-3 sm:my-4">
+              <table className="w-full text-xs sm:text-sm min-w-[400px]">
                 <thead>
                   <tr className="border-b border-[#2a3a52]">
-                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Channel</th>
-                    <th className="text-left py-2 px-3 text-gray-400 font-medium">CAC Range</th>
-                    <th className="text-left py-2 px-3 text-gray-400 font-medium">LTV:CAC Ratio</th>
+                    <th className="text-left py-2 px-2 sm:px-3 text-gray-400 font-medium">Channel</th>
+                    <th className="text-left py-2 px-2 sm:px-3 text-gray-400 font-medium">CAC Range</th>
+                    <th className="text-left py-2 px-2 sm:px-3 text-gray-400 font-medium">LTV:CAC Ratio</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Merchant QR</td>
-                    <td className="py-2 px-3 text-[#c9a227]">AED 10-15</td>
-                    <td className="py-2 px-3 text-green-400">33.6x - 50.4x</td>
+                    <td className="py-2 px-2 sm:px-3">Merchant QR</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">AED 10-15</td>
+                    <td className="py-2 px-2 sm:px-3 text-green-400">33.6x - 50.4x</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Student Ambassadors</td>
-                    <td className="py-2 px-3 text-[#c9a227]">AED 25-30</td>
-                    <td className="py-2 px-3 text-green-400">16.8x - 20.2x</td>
+                    <td className="py-2 px-2 sm:px-3">Student Ambassadors</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">AED 25-30</td>
+                    <td className="py-2 px-2 sm:px-3 text-green-400">16.8x - 20.2x</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Digital Acquisition</td>
-                    <td className="py-2 px-3 text-[#c9a227]">AED 60-80</td>
-                    <td className="py-2 px-3 text-yellow-400">6.3x - 8.4x</td>
+                    <td className="py-2 px-2 sm:px-3">Digital Acquisition</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">AED 60-80</td>
+                    <td className="py-2 px-2 sm:px-3 text-yellow-400">6.3x - 8.4x</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-xs sm:text-sm">
               Blended LTV:CAC ratio of 16.8x (AED 504 LTV ÷ AED 30 CAC) assumes 70% merchant QR acquisition,
               30% student ambassadors during early growth phase. This mix heavily favors low-cost organic
               acquisition before scaling paid channels.
@@ -574,33 +574,33 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="14" title="Market Opportunity & Revenue Model">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               60+ merchant network (32 signed LOIs, 30 in pipeline) attacking a $45B GCC market.
               Commission rate: 15% on completed transactions.
             </p>
-            <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
-              <p className="font-semibold text-white mb-2">Market Sizing (TAM/SAM/SOM)</p>
-              <div className="grid md:grid-cols-3 gap-4 mb-4">
+            <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 mt-3 sm:mt-4">
+              <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Market Sizing (TAM/SAM/SOM)</p>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-3 sm:mb-4">
                 <div>
-                  <p className="text-xl font-bold text-[#c9a227]">$150B</p>
-                  <p className="text-gray-400 text-sm">TAM (GCC Total Market)</p>
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-[#c9a227]">$150B</p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm">TAM (GCC Total Market)</p>
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#c9a227]">$45B</p>
-                  <p className="text-gray-400 text-sm">SAM (GCC Market)</p>
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-[#c9a227]">$45B</p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm">SAM (GCC Market)</p>
                 </div>
                 <div>
-                  <p className="text-xl font-bold text-[#c9a227]">$1.35B</p>
-                  <p className="text-gray-400 text-sm">SOM (Dubai 3yr Target)</p>
+                  <p className="text-base sm:text-lg md:text-xl font-bold text-[#c9a227]">$1.35B</p>
+                  <p className="text-gray-400 text-[10px] sm:text-xs md:text-sm">SOM (Dubai 3yr Target)</p>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm mb-4">
+              <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">
                 At 15% commission rate on transactions, merchants pay only for verified completed sales.
                 Performance-based pricing model means merchants pay AED 10-15 CAC vs AED 200+ on Google Ads.
                 Average merchant ROI exceeds 3-4x based on repeat purchase lift and reduced customer acquisition costs.
               </p>
-              <p className="font-semibold text-white mb-2">Revenue Scaling Path</p>
-              <p className="text-gray-300 text-sm">
+              <p className="font-semibold text-white mb-1.5 sm:mb-2 text-sm sm:text-base">Revenue Scaling Path</p>
+              <p className="text-gray-300 text-xs sm:text-sm">
                 Month 1-3: 30 merchants activated, conservative GMV ramp-up. Month 4-6: 60+ merchants activated
                 as pipeline converts. 1% market penetration at maturity = AED 1.8B GMV opportunity × 8% = AED 144M annual revenue potential (Year 3 target).
               </p>
@@ -648,45 +648,45 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="17" title="Use of Funds">
-            <p className="mb-4">
+            <p className="mb-3 sm:mb-4 text-xs sm:text-sm">
               Capital allocation reflects our stage-appropriate priorities. The majority goes to
               product development and merchant operations — the two areas that directly prove our
               core hypotheses.
             </p>
-            <div className="overflow-x-auto my-4">
-              <table className="w-full text-sm">
+            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0 my-3 sm:my-4">
+              <table className="w-full text-xs sm:text-sm min-w-[400px]">
                 <thead>
                   <tr className="border-b border-[#2a3a52]">
-                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Category</th>
-                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Allocation</th>
-                    <th className="text-left py-2 px-3 text-gray-400 font-medium">Purpose</th>
+                    <th className="text-left py-2 px-2 sm:px-3 text-gray-400 font-medium">Category</th>
+                    <th className="text-left py-2 px-2 sm:px-3 text-gray-400 font-medium">Allocation</th>
+                    <th className="text-left py-2 px-2 sm:px-3 text-gray-400 font-medium">Purpose</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Product & Engineering</td>
-                    <td className="py-2 px-3 text-[#c9a227]">35%</td>
-                    <td className="py-2 px-3 text-gray-400">MVP development, iteration</td>
+                    <td className="py-2 px-2 sm:px-3">Product & Engineering</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">35%</td>
+                    <td className="py-2 px-2 sm:px-3 text-gray-400">MVP development, iteration</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Merchant Operations</td>
-                    <td className="py-2 px-3 text-[#c9a227]">25%</td>
-                    <td className="py-2 px-3 text-gray-400">Onboarding, support, success</td>
+                    <td className="py-2 px-2 sm:px-3">Merchant Operations</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">25%</td>
+                    <td className="py-2 px-2 sm:px-3 text-gray-400">Onboarding, support, success</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Partnerships</td>
-                    <td className="py-2 px-3 text-[#c9a227]">15%</td>
-                    <td className="py-2 px-3 text-gray-400">BNPL, bank integrations</td>
+                    <td className="py-2 px-2 sm:px-3">Partnerships</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">15%</td>
+                    <td className="py-2 px-2 sm:px-3 text-gray-400">BNPL, bank integrations</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
-                    <td className="py-2 px-3">Growth Experiments</td>
-                    <td className="py-2 px-3 text-[#c9a227]">15%</td>
-                    <td className="py-2 px-3 text-gray-400">Targeted user acquisition tests</td>
+                    <td className="py-2 px-2 sm:px-3">Growth Experiments</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">15%</td>
+                    <td className="py-2 px-2 sm:px-3 text-gray-400">Targeted user acquisition tests</td>
                   </tr>
                   <tr>
-                    <td className="py-2 px-3">Legal & Compliance</td>
-                    <td className="py-2 px-3 text-[#c9a227]">10%</td>
-                    <td className="py-2 px-3 text-gray-400">Regulatory, contracts, IP</td>
+                    <td className="py-2 px-2 sm:px-3">Legal & Compliance</td>
+                    <td className="py-2 px-2 sm:px-3 text-[#c9a227]">10%</td>
+                    <td className="py-2 px-2 sm:px-3 text-gray-400">Regulatory, contracts, IP</td>
                   </tr>
                 </tbody>
               </table>
@@ -831,25 +831,25 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="28" title="How will funds be allocated?">
-            <div className="space-y-4">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30 text-center">
-                  <p className="text-2xl font-bold text-emerald-400">55%</p>
-                  <p className="text-xs text-gray-400">Marketing</p>
-                  <p className="text-xs text-gray-500">User & Merchant Acquisition</p>
+            <div className="space-y-3 sm:space-y-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="bg-emerald-500/10 rounded-lg p-2 sm:p-4 border border-emerald-500/30 text-center">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-400">55%</p>
+                  <p className="text-[10px] sm:text-xs text-gray-400">Marketing</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 hidden sm:block">User & Merchant Acquisition</p>
                 </div>
-                <div className="bg-yellow-500/10 rounded-lg p-4 border border-yellow-500/30 text-center">
-                  <p className="text-2xl font-bold text-yellow-400">25%</p>
-                  <p className="text-xs text-gray-400">Salaries</p>
-                  <p className="text-xs text-gray-500">Founder, Co-founder, Key Hires</p>
+                <div className="bg-yellow-500/10 rounded-lg p-2 sm:p-4 border border-yellow-500/30 text-center">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-yellow-400">25%</p>
+                  <p className="text-[10px] sm:text-xs text-gray-400">Salaries</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 hidden sm:block">Founder, Co-founder, Key Hires</p>
                 </div>
-                <div className="bg-blue-500/10 rounded-lg p-4 border border-blue-500/30 text-center">
-                  <p className="text-2xl font-bold text-blue-400">20%</p>
-                  <p className="text-xs text-gray-400">Tech & Ops</p>
-                  <p className="text-xs text-gray-500">Infrastructure, Operations</p>
+                <div className="bg-blue-500/10 rounded-lg p-2 sm:p-4 border border-blue-500/30 text-center">
+                  <p className="text-lg sm:text-xl md:text-2xl font-bold text-blue-400">20%</p>
+                  <p className="text-[10px] sm:text-xs text-gray-400">Tech & Ops</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500 hidden sm:block">Infrastructure, Operations</p>
                 </div>
               </div>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-300 text-xs sm:text-sm">
                 Budget allocation is flexible and adjusts based on actual funding received. Marketing-heavy allocation reflects growth-stage priorities.
               </p>
             </div>
@@ -876,40 +876,40 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="30" title="What are the key risks and mitigations?">
-            <div className="space-y-4">
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
+            <div className="space-y-3 sm:space-y-4">
+              <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+                <table className="w-full text-xs sm:text-sm min-w-[400px]">
                   <thead className="text-left text-gray-400 border-b border-[#2a3a52]">
                     <tr>
-                      <th className="pb-2">Risk</th>
-                      <th className="pb-2">Impact</th>
+                      <th className="pb-2 pr-2">Risk</th>
+                      <th className="pb-2 pr-2">Impact</th>
                       <th className="pb-2">Mitigation</th>
                     </tr>
                   </thead>
                   <tbody className="text-gray-300">
                     <tr className="border-b border-[#2a3a52]/50">
-                      <td className="py-2">Solo founder</td>
-                      <td className="py-2 text-red-400">High</td>
+                      <td className="py-2 pr-2">Solo founder</td>
+                      <td className="py-2 pr-2 text-red-400">High</td>
                       <td className="py-2">90-day co-founder hire commitment</td>
                     </tr>
                     <tr className="border-b border-[#2a3a52]/50">
-                      <td className="py-2">Careem copies model</td>
-                      <td className="py-2 text-yellow-400">Medium</td>
+                      <td className="py-2 pr-2">Careem copies model</td>
+                      <td className="py-2 pr-2 text-yellow-400">Medium</td>
                       <td className="py-2">12-18 month head start, POS moat</td>
                     </tr>
                     <tr className="border-b border-[#2a3a52]/50">
-                      <td className="py-2">Series A market closes</td>
-                      <td className="py-2 text-red-400">High</td>
+                      <td className="py-2 pr-2">Series A market closes</td>
+                      <td className="py-2 pr-2 text-red-400">High</td>
                       <td className="py-2">Conservative burn, path to profitability</td>
                     </tr>
                     <tr className="border-b border-[#2a3a52]/50">
-                      <td className="py-2">SVF license denied</td>
-                      <td className="py-2 text-yellow-400">Medium</td>
+                      <td className="py-2 pr-2">SVF license denied</td>
+                      <td className="py-2 pr-2 text-yellow-400">Medium</td>
                       <td className="py-2">Model viable without float revenue</td>
                     </tr>
                     <tr>
-                      <td className="py-2">Merchant churn &gt;20%</td>
-                      <td className="py-2 text-yellow-400">Medium</td>
+                      <td className="py-2 pr-2">Merchant churn &gt;20%</td>
+                      <td className="py-2 pr-2 text-yellow-400">Medium</td>
                       <td className="py-2">POS integration creates switching cost</td>
                     </tr>
                   </tbody>
@@ -919,27 +919,27 @@ export default function DataRoomPage() {
           </DocItem>
 
           <DocItem number="31" title="What is the expected return profile?">
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#1a2a42] rounded-lg p-4 border border-[#2a3a52]">
-                  <p className="text-xs text-gray-400 mb-1">Base Case (35% probability)</p>
-                  <p className="text-2xl font-bold text-emerald-400">120x</p>
-                  <p className="text-xs text-gray-500">$1.2B exit → $48M return</p>
+            <div className="space-y-3 sm:space-y-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-4">
+                <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 border border-[#2a3a52]">
+                  <p className="text-[10px] sm:text-xs text-gray-400 mb-0.5 sm:mb-1">Base Case (35% probability)</p>
+                  <p className="text-xl sm:text-2xl font-bold text-emerald-400">120x</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500">$1.2B exit → $48M return</p>
                 </div>
-                <div className="bg-[#1a2a42] rounded-lg p-4 border border-[#2a3a52]">
-                  <p className="text-xs text-gray-400 mb-1">Conservative (15% probability)</p>
-                  <p className="text-2xl font-bold text-blue-400">95x</p>
-                  <p className="text-xs text-gray-500">$950M exit → $38M return</p>
+                <div className="bg-[#1a2a42] rounded-lg p-3 sm:p-4 border border-[#2a3a52]">
+                  <p className="text-[10px] sm:text-xs text-gray-400 mb-0.5 sm:mb-1">Conservative (15% probability)</p>
+                  <p className="text-xl sm:text-2xl font-bold text-blue-400">95x</p>
+                  <p className="text-[10px] sm:text-xs text-gray-500">$950M exit → $38M return</p>
                 </div>
               </div>
-              <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/30">
-                <p className="font-bold text-red-400 mb-2">Failure Scenario (40% probability)</p>
-                <p className="text-gray-300 text-sm">
+              <div className="bg-red-500/10 rounded-lg p-3 sm:p-4 border border-red-500/30">
+                <p className="font-bold text-red-400 mb-1.5 sm:mb-2 text-sm sm:text-base">Failure Scenario (40% probability)</p>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   Total loss of investment. Pre-seed venture investing carries significant risk.
                   Only invest capital you can afford to lose entirely.
                 </p>
               </div>
-              <p className="text-gray-300 text-sm">
+              <p className="text-gray-300 text-xs sm:text-sm">
                 <strong>Expected Value:</strong> ~$25M (62x blended return). Even at 50% of projections, returns remain attractive (47-71x).
               </p>
             </div>
@@ -966,29 +966,29 @@ export default function DataRoomPage() {
         </Folder>
 
         {/* Contact */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-400 mb-4">Questions about any materials?</p>
+        <div className="mt-8 sm:mt-12 text-center">
+          <p className="text-gray-400 mb-3 sm:mb-4 text-sm sm:text-base">Questions about any materials?</p>
           <a
             href="mailto:rejaul@nuqtapp.com?subject=Data%20Room%20Question"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#c9a227] text-[#0a1628] rounded-lg sm:rounded-xl font-bold hover:bg-[#f4d35e] transition-colors text-sm sm:text-base"
           >
             Contact Founder
           </a>
         </div>
 
         {/* Navigation */}
-        <div className="mt-12 flex items-center justify-between border-t border-[#2a3a52] pt-8">
-          <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between border-t border-[#2a3a52] pt-6 sm:pt-8 gap-4">
+          <Link href="/" className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base">
             ← Back to Site
           </Link>
-          <div className="flex gap-6">
-            <Link href="/commitment" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors">
+          <div className="flex flex-wrap gap-3 sm:gap-6">
+            <Link href="/commitment" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               Founder Commitment
             </Link>
-            <Link href="/terms" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors">
+            <Link href="/terms" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               CCD Terms
             </Link>
-            <Link href="/memo" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors">
+            <Link href="/memo" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               Memo
             </Link>
           </div>

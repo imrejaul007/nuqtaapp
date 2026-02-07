@@ -33,7 +33,6 @@ import {
   LineChart,
   MapPin
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * C-SUITE STRATEGIC ANALYSIS
@@ -136,8 +135,6 @@ export default function CSuiteStrategyPage() {
         {activeTab === 'chro' && <CHROSection />}
         {activeTab === 'cfo' && <CFOSection />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

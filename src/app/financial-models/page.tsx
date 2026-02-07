@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Calculator,
   TrendingUp,
@@ -1001,8 +1000,6 @@ export default function FinancialModelsPage() {
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

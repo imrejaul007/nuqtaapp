@@ -35,7 +35,6 @@ import {
   Database,
   RefreshCw
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * COO AGENT REPORT
@@ -120,8 +119,6 @@ export default function COOReportPage() {
         {activeSection === 'execution' && <ExecutionPlaybook />}
         {activeSection === 'metrics' && <OperationsMetrics />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

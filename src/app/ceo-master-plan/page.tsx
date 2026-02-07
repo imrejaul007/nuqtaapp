@@ -45,7 +45,6 @@ import {
   TrendingDown,
   Percent
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CEO MASTER PLAN & EXECUTION ROADMAP
@@ -135,8 +134,6 @@ export default function CEOMasterPlanPage() {
         {activeSection === 'metrics' && <SuccessMetrics />}
         {activeSection === 'risks' && <RisksAndMitigation />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

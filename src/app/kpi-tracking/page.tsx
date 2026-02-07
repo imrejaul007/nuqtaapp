@@ -7,7 +7,6 @@ import {
   ChevronDown, ChevronUp, Copy, Check, Zap, Globe, Smartphone,
   ShoppingCart, Star, MessageCircle, RefreshCw, Calendar, PieChart
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 export default function KPITrackingPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>('acquisition');
@@ -490,8 +489,6 @@ export default function KPITrackingPage() {
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

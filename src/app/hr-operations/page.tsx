@@ -7,7 +7,6 @@ import {
   ChevronDown, ChevronUp, Copy, Check, Zap, Star, Target, Settings,
   GraduationCap, Coffee, Award, Bell, MessageSquare, Globe, Building2
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 export default function HROperationsPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('onboarding');
@@ -620,8 +619,6 @@ export default function HROperationsPage() {
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

@@ -35,7 +35,6 @@ import {
   AlertCircle,
   Gauge
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 type TabType = 'dashboard' | 'assumptions' | 'h1' | 'h2' | 'h3' | 'cashflow' | 'pnl' | 'sensitivity';
 
@@ -380,8 +379,6 @@ export default function FinancialProjectionPage() {
         {activeTab === 'pnl' && <PLTab assumptions={assumptions} metrics={metrics} />}
         {activeTab === 'sensitivity' && <SensitivityTab assumptions={assumptions} />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

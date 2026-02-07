@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Briefcase,
   MessageSquare,
@@ -86,8 +85,6 @@ export default function SalesKitPage() {
         {activeTab === 'process' && <ProcessTab />}
         {activeTab === 'materials' && <MaterialsTab />}
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

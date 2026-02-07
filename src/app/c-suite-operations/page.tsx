@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   Crown,
   Code,
@@ -125,8 +124,6 @@ export default function CSuiteOperationsPage() {
         {activeTab === 'mom' && <MeetingMoM />}
 
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

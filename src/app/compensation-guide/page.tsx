@@ -6,7 +6,6 @@ import {
   CheckCircle, ChevronDown, ChevronUp, Copy, Check, Briefcase, Clock,
   BarChart3, Percent, Calendar, Zap, Shield, Crown, Building2, Coins
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 export default function CompensationGuidePage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('salary');
@@ -602,8 +601,6 @@ export default function CompensationGuidePage() {
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }

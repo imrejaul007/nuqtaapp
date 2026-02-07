@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   ArrowLeft,
   Newspaper,
@@ -736,8 +735,6 @@ export default function PRLaunchPage() {
           </div>
         )}
       </main>
-
-      <GlobalFooter />
     </div>
   );
 }

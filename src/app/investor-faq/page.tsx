@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import GlobalFooter from '@/components/GlobalFooter';
 import {
   HelpCircle,
   DollarSign,
@@ -335,8 +334,6 @@ export default function InvestorFAQPage() {
           </div>
         </div>
       </div>
-
-      <GlobalFooter />
     </div>
   );
 }
