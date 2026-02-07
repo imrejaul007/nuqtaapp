@@ -237,7 +237,7 @@ export default function GTMMainPage() {
               <div className="mt-6 bg-cyan-500/10 border border-cyan-500/30 rounded-lg p-4">
                 <div className="flex items-center justify-between">
                   <span className="font-bold text-cyan-300">Exit Criteria:</span>
-                  <span className="text-cyan-400">50K MAU per country • 30% D30 • ≤10% churn • 12x LTV:CAC</span>
+                  <span className="text-cyan-400">50K MAU per country • 30% D30 • ≤10% churn • 16.8x LTV:CAC</span>
                 </div>
               </div>
             </div>

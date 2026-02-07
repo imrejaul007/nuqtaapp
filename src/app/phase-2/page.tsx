@@ -212,7 +212,7 @@ export default function Phase2Page() {
                   <div className="font-bold text-emerald-300 mb-1">Unit Economics</div>
                   <div className="text-sm text-slate-300">
                     • CAC ≤ AED 40 per country<br />
-                    • LTV:CAC ≥ 12x<br />
+                    • LTV:CAC ≥ 16.8x<br />
                     • 25% EBITDA margin
                   </div>
                 </div>

@@ -481,7 +481,7 @@ export default function DataRoomPage() {
         <Folder icon="📈" title="4. Unit Economics" id="unit-economics">
           <DocItem number="11" title="LTV & CAC Breakdown">
             <p className="mb-4">
-              Customer acquisition cost (AED 30) vs lifetime value (AED 540) across channels.
+              Customer acquisition cost (AED 30) vs lifetime value (AED 504) across channels.
               Includes payback period calculation (&lt;1 month) and cohort retention assumptions.
             </p>
             <div className="bg-[#1a2a42] rounded-lg p-4 mt-4">
@@ -491,7 +491,7 @@ export default function DataRoomPage() {
                   <p className="text-gray-400 text-sm">Blended CAC</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-[#c9a227]">AED 540</p>
+                  <p className="text-2xl font-bold text-[#c9a227]">AED 504</p>
                   <p className="text-gray-400 text-sm">Lifetime Value</p>
                 </div>
                 <div>
@@ -530,7 +530,7 @@ export default function DataRoomPage() {
                   <tr className="border-b border-[#2a3a52]/50">
                     <td className="py-2 px-3">Student Ambassadors</td>
                     <td className="py-2 px-3 text-[#c9a227]">AED 25-30</td>
-                    <td className="py-2 px-3 text-green-400">18x - 20.2x</td>
+                    <td className="py-2 px-3 text-green-400">16.8x - 20.2x</td>
                   </tr>
                   <tr className="border-b border-[#2a3a52]/50">
                     <td className="py-2 px-3">Digital Acquisition</td>
@@ -541,7 +541,7 @@ export default function DataRoomPage() {
               </table>
             </div>
             <p className="text-gray-300 text-sm">
-              Blended LTV:CAC ratio of 18x (AED 540 LTV ÷ AED 30 CAC) assumes 70% merchant QR acquisition,
+              Blended LTV:CAC ratio of 16.8x (AED 504 LTV ÷ AED 30 CAC) assumes 70% merchant QR acquisition,
               30% student ambassadors during early growth phase. This mix heavily favors low-cost organic
               acquisition before scaling paid channels.
             </p>
@@ -821,7 +821,7 @@ export default function DataRoomPage() {
                   <li><strong>MAU:</strong> 50,000 users (H1 target - matching Tabby UAE trajectory)</li>
                   <li><strong>Merchants:</strong> 1,500 (H1 target - validated through 32 LOIs already secured)</li>
                   <li><strong>Retention:</strong> 30% D30 retention (above industry standard for rewards apps)</li>
-                  <li><strong>LTV:CAC:</strong> 16x ratio (excellent for consumer fintech)</li>
+                  <li><strong>LTV:CAC:</strong> 16.8x ratio (excellent for consumer fintech)</li>
                 </ul>
               </div>
               <p className="text-gray-300 text-sm">

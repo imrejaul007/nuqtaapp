@@ -89,7 +89,7 @@ export default function MasterRoadmapPage() {
             </div>
             <div className="bg-white rounded-xl p-6 border-2 border-orange-200">
               <h4 className="text-lg font-black text-orange-700 mb-3">Phase 2 → Phase 3 Gate</h4>
-              <p className="text-sm text-slate-700">50K MAU per country, 30% D30, 10% cross-border tx, 12x LTV:CAC, 25% EBITDA</p>
+              <p className="text-sm text-slate-700">50K MAU per country, 30% D30, 10% cross-border tx, 16.8x LTV:CAC, 25% EBITDA</p>
             </div>
           </div>
 

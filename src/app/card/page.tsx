@@ -315,7 +315,7 @@ export default function NuqtaInvestorOnePager() {
                       </div>
                       <div className="bg-blue-500/10 rounded p-2">
                         <p className="text-xs text-slate-400">LTV:CAC</p>
-                        <p className="text-sm text-white font-black">18x</p>
+                        <p className="text-sm text-white font-black">16.8x</p>
                       </div>
                     </div>
                   </div>
@@ -401,7 +401,7 @@ export default function NuqtaInvestorOnePager() {
                         <p className="text-[9px] text-[#0a1628]/70 font-bold">Runway</p>
                       </div>
                       <div className="bg-[#0a1628]/30 backdrop-blur-sm px-2 py-2 rounded-lg text-center border border-[#0a1628]/40">
-                        <p className="text-xs text-[#0a1628] font-black">18x</p>
+                        <p className="text-xs text-[#0a1628] font-black">16.8x</p>
                         <p className="text-[9px] text-[#0a1628]/70 font-bold">LTV:CAC</p>
                       </div>
                       <div className="bg-[#0a1628]/30 backdrop-blur-sm px-2 py-2 rounded-lg text-center border border-[#0a1628]/40">

@@ -40,7 +40,24 @@ import {
   AlertTriangle,
   Search,
   X,
-  Calculator
+  Calculator,
+  LineChart,
+  Smartphone,
+  Tv,
+  Shirt,
+  Pill,
+  Gamepad2,
+  ClipboardList,
+  Video,
+  Globe,
+  UserPlus,
+  Award,
+  Wallet,
+  Ticket,
+  QrCode,
+  Headphones,
+  PenTool,
+  Share2
 } from 'lucide-react';
 
 /**
@@ -73,6 +90,7 @@ const navigationData: NavCategory[] = [
       { label: 'All Decks', href: '/deck', icon: Presentation },
       { label: 'Data Room', href: '/data-room', icon: Database },
       { label: 'Financial Models', href: '/financial-models', icon: Calculator },
+      { label: 'Financial Projection', href: '/financialprojection', icon: LineChart },
       { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail },
       { label: 'Investor FAQ', href: '/investor-faq', icon: FileText },
       { label: 'Funding Documents', href: '/funding-docs', icon: Briefcase },
@@ -87,8 +105,12 @@ const navigationData: NavCategory[] = [
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp },
       { label: 'Competitor Analysis', href: '/competitor-analysis', icon: BarChart3 },
       { label: 'Execution Plan', href: '/execution-plan', icon: Target },
+      { label: 'H1 GTM', href: '/h1-gtm', icon: Rocket },
+      { label: 'H2 GTM', href: '/h2-gtm', icon: TrendingUp },
+      { label: 'H3 GTM', href: '/h3-gtm', icon: TrendingUp },
       { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Calendar },
       { label: 'Phase 3 GTM', href: '/phase-3-gtm', icon: Calendar },
+      { label: 'KPI Tracking', href: '/kpi-tracking', icon: BarChart3 },
     ]
   },
   {
@@ -100,9 +122,13 @@ const navigationData: NavCategory[] = [
       { label: 'Packages & Pricing', href: '/merchant-packages', icon: CreditCard },
       { label: 'Merchant Playbook', href: '/merchant-playbook', icon: BookOpen },
       { label: 'Merchant Database', href: '/merchant-database', icon: Database },
+      { label: 'Merchant Pipeline', href: '/merchant-pipeline', icon: TrendingUp },
+      { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Megaphone },
       { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase },
       { label: 'SOPs', href: '/sop', icon: CheckSquare },
       { label: 'Onboarding', href: '/merchant-onboarding', icon: Users },
+      { label: 'QR Design', href: '/qr-design-specs', icon: QrCode },
+      { label: 'Support Templates', href: '/support-templates', icon: Headphones },
     ]
   },
   {
@@ -110,11 +136,15 @@ const navigationData: NavCategory[] = [
     icon: Building2,
     color: 'text-amber-400',
     items: [
-      { label: 'Cafe Deck & Playbook', href: '/playbook-cafe', icon: Coffee },
-      { label: 'Salon Deck & Playbook', href: '/playbook-salon', icon: Scissors },
+      { label: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Coffee },
+      { label: 'Salon & Spa', href: '/playbook-salon', icon: Scissors },
       { label: 'Supermarket', href: '/playbook-supermarket', icon: ShoppingCart },
       { label: 'Gold & Jewelry', href: '/playbook-gold', icon: Gem },
       { label: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell },
+      { label: 'Electronics', href: '/playbook-electronics', icon: Smartphone },
+      { label: 'Pharmacy', href: '/playbook-pharmacy', icon: Pill },
+      { label: 'Fashion', href: '/playbook-fashion', icon: Shirt },
+      { label: 'Entertainment', href: '/playbook-entertainment', icon: Gamepad2 },
       { label: 'University', href: '/deck-university', icon: BookOpen },
       { label: 'Corporate', href: '/deck-corporate', icon: Briefcase },
     ]
@@ -126,11 +156,16 @@ const navigationData: NavCategory[] = [
     items: [
       { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone },
       { label: 'CMO Playbook', href: '/cmo-playbook', icon: BookOpen },
+      { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
+      { label: 'Content Calendar', href: '/content-calendar', icon: Calendar },
       { label: 'Brand Voice', href: '/brand-voice', icon: MessageSquare },
-      { label: 'Campaigns', href: '/seasonal-campaigns', icon: Calendar },
+      { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar },
+      { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Share2 },
       { label: 'Influencer List', href: '/influencer-list', icon: Users },
       { label: 'Press Kit', href: '/press-kit', icon: FileText },
-      { label: 'Content Templates', href: '/email-templates', icon: Mail },
+      { label: 'Media Hub', href: '/media-hub', icon: Tv },
+      { label: 'Email Templates', href: '/email-templates', icon: Mail },
+      { label: 'Analytics', href: '/analytics-dashboard', icon: BarChart3 },
     ]
   },
   {
@@ -140,9 +175,13 @@ const navigationData: NavCategory[] = [
     items: [
       { label: 'Partnership Playbook', href: '/partnerships', icon: Handshake },
       { label: '4-Level Framework', href: '/partnership-framework', icon: Layers },
+      { label: 'Partnership Tiers', href: '/partnership-tiers', icon: Award },
       { label: 'Co-Partner Program', href: '/co-partner', icon: Users },
-      { label: 'Global Village', href: '/deck-gv', icon: Building2 },
+      { label: 'Global Village Deck', href: '/deck-gv', icon: Globe },
+      { label: 'GV Playbook', href: '/gv-playbook', icon: BookOpen },
+      { label: 'GV Merchants', href: '/gv-merchants', icon: Store },
       { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Presentation },
+      { label: 'Exhibition Merchants', href: '/exhibition-merchants', icon: Store },
     ]
   },
   {
@@ -150,14 +189,18 @@ const navigationData: NavCategory[] = [
     icon: Crown,
     color: 'text-[#c9a227]',
     items: [
-      { label: '3-Year Domination Plan', href: '/3-year-plan', icon: Target },
+      { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
-      { label: 'CEO Report', href: '/ceo-agent', icon: Bot },
-      { label: 'COO Report', href: '/coo-agent', icon: Settings },
-      { label: 'CFO Report', href: '/cfo-agent', icon: DollarSign },
-      { label: 'CMO Report', href: '/cmo-agent', icon: Megaphone },
-      { label: 'CHRO Report', href: '/chro-agent', icon: Heart },
+      { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },
+      { label: 'C-Suite Operations', href: '/c-suite-operations', icon: Settings },
       { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle },
+      { label: 'CEO Agent', href: '/ceo-agent', icon: Bot },
+      { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown },
+      { label: 'COO Agent', href: '/coo-agent', icon: Bot },
+      { label: 'CFO Agent', href: '/cfo-agent', icon: Bot },
+      { label: 'CMO Agent', href: '/cmo-agent', icon: Bot },
+      { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
+      { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
     ]
   },
   {
@@ -168,9 +211,30 @@ const navigationData: NavCategory[] = [
       { label: 'Team', href: '/team', icon: Users },
       { label: 'Operations', href: '/operations', icon: Settings },
       { label: 'Tasks', href: '/tasks', icon: CheckSquare },
-      { label: 'Legal & Policies', href: '/policies', icon: Scale },
-      { label: 'Contracts', href: '/contracts', icon: FileText },
       { label: 'HR Operations', href: '/hr-operations', icon: Heart },
+      { label: 'Hiring Playbook', href: '/hiring-playbook', icon: UserPlus },
+      { label: 'Compensation', href: '/compensation-guide', icon: Wallet },
+      { label: 'ESOP', href: '/esop', icon: Ticket },
+      { label: 'Join Us', href: '/join-us', icon: UserPlus },
+      { label: 'Contracts', href: '/contracts', icon: FileText },
+      { label: 'Legal Docs', href: '/legal-docs', icon: Scale },
+      { label: 'Policies', href: '/policies', icon: Scale },
+    ]
+  },
+  {
+    title: 'Launch',
+    icon: Rocket,
+    color: 'text-orange-400',
+    items: [
+      { label: 'Launch Readiness', href: '/launch-readiness', icon: CheckSquare },
+      { label: 'Launch Sprint', href: '/launch-sprint', icon: Rocket },
+      { label: 'PR Launch', href: '/pr-launch', icon: Megaphone },
+      { label: 'User Acquisition', href: '/user-acquisition', icon: UserPlus },
+      { label: 'Merchant Acquisition', href: '/merchant-acquisition', icon: Store },
+      { label: 'User Journey', href: '/user-journey', icon: Map },
+      { label: 'Customer Journeys', href: '/customer-journeys', icon: Users },
+      { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
+      { label: 'Business Playbook', href: '/business-playbook', icon: BookOpen },
     ]
   },
 ];
@@ -187,11 +251,13 @@ const quickLinks = [
   { label: 'Dashboard', href: '/dashboard', icon: BarChart3 },
   { label: 'Pitch Deck', href: '/deck-90', icon: Rocket },
   { label: 'Data Room', href: '/data-room', icon: Database },
+  { label: 'Financial', href: '/financialprojection', icon: Calculator },
   { label: 'GTM', href: '/gtm', icon: TrendingUp },
   { label: 'Merchants', href: '/merchant-engines', icon: Store },
   { label: 'Marketing', href: '/marketing-hub', icon: Megaphone },
   { label: 'Partnerships', href: '/partnerships', icon: Handshake },
   { label: 'C-Suite', href: '/executive-team', icon: Crown },
+  { label: 'Launch', href: '/launch-readiness', icon: Rocket },
 ];
 
 const GlobalFooter = () => {

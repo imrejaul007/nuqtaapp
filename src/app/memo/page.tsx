@@ -382,15 +382,15 @@ export default function InvestorMemo() {
                 </p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 540</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">AED 504</p>
                 <p className="text-[10px] sm:text-xs text-gray-500 mb-1 sm:mb-2">LTV</p>
                 <p className="text-[9px] sm:text-[10px] text-gray-600 leading-tight">
-                  Monthly RPU: AED 45<br />
-                  12-month retention
+                  Monthly RPU: AED 36<br />
+                  14-month retention
                 </p>
               </div>
               <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">18x</p>
+                <p className="text-lg sm:text-xl md:text-2xl font-bold text-[#c9a227]">16.8x</p>
                 <p className="text-[10px] sm:text-xs text-gray-500 mb-1 sm:mb-2">LTV:CAC</p>
                 <p className="text-[9px] sm:text-[10px] text-gray-600 leading-tight">
                   Payback &lt;1 month<br />
