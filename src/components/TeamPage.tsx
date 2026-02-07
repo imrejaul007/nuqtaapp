@@ -1495,7 +1495,7 @@ const TeamPage = () => {
                 { label: 'Merchants', value: '250+', icon: HandshakeIcon },
                 { label: 'GMV', value: 'AED 10M', icon: BarChart3 },
                 { label: 'D30 Retention', value: '≥25%', icon: Target },
-                { label: 'LTV:CAC', value: '≥10x', icon: TrendingUp },
+                { label: 'LTV:CAC', value: '≥16.8x', icon: TrendingUp },
               ].map((goal, i) => (
                 <div key={i} className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-4 text-center">
                   <goal.icon className="w-6 h-6 text-[#c9a227] mx-auto mb-2" />

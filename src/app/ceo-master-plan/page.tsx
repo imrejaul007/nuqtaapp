@@ -894,9 +894,9 @@ function SuccessMetrics() {
             {
               period: 'Month 3 (May)',
               milestones: [
-                { item: '50,000 active users', critical: true },
-                { item: '1,500 merchants live', critical: true },
-                { item: 'AED 500K GMV', critical: false },
+                { item: '15,000 active users', critical: true },
+                { item: '250 merchants live', critical: true },
+                { item: 'AED 1M GMV', critical: false },
                 { item: 'Series A prep started', critical: false },
               ]
             },

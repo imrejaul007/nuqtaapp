@@ -98,8 +98,8 @@ export default function H2StrategyPage() {
               <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
                 <p className="text-sm font-black text-blue-700 mb-3">✅ UNIT ECONOMICS WORK</p>
                 <ul className="text-sm text-slate-700 space-y-2">
-                  <li>• LTV:CAC = 10:1</li>
-                  <li>• Blended take rate: 5-10%</li>
+                  <li>• LTV:CAC = 16.8x</li>
+                  <li>• Blended take rate: 8%</li>
                   <li>• Merchant repeat: 15%+</li>
                 </ul>
               </div>

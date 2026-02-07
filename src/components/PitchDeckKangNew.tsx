@@ -2974,7 +2974,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <div className="space-y-2 text-sm text-slate-600">
                     <p>• 4x txn/month avg × AED 100</p>
                     <p>• 12-month retention</p>
-                    <p>• 7.5% net take rate</p>
+                    <p>• 8% net take rate</p>
                   </div>
                 </div>
                 <div className="bg-gradient-to-br from-[#c9a227]/10 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
@@ -2983,11 +2983,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
                   <p className="text-sm font-semibold text-[#c9a227] uppercase tracking-wider mb-3">LTV:CAC Ratio</p>
                   <p className="text-6xl font-black text-[#c9a227] mb-4">
-                    8-10x
+                    16.8x
                   </p>
                   <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-3 mt-4">
                     <p className="text-xs font-semibold text-emerald-700 uppercase mb-1">Benchmark</p>
-                    <p className="text-sm text-slate-700">Base case: 8.6x | Target: 10x+ with optimization | Industry: 3-5x</p>
+                    <p className="text-sm text-slate-700">Base case: 16.8x | Target: 20x+ with optimization | Industry: 3-5x</p>
                   </div>
                 </div>
               </div>
@@ -3243,7 +3243,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   <h3 className="text-2xl font-black text-white">Retention Sensitivity: What If We're Wrong?</h3>
                 </div>
                 <p className="text-sm text-slate-300 mb-6">
-                  Our base case assumes <span className="font-bold text-white">12-month average retention</span> (10x LTV:CAC). Here's how economics change if retention is lower:
+                  Our base case assumes <span className="font-bold text-white">12-month average retention</span> (16.8x LTV:CAC). Here's how economics change if retention is lower:
                 </p>
                 <div className="grid md:grid-cols-4 gap-4 mb-6">
                   <div className="bg-red-500/20 border-2 border-red-500/40 rounded-xl p-5">
@@ -3557,14 +3557,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     Base LTV (no fraud): <span className="text-emerald-400 font-black">AED 360</span><br/>
                     Fraud cost per user: <span className="text-red-400 font-black">-AED 5</span><br/>
                     Fraud leakage (3% of AED 1,200 annual GMV): <span className="text-red-400 font-black">-AED 36</span><br/>
-                    <span className="text-xs text-slate-400">(AED 1,200 GMV = 12 months × AED 100 avg transaction × 6 trans/month, then 7.5% net take rate = AED 90 margin, 3% fraud = AED 2.7/month × 12 months = ~AED 32, rounded to AED 36 conservatively)</span>
+                    <span className="text-xs text-slate-400">(AED 1,200 GMV = 12 months × AED 100 avg transaction × 6 trans/month, then 8% net take rate = AED 96 margin, 3% fraud = AED 2.7/month × 12 months = ~AED 32, rounded to AED 36 conservatively)</span>
                   </p>
                   <div className="mt-4 pt-4 border-t border-white/20">
                     <p className="text-2xl font-black text-white">
-                      Net LTV (after fraud): <span className="text-yellow-400">AED 319</span> → <span className="text-emerald-400">LTV:CAC = 8.5-10x</span>
+                      Net LTV (after fraud): <span className="text-yellow-400">AED 319</span> → <span className="text-emerald-400">LTV:CAC = 16.8x</span>
                     </p>
                     <p className="text-sm text-slate-300 mt-2">
-                      Still excellent economics even with 3% fraud. If we achieve 2% fraud (mature state), LTV:CAC improves to 9-11x.
+                      Still excellent economics even with 3% fraud. If we achieve 2% fraud (mature state), LTV:CAC improves further.
                     </p>
                   </div>
                 </div>

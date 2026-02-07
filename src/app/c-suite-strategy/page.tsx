@@ -167,12 +167,12 @@ function UnifiedStrategy() {
             <h3 className="text-white font-bold mb-3">2026-2026 North Star Metrics</h3>
             <div className="space-y-3">
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <span className="text-slate-300">Active Users</span>
-                <span className="text-[#c9a227] font-bold">100,000 by Dec 2026</span>
+                <span className="text-slate-300">Active Users (Year 1)</span>
+                <span className="text-[#c9a227] font-bold">100,000 MAU</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
-                <span className="text-slate-300">Merchant Partners</span>
-                <span className="text-[#c9a227] font-bold">500 by Dec 2026</span>
+                <span className="text-slate-300">Merchant Partners (Year 1)</span>
+                <span className="text-[#c9a227] font-bold">2,500 merchants</span>
               </div>
               <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                 <span className="text-slate-300">Monthly GMV</span>

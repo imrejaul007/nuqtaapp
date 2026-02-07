@@ -1286,7 +1286,7 @@ export default function CFOReportPage() {
                   { metric: 'Gross Margin', current: 'N/A', target: '80%+', status: 'pending' },
                   { metric: 'CAC', current: 'Unknown', target: '<AED 30', status: 'pending' },
                   { metric: 'LTV', current: 'Unknown', target: 'AED 500+', status: 'pending' },
-                  { metric: 'LTV:CAC', current: 'Unknown', target: '>10x', status: 'pending' }
+                  { metric: 'LTV:CAC', current: 'Unknown', target: '>16.8x', status: 'pending' }
                 ].map((item) => (
                   <div key={item.metric} className="bg-white/5 rounded-lg p-4">
                     <p className="text-slate-400 text-sm mb-1">{item.metric}</p>

@@ -140,7 +140,7 @@ export default function InvestorFAQPage() {
         },
         {
           question: 'What\'s your hiring plan?',
-          answer: 'Phase 1 (Pre-launch): CTO, 2 developers. Phase 2 (H1): 15 merchant sales reps, 3 ops managers. Phase 3 (H2): Marketing team (5), data analyst (2), customer support (8). Total team by end of Year 1: 70 people. Aggressive scaling for 50K MAU target.',
+          answer: 'Phase 1 (Pre-launch): CTO, 2 developers. Phase 2 (H1): 15 merchant sales reps, 3 ops managers. Phase 3 (H2): Marketing team (5), data analyst (2), customer support (8). Total team by end of Year 1: 70 people. H1 target: 50K MAU, Year 1 target: 100K MAU.',
           links: [{ label: 'CTO Role', href: '/join-us' }]
         },
         {

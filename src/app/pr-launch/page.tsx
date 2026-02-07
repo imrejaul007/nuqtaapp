@@ -386,7 +386,7 @@ const talkingPoints = [
     topic: 'Traction & Goals',
     points: [
       'Launching with [XX] partner merchants',
-      'Target: 500 merchants, 50,000 users in Year 1',
+      'H1: 50K MAU, 1,500 merchants | Year 1: 100K MAU, 2,500 merchants',
       'Focus on Dubai first, then expand across UAE and GCC',
       'Team of [X] with combined experience in fintech, retail, marketing'
     ]

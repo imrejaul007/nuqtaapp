@@ -74,7 +74,7 @@ export default function H3GTMPage() {
                 <p className="text-xs text-slate-400 mt-1">Down from 100% in H1-H2</p>
               </div>
               <div className="space-y-3 text-sm text-slate-300">
-                <p><strong className="text-white">Core business:</strong> 7.5% take rate on consumer transactions</p>
+                <p><strong className="text-white">Core business:</strong> 8% take rate on consumer transactions</p>
                 <p><strong className="text-white">Scale:</strong> AED 200M annual GMV</p>
                 <p><strong className="text-white">Margin:</strong> ~60% after costs</p>
                 <p className="text-blue-300 font-bold">Still growing, but no longer the only engine</p>

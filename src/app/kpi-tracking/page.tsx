@@ -68,8 +68,8 @@ export default function KPITrackingPage() {
       icon: DollarSign,
       color: 'yellow',
       metrics: [
-        { name: 'Gross Merchandise Value (GMV)', formula: 'Total value of transactions', source: 'Transaction database', target: 'AED 5M/month by M12', benchmark: 'Growth: 30%+ MoM', frequency: 'Daily' },
-        { name: 'Revenue', formula: 'Commission + Partner fees', source: 'Finance system', target: 'AED 250K/month by M12', benchmark: '5% of GMV', frequency: 'Daily' },
+        { name: 'Gross Merchandise Value (GMV)', formula: 'Total value of transactions', source: 'Transaction database', target: 'AED 10M/month by M12 (AED 120M Year 1)', benchmark: 'Growth: 30%+ MoM', frequency: 'Daily' },
+        { name: 'Revenue', formula: 'Commission + Partner fees', source: 'Finance system', target: 'AED 800K/month by M12 (AED 9.6M Year 1)', benchmark: '8% of GMV', frequency: 'Daily' },
         { name: 'Average Order Value (AOV)', formula: 'Total GMV / Number of orders', source: 'Transaction database', target: 'AED 150+', benchmark: 'UAE avg: AED 120-180', frequency: 'Weekly' },
         { name: 'Transactions Per User', formula: 'Total transactions / Active users', source: 'Transaction + User data', target: '> 4 per month', benchmark: 'Power users: 8+', frequency: 'Weekly' },
         { name: 'Customer Lifetime Value (LTV)', formula: 'Avg revenue × Avg lifespan', source: 'Cohort analysis', target: 'AED 200+', benchmark: 'LTV:CAC > 3:1', frequency: 'Monthly' },
@@ -82,7 +82,7 @@ export default function KPITrackingPage() {
       icon: ShoppingCart,
       color: 'purple',
       metrics: [
-        { name: 'Active Merchants', formula: 'Merchants with transactions in period', source: 'Merchant database', target: '500+ by M6', benchmark: 'Growth: 20%+ MoM', frequency: 'Weekly' },
+        { name: 'Active Merchants', formula: 'Merchants with transactions in period', source: 'Merchant database', target: '1,500+ by M6 (H1)', benchmark: 'Growth: 20%+ MoM', frequency: 'Weekly' },
         { name: 'Merchant Acquisition Cost', formula: 'Sales + Marketing / New merchants', source: 'Sales CRM + Finance', target: '< AED 2,000', benchmark: 'Good: AED 1-3K', frequency: 'Monthly' },
         { name: 'Merchant Churn Rate', formula: 'Lost merchants / Start merchants × 100', source: 'Merchant database', target: '< 3% monthly', benchmark: 'Good: 2-5%', frequency: 'Monthly' },
         { name: 'Avg GMV Per Merchant', formula: 'Total GMV / Active merchants', source: 'Transaction data', target: 'AED 10K+/month', benchmark: 'Top: AED 25K+', frequency: 'Monthly' },

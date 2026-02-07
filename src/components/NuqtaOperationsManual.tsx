@@ -81,13 +81,13 @@ const companyOverview = {
     { name: 'Radical Transparency', desc: 'Share context, share numbers, share learning', icon: Globe },
   ],
   h1Goals: {
-    timeline: '5 months',
+    timeline: '6 months',
     targets: [
-      { metric: 'MAU', value: '10,000', current: '0' },
-      { metric: 'Merchants', value: '250+', current: '0' },
-      { metric: 'GMV', value: 'AED 10M', current: '0' },
+      { metric: 'MAU (H1)', value: '50,000', current: '0' },
+      { metric: 'Merchants (H1)', value: '1,500+', current: '0' },
+      { metric: 'GMV (H1)', value: 'AED 25M', current: '0' },
       { metric: 'D30 Retention', value: '≥25%', current: 'N/A' },
-      { metric: 'LTV:CAC', value: '≥10x', current: 'N/A' },
+      { metric: 'LTV:CAC', value: '≥16.8x', current: 'N/A' },
     ]
   }
 };
@@ -413,7 +413,7 @@ const roles = [
       { task: 'Growth roadmap planning', timing: '4th week' },
     ],
     kpis: [
-      { metric: 'MAU', target: '10K by H1 end' },
+      { metric: 'MAU (H1)', target: '50K by H1 end' },
       { metric: 'D1 retention', target: '≥40%' },
       { metric: 'D7 retention', target: '≥30%' },
       { metric: 'D30 retention', target: '≥25%' },
