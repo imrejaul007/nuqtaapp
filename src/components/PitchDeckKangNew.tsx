@@ -2426,7 +2426,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       <p className={`${typography.label} font-bold text-emerald-300 uppercase`}>User Model</p>
                     </div>
                     <p className={`${typography.bodyLarge} text-white font-medium`}>
-                      FREE for users during Year 1 validation • Focus on transaction volume, not subscriptions
+                      FREE for users during Year 1 • Nuqta+ premium membership (99 AED/mo) launches H2 2026
                     </p>
                   </div>
                   <div className="bg-blue-900/30 border border-blue-500/30 rounded-xl p-5">
@@ -5249,6 +5249,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                           <div className="space-y-1">
                             <p className="text-sm text-slate-700">• 2,500 merchants</p>
                             <p className="text-sm text-slate-700">• 100K users</p>
+                            <p className="text-sm text-slate-700">• Nuqta+ launch (H2)</p>
                             <p className="text-sm text-slate-700">• AED 120M GMV</p>
                           </div>
                         </div>
@@ -5819,7 +5820,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     emoji: "Rocket",
                     title: "Core PMF Validation",
                     subtitle: "Dubai Launch",
-                    features: ["Launch F&B + Core Verticals", "2,500 merchants • 100K MAU", "Prove 30% D30 retention + LTV:CAC 16.8x", "AED 9.6M Revenue • 10% EBITDA"],
+                    features: ["Launch F&B + Core Verticals", "2,500 merchants • 100K MAU", "Nuqta+ membership launch (H2) — recurring revenue", "Prove 30% D30 retention + LTV:CAC 16.8x", "AED 9.6M Revenue • 10% EBITDA"],
                     kpis: "2,500 merchants • 100K MAU • AED 120M GMV • AED 9.6M revenue",
                     status: "In Progress",
                     color: "emerald",
