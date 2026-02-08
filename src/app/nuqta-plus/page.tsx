@@ -17,13 +17,13 @@ import GlobalFooter from '@/components/GlobalFooter';
 // Exclusive Partner Brands (NOT owned by Nuqta) - 16 Categories
 const partnerBrands = [
   { id: 'salon', name: 'Salon & Spa', icon: Scissors, coin: 100, color: 'pink', description: 'Premium beauty services', partnerType: 'Exclusive Partner', partnerName: 'Nilim', minOrder: 200, status: 'confirmed' },
-  { id: 'perfume', name: 'Perfume & Oud', icon: Droplets, coin: 100, color: 'purple', description: 'Luxury fragrances', partnerType: 'Exclusive Partner', partnerName: 'Al Mutlaib', minOrder: 400, status: 'confirmed' },
+  { id: 'perfume', name: 'Perfume & Oud', icon: Droplets, coin: 100, color: 'purple', description: 'Luxury fragrances', partnerType: 'Exclusive Partner', partnerName: 'Al Mutlaib', minOrder: 200, status: 'confirmed' },
   { id: 'haircare', name: 'Haircare & Cosmetics', icon: Sparkles, coin: 100, color: 'rose', description: 'Beauty essentials', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
   { id: 'coffee', name: 'Coffee & Beverages', icon: Coffee, coin: 100, color: 'amber', description: 'Specialty drinks', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
   { id: 'laundry', name: 'Laundry', icon: ShoppingBag, coin: 100, color: 'blue', description: 'Premium laundry services', partnerType: 'Exclusive Partner', partnerName: 'Laundristan', minOrder: 200, status: 'confirmed' },
   { id: 'abaya', name: 'Abaya', icon: Shirt, coin: 100, color: 'slate', description: 'Designer modest fashion', partnerType: 'Exclusive Partner', partnerName: 'W Line', minOrder: 400, status: 'confirmed' },
   { id: 'jewellery', name: 'Jewellery', icon: Gem, coin: 100, color: 'yellow', description: 'Elegant accessories', partnerType: 'Exclusive Partner', partnerName: '10 Stone', minOrder: 200, status: 'confirmed' },
-  { id: 'home-fragrance', name: 'Home Fragrance', icon: Home, coin: 100, color: 'indigo', description: 'Ambient scents', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+  { id: 'home-fragrance', name: 'Home Fragrance', icon: Home, coin: 100, color: 'indigo', description: 'Premium home fragrances', partnerType: 'Exclusive Partner', partnerName: 'Whiff Theory', minOrder: 200, status: 'confirmed' },
   { id: 'mens-grooming', name: "Men's Grooming", icon: User, coin: 100, color: 'cyan', description: 'Premium grooming services', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
   { id: 'tours-travel', name: 'Tours & Travel', icon: Plane, coin: 100, color: 'sky', description: 'Local experiences & trips', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 300, status: 'pending' },
   { id: 'handbags', name: 'Handbags', icon: ShoppingBag, coin: 100, color: 'fuchsia', description: 'Designer bags & accessories', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 300, status: 'pending' },
@@ -34,14 +34,82 @@ const partnerBrands = [
   { id: 'florist', name: 'Florist & Gifts', icon: Flower, coin: 100, color: 'emerald', description: 'Flowers & gift arrangements', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
 ];
 
-// Confirmed Partners Summary
+// Confirmed Partners Summary with SKU Details
 const confirmedPartners = [
-  { category: 'Perfume & Oud', partner: 'Al Mutlaib', minOrder: 400, maxOrder: 40000, products: 'Oud, Dehanla Oudh, Perfumes' },
-  { category: 'Salon & Spa', partner: 'Nilim', minOrder: 200, maxOrder: null, products: 'At-home salon & spa services' },
-  { category: 'Abaya', partner: 'W Line', minOrder: 400, maxOrder: null, products: 'Designer abayas' },
-  { category: 'Jewellery', partner: '10 Stone', minOrder: 200, maxOrder: null, products: 'Premium jewellery' },
-  { category: 'Laundry', partner: 'Laundristan', minOrder: 200, maxOrder: null, products: 'Weekly/monthly laundry subscription' },
-  { category: 'Premium Car Wash', partner: 'Z Wash', minOrder: 200, maxOrder: null, products: 'Doorstep vehicle cleaning subscription' },
+  {
+    category: 'Perfume & Oud',
+    partner: 'Al Mutlaib',
+    minOrder: 200,
+    maxOrder: 40000,
+    products: 'Oud, Dehnal Oud, Perfumes',
+    skus: [
+      { name: 'Oud (Tola)', qty: 5, price: 300 },
+      { name: 'Perfume', qty: 2, price: 200 },
+      { name: 'Perfume (Premium)', qty: 2, price: 500 },
+      { name: 'Dehnal Oud (3ml)', qty: 5, price: 400 },
+    ],
+    totalSKUs: 14
+  },
+  {
+    category: 'Home Fragrance',
+    partner: 'Whiff Theory',
+    minOrder: 200,
+    maxOrder: null,
+    products: 'Premium home fragrances',
+    skus: [
+      { name: 'Home Fragrance', qty: 2, price: 200 },
+    ],
+    totalSKUs: 2
+  },
+  {
+    category: 'Abaya',
+    partner: 'W Line',
+    minOrder: 400,
+    maxOrder: 700,
+    products: 'Designer abayas',
+    skus: [
+      { name: 'Abaya (Standard)', qty: 1, price: 400 },
+      { name: 'Abaya (Premium)', qty: 3, price: 500 },
+      { name: 'Abaya (Luxury)', qty: 1, price: 700 },
+    ],
+    totalSKUs: 5
+  },
+  {
+    category: 'Salon & Spa',
+    partner: 'Nilim',
+    minOrder: 200,
+    maxOrder: null,
+    products: 'At-home salon & spa services',
+    skus: [],
+    totalSKUs: null
+  },
+  {
+    category: 'Jewellery',
+    partner: '10 Stone',
+    minOrder: 200,
+    maxOrder: null,
+    products: 'Premium jewellery',
+    skus: [],
+    totalSKUs: null
+  },
+  {
+    category: 'Laundry',
+    partner: 'Laundristan',
+    minOrder: 200,
+    maxOrder: null,
+    products: 'Weekly/monthly laundry subscription',
+    skus: [],
+    totalSKUs: null
+  },
+  {
+    category: 'Premium Car Wash',
+    partner: 'Z Wash',
+    minOrder: 200,
+    maxOrder: null,
+    products: 'Doorstep vehicle cleaning subscription',
+    skus: [],
+    totalSKUs: null
+  },
 ];
 
 // Coin Rules
