@@ -16,22 +16,30 @@ import GlobalFooter from '@/components/GlobalFooter';
 
 // Exclusive Partner Brands (NOT owned by Nuqta) - 16 Categories
 const partnerBrands = [
-  { id: 'salon', name: 'Salon & Spa', icon: Scissors, coin: 100, color: 'pink', description: 'Premium beauty services', partnerType: 'Exclusive Partner' },
-  { id: 'perfume', name: 'Perfume & Oud', icon: Droplets, coin: 100, color: 'purple', description: 'Luxury fragrances', partnerType: 'Exclusive Partner' },
-  { id: 'haircare', name: 'Haircare & Cosmetics', icon: Sparkles, coin: 100, color: 'rose', description: 'Beauty essentials', partnerType: 'Exclusive Partner' },
-  { id: 'coffee', name: 'Coffee & Beverages', icon: Coffee, coin: 100, color: 'amber', description: 'Specialty drinks', partnerType: 'Exclusive Partner' },
-  { id: 'laundry', name: 'Laundry', icon: ShoppingBag, coin: 100, color: 'blue', description: 'Premium laundry services', partnerType: 'Exclusive Partner' },
-  { id: 'abaya', name: 'Abaya', icon: Shirt, coin: 100, color: 'slate', description: 'Designer modest fashion', partnerType: 'Exclusive Partner' },
-  { id: 'jewellery', name: 'Jewellery', icon: Gem, coin: 100, color: 'yellow', description: 'Elegant accessories', partnerType: 'Exclusive Partner' },
-  { id: 'home-fragrance', name: 'Home Fragrance', icon: Home, coin: 100, color: 'indigo', description: 'Ambient scents', partnerType: 'Exclusive Partner' },
-  { id: 'mens-grooming', name: "Men's Grooming", icon: User, coin: 100, color: 'cyan', description: 'Premium grooming services', partnerType: 'Exclusive Partner' },
-  { id: 'tours-travel', name: 'Tours & Travel', icon: Plane, coin: 100, color: 'sky', description: 'Local experiences & trips', partnerType: 'Exclusive Partner' },
-  { id: 'handbags', name: 'Handbags', icon: ShoppingBag, coin: 100, color: 'fuchsia', description: 'Designer bags & accessories', partnerType: 'Exclusive Partner' },
-  { id: 'desserts', name: 'Desserts', icon: Cake, coin: 100, color: 'orange', description: 'Sweet treats & cakes', partnerType: 'Exclusive Partner' },
-  { id: 'home-cleaning', name: 'Home Cleaning', icon: Brush, coin: 100, color: 'teal', description: 'Professional cleaning services', partnerType: 'Exclusive Partner' },
-  { id: 'car-wash', name: 'Premium Car Wash', icon: Car, coin: 100, color: 'red', description: 'Auto detailing & wash', partnerType: 'Exclusive Partner' },
-  { id: 'pet-services', name: 'Pet Grooming & Care', icon: PawPrint, coin: 100, color: 'lime', description: 'Pet grooming & supplies', partnerType: 'Exclusive Partner' },
-  { id: 'florist', name: 'Florist & Gifts', icon: Flower, coin: 100, color: 'emerald', description: 'Flowers & gift arrangements', partnerType: 'Exclusive Partner' },
+  { id: 'salon', name: 'Salon & Spa', icon: Scissors, coin: 100, color: 'pink', description: 'Premium beauty services', partnerType: 'Exclusive Partner', partnerName: 'Nilim', minOrder: 200, status: 'confirmed' },
+  { id: 'perfume', name: 'Perfume & Oud', icon: Droplets, coin: 100, color: 'purple', description: 'Luxury fragrances', partnerType: 'Exclusive Partner', partnerName: 'Al Mutlaib', minOrder: 400, status: 'confirmed' },
+  { id: 'haircare', name: 'Haircare & Cosmetics', icon: Sparkles, coin: 100, color: 'rose', description: 'Beauty essentials', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+  { id: 'coffee', name: 'Coffee & Beverages', icon: Coffee, coin: 100, color: 'amber', description: 'Specialty drinks', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'laundry', name: 'Laundry', icon: ShoppingBag, coin: 100, color: 'blue', description: 'Premium laundry services', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'abaya', name: 'Abaya', icon: Shirt, coin: 100, color: 'slate', description: 'Designer modest fashion', partnerType: 'Exclusive Partner', partnerName: 'W Line', minOrder: 400, status: 'confirmed' },
+  { id: 'jewellery', name: 'Jewellery', icon: Gem, coin: 100, color: 'yellow', description: 'Elegant accessories', partnerType: 'Exclusive Partner', partnerName: '10 Stone', minOrder: 200, status: 'confirmed' },
+  { id: 'home-fragrance', name: 'Home Fragrance', icon: Home, coin: 100, color: 'indigo', description: 'Ambient scents', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+  { id: 'mens-grooming', name: "Men's Grooming", icon: User, coin: 100, color: 'cyan', description: 'Premium grooming services', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'tours-travel', name: 'Tours & Travel', icon: Plane, coin: 100, color: 'sky', description: 'Local experiences & trips', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 300, status: 'pending' },
+  { id: 'handbags', name: 'Handbags', icon: ShoppingBag, coin: 100, color: 'fuchsia', description: 'Designer bags & accessories', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 300, status: 'pending' },
+  { id: 'desserts', name: 'Desserts', icon: Cake, coin: 100, color: 'orange', description: 'Sweet treats & cakes', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'home-cleaning', name: 'Home Cleaning', icon: Brush, coin: 100, color: 'teal', description: 'Professional cleaning services', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+  { id: 'car-wash', name: 'Premium Car Wash', icon: Car, coin: 100, color: 'red', description: 'Auto detailing & wash', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'pet-services', name: 'Pet Grooming & Care', icon: PawPrint, coin: 100, color: 'lime', description: 'Pet grooming & supplies', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+  { id: 'florist', name: 'Florist & Gifts', icon: Flower, coin: 100, color: 'emerald', description: 'Flowers & gift arrangements', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+];
+
+// Confirmed Partners Summary
+const confirmedPartners = [
+  { category: 'Perfume & Oud', partner: 'Al Mutlaib', minOrder: 400, maxOrder: 40000, products: 'Oud, Dehanla Oudh, Perfumes' },
+  { category: 'Salon & Spa', partner: 'Nilim', minOrder: 200, maxOrder: null, products: 'At-home salon & spa services' },
+  { category: 'Abaya', partner: 'W Line', minOrder: 400, maxOrder: null, products: 'Designer abayas' },
+  { category: 'Jewellery', partner: '10 Stone', minOrder: 200, maxOrder: null, products: 'Premium jewellery' },
 ];
 
 // Coin Rules
@@ -275,6 +283,75 @@ export default function NuqtaPlusPage() {
                 <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/30">
                   <div className="text-purple-400 font-bold mb-2">Guaranteed Traffic</div>
                   <p className="text-sm text-slate-400">Partners receive guaranteed monthly customers from Nuqta+</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Confirmed Partners */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <div className="text-green-400 text-sm font-bold uppercase tracking-wider">Phase 1 Ready</div>
+                  <h3 className="text-xl font-bold text-white">4 Partners Confirmed</h3>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {confirmedPartners.map((partner, i) => (
+                  <div key={i} className="bg-slate-900/70 rounded-xl p-5 border border-green-500/30">
+                    <div className="flex items-center justify-between mb-3">
+                      <div>
+                        <div className="text-xs text-green-400 uppercase tracking-wider">{partner.category}</div>
+                        <div className="text-xl font-bold text-white">{partner.partner}</div>
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center">
+                        <CheckCircle className="w-4 h-4 text-green-400" />
+                      </div>
+                    </div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-slate-400">Min Order</span>
+                        <span className="text-[#c9a227] font-bold">{partner.minOrder} AED</span>
+                      </div>
+                      {partner.maxOrder && (
+                        <div className="flex justify-between">
+                          <span className="text-slate-400">Max Order</span>
+                          <span className="text-white font-medium">{partner.maxOrder.toLocaleString()} AED</span>
+                        </div>
+                      )}
+                      <div className="pt-2 border-t border-slate-700/50">
+                        <span className="text-slate-400 text-xs">{partner.products}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4 bg-slate-900/50 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-5 h-5 text-[#c9a227]" />
+                  <span className="text-white font-bold">Partner Economics</span>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+                  <div>
+                    <div className="text-2xl font-bold text-green-400">4/16</div>
+                    <div className="text-xs text-slate-400">Confirmed</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-[#c9a227]">200+</div>
+                    <div className="text-xs text-slate-400">Min AOV</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-purple-400">40K</div>
+                    <div className="text-xs text-slate-400">Max AOV</div>
+                  </div>
+                  <div>
+                    <div className="text-2xl font-bold text-blue-400">100%</div>
+                    <div className="text-xs text-slate-400">Premium</div>
+                  </div>
                 </div>
               </div>
             </div>
