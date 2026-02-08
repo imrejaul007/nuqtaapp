@@ -20,7 +20,7 @@ const partnerBrands = [
   { id: 'perfume', name: 'Perfume & Oud', icon: Droplets, coin: 100, color: 'purple', description: 'Luxury fragrances', partnerType: 'Exclusive Partner', partnerName: 'Al Mutlaib', minOrder: 400, status: 'confirmed' },
   { id: 'haircare', name: 'Haircare & Cosmetics', icon: Sparkles, coin: 100, color: 'rose', description: 'Beauty essentials', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
   { id: 'coffee', name: 'Coffee & Beverages', icon: Coffee, coin: 100, color: 'amber', description: 'Specialty drinks', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
-  { id: 'laundry', name: 'Laundry', icon: ShoppingBag, coin: 100, color: 'blue', description: 'Premium laundry services', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'laundry', name: 'Laundry', icon: ShoppingBag, coin: 100, color: 'blue', description: 'Premium laundry services', partnerType: 'Exclusive Partner', partnerName: 'Laundristan', minOrder: 200, status: 'confirmed' },
   { id: 'abaya', name: 'Abaya', icon: Shirt, coin: 100, color: 'slate', description: 'Designer modest fashion', partnerType: 'Exclusive Partner', partnerName: 'W Line', minOrder: 400, status: 'confirmed' },
   { id: 'jewellery', name: 'Jewellery', icon: Gem, coin: 100, color: 'yellow', description: 'Elegant accessories', partnerType: 'Exclusive Partner', partnerName: '10 Stone', minOrder: 200, status: 'confirmed' },
   { id: 'home-fragrance', name: 'Home Fragrance', icon: Home, coin: 100, color: 'indigo', description: 'Ambient scents', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
@@ -29,7 +29,7 @@ const partnerBrands = [
   { id: 'handbags', name: 'Handbags', icon: ShoppingBag, coin: 100, color: 'fuchsia', description: 'Designer bags & accessories', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 300, status: 'pending' },
   { id: 'desserts', name: 'Desserts', icon: Cake, coin: 100, color: 'orange', description: 'Sweet treats & cakes', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
   { id: 'home-cleaning', name: 'Home Cleaning', icon: Brush, coin: 100, color: 'teal', description: 'Professional cleaning services', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
-  { id: 'car-wash', name: 'Premium Car Wash', icon: Car, coin: 100, color: 'red', description: 'Auto detailing & wash', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
+  { id: 'car-wash', name: 'Premium Car Wash', icon: Car, coin: 100, color: 'red', description: 'Auto detailing & wash', partnerType: 'Exclusive Partner', partnerName: 'Z Wash', minOrder: 200, status: 'confirmed' },
   { id: 'pet-services', name: 'Pet Grooming & Care', icon: PawPrint, coin: 100, color: 'lime', description: 'Pet grooming & supplies', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
   { id: 'florist', name: 'Florist & Gifts', icon: Flower, coin: 100, color: 'emerald', description: 'Flowers & gift arrangements', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
 ];
@@ -40,6 +40,8 @@ const confirmedPartners = [
   { category: 'Salon & Spa', partner: 'Nilim', minOrder: 200, maxOrder: null, products: 'At-home salon & spa services' },
   { category: 'Abaya', partner: 'W Line', minOrder: 400, maxOrder: null, products: 'Designer abayas' },
   { category: 'Jewellery', partner: '10 Stone', minOrder: 200, maxOrder: null, products: 'Premium jewellery' },
+  { category: 'Laundry', partner: 'Laundristan', minOrder: 200, maxOrder: null, products: 'Weekly/monthly laundry subscription' },
+  { category: 'Premium Car Wash', partner: 'Z Wash', minOrder: 200, maxOrder: null, products: 'Doorstep vehicle cleaning subscription' },
 ];
 
 // Coin Rules
@@ -295,7 +297,7 @@ export default function NuqtaPlusPage() {
                 </div>
                 <div>
                   <div className="text-green-400 text-sm font-bold uppercase tracking-wider">Phase 1 Ready</div>
-                  <h3 className="text-xl font-bold text-white">4 Partners Confirmed</h3>
+                  <h3 className="text-xl font-bold text-white">6 Partners Confirmed</h3>
                 </div>
               </div>
 
@@ -337,7 +339,7 @@ export default function NuqtaPlusPage() {
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-green-400">4/16</div>
+                    <div className="text-2xl font-bold text-green-400">6/16</div>
                     <div className="text-xs text-slate-400">Confirmed</div>
                   </div>
                   <div>
