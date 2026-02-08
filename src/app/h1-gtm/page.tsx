@@ -12,7 +12,7 @@ export default function H1GTMPage() {
           <div className="inline-block px-4 py-2 bg-emerald-500/20 border border-emerald-500/40 rounded-full text-emerald-300 text-sm font-bold">
             🚀 H1: PROVE THE LOOP (~5 MONTHS)
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black tracking-tight">
             GTM Strategy: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-600">Habit Formation First</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
@@ -53,7 +53,7 @@ export default function H1GTMPage() {
           <h2 className="text-4xl font-black text-center text-slate-100">⚖️ The 3 GTM Rules (Discipline Signals)</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-2xl p-6">
-              <div className="text-6xl mb-4">1️⃣</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">1️⃣</div>
               <h3 className="text-2xl font-bold text-purple-300 mb-3">Only 3 Channels</h3>
               <p className="text-slate-300">
                 For the first 6 months. No "test everything" mode. Focus creates mastery.
@@ -64,7 +64,7 @@ export default function H1GTMPage() {
             </div>
 
             <div className="bg-gradient-to-br from-blue-900/30 to-blue-800/20 border-2 border-blue-500/40 rounded-2xl p-6">
-              <div className="text-6xl mb-4">2️⃣</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">2️⃣</div>
               <h3 className="text-2xl font-bold text-blue-300 mb-3">Metrics, Not Vanity</h3>
               <p className="text-slate-300">
                 D7/D30 retention &gt; user count. Weekly reviews. Kill what doesn't work.
@@ -75,7 +75,7 @@ export default function H1GTMPage() {
             </div>
 
             <div className="bg-gradient-to-br from-emerald-900/30 to-emerald-800/20 border-2 border-emerald-500/40 rounded-2xl p-6">
-              <div className="text-6xl mb-4">3️⃣</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">3️⃣</div>
               <h3 className="text-2xl font-bold text-emerald-300 mb-3">Density Before Breadth</h3>
               <p className="text-slate-300">
                 Own Marina/Downtown before expanding cities. One neighborhood at a time.

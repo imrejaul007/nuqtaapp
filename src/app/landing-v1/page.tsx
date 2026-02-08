@@ -755,7 +755,7 @@ export default function Home() {
               ].map((item, idx) => (
                 <AnimatedSection key={idx} delay={200 + idx * 150}>
                   <div className="bg-[#1a2a42]/50 rounded-xl p-6 border border-[#2a3a52] hover:border-[#c9a227]/50 transition-all duration-500 hover:scale-105 cursor-pointer group h-full">
-                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.emoji}</div>
+                    <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.emoji}</div>
                     <h3 className="text-xl font-bold mb-2 group-hover:text-[#c9a227] transition-colors">{item.title}</h3>
                     <p className="text-gray-400 mb-3">{item.desc}</p>
                     <p className="text-[#c9a227] text-sm font-medium">{item.highlight}</p>

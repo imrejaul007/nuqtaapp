@@ -1062,22 +1062,22 @@ export default function MerchantDatabase() {
         {/* Summary Stats */}
         <div className="grid md:grid-cols-4 gap-6 mb-12">
           <div className="bg-gradient-to-br from-orange-500 to-red-500 text-white rounded-2xl p-6 text-center">
-            <div className="text-5xl font-black mb-2">100</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2">100</div>
             <div className="text-sm uppercase tracking-wide">F&B Merchants</div>
             <div className="text-xs opacity-75 mt-2">~1,520+ stores (chains)</div>
           </div>
           <div className="bg-gradient-to-br from-purple-500 to-pink-500 text-white rounded-2xl p-6 text-center">
-            <div className="text-5xl font-black mb-2">75</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2">75</div>
             <div className="text-sm uppercase tracking-wide">Salon/Fitness</div>
             <div className="text-xs opacity-75 mt-2">High repeat frequency</div>
           </div>
           <div className="bg-gradient-to-br from-green-500 to-emerald-500 text-white rounded-2xl p-6 text-center">
-            <div className="text-5xl font-black mb-2">20</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2">20</div>
             <div className="text-sm uppercase tracking-wide">Grocery/Retail</div>
             <div className="text-xs opacity-75 mt-2">~790+ stores (volume)</div>
           </div>
           <div className="bg-gradient-to-br from-blue-500 to-indigo-500 text-white rounded-2xl p-6 text-center">
-            <div className="text-5xl font-black mb-2">55</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-2">55</div>
             <div className="text-sm uppercase tracking-wide">Fashion/Events</div>
             <div className="text-xs opacity-75 mt-2">Content amplifiers</div>
           </div>

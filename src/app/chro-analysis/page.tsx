@@ -315,7 +315,7 @@ export default function CHROAnalysisPage() {
               </div>
               <div className="flex items-center gap-8">
                 <div className="text-center">
-                  <div className="text-5xl sm:text-6xl font-bold text-[#c9a227]">{chroVerdict.overallScore}</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:text-6xl font-bold text-[#c9a227]">{chroVerdict.overallScore}</div>
                   <div className="text-slate-400 text-sm">/100</div>
                 </div>
                 <div className="text-center">

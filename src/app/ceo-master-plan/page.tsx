@@ -95,7 +95,7 @@ export default function CEOMasterPlanPage() {
             <div className="text-right">
               <div className="bg-[#c9a227]/20 rounded-xl p-4 border border-[#c9a227]/30">
                 <p className="text-slate-400 text-sm">Days to Launch</p>
-                <p className="text-5xl font-bold text-[#c9a227]">{daysToLaunch}</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227]">{daysToLaunch}</p>
                 <p className="text-white text-sm mt-1">{launchDate}</p>
               </div>
             </div>
@@ -340,7 +340,7 @@ function CurrentSituation() {
           <div className="p-6 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
             <h4 className="text-[#c9a227] font-bold mb-4">Overall Assessment</h4>
             <div className="flex items-center gap-4 mb-4">
-              <div className="text-6xl font-bold text-[#c9a227]">A</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#c9a227]">A</div>
               <div>
                 <p className="text-white font-medium text-lg">Launch Ready</p>
                 <p className="text-slate-400">Focus: Funding + Merchant Activation</p>

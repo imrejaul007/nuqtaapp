@@ -4,12 +4,12 @@ export default function H2StrategyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-16 px-8">
+      <div className="bg-gradient-to-r from-purple-900 to-indigo-900 text-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="inline-block px-4 py-2 bg-purple-500 rounded-full mb-6">
             <p className="text-xs font-black uppercase tracking-wider">H2 Scale & Defensibility</p>
           </div>
-          <h1 className="text-5xl md:text-7xl font-black mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black mb-6">
             Nuqta H2 2026 Strategy
           </h1>
           <p className="text-2xl text-purple-200 max-w-3xl mb-4">

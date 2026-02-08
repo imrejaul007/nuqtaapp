@@ -12,7 +12,7 @@ export default function Phase2GTMPage() {
           <div className="inline-block px-4 py-2 bg-cyan-500/20 border border-cyan-500/40 rounded-full text-cyan-300 text-sm font-bold">
             🌍 PHASE 2: GCC EXPANSION (~1.2 YEARS)
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black tracking-tight">
             GTM Strategy: <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Proven Playbook Export</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
@@ -125,7 +125,7 @@ export default function Phase2GTMPage() {
         {/* Qatar GTM Deep Dive */}
         <div className="space-y-6">
           <div className="text-center">
-            <div className="text-6xl mb-4">🇶🇦</div>
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">🇶🇦</div>
             <h2 className="text-4xl font-black text-cyan-300">Qatar Entry GTM (3-4 Months)</h2>
           </div>
 
@@ -234,7 +234,7 @@ export default function Phase2GTMPage() {
         {/* Saudi Arabia GTM Deep Dive */}
         <div className="space-y-6">
           <div className="text-center">
-            <div className="text-6xl mb-4">🇸🇦</div>
+            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">🇸🇦</div>
             <h2 className="text-4xl font-black text-orange-300">Saudi Arabia Entry GTM (9-10 Months)</h2>
           </div>
 

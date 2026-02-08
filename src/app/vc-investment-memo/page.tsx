@@ -163,7 +163,7 @@ export default function VCInvestmentMemoPage() {
 
             {/* Verdict Box */}
             <div className="bg-gradient-to-r from-amber-500/20 to-emerald-500/20 rounded-xl border border-amber-500/30 p-6 text-center">
-              <div className="text-6xl font-bold mb-2">
+              <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
                 <span className="text-amber-400">{overallScore}</span>
                 <span className="text-white/40 text-2xl">/100</span>
               </div>
@@ -485,7 +485,7 @@ export default function VCInvestmentMemoPage() {
 
         <div className="mt-6 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-xl border border-emerald-500/20 p-6 text-center">
           <div className="text-white/60 text-sm mb-2">Blended Expected Value</div>
-          <div className="text-5xl font-bold text-emerald-400 mb-2">62x</div>
+          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-400 mb-2">62x</div>
           <div className="text-white/60 text-sm">Expected return on $400K investment = ~$25M expected value</div>
         </div>
       </section>

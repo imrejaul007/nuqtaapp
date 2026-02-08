@@ -76,7 +76,7 @@ export default function NuqtaInvestorOnePager() {
 
                 <div className="bg-gradient-to-br from-[#0a1628] to-[#0d1d3a] text-white rounded-xl p-5 shadow-2xl border-2 border-[#c9a227]/30">
                   <p className="text-lg leading-relaxed font-bold text-center mb-3">
-                    <span className="text-[#c9a227] text-6xl font-black block mb-3 drop-shadow-lg">10%</span>
+                    <span className="text-[#c9a227] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black block mb-3 drop-shadow-lg">10%</span>
                     Offline cashback
                   </p>
                   <div className="flex items-center justify-center gap-2 pt-3 border-t border-[#c9a227]/20">
@@ -151,7 +151,7 @@ export default function NuqtaInvestorOnePager() {
 
                 <div className="bg-gradient-to-br from-red-500/10 to-red-500/5 border-2 border-red-500/40 rounded-xl p-4 shadow-lg">
                   <div className="text-center mb-3">
-                    <p className="text-6xl font-black text-red-400 mb-2 leading-none">AED 684</p>
+                    <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-red-400 mb-2 leading-none">AED 684</p>
                     <p className="text-sm font-bold text-slate-300">Lost per shopper annually</p>
                     <p className="text-base text-red-300 mt-2 font-black">AED 2.4B UAE market loss</p>
                   </div>
@@ -255,7 +255,7 @@ export default function NuqtaInvestorOnePager() {
                   <div className="absolute top-0 right-0 w-32 h-32 bg-[#c9a227]/10 rounded-full blur-3xl"></div>
                   <div className="text-center pb-3 border-b-2 border-[#c9a227]/30 relative z-10">
                     <p className="text-xs text-[#c9a227] font-black uppercase mb-2 tracking-wider">GCC Offline Retail (TAM)</p>
-                    <p className="text-6xl font-black text-white mb-3 leading-none drop-shadow-lg">$150B</p>
+                    <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 leading-none drop-shadow-lg">$150B</p>
                     <div className="grid grid-cols-2 gap-2 max-w-xs mx-auto">
                       <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border border-emerald-500/40 rounded-lg px-3 py-2">
                         <p className="text-xs text-emerald-300 font-black">6 GCC countries</p>
@@ -389,7 +389,7 @@ export default function NuqtaInvestorOnePager() {
                   <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent"></div>
                   <div className="relative z-10">
                     <div className="text-center mb-4">
-                      <p className="text-7xl font-black text-[#0a1628] mb-2 leading-none drop-shadow-xl">$400K</p>
+                      <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#0a1628] mb-2 leading-none drop-shadow-xl">$400K</p>
                       <p className="text-base text-[#0a1628] font-black uppercase tracking-wider">Pre-seed round</p>
                       <div className="mt-3 bg-[#0a1628]/20 backdrop-blur-sm rounded-lg px-3 py-2 inline-block border border-[#0a1628]/30">
                         <p className="text-xs text-[#0a1628] font-bold">CCS • $5M Cap • 20% Discount</p>
@@ -507,7 +507,7 @@ export default function NuqtaInvestorOnePager() {
 
                 <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/50 rounded-xl p-5 shadow-xl">
                   <div className="text-center mb-3">
-                    <p className="text-6xl font-black text-emerald-400 mb-2 leading-none">10%</p>
+                    <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-emerald-400 mb-2 leading-none">10%</p>
                     <p className="text-sm text-white font-bold">Cashback on every purchase</p>
                     <p className="text-xs text-emerald-300 mt-1">5% instant + 5% social sharing bonus</p>
                   </div>
@@ -836,7 +836,7 @@ export default function NuqtaInvestorOnePager() {
                 <div className="relative z-10">
                   <div className="text-center mb-4">
                     <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#0a1628]/20 flex items-center justify-center">
-                      <span className="text-5xl">🚀</span>
+                      <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">🚀</span>
                     </div>
                     <h3 className="text-3xl font-black uppercase tracking-wider mb-2">Ready?</h3>
                     <p className="text-base font-bold">Transform UAE commerce</p>

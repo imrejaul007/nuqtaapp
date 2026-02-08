@@ -12,7 +12,7 @@ export default function H2GTMPage() {
           <div className="inline-block px-4 py-2 bg-blue-500/20 border border-blue-500/40 rounded-full text-blue-300 text-sm font-bold">
             🔷 H2: SCALE (~2.5 MONTHS)
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black tracking-tight">
             GTM Strategy: <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">Category Playbook</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">

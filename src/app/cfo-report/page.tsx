@@ -123,7 +123,7 @@ export default function CFOReportPage() {
             {/* Agent Card */}
             <div className="bg-gradient-to-r from-emerald-900/30 to-green-900/30 rounded-2xl border border-emerald-500/30 p-8">
               <div className="flex items-start gap-6">
-                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-5xl font-bold text-white">
+                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                   JM
                 </div>
                 <div className="flex-1">

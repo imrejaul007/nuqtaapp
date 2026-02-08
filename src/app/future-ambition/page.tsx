@@ -674,14 +674,14 @@ export default function FutureAmbitionPage() {
           </div>
           <div className="bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-xl p-6 text-center">
             <p className="text-lg text-[#c9a227] mb-2">At Global Scale</p>
-            <p className="text-5xl font-black text-[#d4ab2c]">$2 Trillion+ Valuation</p>
+            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#d4ab2c]">$2 Trillion+ Valuation</p>
             <p className="text-slate-400 mt-2">1 Billion+ users • $200B+ annual revenue • Financial infrastructure for half the world</p>
           </div>
         </div>
 
         {/* Final Vision Statement */}
         <div className="bg-gradient-to-r from-purple-900 to-indigo-900 border-2 border-purple-500 rounded-2xl p-8 text-center">
-          <div className="text-6xl mb-6">🌍</div>
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6">🌍</div>
           <h2 className="text-4xl font-black text-white mb-4">
             The Vision: Global Financial Operating System
           </h2>

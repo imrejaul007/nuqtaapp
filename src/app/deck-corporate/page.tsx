@@ -85,7 +85,7 @@ function CoverSlide({ onNext }: SlideProps) {
           </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black text-white mb-6">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black text-white mb-6">
           Transform Employee
           <span className="text-[#c9a227]"> Rewards</span>
         </h1>

@@ -153,7 +153,7 @@ export default function NuqtaMerchantOnePager() {
 
                 <div className="bg-gradient-to-br from-red-500/10 to-red-500/5 border-2 border-red-500/40 rounded-xl p-5 shadow-lg">
                   <div className="text-center mb-4">
-                    <p className="text-6xl font-black text-red-400 mb-2 leading-none">AED 500+</p>
+                    <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-red-400 mb-2 leading-none">AED 500+</p>
                     <p className="text-sm font-bold text-slate-300">Per customer on Google/Meta</p>
                     <p className="text-base text-red-300 mt-2 font-black">No guarantee they'll return</p>
                   </div>
@@ -625,7 +625,7 @@ export default function NuqtaMerchantOnePager() {
                 <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/50 rounded-xl p-6 shadow-2xl">
                   <div className="text-center pb-4 border-b-2 border-[#c9a227]/30 mb-5">
                     <p className="text-sm text-[#c9a227] font-black uppercase mb-3">Performance-Based Only</p>
-                    <p className="text-7xl font-black text-white mb-3 leading-none drop-shadow-lg">15%</p>
+                    <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-3 leading-none drop-shadow-lg">15%</p>
                     <p className="text-lg text-slate-300 font-bold mb-3">Commission per transaction</p>
                     <p className="text-sm text-slate-400">You keep 85% • We keep 15%</p>
                   </div>
@@ -739,7 +739,7 @@ export default function NuqtaMerchantOnePager() {
                 <div className="relative z-10">
                   <div className="text-center mb-4">
                     <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#0a1628]/20 flex items-center justify-center shadow-lg">
-                      <span className="text-5xl">🚀</span>
+                      <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">🚀</span>
                     </div>
                     <h3 className="text-3xl font-black uppercase tracking-wider mb-2">Start Growing Today</h3>
                     <p className="text-base font-bold">Zero risk • Zero upfront cost</p>

@@ -900,7 +900,7 @@ function SuccessMetrics() {
       {/* Final Score */}
       <div className="bg-gradient-to-r from-green-500/20 to-[#c9a227]/20 rounded-2xl p-8 border border-green-500/30 text-center">
         <div className="inline-flex items-center justify-center w-32 h-32 bg-[#c9a227]/30 rounded-full border-4 border-[#c9a227] mb-4">
-          <span className="text-5xl font-bold text-[#c9a227]">100</span>
+          <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227]">100</span>
         </div>
         <h3 className="text-2xl font-bold text-white mb-2">Operations Readiness: PERFECT</h3>
         <p className="text-slate-400 mb-6">All systems operational. All merchants ready. All risks mitigated.</p>

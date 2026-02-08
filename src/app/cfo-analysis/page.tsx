@@ -287,7 +287,7 @@ export default function CFOAnalysisPage() {
 
           {/* Overall Health Score */}
           <div className="max-w-md mx-auto bg-white/5 rounded-2xl border border-white/10 p-6 text-center">
-            <div className="text-5xl sm:text-6xl font-bold mb-2">
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:text-6xl font-bold mb-2">
               <span className={overallScore >= 70 ? 'text-emerald-400' : overallScore >= 50 ? 'text-amber-400' : 'text-red-400'}>
                 {overallScore}
               </span>

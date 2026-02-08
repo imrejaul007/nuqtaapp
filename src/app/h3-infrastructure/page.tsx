@@ -10,7 +10,7 @@ export default function H3InfrastructurePage() {
           <div className="inline-block px-4 py-2 bg-purple-500/20 border border-purple-500/40 rounded-full text-purple-300 text-sm font-bold">
             🟣 HORIZON 3 (Years 3-5)
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black tracking-tight">
             Become <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Infrastructure</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">

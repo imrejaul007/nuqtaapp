@@ -375,7 +375,7 @@ export default function LaunchReadinessPage() {
             </div>
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <div className="text-5xl font-bold text-[#c9a227]">{Math.round((stats.done / stats.total) * 100)}%</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#c9a227]">{Math.round((stats.done / stats.total) * 100)}%</div>
                 <div className="text-slate-400 text-sm">Complete</div>
               </div>
               <div className="w-px h-16 bg-white/10" />

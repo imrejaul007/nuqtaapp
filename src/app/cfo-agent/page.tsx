@@ -308,7 +308,7 @@ function FinancialDiagnosis() {
           <div className="p-6 bg-green-500/10 rounded-xl border border-green-500/30">
             <h4 className="text-green-400 font-bold mb-4">Overall Assessment</h4>
             <div className="flex items-center gap-4 mb-4">
-              <div className="text-5xl font-bold text-green-400">A+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-green-400">A+</div>
               <div>
                 <p className="text-white font-medium">Financial Readiness: 100%</p>
                 <p className="text-slate-400 text-sm">Launch Ready: Yes</p>

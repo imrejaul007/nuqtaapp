@@ -12,7 +12,7 @@ export default function Phase3GTMPage() {
           <div className="inline-block px-4 py-2 bg-amber-500/20 border border-amber-500/40 rounded-full text-amber-300 text-sm font-bold">
             🏆 PHASE 3: FULL GCC COMPLETION (~10 MONTHS)
           </div>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl md:text-7xl font-black tracking-tight">
             GTM Strategy: <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-600">Exit-Ready Infrastructure</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
@@ -167,7 +167,7 @@ export default function Phase3GTMPage() {
             {/* Kuwait */}
             <div className="bg-gradient-to-br from-green-900/30 to-emerald-800/20 border-2 border-green-500/40 rounded-2xl p-6">
               <div className="text-center mb-4">
-                <div className="text-5xl mb-3">🇰🇼</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">🇰🇼</div>
                 <h3 className="text-2xl font-black text-green-300">Kuwait</h3>
                 <p className="text-sm text-slate-400 mt-1">Population: 4.3M</p>
               </div>
@@ -201,7 +201,7 @@ export default function Phase3GTMPage() {
             {/* Bahrain */}
             <div className="bg-gradient-to-br from-red-900/30 to-pink-800/20 border-2 border-red-500/40 rounded-2xl p-6">
               <div className="text-center mb-4">
-                <div className="text-5xl mb-3">🇧🇭</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">🇧🇭</div>
                 <h3 className="text-2xl font-black text-red-300">Bahrain</h3>
                 <p className="text-sm text-slate-400 mt-1">Population: 1.7M</p>
               </div>
@@ -235,7 +235,7 @@ export default function Phase3GTMPage() {
             {/* Oman */}
             <div className="bg-gradient-to-br from-orange-900/30 to-amber-800/20 border-2 border-orange-500/40 rounded-2xl p-6">
               <div className="text-center mb-4">
-                <div className="text-5xl mb-3">🇴🇲</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3">🇴🇲</div>
                 <h3 className="text-2xl font-black text-orange-300">Oman</h3>
                 <p className="text-sm text-slate-400 mt-1">Population: 5M</p>
               </div>
@@ -587,7 +587,7 @@ export default function Phase3GTMPage() {
 
         {/* Final CTA */}
         <div className="bg-gradient-to-r from-amber-800 to-yellow-900 border-2 border-amber-500 rounded-2xl p-8 text-center">
-          <div className="text-6xl mb-4">🎉</div>
+          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">🎉</div>
           <h3 className="text-3xl font-bold text-white mb-4">
             GTM Strategy Complete: UAE → Full GCC
           </h3>

@@ -122,7 +122,7 @@ export default function LandingPage() {
           {/* Logo with glow effect */}
           <div className="mb-8 inline-flex items-center justify-center relative">
             <div className="absolute inset-0 bg-[#c9a227]/20 blur-2xl rounded-full scale-150" />
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl relative z-10">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl relative z-10">
               Nuqta
             </h1>
           </div>
@@ -234,7 +234,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {/* Pain Point 1 */}
             <div className="bg-gradient-to-br from-red-500/20 to-red-500/5 border-2 border-red-500/40 rounded-2xl p-8">
-              <div className="text-5xl mb-4">😫</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">😫</div>
               <h3 className="text-2xl font-bold mb-3 text-red-300">Generic Discovery</h3>
               <p className="text-slate-300 mb-4">
                 Google Maps shows you cafes, but doesn't save you money. No built-in loyalty or cashback.
@@ -248,7 +248,7 @@ export default function LandingPage() {
 
             {/* Pain Point 2 */}
             <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 border-2 border-orange-500/40 rounded-2xl p-8">
-              <div className="text-5xl mb-4">🎫</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">🎫</div>
               <h3 className="text-2xl font-bold mb-3 text-orange-300">Fragmented Loyalty</h3>
               <p className="text-slate-300 mb-4">
                 15 different apps for cafes, salons, gyms. Users forget to check before spending.
@@ -262,7 +262,7 @@ export default function LandingPage() {
 
             {/* Pain Point 3 */}
             <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-500/5 border-2 border-yellow-500/40 rounded-2xl p-8">
-              <div className="text-5xl mb-4">💸</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-4">💸</div>
               <h3 className="text-2xl font-bold mb-3 text-yellow-300">Credit Cards Don't Work</h3>
               <p className="text-slate-300 mb-4">
                 Most cafes/salons are cash-based. Credit card rewards don't apply to offline spending.
@@ -497,7 +497,7 @@ export default function LandingPage() {
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-8">
               <div className="text-center mb-6">
                 <p className="text-sm uppercase tracking-wider text-blue-400 font-bold mb-2">Customer Acquisition Cost</p>
-                <p className="text-6xl font-black text-blue-400 mb-2">AED 30</p>
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-400 mb-2">AED 30</p>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-blue-500/30 pb-2">
@@ -524,7 +524,7 @@ export default function LandingPage() {
             <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-8">
               <div className="text-center mb-6">
                 <p className="text-sm uppercase tracking-wider text-purple-400 font-bold mb-2">Lifetime Value</p>
-                <p className="text-6xl font-black text-purple-400 mb-2">AED 504</p>
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-purple-400 mb-2">AED 504</p>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-purple-500/30 pb-2">
@@ -551,7 +551,7 @@ export default function LandingPage() {
             <div className="bg-gradient-to-br from-emerald-500/30 to-emerald-500/10 border-4 border-emerald-500/60 rounded-2xl p-8 shadow-2xl shadow-emerald-500/20">
               <div className="text-center mb-6">
                 <p className="text-sm uppercase tracking-wider text-emerald-400 font-bold mb-2">LTV:CAC Ratio</p>
-                <p className="text-7xl font-black text-emerald-400 mb-2">16.8x</p>
+                <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-emerald-400 mb-2">16.8x</p>
               </div>
               <div className="space-y-3">
                 <div className="flex justify-between items-center border-b border-emerald-500/30 pb-2">
@@ -643,7 +643,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-4 gap-6 mb-12">
             <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 text-center">
               <TrendingUp className="w-12 h-12 text-emerald-400 mx-auto mb-3" />
-              <p className="text-5xl font-black text-emerald-400 mb-2">32</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-emerald-400 mb-2">32</p>
               <p className="text-sm text-slate-300">Signed Merchant LOIs</p>
             </div>
             <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 text-center">
@@ -658,7 +658,7 @@ export default function LandingPage() {
             </div>
             <div className="bg-gradient-to-br from-orange-500/20 to-orange-500/5 border-2 border-orange-500/40 rounded-2xl p-6 text-center">
               <Target className="w-12 h-12 text-orange-400 mx-auto mb-3" />
-              <p className="text-5xl font-black text-orange-400 mb-2">15%</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-orange-400 mb-2">15%</p>
               <p className="text-sm text-slate-300">Commission Rate</p>
             </div>
           </div>
