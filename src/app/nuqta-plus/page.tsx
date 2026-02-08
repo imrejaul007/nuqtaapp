@@ -72,11 +72,11 @@ const userTypes = [
   { type: 'Heavy User', brands: '10-16 brands', coins: '1,000-1,600 AED', aov: '2,000-3,200 AED', percentage: 20 },
 ];
 
-// Growth Targets
+// Growth Targets (H2 2026 Launch)
 const growthTargets = [
-  { month: 'Month 3', members: '5,000', totalAOV: '5M+ AED', memberGrowth: 5000 },
-  { month: 'Month 6', members: '15,000', totalAOV: '15M+ AED', memberGrowth: 15000 },
-  { month: 'Month 12', members: '50,000', totalAOV: '50M+ AED', memberGrowth: 50000 },
+  { month: 'Q4 2026', members: '5,000', totalAOV: '5M+ AED', memberGrowth: 5000 },
+  { month: 'H1 2027', members: '25,000', totalAOV: '25M+ AED', memberGrowth: 25000 },
+  { month: 'H2 2027', members: '50,000', totalAOV: '50M+ AED', memberGrowth: 50000 },
 ];
 
 // Launch Phases
@@ -90,13 +90,13 @@ const nuqtaRevenue = [
   { source: 'Partner Commission', amount: 'Fixed % per transaction', type: 'transaction' },
 ];
 
-// 90-Day Roadmap
+// H2 Launch Roadmap (Nuqta+ launches in H2 2026)
 const roadmap = [
   {
-    month: 'Month 1',
+    month: 'Q2 2026',
     title: 'Partner Acquisition',
     tasks: [
-      'Sign 6 exclusive partners',
+      'Sign remaining 10 exclusive partners',
       'Negotiate commission rates',
       'Partner onboarding & training',
       'Build coin redemption system'
@@ -104,24 +104,24 @@ const roadmap = [
     status: 'in_progress'
   },
   {
-    month: 'Month 2',
-    title: 'Integration',
+    month: 'Q3 2026',
+    title: 'Integration & Beta',
     tasks: [
       'Partner POS integration',
       'App integration for redemption',
-      'Beta test with 100 users',
+      'Beta test with 500 users',
       'Partner feedback loop'
     ],
     status: 'pending'
   },
   {
-    month: 'Month 3',
-    title: 'Launch',
+    month: 'Q4 2026',
+    title: 'Full Launch',
     tasks: [
       'Launch free trial campaign',
       'Start paid conversions',
       'Monitor partner satisfaction',
-      'Scale based on data'
+      'Scale to 10K members'
     ],
     status: 'pending'
   },
