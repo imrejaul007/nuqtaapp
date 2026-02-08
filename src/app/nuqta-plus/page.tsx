@@ -279,6 +279,69 @@ export default function NuqtaPlusPage() {
               </div>
             </div>
 
+            {/* THE GOLD - Forced Spending Mechanism */}
+            <div className="bg-gradient-to-r from-[#c9a227]/30 to-yellow-500/20 rounded-xl p-6 sm:p-8 border-2 border-[#c9a227]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-[#c9a227] flex items-center justify-center">
+                  <Star className="w-6 h-6 text-[#0a1628]" />
+                </div>
+                <div>
+                  <div className="text-[#c9a227] text-sm font-bold uppercase tracking-wider">The Gold</div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Forced Additional Spending</h3>
+                </div>
+              </div>
+
+              <div className="bg-slate-900/70 rounded-xl p-6 mb-6">
+                <div className="text-center mb-6">
+                  <p className="text-lg sm:text-xl text-white mb-2">To use <span className="text-[#c9a227] font-bold">100 AED</span> coin, user MUST spend</p>
+                  <div className="text-4xl sm:text-5xl font-bold text-green-400">200-300 AED</div>
+                  <p className="text-slate-400 mt-2">minimum at each partner</p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="bg-slate-800/50 rounded-lg p-4 text-center border border-[#c9a227]/30">
+                    <div className="text-[#c9a227] font-bold text-2xl">100 AED</div>
+                    <div className="text-xs text-slate-400">Coin value (discount)</div>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-lg p-4 text-center border border-green-500/30">
+                    <div className="text-green-400 font-bold text-2xl">+200 AED</div>
+                    <div className="text-xs text-slate-400">Cash payment (min)</div>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-lg p-4 text-center border border-purple-500/30">
+                    <div className="text-purple-400 font-bold text-2xl">=300 AED</div>
+                    <div className="text-xs text-slate-400">Total transaction</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-4 border border-[#c9a227]/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Zap className="w-5 h-5 text-[#c9a227]" />
+                    <span className="text-white font-bold">Per Brand Math</span>
+                  </div>
+                  <ul className="text-sm text-slate-300 space-y-1">
+                    <li>• User gets 100 AED coin</li>
+                    <li>• Partner requires 200+ AED min spend</li>
+                    <li>• User pays 100-200 AED cash</li>
+                    <li>• Partner gets 200-300 AED revenue</li>
+                  </ul>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4 border border-green-500/20">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingUp className="w-5 h-5 text-green-400" />
+                    <span className="text-white font-bold">Total User Spending</span>
+                  </div>
+                  <ul className="text-sm text-slate-300 space-y-1">
+                    <li>• Light user (3 brands): 600-900 AED</li>
+                    <li>• Average user (6 brands): 1,200-1,800 AED</li>
+                    <li>• Heavy user (10+ brands): 2,000-3,000 AED</li>
+                    <li>• <span className="text-green-400 font-medium">All guaranteed monthly!</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             {/* Win-Win Model */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* For Users */}
@@ -292,14 +355,14 @@ export default function NuqtaPlusPage() {
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                     <div>
                       <div className="text-white font-medium">Pay 99 AED, Get 1,600 AED value</div>
-                      <div className="text-sm text-slate-400">10x ROI on membership fee</div>
+                      <div className="text-sm text-slate-400">16x ROI on membership fee</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                     <div>
-                      <div className="text-white font-medium">100 AED coin per brand/month</div>
-                      <div className="text-sm text-slate-400">Use as discount at checkout</div>
+                      <div className="text-white font-medium">100 AED coin = 33-50% discount</div>
+                      <div className="text-sm text-slate-400">On 200-300 AED purchase at each brand</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -322,8 +385,8 @@ export default function NuqtaPlusPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-400 mt-0.5" />
                     <div>
-                      <div className="text-white font-medium">Guaranteed monthly customers</div>
-                      <div className="text-sm text-slate-400">Nuqta+ members MUST visit to use coins</div>
+                      <div className="text-white font-medium">200-300 AED guaranteed per visit</div>
+                      <div className="text-sm text-slate-400">Minimum spend requirement ensures high AOV</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
