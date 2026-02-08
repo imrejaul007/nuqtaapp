@@ -536,7 +536,7 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
               <div className="bg-[#1a2a42]/50 rounded-xl p-4 border border-[#2a3a52]">
                 <p className="text-xs sm:text-sm text-gray-300 text-center">
                   <span className="text-[#c9a227] font-bold">Primary Revenue:</span> Merchant-funded loyalty (95% of Year 1)
-                  <br/><span className="text-gray-500">Future upside: Promoted listings, BNPL referrals, analytics (Year 2+)</span>
+                  <br/><span className="text-gray-500">Future upside: Nuqta+ subscriptions (H2), promoted listings, BNPL referrals, analytics</span>
                 </p>
               </div>
             </div>
@@ -916,6 +916,10 @@ export default function PitchDeckFinal({ isOpen, onClose }: PitchDeckProps) {
                         <li className="flex items-start gap-2">
                           <span className="text-green-400">✓</span>
                           <span>Social sharing mechanism fully integrated</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-green-400">✓</span>
+                          <span>Nuqta+ membership program launch (H2) — recurring revenue</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-green-400">✓</span>
