@@ -82,39 +82,39 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 0: COVER ====================
       case 0:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#0d1d3a] to-[#0a1628] relative flex items-center justify-center p-8 overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#0a1628] via-[#0d1d3a] to-[#0a1628] relative flex items-center justify-center p-4 sm:p-6 md:p-8 overflow-hidden">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
-              <div className="absolute top-20 left-20 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/10 rounded-full blur-3xl animate-pulse" />
-              <div className="absolute bottom-20 right-20 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-10 left-10 sm:top-20 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-[#c9a227]/10 rounded-full blur-3xl animate-pulse" />
+              <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
             </div>
 
-            <div className="max-w-6xl mx-auto text-center space-y-12 relative z-10">
+            <div className="max-w-6xl mx-auto text-center space-y-6 sm:space-y-8 md:space-y-12 relative z-10">
 
               {/* Logo with glow effect */}
               <div className="inline-flex items-center justify-center relative">
                 <div className="absolute inset-0 bg-[#c9a227]/20 blur-2xl rounded-full scale-150" />
-                <Image src="/nuqta-logo.png" alt="Nuqta" width={220} height={220} className="object-contain relative z-10" priority />
+                <Image src="/nuqta-logo.png" alt="Nuqta" width={220} height={220} className="w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 object-contain relative z-10" priority />
               </div>
 
               {/* Main Heading with gradient */}
-              <div className="space-y-6">
-                <h1 className={`${typography.metricHero} bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl`}>
+              <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black bg-gradient-to-r from-white via-slate-100 to-white bg-clip-text text-transparent tracking-tighter leading-[0.9] drop-shadow-2xl">
                   Nuqta
                 </h1>
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-r from-[#c9a227] to-[#d4ab2c] blur-xl opacity-30" />
-                  <p className={`${typography.h2} text-white relative z-10`}>
+                  <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white relative z-10">
                     Search. Save. Earn.
                   </p>
                 </div>
               </div>
 
               {/* Value Proposition */}
-              <div className="max-w-4xl mx-auto">
-                <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 border-2 border-[#c9a227]/30 rounded-2xl p-8 backdrop-blur-sm">
-                  <p className={`${typography.h3} text-white leading-relaxed`}>
+              <div className="max-w-4xl mx-auto px-2">
+                <div className="bg-gradient-to-r from-[#c9a227]/20 via-[#c9a227]/10 to-[#c9a227]/20 border-2 border-[#c9a227]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm">
+                  <p className="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-white leading-relaxed">
                     <span className="text-[#c9a227] font-black">10% offline cashback</span> on every purchase —{' '}
                     <span className="font-semibold">5x better than credit cards</span>
                   </p>
@@ -122,55 +122,55 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Key Metrics Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto pt-8">
-                <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#c9a227]/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metric} text-[#c9a227] mb-2`}>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto pt-4 sm:pt-6 md:pt-8">
+                <div className="bg-gradient-to-br from-[#c9a227]/20 to-[#c9a227]/5 border-2 border-[#c9a227]/40 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:shadow-2xl hover:shadow-[#c9a227]/20 transition-all backdrop-blur-sm">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#c9a227] mb-1 sm:mb-2">
                     <AnimatedNumber value={35} prefix="$" suffix="B" duration={2000} />
                   </p>
-                  <p className={`${typography.labelEyebrow} text-white`}>GCC SAM</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-white">GCC SAM</p>
                 </div>
-                <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metric} text-emerald-400 mb-2`}>16.8x</p>
-                  <p className={`${typography.labelEyebrow} text-white`}>LTV:CAC</p>
+                <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/5 border-2 border-emerald-500/40 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all backdrop-blur-sm">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-emerald-400 mb-1 sm:mb-2">16.8x</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-white">LTV:CAC</p>
                 </div>
-                <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metric} text-blue-400 mb-2`}>32</p>
-                  <p className={`${typography.labelEyebrow} text-white`}>Signed LOIs</p>
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/5 border-2 border-blue-500/40 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:shadow-2xl hover:shadow-blue-500/20 transition-all backdrop-blur-sm">
+                  <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-blue-400 mb-1 sm:mb-2">32</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-white">Signed LOIs</p>
                 </div>
-                <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-2xl p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
-                  <p className={`${typography.metricMedium} text-purple-400 mb-2`}>March 1, 2026</p>
-                  <p className={`${typography.labelEyebrow} text-white`}>Launch</p>
+                <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/5 border-2 border-purple-500/40 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 hover:shadow-2xl hover:shadow-purple-500/20 transition-all backdrop-blur-sm">
+                  <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-purple-400 mb-1 sm:mb-2">Mar 1, 2026</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-wider font-bold text-white">Launch</p>
                 </div>
               </div>
 
               {/* The Ask */}
-              <div className="pt-8">
-                <div className="inline-flex flex-col items-center gap-4">
-                  <div className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] px-10 py-5 rounded-2xl shadow-2xl shadow-[#c9a227]/30 border-4 border-white/20 relative overflow-hidden group">
+              <div className="pt-4 sm:pt-6 md:pt-8">
+                <div className="inline-flex flex-col items-center gap-3 sm:gap-4">
+                  <div className="bg-gradient-to-r from-[#c9a227] via-[#d4ab2c] to-[#c9a227] px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl sm:rounded-2xl shadow-2xl shadow-[#c9a227]/30 border-2 sm:border-4 border-white/20 relative overflow-hidden group">
                     <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-                    <p className={`${typography.h3} text-[#0a1628] relative z-10`}>Raising $400K Pre-Seed</p>
+                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#0a1628] relative z-10">Raising $400K Pre-Seed</p>
                   </div>
-                  <div className="flex items-center gap-3 px-6 py-3 bg-slate-800/50 border-2 border-emerald-500/40 rounded-full backdrop-blur-sm">
-                    <div className="w-3 h-3 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className={`${typography.bodySmall} font-bold text-emerald-400`}>SAFE • 20% Discount • $5M Cap</p>
+                  <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-slate-800/50 border-2 border-emerald-500/40 rounded-full backdrop-blur-sm">
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-emerald-500 animate-pulse" />
+                    <p className="text-xs sm:text-sm font-bold text-emerald-400">SAFE • 20% Discount • $5M Cap</p>
                   </div>
                 </div>
               </div>
 
               {/* Location & Contact */}
-              <div className="pt-4 border-t border-white/10">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-slate-400">
+              <div className="pt-3 sm:pt-4 border-t border-white/10">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-slate-400">
                   <div className="flex items-center gap-2">
-                    <MapPin size={18} className="text-[#c9a227]" />
-                    <span className="text-sm font-semibold">Dubai, UAE</span>
+                    <MapPin size={16} className="text-[#c9a227]" />
+                    <span className="text-xs sm:text-sm font-semibold">Dubai, UAE</span>
                   </div>
                   <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold">rejaul@nuqtapp.com</span>
+                    <span className="text-xs sm:text-sm font-semibold">rejaul@nuqtapp.com</span>
                   </div>
                   <div className="hidden sm:block w-1 h-1 rounded-full bg-slate-600" />
                   <div className="flex items-center gap-2">
-                    <span className="text-sm font-semibold">nuqtapp.com</span>
+                    <span className="text-xs sm:text-sm font-semibold">nuqtapp.com</span>
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 1: SHOPPER PROBLEM - UPGRADED VISUAL STORYTELLING ====================
       case 1:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50/30 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50/30 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
@@ -190,7 +190,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header with emotional hook */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mb-6 shadow-lg">
                   <p className={`${typography.label} font-bold text-white uppercase tracking-wider`}>The Hidden Tragedy</p>
                 </div>
@@ -204,12 +204,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Hero Stat - Dramatic Visual */}
-              <div className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 rounded-3xl p-8 sm:p-12 mb-12 shadow-2xl relative overflow-hidden">
+              <div className="bg-gradient-to-br from-red-600 via-red-500 to-orange-500 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 sm:p-12 mb-6 sm:mb-8 md:mb-12 shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
 
                 <div className="relative z-10">
-                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                     <div className="text-white">
                       <p className={`${typography.bodyLarge} mb-3 opacity-90 uppercase tracking-wider font-bold`}>Every Shopper Loses Per Year</p>
                       <p className={`${typography.metricHero} font-black tracking-tight mb-4`}>
@@ -236,9 +236,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 3 Pain Points - Enhanced Cards with Better Visual Hierarchy */}
-              <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid md:grid-cols-3 gap-6 lg:gap-4 sm:gap-6 md:gap-8">
                 {/* Pain Point 1 */}
-                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 relative overflow-hidden">
+                <div className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
 
                   <div className="relative z-10">
@@ -257,7 +257,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Pain Point 2 */}
-                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-orange-200 relative overflow-hidden">
+                <div className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-orange-200 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
 
                   <div className="relative z-10">
@@ -276,7 +276,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Pain Point 3 */}
-                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 relative overflow-hidden">
+                <div className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
 
                   <div className="relative z-10">
@@ -296,7 +296,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Callout - Emotional Impact */}
-              <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-center shadow-2xl">
+              <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center shadow-2xl">
                 <p className={`${typography.h3} font-bold text-white mb-3`}>
                   The result? <span className="text-red-400">3.5 million shoppers</span> leave money on the table, every single day.
                 </p>
@@ -312,7 +312,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 2: MERCHANT PROBLEM - UPGRADED VISUAL STORYTELLING ====================
       case 2:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-red-50/30 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-orange-50 via-red-50/30 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
@@ -320,7 +320,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header with emotional hook */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mb-6 shadow-lg">
                   <p className={`${typography.label} font-bold text-white uppercase tracking-wider`}>The Other Side</p>
                 </div>
@@ -334,7 +334,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Dramatic Metrics Dashboard - 4 Key Stats */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-6 sm:mb-8 md:mb-12">
                 <div className="group bg-gradient-to-br from-red-500 to-red-600 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12" />
                   <div className="relative z-10">
@@ -381,9 +381,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 3 Core Problems - Enhanced Visual Cards */}
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {/* Problem 1: Discovery */}
-                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-orange-200 relative overflow-hidden">
+                <div className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-orange-200 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
 
                   <div className="relative z-10">
@@ -410,7 +410,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Problem 2: High CAC */}
-                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 relative overflow-hidden">
+                <div className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-red-200 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
 
                   <div className="relative z-10">
@@ -437,7 +437,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Problem 3: Retention */}
-                <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 relative overflow-hidden">
+                <div className="group bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-yellow-200 relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500" />
 
                   <div className="relative z-10">
@@ -465,7 +465,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Callout - The Vicious Cycle */}
-              <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 text-center shadow-2xl">
+              <div className="mt-12 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center shadow-2xl">
                 <p className={`${typography.h3} font-bold text-white mb-3`}>
                   The vicious cycle: <span className="text-orange-400">High CAC → Low margin → Can't invest in retention → Repeat</span>
                 </p>
@@ -481,7 +481,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 3: MARKET OPPORTUNITY (PREMIUM ✓✓✓) ====================
       case 3:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 flex items-center justify-center relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -489,7 +489,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto w-full relative z-10">
 
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/10 rounded-full mb-4 border border-[#c9a227]/30 shadow-lg">
                   <Target className="text-[#c9a227]" size={24} />
                   <p className={`${typography.bodySmall} font-bold text-[#c9a227] uppercase tracking-wider`}>Market Opportunity</p>
@@ -503,7 +503,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Main Content Grid */}
-              <div className="grid lg:grid-cols-5 gap-8 items-start">
+              <div className="grid lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 items-start">
 
                 {/* LEFT: Recharts Nested Pie Chart - 2 columns */}
                 <div className="lg:col-span-2 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white rounded-3xl shadow-2xl p-8 border-2 border-blue-200/50 hover:shadow-2xl transition-shadow duration-300 relative overflow-hidden">
@@ -719,7 +719,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 4: WHY NOW (PREMIUM ✓✓✓) ====================
       case 4:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-purple-50/30 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 via-purple-50/30 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -727,7 +727,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-blue-100 rounded-full mb-4">
                   <p className={`${typography.labelEyebrow} text-blue-700`}>Perfect Timing</p>
                 </div>
@@ -740,7 +740,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 4 Timing Factors in 2x2 Grid */}
-              <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-6 mb-6 sm:mb-8 md:mb-12 max-w-6xl mx-auto">
                 {[
                   {
                     icon: Search,
@@ -804,7 +804,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   return (
                     <div
                       key={idx}
-                      className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300`}
+                      className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300`}
                       style={{ animationDelay: factor.delay }}
                     >
                       {/* Icon + Title */}
@@ -841,7 +841,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Convergence Visual */}
               <div className="max-w-5xl mx-auto">
-                <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/30">
+                <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-center shadow-2xl border-2 border-[#c9a227]/30">
                   <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                     <p className={`${typography.labelEyebrow} text-[#c9a227]`}>The Perfect Storm</p>
                   </div>
@@ -1209,11 +1209,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
         const activeColor = colorClasses[activeExample.color as keyof typeof colorClasses];
 
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8">
             <div className="max-w-7xl mx-auto">
 
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-3 py-1 bg-emerald-100 rounded-full mb-4">
                   <p className={`${typography.labelEyebrow} text-emerald-700`}>Our Solution</p>
                 </div>
@@ -1226,7 +1226,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Interactive Niche Tabs */}
-              <div className="mb-12">
+              <div className="mb-6 sm:mb-8 md:mb-12">
                 <div className="flex items-center justify-center gap-3 mb-8">
                   {Object.entries(nicheExamples).map(([key, niche]) => (
                     <button
@@ -1248,7 +1248,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="space-y-6">
 
                   {/* Step 1: Search & Discover */}
-                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center font-black text-xl">1</div>
                       <h3 className={`${typography.h2} text-slate-900`}>{activeExample.discover.step}</h3>
@@ -1271,7 +1271,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
 
                   {/* Step 2: Find Deals & Offers */}
-                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className={`w-12 h-12 rounded-full ${activeColor.bg} text-white flex items-center justify-center font-black text-xl`}>2</div>
                       <h3 className={`${typography.h2} text-slate-900`}>{activeExample.deals.step}</h3>
@@ -1302,7 +1302,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
 
                   {/* Step 3: Payment Comparison */}
-                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center font-black text-xl">3</div>
                       <h3 className={`${typography.h2} text-slate-900`}>{activeExample.payment.step}</h3>
@@ -1350,7 +1350,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
 
                   {/* Step 4: Earn Rewards as Cashback */}
-                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-3xl p-8 shadow-xl transition-all duration-300`}>
+                  <div className={`${activeColor.light} border-2 ${activeColor.border} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl transition-all duration-300`}>
                     <div className="flex items-center gap-4 mb-6">
                       <div className="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center font-black text-xl">4</div>
                       <h3 className={`${typography.h2} text-slate-900`}>{activeExample.rewards.step}</h3>
@@ -1385,10 +1385,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 3 Value Props - Dynamic Based on Active Niche */}
-              <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
 
                 {/* FOR SHOPPERS */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-emerald-200 transition-all duration-300">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border-2 border-emerald-200 transition-all duration-300">
                   <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center mb-6">
                     <Search className="text-white" size={32} />
                   </div>
@@ -1416,7 +1416,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* FOR MERCHANTS */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-[#c9a227]/30 transition-all duration-300">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border-2 border-[#c9a227]/30 transition-all duration-300">
                   <div className="w-16 h-16 bg-[#c9a227] rounded-2xl flex items-center justify-center mb-6">
                     <Store className="text-white" size={32} />
                   </div>
@@ -1441,7 +1441,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* FOR PAYMENT PARTNERS */}
-                <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200 transition-all duration-300">
+                <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl border-2 border-blue-200 transition-all duration-300">
                   <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
                     <CreditCard className="text-white" size={32} />
                   </div>
@@ -1468,7 +1468,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom CTA */}
-              <div className="text-center bg-slate-900 rounded-2xl p-8 text-white">
+              <div className="text-center bg-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-white">
                 <p className={`${typography.h3} mb-2`}>
                   One platform. Three revenue streams. Zero customer acquisition cost.
                 </p>
@@ -1482,13 +1482,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 6: USER JOURNEY - BEFORE (UPGRADED) ====================
       case 6:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50/30 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50 via-orange-50/30 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-red-100 to-orange-100 rounded-full mb-4 border-2 border-red-200">
                   <p className="text-xs font-black text-red-700 uppercase tracking-wider">Current Experience — Broken</p>
                 </div>
@@ -1543,7 +1543,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                         </div>
 
                         {/* Card */}
-                        <div className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300`}
+                        <div className={`bg-gradient-to-br ${bgGradient} border-2 ${borderColor} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300`}
                           style={{ animationDelay: `${idx * 100}ms` }}>
                           <div className="flex items-start gap-6">
                             <div className="flex-shrink-0">
@@ -1567,7 +1567,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Dramatic Bottom Stat with Failure Icons */}
-              <div className="mt-12 bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-3xl p-10 text-center text-white shadow-2xl relative overflow-hidden">
+              <div className="mt-12 bg-gradient-to-r from-red-600 via-red-500 to-red-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-center text-white shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
                 <div className="relative z-10">
                   <div className="flex items-center justify-center gap-4 mb-4">
@@ -1588,13 +1588,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 7: USER JOURNEY - AFTER (UPGRADED) ====================
       case 7:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-green-50/30 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 via-green-50/30 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-green-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-100 to-green-100 rounded-full mb-4 border-2 border-emerald-300">
                   <p className="text-xs font-black text-emerald-700 uppercase tracking-wider">With Nuqta — Simplified</p>
                 </div>
@@ -1608,7 +1608,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Success Path with Visual Flow */}
-              <div className="relative max-w-6xl mx-auto mb-12">
+              <div className="relative max-w-6xl mx-auto mb-6 sm:mb-8 md:mb-12">
                 {/* Flow arrows */}
                 <div className="hidden md:flex absolute top-1/2 left-0 right-0 justify-between items-center px-32 -translate-y-1/2 z-0">
                   <ArrowRight size={64} className="text-emerald-200" />
@@ -1616,7 +1616,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* 3 Simple Steps */}
-                <div className="grid md:grid-cols-3 gap-8 relative z-10">
+                <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative z-10">
                   {[
                     { num: 1, title: "Search Once", desc: "Type 'coffee deals near me' in Nuqta", icon: Search, result: "Instant results from all local merchants", time: "~5 sec", color: "emerald" },
                     { num: 2, title: "Compare & Choose", desc: "See all deals in one view, sorted by distance + savings", icon: CheckCircle2, result: "Save 15-30% instantly", time: "~15 sec", color: "green" },
@@ -1630,7 +1630,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     }[step.color];
 
                     return (
-                      <div key={idx} className="bg-white border-2 border-emerald-200 rounded-3xl p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                      <div key={idx} className="bg-white border-2 border-emerald-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
                         {/* Icon Badge */}
                         <div className={`w-20 h-20 rounded-3xl bg-gradient-to-br ${bgGradient} flex items-center justify-center mb-6 shadow-lg mx-auto`}>
                           <Icon className="text-white" size={40} />
@@ -1660,7 +1660,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Dramatic Bottom Stat with Success Icons */}
-              <div className="bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 rounded-3xl p-10 text-center text-white shadow-2xl relative overflow-hidden">
+              <div className="bg-gradient-to-r from-emerald-600 via-green-500 to-emerald-600 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-center text-white shadow-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
                 <div className="relative z-10">
                   <div className="flex items-center justify-center gap-6 mb-4">
@@ -1681,7 +1681,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Before/After Comparison Callout */}
-              <div className="mt-8 bg-slate-900 rounded-2xl p-8 text-center text-white">
+              <div className="mt-8 bg-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center text-white">
                 <div className="flex items-center justify-center gap-12">
                   <div>
                     <p className={`${typography.metricMedium} text-red-400 mb-1`}>27 min</p>
@@ -1701,13 +1701,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 8: PLATFORM DIFFERENTIATION (PREMIUM ✓✓✓) ====================
       case 8:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/20 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/20 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-purple-100 rounded-full mb-4 shadow-md">
                   <p className="text-xs font-bold text-purple-700 uppercase tracking-wider">Core Differentiation</p>
                 </div>
@@ -1720,9 +1720,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Comparison Table */}
-              <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto mb-6 sm:mb-8 md:mb-12">
                 {/* What We're NOT */}
-                <div className="bg-gradient-to-br from-red-50 via-red-50/50 to-white border-2 border-red-200 rounded-3xl p-8 shadow-xl">
+                <div className="bg-gradient-to-br from-red-50 via-red-50/50 to-white border-2 border-red-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl">
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-100 mb-4 shadow-md">
                       <Ban className="text-red-600" size={32} />
@@ -1754,7 +1754,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* What We ARE */}
-                <div className="bg-gradient-to-br from-emerald-50 via-emerald-50/50 to-white border-2 border-emerald-200 rounded-3xl p-8 shadow-xl">
+                <div className="bg-gradient-to-br from-emerald-50 via-emerald-50/50 to-white border-2 border-emerald-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl">
                   <div className="text-center mb-6">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4 shadow-md">
                       <CheckCircle2 className="text-emerald-600" size={32} />
@@ -1788,7 +1788,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Key Insight Banner */}
               <div className="max-w-5xl mx-auto">
-                <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
+                <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
                   <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                     <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">The Core Difference</p>
                   </div>
@@ -1822,9 +1822,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 9: COMPETITIVE LANDSCAPE ====================
       case 9:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
                   <p className={`${typography.labelEyebrow} text-red-700`}>Competitive Analysis</p>
                 </div>
@@ -1840,7 +1840,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Competitive Matrix */}
-              <div className="overflow-x-auto mb-12">
+              <div className="overflow-x-auto mb-6 sm:mb-8 md:mb-12">
                 <table className="w-full border-collapse bg-white rounded-2xl overflow-hidden shadow-xl">
                   <thead>
                     <tr className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 text-white">
@@ -2004,7 +2004,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Why Competitors Can't Copy - Memorable Analogies */}
-              <div className="bg-gradient-to-br from-[#c9a227]/10 via-white to-slate-50 border-4 border-[#c9a227]/30 rounded-3xl p-10 mb-12 shadow-2xl">
+              <div className="bg-gradient-to-br from-[#c9a227]/10 via-white to-slate-50 border-4 border-[#c9a227]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 mb-6 sm:mb-8 md:mb-12 shadow-2xl">
                 <div className="text-center mb-8">
                   <div className="inline-block px-5 py-2 bg-slate-900 rounded-full mb-4">
                     <p className={`${typography.label} font-bold text-[#c9a227] uppercase tracking-wider`}>Structural Moat — Explained Simply</p>
@@ -2123,9 +2123,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <h3 className={`${typography.h2} font-black text-slate-900`}>Business Model Constraints by Competitor</h3>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
                 {/* Left: Structural Barriers */}
-                <div className="bg-gradient-to-br from-red-50 via-red-50/50 to-white border-2 border-red-200 rounded-3xl p-8 shadow-xl">
+                <div className="bg-gradient-to-br from-red-50 via-red-50/50 to-white border-2 border-red-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
                       <AlertCircle className="text-red-600" size={28} />
@@ -2165,7 +2165,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Right: Our Structural Advantages */}
-                <div className="bg-gradient-to-br from-emerald-50 via-emerald-50/50 to-white border-2 border-emerald-200 rounded-3xl p-8 shadow-xl">
+                <div className="bg-gradient-to-br from-emerald-50 via-emerald-50/50 to-white border-2 border-emerald-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
                       <Trophy className="text-emerald-600" size={28} />
@@ -2223,7 +2223,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Callout */}
-              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
                 <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                   <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Technical Conclusion</p>
                 </div>
@@ -2265,14 +2265,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
         ];
 
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4">
                   <p className={`${typography.labelEyebrow} text-[#c9a227]`}>Revenue Model</p>
                 </div>
@@ -2285,10 +2285,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Revenue Chart & Breakdown Grid */}
-              <div className="grid lg:grid-cols-2 gap-10 mb-12 max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-10 mb-6 sm:mb-8 md:mb-12 max-w-6xl mx-auto">
 
                 {/* Left: Recharts Bar Chart */}
-                <div className="bg-white border-2 border-[#c9a227]/20 rounded-3xl p-8 shadow-xl">
+                <div className="bg-white border-2 border-[#c9a227]/20 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-xl">
                   <h3 className={`${typography.h3} font-bold text-slate-900 mb-6 text-center`}>Revenue Contribution</h3>
                   <ResponsiveContainer width="100%" height={320}>
                     <BarChart data={revenueData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
@@ -2392,7 +2392,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Example Calculation with Visual Progression */}
-              <div className="bg-gradient-to-br from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-white max-w-6xl mx-auto shadow-2xl border-2 border-[#c9a227]/20">
+              <div className="bg-gradient-to-br from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-white max-w-6xl mx-auto shadow-2xl border-2 border-[#c9a227]/20">
                 <h3 className={`${typography.h2} font-bold mb-8 text-center`}>
                   Example: <span className="text-[#c9a227]">AED 1,000</span> Monthly GMV per User
                 </h3>
@@ -2447,14 +2447,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 11: PLATFORM ARCHITECTURE (NEW) ====================
       case 11:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-4 border-2 border-blue-200 shadow-lg">
                   <p className="text-xs font-black text-blue-700 uppercase tracking-wider">Platform Architecture</p>
                 </div>
@@ -2555,7 +2555,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Intelligence Layer */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-[#c9a227] rounded-3xl p-8 mb-8 max-w-6xl mx-auto shadow-2xl">
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 border-2 border-[#c9a227] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-8 max-w-6xl mx-auto shadow-2xl">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-14 h-14 bg-[#c9a227] rounded-xl flex items-center justify-center">
                     <Zap size={28} className="text-slate-900" />
@@ -2621,13 +2621,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 12: NUQTA COIN VS BRAND COIN (PREMIUM ✓✓✓) ====================
       case 12:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 via-orange-50/20 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-[#c9a227]/20 rounded-full mb-4 shadow-lg">
                   <p className="text-xs font-bold text-[#c9a227] uppercase tracking-wider">Rewards System</p>
                 </div>
@@ -2640,10 +2640,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 2-Column Comparison */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12 max-w-6xl mx-auto">
 
                 {/* Nuqta Coin */}
-                <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-10">
+                <div className="bg-white border-2 border-[#c9a227]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-[#c9a227] rounded-full flex items-center justify-center">
                       <Coins className="text-white" size={32} />
@@ -2701,7 +2701,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Brand Coin */}
-                <div className="bg-white border-2 border-blue-200 rounded-3xl p-10">
+                <div className="bg-white border-2 border-blue-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center">
                       <Store className="text-white" size={32} />
@@ -2761,7 +2761,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Key Insight */}
-              <div className="bg-slate-900 rounded-2xl p-10 text-white text-center mb-12">
+              <div className="bg-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-10 text-white text-center mb-6 sm:mb-8 md:mb-12">
                 <p className="text-3xl font-bold mb-4">
                   💡 Smart Rule: <span className="text-[#c9a227]">Nuqta Coin = Freedom</span> • <span className="text-blue-400">Brand Coin = Loyalty</span>
                 </p>
@@ -2790,7 +2790,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <div className="grid md:grid-cols-3 gap-6">
 
                   {/* Business Benefits */}
-                  <div className="bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-white border-2 border-emerald-500/30 rounded-3xl p-8">
+                  <div className="bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-white border-2 border-emerald-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-600 to-emerald-500 text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
                       <Store className="text-white" size={28} />
                     </div>
@@ -2820,7 +2820,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
 
                   {/* User Benefits */}
-                  <div className="bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-white border-2 border-blue-500/30 rounded-3xl p-8">
+                  <div className="bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-white border-2 border-blue-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-blue-500 text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
                       💰
                     </div>
@@ -2850,7 +2850,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   </div>
 
                   {/* Nuqta Benefits */}
-                  <div className="bg-gradient-to-br from-[#c9a227]/10 via-[#c9a227]/5 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8">
+                  <div className="bg-gradient-to-br from-[#c9a227]/10 via-[#c9a227]/5 to-white border-2 border-[#c9a227]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8">
                     <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#c9a227] to-[#b8922a] text-white flex items-center justify-center text-2xl mb-4 shadow-lg">
                       <Rocket className="text-white" size={28} />
                     </div>
@@ -2883,7 +2883,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Stickiness Metric */}
-              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl p-8 text-center">
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center">
                 <p className="text-sm text-[#c9a227] font-bold uppercase tracking-wider mb-3">The Retention Engine</p>
                 <p className="text-3xl sm:text-4xl font-black text-white mb-4">
                   Users with <span className="text-[#c9a227]">10+ AED in coins</span> create <span className="text-emerald-400">powerful habit loops</span>
@@ -2900,9 +2900,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 13: UNIT ECONOMICS ====================
       case 13:
         return (
-          <div className="w-full min-h-screen bg-white py-16 px-8">
+          <div className="w-full min-h-screen bg-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8">
             <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-emerald-100 rounded-full mb-4">
                   <p className="text-xs font-bold text-emerald-700 uppercase tracking-wider">Unit Economics</p>
                 </div>
@@ -2941,13 +2941,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Core Economics */}
-              <div className="grid md:grid-cols-3 gap-8 mb-10">
-                <div className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-10">
+                <div className="bg-gradient-to-br from-emerald-50 to-white border-2 border-emerald-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center hover:shadow-2xl transition-all">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 mb-4">
                     <DollarSign size={32} className="text-emerald-600" />
                   </div>
                   <p className="text-sm font-semibold text-emerald-700 uppercase tracking-wider mb-3">Blended CAC</p>
-                  <p className="text-6xl font-black text-emerald-600 mb-4">
+                  <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-emerald-600 mb-2 sm:mb-4">
                     <AnimatedNumber value={50} prefix="AED " duration={2000} />
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
@@ -2963,12 +2963,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p className="text-xs text-slate-500 mt-1 italic">All scenarios remain above 5x industry threshold</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
+                <div className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center hover:shadow-2xl transition-all">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-100 mb-4">
                     <TrendingUp size={32} className="text-blue-600" />
                   </div>
                   <p className="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-3">Annual LTV</p>
-                  <p className="text-6xl font-black text-blue-600 mb-4">
+                  <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-blue-600 mb-2 sm:mb-4">
                     <AnimatedNumber value={500} prefix="AED " duration={2000} />
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
@@ -2977,12 +2977,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <p>• 8% net take rate</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-[#c9a227]/10 to-white border-2 border-[#c9a227]/30 rounded-3xl p-8 text-center hover:shadow-2xl transition-all">
+                <div className="bg-gradient-to-br from-[#c9a227]/10 to-white border-2 border-[#c9a227]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center hover:shadow-2xl transition-all">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#c9a227]/20 mb-4">
                     <Trophy size={32} className="text-[#c9a227]" />
                   </div>
                   <p className="text-sm font-semibold text-[#c9a227] uppercase tracking-wider mb-3">LTV:CAC Ratio</p>
-                  <p className="text-6xl font-black text-[#c9a227] mb-4">
+                  <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-[#c9a227] mb-2 sm:mb-4">
                     16.8x
                   </p>
                   <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-lg p-3 mt-4">
@@ -2993,7 +2993,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Revenue Breakdown with Waterfall Chart */}
-              <div className="bg-slate-50 border-2 border-slate-200 rounded-2xl p-8 mb-10">
+              <div className="bg-slate-50 border-2 border-slate-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Revenue Per AED 100 Transaction</h3>
 
                 {/* Waterfall Chart Visualization */}
@@ -3079,7 +3079,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Payback Period */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 mb-10">
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <div className="grid md:grid-cols-3 gap-6 items-center">
                   <div className="text-center md:text-left">
                     <p className="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-2">CAC Payback Period</p>
@@ -3098,14 +3098,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Wallet Float Dynamics (Cash Flow Advantage) */}
-              <div className="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-2xl p-8 mb-10 text-white">
+              <div className="bg-gradient-to-br from-blue-900 to-indigo-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10 text-white">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                     <Coins size={24} className="text-white" />
                   </div>
                   <h3 className="text-3xl font-black text-white">Wallet Float Dynamics (Cash Flow Advantage)</h3>
                 </div>
-                <div className="grid md:grid-cols-2 gap-8 mb-6">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6">
                   <div>
                     <p className="text-lg font-semibold mb-4 text-blue-200">How Wallet Float Works:</p>
                     <p className="text-base text-white/90 leading-relaxed mb-4">
@@ -3180,7 +3180,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Why These Economics Are Defensible */}
-              <div className="bg-white border-2 border-purple-200 rounded-2xl p-8">
+              <div className="bg-white border-2 border-purple-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">Why These Unit Economics Are Defensible</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
@@ -3237,7 +3237,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Retention Sensitivity Analysis (Investor-Grade Transparency) */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 border-2 border-slate-700 rounded-2xl p-8 mt-10">
+              <div className="bg-gradient-to-br from-slate-900 to-slate-800 border-2 border-slate-700 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mt-10">
                 <div className="flex items-center gap-3 mb-6">
                   <AlertTriangle size={28} className="text-yellow-400" />
                   <h3 className="text-2xl font-black text-white">Retention Sensitivity: What If We're Wrong?</h3>
@@ -3290,14 +3290,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 14: FRAUD CONTROLS (PREMIUM ✓✓✓) ====================
       case 14:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 via-white to-orange-50/20 py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-red-50/30 via-white to-orange-50/20 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-red-100 rounded-full mb-4">
                   <p className="text-xs font-bold text-red-700 uppercase tracking-wider">Risk Mitigation</p>
                 </div>
@@ -3310,8 +3310,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Core Principle Banner */}
-              <div className="max-w-5xl mx-auto mb-12">
-                <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-900 rounded-3xl p-8 text-center shadow-2xl border-2 border-red-700">
+              <div className="max-w-5xl mx-auto mb-6 sm:mb-8 md:mb-12">
+                <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center shadow-2xl border-2 border-red-700">
                   <p className="text-sm text-red-300 font-bold uppercase tracking-wider mb-3">Core Defense Principle</p>
                   <p className="text-3xl sm:text-4xl font-black text-white mb-4 leading-tight">
                     Fraud thrives on instant liquidity — <span className="text-red-300">Nuqta removes that</span>
@@ -3325,11 +3325,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 8-Layer Defense Pyramid with Visual Diagram */}
-              <div className="max-w-6xl mx-auto mb-12">
+              <div className="max-w-6xl mx-auto mb-6 sm:mb-8 md:mb-12">
                 <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">8-Layer Defense System</h3>
 
                 {/* Visual Pyramid Diagram */}
-                <div className="mb-12 max-w-4xl mx-auto">
+                <div className="mb-6 sm:mb-8 md:mb-12 max-w-4xl mx-auto">
                   <div className="relative">
                     {/* Pyramid Layers - Each layer gets narrower */}
                     {[
@@ -3495,7 +3495,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
 
               {/* Investor Answer Section */}
               <div className="max-w-5xl mx-auto">
-                <div className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-2xl p-8 shadow-lg">
+                <div className="bg-gradient-to-br from-slate-50 to-white border-2 border-slate-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
                       <span className="text-blue-700 font-black text-lg">Q</span>
@@ -3519,7 +3519,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Fraud Cost Assumption (Transparent Modeling) */}
-              <div className="max-w-5xl mx-auto mt-10 bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-orange-300 rounded-2xl p-8 shadow-lg">
+              <div className="max-w-5xl mx-auto mt-10 bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-orange-300 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg">
                 <div className="flex items-center gap-3 mb-4">
                   <AlertTriangle size={28} className="text-orange-600" />
                   <h3 className="text-2xl font-black text-slate-900">Fraud Cost Built Into Unit Economics</h3>
@@ -3593,14 +3593,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 15: GTM STRATEGY ====================
       case 15:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
                   <p className="text-xs font-black text-purple-700 uppercase tracking-wider">Go-to-Market Strategy</p>
                 </div>
@@ -3616,7 +3616,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* GTM Rules */}
-              <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 mb-10">
+              <div className="bg-white border-2 border-purple-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
                   <Target size={28} className="text-purple-600" />
                   GTM Rules (Discipline Signals)
@@ -3641,7 +3641,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Core Growth Engine */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 mb-10">
+              <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <div className="flex items-center gap-3 mb-6">
                   <Zap size={32} className="text-yellow-400" />
                   <h3 className="text-3xl font-black text-white">Core Growth Engine: Habit Loops</h3>
@@ -3781,7 +3781,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* CAC Funnel Math (Transparent Conversion Rates) */}
-              <div className="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-slate-300 rounded-2xl p-8 mb-10">
+              <div className="bg-gradient-to-br from-slate-50 to-blue-50 border-2 border-slate-300 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <div className="flex items-center gap-3 mb-6">
                   <TrendingDown size={28} className="text-slate-700" />
                   <h3 className="text-2xl font-black text-slate-900">CAC Funnel Math (Merchant QR Channel)</h3>
@@ -3833,7 +3833,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Digital Scale (Gated) */}
-              <div className="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl p-8 mb-10">
+              <div className="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <div className="flex items-center gap-3 mb-6">
                   <Lock size={28} className="text-red-600" />
                   <h3 className="text-3xl font-black text-slate-900">Digital Scale (Gated Until Unit Economics Proven)</h3>
@@ -3867,7 +3867,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Key Metrics Dashboard */}
-              <div className="bg-white border-2 border-slate-200 rounded-2xl p-8">
+              <div className="bg-white border-2 border-slate-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                 <h3 className="text-3xl font-bold text-slate-900 mb-6 text-center">Key Metrics (Weekly Review)</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 rounded-xl p-5 text-center">
@@ -3900,7 +3900,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Geographic Strategy */}
-              <div className="mt-10 bg-slate-900 rounded-2xl p-8 text-center">
+              <div className="mt-10 bg-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">Geographic Expansion Rule</h3>
                 <p className="text-lg text-slate-300 max-w-4xl mx-auto">
                   <span className="font-bold text-[#c9a227]">Density before breadth:</span> Own Marina + Downtown Dubai
@@ -3915,14 +3915,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 16: MERCHANT ONBOARDING ====================
       case 16:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-purple-50 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-amber-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-amber-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
                   <p className="text-xs font-black text-purple-700 uppercase tracking-wider">Solving Chicken-Egg Problem</p>
                 </div>
@@ -3935,7 +3935,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Flywheel Diagram */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 mb-10">
+              <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-10">
                 <h3 className="text-2xl font-bold text-white mb-6 text-center">Network Effects Flywheel</h3>
                 <div className="flex items-center justify-center">
                   <div className="relative">
@@ -4073,7 +4073,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Stats Bar */}
-              <div className="bg-gradient-to-r from-purple-900 to-slate-900 rounded-2xl p-8">
+              <div className="bg-gradient-to-r from-purple-900 to-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   <div className="text-center">
                     <p className="text-sm font-semibold text-purple-300 uppercase mb-2">Total Merchants Year 1</p>
@@ -4111,13 +4111,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 17: TRACTION ====================
       case 17:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-emerald-50 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-6xl mx-auto relative z-10">
-              <div className="text-center mb-16">
+              <div className="text-center mb-8 sm:mb-12 md:mb-16">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-full mb-4 border-2 border-emerald-200 shadow-lg">
                   <p className="text-xs font-black text-emerald-700 uppercase tracking-wider">Pre-Launch Traction</p>
                 </div>
@@ -4130,7 +4130,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Stats Grid with Sparklines */}
-              <div className="grid md:grid-cols-4 gap-6 mb-12">
+              <div className="grid md:grid-cols-4 gap-6 mb-6 sm:mb-8 md:mb-12">
                 {[
                   {
                     label: "Signed Merchants",
@@ -4221,7 +4221,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Pre-Launch Validation */}
-              <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-2 border-blue-200 rounded-2xl p-8 mb-12">
+              <div className="bg-gradient-to-r from-blue-50 to-emerald-50 border-2 border-blue-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 md:mb-12">
                 <div className="flex items-start gap-4">
                   <CheckCircle2 size={32} className="text-emerald-600 flex-shrink-0 mt-1" />
                   <div>
@@ -4255,9 +4255,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Post-Launch: H1 Timeline (5 Months) */}
-              <div className="bg-white border-2 border-emerald-200 rounded-2xl p-10">
+              <div className="bg-white border-2 border-emerald-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-10">
                 <h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">H1 2026: Prove the Loop (~5 Months)</h3>
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                   {[
                     { milestone: "Month 1-2: Launch", date: "Weeks 1-8", tasks: ["Activate first 100 merchants", "Acquire 10,000 MAU", "Process AED 2M GMV", "Track D7 retention ≥30%"] },
                     { milestone: "Month 3-4: Scale", date: "Weeks 9-16", tasks: ["Scale to 35,000 MAU", "800 active merchants", "AED 15M GMV (cumulative to date)", "Measure D30 retention ≥25%"] },
@@ -4297,7 +4297,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* H1 Gate Criteria */}
-                <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-2xl p-8">
+                <div className="bg-gradient-to-r from-emerald-50 to-blue-50 border-2 border-emerald-300 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                   <h4 className="text-2xl font-bold text-slate-900 mb-6 text-center">H1 Exit Gate Targets (Aggressive)</h4>
                   <div className="grid md:grid-cols-3 gap-6">
                     <div className="bg-white rounded-xl p-6 border-2 border-blue-200">
@@ -4348,13 +4348,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 18: TEAM (PREMIUM ✓) ====================
       case 18:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-slate-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-6xl mx-auto relative z-10">
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#c9a227]/20 to-slate-100 rounded-full mb-4 border-2 border-[#c9a227]/30 shadow-lg">
                   <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Our Team</p>
                 </div>
@@ -4367,9 +4367,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Founder Card with Photo */}
-              <div className="max-w-3xl mx-auto mb-12">
-                <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all">
-                  <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="max-w-3xl mx-auto mb-6 sm:mb-8 md:mb-12">
+                <div className="bg-white border-2 border-[#c9a227]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 sm:p-10 shadow-xl hover:shadow-2xl transition-all">
+                  <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 items-center">
                     {/* Founder Photo */}
                     <div className="relative flex-shrink-0">
                       <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-[#c9a227] shadow-xl">
@@ -4425,7 +4425,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Core Team Grid - NEW */}
-              <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-8 sm:p-10 shadow-lg mb-8">
+              <div className="bg-white border-2 border-[#c9a227]/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 sm:p-10 shadow-lg mb-8">
                 <h3 className={`${typography.h2} text-slate-900 mb-8 text-center`}>Core Team</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
@@ -4465,7 +4465,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Advisors Grid - Enhanced */}
-              <div className="bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-10 shadow-lg">
+              <div className="bg-white border-2 border-slate-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 sm:p-10 shadow-lg">
                 <h3 className={`${typography.h2} text-slate-900 mb-8 text-center`}>Advisors & Supporters</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   {[
@@ -4500,7 +4500,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 19: THE ASK ====================
       case 19:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-16 px-8 flex items-center justify-center relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-orange-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -4510,12 +4510,12 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Investment Opportunity</p>
               </div>
 
-              <h2 className="text-7xl sm:text-8xl font-black text-slate-900 mb-8">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-4 sm:mb-6 md:mb-8">
                 The <span className="text-[#c9a227]">Ask</span>
               </h2>
 
               {/* Main Ask */}
-              <div className="bg-white border-4 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-2xl">
+              <div className="bg-white border-4 border-[#c9a227]/30 rounded-3xl p-12 mb-6 sm:mb-8 md:mb-12 shadow-2xl">
                 <p className="text-2xl text-slate-600 mb-6">Raising Pre-Seed Round</p>
                 <p className="text-8xl sm:text-9xl font-black text-[#c9a227] mb-6">
                   <AnimatedNumber value={400} prefix="$" suffix="K" duration={2000} />
@@ -4525,7 +4525,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </p>
 
                 {/* SAFE Structure */}
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-2xl p-8 max-w-3xl mx-auto">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 border-2 border-blue-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 max-w-3xl mx-auto">
                   <div className="flex items-center gap-3 mb-6 justify-center">
                     <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -4624,14 +4624,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 20: FINANCIAL PROJECTIONS ====================
       case 20:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-16 px-8 flex items-center justify-center relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block bg-emerald-500/20 border border-emerald-400 px-6 py-2 rounded-full mb-4">
                   <p className={`${typography.labelEyebrow} text-emerald-300`}>5-Year Financial Outlook</p>
                 </div>
@@ -4644,7 +4644,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Revenue Chart */}
-              <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 mb-8">
+              <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-8">
                 <h3 className={`${typography.h3} text-white mb-6`}>Revenue Growth Trajectory</h3>
                 <div className="h-80">
                   <ResponsiveContainer width="100%" height="100%">
@@ -4904,14 +4904,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 21: EXIT STRATEGY ====================
       case 21:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-16 px-8 flex items-center justify-center relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
 
             <div className="max-w-7xl mx-auto relative z-10">
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block bg-emerald-500/20 border border-emerald-400 px-6 py-2 rounded-full mb-4">
                   <p className={`${typography.labelEyebrow} text-emerald-300`}>Path to Liquidity</p>
                 </div>
@@ -4972,7 +4972,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Comparable MENA Exits */}
-              <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8 mb-8">
+              <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-8">
                 <h3 className={`${typography.h3} text-white mb-6 flex items-center gap-3`}>
                   <TrendingUp className="text-emerald-400" size={28} />
                   Comparable MENA Exits (Proof of Market)
@@ -5001,9 +5001,9 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Exit Timeline + Valuation Scenarios */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8">
                 {/* Left: Timeline */}
-                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                   <h3 className={`${typography.h3} text-white mb-6`}>Exit Timeline</h3>
                   <div className="space-y-6">
                     {[
@@ -5051,7 +5051,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Right: Why We're Attractive */}
-                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-8">
+                <div className="bg-white/5 backdrop-blur border border-white/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                   <h3 className={`${typography.h3} text-white mb-6`}>Why Acquirers Will Pay Premium</h3>
                   <div className="space-y-4">
                     {[
@@ -5089,7 +5089,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Investor Returns Panel - MOST IMPORTANT */}
-              <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-2 border-emerald-400 rounded-2xl p-8">
+              <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-2 border-emerald-400 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                 <h3 className={`${typography.h2} text-white mb-6 flex items-center gap-3`}>
                   <DollarSign className="text-emerald-400" size={32} />
                   Pre-Seed Investor Returns ($400K SAFE, $5M Cap)
@@ -5177,7 +5177,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 22: VISION ====================
       case 22:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-16 px-8 flex items-center justify-center relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 flex items-center justify-center relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-slate-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -5185,7 +5185,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-6xl mx-auto relative z-10">
 
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-500/10 rounded-full mb-4 border-2 border-purple-500/30 shadow-lg">
                   <Rocket className="text-purple-600" size={24} />
                   <p className="text-sm font-black text-purple-700 uppercase tracking-wider">Long-term Vision</p>
@@ -5199,7 +5199,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Vision Statement Card */}
-              <div className="bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-white border-2 border-purple-500/30 rounded-3xl p-8 mb-12 shadow-xl">
+              <div className="bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-white border-2 border-purple-500/30 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 md:mb-12 shadow-xl">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
                     <span className="text-3xl">💡</span>
@@ -5222,7 +5222,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 3-Phase Roadmap */}
-              <div className="space-y-6 mb-12">
+              <div className="space-y-6 mb-6 sm:mb-8 md:mb-12">
 
                 {/* Phase 1: Year 1-3 */}
                 <div className="bg-white border-2 border-emerald-500/30 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
@@ -5352,7 +5352,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Vision Statement */}
-              <div className="bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-2xl p-8 shadow-2xl border-4 border-white/20 relative overflow-hidden">
+              <div className="bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-2xl border-4 border-white/20 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
                 <div className="relative z-10 text-center">
                   <p className="text-3xl font-black mb-3 leading-tight">
@@ -5371,7 +5371,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 23: COMPETITIVE LANDSCAPE - ALTERNATIVE VIEW ====================
       case 23:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-50 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -5379,7 +5379,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-100 to-slate-100 rounded-full mb-4 border-2 border-blue-200 shadow-lg">
                   <p className="text-xs font-black text-blue-700 uppercase tracking-wider">Strategic Positioning</p>
                 </div>
@@ -5395,7 +5395,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Comparison Grid */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
 
                 {/* Left: What They're Missing */}
                 <div>
@@ -5500,7 +5500,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 <h3 className="text-3xl font-black text-slate-900">Why This Timing Creates an Unassailable Position</h3>
               </div>
 
-              <div className="bg-gradient-to-br from-blue-50 via-blue-50/50 to-white border-2 border-blue-200 rounded-3xl p-8 mb-8 shadow-xl">
+              <div className="bg-gradient-to-br from-blue-50 via-blue-50/50 to-white border-2 border-blue-200 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-8 shadow-xl">
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="bg-white rounded-xl p-6 border-l-4 border-blue-500 shadow-sm">
                     <p className="text-sm text-blue-600 font-bold uppercase tracking-wide mb-2">First-Mover</p>
@@ -5527,7 +5527,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom Callout */}
-              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-3xl p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-10 text-center shadow-2xl border-2 border-[#c9a227]/20">
                 <div className="inline-block px-4 py-2 bg-blue-500/20 rounded-full mb-4">
                   <p className="text-xs font-bold text-blue-400 uppercase tracking-wider">Strategic Takeaway</p>
                 </div>
@@ -5557,7 +5557,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 24: COMPETITIVE MOAT ====================
       case 24:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[#c9a227]/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -5565,11 +5565,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
             <div className="max-w-7xl mx-auto relative z-10">
 
               {/* Header */}
-              <div className="text-center mb-16">
+              <div className="text-center mb-8 sm:mb-12 md:mb-16">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#c9a227]/10 to-blue-100 rounded-full mb-4 border-2 border-[#c9a227]/30 shadow-lg">
                   <p className="text-xs font-black text-[#c9a227] uppercase tracking-wider">Defensibility</p>
                 </div>
-                <h2 className="text-6xl font-black text-slate-900 mb-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 sm:mb-6">
                   Why This Can't Be Copied <span className="text-[#c9a227]">in 3 Months</span>
                 </h2>
                 <p className="text-2xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
@@ -5578,10 +5578,10 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* 4 Moat Pillars */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6 sm:mb-8 md:mb-12">
 
                 {/* Pillar 1: Neutral Intelligence */}
-                <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
+                <div className="bg-white border-2 border-blue-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all">
                   <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <Target className="text-blue-600" size={32} />
                   </div>
@@ -5606,7 +5606,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Pillar 2: Incentive Alignment */}
-                <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
+                <div className="bg-white border-2 border-emerald-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all">
                   <div className="w-16 h-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <Handshake className="text-emerald-600" size={32} />
                   </div>
@@ -5652,7 +5652,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Pillar 3: Offline Behavioral Data */}
-                <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
+                <div className="bg-white border-2 border-purple-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all">
                   <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <BarChart3 className="text-purple-600" size={32} />
                   </div>
@@ -5687,7 +5687,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
 
                 {/* Pillar 4: Coin Lock-In Mechanism */}
-                <div className="bg-white border-2 border-orange-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
+                <div className="bg-white border-2 border-orange-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all">
                   <div className="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                     <Coins className="text-orange-600" size={32} />
                   </div>
@@ -5723,7 +5723,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Defense Timeline */}
-              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white mb-8">
+              <div className="bg-gradient-to-r from-slate-900 to-slate-800 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-white mb-8">
                 <h3 className="text-2xl font-bold mb-6 text-center">Defense Timeline</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
@@ -5742,7 +5742,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Proof KPIs */}
-              <div className="bg-white border-2 border-[#c9a227]/30 rounded-2xl p-8">
+              <div className="bg-white border-2 border-[#c9a227]/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                 <h3 className="text-xl font-bold text-slate-900 mb-4 text-center">Moat Validation Metrics</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                   <div>
@@ -5772,14 +5772,14 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 25: ROADMAP ====================
       case 25:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-emerald-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-6xl mx-auto relative z-10">
               {/* Enhanced Header */}
-              <div className="text-center mb-12">
+              <div className="text-center mb-6 sm:mb-8 md:mb-12">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600/20 to-blue-600/10 rounded-full mb-4 border-2 border-blue-600/30 shadow-lg">
                   <span className="text-2xl">🗓️</span>
                   <p className="text-sm font-black text-blue-700 uppercase tracking-wider">GTM Roadmap</p>
@@ -5863,7 +5863,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   };
 
                   return (
-                    <div key={idx} className={`bg-gradient-to-br ${horizon.bgGradient} border-2 ${horizon.borderColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300`}>
+                    <div key={idx} className={`bg-gradient-to-br ${horizon.bgGradient} border-2 ${horizon.borderColor} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all duration-300`}>
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         {/* Left: Phase Badge + Title */}
                         <div className="flex items-start gap-4 flex-1">
@@ -5952,7 +5952,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   };
 
                   return (
-                    <div key={`phase2-${idx}`} className={`bg-gradient-to-br ${phase.bgGradient} border-2 ${phase.borderColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300`}>
+                    <div key={`phase2-${idx}`} className={`bg-gradient-to-br ${phase.bgGradient} border-2 ${phase.borderColor} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all duration-300`}>
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         {/* Left: Phase Badge + Title */}
                         <div className="flex items-start gap-4 flex-1">
@@ -6041,7 +6041,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   };
 
                   return (
-                    <div key={`phase3-${idx}`} className={`bg-gradient-to-br ${phase.bgGradient} border-2 ${phase.borderColor} rounded-3xl p-8 hover:shadow-2xl transition-all duration-300`}>
+                    <div key={`phase3-${idx}`} className={`bg-gradient-to-br ${phase.bgGradient} border-2 ${phase.borderColor} rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 hover:shadow-2xl transition-all duration-300`}>
                       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                         {/* Left: Phase Badge + Title */}
                         <div className="flex items-start gap-4 flex-1">
@@ -6096,7 +6096,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Bottom CTA Banner */}
-              <div className="mt-12 bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-3xl p-8 text-center shadow-xl">
+              <div className="mt-12 bg-gradient-to-br from-[#c9a227] via-[#d4ab2c] to-[#c9a227] text-[#0a1628] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 text-center shadow-xl">
                 <p className="text-3xl lg:text-4xl font-black mb-3">From Dubai launch to GCC market leader in 5 years</p>
                 <p className="text-lg font-medium opacity-90">5 Years. 100,000+ merchants. 5M MAU. AED 6B GMV. AED 480M Revenue.</p>
               </div>
@@ -6107,13 +6107,13 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
       // ==================== SLIDE 26: TECHNOLOGY ====================
       case 26:
         return (
-          <div className="w-full min-h-screen bg-gradient-to-br from-white via-purple-50/20 to-white py-16 px-8 relative overflow-hidden">
+          <div className="w-full min-h-screen bg-gradient-to-br from-white via-purple-50/20 to-white py-8 px-4 sm:py-12 sm:px-6 md:py-16 md:px-8 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 right-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
 
             <div className="max-w-6xl mx-auto relative z-10">
-              <div className="text-center mb-16">
+              <div className="text-center mb-8 sm:mb-12 md:mb-16">
                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full mb-4 border-2 border-purple-200 shadow-lg">
                   <p className={`${typography.labelEyebrow} text-purple-700`}>Tech Stack</p>
                 </div>
@@ -6125,7 +6125,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                 {[
                   {
                     layer: "Frontend",
@@ -6145,7 +6145,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 ].map((stack, idx) => {
                   const Icon = stack.icon;
                   return (
-                    <div key={idx} className="bg-gradient-to-br from-purple-50 to-white border-2 border-purple-200 rounded-2xl p-8">
+                    <div key={idx} className="bg-gradient-to-br from-purple-50 to-white border-2 border-purple-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                       <div className="w-16 h-16 bg-purple-500 rounded-xl flex items-center justify-center mb-6">
                         <Icon className="text-white" size={32} />
                       </div>
@@ -6164,7 +6164,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               </div>
 
               {/* Payment Intelligence Layer */}
-              <div className="mt-12 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-2xl p-10">
+              <div className="mt-12 bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-10">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-16 h-16 bg-blue-500 rounded-xl flex items-center justify-center">
                     <CreditCard className="text-white" size={32} />
@@ -6190,8 +6190,8 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
               </div>
 
-              <div className="mt-8 bg-slate-900 rounded-2xl p-10 text-white">
-                <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div className="mt-8 bg-slate-900 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-10 text-white">
+                <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 text-center">
                   <div>
                     <p className={`${typography.metric} text-[#c9a227] mb-2`}>&lt;100ms</p>
                     <p className={`${typography.h4} text-slate-300`}>Search latency</p>
@@ -6223,22 +6223,22 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
               <h1 className={`${typography.h1} text-slate-900 mb-8`}>
                 Questions?
               </h1>
-              <p className={`${typography.h2} text-slate-600 mb-12 max-w-3xl mx-auto`}>
+              <p className={`${typography.h2} text-slate-600 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto`}>
                 Let's discuss how Nuqta can transform local discovery in the GCC
               </p>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                <div className="bg-white border-2 border-blue-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+              <div className="grid md:grid-cols-3 gap-6 mb-6 sm:mb-8 md:mb-12">
+                <div className="bg-white border-2 border-blue-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-xl transition-all">
                   <div className={typography.metricMedium}>📧</div>
                   <p className={`${typography.labelEyebrow} text-slate-600 mb-2`}>Email</p>
                   <p className={`${typography.h4} text-slate-900`}>rejaul@nuqtapp.com</p>
                 </div>
-                <div className="bg-white border-2 border-emerald-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                <div className="bg-white border-2 border-emerald-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-xl transition-all">
                   <div className={typography.metricMedium}>📱</div>
                   <p className={`${typography.labelEyebrow} text-slate-600 mb-2`}>Phone</p>
                   <p className={`${typography.h4} text-slate-900`}>+971 50 376 4345</p>
                 </div>
-                <div className="bg-white border-2 border-purple-200 rounded-2xl p-8 hover:shadow-xl transition-all">
+                <div className="bg-white border-2 border-purple-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:shadow-xl transition-all">
                   <div className={typography.metricMedium}>🌐</div>
                   <p className={`${typography.labelEyebrow} text-slate-600 mb-2`}>Website</p>
                   <p className={`${typography.h4} text-slate-900`}>www.nuqtapp.com</p>
@@ -6266,7 +6266,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 Let's <span className="text-emerald-600">Talk</span>
               </h1>
 
-              <div className="bg-white border-2 border-emerald-200 rounded-3xl p-12 mb-12 shadow-2xl">
+              <div className="bg-white border-2 border-emerald-200 rounded-3xl p-12 mb-6 sm:mb-8 md:mb-12 shadow-2xl">
                 <p className={`${typography.h2} text-slate-900 mb-6`}>
                   Ready to revolutionize local shopping?
                 </p>
@@ -6313,11 +6313,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 Join <span className="text-[#c9a227]">Us</span>
               </h1>
 
-              <p className={`${typography.h2} text-slate-600 mb-12 max-w-3xl mx-auto`}>
+              <p className={`${typography.h2} text-slate-600 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto`}>
                 Be part of the journey to transform how 50M people discover local deals
               </p>
 
-              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-2xl text-white">
+              <div className="bg-gradient-to-r from-slate-900 via-[#0a1628] to-slate-900 border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-6 sm:mb-8 md:mb-12 shadow-2xl text-white">
                 <h3 className={`${typography.h3} mb-8 text-[#c9a227]`}>The Opportunity</h3>
                 <div className="grid md:grid-cols-3 gap-6 mb-8">
                   <div>
@@ -6366,7 +6366,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 Thank <span className="text-purple-600">You</span>
               </h1>
 
-              <div className="bg-white border-2 border-purple-200 rounded-3xl p-12 mb-12 shadow-2xl">
+              <div className="bg-white border-2 border-purple-200 rounded-3xl p-12 mb-6 sm:mb-8 md:mb-12 shadow-2xl">
                 <p className={`${typography.h2} text-slate-900 mb-6`}>
                   For your time and consideration
                 </p>
@@ -6374,7 +6374,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                   We're building something special—and we'd love to have you as part of the journey
                 </p>
 
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8">
                   <p className={`${typography.h4} text-slate-900 mb-4`}>Key Takeaway</p>
                   <p className={`${typography.h3} text-slate-700 italic leading-relaxed`}>
                     "Nuqta makes finding the best local deals <span className="font-black text-purple-600">54x faster</span> than traditional search, while creating sustainable value for merchants and banks."
@@ -6382,7 +6382,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 </div>
               </div>
 
-              <div className="flex items-center justify-center gap-8 mb-8">
+              <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 mb-8">
                 <div className="text-center">
                   <p className={`${typography.bodySmall} text-slate-600 mb-2`}>Contact</p>
                   <p className={`${typography.h4} text-slate-900`}>rejaul@nuqtapp.com</p>
@@ -6406,7 +6406,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
         return (
           <div className="w-full min-h-screen bg-gradient-to-br from-[#c9a227]/10 to-white flex items-center justify-center p-8">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-[#c9a227] to-[#a68420] flex items-center justify-center mx-auto mb-12 shadow-2xl">
+              <div className="w-32 h-32 rounded-3xl bg-gradient-to-br from-[#c9a227] to-[#a68420] flex items-center justify-center mx-auto mb-6 sm:mb-8 md:mb-12 shadow-2xl">
                 <Image src="/nuqta-logo.png" alt="Nuqta" width={96} height={96} className="object-contain p-4" />
               </div>
 
@@ -6414,11 +6414,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                 Nuqta
               </h1>
 
-              <p className={`${typography.metricMedium} text-[#c9a227] font-bold mb-12`}>
+              <p className={`${typography.metricMedium} text-[#c9a227] font-bold mb-6 sm:mb-8 md:mb-12`}>
                 Find Deals Before Google
               </p>
 
-              <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-12 shadow-xl">
+              <div className="bg-white border-2 border-[#c9a227]/30 rounded-3xl p-12 mb-6 sm:mb-8 md:mb-12 shadow-xl">
                 <p className={`${typography.h2} text-slate-900 mb-8`}>
                   Let's build the future of local discovery together
                 </p>
