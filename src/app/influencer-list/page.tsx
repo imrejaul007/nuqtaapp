@@ -828,52 +828,311 @@ export default function InfluencerListPage() {
           </div>
         </div>
 
-        {/* Outreach Template */}
+        {/* Outreach Templates by Tier */}
         <div className="mt-8 bg-white/5 rounded-xl p-6 border border-white/10">
-          <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+          <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
             <Mail className="text-[#c9a227]" size={20} />
-            Outreach Template
+            DM Templates by Influencer Tier
           </h3>
-          <div className="bg-black/30 rounded-lg p-4 relative">
-            <button
-              onClick={() => copyToClipboard(`Hi [Name],
 
-I'm reaching out from Nuqta - Dubai's new rewards app launching soon!
+          {/* Nano Influencer Template (1K-10K) */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-bold">NANO (1K-10K)</span>
+              <span className="text-gray-400 text-sm">Barter Deal - Free meal/service + 200 coins</span>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 relative">
+              <button
+                onClick={() => copyToClipboard(`Hey [Name]! 👋
 
-We love your content about [their niche] and think you'd be a perfect partner.
+Love your [food/beauty/fitness] content! Your [specific post] was amazing 🔥
 
-Nuqta helps your followers earn rewards at 100+ Dubai locations. We'd love to collaborate on:
-• Sponsored content showing how the app works
-• Exclusive referral code for your audience
-• Long-term ambassador partnership
+We're launching Nuqta - Dubai's new rewards app, and want to invite you for a FREE [meal/service] at one of our partner spots!
 
-Interested in learning more? I'd love to send you more details.
+The deal:
+✨ Free [meal/salon visit/gym session] (on us!)
+✨ 200 bonus Nuqta coins (worth AED 20)
+✨ Just share a quick story or reel about your experience
+
+No contracts, no pressure - just enjoy and share if you love it!
+
+Interested? Drop me a "yes" and I'll send you the details 🙌`, 'nano')}
+                className="absolute top-2 right-2 p-2 bg-white/10 rounded-lg hover:bg-white/20"
+              >
+                {copiedId === 'nano' ? <Check className="text-green-400" size={16} /> : <Copy className="text-slate-400" size={16} />}
+              </button>
+              <pre className="text-slate-300 text-sm whitespace-pre-wrap font-sans pr-10">
+{`Hey [Name]! 👋
+
+Love your [food/beauty/fitness] content! Your [specific post] was amazing 🔥
+
+We're launching Nuqta - Dubai's new rewards app, and want to invite you for a FREE [meal/service] at one of our partner spots!
+
+The deal:
+✨ Free [meal/salon visit/gym session] (on us!)
+✨ 200 bonus Nuqta coins (worth AED 20)
+✨ Just share a quick story or reel about your experience
+
+No contracts, no pressure - just enjoy and share if you love it!
+
+Interested? Drop me a "yes" and I'll send you the details 🙌`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Micro Influencer Template (10K-100K) */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-bold">MICRO (10K-100K)</span>
+              <span className="text-gray-400 text-sm">Paid Collab - AED 500-2,000 + coins + referral code</span>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 relative">
+              <button
+                onClick={() => copyToClipboard(`Hi [Name],
+
+I've been following your content for a while - your [specific content type] really resonates with your audience!
+
+I'm from Nuqta, Dubai's newest rewards app launching this month. We help people earn cashback at 100+ spots across Dubai.
+
+We'd love to work with you on a paid collaboration:
+
+💰 AED [500-2,000] for 1 Reel + 3 Stories
+🎁 Your own referral code (you earn per signup!)
+✨ 500 Nuqta coins (AED 50 value)
+🍽️ Free experience at any partner merchant
+
+Your content style would be perfect for showing how easy it is to earn rewards on everyday purchases.
+
+Can I send over more details?
 
 Best,
-[Your Name]
-Nuqta Partnerships`, 'outreach')}
-              className="absolute top-2 right-2 p-2 bg-white/10 rounded-lg hover:bg-white/20"
-            >
-              {copiedId === 'outreach' ? <Check className="text-green-400" size={16} /> : <Copy className="text-slate-400" size={16} />}
-            </button>
-            <pre className="text-slate-300 text-sm whitespace-pre-wrap font-sans pr-10">
+[Name] | Nuqta Partnerships
+📧 partnerships@nuqta.app`, 'micro')}
+                className="absolute top-2 right-2 p-2 bg-white/10 rounded-lg hover:bg-white/20"
+              >
+                {copiedId === 'micro' ? <Check className="text-green-400" size={16} /> : <Copy className="text-slate-400" size={16} />}
+              </button>
+              <pre className="text-slate-300 text-sm whitespace-pre-wrap font-sans pr-10">
 {`Hi [Name],
 
-I'm reaching out from Nuqta - Dubai's new rewards app launching soon!
+I've been following your content for a while - your [specific content type] really resonates with your audience!
 
-We love your content about [their niche] and think you'd be a perfect partner.
+I'm from Nuqta, Dubai's newest rewards app launching this month. We help people earn cashback at 100+ spots across Dubai.
 
-Nuqta helps your followers earn rewards at 100+ Dubai locations. We'd love to collaborate on:
-• Sponsored content showing how the app works
-• Exclusive referral code for your audience
-• Long-term ambassador partnership
+We'd love to work with you on a paid collaboration:
 
-Interested in learning more? I'd love to send you more details.
+💰 AED [500-2,000] for 1 Reel + 3 Stories
+🎁 Your own referral code (you earn per signup!)
+✨ 500 Nuqta coins (AED 50 value)
+🍽️ Free experience at any partner merchant
+
+Your content style would be perfect for showing how easy it is to earn rewards on everyday purchases.
+
+Can I send over more details?
 
 Best,
+[Name] | Nuqta Partnerships
+📧 partnerships@nuqta.app`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Mid-Tier Influencer Template (100K-500K) */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-bold">MID-TIER (100K-500K)</span>
+              <span className="text-gray-400 text-sm">Brand Partnership - AED 2,000-8,000 + ambassador program</span>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 relative">
+              <button
+                onClick={() => copyToClipboard(`Hi [Name],
+
+I hope this message finds you well. I'm [Your Name], Head of Partnerships at Nuqta.
+
+We've been impressed by your content and the authentic connection you have with your [X]K+ followers. Your recent [specific campaign/post] particularly stood out to us.
+
+Nuqta is Dubai's new rewards platform launching this month with 100+ partner merchants. We're looking for select creators to be part of our exclusive Ambassador Program.
+
+What we're offering:
+💎 AED [3,000-8,000] for a campaign package
+📱 Your own branded referral code with revenue share
+🌟 Priority access to all premium experiences
+🎬 Professional content support if needed
+📈 Monthly performance bonuses based on signups
+
+We envision a 3-month partnership starting with our launch campaign.
+
+Would you be open to a quick call this week to discuss?
+
+Best regards,
 [Your Name]
-Nuqta Partnerships`}
-            </pre>
+Head of Partnerships | Nuqta
+📞 +971 XX XXX XXXX
+📧 [name]@nuqta.app`, 'midtier')}
+                className="absolute top-2 right-2 p-2 bg-white/10 rounded-lg hover:bg-white/20"
+              >
+                {copiedId === 'midtier' ? <Check className="text-green-400" size={16} /> : <Copy className="text-slate-400" size={16} />}
+              </button>
+              <pre className="text-slate-300 text-sm whitespace-pre-wrap font-sans pr-10">
+{`Hi [Name],
+
+I hope this message finds you well. I'm [Your Name], Head of Partnerships at Nuqta.
+
+We've been impressed by your content and the authentic connection you have with your [X]K+ followers. Your recent [specific campaign/post] particularly stood out to us.
+
+Nuqta is Dubai's new rewards platform launching this month with 100+ partner merchants. We're looking for select creators to be part of our exclusive Ambassador Program.
+
+What we're offering:
+💎 AED [3,000-8,000] for a campaign package
+📱 Your own branded referral code with revenue share
+🌟 Priority access to all premium experiences
+🎬 Professional content support if needed
+📈 Monthly performance bonuses based on signups
+
+We envision a 3-month partnership starting with our launch campaign.
+
+Would you be open to a quick call this week to discuss?
+
+Best regards,
+[Your Name]
+Head of Partnerships | Nuqta
+📞 +971 XX XXX XXXX
+📧 [name]@nuqta.app`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Macro/Mega Influencer Template (500K+) */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-[#c9a227]/20 text-[#c9a227] px-3 py-1 rounded-full text-sm font-bold">MACRO/MEGA (500K+)</span>
+              <span className="text-gray-400 text-sm">Strategic Partnership - AED 10,000+ + equity discussion</span>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 relative">
+              <button
+                onClick={() => copyToClipboard(`Dear [Name],
+
+I'm [Your Name], CEO of Nuqta - Dubai's new rewards platform launching with backing from [investor names if applicable].
+
+Your influence in the UAE market is remarkable, and we believe a strategic partnership could be mutually beneficial as we launch.
+
+Nuqta is reimagining loyalty in the Middle East. We're launching with 100+ merchants and ambitious growth targets for 2026.
+
+We're interested in discussing a comprehensive partnership that could include:
+
+🏆 Brand Ambassador Role (exclusive category)
+💰 Premium compensation package (AED 15,000+ per campaign)
+📈 Performance bonuses + revenue share on signups
+🎯 Potential advisory/equity participation
+🎬 Co-created content with full production support
+🌟 VIP access to all partner experiences
+
+I'd love to arrange a meeting at your convenience - coffee is on us, of course.
+
+Looking forward to connecting.
+
+Warm regards,
+[Your Name]
+CEO & Founder | Nuqta
+📞 +971 XX XXX XXXX
+📧 ceo@nuqta.app
+🌐 nuqta.app`, 'macro')}
+                className="absolute top-2 right-2 p-2 bg-white/10 rounded-lg hover:bg-white/20"
+              >
+                {copiedId === 'macro' ? <Check className="text-green-400" size={16} /> : <Copy className="text-slate-400" size={16} />}
+              </button>
+              <pre className="text-slate-300 text-sm whitespace-pre-wrap font-sans pr-10">
+{`Dear [Name],
+
+I'm [Your Name], CEO of Nuqta - Dubai's new rewards platform launching with backing from [investor names if applicable].
+
+Your influence in the UAE market is remarkable, and we believe a strategic partnership could be mutually beneficial as we launch.
+
+Nuqta is reimagining loyalty in the Middle East. We're launching with 100+ merchants and ambitious growth targets for 2026.
+
+We're interested in discussing a comprehensive partnership that could include:
+
+🏆 Brand Ambassador Role (exclusive category)
+💰 Premium compensation package (AED 15,000+ per campaign)
+📈 Performance bonuses + revenue share on signups
+🎯 Potential advisory/equity participation
+🎬 Co-created content with full production support
+🌟 VIP access to all partner experiences
+
+I'd love to arrange a meeting at your convenience - coffee is on us, of course.
+
+Looking forward to connecting.
+
+Warm regards,
+[Your Name]
+CEO & Founder | Nuqta
+📞 +971 XX XXX XXXX
+📧 ceo@nuqta.app
+🌐 nuqta.app`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Follow-Up Template */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="bg-orange-500/20 text-orange-400 px-3 py-1 rounded-full text-sm font-bold">FOLLOW-UP</span>
+              <span className="text-gray-400 text-sm">Send 3-5 days after initial DM if no response</span>
+            </div>
+            <div className="bg-black/30 rounded-lg p-4 relative">
+              <button
+                onClick={() => copyToClipboard(`Hey [Name]! 👋
+
+Just following up on my previous message about Nuqta!
+
+Quick recap - we'd love to treat you to a [free meal/experience] at one of our partner spots in exchange for sharing your honest experience.
+
+No pressure at all - just thought it'd be a fun collab! Let me know if you're interested 😊
+
+[Your Name]`, 'followup')}
+                className="absolute top-2 right-2 p-2 bg-white/10 rounded-lg hover:bg-white/20"
+              >
+                {copiedId === 'followup' ? <Check className="text-green-400" size={16} /> : <Copy className="text-slate-400" size={16} />}
+              </button>
+              <pre className="text-slate-300 text-sm whitespace-pre-wrap font-sans pr-10">
+{`Hey [Name]! 👋
+
+Just following up on my previous message about Nuqta!
+
+Quick recap - we'd love to treat you to a [free meal/experience] at one of our partner spots in exchange for sharing your honest experience.
+
+No pressure at all - just thought it'd be a fun collab! Let me know if you're interested 😊
+
+[Your Name]`}
+              </pre>
+            </div>
+          </div>
+
+          {/* Quick Tips */}
+          <div className="bg-[#c9a227]/10 rounded-lg p-4 border border-[#c9a227]/30">
+            <h4 className="text-[#c9a227] font-bold mb-3">📌 DM Best Practices</h4>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-300">
+              <div>
+                <p className="font-bold text-white mb-1">✅ Do:</p>
+                <ul className="space-y-1">
+                  <li>• Personalize with specific content they made</li>
+                  <li>• Keep it short (under 150 words for nano/micro)</li>
+                  <li>• Be clear about what you're offering</li>
+                  <li>• Follow up once after 3-5 days</li>
+                  <li>• Send during active hours (10am-2pm, 7-9pm)</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold text-white mb-1">❌ Don't:</p>
+                <ul className="space-y-1">
+                  <li>• Send copy-paste generic messages</li>
+                  <li>• Be pushy or follow up more than twice</li>
+                  <li>• Promise what you can't deliver</li>
+                  <li>• Lowball rates (damages reputation)</li>
+                  <li>• Forget to check their recent content first</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </main>

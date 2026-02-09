@@ -58,7 +58,14 @@ import {
   Headphones,
   PenTool,
   Share2,
-  Sparkles
+  Sparkles,
+  Beaker,
+  RefreshCw,
+  Zap,
+  Brain,
+  Filter,
+  Eye,
+  MapPin
 } from 'lucide-react';
 
 /**
@@ -157,6 +164,7 @@ const navigationData: NavCategory[] = [
     color: 'text-pink-400',
     items: [
       { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone },
+      { label: 'Social Media Tracker', href: '/social-media-tracker', icon: TrendingUp },
       { label: 'CMO Playbook', href: '/cmo-playbook', icon: BookOpen },
       { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
       { label: 'Content Calendar', href: '/content-calendar', icon: Calendar },
@@ -164,9 +172,12 @@ const navigationData: NavCategory[] = [
       { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar },
       { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Share2 },
       { label: 'Influencer List', href: '/influencer-list', icon: Users },
+      { label: 'Ambassador Program', href: '/ambassador-program', icon: Award },
+      { label: 'Offline Marketing', href: '/offline-marketing', icon: Map },
+      { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare },
+      { label: 'Email Templates', href: '/email-templates', icon: Mail },
       { label: 'Press Kit', href: '/press-kit', icon: FileText },
       { label: 'Media Hub', href: '/media-hub', icon: Tv },
-      { label: 'Email Templates', href: '/email-templates', icon: Mail },
       { label: 'Analytics', href: '/analytics-dashboard', icon: BarChart3 },
     ]
   },
@@ -184,6 +195,8 @@ const navigationData: NavCategory[] = [
       { label: 'GV Merchants', href: '/gv-merchants', icon: Store },
       { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Presentation },
       { label: 'Exhibition Merchants', href: '/exhibition-merchants', icon: Store },
+      { label: 'Event Execution', href: '/event-execution', icon: Calendar },
+      { label: '60-Event Master Plan', href: '/event-master-plan', icon: Rocket },
     ]
   },
   {
@@ -212,6 +225,26 @@ const navigationData: NavCategory[] = [
       { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
       { label: 'CHRO Analysis', href: '/chro-analysis', icon: Heart },
       { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
+    ]
+  },
+  {
+    title: 'Growth',
+    icon: Zap,
+    color: 'text-lime-400',
+    items: [
+      { label: 'Marketing War Room', href: '/marketing-war-room', icon: Brain },
+      { label: 'Customer Intelligence', href: '/customer-intelligence', icon: Eye },
+      { label: 'Revenue Optimization', href: '/revenue-optimization', icon: DollarSign },
+      { label: 'Competitive Intel', href: '/competitive-intel', icon: Target },
+      { label: 'PMF Scoreboard', href: '/pmf-scoreboard', icon: BarChart3 },
+      { label: 'Funnel Optimization', href: '/funnel-optimization', icon: Filter },
+      { label: 'Geographic Expansion', href: '/geographic-expansion', icon: MapPin },
+      { label: 'Growth Warfare', href: '/growth-warfare', icon: Target },
+      { label: 'Viral Growth', href: '/viral-growth', icon: Rocket },
+      { label: 'Unit Economics', href: '/unit-economics', icon: Calculator },
+      { label: 'Experiments', href: '/growth-experiments', icon: Beaker },
+      { label: 'Pricing Strategy', href: '/pricing-strategy', icon: DollarSign },
+      { label: 'Win-Back', href: '/win-back', icon: RefreshCw },
     ]
   },
   {

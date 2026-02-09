@@ -16,7 +16,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 
 // Exclusive Partner Brands (NOT owned by Nuqta) - 16 Categories
 const partnerBrands = [
-  { id: 'salon', name: 'Salon & Spa', icon: Scissors, coin: 100, color: 'pink', description: 'Premium beauty services', partnerType: 'Exclusive Partner', partnerName: 'Nilim', minOrder: 200, status: 'confirmed' },
+  { id: 'salon', name: 'Salon & Spa', icon: Scissors, coin: 100, color: 'pink', description: 'Premium beauty services (227 services)', partnerType: 'Exclusive Partner', partnerName: 'Nilim (YB Lounge)', minOrder: 200, status: 'confirmed' },
   { id: 'perfume', name: 'Perfume & Oud', icon: Droplets, coin: 100, color: 'purple', description: 'Luxury fragrances', partnerType: 'Exclusive Partner', partnerName: 'Al Mutlaib', minOrder: 200, status: 'confirmed' },
   { id: 'haircare', name: 'Haircare & Cosmetics', icon: Sparkles, coin: 100, color: 'rose', description: 'Beauty essentials', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
   { id: 'coffee', name: 'Coffee & Beverages', icon: Coffee, coin: 100, color: 'amber', description: 'Specialty drinks', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 150, status: 'pending' },
@@ -76,12 +76,47 @@ const confirmedPartners = [
   },
   {
     category: 'Salon & Spa',
-    partner: 'Nilim',
+    partner: 'Nilim (YB Lounge)',
     minOrder: 200,
-    maxOrder: null,
-    products: 'At-home salon & spa services',
-    skus: [],
-    totalSKUs: null
+    maxOrder: 2000,
+    products: 'Full-service salon & spa (Hair, Nails, Makeup, Massage, Moroccan Bath)',
+    skus: [
+      // Threading & Waxing
+      { name: 'Upper Lips Threading', qty: 1, price: 35 },
+      { name: 'Eyebrows Threading/Wax', qty: 1, price: 50 },
+      { name: 'Full Face Threading', qty: 1, price: 120 },
+      { name: 'Under Arm Waxing', qty: 1, price: 50 },
+      { name: 'Full Arms Waxing', qty: 1, price: 90 },
+      { name: 'Full Legs Waxing', qty: 1, price: 110 },
+      { name: 'Full Bikini Waxing', qty: 1, price: 150 },
+      // Hair Services
+      { name: 'Straight Blowdry', qty: 1, price: 130 },
+      { name: 'Blowdry with Curls/Wavy', qty: 1, price: 150 },
+      { name: 'Haircut + Blowdry', qty: 1, price: 350 },
+      { name: 'Hair Trimming + Wash', qty: 1, price: 180 },
+      { name: 'Full Hair Color (Ammonia Free)', qty: 1, price: 450 },
+      { name: 'Balayage Full Highlight', qty: 1, price: 900 },
+      { name: 'Brazilian Blowout', qty: 1, price: 1000 },
+      { name: 'K18 Repair Treatment', qty: 1, price: 250 },
+      // Nail Services
+      { name: 'Classic Polish Manicure', qty: 1, price: 120 },
+      { name: 'Classic Polish Pedicure', qty: 1, price: 150 },
+      { name: 'Russian Gel Manicure', qty: 1, price: 220 },
+      { name: 'Russian Gel Pedicure', qty: 1, price: 230 },
+      { name: 'Nail Extensions', qty: 1, price: 380 },
+      // Massage & Spa
+      { name: 'Full Body Relaxing Massage', qty: 1, price: 260 },
+      { name: 'Full Body Deep Tissue Massage', qty: 1, price: 280 },
+      { name: 'Back & Shoulders Massage', qty: 1, price: 180 },
+      { name: 'Moroccan Bath Traditional', qty: 1, price: 200 },
+      { name: 'Special Moroccan Bath', qty: 1, price: 280 },
+      { name: 'Moroccan Bath - Thalgo', qty: 1, price: 400 },
+      // Makeup
+      { name: 'Simple Makeup (with Lashes)', qty: 1, price: 450 },
+      { name: 'Party Event Makeup', qty: 1, price: 500 },
+      { name: 'Lip Blush', qty: 1, price: 2000 },
+    ],
+    totalSKUs: 227
   },
   {
     category: 'Jewellery',

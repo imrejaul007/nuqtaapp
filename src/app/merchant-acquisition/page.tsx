@@ -26,7 +26,18 @@ import {
   TrendingUp,
   Coffee,
   Utensils,
-  Building2
+  Building2,
+  Instagram,
+  Linkedin,
+  Globe,
+  Handshake,
+  Gift,
+  Layers,
+  Share2,
+  Mail,
+  Search,
+  Crown,
+  Sparkles
 } from 'lucide-react';
 
 export default function MerchantAcquisitionPage() {
@@ -49,6 +60,127 @@ export default function MerchantAcquisitionPage() {
     { time: '14:00-16:00', activity: 'Visit 3 restaurants (afternoon)', location: 'Target Area 2' },
     { time: '16:00-17:00', activity: 'Follow-up emails, update tracker', location: 'Office' },
     { time: '17:00-18:00', activity: 'Evening calls to decision makers', location: 'Office' },
+  ];
+
+  // Merchant Onboarding Channels
+  const onboardingChannels = [
+    {
+      id: 'direct-sales',
+      name: 'Direct Sales',
+      icon: Handshake,
+      color: 'green',
+      priority: 'P0',
+      description: 'In-person visits to premium brands',
+      tactics: [
+        'CEO/BDA street visits to target areas',
+        'Pre-research on Google Maps & Instagram',
+        'Warm intro via mutual connections',
+        'Mall management partnerships',
+        'Event booth connections'
+      ],
+      metrics: { conversion: '33%', timeline: 'Same day - 1 week', cost: 'AED 50/visit' },
+      bestFor: 'High-value exclusive partners (Al Mutlaib, W Line, YB Lounge)',
+      status: 'active'
+    },
+    {
+      id: 'partner-referrals',
+      name: 'Partner Referrals',
+      icon: Share2,
+      color: 'purple',
+      priority: 'P0',
+      description: 'Existing partners refer similar businesses',
+      tactics: [
+        'Ask Al Mutlaib to refer other oud/perfume brands',
+        'Ask W Line to refer other abaya designers',
+        'Ask YB Lounge to refer other salons',
+        'Incentive: 50 bonus coins per successful referral',
+        'Reduced commission for first 3 months for referrer'
+      ],
+      metrics: { conversion: '50%', timeline: '1-2 weeks', cost: 'AED 0 (coins only)' },
+      bestFor: 'Similar category expansion (perfume → perfume, salon → salon)',
+      status: 'planned'
+    },
+    {
+      id: 'cold-outreach',
+      name: 'Cold Outreach',
+      icon: Mail,
+      color: 'blue',
+      priority: 'P1',
+      description: 'Instagram DM, LinkedIn, Google Maps scraping',
+      tactics: [
+        'Instagram DM to local boutique brands (high response rate)',
+        'LinkedIn outreach for B2B services (laundry, car wash)',
+        'Google Maps list building by area + category',
+        'WhatsApp Business API for follow-ups',
+        'Email campaigns to restaurant associations'
+      ],
+      metrics: { conversion: '5-10%', timeline: '2-4 weeks', cost: 'AED 10/lead' },
+      bestFor: 'Volume acquisition, SMB merchants, service businesses',
+      status: 'planned'
+    },
+    {
+      id: 'events-exhibitions',
+      name: 'Industry Events',
+      icon: Calendar,
+      color: 'orange',
+      priority: 'P1',
+      description: 'Trade shows, expos, and industry gatherings',
+      tactics: [
+        'Dubai Restaurant Week (March) - 200+ restaurants',
+        'Beautyworld Middle East (April) - salons & spas',
+        'Global Village pop-up booth (Oct-Apr)',
+        'Chamber of Commerce networking events',
+        'Mall activation partnerships (City Centre, MOE)'
+      ],
+      metrics: { conversion: '20%', timeline: 'Event + 2 weeks follow-up', cost: 'AED 2,000-10,000/event' },
+      bestFor: 'Bulk lead generation, brand awareness, category blitz',
+      status: 'planned'
+    },
+    {
+      id: 'aggregator-partnerships',
+      name: 'Aggregator Partnerships',
+      icon: Layers,
+      color: 'cyan',
+      priority: 'P2',
+      description: 'Partner with platforms that have many merchants',
+      tactics: [
+        'Fresha (salon booking) - 500+ UAE salons',
+        'ServiceMarket (home services) - 200+ providers',
+        'Justlife (cleaning, beauty) - 150+ vendors',
+        'Talabat/Deliveroo merchant network outreach',
+        'POS provider partnerships (Foodics, Lightspeed)'
+      ],
+      metrics: { conversion: '30%', timeline: '1-3 months', cost: 'Rev share or integration fee' },
+      bestFor: 'Scale quickly, one integration = many merchants',
+      status: 'future'
+    },
+    {
+      id: 'marketplace-conversion',
+      name: 'Marketplace → Nuqta+',
+      icon: Crown,
+      color: 'gold',
+      priority: 'P2',
+      description: 'Convert free Nuqta merchants to exclusive Nuqta+',
+      tactics: [
+        'Show merchant their Nuqta transaction data',
+        '"Your competitors are already on Nuqta+" FOMO',
+        'Exclusive Nuqta+ badge and priority placement',
+        'Corporate gifting access (B2B orders)',
+        'Reduced commission for annual commitment'
+      ],
+      metrics: { conversion: '40%', timeline: 'After 30 days on platform', cost: 'AED 0' },
+      bestFor: 'Upselling existing merchants, building exclusivity',
+      status: 'future'
+    }
+  ];
+
+  // Priority Categories to Onboard
+  const priorityCategories = [
+    { category: 'Flowers', reason: 'Essential for gifting bundles', status: 'needed', urgency: 'high' },
+    { category: 'Chocolates/Dates', reason: 'Completes gift packages', status: 'needed', urgency: 'high' },
+    { category: 'More Salons', reason: 'High frequency, recurring', status: 'in-progress', urgency: 'medium' },
+    { category: 'Coffee Shops', reason: 'Daily usage, sticky users', status: 'needed', urgency: 'medium' },
+    { category: "Men's Grooming", reason: 'Untapped market in UAE', status: 'needed', urgency: 'medium' },
   ];
 
   // Pitch Script
@@ -142,6 +274,127 @@ export default function MerchantAcquisitionPage() {
             <div className="bg-white/5 rounded-lg p-4">
               <div className="text-blue-400 font-bold mb-1">Good Margins</div>
               <div className="text-gray-400 text-sm">60-70% margins can absorb 15% commission.</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Merchant Onboarding Channels */}
+        <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl p-6 border border-purple-500/30 mb-8">
+          <div className="flex items-center gap-3 mb-6">
+            <Layers className="text-purple-400" size={32} />
+            <div>
+              <h2 className="text-2xl font-bold text-white">Merchant Onboarding Channels</h2>
+              <p className="text-gray-400 text-sm">6 channels to acquire merchants at scale</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {onboardingChannels.map((channel) => (
+              <div
+                key={channel.id}
+                className={`bg-white/5 rounded-xl p-5 border transition-all hover:bg-white/10 ${
+                  channel.status === 'active' ? 'border-green-500/50' :
+                  channel.status === 'planned' ? 'border-yellow-500/30' :
+                  'border-white/10'
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                    channel.color === 'green' ? 'bg-green-500/20 text-green-400' :
+                    channel.color === 'purple' ? 'bg-purple-500/20 text-purple-400' :
+                    channel.color === 'blue' ? 'bg-blue-500/20 text-blue-400' :
+                    channel.color === 'orange' ? 'bg-orange-500/20 text-orange-400' :
+                    channel.color === 'cyan' ? 'bg-cyan-500/20 text-cyan-400' :
+                    'bg-[#c9a227]/20 text-[#c9a227]'
+                  }`}>
+                    <channel.icon size={20} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-bold">{channel.name}</span>
+                      <span className={`text-xs px-2 py-0.5 rounded ${
+                        channel.priority === 'P0' ? 'bg-red-500/20 text-red-400' :
+                        channel.priority === 'P1' ? 'bg-yellow-500/20 text-yellow-400' :
+                        'bg-gray-500/20 text-gray-400'
+                      }`}>{channel.priority}</span>
+                    </div>
+                    <span className={`text-xs ${
+                      channel.status === 'active' ? 'text-green-400' :
+                      channel.status === 'planned' ? 'text-yellow-400' :
+                      'text-gray-500'
+                    }`}>
+                      {channel.status === 'active' ? '● Active' : channel.status === 'planned' ? '○ Planned' : '◌ Future'}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-gray-400 text-sm mb-3">{channel.description}</p>
+
+                <div className="space-y-1 mb-3">
+                  {channel.tactics.slice(0, 3).map((tactic, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-gray-300">
+                      <CheckCircle2 className="text-green-400 flex-shrink-0 mt-0.5" size={12} />
+                      <span>{tactic}</span>
+                    </div>
+                  ))}
+                  {channel.tactics.length > 3 && (
+                    <div className="text-xs text-gray-500">+{channel.tactics.length - 3} more tactics</div>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-3 gap-2 text-center bg-white/5 rounded-lg p-2">
+                  <div>
+                    <div className="text-green-400 font-bold text-sm">{channel.metrics.conversion}</div>
+                    <div className="text-gray-500 text-xs">Conv.</div>
+                  </div>
+                  <div>
+                    <div className="text-blue-400 font-bold text-sm">{channel.metrics.timeline.split(' ')[0]}</div>
+                    <div className="text-gray-500 text-xs">Timeline</div>
+                  </div>
+                  <div>
+                    <div className="text-[#c9a227] font-bold text-sm">{channel.metrics.cost.split('/')[0].replace('AED ', '')}</div>
+                    <div className="text-gray-500 text-xs">Cost</div>
+                  </div>
+                </div>
+
+                <div className="mt-3 text-xs text-gray-500">
+                  <span className="text-gray-400">Best for:</span> {channel.bestFor}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Priority Categories to Onboard */}
+        <div className="bg-white/5 rounded-xl p-6 border border-white/10 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <Target className="text-red-400" size={24} />
+            <h3 className="text-xl font-bold text-white">Priority Categories to Onboard (for Nuqta+ Gifting)</h3>
+          </div>
+          <div className="grid md:grid-cols-5 gap-3">
+            {priorityCategories.map((cat, idx) => (
+              <div key={idx} className={`p-4 rounded-lg border ${
+                cat.urgency === 'high' ? 'bg-red-500/10 border-red-500/30' :
+                'bg-white/5 border-white/10'
+              }`}>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-white font-bold">{cat.category}</span>
+                  <span className={`text-xs px-2 py-0.5 rounded ${
+                    cat.status === 'needed' ? 'bg-red-500/20 text-red-400' :
+                    cat.status === 'in-progress' ? 'bg-yellow-500/20 text-yellow-400' :
+                    'bg-green-500/20 text-green-400'
+                  }`}>
+                    {cat.status}
+                  </span>
+                </div>
+                <div className="text-gray-400 text-xs">{cat.reason}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 bg-[#c9a227]/10 rounded-lg p-3 border border-[#c9a227]/30">
+            <div className="text-[#c9a227] text-sm">
+              <strong>Why these categories?</strong> Flowers + Chocolates + Dates are essential for corporate gifting bundles.
+              Users spend 200+ AED per order, you give 100 coins, and keep healthy margins.
             </div>
           </div>
         </div>
