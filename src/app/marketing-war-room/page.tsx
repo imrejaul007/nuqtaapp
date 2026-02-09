@@ -2079,7 +2079,7 @@ const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampa
                 Reward Structure
               </h4>
               <div className="grid md:grid-cols-2 gap-3">
-                {Object.entries(campaign.mechanics.rewards || campaign.mechanics.offer || {}).map(([key, value]) => (
+                {Object.entries(campaign.mechanics.rewards || (campaign.mechanics as Record<string, unknown>).offer || {}).map(([key, value]) => (
                   <div key={key} className="bg-amber-50 rounded-lg p-3">
                     <div className="text-xs font-bold text-amber-700 uppercase mb-1">{key.replace(/([A-Z])/g, ' $1')}</div>
                     <div className="text-sm text-gray-800">{value}</div>
@@ -2090,6 +2090,7 @@ const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampa
           )}
 
           {/* Creative Assets */}
+          {'headline' in campaign.creativeAssets && (
           <div>
             <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
               <Image size={18} className="text-pink-600" />
@@ -2109,6 +2110,7 @@ const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampa
               </div>
             </div>
           </div>
+          )}
 
           {/* Channels */}
           <div>
@@ -2155,6 +2157,7 @@ const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampa
           </div>
 
           {/* Fraud Prevention */}
+          {'fraudPrevention' in campaign && (
           <div>
             <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
               <Shield size={18} className="text-red-600" />
@@ -2169,26 +2172,27 @@ const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampa
               ))}
             </div>
           </div>
+          )}
 
           {/* Sales Script (for merchant campaigns) */}
-          {'salesScript' in campaign && (
+          {'salesScript' in campaign && campaign.salesScript && (
             <div>
               <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
                 <MessageSquare size={18} className="text-cyan-600" />
                 Sales Script
               </h4>
               <div className="space-y-3">
-                {Object.entries(campaign.salesScript).filter(([key]) => key !== 'objectionHandlers').map(([key, value]) => (
+                {Object.entries(campaign.salesScript as Record<string, unknown>).filter(([key]) => key !== 'objectionHandlers').map(([key, value]) => (
                   <div key={key} className="bg-cyan-50 rounded-lg p-3">
                     <div className="text-xs font-bold text-cyan-700 uppercase mb-1">{key}</div>
-                    <div className="text-sm text-gray-800 italic">"{value}"</div>
+                    <div className="text-sm text-gray-800 italic">"{String(value)}"</div>
                   </div>
                 ))}
-                {'objectionHandlers' in campaign.salesScript && (
+                {'objectionHandlers' in (campaign.salesScript as Record<string, unknown>) && (
                   <div className="bg-amber-50 rounded-lg p-3">
                     <div className="text-xs font-bold text-amber-700 uppercase mb-2">Objection Handlers</div>
                     <div className="space-y-2">
-                      {Object.entries(campaign.salesScript.objectionHandlers).map(([objection, response]) => (
+                      {Object.entries((campaign.salesScript as { objectionHandlers: Record<string, string> }).objectionHandlers || {}).map(([objection, response]) => (
                         <div key={objection} className="text-sm">
                           <span className="font-bold text-red-600">"{objection}"</span>
                           <span className="text-gray-400 mx-2">→</span>
