@@ -60,7 +60,12 @@ import {
   TrendingDown,
   Bot,
   CreditCard,
-  Sparkles
+  Sparkles,
+  Brain,
+  Eye,
+  Filter,
+  Beaker,
+  RefreshCw
 } from 'lucide-react';
 
 interface QuickAction {
@@ -239,6 +244,28 @@ const sections: Section[] = [
     ]
   },
   {
+    title: 'Growth & Intelligence',
+    icon: Brain,
+    color: 'text-lime-400',
+    bgColor: 'from-lime-500/10 to-lime-600/5',
+    borderColor: 'border-lime-500/30',
+    links: [
+      { label: 'Marketing War Room', href: '/marketing-war-room', icon: Brain },
+      { label: 'Customer Intelligence', href: '/customer-intelligence', icon: Eye },
+      { label: 'Revenue Optimization', href: '/revenue-optimization', icon: DollarSign },
+      { label: 'Competitive Intel', href: '/competitive-intel', icon: Target },
+      { label: 'PMF Scoreboard', href: '/pmf-scoreboard', icon: BarChart3 },
+      { label: 'Funnel Optimization', href: '/funnel-optimization', icon: Filter },
+      { label: 'Geographic Expansion', href: '/geographic-expansion', icon: Map },
+      { label: 'Growth Warfare', href: '/growth-warfare', icon: Target },
+      { label: 'Viral Growth', href: '/viral-growth', icon: Rocket },
+      { label: 'Unit Economics', href: '/unit-economics', icon: Calculator },
+      { label: 'Experiments', href: '/growth-experiments', icon: Beaker },
+      { label: 'Pricing Strategy', href: '/pricing-strategy', icon: DollarSign },
+      { label: 'Win-Back', href: '/win-back', icon: RefreshCw },
+    ]
+  },
+  {
     title: 'Products & Revenue',
     icon: Sparkles,
     color: 'text-emerald-400',
@@ -370,16 +397,16 @@ export default function DashboardPage() {
         {/* Stats */}
         <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3 sm:p-5 text-center">
-            <div className="text-2xl sm:text-3xl font-black text-white">140+</div>
+            <div className="text-2xl sm:text-3xl font-black text-white">170+</div>
             <div className="text-blue-400 text-xs sm:text-sm">Total Pages</div>
           </div>
           <div className="bg-green-500/10 border border-green-500/30 rounded-xl p-3 sm:p-5 text-center">
-            <div className="text-2xl sm:text-3xl font-black text-white">9</div>
+            <div className="text-2xl sm:text-3xl font-black text-white">11</div>
             <div className="text-green-400 text-xs sm:text-sm">Main Categories</div>
           </div>
-          <div className="bg-purple-500/10 border border-purple-500/30 rounded-xl p-3 sm:p-5 text-center">
-            <div className="text-2xl sm:text-3xl font-black text-white">21</div>
-            <div className="text-purple-400 text-xs sm:text-sm">Partnership Types</div>
+          <div className="bg-lime-500/10 border border-lime-500/30 rounded-xl p-3 sm:p-5 text-center">
+            <div className="text-2xl sm:text-3xl font-black text-white">13</div>
+            <div className="text-lime-400 text-xs sm:text-sm">Growth Tools</div>
           </div>
           <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-3 sm:p-5 text-center">
             <div className="text-2xl sm:text-3xl font-black text-white">9</div>
