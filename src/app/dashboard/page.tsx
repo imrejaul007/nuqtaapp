@@ -355,6 +355,7 @@ const cxoDepartments: CXODepartment[] = [
         name: 'Campaigns',
         icon: Sparkles,
         links: [
+          { label: 'Sales Calendar', href: '/sales-calendar', icon: Calendar },
           { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
           { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Megaphone },
           { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar },
