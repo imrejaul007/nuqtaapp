@@ -29,7 +29,7 @@ const keyStats = [
 // Value Propositions
 const shopperBenefits = [
   { icon: Timer, title: 'Pay in Installments', description: 'Split purchases into 3-12 easy monthly payments.' },
-  { icon: Gift, title: 'Nuqta+ 0% Interest', description: 'Nuqta+ members get 0% interest for 3 months.' },
+  { icon: Gift, title: 'Nuqta+ 0% Fees', description: 'Nuqta+ members pay zero platform fees for 3 months.' },
   { icon: Coins, title: 'Earn Nuqta Coins', description: 'Get rewarded on every BNPL purchase you make.' },
   { icon: Shield, title: 'No Hidden Fees', description: 'Transparent pricing. No surprises at checkout.' },
   { icon: Smartphone, title: 'Instant Approval', description: 'Quick credit check. Know in seconds.' },
@@ -54,7 +54,7 @@ const nuqtaAdvantage = [
 const pricingTiers = [
   {
     tier: 'Standard',
-    interestRate: '2.5%/month',
+    platformFee: '2.5%/month',
     installments: '3-6 months',
     coinBack: '50 AED',
     effectiveCost: '7.5-15%',
@@ -65,7 +65,7 @@ const pricingTiers = [
   },
   {
     tier: 'Nuqta+ Member',
-    interestRate: '0%',
+    platformFee: '0%',
     installments: '3 months',
     coinBack: '100 AED',
     effectiveCost: '0%',
@@ -76,7 +76,7 @@ const pricingTiers = [
   },
   {
     tier: 'Premium',
-    interestRate: '1.5%/month',
+    platformFee: '1.5%/month',
     installments: '3-12 months',
     coinBack: '150 AED',
     effectiveCost: '4.5-18%',
@@ -91,7 +91,7 @@ const pricingTiers = [
 const unitEconomics = {
   avgTransaction: 1500,
   merchantFee: 75, // 5%
-  interestIncome: 45, // avg 3% on non-Nuqta+
+  platformFeeIncome: 45, // avg 3% platform fee on non-Nuqta+
   lateFees: 15, // Expected avg per user
   defaultCost: 30, // 2% default rate
   operatingCost: 15,
@@ -204,7 +204,7 @@ const risks = [
       'Nuqta ecosystem advantage',
       'Coin rewards differentiation',
       'Corporate partnership network',
-      'Nuqta+ 0% interest exclusive',
+      'Nuqta+ 0% platform fee exclusive',
     ],
   },
   {
@@ -253,11 +253,11 @@ const gtmChannels = [
 
 // Competitive Comparison
 const competitors = [
-  { name: 'Qist', installments: '3-12 months', rewards: '100 AED/mo Nuqta+', merchants: 'Nuqta Partners', interestFree: '3 months (Nuqta+)', ecosystem: 'Full Nuqta', advantage: 'Rewards + Ecosystem' },
-  { name: 'Tabby', installments: '4 payments', rewards: 'None', merchants: '10,000+', interestFree: '4 weeks', ecosystem: 'Standalone', advantage: 'Market leader' },
-  { name: 'Tamara', installments: '3-6 payments', rewards: 'Limited', merchants: '8,000+', interestFree: '30 days', ecosystem: 'Limited', advantage: 'Saudi expansion' },
-  { name: 'Postpay', installments: '3 payments', rewards: 'None', merchants: '5,000+', interestFree: '14 days', ecosystem: 'None', advantage: 'Quick checkout' },
-  { name: 'Spotii', installments: '4 payments', rewards: 'None', merchants: '3,000+', interestFree: '14 days', ecosystem: 'None', advantage: 'Fashion focus' },
+  { name: 'Qist', installments: '3-12 months', rewards: '100 AED/mo Nuqta+', merchants: 'Nuqta Partners', zeroFee: '3 months (Nuqta+)', ecosystem: 'Full Nuqta', advantage: 'Rewards + Ecosystem' },
+  { name: 'Tabby', installments: '4 payments', rewards: 'None', merchants: '10,000+', zeroFee: '4 weeks', ecosystem: 'Standalone', advantage: 'Market leader' },
+  { name: 'Tamara', installments: '3-6 payments', rewards: 'Limited', merchants: '8,000+', zeroFee: '30 days', ecosystem: 'Limited', advantage: 'Saudi expansion' },
+  { name: 'Postpay', installments: '3 payments', rewards: 'None', merchants: '5,000+', zeroFee: '14 days', ecosystem: 'None', advantage: 'Quick checkout' },
+  { name: 'Spotii', installments: '4 payments', rewards: 'None', merchants: '3,000+', zeroFee: '14 days', ecosystem: 'None', advantage: 'Fashion focus' },
 ];
 
 // Corporate Structure
@@ -284,7 +284,7 @@ const productFeatures = [
 // Revenue Model
 const revenueStreams = [
   { source: 'Merchant Fee', description: 'Fee charged to merchants per transaction', value: '3-6%', volume: 'Primary', margin: 'High' },
-  { source: 'Interest Income', description: 'Interest on installments (non-Nuqta+ users)', value: '2.5%/month', volume: 'Secondary', margin: 'High' },
+  { source: 'Platform Fee', description: 'Transaction fee on installments (non-Nuqta+ users)', value: '2.5%/month', volume: 'Secondary', margin: 'High' },
   { source: 'Late Fees', description: 'Penalty for missed payments', value: '25 AED + 1.5%', volume: 'Variable', margin: 'Very High' },
   { source: 'Nuqta+ Upsell', description: 'Premium membership conversion', value: '99 AED/month', volume: 'Growing', margin: 'Very High' },
   { source: 'Qist Card Fee', description: 'Annual card fee for physical card', value: '99 AED/year', volume: 'Future', margin: 'High' },
@@ -326,7 +326,7 @@ const ecosystemProducts = [
     description: 'BNPL payment infrastructure',
     ticketSize: '500-5,000 AED',
     useCase: 'Retail purchases & electronics',
-    keyFeatures: ['0% interest for Nuqta+', '3-12 month plans', 'Instant approval', 'Coin rewards'],
+    keyFeatures: ['0% fees for Nuqta+', '3-12 month plans', 'Instant approval', 'Coin rewards'],
   },
   {
     name: 'Sakin',
@@ -351,7 +351,7 @@ const ecosystemUseCases = [
     journey: [
       { product: 'Nuqta', action: 'Gets corporate Nuqta+ membership through employer', coins: '+500' },
       { product: 'Sakin', action: 'Finances 68K move-in cost over 12 months', coins: '+1,000' },
-      { product: 'Qist', action: 'Buys furniture via BNPL at 0% interest', coins: '+200' },
+      { product: 'Qist', action: 'Buys furniture via BNPL at 0% fees', coins: '+200' },
       { product: 'Nuqta', action: 'Earns coins on daily purchases at cafes/gyms', coins: '+100/mo' },
     ],
     totalValue: '15,000 AED',
@@ -390,7 +390,7 @@ const unifiedCreditBenefits = [
   { icon: Coins, title: 'Unified Coin Economy', description: 'Earn and redeem Nuqta coins across all three products' },
   { icon: Shield, title: 'Shared Risk Scoring', description: 'Better underwriting with cross-product payment behavior data' },
   { icon: Repeat, title: 'Flywheel Effect', description: 'Each product drives users to the others, reducing CAC' },
-  { icon: Crown, title: 'Nuqta+ Gateway', description: '0% interest on both Qist & Sakin drives Nuqta+ subscriptions' },
+  { icon: Crown, title: 'Nuqta+ Gateway', description: '0% fees on both Qist & Sakin drives Nuqta+ subscriptions' },
 ];
 
 // Ecosystem financial power
@@ -451,7 +451,7 @@ export default function QistPage() {
 
               <p className="text-slate-300 text-sm sm:text-base max-w-2xl mb-4">
                 UAE&apos;s first <span className="text-violet-400 font-medium">Buy Now Pay Later</span> integrated with <span className="text-[#c9a227] font-medium">Nuqta rewards</span>.
-                Split purchases into easy installments. Nuqta+ members get 0% interest for 3 months.
+                Split purchases into easy installments. Nuqta+ members pay 0% platform fees for 3 months.
               </p>
 
               {/* Partner Badge */}
@@ -482,7 +482,7 @@ export default function QistPage() {
                   <span className="text-lg font-bold text-white">The Core Promise</span>
                 </div>
                 <p className="text-xl sm:text-2xl font-bold text-white">
-                  <span className="text-violet-400">Split any purchase</span> and get <span className="text-[#c9a227]">0% interest</span> with Nuqta+
+                  <span className="text-violet-400">Split any purchase</span> with <span className="text-[#c9a227]">0% fees</span> for Nuqta+ members
                 </p>
               </div>
               <div className="flex gap-3">
@@ -492,7 +492,7 @@ export default function QistPage() {
                 </div>
                 <div className="bg-slate-900/50 rounded-lg p-3 text-center">
                   <div className="text-2xl font-bold text-[#c9a227]">0%</div>
-                  <div className="text-xs text-slate-400">Interest*</div>
+                  <div className="text-xs text-slate-400">Fees*</div>
                 </div>
               </div>
             </div>
@@ -539,7 +539,7 @@ export default function QistPage() {
                   <strong className="text-white">Qist</strong> (قسط - &quot;installment&quot; in Arabic) is a Buy Now Pay Later service that allows
                   consumers to split purchases into 3-12 monthly payments. As a <strong className="text-[#c9a227]">Nuqta Group sister company</strong>,
                   Qist leverages existing corporate partnerships to instantly access merchant networks. <strong className="text-violet-400">Nuqta+ members</strong> get
-                  0% interest for 3 months, creating a powerful conversion funnel into the premium loyalty ecosystem.
+                  0% platform fees for 3 months, creating a powerful conversion funnel into the premium loyalty ecosystem.
                 </p>
               </div>
 
@@ -773,7 +773,7 @@ export default function QistPage() {
                     </li>
                     <li className="flex items-start gap-2 text-slate-300">
                       <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
-                      3-month 0% interest for Nuqta+ members
+                      3-month 0% fees for Nuqta+ members
                     </li>
                     <li className="flex items-start gap-2 text-slate-300">
                       <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
@@ -1026,7 +1026,7 @@ export default function QistPage() {
                     {[
                       'Single user serves 3 revenue streams',
                       'Cross-product data = better underwriting',
-                      'Nuqta+ drives 0% interest across all products',
+                      'Nuqta+ drives 0% fees across all products',
                       'CAC amortized across entire ecosystem',
                     ].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
@@ -1095,7 +1095,7 @@ export default function QistPage() {
                     Qist BNPL
                   </h3>
                   <ul className="space-y-2">
-                    {['Instant approval in seconds', '0% interest for Nuqta+ members', 'No credit card required', 'Earn rewards on purchases', 'Build credit history', 'No annual fees'].map((item, i) => (
+                    {['Instant approval in seconds', '0% platform fees for Nuqta+ members', 'No credit card required', 'Earn rewards on purchases', 'Build credit history', 'No annual fees'].map((item, i) => (
                       <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
                         <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                         {item}
@@ -1135,7 +1135,7 @@ export default function QistPage() {
                     </div>
                   )}
                   <h3 className="text-xl font-bold text-white mb-2">{tier.tier}</h3>
-                  <div className="text-3xl font-black text-white mb-1">{tier.interestRate}</div>
+                  <div className="text-3xl font-black text-white mb-1">{tier.platformFee}</div>
                   <div className="text-sm text-slate-400 mb-4">{tier.installments}</div>
 
                   <div className="space-y-3 mb-6">
@@ -1217,8 +1217,8 @@ export default function QistPage() {
                   <div className="text-xs text-slate-400">Merchant Fee (5%)</div>
                 </div>
                 <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
-                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.interestIncome} AED</div>
-                  <div className="text-xs text-slate-400">Avg Interest Income</div>
+                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.platformFeeIncome} AED</div>
+                  <div className="text-xs text-slate-400">Avg Platform Fee</div>
                 </div>
                 <div className="bg-orange-500/10 rounded-xl p-4 text-center border border-orange-500/30">
                   <div className="text-2xl font-bold text-orange-400">{unitEconomics.lateFees} AED</div>
@@ -1242,8 +1242,8 @@ export default function QistPage() {
                     <span className="text-green-400 font-bold">+{unitEconomics.merchantFee} AED</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
-                    <span className="text-green-400">+ Interest Income (avg)</span>
-                    <span className="text-green-400 font-bold">+{unitEconomics.interestIncome} AED</span>
+                    <span className="text-green-400">+ Platform Fee Income (avg)</span>
+                    <span className="text-green-400 font-bold">+{unitEconomics.platformFeeIncome} AED</span>
                   </div>
                   <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
                     <span className="text-green-400">+ Late Fees (expected)</span>
@@ -1272,7 +1272,7 @@ export default function QistPage() {
                 Nuqta+ Conversion Bonus
               </h3>
               <p className="text-slate-300 mb-4">
-                Every Qist user who converts to Nuqta+ (for 0% interest) generates additional revenue:
+                Every Qist user who converts to Nuqta+ (for 0% fees) generates additional revenue:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
@@ -1547,7 +1547,7 @@ export default function QistPage() {
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Provider</th>
                       <th className="text-center py-3 px-4 text-slate-400 font-medium">Installments</th>
-                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Interest-Free</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Zero Fee Period</th>
                       <th className="text-center py-3 px-4 text-slate-400 font-medium">Rewards</th>
                       <th className="text-center py-3 px-4 text-slate-400 font-medium">Merchants</th>
                       <th className="text-center py-3 px-4 text-slate-400 font-medium">Ecosystem</th>
@@ -1559,10 +1559,10 @@ export default function QistPage() {
                         <td className={`py-3 px-4 font-bold ${comp.name === 'Qist' ? 'text-violet-400' : 'text-white'}`}>{comp.name}</td>
                         <td className="py-3 px-4 text-center text-slate-300">{comp.installments}</td>
                         <td className="py-3 px-4 text-center">
-                          {comp.interestFree.includes('3 months') ? (
-                            <span className="text-green-400 font-bold">{comp.interestFree}</span>
+                          {comp.zeroFee.includes('3 months') ? (
+                            <span className="text-green-400 font-bold">{comp.zeroFee}</span>
                           ) : (
-                            <span className="text-slate-400">{comp.interestFree}</span>
+                            <span className="text-slate-400">{comp.zeroFee}</span>
                           )}
                         </td>
                         <td className="py-3 px-4 text-center">
@@ -1608,7 +1608,7 @@ export default function QistPage() {
                 <div>
                   <h4 className="text-white font-bold mb-3">Qist Unique Value</h4>
                   <div className="space-y-2">
-                    {['100 AED/month Nuqta+ rewards', 'Full ecosystem (Sakin, Nuqta+, Coins)', 'Instant 100+ corporate merchants', '0% interest drives Nuqta+ conversion'].map((item, i) => (
+                    {['100 AED/month Nuqta+ rewards', 'Full ecosystem (Sakin, Nuqta+, Coins)', 'Instant 100+ corporate merchants', '0% fees drives Nuqta+ conversion'].map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
                         <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                         {item}

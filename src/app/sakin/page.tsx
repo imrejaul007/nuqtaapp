@@ -122,7 +122,7 @@ const bankBenefits = [
   { icon: TrendingUp, title: 'Large Volume', description: 'Access to billions in rent financing annually.' },
   { icon: UserCheck, title: 'Low-Risk Customers', description: 'Salaried professionals with verified income.' },
   { icon: RefreshCw, title: 'Automated Repayments', description: 'Salary-linked auto-debit ensures timely payments.' },
-  { icon: PiggyBank, title: 'Predictable Returns', description: 'Fixed interest income on consumer loans.' },
+  { icon: PiggyBank, title: 'Predictable Returns', description: 'Fixed fee income on consumer financing.' },
 ];
 
 // Pricing Tiers
@@ -265,7 +265,7 @@ const risks = [
     ],
   },
   {
-    risk: 'High Bank Interest Rates',
+    risk: 'High Bank Financing Costs',
     severity: 'medium',
     mitigation: [
       'Volume-based rate negotiation',
@@ -440,7 +440,7 @@ const qistBNPLModel = {
   nuqtaIntegration: [
     'Use Nuqta coins as down payment',
     'Earn coins on every BNPL purchase',
-    'Nuqta+ members get 0% interest for 3 months',
+    'Nuqta+ members get 0% platform fees for 3 months',
     'Cross-sell to existing Nuqta users',
   ],
   competitorAnalysis: [
@@ -1384,7 +1384,7 @@ export default function SakinPage() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-slate-400">Nuqta+ Benefit</span>
-                    <span className="text-[#c9a227] font-bold">0% interest for 3 months</span>
+                    <span className="text-[#c9a227] font-bold">0% fees for 3 months</span>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-violet-500/30">
@@ -1815,7 +1815,7 @@ export default function SakinPage() {
                   <h3 className="text-lg font-bold text-red-400 mb-4">Costs</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
-                      <span className="text-slate-300">Bank Interest (6%)</span>
+                      <span className="text-slate-300">Bank Financing Cost (6%)</span>
                       <span className="text-red-400 font-bold">-{unitEconomics.bankCost.toLocaleString()} AED</span>
                     </div>
                     <div className="flex justify-between py-2 border-b border-slate-700/50">

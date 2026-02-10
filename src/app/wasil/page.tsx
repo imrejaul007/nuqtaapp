@@ -232,7 +232,7 @@ const ecosystemIntegration = [
   {
     product: 'Qist',
     integration: 'BNPL for orders above 200 AED',
-    benefit: '0% interest for Nuqta+ members',
+    benefit: '0% fees for Nuqta+ members',
     icon: ShoppingBag,
     color: 'text-violet-400',
   },
@@ -274,7 +274,7 @@ const wasilPlusSubscription = {
   ],
   nuqtaPlusBundle: {
     price: 99,
-    includes: ['Nuqta+ membership', 'Wasil+ included', 'Qist 0% interest', 'Sakin priority'],
+    includes: ['Nuqta+ membership', 'Wasil+ included', 'Qist 0% fees', 'Sakin priority'],
   },
 };
 
