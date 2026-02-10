@@ -41,7 +41,8 @@ import {
   TrendingDown,
   Receipt,
   Settings,
-  Sparkles
+  Sparkles,
+  Store
 } from 'lucide-react';
 
 /**
@@ -183,24 +184,34 @@ const CafePlaybook = () => {
               </div>
 
               <div className="bg-orange-500/10 rounded-xl p-4 border border-orange-500/20">
-                <h4 className="text-orange-400 font-semibold mb-2">Key Pain Points</h4>
+                <h4 className="text-orange-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• 68% of customers never return after first visit</li>
-                  <li>• Instagram/Google Ads cost AED 50-200 per new customer</li>
-                  <li>• No customer data from cash/card payments</li>
-                  <li>• Delivery apps charge 30%+ and own the customer</li>
-                  <li>• Paper loyalty cards have 90% abandonment rate</li>
+                  <li>• <strong className="text-orange-300">68% of customers never return</strong> after first visit - they try the new cafe down the street</li>
+                  <li>• <strong className="text-orange-300">Instagram/TikTok influencers</strong> cost AED 500-5,000 per post with no guaranteed ROI</li>
+                  <li>• <strong className="text-orange-300">Talabat/Deliveroo take 30-35%</strong> commission AND own your customer data</li>
+                  <li>• <strong className="text-orange-300">High rent in malls</strong> (AED 350-500/sqft in Dubai malls) means every empty seat hurts</li>
+                  <li>• <strong className="text-orange-300">Expat population turnover</strong> - customers leave UAE every 2-3 years, need constant acquisition</li>
+                  <li>• <strong className="text-orange-300">Summer exodus</strong> - 30-40% revenue drop June-August as residents travel</li>
+                  <li>• <strong className="text-orange-300">Ramadan timing</strong> - operational challenges during holy month, unpredictable iftar traffic</li>
+                  <li>• <strong className="text-orange-300">Competition from hotel F&B</strong> - hotels offer Friday brunches with entertainment</li>
+                  <li>• <strong className="text-orange-300">Staff turnover</strong> - average 6-month tenure means losing customer relationships</li>
+                  <li>• <strong className="text-orange-300">No customer data</strong> from cash/card payments - can&apos;t retarget or personalize</li>
                 </ul>
               </div>
 
               <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
-                <h4 className="text-emerald-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Turn 1-time visitors into 2.5x repeat customers</li>
-                  <li>• Pay only on actual sales (15-20% vs AED 50+ per customer)</li>
-                  <li>• Own customer data - see who visits, when, how much</li>
-                  <li>• Free marketing OS worth AED 2,000+/month</li>
-                  <li>• No POS integration needed - works alongside existing setup</li>
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-orange-300">68% never return?</strong> → <strong className="text-emerald-300">Coins create pull-back effect</strong> - customers come back to earn/redeem, turning 1-time visitors into 2.5x repeat customers</li>
+                  <li>• <strong className="text-orange-300">Influencers cost AED 5K?</strong> → <strong className="text-emerald-300">Pay only 15-20% on actual sales</strong> - zero upfront cost, pay only when customer spends</li>
+                  <li>• <strong className="text-orange-300">Talabat takes 30-35%?</strong> → <strong className="text-emerald-300">Build direct dine-in loyalty at 15-20%</strong> - half the commission AND you own the customer data</li>
+                  <li>• <strong className="text-orange-300">High mall rent?</strong> → <strong className="text-emerald-300">Fill empty seats with 500K+ Nuqta users</strong> discovering cafes daily - targeted push notifications to nearby users</li>
+                  <li>• <strong className="text-orange-300">Expat turnover?</strong> → <strong className="text-emerald-300">Continuous new customer acquisition</strong> - constant flow from Nuqta user base replaces leaving expats</li>
+                  <li>• <strong className="text-orange-300">Summer exodus?</strong> → <strong className="text-emerald-300">Double coins campaigns</strong> - residents who stay get extra incentive, maintaining traffic during slow months</li>
+                  <li>• <strong className="text-orange-300">Ramadan unpredictable?</strong> → <strong className="text-emerald-300">Iftar targeting</strong> - push notifications to users near you during iftar hours, special Ramadan coin bonuses</li>
+                  <li>• <strong className="text-orange-300">Hotel F&B competition?</strong> → <strong className="text-emerald-300">Differentiate with rewards</strong> - hotels can&apos;t match coin earning, create unique loyalty</li>
+                  <li>• <strong className="text-orange-300">Staff turnover?</strong> → <strong className="text-emerald-300">YOU own customer data</strong> - relationships stay with the cafe, not the staff member</li>
+                  <li>• <strong className="text-orange-300">No customer data?</strong> → <strong className="text-emerald-300">QR scan captures everything</strong> - know who visits, when, spending patterns, preferences - even from cash</li>
                 </ul>
               </div>
             </div>
@@ -977,6 +988,112 @@ const CafePlaybook = () => {
               </div>
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-orange-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-orange-500 text-[#0a1628] flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl p-6 border border-emerald-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/30 flex items-center justify-center">
+                  <Store className="text-emerald-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-emerald-400 text-sm">How to onboard cafe merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign cafe & restaurant merchants. Includes event blitz, referral programs, and category conquest strategies.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Event Blitz: 50-100 merchants in 48 hours</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Category Conquest: F&B vertical domination</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>30-day free trial + QR instant setup</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-lg font-semibold text-sm hover:bg-emerald-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring customers to cafes</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns to drive customers to your partner cafes. Referral chains, streak rewards, and UGC campaigns for F&B discovery.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain Referral: K-factor 1.2+</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Nuqta Finds: UGC cafe reviews</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Neighborhood Champions: Local F&B focus</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-orange-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-emerald-400">40%</p>
+                <p className="text-xs text-slate-400">F&B LOI Share</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">2.5x</p>
+                <p className="text-xs text-slate-400">Repeat Rate Target</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

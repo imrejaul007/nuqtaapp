@@ -37,7 +37,8 @@ import {
   Gift,
   Percent,
   Tag,
-  Heart
+  Heart,
+  Store
 } from 'lucide-react';
 
 /**
@@ -178,27 +179,35 @@ const FashionPlaybook = () => {
                 ))}
               </div>
 
-              <div className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/20">
-                <h4 className="text-purple-400 font-semibold mb-2">Key Pain Points</h4>
+              <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• High competition from malls and online (Namshi, Ounass)</li>
-                  <li>• Seasonal inventory - need to clear stock</li>
-                  <li>• High CAC through Instagram influencers</li>
-                  <li>• Customers shop around for best deals</li>
-                  <li>• Hard to build loyalty in impulse-buy category</li>
-                  <li>• End-of-season sales eat into margins</li>
+                  <li>• <strong className="text-red-300">Namshi/Ounass/Amazon taking over</strong> - online fashion grew 300% post-COVID</li>
+                  <li>• <strong className="text-red-300">5,000+ fashion stores in Dubai</strong> - brutal mall and street competition</li>
+                  <li>• <strong className="text-red-300">Instagram influencers cost AED 2,000-15,000</strong> per post</li>
+                  <li>• <strong className="text-red-300">DSF/Eid sale conditioning</strong> - customers wait for 70% off</li>
+                  <li>• <strong className="text-red-300">Fast fashion kills loyalty</strong> - customers want new, not repeat visits</li>
+                  <li>• <strong className="text-red-300">Seasonal inventory pressure</strong> - must clear stock or lose money</li>
+                  <li>• <strong className="text-red-300">Mall rent squeeze</strong> - AED 400-600/sqft needs high footfall</li>
+                  <li>• <strong className="text-red-300">Expat turnover</strong> - regular customers leave UAE every 2-3 years</li>
+                  <li>• <strong className="text-red-300">Summer slowdown</strong> - 30% drop as residents travel</li>
+                  <li>• <strong className="text-red-300">No customer data</strong> - cash/card gives no retargeting ability</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Earn coins = reason to shop at YOUR store</li>
-                  <li>• New collection alerts bring customers back</li>
-                  <li>• Coins help clear seasonal inventory</li>
-                  <li>• Discovery by 500K+ fashion-conscious users</li>
-                  <li>• Compete with online on experience + rewards</li>
-                  <li>• VIP customer recognition and perks</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">Online taking over?</strong> → <strong className="text-emerald-300">In-store rewards online can&apos;t match</strong> - coins make physical shopping more valuable</li>
+                  <li>• <strong className="text-red-300">5,000+ stores competing?</strong> → <strong className="text-emerald-300">Stand out with rewards</strong> - be the boutique where shoppers earn coins</li>
+                  <li>• <strong className="text-red-300">Influencers cost AED 15K?</strong> → <strong className="text-emerald-300">Pay only 15-20% on actual sales</strong> - no upfront marketing cost</li>
+                  <li>• <strong className="text-red-300">DSF/Eid sale waiting?</strong> → <strong className="text-emerald-300">Bonus coins drive traffic NOW</strong> - rewards without destroying margins</li>
+                  <li>• <strong className="text-red-300">Fast fashion kills loyalty?</strong> → <strong className="text-emerald-300">New collection alerts</strong> - push notifications bring customers back for new arrivals</li>
+                  <li>• <strong className="text-red-300">Seasonal inventory stuck?</strong> → <strong className="text-emerald-300">Double coins on last season</strong> - clear stock without deep discounts</li>
+                  <li>• <strong className="text-red-300">Mall rent squeeze?</strong> → <strong className="text-emerald-300">500K+ users driving traffic</strong> - fill your store with Nuqta discovery</li>
+                  <li>• <strong className="text-red-300">Expat turnover?</strong> → <strong className="text-emerald-300">Continuous acquisition</strong> - new customers replace departing expats</li>
+                  <li>• <strong className="text-red-300">Summer slowdown?</strong> → <strong className="text-emerald-300">Summer survival campaigns</strong> - bonus coins for those who stay</li>
+                  <li>• <strong className="text-red-300">No customer data?</strong> → <strong className="text-emerald-300">QR scan captures everything</strong> - retarget, personalize, bring them back</li>
                 </ul>
               </div>
             </div>
@@ -711,6 +720,112 @@ const FashionPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-purple-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-fuchsia-500/20 to-purple-500/20 rounded-2xl p-6 border border-fuchsia-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-fuchsia-500/30 flex items-center justify-center">
+                  <Store className="text-fuchsia-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-fuchsia-400 text-sm">How to onboard fashion merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign fashion boutiques and retail stores. Seasonal focus with style-based rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-fuchsia-400" />
+                  <span>DSF Blitz: Mall & boutique signups</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-fuchsia-400" />
+                  <span>Content Studio: Fashion lookbook shoots</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-fuchsia-400" />
+                  <span>Category Conquest: Fashion vertical</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-fuchsia-500 text-white rounded-lg font-semibold text-sm hover:bg-fuchsia-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-pink-500/20 to-rose-500/20 rounded-2xl p-6 border border-pink-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-pink-500/30 flex items-center justify-center">
+                  <Users className="text-pink-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-pink-400 text-sm">How to bring shoppers to boutiques</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns for fashion-conscious users. Style UGC, seasonal drops, and influencer referrals.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-pink-400" />
+                  <span>Nuqta Finds: OOTD fashion UGC</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-pink-400" />
+                  <span>Flash Frenzy: DSF & Eid fashion deals</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-pink-400" />
+                  <span>Golden Chain: Style squad referrals</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500 text-white rounded-lg font-semibold text-sm hover:bg-pink-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-purple-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-pink-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-fuchsia-400">AED 400</p>
+                <p className="text-xs text-slate-400">Avg Transaction</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">12-18%</p>
+                <p className="text-xs text-slate-400">Commission</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

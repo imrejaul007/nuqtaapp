@@ -37,7 +37,8 @@ import {
   Coins,
   Bell,
   Stethoscope,
-  Leaf
+  Leaf,
+  Store
 } from 'lucide-react';
 
 /**
@@ -179,26 +180,34 @@ const PharmacyPlaybook = () => {
               </div>
 
               <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
-                <h4 className="text-red-400 font-semibold mb-2">Key Pain Points</h4>
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Regulated margins on prescription drugs</li>
-                  <li>• Competition from online pharmacies (Aster, Life)</li>
-                  <li>• Chains dominate (Aster, Life, BinSina, Supercare)</li>
-                  <li>• Hard to differentiate - same products everywhere</li>
-                  <li>• Customer loyalty is purely convenience-based</li>
-                  <li>• Non-prescription wellness products have better margins</li>
+                  <li>• <strong className="text-red-300">Aster/Life/BinSina chains dominate</strong> - 70% market share</li>
+                  <li>• <strong className="text-red-300">Regulated margins on prescriptions</strong> - government controls profit</li>
+                  <li>• <strong className="text-red-300">3,000+ pharmacies in UAE</strong> - one on every corner</li>
+                  <li>• <strong className="text-red-300">Online pharmacy apps</strong> delivering meds same-day</li>
+                  <li>• <strong className="text-red-300">Insurance patients = hassle</strong> - low margins, paperwork</li>
+                  <li>• <strong className="text-red-300">Zero differentiation</strong> - same products, same prices</li>
+                  <li>• <strong className="text-red-300">Loyalty = convenience only</strong> - customers pick nearest</li>
+                  <li>• <strong className="text-red-300">Wellness/supplements are margin</strong> but need push to sell</li>
+                  <li>• <strong className="text-red-300">Expat health patterns</strong> - different needs by nationality</li>
+                  <li>• <strong className="text-red-300">Chronic medication loyalty</strong> - once set, hard to switch</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Earn coins = reason to choose YOUR pharmacy</li>
-                  <li>• Prescription refill reminders drive returns</li>
-                  <li>• Wellness/OTC products are 30%+ margin</li>
-                  <li>• Discovery by 500K+ health-conscious users</li>
-                  <li>• Compete with chains on loyalty, not just location</li>
-                  <li>• Chronic medication customers = high LTV</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">Aster/Life chains dominate?</strong> → <strong className="text-emerald-300">Coins differentiate YOUR pharmacy</strong> - rewards chains can&apos;t match locally</li>
+                  <li>• <strong className="text-red-300">Regulated prescription margins?</strong> → <strong className="text-emerald-300">Only 5-8% commission</strong> - sustainable for government-controlled margins</li>
+                  <li>• <strong className="text-red-300">3,000+ pharmacies competing?</strong> → <strong className="text-emerald-300">Stand out with rewards</strong> - be the pharmacy where customers earn coins</li>
+                  <li>• <strong className="text-red-300">Online pharmacy apps?</strong> → <strong className="text-emerald-300">In-person service + rewards</strong> - pharmacist advice online can&apos;t offer</li>
+                  <li>• <strong className="text-red-300">Insurance = hassle?</strong> → <strong className="text-emerald-300">Attract cash customers</strong> - 500K+ users preferring direct purchase</li>
+                  <li>• <strong className="text-red-300">Zero differentiation?</strong> → <strong className="text-emerald-300">Coins ARE the differentiator</strong> - same products, different rewards</li>
+                  <li>• <strong className="text-red-300">Pick nearest only?</strong> → <strong className="text-emerald-300">Refill reminders + coins</strong> - they travel to YOUR pharmacy for rewards</li>
+                  <li>• <strong className="text-red-300">Wellness/supplements need push?</strong> → <strong className="text-emerald-300">Bonus coins on 30%+ margin products</strong> - incentivize high-margin sales</li>
+                  <li>• <strong className="text-red-300">Expat health patterns?</strong> → <strong className="text-emerald-300">Customer data insights</strong> - track needs by nationality, personalize</li>
+                  <li>• <strong className="text-red-300">Chronic med hard to switch?</strong> → <strong className="text-emerald-300">Lock them in early</strong> - diabetic, BP patients stay loyal once earning coins</li>
                 </ul>
               </div>
             </div>
@@ -715,6 +724,112 @@ const PharmacyPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-red-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-rose-500/20 to-red-500/20 rounded-2xl p-6 border border-rose-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-rose-500/30 flex items-center justify-center">
+                  <Store className="text-rose-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-rose-400 text-sm">How to onboard pharmacy merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign pharmacies. Recurring prescription focus with health & wellness rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-rose-400" />
+                  <span>Neighborhood Conquest: Area pharmacy focus</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-rose-400" />
+                  <span>Merchant Referral: Pharmacist networks</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-rose-400" />
+                  <span>Success Academy: Loyalty training</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-rose-500 text-white rounded-lg font-semibold text-sm hover:bg-rose-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring customers to pharmacies</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns for health-conscious users. Prescription reminders, wellness rewards, and family health.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Streak Masters: Monthly prescription streaks</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Neighborhood Champions: Local pharmacy</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain: Family health referrals</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-red-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-rose-400">4x/mo</p>
+                <p className="text-xs text-slate-400">Visit Frequency</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">5-8%</p>
+                <p className="text-xs text-slate-400">Commission</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

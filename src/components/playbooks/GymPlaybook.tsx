@@ -35,7 +35,8 @@ import {
   Megaphone,
   MapPin,
   Gift,
-  Percent
+  Percent,
+  Store
 } from 'lucide-react';
 
 /**
@@ -176,27 +177,39 @@ const GymPlaybook = () => {
                 ))}
               </div>
 
-              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
-                <h4 className="text-emerald-400 font-semibold mb-2">Key Pain Points</h4>
+              <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• 50% of new members quit within 3 months</li>
-                  <li>• High member acquisition cost (AED 200-500)</li>
-                  <li>• Seasonal drops (summer, Ramadan)</li>
-                  <li>• ClassPass takes 30%+ and commoditizes gyms</li>
-                  <li>• Hard to compete with luxury hotel gyms</li>
-                  <li>• Members don&apos;t refer friends enough</li>
+                  <li>• <strong className="text-red-300">50% of new members quit within 3 months</strong> - New Year motivation dies fast</li>
+                  <li>• <strong className="text-red-300">ClassPass takes 30%+</strong> per class and trains members to gym-hop</li>
+                  <li>• <strong className="text-red-300">High acquisition cost AED 200-500</strong> per member via ads</li>
+                  <li>• <strong className="text-red-300">Summer exodus crisis</strong> - 40% drop in attendance June-August</li>
+                  <li>• <strong className="text-red-300">Ramadan operational challenges</strong> - gym hours shift, attendance drops</li>
+                  <li>• <strong className="text-red-300">1,200+ gyms in Dubai</strong> - new boutique studios opening monthly</li>
+                  <li>• <strong className="text-red-300">Hotel gym competition</strong> - luxury hotels offer day passes to residents</li>
+                  <li>• <strong className="text-red-300">Expat turnover</strong> - members leave UAE, need constant replacement</li>
+                  <li>• <strong className="text-red-300">Corporate gym deals</strong> - employees get free/discounted access elsewhere</li>
+                  <li>• <strong className="text-red-300">Home fitness trend</strong> - Peloton, Mirror, YouTube workouts reduce visits</li>
+                  <li>• <strong className="text-red-300">PT poaching</strong> - personal trainers leave and take clients</li>
+                  <li>• <strong className="text-red-300">No upsell data</strong> - don&apos;t know which members to target for PT/supplements</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Earn cashback on membership = reason to stay</li>
-                  <li>• Coins spent at gym F&B/supplements = extra revenue</li>
-                  <li>• Referral incentives through coin gifting</li>
-                  <li>• Discovery by 500K+ health-conscious users</li>
-                  <li>• Push notifications to re-engage lapsed members</li>
-                  <li>• Own member data (not ClassPass)</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">50% quit in 3 months?</strong> → <strong className="text-emerald-300">Coins = reason to keep going</strong> - members don&apos;t abandon rewards, 30% better retention</li>
+                  <li>• <strong className="text-red-300">ClassPass takes 30%+?</strong> → <strong className="text-emerald-300">15-20% commission</strong> AND you keep the member data, not ClassPass</li>
+                  <li>• <strong className="text-red-300">AED 200-500 per member?</strong> → <strong className="text-emerald-300">Pay only on actual membership</strong> - no upfront ad spend, discovered by 500K+ users</li>
+                  <li>• <strong className="text-red-300">Summer 40% drop?</strong> → <strong className="text-emerald-300">Summer survival campaigns</strong> - double coins keep members who stayed coming</li>
+                  <li>• <strong className="text-red-300">Ramadan attendance drops?</strong> → <strong className="text-emerald-300">Post-iftar workout targeting</strong> - push notifications for evening sessions</li>
+                  <li>• <strong className="text-red-300">1,200+ gyms competing?</strong> → <strong className="text-emerald-300">Differentiate with rewards</strong> - be the gym where members earn, not just exercise</li>
+                  <li>• <strong className="text-red-300">Hotel gym competition?</strong> → <strong className="text-emerald-300">Loyalty hotels can&apos;t match</strong> - day passes don&apos;t earn coins</li>
+                  <li>• <strong className="text-red-300">Expat members leave?</strong> → <strong className="text-emerald-300">Continuous acquisition</strong> - new members from Nuqta replace departing expats</li>
+                  <li>• <strong className="text-red-300">Corporate deals elsewhere?</strong> → <strong className="text-emerald-300">Personal rewards beat corporate</strong> - individual coins more valuable</li>
+                  <li>• <strong className="text-red-300">Home fitness trend?</strong> → <strong className="text-emerald-300">Rewards for showing up</strong> - can&apos;t earn coins on YouTube workout</li>
+                  <li>• <strong className="text-red-300">PT poaching?</strong> → <strong className="text-emerald-300">YOU own member data</strong> - trainers leave, member relationships stay</li>
+                  <li>• <strong className="text-red-300">No upsell data?</strong> → <strong className="text-emerald-300">Know your members</strong> - target right people for PT, supplements, gear</li>
                 </ul>
               </div>
             </div>
@@ -651,6 +664,112 @@ const GymPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-emerald-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-emerald-500 text-[#0a1628] flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/20 rounded-2xl p-6 border border-teal-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-teal-500/30 flex items-center justify-center">
+                  <Store className="text-teal-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-teal-400 text-sm">How to onboard fitness merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign gyms, yoga studios, and fitness centers. Membership retention focus with streak-based loyalty.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-teal-400" />
+                  <span>Category Conquest: Fitness vertical domination</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-teal-400" />
+                  <span>Success Academy: Member retention training</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-teal-400" />
+                  <span>Event Blitz: Fitness expo acquisitions</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-teal-500 text-white rounded-lg font-semibold text-sm hover:bg-teal-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring members to gyms</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns to drive fitness enthusiasts. Workout streak rewards, buddy referrals, and transformation challenges.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Streak Masters: Daily workout rewards</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain: Gym buddy referrals</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Neighborhood Champions: Local fitness focus</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-emerald-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-teal-400">30%</p>
+                <p className="text-xs text-slate-400">Retention Boost</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">2x</p>
+                <p className="text-xs text-slate-400">Member LTV Target</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

@@ -36,7 +36,8 @@ import {
   Coins,
   Gift,
   Star,
-  Award
+  Award,
+  Store
 } from 'lucide-react';
 
 /**
@@ -177,27 +178,35 @@ const GoldPlaybook = () => {
                 ))}
               </div>
 
-              <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/20">
-                <h4 className="text-amber-400 font-semibold mb-2">Key Pain Points</h4>
+              <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Very thin margins on gold (8-12% making charges)</li>
-                  <li>• Highly price-sensitive customers compare everywhere</li>
-                  <li>• Seasonal purchases (Diwali, Eid, weddings)</li>
-                  <li>• Hard to build loyalty - customers shop on price</li>
-                  <li>• High CAC - marketing is expensive</li>
-                  <li>• Online competitors offering competitive rates</li>
+                  <li>• <strong className="text-red-300">Paper-thin margins 8-12%</strong> on gold (making charges only)</li>
+                  <li>• <strong className="text-red-300">300+ gold shops in Gold Souk alone</strong> - brutal price competition</li>
+                  <li>• <strong className="text-red-300">Customers price-check everywhere</strong> - visit 5+ shops before buying</li>
+                  <li>• <strong className="text-red-300">Seasonal dependency</strong> - Diwali, Eid, wedding season or dead</li>
+                  <li>• <strong className="text-red-300">Indian wedding tourist shopping</strong> - one-time buyers, no loyalty</li>
+                  <li>• <strong className="text-red-300">Online gold investment apps</strong> - digital gold stealing customers</li>
+                  <li>• <strong className="text-red-300">Gold price volatility</strong> - customers wait for price drops</li>
+                  <li>• <strong className="text-red-300">Mall rent vs souk location</strong> - high rent = need volume</li>
+                  <li>• <strong className="text-red-300">Trust is everything</strong> - customers stick to "family jeweler"</li>
+                  <li>• <strong className="text-red-300">UAE residents travel for gold</strong> - India, Singapore cheaper</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Earn coins on high-value purchases = stronger loyalty</li>
-                  <li>• Occasion-based reminders (anniversaries, birthdays)</li>
-                  <li>• Referral incentives for wedding customers</li>
-                  <li>• Discovery by 500K+ affluent users</li>
-                  <li>• Compete with online on experience, not just price</li>
-                  <li>• Gift card / coin gifting for occasions</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">Paper-thin margins 8-12%?</strong> → <strong className="text-emerald-300">Only 5-8% commission</strong> - sustainable for low-margin gold business</li>
+                  <li>• <strong className="text-red-300">300+ Gold Souk competitors?</strong> → <strong className="text-emerald-300">Stand out with rewards</strong> - be the jeweler where customers earn coins</li>
+                  <li>• <strong className="text-red-300">Price-check 5+ shops?</strong> → <strong className="text-emerald-300">Compete beyond price</strong> - experience + rewards = loyalty, not just price</li>
+                  <li>• <strong className="text-red-300">Seasonal dependency?</strong> → <strong className="text-emerald-300">Diwali/Eid campaigns</strong> - bonus coins during festival seasons boost traffic</li>
+                  <li>• <strong className="text-red-300">Tourist one-time buyers?</strong> → <strong className="text-emerald-300">Wedding customer referrals</strong> - one bride brings 10 family members via coins</li>
+                  <li>• <strong className="text-red-300">Digital gold apps?</strong> → <strong className="text-emerald-300">Physical gold + rewards</strong> - experience digital gold can&apos;t offer</li>
+                  <li>• <strong className="text-red-300">Wait for price drops?</strong> → <strong className="text-emerald-300">Coins offset price timing</strong> - rewards make buying now more attractive</li>
+                  <li>• <strong className="text-red-300">Mall rent needs volume?</strong> → <strong className="text-emerald-300">500K+ affluent users</strong> discovering your jewelry store</li>
+                  <li>• <strong className="text-red-300">Need to be family jeweler?</strong> → <strong className="text-emerald-300">Build trust through consistency</strong> - repeat coin-earner becomes loyal</li>
+                  <li>• <strong className="text-red-300">Travel for cheaper gold?</strong> → <strong className="text-emerald-300">Local rewards make staying worth it</strong> - coins match travel savings</li>
                 </ul>
               </div>
             </div>
@@ -706,6 +715,112 @@ const GoldPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-amber-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-amber-500 text-[#0a1628] flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-2xl p-6 border border-yellow-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-yellow-500/30 flex items-center justify-center">
+                  <Store className="text-yellow-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-yellow-400 text-sm">How to onboard gold & jewelry merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign gold and jewelry shops. High-value transaction focus with trust-building strategies.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-yellow-400" />
+                  <span>Gold Souk Blitz: Dubai Gold Souk acquisition</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-yellow-400" />
+                  <span>Content Studio: Luxury jewelry shoots</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-yellow-400" />
+                  <span>Merchant Referral: Jeweler networks</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500 text-black rounded-lg font-semibold text-sm hover:bg-yellow-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring buyers to jewelry stores</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns for affluent jewelry shoppers. Wedding season targeting, Diwali gold rush, and luxury referrals.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Eid Gift Bonanza: Festival gold purchases</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain: Wedding referral chains</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Diwali Dhamaka: Indian community gold rush</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-amber-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-yellow-400">AED 5K+</p>
+                <p className="text-xs text-slate-400">Avg Transaction</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">5-8%</p>
+                <p className="text-xs text-slate-400">Commission</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

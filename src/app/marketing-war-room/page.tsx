@@ -1540,6 +1540,882 @@ const nuqtaUserCampaigns = [
   }
 ];
 
+// =============================================================================
+// UAE CULTURAL CALENDAR CAMPAIGNS
+// =============================================================================
+const uaeCulturalCampaigns = [
+  {
+    id: 'UAE1',
+    name: 'Ramadan Rewards Rush',
+    period: 'Ramadan (30 days)',
+    timing: '~March 2026',
+    category: 'Religious Holiday',
+    thesis: 'Capture the massive Iftar and Suhoor dining surge with special coin multipliers',
+    priority: 'CRITICAL',
+
+    culturalContext: {
+      insight: 'Ramadan sees 40% increase in restaurant spending, especially 6-9 PM (Iftar) and 3-5 AM (Suhoor)',
+      opportunity: 'Position Nuqta as THE Ramadan savings companion',
+      sensitivity: 'Respectful messaging, no intrusive notifications during fasting hours'
+    },
+
+    mechanics: {
+      overview: 'Special Ramadan coin boosts at F&B partners during Iftar and Suhoor windows',
+      steps: [
+        'Iftar Hour Boost: 3x coins on F&B purchases 6-9 PM daily',
+        'Suhoor Specials: 5x coins at 24-hour cafes 2-5 AM',
+        'Charity Coins: Users can donate coins to verified UAE charities',
+        'Family Bundle: 2x coins when spending AED 200+ (family Iftar)',
+        'Last 10 Nights: 10x coins at participating merchants for final push'
+      ],
+      rewards: {
+        iftarBoost: '3x coins (worth AED 0.30 per AED 10 spent)',
+        suhoorBoost: '5x coins (worth AED 0.50 per AED 10 spent)',
+        familyBundle: '2x coins on AED 200+ transactions',
+        last10Nights: '10x coins = AED 1 per AED 10 spent',
+        charityDonation: 'Convert coins to Zakat donations (1 coin = AED 0.10)'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"إفطار مع توفير" (Iftar with Savings)',
+      subhead: '"Earn 3x Nuqta Coins this Ramadan"',
+      visualConcept: 'Crescent moon with gold coins, lantern motifs, family dining',
+      cta: 'Start Saving This Ramadan',
+      arabicCopy: 'رمضان كريم - وفر أكثر مع نقطة',
+      colors: 'Deep purple, gold, moonlight blue'
+    },
+
+    channels: [
+      { channel: 'Push (6 PM)', tactic: '"Iftar boost is LIVE! 3x coins for next 3 hours"', budget: 'AED 0' },
+      { channel: 'WhatsApp', tactic: 'Ramadan greeting + daily deals', budget: 'AED 5K' },
+      { channel: 'Instagram', tactic: 'Iftar spot recommendations with coin info', budget: 'AED 15K' },
+      { channel: 'Radio', tactic: 'Dubai Eye/Virgin Radio Iftar hour sponsorship', budget: 'AED 20K' },
+      { channel: 'Influencers', tactic: 'Food bloggers showing Ramadan savings', budget: 'AED 25K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Restaurants', boost: '3x', merchants: 'All F&B partners' },
+      { category: 'Cafés', boost: '5x (Suhoor)', merchants: '24-hour cafés only' },
+      { category: 'Supermarkets', boost: '2x', merchants: 'Grocery partners' },
+      { category: 'Bakeries', boost: '3x', merchants: 'Sweet shops, bakeries' }
+    ],
+
+    kpis: {
+      primary: 'F&B transactions during Ramadan',
+      target: '500% increase vs normal month',
+      secondary: [
+        'New users during Ramadan: 10,000+',
+        'Charity coins donated: 50,000+',
+        'Merchant revenue boost: +40%',
+        'Daily active users: 60%+ DAU/MAU'
+      ]
+    },
+
+    budget: 'AED 100,000 (ads + coin multipliers + charity match)',
+    expectedROI: '8x (Ramadan spending + new user acquisition)'
+  },
+  {
+    id: 'UAE2',
+    name: 'Eid Double Celebration',
+    period: 'Eid Al-Fitr & Eid Al-Adha (4 days each)',
+    timing: '~April 2026 & ~June 2026',
+    category: 'Religious Holiday',
+    thesis: 'Maximize gift-giving and celebration spending with Golden Gift feature',
+    priority: 'CRITICAL',
+
+    culturalContext: {
+      insight: 'Eid is biggest shopping period - clothing, gifts, dining, family gatherings',
+      opportunity: 'Position Nuqta coins as modern Eidi (cash gifts)',
+      sensitivity: 'Family-focused messaging, celebration themes'
+    },
+
+    mechanics: {
+      overview: 'Golden Gift Packets for Eidi + massive multipliers across all categories',
+      steps: [
+        'Eid Eve: 5x coins on all purchases (build excitement)',
+        'Eid Day 1-3: Golden Gift Packets enabled (send Eidi via Nuqta)',
+        'Group Gifts: Send to family WhatsApp groups, random amounts',
+        'Eid Shopping Spree: 3x coins on fashion, beauty, gifts',
+        'Eid Feast: 4x coins at restaurants for family gatherings'
+      ],
+      rewards: {
+        eidEve: '5x coins on everything',
+        goldenGift: 'Send coins as Eidi (Nuqta adds 20% bonus)',
+        shopping: '3x coins on fashion/beauty/gifts',
+        dining: '4x coins at restaurants',
+        firstEidi: 'First-time gift receivers get 200 bonus coins (AED 20 value)'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"عيدكم مبارك" (Eid Mubarak)',
+      subhead: '"Send Golden Eidi, Earn Golden Coins"',
+      visualConcept: 'Golden gift boxes, coins with crescent, family celebration',
+      cta: 'Send Eid Gift',
+      arabicCopy: 'عيد سعيد مع هدايا ذهبية من نقطة',
+      colors: 'Gold, emerald green, white'
+    },
+
+    channels: [
+      { channel: 'WhatsApp', tactic: 'Eid greeting cards with gift CTA', budget: 'AED 8K' },
+      { channel: 'SMS', tactic: '"Send Eidi with Nuqta" to all users', budget: 'AED 10K' },
+      { channel: 'Instagram/TikTok', tactic: 'Eid outfit hauls with coin earnings', budget: 'AED 20K' },
+      { channel: 'Mall activations', tactic: 'Booth at Dubai Mall, MOE during Eid', budget: 'AED 30K' },
+      { channel: 'Influencers', tactic: 'Lifestyle influencers showing Eid shopping', budget: 'AED 15K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Fashion & Retail', boost: '3x', merchants: 'Clothing, accessories' },
+      { category: 'Salons & Beauty', boost: '3x', merchants: 'Eid grooming' },
+      { category: 'Restaurants', boost: '4x', merchants: 'Family dining' },
+      { category: 'Gifts & Sweets', boost: '5x', merchants: 'Gift shops, chocolatiers' }
+    ],
+
+    kpis: {
+      primary: 'Golden Gifts sent during Eid',
+      target: '10,000+ gifts sent',
+      secondary: [
+        'New users from gifts: 3,000+',
+        'Gift recipient activation: 85%+',
+        'Overall transactions: 400% vs normal',
+        'Average gift value: AED 50+'
+      ]
+    },
+
+    budget: 'AED 120,000 (per Eid event)',
+    expectedROI: '10x (viral gift acquisition + high-value purchases)'
+  },
+  {
+    id: 'UAE3',
+    name: 'UAE National Day Gold Rush',
+    period: 'December 2-3 (UAE National Day)',
+    timing: 'December 2026',
+    category: 'National Holiday',
+    thesis: 'Patriotic celebration with UAE-themed rewards and local merchant spotlight',
+    priority: 'HIGH',
+
+    culturalContext: {
+      insight: 'National pride peaks, strong preference for local/UAE brands',
+      opportunity: 'Position Nuqta as UAE-born, supporting local businesses',
+      sensitivity: 'Patriotic but not commercial, celebrate UAE identity'
+    },
+
+    mechanics: {
+      overview: 'Support local UAE businesses with special "UAE-born" merchant category',
+      steps: [
+        '52x coins at UAE-owned businesses (52 years since founding)',
+        '"Discover UAE" challenge: Visit 5 local merchants, win AED 100',
+        'UAE Flag Colors Quest: Collect red, green, white, black badges',
+        'Local Heroes Spotlight: Featured UAE entrepreneurs',
+        'Community Give-back: Coins donated to UAE charities'
+      ],
+      rewards: {
+        localBoost: '52x coins at UAE-owned merchants (1 day only)',
+        discoverUAE: 'Visit 5 local merchants = 500 coins (AED 50)',
+        flagQuest: 'Collect all 4 color badges = 200 coins',
+        heroSpotlight: 'Extra visibility for UAE merchants'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"روح الاتحاد" (Spirit of the Union)',
+      subhead: '"Celebrate UAE, Support Local, Save More"',
+      visualConcept: 'UAE flag colors, Burj Khalifa, falcon, local pride',
+      cta: 'Support Local',
+      arabicCopy: 'فخورين بالإمارات - ندعم المحلي مع نقطة',
+      colors: 'Red, green, white, black (UAE flag)'
+    },
+
+    channels: [
+      { channel: 'Instagram', tactic: 'UAE pride content, local merchant stories', budget: 'AED 15K' },
+      { channel: 'TikTok', tactic: 'National Day celebrations with Nuqta', budget: 'AED 10K' },
+      { channel: 'Outdoor', tactic: 'Dubai Marina/JBR walkway activations', budget: 'AED 25K' },
+      { channel: 'Radio', tactic: 'Arabic stations during celebrations', budget: 'AED 15K' }
+    ],
+
+    merchantCategories: [
+      { category: 'UAE-owned Cafés', boost: '52x', merchants: 'Local coffee shops' },
+      { category: 'UAE Restaurants', boost: '52x', merchants: 'Emirati cuisine' },
+      { category: 'Local Retail', boost: '52x', merchants: 'UAE entrepreneurs' },
+      { category: 'All Partners', boost: '5x', merchants: 'Everyone else' }
+    ],
+
+    kpis: {
+      primary: 'Transactions at UAE-owned businesses',
+      target: '1000% increase vs normal day',
+      secondary: [
+        'UAE merchants signed: 50+ new',
+        'Discover UAE completions: 2000+',
+        'Social mentions: 5000+',
+        'App downloads: 5000+'
+      ]
+    },
+
+    budget: 'AED 80,000',
+    expectedROI: '6x (PR value + local merchant relationships)'
+  },
+  {
+    id: 'UAE4',
+    name: 'Dubai Shopping Festival Frenzy',
+    period: 'DSF (December-January, ~5 weeks)',
+    timing: 'December 2026 - January 2027',
+    category: 'Shopping Festival',
+    thesis: 'Ride the DSF wave with daily flash deals and mega raffles',
+    priority: 'HIGH',
+
+    culturalContext: {
+      insight: 'DSF is biggest retail event, millions of visitors, massive deals',
+      opportunity: 'Be the companion app for DSF shopping',
+      sensitivity: 'Complement DSF, don\'t compete with official promotions'
+    },
+
+    mechanics: {
+      overview: 'Daily rotating deals + DSF Mega Raffle entries from Nuqta transactions',
+      steps: [
+        'Daily Flash Deal: Different merchant category each day (10x coins)',
+        'DSF Mega Entry: Every AED 100 spent = 1 raffle entry',
+        'Gold Souk Special: 5x coins on jewelry purchases',
+        'Fashion Week: 4x coins on clothing all week',
+        'Grand Finale: 20x coins on last day'
+      ],
+      rewards: {
+        dailyFlash: '10x coins on featured category (rotates daily)',
+        megaRaffle: 'Entries for AED 50,000 grand prize (funded by Nuqta)',
+        goldSouk: '5x coins on jewelry (worth AED 0.50 per AED 10)',
+        fashionWeek: '4x coins on fashion all week',
+        grandFinale: '20x coins = AED 2 per AED 10 spent'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"Shop Dubai, Save with Nuqta"',
+      subhead: '"Every Purchase = Raffle Entry + Coins"',
+      visualConcept: 'DSF branding compatibility, shopping bags, gold coins',
+      cta: 'Join DSF Savings',
+      colors: 'DSF blue + Nuqta gold'
+    },
+
+    channels: [
+      { channel: 'Mall Activations', tactic: 'Booths at major malls during DSF', budget: 'AED 50K' },
+      { channel: 'Digital Ads', tactic: 'Geo-targeted to mall visitors', budget: 'AED 30K' },
+      { channel: 'Influencers', tactic: 'Shopping haul content with Nuqta', budget: 'AED 25K' },
+      { channel: 'Radio', tactic: 'DSF shopping tips with Nuqta plug', budget: 'AED 15K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Fashion', boost: '4x (Fashion Week)', merchants: 'Clothing, shoes' },
+      { category: 'Jewelry', boost: '5x', merchants: 'Gold Souk, jewelry stores' },
+      { category: 'Electronics', boost: '3x', merchants: 'Tech partners' },
+      { category: 'Home & Living', boost: '3x', merchants: 'Furniture, decor' },
+      { category: 'All', boost: '2x base', merchants: 'Everyone' }
+    ],
+
+    kpis: {
+      primary: 'DSF period transactions',
+      target: '10x normal volume',
+      secondary: [
+        'New user signups: 15,000+',
+        'Raffle entries: 100,000+',
+        'Merchant GMV during DSF: AED 500K+',
+        'App ranking in UAE: Top 10 Shopping'
+      ]
+    },
+
+    budget: 'AED 150,000 (activation + raffle + ads)',
+    expectedROI: '12x (massive user acquisition during peak shopping)'
+  },
+  {
+    id: 'UAE5',
+    name: 'Summer Escape Savings',
+    period: 'July-August (Summer months)',
+    timing: 'July-August 2026',
+    category: 'Seasonal',
+    thesis: 'Combat summer slowdown with indoor activity focus and staycation deals',
+    priority: 'MEDIUM',
+
+    culturalContext: {
+      insight: 'Many residents travel, those staying seek AC activities',
+      opportunity: 'Capture staycation and indoor entertainment spending',
+      sensitivity: 'Acknowledge heat, offer relief solutions'
+    },
+
+    mechanics: {
+      overview: 'Indoor entertainment, mall dining, and staycation rewards',
+      steps: [
+        'Mall Monday: 3x coins at mall F&B every Monday',
+        'Cinema Rewards: 5x coins on movie snacks',
+        'Gym Motivation: 4x coins at fitness centers',
+        'Staycation Bonus: 10x coins at hotel restaurants',
+        'Cool Down: 3x coins at ice cream/dessert shops'
+      ],
+      rewards: {
+        mallMonday: '3x coins at mall restaurants',
+        cinema: '5x coins on cinema concessions',
+        gym: '4x coins at gyms/fitness',
+        staycation: '10x coins at hotel dining',
+        dessert: '3x coins at ice cream/desserts'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"Beat the Heat, Stack the Coins"',
+      subhead: '"Summer savings at cool spots"',
+      visualConcept: 'Sun + AC symbols, ice cream, indoor activities',
+      cta: 'Find Cool Spots',
+      colors: 'Cool blues, refreshing whites'
+    },
+
+    channels: [
+      { channel: 'Push', tactic: 'Hot weather triggers cool spot suggestions', budget: 'AED 0' },
+      { channel: 'Instagram', tactic: 'Indoor activity recommendations', budget: 'AED 10K' },
+      { channel: 'Email', tactic: 'Weekly "Beat the Heat" guide', budget: 'AED 3K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Mall F&B', boost: '3x', merchants: 'Mall restaurants' },
+      { category: 'Entertainment', boost: '5x', merchants: 'Cinema, gaming' },
+      { category: 'Gyms', boost: '4x', merchants: 'Fitness centers' },
+      { category: 'Hotels', boost: '10x', merchants: 'Hotel restaurants' }
+    ],
+
+    kpis: {
+      primary: 'Maintain transaction volume during summer',
+      target: 'Only 20% drop vs peak months (vs industry 40%)',
+      secondary: [
+        'Indoor category transactions: +50%',
+        'Gym partner sign-ups: +30%',
+        'User retention: 80%+'
+      ]
+    },
+
+    budget: 'AED 40,000',
+    expectedROI: '4x (retention during slow period)'
+  },
+  {
+    id: 'UAE6',
+    name: 'Back to School Boost',
+    period: 'Late August - Early September',
+    timing: 'August-September 2026',
+    category: 'Seasonal',
+    thesis: 'Capture family back-to-school spending on supplies, clothes, and treats',
+    priority: 'MEDIUM',
+
+    culturalContext: {
+      insight: 'Families spend heavily on school prep, uniforms, supplies',
+      opportunity: 'Position Nuqta for family shopping occasions',
+      sensitivity: 'Family-friendly, practical savings focus'
+    },
+
+    mechanics: {
+      overview: 'Family-focused savings on school prep categories',
+      steps: [
+        'Uniform Rush: 5x coins on school uniform purchases',
+        'Stationery Stack: 4x coins on school supplies',
+        'First Day Treat: 3x coins on celebratory meals',
+        'Parent Reward: 2x coins on coffee (parents need it!)',
+        'Study Buddy: 3x coins at tutoring/education centers'
+      ],
+      rewards: {
+        uniforms: '5x coins on school uniforms',
+        stationery: '4x coins on school supplies',
+        firstDay: '3x coins on family meals',
+        parentCoffee: '2x coins at cafés',
+        tutoring: '3x coins at education centers'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"Smart Kids, Smarter Parents"',
+      subhead: '"Save on back-to-school with Nuqta"',
+      visualConcept: 'School supplies, happy families, gold stars',
+      cta: 'Start School Savings',
+      colors: 'Primary colors, cheerful palette'
+    },
+
+    channels: [
+      { channel: 'Instagram', tactic: 'Parent tips + savings content', budget: 'AED 10K' },
+      { channel: 'WhatsApp', tactic: 'School prep shopping lists with deals', budget: 'AED 5K' },
+      { channel: 'School partnerships', tactic: 'Flyers in school welcome packs', budget: 'AED 15K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Fashion/Uniforms', boost: '5x', merchants: 'School uniform shops' },
+      { category: 'Stationery', boost: '4x', merchants: 'Office/school supplies' },
+      { category: 'F&B', boost: '3x', merchants: 'Family restaurants' },
+      { category: 'Education', boost: '3x', merchants: 'Tutoring centers' }
+    ],
+
+    kpis: {
+      primary: 'Family segment transactions',
+      target: '300% increase in family category',
+      secondary: [
+        'New family user segment: 2000+ families',
+        'Multi-child household retention: 85%',
+        'Average family spend: AED 500+/month'
+      ]
+    },
+
+    budget: 'AED 50,000',
+    expectedROI: '5x (high-value family segment acquisition)'
+  }
+];
+
+// =============================================================================
+// MULTICULTURAL COMMUNITY CAMPAIGNS - UAE's Diverse Population
+// =============================================================================
+const multiculturalCampaigns = [
+  {
+    id: 'MC1',
+    name: 'Diwali Dhamaka (Indian Community)',
+    community: 'Indian',
+    population: '3.5M+ Indians in UAE (largest expat group)',
+    period: 'Diwali (5 days, Oct-Nov)',
+    timing: 'October-November 2026',
+    category: 'Cultural Festival',
+    thesis: 'Capture the massive Diwali spending surge on jewelry, sweets, fashion, and family dining',
+    priority: 'CRITICAL',
+
+    culturalContext: {
+      insight: 'Diwali = biggest shopping period for Indians. Gold/jewelry, new clothes, sweets, family gatherings',
+      opportunity: 'Indians are UAE\'s largest expat group - massive spending power during Diwali',
+      sensitivity: 'Authentic celebration, avoid stereotypes, partner with Indian community leaders',
+      keyMoments: ['Dhanteras (Gold buying)', 'Diwali Day', 'Bhai Dooj (Sibling gifts)']
+    },
+
+    mechanics: {
+      overview: 'Festival of Lights = Festival of Savings with special Indian merchant partnerships',
+      steps: [
+        'Dhanteras Gold Rush: 10x coins on jewelry (Indians buy gold on this day)',
+        'Diwali Feast: 5x coins at Indian restaurants',
+        'Sweet Savings: 4x coins at Indian sweet shops',
+        'Fashion Forward: 3x coins on ethnic wear (sarees, kurtas)',
+        'Gift of Light: Send Diwali coin gifts via WhatsApp'
+      ],
+      rewards: {
+        goldRush: '10x coins on jewelry (worth AED 1 per AED 10)',
+        diwaliDining: '5x coins at Indian restaurants',
+        sweetShops: '4x coins on sweets and mithai',
+        ethnicWear: '3x coins on Indian fashion',
+        diwalGift: 'Send coin gifts + 25% bonus from Nuqta'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"दिवाली की शुभकामनाएं" (Happy Diwali)',
+      subhead: '"Light up your savings this Diwali"',
+      hindiCopy: 'दिवाली पर बचत का त्योहार - नुक़ता के साथ',
+      visualConcept: 'Diyas (oil lamps), rangoli patterns, gold coins, festive lights',
+      cta: 'Celebrate & Save',
+      colors: 'Gold, orange, red, purple (festive colors)'
+    },
+
+    channels: [
+      { channel: 'WhatsApp', tactic: 'Diwali greeting + deals to Indian user segment', budget: 'AED 8K' },
+      { channel: 'Instagram', tactic: 'Indian influencers, Diwali shopping hauls', budget: 'AED 20K' },
+      { channel: 'Radio Mirchi UAE', tactic: 'Hindi radio spots during Diwali week', budget: 'AED 15K' },
+      { channel: 'Little India (Meena Bazaar)', tactic: 'On-ground activation, QR stands', budget: 'AED 25K' },
+      { channel: 'Indian Associations', tactic: 'Partner with IBA, Indian clubs', budget: 'AED 10K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Jewelry & Gold', boost: '10x (Dhanteras)', merchants: 'Gold Souk, Malabar, Joyalukkas' },
+      { category: 'Indian Restaurants', boost: '5x', merchants: 'Indian fine dining, family restaurants' },
+      { category: 'Sweet Shops', boost: '4x', merchants: 'Bikanervala, Haldiram\'s, local mithai' },
+      { category: 'Ethnic Fashion', boost: '3x', merchants: 'Saree shops, ethnic wear' },
+      { category: 'Groceries', boost: '2x', merchants: 'Indian supermarkets, Lulu' }
+    ],
+
+    kpis: {
+      primary: 'Indian community transactions during Diwali',
+      target: '800% increase vs normal week',
+      secondary: [
+        'Indian segment new users: 5,000+',
+        'Jewelry partner GMV: AED 200K+',
+        'Diwali gift packets sent: 3,000+',
+        'Indian merchant sign-ups: 30+'
+      ]
+    },
+
+    budget: 'AED 120,000',
+    expectedROI: '10x (massive Indian community spending power)'
+  },
+  {
+    id: 'MC2',
+    name: 'Filipino Fiesta (Pinoy Community)',
+    community: 'Filipino',
+    population: '700K+ Filipinos in UAE',
+    period: 'Year-round + Christmas/Simbang Gabi',
+    timing: 'December 2026 (peak) + monthly activations',
+    category: 'Community Building',
+    thesis: 'Build loyalty with tight-knit Filipino community through remittance-style savings and Balikbayan box partnerships',
+    priority: 'HIGH',
+
+    culturalContext: {
+      insight: 'Filipinos are highly networked (barkada culture), love deals, strong WhatsApp groups',
+      opportunity: 'Close-knit community = viral potential. One Filipino tells 10 friends.',
+      sensitivity: 'Respect for OFW sacrifices, family-first messaging, tagalog content',
+      keyMoments: ['Christmas/Simbang Gabi', 'Flores de Mayo', 'Philippine Independence Day (June 12)']
+    },
+
+    mechanics: {
+      overview: 'Barkada Rewards - group savings for the Filipino community',
+      steps: [
+        'Barkada Bonus: Groups of 5+ friends who all use Nuqta get 2x coins',
+        'Padala Points: Extra coins when saving for remittance amounts',
+        'Simbang Gabi Special: 5x coins during 9-day novena period',
+        'Balikbayan Partner: Coins on cargo/shipping services',
+        'Pinoy Merchant Spotlight: Feature Filipino-owned businesses'
+      ],
+      rewards: {
+        barkadaBonus: 'All 5 barkada members transact = everyone gets 2x',
+        padalaPoints: 'Save AED 500 milestone = 200 bonus coins',
+        simbangGabi: '5x coins Dec 16-24 (Simbang Gabi period)',
+        balikbayan: '3x coins on cargo/shipping services',
+        paskoBigay: 'Christmas gift packets with 50% Nuqta bonus'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"Merry Christmas, Ka-Nuqta!"',
+      subhead: '"Mag-ipon, Mag-enjoy, Mag-Nuqta"',
+      tagalogCopy: 'Tipid tips para sa barkada - libre ang pag-sign up!',
+      visualConcept: 'Parol (Christmas lantern), barkada photos, family remittance themes',
+      cta: 'Join the Barkada',
+      colors: 'Blue, red, yellow (Philippine flag colors)'
+    },
+
+    channels: [
+      { channel: 'Facebook Groups', tactic: 'Filipino UAE groups, OFW communities', budget: 'AED 10K' },
+      { channel: 'TikTok', tactic: 'Pinoy influencers, comedy skits about saving', budget: 'AED 15K' },
+      { channel: 'Filipino stores', tactic: 'QR stands at Pinoy supermarkets, remittance centers', budget: 'AED 20K' },
+      { channel: 'Church partnerships', tactic: 'Flyers at Filipino masses, Simbang Gabi', budget: 'AED 5K' },
+      { channel: 'Radio Tag 91.1', tactic: 'Filipino radio station spots', budget: 'AED 12K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Filipino Restaurants', boost: '5x', merchants: 'Jollibee, Max\'s, local carinderias' },
+      { category: 'Cargo/Shipping', boost: '3x', merchants: 'LBC, JRS, Balikbayan services' },
+      { category: 'Remittance', boost: '2x', merchants: 'Exchange houses' },
+      { category: 'Filipino Groceries', boost: '3x', merchants: 'Filipino supermarkets' },
+      { category: 'Salons', boost: '4x', merchants: 'Filipino-owned salons (big category)' }
+    ],
+
+    kpis: {
+      primary: 'Filipino community user base',
+      target: '10,000 active Filipino users',
+      secondary: [
+        'Barkada groups formed: 500+',
+        'Christmas period transactions: 600% increase',
+        'Filipino merchant partnerships: 50+',
+        'Viral coefficient in community: 1.5+'
+      ]
+    },
+
+    budget: 'AED 80,000',
+    expectedROI: '8x (high virality in tight-knit community)'
+  },
+  {
+    id: 'MC3',
+    name: 'Pakistani Pride (Pakistani Community)',
+    community: 'Pakistani',
+    population: '1.5M+ Pakistanis in UAE',
+    period: 'Eid + Pakistan Day (March 23) + Independence Day (Aug 14)',
+    timing: 'Year-round with peak moments',
+    category: 'Community Building',
+    thesis: 'Engage Pakistan\'s large UAE diaspora through cricket, Eid celebrations, and Pakistani merchant network',
+    priority: 'HIGH',
+
+    culturalContext: {
+      insight: 'Cricket-crazy nation, strong family values, love for biryani and chai',
+      opportunity: 'Second-largest South Asian community, underserved by marketing',
+      sensitivity: 'Respect for religious values, family-oriented messaging, Urdu content',
+      keyMoments: ['Eid ul-Fitr/Adha', 'Pakistan Day (March 23)', 'Independence Day (Aug 14)', 'PSL/Cricket World Cup']
+    },
+
+    mechanics: {
+      overview: 'Cricket & Chai - rewards that resonate with Pakistani culture',
+      steps: [
+        'Match Day Mania: 5x coins during Pakistan cricket matches',
+        'Chai Time Rewards: 3x coins at Pakistani chai spots',
+        'Biryani Bonanza: 4x coins at Pakistani restaurants',
+        'Pakistan Day Special: 23x coins on March 23rd',
+        'Independence Savings: AED 14 bonus on Aug 14th'
+      ],
+      rewards: {
+        matchDay: '5x coins during live Pakistan matches',
+        chaiTime: '3x coins at chai cafés 4-7 PM',
+        biryani: '4x coins at Pakistani restaurants',
+        pakistanDay: '23x coins (March 23 only)',
+        independenceDay: 'AED 14 bonus + 14x coins (Aug 14)'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"پاکستان زندہ باد" (Long Live Pakistan)',
+      subhead: '"Save like a champion with Nuqta"',
+      urduCopy: 'نقطہ کے ساتھ بچت کریں - پاکستانی انداز میں',
+      visualConcept: 'Cricket bat + coins, green/white colors, chai cups, biryani',
+      cta: 'Join Team Nuqta',
+      colors: 'Green, white (Pakistan flag)'
+    },
+
+    channels: [
+      { channel: 'Cricket venues', tactic: 'Activation at Dubai Stadium during matches', budget: 'AED 25K' },
+      { channel: 'WhatsApp', tactic: 'Cricket groups, Pakistani community groups', budget: 'AED 8K' },
+      { channel: 'Pakistani restaurants', tactic: 'Table tents, QR codes at popular spots', budget: 'AED 15K' },
+      { channel: 'FM 100.3', tactic: 'Urdu radio spots', budget: 'AED 12K' },
+      { channel: 'Instagram/TikTok', tactic: 'Pakistani influencers, cricket content', budget: 'AED 18K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Pakistani Restaurants', boost: '4x', merchants: 'Biryani houses, BBQ spots' },
+      { category: 'Chai Cafés', boost: '3x', merchants: 'Pakistani chai spots, dhabas' },
+      { category: 'Grocery', boost: '2x', merchants: 'Pakistani supermarkets' },
+      { category: 'Fashion', boost: '3x', merchants: 'Pakistani clothing stores' },
+      { category: 'Salons', boost: '3x', merchants: 'Pakistani barber shops, salons' }
+    ],
+
+    kpis: {
+      primary: 'Pakistani community engagement',
+      target: '8,000 active Pakistani users',
+      secondary: [
+        'Match day transactions: 500% spike',
+        'Pakistan Day participation: 2,000+',
+        'Pakistani merchant sign-ups: 40+',
+        'Community referral rate: 30%+'
+      ]
+    },
+
+    budget: 'AED 90,000',
+    expectedROI: '7x (large underserved community)'
+  },
+  {
+    id: 'MC4',
+    name: 'Arab Expat Excellence',
+    community: 'Arab Expats',
+    population: '1M+ Arab expats (Egyptian, Jordanian, Lebanese, Syrian)',
+    period: 'Year-round + Ramadan/Eid',
+    timing: 'Continuous with Ramadan peak',
+    category: 'Community Building',
+    thesis: 'Engage Arab expats through Arabic-first experience, Arab cuisine, and shisha café culture',
+    priority: 'HIGH',
+
+    culturalContext: {
+      insight: 'Arabic-speaking, appreciate Arab hospitality, strong café culture',
+      opportunity: 'Native Arabic speakers appreciate Arabic-first UX and content',
+      sensitivity: 'Diverse Arab nationalities, avoid generalizations, respect dialects',
+      keyMoments: ['Ramadan/Eid', 'Egyptian Revolution Day', 'Lebanese Independence', 'National days']
+    },
+
+    mechanics: {
+      overview: 'Ahlan wa Sahlan - Arabic-first rewards experience',
+      steps: [
+        'Arabic App Experience: Full Arabic UI with dialect options',
+        'Majlis Rewards: 3x coins at shisha cafés and Arabic coffee shops',
+        'Levantine Feast: 4x coins at Lebanese, Syrian, Jordanian restaurants',
+        'Egyptian Night: 5x coins on Thursdays at Egyptian spots',
+        'Arabic Content Creators: Arab influencer ambassador program'
+      ],
+      rewards: {
+        majlisRewards: '3x coins at shisha/Arabic cafés',
+        levantineDining: '4x coins at Levantine restaurants',
+        egyptianThursday: '5x coins at Egyptian restaurants (Thursdays)',
+        arabicCreator: 'Top Arab content creators get monthly bonuses',
+        ramadanBoost: 'Special multipliers during Ramadan (see cultural campaigns)'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"أهلاً وسهلاً" (Welcome)',
+      subhead: '"وفّر أكثر مع نقطة"',
+      arabicCopy: 'تطبيق عربي بالكامل - لأنك تستحق الأفضل',
+      visualConcept: 'Arabic calligraphy, traditional patterns, coffee cups, majlis setting',
+      cta: 'ابدأ التوفير',
+      colors: 'Deep maroon, gold, black (elegant Arab aesthetic)'
+    },
+
+    channels: [
+      { channel: 'Arabic Instagram', tactic: 'Arab lifestyle influencers', budget: 'AED 20K' },
+      { channel: 'Shisha cafés', tactic: 'Table QR codes, menu integration', budget: 'AED 15K' },
+      { channel: 'Arabic radio', tactic: 'Mix FM Arabic, Emarat FM', budget: 'AED 15K' },
+      { channel: 'Arab community events', tactic: 'Egyptian/Lebanese/Jordanian clubs', budget: 'AED 12K' },
+      { channel: 'WhatsApp', tactic: 'Arabic community groups', budget: 'AED 5K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Shisha Cafés', boost: '3x', merchants: 'Arabic cafés, majlis spots' },
+      { category: 'Lebanese Restaurants', boost: '4x', merchants: 'Lebanese fine dining, casual' },
+      { category: 'Egyptian Restaurants', boost: '4x', merchants: 'Koshary, Egyptian cuisine' },
+      { category: 'Syrian/Jordanian', boost: '4x', merchants: 'Shawarma, Arabic sweets' },
+      { category: 'Arabic Sweets', boost: '3x', merchants: 'Kunafa, baklava shops' }
+    ],
+
+    kpis: {
+      primary: 'Arab expat user satisfaction (NPS)',
+      target: 'NPS 60+ in Arab segment',
+      secondary: [
+        'Arabic app usage: 40% of Arab users',
+        'Arab community users: 6,000+',
+        'Arab merchant partnerships: 60+',
+        'Arabic content engagement: 5%+ rate'
+      ]
+    },
+
+    budget: 'AED 85,000',
+    expectedROI: '6x (Arabic-first differentiation)'
+  },
+  {
+    id: 'MC5',
+    name: 'Western Expat Weekend Club',
+    community: 'Western Expats',
+    population: '500K+ Western expats (British, American, European, Australian)',
+    period: 'Year-round + Christmas, Brunch culture',
+    timing: 'Weekends focus, holiday peaks',
+    category: 'Lifestyle',
+    thesis: 'Target high-spending Western expats through brunch culture, fitness, and premium experiences',
+    priority: 'MEDIUM',
+
+    culturalContext: {
+      insight: 'Friday brunch culture, fitness-focused, higher disposable income',
+      opportunity: 'Highest per-transaction spending, premium merchant affinity',
+      sensitivity: 'Quality over deals, experience-focused, not price-sensitive',
+      keyMoments: ['Friday Brunches', 'Christmas/New Year', 'Yoga/Fitness events', 'Rugby Sevens']
+    },
+
+    mechanics: {
+      overview: 'Premium Rewards for premium lifestyle',
+      steps: [
+        'Brunch Club: 4x coins on Friday/Saturday brunches',
+        'Fitness First: 5x coins at gyms, yoga studios, fitness centers',
+        'Rugby Sevens: 10x coins during Dubai Rugby Sevens week',
+        'Christmas Feast: 5x coins at Western restaurants Dec 20-26',
+        'Quality Quest: Bonus coins at Michelin/premium venues'
+      ],
+      rewards: {
+        brunchClub: '4x coins on brunch transactions (Fri-Sat)',
+        fitnessFirst: '5x coins at gyms and fitness studios',
+        rugbySevens: '10x coins during Rugby Sevens weekend',
+        christmasFeast: '5x coins at Western restaurants (Dec 20-26)',
+        premiumBonus: '3x base at premium/fine dining venues'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"Save Smart, Live Well"',
+      subhead: '"Rewards that match your lifestyle"',
+      visualConcept: 'Brunch scenes, gym equipment, premium aesthetics, Dubai skyline',
+      cta: 'Join the Club',
+      colors: 'Navy, white, gold (sophisticated palette)'
+    },
+
+    channels: [
+      { channel: 'Instagram', tactic: 'Brunch bloggers, fitness influencers', budget: 'AED 20K' },
+      { channel: 'Dubai Marina/JBR', tactic: 'Gym partnerships, brunch spots', budget: 'AED 15K' },
+      { channel: 'LinkedIn', tactic: 'Professional networking events', budget: 'AED 8K' },
+      { channel: 'Sports events', tactic: 'Rugby Sevens, golf tournaments', budget: 'AED 20K' },
+      { channel: 'Premium venues', tactic: 'Five-star hotel partnerships', budget: 'AED 12K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Brunch Venues', boost: '4x', merchants: 'Friday brunch spots' },
+      { category: 'Gyms & Fitness', boost: '5x', merchants: 'Premium gyms, yoga, CrossFit' },
+      { category: 'Fine Dining', boost: '3x', merchants: 'Premium restaurants' },
+      { category: 'Sports Bars', boost: '3x', merchants: 'Pubs, sports venues' },
+      { category: 'Wellness', boost: '4x', merchants: 'Spas, wellness centers' }
+    ],
+
+    kpis: {
+      primary: 'Average transaction value in Western segment',
+      target: 'AED 150+ average (vs AED 80 overall)',
+      secondary: [
+        'Western expat users: 3,000+',
+        'Premium merchant GMV: AED 100K+/month',
+        'Brunch venue partnerships: 30+',
+        'Fitness center sign-ups: 20+'
+      ]
+    },
+
+    budget: 'AED 75,000',
+    expectedROI: '5x (high-value transactions)'
+  },
+  {
+    id: 'MC6',
+    name: 'Chinese New Year Golden Festival',
+    community: 'Chinese',
+    population: '200K+ Chinese in UAE',
+    period: 'Chinese New Year (2 weeks)',
+    timing: 'January-February 2027',
+    category: 'Cultural Festival',
+    thesis: 'Capture Chinese New Year spending on dining, gifts, and celebrations',
+    priority: 'MEDIUM',
+
+    culturalContext: {
+      insight: 'CNY is biggest spending period, red envelopes (hongbao) tradition',
+      opportunity: 'Growing Chinese population, WeChat-style features resonate',
+      sensitivity: 'Lucky numbers (8), avoid unlucky (4), red color mandatory',
+      keyMoments: ['CNY Eve Dinner', 'Day 1-7 celebrations', 'Lantern Festival (Day 15)']
+    },
+
+    mechanics: {
+      overview: 'Golden Hongbao - digital red envelopes with Nuqta coins',
+      steps: [
+        '8x8 Lucky Boost: 8x coins on transactions of AED 88, 888, etc.',
+        'Digital Hongbao: Send red envelope coin gifts',
+        'Dragon Dance: 5x coins at Chinese restaurants',
+        'Lunar New Year Quest: Visit 8 merchants, win AED 88',
+        'WeChat-style Groups: Hongbao drops in group chats'
+      ],
+      rewards: {
+        luckyBoost: '8x coins on lucky number transactions',
+        hongbao: 'Red envelope gifts with 28% Nuqta bonus',
+        dragonDining: '5x coins at Chinese restaurants',
+        lunarQuest: 'Visit 8 merchants = 888 coins (AED 88.80)',
+        lanternFestival: '15x coins on Day 15 (Lantern Festival)'
+      }
+    },
+
+    creativeAssets: {
+      headline: '"恭喜发财" (Gong Xi Fa Cai)',
+      subhead: '"Prosperity starts with savings"',
+      chineseCopy: '新年快乐 - 用Nuqta红包送祝福',
+      visualConcept: 'Red envelopes, dragons, gold coins, lanterns, prosperity symbols',
+      cta: 'Send a Hongbao',
+      colors: 'Red, gold (mandatory CNY colors)'
+    },
+
+    channels: [
+      { channel: 'WeChat', tactic: 'WeChat groups, mini-program integration', budget: 'AED 15K' },
+      { channel: 'Dragon Mart', tactic: 'On-ground activation, merchant partnerships', budget: 'AED 20K' },
+      { channel: 'Chinese restaurants', tactic: 'Table tents, QR codes', budget: 'AED 10K' },
+      { channel: 'Chinese associations', tactic: 'Community event partnerships', budget: 'AED 8K' },
+      { channel: 'Chinese influencers', tactic: 'Xiaohongshu, Weibo content', budget: 'AED 12K' }
+    ],
+
+    merchantCategories: [
+      { category: 'Chinese Restaurants', boost: '5x', merchants: 'Chinese fine dining, dim sum' },
+      { category: 'Dragon Mart', boost: '4x', merchants: 'Dragon Mart stores' },
+      { category: 'Gold & Jewelry', boost: '8x (CNY only)', merchants: 'Jewelry stores' },
+      { category: 'Gifts & Souvenirs', boost: '3x', merchants: 'Gift shops' },
+      { category: 'Supermarkets', boost: '2x', merchants: 'Asian supermarkets' }
+    ],
+
+    kpis: {
+      primary: 'Chinese community CNY transactions',
+      target: '500% increase during CNY period',
+      secondary: [
+        'Hongbao sent: 2,000+',
+        'Chinese user sign-ups: 1,500+',
+        'Dragon Mart partners: 30+',
+        'Lucky number transactions: 1,000+'
+      ]
+    },
+
+    budget: 'AED 65,000',
+    expectedROI: '6x (high cultural engagement)'
+  }
+];
+
 const nuqtaMerchantCampaigns = [
   {
     id: 'NM1',
@@ -2014,6 +2890,444 @@ const CampaignAnalysisCard = ({ campaign }: { campaign: typeof viralCampaigns[0]
   );
 };
 
+// Multicultural Community Campaign Card
+const MulticulturalCampaignCard = ({ campaign }: { campaign: typeof multiculturalCampaigns[0] }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const communityColors: Record<string, string> = {
+    'Indian': 'from-orange-600 to-green-600',
+    'Filipino': 'from-blue-600 to-red-600',
+    'Pakistani': 'from-green-700 to-green-500',
+    'Arab Expats': 'from-maroon-600 to-amber-600',
+    'Western Expats': 'from-blue-800 to-blue-500',
+    'Chinese': 'from-red-600 to-yellow-500'
+  };
+
+  const gradientColor = communityColors[campaign.community] || 'from-purple-600 to-indigo-600';
+
+  return (
+    <div className={`rounded-2xl overflow-hidden border-2 ${expanded ? 'border-[#c9a227]' : 'border-gray-200'}`}>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className={`w-full p-6 bg-gradient-to-r ${gradientColor} text-white text-left`}
+      >
+        <div className="flex items-start justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-2 flex-wrap">
+              <span className="text-xs font-bold bg-white/20 px-2 py-0.5 rounded">{campaign.id}</span>
+              <span className={`text-xs px-2 py-0.5 rounded ${
+                campaign.priority === 'CRITICAL' ? 'bg-red-500' :
+                campaign.priority === 'HIGH' ? 'bg-amber-500' : 'bg-blue-500'
+              }`}>
+                {campaign.priority}
+              </span>
+              <span className="text-xs bg-white/20 px-2 py-0.5 rounded">{campaign.community}</span>
+              <span className="text-xs opacity-80">{campaign.population}</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-2">{campaign.name}</h3>
+            <p className="text-white/80 text-sm mb-2">{campaign.thesis}</p>
+            <div className="flex items-center gap-4 text-xs flex-wrap">
+              <span className="bg-white/10 px-2 py-1 rounded">{campaign.period}</span>
+              <span className="bg-white/10 px-2 py-1 rounded">{campaign.timing}</span>
+            </div>
+          </div>
+          {expanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+        </div>
+      </button>
+
+      {expanded && (
+        <div className="p-6 bg-white space-y-6">
+          {/* Cultural Context */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Globe size={18} className="text-emerald-600" />
+              Cultural Context
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              <div className="bg-emerald-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-emerald-700 uppercase mb-1">Cultural Insight</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.insight}</div>
+              </div>
+              <div className="bg-emerald-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-emerald-700 uppercase mb-1">Opportunity</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.opportunity}</div>
+              </div>
+              <div className="bg-amber-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-amber-700 uppercase mb-1">Sensitivity Notes</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.sensitivity}</div>
+              </div>
+              <div className="bg-purple-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-purple-700 uppercase mb-1">Key Moments</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.keyMoments.join(', ')}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mechanics */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Target size={18} className="text-purple-600" />
+              Campaign Mechanics
+            </h4>
+            <p className="text-gray-600 mb-3">{campaign.mechanics.overview}</p>
+            <div className="space-y-2">
+              {campaign.mechanics.steps.map((step, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold shrink-0">
+                    {i + 1}
+                  </div>
+                  <span className="text-sm text-gray-700">{step}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Rewards with AED Values */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Gift size={18} className="text-amber-600" />
+              Reward Structure
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              {Object.entries(campaign.mechanics.rewards).map(([key, value]) => (
+                <div key={key} className="bg-amber-50 rounded-lg p-3 border border-amber-200">
+                  <div className="text-xs font-bold text-amber-700 uppercase mb-1">{key.replace(/([A-Z])/g, ' $1')}</div>
+                  <div className="text-sm text-gray-800 font-medium">{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Merchant Categories */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Store size={18} className="text-blue-600" />
+              Merchant Categories & Boosts
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              {campaign.merchantCategories.map((cat, i) => (
+                <div key={i} className="bg-blue-50 rounded-lg p-3 flex items-center justify-between">
+                  <div>
+                    <div className="font-medium text-blue-800">{cat.category}</div>
+                    <div className="text-xs text-gray-600">{cat.merchants}</div>
+                  </div>
+                  <div className="text-lg font-bold text-blue-600">{cat.boost}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Creative Assets */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Image size={18} className="text-pink-600" />
+              Creative Assets
+            </h4>
+            <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-4 border border-pink-200">
+              <div className="text-xl font-bold text-gray-900 mb-1">{campaign.creativeAssets.headline}</div>
+              <div className="text-gray-600 mb-3">{campaign.creativeAssets.subhead}</div>
+              {'hindiCopy' in campaign.creativeAssets && (
+                <div className="text-lg font-medium text-orange-700 mb-2">{campaign.creativeAssets.hindiCopy}</div>
+              )}
+              {'tagalogCopy' in campaign.creativeAssets && (
+                <div className="text-lg font-medium text-blue-700 mb-2">{campaign.creativeAssets.tagalogCopy}</div>
+              )}
+              {'urduCopy' in campaign.creativeAssets && (
+                <div className="text-lg font-medium text-green-700 mb-2 text-right" dir="rtl">{campaign.creativeAssets.urduCopy}</div>
+              )}
+              {'arabicCopy' in campaign.creativeAssets && (
+                <div className="text-lg font-medium text-maroon-700 mb-2 text-right" dir="rtl">{campaign.creativeAssets.arabicCopy}</div>
+              )}
+              {'chineseCopy' in campaign.creativeAssets && (
+                <div className="text-lg font-medium text-red-700 mb-2">{campaign.creativeAssets.chineseCopy}</div>
+              )}
+              <div className="grid md:grid-cols-3 gap-3 mt-3">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase mb-1">Visual Concept</div>
+                  <div className="text-sm text-gray-700">{campaign.creativeAssets.visualConcept}</div>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 uppercase mb-1">Color Palette</div>
+                  <div className="text-sm text-gray-700">{campaign.creativeAssets.colors}</div>
+                </div>
+                <div>
+                  <button className="bg-[#c9a227] text-white px-4 py-2 rounded-lg font-bold text-sm w-full">
+                    {campaign.creativeAssets.cta}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Channels */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Radio size={18} className="text-cyan-600" />
+              Channel Strategy
+            </h4>
+            <div className="space-y-2">
+              {campaign.channels.map((ch, i) => (
+                <div key={i} className="flex items-center justify-between p-3 bg-cyan-50 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="font-medium text-cyan-800 w-36">{ch.channel}</div>
+                    <div className="text-sm text-gray-600">{ch.tactic}</div>
+                  </div>
+                  <div className="text-sm font-bold text-cyan-600">{ch.budget}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* KPIs */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <BarChart3 size={18} className="text-emerald-600" />
+              Success Metrics
+            </h4>
+            <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase">Primary KPI</div>
+                  <div className="font-bold text-gray-900">{campaign.kpis.primary}</div>
+                </div>
+                <div className="text-2xl font-bold text-emerald-600">{campaign.kpis.target}</div>
+              </div>
+              <div className="space-y-1">
+                {campaign.kpis.secondary.map((kpi, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm">
+                    <Check className="text-emerald-500" size={14} />
+                    <span>{kpi}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Budget & ROI */}
+          <div className="bg-[#0a1628] rounded-xl p-4 text-white flex items-center justify-between">
+            <div>
+              <div className="text-xs text-gray-400 uppercase">Budget</div>
+              <div className="text-xl font-bold">{campaign.budget}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-xs text-gray-400 uppercase">Expected ROI</div>
+              <div className="text-xl font-bold text-[#c9a227]">{campaign.expectedROI}</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+// UAE Cultural Campaign Card
+const CulturalCampaignCard = ({ campaign }: { campaign: typeof uaeCulturalCampaigns[0] }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  const priorityColor = campaign.priority === 'CRITICAL' ? 'from-red-600 to-rose-600' :
+                        campaign.priority === 'HIGH' ? 'from-amber-600 to-orange-600' :
+                        'from-blue-600 to-indigo-600';
+
+  return (
+    <div className={`rounded-2xl overflow-hidden border-2 ${expanded ? 'border-[#c9a227]' : 'border-gray-200'}`}>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className={`w-full p-6 bg-gradient-to-r ${priorityColor} text-white text-left`}
+      >
+        <div className="flex items-start justify-between">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="text-xs font-bold bg-white/20 px-2 py-0.5 rounded">{campaign.id}</span>
+              <span className={`text-xs px-2 py-0.5 rounded ${
+                campaign.priority === 'CRITICAL' ? 'bg-red-500' :
+                campaign.priority === 'HIGH' ? 'bg-amber-500' : 'bg-blue-500'
+              }`}>
+                {campaign.priority}
+              </span>
+              <span className="text-xs opacity-80">{campaign.category}</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-2">{campaign.name}</h3>
+            <p className="text-white/80 text-sm mb-2">{campaign.thesis}</p>
+            <div className="flex items-center gap-4 text-xs">
+              <span className="bg-white/10 px-2 py-1 rounded">{campaign.period}</span>
+              <span className="bg-white/10 px-2 py-1 rounded">{campaign.timing}</span>
+            </div>
+          </div>
+          {expanded ? <ChevronUp size={24} /> : <ChevronDown size={24} />}
+        </div>
+      </button>
+
+      {expanded && (
+        <div className="p-6 bg-white space-y-6">
+          {/* Cultural Context */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Globe size={18} className="text-emerald-600" />
+              Cultural Context
+            </h4>
+            <div className="grid md:grid-cols-3 gap-3">
+              <div className="bg-emerald-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-emerald-700 uppercase mb-1">Insight</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.insight}</div>
+              </div>
+              <div className="bg-emerald-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-emerald-700 uppercase mb-1">Opportunity</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.opportunity}</div>
+              </div>
+              <div className="bg-emerald-50 rounded-lg p-3">
+                <div className="text-xs font-bold text-emerald-700 uppercase mb-1">Sensitivity</div>
+                <div className="text-sm text-gray-800">{campaign.culturalContext.sensitivity}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mechanics */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Target size={18} className="text-purple-600" />
+              Campaign Mechanics
+            </h4>
+            <p className="text-gray-600 mb-3">{campaign.mechanics.overview}</p>
+            <div className="space-y-2">
+              {campaign.mechanics.steps.map((step, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold shrink-0">
+                    {i + 1}
+                  </div>
+                  <span className="text-sm text-gray-700">{step}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Rewards with AED Values */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Gift size={18} className="text-amber-600" />
+              Reward Structure (with AED Values)
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              {Object.entries(campaign.mechanics.rewards).map(([key, value]) => (
+                <div key={key} className="bg-amber-50 rounded-lg p-3 border border-amber-200">
+                  <div className="text-xs font-bold text-amber-700 uppercase mb-1">{key.replace(/([A-Z])/g, ' $1')}</div>
+                  <div className="text-sm text-gray-800 font-medium">{value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Merchant Categories */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Store size={18} className="text-blue-600" />
+              Merchant Categories & Boosts
+            </h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              {campaign.merchantCategories.map((cat, i) => (
+                <div key={i} className="bg-blue-50 rounded-lg p-3 flex items-center justify-between">
+                  <div>
+                    <div className="font-medium text-blue-800">{cat.category}</div>
+                    <div className="text-xs text-gray-600">{cat.merchants}</div>
+                  </div>
+                  <div className="text-lg font-bold text-blue-600">{cat.boost}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Creative Assets */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Image size={18} className="text-pink-600" />
+              Creative Assets
+            </h4>
+            <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-xl p-4 border border-pink-200">
+              <div className="text-xl font-bold text-gray-900 mb-1">{campaign.creativeAssets.headline}</div>
+              <div className="text-gray-600 mb-3">{campaign.creativeAssets.subhead}</div>
+              {'arabicCopy' in campaign.creativeAssets && (
+                <div className="text-right text-lg font-medium text-gray-700 mb-3" dir="rtl">
+                  {campaign.creativeAssets.arabicCopy}
+                </div>
+              )}
+              <div className="grid md:grid-cols-3 gap-3 mt-3">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase mb-1">Visual Concept</div>
+                  <div className="text-sm text-gray-700">{campaign.creativeAssets.visualConcept}</div>
+                </div>
+                <div>
+                  <div className="text-xs text-gray-500 uppercase mb-1">Color Palette</div>
+                  <div className="text-sm text-gray-700">{campaign.creativeAssets.colors}</div>
+                </div>
+                <div>
+                  <button className="bg-[#c9a227] text-white px-4 py-2 rounded-lg font-bold text-sm w-full">
+                    {campaign.creativeAssets.cta}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Channels */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <Radio size={18} className="text-cyan-600" />
+              Channel Strategy
+            </h4>
+            <div className="space-y-2">
+              {campaign.channels.map((ch, i) => (
+                <div key={i} className="flex items-center justify-between p-3 bg-cyan-50 rounded-lg">
+                  <div className="flex items-center gap-3">
+                    <div className="font-medium text-cyan-800 w-28">{ch.channel}</div>
+                    <div className="text-sm text-gray-600">{ch.tactic}</div>
+                  </div>
+                  <div className="text-sm font-bold text-cyan-600">{ch.budget}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* KPIs */}
+          <div>
+            <h4 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+              <BarChart3 size={18} className="text-emerald-600" />
+              Success Metrics
+            </h4>
+            <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-200">
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <div className="text-xs text-gray-500 uppercase">Primary KPI</div>
+                  <div className="font-bold text-gray-900">{campaign.kpis.primary}</div>
+                </div>
+                <div className="text-2xl font-bold text-emerald-600">{campaign.kpis.target}</div>
+              </div>
+              <div className="space-y-1">
+                {campaign.kpis.secondary.map((kpi, i) => (
+                  <div key={i} className="flex items-center gap-2 text-sm">
+                    <Check className="text-emerald-500" size={14} />
+                    <span>{kpi}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Budget & ROI */}
+          <div className="bg-[#0a1628] rounded-xl p-4 text-white flex items-center justify-between">
+            <div>
+              <div className="text-xs text-gray-400 uppercase">Budget</div>
+              <div className="text-xl font-bold">{campaign.budget}</div>
+            </div>
+            <div className="text-right">
+              <div className="text-xs text-gray-400 uppercase">Expected ROI</div>
+              <div className="text-xl font-bold text-[#c9a227]">{campaign.expectedROI}</div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // Nuqta Campaign Card
 const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampaigns[0] | typeof nuqtaMerchantCampaigns[0]; type: 'user' | 'merchant' }) => {
   const [expanded, setExpanded] = useState(false);
@@ -2244,7 +3558,7 @@ const NuqtaCampaignCard = ({ campaign, type }: { campaign: typeof nuqtaUserCampa
 // MAIN PAGE
 // =============================================================================
 export default function MarketingWarRoomPage() {
-  const [activeTab, setActiveTab] = useState<'team' | 'analysis' | 'user-campaigns' | 'merchant-campaigns'>('team');
+  const [activeTab, setActiveTab] = useState<'team' | 'analysis' | 'user-campaigns' | 'merchant-campaigns' | 'cultural-campaigns' | 'multicultural-campaigns'>('team');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
 
   const categories = ['all', ...Array.from(new Set(viralCampaigns.map(c => c.category)))];
@@ -2275,22 +3589,30 @@ export default function MarketingWarRoomPage() {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto">
-              <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-purple-400">6</div>
-                <div className="text-sm text-gray-300">Expert Strategists</div>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 mt-8 max-w-6xl mx-auto">
+              <div className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-purple-400">20</div>
+                <div className="text-xs sm:text-sm text-gray-300">Iconic Campaigns</div>
               </div>
-              <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-emerald-400">20</div>
-                <div className="text-sm text-gray-300">Campaigns Analyzed</div>
+              <div className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-emerald-400">6</div>
+                <div className="text-xs sm:text-sm text-gray-300">User Campaigns</div>
               </div>
-              <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-amber-400">6</div>
-                <div className="text-sm text-gray-300">User Campaigns</div>
+              <div className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-cyan-400">5</div>
+                <div className="text-xs sm:text-sm text-gray-300">Merchant Campaigns</div>
               </div>
-              <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-cyan-400">5</div>
-                <div className="text-sm text-gray-300">Merchant Campaigns</div>
+              <div className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-red-400">6</div>
+                <div className="text-xs sm:text-sm text-gray-300">UAE Cultural</div>
+              </div>
+              <div className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-pink-400">6</div>
+                <div className="text-xs sm:text-sm text-gray-300">Multicultural</div>
+              </div>
+              <div className="bg-white/10 rounded-xl p-3 sm:p-4">
+                <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">43</div>
+                <div className="text-xs sm:text-sm text-gray-300">Total Campaigns</div>
               </div>
             </div>
           </div>
@@ -2304,8 +3626,10 @@ export default function MarketingWarRoomPage() {
             {[
               { id: 'team', label: 'Expert Team', icon: Users },
               { id: 'analysis', label: '20 Campaign Analysis', icon: Eye },
-              { id: 'user-campaigns', label: 'Nuqta User Campaigns', icon: Users },
-              { id: 'merchant-campaigns', label: 'Nuqta Merchant Campaigns', icon: Store }
+              { id: 'user-campaigns', label: 'User Campaigns', icon: Users },
+              { id: 'merchant-campaigns', label: 'Merchant Campaigns', icon: Store },
+              { id: 'cultural-campaigns', label: 'UAE Cultural', icon: Calendar },
+              { id: 'multicultural-campaigns', label: 'Multicultural', icon: Globe }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -2431,6 +3755,152 @@ export default function MarketingWarRoomPage() {
               {nuqtaMerchantCampaigns.map((campaign) => (
                 <NuqtaCampaignCard key={campaign.id} campaign={campaign} type="merchant" />
               ))}
+            </div>
+          </div>
+        )}
+
+        {/* UAE Cultural Campaigns Tab */}
+        {activeTab === 'cultural-campaigns' && (
+          <div className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">UAE Cultural Calendar Campaigns</h2>
+              <p className="text-gray-600">6 culturally-optimized campaigns for UAE holidays, festivals, and seasonal moments</p>
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">🌙 Ramadan</span>
+                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">🎁 Eid</span>
+                <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">🇦🇪 National Day</span>
+                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">🛍️ DSF</span>
+                <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">☀️ Summer</span>
+                <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">📚 Back to School</span>
+              </div>
+            </div>
+
+            {/* Annual Calendar View */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 rounded-2xl p-6 border border-[#c9a227]/30 mb-8">
+              <h3 className="font-bold text-gray-900 text-xl mb-4">2026 Campaign Calendar</h3>
+              <div className="grid grid-cols-4 md:grid-cols-12 gap-2">
+                {[
+                  { month: 'Jan', campaign: 'DSF', color: 'bg-blue-500' },
+                  { month: 'Feb', campaign: '-', color: 'bg-gray-200' },
+                  { month: 'Mar', campaign: 'Ramadan', color: 'bg-purple-500' },
+                  { month: 'Apr', campaign: 'Eid', color: 'bg-green-500' },
+                  { month: 'May', campaign: '-', color: 'bg-gray-200' },
+                  { month: 'Jun', campaign: 'Eid', color: 'bg-green-500' },
+                  { month: 'Jul', campaign: 'Summer', color: 'bg-yellow-500' },
+                  { month: 'Aug', campaign: 'School', color: 'bg-orange-500' },
+                  { month: 'Sep', campaign: 'School', color: 'bg-orange-500' },
+                  { month: 'Oct', campaign: '-', color: 'bg-gray-200' },
+                  { month: 'Nov', campaign: '-', color: 'bg-gray-200' },
+                  { month: 'Dec', campaign: 'UAE Day', color: 'bg-red-500' },
+                ].map((m, i) => (
+                  <div key={i} className="text-center">
+                    <div className={`${m.color} text-white text-xs font-bold py-2 rounded-lg mb-1`}>
+                      {m.month}
+                    </div>
+                    <div className="text-xs text-gray-600">{m.campaign}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {uaeCulturalCampaigns.map((campaign) => (
+                <CulturalCampaignCard key={campaign.id} campaign={campaign} />
+              ))}
+            </div>
+
+            {/* Total Investment Summary */}
+            <div className="bg-[#0a1628] rounded-2xl p-6 text-white">
+              <h3 className="font-bold text-xl mb-4 text-[#c9a227]">Annual Cultural Campaign Investment</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-[#c9a227]">AED 640K</div>
+                  <div className="text-sm text-gray-400">Total Budget</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">6</div>
+                  <div className="text-sm text-gray-400">Major Campaigns</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-purple-400">50K+</div>
+                  <div className="text-sm text-gray-400">Est. New Users</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-amber-400">8x</div>
+                  <div className="text-sm text-gray-400">Avg. ROI</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Multicultural Community Campaigns Tab */}
+        {activeTab === 'multicultural-campaigns' && (
+          <div className="space-y-6">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Multicultural Community Campaigns</h2>
+              <p className="text-gray-600">6 world-class campaigns targeting UAE&apos;s diverse expat communities</p>
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">🪔 Indian (3.5M+)</span>
+                <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">🇵🇭 Filipino (700K+)</span>
+                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">🇵🇰 Pakistani (1.5M+)</span>
+                <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm">🌍 Arab Expat (1M+)</span>
+                <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">🌎 Western (500K+)</span>
+                <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">🧧 Chinese (200K+)</span>
+              </div>
+            </div>
+
+            {/* Community Population Overview */}
+            <div className="bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-blue-500/10 rounded-2xl p-6 border border-purple-500/30 mb-8">
+              <h3 className="font-bold text-gray-900 text-xl mb-4">UAE Expat Population Overview</h3>
+              <p className="text-gray-600 mb-4">UAE hosts 9M+ expatriates from 200+ nationalities. These campaigns target the largest communities with culturally-relevant messaging.</p>
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+                {[
+                  { community: 'Indian', population: '3.5M+', flag: '🇮🇳', color: 'bg-orange-500' },
+                  { community: 'Pakistani', population: '1.5M+', flag: '🇵🇰', color: 'bg-green-500' },
+                  { community: 'Arab Expat', population: '1M+', flag: '🌍', color: 'bg-emerald-500' },
+                  { community: 'Filipino', population: '700K+', flag: '🇵🇭', color: 'bg-blue-500' },
+                  { community: 'Western', population: '500K+', flag: '🌎', color: 'bg-purple-500' },
+                  { community: 'Chinese', population: '200K+', flag: '🇨🇳', color: 'bg-red-500' },
+                ].map((c, i) => (
+                  <div key={i} className="text-center">
+                    <div className={`${c.color} text-white text-2xl py-3 rounded-lg mb-2`}>
+                      {c.flag}
+                    </div>
+                    <div className="font-bold text-gray-900">{c.population}</div>
+                    <div className="text-xs text-gray-600">{c.community}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              {multiculturalCampaigns.map((campaign) => (
+                <MulticulturalCampaignCard key={campaign.id} campaign={campaign} />
+              ))}
+            </div>
+
+            {/* Total Investment Summary */}
+            <div className="bg-[#0a1628] rounded-2xl p-6 text-white">
+              <h3 className="font-bold text-xl mb-4 text-[#c9a227]">Annual Multicultural Campaign Investment</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-[#c9a227]">AED 470K</div>
+                  <div className="text-sm text-gray-400">Total Budget</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-pink-400">6</div>
+                  <div className="text-sm text-gray-400">Community Campaigns</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-purple-400">8M+</div>
+                  <div className="text-sm text-gray-400">Target Population</div>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">9x</div>
+                  <div className="text-sm text-gray-400">Avg. Expected ROI</div>
+                </div>
+              </div>
             </div>
           </div>
         )}

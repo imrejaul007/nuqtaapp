@@ -195,27 +195,36 @@ const SupermarketPlaybook = () => {
                 ))}
               </div>
 
-              <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/20">
-                <h4 className="text-green-400 font-semibold mb-2">Key Pain Points</h4>
+              <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Extremely thin margins (15-25%) make discounts risky</li>
-                  <li>• Hard to differentiate from competitors</li>
-                  <li>• Dark store / quick commerce eating into sales</li>
-                  <li>• Customer loyalty is purely price-based</li>
-                  <li>• Promotional costs eaten by store, not brands</li>
-                  <li>• Limited customer data from cash transactions</li>
+                  <li>• <strong className="text-red-300">Talabat Mart/Noon Minutes killing walk-ins</strong> - 15-minute delivery</li>
+                  <li>• <strong className="text-red-300">Extremely thin margins 15-25%</strong> - discounts are suicide</li>
+                  <li>• <strong className="text-red-300">2,500+ supermarkets in UAE</strong> - one on every corner</li>
+                  <li>• <strong className="text-red-300">Price wars with Carrefour/Lulu</strong> - hypermarkets crush small stores</li>
+                  <li>• <strong className="text-red-300">Customer loyalty = price only</strong> - they switch for AED 1 savings</li>
+                  <li>• <strong className="text-red-300">Ramadan chaos</strong> - unpredictable iftar shopping patterns</li>
+                  <li>• <strong className="text-red-300">Brand promotional costs</strong> - store pays, not brands</li>
+                  <li>• <strong className="text-red-300">Premium organic stores struggle</strong> - hard to justify price premium</li>
+                  <li>• <strong className="text-red-300">Expat shopping habits</strong> - Indian, Filipino, Arab - different needs</li>
+                  <li>• <strong className="text-red-300">Cash transaction = no data</strong> - can&apos;t track customer behavior</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta (Brand Coins Model)</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Brands fund the rewards - zero cost to store</li>
-                  <li>• Drives traffic without margin erosion</li>
-                  <li>• Customer data and purchase insights</li>
-                  <li>• Gamified loyalty increases basket size</li>
-                  <li>• Competes with quick commerce on experience</li>
-                  <li>• Brands get direct access to customers</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point (Brand Coins Model)</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">Talabat Mart killing walk-ins?</strong> → <strong className="text-emerald-300">Coins make in-store worth it</strong> - quick commerce can&apos;t offer rewards</li>
+                  <li>• <strong className="text-red-300">Thin margins 15-25%?</strong> → <strong className="text-emerald-300">BRANDS fund the rewards</strong> - ZERO cost to your store</li>
+                  <li>• <strong className="text-red-300">2,500+ supermarkets competing?</strong> → <strong className="text-emerald-300">Stand out with rewards</strong> - be the store where shoppers earn coins</li>
+                  <li>• <strong className="text-red-300">Price wars with Carrefour?</strong> → <strong className="text-emerald-300">Compete on value, not price</strong> - rewards beat discounts</li>
+                  <li>• <strong className="text-red-300">Switch for AED 1 savings?</strong> → <strong className="text-emerald-300">Coins create switching cost</strong> - customers don&apos;t leave earned rewards</li>
+                  <li>• <strong className="text-red-300">Ramadan chaos?</strong> → <strong className="text-emerald-300">Brands boost Ramadan coins</strong> - predictable campaigns drive traffic</li>
+                  <li>• <strong className="text-red-300">Store pays promo costs?</strong> → <strong className="text-emerald-300">P&G, Nestle pay for visibility</strong> - brands fund, you benefit</li>
+                  <li>• <strong className="text-red-300">Organic stores struggle?</strong> → <strong className="text-emerald-300">Rewards justify premium</strong> - coins make higher prices worth it</li>
+                  <li>• <strong className="text-red-300">Expat shopping habits?</strong> → <strong className="text-emerald-300">Customer data insights</strong> - track patterns by nationality</li>
+                  <li>• <strong className="text-red-300">Cash = no data?</strong> → <strong className="text-emerald-300">QR scan captures everything</strong> - build database from every transaction</li>
+                  <li>• <strong className="text-emerald-300">Only 5-8% commission</strong> - sustainable for low-margin business</li>
                 </ul>
               </div>
             </div>
@@ -777,6 +786,112 @@ const SupermarketPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-green-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-green-500 text-[#0a1628] flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl p-6 border border-emerald-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/30 flex items-center justify-center">
+                  <Store className="text-emerald-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-emerald-400 text-sm">How to onboard grocery merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign supermarkets and grocery stores. High-frequency purchase focus with basket-building rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Category Conquest: Grocery vertical domination</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Event Blitz: Ramadan grocery signups</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Merchant Referral: Store owner networks</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-lg font-semibold text-sm hover:bg-emerald-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring shoppers to stores</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns to drive grocery shoppers. Weekly shopping streaks, family referrals, and neighborhood rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Streak Masters: Weekly shopping rewards</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Neighborhood Champions: Local store focus</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain: Family & friend referrals</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-green-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-emerald-400">3-4x</p>
+                <p className="text-xs text-slate-400">Weekly Visits</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">AED 150</p>
+                <p className="text-xs text-slate-400">Avg Basket</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

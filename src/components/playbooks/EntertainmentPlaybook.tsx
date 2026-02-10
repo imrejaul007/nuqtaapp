@@ -38,7 +38,8 @@ import {
   Star,
   Gift,
   PartyPopper,
-  Clapperboard
+  Clapperboard,
+  Store
 } from 'lucide-react';
 
 /**
@@ -195,27 +196,35 @@ const EntertainmentPlaybook = () => {
                 ))}
               </div>
 
-              <div className="bg-fuchsia-500/10 rounded-xl p-4 border border-fuchsia-500/20">
-                <h4 className="text-fuchsia-400 font-semibold mb-2">Key Pain Points</h4>
+              <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Highly seasonal - weekends busy, weekdays empty</li>
-                  <li>• Competition from home entertainment (Netflix, gaming)</li>
-                  <li>• High fixed costs - need consistent traffic</li>
-                  <li>• Hard to drive repeat visits</li>
-                  <li>• Family bookings are infrequent but high value</li>
-                  <li>• Events compete for limited attention</li>
+                  <li>• <strong className="text-red-300">Weekend packed, weekdays dead</strong> - 80% revenue in 2 days</li>
+                  <li>• <strong className="text-red-300">Netflix/Disney+ killing cinema</strong> - why leave home?</li>
+                  <li>• <strong className="text-red-300">Summer exodus crisis</strong> - 40% drop as families travel</li>
+                  <li>• <strong className="text-red-300">High fixed costs</strong> - mall rent, staff, equipment regardless of traffic</li>
+                  <li>• <strong className="text-red-300">School holiday dependency</strong> - dead during term time</li>
+                  <li>• <strong className="text-red-300">Event-driven market</strong> - one bad movie = empty theaters</li>
+                  <li>• <strong className="text-red-300">Birthday party competition</strong> - every mall has 5 options</li>
+                  <li>• <strong className="text-red-300">Ramadan operational shifts</strong> - daytime closure, iftar rush</li>
+                  <li>• <strong className="text-red-300">Theme park fatigue</strong> - Dubai Parks struggles for repeat visits</li>
+                  <li>• <strong className="text-red-300">Entertainer app conditioning</strong> - customers expect BOGO</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Earn coins = reason to choose YOUR venue</li>
-                  <li>• Fill weekday slots with targeted promotions</li>
-                  <li>• Birthday and event reminders drive bookings</li>
-                  <li>• Discovery by 500K+ users looking for fun</li>
-                  <li>• Family packages with coin incentives</li>
-                  <li>• Gift coins for occasions (birthdays, holidays)</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">Weekdays dead?</strong> → <strong className="text-emerald-300">Double coins on Tue-Wed</strong> - incentivize weekday visits, balance traffic</li>
+                  <li>• <strong className="text-red-300">Netflix killing cinema?</strong> → <strong className="text-emerald-300">Coins make leaving home worth it</strong> - rewards for experience Netflix can&apos;t offer</li>
+                  <li>• <strong className="text-red-300">Summer 40% drop?</strong> → <strong className="text-emerald-300">Staycation entertainment campaigns</strong> - target families who stayed</li>
+                  <li>• <strong className="text-red-300">High fixed costs?</strong> → <strong className="text-emerald-300">500K+ users discovering your venue</strong> - fill capacity without ad spend</li>
+                  <li>• <strong className="text-red-300">School holiday only?</strong> → <strong className="text-emerald-300">Weekend campaigns year-round</strong> - drive traffic during term time</li>
+                  <li>• <strong className="text-red-300">Bad movie = empty?</strong> → <strong className="text-emerald-300">Coin bonuses on slow releases</strong> - incentivize any movie, not just blockbusters</li>
+                  <li>• <strong className="text-red-300">Birthday party competition?</strong> → <strong className="text-emerald-300">Birthday reminders + rewards</strong> - target parents with kids turning X age</li>
+                  <li>• <strong className="text-red-300">Ramadan shifts?</strong> → <strong className="text-emerald-300">Post-iftar entertainment</strong> - target evening activities during holy month</li>
+                  <li>• <strong className="text-red-300">Theme park fatigue?</strong> → <strong className="text-emerald-300">Annual pass rewards</strong> - coins drive repeat visits, build habit</li>
+                  <li>• <strong className="text-red-300">Entertainer BOGO?</strong> → <strong className="text-emerald-300">Cashback preserves pricing</strong> - no discounts, maintain integrity</li>
                 </ul>
               </div>
             </div>
@@ -732,6 +741,112 @@ const EntertainmentPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-fuchsia-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-fuchsia-500 text-white flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 rounded-2xl p-6 border border-violet-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-violet-500/30 flex items-center justify-center">
+                  <Store className="text-violet-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-violet-400 text-sm">How to onboard entertainment venues</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign cinemas, arcades, and entertainment centers. Experience focus with group rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-violet-400" />
+                  <span>Mall Blitz: Entertainment zone signups</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-violet-400" />
+                  <span>Category Conquest: Entertainment vertical</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-violet-400" />
+                  <span>Content Studio: Experience showcases</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-violet-500 text-white rounded-lg font-semibold text-sm hover:bg-violet-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-pink-500/20 to-orange-500/20 rounded-2xl p-6 border border-pink-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-pink-500/30 flex items-center justify-center">
+                  <Users className="text-pink-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-pink-400 text-sm">How to bring visitors to venues</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns for families and friends. Weekend deals, group rewards, and experience sharing.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-pink-400" />
+                  <span>Nuqta Finds: Experience review UGC</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-pink-400" />
+                  <span>Flash Frenzy: Weekend entertainment deals</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-pink-400" />
+                  <span>Golden Chain: Friend group referrals</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-pink-500 text-white rounded-lg font-semibold text-sm hover:bg-pink-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-fuchsia-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-pink-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-violet-400">AED 200</p>
+                <p className="text-xs text-slate-400">Avg Spend</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">15-20%</p>
+                <p className="text-xs text-slate-400">Commission</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

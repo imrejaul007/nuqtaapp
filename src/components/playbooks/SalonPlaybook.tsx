@@ -36,7 +36,8 @@ import {
   TrendingDown,
   Megaphone,
   MapPin,
-  Gift
+  Gift,
+  Store
 } from 'lucide-react';
 
 /**
@@ -178,26 +179,36 @@ const SalonPlaybook = () => {
               </div>
 
               <div className="bg-pink-500/10 rounded-xl p-4 border border-pink-500/20">
-                <h4 className="text-pink-400 font-semibold mb-2">Key Pain Points</h4>
+                <h4 className="text-pink-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Clients book once, then try a different salon next time</li>
-                  <li>• High customer acquisition cost (Instagram influencers: AED 500+)</li>
-                  <li>• Booking apps like Fresha/Booksy charge 20-30%</li>
-                  <li>• Walk-in traffic is unpredictable</li>
-                  <li>• No way to re-engage past clients systematically</li>
-                  <li>• Staff turnover means losing client relationships</li>
+                  <li>• <strong className="text-pink-300">55% of clients never rebook</strong> - they try the new salon in the next building</li>
+                  <li>• <strong className="text-pink-300">Beauty influencers cost AED 1,000-10,000</strong> per post - no guaranteed bookings</li>
+                  <li>• <strong className="text-pink-300">Fresha/Booksy take 20-30%</strong> commission and own your client data</li>
+                  <li>• <strong className="text-pink-300">5,000+ salons in Dubai alone</strong> - fierce competition on every street</li>
+                  <li>• <strong className="text-pink-300">Expat client turnover</strong> - clients leave UAE every 2-3 years</li>
+                  <li>• <strong className="text-pink-300">Staff poaching is rampant</strong> - stylists leave and take clients with them</li>
+                  <li>• <strong className="text-pink-300">Mall rent pressure</strong> - AED 300-400/sqft means empty chairs bleed money</li>
+                  <li>• <strong className="text-pink-300">Weekend-heavy traffic</strong> - weekdays are dead, Fri-Sat overbooked</li>
+                  <li>• <strong className="text-pink-300">Home service competition</strong> - apps like Glamz sending stylists to homes</li>
+                  <li>• <strong className="text-pink-300">Price sensitivity</strong> - clients compare prices on Instagram before booking</li>
+                  <li>• <strong className="text-pink-300">Summer client exodus</strong> - 30% revenue drop as residents travel abroad</li>
                 </ul>
               </div>
 
               <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
-                <h4 className="text-emerald-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Turn one-time clients into regulars (2x more visits)</li>
-                  <li>• Pay only 15-20% (vs 30% to booking apps)</li>
-                  <li>• Build a client database they OWN</li>
-                  <li>• Send targeted campaigns (birthday, win-back)</li>
-                  <li>• Attract clients from other 500K Nuqta users</li>
-                  <li>• No POS change - works with any payment method</li>
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-pink-300">55% never rebook?</strong> → <strong className="text-emerald-300">Coins create rebooking incentive</strong> - 2x more return visits, clients don&apos;t leave rewards behind</li>
+                  <li>• <strong className="text-pink-300">Influencers cost AED 10K?</strong> → <strong className="text-emerald-300">Pay only 15-20% on actual bookings</strong> - zero upfront cost, before/after content included</li>
+                  <li>• <strong className="text-pink-300">Fresha takes 20-30%?</strong> → <strong className="text-emerald-300">Half the commission at 15-20%</strong> AND you own the client data, not the app</li>
+                  <li>• <strong className="text-pink-300">5,000+ salons competing?</strong> → <strong className="text-emerald-300">Stand out with rewards</strong> - be the salon where clients earn coins, differentiate beyond service</li>
+                  <li>• <strong className="text-pink-300">Expat clients leave?</strong> → <strong className="text-emerald-300">Continuous acquisition from 500K+ users</strong> - new clients replace departing expats automatically</li>
+                  <li>• <strong className="text-pink-300">Staff poaching?</strong> → <strong className="text-emerald-300">YOU own the client database</strong> - stylists leave, your client relationships stay with you</li>
+                  <li>• <strong className="text-pink-300">Mall rent bleeding money?</strong> → <strong className="text-emerald-300">Fill empty chairs with targeted notifications</strong> - push to nearby users during slow hours</li>
+                  <li>• <strong className="text-pink-300">Weekdays dead?</strong> → <strong className="text-emerald-300">Double coins on Tue-Wed</strong> - incentivize weekday bookings, balance traffic</li>
+                  <li>• <strong className="text-pink-300">Home service apps?</strong> → <strong className="text-emerald-300">In-salon rewards they can&apos;t match</strong> - coins + experience beats home convenience</li>
+                  <li>• <strong className="text-pink-300">Price shopping on Instagram?</strong> → <strong className="text-emerald-300">Compete on value, not just price</strong> - cashback makes your price effectively lower</li>
+                  <li>• <strong className="text-pink-300">Summer exodus?</strong> → <strong className="text-emerald-300">Summer survival campaigns</strong> - bonus coins keep remaining residents coming</li>
                 </ul>
               </div>
             </div>
@@ -907,6 +918,112 @@ const SalonPlaybook = () => {
               </div>
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-pink-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-pink-500 text-[#0a1628] flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-emerald-500/20 to-teal-500/20 rounded-2xl p-6 border border-emerald-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-emerald-500/30 flex items-center justify-center">
+                  <Store className="text-emerald-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-emerald-400 text-sm">How to onboard salon merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign salon & spa merchants. Beauty industry focus with appointment-based loyalty strategies.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Category Conquest: Beauty vertical domination</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Content Studio: Before/after transformation shoots</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                  <span>Merchant Referral: Salon owners refer salons</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-lg font-semibold text-sm hover:bg-emerald-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring clients to salons</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns to drive beauty-conscious customers. Transformation content, referral chains, and streak rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Nuqta Finds: Beauty transformation UGC</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain: Referral for beauty services</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Flash Frenzy: Limited-time beauty deals</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-pink-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-emerald-400">AED 350</p>
+                <p className="text-xs text-slate-400">Avg Ticket</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">3x</p>
+                <p className="text-xs text-slate-400">Repeat Rate Target</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}

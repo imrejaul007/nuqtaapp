@@ -49,7 +49,12 @@ import {
   Sparkles,
   AlertCircle,
   Check,
-  X
+  X,
+  Building2,
+  Car,
+  Heart,
+  PawPrint,
+  Shirt
 } from 'lucide-react';
 
 export default function MerchantPlaybookPage() {
@@ -604,6 +609,12 @@ export default function MerchantPlaybookPage() {
       purple: { bg: 'bg-purple-500/20', text: 'text-purple-400', border: 'border-purple-500/30' },
       indigo: { bg: 'bg-indigo-500/20', text: 'text-indigo-400', border: 'border-indigo-500/30' },
       slate: { bg: 'bg-slate-500/20', text: 'text-slate-400', border: 'border-slate-500/30' },
+      teal: { bg: 'bg-teal-500/20', text: 'text-teal-400', border: 'border-teal-500/30' },
+      sky: { bg: 'bg-sky-500/20', text: 'text-sky-400', border: 'border-sky-500/30' },
+      orange: { bg: 'bg-orange-500/20', text: 'text-orange-400', border: 'border-orange-500/30' },
+      fuchsia: { bg: 'bg-fuchsia-500/20', text: 'text-fuchsia-400', border: 'border-fuchsia-500/30' },
+      emerald: { bg: 'bg-emerald-500/20', text: 'text-emerald-400', border: 'border-emerald-500/30' },
+      cyan: { bg: 'bg-cyan-500/20', text: 'text-cyan-400', border: 'border-cyan-500/30' },
     };
     return colors[color]?.[type] || '';
   };
@@ -669,7 +680,7 @@ export default function MerchantPlaybookPage() {
             {/* Hero Stats */}
             <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
-                <div className="text-4xl font-bold text-[#c9a227]">7</div>
+                <div className="text-4xl font-bold text-[#c9a227]">14</div>
                 <div className="text-gray-400 mt-1">Merchant Categories</div>
               </div>
               <div className="bg-white/5 rounded-xl p-6 border border-white/10 text-center">
@@ -885,31 +896,135 @@ export default function MerchantPlaybookPage() {
             {/* Full Playbook Links */}
             <div className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 rounded-xl p-6 border border-[#c9a227]/30 mb-8">
               <h3 className="text-xl font-bold text-white mb-4">📚 Full Category Playbooks (Complete Sales Guides)</h3>
-              <p className="text-gray-400 text-sm mb-4">Each playbook includes industry overview, custom Nuqta services, pitch scripts, ROI calculators, objection handling, and closing techniques.</p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+              <p className="text-gray-400 text-sm mb-4">Each playbook includes industry overview, pitch scripts, ROI calculators, objection handling, and <span className="text-[#c9a227] font-medium">marketing campaigns</span> for merchant & user acquisition.</p>
+
+              {/* Campaign Stats Summary */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 p-4 bg-white/5 rounded-xl border border-white/10">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-emerald-400">5</div>
+                  <div className="text-xs text-gray-400">Merchant Campaigns</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-purple-400">6</div>
+                  <div className="text-xs text-gray-400">User Campaigns</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-amber-400">6</div>
+                  <div className="text-xs text-gray-400">Cultural Campaigns</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-pink-400">6</div>
+                  <div className="text-xs text-gray-400">Multicultural</div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
-                  { name: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Utensils, color: 'orange', engine: 'A' },
-                  { name: 'Salon & Spa', href: '/playbook-salon', icon: Scissors, color: 'pink', engine: 'A' },
-                  { name: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell, color: 'green', engine: 'A' },
-                  { name: 'Fashion & Retail', href: '/playbook-fashion', icon: ShoppingBag, color: 'purple', engine: 'A' },
-                  { name: 'Entertainment', href: '/playbook-entertainment', icon: Film, color: 'fuchsia', engine: 'A/C' },
-                  { name: 'Supermarket', href: '/playbook-supermarket', icon: Store, color: 'emerald', engine: 'B' },
-                  { name: 'Gold & Jewelry', href: '/playbook-gold', icon: Star, color: 'amber', engine: 'B' },
-                  { name: 'Electronics', href: '/playbook-electronics', icon: Settings, color: 'cyan', engine: 'B' },
-                  { name: 'Pharmacy', href: '/playbook-pharmacy', icon: Stethoscope, color: 'red', engine: 'B' },
+                  { name: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Utensils, color: 'orange', engine: 'A', avgTicket: 'AED 55-120', loiShare: '40%' },
+                  { name: 'Salon & Spa', href: '/playbook-salon', icon: Scissors, color: 'pink', engine: 'A', avgTicket: 'AED 350', loiShare: '20%' },
+                  { name: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell, color: 'green', engine: 'A', avgTicket: 'AED 300/mo', loiShare: '10%' },
+                  { name: 'Fashion & Retail', href: '/playbook-fashion', icon: ShoppingBag, color: 'purple', engine: 'A', avgTicket: 'AED 400', loiShare: '8%' },
+                  { name: 'Entertainment', href: '/playbook-entertainment', icon: Film, color: 'fuchsia', engine: 'A/C', avgTicket: 'AED 200', loiShare: '5%' },
+                  { name: 'Hotels & Hospitality', href: '/playbook-hotel', icon: Building2, color: 'blue', engine: 'A', avgTicket: 'AED 500+', loiShare: '12%' },
+                  { name: 'Car Services & Auto', href: '/playbook-auto', icon: Car, color: 'slate', engine: 'A', avgTicket: 'AED 200', loiShare: '8%' },
+                  { name: 'Clinics & Medical', href: '/playbook-clinic', icon: Heart, color: 'teal', engine: 'A', avgTicket: 'AED 400', loiShare: '6%' },
+                  { name: 'Pet Services', href: '/playbook-pet', icon: PawPrint, color: 'amber', engine: 'A', avgTicket: 'AED 250', loiShare: '4%' },
+                  { name: 'Laundry & Dry Cleaning', href: '/playbook-laundry', icon: Shirt, color: 'sky', engine: 'B', avgTicket: 'AED 80', loiShare: '5%' },
+                  { name: 'Supermarket', href: '/playbook-supermarket', icon: Store, color: 'emerald', engine: 'B', avgTicket: 'AED 150', loiShare: '7%' },
+                  { name: 'Gold & Jewelry', href: '/playbook-gold', icon: Star, color: 'amber', engine: 'B', avgTicket: 'AED 5K+', loiShare: '3%' },
+                  { name: 'Electronics', href: '/playbook-electronics', icon: Settings, color: 'cyan', engine: 'B', avgTicket: 'AED 1.5K', loiShare: '4%' },
+                  { name: 'Pharmacy', href: '/playbook-pharmacy', icon: Stethoscope, color: 'red', engine: 'B', avgTicket: 'AED 80', loiShare: '3%' },
                 ].map((item, idx) => (
-                  <Link
+                  <div
                     key={idx}
-                    href={item.href}
-                    className={`flex flex-col items-center gap-2 p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-[#c9a227]/50 transition-all group`}
+                    className="bg-white/5 rounded-xl border border-white/10 hover:border-[#c9a227]/50 transition-all overflow-hidden"
                   >
-                    <item.icon className="text-[#c9a227] group-hover:scale-110 transition-transform" size={24} />
-                    <span className="text-white text-sm font-medium text-center">{item.name}</span>
-                    <span className={`text-xs px-2 py-0.5 rounded-full ${item.engine === 'A' ? 'bg-green-500/20 text-green-400' : item.engine === 'B' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-purple-500/20 text-purple-400'}`}>
-                      Engine {item.engine}
-                    </span>
-                  </Link>
+                    {/* Card Header */}
+                    <div className="p-4 border-b border-white/10">
+                      <div className="flex items-center gap-3">
+                        <div className="p-2 rounded-lg bg-[#c9a227]/20">
+                          <item.icon className="text-[#c9a227]" size={20} />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-white font-medium">{item.name}</div>
+                          <div className="flex items-center gap-2 text-xs">
+                            <span className={`px-1.5 py-0.5 rounded ${item.engine === 'A' ? 'bg-green-500/20 text-green-400' : item.engine === 'B' ? 'bg-yellow-500/20 text-yellow-400' : 'bg-purple-500/20 text-purple-400'}`}>
+                              Engine {item.engine}
+                            </span>
+                            <span className="text-gray-500">•</span>
+                            <span className="text-gray-400">{item.avgTicket}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Stats Row */}
+                    <div className="grid grid-cols-3 divide-x divide-white/10 text-center py-2 bg-white/[0.02]">
+                      <div>
+                        <div className="text-sm font-bold text-emerald-400">5</div>
+                        <div className="text-[10px] text-gray-500">Merchant</div>
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-purple-400">6</div>
+                        <div className="text-[10px] text-gray-500">User</div>
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-[#c9a227]">{item.loiShare}</div>
+                        <div className="text-[10px] text-gray-500">LOI Share</div>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="p-3 flex gap-2">
+                      <Link
+                        href={item.href}
+                        className="flex-1 text-center py-2 px-3 bg-[#c9a227] text-black text-xs font-semibold rounded-lg hover:bg-[#d4af37] transition-colors"
+                      >
+                        Full Playbook
+                      </Link>
+                      <Link
+                        href="/marketing-war-room?tab=merchant-campaigns"
+                        className="flex-1 text-center py-2 px-3 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-lg hover:bg-emerald-500/30 transition-colors"
+                      >
+                        Campaigns
+                      </Link>
+                    </div>
+                  </div>
                 ))}
+              </div>
+
+              {/* Quick Campaign Access */}
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <div className="flex flex-wrap gap-3 justify-center">
+                  <Link
+                    href="/marketing-war-room?tab=merchant-campaigns"
+                    className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg hover:bg-emerald-500/30 transition-colors"
+                  >
+                    <Store size={16} />
+                    <span className="text-sm font-medium">All Merchant Campaigns</span>
+                  </Link>
+                  <Link
+                    href="/marketing-war-room?tab=user-campaigns"
+                    className="flex items-center gap-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-colors"
+                  >
+                    <Users size={16} />
+                    <span className="text-sm font-medium">All User Campaigns</span>
+                  </Link>
+                  <Link
+                    href="/marketing-war-room?tab=cultural-campaigns"
+                    className="flex items-center gap-2 px-4 py-2 bg-amber-500/20 text-amber-400 rounded-lg hover:bg-amber-500/30 transition-colors"
+                  >
+                    <Calendar size={16} />
+                    <span className="text-sm font-medium">UAE Cultural Campaigns</span>
+                  </Link>
+                  <Link
+                    href="/marketing-war-room?tab=multicultural-campaigns"
+                    className="flex items-center gap-2 px-4 py-2 bg-pink-500/20 text-pink-400 rounded-lg hover:bg-pink-500/30 transition-colors"
+                  >
+                    <Globe size={16} />
+                    <span className="text-sm font-medium">Multicultural Campaigns</span>
+                  </Link>
+                </div>
               </div>
             </div>
 

@@ -37,7 +37,8 @@ import {
   Sparkles,
   Coins,
   Wrench,
-  Package
+  Package,
+  Store
 } from 'lucide-react';
 
 /**
@@ -178,27 +179,35 @@ const ElectronicsPlaybook = () => {
                 ))}
               </div>
 
-              <div className="bg-cyan-500/10 rounded-xl p-4 border border-cyan-500/20">
-                <h4 className="text-cyan-400 font-semibold mb-2">Key Pain Points</h4>
+              <div className="bg-red-500/10 rounded-xl p-4 border border-red-500/20">
+                <h4 className="text-red-400 font-semibold mb-2">🇦🇪 GCC-Specific Pain Points</h4>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Very thin margins (5-15%), especially on phones</li>
-                  <li>• Fierce online competition (Amazon, Noon)</li>
-                  <li>• Customers compare prices everywhere</li>
-                  <li>• Extended warranty and accessories are profit centers</li>
-                  <li>• High cost to acquire new customers</li>
-                  <li>• Seasonal sales (Back to School, Black Friday)</li>
+                  <li>• <strong className="text-red-300">Amazon/Noon crushing retail</strong> - same-day delivery, better prices</li>
+                  <li>• <strong className="text-red-300">Paper-thin margins 5-15%</strong> on phones (iPhone margin ~AED 50)</li>
+                  <li>• <strong className="text-red-300">3,000+ electronics stores in UAE</strong> - brutal Computer Plaza competition</li>
+                  <li>• <strong className="text-red-300">Customers price-check on phone</strong> while standing in store</li>
+                  <li>• <strong className="text-red-300">Gray market imports</strong> from India/Singapore undercutting prices</li>
+                  <li>• <strong className="text-red-300">Extended warranty is real profit</strong> but hard to sell</li>
+                  <li>• <strong className="text-red-300">iPhone launch madness</strong> then crickets for months</li>
+                  <li>• <strong className="text-red-300">DSF/Gitex conditioning</strong> - customers wait for "festival prices"</li>
+                  <li>• <strong className="text-red-300">No trade-in system</strong> vs Apple Store direct</li>
+                  <li>• <strong className="text-red-300">Accessories are margin</strong> but customers buy from Amazon</li>
                 </ul>
               </div>
 
-              <div className="bg-blue-500/10 rounded-xl p-4 border border-blue-500/20">
-                <h4 className="text-blue-400 font-semibold mb-2">Why They Need Nuqta</h4>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Earn coins = reason to choose physical store over online</li>
-                  <li>• Accessory upsells drive coin redemption</li>
-                  <li>• Warranty reminders bring customers back</li>
-                  <li>• Discovery by 500K+ tech-savvy users</li>
-                  <li>• Compete with online on experience + rewards</li>
-                  <li>• Trade-in/upgrade reminders</li>
+              <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/20">
+                <h4 className="text-emerald-400 font-semibold mb-2">✨ How Nuqta Solves Each Pain Point</h4>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  <li>• <strong className="text-red-300">Amazon/Noon crushing retail?</strong> → <strong className="text-emerald-300">Coins on purchases online can&apos;t match</strong> - in-store rewards beat delivery</li>
+                  <li>• <strong className="text-red-300">Paper-thin margins 5-15%?</strong> → <strong className="text-emerald-300">Only 5-8% commission</strong> - sustainable for low-margin electronics</li>
+                  <li>• <strong className="text-red-300">3,000+ stores competing?</strong> → <strong className="text-emerald-300">Stand out with rewards</strong> - be the store where customers earn coins</li>
+                  <li>• <strong className="text-red-300">Price-check while in store?</strong> → <strong className="text-emerald-300">Coins close the deal</strong> - rewards make your price effectively lower</li>
+                  <li>• <strong className="text-red-300">Gray market undercutting?</strong> → <strong className="text-emerald-300">Warranty + rewards</strong> - legitimate purchase with coins beats shady import</li>
+                  <li>• <strong className="text-red-300">Extended warranty hard sell?</strong> → <strong className="text-emerald-300">Bonus coins on warranty</strong> - incentivize the upsell customers need</li>
+                  <li>• <strong className="text-red-300">iPhone then crickets?</strong> → <strong className="text-emerald-300">Accessory campaigns</strong> - drive case, charger, AirPods sales between launches</li>
+                  <li>• <strong className="text-red-300">DSF/Gitex waiting?</strong> → <strong className="text-emerald-300">Bonus coins drive traffic NOW</strong> - rewards without festival discounts</li>
+                  <li>• <strong className="text-red-300">No trade-in vs Apple?</strong> → <strong className="text-emerald-300">Upgrade notifications</strong> - 2-year cycle alerts bring customers back</li>
+                  <li>• <strong className="text-red-300">Accessories to Amazon?</strong> → <strong className="text-emerald-300">Redeem coins on accessories</strong> - high-margin upsell with earned rewards</li>
                 </ul>
               </div>
             </div>
@@ -715,6 +724,112 @@ const ElectronicsPlaybook = () => {
               ))}
             </div>
           </CollapsibleSection>
+        </div>
+
+        {/* Marketing Campaigns Section */}
+        <div className="mb-8">
+          <h2 className="text-cyan-400 text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2">
+            <span className="w-6 h-6 rounded-full bg-cyan-500 text-[#0a1628] flex items-center justify-center text-xs font-black">★</span>
+            Marketing Campaigns
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            {/* Merchant Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl p-6 border border-blue-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-blue-500/30 flex items-center justify-center">
+                  <Store className="text-blue-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">Merchant Acquisition</h3>
+                  <p className="text-blue-400 text-sm">How to onboard electronics merchants</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Battle-tested campaigns to sign electronics stores. High-value purchase focus with warranty and service rewards.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-blue-400" />
+                  <span>Event Blitz: GITEX & tech expo signups</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-blue-400" />
+                  <span>Category Conquest: Electronics vertical</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-blue-400" />
+                  <span>Content Studio: Tech product demos</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=merchant-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors"
+              >
+                <Megaphone size={16} />
+                View Merchant Campaigns
+              </Link>
+            </div>
+
+            {/* User Acquisition Campaign */}
+            <div className="bg-gradient-to-br from-purple-500/20 to-indigo-500/20 rounded-2xl p-6 border border-purple-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-purple-500/30 flex items-center justify-center">
+                  <Users className="text-purple-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg">User Acquisition</h3>
+                  <p className="text-purple-400 text-sm">How to bring buyers to tech stores</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-sm mb-4">
+                Viral campaigns for tech enthusiasts. DSF deals, warranty reminders, and gadget referrals.
+              </p>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Flash Frenzy: DSF electronics deals</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Golden Chain: Tech enthusiast referrals</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-slate-400">
+                  <CheckCircle2 size={14} className="text-purple-400" />
+                  <span>Back to School: Student tech deals</span>
+                </div>
+              </div>
+              <Link
+                href="/marketing-war-room?tab=user-campaigns"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-lg font-semibold text-sm hover:bg-purple-600 transition-colors"
+              >
+                <Users size={16} />
+                View User Campaigns
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Campaign Stats */}
+          <div className="mt-4 bg-white/5 rounded-xl p-4 border border-white/10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <p className="text-2xl font-bold text-cyan-400">5</p>
+                <p className="text-xs text-slate-400">Merchant Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-purple-400">6</p>
+                <p className="text-xs text-slate-400">User Campaigns</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-blue-400">AED 1.5K</p>
+                <p className="text-xs text-slate-400">Avg Transaction</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-[#c9a227]">10-15%</p>
+                <p className="text-xs text-slate-400">Commission</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Contact Footer */}
