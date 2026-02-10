@@ -10,7 +10,7 @@ import {
   Building, Globe, Smartphone, Play, ChevronRight, Package,
   MapPin, Megaphone, Video, Instagram, Handshake, Store,
   RefreshCw, Lock, Percent, BadgeCheck, Plane, Brush, Cake, User,
-  Car, PawPrint, Flower
+  Car, PawPrint, Flower, Key
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -32,6 +32,8 @@ const partnerBrands = [
   { id: 'car-wash', name: 'Premium Car Wash', icon: Car, coin: 100, color: 'red', description: 'Auto detailing & wash', partnerType: 'Exclusive Partner', partnerName: 'Z Wash', minOrder: 200, status: 'confirmed' },
   { id: 'pet-services', name: 'Pet Grooming & Care', icon: PawPrint, coin: 100, color: 'lime', description: 'Pet grooming & supplies', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
   { id: 'florist', name: 'Florist & Gifts', icon: Flower, coin: 100, color: 'emerald', description: 'Flowers & gift arrangements', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 200, status: 'pending' },
+  { id: 'car-rental', name: 'Car Rental', icon: Car, coin: 150, color: 'violet', description: 'Premium vehicle rentals & daily/weekly cars', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 300, status: 'pending' },
+  { id: 'home-rental', name: 'Home & Property Rental', icon: Key, coin: 200, color: 'amber', description: 'Vacation homes, apartments & short-term stays', partnerType: 'Exclusive Partner', partnerName: null, minOrder: 500, status: 'pending' },
 ];
 
 // Confirmed Partners Summary with SKU Details
@@ -168,11 +170,11 @@ const partnerBenefits = [
   { benefit: 'Recurring Revenue Stream', description: 'Same customers return every month', icon: RefreshCw },
 ];
 
-// User Types (with 16 brands = 1,600 AED total value)
+// User Types (with 18 brands = 1,950 AED total value)
 const userTypes = [
   { type: 'Light User', brands: '2-4 brands', coins: '200-400 AED', aov: '400-800 AED', percentage: 30 },
-  { type: 'Average User', brands: '5-8 brands', coins: '500-800 AED', aov: '1,000-1,600 AED', percentage: 50 },
-  { type: 'Heavy User', brands: '10-16 brands', coins: '1,000-1,600 AED', aov: '2,000-3,200 AED', percentage: 20 },
+  { type: 'Average User', brands: '5-10 brands', coins: '500-1,000 AED', aov: '1,000-2,000 AED', percentage: 50 },
+  { type: 'Heavy User', brands: '12-18 brands', coins: '1,200-1,950 AED', aov: '2,400-3,900 AED', percentage: 20 },
 ];
 
 // Growth Targets (H2 2026 Launch)
@@ -185,7 +187,7 @@ const growthTargets = [
 // Launch Phases
 const phase1Brands = ['salon', 'perfume', 'coffee', 'laundry', 'abaya', 'jewellery', 'haircare'];
 const phase2Brands = ['home-fragrance', 'mens-grooming', 'tours-travel', 'handbags', 'desserts', 'home-cleaning'];
-const phase3Brands = ['car-wash', 'pet-services', 'florist'];
+const phase3Brands = ['car-wash', 'pet-services', 'florist', 'car-rental', 'home-rental'];
 
 // Nuqta Revenue Model
 const nuqtaRevenue = [
@@ -285,8 +287,8 @@ export default function NuqtaPlusPage() {
                 </div>
               </div>
               <p className="text-slate-300 text-sm sm:text-base max-w-2xl">
-                Premium lifestyle membership with <span className="text-[#c9a227] font-medium">16 exclusive partner brands</span>.
-                Guarantees monthly active users with 1,600+ AED total AOV across partner network.
+                Premium lifestyle membership with <span className="text-[#c9a227] font-medium">18 exclusive partner brands</span>.
+                Guarantees monthly active users with 1,950+ AED total AOV across partner network.
               </p>
             </div>
 
@@ -297,11 +299,11 @@ export default function NuqtaPlusPage() {
                 <div className="text-xs text-slate-400">AED/month</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-3 sm:p-4 border border-green-500/30 text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-green-400">1,600</div>
+                <div className="text-2xl sm:text-3xl font-bold text-green-400">1,950</div>
                 <div className="text-xs text-slate-400">AED value</div>
               </div>
               <div className="bg-slate-800/50 rounded-xl p-3 sm:p-4 border border-purple-500/30 text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-purple-400">16</div>
+                <div className="text-2xl sm:text-3xl font-bold text-purple-400">18</div>
                 <div className="text-xs text-slate-400">Partners</div>
               </div>
             </div>
@@ -314,7 +316,7 @@ export default function NuqtaPlusPage() {
               <span className="text-lg sm:text-xl font-bold text-white">Strategic Purpose</span>
             </div>
             <p className="text-lg sm:text-xl text-white font-medium mb-4">
-              Guarantee <span className="text-green-400">Monthly Active Users</span> with <span className="text-[#c9a227]">1,600+ AED AOV</span> through 16 exclusive partner brands
+              Guarantee <span className="text-green-400">Monthly Active Users</span> with <span className="text-[#c9a227]">1,950+ AED AOV</span> through 18 exclusive partner brands
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               <div className="bg-slate-900/50 rounded-lg p-3 text-center">
@@ -536,7 +538,7 @@ export default function NuqtaPlusPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-400 mt-0.5" />
                     <div>
-                      <div className="text-white font-medium">Pay 99 AED, Get 1,600 AED value</div>
+                      <div className="text-white font-medium">Pay 99 AED, Get 1,950 AED value</div>
                       <div className="text-sm text-slate-400">16x ROI on membership fee</div>
                     </div>
                   </div>
@@ -601,7 +603,7 @@ export default function NuqtaPlusPage() {
                   <p className="text-sm text-slate-400">Members use coins monthly = guaranteed active users</p>
                 </div>
                 <div className="bg-slate-900/50 rounded-lg p-4">
-                  <div className="text-[#c9a227] font-bold mb-2">1,600+ AED AOV</div>
+                  <div className="text-[#c9a227] font-bold mb-2">1,950+ AED AOV</div>
                   <p className="text-sm text-slate-400">Users spend across multiple partner brands monthly</p>
                 </div>
                 <div className="bg-slate-900/50 rounded-lg p-4">
@@ -704,7 +706,7 @@ export default function NuqtaPlusPage() {
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-300">Total coin value</span>
-                      <span className="text-green-400 font-bold text-xl">1,600 AED</span>
+                      <span className="text-green-400 font-bold text-xl">1,950 AED</span>
                     </div>
                     <div className="flex justify-between items-center">
                       <span className="text-slate-300">Partner brands</span>
@@ -741,7 +743,7 @@ export default function NuqtaPlusPage() {
                   </div>
                   <div className="text-white font-bold mb-2">User Signs Up</div>
                   <ul className="text-sm text-slate-400 space-y-1">
-                    <li>• Sees &ldquo;1,600 AED monthly benefits&rdquo;</li>
+                    <li>• Sees &ldquo;1,950 AED monthly benefits&rdquo;</li>
                     <li>• Activates free 30-day trial</li>
                     <li>• Coins issued for all 16 partners</li>
                   </ul>
@@ -798,7 +800,7 @@ export default function NuqtaPlusPage() {
                   <p className="text-slate-300">Every Nuqta+ member is a guaranteed Monthly Active User. Coins expire in 30 days, forcing usage.</p>
                 </div>
                 <div className="bg-slate-900/50 rounded-xl p-6 border border-[#c9a227]/30">
-                  <div className="text-4xl font-bold text-[#c9a227] mb-2">1,600+ AED AOV</div>
+                  <div className="text-4xl font-bold text-[#c9a227] mb-2">1,950+ AED AOV</div>
                   <p className="text-slate-300">Members spend across multiple partner brands monthly, ensuring high average order value.</p>
                 </div>
               </div>
@@ -830,7 +832,7 @@ export default function NuqtaPlusPage() {
                     <Gift className="w-5 h-5 text-purple-400" />
                   </div>
                   <div className="text-white font-medium mb-1">High Perceived Value</div>
-                  <p className="text-xs text-slate-400">1,600 AED feels too valuable to waste</p>
+                  <p className="text-xs text-slate-400">1,950 AED feels too valuable to waste</p>
                 </div>
                 <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-600/30">
                   <div className="w-10 h-10 rounded-full bg-[#c9a227]/20 flex items-center justify-center mb-3">
@@ -1474,7 +1476,7 @@ export default function NuqtaPlusPage() {
               <div className="bg-slate-900/50 rounded-xl p-6 text-center">
                 <div className="text-sm text-slate-400 mb-2">Core Message</div>
                 <p className="text-2xl sm:text-3xl text-white font-bold">
-                  &ldquo;Pay <span className="text-[#c9a227]">99 AED</span>. Get up to <span className="text-green-400">1,600 AED</span> in lifestyle benefits every month.&rdquo;
+                  &ldquo;Pay <span className="text-[#c9a227]">99 AED</span>. Get up to <span className="text-green-400">1,950 AED</span> in lifestyle benefits every month.&rdquo;
                 </p>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
@@ -1612,7 +1614,7 @@ export default function NuqtaPlusPage() {
               </div>
               <div className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
                 <DollarSign className="w-6 h-6 text-[#c9a227] mx-auto mb-2" />
-                <div className="text-2xl font-bold text-white">1,600+</div>
+                <div className="text-2xl font-bold text-white">1,950+</div>
                 <div className="text-xs text-slate-400">AED AOV/user</div>
               </div>
               <div className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
