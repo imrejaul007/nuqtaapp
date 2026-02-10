@@ -12,26 +12,103 @@ import {
   Building2, Banknote, Scale, UserCheck, Landmark, PiggyBank,
   LineChart, CircleDollarSign, ShieldCheck, HeartHandshake,
   Search, Eye, MessageCircle, CalendarDays, Sparkles, Camera, Layers,
-  ShoppingBag, Coins, Network, ArrowRightLeft
+  ShoppingBag, Coins, Network, ArrowRightLeft, Truck, Package, Wrench
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
 // Executive Summary Stats
 const keyStats = [
   { label: 'Target Market', value: '900K', suffix: 'households', color: 'text-blue-400' },
-  { label: 'Year 1 Users', value: '8,000', suffix: 'tenants', color: 'text-green-400' },
-  { label: 'Avg Rent', value: '60K', suffix: 'AED/year', color: 'text-purple-400' },
-  { label: 'Net Profit/User', value: '3,100', suffix: 'AED/year', color: 'text-[#c9a227]' },
+  { label: 'Year 1 Users', value: '6,000', suffix: 'tenants', color: 'text-green-400' },
+  { label: 'Avg Move-in', value: '68K', suffix: 'AED', color: 'text-purple-400' },
+  { label: 'Net Profit/User', value: '2,500', suffix: 'AED/year', color: 'text-[#c9a227]' },
 ];
+
+// Full Move-in Cost Calculator
+const moveInCostExample = {
+  annualRent: 60000,
+  deposit: 3000,
+  brokerFee: 3000,
+  registration: 2000,
+  totalMoveIn: 68000,
+  monthlyPayment: 6300, // with Sakin financing
+};
+
+// Three Pillars of Sakin
+const sakinPillars = [
+  {
+    pillar: 'Find a Home',
+    icon: 'Search',
+    description: 'Property marketplace with broker + owner listings',
+    features: ['Broker listings', 'Owner listings', 'Corporate housing', 'Monthly furnished rentals'],
+    status: 'Phase 2',
+  },
+  {
+    pillar: 'Pay & Finance',
+    icon: 'Banknote',
+    description: 'Core financing products for move-in costs',
+    features: ['Annual rent financing', 'Deposit financing', 'Agent commission financing', 'Emergency rent loans'],
+    status: 'Phase 1',
+  },
+  {
+    pillar: 'Move & Set Up',
+    icon: 'Truck',
+    description: 'Future services layer after traction',
+    features: ['Furniture BNPL', 'Moving services', 'Cleaning', 'Utility setup', 'Insurance'],
+    status: 'Phase 3',
+  },
+];
+
+// Broker Partnership Model
+const brokerPartnershipModel = {
+  valueForBrokers: [
+    { benefit: 'Faster Deal Closure', description: 'Tenants can afford upfront with financing' },
+    { benefit: 'More Qualified Tenants', description: 'Pre-approved financing = serious buyers' },
+    { benefit: 'Guaranteed Commission', description: 'Sakin pays broker fee on day 1' },
+    { benefit: 'New Lead Channel', description: 'Access to Nuqta user base' },
+  ],
+  revenueFromBrokers: [
+    { source: 'Broker Fee Spread', description: 'Finance broker fee, earn spread', value: '~500 AED/deal' },
+    { source: 'Referral Commission', description: 'Broker refers tenant to Sakin', value: '200-500 AED/referral' },
+    { source: 'Premium Listing', description: 'Brokers pay for featured listings', value: '500-2,000 AED/listing' },
+  ],
+  targetBrokers: '50-100 brokers in first 6 months',
+};
+
+// Cost Structure (Lean Model)
+const costStructure = {
+  oneTimeSetup: [
+    { item: 'Company setup', cost: 30000 },
+    { item: 'Legal & compliance', cost: 20000 },
+    { item: 'Tech (self-built)', cost: 10000 },
+    { item: 'Misc setup', cost: 20000 },
+  ],
+  monthlyTeam: [
+    { role: 'Operations Manager', cost: 12000 },
+    { role: 'Credit Analyst', cost: 8000 },
+    { role: 'Customer Support', cost: 5000 },
+    { role: 'Broker Partnerships', cost: 8000 },
+  ],
+  monthlyOther: [
+    { item: 'Office/coworking', cost: 5000 },
+    { item: 'Cloud/tools', cost: 5000 },
+    { item: 'Legal/compliance', cost: 5000 },
+    { item: 'Payment/misc', cost: 15000 },
+  ],
+  totalSetup: 80000,
+  monthlyBurn: 65000,
+  annualBurn: 800000,
+  breakEvenUsers: 320,
+};
 
 // Value Propositions
 const tenantBenefits = [
-  { icon: Calendar, title: 'Pay Monthly', description: 'No more annual lump sum. Split your rent into 12 easy payments.' },
+  { icon: Calendar, title: 'Pay Monthly', description: 'No more annual lump sum. Split your entire move-in cost into 12 easy payments.' },
   { icon: Gift, title: '100 AED Nuqta+ Discount', description: 'Nuqta+ members get 100 AED off rent every month.' },
-  { icon: Wallet, title: 'Better Cash Flow', description: 'Keep more money in your pocket each month.' },
-  { icon: Shield, title: 'No Hidden Fees', description: 'Transparent pricing. Know exactly what you pay.' },
-  { icon: Smartphone, title: 'Easy App Experience', description: 'Apply, track, and pay all from your phone.' },
-  { icon: Award, title: 'Build Credit History', description: 'Regular payments help build your UAE credit profile.' },
+  { icon: Wallet, title: 'No Large Upfront Cash', description: 'No need for 68K AED upfront. Pay ~6,300/month instead.' },
+  { icon: Shield, title: 'No Broker Hassle', description: 'We handle broker negotiations and payments for you.' },
+  { icon: Smartphone, title: 'One Simple Payment', description: 'Rent + deposit + broker + registration = one monthly bill.' },
+  { icon: Award, title: 'Earn Coins Monthly', description: 'Get Nuqta coins every month you pay on time.' },
 ];
 
 const landlordBenefits = [
@@ -85,23 +162,25 @@ const pricingTiers = [
   },
 ];
 
-// Unit Economics
+// Unit Economics (Full Move-in Financing)
 const unitEconomics = {
-  avgRent: 60000,
-  tenantFee: 7200, // 12%
-  bankCost: 3600, // 6%
+  avgMoveIn: 68000, // Total: rent + deposit + broker + registration
+  tenantFee: 8160, // 12% of 68K
+  bankCost: 4080, // 6% of 68K
   coinCost: 500, // Real cost of 100 AED coin x 12
   operatingCost: 1000, // Customer support, tech, etc.
-  netProfit: 3100,
+  paymentFees: 300, // Card/auto-debit fees
+  netProfit: 2280, // Conservative estimate
   nuqtaPlusFee: 1188, // 99 x 12
-  totalRevenue: 4288,
+  totalRevenueWithNuqta: 3468, // Net + Nuqta+ conversion
+  grossSpread: 4080, // 8160 - 4080
 };
 
-// Financial Projections
+// Financial Projections (aligned with business plan)
 const financialProjections = [
-  { year: 'Year 1', users: 8000, rentVolume: 480, revenue: 24.8, netProfit: 20, capitalNeeded: 100 },
-  { year: 'Year 2', users: 25000, rentVolume: 1500, revenue: 77.5, netProfit: 62, capitalNeeded: 250 },
-  { year: 'Year 3', users: 60000, rentVolume: 3600, revenue: 186, netProfit: 150, capitalNeeded: 500 },
+  { year: 'Year 1', users: 6000, moveInVolume: 408, revenue: 49, netProfit: 15, capitalNeeded: 100 },
+  { year: 'Year 2', users: 25000, moveInVolume: 1700, revenue: 204, netProfit: 62, capitalNeeded: 250 },
+  { year: 'Year 3', users: 60000, moveInVolume: 4080, revenue: 490, netProfit: 150, capitalNeeded: 500 },
 ];
 
 // Roadmap Phases
@@ -384,16 +463,19 @@ export default function SakinPage() {
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Home },
+    { id: 'pillars', label: '3 Pillars', icon: Layers },
     { id: 'properties', label: 'Properties', icon: Search },
-    { id: 'ecosystem', label: 'Fintech Ecosystem', icon: Layers },
+    { id: 'brokers', label: 'Brokers', icon: Handshake },
     { id: 'value-prop', label: 'Value Proposition', icon: Gift },
     { id: 'pricing', label: 'Pricing', icon: DollarSign },
     { id: 'economics', label: 'Unit Economics', icon: Calculator },
+    { id: 'costs', label: 'Costs', icon: Wallet },
     { id: 'financials', label: 'Financials', icon: BarChart3 },
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'gtm', label: 'Go-to-Market', icon: Target },
     { id: 'risks', label: 'Risks', icon: Shield },
     { id: 'competition', label: 'Competition', icon: Users },
+    { id: 'ecosystem', label: 'Ecosystem', icon: Network },
   ];
 
   return (
@@ -503,12 +585,51 @@ export default function SakinPage() {
               </h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-slate-300">
-                  <strong className="text-white">Sakin</strong> is a comprehensive rent platform with two core products:
-                  <strong className="text-teal-400"> Sakin Properties</strong> (an Airbnb-style marketplace to find verified rentals) and
-                  <strong className="text-teal-400"> Sakin Financing</strong> (monthly rent payment). We pay landlords the full annual rent upfront,
-                  while tenants pay us monthly with a small financing fee. As a <strong className="text-[#c9a227]">Nuqta+ partner</strong>,
-                  members receive 100 AED back every month, making their effective financing cost one of the lowest in the market.
+                  <strong className="text-white">Sakin</strong> is a <strong className="text-teal-400">housing fintech platform</strong> that helps users find a home,
+                  shows full move-in cost, and offers monthly payment plans. We handle <strong className="text-teal-400">broker fees, deposits, registration</strong> - everything.
+                  Users pay one simple monthly payment instead of 68,000 AED upfront. As a <strong className="text-[#c9a227]">Nuqta+ partner</strong>,
+                  members receive 100 AED back every month in coins.
                 </p>
+              </div>
+
+              {/* Core Promise Box */}
+              <div className="mt-6 bg-teal-500/10 rounded-xl p-4 border border-teal-500/30">
+                <p className="text-center text-lg font-bold text-white">
+                  &quot;No broker hassle. No big cheques. <span className="text-teal-400">One simple monthly payment.</span>&quot;
+                </p>
+              </div>
+
+              {/* Move-in Cost Calculator */}
+              <div className="mt-6">
+                <h3 className="text-lg font-bold text-white mb-4">Full Move-in Cost Example</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <h4 className="text-white font-bold mb-3">Traditional Way</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between"><span className="text-slate-400">Annual Rent</span><span className="text-white">60,000 AED</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">Security Deposit</span><span className="text-white">3,000 AED</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">Broker Fee</span><span className="text-white">3,000 AED</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">Registration</span><span className="text-white">2,000 AED</span></div>
+                      <div className="flex justify-between pt-2 border-t border-slate-700">
+                        <span className="text-red-400 font-bold">Total Upfront</span>
+                        <span className="text-red-400 font-bold">68,000 AED</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-teal-500/10 rounded-xl p-4 border border-teal-500/30">
+                    <h4 className="text-teal-400 font-bold mb-3">With Sakin</h4>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between"><span className="text-slate-400">Monthly Payment</span><span className="text-white">~6,300 AED</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">Total (12 months)</span><span className="text-white">~75,600 AED</span></div>
+                      <div className="flex justify-between"><span className="text-slate-400">Financing Cost (12%)</span><span className="text-white">~8,160 AED</span></div>
+                      <div className="flex justify-between"><span className="text-[#c9a227]">Nuqta+ Coins Back</span><span className="text-[#c9a227]">-1,200 AED</span></div>
+                      <div className="flex justify-between pt-2 border-t border-teal-500/30">
+                        <span className="text-teal-400 font-bold">Effective Cost</span>
+                        <span className="text-teal-400 font-bold">~7% APR</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* How It Works */}
@@ -600,6 +721,306 @@ export default function SakinPage() {
                 <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
                   <div className="text-3xl font-bold text-white">54B</div>
                   <div className="text-xs text-slate-400 mt-1">Total market (AED)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 3 Pillars Tab */}
+        {activeTab === 'pillars' && (
+          <div className="space-y-8">
+            {/* Three Pillars Overview */}
+            <div className="bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border border-teal-500/30">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <Layers className="w-6 h-6 text-teal-400" />
+                The Three Pillars of Sakin
+              </h2>
+              <p className="text-slate-300">
+                Sakin is built on <strong className="text-white">three interconnected pillars</strong> that create a complete housing solution.
+                Each pillar unlocks new revenue streams and deepens user engagement.
+              </p>
+            </div>
+
+            {/* Pillar Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Pillar 1: Find */}
+              <div className="bg-slate-800/30 rounded-xl p-6 border-2 border-cyan-500/50">
+                <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-4">
+                  <Search className="w-7 h-7 text-cyan-400" />
+                </div>
+                <div className="text-xs font-bold text-cyan-400 mb-1">PILLAR 1</div>
+                <h3 className="text-xl font-bold text-white mb-2">Find a Home</h3>
+                <p className="text-sm text-slate-400 mb-4">Property marketplace with broker + owner listings</p>
+                <div className="space-y-2">
+                  {['Broker listings', 'Owner listings', 'Corporate housing', 'Monthly furnished rentals'].map((f, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-cyan-400" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 px-3 py-1.5 bg-purple-500/20 rounded-full inline-block">
+                  <span className="text-xs font-bold text-purple-400">Phase 2</span>
+                </div>
+              </div>
+
+              {/* Pillar 2: Pay */}
+              <div className="bg-slate-800/30 rounded-xl p-6 border-2 border-teal-500">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-teal-500 text-white text-xs font-bold rounded-full">
+                  CORE REVENUE
+                </div>
+                <div className="w-14 h-14 rounded-2xl bg-teal-500/20 flex items-center justify-center mb-4">
+                  <Banknote className="w-7 h-7 text-teal-400" />
+                </div>
+                <div className="text-xs font-bold text-teal-400 mb-1">PILLAR 2</div>
+                <h3 className="text-xl font-bold text-white mb-2">Pay & Finance</h3>
+                <p className="text-sm text-slate-400 mb-4">Core financing products for move-in costs</p>
+                <div className="space-y-2">
+                  {['Annual rent financing', 'Deposit financing', 'Agent commission financing', 'Emergency rent loans'].map((f, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-teal-400" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 px-3 py-1.5 bg-green-500/20 rounded-full inline-block">
+                  <span className="text-xs font-bold text-green-400">Phase 1 - Now</span>
+                </div>
+              </div>
+
+              {/* Pillar 3: Move */}
+              <div className="bg-slate-800/30 rounded-xl p-6 border-2 border-orange-500/50">
+                <div className="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center mb-4">
+                  <Truck className="w-7 h-7 text-orange-400" />
+                </div>
+                <div className="text-xs font-bold text-orange-400 mb-1">PILLAR 3</div>
+                <h3 className="text-xl font-bold text-white mb-2">Move & Set Up</h3>
+                <p className="text-sm text-slate-400 mb-4">Future services layer after traction</p>
+                <div className="space-y-2">
+                  {['Furniture BNPL', 'Moving services', 'Cleaning', 'Utility setup', 'Insurance'].map((f, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-orange-400" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 px-3 py-1.5 bg-slate-500/20 rounded-full inline-block">
+                  <span className="text-xs font-bold text-slate-400">Phase 3 - Future</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Product Listing Structure */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-teal-400" />
+                Every Listing Shows Full Move-in Cost
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
+                  <h4 className="text-white font-bold mb-4">Sample Listing</h4>
+                  <div className="text-2xl font-bold text-white mb-4">1BR Apartment - JLT</div>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Annual Rent</span>
+                      <span className="text-white font-medium">60,000 AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Deposit</span>
+                      <span className="text-white font-medium">3,000 AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Broker Fee</span>
+                      <span className="text-white font-medium">3,000 AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Registration</span>
+                      <span className="text-white font-medium">2,000 AED</span>
+                    </div>
+                    <div className="flex justify-between py-3 bg-red-500/10 rounded-lg px-3 mt-2">
+                      <span className="text-red-400 font-bold">Total Move-in Cost</span>
+                      <span className="text-red-400 font-bold">68,000 AED</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-teal-500/10 rounded-xl p-5 border border-teal-500/30">
+                  <h4 className="text-teal-400 font-bold mb-4">Payment Options</h4>
+                  <div className="space-y-4">
+                    <div className="bg-slate-900/50 rounded-lg p-4">
+                      <div className="text-sm text-slate-400 mb-1">Option 1: Pay Once</div>
+                      <div className="text-2xl font-bold text-white">68,000 AED</div>
+                    </div>
+                    <div className="bg-teal-500/20 rounded-lg p-4 border-2 border-teal-500">
+                      <div className="text-sm text-teal-400 mb-1">Option 2: Pay Monthly with Sakin</div>
+                      <div className="text-2xl font-bold text-white">~6,300 AED<span className="text-sm font-normal text-slate-400">/month</span></div>
+                      <div className="text-xs text-[#c9a227] mt-2">+ Earn 100 AED Nuqta coins monthly</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Revenue by Pillar */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-green-400" />
+                Revenue Streams by Pillar
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Pillar</th>
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Revenue Stream</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Margin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-teal-400 font-bold">Pay & Finance</td>
+                      <td className="py-3 px-4 text-white">Rent financing (12% fee)</td>
+                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-bold">High</span></td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-teal-400 font-bold">Pay & Finance</td>
+                      <td className="py-3 px-4 text-white">Deposit financing</td>
+                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-bold">High</span></td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-cyan-400 font-bold">Find a Home</td>
+                      <td className="py-3 px-4 text-white">Broker referral spread</td>
+                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs font-bold">Medium</span></td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-cyan-400 font-bold">Find a Home</td>
+                      <td className="py-3 px-4 text-white">Owner listing fees</td>
+                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs font-bold">Medium</span></td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-orange-400 font-bold">Move & Set Up</td>
+                      <td className="py-3 px-4 text-white">Furniture BNPL, moving, cleaning</td>
+                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs font-bold">Medium</span></td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 text-[#c9a227] font-bold">Ecosystem</td>
+                      <td className="py-3 px-4 text-white">Nuqta+ conversions + merchant spend</td>
+                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-bold">Ongoing</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Brokers Tab */}
+        {activeTab === 'brokers' && (
+          <div className="space-y-8">
+            {/* Broker Partnership Overview */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-indigo-500/10 rounded-xl p-6 border border-purple-500/30">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <Handshake className="w-6 h-6 text-purple-400" />
+                Broker Partnership Model
+              </h2>
+              <p className="text-slate-300">
+                Brokers are a <strong className="text-white">key acquisition channel</strong> for Sakin. We offer faster deal closure,
+                guaranteed commission payment, and access to qualified tenants. Target: <strong className="text-purple-400">50-100 brokers in first 6 months</strong>.
+              </p>
+            </div>
+
+            {/* Value for Brokers */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Gift className="w-5 h-5 text-purple-400" />
+                Value Proposition for Brokers
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {brokerPartnershipModel.valueForBrokers.map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <CheckCircle className="w-6 h-6 text-purple-400 mb-2" />
+                    <h4 className="text-white font-bold text-sm mb-1">{item.benefit}</h4>
+                    <p className="text-xs text-slate-400">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Revenue from Brokers */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-green-400" />
+                Revenue Streams from Broker Partnerships
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {brokerPartnershipModel.revenueFromBrokers.map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
+                    <div className="text-sm text-slate-400 mb-1">{item.source}</div>
+                    <div className="text-2xl font-bold text-green-400 mb-2">{item.value}</div>
+                    <p className="text-xs text-slate-400">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Broker GTM */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Target className="w-5 h-5 text-purple-400" />
+                Broker Acquisition Strategy
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-white font-bold mb-3">What We Offer Brokers</h4>
+                  <div className="space-y-2">
+                    {['Commission per deal (200-500 AED referral)', 'Faster deal closings (tenant can afford upfront)', 'Guaranteed payouts (Sakin pays day 1)', 'Co-branded marketing materials', 'Premium listing slots'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <ArrowRight className="w-4 h-4 text-purple-400" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-3">Target Broker Segments</h4>
+                  <div className="space-y-2">
+                    {['Independent brokers (high volume)', 'Real estate agencies (200+ in UAE)', 'Property management companies', 'Developer sales teams', 'Relocation specialists'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <Building className="w-4 h-4 text-purple-400" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Owner Listings */}
+            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-6 border border-teal-500/30">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Home className="w-5 h-5 text-teal-400" />
+                Direct Owner Listings (NoBroker Style)
+              </h3>
+              <p className="text-slate-300 mb-4">
+                In addition to broker listings, Sakin enables <strong className="text-white">direct owner-to-tenant</strong> connections.
+                This creates a &quot;no broker hassle&quot; experience while still offering financing.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-teal-400">Free</div>
+                  <div className="text-xs text-slate-400">Basic listing</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-teal-400">199</div>
+                  <div className="text-xs text-slate-400">AED/mo premium tools</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-green-400">0%</div>
+                  <div className="text-xs text-slate-400">Broker fee for tenant</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-[#c9a227]">100%</div>
+                  <div className="text-xs text-slate-400">Rent to landlord</div>
                 </div>
               </div>
             </div>
@@ -1371,8 +1792,8 @@ export default function SakinPage() {
                   <h3 className="text-lg font-bold text-green-400 mb-4">Revenue</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
-                      <span className="text-slate-300">Average Annual Rent</span>
-                      <span className="text-white font-bold">{unitEconomics.avgRent.toLocaleString()} AED</span>
+                      <span className="text-slate-300">Avg Move-in Financed</span>
+                      <span className="text-white font-bold">{unitEconomics.avgMoveIn.toLocaleString()} AED</span>
                     </div>
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
                       <span className="text-slate-300">Tenant Fee (12%)</span>
@@ -1402,12 +1823,16 @@ export default function SakinPage() {
                       <span className="text-red-400 font-bold">-{unitEconomics.coinCost.toLocaleString()} AED</span>
                     </div>
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-300">Payment Fees</span>
+                      <span className="text-red-400 font-bold">-{unitEconomics.paymentFees.toLocaleString()} AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
                       <span className="text-slate-300">Operating Costs</span>
                       <span className="text-red-400 font-bold">-{unitEconomics.operatingCost.toLocaleString()} AED</span>
                     </div>
                     <div className="flex justify-between py-3 bg-red-500/10 rounded-lg px-3">
                       <span className="text-white font-bold">Total Costs</span>
-                      <span className="text-red-400 font-bold">-{(unitEconomics.bankCost + unitEconomics.coinCost + unitEconomics.operatingCost).toLocaleString()} AED</span>
+                      <span className="text-red-400 font-bold">-{(unitEconomics.bankCost + unitEconomics.coinCost + unitEconomics.operatingCost + unitEconomics.paymentFees).toLocaleString()} AED</span>
                     </div>
                   </div>
                 </div>
@@ -1418,11 +1843,11 @@ export default function SakinPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                   <div>
                     <div className="text-teal-400 text-sm font-bold uppercase">Net Profit Per Tenant</div>
-                    <div className="text-4xl font-black text-white mt-1">{unitEconomics.totalRevenue.toLocaleString()} AED<span className="text-lg text-slate-400">/year</span></div>
+                    <div className="text-4xl font-black text-white mt-1">~2,500 AED<span className="text-lg text-slate-400">/year</span></div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm text-slate-400">Profit Margin</div>
-                    <div className="text-3xl font-bold text-green-400">~51%</div>
+                    <div className="text-sm text-slate-400">Gross Spread</div>
+                    <div className="text-3xl font-bold text-green-400">{unitEconomics.grossSpread.toLocaleString()} AED</div>
                   </div>
                 </div>
               </div>
@@ -1455,9 +1880,156 @@ export default function SakinPage() {
           </div>
         )}
 
+        {/* Costs Tab */}
+        {activeTab === 'costs' && (
+          <div className="space-y-8">
+            {/* Cost Structure Overview */}
+            <div className="bg-gradient-to-r from-emerald-500/20 to-green-500/10 rounded-xl p-6 border border-emerald-500/30">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <Wallet className="w-6 h-6 text-emerald-400" />
+                Lean Cost Structure
+              </h2>
+              <p className="text-slate-300">
+                Sakin operates with a <strong className="text-white">lean startup model</strong>. Total setup cost is ~80K AED,
+                monthly burn is ~65K AED, breaking even at just <strong className="text-emerald-400">320 users</strong>.
+              </p>
+            </div>
+
+            {/* One-time Setup */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Rocket className="w-5 h-5 text-emerald-400" />
+                One-Time Setup Costs
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {costStructure.oneTimeSetup.map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-2xl font-bold text-white">{(item.cost / 1000).toFixed(0)}K</div>
+                    <div className="text-xs text-slate-400">{item.item}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-4 bg-emerald-500/10 rounded-lg p-4 text-center border border-emerald-500/30">
+                <div className="text-sm text-slate-400">Total Setup</div>
+                <div className="text-3xl font-bold text-emerald-400">{(costStructure.totalSetup / 1000).toFixed(0)}K AED</div>
+              </div>
+            </div>
+
+            {/* Monthly Costs */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Team Costs */}
+              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <Users className="w-5 h-5 text-blue-400" />
+                  Monthly Team Costs
+                </h3>
+                <div className="space-y-3">
+                  {costStructure.monthlyTeam.map((item, i) => (
+                    <div key={i} className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">{item.role}</span>
+                      <span className="text-white font-medium">{item.cost.toLocaleString()} AED</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between py-2 bg-blue-500/10 rounded-lg px-3">
+                    <span className="text-blue-400 font-bold">Total Salaries</span>
+                    <span className="text-blue-400 font-bold">33,000 AED</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Other Costs */}
+              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <Wrench className="w-5 h-5 text-purple-400" />
+                  Monthly Operating Costs
+                </h3>
+                <div className="space-y-3">
+                  {costStructure.monthlyOther.map((item, i) => (
+                    <div key={i} className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">{item.item}</span>
+                      <span className="text-white font-medium">{item.cost.toLocaleString()} AED</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between py-2 bg-purple-500/10 rounded-lg px-3">
+                    <span className="text-purple-400 font-bold">Total Operating</span>
+                    <span className="text-purple-400 font-bold">30,000 AED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Total Monthly Burn */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-6 border border-orange-500/30">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-orange-400" />
+                Total Monthly Burn
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/20">
+                  <div className="text-sm text-slate-400 mb-1">Monthly Burn</div>
+                  <div className="text-3xl font-bold text-orange-400">~65K</div>
+                  <div className="text-xs text-slate-500">AED/month</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/20">
+                  <div className="text-sm text-slate-400 mb-1">Annual Burn</div>
+                  <div className="text-3xl font-bold text-orange-400">~800K</div>
+                  <div className="text-xs text-slate-500">AED/year</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/20">
+                  <div className="text-sm text-slate-400 mb-1">Runway (with 500K)</div>
+                  <div className="text-3xl font-bold text-white">~8</div>
+                  <div className="text-xs text-slate-500">months</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Break-even Analysis */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <CheckCircle className="w-5 h-5 text-green-400" />
+                Break-even Analysis
+              </h3>
+              <p className="text-slate-300 mb-6">
+                With ~2,500 AED net profit per user and ~800K annual costs, Sakin breaks even with just <strong className="text-green-400">320 users</strong>.
+                This is a <strong className="text-white">very low threshold</strong> for a fintech startup.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
+                  <div className="text-sm text-slate-400 mb-1">Profit per User</div>
+                  <div className="text-2xl font-bold text-white">~2,500</div>
+                  <div className="text-xs text-slate-500">AED/year</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
+                  <div className="text-sm text-slate-400 mb-1">Annual Cost</div>
+                  <div className="text-2xl font-bold text-white">~800K</div>
+                  <div className="text-xs text-slate-500">AED</div>
+                </div>
+                <div className="bg-green-500/20 rounded-xl p-4 text-center border-2 border-green-500">
+                  <div className="text-sm text-green-400 mb-1">Break-even</div>
+                  <div className="text-3xl font-bold text-green-400">320</div>
+                  <div className="text-xs text-green-400">users</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
+                  <div className="text-sm text-slate-400 mb-1">Year 1 Target</div>
+                  <div className="text-2xl font-bold text-teal-400">6,000</div>
+                  <div className="text-xs text-slate-500">users (18x BE)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Financials Tab */}
         {activeTab === 'financials' && (
           <div className="space-y-8">
+            {/* Break-even Reminder */}
+            <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30 flex items-center gap-3">
+              <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
+              <p className="text-slate-300">
+                <strong className="text-green-400">Very Low Break-even:</strong> Only 320 users needed to cover costs. Year 1 target of 6,000 users = 18x break-even.
+              </p>
+            </div>
+
             {/* 3-Year Projections */}
             <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
               <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
@@ -1483,9 +2055,9 @@ export default function SakinPage() {
                       ))}
                     </tr>
                     <tr className="border-b border-slate-700/50">
-                      <td className="py-3 px-4 text-slate-300">Rent Volume (AED M)</td>
+                      <td className="py-3 px-4 text-slate-300">Move-in Volume (AED M)</td>
                       {financialProjections.map((proj, i) => (
-                        <td key={i} className="text-right py-3 px-4 text-white font-medium">{proj.rentVolume}M</td>
+                        <td key={i} className="text-right py-3 px-4 text-white font-medium">{proj.moveInVolume}M</td>
                       ))}
                     </tr>
                     <tr className="border-b border-slate-700/50">
