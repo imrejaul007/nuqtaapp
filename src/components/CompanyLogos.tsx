@@ -159,7 +159,7 @@ export const GamificationLogo = ({ size = 48, className = '' }: { size?: number;
   </svg>
 );
 
-// Nuqta Main Logo - The N with dot
+// Nuqta Main Logo - The N with dot (also exported as NuqtaLogo for convenience)
 export const NuqtaMainLogo = ({ size = 48, className = '' }: { size?: number; className?: string }) => (
   <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
     <defs>
@@ -279,6 +279,9 @@ export const FakhirLogo = ({ size = 48, className = '' }: { size?: number; class
     <circle cx="65" cy="64" r="2" fill="url(#fakhirGrad)" />
   </svg>
 );
+
+// Alias for NuqtaMainLogo for convenience
+export const NuqtaLogo = NuqtaMainLogo;
 
 // Export all logos as a mapping
 export const CompanyLogos = {
