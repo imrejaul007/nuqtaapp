@@ -54,7 +54,8 @@ import {
   Car,
   Heart,
   PawPrint,
-  Shirt
+  Shirt,
+  PartyPopper
 } from 'lucide-react';
 
 export default function MerchantPlaybookPage() {
@@ -934,6 +935,7 @@ export default function MerchantPlaybookPage() {
                   { name: 'Gold & Jewelry', href: '/playbook-gold', icon: Star, color: 'amber', engine: 'B', avgTicket: 'AED 5K+', loiShare: '3%' },
                   { name: 'Electronics', href: '/playbook-electronics', icon: Settings, color: 'cyan', engine: 'B', avgTicket: 'AED 1.5K', loiShare: '4%' },
                   { name: 'Pharmacy', href: '/playbook-pharmacy', icon: Stethoscope, color: 'red', engine: 'B', avgTicket: 'AED 80', loiShare: '3%' },
+                  { name: 'Events & Exhibitions', href: '/events-playbook', icon: PartyPopper, color: 'violet', engine: 'C', avgTicket: 'AED 500+', loiShare: 'Partnership' },
                 ].map((item, idx) => (
                   <div
                     key={idx}
