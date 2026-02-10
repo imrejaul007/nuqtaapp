@@ -266,6 +266,27 @@ const financialProjections = [
   { year: 'Year 3', users: 60000, moveInVolume: 4080, revenue: 490, netProfit: 150, capitalNeeded: 500 },
 ];
 
+// GCC Expansion
+const gccExpansion = {
+  headline: 'Find Housing Across the Gulf',
+  description: 'Sakin expands to serve expats and tourists across all 6 GCC countries',
+  countries: [
+    { country: 'UAE', flag: '🇦🇪', status: 'Active', avgRent: '60,000 AED', timeline: '2027' },
+    { country: 'Saudi Arabia', flag: '🇸🇦', status: 'Phase 2', avgRent: '45,000 SAR', timeline: '2028' },
+    { country: 'Qatar', flag: '🇶🇦', status: 'Phase 2', avgRent: '6,000 QAR/mo', timeline: '2028' },
+    { country: 'Kuwait', flag: '🇰🇼', status: 'Phase 3', avgRent: '4,500 KWD', timeline: '2029' },
+    { country: 'Bahrain', flag: '🇧🇭', status: 'Phase 3', avgRent: '4,000 BHD', timeline: '2029' },
+    { country: 'Oman', flag: '🇴🇲', status: 'Phase 3', avgRent: '4,000 OMR', timeline: '2029' },
+  ],
+  benefits: [
+    'One profile works across all GCC countries',
+    'Credit history from UAE helps in Saudi',
+    'Relocate within GCC with Sakin support',
+    'Furnished stays for GCC business travelers',
+    'Corporate packages for multi-country teams',
+  ],
+};
+
 // Roadmap Phases
 const roadmapPhases = [
   {

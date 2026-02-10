@@ -37,6 +37,16 @@ const corridors = [
   { country: 'Indonesia', flag: '🇮🇩', volume: '$1B', share: '2%', avgTransfer: 2500, ourFee: '0.5%', competitorFee: '2-3%' },
 ];
 
+// GCC Cross-Border Corridors
+const gccCorridors = [
+  { from: '🇦🇪 UAE', to: '🇸🇦 Saudi Arabia', volume: '$5B', fee: '0.25%', feature: 'Instant transfers between GCC countries' },
+  { from: '🇦🇪 UAE', to: '🇶🇦 Qatar', volume: '$2B', fee: '0.25%', feature: 'Same-day settlement' },
+  { from: '🇦🇪 UAE', to: '🇰🇼 Kuwait', volume: '$1.5B', fee: '0.25%', feature: 'Free for Nuqta+ members' },
+  { from: '🇦🇪 UAE', to: '🇧🇭 Bahrain', volume: '$800M', fee: '0.25%', feature: 'GCC Hawil Card acceptance' },
+  { from: '🇦🇪 UAE', to: '🇴🇲 Oman', volume: '$1.2B', fee: '0.25%', feature: 'Multi-currency wallet' },
+  { from: '🇸🇦 Saudi', to: '🇦🇪 UAE', volume: '$4B', fee: '0.25%', feature: 'Unified Nuqta rewards' },
+];
+
 // The Google Rate Advantage
 const googleRateAdvantage = {
   headline: 'Buy Nuqta Coins at Google Rate',

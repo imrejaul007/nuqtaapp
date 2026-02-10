@@ -127,6 +127,27 @@ const financialProjections = [
   { year: 'Year 3', users: 200000, transactions: 1000000, gmv: 800, revenue: 40, netProfit: 28, merchants: 1500 },
 ];
 
+// GCC Expansion
+const gccExpansion = {
+  headline: 'Shop Now, Pay Later Across the Gulf',
+  description: 'Qist expands BNPL services to all GCC countries - your credit travels with you',
+  countries: [
+    { country: 'UAE', flag: '🇦🇪', status: 'Active', merchants: '500+', maxLimit: '50,000 AED', timeline: '2027' },
+    { country: 'Saudi Arabia', flag: '🇸🇦', status: 'Phase 2', merchants: '1,000+', maxLimit: '50,000 SAR', timeline: '2028' },
+    { country: 'Qatar', flag: '🇶🇦', status: 'Phase 2', merchants: '200+', maxLimit: '50,000 QAR', timeline: '2028' },
+    { country: 'Kuwait', flag: '🇰🇼', status: 'Phase 3', merchants: '150+', maxLimit: '15,000 KWD', timeline: '2029' },
+    { country: 'Bahrain', flag: '🇧🇭', status: 'Phase 3', merchants: '100+', maxLimit: '18,000 BHD', timeline: '2029' },
+    { country: 'Oman', flag: '🇴🇲', status: 'Phase 3', merchants: '100+', maxLimit: '20,000 OMR', timeline: '2029' },
+  ],
+  benefits: [
+    'Shop in Saudi, pay from UAE account',
+    'Credit limit travels across GCC',
+    'Same 0% fees for Nuqta+ members',
+    'Multi-currency installment options',
+    'GCC-wide merchant network',
+  ],
+};
+
 // Roadmap Phases
 const roadmapPhases = [
   {

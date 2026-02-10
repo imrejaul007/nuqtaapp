@@ -383,6 +383,220 @@ const financialOverview = {
   },
 };
 
+// GCC Expansion Data
+const gccExpansion = {
+  countries: [
+    {
+      country: 'UAE',
+      arabic: 'الإمارات',
+      flag: '🇦🇪',
+      status: 'Active',
+      population: '10M',
+      expats: '89%',
+      tourists: '21M/year',
+      gdp: '$507B',
+      remittance: '$48B/year',
+      products: ['All 7 Products', 'Full Ecosystem'],
+      timeline: 'Now',
+      color: 'text-emerald-400',
+      bgColor: 'bg-emerald-500/10',
+      borderColor: 'border-emerald-500',
+    },
+    {
+      country: 'Saudi Arabia',
+      arabic: 'السعودية',
+      flag: '🇸🇦',
+      status: 'Phase 2',
+      population: '36M',
+      expats: '38%',
+      tourists: '27M/year',
+      gdp: '$1.1T',
+      remittance: '$39B/year',
+      products: ['Hawil', 'Qist', 'Nuqta+', 'Wasil'],
+      timeline: '2027',
+      color: 'text-green-400',
+      bgColor: 'bg-green-500/10',
+      borderColor: 'border-green-500',
+    },
+    {
+      country: 'Qatar',
+      arabic: 'قطر',
+      flag: '🇶🇦',
+      status: 'Phase 2',
+      population: '3M',
+      expats: '88%',
+      tourists: '4M/year',
+      gdp: '$230B',
+      remittance: '$15B/year',
+      products: ['Hawil', 'Qist', 'Nuqta+'],
+      timeline: '2027',
+      color: 'text-purple-400',
+      bgColor: 'bg-purple-500/10',
+      borderColor: 'border-purple-500',
+    },
+    {
+      country: 'Kuwait',
+      arabic: 'الكويت',
+      flag: '🇰🇼',
+      status: 'Phase 3',
+      population: '4.5M',
+      expats: '70%',
+      tourists: '800K/year',
+      gdp: '$175B',
+      remittance: '$18B/year',
+      products: ['Hawil', 'Qist'],
+      timeline: '2028',
+      color: 'text-blue-400',
+      bgColor: 'bg-blue-500/10',
+      borderColor: 'border-blue-500',
+    },
+    {
+      country: 'Bahrain',
+      arabic: 'البحرين',
+      flag: '🇧🇭',
+      status: 'Phase 3',
+      population: '1.5M',
+      expats: '55%',
+      tourists: '12M/year',
+      gdp: '$44B',
+      remittance: '$3B/year',
+      products: ['Hawil', 'Qist', 'Nuqta+'],
+      timeline: '2028',
+      color: 'text-red-400',
+      bgColor: 'bg-red-500/10',
+      borderColor: 'border-red-500',
+    },
+    {
+      country: 'Oman',
+      arabic: 'عمان',
+      flag: '🇴🇲',
+      status: 'Phase 3',
+      population: '5M',
+      expats: '44%',
+      tourists: '3.5M/year',
+      gdp: '$108B',
+      remittance: '$11B/year',
+      products: ['Hawil', 'Qist'],
+      timeline: '2028',
+      color: 'text-orange-400',
+      bgColor: 'bg-orange-500/10',
+      borderColor: 'border-orange-500',
+    },
+  ],
+  totalMarket: {
+    population: '60M+',
+    expats: '25M+',
+    tourists: '70M/year',
+    gdp: '$2.1T',
+    remittance: '$134B/year',
+    fintechGap: 'Underserved by 40%',
+  },
+  expansionPhases: [
+    {
+      phase: 'Phase 1 - UAE Foundation',
+      timeline: '2026-2027',
+      status: 'Active',
+      goals: [
+        'Launch all 7 core products in UAE',
+        'Achieve 500K users',
+        '500+ merchant partners',
+        'Build technology & compliance infrastructure',
+      ],
+      color: 'border-emerald-500',
+    },
+    {
+      phase: 'Phase 2 - GCC Major Markets',
+      timeline: '2027-2028',
+      status: 'Planned',
+      goals: [
+        'Expand to Saudi Arabia & Qatar',
+        'Launch Hawil cross-border corridors',
+        'Partner with major Saudi banks',
+        'Vision 2030 alignment',
+      ],
+      color: 'border-blue-500',
+    },
+    {
+      phase: 'Phase 3 - Full GCC Coverage',
+      timeline: '2028-2029',
+      status: 'Planned',
+      goals: [
+        'Launch in Kuwait, Bahrain, Oman',
+        'GCC-wide Hawil Card acceptance',
+        'Unified rewards across borders',
+        'Corporate GCC packages',
+      ],
+      color: 'border-purple-500',
+    },
+    {
+      phase: 'Phase 4 - Regional Dominance',
+      timeline: '2029-2030',
+      status: 'Vision',
+      goals: [
+        'Expand to Egypt, Jordan, Morocco',
+        '5M+ users across MENA',
+        'IPO readiness',
+        'White-label partnerships',
+      ],
+      color: 'border-[#c9a227]',
+    },
+  ],
+  gccFeatures: [
+    {
+      feature: 'Cross-Border Hawil',
+      description: 'Send money between GCC countries at Google rate',
+      benefit: 'Save 3-5% vs traditional banks',
+      icon: Send,
+      color: 'text-blue-400',
+    },
+    {
+      feature: 'GCC Travel Card',
+      description: 'One Hawil Card works across all 6 GCC nations',
+      benefit: 'No FX fees within GCC',
+      icon: CreditCard,
+      color: 'text-emerald-400',
+    },
+    {
+      feature: 'Unified Rewards',
+      description: 'Earn & spend Nuqta coins in any GCC country',
+      benefit: 'Seamless cross-border loyalty',
+      icon: Coins,
+      color: 'text-[#c9a227]',
+    },
+    {
+      feature: 'GCC Qist Network',
+      description: 'BNPL that works at partners across the region',
+      benefit: 'Shop in Dubai, pay from Riyadh',
+      icon: Wallet,
+      color: 'text-violet-400',
+    },
+    {
+      feature: 'Regional Sakin',
+      description: 'Find housing across GCC with one profile',
+      benefit: 'Relocate easily within GCC',
+      icon: Home,
+      color: 'text-green-400',
+    },
+    {
+      feature: 'GCC Rakab',
+      description: 'Consistent ride experience in all GCC cities',
+      benefit: 'Same app, same wallet, any GCC city',
+      icon: Car,
+      color: 'text-orange-400',
+    },
+  ],
+  corridors: [
+    { from: 'UAE', to: 'India', volume: '$12B', users: '3.5M' },
+    { from: 'UAE', to: 'Philippines', volume: '$5B', users: '700K' },
+    { from: 'Saudi', to: 'India', volume: '$8B', users: '2.5M' },
+    { from: 'Saudi', to: 'Egypt', volume: '$6B', users: '2.8M' },
+    { from: 'Qatar', to: 'India', volume: '$4B', users: '750K' },
+    { from: 'Kuwait', to: 'India', volume: '$5B', users: '1M' },
+    { from: 'GCC', to: 'UK/Europe', volume: '$15B', users: '500K' },
+    { from: 'GCC', to: 'Pakistan', volume: '$22B', users: '4M' },
+  ],
+};
+
 // Improvements Roadmap
 const improvements = [
   {
@@ -525,6 +739,7 @@ export default function EcosystemPage() {
     { id: 'overview', label: 'Overview', icon: Network },
     { id: 'products', label: 'Products', icon: Sparkles },
     { id: 'hawil-card', label: 'Hawil Card', icon: CreditCard },
+    { id: 'gcc-expansion', label: 'GCC Expansion', icon: Globe },
     { id: 'synergies', label: 'Synergies', icon: Layers },
     { id: 'journeys', label: 'User Journeys', icon: Users },
     { id: 'segments', label: 'Segments', icon: Target },
@@ -1204,6 +1419,246 @@ export default function EcosystemPage() {
               >
                 Learn More About Hawil Card <ArrowRight className="w-4 h-4" />
               </Link>
+            </div>
+          </div>
+        )}
+
+        {/* GCC Expansion Tab */}
+        {activeTab === 'gcc-expansion' && (
+          <div className="space-y-8">
+            {/* Hero Banner */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 via-blue-500/10 to-emerald-500/10 rounded-2xl p-8 border-2 border-[#c9a227]">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c9a227] to-amber-500 flex items-center justify-center">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-black text-white">GCC Expansion Strategy</h2>
+                  <p className="text-[#c9a227] text-lg">From UAE to the entire Gulf region</p>
+                </div>
+              </div>
+              <p className="text-slate-300 text-lg max-w-3xl mb-6">
+                Nuqta is building the first <strong className="text-white">pan-GCC financial super app</strong> -
+                serving 60M+ residents and 70M+ tourists across 6 countries with unified rewards,
+                seamless cross-border payments, and localized products.
+              </p>
+
+              {/* Total Market Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+                {[
+                  { label: 'Population', value: gccExpansion.totalMarket.population },
+                  { label: 'Expats', value: gccExpansion.totalMarket.expats },
+                  { label: 'Tourists/Year', value: gccExpansion.totalMarket.tourists },
+                  { label: 'Combined GDP', value: gccExpansion.totalMarket.gdp },
+                  { label: 'Remittance', value: gccExpansion.totalMarket.remittance },
+                  { label: 'Fintech Gap', value: gccExpansion.totalMarket.fintechGap },
+                ].map((stat, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 text-center border border-[#c9a227]/30">
+                    <div className="text-lg font-bold text-[#c9a227]">{stat.value}</div>
+                    <div className="text-xs text-slate-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Country Cards */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-emerald-400" />
+                GCC Markets
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {gccExpansion.countries.map((country, i) => (
+                  <div key={i} className={`${country.bgColor} rounded-xl p-5 border-2 ${country.borderColor}`}>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <span className="text-3xl">{country.flag}</span>
+                        <div>
+                          <h4 className={`font-bold ${country.color}`}>{country.country}</h4>
+                          <span className="text-slate-500 text-sm">{country.arabic}</span>
+                        </div>
+                      </div>
+                      <span className={`px-2 py-1 rounded text-xs font-bold ${
+                        country.status === 'Active' ? 'bg-emerald-500/20 text-emerald-400' :
+                        country.status === 'Phase 2' ? 'bg-blue-500/20 text-blue-400' :
+                        'bg-purple-500/20 text-purple-400'
+                      }`}>
+                        {country.status}
+                      </span>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2 mb-4 text-sm">
+                      <div className="bg-slate-900/50 rounded p-2">
+                        <div className="text-slate-400 text-xs">Population</div>
+                        <div className="text-white font-medium">{country.population}</div>
+                      </div>
+                      <div className="bg-slate-900/50 rounded p-2">
+                        <div className="text-slate-400 text-xs">Expats</div>
+                        <div className="text-white font-medium">{country.expats}</div>
+                      </div>
+                      <div className="bg-slate-900/50 rounded p-2">
+                        <div className="text-slate-400 text-xs">Tourists</div>
+                        <div className="text-white font-medium">{country.tourists}</div>
+                      </div>
+                      <div className="bg-slate-900/50 rounded p-2">
+                        <div className="text-slate-400 text-xs">Remittance</div>
+                        <div className="text-white font-medium">{country.remittance}</div>
+                      </div>
+                    </div>
+
+                    <div className="mb-3">
+                      <div className="text-xs text-slate-400 mb-2">Products</div>
+                      <div className="flex flex-wrap gap-1">
+                        {country.products.map((product, j) => (
+                          <span key={j} className={`text-xs px-2 py-1 rounded ${country.bgColor} ${country.color} border ${country.borderColor}`}>
+                            {product}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-slate-400">Launch</span>
+                      <span className={`font-bold ${country.color}`}>{country.timeline}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Expansion Phases Timeline */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Clock className="w-5 h-5 text-blue-400" />
+                Expansion Roadmap
+              </h3>
+              <div className="space-y-4">
+                {gccExpansion.expansionPhases.map((phase, i) => (
+                  <div key={i} className={`rounded-xl p-5 border-2 ${phase.color} bg-slate-900/30`}>
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white font-bold ${
+                          phase.status === 'Active' ? 'bg-emerald-500' :
+                          phase.status === 'Planned' ? 'bg-blue-500' :
+                          'bg-[#c9a227]'
+                        }`}>
+                          {i + 1}
+                        </div>
+                        <div>
+                          <h4 className="text-white font-bold">{phase.phase}</h4>
+                          <span className="text-slate-400 text-sm">{phase.timeline}</span>
+                        </div>
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        phase.status === 'Active' ? 'bg-emerald-500/20 text-emerald-400' :
+                        phase.status === 'Planned' ? 'bg-blue-500/20 text-blue-400' :
+                        'bg-[#c9a227]/20 text-[#c9a227]'
+                      }`}>
+                        {phase.status}
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                      {phase.goals.map((goal, j) => (
+                        <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
+                          <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
+                            phase.status === 'Active' ? 'text-emerald-400' :
+                            phase.status === 'Planned' ? 'text-blue-400' :
+                            'text-[#c9a227]'
+                          }`} />
+                          {goal}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* GCC Features */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#c9a227]" />
+                Cross-GCC Features
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {gccExpansion.gccFeatures.map((feature, i) => {
+                  const FeatureIcon = feature.icon;
+                  return (
+                    <div key={i} className="bg-slate-800/50 rounded-xl p-5 border border-slate-700/50">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-lg bg-slate-900/50 flex items-center justify-center">
+                          <FeatureIcon className={`w-5 h-5 ${feature.color}`} />
+                        </div>
+                        <h4 className={`font-bold ${feature.color}`}>{feature.feature}</h4>
+                      </div>
+                      <p className="text-slate-300 text-sm mb-2">{feature.description}</p>
+                      <div className="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-2 rounded-lg">
+                        ✓ {feature.benefit}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Remittance Corridors */}
+            <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-blue-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Send className="w-5 h-5 text-blue-400" />
+                Top Remittance Corridors
+              </h3>
+              <p className="text-slate-300 mb-6">
+                Hawil targets <strong className="text-white">$134B</strong> in annual GCC remittance flows -
+                the largest in the world.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {gccExpansion.corridors.map((corridor, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-blue-500/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-blue-400 font-bold">{corridor.from}</span>
+                      <ArrowRight className="w-4 h-4 text-slate-500" />
+                      <span className="text-white font-bold">{corridor.to}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <div>
+                        <div className="text-slate-400 text-xs">Volume</div>
+                        <div className="text-emerald-400 font-bold">{corridor.volume}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-slate-400 text-xs">Senders</div>
+                        <div className="text-[#c9a227] font-bold">{corridor.users}</div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Vision */}
+            <div className="text-center bg-[#c9a227]/10 rounded-xl p-8 border-2 border-[#c9a227]">
+              <h3 className="text-2xl font-bold text-white mb-4">Our GCC Vision</h3>
+              <p className="text-slate-300 text-lg max-w-2xl mx-auto mb-6">
+                By 2030, every resident and tourist in the GCC will have access to the Nuqta ecosystem -
+                one wallet, one card, one app for the entire Gulf region.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-[#c9a227]">6</div>
+                  <div className="text-xs text-slate-400">Countries</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-[#c9a227]">5M+</div>
+                  <div className="text-xs text-slate-400">Target Users</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-[#c9a227]">$1B+</div>
+                  <div className="text-xs text-slate-400">Transaction Volume</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-2xl font-bold text-[#c9a227]">2030</div>
+                  <div className="text-xs text-slate-400">Full GCC Coverage</div>
+                </div>
+              </div>
             </div>
           </div>
         )}

@@ -90,6 +90,27 @@ const financialProjections = [
   { year: 'Year 3', orders: 6000000, gmv: 510, revenue: 75, netProfit: 28, merchants: 4000, riders: 1500 },
 ];
 
+// GCC Expansion
+const gccExpansion = {
+  headline: 'Quick Commerce Across the Gulf',
+  description: 'Wasil expands 60-minute delivery to all GCC countries - same app, same speed, anywhere',
+  countries: [
+    { country: 'UAE', flag: '🇦🇪', status: 'Active', cities: 'Dubai, Abu Dhabi, Sharjah', deliveryTime: '60 min', timeline: '2027' },
+    { country: 'Saudi Arabia', flag: '🇸🇦', status: 'Phase 2', cities: 'Riyadh, Jeddah', deliveryTime: '60 min', timeline: '2028' },
+    { country: 'Qatar', flag: '🇶🇦', status: 'Phase 2', cities: 'Doha', deliveryTime: '45 min', timeline: '2028' },
+    { country: 'Kuwait', flag: '🇰🇼', status: 'Phase 3', cities: 'Kuwait City', deliveryTime: '60 min', timeline: '2029' },
+    { country: 'Bahrain', flag: '🇧🇭', status: 'Phase 3', cities: 'Manama', deliveryTime: '30 min', timeline: '2029' },
+    { country: 'Oman', flag: '🇴🇲', status: 'Phase 3', cities: 'Muscat', deliveryTime: '60 min', timeline: '2029' },
+  ],
+  benefits: [
+    'Same Wasil+ membership works everywhere',
+    'Order in Dubai for delivery in Riyadh',
+    'Pay with Hawil Card at Google rate',
+    'Earn Nuqta coins across all GCC countries',
+    'Gift delivery to family in other GCC countries',
+  ],
+};
+
 // Roadmap Phases
 const roadmapPhases = [
   {

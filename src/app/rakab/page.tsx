@@ -294,6 +294,27 @@ const financialProjections = [
   { year: 'Year 3', rides: 2000000, revenue: 9, drivers: 2500, users: 200000, cities: 7 },
 ];
 
+// GCC Expansion
+const gccExpansion = {
+  headline: 'One App Across the Gulf',
+  description: 'Rakab will expand across all 6 GCC countries - same app, same wallet, same experience',
+  countries: [
+    { country: 'UAE', flag: '🇦🇪', status: 'Active', cities: 'Dubai, Abu Dhabi, Sharjah', timeline: '2027' },
+    { country: 'Saudi Arabia', flag: '🇸🇦', status: 'Phase 2', cities: 'Riyadh, Jeddah, Dammam', timeline: '2028' },
+    { country: 'Qatar', flag: '🇶🇦', status: 'Phase 2', cities: 'Doha', timeline: '2028' },
+    { country: 'Kuwait', flag: '🇰🇼', status: 'Phase 3', cities: 'Kuwait City', timeline: '2029' },
+    { country: 'Bahrain', flag: '🇧🇭', status: 'Phase 3', cities: 'Manama', timeline: '2029' },
+    { country: 'Oman', flag: '🇴🇲', status: 'Phase 3', cities: 'Muscat', timeline: '2029' },
+  ],
+  benefits: [
+    'Same Nuqta wallet works across all GCC countries',
+    'Earn coins in Dubai, spend in Riyadh',
+    'Consistent pricing and experience',
+    'Business travelers get seamless rides',
+    'Tourists can pre-book GCC-wide',
+  ],
+};
+
 // Competitive Advantages
 const competitiveAdvantages = [
   {
