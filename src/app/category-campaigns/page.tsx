@@ -1274,18 +1274,275 @@ const entertainmentCampaigns: CategoryData = {
   ]
 };
 
+// EVENTS & EXHIBITIONS - Comprehensive Campaigns for Global Village, GITEX, Concerts, etc.
 const eventsCampaigns: CategoryData = {
   id: 'events', name: 'Events & Exhibitions', icon: CalendarDays, color: 'purple',
   painPoints: [
+    // Event Organizer Pain Points
     { pain: '70% of visitors just browse - don\'t make purchases', solution: 'Coins create spending incentive - minimum AED 300-500 to unlock' },
     { pain: 'Merchants don\'t renew if they don\'t make money', solution: 'Proven sales data makes renewal easy' },
-    { pain: 'No spending data - can\'t prove ROI', solution: 'Real-time dashboard tracks everything' }
+    { pain: 'No spending data - can\'t prove ROI to sponsors', solution: 'Real-time dashboard tracks everything' },
+    { pain: 'One-time visitors - no retargeting after event', solution: 'All visitors become Nuqta users forever' },
+    { pain: 'Low average spend - AED 50-100 vs AED 500+ potential', solution: 'Coin unlock threshold guarantees higher basket' },
+    { pain: 'F&B competition with nearby malls', solution: 'Event-only coins work only at event merchants' },
+    { pain: 'Peak hour chaos - no off-peak incentives', solution: 'Double coins during slow hours distribute traffic' },
+    { pain: 'Sponsor ROI questions - can\'t quantify value', solution: 'Co-branded coins with tracked engagement' },
+    { pain: 'Staff theft concerns - cash handling issues', solution: 'App-based logging with full audit trail' },
+    { pain: 'Weather dependency - outdoor events lose visitors', solution: 'Push notifications + bonus coins for bad weather days' },
+    // Merchant Pain Points at Events
+    { pain: 'High booth fees AED 50K-500K - uncertain ROI', solution: 'Pay only 5-8% on sales, no upfront cost' },
+    { pain: 'Tire-kickers collect brochures but don\'t buy', solution: 'AED 500 minimum spend motivates real purchases' },
+    { pain: 'No lead capture - can\'t follow up', solution: 'Every customer logged with phone, email, purchase history' },
+    { pain: 'Competition from neighboring booths', solution: 'Bonus coins differentiate your booth' },
+    { pain: 'Post-event silence - can\'t re-engage visitors', solution: 'Push notifications reach customers after event ends' }
   ],
   merchantCampaigns: [
-    { id: 'event-m1', name: 'Convert Browsers to Buyers', type: 'merchant', painPoint: '70% of visitors just browse - don\'t make purchases at exhibitor booths', nuqtaSolution: 'Coins create spending incentive - visitors MUST spend to unlock rewards', thesis: 'Help event organizers increase merchant sales.', channels: [{ channel: 'Event organizer outreach', tactic: 'Target exhibition and event companies', budget: 'AED 3,000' }, { channel: 'Industry events', tactic: 'Event management conferences', budget: 'AED 2,000' }], creativeAssets: ['Browser to buyer conversion', 'Minimum spend unlock system', 'Merchant ROI dashboard'], messaging: { headline: '70% of Your Visitors Leave Without Buying Anything.', body: 'Browsers are nice. Buyers are better. Nuqta coins require minimum spend to unlock - converting browsers to guaranteed spenders.', cta: 'Convert Browsers to Buyers' }, kpis: [{ metric: 'Event organizers contacted', target: '10/month' }, { metric: 'Events launched', target: '3/quarter' }], timeline: 'Event-focused', budget: 'AED 5,000/week' }
+    // EVENT ORGANIZER CAMPAIGNS (targeting Global Village, GITEX, ATM, etc.)
+    {
+      id: 'event-org-1', name: 'Convert Browsers to Buyers', type: 'merchant',
+      painPoint: '70% of visitors just browse - don\'t make purchases at exhibitor booths',
+      nuqtaSolution: 'Coins create spending incentive - visitors MUST spend AED 300-500 to unlock their coins',
+      thesis: 'Target major event organizers like Global Village, DWTC (GITEX, ATM, Gulfood). Show them how Nuqta guarantees visitor spending.',
+      channels: [
+        { channel: 'Executive outreach', tactic: 'Direct meetings with Global Village, DWTC leadership', budget: 'AED 5,000' },
+        { channel: 'Case study content', tactic: 'Create mock ROI projections for their visitor numbers', budget: 'AED 2,000' },
+        { channel: 'Industry conferences', tactic: 'MICE industry events presentation', budget: 'AED 3,000' }
+      ],
+      creativeAssets: ['Browser to buyer conversion funnel', 'Minimum spend unlock system demo', 'Global Village visitor projection', 'Merchant revenue increase calculator'],
+      messaging: { headline: '7 Million Visitors. 70% Leave Without Spending. That\'s 5 Million Lost Customers.', body: 'Global Village sees 7M+ visitors per season. 70% browse without buying. Nuqta Event Coins require AED 500 minimum spend to unlock - converting browsers into guaranteed spenders. Your merchants make money. They renew next year.', cta: 'See How Nuqta Transforms Visitor Spending' },
+      kpis: [{ metric: 'Major event organizers contacted', target: '5/quarter' }, { metric: 'Event partnerships signed', target: '2/year' }, { metric: 'Browser to buyer conversion', target: '40%' }],
+      timeline: 'Year-round - events have different seasons', budget: 'AED 10,000/week during pitch periods'
+    },
+    {
+      id: 'event-org-2', name: 'Merchant Renewal Guarantee', type: 'merchant',
+      painPoint: 'Merchants don\'t renew - if they don\'t make money, they won\'t come back next year',
+      nuqtaSolution: 'Proven sales data shows exactly how much Nuqta drove, making renewal pitch easy',
+      thesis: 'Address the biggest event organizer fear - losing exhibitors. Position Nuqta as merchant success guarantee.',
+      channels: [
+        { channel: 'Event organizer meetings', tactic: 'Present merchant retention strategy', budget: 'AED 3,000' },
+        { channel: 'Merchant success stories', tactic: 'Document before/after case studies', budget: 'AED 2,000' },
+        { channel: 'Industry content', tactic: 'Publish research on event merchant retention', budget: 'AED 1,500' }
+      ],
+      creativeAssets: ['Merchant ROI dashboard demo', 'Year-over-year renewal rate comparison', 'Exhibitor satisfaction survey template', 'Revenue attribution report'],
+      messaging: { headline: 'Your Merchants Made Money. Watch Them Line Up for Next Year.', body: 'When merchants see their Nuqta dashboard showing exactly how much they earned, renewal becomes automatic. "I made AED 200K through Nuqta visitors" beats any sales pitch.', cta: 'Guarantee Merchant Renewals' },
+      kpis: [{ metric: 'Merchant retention rate', target: '85% vs industry 60%' }, { metric: 'Renewal conversations initiated by merchants', target: '50%' }],
+      timeline: 'Post-event follow-up period', budget: 'AED 6,500/week'
+    },
+    {
+      id: 'event-org-3', name: 'Sponsor ROI Dashboard', type: 'merchant',
+      painPoint: 'Sponsor ROI questions - can\'t quantify brand exposure value',
+      nuqtaSolution: 'Co-branded coins with tracked engagement - sponsors see exactly what they got',
+      thesis: 'Help event organizers win and retain sponsors with quantifiable ROI data.',
+      channels: [
+        { channel: 'Sponsor acquisition deck', tactic: 'Create Nuqta sponsor package for events', budget: 'AED 3,000' },
+        { channel: 'Brand partnerships', tactic: 'Approach FMCG brands for event coin sponsorship', budget: 'AED 4,000' },
+        { channel: 'Industry content', tactic: 'Publish sponsor ROI research', budget: 'AED 1,500' }
+      ],
+      creativeAssets: ['Co-branded coin examples', 'Sponsor engagement dashboard', 'Brand recall study template', 'CPE (cost per engagement) calculator'],
+      messaging: { headline: 'Your Sponsors Want Numbers. Give Them a Dashboard.', body: '"Coca-Cola Event Coins" - every time a visitor earns or spends, they engage with the brand. Track impressions, redemptions, and purchases. Sponsors see exactly what they paid for.', cta: 'Quantify Sponsor ROI' },
+      kpis: [{ metric: 'Sponsor packages sold', target: 'AED 500K/event' }, { metric: 'Sponsor renewal rate', target: '90%' }, { metric: 'CPE reduction', target: '40% vs traditional sponsorship' }],
+      timeline: 'Pre-event sponsor acquisition period', budget: 'AED 8,500/week'
+    },
+    {
+      id: 'event-org-4', name: 'Build Your Visitor Database', type: 'merchant',
+      painPoint: 'One-time visitors - no way to retarget or re-engage after event ends',
+      nuqtaSolution: 'All visitors become Nuqta users - retarget for next year\'s event, sponsor products, partner offers',
+      thesis: 'Position Nuqta as database builder for events. Visitors become owned audience.',
+      channels: [
+        { channel: 'Event organizer meetings', tactic: 'Database growth strategy presentation', budget: 'AED 2,500' },
+        { channel: 'Data monetization content', tactic: 'Show value of visitor database', budget: 'AED 1,500' },
+        { channel: 'Case studies', tactic: 'Demonstrate retargeting success', budget: 'AED 1,000' }
+      ],
+      creativeAssets: ['Visitor database growth projection', 'Retargeting campaign examples', 'Data monetization opportunities', 'Next-year ticket sales funnel'],
+      messaging: { headline: 'This Year\'s Visitors Are Next Year\'s Pre-Sales.', body: '7 million visitors become 7 million Nuqta users. Push notification: "Global Village 2026 tickets on sale - here\'s 50 bonus coins." Watch pre-sales explode.', cta: 'Own Your Visitor Database' },
+      kpis: [{ metric: 'Visitor database capture rate', target: '80%' }, { metric: 'Next-year ticket pre-sales', target: '30% from database' }, { metric: 'Sponsor retargeting revenue', target: 'AED 1M+/event' }],
+      timeline: 'During and post-event', budget: 'AED 5,000/week'
+    },
+    {
+      id: 'event-org-5', name: 'Traffic Distribution Control', type: 'merchant',
+      painPoint: 'Peak hour chaos - no way to incentivize off-peak visits',
+      nuqtaSolution: 'Double coins during slow hours (2-5pm weekdays) distributes visitor traffic evenly',
+      thesis: 'Help event organizers manage crowd flow and improve visitor experience.',
+      channels: [
+        { channel: 'Operations meetings', tactic: 'Present traffic management solution', budget: 'AED 2,000' },
+        { channel: 'Crowd management content', tactic: 'Publish traffic distribution case study', budget: 'AED 1,200' },
+        { channel: 'Technology demos', tactic: 'Show real-time traffic shifting capability', budget: 'AED 1,500' }
+      ],
+      creativeAssets: ['Hourly traffic heat map', 'Double coin campaign examples', 'Queue time reduction data', 'Visitor satisfaction improvement'],
+      messaging: { headline: 'Friday 7PM: Chaos. Tuesday 3PM: Double Coins.', body: 'Push notifications shift traffic: "Visiting now? Earn DOUBLE coins until 5pm!" Reduce Friday evening crushes. Fill weekday afternoons. Better experience for everyone.', cta: 'Control Your Event Traffic' },
+      kpis: [{ metric: 'Off-peak traffic increase', target: '40%' }, { metric: 'Peak hour reduction', target: '25%' }, { metric: 'Visitor satisfaction', target: '15% improvement' }],
+      timeline: 'During event operations', budget: 'AED 4,700/week'
+    },
+    {
+      id: 'event-org-6', name: 'Weather-Proof Your Event', type: 'merchant',
+      painPoint: 'Weather dependency - outdoor events lose visitors in summer heat or rain',
+      nuqtaSolution: 'Push notifications with bonus coins incentivize visits during bad weather or slow periods',
+      thesis: 'Help outdoor events (Global Village, food festivals) manage weather impact.',
+      channels: [
+        { channel: 'Outdoor event targeting', tactic: 'Focus on Global Village, food festivals, markets', budget: 'AED 2,000' },
+        { channel: 'Weather strategy content', tactic: 'Publish weather mitigation playbook', budget: 'AED 1,000' },
+        { channel: 'Real-time demos', tactic: 'Show weather-triggered notification system', budget: 'AED 1,500' }
+      ],
+      creativeAssets: ['Weather bonus coin system', 'Rain day campaign examples', 'Hot afternoon incentive program', 'Attendance recovery data'],
+      messaging: { headline: '40°C Outside? 3X Coins Inside.', body: 'Hot summer afternoon killing attendance? Push notification: "Beat the heat, earn 3X coins today only!" Weather-triggered campaigns rescue slow days.', cta: 'Weather-Proof Your Revenue' },
+      kpis: [{ metric: 'Bad weather day recovery', target: '50% normal attendance' }, { metric: 'Weather campaign response rate', target: '30%' }, { metric: 'Revenue stabilization', target: '20% less variance' }],
+      timeline: 'Weather-dependent periods', budget: 'AED 4,500/week'
+    },
+    // EXHIBITOR/MERCHANT CAMPAIGNS (targeting businesses that participate in events)
+    {
+      id: 'event-merch-1', name: 'Justify Your Booth Investment', type: 'merchant',
+      painPoint: 'High booth fees AED 50K-500K with uncertain ROI',
+      nuqtaSolution: 'Pay only 5-8% on actual sales through Nuqta - no upfront cost, pay when you earn',
+      thesis: 'Target businesses considering event participation. Reduce their risk with performance-based model.',
+      channels: [
+        { channel: 'Exhibitor lists', tactic: 'Target businesses on past exhibitor lists', budget: 'AED 2,500' },
+        { channel: 'Trade associations', tactic: 'Partner with industry associations', budget: 'AED 1,500' },
+        { channel: 'LinkedIn', tactic: 'Target marketing managers of potential exhibitors', budget: 'AED 1,000' }
+      ],
+      creativeAssets: ['Booth ROI calculator', 'Pay-per-sale vs upfront comparison', 'Success story from similar exhibitor', 'Commission structure explanation'],
+      messaging: { headline: 'AED 100K Booth Fee. Zero Sales Guarantee. Until Now.', body: 'GITEX booth: AED 100K upfront. Nuqta: 5-8% only when you sell. No sales? No fee. Turn uncertain booth investment into guaranteed ROI.', cta: 'Only Pay When You Sell' },
+      kpis: [{ metric: 'Exhibitors onboarded', target: '50/major event' }, { metric: 'Average exhibitor sales', target: 'AED 150K' }, { metric: 'Exhibitor satisfaction', target: '90%' }],
+      timeline: 'Pre-event exhibitor acquisition', budget: 'AED 5,000/week'
+    },
+    {
+      id: 'event-merch-2', name: 'Kill the Tire-Kickers', type: 'merchant',
+      painPoint: 'Visitors collect brochures but don\'t buy - tire-kickers everywhere',
+      nuqtaSolution: 'AED 500 minimum spend threshold means visitors are motivated to buy, not just browse',
+      thesis: 'Address exhibitor frustration with non-buying visitors. Position Nuqta as quality visitor filter.',
+      channels: [
+        { channel: 'Exhibitor outreach', tactic: 'Target frustrated past exhibitors', budget: 'AED 2,000' },
+        { channel: 'Testimonials', tactic: 'Collect and share exhibitor success stories', budget: 'AED 1,000' },
+        { channel: 'Event organizer partnership', tactic: 'Co-promote with event organizers', budget: 'AED 1,500' }
+      ],
+      creativeAssets: ['Tire-kicker vs buyer conversion', 'Minimum spend motivation diagram', 'Exhibitor testimonial videos', 'Before/after sales comparison'],
+      messaging: { headline: 'Stop Handing Out 5,000 Brochures. Start Making 500 Sales.', body: 'Every Nuqta visitor needs to spend AED 500 to unlock their coins. They\'re not browsing - they\'re buying. Your booth becomes a sales machine, not a brochure stand.', cta: 'Convert Browsers to Buyers' },
+      kpis: [{ metric: 'Visitor-to-buyer conversion', target: '40% vs 10% baseline' }, { metric: 'Average transaction value', target: 'AED 800' }, { metric: 'Brochure-to-sale ratio', target: '1:5 vs 1:100' }],
+      timeline: 'During events', budget: 'AED 4,500/week'
+    },
+    {
+      id: 'event-merch-3', name: 'Capture Every Lead', type: 'merchant',
+      painPoint: 'No lead capture - can\'t follow up with interested visitors after event',
+      nuqtaSolution: 'Every customer logged with phone, email, purchase history - your database forever',
+      thesis: 'Address post-event follow-up challenge. Nuqta as lead capture system.',
+      channels: [
+        { channel: 'B2B exhibitor focus', tactic: 'Target B2B companies at trade shows', budget: 'AED 2,500' },
+        { channel: 'CRM integration content', tactic: 'Show data export capabilities', budget: 'AED 1,000' },
+        { channel: 'Follow-up success stories', tactic: 'Document post-event conversion rates', budget: 'AED 1,000' }
+      ],
+      creativeAssets: ['Lead capture flow diagram', 'CRM export demonstration', 'Follow-up email templates', 'Post-event conversion funnel'],
+      messaging: { headline: 'Every GITEX Visitor Who Bought From You Is Now in Your CRM.', body: 'Name, email, phone, what they bought, how much they spent. Export to your CRM. Send follow-up offers. Turn event visitors into year-round customers.', cta: 'Capture Every Lead' },
+      kpis: [{ metric: 'Lead capture rate', target: '100% of buyers' }, { metric: 'Post-event follow-up conversion', target: '20%' }, { metric: 'Customer lifetime value', target: '3x event purchase' }],
+      timeline: 'During and post-event', budget: 'AED 4,500/week'
+    },
+    {
+      id: 'event-merch-4', name: 'Stand Out From Neighbor Booths', type: 'merchant',
+      painPoint: 'Competition from neighboring booths - similar products, no differentiation',
+      nuqtaSolution: 'Bonus coins for your booth differentiate you from competitors',
+      thesis: 'Help exhibitors win traffic from competing booths at the same event.',
+      channels: [
+        { channel: 'Pre-event outreach', tactic: 'Contact exhibitors before event starts', budget: 'AED 1,500' },
+        { channel: 'Event floor presence', tactic: 'On-site exhibitor sign-up team', budget: 'AED 2,000' },
+        { channel: 'Competitive content', tactic: 'Show booth traffic comparison data', budget: 'AED 800' }
+      ],
+      creativeAssets: ['Bonus coin booth signage', 'Traffic flow comparison', 'Competitive advantage framework', 'Booth differentiation guide'],
+      messaging: { headline: '50 Food Stalls. Only YOURS Offers Bonus Coins.', body: 'Your neighbor sells the same thing. But visitors see YOUR sign: "Earn 3X Coins Here!" Guess which booth gets the traffic. Differentiate with rewards.', cta: 'Win More Booth Traffic' },
+      kpis: [{ metric: 'Booth traffic increase', target: '50% vs neighbors' }, { metric: 'Bonus coin redemptions', target: '1,000/day' }, { metric: 'Competitive win rate', target: '70%' }],
+      timeline: 'During events', budget: 'AED 4,300/week'
+    },
+    {
+      id: 'event-merch-5', name: 'Post-Event Customer Engagement', type: 'merchant',
+      painPoint: 'Post-event silence - can\'t re-engage visitors after event ends',
+      nuqtaSolution: 'Push notifications reach your event customers year-round',
+      thesis: 'Turn event visitors into year-round customers for exhibitors.',
+      channels: [
+        { channel: 'Post-event follow-up', tactic: 'Contact exhibitors after event', budget: 'AED 1,500' },
+        { channel: 'Retention content', tactic: 'Publish visitor retention playbook', budget: 'AED 1,000' },
+        { channel: 'Year-round engagement demos', tactic: 'Show ongoing customer engagement', budget: 'AED 1,000' }
+      ],
+      creativeAssets: ['Post-event campaign examples', 'Customer journey from event to store', 'Push notification templates', 'Year-round engagement calendar'],
+      messaging: { headline: 'GITEX Ended. Your Customer Relationship Just Started.', body: '3 months after GITEX: "Remember that laptop you loved? It\'s 20% off + double coins this weekend." Turn event browsers into store customers.', cta: 'Keep Customers Year-Round' },
+      kpis: [{ metric: 'Post-event engagement rate', target: '25%' }, { metric: 'Event-to-store conversion', target: '15%' }, { metric: 'Customer lifetime extension', target: '12 months' }],
+      timeline: 'Post-event', budget: 'AED 3,500/week'
+    }
   ],
   userCampaigns: [
-    { id: 'event-u1', name: 'Event Rewards', type: 'user', painPoint: 'Events are special occasions', nuqtaSolution: 'Earn coins at Global Village, exhibitions, concerts', thesis: 'Target event-goers.', channels: [{ channel: 'Event partnerships', tactic: 'On-site promotion', budget: 'AED 2,000' }, { channel: 'Push notifications', tactic: 'Event happening nearby alerts', budget: 'AED 800' }], creativeAssets: ['Event coin guide', 'Festival rewards tracker'], messaging: { headline: 'Global Village, Concerts, Exhibitions - All Earning You Coins.', body: 'Every event purchase earns rewards. Make your event experience even more rewarding.', cta: 'Earn at Events' }, kpis: [{ metric: 'Event transactions', target: '100,000/season' }], timeline: 'Event season', budget: 'AED 2,800/week' }
+    // USER ACQUISITION CAMPAIGNS FOR EVENTS
+    {
+      id: 'event-u1', name: 'Global Village Season Launch', type: 'user',
+      painPoint: 'Users don\'t know about coin earning opportunities at events',
+      nuqtaSolution: 'Discover all events where you can earn coins - Global Village, GITEX, concerts, exhibitions',
+      thesis: 'Drive massive user engagement during Global Village season (Nov-Apr) and major events.',
+      channels: [
+        { channel: 'Push notifications', tactic: 'Event launch announcements to all users', budget: 'AED 3,000' },
+        { channel: 'Instagram', tactic: 'Global Village content and influencer partnerships', budget: 'AED 5,000' },
+        { channel: 'TikTok', tactic: 'Event experience videos with coin earning', budget: 'AED 3,000' },
+        { channel: 'Email', tactic: 'Event guide and coin earning tips', budget: 'AED 500' }
+      ],
+      creativeAssets: ['Global Village coin guide', 'Event season calendar', 'Pavilion-by-pavilion earning guide', 'Best coin earning spots at GV'],
+      messaging: { headline: 'Global Village Is Open. Your Coins Are Waiting.', body: 'Every pavilion. Every food stall. Every shop. All earning you coins. This season, make Global Village pay you back. AED 100 in Event Coins with entry - unlock with AED 500 spend.', cta: 'Start Earning at Global Village' },
+      kpis: [{ metric: 'Event transactions', target: '500,000/season' }, { metric: 'Average event spend', target: 'AED 600' }, { metric: 'Event coin redemptions', target: 'AED 5M distributed' }],
+      timeline: 'Global Village season (Nov-Apr)', budget: 'AED 11,500/week'
+    },
+    {
+      id: 'event-u2', name: 'GITEX Tech Shopping', type: 'user',
+      painPoint: 'Users want deals on electronics at GITEX',
+      nuqtaSolution: 'Earn coins on every GITEX purchase - tech shopping that pays back',
+      thesis: 'Drive user traffic to GITEX and tech exhibitions.',
+      channels: [
+        { channel: 'Push notifications', tactic: 'GITEX deal alerts with coin bonuses', budget: 'AED 2,000' },
+        { channel: 'Instagram', tactic: 'Tech deals content', budget: 'AED 2,500' },
+        { channel: 'In-app', tactic: 'GITEX exhibitor listings with coin rates', budget: 'AED 500' }
+      ],
+      creativeAssets: ['GITEX coin guide', 'Best tech deals with coins', 'Exhibitor coin rate comparison', 'Electronics earning calculator'],
+      messaging: { headline: 'GITEX Deals + Nuqta Coins = Maximum Savings.', body: 'That laptop is already 30% off. Add coin earnings and it\'s basically free money. Every AED spent at GITEX earns coins. Stack the savings.', cta: 'Shop GITEX, Earn Coins' },
+      kpis: [{ metric: 'GITEX transactions', target: '50,000' }, { metric: 'Average GITEX spend', target: 'AED 2,000' }, { metric: 'Electronics coins distributed', target: 'AED 1M' }],
+      timeline: 'GITEX period (October)', budget: 'AED 5,000/week'
+    },
+    {
+      id: 'event-u3', name: 'Concert & Festival Rewards', type: 'user',
+      painPoint: 'Concert and festival experiences are expensive',
+      nuqtaSolution: 'Earn coins on F&B and merchandise at concerts - entertainment that rewards',
+      thesis: 'Target music lovers and festival-goers for coin earning on entertainment spending.',
+      channels: [
+        { channel: 'Event partnerships', tactic: 'On-site promotion at concerts', budget: 'AED 3,000' },
+        { channel: 'Instagram', tactic: 'Concert experience content', budget: 'AED 2,000' },
+        { channel: 'Push notifications', tactic: 'Concert-day coin bonus alerts', budget: 'AED 800' }
+      ],
+      creativeAssets: ['Concert coin earning guide', 'Festival rewards tracker', 'F&B coin locations at venues', 'Merchandise coin earning'],
+      messaging: { headline: 'The Concert Is Amazing. The Coins Make It Better.', body: 'That AED 50 beer? Now it\'s earning you coins. That band t-shirt? More coins. Every purchase at concerts and festivals rewards you. Party smarter.', cta: 'Earn at Every Concert' },
+      kpis: [{ metric: 'Concert transactions', target: '20,000/major event' }, { metric: 'Average concert spend', target: 'AED 300' }, { metric: 'Entertainment coins distributed', target: 'AED 500K/event' }],
+      timeline: 'Concert and festival season', budget: 'AED 5,800/week'
+    },
+    {
+      id: 'event-u4', name: 'Exhibition Discovery', type: 'user',
+      painPoint: 'Users don\'t know which exhibitions are coin-earning',
+      nuqtaSolution: 'Discover all exhibitions with Nuqta merchants - art, food, travel, and more',
+      thesis: 'Drive user traffic to trade exhibitions and consumer shows.',
+      channels: [
+        { channel: 'In-app', tactic: 'Exhibition discovery section with dates', budget: 'AED 800' },
+        { channel: 'Push notifications', tactic: 'Upcoming exhibition alerts', budget: 'AED 600' },
+        { channel: 'Email', tactic: 'Monthly exhibition guide', budget: 'AED 300' }
+      ],
+      creativeAssets: ['Exhibition calendar', 'Nuqta merchant exhibitor list', 'Best finds at each exhibition', 'Coin earning breakdown by show'],
+      messaging: { headline: 'Every Exhibition. Every Merchant. All Earning Coins.', body: 'Arabian Travel Market, Gulfood, Art Dubai - every major exhibition has Nuqta merchants. Discover amazing products AND earn coins while you explore.', cta: 'Explore Exhibitions' },
+      kpis: [{ metric: 'Exhibition transactions', target: '30,000/quarter' }, { metric: 'Exhibition discovery clicks', target: '100,000/quarter' }, { metric: 'Average exhibition spend', target: 'AED 500' }],
+      timeline: 'Year-round', budget: 'AED 1,700/week'
+    },
+    {
+      id: 'event-u5', name: 'Seasonal Event Guide', type: 'user',
+      painPoint: 'Users miss out on seasonal events with coin earning',
+      nuqtaSolution: 'Complete guide to Ramadan tents, DSF events, Diwali markets with coin rewards',
+      thesis: 'Target users during seasonal festivals and events.',
+      channels: [
+        { channel: 'Push notifications', tactic: 'Seasonal event launch alerts', budget: 'AED 1,000' },
+        { channel: 'Instagram', tactic: 'Seasonal content (DSF, Ramadan, Diwali)', budget: 'AED 2,000' },
+        { channel: 'In-app', tactic: 'Seasonal events section', budget: 'AED 500' }
+      ],
+      creativeAssets: ['Ramadan tent coin guide', 'DSF shopping rewards', 'Diwali market earning guide', 'Seasonal bonus coin calendar'],
+      messaging: { headline: 'Ramadan. DSF. Diwali. Every Season Earns.', body: 'Iftar at a Ramadan tent? Coins. DSF shopping? More coins. Diwali gold shopping? Even more coins. Every seasonal celebration rewards you.', cta: 'Earn on Every Season' },
+      kpis: [{ metric: 'Seasonal event transactions', target: '200,000/year' }, { metric: 'Seasonal bonus redemptions', target: 'AED 2M distributed' }, { metric: 'Seasonal engagement', target: '60% of users' }],
+      timeline: 'Seasonal peaks (Ramadan, DSF, Diwali)', budget: 'AED 3,500/week'
+    }
   ]
 };
 
