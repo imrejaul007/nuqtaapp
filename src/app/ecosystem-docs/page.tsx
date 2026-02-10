@@ -505,43 +505,43 @@ export default function EcosystemDocsPage() {
 
         {/* Overview Section */}
         {activeSection === 'overview' && (
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h2 className="text-2xl font-bold mb-4">Ecosystem Overview</h2>
-              <p className="text-gray-300 mb-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ecosystem Overview</h2>
+              <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
                 Nuqta is a vertically integrated financial ecosystem comprising 9 interconnected products.
                 Each product can function independently but delivers exponentially more value when used together.
                 The ecosystem is designed to capture every financial touchpoint in a user&apos;s life in the UAE and GCC.
               </p>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold text-[#c9a227]">9</div>
-                  <div className="text-sm">Products</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">9</div>
+                  <div className="text-xs sm:text-sm">Products</div>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold text-[#c9a227]">36+</div>
-                  <div className="text-sm">Cross-Product Integrations</div>
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">36+</div>
+                  <div className="text-xs sm:text-sm">Integrations</div>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <div className="text-3xl font-bold text-[#c9a227]">3x</div>
-                  <div className="text-sm">Retention vs Single Product</div>
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">3x</div>
+                  <div className="text-xs sm:text-sm">Retention</div>
                 </div>
               </div>
             </div>
 
             {/* Product Grid Overview */}
-            <div className="grid sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
               {productDetails.map((product) => {
                 const Logo = product.logo;
                 return (
-                  <div key={product.id} className={`bg-[#1a2a42] rounded-xl p-4 border ${product.borderColor}/30 hover:${product.borderColor}/50 transition-all`}>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10">
-                        <Logo size={40} />
+                  <div key={product.id} className={`bg-[#1a2a42] rounded-xl p-3 sm:p-4 border ${product.borderColor}/30 hover:${product.borderColor}/50 transition-all`}>
+                    <div className="flex items-center gap-2 sm:gap-3 mb-1 sm:mb-2">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+                        <Logo size={32} />
                       </div>
-                      <div>
-                        <h3 className="font-bold">{product.name} <span className="text-[#c9a227]">{product.arabic}</span></h3>
-                        <p className="text-xs text-gray-400">{product.tagline}</p>
+                      <div className="min-w-0">
+                        <h3 className="font-bold text-sm sm:text-base truncate">{product.name} <span className="text-[#c9a227]">{product.arabic}</span></h3>
+                        <p className="text-[10px] sm:text-xs text-gray-400 truncate">{product.tagline}</p>
                       </div>
                     </div>
                   </div>
@@ -550,35 +550,31 @@ export default function EcosystemDocsPage() {
             </div>
 
             {/* Ecosystem Philosophy */}
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
-              <h3 className="text-xl font-bold mb-4">Ecosystem Philosophy</h3>
-              <div className="grid sm:grid-cols-2 gap-6">
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Ecosystem Philosophy</h3>
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold text-[#c9a227] mb-2">One Wallet</h4>
-                  <p className="text-sm text-gray-400">
-                    Single Nuqta wallet across all 9 products. Earn coins anywhere, spend anywhere.
-                    No fragmentation, no separate loyalty programs.
+                  <h4 className="font-semibold text-[#c9a227] mb-1 sm:mb-2 text-sm sm:text-base">One Wallet</h4>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    Single wallet across all 9 products. Earn coins anywhere, spend anywhere.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#c9a227] mb-2">One Membership</h4>
-                  <p className="text-sm text-gray-400">
-                    Nuqta+ unlocks premium benefits across every product. One subscription,
-                    ecosystem-wide value.
+                  <h4 className="font-semibold text-[#c9a227] mb-1 sm:mb-2 text-sm sm:text-base">One Membership</h4>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    Nuqta+ unlocks premium benefits across every product. One subscription.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#c9a227] mb-2">One Identity</h4>
-                  <p className="text-sm text-gray-400">
+                  <h4 className="font-semibold text-[#c9a227] mb-1 sm:mb-2 text-sm sm:text-base">One Identity</h4>
+                  <p className="text-xs sm:text-sm text-gray-400">
                     Single KYC, unified profile. Verified once, trusted everywhere.
-                    No repeat onboarding per product.
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#c9a227] mb-2">One Experience</h4>
-                  <p className="text-sm text-gray-400">
-                    Consistent UI/UX, seamless transitions between products.
-                    Feels like one app, not nine.
+                  <h4 className="font-semibold text-[#c9a227] mb-1 sm:mb-2 text-sm sm:text-base">One Experience</h4>
+                  <p className="text-xs sm:text-sm text-gray-400">
+                    Consistent UI/UX, seamless transitions. Feels like one app.
                   </p>
                 </div>
               </div>
@@ -588,10 +584,10 @@ export default function EcosystemDocsPage() {
 
         {/* Product Catalog Section */}
         {activeSection === 'products' && (
-          <div className="space-y-6">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">Product Catalog</h2>
-              <p className="text-gray-400">Detailed documentation for each product</p>
+          <div className="space-y-4 sm:space-y-6">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">Product Catalog</h2>
+              <p className="text-gray-400 text-sm sm:text-base">Detailed documentation for each product</p>
             </div>
 
             {productDetails.map((product) => {
@@ -666,15 +662,15 @@ export default function EcosystemDocsPage() {
 
         {/* Integrations Section */}
         {activeSection === 'integrations' && (
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">Cross-Product Integrations</h2>
-              <p className="text-gray-400">How products work together to create value</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">Cross-Product Integrations</h2>
+              <p className="text-gray-400 text-sm sm:text-base">How products work together to create value</p>
             </div>
 
             {/* Integration Matrix */}
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52] overflow-x-auto">
-              <h3 className="text-xl font-bold mb-4">Key Synergies</h3>
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52] overflow-x-auto">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Key Synergies</h3>
               <table className="w-full text-sm min-w-[600px]">
                 <thead>
                   <tr className="border-b border-[#2a3a52]">
@@ -698,12 +694,12 @@ export default function EcosystemDocsPage() {
             </div>
 
             {/* Integration Architecture */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-4">Integration Architecture</h3>
-              <div className="grid sm:grid-cols-2 gap-6">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Integration Architecture</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-semibold text-[#c9a227] mb-2">Shared Services</h4>
-                  <ul className="space-y-2 text-sm text-gray-300">
+                  <h4 className="font-semibold text-[#c9a227] mb-2 text-sm sm:text-base">Shared Services</h4>
+                  <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
                     <li>• Unified Authentication (SSO)</li>
                     <li>• Central Wallet & Coins Engine</li>
                     <li>• KYC/Identity Service</li>
@@ -712,8 +708,8 @@ export default function EcosystemDocsPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#c9a227] mb-2">Event-Driven Communication</h4>
-                  <ul className="space-y-2 text-sm text-gray-300">
+                  <h4 className="font-semibold text-[#c9a227] mb-2 text-sm sm:text-base">Event-Driven Communication</h4>
+                  <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
                     <li>• Real-time event streaming</li>
                     <li>• Cross-product triggers</li>
                     <li>• Gamification event hooks</li>
@@ -725,28 +721,28 @@ export default function EcosystemDocsPage() {
             </div>
 
             {/* Coins Flow */}
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
-              <h3 className="text-xl font-bold mb-4">Nuqta Coins Flow</h3>
-              <div className="grid sm:grid-cols-3 gap-4 text-center">
-                <div className="bg-[#0a1628] rounded-xl p-4 border border-green-500/30">
-                  <Coins className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                  <h4 className="font-semibold text-green-400">Earn</h4>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Purchases, Referrals, Achievements, Streaks
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Nuqta Coins Flow</h3>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 border border-green-500/30">
+                  <Coins className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mx-auto mb-1 sm:mb-2" />
+                  <h4 className="font-semibold text-green-400 text-sm sm:text-base">Earn</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-400 mt-1">
+                    Purchases, Referrals, Achievements
                   </p>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4 border border-[#c9a227]/30">
-                  <Wallet className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <h4 className="font-semibold text-[#c9a227]">Store</h4>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Unified wallet, Never expire, Cross-product
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 border border-[#c9a227]/30">
+                  <Wallet className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-1 sm:mb-2" />
+                  <h4 className="font-semibold text-[#c9a227] text-sm sm:text-base">Store</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-400 mt-1">
+                    Unified wallet, Never expire
                   </p>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4 border border-blue-500/30">
-                  <Gift className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                  <h4 className="font-semibold text-blue-400">Redeem</h4>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Discounts, Upgrades, Partner rewards
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 border border-blue-500/30">
+                  <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mx-auto mb-1 sm:mb-2" />
+                  <h4 className="font-semibold text-blue-400 text-sm sm:text-base">Redeem</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-400 mt-1">
+                    Discounts, Upgrades, Rewards
                   </p>
                 </div>
               </div>
@@ -756,19 +752,19 @@ export default function EcosystemDocsPage() {
 
         {/* User Journeys Section */}
         {activeSection === 'user-journeys' && (
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">User Journeys</h2>
-              <p className="text-gray-400">How different user personas experience the ecosystem</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">User Journeys</h2>
+              <p className="text-gray-400 text-sm sm:text-base">How different user personas experience the ecosystem</p>
             </div>
 
             {userJourneys.map((journey) => (
-              <div key={journey.persona} className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
-                <div className="flex items-center gap-3 mb-6">
-                  <journey.icon className={`w-8 h-8 ${journey.color}`} />
+              <div key={journey.persona} className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
+                <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                  <journey.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${journey.color}`} />
                   <div>
-                    <h3 className="text-xl font-bold">{journey.persona}</h3>
-                    <p className="text-sm text-gray-400">{journey.savings}</p>
+                    <h3 className="text-lg sm:text-xl font-bold">{journey.persona}</h3>
+                    <p className="text-xs sm:text-sm text-gray-400">{journey.savings}</p>
                   </div>
                 </div>
 
@@ -803,63 +799,63 @@ export default function EcosystemDocsPage() {
 
         {/* Technical Architecture Section */}
         {activeSection === 'technical' && (
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">Technical Architecture</h2>
-              <p className="text-gray-400">System design and infrastructure overview</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">Technical Architecture</h2>
+              <p className="text-gray-400 text-sm sm:text-base">System design and infrastructure overview</p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-[#1a2a42] rounded-2xl p-6 border border-[#2a3a52]">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <Smartphone className="w-5 h-5 text-[#c9a227]" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 border border-[#2a3a52]">
+                <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 flex items-center gap-2">
+                  <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                   Frontend
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  <li>• React Native for iOS & Android apps</li>
-                  <li>• Next.js for web dashboard & merchant portal</li>
-                  <li>• Shared component library across products</li>
-                  <li>• Real-time updates via WebSocket</li>
-                  <li>• Offline-first architecture for core features</li>
+                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
+                  <li>• React Native for iOS & Android</li>
+                  <li>• Next.js for web dashboard</li>
+                  <li>• Shared component library</li>
+                  <li>• Real-time updates (WebSocket)</li>
+                  <li>• Offline-first architecture</li>
                 </ul>
               </div>
 
-              <div className="bg-[#1a2a42] rounded-2xl p-6 border border-[#2a3a52]">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <Layers className="w-5 h-5 text-[#c9a227]" />
+              <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 border border-[#2a3a52]">
+                <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 flex items-center gap-2">
+                  <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                   Backend
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  <li>• Microservices architecture (Node.js, Go)</li>
-                  <li>• Event-driven communication (Kafka)</li>
+                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
+                  <li>• Microservices (Node.js, Go)</li>
+                  <li>• Event-driven (Kafka)</li>
                   <li>• PostgreSQL + Redis + MongoDB</li>
-                  <li>• Kubernetes for orchestration</li>
+                  <li>• Kubernetes orchestration</li>
                   <li>• API Gateway with rate limiting</li>
                 </ul>
               </div>
 
-              <div className="bg-[#1a2a42] rounded-2xl p-6 border border-[#2a3a52]">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#c9a227]" />
+              <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 border border-[#2a3a52]">
+                <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 flex items-center gap-2">
+                  <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                   Security
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-300">
-                  <li>• Bank-grade encryption (AES-256, TLS 1.3)</li>
-                  <li>• No card numbers stored (tokenization)</li>
-                  <li>• SOC 2 Type II compliance target</li>
-                  <li>• PCI DSS Level 1 for payments</li>
+                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
+                  <li>• Bank-grade encryption (AES-256)</li>
+                  <li>• No card numbers stored</li>
+                  <li>• SOC 2 Type II compliance</li>
+                  <li>• PCI DSS Level 1</li>
                   <li>• Real-time fraud detection ML</li>
                 </ul>
               </div>
 
-              <div className="bg-[#1a2a42] rounded-2xl p-6 border border-[#2a3a52]">
-                <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-[#c9a227]" />
+              <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 border border-[#2a3a52]">
+                <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 flex items-center gap-2">
+                  <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                   Data & Analytics
                 </h3>
-                <ul className="space-y-2 text-sm text-gray-300">
+                <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-300">
                   <li>• Real-time analytics pipeline</li>
-                  <li>• ML models for recommendations</li>
+                  <li>• ML recommendations</li>
                   <li>• Credit scoring AI (Qist)</li>
                   <li>• Fraud detection models</li>
                   <li>• A/B testing infrastructure</li>
@@ -868,23 +864,23 @@ export default function EcosystemDocsPage() {
             </div>
 
             {/* Infrastructure */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-4">Cloud Infrastructure</h3>
-              <div className="grid sm:grid-cols-3 gap-4 text-center">
-                <div className="bg-[#0a1628] rounded-xl p-4">
-                  <div className="text-2xl mb-2">☁️</div>
-                  <h4 className="font-semibold">AWS / GCP</h4>
-                  <p className="text-xs text-gray-400">Multi-cloud for redundancy</p>
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Cloud Infrastructure</h3>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 text-center">
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4">
+                  <div className="text-xl sm:text-2xl mb-1 sm:mb-2">☁️</div>
+                  <h4 className="font-semibold text-xs sm:text-base">AWS / GCP</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-400">Multi-cloud</p>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4">
-                  <div className="text-2xl mb-2">🌍</div>
-                  <h4 className="font-semibold">GCC Regions</h4>
-                  <p className="text-xs text-gray-400">Data residency compliance</p>
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4">
+                  <div className="text-xl sm:text-2xl mb-1 sm:mb-2">🌍</div>
+                  <h4 className="font-semibold text-xs sm:text-base">GCC Regions</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-400">Data residency</p>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4">
-                  <div className="text-2xl mb-2">⚡</div>
-                  <h4 className="font-semibold">99.9% SLA</h4>
-                  <p className="text-xs text-gray-400">High availability target</p>
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4">
+                  <div className="text-xl sm:text-2xl mb-1 sm:mb-2">⚡</div>
+                  <h4 className="font-semibold text-xs sm:text-base">99.9% SLA</h4>
+                  <p className="text-[10px] sm:text-xs text-gray-400">High availability</p>
                 </div>
               </div>
             </div>
@@ -893,15 +889,15 @@ export default function EcosystemDocsPage() {
 
         {/* Revenue Model Section */}
         {activeSection === 'revenue' && (
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">Revenue Model</h2>
-              <p className="text-gray-400">How each product generates revenue</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">Revenue Model</h2>
+              <p className="text-gray-400 text-sm sm:text-base">How each product generates revenue</p>
             </div>
 
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
               <div className="overflow-x-auto">
-                <table className="w-full text-sm min-w-[600px]">
+                <table className="w-full text-xs sm:text-sm min-w-[500px]">
                   <thead>
                     <tr className="border-b border-[#2a3a52]">
                       <th className="text-left py-3 px-4">Product</th>
@@ -965,9 +961,9 @@ export default function EcosystemDocsPage() {
             </div>
 
             {/* Total Revenue Projection */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-4">5-Year Revenue Projection</h3>
-              <div className="grid sm:grid-cols-5 gap-4 text-center">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">5-Year Revenue Projection</h3>
+              <div className="grid grid-cols-5 gap-1 sm:gap-4 text-center">
                 {[
                   { year: 'Y1', revenue: '2.5M' },
                   { year: 'Y2', revenue: '15M' },
@@ -975,9 +971,9 @@ export default function EcosystemDocsPage() {
                   { year: 'Y4', revenue: '180M' },
                   { year: 'Y5', revenue: '480M' },
                 ].map((item) => (
-                  <div key={item.year} className="bg-[#0a1628] rounded-xl p-4">
-                    <div className="text-xl font-bold text-[#c9a227]">{item.revenue}</div>
-                    <div className="text-sm text-gray-400">{item.year} (AED)</div>
+                  <div key={item.year} className="bg-[#0a1628] rounded-lg sm:rounded-xl p-2 sm:p-4">
+                    <div className="text-sm sm:text-xl font-bold text-[#c9a227]">{item.revenue}</div>
+                    <div className="text-[10px] sm:text-sm text-gray-400">{item.year}</div>
                   </div>
                 ))}
               </div>
@@ -987,14 +983,14 @@ export default function EcosystemDocsPage() {
 
         {/* GCC Expansion Section */}
         {activeSection === 'expansion' && (
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">GCC Expansion Strategy</h2>
-              <p className="text-gray-400">Rolling out across 6 GCC countries</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">GCC Expansion Strategy</h2>
+              <p className="text-gray-400 text-sm sm:text-base">Rolling out across 6 GCC countries</p>
             </div>
 
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52] overflow-x-auto">
-              <table className="w-full text-sm min-w-[700px]">
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52] overflow-x-auto">
+              <table className="w-full text-xs sm:text-sm min-w-[500px]">
                 <thead>
                   <tr className="border-b border-[#2a3a52]">
                     <th className="text-left py-3 px-4">Country</th>
@@ -1029,13 +1025,13 @@ export default function EcosystemDocsPage() {
             </div>
 
             {/* Cross-Border Features */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-4">Cross-Border Strategy</h3>
-              <ul className="space-y-3">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Cross-Border Strategy</h3>
+              <ul className="space-y-2 sm:space-y-3">
                 {gccExpansion.strategy.map((point, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-[#c9a227] flex-shrink-0" />
-                    <span className="text-gray-300">{point}</span>
+                  <li key={i} className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227] flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-300 text-xs sm:text-base">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -1045,28 +1041,28 @@ export default function EcosystemDocsPage() {
 
         {/* Roadmap Section */}
         {activeSection === 'roadmap' && (
-          <div className="space-y-8">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold mb-2">Product Roadmap</h2>
-              <p className="text-gray-400">Development timeline through 2031</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="text-xl sm:text-2xl font-bold mb-2">Product Roadmap</h2>
+              <p className="text-gray-400 text-sm sm:text-base">Development timeline through 2031</p>
             </div>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {roadmap.map((phase) => (
                 <div
                   key={phase.phase}
-                  className={`rounded-2xl p-6 sm:p-8 border ${
+                  className={`rounded-2xl p-4 sm:p-6 md:p-8 border ${
                     phase.status === 'current'
                       ? 'bg-[#c9a227]/10 border-[#c9a227]/50'
                       : 'bg-[#1a2a42] border-[#2a3a52]'
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4 flex-wrap gap-2">
                     <div>
-                      <h3 className="text-xl font-bold">{phase.phase}</h3>
-                      <p className="text-sm text-gray-400">{phase.timeline}</p>
+                      <h3 className="text-base sm:text-xl font-bold">{phase.phase}</h3>
+                      <p className="text-xs sm:text-sm text-gray-400">{phase.timeline}</p>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-sm ${
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm ${
                       phase.status === 'current' ? 'bg-[#c9a227] text-[#0a1628]' :
                       phase.status === 'upcoming' ? 'bg-yellow-500/20 text-yellow-400' :
                       'bg-gray-500/20 text-gray-400'
@@ -1076,15 +1072,15 @@ export default function EcosystemDocsPage() {
                     </span>
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     {phase.milestones.map((m, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <CheckCircle className={`w-5 h-5 flex-shrink-0 mt-0.5 ${
+                      <div key={i} className="flex items-start gap-2 sm:gap-3">
+                        <CheckCircle className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 ${
                           phase.status === 'current' ? 'text-[#c9a227]' : 'text-gray-500'
                         }`} />
                         <div>
-                          <span className="font-medium text-sm">{m.product}</span>
-                          <p className="text-sm text-gray-400">{m.milestone}</p>
+                          <span className="font-medium text-xs sm:text-sm">{m.product}</span>
+                          <p className="text-xs sm:text-sm text-gray-400">{m.milestone}</p>
                         </div>
                       </div>
                     ))}
@@ -1098,22 +1094,22 @@ export default function EcosystemDocsPage() {
       </div>
 
       {/* Footer Navigation */}
-      <div className="bg-[#0d1c30] border-t border-[#2a3a52] py-8">
+      <div className="bg-[#0d1c30] border-t border-[#2a3a52] py-6 sm:py-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
-            <Link href="/company-profile" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <Link href="/company-profile" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               Company Profile
             </Link>
             <span className="text-gray-600">|</span>
-            <Link href="/ecosystem" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors">
+            <Link href="/ecosystem" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               Ecosystem Overview
             </Link>
             <span className="text-gray-600">|</span>
-            <Link href="/data-room" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors">
+            <Link href="/data-room" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               Data Room
             </Link>
           </div>
-          <p className="text-center text-gray-500 text-sm">
+          <p className="text-center text-gray-500 text-xs sm:text-sm">
             © 2026 Nuqta. Building the financial ecosystem for UAE & GCC.
           </p>
         </div>

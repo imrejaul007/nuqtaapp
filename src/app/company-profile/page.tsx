@@ -443,21 +443,21 @@ export default function CompanyProfilePage() {
         {activeTab === 'market' && (
           <div className="space-y-8">
             {/* TAM/SAM/SOM */}
-            <div className="grid sm:grid-cols-3 gap-4">
-              <div className="bg-[#1a2a42] rounded-xl p-6 border border-[#2a3a52] text-center">
-                <div className="text-4xl font-bold text-[#c9a227] mb-2">$600B</div>
-                <div className="font-bold">TAM</div>
-                <div className="text-sm text-gray-400">GCC Consumer Spending</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <div className="bg-[#1a2a42] rounded-xl p-4 sm:p-6 border border-[#2a3a52] text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-[#c9a227] mb-1 sm:mb-2">$600B</div>
+                <div className="font-bold text-sm sm:text-base">TAM</div>
+                <div className="text-xs sm:text-sm text-gray-400">GCC Consumer Spending</div>
               </div>
-              <div className="bg-[#1a2a42] rounded-xl p-6 border border-[#2a3a52] text-center">
-                <div className="text-4xl font-bold text-[#c9a227] mb-2">$45B</div>
-                <div className="font-bold">SAM</div>
-                <div className="text-sm text-gray-400">UAE Digital Transactions</div>
+              <div className="bg-[#1a2a42] rounded-xl p-4 sm:p-6 border border-[#2a3a52] text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-[#c9a227] mb-1 sm:mb-2">$45B</div>
+                <div className="font-bold text-sm sm:text-base">SAM</div>
+                <div className="text-xs sm:text-sm text-gray-400">UAE Digital Transactions</div>
               </div>
-              <div className="bg-[#1a2a42] rounded-xl p-6 border border-[#2a3a52] text-center">
-                <div className="text-4xl font-bold text-[#c9a227] mb-2">$1.35B</div>
-                <div className="font-bold">SOM</div>
-                <div className="text-sm text-gray-400">3-Year Dubai Target</div>
+              <div className="bg-[#1a2a42] rounded-xl p-4 sm:p-6 border border-[#2a3a52] text-center">
+                <div className="text-3xl sm:text-4xl font-bold text-[#c9a227] mb-1 sm:mb-2">$1.35B</div>
+                <div className="font-bold text-sm sm:text-base">SOM</div>
+                <div className="text-xs sm:text-sm text-gray-400">3-Year Dubai Target</div>
               </div>
             </div>
 
@@ -638,26 +638,26 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* Unit Economics */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-[#1a2a42] rounded-xl p-5 border border-[#2a3a52] text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-1">AED 30</div>
-                <div className="font-medium">Blended CAC</div>
-                <div className="text-xs text-gray-400">Per acquired user</div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              <div className="bg-[#1a2a42] rounded-xl p-3 sm:p-5 border border-[#2a3a52] text-center">
+                <div className="text-xl sm:text-3xl font-bold text-emerald-400 mb-1">AED 30</div>
+                <div className="font-medium text-sm sm:text-base">Blended CAC</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">Per acquired user</div>
               </div>
-              <div className="bg-[#1a2a42] rounded-xl p-5 border border-[#2a3a52] text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-1">AED 504</div>
-                <div className="font-medium">LTV</div>
-                <div className="text-xs text-gray-400">24-month lifetime value</div>
+              <div className="bg-[#1a2a42] rounded-xl p-3 sm:p-5 border border-[#2a3a52] text-center">
+                <div className="text-xl sm:text-3xl font-bold text-emerald-400 mb-1">AED 504</div>
+                <div className="font-medium text-sm sm:text-base">LTV</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">24-month value</div>
               </div>
-              <div className="bg-[#1a2a42] rounded-xl p-5 border border-[#2a3a52] text-center">
-                <div className="text-3xl font-bold text-[#c9a227] mb-1">16.8x</div>
-                <div className="font-medium">LTV:CAC</div>
-                <div className="text-xs text-gray-400">Top-tier ratio</div>
+              <div className="bg-[#1a2a42] rounded-xl p-3 sm:p-5 border border-[#2a3a52] text-center">
+                <div className="text-xl sm:text-3xl font-bold text-[#c9a227] mb-1">16.8x</div>
+                <div className="font-medium text-sm sm:text-base">LTV:CAC</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">Top-tier ratio</div>
               </div>
-              <div className="bg-[#1a2a42] rounded-xl p-5 border border-[#2a3a52] text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">&lt;1 mo</div>
-                <div className="font-medium">Payback</div>
-                <div className="text-xs text-gray-400">CAC recovery period</div>
+              <div className="bg-[#1a2a42] rounded-xl p-3 sm:p-5 border border-[#2a3a52] text-center">
+                <div className="text-xl sm:text-3xl font-bold text-blue-400 mb-1">&lt;1 mo</div>
+                <div className="font-medium text-sm sm:text-base">Payback</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">CAC recovery</div>
               </div>
             </div>
 
@@ -683,30 +683,32 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* Flywheel */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-4">The Nuqta Flywheel</h3>
-              <div className="flex flex-wrap justify-center gap-4 items-center">
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <Users className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <p className="text-sm font-medium">More Users</p>
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-4">The Nuqta Flywheel</h3>
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-4 items-center">
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xs sm:text-sm font-medium">More Users</p>
                 </div>
-                <ArrowRight className="w-6 h-6 text-[#c9a227]" />
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <Store className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <p className="text-sm font-medium">More Merchants</p>
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227] hidden sm:block" />
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <Store className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xs sm:text-sm font-medium">More Merchants</p>
                 </div>
-                <ArrowRight className="w-6 h-6 text-[#c9a227]" />
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <Gift className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <p className="text-sm font-medium">Better Rewards</p>
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227] hidden sm:block" />
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xs sm:text-sm font-medium">Better Rewards</p>
                 </div>
-                <ArrowRight className="w-6 h-6 text-[#c9a227]" />
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <Heart className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <p className="text-sm font-medium">Higher Retention</p>
+                <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227] hidden sm:block" />
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-1 sm:mb-2" />
+                  <p className="text-xs sm:text-sm font-medium">Higher Retention</p>
                 </div>
-                <ArrowRight className="w-6 h-6 text-[#c9a227] rotate-90 sm:rotate-0" />
-                <div className="text-[#c9a227] text-2xl">↺</div>
+                <div className="col-span-2 sm:col-span-1 flex justify-center items-center gap-2 mt-2 sm:mt-0">
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227] rotate-90 sm:rotate-0" />
+                  <div className="text-[#c9a227] text-xl sm:text-2xl">↺</div>
+                </div>
               </div>
             </div>
           </div>
@@ -714,28 +716,28 @@ export default function CompanyProfilePage() {
 
         {/* Traction & Metrics */}
         {activeTab === 'traction' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Current Status */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="bg-emerald-500/10 rounded-xl p-5 border border-emerald-500/30 text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-1">32+</div>
-                <div className="font-medium">Merchant LOIs</div>
-                <div className="text-xs text-gray-400">Signed agreements</div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              <div className="bg-emerald-500/10 rounded-xl p-3 sm:p-5 border border-emerald-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1">32+</div>
+                <div className="font-medium text-sm sm:text-base">Merchant LOIs</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">Signed agreements</div>
               </div>
-              <div className="bg-blue-500/10 rounded-xl p-5 border border-blue-500/30 text-center">
-                <div className="text-3xl font-bold text-blue-400 mb-1">80%</div>
-                <div className="font-medium">MVP Complete</div>
-                <div className="text-xs text-gray-400">Launch: March 1, 2026</div>
+              <div className="bg-blue-500/10 rounded-xl p-3 sm:p-5 border border-blue-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-blue-400 mb-1">80%</div>
+                <div className="font-medium text-sm sm:text-base">MVP Complete</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">Launch: Mar 1, 2026</div>
               </div>
-              <div className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30 text-center">
-                <div className="text-3xl font-bold text-purple-400 mb-1">6</div>
-                <div className="font-medium">C-Suite Team</div>
-                <div className="text-xs text-gray-400">Structure defined</div>
+              <div className="bg-purple-500/10 rounded-xl p-3 sm:p-5 border border-purple-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-purple-400 mb-1">6</div>
+                <div className="font-medium text-sm sm:text-base">C-Suite Team</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">Structure defined</div>
               </div>
-              <div className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30 text-center">
-                <div className="text-3xl font-bold text-amber-400 mb-1">$5M</div>
-                <div className="font-medium">Valuation Cap</div>
-                <div className="text-xs text-gray-400">Pre-seed SAFE</div>
+              <div className="bg-amber-500/10 rounded-xl p-3 sm:p-5 border border-amber-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-amber-400 mb-1">$5M</div>
+                <div className="font-medium text-sm sm:text-base">Valuation Cap</div>
+                <div className="text-[10px] sm:text-xs text-gray-400">Pre-seed SAFE</div>
               </div>
             </div>
 
@@ -766,24 +768,24 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* Year 1 Targets */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-6">Year 1 (2027) Targets</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="bg-[#0a1628]/50 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-[#c9a227]">100K</div>
-                  <div className="text-sm font-medium">MAU</div>
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-transparent rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Year 1 (2027) Targets</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-[#0a1628]/50 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">100K</div>
+                  <div className="text-xs sm:text-sm font-medium">MAU</div>
                 </div>
-                <div className="bg-[#0a1628]/50 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-[#c9a227]">2,500</div>
-                  <div className="text-sm font-medium">Merchants</div>
+                <div className="bg-[#0a1628]/50 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">2,500</div>
+                  <div className="text-xs sm:text-sm font-medium">Merchants</div>
                 </div>
-                <div className="bg-[#0a1628]/50 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-[#c9a227]">30%</div>
-                  <div className="text-sm font-medium">D30 Retention</div>
+                <div className="bg-[#0a1628]/50 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">30%</div>
+                  <div className="text-xs sm:text-sm font-medium">D30 Retention</div>
                 </div>
-                <div className="bg-[#0a1628]/50 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-[#c9a227]">$2.5M</div>
-                  <div className="text-sm font-medium">Revenue</div>
+                <div className="bg-[#0a1628]/50 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">$2.5M</div>
+                  <div className="text-xs sm:text-sm font-medium">Revenue</div>
                 </div>
               </div>
             </div>
@@ -874,20 +876,20 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* Organization Scale */}
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
-              <h3 className="text-xl font-bold mb-4">Hiring Plan</h3>
-              <div className="grid grid-cols-3 gap-4">
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Hiring Plan</h3>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#c9a227]">6</div>
-                  <div className="text-sm">C-Suite Roles</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">6</div>
+                  <div className="text-xs sm:text-sm">C-Suite Roles</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#c9a227]">20+</div>
-                  <div className="text-sm">Sub-Teams</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">20+</div>
+                  <div className="text-xs sm:text-sm">Sub-Teams</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#c9a227]">80+</div>
-                  <div className="text-sm">Total Roles (H3)</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">80+</div>
+                  <div className="text-xs sm:text-sm">Total Roles (H3)</div>
                 </div>
               </div>
             </div>
@@ -927,59 +929,59 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* Return Scenarios */}
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30">
-                <h4 className="font-bold text-emerald-400 mb-3">Base Case (35% probability)</h4>
-                <div className="text-4xl font-bold text-emerald-400 mb-2">120x</div>
-                <p className="text-gray-300 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="bg-emerald-500/10 rounded-xl p-4 sm:p-6 border border-emerald-500/30">
+                <h4 className="font-bold text-emerald-400 mb-2 sm:mb-3 text-sm sm:text-base">Base Case (35% probability)</h4>
+                <div className="text-3xl sm:text-4xl font-bold text-emerald-400 mb-1 sm:mb-2">120x</div>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   $1.2B exit → $48M return on $400K investment
                 </p>
               </div>
-              <div className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30">
-                <h4 className="font-bold text-blue-400 mb-3">Conservative (15% probability)</h4>
-                <div className="text-4xl font-bold text-blue-400 mb-2">95x</div>
-                <p className="text-gray-300 text-sm">
+              <div className="bg-blue-500/10 rounded-xl p-4 sm:p-6 border border-blue-500/30">
+                <h4 className="font-bold text-blue-400 mb-2 sm:mb-3 text-sm sm:text-base">Conservative (15% probability)</h4>
+                <div className="text-3xl sm:text-4xl font-bold text-blue-400 mb-1 sm:mb-2">95x</div>
+                <p className="text-gray-300 text-xs sm:text-sm">
                   $950M exit → $38M return on $400K investment
                 </p>
               </div>
             </div>
 
             {/* Even at 50% Miss */}
-            <div className="bg-[#c9a227]/10 rounded-2xl p-6 sm:p-8 border border-[#c9a227]/30">
-              <h3 className="text-xl font-bold mb-4">Stress Test: 50% Miss Scenario</h3>
-              <p className="text-gray-300 mb-4">
+            <div className="bg-[#c9a227]/10 rounded-2xl p-4 sm:p-6 md:p-8 border border-[#c9a227]/30">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Stress Test: 50% Miss Scenario</h3>
+              <p className="text-gray-300 mb-3 sm:mb-4 text-sm sm:text-base">
                 Even if we achieve only 50% of projections:
               </p>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold">AED 240M</div>
-                  <div className="text-sm text-gray-400">Y5 Revenue (50%)</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-lg sm:text-2xl font-bold">AED 240M</div>
+                  <div className="text-[10px] sm:text-sm text-gray-400">Y5 Revenue</div>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold">$400-600M</div>
-                  <div className="text-sm text-gray-400">Exit Valuation</div>
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-lg sm:text-2xl font-bold">$400-600M</div>
+                  <div className="text-[10px] sm:text-sm text-gray-400">Exit Value</div>
                 </div>
-                <div className="bg-[#0a1628] rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-emerald-400">40-60x</div>
-                  <div className="text-sm text-gray-400">Investor Return</div>
+                <div className="bg-[#0a1628] rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-lg sm:text-2xl font-bold text-emerald-400">40-60x</div>
+                  <div className="text-[10px] sm:text-sm text-gray-400">Return</div>
                 </div>
               </div>
-              <p className="text-[#c9a227] text-sm mt-4 text-center">
+              <p className="text-[#c9a227] text-xs sm:text-sm mt-3 sm:mt-4 text-center">
                 Still top-decile venture returns even with 50% execution miss.
               </p>
             </div>
 
             {/* Burn & Runway */}
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
-              <h3 className="text-xl font-bold mb-4">Burn Rate & Runway</h3>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
-                  <div className="text-4xl font-bold text-[#c9a227] mb-2">&lt;$40K/mo</div>
-                  <p className="text-gray-400">Target early-stage monthly burn</p>
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
+              <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Burn Rate & Runway</h3>
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
+                <div className="text-center sm:text-left">
+                  <div className="text-2xl sm:text-4xl font-bold text-[#c9a227] mb-1 sm:mb-2">&lt;$40K/mo</div>
+                  <p className="text-gray-400 text-xs sm:text-base">Target early-stage monthly burn</p>
                 </div>
-                <div>
-                  <div className="text-4xl font-bold text-[#c9a227] mb-2">18-24 mo</div>
-                  <p className="text-gray-400">Runway on $400K raise</p>
+                <div className="text-center sm:text-left">
+                  <div className="text-2xl sm:text-4xl font-bold text-[#c9a227] mb-1 sm:mb-2">18-24 mo</div>
+                  <p className="text-gray-400 text-xs sm:text-base">Runway on $400K raise</p>
                 </div>
               </div>
             </div>
@@ -1028,32 +1030,32 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* Use of Funds */}
-            <div className="bg-[#1a2a42] rounded-2xl p-6 sm:p-8 border border-[#2a3a52]">
-              <h3 className="text-xl font-bold mb-6">Use of Funds</h3>
-              <div className="grid sm:grid-cols-3 gap-4">
-                <div className="text-center p-4">
-                  <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
-                    <TrendingUp className="w-10 h-10 text-[#c9a227]" />
+            <div className="bg-[#1a2a42] rounded-2xl p-4 sm:p-6 md:p-8 border border-[#2a3a52]">
+              <h3 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6">Use of Funds</h3>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="text-center p-2 sm:p-4">
+                  <div className="w-12 h-12 sm:w-20 sm:h-20 mx-auto mb-2 sm:mb-3 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 sm:w-10 sm:h-10 text-[#c9a227]" />
                   </div>
-                  <div className="text-3xl font-bold text-[#c9a227]">55%</div>
-                  <div className="font-medium">Marketing</div>
-                  <p className="text-xs text-gray-400 mt-1">User & merchant acquisition</p>
+                  <div className="text-xl sm:text-3xl font-bold text-[#c9a227]">55%</div>
+                  <div className="font-medium text-xs sm:text-base">Marketing</div>
+                  <p className="text-[10px] sm:text-xs text-gray-400 mt-1 hidden sm:block">User & merchant acquisition</p>
                 </div>
-                <div className="text-center p-4">
-                  <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
-                    <Users className="w-10 h-10 text-[#c9a227]" />
+                <div className="text-center p-2 sm:p-4">
+                  <div className="w-12 h-12 sm:w-20 sm:h-20 mx-auto mb-2 sm:mb-3 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
+                    <Users className="w-6 h-6 sm:w-10 sm:h-10 text-[#c9a227]" />
                   </div>
-                  <div className="text-3xl font-bold text-[#c9a227]">25%</div>
-                  <div className="font-medium">Salaries</div>
-                  <p className="text-xs text-gray-400 mt-1">Founder, co-founder, key hires</p>
+                  <div className="text-xl sm:text-3xl font-bold text-[#c9a227]">25%</div>
+                  <div className="font-medium text-xs sm:text-base">Salaries</div>
+                  <p className="text-[10px] sm:text-xs text-gray-400 mt-1 hidden sm:block">Founder, co-founder, key hires</p>
                 </div>
-                <div className="text-center p-4">
-                  <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
-                    <Smartphone className="w-10 h-10 text-[#c9a227]" />
+                <div className="text-center p-2 sm:p-4">
+                  <div className="w-12 h-12 sm:w-20 sm:h-20 mx-auto mb-2 sm:mb-3 rounded-full bg-[#c9a227]/20 flex items-center justify-center">
+                    <Smartphone className="w-6 h-6 sm:w-10 sm:h-10 text-[#c9a227]" />
                   </div>
-                  <div className="text-3xl font-bold text-[#c9a227]">20%</div>
-                  <div className="font-medium">Tech & Ops</div>
-                  <p className="text-xs text-gray-400 mt-1">Infrastructure, operations</p>
+                  <div className="text-xl sm:text-3xl font-bold text-[#c9a227]">20%</div>
+                  <div className="font-medium text-xs sm:text-base">Tech & Ops</div>
+                  <p className="text-[10px] sm:text-xs text-gray-400 mt-1 hidden sm:block">Infrastructure, operations</p>
                 </div>
               </div>
             </div>
@@ -1124,19 +1126,19 @@ export default function CompanyProfilePage() {
             </div>
 
             {/* CTA */}
-            <div className="text-center py-8">
-              <h3 className="text-2xl font-bold mb-4">Ready to Invest?</h3>
-              <p className="text-gray-400 mb-6 max-w-xl mx-auto">
+            <div className="text-center py-6 sm:py-8">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ready to Invest?</h3>
+              <p className="text-gray-400 mb-4 sm:mb-6 max-w-xl mx-auto text-sm sm:text-base px-2">
                 Join us in building the financial ecosystem for 30M+ users across the GCC.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link href="/data-room" className="flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors">
-                  <Briefcase className="w-5 h-5" />
+              <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+                <Link href="/data-room" className="flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors text-sm sm:text-base">
+                  <Briefcase className="w-4 h-4 sm:w-5 sm:h-5" />
                   Access Data Room
                 </Link>
                 <a
                   href="mailto:rejaul@nuqtapp.com?subject=Investment%20Interest%20-%20Nuqta"
-                  className="flex items-center gap-2 px-6 py-3 bg-[#1a2a42] border border-[#c9a227]/50 text-[#c9a227] rounded-xl font-bold hover:bg-[#c9a227]/10 transition-colors"
+                  className="flex items-center justify-center gap-2 px-5 sm:px-6 py-3 bg-[#1a2a42] border border-[#c9a227]/50 text-[#c9a227] rounded-xl font-bold hover:bg-[#c9a227]/10 transition-colors text-sm sm:text-base"
                 >
                   Contact Founder
                 </a>
