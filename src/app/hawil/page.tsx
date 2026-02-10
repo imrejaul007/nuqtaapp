@@ -763,9 +763,9 @@ export default function HawilPage() {
         {activeTab === 'overview' && (
           <div className="space-y-8">
             {/* Executive Summary */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Executive Summary
               </h2>
               <div className="prose prose-invert max-w-none">
@@ -779,8 +779,8 @@ export default function HawilPage() {
 
               {/* How It Works */}
               <div className="mt-6">
-                <h3 className="text-lg font-bold text-white mb-4">How It Works</h3>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-4">How It Works</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   {[
                     { step: 1, icon: Wallet, title: 'Fund', desc: 'Add AED from bank or Nuqta wallet' },
                     { step: 2, icon: ArrowDownUp, title: 'Convert', desc: 'Get Google rate (0% markup)' },
@@ -788,13 +788,13 @@ export default function HawilPage() {
                     { step: 4, icon: Coins, title: 'Earn', desc: 'Get Nuqta coins as reward' },
                   ].map((item, i) => (
                     <div key={i} className="relative">
-                      <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
-                        <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3">
-                          <item.icon className="w-5 h-5 text-green-400" />
+                      <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50 text-center">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                          <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                         </div>
-                        <div className="text-xs text-green-400 mb-1">Step {item.step}</div>
-                        <div className="text-sm font-bold text-white">{item.title}</div>
-                        <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                        <div className="text-[10px] sm:text-xs text-green-400 mb-1">Step {item.step}</div>
+                        <div className="text-xs sm:text-sm font-bold text-white">{item.title}</div>
+                        <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{item.desc}</div>
                       </div>
                       {i < 3 && (
                         <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
@@ -806,19 +806,19 @@ export default function HawilPage() {
             </div>
 
             {/* The Big Differentiator */}
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Percent className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Percent className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 The Hawil Difference: Google Rate
               </h2>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 When you send money with Hawil, you get the <strong className="text-white">exact Google/mid-market rate</strong> -
                 the same rate you see when you search &quot;AED to INR&quot; on Google. No markup. No hidden fees.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-red-500/30">
-                  <h4 className="text-red-400 font-bold mb-4">❌ How Others Work</h4>
-                  <div className="space-y-2 text-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-red-500/30">
+                  <h4 className="text-red-400 font-bold text-sm sm:text-base mb-3 sm:mb-4">How Others Work</h4>
+                  <div className="space-y-2 text-xs sm:text-sm">
                     <div className="flex justify-between text-slate-300">
                       <span>Google Rate (AED to INR)</span>
                       <span>22.50</span>
@@ -837,9 +837,9 @@ export default function HawilPage() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-5 border border-green-500/30">
-                  <h4 className="text-green-400 font-bold mb-4">✅ How Hawil Works</h4>
-                  <div className="space-y-2 text-sm">
+                <div className="bg-green-500/10 rounded-xl p-4 sm:p-5 border border-green-500/30">
+                  <h4 className="text-green-400 font-bold text-sm sm:text-base mb-3 sm:mb-4">How Hawil Works</h4>
+                  <div className="space-y-2 text-xs sm:text-sm">
                     <div className="flex justify-between text-slate-300">
                       <span>Google Rate (AED to INR)</span>
                       <span>22.50</span>
@@ -868,40 +868,40 @@ export default function HawilPage() {
             </div>
 
             {/* Value Props */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Send className="w-5 h-5 text-green-400" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                  <Send className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                   For Senders
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {senderBenefits.slice(0, 4).map((benefit, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-4 h-4 text-green-400" />
+                    <div key={i} className="flex items-start gap-2 sm:gap-3">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-400" />
                       </div>
                       <div>
-                        <h4 className="text-white font-medium text-sm">{benefit.title}</h4>
-                        <p className="text-xs text-slate-400">{benefit.description}</p>
+                        <h4 className="text-white font-medium text-xs sm:text-sm">{benefit.title}</h4>
+                        <p className="text-[10px] sm:text-xs text-slate-400">{benefit.description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Gift className="w-5 h-5 text-blue-400" />
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                  <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                   For Receivers
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {receiverBenefits.map((benefit, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                        <benefit.icon className="w-4 h-4 text-blue-400" />
+                    <div key={i} className="flex items-start gap-2 sm:gap-3">
+                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400" />
                       </div>
                       <div>
-                        <h4 className="text-white font-medium text-sm">{benefit.title}</h4>
-                        <p className="text-xs text-slate-400">{benefit.description}</p>
+                        <h4 className="text-white font-medium text-xs sm:text-sm">{benefit.title}</h4>
+                        <p className="text-[10px] sm:text-xs text-slate-400">{benefit.description}</p>
                       </div>
                     </div>
                   ))}
@@ -910,9 +910,9 @@ export default function HawilPage() {
             </div>
 
             {/* Corporate Structure */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Corporate Structure
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -951,47 +951,47 @@ export default function HawilPage() {
 
         {/* Google Rate Tab */}
         {activeTab === 'google-rate' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Hero */}
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-2xl p-8 border-2 border-green-500">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <Percent className="w-5 h-5 text-green-400" />
-                  <span className="text-green-400 font-bold">Revolutionary Pricing</span>
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-green-500">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Percent className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                  <span className="text-green-400 font-bold text-xs sm:text-sm">Revolutionary Pricing</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
                   {googleRateAdvantage.headline}
                 </h2>
-                <p className="text-slate-300 text-lg">{googleRateAdvantage.subheadline}</p>
+                <p className="text-slate-300 text-sm sm:text-lg">{googleRateAdvantage.subheadline}</p>
               </div>
 
               {/* Comparison */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {googleRateAdvantage.comparison.map((item, i) => (
-                  <div key={i} className={`rounded-xl p-4 text-center ${
+                  <div key={i} className={`rounded-xl p-3 sm:p-4 text-center ${
                     item.highlight
                       ? 'bg-green-500/20 border-2 border-green-500'
                       : 'bg-slate-900/50 border border-slate-700/50'
                   }`}>
-                    <div className={`text-2xl font-bold mb-1 ${item.highlight ? 'text-green-400' : 'text-red-400'}`}>
+                    <div className={`text-xl sm:text-2xl font-bold mb-1 ${item.highlight ? 'text-green-400' : 'text-red-400'}`}>
                       {item.markup}
                     </div>
-                    <div className="text-white font-medium text-sm">{item.provider}</div>
-                    <div className="text-xs text-slate-400 mt-1">{item.description}</div>
+                    <div className="text-white font-medium text-xs sm:text-sm">{item.provider}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{item.description}</div>
                   </div>
                 ))}
               </div>
 
               {/* How It Works */}
-              <div className="bg-slate-900/50 rounded-xl p-6">
-                <h3 className="text-white font-bold mb-4">How Nuqta Coins Enable Google Rate</h3>
-                <div className="space-y-3">
+              <div className="bg-slate-900/50 rounded-xl p-4 sm:p-6">
+                <h3 className="text-white font-bold text-sm sm:text-base mb-3 sm:mb-4">How Nuqta Coins Enable Google Rate</h3>
+                <div className="space-y-2 sm:space-y-3">
                   {googleRateAdvantage.howItWorks.map((step, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-sm">
+                    <div key={i} className="flex items-center gap-2 sm:gap-3">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-xs sm:text-sm flex-shrink-0">
                         {i + 1}
                       </div>
-                      <span className="text-slate-300">{step}</span>
+                      <span className="text-slate-300 text-xs sm:text-sm">{step}</span>
                     </div>
                   ))}
                 </div>
@@ -999,34 +999,34 @@ export default function HawilPage() {
             </div>
 
             {/* Nuqta Coins as Currency */}
-            <div className="bg-[#c9a227]/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Coins className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-[#c9a227]/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Nuqta Coins: Universal Currency
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 Nuqta Coins are pegged to USD and can be bought/sold at Google rate. This creates a <strong className="text-white">zero-markup currency layer</strong> for the entire ecosystem.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {currencyExchangeModel.steps.map((step, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                    <step.icon className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                    <div className="text-xs text-[#c9a227] mb-1">Step {step.step}</div>
-                    <div className="text-white font-bold text-sm">{step.title}</div>
-                    <div className="text-xs text-slate-400 mt-1">{step.description}</div>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                    <step.icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-2" />
+                    <div className="text-[10px] sm:text-xs text-[#c9a227] mb-1">Step {step.step}</div>
+                    <div className="text-white font-bold text-xs sm:text-sm">{step.title}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{step.description}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Calculator Example */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Real Savings Example: Sending 10,000 AED to India
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[500px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Provider</th>
@@ -1079,24 +1079,24 @@ export default function HawilPage() {
 
         {/* Hawil Card Tab */}
         {activeTab === 'hawil-card' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Hero - Card Visual */}
-            <div className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-[#c9a227]/20 rounded-2xl p-8 border-2 border-blue-500">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <CreditCard className="w-5 h-5 text-blue-400" />
-                  <span className="text-blue-400 font-bold">Tourist & Resident Card</span>
+            <div className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-[#c9a227]/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-blue-500">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-4">
+                  <CreditCard className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                  <span className="text-blue-400 font-bold text-xs sm:text-sm">Tourist & Resident Card</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
                   {hawilCard.name}: <span className="text-blue-400">{hawilCard.tagline}</span>
                 </h2>
-                <p className="text-slate-300 text-lg max-w-3xl mx-auto">{hawilCard.description}</p>
+                <p className="text-slate-300 text-sm sm:text-lg max-w-3xl mx-auto">{hawilCard.description}</p>
               </div>
 
               {/* Card Visuals */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {hawilCard.cardTypes.map((card, i) => (
-                  <div key={i} className={`${card.color} rounded-2xl p-6 shadow-2xl relative overflow-hidden`}>
+                  <div key={i} className={`${card.color} rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-2xl relative overflow-hidden`}>
                     <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
                     <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
                     <div className="relative z-10">
@@ -1126,46 +1126,46 @@ export default function HawilPage() {
               </div>
 
               {/* Key USP */}
-              <div className="bg-slate-900/50 rounded-xl p-6 border border-[#c9a227]">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/30">
-                    <h4 className="text-green-400 font-bold mb-2 flex items-center gap-2">
-                      <Store className="w-4 h-4" />
+              <div className="bg-slate-900/50 rounded-xl p-4 sm:p-6 border border-[#c9a227]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                  <div className="bg-green-500/10 rounded-lg p-3 sm:p-4 border border-green-500/30">
+                    <h4 className="text-green-400 font-bold text-sm sm:text-base mb-2 flex items-center gap-2">
+                      <Store className="w-3 h-3 sm:w-4 sm:h-4" />
                       At Nuqta Partners (500+)
                     </h4>
-                    <div className="text-2xl font-black text-white mb-1">{hawilCard.rateStructure.nuqtaPartners.rate}</div>
-                    <div className="text-[#c9a227] text-sm font-medium">{hawilCard.rateStructure.nuqtaPartners.cashback}</div>
-                    <div className="text-xs text-slate-400 mt-2">{hawilCard.rateStructure.nuqtaPartners.description}</div>
+                    <div className="text-xl sm:text-2xl font-black text-white mb-1">{hawilCard.rateStructure.nuqtaPartners.rate}</div>
+                    <div className="text-[#c9a227] text-xs sm:text-sm font-medium">{hawilCard.rateStructure.nuqtaPartners.cashback}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 mt-2">{hawilCard.rateStructure.nuqtaPartners.description}</div>
                   </div>
-                  <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700">
-                    <h4 className="text-slate-400 font-bold mb-2 flex items-center gap-2">
-                      <Globe className="w-4 h-4" />
+                  <div className="bg-slate-800/50 rounded-lg p-3 sm:p-4 border border-slate-700">
+                    <h4 className="text-slate-400 font-bold text-sm sm:text-base mb-2 flex items-center gap-2">
+                      <Globe className="w-3 h-3 sm:w-4 sm:h-4" />
                       At Other Merchants
                     </h4>
-                    <div className="text-2xl font-black text-white mb-1">{hawilCard.rateStructure.otherMerchants.rate}</div>
-                    <div className="text-[#c9a227] text-sm font-medium">{hawilCard.rateStructure.otherMerchants.cashback}</div>
-                    <div className="text-xs text-slate-400 mt-2">{hawilCard.rateStructure.otherMerchants.description}</div>
+                    <div className="text-xl sm:text-2xl font-black text-white mb-1">{hawilCard.rateStructure.otherMerchants.rate}</div>
+                    <div className="text-[#c9a227] text-xs sm:text-sm font-medium">{hawilCard.rateStructure.otherMerchants.cashback}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 mt-2">{hawilCard.rateStructure.otherMerchants.description}</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* How It Works */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-blue-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 How Hawil Card Works
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
                 {hawilCard.howItWorks.map((step, i) => (
                   <div key={i} className="relative">
-                    <div className="bg-gradient-to-b from-blue-500/20 to-slate-900/50 rounded-xl p-4 border border-blue-500/30 text-center h-full">
-                      <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3 border border-blue-500/50">
-                        <step.icon className="w-6 h-6 text-blue-400" />
+                    <div className="bg-gradient-to-b from-blue-500/20 to-slate-900/50 rounded-xl p-3 sm:p-4 border border-blue-500/30 text-center h-full">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3 border border-blue-500/50">
+                        <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                       </div>
-                      <div className="text-xs text-blue-400 font-bold mb-1">Step {step.step}</div>
-                      <div className="text-sm font-bold text-white mb-2">{step.title}</div>
-                      <div className="text-xs text-slate-400">{step.description}</div>
+                      <div className="text-[10px] sm:text-xs text-blue-400 font-bold mb-1">Step {step.step}</div>
+                      <div className="text-xs sm:text-sm font-bold text-white mb-1 sm:mb-2">{step.title}</div>
+                      <div className="text-[10px] sm:text-xs text-slate-400">{step.description}</div>
                     </div>
                     {i < 4 && (
                       <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-blue-500/50" size={24} />
@@ -1176,19 +1176,19 @@ export default function HawilPage() {
             </div>
 
             {/* Visa Linking System */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border-2 border-blue-500">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-blue-400" />
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-4 sm:p-6 border-2 border-blue-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 Visa-Linked Security System
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 {/* Tourist Visa */}
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/30">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-                      <Plane className="w-5 h-5 text-blue-400" />
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-blue-500/30">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                      <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                     </div>
-                    <h4 className="text-blue-400 font-bold">Tourist Visa Holder</h4>
+                    <h4 className="text-blue-400 font-bold text-sm sm:text-base">Tourist Visa Holder</h4>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-start gap-2">
@@ -1223,12 +1223,12 @@ export default function HawilPage() {
                 </div>
 
                 {/* Resident Visa */}
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-[#c9a227]/30">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
-                      <Home className="w-5 h-5 text-[#c9a227]" />
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
+                      <Home className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                     </div>
-                    <h4 className="text-[#c9a227] font-bold">Residence Visa Holder</h4>
+                    <h4 className="text-[#c9a227] font-bold text-sm sm:text-base">Residence Visa Holder</h4>
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-start gap-2">
@@ -1258,22 +1258,22 @@ export default function HawilPage() {
             </div>
 
             {/* Recharge Options */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Coins className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Coins className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Easy Recharge Options
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {hawilCard.rechargeOptions.map((option, i) => (
-                  <div key={i} className="bg-gradient-to-b from-green-500/10 to-slate-900/50 rounded-xl p-5 border border-green-500/30">
-                    <h4 className="text-white font-bold text-sm mb-2">{option.method}</h4>
-                    <p className="text-xs text-slate-400 mb-3">{option.description}</p>
+                  <div key={i} className="bg-gradient-to-b from-green-500/10 to-slate-900/50 rounded-xl p-4 sm:p-5 border border-green-500/30">
+                    <h4 className="text-white font-bold text-xs sm:text-sm mb-2">{option.method}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400 mb-2 sm:mb-3">{option.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-green-400 font-bold text-lg">{option.fee}</span>
-                      <span className="text-xs text-slate-500">fee</span>
+                      <span className="text-green-400 font-bold text-base sm:text-lg">{option.fee}</span>
+                      <span className="text-[10px] sm:text-xs text-slate-500">fee</span>
                     </div>
                     <div className="text-[10px] text-slate-500 mt-2 flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3 text-green-400" />
+                      <CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" />
                       {option.note}
                     </div>
                   </div>
@@ -1291,19 +1291,19 @@ export default function HawilPage() {
             </div>
 
             {/* Exit Process */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-6 border border-orange-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Plane className="w-5 h-5 text-orange-400" />
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-4 sm:p-6 border border-orange-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Leaving UAE? Convert Your Balance
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 {hawilCard.exitProcess.map((step, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
-                    <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-3 text-orange-400 font-bold">
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50 text-center">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3 text-orange-400 font-bold text-sm sm:text-base">
                       {step.step}
                     </div>
-                    <div className="text-white font-bold text-sm mb-1">{step.action}</div>
-                    <div className="text-xs text-slate-400">{step.description}</div>
+                    <div className="text-white font-bold text-xs sm:text-sm mb-1">{step.action}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">{step.description}</div>
                   </div>
                 ))}
               </div>
@@ -1315,18 +1315,18 @@ export default function HawilPage() {
             </div>
 
             {/* Fee Structure */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Receipt className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Receipt className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Transparent Fees
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-3 sm:gap-4">
                 {Object.entries(hawilCard.fees).map(([key, value], i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 text-center border border-slate-700/50">
-                    <div className={`text-xl font-bold ${value === '0 AED' || value === '0%' ? 'text-green-400' : 'text-white'}`}>
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 sm:p-4 text-center border border-slate-700/50">
+                    <div className={`text-lg sm:text-xl font-bold ${value === '0 AED' || value === '0%' ? 'text-green-400' : 'text-white'}`}>
                       {value}
                     </div>
-                    <div className="text-xs text-slate-400 mt-1">
+                    <div className="text-[10px] sm:text-xs text-slate-400 mt-1">
                       {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
                     </div>
                   </div>
@@ -1335,15 +1335,15 @@ export default function HawilPage() {
             </div>
 
             {/* Merchant Recharge Program */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Store className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Store className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 {hawilCard.merchantProgram.title}
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 Nuqta partner merchants can act as <strong className="text-white">Hawil Card recharge points</strong> - function like a currency exchange without needing a license!
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="text-[#c9a227] font-bold mb-3">Benefits for Merchants</h4>
                   <div className="space-y-2">
@@ -1381,70 +1381,70 @@ export default function HawilPage() {
 
         {/* Tourists Tab */}
         {activeTab === 'tourists' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Hero */}
-            <div className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-teal-500/10 rounded-2xl p-8 border-2 border-blue-500">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <Plane className="w-5 h-5 text-blue-400" />
-                  <span className="text-blue-400 font-bold">Tourist Acquisition Engine</span>
+            <div className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-teal-500/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-blue-500">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                  <span className="text-blue-400 font-bold text-xs sm:text-sm">Tourist Acquisition Engine</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
                   {touristStrategy.headline}
                 </h2>
-                <p className="text-slate-300 text-lg">{touristStrategy.subheadline}</p>
+                <p className="text-slate-300 text-sm sm:text-lg">{touristStrategy.subheadline}</p>
               </div>
 
               {/* UAE Tourism Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-blue-500/30">
-                  <div className="text-2xl font-bold text-blue-400">{touristStrategy.uaeStats.tourists}</div>
-                  <div className="text-xs text-slate-400">Annual Visitors</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-blue-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-blue-400">{touristStrategy.uaeStats.tourists}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Annual Visitors</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-cyan-500/30">
-                  <div className="text-2xl font-bold text-cyan-400">{touristStrategy.uaeStats.spending}</div>
-                  <div className="text-xs text-slate-400">Tourist Spending</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-cyan-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-cyan-400">{touristStrategy.uaeStats.spending}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Tourist Spending</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-teal-500/30">
-                  <div className="text-2xl font-bold text-teal-400">{touristStrategy.uaeStats.avgStay}</div>
-                  <div className="text-xs text-slate-400">Average Stay</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-teal-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-teal-400">{touristStrategy.uaeStats.avgStay}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Average Stay</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-2xl font-bold text-green-400">{touristStrategy.uaeStats.topSpend}</div>
-                  <div className="text-xs text-slate-400">Top Spending</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">{touristStrategy.uaeStats.topSpend}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Top Spending</div>
                 </div>
               </div>
 
               {/* USP Banner */}
-              <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/20 rounded-xl p-6 border border-[#c9a227]">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#c9a227]/20 flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-6 h-6 text-[#c9a227]" />
+              <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/20 rounded-xl p-4 sm:p-6 border border-[#c9a227]">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#c9a227]/20 flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227]" />
                   </div>
                   <div>
-                    <h3 className="text-white font-bold text-lg mb-2">The Question Every Tourist Should Ask</h3>
-                    <p className="text-slate-300 text-lg">&quot;{touristStrategy.usp}&quot;</p>
+                    <h3 className="text-white font-bold text-base sm:text-lg mb-2">The Question Every Tourist Should Ask</h3>
+                    <p className="text-slate-300 text-sm sm:text-lg">&quot;{touristStrategy.usp}&quot;</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Tourist Acquisition Flow */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-blue-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 Tourist Acquisition Funnel
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
                 {touristStrategy.acquisitionFlow.map((step, i) => (
                   <div key={i} className="relative">
-                    <div className="bg-gradient-to-b from-blue-500/20 to-slate-900/50 rounded-xl p-4 border border-blue-500/30 text-center h-full">
-                      <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3 border border-blue-500/50">
-                        <step.icon className="w-6 h-6 text-blue-400" />
+                    <div className="bg-gradient-to-b from-blue-500/20 to-slate-900/50 rounded-xl p-3 sm:p-4 border border-blue-500/30 text-center h-full">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3 border border-blue-500/50">
+                        <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" />
                       </div>
-                      <div className="text-xs text-blue-400 font-bold mb-1">Step {step.step}</div>
-                      <div className="text-sm font-bold text-white mb-2">{step.title}</div>
-                      <div className="text-xs text-slate-400">{step.description}</div>
+                      <div className="text-[10px] sm:text-xs text-blue-400 font-bold mb-1">Step {step.step}</div>
+                      <div className="text-xs sm:text-sm font-bold text-white mb-1 sm:mb-2">{step.title}</div>
+                      <div className="text-[10px] sm:text-xs text-slate-400">{step.description}</div>
                     </div>
                     {i < 4 && (
                       <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-blue-500/50" size={24} />
@@ -1455,10 +1455,10 @@ export default function HawilPage() {
             </div>
 
             {/* Credit Card vs Hawil */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-red-500/10 rounded-xl p-6 border-2 border-red-500/50">
-                <h4 className="text-red-400 font-bold mb-4 flex items-center gap-2">
-                  <CreditCard className="w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+              <div className="bg-red-500/10 rounded-xl p-4 sm:p-6 border-2 border-red-500/50">
+                <h4 className="text-red-400 font-bold text-sm sm:text-base mb-3 sm:mb-4 flex items-center gap-2">
+                  <CreditCard className="w-4 h-4 sm:w-5 sm:h-5" />
                   Using Foreign Credit Card
                 </h4>
                 <div className="space-y-3">
@@ -1484,9 +1484,9 @@ export default function HawilPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-green-500/10 rounded-xl p-6 border-2 border-green-500">
-                <h4 className="text-green-400 font-bold mb-4 flex items-center gap-2">
-                  <Coins className="w-5 h-5" />
+              <div className="bg-green-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+                <h4 className="text-green-400 font-bold text-sm sm:text-base mb-3 sm:mb-4 flex items-center gap-2">
+                  <Coins className="w-4 h-4 sm:w-5 sm:h-5" />
                   Using Hawil + Nuqta Coins
                 </h4>
                 <div className="space-y-3">
@@ -1515,37 +1515,37 @@ export default function HawilPage() {
             </div>
 
             {/* Tourist Benefits */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Star className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Star className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Why Tourists Love Nuqta
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {touristStrategy.touristBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-gradient-to-b from-[#c9a227]/10 to-slate-900/50 rounded-xl p-5 border border-[#c9a227]/30">
-                    <CheckCircle className="w-8 h-8 text-[#c9a227] mb-3" />
-                    <h4 className="text-white font-bold mb-2">{benefit.title}</h4>
-                    <p className="text-slate-400 text-sm">{benefit.description}</p>
+                  <div key={i} className="bg-gradient-to-b from-[#c9a227]/10 to-slate-900/50 rounded-xl p-4 sm:p-5 border border-[#c9a227]/30">
+                    <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mb-2 sm:mb-3" />
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-2">{benefit.title}</h4>
+                    <p className="text-slate-400 text-xs sm:text-sm">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Tourist Campaigns */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Target className="w-5 h-5 text-blue-400" />
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-4 sm:p-6 border border-blue-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 Targeted Tourist Campaigns
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {touristStrategy.touristCampaigns.map((campaign, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Users className="w-5 h-5 text-blue-400" />
-                      <h4 className="text-white font-bold text-sm">{campaign.segment}</h4>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <div className="flex items-center gap-2 mb-2 sm:mb-3">
+                      <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                      <h4 className="text-white font-bold text-xs sm:text-sm">{campaign.segment}</h4>
                     </div>
-                    <p className="text-slate-400 text-xs mb-3">{campaign.offer}</p>
-                    <div className="text-xs text-slate-500">
+                    <p className="text-slate-400 text-[10px] sm:text-xs mb-2 sm:mb-3">{campaign.offer}</p>
+                    <div className="text-[10px] sm:text-xs text-slate-500">
                       Avg Spend: <span className="text-blue-400 font-bold">{campaign.spend}</span>
                     </div>
                   </div>
@@ -1554,34 +1554,34 @@ export default function HawilPage() {
             </div>
 
             {/* Ecosystem Discovery */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Network className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Network className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 From Currency Exchange to Full Ecosystem
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 Once tourists convert currency via Hawil, they unlock the entire Nuqta ecosystem:
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-[#c9a227]/30">
-                  <Store className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <div className="text-white font-bold text-sm">500+ Merchants</div>
-                  <div className="text-xs text-slate-400">Exclusive deals</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <Store className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-2" />
+                  <div className="text-white font-bold text-xs sm:text-sm">500+ Merchants</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Exclusive deals</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-orange-500/30">
-                  <Send className="w-8 h-8 text-orange-400 mx-auto mb-2" />
-                  <div className="text-white font-bold text-sm">Wasil Delivery</div>
-                  <div className="text-xs text-slate-400">60-min delivery</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 text-center border border-orange-500/30">
+                  <Send className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-xs sm:text-sm">Wasil Delivery</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">60-min delivery</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-violet-500/30">
-                  <ShoppingBag className="w-8 h-8 text-violet-400 mx-auto mb-2" />
-                  <div className="text-white font-bold text-sm">Qist BNPL</div>
-                  <div className="text-xs text-slate-400">For big purchases</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 text-center border border-violet-500/30">
+                  <ShoppingBag className="w-6 h-6 sm:w-8 sm:h-8 text-violet-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-xs sm:text-sm">Qist BNPL</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">For big purchases</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-green-500/30">
-                  <Gift className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                  <div className="text-white font-bold text-sm">Earn Coins</div>
-                  <div className="text-xs text-slate-400">Rewards on everything</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 text-center border border-green-500/30">
+                  <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-xs sm:text-sm">Earn Coins</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Rewards on everything</div>
                 </div>
               </div>
               <div className="mt-6 text-center">
@@ -1598,15 +1598,15 @@ export default function HawilPage() {
 
         {/* Ecosystem Tab */}
         {activeTab === 'ecosystem' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Hero */}
-            <div className="bg-gradient-to-r from-green-500/20 via-[#c9a227]/20 to-violet-500/20 rounded-2xl p-8 border-2 border-green-500/50">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <Network className="w-5 h-5 text-green-400" />
-                  <span className="text-green-400 font-bold">5th Product in the Ecosystem</span>
+            <div className="bg-gradient-to-r from-green-500/20 via-[#c9a227]/20 to-violet-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-green-500/50">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Network className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                  <span className="text-green-400 font-bold text-xs sm:text-sm">5th Product in the Ecosystem</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
                   Hawil Completes the <span className="text-green-400">Financial Circle</span>
                 </h2>
                 <p className="text-slate-300 max-w-3xl mx-auto text-lg">
@@ -1615,7 +1615,7 @@ export default function HawilPage() {
               </div>
 
               {/* Five Products */}
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
                 {[
                   { name: 'Nuqta', arabic: 'نقطة', tagline: 'Earn', color: 'text-[#c9a227]', bgColor: 'bg-[#c9a227]/10', borderColor: 'border-[#c9a227]', icon: Crown },
                   { name: 'Qist', arabic: 'قسط', tagline: 'Pay', color: 'text-violet-400', bgColor: 'bg-violet-500/10', borderColor: 'border-violet-500', icon: ShoppingBag },
@@ -1623,41 +1623,41 @@ export default function HawilPage() {
                   { name: 'Wasil', arabic: 'واصل', tagline: 'Get', color: 'text-orange-400', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500', icon: Send },
                   { name: 'Hawil', arabic: 'حوّل', tagline: 'Send', color: 'text-green-400', bgColor: 'bg-green-500/10', borderColor: 'border-green-500', icon: Send },
                 ].map((product, i) => (
-                  <div key={i} className={`${product.bgColor} rounded-xl p-4 border-2 ${product.borderColor} text-center`}>
-                    <div className={`w-10 h-10 rounded-xl ${product.bgColor} flex items-center justify-center mx-auto mb-2 border ${product.borderColor}`}>
-                      <product.icon className={`w-5 h-5 ${product.color}`} />
+                  <div key={i} className={`${product.bgColor} rounded-xl p-3 sm:p-4 border-2 ${product.borderColor} text-center`}>
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-xl ${product.bgColor} flex items-center justify-center mx-auto mb-2 border ${product.borderColor}`}>
+                      <product.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${product.color}`} />
                     </div>
-                    <h3 className={`text-lg font-black ${product.color}`}>{product.name}</h3>
-                    <span className="text-slate-400 text-xs">{product.arabic}</span>
-                    <p className="text-slate-300 text-sm mt-1">{product.tagline}</p>
+                    <h3 className={`text-base sm:text-lg font-black ${product.color}`}>{product.name}</h3>
+                    <span className="text-slate-400 text-[10px] sm:text-xs">{product.arabic}</span>
+                    <p className="text-slate-300 text-xs sm:text-sm mt-1">{product.tagline}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Integration Points */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Link2 className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Link2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Deep Ecosystem Integration
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {ecosystemIntegration.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
                         item.product === 'Nuqta' ? 'bg-[#c9a227]/20' :
                         item.product === 'Qist' ? 'bg-violet-500/20' :
                         item.product === 'Sakin' ? 'bg-emerald-500/20' :
                         'bg-orange-500/20'
                       }`}>
-                        <item.icon className={`w-5 h-5 ${item.color}`} />
+                        <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${item.color}`} />
                       </div>
-                      <h4 className={`font-bold ${item.color}`}>{item.product}</h4>
+                      <h4 className={`font-bold text-sm sm:text-base ${item.color}`}>{item.product}</h4>
                     </div>
-                    <p className="text-sm text-slate-300 mb-2">{item.integration}</p>
-                    <div className="flex items-center gap-2 text-xs text-green-400">
-                      <CheckCircle className="w-3 h-3" />
+                    <p className="text-xs sm:text-sm text-slate-300 mb-2">{item.integration}</p>
+                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-green-400">
+                      <CheckCircle className="w-3 h-3 flex-shrink-0" />
                       {item.benefit}
                     </div>
                   </div>
@@ -1666,12 +1666,12 @@ export default function HawilPage() {
             </div>
 
             {/* Use Case: Complete Journey */}
-            <div className="bg-green-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Plane className="w-5 h-5 text-green-400" />
+            <div className="bg-green-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Complete Expat Journey: Raj from India
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
                 {[
                   { product: 'Nuqta', action: 'Gets Nuqta+ via employer', result: 'Saves on daily purchases' },
                   { product: 'Sakin', action: 'Finances apartment move-in', result: '68K over 12 months' },
@@ -1709,14 +1709,14 @@ export default function HawilPage() {
 
         {/* Corridors Tab */}
         {activeTab === 'corridors' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Top Remittance Corridors from UAE
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[600px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Country</th>
@@ -1752,11 +1752,11 @@ export default function HawilPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h3 className="text-lg font-bold text-white mb-4">Launch Strategy</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-lg p-4">
-                  <div className="text-green-400 font-bold mb-2">Phase 1 (Launch)</div>
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Launch Strategy</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                  <div className="text-green-400 font-bold text-sm sm:text-base mb-2">Phase 1 (Launch)</div>
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-sm text-slate-300">
                       <span>🇮🇳</span> India
@@ -1801,18 +1801,18 @@ export default function HawilPage() {
 
         {/* Pricing Tab */}
         {activeTab === 'pricing' && (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {pricingTiers.map((tier, i) => (
-                <div key={i} className={`rounded-xl p-6 border-2 ${tier.color} ${tier.bgColor} relative`}>
+                <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${tier.color} ${tier.bgColor} relative`}>
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#c9a227] text-[#0a1628] text-xs font-bold rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2 sm:px-3 py-1 bg-[#c9a227] text-[#0a1628] text-[10px] sm:text-xs font-bold rounded-full whitespace-nowrap">
                       BEST VALUE
                     </div>
                   )}
-                  <h3 className="text-xl font-bold text-white mb-2">{tier.tier}</h3>
-                  <div className="text-3xl font-black text-green-400 mb-1">{tier.transferFee}</div>
-                  <div className="text-sm text-slate-400 mb-4">transfer fee</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 mt-1 sm:mt-0">{tier.tier}</h3>
+                  <div className="text-2xl sm:text-3xl font-black text-green-400 mb-1">{tier.transferFee}</div>
+                  <div className="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4">transfer fee</div>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
@@ -1840,28 +1840,28 @@ export default function HawilPage() {
 
         {/* Unit Economics Tab */}
         {activeTab === 'economics' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Per Transfer Economics (Avg 2,500 AED)
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-green-500/10 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-2xl font-bold text-green-400">{unitEconomics.transferFee} AED</div>
-                  <div className="text-xs text-slate-400">Transfer Fee (0.5%)</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="bg-green-500/10 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">{unitEconomics.transferFee} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Transfer Fee (0.5%)</div>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
-                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.fxSpread} AED</div>
-                  <div className="text-xs text-slate-400">FX Markup (0%!)</div>
+                <div className="bg-blue-500/10 rounded-xl p-3 sm:p-4 text-center border border-blue-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-400">{unitEconomics.fxSpread} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">FX Markup (0%!)</div>
                 </div>
-                <div className="bg-red-500/10 rounded-xl p-4 text-center border border-red-500/30">
-                  <div className="text-2xl font-bold text-red-400">-{unitEconomics.partnerCost} AED</div>
-                  <div className="text-xs text-slate-400">Partner Cost</div>
+                <div className="bg-red-500/10 rounded-xl p-3 sm:p-4 text-center border border-red-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-red-400">-{unitEconomics.partnerCost} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Partner Cost</div>
                 </div>
-                <div className="bg-[#c9a227]/10 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-2xl font-bold text-[#c9a227]">{unitEconomics.actualProfit} AED</div>
-                  <div className="text-xs text-slate-400">Net Profit</div>
+                <div className="bg-[#c9a227]/10 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">{unitEconomics.actualProfit} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Net Profit</div>
                 </div>
               </div>
 
@@ -1900,14 +1900,14 @@ export default function HawilPage() {
 
         {/* Financials Tab */}
         {activeTab === 'financials' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 3-Year Financial Projections
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[500px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Metric</th>
@@ -1962,21 +1962,21 @@ export default function HawilPage() {
 
         {/* Roadmap Tab */}
         {activeTab === 'roadmap' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {roadmapPhases.map((phase, i) => (
-              <div key={i} className={`rounded-xl p-6 border-2 ${phase.color} ${phase.bgColor}`}>
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+              <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${phase.color} ${phase.bgColor}`}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4">
                   <div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-slate-400">{phase.phase}</span>
-                      <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-400">{phase.phase}</span>
+                      <h3 className="text-lg sm:text-xl font-bold text-white">{phase.title}</h3>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Clock className="w-4 h-4 text-slate-400" />
-                      <span className="text-slate-400 text-sm">{phase.timeline}</span>
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400" />
+                      <span className="text-slate-400 text-xs sm:text-sm">{phase.timeline}</span>
                     </div>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <span className={`px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold w-fit ${
                     phase.status === 'planned' ? 'bg-blue-500/20 text-blue-400' :
                     phase.status === 'in_progress' ? 'bg-green-500/20 text-green-400' :
                     'bg-slate-500/20 text-slate-400'
@@ -1984,10 +1984,10 @@ export default function HawilPage() {
                     {phase.status === 'planned' ? 'Planned' : 'Pending'}
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {phase.milestones.map((milestone, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                    <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-slate-500 flex-shrink-0" />
                       {milestone}
                     </div>
                   ))}
@@ -2043,14 +2043,14 @@ export default function HawilPage() {
 
         {/* Competition Tab */}
         {activeTab === 'competition' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 UAE Remittance Competitive Landscape
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[900px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[800px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Provider</th>
@@ -2096,29 +2096,29 @@ export default function HawilPage() {
             </div>
 
             {/* Competitive Advantage */}
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Hawil Competitive Moat
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="text-white font-bold mb-3">What Competitors Lack</h4>
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-3">What Competitors Lack</h4>
                   <div className="space-y-2">
                     {['Hidden FX markups (2-5%)', 'No rewards or loyalty', 'No ecosystem integration', 'Slow settlement times'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
-                        <AlertTriangle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 flex-shrink-0" />
                         {item}
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-3">Hawil Unique Value</h4>
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-3">Hawil Unique Value</h4>
                   <div className="space-y-2">
                     {['Google rate (0% markup)', 'Nuqta coins on every transfer', 'Full ecosystem (Qist, Sakin, Wasil)', 'Instant transfers 24/7'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
                         {item}
                       </div>
                     ))}

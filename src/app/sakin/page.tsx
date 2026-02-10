@@ -737,9 +737,9 @@ export default function SakinPage() {
               </div>
 
               {/* How It Works */}
-              <div className="mt-6">
-                <h3 className="text-lg font-bold text-white mb-4">How It Works</h3>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="mt-4 sm:mt-6">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">How It Works</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                   {[
                     { step: 1, icon: FileText, title: 'Apply', desc: 'Upload tenancy contract' },
                     { step: 2, icon: UserCheck, title: 'Verify', desc: 'Salary & identity check' },
@@ -748,16 +748,16 @@ export default function SakinPage() {
                     { step: 5, icon: Calendar, title: 'You Pay', desc: 'Monthly + earn rewards' },
                   ].map((item, i) => (
                     <div key={i} className="relative">
-                      <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
-                        <div className="w-10 h-10 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto mb-3">
-                          <item.icon className="w-5 h-5 text-teal-400" />
+                      <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50 text-center">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-teal-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                          <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                         </div>
-                        <div className="text-xs text-teal-400 mb-1">Step {item.step}</div>
-                        <div className="text-sm font-bold text-white">{item.title}</div>
-                        <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                        <div className="text-[10px] sm:text-xs text-teal-400 mb-1">Step {item.step}</div>
+                        <div className="text-xs sm:text-sm font-bold text-white">{item.title}</div>
+                        <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{item.desc}</div>
                       </div>
                       {i < 4 && (
-                        <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
+                        <ChevronRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
                       )}
                     </div>
                   ))}
@@ -766,12 +766,12 @@ export default function SakinPage() {
             </div>
 
             {/* Corporate Structure */}
-            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-6 border border-teal-500/30">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-teal-400" />
+            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-4 sm:p-6 border border-teal-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 Corporate Structure
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-3">
                   <div className="flex justify-between py-2 border-b border-slate-700/50">
                     <span className="text-slate-400">Parent Company</span>
@@ -804,27 +804,27 @@ export default function SakinPage() {
             </div>
 
             {/* Market Opportunity */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-teal-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 UAE Market Opportunity
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">2M+</div>
-                  <div className="text-xs text-slate-400 mt-1">Rent-paying households</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">2M+</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">Rent-paying households</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">900K</div>
-                  <div className="text-xs text-slate-400 mt-1">Addressable market</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">900K</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">Addressable market</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">60K</div>
-                  <div className="text-xs text-slate-400 mt-1">Avg annual rent (AED)</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">60K</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">Avg annual rent (AED)</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">54B</div>
-                  <div className="text-xs text-slate-400 mt-1">Total market (AED)</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">54B</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">Total market (AED)</div>
                 </div>
               </div>
             </div>
@@ -833,11 +833,11 @@ export default function SakinPage() {
 
         {/* 3 Pillars Tab */}
         {activeTab === 'pillars' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Three Pillars Overview */}
-            <div className="bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border border-teal-500/30">
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Layers className="w-6 h-6 text-teal-400" />
+            <div className="bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border border-teal-500/30">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Layers className="w-5 h-5 sm:w-6 sm:h-6 text-teal-400" />
                 The Three Pillars of Sakin
               </h2>
               <p className="text-slate-300">
@@ -847,15 +847,15 @@ export default function SakinPage() {
             </div>
 
             {/* Pillar Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {/* Pillar 1: Find */}
-              <div className="bg-slate-800/30 rounded-xl p-6 border-2 border-cyan-500/50">
-                <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-4">
-                  <Search className="w-7 h-7 text-cyan-400" />
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border-2 border-cyan-500/50">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                  <Search className="w-5 h-5 sm:w-7 sm:h-7 text-cyan-400" />
                 </div>
-                <div className="text-xs font-bold text-cyan-400 mb-1">PILLAR 1</div>
-                <h3 className="text-xl font-bold text-white mb-2">Find a Home</h3>
-                <p className="text-sm text-slate-400 mb-4">Property marketplace with broker + owner listings</p>
+                <div className="text-[10px] sm:text-xs font-bold text-cyan-400 mb-1">PILLAR 1</div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Find a Home</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4">Property marketplace with broker + owner listings</p>
                 <div className="space-y-2">
                   {['Broker listings', 'Owner listings', 'Corporate housing', 'Monthly furnished rentals'].map((f, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
@@ -870,16 +870,16 @@ export default function SakinPage() {
               </div>
 
               {/* Pillar 2: Pay */}
-              <div className="bg-slate-800/30 rounded-xl p-6 border-2 border-teal-500">
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-teal-500 text-white text-xs font-bold rounded-full">
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border-2 border-teal-500 relative">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2 sm:px-3 py-1 bg-teal-500 text-white text-[10px] sm:text-xs font-bold rounded-full">
                   CORE REVENUE
                 </div>
-                <div className="w-14 h-14 rounded-2xl bg-teal-500/20 flex items-center justify-center mb-4">
-                  <Banknote className="w-7 h-7 text-teal-400" />
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-teal-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                  <Banknote className="w-5 h-5 sm:w-7 sm:h-7 text-teal-400" />
                 </div>
-                <div className="text-xs font-bold text-teal-400 mb-1">PILLAR 2</div>
-                <h3 className="text-xl font-bold text-white mb-2">Pay & Finance</h3>
-                <p className="text-sm text-slate-400 mb-4">Core financing products for move-in costs</p>
+                <div className="text-[10px] sm:text-xs font-bold text-teal-400 mb-1">PILLAR 2</div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Pay & Finance</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4">Core financing products for move-in costs</p>
                 <div className="space-y-2">
                   {['Annual rent financing', 'Deposit financing', 'Agent commission financing', 'Emergency rent loans'].map((f, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
@@ -894,13 +894,13 @@ export default function SakinPage() {
               </div>
 
               {/* Pillar 3: Move */}
-              <div className="bg-slate-800/30 rounded-xl p-6 border-2 border-orange-500/50">
-                <div className="w-14 h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center mb-4">
-                  <Truck className="w-7 h-7 text-orange-400" />
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border-2 border-orange-500/50">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                  <Truck className="w-5 h-5 sm:w-7 sm:h-7 text-orange-400" />
                 </div>
-                <div className="text-xs font-bold text-orange-400 mb-1">PILLAR 3</div>
-                <h3 className="text-xl font-bold text-white mb-2">Move & Set Up</h3>
-                <p className="text-sm text-slate-400 mb-4">Future services layer after traction</p>
+                <div className="text-[10px] sm:text-xs font-bold text-orange-400 mb-1">PILLAR 3</div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Move & Set Up</h3>
+                <p className="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4">Future services layer after traction</p>
                 <div className="space-y-2">
                   {['Furniture BNPL', 'Moving services', 'Cleaning', 'Utility setup', 'Insurance'].map((f, i) => (
                     <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
@@ -916,12 +916,12 @@ export default function SakinPage() {
             </div>
 
             {/* Product Listing Structure */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-teal-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 Every Listing Shows Full Move-in Cost
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
                   <h4 className="text-white font-bold mb-4">Sample Listing</h4>
                   <div className="text-2xl font-bold text-white mb-4">1BR Apartment - JLT</div>
@@ -966,12 +966,12 @@ export default function SakinPage() {
             </div>
 
             {/* Revenue by Pillar */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Revenue Streams by Pillar
               </h3>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[400px] px-4 sm:px-0">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
@@ -1007,24 +1007,24 @@ export default function SakinPage() {
                       <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs font-bold">Medium</span></td>
                     </tr>
                     <tr>
-                      <td className="py-3 px-4 text-[#c9a227] font-bold">Ecosystem</td>
-                      <td className="py-3 px-4 text-white">Nuqta+ conversions + merchant spend</td>
-                      <td className="py-3 px-4 text-center"><span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-bold">Ongoing</span></td>
+                      <td className="py-2 sm:py-3 px-3 sm:px-4 text-[#c9a227] font-bold text-xs sm:text-sm">Ecosystem</td>
+                      <td className="py-2 sm:py-3 px-3 sm:px-4 text-white text-xs sm:text-sm">Nuqta+ conversions + merchant spend</td>
+                      <td className="py-2 sm:py-3 px-3 sm:px-4 text-center"><span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-[10px] sm:text-xs font-bold">Ongoing</span></td>
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
           </div>
         )}
 
         {/* Brokers Tab */}
         {activeTab === 'brokers' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Broker Partnership Overview */}
-            <div className="bg-gradient-to-r from-purple-500/20 to-indigo-500/10 rounded-xl p-6 border border-purple-500/30">
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Handshake className="w-6 h-6 text-purple-400" />
+            <div className="bg-gradient-to-r from-purple-500/20 to-indigo-500/10 rounded-xl p-4 sm:p-6 border border-purple-500/30">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Handshake className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
                 Broker Partnership Model
               </h2>
               <p className="text-slate-300">
@@ -1034,46 +1034,46 @@ export default function SakinPage() {
             </div>
 
             {/* Value for Brokers */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Gift className="w-5 h-5 text-purple-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                 Value Proposition for Brokers
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {brokerPartnershipModel.valueForBrokers.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <CheckCircle className="w-6 h-6 text-purple-400 mb-2" />
-                    <h4 className="text-white font-bold text-sm mb-1">{item.benefit}</h4>
-                    <p className="text-xs text-slate-400">{item.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400 mb-1 sm:mb-2" />
+                    <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{item.benefit}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Revenue from Brokers */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Revenue Streams from Broker Partnerships
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 {brokerPartnershipModel.revenueFromBrokers.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="text-sm text-slate-400 mb-1">{item.source}</div>
-                    <div className="text-2xl font-bold text-green-400 mb-2">{item.value}</div>
-                    <p className="text-xs text-slate-400">{item.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="text-xs sm:text-sm text-slate-400 mb-1">{item.source}</div>
+                    <div className="text-xl sm:text-2xl font-bold text-green-400 mb-1 sm:mb-2">{item.value}</div>
+                    <p className="text-[10px] sm:text-xs text-slate-400">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Broker GTM */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Target className="w-5 h-5 text-purple-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                 Broker Acquisition Strategy
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="text-white font-bold mb-3">What We Offer Brokers</h4>
                   <div className="space-y-2">
@@ -1100,31 +1100,31 @@ export default function SakinPage() {
             </div>
 
             {/* Owner Listings */}
-            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-6 border border-teal-500/30">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Home className="w-5 h-5 text-teal-400" />
+            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-4 sm:p-6 border border-teal-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Home className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 Direct Owner Listings (NoBroker Style)
               </h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-3 sm:mb-4">
                 In addition to broker listings, Sakin enables <strong className="text-white">direct owner-to-tenant</strong> connections.
                 This creates a &quot;no broker hassle&quot; experience while still offering financing.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-teal-400">Free</div>
-                  <div className="text-xs text-slate-400">Basic listing</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-teal-400">Free</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Basic listing</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-teal-400">199</div>
-                  <div className="text-xs text-slate-400">AED/mo premium tools</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-teal-400">199</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">AED/mo premium tools</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-green-400">0%</div>
-                  <div className="text-xs text-slate-400">Broker fee for tenant</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">0%</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Broker fee for tenant</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-[#c9a227]">100%</div>
-                  <div className="text-xs text-slate-400">Rent to landlord</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">100%</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Rent to landlord</div>
                 </div>
               </div>
             </div>
@@ -1133,45 +1133,45 @@ export default function SakinPage() {
 
         {/* Properties Tab - Business Plan */}
         {activeTab === 'properties' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Product Overview */}
-            <div className="bg-gradient-to-r from-cyan-500/20 to-teal-500/10 rounded-xl p-6 border border-cyan-500/30">
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Search className="w-6 h-6 text-cyan-400" />
+            <div className="bg-gradient-to-r from-cyan-500/20 to-teal-500/10 rounded-xl p-4 sm:p-6 border border-cyan-500/30">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Search className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
                 Sakin Properties - Rental Marketplace
               </h2>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-3 sm:mb-4">
                 A <strong className="text-white">property listing marketplace</strong> integrated with Sakin financing.
                 Users discover rental properties, apply for monthly rent payment, and get Nuqta+ rewards - all in one platform.
                 Think <strong className="text-cyan-400">Property Finder + Rent Financing + Loyalty Rewards</strong>.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-cyan-400">54B</div>
-                  <div className="text-xs text-slate-400">AED Market Size</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-4 sm:mt-6">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-cyan-400">54B</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">AED Market Size</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-cyan-400">85%</div>
-                  <div className="text-xs text-slate-400">Search Online</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-cyan-400">85%</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Search Online</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-green-400">0</div>
-                  <div className="text-xs text-slate-400">Competitors w/ Financing</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">0</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Competitors w/ Financing</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-[#c9a227]">1st</div>
-                  <div className="text-xs text-slate-400">Mover Advantage</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">1st</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Mover Advantage</div>
                 </div>
               </div>
             </div>
 
             {/* Why Build This */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Target className="w-5 h-5 text-cyan-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 Strategic Rationale
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="text-white font-bold mb-3">Current Market Pain Points</h4>
                   <div className="space-y-2">
@@ -1198,30 +1198,30 @@ export default function SakinPage() {
             </div>
 
             {/* Platform Features */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Layers className="w-5 h-5 text-cyan-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 Platform Features
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {propertiesFeatures.map((feature, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <feature.icon className="w-6 h-6 text-cyan-400 mb-2" />
-                    <h4 className="text-white font-bold text-sm mb-1">{feature.title}</h4>
-                    <p className="text-xs text-slate-400">{feature.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 mb-1 sm:mb-2" />
+                    <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{feature.title}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400">{feature.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Revenue Model */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Revenue Model
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[600px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[600px] px-4 sm:px-0">
+                <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Revenue Stream</th>
@@ -1245,17 +1245,17 @@ export default function SakinPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* Competitive Analysis */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-cyan-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 Competitive Analysis
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[700px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[700px] px-4 sm:px-0">
+                <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Platform</th>
@@ -1289,16 +1289,16 @@ export default function SakinPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* 3-Year Projections */}
-            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/5 rounded-xl p-6 border border-purple-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-purple-400" />
+            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/5 rounded-xl p-4 sm:p-6 border border-purple-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                 Properties Platform Projections
               </h3>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[500px] px-4 sm:px-0">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
@@ -1341,58 +1341,58 @@ export default function SakinPage() {
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* Short-Term Rentals */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-6 border border-orange-500/30">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <CalendarDays className="w-5 h-5 text-orange-400" />
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-4 sm:p-6 border border-orange-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <CalendarDays className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Future: Short-Term Rentals (Airbnb-Style)
               </h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-3 sm:mb-4">
                 Phase 4 expansion into holiday homes and short-term furnished rentals - competing with Airbnb but with <strong className="text-[#c9a227]">Nuqta rewards</strong>.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-orange-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Target Market</div>
-                  <div className="text-white font-bold">{shortTermRentalsModel.targetMarket}</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-orange-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Target Market</div>
+                  <div className="text-white font-bold text-sm sm:text-base">{shortTermRentalsModel.targetMarket}</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-orange-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Revenue Model</div>
-                  <div className="text-green-400 font-bold">{shortTermRentalsModel.revenueModel}</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-orange-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Revenue Model</div>
+                  <div className="text-green-400 font-bold text-sm sm:text-base">{shortTermRentalsModel.revenueModel}</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-orange-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Nuqta+ Value</div>
-                  <div className="text-[#c9a227] font-bold">{shortTermRentalsModel.nuqtaPlusValue}</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-orange-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Nuqta+ Value</div>
+                  <div className="text-[#c9a227] font-bold text-sm sm:text-base">{shortTermRentalsModel.nuqtaPlusValue}</div>
                 </div>
               </div>
-              <p className="text-slate-400 text-sm mt-4">
+              <p className="text-slate-400 text-xs sm:text-sm mt-3 sm:mt-4">
                 <strong className="text-white">Competitive Gap:</strong> {shortTermRentalsModel.competitorGap}
               </p>
             </div>
 
             {/* Integration with Sakin Financing */}
-            <div className="bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-teal-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-teal-400" />
+            <div className="bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border-2 border-teal-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 The Full-Stack Advantage
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {[
                   { step: '1', title: 'Discover', desc: 'Browse verified properties on Sakin' },
                   { step: '2', title: 'Apply', desc: 'One-click Sakin financing application' },
                   { step: '3', title: 'Move In', desc: 'We pay landlord, you pay monthly' },
                   { step: '4', title: 'Earn', desc: '100 AED Nuqta+ reward every month' },
                 ].map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-teal-500/30">
-                    <div className="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center mx-auto mb-2 text-white font-bold">{item.step}</div>
-                    <div className="text-white font-bold">{item.title}</div>
-                    <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-teal-500/30">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-teal-500 flex items-center justify-center mx-auto mb-1 sm:mb-2 text-white font-bold text-xs sm:text-sm">{item.step}</div>
+                    <div className="text-white font-bold text-xs sm:text-base">{item.title}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{item.desc}</div>
                   </div>
                 ))}
               </div>
-              <p className="text-center text-slate-300 mt-4">
+              <p className="text-center text-slate-300 text-sm sm:text-base mt-3 sm:mt-4">
                 <strong className="text-teal-400">No competitor offers this end-to-end experience.</strong>
               </p>
             </div>
@@ -1401,16 +1401,16 @@ export default function SakinPage() {
 
         {/* Fintech Ecosystem Tab */}
         {activeTab === 'ecosystem' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Ecosystem Vision */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#c9a227] flex items-center justify-center">
-                  <Network className="w-7 h-7 text-[#0a1628]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-2xl bg-[#c9a227] flex items-center justify-center">
+                  <Network className="w-5 h-5 sm:w-7 sm:h-7 text-[#0a1628]" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-white">Nuqta Fintech Ecosystem</h2>
-                  <p className="text-[#c9a227]">Full-stack financial services with loyalty rewards</p>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white">Nuqta Fintech Ecosystem</h2>
+                  <p className="text-[#c9a227] text-sm sm:text-base">Full-stack financial services with loyalty rewards</p>
                 </div>
               </div>
               <p className="text-slate-300">
@@ -1421,16 +1421,16 @@ export default function SakinPage() {
             </div>
 
             {/* Sister Companies Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Sakin Card */}
-              <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-teal-500">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-teal-500 flex items-center justify-center">
-                    <Home className="w-6 h-6 text-white" />
+              <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border-2 border-teal-500">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-teal-500 flex items-center justify-center">
+                    <Home className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Sakin <span className="text-teal-400">سكن</span></h3>
-                    <p className="text-teal-400 text-sm">Pay Monthly. Live Easy.</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">Sakin <span className="text-teal-400">سكن</span></h3>
+                    <p className="text-teal-400 text-xs sm:text-sm">Pay Monthly. Live Easy.</p>
                   </div>
                 </div>
                 <div className="space-y-2 mb-4">
@@ -1467,14 +1467,14 @@ export default function SakinPage() {
               </div>
 
               {/* Qist Card */}
-              <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/10 rounded-xl p-6 border-2 border-violet-500">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-violet-500 flex items-center justify-center">
-                    <ShoppingBag className="w-6 h-6 text-white" />
+              <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/10 rounded-xl p-4 sm:p-6 border-2 border-violet-500">
+                <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-violet-500 flex items-center justify-center">
+                    <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">Qist <span className="text-violet-400">قسط</span></h3>
-                    <p className="text-violet-400 text-sm">Shop Now. Pay Easy.</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">Qist <span className="text-violet-400">قسط</span></h3>
+                    <p className="text-violet-400 text-xs sm:text-sm">Shop Now. Pay Easy.</p>
                   </div>
                 </div>
                 <div className="space-y-2 mb-4">
@@ -1512,13 +1512,13 @@ export default function SakinPage() {
             </div>
 
             {/* Qist BNPL Deep Dive */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Qist BNPL - Business Model
               </h3>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                 <div>
                   <h4 className="text-white font-bold mb-3">The Concept</h4>
                   <p className="text-slate-300 text-sm mb-4">
@@ -1554,9 +1554,9 @@ export default function SakinPage() {
               </div>
 
               {/* Corporate Advantage */}
-              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 border border-green-500/30">
-                <div className="flex items-start gap-3">
-                  <Handshake className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-3 sm:p-4 border border-green-500/30">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <Handshake className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 flex-shrink-0 mt-1" />
                   <div>
                     <h4 className="text-white font-bold">Corporate Partnership Advantage</h4>
                     <p className="text-slate-300 text-sm mt-1">
@@ -1569,13 +1569,13 @@ export default function SakinPage() {
             </div>
 
             {/* Qist Competitive Analysis */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 BNPL Competitive Analysis
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[700px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[700px] px-4 sm:px-0">
+                <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Platform</th>
@@ -1607,16 +1607,16 @@ export default function SakinPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* Qist Projections */}
-            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-6 border border-violet-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-violet-400" />
+            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-4 sm:p-6 border border-violet-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Qist 3-Year Projections
               </h3>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[500px] px-4 sm:px-0">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
@@ -1653,33 +1653,33 @@ export default function SakinPage() {
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* Ecosystem Synergy */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <ArrowRightLeft className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <ArrowRightLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Ecosystem Synergy
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <Coins className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <Coins className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-2" />
                   <h4 className="text-white font-bold mb-1">Shared Rewards</h4>
                   <p className="text-xs text-slate-400">Nuqta coins work across Sakin, Qist, and all partner merchants</p>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <Users className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <h4 className="text-white font-bold mb-1">Cross-Sell</h4>
-                  <p className="text-xs text-slate-400">Sakin users become Qist users, Qist users become Nuqta+ members</p>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <Users className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-2" />
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-1">Cross-Sell</h4>
+                  <p className="text-[10px] sm:text-xs text-slate-400">Sakin users become Qist users, Qist users become Nuqta+ members</p>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <TrendingUp className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <h4 className="text-white font-bold mb-1">Data Advantage</h4>
-                  <p className="text-xs text-slate-400">Rich spending data enables better credit scoring for both products</p>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-2" />
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-1">Data Advantage</h4>
+                  <p className="text-[10px] sm:text-xs text-slate-400">Rich spending data enables better credit scoring for both products</p>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-[#c9a227]/30">
+              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#c9a227]/30">
                 <p className="text-center text-slate-300">
                   <strong className="text-[#c9a227]">Combined Year 3 Revenue: 225M+ AED</strong> from the Nuqta Fintech Ecosystem
                 </p>
@@ -1690,70 +1690,70 @@ export default function SakinPage() {
 
         {/* Value Proposition Tab */}
         {activeTab === 'value-prop' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* For Tenants */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-teal-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 For Tenants
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {tenantBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-teal-400" />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-teal-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-teal-400" />
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* For Landlords */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Key className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Key className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 For Landlords
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {landlordBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-green-500/20">
-                    <benefit.icon className="w-8 h-8 text-green-400 mb-3" />
-                    <h3 className="text-base font-bold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-5 border border-green-500/20">
+                    <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-green-400 mb-2 sm:mb-3" />
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1 sm:mb-2">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* For Banks */}
-            <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/5 rounded-xl p-6 border border-blue-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Landmark className="w-5 h-5 text-blue-400" />
+            <div className="bg-gradient-to-r from-blue-500/10 to-indigo-500/5 rounded-xl p-4 sm:p-6 border border-blue-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Landmark className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 For Banking Partners
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {bankBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/20">
-                    <benefit.icon className="w-8 h-8 text-blue-400 mb-3" />
-                    <h3 className="text-base font-bold text-white mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-5 border border-blue-500/20">
+                    <benefit.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mb-2 sm:mb-3" />
+                    <h3 className="text-sm sm:text-base font-bold text-white mb-1 sm:mb-2">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Sakin Properties Marketplace */}
-            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-6 border border-teal-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Search className="w-5 h-5 text-teal-400" />
+            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-4 sm:p-6 border border-teal-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Search className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 Sakin Properties Marketplace
               </h2>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-3 sm:mb-4">
                 More than just rent financing - Sakin is a full-stack rental platform where users can discover, tour, and finance their next home all in one app.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {[
                   { icon: Search, title: 'Smart Property Search', desc: 'AI-powered search with filters for location, budget, amenities' },
                   { icon: Eye, title: 'Virtual Tours', desc: '360° walkthroughs and video tours from your phone' },
@@ -1762,43 +1762,43 @@ export default function SakinPage() {
                   { icon: Banknote, title: 'Instant Financing', desc: 'Apply for Sakin rent financing from any listing' },
                   { icon: Crown, title: 'Nuqta+ Priority', desc: 'Exclusive listings and early access for members' },
                 ].map((feature, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-teal-500/20">
-                    <feature.icon className="w-6 h-6 text-teal-400 mb-2" />
-                    <h3 className="text-white font-bold mb-1">{feature.title}</h3>
-                    <p className="text-sm text-slate-400">{feature.desc}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-teal-500/20">
+                    <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-teal-400 mb-1 sm:mb-2" />
+                    <h3 className="text-white font-bold text-xs sm:text-sm mb-1">{feature.title}</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-400">{feature.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Nuqta+ Integration */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#c9a227] flex items-center justify-center">
-                  <Crown className="w-6 h-6 text-[#0a1628]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#c9a227] flex items-center justify-center">
+                  <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-[#0a1628]" />
                 </div>
                 <div>
-                  <div className="text-[#c9a227] text-sm font-bold uppercase">Nuqta+ Integration</div>
-                  <h3 className="text-xl font-bold text-white">The Ultimate Retention Engine</h3>
+                  <div className="text-[#c9a227] text-xs sm:text-sm font-bold uppercase">Nuqta+ Integration</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white">The Ultimate Retention Engine</h3>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-3xl font-bold text-[#c9a227]">100</div>
-                  <div className="text-xs text-slate-400">AED off rent/month</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-4 sm:mt-6">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-3xl font-bold text-[#c9a227]">100</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">AED off rent/month</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-3xl font-bold text-[#c9a227]">1,200</div>
-                  <div className="text-xs text-slate-400">AED saved/year</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-3xl font-bold text-[#c9a227]">1,200</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">AED saved/year</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-3xl font-bold text-[#c9a227]">12x</div>
-                  <div className="text-xs text-slate-400">Monthly app opens</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-3xl font-bold text-[#c9a227]">12x</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Monthly app opens</div>
                 </div>
               </div>
 
-              <p className="text-slate-300 mt-4">
+              <p className="text-slate-300 text-sm sm:text-base mt-3 sm:mt-4">
                 Sakin users must be <strong className="text-[#c9a227]">Nuqta+ members</strong> to receive the 100 AED monthly
                 discount. This creates guaranteed monthly engagement and cross-ecosystem spending on all 18+ partner brands.
               </p>
@@ -1808,45 +1808,45 @@ export default function SakinPage() {
 
         {/* Pricing Tab */}
         {activeTab === 'pricing' && (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {pricingTiers.map((tier, i) => (
                 <div
                   key={i}
-                  className={`relative rounded-2xl p-6 border-2 ${tier.color} ${tier.bgColor}`}
+                  className={`relative rounded-2xl p-4 sm:p-6 border-2 ${tier.color} ${tier.bgColor}`}
                 >
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#c9a227] rounded-full text-xs font-bold text-[#0a1628]">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 sm:px-4 py-1 bg-[#c9a227] rounded-full text-[10px] sm:text-xs font-bold text-[#0a1628]">
                       RECOMMENDED
                     </div>
                   )}
 
-                  <h3 className="text-xl font-bold text-white mb-2">{tier.tier}</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{tier.tier}</h3>
 
-                  <div className="mt-4 mb-6">
+                  <div className="mt-3 sm:mt-4 mb-4 sm:mb-6">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-4xl font-bold text-white">{tier.monthlyFee}</span>
-                      <span className="text-slate-400">/month</span>
+                      <span className="text-3xl sm:text-4xl font-bold text-white">{tier.monthlyFee}</span>
+                      <span className="text-slate-400 text-sm">/month</span>
                     </div>
-                    <div className="text-sm text-slate-400 mt-1">{tier.annualFee} annually</div>
+                    <div className="text-xs sm:text-sm text-slate-400 mt-1">{tier.annualFee} annually</div>
                   </div>
 
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
-                      <span className="text-slate-400">Coin Back</span>
-                      <span className="text-[#c9a227] font-bold">{tier.coinBack}</span>
+                      <span className="text-slate-400 text-sm">Coin Back</span>
+                      <span className="text-[#c9a227] font-bold text-sm">{tier.coinBack}</span>
                     </div>
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
-                      <span className="text-slate-400">Effective Cost</span>
-                      <span className="text-green-400 font-bold">{tier.effectiveCost}</span>
+                      <span className="text-slate-400 text-sm">Effective Cost</span>
+                      <span className="text-green-400 font-bold text-sm">{tier.effectiveCost}</span>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <div className="text-xs text-slate-400 uppercase tracking-wider mb-2">Requirements</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 uppercase tracking-wider mb-2">Requirements</div>
                     {tier.requirements.map((req, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
                         {req}
                       </div>
                     ))}
@@ -1856,24 +1856,24 @@ export default function SakinPage() {
             </div>
 
             {/* Example Calculation */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4">Example: 60,000 AED Annual Rent</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-1">Monthly Rent</div>
-                  <div className="text-2xl font-bold text-white">5,000 AED</div>
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Example: 60,000 AED Annual Rent</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Monthly Rent</div>
+                  <div className="text-lg sm:text-2xl font-bold text-white">5,000 AED</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-1">Monthly Fee (1%)</div>
-                  <div className="text-2xl font-bold text-red-400">+600 AED</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Monthly Fee (1%)</div>
+                  <div className="text-lg sm:text-2xl font-bold text-red-400">+600 AED</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-1">Nuqta+ Discount</div>
-                  <div className="text-2xl font-bold text-green-400">-100 AED</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Nuqta+ Discount</div>
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">-100 AED</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4 border-2 border-teal-500">
-                  <div className="text-sm text-slate-400 mb-1">You Pay</div>
-                  <div className="text-2xl font-bold text-teal-400">5,500 AED</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 border-2 border-teal-500">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">You Pay</div>
+                  <div className="text-lg sm:text-2xl font-bold text-teal-400">5,500 AED</div>
                 </div>
               </div>
             </div>
@@ -1882,18 +1882,18 @@ export default function SakinPage() {
 
         {/* Unit Economics Tab */}
         {activeTab === 'economics' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Per Tenant Economics */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-teal-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 Unit Economics (Per Tenant)
               </h2>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
                 {/* Revenue Side */}
                 <div>
-                  <h3 className="text-lg font-bold text-green-400 mb-4">Revenue</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-green-400 mb-3 sm:mb-4">Revenue</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
                       <span className="text-slate-300">Avg Move-in Financed</span>
@@ -1916,7 +1916,7 @@ export default function SakinPage() {
 
                 {/* Cost Side */}
                 <div>
-                  <h3 className="text-lg font-bold text-red-400 mb-4">Costs</h3>
+                  <h3 className="text-base sm:text-lg font-bold text-red-400 mb-3 sm:mb-4">Costs</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
                       <span className="text-slate-300">Bank Financing Cost (6%)</span>
@@ -1943,41 +1943,41 @@ export default function SakinPage() {
               </div>
 
               {/* Net Profit */}
-              <div className="mt-8 bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-teal-500">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div>
-                    <div className="text-teal-400 text-sm font-bold uppercase">Net Profit Per Tenant</div>
-                    <div className="text-4xl font-black text-white mt-1">~2,500 AED<span className="text-lg text-slate-400">/year</span></div>
+              <div className="mt-6 sm:mt-8 bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border-2 border-teal-500">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+                  <div className="text-center sm:text-left">
+                    <div className="text-teal-400 text-xs sm:text-sm font-bold uppercase">Net Profit Per Tenant</div>
+                    <div className="text-2xl sm:text-4xl font-black text-white mt-1">~2,500 AED<span className="text-sm sm:text-lg text-slate-400">/year</span></div>
                   </div>
                   <div className="text-center">
-                    <div className="text-sm text-slate-400">Gross Spread</div>
-                    <div className="text-3xl font-bold text-green-400">{unitEconomics.grossSpread.toLocaleString()} AED</div>
+                    <div className="text-xs sm:text-sm text-slate-400">Gross Spread</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-400">{unitEconomics.grossSpread.toLocaleString()} AED</div>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Coin Economics Breakdown */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <Gift className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Coin Economics Breakdown
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                  <div className="text-sm text-slate-400 mb-1">Face Value</div>
-                  <div className="text-2xl font-bold text-[#c9a227]">1,200 AED</div>
-                  <div className="text-xs text-slate-500">100 AED × 12 months</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Face Value</div>
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">1,200 AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">100 AED x 12 months</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                  <div className="text-sm text-slate-400 mb-1">Real Cost to Sakin</div>
-                  <div className="text-2xl font-bold text-green-400">~500 AED</div>
-                  <div className="text-xs text-slate-500">~40% redemption rate</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Real Cost to Sakin</div>
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">~500 AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">~40% redemption rate</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                  <div className="text-sm text-slate-400 mb-1">User Perceived Value</div>
-                  <div className="text-2xl font-bold text-purple-400">1,200 AED</div>
-                  <div className="text-xs text-slate-500">Full discount off rent</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">User Perceived Value</div>
+                  <div className="text-xl sm:text-2xl font-bold text-purple-400">1,200 AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">Full discount off rent</div>
                 </div>
               </div>
             </div>
@@ -1986,45 +1986,45 @@ export default function SakinPage() {
 
         {/* Costs Tab */}
         {activeTab === 'costs' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Cost Structure Overview */}
-            <div className="bg-gradient-to-r from-emerald-500/20 to-green-500/10 rounded-xl p-6 border border-emerald-500/30">
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Wallet className="w-6 h-6 text-emerald-400" />
+            <div className="bg-gradient-to-r from-emerald-500/20 to-green-500/10 rounded-xl p-4 sm:p-6 border border-emerald-500/30">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Wallet className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
                 Lean Cost Structure
               </h2>
-              <p className="text-slate-300">
+              <p className="text-slate-300 text-sm sm:text-base">
                 Sakin operates with a <strong className="text-white">lean startup model</strong>. Total setup cost is ~80K AED,
                 monthly burn is ~65K AED, breaking even at just <strong className="text-emerald-400">320 users</strong>.
               </p>
             </div>
 
             {/* One-time Setup */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Rocket className="w-5 h-5 text-emerald-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                 One-Time Setup Costs
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {costStructure.oneTimeSetup.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                    <div className="text-2xl font-bold text-white">{(item.cost / 1000).toFixed(0)}K</div>
-                    <div className="text-xs text-slate-400">{item.item}</div>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                    <div className="text-xl sm:text-2xl font-bold text-white">{(item.cost / 1000).toFixed(0)}K</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">{item.item}</div>
                   </div>
                 ))}
               </div>
-              <div className="mt-4 bg-emerald-500/10 rounded-lg p-4 text-center border border-emerald-500/30">
-                <div className="text-sm text-slate-400">Total Setup</div>
-                <div className="text-3xl font-bold text-emerald-400">{(costStructure.totalSetup / 1000).toFixed(0)}K AED</div>
+              <div className="mt-3 sm:mt-4 bg-emerald-500/10 rounded-lg p-3 sm:p-4 text-center border border-emerald-500/30">
+                <div className="text-xs sm:text-sm text-slate-400">Total Setup</div>
+                <div className="text-2xl sm:text-3xl font-bold text-emerald-400">{(costStructure.totalSetup / 1000).toFixed(0)}K AED</div>
               </div>
             </div>
 
             {/* Monthly Costs */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {/* Team Costs */}
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-blue-400" />
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                  <Users className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                   Monthly Team Costs
                 </h3>
                 <div className="space-y-3">
@@ -2042,9 +2042,9 @@ export default function SakinPage() {
               </div>
 
               {/* Other Costs */}
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <Wrench className="w-5 h-5 text-purple-400" />
+              <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                  <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                   Monthly Operating Costs
                 </h3>
                 <div className="space-y-3">
@@ -2063,60 +2063,60 @@ export default function SakinPage() {
             </div>
 
             {/* Total Monthly Burn */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-6 border border-orange-500/30">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-orange-400" />
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-4 sm:p-6 border border-orange-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Total Monthly Burn
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Monthly Burn</div>
-                  <div className="text-3xl font-bold text-orange-400">~65K</div>
-                  <div className="text-xs text-slate-500">AED/month</div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-orange-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Monthly Burn</div>
+                  <div className="text-xl sm:text-3xl font-bold text-orange-400">~65K</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">AED/month</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Annual Burn</div>
-                  <div className="text-3xl font-bold text-orange-400">~800K</div>
-                  <div className="text-xs text-slate-500">AED/year</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-orange-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Annual Burn</div>
+                  <div className="text-xl sm:text-3xl font-bold text-orange-400">~800K</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">AED/year</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Runway (with 500K)</div>
-                  <div className="text-3xl font-bold text-white">~8</div>
-                  <div className="text-xs text-slate-500">months</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-orange-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Runway (with 500K)</div>
+                  <div className="text-xl sm:text-3xl font-bold text-white">~8</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">months</div>
                 </div>
               </div>
             </div>
 
             {/* Break-even Analysis */}
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Break-even Analysis
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 With ~2,500 AED net profit per user and ~800K annual costs, Sakin breaks even with just <strong className="text-green-400">320 users</strong>.
                 This is a <strong className="text-white">very low threshold</strong> for a fintech startup.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-sm text-slate-400 mb-1">Profit per User</div>
-                  <div className="text-2xl font-bold text-white">~2,500</div>
-                  <div className="text-xs text-slate-500">AED/year</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Profit per User</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">~2,500</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">AED/year</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-sm text-slate-400 mb-1">Annual Cost</div>
-                  <div className="text-2xl font-bold text-white">~800K</div>
-                  <div className="text-xs text-slate-500">AED</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Annual Cost</div>
+                  <div className="text-xl sm:text-2xl font-bold text-white">~800K</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">AED</div>
                 </div>
-                <div className="bg-green-500/20 rounded-xl p-4 text-center border-2 border-green-500">
-                  <div className="text-sm text-green-400 mb-1">Break-even</div>
-                  <div className="text-3xl font-bold text-green-400">320</div>
-                  <div className="text-xs text-green-400">users</div>
+                <div className="bg-green-500/20 rounded-xl p-3 sm:p-4 text-center border-2 border-green-500">
+                  <div className="text-xs sm:text-sm text-green-400 mb-1">Break-even</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-green-400">320</div>
+                  <div className="text-[10px] sm:text-xs text-green-400">users</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-sm text-slate-400 mb-1">Year 1 Target</div>
-                  <div className="text-2xl font-bold text-teal-400">6,000</div>
-                  <div className="text-xs text-slate-500">users (18x BE)</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Year 1 Target</div>
+                  <div className="text-xl sm:text-2xl font-bold text-teal-400">6,000</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">users (18x BE)</div>
                 </div>
               </div>
             </div>
@@ -2125,23 +2125,23 @@ export default function SakinPage() {
 
         {/* Financials Tab */}
         {activeTab === 'financials' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Break-even Reminder */}
-            <div className="bg-green-500/10 rounded-xl p-4 border border-green-500/30 flex items-center gap-3">
-              <CheckCircle className="w-6 h-6 text-green-400 flex-shrink-0" />
-              <p className="text-slate-300">
+            <div className="bg-green-500/10 rounded-xl p-3 sm:p-4 border border-green-500/30 flex items-center gap-2 sm:gap-3">
+              <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-400 flex-shrink-0" />
+              <p className="text-slate-300 text-xs sm:text-base">
                 <strong className="text-green-400">Very Low Break-even:</strong> Only 320 users needed to cover costs. Year 1 target of 6,000 users = 18x break-even.
               </p>
             </div>
 
             {/* 3-Year Projections */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-teal-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 3-Year Financial Projections
               </h2>
 
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[500px] px-4 sm:px-0">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
@@ -2184,34 +2184,34 @@ export default function SakinPage() {
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* Capital Requirements */}
-            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/5 rounded-xl p-6 border border-purple-500/30">
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <PiggyBank className="w-5 h-5 text-purple-400" />
+            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/5 rounded-xl p-4 sm:p-6 border border-purple-500/30">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <PiggyBank className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
                 Capital Requirements
               </h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-3 sm:mb-4">
                 Since rent is paid upfront to landlords, Sakin requires a revolving credit facility.
                 However, because tenants repay monthly, actual capital needs are much lower than total financing volume.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-purple-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Year 1 Credit Line</div>
-                  <div className="text-2xl font-bold text-purple-400">100M AED</div>
-                  <div className="text-xs text-slate-500">Revolving facility</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-purple-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Year 1 Credit Line</div>
+                  <div className="text-xl sm:text-2xl font-bold text-purple-400">100M AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">Revolving facility</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-purple-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Source</div>
-                  <div className="text-lg font-bold text-white">Bank Partnership</div>
-                  <div className="text-xs text-slate-500">NBFC co-lending</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-purple-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Source</div>
+                  <div className="text-base sm:text-lg font-bold text-white">Bank Partnership</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">NBFC co-lending</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 border border-purple-500/20">
-                  <div className="text-sm text-slate-400 mb-1">Structure</div>
-                  <div className="text-lg font-bold text-white">Risk Sharing</div>
-                  <div className="text-xs text-slate-500">70/30 split typical</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-purple-500/20">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-1">Structure</div>
+                  <div className="text-base sm:text-lg font-bold text-white">Risk Sharing</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500">70/30 split typical</div>
                 </div>
               </div>
             </div>
@@ -2220,17 +2220,17 @@ export default function SakinPage() {
 
         {/* Roadmap Tab */}
         {activeTab === 'roadmap' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {roadmapPhases.map((phase, i) => (
-              <div key={i} className={`rounded-xl p-6 border-2 ${phase.color} ${phase.bgColor}`}>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+              <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${phase.color} ${phase.bgColor}`}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <div>
-                    <div className="text-sm font-bold text-slate-400 uppercase tracking-wider">{phase.phase}</div>
-                    <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    <div className="text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-wider">{phase.phase}</div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{phase.title}</h3>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-slate-300">{phase.timeline}</span>
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <span className="text-slate-300 text-sm">{phase.timeline}</span>
+                    <span className={`px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold ${
                       phase.status === 'in_progress' ? 'bg-blue-500 text-white' :
                       phase.status === 'completed' ? 'bg-green-500 text-white' :
                       'bg-slate-600 text-slate-300'
@@ -2240,10 +2240,10 @@ export default function SakinPage() {
                     </span>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {phase.milestones.map((milestone, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className={`w-4 h-4 flex-shrink-0 ${
+                    <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle className={`w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0 ${
                         phase.status === 'completed' ? 'text-green-400' : 'text-slate-500'
                       }`} />
                       {milestone}
@@ -2257,33 +2257,33 @@ export default function SakinPage() {
 
         {/* GTM Tab */}
         {activeTab === 'gtm' && (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {gtmChannels.map((channel, i) => (
-                <div key={i} className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                <div key={i} className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center ${
                       channel.priority === 'critical' ? 'bg-red-500/20' :
                       channel.priority === 'high' ? 'bg-orange-500/20' : 'bg-blue-500/20'
                     }`}>
-                      <channel.icon className={`w-6 h-6 ${
+                      <channel.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${
                         channel.priority === 'critical' ? 'text-red-400' :
                         channel.priority === 'high' ? 'text-orange-400' : 'text-blue-400'
                       }`} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white">{channel.channel}</h3>
-                      <span className={`text-xs font-bold uppercase ${
+                      <h3 className="text-base sm:text-lg font-bold text-white">{channel.channel}</h3>
+                      <span className={`text-[10px] sm:text-xs font-bold uppercase ${
                         channel.priority === 'critical' ? 'text-red-400' :
                         channel.priority === 'high' ? 'text-orange-400' : 'text-blue-400'
                       }`}>{channel.priority} priority</span>
                     </div>
                   </div>
-                  <div className="text-sm text-slate-400 mb-3">{channel.volume}</div>
-                  <div className="space-y-2">
+                  <div className="text-xs sm:text-sm text-slate-400 mb-2 sm:mb-3">{channel.volume}</div>
+                  <div className="space-y-1 sm:space-y-2">
                     {channel.tactics.map((tactic, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                        <ChevronRight className="w-4 h-4 text-slate-500" />
+                      <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4 text-slate-500" />
                         {tactic}
                       </div>
                     ))}
@@ -2296,7 +2296,7 @@ export default function SakinPage() {
 
         {/* Risks Tab */}
         {activeTab === 'risks' && (
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {risks.map((risk, i) => (
               <div
                 key={i}
@@ -2304,35 +2304,35 @@ export default function SakinPage() {
               >
                 <button
                   onClick={() => setExpandedRisk(expandedRisk === risk.risk ? null : risk.risk)}
-                  className="w-full flex items-center justify-between p-4 hover:bg-slate-800/50 transition-colors"
+                  className="w-full flex items-center justify-between p-3 sm:p-4 hover:bg-slate-800/50 transition-colors"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className={`w-3 h-3 rounded-full ${
+                  <div className="flex items-center gap-2 sm:gap-3">
+                    <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
                       risk.severity === 'high' ? 'bg-red-500' :
                       risk.severity === 'medium' ? 'bg-yellow-500' : 'bg-green-500'
                     }`} />
-                    <span className="text-lg font-bold text-white">{risk.risk}</span>
-                    <span className={`text-xs px-2 py-0.5 rounded uppercase font-bold ${
+                    <span className="text-sm sm:text-lg font-bold text-white">{risk.risk}</span>
+                    <span className={`text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded uppercase font-bold ${
                       risk.severity === 'high' ? 'bg-red-500/20 text-red-400' :
                       risk.severity === 'medium' ? 'bg-yellow-500/20 text-yellow-400' :
                       'bg-green-500/20 text-green-400'
                     }`}>{risk.severity}</span>
                   </div>
                   {expandedRisk === risk.risk ? (
-                    <ChevronUp className="w-5 h-5 text-slate-400" />
+                    <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-slate-400" />
+                    <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 text-slate-400" />
                   )}
                 </button>
 
                 {expandedRisk === risk.risk && (
-                  <div className="px-4 pb-4">
-                    <div className="bg-slate-900/50 rounded-lg p-4">
-                      <div className="text-sm text-slate-400 mb-3">Mitigation Strategies:</div>
-                      <div className="space-y-2">
+                  <div className="px-3 sm:px-4 pb-3 sm:pb-4">
+                    <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                      <div className="text-xs sm:text-sm text-slate-400 mb-2 sm:mb-3">Mitigation Strategies:</div>
+                      <div className="space-y-1 sm:space-y-2">
                         {risk.mitigation.map((item, j) => (
-                          <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                            <Shield className="w-4 h-4 text-green-400 flex-shrink-0" />
+                          <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                            <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
                             {item}
                           </div>
                         ))}
@@ -2347,14 +2347,15 @@ export default function SakinPage() {
 
         {/* Competition Tab */}
         {activeTab === 'competition' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50 overflow-x-auto">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-teal-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400" />
                 Competitive Analysis
               </h2>
 
-              <table className="w-full min-w-[600px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[600px] px-4 sm:px-0">
+              <table className="w-full">
                 <thead>
                   <tr className="border-b border-slate-700">
                     <th className="text-left py-3 px-4 text-slate-400 font-medium">Feature</th>
@@ -2416,12 +2417,12 @@ export default function SakinPage() {
                   </tr>
                 </tbody>
               </table>
-            </div>
+            </div></div></div>
 
             {/* Competitive Advantages */}
-            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-6 border border-teal-500/30">
-              <h3 className="text-lg font-bold text-white mb-4">Our Competitive Advantages</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-4 sm:p-6 border border-teal-500/30">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Our Competitive Advantages</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { title: 'Full-Stack Solution', desc: 'Find property + Finance rent in one app' },
                   { title: 'Nuqta+ Integration', desc: '1,200 AED annual rewards via ecosystem' },
@@ -2430,11 +2431,11 @@ export default function SakinPage() {
                   { title: 'Data Advantage', desc: 'Rich spending data from Nuqta ecosystem' },
                   { title: 'Verified Listings', desc: 'Quality control competitors lack' },
                 ].map((adv, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" />
+                  <div key={i} className="flex items-start gap-2 sm:gap-3">
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-teal-400 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-white font-bold">{adv.title}</div>
-                      <div className="text-sm text-slate-400">{adv.desc}</div>
+                      <div className="text-white font-bold text-sm sm:text-base">{adv.title}</div>
+                      <div className="text-xs sm:text-sm text-slate-400">{adv.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -2444,27 +2445,27 @@ export default function SakinPage() {
         )}
 
         {/* CTA Section */}
-        <div className="mt-12 bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-2xl p-8 border border-teal-500/30 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+        <div className="mt-8 sm:mt-12 bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-2xl p-5 sm:p-8 border border-teal-500/30 text-center">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
             Ready to Transform Rent Payments?
           </h2>
-          <p className="text-slate-300 mb-6 max-w-2xl mx-auto">
+          <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6 max-w-2xl mx-auto">
             Sakin is positioned to become the leading rent financing platform in the UAE,
             powered by the Nuqta ecosystem.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
             <Link
               href="/nuqta-plus"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] font-bold rounded-xl hover:bg-[#b8922a] transition-all"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-[#c9a227] text-[#0a1628] font-bold rounded-xl hover:bg-[#b8922a] transition-all text-sm sm:text-base"
             >
-              <Crown className="w-5 h-5" />
+              <Crown className="w-4 h-4 sm:w-5 sm:h-5" />
               View Nuqta+ Integration
             </Link>
             <Link
               href="/data-room"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-700 transition-all border border-slate-600"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-slate-800 text-white font-bold rounded-xl hover:bg-slate-700 transition-all border border-slate-600 text-sm sm:text-base"
             >
-              <FileText className="w-5 h-5" />
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5" />
               Data Room
             </Link>
           </div>

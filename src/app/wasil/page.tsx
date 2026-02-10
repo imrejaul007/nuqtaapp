@@ -442,9 +442,9 @@ export default function WasilPage() {
         {activeTab === 'overview' && (
           <div className="space-y-8">
             {/* Executive Summary */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-orange-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Executive Summary
               </h2>
               <div className="prose prose-invert max-w-none">
@@ -459,8 +459,8 @@ export default function WasilPage() {
 
               {/* How It Works */}
               <div className="mt-6">
-                <h3 className="text-lg font-bold text-white mb-4">How It Works</h3>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-4">How It Works</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4">
                   {[
                     { step: 1, icon: Search, title: 'Browse', desc: 'Shop from 500+ stores' },
                     { step: 2, icon: ShoppingCart, title: 'Order', desc: 'Add to cart, checkout' },
@@ -469,13 +469,13 @@ export default function WasilPage() {
                     { step: 5, icon: Package, title: 'Deliver', desc: 'At your door in 60 min' },
                   ].map((item, i) => (
                     <div key={i} className="relative">
-                      <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
-                        <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-3">
-                          <item.icon className="w-5 h-5 text-orange-400" />
+                      <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50 text-center">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                          <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                         </div>
-                        <div className="text-xs text-orange-400 mb-1">Step {item.step}</div>
-                        <div className="text-sm font-bold text-white">{item.title}</div>
-                        <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                        <div className="text-[10px] sm:text-xs text-orange-400 mb-1">Step {item.step}</div>
+                        <div className="text-xs sm:text-sm font-bold text-white">{item.title}</div>
+                        <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{item.desc}</div>
                       </div>
                       {i < 4 && (
                         <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
@@ -487,9 +487,9 @@ export default function WasilPage() {
             </div>
 
             {/* Corporate Structure */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-6 border border-orange-500/30">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-orange-400" />
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-4 sm:p-6 border border-orange-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Corporate Structure
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -525,9 +525,9 @@ export default function WasilPage() {
             </div>
 
             {/* Revenue Model */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Revenue Model
               </h3>
               <div className="overflow-x-auto">
@@ -563,16 +563,16 @@ export default function WasilPage() {
             </div>
 
             {/* Wasil+ Subscription */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Crown className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Wasil+ Subscription
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-orange-500/30">
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-white font-bold">Wasil+ Standalone</h4>
-                    <span className="text-2xl font-black text-orange-400">{wasilPlusSubscription.price} AED<span className="text-sm font-normal text-slate-400">/mo</span></span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-orange-500/30">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <h4 className="text-white font-bold text-sm sm:text-base">Wasil+ Standalone</h4>
+                    <span className="text-xl sm:text-2xl font-black text-orange-400">{wasilPlusSubscription.price} AED<span className="text-xs sm:text-sm font-normal text-slate-400">/mo</span></span>
                   </div>
                   <ul className="space-y-2">
                     {wasilPlusSubscription.benefits.map((benefit, i) => (
@@ -583,13 +583,13 @@ export default function WasilPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="bg-[#c9a227]/10 rounded-xl p-5 border-2 border-[#c9a227]">
-                  <div className="absolute -top-3 left-4 px-3 py-1 bg-[#c9a227] text-[#0a1628] text-xs font-bold rounded-full">
+                <div className="bg-[#c9a227]/10 rounded-xl p-4 sm:p-5 border-2 border-[#c9a227] relative">
+                  <div className="absolute -top-3 left-4 px-2 sm:px-3 py-1 bg-[#c9a227] text-[#0a1628] text-[10px] sm:text-xs font-bold rounded-full">
                     BEST VALUE
                   </div>
-                  <div className="flex items-center justify-between mb-4">
-                    <h4 className="text-white font-bold">Nuqta+ Bundle</h4>
-                    <span className="text-2xl font-black text-[#c9a227]">{wasilPlusSubscription.nuqtaPlusBundle.price} AED<span className="text-sm font-normal text-slate-400">/mo</span></span>
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 mt-2 sm:mt-0">
+                    <h4 className="text-white font-bold text-sm sm:text-base">Nuqta+ Bundle</h4>
+                    <span className="text-xl sm:text-2xl font-black text-[#c9a227]">{wasilPlusSubscription.nuqtaPlusBundle.price} AED<span className="text-xs sm:text-sm font-normal text-slate-400">/mo</span></span>
                   </div>
                   <ul className="space-y-2">
                     {wasilPlusSubscription.nuqtaPlusBundle.includes.map((item, i) => (
@@ -607,15 +607,15 @@ export default function WasilPage() {
 
         {/* Ecosystem Tab */}
         {activeTab === 'ecosystem' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Hero Banner */}
-            <div className="bg-gradient-to-r from-orange-500/20 via-[#c9a227]/20 to-violet-500/20 rounded-2xl p-8 border-2 border-orange-500/50">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <Network className="w-5 h-5 text-orange-400" />
-                  <span className="text-orange-400 font-bold">Wasil Powers the Ecosystem</span>
+            <div className="bg-gradient-to-r from-orange-500/20 via-[#c9a227]/20 to-violet-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-orange-500/50">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Network className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
+                  <span className="text-orange-400 font-bold text-xs sm:text-sm">Wasil Powers the Ecosystem</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4">
                   The <span className="text-orange-400">Delivery Layer</span> for Everything
                 </h2>
                 <p className="text-slate-300 max-w-3xl mx-auto text-lg">
@@ -625,43 +625,43 @@ export default function WasilPage() {
               </div>
 
               {/* Four Products Visual */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {[
                   { name: 'Nuqta', arabic: 'نقطة', tagline: 'Earn & Save', color: 'text-[#c9a227]', bgColor: 'bg-[#c9a227]/10', borderColor: 'border-[#c9a227]', icon: Crown },
                   { name: 'Qist', arabic: 'قسط', tagline: 'Pay Easy', color: 'text-violet-400', bgColor: 'bg-violet-500/10', borderColor: 'border-violet-500', icon: ShoppingBag },
                   { name: 'Sakin', arabic: 'ساكن', tagline: 'Live Better', color: 'text-emerald-400', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500', icon: Home },
                   { name: 'Wasil', arabic: 'واصل', tagline: 'Get Fast', color: 'text-orange-400', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500', icon: Truck },
                 ].map((product, i) => (
-                  <div key={i} className={`${product.bgColor} rounded-xl p-4 border-2 ${product.borderColor} text-center`}>
-                    <div className={`w-12 h-12 rounded-xl ${product.bgColor} flex items-center justify-center mx-auto mb-3 border ${product.borderColor}`}>
-                      <product.icon className={`w-6 h-6 ${product.color}`} />
+                  <div key={i} className={`${product.bgColor} rounded-xl p-3 sm:p-4 border-2 ${product.borderColor} text-center`}>
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${product.bgColor} flex items-center justify-center mx-auto mb-2 sm:mb-3 border ${product.borderColor}`}>
+                      <product.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${product.color}`} />
                     </div>
-                    <h3 className={`text-lg font-black ${product.color}`}>{product.name}</h3>
-                    <span className="text-slate-400 text-xs">{product.arabic}</span>
-                    <p className="text-slate-300 text-sm mt-1">{product.tagline}</p>
+                    <h3 className={`text-base sm:text-lg font-black ${product.color}`}>{product.name}</h3>
+                    <span className="text-slate-400 text-[10px] sm:text-xs">{product.arabic}</span>
+                    <p className="text-slate-300 text-xs sm:text-sm mt-1">{product.tagline}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Integration Points */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Link2 className="w-5 h-5 text-orange-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Link2 className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Deep Ecosystem Integration
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {ecosystemIntegration.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center ${
                         item.product === 'Nuqta' ? 'bg-[#c9a227]/20' :
                         item.product === 'Qist' ? 'bg-violet-500/20' :
                         'bg-emerald-500/20'
                       }`}>
-                        <item.icon className={`w-5 h-5 ${item.color}`} />
+                        <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${item.color}`} />
                       </div>
-                      <h4 className={`font-bold ${item.color}`}>{item.product}</h4>
+                      <h4 className={`font-bold text-sm sm:text-base ${item.color}`}>{item.product}</h4>
                     </div>
                     <p className="text-sm text-slate-300 mb-2">{item.integration}</p>
                     <div className="flex items-center gap-2 text-xs text-green-400">
@@ -674,21 +674,21 @@ export default function WasilPage() {
             </div>
 
             {/* Order Flow */}
-            <div className="bg-orange-500/10 rounded-xl p-6 border-2 border-orange-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Truck className="w-5 h-5 text-orange-400" />
+            <div className="bg-orange-500/10 rounded-xl p-4 sm:p-6 border-2 border-orange-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Truck className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 How Wasil Powers Every Order
               </h3>
               <p className="text-slate-300 mb-6">
                 Whether a customer orders through Nuqta app or Wasil directly, the same infrastructure handles fulfillment.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-[#c9a227]/30">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Crown className="w-6 h-6 text-[#c9a227]" />
-                    <h4 className="text-white font-bold">Order via Nuqta App</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <Crown className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227]" />
+                    <h4 className="text-white font-bold text-sm sm:text-base">Order via Nuqta App</h4>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {[
                       'Browse Nuqta merchant catalog',
                       'Pay with Nuqta coins or Qist',
@@ -696,19 +696,19 @@ export default function WasilPage() {
                       'Wasil rider picks up & delivers',
                       'Earn 2x Nuqta coins on delivery',
                     ].map((step, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                        <div className="w-6 h-6 rounded-full bg-[#c9a227]/20 flex items-center justify-center text-xs text-[#c9a227] font-bold">{j+1}</div>
+                      <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#c9a227]/20 flex items-center justify-center text-[10px] sm:text-xs text-[#c9a227] font-bold flex-shrink-0">{j+1}</div>
                         {step}
                       </div>
                     ))}
                   </div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-orange-500/30">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Truck className="w-6 h-6 text-orange-400" />
-                    <h4 className="text-white font-bold">Order via Wasil App</h4>
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-orange-500/30">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <Truck className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+                    <h4 className="text-white font-bold text-sm sm:text-base">Order via Wasil App</h4>
                   </div>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-3">
                     {[
                       'Browse full Wasil marketplace',
                       'Connect Nuqta wallet for payment',
@@ -716,8 +716,8 @@ export default function WasilPage() {
                       'Same Wasil rider fleet delivers',
                       'Earn Nuqta coins automatically',
                     ].map((step, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                        <div className="w-6 h-6 rounded-full bg-orange-500/20 flex items-center justify-center text-xs text-orange-400 font-bold">{j+1}</div>
+                      <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-orange-500/20 flex items-center justify-center text-[10px] sm:text-xs text-orange-400 font-bold flex-shrink-0">{j+1}</div>
                         {step}
                       </div>
                     ))}
@@ -727,60 +727,60 @@ export default function WasilPage() {
             </div>
 
             {/* Sakin Integration */}
-            <div className="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Home className="w-5 h-5 text-emerald-400" />
+            <div className="bg-emerald-500/10 rounded-xl p-4 sm:p-6 border border-emerald-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Home className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                 Wasil + Sakin: Move-In Package
               </h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-4">
                 Every new Sakin tenant gets a <strong className="text-white">Wasil Welcome Kit</strong> - essentials delivered
                 on move-in day at a bundled discount.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {[
                   { item: 'Cleaning supplies', price: 'FREE' },
                   { item: 'Grocery starter pack', price: '50% off' },
                   { item: 'Toiletries bundle', price: '30% off' },
                   { item: 'Kitchen essentials', price: '25% off' },
                 ].map((pkg, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 text-center border border-emerald-500/30">
-                    <div className="text-sm text-white font-medium">{pkg.item}</div>
-                    <div className="text-lg font-bold text-emerald-400">{pkg.price}</div>
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-2 sm:p-3 text-center border border-emerald-500/30">
+                    <div className="text-xs sm:text-sm text-white font-medium">{pkg.item}</div>
+                    <div className="text-base sm:text-lg font-bold text-emerald-400">{pkg.price}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Unified Data */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Eye className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Eye className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 The Complete Consumer Picture
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 With Wasil, Nuqta Group sees the full consumer journey - what they buy, where they live, how they pay.
                 This creates the most comprehensive customer profile in UAE fintech.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <Crown className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-                  <div className="text-white font-bold">Nuqta</div>
-                  <div className="text-xs text-slate-400">Where they spend</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <Crown className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm sm:text-base">Nuqta</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Where they spend</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-violet-500/30">
-                  <ShoppingBag className="w-8 h-8 text-violet-400 mx-auto mb-2" />
-                  <div className="text-white font-bold">Qist</div>
-                  <div className="text-xs text-slate-400">How they pay</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-violet-500/30">
+                  <ShoppingBag className="w-6 h-6 sm:w-8 sm:h-8 text-violet-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm sm:text-base">Qist</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">How they pay</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-emerald-500/30">
-                  <Home className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                  <div className="text-white font-bold">Sakin</div>
-                  <div className="text-xs text-slate-400">Where they live</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-emerald-500/30">
+                  <Home className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm sm:text-base">Sakin</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Where they live</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-orange-500/30">
-                  <Truck className="w-8 h-8 text-orange-400 mx-auto mb-2" />
-                  <div className="text-white font-bold">Wasil</div>
-                  <div className="text-xs text-slate-400">What they need</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-orange-500/30">
+                  <Truck className="w-6 h-6 sm:w-8 sm:h-8 text-orange-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm sm:text-base">Wasil</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">What they need</div>
                 </div>
               </div>
             </div>
@@ -789,27 +789,27 @@ export default function WasilPage() {
 
         {/* Categories Tab */}
         {activeTab === 'categories' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <LayoutGrid className="w-5 h-5 text-orange-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <LayoutGrid className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Delivery Categories
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {categories.map((cat, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50 hover:border-orange-500/50 transition-all">
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50 hover:border-orange-500/50 transition-all">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center">
-                        <cat.icon className="w-6 h-6 text-orange-400" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+                        <cat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
                       </div>
-                      <div>
-                        <h3 className="text-white font-bold">{cat.name}</h3>
-                        <p className="text-xs text-slate-400">{cat.items}</p>
+                      <div className="min-w-0">
+                        <h3 className="text-white font-bold text-sm sm:text-base">{cat.name}</h3>
+                        <p className="text-[10px] sm:text-xs text-slate-400 truncate">{cat.items}</p>
                       </div>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-xs sm:text-sm">
                       <div>
-                        <span className="text-slate-400">Avg Order: </span>
+                        <span className="text-slate-400">Avg: </span>
                         <span className="text-green-400 font-medium">{cat.avgOrder} AED</span>
                       </div>
                       <div>
@@ -826,40 +826,40 @@ export default function WasilPage() {
 
         {/* Value Proposition Tab */}
         {activeTab === 'value-prop' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* For Customers */}
-            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-6 border border-orange-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-orange-400" />
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-4 sm:p-6 border border-orange-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 For Customers
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {customerBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-orange-400" />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
                     </div>
-                    <h3 className="text-white font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                    <h3 className="text-white font-bold text-sm sm:text-base mb-2">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* For Merchants */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Store className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Store className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 For Merchants
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {merchantBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-green-400" />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
                     </div>
-                    <h3 className="text-white font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                    <h3 className="text-white font-bold text-sm sm:text-base mb-2">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
@@ -869,61 +869,61 @@ export default function WasilPage() {
 
         {/* Unit Economics Tab */}
         {activeTab === 'economics' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-orange-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Per Order Economics (Avg 85 AED Order)
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-green-500/10 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-2xl font-bold text-green-400">{unitEconomics.deliveryFee} AED</div>
-                  <div className="text-xs text-slate-400">Delivery Fee</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="bg-green-500/10 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">{unitEconomics.deliveryFee} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Delivery Fee</div>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
-                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.commission} AED</div>
-                  <div className="text-xs text-slate-400">Commission (18%)</div>
+                <div className="bg-blue-500/10 rounded-xl p-3 sm:p-4 text-center border border-blue-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-400">{unitEconomics.commission} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Commission (18%)</div>
                 </div>
-                <div className="bg-orange-500/10 rounded-xl p-4 text-center border border-orange-500/30">
-                  <div className="text-2xl font-bold text-orange-400">{unitEconomics.totalRevenue} AED</div>
-                  <div className="text-xs text-slate-400">Total Revenue</div>
+                <div className="bg-orange-500/10 rounded-xl p-3 sm:p-4 text-center border border-orange-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-orange-400">{unitEconomics.totalRevenue} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Total Revenue</div>
                 </div>
-                <div className="bg-[#c9a227]/10 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-2xl font-bold text-[#c9a227]">{unitEconomics.netRevenue} AED</div>
-                  <div className="text-xs text-slate-400">Net per Order</div>
+                <div className="bg-[#c9a227]/10 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">{unitEconomics.netRevenue} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Net per Order</div>
                 </div>
               </div>
 
-              <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                <h3 className="text-white font-bold mb-4">Breakdown</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+              <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                <h3 className="text-white font-bold text-sm sm:text-base mb-3 sm:mb-4">Breakdown</h3>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50 text-xs sm:text-sm">
                     <span className="text-slate-400">Average Order Value</span>
                     <span className="text-white font-bold">{unitEconomics.avgOrderValue} AED</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50 text-xs sm:text-sm">
                     <span className="text-green-400">+ Delivery Fee</span>
                     <span className="text-green-400 font-bold">+{unitEconomics.deliveryFee} AED</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50 text-xs sm:text-sm">
                     <span className="text-green-400">+ Merchant Commission (18%)</span>
                     <span className="text-green-400 font-bold">+{unitEconomics.commission} AED</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50 text-xs sm:text-sm">
                     <span className="text-green-400">+ Surge (avg)</span>
                     <span className="text-green-400 font-bold">+{unitEconomics.surgeAvg} AED</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50 text-xs sm:text-sm">
                     <span className="text-red-400">- Rider Payout</span>
                     <span className="text-red-400 font-bold">-{unitEconomics.riderCost} AED</span>
                   </div>
-                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50 text-xs sm:text-sm">
                     <span className="text-red-400">- Operating Cost</span>
                     <span className="text-red-400 font-bold">-{unitEconomics.operatingCost} AED</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 bg-orange-500/10 rounded-lg px-3">
+                  <div className="flex justify-between items-center py-2 sm:py-3 bg-orange-500/10 rounded-lg px-2 sm:px-3 text-xs sm:text-sm">
                     <span className="text-white font-bold">Net Revenue per Order</span>
-                    <span className="text-orange-400 font-bold text-xl">{unitEconomics.netRevenue} AED</span>
+                    <span className="text-orange-400 font-bold text-base sm:text-xl">{unitEconomics.netRevenue} AED</span>
                   </div>
                 </div>
               </div>
@@ -933,14 +933,14 @@ export default function WasilPage() {
 
         {/* Financials Tab */}
         {activeTab === 'financials' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-orange-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 3-Year Financial Projections
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[500px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Metric</th>
@@ -992,22 +992,22 @@ export default function WasilPage() {
             </div>
 
             {/* Key Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="bg-gradient-to-r from-orange-500/20 to-red-500/10 rounded-xl p-6 border border-orange-500/30 text-center">
-                <div className="text-3xl font-bold text-orange-400">510M</div>
-                <div className="text-slate-400 text-sm mt-1">Year 3 GMV (AED)</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+              <div className="bg-gradient-to-r from-orange-500/20 to-red-500/10 rounded-xl p-4 sm:p-6 border border-orange-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-orange-400">510M</div>
+                <div className="text-slate-400 text-[10px] sm:text-sm mt-1">Year 3 GMV (AED)</div>
               </div>
-              <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border border-green-500/30 text-center">
-                <div className="text-3xl font-bold text-green-400">75M</div>
-                <div className="text-slate-400 text-sm mt-1">Year 3 Revenue (AED)</div>
+              <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border border-green-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-green-400">75M</div>
+                <div className="text-slate-400 text-[10px] sm:text-sm mt-1">Year 3 Revenue (AED)</div>
               </div>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border border-[#c9a227]/30 text-center">
-                <div className="text-3xl font-bold text-[#c9a227]">37%</div>
-                <div className="text-slate-400 text-sm mt-1">Net Margin</div>
+              <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border border-[#c9a227]/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">37%</div>
+                <div className="text-slate-400 text-[10px] sm:text-sm mt-1">Net Margin</div>
               </div>
-              <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-6 border border-blue-500/30 text-center">
-                <div className="text-3xl font-bold text-blue-400">6M</div>
-                <div className="text-slate-400 text-sm mt-1">Year 3 Orders</div>
+              <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border border-blue-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-blue-400">6M</div>
+                <div className="text-slate-400 text-[10px] sm:text-sm mt-1">Year 3 Orders</div>
               </div>
             </div>
           </div>
@@ -1015,42 +1015,42 @@ export default function WasilPage() {
 
         {/* Dark Stores Tab */}
         {activeTab === 'dark-stores' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Warehouse className="w-5 h-5 text-orange-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Warehouse className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Dark Store Model
               </h2>
-              <p className="text-slate-300 mb-6">{darkStoreModel.concept}</p>
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">{darkStoreModel.concept}</p>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-orange-400">{darkStoreModel.deliveryTime}</div>
-                  <div className="text-xs text-slate-400">Delivery Time</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-lg sm:text-2xl font-bold text-orange-400">{darkStoreModel.deliveryTime}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Delivery Time</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-white">{darkStoreModel.skus}</div>
-                  <div className="text-xs text-slate-400">SKUs</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-lg sm:text-2xl font-bold text-white">{darkStoreModel.skus}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">SKUs</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-white">{darkStoreModel.radius}</div>
-                  <div className="text-xs text-slate-400">Coverage Radius</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-lg sm:text-2xl font-bold text-white">{darkStoreModel.radius}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Coverage Radius</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-green-400">{darkStoreModel.breakeven}</div>
-                  <div className="text-xs text-slate-400">Breakeven</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">{darkStoreModel.breakeven}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Breakeven</div>
                 </div>
               </div>
 
-              <h3 className="text-white font-bold mb-4">Planned Locations</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <h3 className="text-white font-bold text-sm sm:text-base mb-3 sm:mb-4">Planned Locations</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {darkStoreModel.locations.map((loc, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="w-4 h-4 text-orange-400" />
-                      <span className="text-white font-medium">{loc.area}</span>
+                      <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400" />
+                      <span className="text-white font-medium text-sm sm:text-base">{loc.area}</span>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-xs sm:text-sm">
                       <span className="text-slate-400">Launch</span>
                       <span className="text-orange-400">{loc.launch}</span>
                     </div>
@@ -1063,21 +1063,21 @@ export default function WasilPage() {
 
         {/* Roadmap Tab */}
         {activeTab === 'roadmap' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {roadmapPhases.map((phase, i) => (
-              <div key={i} className={`rounded-xl p-6 border-2 ${phase.color} ${phase.bgColor}`}>
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+              <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${phase.color} ${phase.bgColor}`}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4">
                   <div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-slate-400">{phase.phase}</span>
-                      <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-400">{phase.phase}</span>
+                      <h3 className="text-lg sm:text-xl font-bold text-white">{phase.title}</h3>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Clock className="w-4 h-4 text-slate-400" />
-                      <span className="text-slate-400 text-sm">{phase.timeline}</span>
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400" />
+                      <span className="text-slate-400 text-xs sm:text-sm">{phase.timeline}</span>
                     </div>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <span className={`px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold w-fit ${
                     phase.status === 'planned' ? 'bg-blue-500/20 text-blue-400' :
                     phase.status === 'in_progress' ? 'bg-green-500/20 text-green-400' :
                     'bg-slate-500/20 text-slate-400'
@@ -1085,10 +1085,10 @@ export default function WasilPage() {
                     {phase.status === 'in_progress' ? 'In Progress' : phase.status === 'planned' ? 'Planned' : 'Pending'}
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {phase.milestones.map((milestone, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                    <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-slate-500 flex-shrink-0" />
                       {milestone}
                     </div>
                   ))}
@@ -1145,14 +1145,14 @@ export default function WasilPage() {
 
         {/* Competition Tab */}
         {activeTab === 'competition' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-orange-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 UAE Quick Commerce Landscape
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[900px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[800px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Provider</th>
@@ -1198,29 +1198,29 @@ export default function WasilPage() {
             </div>
 
             {/* Competitive Advantage */}
-            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/10 rounded-xl p-6 border-2 border-orange-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-orange-400" />
+            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/10 rounded-xl p-4 sm:p-6 border-2 border-orange-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                 Wasil Competitive Moat
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="text-white font-bold mb-3">What Competitors Lack</h4>
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-3">What Competitors Lack</h4>
                   <div className="space-y-2">
                     {['No rewards or coin economy', 'No BNPL integration', 'No ecosystem cross-sell', 'No corporate partnership network'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
-                        <AlertTriangle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <AlertTriangle className="w-3 h-3 sm:w-4 sm:h-4 text-orange-400 flex-shrink-0" />
                         {item}
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-3">Wasil Unique Value</h4>
+                  <h4 className="text-white font-bold text-sm sm:text-base mb-3">Wasil Unique Value</h4>
                   <div className="space-y-2">
                     {['Nuqta coins on every order', 'Qist BNPL for orders 200+ AED', 'Powers all Nuqta app deliveries', 'Sakin move-in package integration'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
                         {item}
                       </div>
                     ))}

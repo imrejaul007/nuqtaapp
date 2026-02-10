@@ -433,14 +433,14 @@ export default function AjerPage() {
 
         {/* Overview Tab */}
         {activeTab === 'overview' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Value Proposition */}
-            <div className="bg-gradient-to-r from-violet-500/20 to-purple-500/10 rounded-xl p-6 border-2 border-violet-500">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-violet-400" />
+            <div className="bg-gradient-to-r from-violet-500/20 to-purple-500/10 rounded-xl p-4 sm:p-6 border-2 border-violet-500">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Why Ajer?
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <div className="bg-slate-900/50 rounded-lg p-4 border border-violet-500/30">
                   <div className="text-violet-400 font-bold mb-2">Save Money</div>
                   <p className="text-sm text-slate-400">Rent instead of buy - save 70-95% on items you only need temporarily</p>
@@ -457,35 +457,35 @@ export default function AjerPage() {
             </div>
 
             {/* Categories Preview */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
               {rentalCategories.slice(0, 8).map((cat, i) => (
-                <div key={i} className={`${cat.bgColor} border border-slate-700/50 rounded-xl p-4 hover:scale-[1.02] transition-transform cursor-pointer`}
+                <div key={i} className={`${cat.bgColor} border border-slate-700/50 rounded-xl p-3 sm:p-4 hover:scale-[1.02] transition-transform cursor-pointer`}
                   onClick={() => { setActiveTab('categories'); setExpandedCategory(cat.name); }}>
-                  <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${cat.color} flex items-center justify-center mb-3`}>
-                    <cat.icon className="w-5 h-5 text-white" />
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br ${cat.color} flex items-center justify-center mb-2 sm:mb-3`}>
+                    <cat.icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
-                  <h3 className={`font-bold ${cat.textColor} text-sm`}>{cat.name}</h3>
+                  <h3 className={`font-bold ${cat.textColor} text-xs sm:text-sm`}>{cat.name}</h3>
                   <span className="text-slate-500 text-xs">{cat.arabic}</span>
                 </div>
               ))}
             </div>
 
             {/* Use Cases */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4">Real Use Cases</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Real Use Cases</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {useCases.map((useCase, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-violet-500/20 flex items-center justify-center">
-                        <useCase.icon className="w-5 h-5 text-violet-400" />
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 sm:p-4 border border-slate-700/50">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-violet-500/20 flex items-center justify-center">
+                        <useCase.icon className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                       </div>
                       <div>
-                        <h4 className="text-white font-bold">{useCase.persona}</h4>
+                        <h4 className="text-white font-bold text-sm sm:text-base">{useCase.persona}</h4>
                         <p className="text-slate-500 text-xs">{useCase.scenario}</p>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1 mb-3">
+                    <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
                       {useCase.rentals.map((item, j) => (
                         <span key={j} className="text-xs bg-violet-500/10 px-2 py-1 rounded text-violet-400">{item}</span>
                       ))}
@@ -507,12 +507,12 @@ export default function AjerPage() {
             </div>
 
             {/* Trust & Safety */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
               {trustFeatures.map((feature, i) => (
-                <div key={i} className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <feature.icon className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-                  <div className="text-white font-medium text-sm">{feature.feature}</div>
-                  <p className="text-xs text-slate-400 mt-1">{feature.description}</p>
+                <div key={i} className="bg-slate-800/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 mx-auto mb-2" />
+                  <div className="text-white font-medium text-xs sm:text-sm">{feature.feature}</div>
+                  <p className="text-xs text-slate-400 mt-1 hidden sm:block">{feature.description}</p>
                 </div>
               ))}
             </div>
@@ -521,22 +521,22 @@ export default function AjerPage() {
 
         {/* Categories Tab */}
         {activeTab === 'categories' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {rentalCategories.map((category, i) => (
               <div key={i} className={`${category.bgColor} border-2 rounded-xl overflow-hidden`} style={{ borderColor: category.textColor.replace('text-', '').replace('-400', '') }}>
                 <button
                   onClick={() => setExpandedCategory(expandedCategory === category.name ? null : category.name)}
-                  className="w-full p-6 flex items-center justify-between text-left"
+                  className="w-full p-4 sm:p-6 flex items-center justify-between text-left"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
-                      <category.icon className="w-7 h-7 text-white" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
+                      <category.icon className="w-5 h-5 sm:w-7 sm:h-7 text-white" />
                     </div>
                     <div>
-                      <h3 className={`text-xl font-bold ${category.textColor}`}>
-                        {category.name} <span className="text-slate-400">{category.arabic}</span>
+                      <h3 className={`text-base sm:text-xl font-bold ${category.textColor}`}>
+                        {category.name} <span className="text-slate-400 text-sm sm:text-base">{category.arabic}</span>
                       </h3>
-                      <p className="text-slate-400">{category.description}</p>
+                      <p className="text-slate-400 text-sm sm:text-base">{category.description}</p>
                     </div>
                   </div>
                   {expandedCategory === category.name ? (
@@ -546,10 +546,10 @@ export default function AjerPage() {
                   )}
                 </button>
                 {expandedCategory === category.name && (
-                  <div className="px-6 pb-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-slate-900/50 rounded-lg p-4">
-                        <h4 className="text-white font-bold mb-3">Items Available</h4>
+                  <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                      <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                        <h4 className="text-white font-bold mb-2 sm:mb-3 text-sm sm:text-base">Items Available</h4>
                         <div className="space-y-2">
                           {category.items.map((item, j) => (
                             <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
@@ -559,18 +559,18 @@ export default function AjerPage() {
                           ))}
                         </div>
                       </div>
-                      <div className="bg-slate-900/50 rounded-lg p-4">
-                        <h4 className="text-white font-bold mb-3">Pricing</h4>
-                        <div className="space-y-3">
+                      <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                        <h4 className="text-white font-bold mb-2 sm:mb-3 text-sm sm:text-base">Pricing</h4>
+                        <div className="space-y-2 sm:space-y-3">
                           <div>
-                            <div className="text-slate-400 text-sm">Price Range</div>
-                            <div className={`text-lg font-bold ${category.textColor}`}>{category.priceRange}</div>
+                            <div className="text-slate-400 text-xs sm:text-sm">Price Range</div>
+                            <div className={`text-base sm:text-lg font-bold ${category.textColor}`}>{category.priceRange}</div>
                           </div>
                         </div>
                       </div>
-                      <div className="bg-slate-900/50 rounded-lg p-4">
-                        <h4 className="text-white font-bold mb-3">Most Popular</h4>
-                        <div className="text-slate-300">{category.popular}</div>
+                      <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                        <h4 className="text-white font-bold mb-2 sm:mb-3 text-sm sm:text-base">Most Popular</h4>
+                        <div className="text-slate-300 text-sm sm:text-base">{category.popular}</div>
                         <div className="mt-3">
                           <span className={`text-xs px-2 py-1 rounded ${category.bgColor} ${category.textColor}`}>
                             Trending
@@ -587,26 +587,26 @@ export default function AjerPage() {
 
         {/* How It Works Tab */}
         {activeTab === 'how-it-works' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* For Renters */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 For Renters
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                 {renterProcess.map((step, i) => (
                   <div key={i} className="relative">
-                    <div className="bg-slate-900/50 rounded-xl p-4 text-center">
-                      <div className="w-10 h-10 rounded-full bg-violet-500/20 flex items-center justify-center mx-auto mb-3">
-                        <step.icon className="w-5 h-5 text-violet-400" />
+                    <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-violet-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                        <step.icon className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                       </div>
                       <div className="text-xs text-violet-400 mb-1">Step {step.step}</div>
-                      <div className="text-white font-medium text-sm mb-1">{step.title}</div>
-                      <p className="text-xs text-slate-400">{step.description}</p>
+                      <div className="text-white font-medium text-xs sm:text-sm mb-1">{step.title}</div>
+                      <p className="text-xs text-slate-400 hidden sm:block">{step.description}</p>
                     </div>
                     {i < 4 && (
-                      <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
+                      <ChevronRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
                     )}
                   </div>
                 ))}
@@ -614,24 +614,24 @@ export default function AjerPage() {
             </div>
 
             {/* For Owners */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Banknote className="w-5 h-5 text-emerald-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Banknote className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                 For Item Owners
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                 {ownerProcess.map((step, i) => (
                   <div key={i} className="relative">
-                    <div className="bg-slate-900/50 rounded-xl p-4 text-center">
-                      <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-3">
-                        <step.icon className="w-5 h-5 text-emerald-400" />
+                    <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                        <step.icon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
                       </div>
                       <div className="text-xs text-emerald-400 mb-1">Step {step.step}</div>
-                      <div className="text-white font-medium text-sm mb-1">{step.title}</div>
-                      <p className="text-xs text-slate-400">{step.description}</p>
+                      <div className="text-white font-medium text-xs sm:text-sm mb-1">{step.title}</div>
+                      <p className="text-xs text-slate-400 hidden sm:block">{step.description}</p>
                     </div>
                     {i < 4 && (
-                      <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
+                      <ChevronRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
                     )}
                   </div>
                 ))}
@@ -642,17 +642,17 @@ export default function AjerPage() {
 
         {/* For Owners Tab */}
         {activeTab === 'for-owners' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Owner Hero */}
-            <div className="bg-gradient-to-r from-emerald-500/20 to-green-500/10 rounded-xl p-6 border-2 border-emerald-500">
-              <h2 className="text-2xl font-bold text-white mb-2">Turn Your Idle Items Into Income</h2>
-              <p className="text-emerald-400 text-lg mb-6">List anything. Earn money. Keep control.</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="bg-gradient-to-r from-emerald-500/20 to-green-500/10 rounded-xl p-4 sm:p-6 border-2 border-emerald-500">
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">Turn Your Idle Items Into Income</h2>
+              <p className="text-emerald-400 text-sm sm:text-lg mb-4 sm:mb-6">List anything. Earn money. Keep control.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {ownerBenefits.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-4">
-                    <item.icon className="w-8 h-8 text-emerald-400 mb-3" />
-                    <h4 className="text-white font-bold mb-1">{item.benefit}</h4>
-                    <p className="text-slate-400 text-sm mb-2">{item.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 sm:p-4">
+                    <item.icon className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mb-2 sm:mb-3" />
+                    <h4 className="text-white font-bold mb-1 text-sm sm:text-base">{item.benefit}</h4>
+                    <p className="text-slate-400 text-xs sm:text-sm mb-2">{item.description}</p>
                     <span className="text-emerald-400 text-xs">{item.example}</span>
                   </div>
                 ))}
@@ -660,37 +660,37 @@ export default function AjerPage() {
             </div>
 
             {/* Earnings Calculator Example */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4">Potential Earnings Examples</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-lg p-4 border border-emerald-500/30">
-                  <Camera className="w-8 h-8 text-emerald-400 mb-3" />
-                  <h4 className="text-white font-bold">Camera Kit</h4>
-                  <div className="text-slate-400 text-sm mb-2">DSLR + lenses worth 15,000 AED</div>
-                  <div className="text-emerald-400 font-bold text-lg">150 AED/day</div>
-                  <div className="text-slate-500 text-sm">≈ 2,000 AED/month (if rented 50%)</div>
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Potential Earnings Examples</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 border border-emerald-500/30">
+                  <Camera className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mb-2 sm:mb-3" />
+                  <h4 className="text-white font-bold text-sm sm:text-base">Camera Kit</h4>
+                  <div className="text-slate-400 text-xs sm:text-sm mb-2">DSLR + lenses worth 15,000 AED</div>
+                  <div className="text-emerald-400 font-bold text-base sm:text-lg">150 AED/day</div>
+                  <div className="text-slate-500 text-xs sm:text-sm">≈ 2,000 AED/month (if rented 50%)</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4 border border-emerald-500/30">
-                  <Car className="w-8 h-8 text-emerald-400 mb-3" />
-                  <h4 className="text-white font-bold">Sports Car</h4>
-                  <div className="text-slate-400 text-sm mb-2">Weekend car worth 300,000 AED</div>
-                  <div className="text-emerald-400 font-bold text-lg">1,500 AED/day</div>
-                  <div className="text-slate-500 text-sm">≈ 12,000 AED/month (weekends only)</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 border border-emerald-500/30">
+                  <Car className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mb-2 sm:mb-3" />
+                  <h4 className="text-white font-bold text-sm sm:text-base">Sports Car</h4>
+                  <div className="text-slate-400 text-xs sm:text-sm mb-2">Weekend car worth 300,000 AED</div>
+                  <div className="text-emerald-400 font-bold text-base sm:text-lg">1,500 AED/day</div>
+                  <div className="text-slate-500 text-xs sm:text-sm">≈ 12,000 AED/month (weekends only)</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-lg p-4 border border-emerald-500/30">
-                  <Gem className="w-8 h-8 text-emerald-400 mb-3" />
-                  <h4 className="text-white font-bold">Designer Bag</h4>
-                  <div className="text-slate-400 text-sm mb-2">Luxury bag worth 8,000 AED</div>
-                  <div className="text-emerald-400 font-bold text-lg">200 AED/day</div>
-                  <div className="text-slate-500 text-sm">≈ 1,600 AED/month (if rented 40%)</div>
+                <div className="bg-slate-900/50 rounded-lg p-3 sm:p-4 border border-emerald-500/30">
+                  <Gem className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mb-2 sm:mb-3" />
+                  <h4 className="text-white font-bold text-sm sm:text-base">Designer Bag</h4>
+                  <div className="text-slate-400 text-xs sm:text-sm mb-2">Luxury bag worth 8,000 AED</div>
+                  <div className="text-emerald-400 font-bold text-base sm:text-lg">200 AED/day</div>
+                  <div className="text-slate-500 text-xs sm:text-sm">≈ 1,600 AED/month (if rented 40%)</div>
                 </div>
               </div>
             </div>
 
             {/* Commission Structure */}
-            <div className="bg-violet-500/10 rounded-xl p-6 border-2 border-violet-500">
-              <h3 className="text-lg font-bold text-white mb-4">Commission Structure</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-violet-500/10 rounded-xl p-4 sm:p-6 border-2 border-violet-500">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">Commission Structure</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                 <div className="bg-slate-900/50 rounded-lg p-4 text-center">
                   <div className="text-violet-400 text-lg font-bold">Standard</div>
                   <div className="text-3xl font-bold text-white my-2">20%</div>
@@ -713,20 +713,20 @@ export default function AjerPage() {
 
         {/* Ecosystem Tab */}
         {activeTab === 'ecosystem' && (
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Network className="w-5 h-5 text-[#c9a227]" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Network className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Nuqta Ecosystem Integration
               </h2>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 Ajer connects seamlessly with all Nuqta products for the ultimate rental experience.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {ecosystemIntegration.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <div className="flex items-center gap-3 mb-3">
-                      <item.icon className={`w-6 h-6 ${item.color}`} />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                      <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
                       <span className={`font-bold ${item.color}`}>{item.product}</span>
                     </div>
                     <p className="text-white text-sm mb-1">{item.integration}</p>
@@ -740,20 +740,20 @@ export default function AjerPage() {
 
         {/* GCC Tab */}
         {activeTab === 'gcc' && (
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-[#c9a227]/20 via-blue-500/10 to-emerald-500/10 rounded-2xl p-8 border-2 border-[#c9a227]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c9a227] to-amber-500 flex items-center justify-center">
-                  <Globe className="w-8 h-8 text-white" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 via-blue-500/10 to-emerald-500/10 rounded-xl sm:rounded-2xl p-4 sm:p-8 border-2 border-[#c9a227]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#c9a227] to-amber-500 flex items-center justify-center">
+                  <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-black text-white">{gccExpansion.headline}</h2>
-                  <p className="text-[#c9a227] text-lg">{gccExpansion.description}</p>
+                  <h2 className="text-xl sm:text-3xl font-black text-white">{gccExpansion.headline}</h2>
+                  <p className="text-[#c9a227] text-sm sm:text-lg">{gccExpansion.description}</p>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {gccExpansion.countries.map((country, i) => (
                 <div key={i} className={`bg-slate-800/50 rounded-xl p-5 border-2 ${
                   country.status === 'Active' ? 'border-emerald-500' :
@@ -791,14 +791,14 @@ export default function AjerPage() {
 
         {/* Financials Tab */}
         {activeTab === 'financials' && (
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Target className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Target className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Financial Projections
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full text-xs sm:text-sm min-w-[400px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Metric</th>
@@ -853,28 +853,28 @@ export default function AjerPage() {
 
         {/* Roadmap Tab */}
         {activeTab === 'roadmap' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {roadmapPhases.map((phase, i) => (
-              <div key={i} className={`${phase.bgColor} rounded-xl p-6 border-2 ${phase.color}`}>
-                <div className="flex items-center justify-between mb-4">
+              <div key={i} className={`${phase.bgColor} rounded-xl p-4 sm:p-6 border-2 ${phase.color}`}>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0 mb-3 sm:mb-4">
                   <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold ${
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base ${
                       phase.status === 'planned' ? 'bg-green-500' : 'bg-blue-500'
                     }`}>
                       {phase.phase.replace('Phase ', '')}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white">{phase.phase}: {phase.title}</h3>
-                      <span className="text-slate-400 text-sm">{phase.timeline}</span>
+                      <h3 className="text-base sm:text-lg font-bold text-white">{phase.phase}: {phase.title}</h3>
+                      <span className="text-slate-400 text-xs sm:text-sm">{phase.timeline}</span>
                     </div>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-bold ${
                     phase.status === 'planned' ? 'bg-green-500/20 text-green-400' : 'bg-blue-500/20 text-blue-400'
                   }`}>
                     {phase.status.charAt(0).toUpperCase() + phase.status.slice(1)}
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {phase.milestones.map((milestone, j) => (
                     <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
                       <CheckCircle className={`w-4 h-4 ${phase.status === 'planned' ? 'text-green-400' : 'text-blue-400'}`} />

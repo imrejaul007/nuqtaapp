@@ -218,41 +218,41 @@ export default function GamificationPage() {
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-950/10 to-slate-950">
       {/* Header */}
       <header className="border-b border-white/10 bg-black/20 backdrop-blur-xl sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 sm:gap-4">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
-                <span className="text-black font-bold text-xl">N</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#c9a227] to-[#e8c547] flex items-center justify-center">
+                <span className="text-black font-bold text-lg sm:text-xl">N</span>
               </div>
-              <span className="text-2xl font-bold text-white">Nuqta</span>
+              <span className="text-xl sm:text-2xl font-bold text-white">Nuqta</span>
             </Link>
-            <span className="text-slate-500">|</span>
-            <span className="text-slate-400">Gamification System</span>
+            <span className="text-slate-500 hidden sm:inline">|</span>
+            <span className="text-slate-400 text-sm hidden sm:inline">Gamification System</span>
           </div>
-          <Link href="/master-roadmap" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
-            <ArrowLeft size={16} />
-            <span className="text-sm">Roadmap</span>
+          <Link href="/master-roadmap" className="flex items-center gap-1 sm:gap-2 text-slate-400 hover:text-white transition-colors">
+            <ArrowLeft size={14} className="sm:w-4 sm:h-4" />
+            <span className="text-xs sm:text-sm">Roadmap</span>
           </Link>
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-6 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
         {/* Hero */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/30 mb-4">
-            <Trophy className="text-purple-400" size={16} />
-            <span className="text-purple-400 text-sm font-medium">Game Mechanics</span>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full border border-purple-500/30 mb-3 sm:mb-4">
+            <Trophy className="text-purple-400 w-4 h-4" />
+            <span className="text-purple-400 text-xs sm:text-sm font-medium">Game Mechanics</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
             Gamification <span className="text-purple-400">System Design</span>
           </h1>
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto">
+          <p className="text-base sm:text-xl text-slate-400 max-w-3xl mx-auto">
             Tiers, badges, streaks, challenges, and leaderboards. Turn earning rewards into an addictive game.
           </p>
         </div>
 
         {/* Tabs */}
-        <div className="flex flex-wrap gap-2 mb-8 justify-center">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8 justify-center">
           {[
             { id: 'tiers', label: 'Tier System', icon: Crown },
             { id: 'badges', label: 'Badges', icon: Award },
@@ -263,51 +263,52 @@ export default function GamificationPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-medium text-xs sm:text-sm transition-all ${
                 activeTab === tab.id
                   ? 'bg-purple-500 text-white'
                   : 'bg-white/5 text-slate-400 hover:bg-white/10'
               }`}
             >
-              <tab.icon size={18} />
-              {tab.label}
+              <tab.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">{tab.label}</span>
+              <span className="sm:hidden">{tab.label.split(' ')[0]}</span>
             </button>
           ))}
         </div>
 
         {/* Tier System */}
         {activeTab === 'tiers' && (
-          <div className="space-y-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {tiers.map((tier, idx) => {
                 const Icon = tier.icon;
                 return (
                   <div key={idx} className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                    <div className={`bg-gradient-to-r ${tier.color} p-6 text-center`}>
-                      <Icon className="text-white mx-auto mb-2" size={40} />
-                      <h3 className="text-2xl font-bold text-white">{tier.name}</h3>
-                      <p className="text-white/80">{tier.pointsRequired.toLocaleString()}+ points</p>
-                      <div className="mt-2 inline-block px-3 py-1 bg-white/20 rounded-full text-white text-sm font-bold">
+                    <div className={`bg-gradient-to-r ${tier.color} p-4 sm:p-6 text-center`}>
+                      <Icon className="text-white mx-auto mb-2 w-8 h-8 sm:w-10 sm:h-10" />
+                      <h3 className="text-xl sm:text-2xl font-bold text-white">{tier.name}</h3>
+                      <p className="text-white/80 text-sm sm:text-base">{tier.pointsRequired.toLocaleString()}+ points</p>
+                      <div className="mt-2 inline-block px-2 sm:px-3 py-1 bg-white/20 rounded-full text-white text-xs sm:text-sm font-bold">
                         {tier.multiplier} Points
                       </div>
                     </div>
-                    <div className="p-5">
-                      <h4 className="font-bold text-white mb-3">Benefits</h4>
-                      <ul className="space-y-2 mb-4">
+                    <div className="p-4 sm:p-5">
+                      <h4 className="font-bold text-white mb-2 sm:mb-3 text-sm sm:text-base">Benefits</h4>
+                      <ul className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
                         {tier.benefits.map((benefit, bIdx) => (
-                          <li key={bIdx} className="flex items-start gap-2 text-slate-300 text-sm">
-                            <CheckCircle className="text-green-400 flex-shrink-0 mt-0.5" size={14} />
+                          <li key={bIdx} className="flex items-start gap-2 text-slate-300 text-xs sm:text-sm">
+                            <CheckCircle className="text-green-400 flex-shrink-0 mt-0.5 w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             {benefit}
                           </li>
                         ))}
                       </ul>
                       {tier.exclusive.length > 0 && (
                         <>
-                          <h4 className="font-bold text-[#c9a227] mb-2 text-sm">Exclusive Perks</h4>
+                          <h4 className="font-bold text-[#c9a227] mb-2 text-xs sm:text-sm">Exclusive Perks</h4>
                           <ul className="space-y-1">
                             {tier.exclusive.map((ex, eIdx) => (
                               <li key={eIdx} className="flex items-center gap-2 text-[#c9a227] text-xs">
-                                <Star size={10} />
+                                <Star className="w-2.5 h-2.5" />
                                 {ex}
                               </li>
                             ))}
@@ -321,12 +322,12 @@ export default function GamificationPage() {
             </div>
 
             {/* Tier Progression */}
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Tier Progression Rules</h3>
-              <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Tier Progression Rules</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-bold text-green-400 mb-2">Earning Tiers</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-green-400 mb-2 text-sm sm:text-base">Earning Tiers</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• Points accumulated in rolling 12-month period</li>
                     <li>• Tier status updates in real-time</li>
                     <li>• Bonus points count toward tier progress</li>
@@ -334,8 +335,8 @@ export default function GamificationPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-amber-400 mb-2">Maintaining Tiers</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-amber-400 mb-2 text-sm sm:text-base">Maintaining Tiers</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• Status valid for 12 months after earning</li>
                     <li>• Grace period of 3 months if points drop</li>
                     <li>• Tier protection available with activity</li>
@@ -349,25 +350,25 @@ export default function GamificationPage() {
 
         {/* Badges */}
         {activeTab === 'badges' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {badges.map(badge => {
                 const Icon = badge.icon;
                 return (
-                  <div key={badge.id} className={`rounded-xl p-4 border ${rarityColors[badge.rarity]}`}>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className={`w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center`}>
-                        <Icon size={20} />
+                  <div key={badge.id} className={`rounded-xl p-3 sm:p-4 border ${rarityColors[badge.rarity]}`}>
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white/10 flex items-center justify-center`}>
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-white text-sm">{badge.name}</h4>
+                        <h4 className="font-bold text-white text-xs sm:text-sm">{badge.name}</h4>
                         <span className="text-xs capitalize">{badge.rarity}</span>
                       </div>
                     </div>
-                    <p className="text-slate-400 text-xs mb-2">{badge.description}</p>
-                    <p className="text-slate-500 text-xs mb-2">{badge.requirement}</p>
+                    <p className="text-slate-400 text-xs mb-1 sm:mb-2 line-clamp-2">{badge.description}</p>
+                    <p className="text-slate-500 text-xs mb-1 sm:mb-2 hidden sm:block">{badge.requirement}</p>
                     <div className="flex items-center gap-1 text-[#c9a227] text-xs font-bold">
-                      <Star size={12} />
+                      <Star className="w-3 h-3" />
                       +{badge.points} points
                     </div>
                   </div>
@@ -375,9 +376,9 @@ export default function GamificationPage() {
               })}
             </div>
 
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Badge Rarity System</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Badge Rarity System</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 {[
                   { rarity: 'Common', color: 'bg-slate-500', percent: '60%', desc: 'Easy to earn, great for beginners' },
                   { rarity: 'Rare', color: 'bg-blue-500', percent: '25%', desc: 'Requires dedication' },
@@ -385,10 +386,10 @@ export default function GamificationPage() {
                   { rarity: 'Legendary', color: 'bg-[#c9a227]', percent: '3%', desc: 'Elite status' }
                 ].map((item, idx) => (
                   <div key={idx} className="text-center">
-                    <div className={`w-12 h-12 ${item.color} rounded-xl mx-auto mb-2`} />
-                    <h4 className="font-bold text-white">{item.rarity}</h4>
-                    <p className="text-slate-400 text-sm">{item.percent} of users</p>
-                    <p className="text-slate-500 text-xs mt-1">{item.desc}</p>
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${item.color} rounded-xl mx-auto mb-2`} />
+                    <h4 className="font-bold text-white text-sm sm:text-base">{item.rarity}</h4>
+                    <p className="text-slate-400 text-xs sm:text-sm">{item.percent} of users</p>
+                    <p className="text-slate-500 text-xs mt-1 hidden sm:block">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -398,21 +399,21 @@ export default function GamificationPage() {
 
         {/* Challenges */}
         {activeTab === 'challenges' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {['daily', 'weekly', 'monthly', 'special'].map(type => (
               <div key={type}>
-                <h3 className="text-lg font-bold text-white mb-4 capitalize flex items-center gap-2">
-                  <Target className={type === 'special' ? 'text-[#c9a227]' : 'text-purple-400'} size={20} />
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4 capitalize flex items-center gap-2">
+                  <Target className={`w-4 h-4 sm:w-5 sm:h-5 ${type === 'special' ? 'text-[#c9a227]' : 'text-purple-400'}`} />
                   {type} Challenges
                 </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {challenges.filter(c => c.type === type).map((challenge, idx) => (
-                    <div key={idx} className="bg-white/5 rounded-xl p-5 border border-white/10">
-                      <h4 className="font-bold text-white mb-1">{challenge.name}</h4>
-                      <p className="text-slate-400 text-sm mb-3">{challenge.description}</p>
+                    <div key={idx} className="bg-white/5 rounded-xl p-4 sm:p-5 border border-white/10">
+                      <h4 className="font-bold text-white mb-1 text-sm sm:text-base">{challenge.name}</h4>
+                      <p className="text-slate-400 text-xs sm:text-sm mb-2 sm:mb-3">{challenge.description}</p>
                       <div className="flex items-center justify-between text-xs">
                         <span className="text-slate-500 flex items-center gap-1">
-                          <Clock size={12} />
+                          <Clock className="w-3 h-3" />
                           {challenge.duration}
                         </span>
                         <span className="text-green-400 font-bold">{challenge.reward}</span>
@@ -427,44 +428,44 @@ export default function GamificationPage() {
 
         {/* Streaks */}
         {activeTab === 'streaks' && (
-          <div className="space-y-6">
-            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl p-6 border border-orange-500/30">
-              <div className="flex items-center gap-4 mb-6">
-                <Flame className="text-orange-400" size={40} />
+          <div className="space-y-4 sm:space-y-6">
+            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl p-4 sm:p-6 border border-orange-500/30">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <Flame className="text-orange-400 w-8 h-8 sm:w-10 sm:h-10" />
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Streak System</h3>
-                  <p className="text-slate-400">Visit any Nuqta merchant daily to build your streak</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Streak System</h3>
+                  <p className="text-slate-400 text-sm sm:text-base">Visit any Nuqta merchant daily to build your streak</p>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {streakRewards.map((streak, idx) => (
-                  <div key={idx} className="flex items-center gap-4 p-4 bg-black/30 rounded-xl">
-                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0">
-                      <span className="text-2xl font-bold text-white">{streak.days}</span>
+                  <div key={idx} className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-black/30 rounded-xl">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center flex-shrink-0">
+                      <span className="text-lg sm:text-2xl font-bold text-white">{streak.days}</span>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-white">{streak.days} Day Streak</h4>
-                      <p className="text-green-400 text-sm">{streak.reward}</p>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-white text-sm sm:text-base">{streak.days} Day Streak</h4>
+                      <p className="text-green-400 text-xs sm:text-sm truncate">{streak.reward}</p>
                       {streak.badge && (
                         <span className="text-[#c9a227] text-xs flex items-center gap-1 mt-1">
-                          <Award size={12} />
+                          <Award className="w-3 h-3" />
                           Unlocks "{streak.badge}" badge
                         </span>
                       )}
                     </div>
-                    <ChevronRight className="text-slate-500" size={20} />
+                    <ChevronRight className="text-slate-500 w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Streak Rules</h3>
-              <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Streak Rules</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-bold text-green-400 mb-2">Building Streaks</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-green-400 mb-2 text-sm sm:text-base">Building Streaks</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• Any purchase counts as a day</li>
                     <li>• Resets at midnight local time</li>
                     <li>• Multiple purchases same day = 1 day</li>
@@ -472,8 +473,8 @@ export default function GamificationPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-red-400 mb-2">Streak Protection</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-red-400 mb-2 text-sm sm:text-base">Streak Protection</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• 1 free "freeze" per month</li>
                     <li>• Gold members: 2 freezes/month</li>
                     <li>• Platinum: Unlimited freezes</li>
@@ -487,49 +488,49 @@ export default function GamificationPage() {
 
         {/* Leaderboards */}
         {activeTab === 'leaderboards' && (
-          <div className="space-y-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {leaderboardCategories.map((board, idx) => (
-                <div key={idx} className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#c9a227] to-amber-600 flex items-center justify-center">
-                      <Trophy className="text-white" size={24} />
+                <div key={idx} className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
+                  <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-[#c9a227] to-amber-600 flex items-center justify-center">
+                      <Trophy className="text-white w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-white">{board.name}</h3>
-                      <p className="text-slate-400 text-sm">{board.description}</p>
+                      <h3 className="font-bold text-white text-sm sm:text-base">{board.name}</h3>
+                      <p className="text-slate-400 text-xs sm:text-sm">{board.description}</p>
                     </div>
                   </div>
-                  <div className="bg-[#c9a227]/10 rounded-lg p-3 border border-[#c9a227]/30">
+                  <div className="bg-[#c9a227]/10 rounded-lg p-2 sm:p-3 border border-[#c9a227]/30">
                     <span className="text-xs text-slate-400">Monthly Prize</span>
-                    <p className="text-[#c9a227] font-bold">{board.prize}</p>
+                    <p className="text-[#c9a227] font-bold text-sm sm:text-base">{board.prize}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold text-white mb-4">Leaderboard Rules</h3>
-              <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Leaderboard Rules</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div>
-                  <h4 className="font-bold text-purple-400 mb-2">Competition Period</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-purple-400 mb-2 text-sm sm:text-base">Competition Period</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• Monthly reset on 1st</li>
                     <li>• Winners announced by 5th</li>
                     <li>• Prizes distributed by 10th</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-blue-400 mb-2">Fair Play</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-blue-400 mb-2 text-sm sm:text-base">Fair Play</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• Anti-gaming measures</li>
                     <li>• Transaction verification</li>
                     <li>• One account per person</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-bold text-green-400 mb-2">Visibility</h4>
-                  <ul className="space-y-2 text-sm text-slate-300">
+                  <h4 className="font-bold text-green-400 mb-2 text-sm sm:text-base">Visibility</h4>
+                  <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-slate-300">
                     <li>• Top 100 displayed</li>
                     <li>• Your rank always visible</li>
                     <li>• Friend rankings</li>

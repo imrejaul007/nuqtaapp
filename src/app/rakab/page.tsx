@@ -542,14 +542,14 @@ export default function RakabPage() {
 
         {/* Overview Tab */}
         {activeTab === 'overview' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Executive Summary */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <FileText className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Executive Summary
               </h2>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 <strong className="text-white">Rakab</strong> (ركب - &quot;ride&quot; in Arabic) is a ride-hailing service built for the Nuqta ecosystem.
                 The unique value: <strong className="text-green-400">pay with Hawil Card at Google rate</strong> (no FX fees),
                 earn <strong className="text-[#c9a227]">5% Nuqta coins</strong> on every ride, and enjoy <strong className="text-blue-400">tourist-first features</strong>
@@ -557,44 +557,44 @@ export default function RakabPage() {
               </p>
 
               {/* Service Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {services.map((service, i) => (
-                  <div key={i} className={`bg-gradient-to-br ${service.color} rounded-xl p-4 text-center`}>
-                    <service.icon className="w-8 h-8 text-white mx-auto mb-2" />
-                    <div className="text-white font-bold">{service.name}</div>
-                    <div className="text-white/70 text-xs mt-1">{service.description}</div>
+                  <div key={i} className={`bg-gradient-to-br ${service.color} rounded-xl p-3 sm:p-4 text-center`}>
+                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white mx-auto mb-2" />
+                    <div className="text-white font-bold text-sm sm:text-base">{service.name}</div>
+                    <div className="text-white/70 text-[10px] sm:text-xs mt-1">{service.description}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Tourist Value Prop */}
-            <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-blue-500">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Plane className="w-5 h-5 text-blue-400" />
+            <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border-2 border-blue-500">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 {touristFeatures.headline}
               </h2>
-              <p className="text-slate-300 mb-6">{touristFeatures.description}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">{touristFeatures.description}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {touristFeatures.features.slice(0, 3).map((feature, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-blue-500/30">
-                    <feature.icon className="w-8 h-8 text-blue-400 mb-3" />
-                    <h4 className="text-white font-bold mb-1">{feature.feature}</h4>
-                    <p className="text-xs text-slate-400 mb-2">{feature.description}</p>
-                    <div className="text-xs text-green-400 font-medium">{feature.savings}</div>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-blue-500/30">
+                    <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400 mb-2 sm:mb-3" />
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1">{feature.feature}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400 mb-2">{feature.description}</p>
+                    <div className="text-[10px] sm:text-xs text-green-400 font-medium">{feature.savings}</div>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Pricing Comparison */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Price Comparison (AED)
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[500px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Route</th>
@@ -625,29 +625,29 @@ export default function RakabPage() {
 
         {/* Services Tab */}
         {activeTab === 'services' && (
-          <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {services.map((service, i) => (
-                <div key={i} className={`bg-gradient-to-br ${service.color} rounded-xl p-6 relative overflow-hidden`}>
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                <div key={i} className={`bg-gradient-to-br ${service.color} rounded-xl p-4 sm:p-6 relative overflow-hidden`}>
+                  <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
                   <div className="relative z-10">
-                    <service.icon className="w-12 h-12 text-white mb-4" />
-                    <h3 className="text-2xl font-bold text-white mb-2">{service.name}</h3>
-                    <p className="text-white/80 mb-4">{service.description}</p>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
-                      <div className="bg-white/20 rounded-lg p-3 text-center">
-                        <div className="text-white font-bold">{service.pricing}</div>
-                        <div className="text-white/60 text-xs">Pricing</div>
+                    <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white mb-3 sm:mb-4" />
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{service.name}</h3>
+                    <p className="text-white/80 text-sm sm:text-base mb-3 sm:mb-4">{service.description}</p>
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
+                      <div className="bg-white/20 rounded-lg p-2 sm:p-3 text-center">
+                        <div className="text-white font-bold text-sm sm:text-base">{service.pricing}</div>
+                        <div className="text-white/60 text-[10px] sm:text-xs">Pricing</div>
                       </div>
-                      <div className="bg-white/20 rounded-lg p-3 text-center">
-                        <div className="text-white font-bold">{service.eta}</div>
-                        <div className="text-white/60 text-xs">Avg ETA</div>
+                      <div className="bg-white/20 rounded-lg p-2 sm:p-3 text-center">
+                        <div className="text-white font-bold text-sm sm:text-base">{service.eta}</div>
+                        <div className="text-white/60 text-[10px] sm:text-xs">Avg ETA</div>
                       </div>
                     </div>
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 sm:space-y-2">
                       {service.features.map((feature, j) => (
-                        <div key={j} className="flex items-center gap-2 text-sm text-white/90">
-                          <CheckCircle className="w-4 h-4 text-white" />
+                        <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-white/90">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-white flex-shrink-0" />
                           {feature}
                         </div>
                       ))}
@@ -658,15 +658,15 @@ export default function RakabPage() {
             </div>
 
             {/* Future Services */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4">Coming Soon</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-base sm:text-lg font-bold text-white mb-4">Coming Soon</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                 {futureServices.map((service, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 text-center border border-slate-700/50">
-                    <service.icon className="w-8 h-8 text-slate-500 mx-auto mb-2" />
-                    <div className="text-white font-medium text-sm">{service.service}</div>
-                    <div className="text-xs text-slate-500">{service.description}</div>
-                    <div className="text-xs text-green-400 mt-2">{service.timeline}</div>
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 sm:p-4 text-center border border-slate-700/50">
+                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-slate-500 mx-auto mb-2" />
+                    <div className="text-white font-medium text-xs sm:text-sm">{service.service}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-500">{service.description}</div>
+                    <div className="text-[10px] sm:text-xs text-green-400 mt-2">{service.timeline}</div>
                   </div>
                 ))}
               </div>
@@ -676,29 +676,29 @@ export default function RakabPage() {
 
         {/* Tourists Tab */}
         {activeTab === 'tourists' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Hero */}
-            <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-2xl p-8 border-2 border-blue-500">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <Plane className="w-5 h-5 text-blue-400" />
-                  <span className="text-blue-400 font-bold">Tourist-First Design</span>
+            <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-blue-500">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
+                  <span className="text-blue-400 font-bold text-xs sm:text-sm">Tourist-First Design</span>
                 </div>
-                <h2 className="text-3xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl font-black text-white mb-4">
                   Save 3-5% on Every Ride
                 </h2>
-                <p className="text-slate-300 text-lg">Pay with Hawil Card at Google rate - no foreign transaction fees</p>
+                <p className="text-slate-300 text-sm sm:text-lg">Pay with Hawil Card at Google rate - no foreign transaction fees</p>
               </div>
 
               {/* Features Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {touristFeatures.features.map((feature, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/30">
-                    <feature.icon className="w-10 h-10 text-blue-400 mb-3" />
-                    <h4 className="text-white font-bold mb-2">{feature.feature}</h4>
-                    <p className="text-sm text-slate-400 mb-3">{feature.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-blue-500/30">
+                    <feature.icon className="w-8 h-8 sm:w-10 sm:h-10 text-blue-400 mb-2 sm:mb-3" />
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-2">{feature.feature}</h4>
+                    <p className="text-xs sm:text-sm text-slate-400 mb-2 sm:mb-3">{feature.description}</p>
                     <div className="bg-green-500/10 rounded-lg p-2 border border-green-500/30">
-                      <span className="text-green-400 text-sm font-medium">{feature.savings}</span>
+                      <span className="text-green-400 text-xs sm:text-sm font-medium">{feature.savings}</span>
                     </div>
                   </div>
                 ))}
@@ -706,25 +706,25 @@ export default function RakabPage() {
             </div>
 
             {/* Airport Packages */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Plane className="w-5 h-5 text-blue-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
                 Fixed-Price Airport Transfers
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {airportPackages.map((pkg, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <div className="flex items-center justify-between mb-3">
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <div className="flex items-center justify-between mb-2 sm:mb-3">
                       <div>
-                        <div className="text-white font-medium text-sm">{pkg.from}</div>
-                        <div className="text-slate-500 text-xs">→ {pkg.to}</div>
+                        <div className="text-white font-medium text-xs sm:text-sm">{pkg.from}</div>
+                        <div className="text-slate-500 text-[10px] sm:text-xs">{pkg.to}</div>
                       </div>
                       <div className="text-right">
-                        <div className="text-green-400 font-bold text-xl">{pkg.price} AED</div>
-                        <div className="text-xs text-slate-500">Fixed price</div>
+                        <div className="text-green-400 font-bold text-lg sm:text-xl">{pkg.price} AED</div>
+                        <div className="text-[10px] sm:text-xs text-slate-500">Fixed price</div>
                       </div>
                     </div>
-                    <div className="flex justify-between text-xs">
+                    <div className="flex justify-between text-[10px] sm:text-xs">
                       <span className="text-slate-400">{pkg.time}</span>
                       <span className="text-green-400">Save {pkg.savings} AED</span>
                     </div>
@@ -737,30 +737,30 @@ export default function RakabPage() {
 
         {/* Ecosystem Tab */}
         {activeTab === 'ecosystem' && (
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Network className="w-5 h-5 text-[#c9a227]" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Network className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Ecosystem Integration
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {ecosystemIntegration.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                      <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
                         item.product === 'Nuqta+' ? 'bg-[#c9a227]/20' :
                         item.product === 'Hawil Card' ? 'bg-blue-500/20' :
                         item.product === 'Qist' ? 'bg-violet-500/20' :
                         item.product === 'Wasil' ? 'bg-orange-500/20' :
                         'bg-emerald-500/20'
                       }`}>
-                        <item.icon className={`w-5 h-5 ${item.color}`} />
+                        <item.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${item.color}`} />
                       </div>
-                      <h4 className={`font-bold ${item.color}`}>{item.product}</h4>
+                      <h4 className={`font-bold text-sm sm:text-base ${item.color}`}>{item.product}</h4>
                     </div>
-                    <p className="text-sm text-slate-300 mb-2">{item.integration}</p>
-                    <div className="flex items-center gap-2 text-xs text-green-400">
-                      <CheckCircle className="w-3 h-3" />
+                    <p className="text-xs sm:text-sm text-slate-300 mb-2">{item.integration}</p>
+                    <div className="flex items-center gap-2 text-[10px] sm:text-xs text-green-400">
+                      <CheckCircle className="w-3 h-3 flex-shrink-0" />
                       {item.benefit}
                     </div>
                   </div>
@@ -772,32 +772,32 @@ export default function RakabPage() {
 
         {/* Pricing Tab */}
         {activeTab === 'pricing' && (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {subscriptionPlans.map((plan, i) => (
-                <div key={i} className={`rounded-xl p-6 border-2 ${plan.color} ${plan.bgColor} relative`}>
+                <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${plan.color} ${plan.bgColor} relative`}>
                   {plan.recommended && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#c9a227] text-[#0a1628] text-xs font-bold rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2 sm:px-3 py-1 bg-[#c9a227] text-[#0a1628] text-[10px] sm:text-xs font-bold rounded-full whitespace-nowrap">
                       BEST VALUE
                     </div>
                   )}
-                  <h3 className="text-xl font-bold text-white mb-2">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-3xl font-black text-green-400">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 mt-1 sm:mt-0">{plan.name}</h3>
+                  <div className="mb-3 sm:mb-4">
+                    <span className="text-2xl sm:text-3xl font-black text-green-400">
                       {typeof plan.price === 'number' ? `${plan.price} AED` : plan.price}
                     </span>
-                    <span className="text-slate-400 text-sm">/{plan.period}</span>
+                    <span className="text-slate-400 text-xs sm:text-sm">/{plan.period}</span>
                   </div>
-                  <div className="space-y-2 mb-4">
+                  <div className="space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
                     {plan.features.map((feature, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-400 flex-shrink-0" />
                         {feature}
                       </div>
                     ))}
                   </div>
-                  <div className="bg-green-500/10 rounded-lg p-3 border border-green-500/30">
-                    <span className="text-green-400 text-sm">{plan.savings}</span>
+                  <div className="bg-green-500/10 rounded-lg p-2 sm:p-3 border border-green-500/30">
+                    <span className="text-green-400 text-xs sm:text-sm">{plan.savings}</span>
                   </div>
                 </div>
               ))}
@@ -807,32 +807,32 @@ export default function RakabPage() {
 
         {/* Drivers Tab */}
         {activeTab === 'drivers' && (
-          <div className="space-y-8">
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h2 className="text-xl font-bold text-white mb-2">{driverProgram.title}</h2>
-              <p className="text-green-400 text-lg mb-6">{driverProgram.tagline}</p>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-2">{driverProgram.title}</h2>
+              <p className="text-green-400 text-sm sm:text-lg mb-4 sm:mb-6">{driverProgram.tagline}</p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6">
                 {driverProgram.benefits.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-green-500/30">
-                    <h4 className="text-white font-bold mb-1">{item.benefit}</h4>
-                    <p className="text-sm text-slate-400">{item.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-3 sm:p-4 border border-green-500/30">
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1">{item.benefit}</h4>
+                    <p className="text-xs sm:text-sm text-slate-400">{item.description}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="grid grid-cols-3 gap-4">
-                <div className="bg-green-500/20 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-green-400">{driverProgram.earnings.avgHourly}</div>
-                  <div className="text-xs text-slate-400">Per Hour</div>
+              <div className="grid grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-green-500/20 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">{driverProgram.earnings.avgHourly}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Per Hour</div>
                 </div>
-                <div className="bg-green-500/20 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-green-400">{driverProgram.earnings.avgDaily}</div>
-                  <div className="text-xs text-slate-400">Per Day</div>
+                <div className="bg-green-500/20 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">{driverProgram.earnings.avgDaily}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Per Day</div>
                 </div>
-                <div className="bg-green-500/20 rounded-xl p-4 text-center">
-                  <div className="text-2xl font-bold text-green-400">{driverProgram.earnings.topDrivers}</div>
-                  <div className="text-xs text-slate-400">Top Drivers/Month</div>
+                <div className="bg-green-500/20 rounded-xl p-3 sm:p-4 text-center">
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">{driverProgram.earnings.topDrivers}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Top Drivers/Month</div>
                 </div>
               </div>
             </div>
@@ -841,48 +841,48 @@ export default function RakabPage() {
 
         {/* Unit Economics Tab */}
         {activeTab === 'economics' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Per Ride Economics (Avg 45 AED fare)
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-green-500/10 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-2xl font-bold text-green-400">{unitEconomics.platformCommission} AED</div>
-                  <div className="text-xs text-slate-400">Platform Fee (15%)</div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="bg-green-500/10 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-green-400">{unitEconomics.platformCommission} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Platform Fee (15%)</div>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
-                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.driverPayout} AED</div>
-                  <div className="text-xs text-slate-400">Driver (85%)</div>
+                <div className="bg-blue-500/10 rounded-xl p-3 sm:p-4 text-center border border-blue-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-blue-400">{unitEconomics.driverPayout} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Driver (85%)</div>
                 </div>
-                <div className="bg-[#c9a227]/10 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-2xl font-bold text-[#c9a227]">{unitEconomics.coinReward} AED</div>
-                  <div className="text-xs text-slate-400">Coin Reward (5%)</div>
+                <div className="bg-[#c9a227]/10 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-lg sm:text-2xl font-bold text-[#c9a227]">{unitEconomics.coinReward} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Coin Reward (5%)</div>
                 </div>
-                <div className="bg-purple-500/10 rounded-xl p-4 text-center border border-purple-500/30">
-                  <div className="text-2xl font-bold text-purple-400">{unitEconomics.netRevenue} AED</div>
-                  <div className="text-xs text-slate-400">Net Revenue</div>
+                <div className="bg-purple-500/10 rounded-xl p-3 sm:p-4 text-center border border-purple-500/30">
+                  <div className="text-lg sm:text-2xl font-bold text-purple-400">{unitEconomics.netRevenue} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Net Revenue</div>
                 </div>
               </div>
 
-              <div className="bg-slate-900/50 rounded-xl p-4">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
                   <div className="text-center">
-                    <div className="text-xl font-bold text-white">{unitEconomics.ltvCacRatio}x</div>
-                    <div className="text-xs text-slate-400">LTV:CAC Ratio</div>
+                    <div className="text-lg sm:text-xl font-bold text-white">{unitEconomics.ltvCacRatio}x</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">LTV:CAC Ratio</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-white">{unitEconomics.ltv} AED</div>
-                    <div className="text-xs text-slate-400">User LTV (12mo)</div>
+                    <div className="text-lg sm:text-xl font-bold text-white">{unitEconomics.ltv} AED</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">User LTV (12mo)</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-white">{unitEconomics.cac} AED</div>
-                    <div className="text-xs text-slate-400">CAC</div>
+                    <div className="text-lg sm:text-xl font-bold text-white">{unitEconomics.cac} AED</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">CAC</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-xl font-bold text-white">{unitEconomics.ridesPerUser}</div>
-                    <div className="text-xs text-slate-400">Rides/User/Month</div>
+                    <div className="text-lg sm:text-xl font-bold text-white">{unitEconomics.ridesPerUser}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">Rides/User/Month</div>
                   </div>
                 </div>
               </div>
@@ -892,14 +892,14 @@ export default function RakabPage() {
 
         {/* Financials Tab */}
         {activeTab === 'financials' && (
-          <div className="space-y-8">
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-green-400" />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 3-Year Financial Projections
               </h2>
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[400px]">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400">Metric</th>
@@ -948,20 +948,20 @@ export default function RakabPage() {
 
         {/* Roadmap Tab */}
         {activeTab === 'roadmap' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {roadmap.map((phase, i) => (
-              <div key={i} className={`rounded-xl p-6 border-2 ${phase.color} ${phase.bgColor}`}>
-                <div className="flex items-center justify-between mb-4">
+              <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${phase.color} ${phase.bgColor}`}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4 mb-4">
                   <div>
-                    <span className="text-xs font-bold text-slate-400">{phase.phase}</span>
-                    <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    <span className="text-[10px] sm:text-xs font-bold text-slate-400">{phase.phase}</span>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">{phase.title}</h3>
                   </div>
-                  <span className="px-3 py-1 bg-slate-900/50 rounded-full text-sm text-slate-300">{phase.timeline}</span>
+                  <span className="px-2 sm:px-3 py-1 bg-slate-900/50 rounded-full text-xs sm:text-sm text-slate-300 w-fit">{phase.timeline}</span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {phase.milestones.map((milestone, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                    <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-slate-500 flex-shrink-0" />
                       {milestone}
                     </div>
                   ))}
@@ -973,18 +973,18 @@ export default function RakabPage() {
 
         {/* Competition Tab */}
         {activeTab === 'competition' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {competitiveAdvantages.map((adv, i) => (
-              <div key={i} className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
-                    <adv.icon className="w-6 h-6 text-green-400" />
+              <div key={i} className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                    <adv.icon className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-white mb-2">{adv.advantage}</h3>
-                    <p className="text-slate-300 mb-2">{adv.description}</p>
-                    <div className="bg-red-500/10 rounded-lg p-3 border border-red-500/30">
-                      <span className="text-red-400 text-sm">{adv.vsCompetitors}</span>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base sm:text-lg font-bold text-white mb-2">{adv.advantage}</h3>
+                    <p className="text-slate-300 text-sm sm:text-base mb-2">{adv.description}</p>
+                    <div className="bg-red-500/10 rounded-lg p-2 sm:p-3 border border-red-500/30">
+                      <span className="text-red-400 text-xs sm:text-sm">{adv.vsCompetitors}</span>
                     </div>
                   </div>
                 </div>

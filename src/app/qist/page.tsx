@@ -599,9 +599,9 @@ export default function QistPage() {
               </div>
 
               {/* How It Works */}
-              <div className="mt-6">
-                <h3 className="text-lg font-bold text-white mb-4">How It Works</h3>
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div className="mt-4 sm:mt-6">
+                <h3 className="text-base sm:text-lg font-bold text-white mb-3 sm:mb-4">How It Works</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
                   {[
                     { step: 1, icon: ShoppingCart, title: 'Shop', desc: 'Choose Qist at checkout' },
                     { step: 2, icon: UserCheck, title: 'Verify', desc: 'Instant credit check' },
@@ -610,16 +610,16 @@ export default function QistPage() {
                     { step: 5, icon: Calendar, title: 'Pay', desc: 'Monthly + earn coins' },
                   ].map((item, i) => (
                     <div key={i} className="relative">
-                      <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
-                        <div className="w-10 h-10 rounded-full bg-violet-500/20 flex items-center justify-center mx-auto mb-3">
-                          <item.icon className="w-5 h-5 text-violet-400" />
+                      <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50 text-center">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-violet-500/20 flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                          <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                         </div>
-                        <div className="text-xs text-violet-400 mb-1">Step {item.step}</div>
-                        <div className="text-sm font-bold text-white">{item.title}</div>
-                        <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                        <div className="text-[10px] sm:text-xs text-violet-400 mb-1">Step {item.step}</div>
+                        <div className="text-xs sm:text-sm font-bold text-white">{item.title}</div>
+                        <div className="text-[10px] sm:text-xs text-slate-400 mt-1">{item.desc}</div>
                       </div>
                       {i < 4 && (
-                        <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
+                        <ChevronRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
                       )}
                     </div>
                   ))}
@@ -628,12 +628,12 @@ export default function QistPage() {
             </div>
 
             {/* Corporate Structure */}
-            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-6 border border-violet-500/30">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Building2 className="w-5 h-5 text-violet-400" />
+            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-4 sm:p-6 border border-violet-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Corporate Structure
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-3">
                   <div className="flex justify-between py-2 border-b border-slate-700/50">
                     <span className="text-slate-400">Parent Company</span>
@@ -666,64 +666,64 @@ export default function QistPage() {
             </div>
 
             {/* Market Opportunity */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 UAE BNPL Market Opportunity
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">25B</div>
-                  <div className="text-xs text-slate-400 mt-1">E-commerce (AED)</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">25B</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">E-commerce (AED)</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">15%</div>
-                  <div className="text-xs text-slate-400 mt-1">BNPL Penetration</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">15%</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">BNPL Penetration</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-white">3.75B</div>
-                  <div className="text-xs text-slate-400 mt-1">Targetable Market</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-white">3.75B</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">Targetable Market</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-3xl font-bold text-green-400">30%</div>
-                  <div className="text-xs text-slate-400 mt-1">YoY Growth</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl sm:text-3xl font-bold text-green-400">30%</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400 mt-1">YoY Growth</div>
                 </div>
               </div>
             </div>
 
             {/* Product Features */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Layers className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Layers className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Product Features
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {productFeatures.map((feature, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <feature.icon className="w-6 h-6 text-violet-400 mb-2" />
-                    <h4 className="text-white font-bold text-sm mb-1">{feature.title}</h4>
-                    <p className="text-xs text-slate-400">{feature.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400 mb-1 sm:mb-2" />
+                    <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{feature.title}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400">{feature.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Nuqta Ecosystem Advantage */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Network className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Network className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 The Nuqta Ecosystem Advantage
               </h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-4">
                 Unlike standalone BNPL players, Qist is deeply integrated into the <strong className="text-white">Nuqta ecosystem</strong>,
                 providing unique advantages that competitors cannot replicate.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {nuqtaAdvantage.map((item, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-[#c9a227]/30">
-                    <item.icon className="w-6 h-6 text-[#c9a227] mb-2" />
-                    <h4 className="text-white font-bold text-sm mb-1">{item.title}</h4>
-                    <p className="text-xs text-slate-400">{item.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-[#c9a227]/30">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#c9a227] mb-1 sm:mb-2" />
+                    <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{item.title}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -735,48 +735,48 @@ export default function QistPage() {
         {activeTab === 'ecosystem' && (
           <div className="space-y-8">
             {/* Hero Banner */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 via-violet-500/20 to-emerald-500/20 rounded-2xl p-8 border-2 border-[#c9a227]/50">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
-                  <Network className="w-5 h-5 text-[#c9a227]" />
-                  <span className="text-[#c9a227] font-bold">The Nuqta Fintech Ecosystem</span>
+            <div className="bg-gradient-to-r from-[#c9a227]/20 via-violet-500/20 to-emerald-500/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border-2 border-[#c9a227]/50">
+              <div className="text-center mb-6 sm:mb-8">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-slate-900/50 rounded-full mb-3 sm:mb-4">
+                  <Network className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
+                  <span className="text-[#c9a227] font-bold text-sm sm:text-base">The Nuqta Fintech Ecosystem</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 sm:mb-4">
                   Three Products. <span className="text-[#c9a227]">One Powerful Platform.</span>
                 </h2>
-                <p className="text-slate-300 max-w-3xl mx-auto text-lg">
+                <p className="text-slate-300 max-w-3xl mx-auto text-sm sm:text-base lg:text-lg">
                   Nuqta, Qist, and Sakin form a unified financial ecosystem that captures the complete
                   consumer journey - from daily spending to major purchases to housing.
                 </p>
               </div>
 
               {/* Three Products Visual */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {ecosystemProducts.map((product, i) => (
-                  <div key={i} className={`${product.bgColor} rounded-xl p-6 border-2 ${product.borderColor} relative`}>
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={`w-12 h-12 rounded-xl ${product.bgColor} flex items-center justify-center border ${product.borderColor}`}>
-                        <product.icon className={`w-6 h-6 ${product.color}`} />
+                  <div key={i} className={`${product.bgColor} rounded-xl p-4 sm:p-6 border-2 ${product.borderColor} relative`}>
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl ${product.bgColor} flex items-center justify-center border ${product.borderColor}`}>
+                        <product.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${product.color}`} />
                       </div>
                       <div>
-                        <h3 className={`text-xl font-black ${product.color}`}>{product.name}</h3>
-                        <span className="text-slate-400 text-sm">{product.arabic} • {product.tagline}</span>
+                        <h3 className={`text-lg sm:text-xl font-black ${product.color}`}>{product.name}</h3>
+                        <span className="text-slate-400 text-xs sm:text-sm">{product.arabic} • {product.tagline}</span>
                       </div>
                     </div>
-                    <p className="text-slate-300 text-sm mb-4">{product.description}</p>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex justify-between text-sm">
+                    <p className="text-slate-300 text-xs sm:text-sm mb-3 sm:mb-4">{product.description}</p>
+                    <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                      <div className="flex justify-between text-xs sm:text-sm">
                         <span className="text-slate-400">Ticket Size</span>
                         <span className="text-white font-medium">{product.ticketSize}</span>
                       </div>
-                      <div className="flex justify-between text-sm">
+                      <div className="flex justify-between text-xs sm:text-sm">
                         <span className="text-slate-400">Use Case</span>
                         <span className="text-white font-medium">{product.useCase}</span>
                       </div>
                     </div>
                     <div className="flex flex-wrap gap-1">
                       {product.keyFeatures.map((feature, j) => (
-                        <span key={j} className="px-2 py-1 bg-slate-900/50 rounded text-xs text-slate-300">{feature}</span>
+                        <span key={j} className="px-1.5 sm:px-2 py-0.5 sm:py-1 bg-slate-900/50 rounded text-[10px] sm:text-xs text-slate-300">{feature}</span>
                       ))}
                     </div>
                   </div>
@@ -784,42 +784,42 @@ export default function QistPage() {
               </div>
 
               {/* Connection Lines Visual */}
-              <div className="mt-8 flex justify-center">
-                <div className="bg-slate-900/50 rounded-xl p-6 inline-flex items-center gap-4">
+              <div className="mt-6 sm:mt-8 flex justify-center">
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-6 inline-flex items-center gap-3 sm:gap-4">
                   <div className="text-center">
-                    <Crown className="w-8 h-8 text-[#c9a227] mx-auto mb-1" />
-                    <span className="text-xs text-slate-400">Nuqta</span>
+                    <Crown className="w-6 h-6 sm:w-8 sm:h-8 text-[#c9a227] mx-auto mb-1" />
+                    <span className="text-[10px] sm:text-xs text-slate-400">Nuqta</span>
                   </div>
-                  <ArrowRightLeft className="w-6 h-6 text-slate-500" />
+                  <ArrowRightLeft className="w-4 h-4 sm:w-6 sm:h-6 text-slate-500" />
                   <div className="text-center">
-                    <ShoppingBag className="w-8 h-8 text-violet-400 mx-auto mb-1" />
-                    <span className="text-xs text-slate-400">Qist</span>
+                    <ShoppingBag className="w-6 h-6 sm:w-8 sm:h-8 text-violet-400 mx-auto mb-1" />
+                    <span className="text-[10px] sm:text-xs text-slate-400">Qist</span>
                   </div>
-                  <ArrowRightLeft className="w-6 h-6 text-slate-500" />
+                  <ArrowRightLeft className="w-4 h-4 sm:w-6 sm:h-6 text-slate-500" />
                   <div className="text-center">
-                    <Home className="w-8 h-8 text-emerald-400 mx-auto mb-1" />
-                    <span className="text-xs text-slate-400">Sakin</span>
+                    <Home className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-400 mx-auto mb-1" />
+                    <span className="text-[10px] sm:text-xs text-slate-400">Sakin</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Qist as Payment Rail */}
-            <div className="bg-violet-500/10 rounded-xl p-6 border-2 border-violet-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Link2 className="w-5 h-5 text-violet-400" />
+            <div className="bg-violet-500/10 rounded-xl p-4 sm:p-6 border-2 border-violet-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Link2 className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Qist: The Unified Payment Infrastructure
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 Qist serves as the <strong className="text-white">payment rail</strong> for the entire ecosystem.
                 Whether it&apos;s a 500 AED purchase at a Nuqta merchant or a 68,000 AED move-in cost through Sakin,
                 Qist powers the financing.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/30">
-                  <div className="flex items-center gap-3 mb-3">
-                    <ShoppingCart className="w-6 h-6 text-violet-400" />
-                    <h4 className="text-white font-bold">Qist for Nuqta (Retail)</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-violet-500/30">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400" />
+                    <h4 className="text-white font-bold text-sm sm:text-base">Qist for Nuqta (Retail)</h4>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2 text-slate-300">
@@ -840,10 +840,10 @@ export default function QistPage() {
                     </li>
                   </ul>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-emerald-500/30">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Home className="w-6 h-6 text-emerald-400" />
-                    <h4 className="text-white font-bold">Qist for Sakin (Housing)</h4>
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-emerald-500/30">
+                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
+                    <Home className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400" />
+                    <h4 className="text-white font-bold text-sm sm:text-base">Qist for Sakin (Housing)</h4>
                   </div>
                   <ul className="space-y-2 text-sm">
                     <li className="flex items-start gap-2 text-slate-300">
@@ -868,39 +868,39 @@ export default function QistPage() {
             </div>
 
             {/* Real User Journeys */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Real User Journeys
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {ecosystemUseCases.map((useCase, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
-                        <useCase.icon className="w-5 h-5 text-[#c9a227]" />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
+                        <useCase.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                       </div>
                       <div>
-                        <h4 className="text-white font-bold">{useCase.scenario}</h4>
-                        <span className="text-slate-400 text-sm">Total Financing: {useCase.totalValue} • Yearly Coins: {useCase.yearlyCoins}</span>
+                        <h4 className="text-white font-bold text-sm sm:text-base">{useCase.scenario}</h4>
+                        <span className="text-slate-400 text-xs sm:text-sm">Total Financing: {useCase.totalValue} • Yearly Coins: {useCase.yearlyCoins}</span>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
                       {useCase.journey.map((step, j) => (
-                        <div key={j} className={`rounded-lg p-3 border ${
+                        <div key={j} className={`rounded-lg p-2 sm:p-3 border ${
                           step.product === 'Nuqta' ? 'bg-[#c9a227]/10 border-[#c9a227]/30' :
                           step.product === 'Qist' ? 'bg-violet-500/10 border-violet-500/30' :
                           'bg-emerald-500/10 border-emerald-500/30'
                         }`}>
-                          <div className="flex items-center justify-between mb-2">
-                            <span className={`text-xs font-bold ${
+                          <div className="flex items-center justify-between mb-1 sm:mb-2">
+                            <span className={`text-[10px] sm:text-xs font-bold ${
                               step.product === 'Nuqta' ? 'text-[#c9a227]' :
                               step.product === 'Qist' ? 'text-violet-400' :
                               'text-emerald-400'
                             }`}>{step.product}</span>
-                            <span className="text-xs text-green-400 font-medium">{step.coins} coins</span>
+                            <span className="text-[10px] sm:text-xs text-green-400 font-medium">{step.coins} coins</span>
                           </div>
-                          <p className="text-xs text-slate-300">{step.action}</p>
+                          <p className="text-[10px] sm:text-xs text-slate-300">{step.action}</p>
                         </div>
                       ))}
                     </div>
@@ -910,33 +910,33 @@ export default function QistPage() {
             </div>
 
             {/* Unified Credit Infrastructure */}
-            <div className="bg-gradient-to-r from-violet-500/10 to-emerald-500/10 rounded-xl p-6 border border-violet-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-violet-400" />
+            <div className="bg-gradient-to-r from-violet-500/10 to-emerald-500/10 rounded-xl p-4 sm:p-6 border border-violet-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Unified Credit Infrastructure
               </h3>
-              <p className="text-slate-300 mb-6">
+              <p className="text-slate-300 text-sm sm:text-base mb-4 sm:mb-6">
                 A single credit profile powers both Qist retail and Sakin housing - creating a
                 <strong className="text-white"> shared underwriting advantage</strong> that standalone BNPL players can&apos;t replicate.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {unifiedCreditBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <benefit.icon className="w-6 h-6 text-violet-400 mb-2" />
-                    <h4 className="text-white font-bold text-sm mb-1">{benefit.title}</h4>
-                    <p className="text-xs text-slate-400">{benefit.description}</p>
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-4 border border-slate-700/50">
+                    <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400 mb-1 sm:mb-2" />
+                    <h4 className="text-white font-bold text-xs sm:text-sm mb-1">{benefit.title}</h4>
+                    <p className="text-[10px] sm:text-xs text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Ecosystem Financials */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-green-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Combined Ecosystem GMV (AED Millions)
               </h3>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[400px] px-4 sm:px-0">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
@@ -979,38 +979,38 @@ export default function QistPage() {
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </div></div>
 
               {/* Cross-sell rates */}
-              <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-[#c9a227]">{ecosystemFinancials.crossSellRates.nuqtaToQist}</div>
-                  <div className="text-xs text-slate-400">Nuqta → Qist</div>
+              <div className="mt-4 sm:mt-6 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">{ecosystemFinancials.crossSellRates.nuqtaToQist}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Nuqta → Qist</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-violet-400">{ecosystemFinancials.crossSellRates.qistToSakin}</div>
-                  <div className="text-xs text-slate-400">Qist → Sakin</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-violet-400">{ecosystemFinancials.crossSellRates.qistToSakin}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Qist → Sakin</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-emerald-400">{ecosystemFinancials.crossSellRates.sakinToNuqta}</div>
-                  <div className="text-xs text-slate-400">Sakin → Nuqta</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-emerald-400">{ecosystemFinancials.crossSellRates.sakinToNuqta}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Sakin → Nuqta</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
-                  <div className="text-2xl font-bold text-green-400">{ecosystemFinancials.crossSellRates.nuqtaPlusConversion}</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-slate-700/50">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">{ecosystemFinancials.crossSellRates.nuqtaPlusConversion}</div>
                   <div className="text-xs text-slate-400">Nuqta+ Conversion</div>
                 </div>
               </div>
             </div>
 
             {/* LTV:CAC Improvement */}
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border-2 border-green-500">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 The Ecosystem Advantage: LTV:CAC Multiplier
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-slate-900/50 rounded-xl p-5 border border-slate-600/30">
-                  <h4 className="text-slate-400 font-bold mb-4">Standalone BNPL</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-600/30">
+                  <h4 className="text-slate-400 font-bold text-sm sm:text-base mb-3 sm:mb-4">Standalone BNPL</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-slate-400">LTV per User</span>
@@ -1026,8 +1026,8 @@ export default function QistPage() {
                     </div>
                   </div>
                 </div>
-                <div className="bg-green-500/10 rounded-xl p-5 border border-green-500/30">
-                  <h4 className="text-green-400 font-bold mb-4">Nuqta Ecosystem</h4>
+                <div className="bg-green-500/10 rounded-xl p-4 sm:p-5 border border-green-500/30">
+                  <h4 className="text-green-400 font-bold text-sm sm:text-base mb-3 sm:mb-4">Nuqta Ecosystem</h4>
                   <div className="space-y-3">
                     <div className="flex justify-between">
                       <span className="text-slate-300">LTV per User</span>
@@ -1044,21 +1044,21 @@ export default function QistPage() {
                   </div>
                 </div>
               </div>
-              <div className="mt-6 text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full">
-                  <ArrowUpRight className="w-5 h-5 text-green-400" />
-                  <span className="text-green-400 font-bold">7.6x Better Unit Economics vs Standalone BNPL</span>
+              <div className="mt-4 sm:mt-6 text-center">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-green-500/20 rounded-full">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                  <span className="text-green-400 font-bold text-sm sm:text-base">7.6x Better Unit Economics vs Standalone BNPL</span>
                 </div>
               </div>
             </div>
 
             {/* Why This Matters */}
-            <div className="bg-[#c9a227]/10 rounded-xl p-6 border-2 border-[#c9a227]">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Zap className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-[#c9a227]/10 rounded-xl p-4 sm:p-6 border-2 border-[#c9a227]">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Why This Trilogy is Unstoppable
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <h4 className="text-white font-bold mb-3">What Competitors Can&apos;t Replicate</h4>
                   <ul className="space-y-2">
@@ -1098,55 +1098,55 @@ export default function QistPage() {
 
         {/* Value Proposition Tab */}
         {activeTab === 'value-prop' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* For Shoppers */}
-            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-6 border border-violet-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Users className="w-5 h-5 text-violet-400" />
+            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-4 sm:p-6 border border-violet-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 For Shoppers
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {shopperBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="w-12 h-12 rounded-xl bg-violet-500/20 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-violet-400" />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 sm:p-5 border border-slate-700/50">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-violet-500/20 flex items-center justify-center mb-3 sm:mb-4">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400" />
                     </div>
-                    <h3 className="text-white font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                    <h3 className="text-white font-bold text-sm sm:text-base mb-1 sm:mb-2">{benefit.title}</h3>
+                    <p className="text-xs sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* For Merchants */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Store className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Store className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 For Merchants
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 {merchantBenefits.map((benefit, i) => (
-                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
-                    <div className="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
-                      <benefit.icon className="w-6 h-6 text-green-400" />
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-3 sm:p-5 border border-slate-700/50">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-2 sm:mb-4">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
                     </div>
-                    <h3 className="text-white font-bold mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-slate-400">{benefit.description}</p>
+                    <h3 className="text-white font-bold text-xs sm:text-base mb-1 sm:mb-2">{benefit.title}</h3>
+                    <p className="text-[10px] sm:text-sm text-slate-400">{benefit.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Comparison Box */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Scale className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Scale className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Qist vs Traditional Credit
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-violet-500/10 rounded-xl p-5 border border-violet-500/30">
-                  <h3 className="text-violet-400 font-bold mb-4 flex items-center gap-2">
-                    <ShoppingBag className="w-5 h-5" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="bg-violet-500/10 rounded-xl p-4 sm:p-5 border border-violet-500/30">
+                  <h3 className="text-violet-400 font-bold text-sm sm:text-base mb-3 sm:mb-4 flex items-center gap-2">
+                    <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />
                     Qist BNPL
                   </h3>
                   <ul className="space-y-2">
@@ -1158,9 +1158,9 @@ export default function QistPage() {
                     ))}
                   </ul>
                 </div>
-                <div className="bg-slate-700/30 rounded-xl p-5 border border-slate-600/30">
-                  <h3 className="text-slate-400 font-bold mb-4 flex items-center gap-2">
-                    <CreditCard className="w-5 h-5" />
+                <div className="bg-slate-700/30 rounded-xl p-4 sm:p-5 border border-slate-600/30">
+                  <h3 className="text-slate-400 font-bold text-sm sm:text-base mb-3 sm:mb-4 flex items-center gap-2">
+                    <CreditCard className="w-4 h-4 sm:w-5 sm:h-5" />
                     Credit Cards
                   </h3>
                   <ul className="space-y-2">
@@ -1179,19 +1179,19 @@ export default function QistPage() {
 
         {/* Pricing Tab */}
         {activeTab === 'pricing' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Pricing Tiers */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {pricingTiers.map((tier, i) => (
-                <div key={i} className={`rounded-xl p-6 border-2 ${tier.color} ${tier.bgColor} relative`}>
+                <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${tier.color} ${tier.bgColor} relative`}>
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#c9a227] text-[#0a1628] text-xs font-bold rounded-full">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2 sm:px-3 py-1 bg-[#c9a227] text-[#0a1628] text-[10px] sm:text-xs font-bold rounded-full">
                       RECOMMENDED
                     </div>
                   )}
-                  <h3 className="text-xl font-bold text-white mb-2">{tier.tier}</h3>
-                  <div className="text-3xl font-black text-white mb-1">{tier.platformFee}</div>
-                  <div className="text-sm text-slate-400 mb-4">{tier.installments}</div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{tier.tier}</h3>
+                  <div className="text-2xl sm:text-3xl font-black text-white mb-1">{tier.platformFee}</div>
+                  <div className="text-xs sm:text-sm text-slate-400 mb-3 sm:mb-4">{tier.installments}</div>
 
                   <div className="space-y-3 mb-6">
                     <div className="flex justify-between py-2 border-b border-slate-700/50">
@@ -1218,13 +1218,13 @@ export default function QistPage() {
             </div>
 
             {/* Revenue Streams */}
-            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
-              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <DollarSign className="w-5 h-5 text-green-400" />
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 sm:p-6 border border-green-500/30">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <DollarSign className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                 Revenue Model
               </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full min-w-[700px]">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[700px] px-4 sm:px-0">
+                <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
                       <th className="text-left py-3 px-4 text-slate-400 font-medium">Revenue Stream</th>
@@ -1252,36 +1252,36 @@ export default function QistPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
           </div>
         )}
 
         {/* Unit Economics Tab */}
         {activeTab === 'economics' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Per Transaction */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <Calculator className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <Calculator className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 Per Transaction Economics (Avg 1,500 AED)
               </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="bg-green-500/10 rounded-xl p-4 text-center border border-green-500/30">
-                  <div className="text-2xl font-bold text-green-400">{unitEconomics.merchantFee} AED</div>
-                  <div className="text-xs text-slate-400">Merchant Fee (5%)</div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="bg-green-500/10 rounded-xl p-3 sm:p-4 text-center border border-green-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">{unitEconomics.merchantFee} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Merchant Fee (5%)</div>
                 </div>
-                <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
-                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.platformFeeIncome} AED</div>
-                  <div className="text-xs text-slate-400">Avg Platform Fee</div>
+                <div className="bg-blue-500/10 rounded-xl p-3 sm:p-4 text-center border border-blue-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-blue-400">{unitEconomics.platformFeeIncome} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Avg Platform Fee</div>
                 </div>
-                <div className="bg-orange-500/10 rounded-xl p-4 text-center border border-orange-500/30">
-                  <div className="text-2xl font-bold text-orange-400">{unitEconomics.lateFees} AED</div>
-                  <div className="text-xs text-slate-400">Expected Late Fees</div>
+                <div className="bg-orange-500/10 rounded-xl p-3 sm:p-4 text-center border border-orange-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-orange-400">{unitEconomics.lateFees} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Expected Late Fees</div>
                 </div>
-                <div className="bg-violet-500/10 rounded-xl p-4 text-center border border-violet-500/30">
-                  <div className="text-2xl font-bold text-violet-400">{unitEconomics.netRevenue} AED</div>
-                  <div className="text-xs text-slate-400">Net Revenue/Txn</div>
+                <div className="bg-violet-500/10 rounded-xl p-3 sm:p-4 text-center border border-violet-500/30">
+                  <div className="text-xl sm:text-2xl font-bold text-violet-400">{unitEconomics.netRevenue} AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Net Revenue/Txn</div>
                 </div>
               </div>
 
@@ -1321,26 +1321,26 @@ export default function QistPage() {
             </div>
 
             {/* Nuqta+ Conversion Value */}
-            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border border-[#c9a227]/50">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <Crown className="w-5 h-5 text-[#c9a227]" />
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border border-[#c9a227]/50">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4 flex items-center gap-2">
+                <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-[#c9a227]" />
                 Nuqta+ Conversion Bonus
               </h3>
-              <p className="text-slate-300 mb-4">
+              <p className="text-slate-300 text-sm sm:text-base mb-3 sm:mb-4">
                 Every Qist user who converts to Nuqta+ (for 0% fees) generates additional revenue:
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-2xl font-bold text-[#c9a227]">99 AED</div>
-                  <div className="text-xs text-slate-400">Monthly Subscription</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">99 AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Monthly Subscription</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-2xl font-bold text-[#c9a227]">1,188 AED</div>
-                  <div className="text-xs text-slate-400">Annual Value</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-2xl font-bold text-[#c9a227]">1,188 AED</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Annual Value</div>
                 </div>
-                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
-                  <div className="text-2xl font-bold text-green-400">40%</div>
-                  <div className="text-xs text-slate-400">Expected Conversion</div>
+                <div className="bg-slate-900/50 rounded-xl p-3 sm:p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-xl sm:text-2xl font-bold text-green-400">40%</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">Expected Conversion</div>
                 </div>
               </div>
             </div>
@@ -1349,14 +1349,14 @@ export default function QistPage() {
 
         {/* Financials Tab */}
         {activeTab === 'financials' && (
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {/* Projections Table */}
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
-                <BarChart3 className="w-5 h-5 text-violet-400" />
+            <div className="bg-slate-800/30 rounded-xl p-4 sm:p-6 border border-slate-700/50">
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2">
+                <BarChart3 className="w-4 h-4 sm:w-5 sm:h-5 text-violet-400" />
                 3-Year Financial Projections
               </h2>
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto -mx-4 sm:mx-0"><div className="min-w-[500px] px-4 sm:px-0">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-slate-700">
@@ -1405,26 +1405,26 @@ export default function QistPage() {
                     </tr>
                   </tbody>
                 </table>
-              </div>
+              </div></div>
             </div>
 
             {/* Key Metrics */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <div className="bg-gradient-to-r from-violet-500/20 to-purple-500/10 rounded-xl p-6 border border-violet-500/30 text-center">
-                <div className="text-3xl font-bold text-violet-400">800M</div>
-                <div className="text-slate-400 text-sm mt-1">Year 3 GMV (AED)</div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+              <div className="bg-gradient-to-r from-violet-500/20 to-purple-500/10 rounded-xl p-4 sm:p-6 border border-violet-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-violet-400">800M</div>
+                <div className="text-slate-400 text-xs sm:text-sm mt-1">Year 3 GMV (AED)</div>
               </div>
-              <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border border-green-500/30 text-center">
-                <div className="text-3xl font-bold text-green-400">40M</div>
-                <div className="text-slate-400 text-sm mt-1">Year 3 Revenue (AED)</div>
+              <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border border-green-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-green-400">40M</div>
+                <div className="text-slate-400 text-xs sm:text-sm mt-1">Year 3 Revenue (AED)</div>
               </div>
-              <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border border-[#c9a227]/30 text-center">
-                <div className="text-3xl font-bold text-[#c9a227]">70%</div>
-                <div className="text-slate-400 text-sm mt-1">Gross Margin</div>
+              <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-4 sm:p-6 border border-[#c9a227]/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-[#c9a227]">70%</div>
+                <div className="text-slate-400 text-xs sm:text-sm mt-1">Gross Margin</div>
               </div>
-              <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-6 border border-blue-500/30 text-center">
-                <div className="text-3xl font-bold text-blue-400">1,500</div>
-                <div className="text-slate-400 text-sm mt-1">Year 3 Merchants</div>
+              <div className="bg-gradient-to-r from-blue-500/20 to-cyan-500/10 rounded-xl p-4 sm:p-6 border border-blue-500/30 text-center">
+                <div className="text-2xl sm:text-3xl font-bold text-blue-400">1,500</div>
+                <div className="text-slate-400 text-xs sm:text-sm mt-1">Year 3 Merchants</div>
               </div>
             </div>
           </div>
@@ -1432,21 +1432,21 @@ export default function QistPage() {
 
         {/* Roadmap Tab */}
         {activeTab === 'roadmap' && (
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {roadmapPhases.map((phase, i) => (
-              <div key={i} className={`rounded-xl p-6 border-2 ${phase.color} ${phase.bgColor}`}>
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+              <div key={i} className={`rounded-xl p-4 sm:p-6 border-2 ${phase.color} ${phase.bgColor}`}>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-3 sm:mb-4">
                   <div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-bold text-slate-400">{phase.phase}</span>
-                      <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <span className="text-[10px] sm:text-xs font-bold text-slate-400">{phase.phase}</span>
+                      <h3 className="text-lg sm:text-xl font-bold text-white">{phase.title}</h3>
                     </div>
                     <div className="flex items-center gap-2 mt-1">
-                      <Clock className="w-4 h-4 text-slate-400" />
-                      <span className="text-slate-400 text-sm">{phase.timeline}</span>
+                      <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
+                      <span className="text-slate-400 text-xs sm:text-sm">{phase.timeline}</span>
                     </div>
                   </div>
-                  <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                  <span className={`px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-bold self-start ${
                     phase.status === 'planned' ? 'bg-blue-500/20 text-blue-400' :
                     phase.status === 'in_progress' ? 'bg-green-500/20 text-green-400' :
                     'bg-slate-500/20 text-slate-400'
@@ -1454,10 +1454,10 @@ export default function QistPage() {
                     {phase.status === 'in_progress' ? 'In Progress' : phase.status === 'planned' ? 'Planned' : 'Pending'}
                   </span>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   {phase.milestones.map((milestone, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
-                      <CheckCircle className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                    <div key={j} className="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
+                      <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-500 flex-shrink-0" />
                       {milestone}
                     </div>
                   ))}
@@ -1469,29 +1469,29 @@ export default function QistPage() {
 
         {/* GTM Tab */}
         {activeTab === 'gtm' && (
-          <div className="space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-6 sm:space-y-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {gtmChannels.map((channel, i) => (
-                <div key={i} className={`rounded-xl p-6 border ${
+                <div key={i} className={`rounded-xl p-4 sm:p-6 border ${
                   channel.priority === 'critical' ? 'border-red-500/50 bg-red-500/5' :
                   channel.priority === 'high' ? 'border-orange-500/50 bg-orange-500/5' :
                   'border-slate-700/50 bg-slate-800/30'
                 }`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                  <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center ${
                       channel.priority === 'critical' ? 'bg-red-500/20' :
                       channel.priority === 'high' ? 'bg-orange-500/20' :
                       'bg-slate-700/50'
                     }`}>
-                      <channel.icon className={`w-6 h-6 ${
+                      <channel.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${
                         channel.priority === 'critical' ? 'text-red-400' :
                         channel.priority === 'high' ? 'text-orange-400' :
                         'text-slate-400'
                       }`} />
                     </div>
                     <div>
-                      <h3 className="text-white font-bold">{channel.channel}</h3>
-                      <span className={`text-xs font-bold ${
+                      <h3 className="text-white font-bold text-sm sm:text-base">{channel.channel}</h3>
+                      <span className={`text-[10px] sm:text-xs font-bold ${
                         channel.priority === 'critical' ? 'text-red-400' :
                         channel.priority === 'high' ? 'text-orange-400' :
                         'text-slate-400'
