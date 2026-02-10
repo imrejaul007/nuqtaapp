@@ -87,7 +87,8 @@ import {
   Box,
   Clock,
   Phone,
-  HelpCircle
+  HelpCircle,
+  Home
 } from 'lucide-react';
 
 interface SubTeam {
@@ -613,6 +614,7 @@ const cxoDepartments: CXODepartment[] = [
         icon: Sparkles,
         links: [
           { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
+          { label: 'Sakin Rent', href: '/sakin', icon: Home },
           { label: 'Nuqta Card', href: '/card', icon: CreditCard },
           { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
         ]
