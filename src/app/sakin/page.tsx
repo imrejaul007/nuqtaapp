@@ -10,7 +10,9 @@ import {
   CreditCard, FileText, Calculator, MapPin, Phone, Mail, Gift,
   Crown, Wallet, Key, Car, ChevronRight, ChevronDown, ChevronUp,
   Building2, Banknote, Scale, UserCheck, Landmark, PiggyBank,
-  LineChart, CircleDollarSign, ShieldCheck, HeartHandshake
+  LineChart, CircleDollarSign, ShieldCheck, HeartHandshake,
+  Search, Eye, MessageCircle, CalendarDays, Sparkles, Camera, Layers,
+  ShoppingBag, Coins, Network, ArrowRightLeft
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -113,7 +115,8 @@ const roadmapPhases = [
       'Secure NBFC/bank partnership',
       'Legal entity setup (sister company)',
       'Regulatory approval (CBUAE)',
-      'Build core platform MVP',
+      'Build core financing platform MVP',
+      'Launch Sakin Properties marketplace (beta)',
       'Risk scoring model development',
     ],
     color: 'border-blue-500',
@@ -125,11 +128,12 @@ const roadmapPhases = [
     timeline: 'Q3 2026',
     status: 'pending',
     milestones: [
-      'Pilot with 500 users',
+      'Pilot financing with 500 users',
       'Partner with 3-5 real estate agencies',
+      'Scale Sakin Properties to 1,000+ listings',
+      'Launch virtual tours & video walkthroughs',
       'Integrate with Nuqta+ for coin rewards',
       'Launch salary auto-debit',
-      'Refine underwriting criteria',
     ],
     color: 'border-purple-500',
     bgColor: 'bg-purple-500/10',
@@ -140,10 +144,11 @@ const roadmapPhases = [
     timeline: 'Q4 2026',
     status: 'pending',
     milestones: [
-      'Full public launch',
-      'Scale to 5,000+ users',
+      'Full public launch (Properties + Financing)',
+      'Scale to 5,000+ financing users',
+      'Grow to 5,000+ verified property listings',
+      'Launch direct landlord-tenant chat',
       'Expand broker partnerships',
-      'Launch employer programs',
       'Add insurance products',
     ],
     color: 'border-green-500',
@@ -155,11 +160,12 @@ const roadmapPhases = [
     timeline: '2027',
     status: 'pending',
     milestones: [
-      'Reach 25,000+ users',
+      'Reach 25,000+ financing users',
+      'Grow to 15,000+ property listings',
+      'Launch short-term rentals (Airbnb-style)',
       'Launch car financing (Sakin Auto)',
       'Add home purchase financing',
       'Expand to Saudi Arabia',
-      'IPO preparation',
     ],
     color: 'border-[#c9a227]',
     bgColor: 'bg-[#c9a227]/10',
@@ -260,12 +266,126 @@ const corporateStructure = {
   regulator: 'Central Bank of UAE (CBUAE)',
 };
 
+// Sakin Properties - Business Model
+const propertiesMarketOpportunity = {
+  totalRentalMarket: '54B AED',
+  onlineSearchShare: '85%',
+  currentPlayers: ['Property Finder', 'Bayut', 'Dubizzle'],
+  painPoints: ['No financing integration', 'Unverified listings', 'No rewards'],
+  sakinAdvantage: 'Only platform with rent financing + Nuqta rewards',
+};
+
+// Sakin Properties - Revenue Model
+const propertiesRevenueModel = [
+  { source: 'Featured Listings', description: 'Landlords/agents pay to feature properties', revenue: '500-2,000 AED/listing', margin: 'High' },
+  { source: 'Lead Generation', description: 'Charge agents per qualified tenant lead', revenue: '50-200 AED/lead', margin: 'High' },
+  { source: 'Sakin Financing Conversion', description: 'Properties listed convert to financing users', revenue: '7,200 AED/user (12% fee)', margin: 'Medium' },
+  { source: 'Premium Landlord Tools', description: 'Analytics, tenant screening, rent collection', revenue: '199 AED/month', margin: 'High' },
+  { source: 'Short-term Rentals', description: 'Airbnb-style bookings with service fee', revenue: '10-15% service fee', margin: 'High' },
+];
+
+// Sakin Properties - Features
+const propertiesFeatures = [
+  { icon: Search, title: 'Smart Search', description: 'AI-powered filters: location, budget, amenities, commute time' },
+  { icon: Camera, title: 'Verified Listings', description: 'All properties verified with real photos, floor plans, accurate info' },
+  { icon: Eye, title: 'Virtual Tours', description: '360° walkthroughs and video tours for remote viewing' },
+  { icon: MessageCircle, title: 'Direct Chat', description: 'In-app messaging with landlords and agents' },
+  { icon: Banknote, title: 'Instant Financing', description: 'Apply for Sakin rent financing directly from listing' },
+  { icon: Crown, title: 'Nuqta+ Priority', description: 'Exclusive listings and early access for members' },
+  { icon: CalendarDays, title: 'Easy Scheduling', description: 'Book viewings directly through the app' },
+  { icon: ShieldCheck, title: 'Tenant Screening', description: 'Pre-approved tenants for landlords' },
+];
+
+// Sakin Properties - Competitive Analysis
+const propertiesCompetitors = [
+  { name: 'Sakin Properties', listings: 'Curated', financing: 'Yes (Sakin)', rewards: '100 AED/mo Nuqta+', verification: 'All verified', advantage: 'Full ecosystem' },
+  { name: 'Property Finder', listings: '500K+', financing: 'No', rewards: 'None', verification: 'Partial', advantage: 'Market leader' },
+  { name: 'Bayut', listings: '400K+', financing: 'No', rewards: 'None', verification: 'Partial', advantage: 'Strong SEO' },
+  { name: 'Dubizzle', listings: '300K+', financing: 'No', rewards: 'None', verification: 'Limited', advantage: 'Brand awareness' },
+];
+
+// Sakin Properties - Projections
+const propertiesProjections = [
+  { year: 'Year 1', listings: '5,000', monthlyVisits: '50K', leads: '2,000', conversions: '400', revenue: '2M' },
+  { year: 'Year 2', listings: '15,000', monthlyVisits: '200K', leads: '8,000', conversions: '1,600', revenue: '8M' },
+  { year: 'Year 3', listings: '40,000', monthlyVisits: '500K', leads: '25,000', conversions: '5,000', revenue: '25M' },
+];
+
+// Short-term Rentals (Airbnb-style)
+const shortTermRentalsModel = {
+  concept: 'Holiday homes and short-term furnished rentals',
+  targetMarket: 'Tourists, business travelers, staycationers',
+  revenueModel: '10-15% service fee on each booking',
+  integration: 'Same app, separate section for short-term stays',
+  nuqtaPlusValue: 'Use Nuqta coins for discounts on bookings',
+  competitorGap: 'Airbnb dominates but no local loyalty/rewards',
+};
+
+// Nuqta Fintech Ecosystem - Sister Companies
+const nuqtaFintechEcosystem = {
+  holding: 'Nuqta Group',
+  vision: 'Full-stack financial services with loyalty rewards',
+  sisterCompanies: [
+    {
+      name: 'Sakin',
+      arabic: 'سكن',
+      tagline: 'Pay Monthly. Live Easy.',
+      product: 'Rent Financing + Property Marketplace',
+      status: 'In Development',
+      color: 'teal',
+    },
+    {
+      name: 'Qist',
+      arabic: 'قسط',
+      tagline: 'Shop Now. Pay Easy.',
+      product: 'Buy Now Pay Later (BNPL)',
+      status: 'Planned',
+      color: 'violet',
+    },
+  ],
+};
+
+// Qist BNPL - Business Model
+const qistBNPLModel = {
+  name: 'Qist',
+  arabic: 'قسط',
+  meaning: 'Installment in Arabic',
+  tagline: 'Shop Now. Pay Easy.',
+  concept: 'BNPL service integrated with Nuqta rewards ecosystem',
+  targetMarket: 'UAE consumers shopping at Nuqta partner merchants',
+  revenueModel: [
+    { source: 'Merchant Fee', value: '3-6% per transaction', margin: 'High' },
+    { source: 'Late Fees', value: '25 AED + 1.5%/month', margin: 'High' },
+    { source: 'Nuqta+ Upsell', value: '99 AED/month membership', margin: 'Very High' },
+  ],
+  nuqtaIntegration: [
+    'Use Nuqta coins as down payment',
+    'Earn coins on every BNPL purchase',
+    'Nuqta+ members get 0% interest for 3 months',
+    'Cross-sell to existing Nuqta users',
+  ],
+  competitorAnalysis: [
+    { name: 'Qist (Nuqta)', installments: '3-12 months', rewards: '100 AED/mo Nuqta+', merchants: 'Nuqta Partners', advantage: 'Full ecosystem' },
+    { name: 'Tabby', installments: '4 payments', rewards: 'None', merchants: '10,000+', advantage: 'Market leader' },
+    { name: 'Tamara', installments: '3-6 payments', rewards: 'Limited', merchants: '8,000+', advantage: 'Saudi expansion' },
+    { name: 'Postpay', installments: '3 payments', rewards: 'None', merchants: '5,000+', advantage: 'Checkout focus' },
+  ],
+  projections: [
+    { year: 'Year 1', users: '20,000', gmv: '50M', revenue: '2.5M', merchants: '100' },
+    { year: 'Year 2', users: '80,000', gmv: '250M', revenue: '12.5M', merchants: '500' },
+    { year: 'Year 3', users: '200,000', gmv: '800M', revenue: '40M', merchants: '1,500' },
+  ],
+  corporateAdvantage: 'Existing Nuqta corporate partnerships provide instant merchant network',
+};
+
 export default function SakinPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedRisk, setExpandedRisk] = useState<string | null>(null);
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Home },
+    { id: 'properties', label: 'Properties', icon: Search },
+    { id: 'ecosystem', label: 'Fintech Ecosystem', icon: Layers },
     { id: 'value-prop', label: 'Value Proposition', icon: Gift },
     { id: 'pricing', label: 'Pricing', icon: DollarSign },
     { id: 'economics', label: 'Unit Economics', icon: Calculator },
@@ -297,8 +417,8 @@ export default function SakinPage() {
               </div>
 
               <p className="text-slate-300 text-sm sm:text-base max-w-2xl mb-4">
-                UAE&apos;s first rent financing platform integrated with <span className="text-[#c9a227] font-medium">Nuqta rewards</span>.
-                We pay your landlord upfront. You pay us monthly.
+                UAE&apos;s first rent financing platform with <span className="text-teal-400 font-medium">property marketplace</span> integrated with <span className="text-[#c9a227] font-medium">Nuqta rewards</span>.
+                Find your home. We pay your landlord upfront. You pay us monthly.
               </p>
 
               {/* Partner Badge */}
@@ -383,9 +503,10 @@ export default function SakinPage() {
               </h2>
               <div className="prose prose-invert max-w-none">
                 <p className="text-slate-300">
-                  <strong className="text-white">Sakin</strong> is a monthly rent payment platform that transforms how
-                  UAE residents pay rent. We pay landlords the full annual rent upfront, while tenants pay us monthly
-                  with a small financing fee. As a <strong className="text-[#c9a227]">Nuqta+ partner</strong>,
+                  <strong className="text-white">Sakin</strong> is a comprehensive rent platform with two core products:
+                  <strong className="text-teal-400"> Sakin Properties</strong> (an Airbnb-style marketplace to find verified rentals) and
+                  <strong className="text-teal-400"> Sakin Financing</strong> (monthly rent payment). We pay landlords the full annual rent upfront,
+                  while tenants pay us monthly with a small financing fee. As a <strong className="text-[#c9a227]">Nuqta+ partner</strong>,
                   members receive 100 AED back every month, making their effective financing cost one of the lowest in the market.
                 </p>
               </div>
@@ -485,6 +606,563 @@ export default function SakinPage() {
           </div>
         )}
 
+        {/* Properties Tab - Business Plan */}
+        {activeTab === 'properties' && (
+          <div className="space-y-8">
+            {/* Product Overview */}
+            <div className="bg-gradient-to-r from-cyan-500/20 to-teal-500/10 rounded-xl p-6 border border-cyan-500/30">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <Search className="w-6 h-6 text-cyan-400" />
+                Sakin Properties - Rental Marketplace
+              </h2>
+              <p className="text-slate-300 mb-4">
+                A <strong className="text-white">property listing marketplace</strong> integrated with Sakin financing.
+                Users discover rental properties, apply for monthly rent payment, and get Nuqta+ rewards - all in one platform.
+                Think <strong className="text-cyan-400">Property Finder + Rent Financing + Loyalty Rewards</strong>.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-cyan-400">54B</div>
+                  <div className="text-xs text-slate-400">AED Market Size</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-cyan-400">85%</div>
+                  <div className="text-xs text-slate-400">Search Online</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-green-400">0</div>
+                  <div className="text-xs text-slate-400">Competitors w/ Financing</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-[#c9a227]">1st</div>
+                  <div className="text-xs text-slate-400">Mover Advantage</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Why Build This */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Target className="w-5 h-5 text-cyan-400" />
+                Strategic Rationale
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-white font-bold mb-3">Current Market Pain Points</h4>
+                  <div className="space-y-2">
+                    {['No financing integration on existing platforms', 'Unverified/outdated listings', 'No loyalty or rewards for tenants', 'Fragmented experience (search → broker → bank)'].map((pain, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <AlertTriangle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                        {pain}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-3">Sakin Properties Advantage</h4>
+                  <div className="space-y-2">
+                    {['Only platform with instant rent financing', '100 AED/month Nuqta+ reward for users', 'Verified listings with virtual tours', 'Full-stack: search → apply → pay monthly'].map((adv, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        {adv}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Platform Features */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Layers className="w-5 h-5 text-cyan-400" />
+                Platform Features
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {propertiesFeatures.map((feature, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <feature.icon className="w-6 h-6 text-cyan-400 mb-2" />
+                    <h4 className="text-white font-bold text-sm mb-1">{feature.title}</h4>
+                    <p className="text-xs text-slate-400">{feature.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Revenue Model */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <DollarSign className="w-5 h-5 text-green-400" />
+                Revenue Model
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[600px]">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Revenue Stream</th>
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Description</th>
+                      <th className="text-right py-3 px-4 text-slate-400 font-medium">Revenue</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Margin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {propertiesRevenueModel.map((item, i) => (
+                      <tr key={i} className="border-b border-slate-700/50">
+                        <td className="py-3 px-4 text-white font-medium">{item.source}</td>
+                        <td className="py-3 px-4 text-slate-300 text-sm">{item.description}</td>
+                        <td className="py-3 px-4 text-green-400 font-bold text-right">{item.revenue}</td>
+                        <td className="py-3 px-4 text-center">
+                          <span className={`px-2 py-1 rounded text-xs font-bold ${
+                            item.margin === 'High' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
+                          }`}>{item.margin}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Competitive Analysis */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Users className="w-5 h-5 text-cyan-400" />
+                Competitive Analysis
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[700px]">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Platform</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Listings</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Financing</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Rewards</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Verification</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {propertiesCompetitors.map((comp, i) => (
+                      <tr key={i} className={`border-b border-slate-700/50 ${comp.name === 'Sakin Properties' ? 'bg-cyan-500/10' : ''}`}>
+                        <td className={`py-3 px-4 font-bold ${comp.name === 'Sakin Properties' ? 'text-cyan-400' : 'text-white'}`}>{comp.name}</td>
+                        <td className="py-3 px-4 text-center text-slate-300">{comp.listings}</td>
+                        <td className="py-3 px-4 text-center">
+                          {comp.financing === 'Yes (Sakin)' ? (
+                            <span className="text-green-400 font-bold">Yes (Sakin)</span>
+                          ) : (
+                            <span className="text-slate-500">No</span>
+                          )}
+                        </td>
+                        <td className="py-3 px-4 text-center">
+                          {comp.rewards !== 'None' ? (
+                            <span className="text-[#c9a227] font-bold">{comp.rewards}</span>
+                          ) : (
+                            <span className="text-slate-500">None</span>
+                          )}
+                        </td>
+                        <td className="py-3 px-4 text-center text-slate-300">{comp.verification}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* 3-Year Projections */}
+            <div className="bg-gradient-to-r from-purple-500/10 to-indigo-500/5 rounded-xl p-6 border border-purple-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-purple-400" />
+                Properties Platform Projections
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Metric</th>
+                      {propertiesProjections.map((proj, i) => (
+                        <th key={i} className="text-right py-3 px-4 text-white font-bold">{proj.year}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Active Listings</td>
+                      {propertiesProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{proj.listings}</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Monthly Visits</td>
+                      {propertiesProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{proj.monthlyVisits}</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Qualified Leads</td>
+                      {propertiesProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{proj.leads}</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Financing Conversions</td>
+                      {propertiesProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-cyan-400 font-bold">{proj.conversions}</td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 text-slate-300">Platform Revenue (AED)</td>
+                      {propertiesProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-green-400 font-bold">{proj.revenue}</td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Short-Term Rentals */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/5 rounded-xl p-6 border border-orange-500/30">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <CalendarDays className="w-5 h-5 text-orange-400" />
+                Future: Short-Term Rentals (Airbnb-Style)
+              </h3>
+              <p className="text-slate-300 mb-4">
+                Phase 4 expansion into holiday homes and short-term furnished rentals - competing with Airbnb but with <strong className="text-[#c9a227]">Nuqta rewards</strong>.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 border border-orange-500/20">
+                  <div className="text-sm text-slate-400 mb-1">Target Market</div>
+                  <div className="text-white font-bold">{shortTermRentalsModel.targetMarket}</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 border border-orange-500/20">
+                  <div className="text-sm text-slate-400 mb-1">Revenue Model</div>
+                  <div className="text-green-400 font-bold">{shortTermRentalsModel.revenueModel}</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 border border-orange-500/20">
+                  <div className="text-sm text-slate-400 mb-1">Nuqta+ Value</div>
+                  <div className="text-[#c9a227] font-bold">{shortTermRentalsModel.nuqtaPlusValue}</div>
+                </div>
+              </div>
+              <p className="text-slate-400 text-sm mt-4">
+                <strong className="text-white">Competitive Gap:</strong> {shortTermRentalsModel.competitorGap}
+              </p>
+            </div>
+
+            {/* Integration with Sakin Financing */}
+            <div className="bg-gradient-to-r from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-teal-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-teal-400" />
+                The Full-Stack Advantage
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {[
+                  { step: '1', title: 'Discover', desc: 'Browse verified properties on Sakin' },
+                  { step: '2', title: 'Apply', desc: 'One-click Sakin financing application' },
+                  { step: '3', title: 'Move In', desc: 'We pay landlord, you pay monthly' },
+                  { step: '4', title: 'Earn', desc: '100 AED Nuqta+ reward every month' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-teal-500/30">
+                    <div className="w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center mx-auto mb-2 text-white font-bold">{item.step}</div>
+                    <div className="text-white font-bold">{item.title}</div>
+                    <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-slate-300 mt-4">
+                <strong className="text-teal-400">No competitor offers this end-to-end experience.</strong>
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* Fintech Ecosystem Tab */}
+        {activeTab === 'ecosystem' && (
+          <div className="space-y-8">
+            {/* Ecosystem Vision */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#c9a227] flex items-center justify-center">
+                  <Network className="w-7 h-7 text-[#0a1628]" />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">Nuqta Fintech Ecosystem</h2>
+                  <p className="text-[#c9a227]">Full-stack financial services with loyalty rewards</p>
+                </div>
+              </div>
+              <p className="text-slate-300">
+                Building on existing <strong className="text-white">corporate partnerships</strong>, Nuqta Group is creating a suite of fintech
+                products - each operating as a sister company with deep integration into the <strong className="text-[#c9a227]">Nuqta+ rewards ecosystem</strong>.
+                This creates a powerful flywheel: users join for rewards, stay for financial services.
+              </p>
+            </div>
+
+            {/* Sister Companies Overview */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Sakin Card */}
+              <div className="bg-gradient-to-br from-teal-500/20 to-cyan-500/10 rounded-xl p-6 border-2 border-teal-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-teal-500 flex items-center justify-center">
+                    <Home className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Sakin <span className="text-teal-400">سكن</span></h3>
+                    <p className="text-teal-400 text-sm">Pay Monthly. Live Easy.</p>
+                  </div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Product</span>
+                    <span className="text-white">Rent Financing + Property Marketplace</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Status</span>
+                    <span className="px-2 py-0.5 bg-blue-500/20 text-blue-400 rounded text-xs font-bold">In Development</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Nuqta+ Benefit</span>
+                    <span className="text-[#c9a227] font-bold">100 AED off rent/month</span>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-teal-500/30">
+                  <div className="text-xs text-slate-400 mb-2">Key Metrics (Year 3)</div>
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="bg-slate-900/50 rounded p-2">
+                      <div className="text-lg font-bold text-teal-400">60K</div>
+                      <div className="text-[10px] text-slate-400">Users</div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded p-2">
+                      <div className="text-lg font-bold text-teal-400">3.6B</div>
+                      <div className="text-[10px] text-slate-400">Rent Volume</div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded p-2">
+                      <div className="text-lg font-bold text-green-400">186M</div>
+                      <div className="text-[10px] text-slate-400">Revenue</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Qist Card */}
+              <div className="bg-gradient-to-br from-violet-500/20 to-purple-500/10 rounded-xl p-6 border-2 border-violet-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-violet-500 flex items-center justify-center">
+                    <ShoppingBag className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Qist <span className="text-violet-400">قسط</span></h3>
+                    <p className="text-violet-400 text-sm">Shop Now. Pay Easy.</p>
+                  </div>
+                </div>
+                <div className="space-y-2 mb-4">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Product</span>
+                    <span className="text-white">Buy Now Pay Later (BNPL)</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Status</span>
+                    <span className="px-2 py-0.5 bg-slate-500/20 text-slate-400 rounded text-xs font-bold">Planned (2027)</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-slate-400">Nuqta+ Benefit</span>
+                    <span className="text-[#c9a227] font-bold">0% interest for 3 months</span>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-violet-500/30">
+                  <div className="text-xs text-slate-400 mb-2">Key Metrics (Year 3)</div>
+                  <div className="grid grid-cols-3 gap-2 text-center">
+                    <div className="bg-slate-900/50 rounded p-2">
+                      <div className="text-lg font-bold text-violet-400">200K</div>
+                      <div className="text-[10px] text-slate-400">Users</div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded p-2">
+                      <div className="text-lg font-bold text-violet-400">800M</div>
+                      <div className="text-[10px] text-slate-400">GMV</div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded p-2">
+                      <div className="text-lg font-bold text-green-400">40M</div>
+                      <div className="text-[10px] text-slate-400">Revenue</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Qist BNPL Deep Dive */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <ShoppingBag className="w-5 h-5 text-violet-400" />
+                Qist BNPL - Business Model
+              </h3>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <h4 className="text-white font-bold mb-3">The Concept</h4>
+                  <p className="text-slate-300 text-sm mb-4">
+                    <strong className="text-violet-400">Qist</strong> (قسط = &quot;installment&quot; in Arabic) is a BNPL service that competes with
+                    Tabby and Tamara, but with one major difference: <strong className="text-[#c9a227]">deep Nuqta rewards integration</strong>.
+                  </p>
+                  <div className="space-y-2">
+                    {qistBNPLModel.nuqtaIntegration.map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-3">Revenue Model</h4>
+                  <div className="space-y-3">
+                    {qistBNPLModel.revenueModel.map((item, i) => (
+                      <div key={i} className="flex items-center justify-between py-2 border-b border-slate-700/50">
+                        <span className="text-slate-300">{item.source}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-green-400 font-bold">{item.value}</span>
+                          <span className={`px-2 py-0.5 rounded text-xs font-bold ${
+                            item.margin === 'Very High' ? 'bg-green-500/20 text-green-400' :
+                            item.margin === 'High' ? 'bg-blue-500/20 text-blue-400' : 'bg-yellow-500/20 text-yellow-400'
+                          }`}>{item.margin}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Corporate Advantage */}
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-4 border border-green-500/30">
+                <div className="flex items-start gap-3">
+                  <Handshake className="w-6 h-6 text-green-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <h4 className="text-white font-bold">Corporate Partnership Advantage</h4>
+                    <p className="text-slate-300 text-sm mt-1">
+                      Existing Nuqta corporate partnerships provide an <strong className="text-green-400">instant merchant network</strong>.
+                      Unlike Tabby/Tamara who had to sign merchants one by one, Qist launches with 100+ partners from day one.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Qist Competitive Analysis */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Users className="w-5 h-5 text-violet-400" />
+                BNPL Competitive Analysis
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[700px]">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Platform</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Installments</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Rewards</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Merchants</th>
+                      <th className="text-center py-3 px-4 text-slate-400 font-medium">Key Advantage</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {qistBNPLModel.competitorAnalysis.map((comp, i) => (
+                      <tr key={i} className={`border-b border-slate-700/50 ${comp.name === 'Qist (Nuqta)' ? 'bg-violet-500/10' : ''}`}>
+                        <td className={`py-3 px-4 font-bold ${comp.name === 'Qist (Nuqta)' ? 'text-violet-400' : 'text-white'}`}>{comp.name}</td>
+                        <td className="py-3 px-4 text-center text-slate-300">{comp.installments}</td>
+                        <td className="py-3 px-4 text-center">
+                          {comp.rewards !== 'None' && comp.rewards !== 'Limited' ? (
+                            <span className="text-[#c9a227] font-bold">{comp.rewards}</span>
+                          ) : (
+                            <span className="text-slate-500">{comp.rewards}</span>
+                          )}
+                        </td>
+                        <td className="py-3 px-4 text-center text-slate-300">{comp.merchants}</td>
+                        <td className="py-3 px-4 text-center">
+                          <span className={`px-2 py-1 rounded text-xs font-bold ${
+                            comp.name === 'Qist (Nuqta)' ? 'bg-violet-500/20 text-violet-400' : 'bg-slate-700 text-slate-300'
+                          }`}>{comp.advantage}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Qist Projections */}
+            <div className="bg-gradient-to-r from-violet-500/10 to-purple-500/5 rounded-xl p-6 border border-violet-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-violet-400" />
+                Qist 3-Year Projections
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Metric</th>
+                      {qistBNPLModel.projections.map((proj, i) => (
+                        <th key={i} className="text-right py-3 px-4 text-white font-bold">{proj.year}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Active Users</td>
+                      {qistBNPLModel.projections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{proj.users}</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">GMV (AED)</td>
+                      {qistBNPLModel.projections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-violet-400 font-bold">{proj.gmv}</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Partner Merchants</td>
+                      {qistBNPLModel.projections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{proj.merchants}</td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 text-slate-300">Revenue (AED)</td>
+                      {qistBNPLModel.projections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-green-400 font-bold">{proj.revenue}</td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Ecosystem Synergy */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-yellow-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowRightLeft className="w-5 h-5 text-[#c9a227]" />
+                Ecosystem Synergy
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
+                  <Coins className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                  <h4 className="text-white font-bold mb-1">Shared Rewards</h4>
+                  <p className="text-xs text-slate-400">Nuqta coins work across Sakin, Qist, and all partner merchants</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
+                  <Users className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                  <h4 className="text-white font-bold mb-1">Cross-Sell</h4>
+                  <p className="text-xs text-slate-400">Sakin users become Qist users, Qist users become Nuqta+ members</p>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
+                  <TrendingUp className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                  <h4 className="text-white font-bold mb-1">Data Advantage</h4>
+                  <p className="text-xs text-slate-400">Rich spending data enables better credit scoring for both products</p>
+                </div>
+              </div>
+              <div className="mt-4 pt-4 border-t border-[#c9a227]/30">
+                <p className="text-center text-slate-300">
+                  <strong className="text-[#c9a227]">Combined Year 3 Revenue: 225M+ AED</strong> from the Nuqta Fintech Ecosystem
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Value Proposition Tab */}
         {activeTab === 'value-prop' && (
           <div className="space-y-8">
@@ -536,6 +1214,33 @@ export default function SakinPage() {
                     <benefit.icon className="w-8 h-8 text-blue-400 mb-3" />
                     <h3 className="text-base font-bold text-white mb-2">{benefit.title}</h3>
                     <p className="text-sm text-slate-400">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Sakin Properties Marketplace */}
+            <div className="bg-gradient-to-r from-teal-500/10 to-cyan-500/5 rounded-xl p-6 border border-teal-500/30">
+              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Search className="w-5 h-5 text-teal-400" />
+                Sakin Properties Marketplace
+              </h2>
+              <p className="text-slate-300 mb-4">
+                More than just rent financing - Sakin is a full-stack rental platform where users can discover, tour, and finance their next home all in one app.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { icon: Search, title: 'Smart Property Search', desc: 'AI-powered search with filters for location, budget, amenities' },
+                  { icon: Eye, title: 'Virtual Tours', desc: '360° walkthroughs and video tours from your phone' },
+                  { icon: ShieldCheck, title: 'Verified Listings', desc: 'All properties verified with real photos and accurate info' },
+                  { icon: MessageCircle, title: 'Direct Chat', desc: 'Message landlords and schedule viewings instantly' },
+                  { icon: Banknote, title: 'Instant Financing', desc: 'Apply for Sakin rent financing from any listing' },
+                  { icon: Crown, title: 'Nuqta+ Priority', desc: 'Exclusive listings and early access for members' },
+                ].map((feature, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-teal-500/20">
+                    <feature.icon className="w-6 h-6 text-teal-400 mb-2" />
+                    <h3 className="text-white font-bold mb-1">{feature.title}</h3>
+                    <p className="text-sm text-slate-400">{feature.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1042,10 +1747,12 @@ export default function SakinPage() {
               <h3 className="text-lg font-bold text-white mb-4">Our Competitive Advantages</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
+                  { title: 'Full-Stack Solution', desc: 'Find property + Finance rent in one app' },
                   { title: 'Nuqta+ Integration', desc: '1,200 AED annual rewards via ecosystem' },
-                  { title: '18+ Partner Brands', desc: 'Cross-sell to salons, restaurants, etc.' },
+                  { title: '19+ Partner Brands', desc: 'Cross-sell to salons, restaurants, etc.' },
                   { title: 'Monthly Engagement', desc: 'Forced app opens for rent payment' },
                   { title: 'Data Advantage', desc: 'Rich spending data from Nuqta ecosystem' },
+                  { title: 'Verified Listings', desc: 'Quality control competitors lack' },
                 ].map((adv, i) => (
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" />
