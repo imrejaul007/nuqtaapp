@@ -1705,6 +1705,48 @@ export default function EcosystemPage() {
 
       </main>
 
+      {/* Group Strategy Section */}
+      <section className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border-t border-b border-[#c9a227]/30 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Nuqta Group Strategy</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Explore our comprehensive plans for building a multi-billion dollar Islamic fintech ecosystem.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href="/group-master-plan" className="group bg-slate-800/50 rounded-xl p-5 border border-[#c9a227]/30 hover:border-[#c9a227] transition-all">
+              <div className="w-12 h-12 rounded-xl bg-[#c9a227]/20 flex items-center justify-center mb-3 group-hover:bg-[#c9a227]/30 transition-colors">
+                <Target className="w-6 h-6 text-[#c9a227]" />
+              </div>
+              <h3 className="font-bold text-white mb-1">Master Plan</h3>
+              <p className="text-sm text-slate-400">55B AED ecosystem vision, valuation path & milestones</p>
+            </Link>
+            <Link href="/group-org-structure" className="group bg-slate-800/50 rounded-xl p-5 border border-purple-500/30 hover:border-purple-500 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-3 group-hover:bg-purple-500/30 transition-colors">
+                <Users className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="font-bold text-white mb-1">Organization</h3>
+              <p className="text-sm text-slate-400">C-Suite team, departments & hiring roadmap</p>
+            </Link>
+            <Link href="/group-launch-strategy" className="group bg-slate-800/50 rounded-xl p-5 border border-emerald-500/30 hover:border-emerald-500 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-3 group-hover:bg-emerald-500/30 transition-colors">
+                <Rocket className="w-6 h-6 text-emerald-400" />
+              </div>
+              <h3 className="font-bold text-white mb-1">Launch Strategy</h3>
+              <p className="text-sm text-slate-400">5-phase go-to-market & product sequence</p>
+            </Link>
+            <Link href="/group-governance" className="group bg-slate-800/50 rounded-xl p-5 border border-blue-500/30 hover:border-blue-500 transition-all">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-3 group-hover:bg-blue-500/30 transition-colors">
+                <Shield className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="font-bold text-white mb-1">Governance</h3>
+              <p className="text-sm text-slate-400">Shariah compliance, policies & risk management</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <GlobalFooter />
     </div>
   );
