@@ -389,6 +389,7 @@ const cxoDepartments: CXODepartment[] = [
         name: 'Campaigns',
         icon: Sparkles,
         links: [
+          { label: 'Top 20 Niche Campaigns', href: '/top-20-campaigns', icon: Crown },
           { label: 'Category Campaigns', href: '/category-campaigns', icon: Target },
           { label: 'Sales Calendar', href: '/sales-calendar', icon: Calendar },
           { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
