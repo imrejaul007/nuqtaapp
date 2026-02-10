@@ -616,6 +616,7 @@ const cxoDepartments: CXODepartment[] = [
         name: 'Core Products',
         icon: Sparkles,
         links: [
+          { label: 'Ecosystem Overview', href: '/ecosystem', icon: Layers },
           { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
           { label: 'Sakin Rent', href: '/sakin', icon: Home },
           { label: 'Qist BNPL', href: '/qist', icon: Wallet },
