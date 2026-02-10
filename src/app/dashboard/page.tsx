@@ -123,14 +123,20 @@ const cxoDepartments: CXODepartment[] = [
     description: 'Overall company vision, strategy, investor relations, and executive decisions',
     teams: [
       {
-        name: 'Investor Relations',
-        icon: Briefcase,
+        name: 'Pitch Decks',
+        icon: Presentation,
         links: [
           { label: '90-Second Pitch', href: '/deck-90', icon: Rocket },
           { label: 'Full Pitch Deck', href: '/deck-kang', icon: Presentation },
           { label: 'Final Deck', href: '/deck-final', icon: Presentation },
           { label: 'New Deck', href: '/deck-new', icon: Presentation },
           { label: 'All Decks', href: '/deck', icon: Folder },
+        ]
+      },
+      {
+        name: 'Investor Relations',
+        icon: Briefcase,
+        links: [
           { label: 'Data Room', href: '/data-room', icon: Database },
           { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail },
           { label: 'Investor FAQ', href: '/investor-faq', icon: FileText },
@@ -140,19 +146,31 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Strategy & Vision',
-        icon: Target,
+        name: 'CEO Reports',
+        icon: FileText,
         links: [
           { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown },
           { label: 'CEO Report', href: '/ceo-report', icon: FileText },
           { label: 'CEO Analysis', href: '/ceo-analysis', icon: BarChart3 },
+        ]
+      },
+      {
+        name: 'Strategy & Vision',
+        icon: Target,
+        links: [
           { label: 'Future Ambition', href: '/future-ambition', icon: Globe },
           { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
           { label: 'Master Roadmap', href: '/master-roadmap', icon: Map },
           { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },
+          { label: 'Commitment', href: '/commitment', icon: CheckSquare },
+        ]
+      },
+      {
+        name: 'Issue Tracking',
+        icon: AlertTriangle,
+        links: [
           { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle },
           { label: 'Executive Issues', href: '/executive-issues', icon: AlertTriangle },
-          { label: 'Commitment', href: '/commitment', icon: CheckSquare },
         ]
       },
       {
@@ -166,13 +184,19 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Partnerships & BD',
+        name: 'Partnerships',
         icon: Handshake,
         links: [
           { label: 'Partnership Playbook', href: '/partnerships', icon: Handshake },
           { label: '4-Level Framework', href: '/partnership-framework', icon: Layers },
           { label: 'Partnership Tiers', href: '/partnership-tiers', icon: Award },
           { label: 'Co-Partner Program', href: '/co-partner', icon: Users },
+        ]
+      },
+      {
+        name: 'Exhibition Decks',
+        icon: Globe,
+        links: [
           { label: 'Global Village Deck', href: '/deck-gv', icon: Globe },
           { label: 'GV Playbook', href: '/gv-playbook', icon: BookOpen },
           { label: 'Exhibition Deck', href: '/deck-exhibition', icon: Presentation },
@@ -192,29 +216,53 @@ const cxoDepartments: CXODepartment[] = [
     description: 'Financial planning, investor relations, legal compliance, and revenue optimization',
     teams: [
       {
-        name: 'Financial Planning',
-        icon: Calculator,
+        name: 'CFO Reports',
+        icon: FileText,
         links: [
           { label: 'CFO Report', href: '/cfo-report', icon: FileText },
           { label: 'CFO Analysis', href: '/cfo-analysis', icon: BarChart3 },
+        ]
+      },
+      {
+        name: 'Financial Models',
+        icon: Calculator,
+        links: [
           { label: 'Financial Models', href: '/financial-models', icon: Calculator },
           { label: 'Financial Projection', href: '/financialprojection', icon: LineChart },
           { label: 'Financial Scenarios', href: '/financial-scenarios', icon: LineChart },
           { label: 'Unit Economics', href: '/unit-economics', icon: Calculator },
+        ]
+      },
+      {
+        name: 'Revenue & Pricing',
+        icon: DollarSign,
+        links: [
           { label: 'Revenue Optimization', href: '/revenue-optimization', icon: DollarSign },
           { label: 'Pricing Strategy', href: '/pricing-strategy', icon: DollarSign },
         ]
       },
       {
-        name: 'Legal & Compliance',
+        name: 'Legal Compliance',
         icon: Scale,
         links: [
           { label: 'Legal & Compliance', href: '/legal-compliance', icon: Scale },
           { label: 'License Preparation', href: '/license-preparation', icon: ClipboardList },
           { label: 'Licensing', href: '/licensing', icon: FileCheck },
+        ]
+      },
+      {
+        name: 'Legal Documents',
+        icon: FileText,
+        links: [
           { label: 'Legal Documents', href: '/legal-documents', icon: FileText },
           { label: 'Legal Docs', href: '/legal-docs', icon: FileText },
           { label: 'Contracts', href: '/contracts', icon: FileText },
+        ]
+      },
+      {
+        name: 'Policies & Terms',
+        icon: Shield,
+        links: [
           { label: 'Policies', href: '/policies', icon: Scale },
           { label: 'Terms', href: '/terms', icon: FileText },
         ]
@@ -233,24 +281,45 @@ const cxoDepartments: CXODepartment[] = [
     description: 'Day-to-day operations, merchant success, launch execution, and process optimization',
     teams: [
       {
-        name: 'Merchant Operations',
+        name: 'COO Reports',
+        icon: FileText,
+        links: [
+          { label: 'COO Report', href: '/coo-report', icon: FileText },
+          { label: 'COO Analysis', href: '/coo-analysis', icon: BarChart3 },
+          { label: 'C-Suite Operations', href: '/c-suite-operations', icon: Settings },
+        ]
+      },
+      {
+        name: 'Merchant Strategy',
         icon: Store,
         links: [
           { label: 'All 3 Engines', href: '/merchant-engines', icon: Settings },
           { label: 'Packages & Pricing', href: '/merchant-packages', icon: CreditCard },
           { label: 'Merchant Playbook', href: '/merchant-playbook', icon: BookOpen },
+          { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase },
+        ]
+      },
+      {
+        name: 'Merchant Pipeline',
+        icon: TrendingUp,
+        links: [
           { label: 'Merchant Database', href: '/merchant-database', icon: Database },
           { label: 'Merchant Pipeline', href: '/merchant-pipeline', icon: TrendingUp },
           { label: 'Merchant Acquisition', href: '/merchant-acquisition', icon: Store },
           { label: 'Merchant Onboarding', href: '/merchant-onboarding', icon: Users },
+        ]
+      },
+      {
+        name: 'Merchant Assets',
+        icon: CreditCard,
+        links: [
           { label: 'Merchant Info', href: '/merchant-info', icon: FileText },
           { label: 'Merchant Card', href: '/merchant-card', icon: CreditCard },
-          { label: 'Sales Kit', href: '/sales-kit', icon: Briefcase },
           { label: 'Vendor Directory', href: '/vendor-directory', icon: Building2 },
         ]
       },
       {
-        name: 'Industry Playbooks - F&B',
+        name: 'Playbooks - F&B',
         icon: Coffee,
         links: [
           { label: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Coffee },
@@ -258,7 +327,7 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Industry Playbooks - Wellness',
+        name: 'Playbooks - Wellness',
         icon: Scissors,
         links: [
           { label: 'Salon & Spa', href: '/playbook-salon', icon: Scissors },
@@ -268,7 +337,7 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Industry Playbooks - Retail',
+        name: 'Playbooks - Retail',
         icon: ShoppingCart,
         links: [
           { label: 'Gold & Jewelry', href: '/playbook-gold', icon: Gem },
@@ -277,12 +346,18 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Industry Playbooks - Services',
+        name: 'Playbooks - Services',
         icon: Settings,
         links: [
           { label: 'Hotels & Hospitality', href: '/playbook-hotel', icon: Building2 },
           { label: 'Auto & Car Services', href: '/playbook-auto', icon: Settings },
           { label: 'Laundry', href: '/playbook-laundry', icon: Shirt },
+        ]
+      },
+      {
+        name: 'Playbooks - Other',
+        icon: Briefcase,
+        links: [
           { label: 'Pet Services', href: '/playbook-pet', icon: Briefcase },
           { label: 'Entertainment', href: '/playbook-entertainment', icon: Gamepad2 },
           { label: 'Events Playbook', href: '/events-playbook', icon: Calendar },
@@ -299,22 +374,31 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Launch & Execution',
+        name: 'Launch Planning',
         icon: Rocket,
         links: [
-          { label: 'COO Report', href: '/coo-report', icon: FileText },
-          { label: 'COO Analysis', href: '/coo-analysis', icon: BarChart3 },
-          { label: 'C-Suite Operations', href: '/c-suite-operations', icon: Settings },
-          { label: 'Operations', href: '/operations', icon: Settings },
-          { label: 'SOPs', href: '/sop', icon: CheckSquare },
           { label: 'Launch Readiness', href: '/launch-readiness', icon: CheckSquare },
           { label: 'Launch Sprint', href: '/launch-sprint', icon: Rocket },
           { label: 'Execution Plan', href: '/execution-plan', icon: Target },
           { label: 'Execution Extended', href: '/execution-plan-extended', icon: Target },
+        ]
+      },
+      {
+        name: 'Operations',
+        icon: Settings,
+        links: [
+          { label: 'Operations', href: '/operations', icon: Settings },
+          { label: 'SOPs', href: '/sop', icon: CheckSquare },
+          { label: 'Tasks', href: '/tasks', icon: CheckSquare },
+        ]
+      },
+      {
+        name: 'Support & Tools',
+        icon: Headphones,
+        links: [
           { label: 'KPI Tracking', href: '/kpi-tracking', icon: BarChart3 },
           { label: 'QR Design Specs', href: '/qr-design-specs', icon: QrCode },
           { label: 'Support Templates', href: '/support-templates', icon: Headphones },
-          { label: 'Tasks', href: '/tasks', icon: CheckSquare },
         ]
       },
       {
@@ -341,13 +425,37 @@ const cxoDepartments: CXODepartment[] = [
     description: 'Brand, marketing, user acquisition, growth experiments, and customer intelligence',
     teams: [
       {
-        name: 'Growth Intelligence',
+        name: 'CMO Reports',
+        icon: FileText,
+        links: [
+          { label: 'CMO Report', href: '/cmo-report', icon: FileText },
+          { label: 'CMO Analysis', href: '/cmo-analysis', icon: BarChart3 },
+          { label: 'CMO Operations', href: '/cmo-operations', icon: Settings },
+        ]
+      },
+      {
+        name: 'Marketing Strategy',
         icon: Brain,
         links: [
           { label: 'Marketing War Room', href: '/marketing-war-room', icon: Brain },
+          { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone },
+          { label: 'CMO Playbook', href: '/cmo-playbook', icon: BookOpen },
+          { label: 'Marketing Bible', href: '/marketing-bible', icon: BookOpen },
+        ]
+      },
+      {
+        name: 'Growth Intelligence',
+        icon: Eye,
+        links: [
           { label: 'Customer Intelligence', href: '/customer-intelligence', icon: Eye },
           { label: 'Competitive Intel', href: '/competitive-intel', icon: Target },
           { label: 'PMF Scoreboard', href: '/pmf-scoreboard', icon: BarChart3 },
+        ]
+      },
+      {
+        name: 'Growth Experiments',
+        icon: Beaker,
+        links: [
           { label: 'Funnel Optimization', href: '/funnel-optimization', icon: Filter },
           { label: 'Growth Experiments', href: '/growth-experiments', icon: Beaker },
           { label: 'Growth Warfare', href: '/growth-warfare', icon: Target },
@@ -361,44 +469,68 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'Viral Growth', href: '/viral-growth', icon: Rocket },
           { label: 'Geographic Expansion', href: '/geographic-expansion', icon: MapPin },
           { label: 'Win-Back', href: '/win-back', icon: RefreshCw },
+        ]
+      },
+      {
+        name: 'Influencer & Ambassador',
+        icon: Award,
+        links: [
           { label: 'Influencer List', href: '/influencer-list', icon: Users },
           { label: 'Ambassador Program', href: '/ambassador-program', icon: Award },
           { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
         ]
       },
       {
-        name: 'Brand & Content',
-        icon: PenTool,
+        name: 'Brand & Voice',
+        icon: MessageSquare,
         links: [
-          { label: 'CMO Report', href: '/cmo-report', icon: FileText },
-          { label: 'CMO Analysis', href: '/cmo-analysis', icon: BarChart3 },
-          { label: 'CMO Operations', href: '/cmo-operations', icon: Settings },
-          { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone },
-          { label: 'CMO Playbook', href: '/cmo-playbook', icon: BookOpen },
-          { label: 'Marketing Bible', href: '/marketing-bible', icon: BookOpen },
           { label: 'Brand Voice', href: '/brand-voice', icon: MessageSquare },
-          { label: 'Content Strategy', href: '/content-strategy', icon: PenTool },
-          { label: 'Content Calendar', href: '/content-calendar', icon: Calendar },
-          { label: 'Niche Content', href: '/niche-content', icon: PenTool },
           { label: 'Press Kit', href: '/press-kit', icon: FileText },
           { label: 'Media Hub', href: '/media-hub', icon: Tv },
           { label: 'Media Properties', href: '/media-properties', icon: ImageIcon },
         ]
       },
       {
-        name: 'Campaigns',
-        icon: Sparkles,
+        name: 'Content',
+        icon: PenTool,
+        links: [
+          { label: 'Content Strategy', href: '/content-strategy', icon: PenTool },
+          { label: 'Content Calendar', href: '/content-calendar', icon: Calendar },
+          { label: 'Niche Content', href: '/niche-content', icon: PenTool },
+        ]
+      },
+      {
+        name: 'Priority Campaigns',
+        icon: Crown,
         links: [
           { label: 'Top 20 Niche Campaigns', href: '/top-20-campaigns', icon: Crown },
           { label: 'Category Campaigns', href: '/category-campaigns', icon: Target },
-          { label: 'Sales Calendar', href: '/sales-calendar', icon: Calendar },
-          { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
+          { label: 'Big Win Campaigns', href: '/big-win-campaigns', icon: Award },
+        ]
+      },
+      {
+        name: 'Merchant Campaigns',
+        icon: Store,
+        links: [
           { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Megaphone },
           { label: 'Seasonal Campaigns', href: '/seasonal-campaigns', icon: Calendar },
           { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Share2 },
-          { label: 'Big Win Campaigns', href: '/big-win-campaigns', icon: Award },
+        ]
+      },
+      {
+        name: 'Campaign Execution',
+        icon: Target,
+        links: [
+          { label: 'Sales Calendar', href: '/sales-calendar', icon: Calendar },
+          { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
           { label: 'All Campaigns', href: '/campaigns', icon: Megaphone },
           { label: 'Offline Marketing', href: '/offline-marketing', icon: MapPin },
+        ]
+      },
+      {
+        name: 'PR & Crisis',
+        icon: AlertTriangle,
+        links: [
           { label: 'PR Launch', href: '/pr-launch', icon: Megaphone },
           { label: 'Crisis Communication', href: '/crisis-communication', icon: AlertTriangle },
         ]
@@ -410,6 +542,12 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'Email Templates', href: '/email-templates', icon: Mail },
           { label: 'SMS Templates', href: '/sms-templates', icon: Phone },
           { label: 'App Store Copy', href: '/app-store-copy', icon: Smartphone },
+        ]
+      },
+      {
+        name: 'Analytics & Tracking',
+        icon: BarChart3,
+        links: [
           { label: 'Social Media Tracker', href: '/social-media-tracker', icon: Share2 },
           { label: 'Explainer Video', href: '/explainer-video', icon: Video },
           { label: 'Analytics Dashboard', href: '/analytics-dashboard', icon: BarChart3 },
@@ -430,15 +568,33 @@ const cxoDepartments: CXODepartment[] = [
     description: 'Product strategy, user experience, Nuqta+ membership, and customer journeys',
     teams: [
       {
-        name: 'GTM Strategy',
+        name: 'GTM Overview',
         icon: TrendingUp,
         links: [
           { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp },
           { label: 'H1 GTM', href: '/h1-gtm', icon: Rocket },
+        ]
+      },
+      {
+        name: 'H2 Strategy',
+        icon: Target,
+        links: [
           { label: 'H2 GTM', href: '/h2-gtm', icon: TrendingUp },
           { label: 'H2 Strategy', href: '/h2-strategy', icon: Target },
+        ]
+      },
+      {
+        name: 'H3 Strategy',
+        icon: Settings,
+        links: [
           { label: 'H3 GTM', href: '/h3-gtm', icon: TrendingUp },
           { label: 'H3 Infrastructure', href: '/h3-infrastructure', icon: Settings },
+        ]
+      },
+      {
+        name: 'Phase Planning',
+        icon: Calendar,
+        links: [
           { label: 'Phase 2', href: '/phase-2', icon: Calendar },
           { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Calendar },
           { label: 'Phase 3', href: '/phase-3', icon: Calendar },
@@ -447,25 +603,31 @@ const cxoDepartments: CXODepartment[] = [
       },
       {
         name: 'Product Analysis',
-        icon: BarChart3,
+        icon: Search,
         links: [
           { label: 'Competitor Analysis', href: '/competitor-analysis', icon: Search },
         ]
       },
       {
-        name: 'Products & Features',
+        name: 'Core Products',
         icon: Sparkles,
         links: [
           { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
-          { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
-          { label: 'User Journey', href: '/user-journey', icon: Map },
-          { label: 'Customer Journeys', href: '/customer-journeys', icon: Users },
-          { label: 'Business Playbook', href: '/business-playbook', icon: BookOpen },
           { label: 'Nuqta Card', href: '/card', icon: CreditCard },
+          { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
         ]
       },
       {
-        name: 'Decks & Presentations',
+        name: 'User Experience',
+        icon: Map,
+        links: [
+          { label: 'User Journey', href: '/user-journey', icon: Map },
+          { label: 'Customer Journeys', href: '/customer-journeys', icon: Users },
+          { label: 'Business Playbook', href: '/business-playbook', icon: BookOpen },
+        ]
+      },
+      {
+        name: 'Product Decks',
         icon: Presentation,
         links: [
           { label: 'University Deck', href: '/deck-university', icon: GraduationCap },
@@ -488,35 +650,59 @@ const cxoDepartments: CXODepartment[] = [
     description: 'Hiring, team building, culture, compensation, and employee experience',
     teams: [
       {
-        name: 'Talent Acquisition',
-        icon: UserPlus,
+        name: 'CHRO Reports',
+        icon: FileText,
         links: [
           { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
           { label: 'CHRO Report', href: '/chro-report', icon: FileText },
           { label: 'CHRO Analysis', href: '/chro-analysis', icon: BarChart3 },
+        ]
+      },
+      {
+        name: 'Hiring',
+        icon: UserPlus,
+        links: [
           { label: 'Hiring Pipeline', href: '/hiring-pipeline', icon: UserPlus },
           { label: 'Hiring Playbook', href: '/hiring-playbook', icon: BookOpen },
+        ]
+      },
+      {
+        name: 'Careers',
+        icon: Briefcase,
+        links: [
           { label: 'Careers Page', href: '/careers', icon: Briefcase },
           { label: 'Join Us', href: '/join-us', icon: UserPlus },
         ]
       },
       {
-        name: 'Team & Culture',
+        name: 'Team Structure',
         icon: Users,
         links: [
           { label: 'Team & Roles', href: '/team', icon: Users },
           { label: 'Org Chart', href: '/org-chart', icon: Users },
+        ]
+      },
+      {
+        name: 'Culture & Policies',
+        icon: Heart,
+        links: [
           { label: 'Employee Handbook', href: '/employee-handbook', icon: BookOpen },
           { label: 'D&I Policy', href: '/diversity-inclusion', icon: Heart },
           { label: 'HR Operations', href: '/hr-operations', icon: Settings },
         ]
       },
       {
-        name: 'Compensation & Benefits',
+        name: 'Compensation',
         icon: Wallet,
         links: [
           { label: 'Compensation Guide', href: '/compensation-guide', icon: Wallet },
           { label: 'ESOP', href: '/esop', icon: Ticket },
+        ]
+      },
+      {
+        name: 'Performance',
+        icon: Award,
+        links: [
           { label: 'Performance Management', href: '/performance-management', icon: Award },
         ]
       },
@@ -762,7 +948,7 @@ export default function DashboardPage() {
             <div className="text-[#c9a227] text-xs sm:text-sm">C-Suite Executives</div>
           </div>
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3 sm:p-5 text-center">
-            <div className="text-2xl sm:text-3xl font-black text-white">30+</div>
+            <div className="text-2xl sm:text-3xl font-black text-white">55+</div>
             <div className="text-blue-400 text-xs sm:text-sm">Sub-Teams</div>
           </div>
           <div className="bg-pink-500/10 border border-pink-500/30 rounded-xl p-3 sm:p-5 text-center">
