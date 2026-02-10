@@ -132,6 +132,7 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'Full Pitch Deck', href: '/deck-kang', icon: Presentation },
           { label: 'Final Deck', href: '/deck-final', icon: Presentation },
           { label: 'New Deck', href: '/deck-new', icon: Presentation },
+          { label: 'Nuqta Card Deck', href: '/card', icon: CreditCard },
           { label: 'All Decks', href: '/deck', icon: Folder },
         ]
       },
@@ -618,7 +619,6 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'Sakin Rent', href: '/sakin', icon: Home },
           { label: 'Qist BNPL', href: '/qist', icon: Wallet },
           { label: 'Wasil Delivery', href: '/wasil', icon: Truck },
-          { label: 'Nuqta Card', href: '/card', icon: CreditCard },
           { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
         ]
       },
