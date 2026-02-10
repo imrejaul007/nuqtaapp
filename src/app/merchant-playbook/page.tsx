@@ -921,21 +921,21 @@ export default function MerchantPlaybookPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {[
-                  { name: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Utensils, color: 'orange', engine: 'A', avgTicket: 'AED 55-120', loiShare: '40%' },
-                  { name: 'Salon & Spa', href: '/playbook-salon', icon: Scissors, color: 'pink', engine: 'A', avgTicket: 'AED 350', loiShare: '20%' },
-                  { name: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell, color: 'green', engine: 'A', avgTicket: 'AED 300/mo', loiShare: '10%' },
-                  { name: 'Fashion & Retail', href: '/playbook-fashion', icon: ShoppingBag, color: 'purple', engine: 'A', avgTicket: 'AED 400', loiShare: '8%' },
-                  { name: 'Entertainment', href: '/playbook-entertainment', icon: Film, color: 'fuchsia', engine: 'A/C', avgTicket: 'AED 200', loiShare: '5%' },
-                  { name: 'Hotels & Hospitality', href: '/playbook-hotel', icon: Building2, color: 'blue', engine: 'A', avgTicket: 'AED 500+', loiShare: '12%' },
-                  { name: 'Car Services & Auto', href: '/playbook-auto', icon: Car, color: 'slate', engine: 'A', avgTicket: 'AED 200', loiShare: '8%' },
-                  { name: 'Clinics & Medical', href: '/playbook-clinic', icon: Heart, color: 'teal', engine: 'A', avgTicket: 'AED 400', loiShare: '6%' },
-                  { name: 'Pet Services', href: '/playbook-pet', icon: PawPrint, color: 'amber', engine: 'A', avgTicket: 'AED 250', loiShare: '4%' },
-                  { name: 'Laundry & Dry Cleaning', href: '/playbook-laundry', icon: Shirt, color: 'sky', engine: 'B', avgTicket: 'AED 80', loiShare: '5%' },
-                  { name: 'Supermarket', href: '/playbook-supermarket', icon: Store, color: 'emerald', engine: 'B', avgTicket: 'AED 150', loiShare: '7%' },
-                  { name: 'Gold & Jewelry', href: '/playbook-gold', icon: Star, color: 'amber', engine: 'B', avgTicket: 'AED 5K+', loiShare: '3%' },
-                  { name: 'Electronics', href: '/playbook-electronics', icon: Settings, color: 'cyan', engine: 'B', avgTicket: 'AED 1.5K', loiShare: '4%' },
-                  { name: 'Pharmacy', href: '/playbook-pharmacy', icon: Stethoscope, color: 'red', engine: 'B', avgTicket: 'AED 80', loiShare: '3%' },
-                  { name: 'Events & Exhibitions', href: '/events-playbook', icon: PartyPopper, color: 'violet', engine: 'C', avgTicket: 'AED 500+', loiShare: 'Partnership' },
+                  { name: 'Cafe & Restaurant', href: '/playbook-cafe', campaignId: 'cafe', icon: Utensils, color: 'orange', engine: 'A', avgTicket: 'AED 55-120', loiShare: '40%' },
+                  { name: 'Salon & Spa', href: '/playbook-salon', campaignId: 'salon', icon: Scissors, color: 'pink', engine: 'A', avgTicket: 'AED 350', loiShare: '20%' },
+                  { name: 'Gym & Fitness', href: '/playbook-gym', campaignId: 'gym', icon: Dumbbell, color: 'green', engine: 'A', avgTicket: 'AED 300/mo', loiShare: '10%' },
+                  { name: 'Fashion & Retail', href: '/playbook-fashion', campaignId: 'fashion', icon: ShoppingBag, color: 'purple', engine: 'A', avgTicket: 'AED 400', loiShare: '8%' },
+                  { name: 'Entertainment', href: '/playbook-entertainment', campaignId: 'entertainment', icon: Film, color: 'fuchsia', engine: 'A/C', avgTicket: 'AED 200', loiShare: '5%' },
+                  { name: 'Hotels & Hospitality', href: '/playbook-hotel', campaignId: 'hotel', icon: Building2, color: 'blue', engine: 'A', avgTicket: 'AED 500+', loiShare: '12%' },
+                  { name: 'Car Services & Auto', href: '/playbook-auto', campaignId: 'auto', icon: Car, color: 'slate', engine: 'A', avgTicket: 'AED 200', loiShare: '8%' },
+                  { name: 'Clinics & Medical', href: '/playbook-clinic', campaignId: 'clinic', icon: Heart, color: 'teal', engine: 'A', avgTicket: 'AED 400', loiShare: '6%' },
+                  { name: 'Pet Services', href: '/playbook-pet', campaignId: 'pet', icon: PawPrint, color: 'amber', engine: 'A', avgTicket: 'AED 250', loiShare: '4%' },
+                  { name: 'Laundry & Dry Cleaning', href: '/playbook-laundry', campaignId: 'laundry', icon: Shirt, color: 'sky', engine: 'B', avgTicket: 'AED 80', loiShare: '5%' },
+                  { name: 'Supermarket', href: '/playbook-supermarket', campaignId: 'supermarket', icon: Store, color: 'emerald', engine: 'B', avgTicket: 'AED 150', loiShare: '7%' },
+                  { name: 'Gold & Jewelry', href: '/playbook-gold', campaignId: 'gold', icon: Star, color: 'amber', engine: 'B', avgTicket: 'AED 5K+', loiShare: '3%' },
+                  { name: 'Electronics', href: '/playbook-electronics', campaignId: 'electronics', icon: Settings, color: 'cyan', engine: 'B', avgTicket: 'AED 1.5K', loiShare: '4%' },
+                  { name: 'Pharmacy', href: '/playbook-pharmacy', campaignId: 'pharmacy', icon: Stethoscope, color: 'red', engine: 'B', avgTicket: 'AED 80', loiShare: '3%' },
+                  { name: 'Events & Exhibitions', href: '/events-playbook', campaignId: 'events', icon: PartyPopper, color: 'violet', engine: 'C', avgTicket: 'AED 500+', loiShare: 'Partnership' },
                 ].map((item, idx) => (
                   <div
                     key={idx}
@@ -985,7 +985,7 @@ export default function MerchantPlaybookPage() {
                         Full Playbook
                       </Link>
                       <Link
-                        href="/marketing-war-room?tab=merchant-campaigns"
+                        href={`/category-campaigns?category=${item.campaignId}`}
                         className="flex-1 text-center py-2 px-3 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-lg hover:bg-emerald-500/30 transition-colors"
                       >
                         Campaigns
@@ -999,18 +999,18 @@ export default function MerchantPlaybookPage() {
               <div className="mt-6 pt-6 border-t border-white/10">
                 <div className="flex flex-wrap gap-3 justify-center">
                   <Link
-                    href="/marketing-war-room?tab=merchant-campaigns"
+                    href="/category-campaigns"
                     className="flex items-center gap-2 px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-lg hover:bg-emerald-500/30 transition-colors"
                   >
                     <Store size={16} />
-                    <span className="text-sm font-medium">All Merchant Campaigns</span>
+                    <span className="text-sm font-medium">Category Campaigns</span>
                   </Link>
                   <Link
-                    href="/marketing-war-room?tab=user-campaigns"
+                    href="/marketing-war-room?tab=merchant-campaigns"
                     className="flex items-center gap-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-colors"
                   >
-                    <Users size={16} />
-                    <span className="text-sm font-medium">All User Campaigns</span>
+                    <Target size={16} />
+                    <span className="text-sm font-medium">Generic Campaigns</span>
                   </Link>
                   <Link
                     href="/marketing-war-room?tab=cultural-campaigns"
