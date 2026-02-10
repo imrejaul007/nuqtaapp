@@ -152,8 +152,17 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },
           { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle },
           { label: 'Executive Issues', href: '/executive-issues', icon: AlertTriangle },
-          { label: 'Executive Team', href: '/executive-team', icon: Crown },
           { label: 'Commitment', href: '/commitment', icon: CheckSquare },
+        ]
+      },
+      {
+        name: 'Organization',
+        icon: Users,
+        links: [
+          { label: 'Company Structure', href: '/company-structure', icon: Users },
+          { label: 'Executive Team', href: '/executive-team', icon: Crown },
+          { label: 'Org Chart', href: '/org-chart', icon: Users },
+          { label: 'Team Page', href: '/team', icon: Users },
         ]
       },
       {
@@ -241,18 +250,42 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Industry Playbooks',
-        icon: BookOpen,
+        name: 'Industry Playbooks - F&B',
+        icon: Coffee,
         links: [
           { label: 'Cafe & Restaurant', href: '/playbook-cafe', icon: Coffee },
-          { label: 'Salon & Spa', href: '/playbook-salon', icon: Scissors },
           { label: 'Supermarket', href: '/playbook-supermarket', icon: ShoppingCart },
-          { label: 'Gold & Jewelry', href: '/playbook-gold', icon: Gem },
+        ]
+      },
+      {
+        name: 'Industry Playbooks - Wellness',
+        icon: Scissors,
+        links: [
+          { label: 'Salon & Spa', href: '/playbook-salon', icon: Scissors },
           { label: 'Gym & Fitness', href: '/playbook-gym', icon: Dumbbell },
-          { label: 'Electronics', href: '/playbook-electronics', icon: Smartphone },
+          { label: 'Clinic & Healthcare', href: '/playbook-clinic', icon: Briefcase },
           { label: 'Pharmacy', href: '/playbook-pharmacy', icon: Pill },
+        ]
+      },
+      {
+        name: 'Industry Playbooks - Retail',
+        icon: ShoppingCart,
+        links: [
+          { label: 'Gold & Jewelry', href: '/playbook-gold', icon: Gem },
+          { label: 'Electronics', href: '/playbook-electronics', icon: Smartphone },
           { label: 'Fashion', href: '/playbook-fashion', icon: Shirt },
+        ]
+      },
+      {
+        name: 'Industry Playbooks - Services',
+        icon: Settings,
+        links: [
+          { label: 'Hotels & Hospitality', href: '/playbook-hotel', icon: Building2 },
+          { label: 'Auto & Car Services', href: '/playbook-auto', icon: Settings },
+          { label: 'Laundry', href: '/playbook-laundry', icon: Shirt },
+          { label: 'Pet Services', href: '/playbook-pet', icon: Briefcase },
           { label: 'Entertainment', href: '/playbook-entertainment', icon: Gamepad2 },
+          { label: 'Events Playbook', href: '/events-playbook', icon: Calendar },
         ]
       },
       {
@@ -356,6 +389,7 @@ const cxoDepartments: CXODepartment[] = [
         name: 'Campaigns',
         icon: Sparkles,
         links: [
+          { label: 'Category Campaigns', href: '/category-campaigns', icon: Target },
           { label: 'Sales Calendar', href: '/sales-calendar', icon: Calendar },
           { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
           { label: 'Merchant Campaigns', href: '/merchant-campaigns', icon: Megaphone },
@@ -721,22 +755,26 @@ export default function DashboardPage() {
         </div>
 
         {/* Stats */}
-        <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div className="mt-8 sm:mt-12 grid grid-cols-2 md:grid-cols-5 gap-3 sm:gap-4">
           <div className="bg-[#c9a227]/10 border border-[#c9a227]/30 rounded-xl p-3 sm:p-5 text-center">
             <div className="text-2xl sm:text-3xl font-black text-white">6</div>
             <div className="text-[#c9a227] text-xs sm:text-sm">C-Suite Executives</div>
           </div>
           <div className="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3 sm:p-5 text-center">
-            <div className="text-2xl sm:text-3xl font-black text-white">27</div>
-            <div className="text-blue-400 text-xs sm:text-sm">Department Teams</div>
+            <div className="text-2xl sm:text-3xl font-black text-white">30+</div>
+            <div className="text-blue-400 text-xs sm:text-sm">Sub-Teams</div>
           </div>
           <div className="bg-pink-500/10 border border-pink-500/30 rounded-xl p-3 sm:p-5 text-center">
-            <div className="text-2xl sm:text-3xl font-black text-white">174</div>
+            <div className="text-2xl sm:text-3xl font-black text-white">180+</div>
             <div className="text-pink-400 text-xs sm:text-sm">Total Pages</div>
           </div>
           <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-3 sm:p-5 text-center">
             <div className="text-2xl sm:text-3xl font-black text-white">6</div>
             <div className="text-emerald-400 text-xs sm:text-sm">AI Agents</div>
+          </div>
+          <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-3 sm:p-5 text-center">
+            <div className="text-2xl sm:text-3xl font-black text-white">15</div>
+            <div className="text-orange-400 text-xs sm:text-sm">Industry Playbooks</div>
           </div>
         </div>
 
