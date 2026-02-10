@@ -206,6 +206,47 @@ export const EcosystemLogo = ({ size = 48, className = '' }: { size?: number; cl
   </svg>
 );
 
+// Safar Logo - Plane with globe
+export const SafarLogo = ({ size = 48, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <defs>
+      <linearGradient id="safarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#0891b2" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="45" fill="url(#safarGrad)" />
+    {/* Plane */}
+    <path d="M25 55 L35 50 L55 45 L75 35 L78 38 L62 50 L68 55 L65 58 L55 55 L40 60 L38 55 Z" fill="white" />
+    {/* Globe hint */}
+    <circle cx="50" cy="55" r="12" stroke="white" strokeWidth="2" fill="none" opacity="0.5" />
+    <ellipse cx="50" cy="55" rx="5" ry="12" stroke="white" strokeWidth="1.5" fill="none" opacity="0.5" />
+  </svg>
+);
+
+// Ajer Logo - Package with circular arrows (rental)
+export const AjerLogo = ({ size = 48, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <defs>
+      <linearGradient id="ajerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#8b5cf6" />
+        <stop offset="100%" stopColor="#7c3aed" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="45" fill="url(#ajerGrad)" />
+    {/* Box */}
+    <rect x="30" y="35" width="40" height="35" rx="3" stroke="white" strokeWidth="3" fill="none" />
+    {/* Box flaps */}
+    <path d="M30 35 L50 25 L70 35" stroke="white" strokeWidth="3" fill="none" />
+    {/* Circular arrow left */}
+    <path d="M22 50 C22 40 30 32 40 32" stroke="white" strokeWidth="2.5" fill="none" />
+    <path d="M38 28 L40 32 L36 34" fill="white" />
+    {/* Circular arrow right */}
+    <path d="M78 50 C78 60 70 68 60 68" stroke="white" strokeWidth="2.5" fill="none" />
+    <path d="M62 72 L60 68 L64 66" fill="white" />
+  </svg>
+);
+
 // Export all logos as a mapping
 export const CompanyLogos = {
   nuqta: NuqtaMainLogo,
@@ -217,6 +258,8 @@ export const CompanyLogos = {
   rakab: RakabLogo,
   gamification: GamificationLogo,
   ecosystem: EcosystemLogo,
+  safar: SafarLogo,
+  ajer: AjerLogo,
 };
 
 export default CompanyLogos;

@@ -17,7 +17,8 @@ import {
 import GlobalFooter from '@/components/GlobalFooter';
 import {
   NuqtaPlusLogo, QistLogo, SakinLogo, WasilLogo,
-  HawilLogo, RakabLogo, GamificationLogo, NuqtaMainLogo, EcosystemLogo
+  HawilLogo, RakabLogo, GamificationLogo, NuqtaMainLogo, EcosystemLogo,
+  SafarLogo, AjerLogo
 } from '@/components/CompanyLogos';
 
 // Core Products
@@ -133,6 +134,38 @@ const coreProducts = [
     stats: { levels: '10', badges: '50+', rewards: 'Unlimited' },
     features: ['Cross-product achievements', 'Referral bonuses', 'Daily challenges', 'Exclusive rewards'],
     revenue: 'Drives engagement → higher LTV',
+  },
+  {
+    name: 'Safar',
+    arabic: 'سفر',
+    tagline: 'Travel',
+    description: 'Complete travel services: visas, flights, hotels, experiences.',
+    color: 'from-cyan-500 to-teal-600',
+    textColor: 'text-cyan-400',
+    bgColor: 'bg-cyan-500/10',
+    borderColor: 'border-cyan-500',
+    icon: Plane,
+    logo: SafarLogo,
+    href: '/safar',
+    stats: { destinations: '150+', visaApproval: '98%', commission: '8-15%' },
+    features: ['Visa processing 150+ countries', 'Flights at Google rate', 'Hotels with Nuqta+ discount', 'Qist BNPL for trips'],
+    revenue: '8-15% commission on bookings',
+  },
+  {
+    name: 'Ajer',
+    arabic: 'أجر',
+    tagline: 'Rent',
+    description: 'Rent anything: cars, electronics, fashion, baby gear & more.',
+    color: 'from-violet-500 to-purple-600',
+    textColor: 'text-violet-400',
+    bgColor: 'bg-violet-500/10',
+    borderColor: 'border-violet-500',
+    icon: Package,
+    logo: AjerLogo,
+    href: '/ajer',
+    stats: { categories: '8', items: '10K+', commission: '15-25%' },
+    features: ['Rent instead of buy - save 70-95%', 'List & earn from idle items', 'Wasil delivery integration', 'Insurance & protection'],
+    revenue: '15-25% platform commission',
   },
 ];
 
@@ -763,7 +796,7 @@ export default function EcosystemPage() {
               The <span className="text-[#c9a227]">Nuqta</span> Ecosystem
             </h1>
             <p className="text-slate-300 text-lg max-w-3xl mx-auto">
-              Seven integrated products serving residents, tourists, corporates, and merchants.
+              Nine integrated products serving residents, tourists, corporates, and merchants.
               One wallet. One membership. Infinite possibilities.
             </p>
           </div>
@@ -778,7 +811,7 @@ export default function EcosystemPage() {
             </div>
 
             {/* Product Ring */}
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3">
               {coreProducts.map((product, i) => {
                 const Logo = product.logo;
                 return (
@@ -802,7 +835,7 @@ export default function EcosystemPage() {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
-              <div className="text-2xl font-bold text-[#c9a227]">7</div>
+              <div className="text-2xl font-bold text-[#c9a227]">9</div>
               <div className="text-xs text-slate-400">Core Products</div>
             </div>
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
