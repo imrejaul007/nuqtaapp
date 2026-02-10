@@ -308,6 +308,96 @@ const touristStrategy = {
   usp: 'Why lose 3-5% on every purchase with your foreign credit card when you can get Google rate and earn rewards?',
 };
 
+// Hawil Tourist Card
+const hawilCard = {
+  name: 'Hawil Card',
+  tagline: 'Your UAE Travel Wallet',
+  description: 'Physical & virtual card for tourists - Google rate at Nuqta partners, normal rates elsewhere. Recharge anywhere, convert back when leaving.',
+  cardTypes: [
+    {
+      type: 'Tourist Card',
+      color: 'bg-gradient-to-br from-blue-600 to-cyan-500',
+      validity: 'Valid until visa expiry',
+      features: ['Linked to tourist visa', 'Auto-locks on exit', 'Reactivate on next visit'],
+    },
+    {
+      type: 'Resident Card',
+      color: 'bg-gradient-to-br from-[#c9a227] to-amber-600',
+      validity: 'Valid until residency expiry',
+      features: ['Linked to residence visa', 'Full Nuqta+ benefits', 'Priority support'],
+    },
+  ],
+  howItWorks: [
+    { step: 1, title: 'Get Card', description: 'Show passport + visa at airport kiosk or partner merchant', icon: CreditCard },
+    { step: 2, title: 'Verify Once', description: 'One-time ID verification - no need to show ID again', icon: UserCheck },
+    { step: 3, title: 'Load Money', description: 'Convert USD/EUR/GBP to AED at Google rate', icon: Coins },
+    { step: 4, title: 'Spend Anywhere', description: 'Tap to pay at any merchant in UAE', icon: Smartphone },
+    { step: 5, title: 'Cash Out', description: 'Convert remaining balance back before leaving', icon: Banknote },
+  ],
+  rateStructure: {
+    nuqtaPartners: {
+      rate: 'Google Rate (0% markup)',
+      cashback: '1-5% in Nuqta coins',
+      description: '500+ merchants with exclusive rates',
+    },
+    otherMerchants: {
+      rate: 'Standard Visa/MC rate',
+      cashback: '0.5% in Nuqta coins',
+      description: 'Same as any other card',
+    },
+  },
+  rechargeOptions: [
+    { method: 'Partner Merchants', description: 'Any Nuqta partner can top up your card', fee: '0%', note: 'ID already verified - just swipe' },
+    { method: 'Airport Kiosks', description: 'Hawil kiosks at DXB, AUH, SHJ', fee: '0%', note: 'Available 24/7' },
+    { method: 'Bank Transfer', description: 'Transfer from any bank account', fee: '0.5%', note: 'Takes 1-2 hours' },
+    { method: 'Cash at Exchange', description: 'Cash deposit at partner exchanges', fee: '0%', note: '50+ locations in UAE' },
+  ],
+  visaLinking: {
+    tourist: {
+      validity: 'Card expires when tourist visa expires',
+      onExit: 'Card auto-locks when exit stamp detected',
+      onReturn: 'Reactivate with new visa entry',
+      balance: 'Balance preserved - withdraw anytime',
+    },
+    resident: {
+      validity: 'Card valid for residency duration',
+      renewal: 'Auto-extends with visa renewal',
+      benefits: 'Full Nuqta+ membership included',
+    },
+  },
+  exitProcess: [
+    { step: 1, action: 'Swipe at Airport', description: 'Use Hawil kiosk at departure terminal' },
+    { step: 2, action: 'Choose Currency', description: 'Convert AED balance to your home currency' },
+    { step: 3, action: 'Get Cash or Transfer', description: 'Receive cash or transfer to home bank' },
+    { step: 4, action: 'Card Locks', description: 'Card auto-locks until next UAE visit' },
+  ],
+  fees: {
+    cardIssuance: '0 AED',
+    monthlyFee: '0 AED',
+    reloadFee: '0%',
+    atmWithdrawal: '10 AED',
+    currencyConversion: '0% at Google rate',
+    exitConversion: '0.5%',
+    replacementCard: '25 AED',
+  },
+  merchantProgram: {
+    title: 'Merchant Recharge Partner',
+    benefits: [
+      'Act as currency exchange point',
+      'No license needed - under Hawil umbrella',
+      'Earn commission on every top-up',
+      'Drive foot traffic to your store',
+      'Tourist already verified - quick transaction',
+    ],
+    commission: '0.25% of top-up amount',
+    requirements: [
+      'Existing Nuqta merchant partner',
+      'POS terminal with Hawil integration',
+      'Staff training (1 hour)',
+    ],
+  },
+};
+
 // Ecosystem Integration
 const ecosystemIntegration = [
   {
@@ -348,6 +438,7 @@ export default function HawilPage() {
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Send },
     { id: 'google-rate', label: 'Google Rate', icon: Percent },
+    { id: 'hawil-card', label: 'Hawil Card', icon: CreditCard },
     { id: 'tourists', label: 'Tourists', icon: Plane },
     { id: 'ecosystem', label: 'Ecosystem', icon: Network },
     { id: 'corridors', label: 'Corridors', icon: Globe },
@@ -768,6 +859,308 @@ export default function HawilPage() {
                 <p className="text-slate-300">
                   Sending 10,000 AED monthly = <span className="text-green-400 font-bold">Save 3,000-7,000 AED/year</span> with Hawil
                 </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Hawil Card Tab */}
+        {activeTab === 'hawil-card' && (
+          <div className="space-y-8">
+            {/* Hero - Card Visual */}
+            <div className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-[#c9a227]/20 rounded-2xl p-8 border-2 border-blue-500">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
+                  <CreditCard className="w-5 h-5 text-blue-400" />
+                  <span className="text-blue-400 font-bold">Tourist & Resident Card</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                  {hawilCard.name}: <span className="text-blue-400">{hawilCard.tagline}</span>
+                </h2>
+                <p className="text-slate-300 text-lg max-w-3xl mx-auto">{hawilCard.description}</p>
+              </div>
+
+              {/* Card Visuals */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                {hawilCard.cardTypes.map((card, i) => (
+                  <div key={i} className={`${card.color} rounded-2xl p-6 shadow-2xl relative overflow-hidden`}>
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+                    <div className="relative z-10">
+                      <div className="flex justify-between items-start mb-8">
+                        <div>
+                          <div className="text-white/80 text-xs mb-1">HAWIL</div>
+                          <div className="text-white font-bold text-lg">{card.type}</div>
+                        </div>
+                        <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                          <CreditCard className="w-6 h-6 text-white" />
+                        </div>
+                      </div>
+                      <div className="text-white/70 text-xs tracking-widest mb-4">•••• •••• •••• 1234</div>
+                      <div className="flex justify-between items-end">
+                        <div>
+                          <div className="text-white/60 text-[10px]">VALID UNTIL</div>
+                          <div className="text-white text-sm font-medium">{card.validity}</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-white/60 text-[10px]">POWERED BY</div>
+                          <div className="text-white text-sm font-bold">NUQTA</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Key USP */}
+              <div className="bg-slate-900/50 rounded-xl p-6 border border-[#c9a227]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-green-500/10 rounded-lg p-4 border border-green-500/30">
+                    <h4 className="text-green-400 font-bold mb-2 flex items-center gap-2">
+                      <Store className="w-4 h-4" />
+                      At Nuqta Partners (500+)
+                    </h4>
+                    <div className="text-2xl font-black text-white mb-1">{hawilCard.rateStructure.nuqtaPartners.rate}</div>
+                    <div className="text-[#c9a227] text-sm font-medium">{hawilCard.rateStructure.nuqtaPartners.cashback}</div>
+                    <div className="text-xs text-slate-400 mt-2">{hawilCard.rateStructure.nuqtaPartners.description}</div>
+                  </div>
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-slate-700">
+                    <h4 className="text-slate-400 font-bold mb-2 flex items-center gap-2">
+                      <Globe className="w-4 h-4" />
+                      At Other Merchants
+                    </h4>
+                    <div className="text-2xl font-black text-white mb-1">{hawilCard.rateStructure.otherMerchants.rate}</div>
+                    <div className="text-[#c9a227] text-sm font-medium">{hawilCard.rateStructure.otherMerchants.cashback}</div>
+                    <div className="text-xs text-slate-400 mt-2">{hawilCard.rateStructure.otherMerchants.description}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* How It Works */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-blue-400" />
+                How Hawil Card Works
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                {hawilCard.howItWorks.map((step, i) => (
+                  <div key={i} className="relative">
+                    <div className="bg-gradient-to-b from-blue-500/20 to-slate-900/50 rounded-xl p-4 border border-blue-500/30 text-center h-full">
+                      <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3 border border-blue-500/50">
+                        <step.icon className="w-6 h-6 text-blue-400" />
+                      </div>
+                      <div className="text-xs text-blue-400 font-bold mb-1">Step {step.step}</div>
+                      <div className="text-sm font-bold text-white mb-2">{step.title}</div>
+                      <div className="text-xs text-slate-400">{step.description}</div>
+                    </div>
+                    {i < 4 && (
+                      <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-blue-500/50" size={24} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Visa Linking System */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border-2 border-blue-500">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-blue-400" />
+                Visa-Linked Security System
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Tourist Visa */}
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                      <Plane className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <h4 className="text-blue-400 font-bold">Tourist Visa Holder</h4>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <Clock className="w-4 h-4 text-slate-500 mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">Validity</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.tourist.validity}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Lock className="w-4 h-4 text-orange-400 mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">On Exit</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.tourist.onExit}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <RefreshCw className="w-4 h-4 text-green-400 mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">On Return</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.tourist.onReturn}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Wallet className="w-4 h-4 text-[#c9a227] mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">Balance</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.tourist.balance}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Resident Visa */}
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
+                      <Home className="w-5 h-5 text-[#c9a227]" />
+                    </div>
+                    <h4 className="text-[#c9a227] font-bold">Residence Visa Holder</h4>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-2">
+                      <Clock className="w-4 h-4 text-slate-500 mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">Validity</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.resident.validity}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <RefreshCw className="w-4 h-4 text-green-400 mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">Renewal</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.resident.renewal}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <Crown className="w-4 h-4 text-[#c9a227] mt-0.5" />
+                      <div>
+                        <div className="text-white text-sm font-medium">Benefits</div>
+                        <div className="text-xs text-slate-400">{hawilCard.visaLinking.resident.benefits}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Recharge Options */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Coins className="w-5 h-5 text-green-400" />
+                Easy Recharge Options
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {hawilCard.rechargeOptions.map((option, i) => (
+                  <div key={i} className="bg-gradient-to-b from-green-500/10 to-slate-900/50 rounded-xl p-5 border border-green-500/30">
+                    <h4 className="text-white font-bold text-sm mb-2">{option.method}</h4>
+                    <p className="text-xs text-slate-400 mb-3">{option.description}</p>
+                    <div className="flex items-center justify-between">
+                      <span className="text-green-400 font-bold text-lg">{option.fee}</span>
+                      <span className="text-xs text-slate-500">fee</span>
+                    </div>
+                    <div className="text-[10px] text-slate-500 mt-2 flex items-center gap-1">
+                      <CheckCircle className="w-3 h-3 text-green-400" />
+                      {option.note}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 bg-green-500/10 rounded-lg p-4 border border-green-500/30">
+                <div className="flex items-center gap-3">
+                  <UserCheck className="w-8 h-8 text-green-400" />
+                  <div>
+                    <div className="text-white font-bold">No ID Required for Top-Ups</div>
+                    <div className="text-sm text-slate-400">Your identity was verified when you got the card. Just swipe and reload - no paperwork!</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Exit Process */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-6 border border-orange-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Plane className="w-5 h-5 text-orange-400" />
+                Leaving UAE? Convert Your Balance
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                {hawilCard.exitProcess.map((step, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center mx-auto mb-3 text-orange-400 font-bold">
+                      {step.step}
+                    </div>
+                    <div className="text-white font-bold text-sm mb-1">{step.action}</div>
+                    <div className="text-xs text-slate-400">{step.description}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-slate-900/50 rounded-lg p-4 text-center">
+                <p className="text-slate-300">
+                  Convert remaining AED to <span className="text-white font-bold">USD, EUR, GBP, INR</span> and 20+ currencies at <span className="text-green-400 font-bold">Google rate + 0.5%</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Fee Structure */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Receipt className="w-5 h-5 text-[#c9a227]" />
+                Transparent Fees
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                {Object.entries(hawilCard.fees).map(([key, value], i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 text-center border border-slate-700/50">
+                    <div className={`text-xl font-bold ${value === '0 AED' || value === '0%' ? 'text-green-400' : 'text-white'}`}>
+                      {value}
+                    </div>
+                    <div className="text-xs text-slate-400 mt-1">
+                      {key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Merchant Recharge Program */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-amber-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Store className="w-5 h-5 text-[#c9a227]" />
+                {hawilCard.merchantProgram.title}
+              </h3>
+              <p className="text-slate-300 mb-6">
+                Nuqta partner merchants can act as <strong className="text-white">Hawil Card recharge points</strong> - function like a currency exchange without needing a license!
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-[#c9a227] font-bold mb-3">Benefits for Merchants</h4>
+                  <div className="space-y-2">
+                    {hawilCard.merchantProgram.benefits.map((benefit, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        {benefit}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 bg-green-500/10 rounded-lg p-3 border border-green-500/30">
+                    <div className="text-green-400 font-bold">Commission: {hawilCard.merchantProgram.commission}</div>
+                    <div className="text-xs text-slate-400">Per top-up transaction</div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-3">Requirements</h4>
+                  <div className="space-y-2">
+                    {hawilCard.merchantProgram.requirements.map((req, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                        {req}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-4 bg-blue-500/10 rounded-lg p-3 border border-blue-500/30">
+                    <div className="text-blue-400 font-bold">Under Hawil License</div>
+                    <div className="text-xs text-slate-400">No separate money exchange license needed</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
