@@ -40,7 +40,7 @@ const sakinPillars = [
     pillar: 'Find a Home',
     icon: 'Search',
     description: 'Property marketplace with broker + owner listings',
-    features: ['Broker listings', 'Owner listings', 'Corporate housing', 'Monthly furnished rentals'],
+    features: ['Broker listings', 'Owner listings', 'Corporate housing', 'Monthly furnished rentals', 'Tourist short stays'],
     status: 'Phase 2',
   },
   {
@@ -58,6 +58,53 @@ const sakinPillars = [
     status: 'Phase 3',
   },
 ];
+
+// NEW: Tourist Short-Term Rentals
+const touristRentals = {
+  title: 'Sakin Stays - Short-Term Rentals for Tourists',
+  description: 'Furnished apartments for tourists - better than hotels, cheaper than Airbnb, with Nuqta ecosystem benefits',
+  targetAudience: [
+    { segment: 'Extended Stay Tourists', stay: '1-4 weeks', need: 'Want apartment, not hotel room' },
+    { segment: 'Family Visitors', stay: '2-8 weeks', need: 'Multiple bedrooms, kitchen' },
+    { segment: 'Business Travelers', stay: '1-3 months', need: 'Comfortable, central location' },
+    { segment: 'Digital Nomads', stay: '1-6 months', need: 'Wifi, workspace, flexible terms' },
+  ],
+  propertyTypes: [
+    { type: 'Studio', bedrooms: 0, avgNight: 150, avgMonth: 3500, locations: ['Dubai Marina', 'JBR', 'Downtown'] },
+    { type: '1 Bedroom', bedrooms: 1, avgNight: 250, avgMonth: 5500, locations: ['Business Bay', 'Marina', 'JLT'] },
+    { type: '2 Bedroom', bedrooms: 2, avgNight: 400, avgMonth: 8500, locations: ['Downtown', 'Palm', 'Marina'] },
+    { type: '3+ Bedroom', bedrooms: 3, avgNight: 600, avgMonth: 12000, locations: ['Palm', 'Emirates Hills', 'JBR'] },
+  ],
+  vsCompetitors: [
+    { feature: 'Best Rates', sakin: 'Google rate on payments', airbnb: 'Standard card rates', hotels: 'Standard card rates' },
+    { feature: 'Earn Rewards', sakin: 'Nuqta coins on stay', airbnb: 'None', hotels: 'Hotel points only' },
+    { feature: 'BNPL', sakin: 'Qist for monthly stays', airbnb: 'Not available', hotels: 'Not available' },
+    { feature: 'Delivery', sakin: 'Wasil integrated', airbnb: 'Use other apps', hotels: 'Expensive room service' },
+    { feature: 'Welcome Kit', sakin: 'Free via Wasil', airbnb: 'None', hotels: 'Minibar only' },
+    { feature: 'Currency', sakin: 'Hawil Card accepted', airbnb: 'Credit card only', hotels: 'Credit card only' },
+  ],
+  ecosystemBenefits: [
+    { benefit: 'Pay with Hawil Card', description: 'Use Google rate currency - save 3-5%' },
+    { benefit: 'Wasil Delivery', description: 'Groceries, pharmacy, food delivered to apartment' },
+    { benefit: 'Qist for Long Stays', description: 'Finance monthly stay, pay after returning home' },
+    { benefit: 'Nuqta Merchant Deals', description: 'Exclusive deals at 500+ merchants' },
+    { benefit: 'Concierge Service', description: 'Restaurant reservations, tours, experiences' },
+    { benefit: 'Earn Coins', description: 'Coins on booking + all purchases' },
+  ],
+  bookingProcess: [
+    { step: 1, title: 'Browse & Book', description: 'Find apartment in Sakin app, pay with Hawil Card or Qist' },
+    { step: 2, title: 'Get Welcome Kit', description: 'Wasil delivers essentials before you arrive' },
+    { step: 3, title: 'Check In', description: 'Digital key, 24/7 support via WhatsApp' },
+    { step: 4, title: 'Live Like a Local', description: 'Use Nuqta ecosystem for everything' },
+    { step: 5, title: 'Check Out', description: 'Extend anytime, or cash out remaining Hawil balance' },
+  ],
+  revenue: {
+    commission: '10-15% per booking',
+    avgBookingValue: 8000,
+    avgStay: '2 weeks',
+    target: '500 bookings/month by Year 2',
+  },
+};
 
 // Broker Partnership Model
 const brokerPartnershipModel = {

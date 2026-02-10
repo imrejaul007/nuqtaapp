@@ -622,6 +622,7 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'Qist BNPL', href: '/qist', icon: Wallet },
           { label: 'Wasil Delivery', href: '/wasil', icon: Truck },
           { label: 'Hawil Remittance', href: '/hawil', icon: ArrowLeftRight },
+          { label: 'Rakab Mobility', href: '/rakab', icon: Truck },
           { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
         ]
       },

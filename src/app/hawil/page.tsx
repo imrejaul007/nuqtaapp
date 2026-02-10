@@ -12,7 +12,8 @@ import {
   BadgePercent, CircleDollarSign, PieChart, LineChart, ArrowUpRight,
   Link2, RefreshCw, Landmark, MapPin, Flag, Percent, Receipt,
   Timer, UserCheck, Lock, Eye, Search, Repeat, ArrowDownUp,
-  Plane, Home, ShoppingBag, IndianRupee, PhilippinePeso, BadgeDollarSign
+  Plane, Home, ShoppingBag, IndianRupee, PhilippinePeso, BadgeDollarSign,
+  Package, Wifi, Heart, Users2
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -308,6 +309,66 @@ const touristStrategy = {
   usp: 'Why lose 3-5% on every purchase with your foreign credit card when you can get Google rate and earn rewards?',
 };
 
+// Tourist Journey Add-ons
+const touristAddons = {
+  title: 'Complete Tourist Experience',
+  description: 'Beyond currency exchange - everything a tourist needs in one app',
+  services: [
+    {
+      name: 'Concierge Service',
+      icon: Phone,
+      description: 'Personal assistant for restaurant reservations, experiences, tours',
+      features: [
+        'Restaurant reservations at Nuqta partners',
+        'Theme park & attraction tickets',
+        'Desert safari & city tours',
+        'VIP access to events',
+        'Translation assistance',
+      ],
+      pricing: 'Free for Hawil Card holders | Premium: 50 AED/request',
+      availability: '24/7 WhatsApp & in-app chat',
+    },
+    {
+      name: 'eSIM Data',
+      icon: Smartphone,
+      description: 'Instant mobile data - no SIM swap needed',
+      packages: [
+        { data: '3GB', validity: '7 days', price: '35 AED', best: false },
+        { data: '10GB', validity: '14 days', price: '75 AED', best: true },
+        { data: '20GB', validity: '30 days', price: '120 AED', best: false },
+        { data: 'Unlimited', validity: '7 days', price: '99 AED', best: false },
+      ],
+      features: ['Instant activation', 'Works with any eSIM phone', 'Local UAE number included', 'Free WhatsApp calls'],
+      partner: 'Powered by du/Etisalat',
+    },
+    {
+      name: 'Luggage Storage',
+      icon: Package,
+      description: 'Store bags anywhere - explore hands-free',
+      locations: [
+        { area: 'Dubai Mall', spots: 5, price: '25 AED/day' },
+        { area: 'Mall of Emirates', spots: 3, price: '25 AED/day' },
+        { area: 'JBR Walk', spots: 2, price: '20 AED/day' },
+        { area: 'Dubai Marina', spots: 3, price: '20 AED/day' },
+        { area: 'Airport T1/T2/T3', spots: 10, price: '30 AED/day' },
+      ],
+      features: ['Secure lockers', 'Insurance included', 'Book via app', 'Extend anytime'],
+    },
+    {
+      name: 'Airport Fast Track',
+      icon: Plane,
+      description: 'Skip the queues at immigration and security',
+      services: [
+        { service: 'Arrival Fast Track', price: '150 AED', description: 'Skip immigration queue' },
+        { service: 'Departure Fast Track', price: '150 AED', description: 'Priority security + immigration' },
+        { service: 'Meet & Greet', price: '300 AED', description: 'Personal assistant at gate' },
+        { service: 'Lounge Access', price: '200 AED', description: '3 hours any airport lounge' },
+      ],
+      airports: ['DXB Terminal 1, 2, 3', 'DWC', 'AUH', 'SHJ'],
+    },
+  ],
+};
+
 // Hawil Tourist Card
 const hawilCard = {
   name: 'Hawil Card',
@@ -318,15 +379,86 @@ const hawilCard = {
       type: 'Tourist Card',
       color: 'bg-gradient-to-br from-blue-600 to-cyan-500',
       validity: 'Valid until visa expiry',
-      features: ['Linked to tourist visa', 'Auto-locks on exit', 'Reactivate on next visit'],
+      features: ['Linked to tourist visa', 'Auto-locks on exit', 'Reactivate on next visit', 'Virtual card instant issue'],
     },
     {
       type: 'Resident Card',
       color: 'bg-gradient-to-br from-[#c9a227] to-amber-600',
       validity: 'Valid until residency expiry',
-      features: ['Linked to residence visa', 'Full Nuqta+ benefits', 'Priority support'],
+      features: ['Linked to residence visa', 'Full Nuqta+ benefits', 'Priority support', 'Family cards included'],
+    },
+    {
+      type: 'Family Card',
+      color: 'bg-gradient-to-br from-pink-500 to-rose-600',
+      validity: 'Linked to primary holder',
+      features: ['Up to 4 family members', 'Shared balance or separate', 'Parental controls', 'Same visa linking'],
     },
   ],
+  // NEW: Virtual Card & Digital Wallet
+  virtualCard: {
+    title: 'Instant Virtual Card',
+    description: 'Get a virtual card in 60 seconds - use immediately while physical card ships',
+    features: [
+      { feature: 'Instant Issue', description: 'Virtual card ready in 60 seconds after verification' },
+      { feature: 'Apple Pay', description: 'Add to Apple Wallet for contactless payments' },
+      { feature: 'Google Pay', description: 'Add to Google Wallet for Android users' },
+      { feature: 'Samsung Pay', description: 'Full Samsung Pay compatibility' },
+      { feature: 'Online Shopping', description: 'Use for any online purchase immediately' },
+    ],
+    process: [
+      { step: 1, action: 'Scan passport', time: '30 sec' },
+      { step: 2, action: 'Verify identity', time: '30 sec' },
+      { step: 3, action: 'Virtual card issued', time: 'Instant' },
+      { step: 4, action: 'Add to wallet', time: '10 sec' },
+    ],
+  },
+  // NEW: Multi-Currency Wallet
+  multiCurrency: {
+    title: 'Multi-Currency Wallet',
+    description: 'Hold multiple currencies simultaneously - convert only when you need to',
+    currencies: [
+      { code: 'AED', name: 'UAE Dirham', flag: '🇦🇪', canHold: true, canSpend: true },
+      { code: 'USD', name: 'US Dollar', flag: '🇺🇸', canHold: true, canSpend: true },
+      { code: 'EUR', name: 'Euro', flag: '🇪🇺', canHold: true, canSpend: true },
+      { code: 'GBP', name: 'British Pound', flag: '🇬🇧', canHold: true, canSpend: true },
+      { code: 'INR', name: 'Indian Rupee', flag: '🇮🇳', canHold: true, canSpend: false },
+      { code: 'PKR', name: 'Pakistani Rupee', flag: '🇵🇰', canHold: true, canSpend: false },
+      { code: 'PHP', name: 'Philippine Peso', flag: '🇵🇭', canHold: true, canSpend: false },
+    ],
+    features: [
+      'Hold up to 10 currencies at once',
+      'Convert between currencies at Google rate',
+      'Auto-convert when spending (optional)',
+      'Lock rates for up to 24 hours',
+      'Set alerts for favorable rates',
+    ],
+  },
+  // NEW: Family Cards
+  familyCards: {
+    title: 'Family Cards',
+    description: 'Add spouse, kids, or parents to your Hawil Card account',
+    plans: [
+      {
+        type: 'Shared Balance',
+        description: 'All family members share one balance',
+        features: ['Single balance pool', 'Spending notifications', 'Set individual limits', 'Real-time tracking'],
+        fee: '0 AED',
+      },
+      {
+        type: 'Separate Balances',
+        description: 'Each member has their own balance',
+        features: ['Individual wallets', 'Transfer between family', 'Personal spending history', 'Own multi-currency'],
+        fee: '0 AED',
+      },
+    ],
+    controls: [
+      { control: 'Spending Limits', description: 'Set daily/weekly/monthly limits per card' },
+      { control: 'Category Blocks', description: 'Block specific merchant categories (e.g., bars for kids)' },
+      { control: 'Location Alerts', description: 'Get notified when card used in new location' },
+      { control: 'Instant Freeze', description: 'Freeze any family card instantly from app' },
+    ],
+    eligibility: 'Primary cardholder must be on same visa (tourist/resident)',
+  },
   howItWorks: [
     { step: 1, title: 'Get Card', description: 'Show passport + visa at airport kiosk or partner merchant', icon: CreditCard },
     { step: 2, title: 'Verify Once', description: 'One-time ID verification - no need to show ID again', icon: UserCheck },
