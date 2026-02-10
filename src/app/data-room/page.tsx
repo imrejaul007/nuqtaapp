@@ -772,6 +772,38 @@ export default function DataRoomPage() {
               </p>
             </div>
           </DocItem>
+
+          <DocItem number="22" title="Organization Structure">
+            <p className="mb-4">
+              Nuqta has a well-defined organizational structure with clear reporting lines,
+              sub-teams under each C-Suite executive, and defined responsibilities for all roles.
+            </p>
+            <div className="mt-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
+                <div className="bg-amber-500/10 rounded-lg p-3 border border-amber-500/30 text-center">
+                  <p className="text-lg font-bold text-amber-400">6</p>
+                  <p className="text-xs text-gray-400">C-Suite Roles</p>
+                </div>
+                <div className="bg-emerald-500/10 rounded-lg p-3 border border-emerald-500/30 text-center">
+                  <p className="text-lg font-bold text-emerald-400">20+</p>
+                  <p className="text-xs text-gray-400">Sub-Teams</p>
+                </div>
+                <div className="bg-blue-500/10 rounded-lg p-3 border border-blue-500/30 text-center">
+                  <p className="text-lg font-bold text-blue-400">80+</p>
+                  <p className="text-xs text-gray-400">Total Roles (H3)</p>
+                </div>
+              </div>
+              <p className="font-semibold text-white mb-2">Department Structure</p>
+              <p className="text-gray-300 text-sm mb-4">
+                CEO (Strategy & Executive Office) → CTO (Product, Engineering, Design, Data) →
+                COO (Merchant Success, Support, Operations, Legal) → CMO (Growth, Content, Creative, Performance, PR) →
+                CHRO (Talent, People Ops, L&D, Culture) → CFO (Finance, Treasury, FP&A)
+              </p>
+              <Link href="/company-structure" className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-lg text-[#c9a227] hover:bg-[#c9a227]/30 transition-colors text-sm">
+                View Full Company Structure →
+              </Link>
+            </div>
+          </DocItem>
         </Folder>
 
         {/* SECTION 7: INVESTOR FAQ */}
