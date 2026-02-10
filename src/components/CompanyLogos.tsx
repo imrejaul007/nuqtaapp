@@ -247,6 +247,39 @@ export const AjerLogo = ({ size = 48, className = '' }: { size?: number; classNa
   </svg>
 );
 
+// Fakhir Logo - Crown with diamond (luxury)
+export const FakhirLogo = ({ size = 48, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <defs>
+      <linearGradient id="fakhirGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#f59e0b" />
+        <stop offset="50%" stopColor="#d97706" />
+        <stop offset="100%" stopColor="#b45309" />
+      </linearGradient>
+      <linearGradient id="fakhirGold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#fef3c7" />
+        <stop offset="50%" stopColor="#fcd34d" />
+        <stop offset="100%" stopColor="#f59e0b" />
+      </linearGradient>
+    </defs>
+    <circle cx="50" cy="50" r="45" fill="url(#fakhirGrad)" />
+    {/* Ornate crown */}
+    <path d="M20 60 L25 35 L35 45 L50 25 L65 45 L75 35 L80 60 Z" fill="white" />
+    {/* Crown jewels */}
+    <circle cx="25" cy="35" r="4" fill="url(#fakhirGold)" />
+    <circle cx="50" cy="25" r="5" fill="url(#fakhirGold)" />
+    <circle cx="75" cy="35" r="4" fill="url(#fakhirGold)" />
+    {/* Diamond in center */}
+    <path d="M50 50 L42 58 L50 72 L58 58 Z" fill="url(#fakhirGold)" />
+    {/* Crown band */}
+    <rect x="22" y="60" width="56" height="8" rx="2" fill="white" />
+    {/* Band jewels */}
+    <circle cx="35" cy="64" r="2" fill="url(#fakhirGrad)" />
+    <circle cx="50" cy="64" r="3" fill="url(#fakhirGrad)" />
+    <circle cx="65" cy="64" r="2" fill="url(#fakhirGrad)" />
+  </svg>
+);
+
 // Export all logos as a mapping
 export const CompanyLogos = {
   nuqta: NuqtaMainLogo,
@@ -260,6 +293,7 @@ export const CompanyLogos = {
   ecosystem: EcosystemLogo,
   safar: SafarLogo,
   ajer: AjerLogo,
+  fakhir: FakhirLogo,
 };
 
 export default CompanyLogos;

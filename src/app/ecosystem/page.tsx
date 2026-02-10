@@ -18,7 +18,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 import {
   NuqtaPlusLogo, QistLogo, SakinLogo, WasilLogo,
   HawilLogo, RakabLogo, GamificationLogo, NuqtaMainLogo, EcosystemLogo,
-  SafarLogo, AjerLogo
+  SafarLogo, AjerLogo, FakhirLogo
 } from '@/components/CompanyLogos';
 
 // Core Products
@@ -166,6 +166,22 @@ const coreProducts = [
     stats: { categories: '8', items: '10K+', commission: '15-25%' },
     features: ['Rent instead of buy - save 70-95%', 'List & earn from idle items', 'Wasil delivery integration', 'Insurance & protection'],
     revenue: '15-25% platform commission',
+  },
+  {
+    name: 'Fakhir',
+    arabic: 'فاخر',
+    tagline: 'Luxury',
+    description: 'Exclusive luxury concierge & lifestyle management for HNWIs.',
+    color: 'from-amber-500 to-yellow-600',
+    textColor: 'text-amber-400',
+    bgColor: 'bg-amber-500/10',
+    borderColor: 'border-amber-500',
+    icon: Crown,
+    logo: FakhirLogo,
+    href: '/fakhir',
+    stats: { members: '2,500', avgSpend: '500K+ AED', commission: '5-15%' },
+    features: ['24/7 white-glove concierge', 'Private aviation & yachts', 'Exclusive events access', 'Fakhir Black Card'],
+    revenue: 'Membership + 5-15% service commission',
   },
 ];
 
