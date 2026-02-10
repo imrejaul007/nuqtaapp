@@ -103,6 +103,22 @@ const coreProducts = [
     revenue: '0.5% transfer fee',
   },
   {
+    name: 'Rakab',
+    arabic: 'ركب',
+    tagline: 'Ride',
+    description: 'Ride-hailing with Google rate payments and 5% Nuqta coins.',
+    color: 'from-green-500 to-emerald-600',
+    textColor: 'text-green-400',
+    bgColor: 'bg-green-500/10',
+    borderColor: 'border-green-500',
+    icon: Car,
+    logo: RakabLogo,
+    href: '/rakab',
+    stats: { drivers: '1,000+', coverage: 'Dubai', coins: '5% back' },
+    features: ['Pay with Hawil Card at Google rate', '5% coins on every ride', '85% driver commission', 'Tourist-first features'],
+    revenue: '15% commission per ride',
+  },
+  {
     name: 'Gamification',
     arabic: 'ألعاب',
     tagline: 'Play',
@@ -136,7 +152,7 @@ const userSegments = [
     icon: Plane,
     population: '21M/year',
     acquisition: 'Hawil Card at airport, Google rate marketing',
-    journey: ['Hawil Card', 'Nuqta merchant deals', 'Wasil delivery', 'Qist for big purchases'],
+    journey: ['Hawil Card', 'Rakab rides', 'Wasil delivery', 'Nuqta merchant deals', 'Qist for big purchases'],
     ltv: '500 AED/visit',
     color: 'text-blue-400',
   },
@@ -276,11 +292,11 @@ const futureProducts = [
     color: 'text-red-400',
   },
   {
-    name: 'Rakab',
-    arabic: 'ركب',
-    tagline: 'Ride',
-    description: 'Ride-hailing with Nuqta coins',
-    icon: Car,
+    name: 'Nuqta Pay',
+    arabic: 'نقطة باي',
+    tagline: 'Pay',
+    description: 'QR code payments at any merchant - even without Nuqta partnership',
+    icon: CreditCard,
     status: 'Planned 2028',
     color: 'text-green-400',
   },
@@ -532,7 +548,7 @@ export default function EcosystemPage() {
               The <span className="text-[#c9a227]">Nuqta</span> Ecosystem
             </h1>
             <p className="text-slate-300 text-lg max-w-3xl mx-auto">
-              Six integrated products serving residents, tourists, corporates, and merchants.
+              Seven integrated products serving residents, tourists, corporates, and merchants.
               One wallet. One membership. Infinite possibilities.
             </p>
           </div>
@@ -571,7 +587,7 @@ export default function EcosystemPage() {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
-              <div className="text-2xl font-bold text-[#c9a227]">6</div>
+              <div className="text-2xl font-bold text-[#c9a227]">7</div>
               <div className="text-xs text-slate-400">Core Products</div>
             </div>
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
