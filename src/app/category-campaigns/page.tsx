@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import {
@@ -1296,7 +1296,7 @@ const allCategories: CategoryData[] = [
   entertainmentCampaigns, eventsCampaigns
 ];
 
-export default function CategoryCampaignsPage() {
+function CategoryCampaignsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get('category');
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'cafe');
@@ -1496,5 +1496,25 @@ export default function CategoryCampaignsPage() {
         </p>
       </div>
     </div>
+  );
+}
+
+// Loading fallback for Suspense
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-[#0a1628] flex items-center justify-center">
+      <div className="text-center">
+        <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+        <p className="text-slate-400">Loading campaigns...</p>
+      </div>
+    </div>
+  );
+}
+
+export default function CategoryCampaignsPage() {
+  return (
+    <Suspense fallback={<LoadingFallback />}>
+      <CategoryCampaignsContent />
+    </Suspense>
   );
 }
