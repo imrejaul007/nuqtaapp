@@ -89,7 +89,8 @@ import {
   Phone,
   HelpCircle,
   Home,
-  Truck
+  Truck,
+  ArrowLeftRight
 } from 'lucide-react';
 
 interface SubTeam {
@@ -619,6 +620,7 @@ const cxoDepartments: CXODepartment[] = [
           { label: 'Sakin Rent', href: '/sakin', icon: Home },
           { label: 'Qist BNPL', href: '/qist', icon: Wallet },
           { label: 'Wasil Delivery', href: '/wasil', icon: Truck },
+          { label: 'Hawil Remittance', href: '/hawil', icon: ArrowLeftRight },
           { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
         ]
       },

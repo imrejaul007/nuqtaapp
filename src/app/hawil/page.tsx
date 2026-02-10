@@ -1,0 +1,1281 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import {
+  Send, DollarSign, Globe, Shield, TrendingUp, Users, Target,
+  Rocket, CheckCircle, AlertTriangle, Clock, Building, ArrowRight,
+  Star, Zap, BarChart3, Award, Handshake, Store, CreditCard,
+  FileText, Calculator, Gift, Crown, Wallet, ChevronRight,
+  ChevronDown, ChevronUp, Building2, ShieldCheck, HeartHandshake,
+  Coins, Network, ArrowRightLeft, Phone, Smartphone, Banknote,
+  BadgePercent, CircleDollarSign, PieChart, LineChart, ArrowUpRight,
+  Link2, RefreshCw, Landmark, MapPin, Flag, Percent, Receipt,
+  Timer, UserCheck, Lock, Eye, Search, Repeat, ArrowDownUp,
+  Plane, Home, ShoppingBag, IndianRupee, PhilippinePeso, BadgeDollarSign
+} from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
+
+// Executive Summary Stats
+const keyStats = [
+  { label: 'UAE Remittance', value: '$50B', suffix: 'annually', color: 'text-green-400' },
+  { label: 'Target Year 1', value: '$100M', suffix: 'volume', color: 'text-blue-400' },
+  { label: 'Avg Transfer', value: '2,500', suffix: 'AED', color: 'text-purple-400' },
+  { label: 'Our Fee', value: '0.5%', suffix: 'only', color: 'text-[#c9a227]' },
+];
+
+// Top Remittance Corridors from UAE
+const corridors = [
+  { country: 'India', flag: '🇮🇳', volume: '$15B', share: '30%', avgTransfer: 3000, ourFee: '0.5%', competitorFee: '3-5%' },
+  { country: 'Pakistan', flag: '🇵🇰', volume: '$8B', share: '16%', avgTransfer: 2500, ourFee: '0.5%', competitorFee: '3-4%' },
+  { country: 'Philippines', flag: '🇵🇭', volume: '$6B', share: '12%', avgTransfer: 2000, ourFee: '0.5%', competitorFee: '2-4%' },
+  { country: 'Bangladesh', flag: '🇧🇩', volume: '$4B', share: '8%', avgTransfer: 2200, ourFee: '0.5%', competitorFee: '3-5%' },
+  { country: 'Egypt', flag: '🇪🇬', volume: '$3B', share: '6%', avgTransfer: 2800, ourFee: '0.5%', competitorFee: '2-4%' },
+  { country: 'Nepal', flag: '🇳🇵', volume: '$2B', share: '4%', avgTransfer: 1800, ourFee: '0.5%', competitorFee: '3-5%' },
+  { country: 'Sri Lanka', flag: '🇱🇰', volume: '$1.5B', share: '3%', avgTransfer: 2000, ourFee: '0.5%', competitorFee: '2-4%' },
+  { country: 'Indonesia', flag: '🇮🇩', volume: '$1B', share: '2%', avgTransfer: 2500, ourFee: '0.5%', competitorFee: '2-3%' },
+];
+
+// The Google Rate Advantage
+const googleRateAdvantage = {
+  headline: 'Buy Nuqta Coins at Google Rate',
+  subheadline: 'Zero markup. Zero hidden fees. Best rate in UAE.',
+  comparison: [
+    { provider: 'Hawil (Nuqta Coins)', markup: '0%', description: 'Google/mid-market rate', highlight: true },
+    { provider: 'Exchange Houses', markup: '2-4%', description: 'Hidden in exchange rate', highlight: false },
+    { provider: 'Banks', markup: '3-5%', description: 'Plus fixed fees', highlight: false },
+    { provider: 'Wise', markup: '0.5-1%', description: 'Plus transfer fee', highlight: false },
+  ],
+  howItWorks: [
+    'You buy Nuqta Coins with AED at exact Google rate',
+    'Coins are stored in your Nuqta Wallet',
+    'Send coins to family - they convert at local Google rate',
+    'Zero markup on both ends = maximum value',
+  ],
+};
+
+// Value Propositions
+const senderBenefits = [
+  { icon: Percent, title: 'Google Rate Exchange', description: 'Buy Nuqta coins at exact Google/mid-market rate. Zero markup.' },
+  { icon: BadgePercent, title: '0.5% Transfer Fee', description: 'Flat 0.5% fee. No hidden charges. Save up to 90% vs banks.' },
+  { icon: Coins, title: 'Earn While Sending', description: 'Get Nuqta coins on every transfer. More you send, more you earn.' },
+  { icon: Zap, title: 'Instant Transfers', description: 'Money arrives in minutes, not days. 24/7 availability.' },
+  { icon: Shield, title: 'Bank-Grade Security', description: 'Licensed, regulated, and fully insured transfers.' },
+  { icon: Smartphone, title: 'Track Everything', description: 'Real-time tracking. Instant notifications when money arrives.' },
+];
+
+const receiverBenefits = [
+  { icon: Banknote, title: 'Best Rate Guaranteed', description: 'Family receives at Google rate. No deductions.' },
+  { icon: Clock, title: 'Instant Arrival', description: 'Money in bank account within minutes.' },
+  { icon: Wallet, title: 'Multiple Options', description: 'Bank deposit, mobile wallet, or cash pickup.' },
+  { icon: Gift, title: 'Bonus Rewards', description: 'Receivers can join Nuqta and earn coins too.' },
+];
+
+// Currency Exchange Model
+const currencyExchangeModel = {
+  concept: 'Nuqta Coins as Universal Currency',
+  steps: [
+    { step: 1, title: 'Buy Coins', description: 'Convert AED to Nuqta Coins at Google rate (0% markup)', icon: Coins },
+    { step: 2, title: 'Store or Send', description: 'Keep in wallet or send to family instantly', icon: Send },
+    { step: 3, title: 'Convert Anywhere', description: 'Receiver converts to local currency at Google rate', icon: ArrowDownUp },
+    { step: 4, title: 'Earn Rewards', description: 'Both sender and receiver earn Nuqta coins', icon: Gift },
+  ],
+  advantages: [
+    'No forex markup on either end',
+    'Coins hold value (pegged to USD)',
+    'Use coins for Nuqta ecosystem purchases',
+    'Convert back to AED anytime at Google rate',
+  ],
+};
+
+// Pricing
+const pricingTiers = [
+  {
+    tier: 'Standard',
+    transferFee: '0.75%',
+    exchangeRate: 'Google Rate',
+    minTransfer: '100 AED',
+    maxTransfer: '10,000 AED',
+    speed: '1-24 hours',
+    coinReward: '25 coins',
+    color: 'border-slate-500',
+    bgColor: 'bg-slate-800/30',
+  },
+  {
+    tier: 'Nuqta+ Member',
+    transferFee: '0.5%',
+    exchangeRate: 'Google Rate',
+    minTransfer: '100 AED',
+    maxTransfer: '50,000 AED',
+    speed: 'Instant',
+    coinReward: '50 coins',
+    color: 'border-[#c9a227]',
+    bgColor: 'bg-[#c9a227]/10',
+    popular: true,
+  },
+  {
+    tier: 'Premium',
+    transferFee: '0.25%',
+    exchangeRate: 'Google Rate',
+    minTransfer: '100 AED',
+    maxTransfer: '100,000 AED',
+    speed: 'Instant',
+    coinReward: '100 coins',
+    color: 'border-purple-500',
+    bgColor: 'bg-purple-500/10',
+  },
+];
+
+// Unit Economics
+const unitEconomics = {
+  avgTransfer: 2500,
+  transferFee: 12.5, // 0.5%
+  fxSpread: 0, // We use Google rate
+  partnerCost: 5, // Payment to local payout partner
+  operatingCost: 2,
+  netRevenue: 5.5,
+  coinRewardCost: 2.5, // 50 coins at 0.05 AED each
+  actualProfit: 3,
+  nuqtaPlusConversion: 20, // % who convert to Nuqta+
+};
+
+// Financial Projections
+const financialProjections = [
+  { year: 'Year 1', volume: 100, transactions: 40000, revenue: 0.5, netProfit: 0.12, users: 15000, countries: 8 },
+  { year: 'Year 2', volume: 500, transactions: 200000, revenue: 2.5, netProfit: 0.8, users: 75000, countries: 15 },
+  { year: 'Year 3', volume: 2000, transactions: 800000, revenue: 10, netProfit: 4, users: 250000, countries: 25 },
+];
+
+// Roadmap
+const roadmapPhases = [
+  {
+    phase: 'Phase 1',
+    title: 'Foundation',
+    timeline: 'Q4 2026',
+    status: 'planned',
+    milestones: [
+      'Legal entity setup (Hawil Exchange LLC)',
+      'CBUAE money exchange license',
+      'Partner with 3 payout networks',
+      'Build core transfer platform',
+      'Integrate Nuqta wallet',
+      'Launch India & Pakistan corridors',
+    ],
+    color: 'border-green-500',
+    bgColor: 'bg-green-500/10',
+  },
+  {
+    phase: 'Phase 2',
+    title: 'Expansion',
+    timeline: 'Q1 2027',
+    status: 'pending',
+    milestones: [
+      'Add Philippines, Bangladesh, Egypt',
+      'Launch Nuqta Coin exchange feature',
+      'Mobile app release',
+      'Cash pickup partnerships',
+      'Corporate bulk transfers',
+      'Reach $50M monthly volume',
+    ],
+    color: 'border-blue-500',
+    bgColor: 'bg-blue-500/10',
+  },
+  {
+    phase: 'Phase 3',
+    title: 'Scale',
+    timeline: 'Q3 2027',
+    status: 'pending',
+    milestones: [
+      'Expand to 15+ countries',
+      'Launch Hawil card (multi-currency)',
+      'Real-time currency conversion',
+      'B2B payroll remittance',
+      'Cross-border Qist payments',
+      'Reach $200M monthly volume',
+    ],
+    color: 'border-purple-500',
+    bgColor: 'bg-purple-500/10',
+  },
+  {
+    phase: 'Phase 4',
+    title: 'Dominance',
+    timeline: '2028',
+    status: 'pending',
+    milestones: [
+      '25+ countries coverage',
+      'Crypto/stablecoin rails',
+      'Regional expansion (GCC)',
+      '$500M+ monthly volume',
+      'IPO preparation',
+    ],
+    color: 'border-[#c9a227]',
+    bgColor: 'bg-[#c9a227]/10',
+  },
+];
+
+// Competition
+const competitors = [
+  { name: 'Hawil', fee: '0.5%', fxMarkup: '0% (Google)', speed: 'Instant', rewards: 'Nuqta Coins', ecosystem: 'Full Nuqta', advantage: 'Best rate + rewards' },
+  { name: 'Exchange Houses', fee: '0-1%', fxMarkup: '2-4%', speed: '1-3 days', rewards: 'None', ecosystem: 'None', advantage: 'Cash handling' },
+  { name: 'Banks', fee: '25-50 AED', fxMarkup: '3-5%', speed: '2-5 days', rewards: 'None', ecosystem: 'None', advantage: 'Trust' },
+  { name: 'Wise', fee: '0.5-1%', fxMarkup: '0.5-1%', speed: '1-2 days', rewards: 'None', ecosystem: 'None', advantage: 'Transparency' },
+  { name: 'Remitly', fee: '1-3%', fxMarkup: '1-2%', speed: 'Instant', rewards: 'Limited', ecosystem: 'None', advantage: 'Speed' },
+  { name: 'Western Union', fee: '5-10%', fxMarkup: '2-4%', speed: 'Instant', rewards: 'None', ecosystem: 'None', advantage: 'Cash network' },
+];
+
+// Risks
+const risks = [
+  {
+    risk: 'Regulatory Compliance',
+    severity: 'high',
+    mitigation: [
+      'CBUAE license from day 1',
+      'AML/KYC compliance built-in',
+      'Regular audits',
+      'Compliance officer hired',
+    ],
+  },
+  {
+    risk: 'FX Rate Volatility',
+    severity: 'medium',
+    mitigation: [
+      'Real-time rate locking',
+      'Hedging strategies',
+      'Volume-based rate agreements',
+      'Multi-provider redundancy',
+    ],
+  },
+  {
+    risk: 'Payout Partner Reliability',
+    severity: 'medium',
+    mitigation: [
+      'Multiple partners per corridor',
+      'SLA agreements',
+      '24/7 monitoring',
+      'Instant failover',
+    ],
+  },
+  {
+    risk: 'Competition from Banks/Fintechs',
+    severity: 'high',
+    mitigation: [
+      'Google rate = unbeatable pricing',
+      'Nuqta ecosystem advantage',
+      'Coin rewards differentiation',
+      'Superior UX',
+    ],
+  },
+];
+
+// Corporate Structure
+const corporateStructure = {
+  parentCompany: 'Nuqta Group',
+  subsidiary: 'Hawil Exchange LLC',
+  ownership: '100% owned by Nuqta Group',
+  license: 'Money Exchange / Remittance',
+  regulator: 'Central Bank of UAE (CBUAE)',
+};
+
+// Ecosystem Integration
+const ecosystemIntegration = [
+  {
+    product: 'Nuqta',
+    integration: 'Nuqta Wallet as funding source',
+    benefit: 'Earn coins on every transfer',
+    icon: Crown,
+    color: 'text-[#c9a227]',
+  },
+  {
+    product: 'Qist',
+    integration: 'Emergency BNPL for urgent transfers',
+    benefit: 'Send now, pay over 3 months',
+    icon: ShoppingBag,
+    color: 'text-violet-400',
+  },
+  {
+    product: 'Sakin',
+    integration: 'Pay rent abroad for family',
+    benefit: 'Send housing money at best rate',
+    icon: Home,
+    color: 'text-emerald-400',
+  },
+  {
+    product: 'Wasil',
+    integration: 'Send gifts with money',
+    benefit: 'Deliver physical gifts + money transfer',
+    icon: Send,
+    color: 'text-orange-400',
+  },
+];
+
+export default function HawilPage() {
+  const [activeTab, setActiveTab] = useState('overview');
+  const [expandedRisk, setExpandedRisk] = useState<string | null>(null);
+  const [selectedCorridor, setSelectedCorridor] = useState(corridors[0]);
+
+  const tabs = [
+    { id: 'overview', label: 'Overview', icon: Send },
+    { id: 'google-rate', label: 'Google Rate', icon: Percent },
+    { id: 'ecosystem', label: 'Ecosystem', icon: Network },
+    { id: 'corridors', label: 'Corridors', icon: Globe },
+    { id: 'pricing', label: 'Pricing', icon: DollarSign },
+    { id: 'economics', label: 'Unit Economics', icon: Calculator },
+    { id: 'financials', label: 'Financials', icon: BarChart3 },
+    { id: 'roadmap', label: 'Roadmap', icon: Rocket },
+    { id: 'risks', label: 'Risks', icon: Shield },
+    { id: 'competition', label: 'Competition', icon: Users },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#0a1628]">
+      {/* Hero Section */}
+      <div className="bg-gradient-to-br from-[#0a1628] via-[#1a2d4a] to-[#0a1628] border-b border-slate-700/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+            <div>
+              {/* Logo & Brand */}
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-green-500/20">
+                  <Send className="w-7 h-7 sm:w-10 sm:h-10 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-3xl sm:text-5xl font-black text-white">
+                    Hawil <span className="text-green-400">حوّل</span>
+                  </h1>
+                  <p className="text-green-400 text-sm sm:text-lg font-medium">Send Money. Save More.</p>
+                </div>
+              </div>
+
+              <p className="text-slate-300 text-sm sm:text-base max-w-2xl mb-4">
+                UAE&apos;s first remittance with <span className="text-green-400 font-medium">Google rate exchange</span> and <span className="text-[#c9a227] font-medium">Nuqta rewards</span>.
+                Zero markup on currency. 0.5% flat fee. Earn coins on every transfer.
+              </p>
+
+              {/* Partner Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#c9a227]/20 border border-[#c9a227]/50 rounded-full">
+                <HeartHandshake className="w-4 h-4 text-[#c9a227]" />
+                <span className="text-[#c9a227] text-xs sm:text-sm font-medium">A Nuqta Group Company</span>
+              </div>
+            </div>
+
+            {/* Key Stats */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {keyStats.map((stat, i) => (
+                <div key={i} className="bg-slate-800/50 rounded-xl p-3 sm:p-4 border border-slate-700/50 text-center min-w-[120px]">
+                  <div className={`text-xl sm:text-2xl font-bold ${stat.color}`}>{stat.value}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-400">{stat.suffix}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Value Banner */}
+          <div className="mt-8 bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-4 sm:p-6 border border-green-500/30">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <Zap className="w-5 h-5 text-green-400" />
+                  <span className="text-lg font-bold text-white">The Core Promise</span>
+                </div>
+                <p className="text-xl sm:text-2xl font-bold text-white">
+                  <span className="text-green-400">Google Rate</span> + <span className="text-[#c9a227]">0.5% Fee</span> + <span className="text-violet-400">Nuqta Coins</span>
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center">
+                  <div className="text-2xl font-bold text-green-400">0%</div>
+                  <div className="text-xs text-slate-400">FX Markup</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center">
+                  <div className="text-2xl font-bold text-[#c9a227]">0.5%</div>
+                  <div className="text-xs text-slate-400">Fee Only</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Navigation Tabs */}
+      <div className="sticky top-0 z-40 bg-[#0a1628]/95 backdrop-blur-sm border-b border-slate-700/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex overflow-x-auto py-2 gap-1 sm:gap-2 scrollbar-hide">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all ${
+                  activeTab === tab.id
+                    ? 'bg-green-500 text-white'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
+                }`}
+              >
+                <tab.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                {tab.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        {/* Overview Tab */}
+        {activeTab === 'overview' && (
+          <div className="space-y-8">
+            {/* Executive Summary */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <FileText className="w-5 h-5 text-green-400" />
+                Executive Summary
+              </h2>
+              <div className="prose prose-invert max-w-none">
+                <p className="text-slate-300">
+                  <strong className="text-white">Hawil</strong> (حوّل - &quot;transfer&quot; in Arabic) is a remittance and currency exchange platform
+                  that offers the <strong className="text-green-400">Google/mid-market exchange rate</strong> with zero markup.
+                  As a <strong className="text-[#c9a227]">Nuqta Group sister company</strong>, users earn Nuqta coins on every transfer
+                  and can use the Nuqta ecosystem for funding and emergency BNPL via Qist.
+                </p>
+              </div>
+
+              {/* How It Works */}
+              <div className="mt-6">
+                <h3 className="text-lg font-bold text-white mb-4">How It Works</h3>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  {[
+                    { step: 1, icon: Wallet, title: 'Fund', desc: 'Add AED from bank or Nuqta wallet' },
+                    { step: 2, icon: ArrowDownUp, title: 'Convert', desc: 'Get Google rate (0% markup)' },
+                    { step: 3, icon: Send, title: 'Send', desc: 'Instant transfer to family' },
+                    { step: 4, icon: Coins, title: 'Earn', desc: 'Get Nuqta coins as reward' },
+                  ].map((item, i) => (
+                    <div key={i} className="relative">
+                      <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                        <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-3">
+                          <item.icon className="w-5 h-5 text-green-400" />
+                        </div>
+                        <div className="text-xs text-green-400 mb-1">Step {item.step}</div>
+                        <div className="text-sm font-bold text-white">{item.title}</div>
+                        <div className="text-xs text-slate-400 mt-1">{item.desc}</div>
+                      </div>
+                      {i < 3 && (
+                        <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* The Big Differentiator */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
+              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Percent className="w-5 h-5 text-green-400" />
+                The Hawil Difference: Google Rate
+              </h2>
+              <p className="text-slate-300 mb-6">
+                When you send money with Hawil, you get the <strong className="text-white">exact Google/mid-market rate</strong> -
+                the same rate you see when you search &quot;AED to INR&quot; on Google. No markup. No hidden fees.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-red-500/30">
+                  <h4 className="text-red-400 font-bold mb-4">❌ How Others Work</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between text-slate-300">
+                      <span>Google Rate (AED to INR)</span>
+                      <span>22.50</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Exchange House Rate</span>
+                      <span>21.80 <span className="text-red-400">(-3.1%)</span></span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Bank Rate</span>
+                      <span>21.50 <span className="text-red-400">(-4.4%)</span></span>
+                    </div>
+                    <div className="flex justify-between py-2 mt-2 border-t border-slate-700">
+                      <span className="text-white font-bold">Hidden Loss on 10,000 AED</span>
+                      <span className="text-red-400 font-bold">310-440 AED</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-green-500/10 rounded-xl p-5 border border-green-500/30">
+                  <h4 className="text-green-400 font-bold mb-4">✅ How Hawil Works</h4>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex justify-between text-slate-300">
+                      <span>Google Rate (AED to INR)</span>
+                      <span>22.50</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Hawil Rate</span>
+                      <span className="text-green-400 font-bold">22.50 (same!)</span>
+                    </div>
+                    <div className="flex justify-between text-slate-300">
+                      <span>Transfer Fee (0.5%)</span>
+                      <span>50 AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 mt-2 border-t border-slate-700">
+                      <span className="text-white font-bold">Total Cost on 10,000 AED</span>
+                      <span className="text-green-400 font-bold">50 AED only!</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full">
+                  <ArrowUpRight className="w-5 h-5 text-green-400" />
+                  <span className="text-green-400 font-bold">Save up to 90% vs traditional remittance</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Value Props */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <Send className="w-5 h-5 text-green-400" />
+                  For Senders
+                </h3>
+                <div className="space-y-4">
+                  {senderBenefits.slice(0, 4).map((benefit, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-4 h-4 text-green-400" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium text-sm">{benefit.title}</h4>
+                        <p className="text-xs text-slate-400">{benefit.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <Gift className="w-5 h-5 text-blue-400" />
+                  For Receivers
+                </h3>
+                <div className="space-y-4">
+                  {receiverBenefits.map((benefit, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                        <benefit.icon className="w-4 h-4 text-blue-400" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-medium text-sm">{benefit.title}</h4>
+                        <p className="text-xs text-slate-400">{benefit.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Corporate Structure */}
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
+              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Building2 className="w-5 h-5 text-green-400" />
+                Corporate Structure
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Parent Company</span>
+                    <span className="text-white font-medium">{corporateStructure.parentCompany}</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Entity Name</span>
+                    <span className="text-white font-medium">{corporateStructure.subsidiary}</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Ownership</span>
+                    <span className="text-white font-medium">{corporateStructure.ownership}</span>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">License Type</span>
+                    <span className="text-white font-medium">{corporateStructure.license}</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Regulator</span>
+                    <span className="text-white font-medium">{corporateStructure.regulator}</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Integration</span>
+                    <span className="text-[#c9a227] font-medium">Nuqta+ Partner</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Google Rate Tab */}
+        {activeTab === 'google-rate' && (
+          <div className="space-y-8">
+            {/* Hero */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-2xl p-8 border-2 border-green-500">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Percent className="w-5 h-5 text-green-400" />
+                  <span className="text-green-400 font-bold">Revolutionary Pricing</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                  {googleRateAdvantage.headline}
+                </h2>
+                <p className="text-slate-300 text-lg">{googleRateAdvantage.subheadline}</p>
+              </div>
+
+              {/* Comparison */}
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+                {googleRateAdvantage.comparison.map((item, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center ${
+                    item.highlight
+                      ? 'bg-green-500/20 border-2 border-green-500'
+                      : 'bg-slate-900/50 border border-slate-700/50'
+                  }`}>
+                    <div className={`text-2xl font-bold mb-1 ${item.highlight ? 'text-green-400' : 'text-red-400'}`}>
+                      {item.markup}
+                    </div>
+                    <div className="text-white font-medium text-sm">{item.provider}</div>
+                    <div className="text-xs text-slate-400 mt-1">{item.description}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* How It Works */}
+              <div className="bg-slate-900/50 rounded-xl p-6">
+                <h3 className="text-white font-bold mb-4">How Nuqta Coins Enable Google Rate</h3>
+                <div className="space-y-3">
+                  {googleRateAdvantage.howItWorks.map((step, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <span className="text-slate-300">{step}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Nuqta Coins as Currency */}
+            <div className="bg-[#c9a227]/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Coins className="w-5 h-5 text-[#c9a227]" />
+                Nuqta Coins: Universal Currency
+              </h3>
+              <p className="text-slate-300 mb-6">
+                Nuqta Coins are pegged to USD and can be bought/sold at Google rate. This creates a <strong className="text-white">zero-markup currency layer</strong> for the entire ecosystem.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                {currencyExchangeModel.steps.map((step, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-[#c9a227]/30">
+                    <step.icon className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                    <div className="text-xs text-[#c9a227] mb-1">Step {step.step}</div>
+                    <div className="text-white font-bold text-sm">{step.title}</div>
+                    <div className="text-xs text-slate-400 mt-1">{step.description}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Calculator Example */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Calculator className="w-5 h-5 text-green-400" />
+                Real Savings Example: Sending 10,000 AED to India
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400">Provider</th>
+                      <th className="text-right py-3 px-4 text-slate-400">Rate</th>
+                      <th className="text-right py-3 px-4 text-slate-400">Fee</th>
+                      <th className="text-right py-3 px-4 text-slate-400">INR Received</th>
+                      <th className="text-right py-3 px-4 text-slate-400">You Lose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700/50 bg-green-500/10">
+                      <td className="py-3 px-4 text-green-400 font-bold">Hawil</td>
+                      <td className="py-3 px-4 text-right text-white">22.50</td>
+                      <td className="py-3 px-4 text-right text-white">50 AED</td>
+                      <td className="py-3 px-4 text-right text-green-400 font-bold">₹223,875</td>
+                      <td className="py-3 px-4 text-right text-green-400 font-bold">50 AED</td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-white">Exchange House</td>
+                      <td className="py-3 px-4 text-right text-slate-300">21.80</td>
+                      <td className="py-3 px-4 text-right text-slate-300">0 AED</td>
+                      <td className="py-3 px-4 text-right text-slate-300">₹218,000</td>
+                      <td className="py-3 px-4 text-right text-red-400">320 AED</td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-white">Bank</td>
+                      <td className="py-3 px-4 text-right text-slate-300">21.50</td>
+                      <td className="py-3 px-4 text-right text-slate-300">35 AED</td>
+                      <td className="py-3 px-4 text-right text-slate-300">₹214,108</td>
+                      <td className="py-3 px-4 text-right text-red-400">470 AED</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 text-white">Western Union</td>
+                      <td className="py-3 px-4 text-right text-slate-300">21.60</td>
+                      <td className="py-3 px-4 text-right text-slate-300">150 AED</td>
+                      <td className="py-3 px-4 text-right text-slate-300">₹212,760</td>
+                      <td className="py-3 px-4 text-right text-red-400">640 AED</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-slate-300">
+                  Sending 10,000 AED monthly = <span className="text-green-400 font-bold">Save 3,000-7,000 AED/year</span> with Hawil
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Ecosystem Tab */}
+        {activeTab === 'ecosystem' && (
+          <div className="space-y-8">
+            {/* Hero */}
+            <div className="bg-gradient-to-r from-green-500/20 via-[#c9a227]/20 to-violet-500/20 rounded-2xl p-8 border-2 border-green-500/50">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Network className="w-5 h-5 text-green-400" />
+                  <span className="text-green-400 font-bold">5th Product in the Ecosystem</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                  Hawil Completes the <span className="text-green-400">Financial Circle</span>
+                </h2>
+                <p className="text-slate-300 max-w-3xl mx-auto text-lg">
+                  From earning rewards to sending money home - Nuqta now covers the complete expat financial journey.
+                </p>
+              </div>
+
+              {/* Five Products */}
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                {[
+                  { name: 'Nuqta', arabic: 'نقطة', tagline: 'Earn', color: 'text-[#c9a227]', bgColor: 'bg-[#c9a227]/10', borderColor: 'border-[#c9a227]', icon: Crown },
+                  { name: 'Qist', arabic: 'قسط', tagline: 'Pay', color: 'text-violet-400', bgColor: 'bg-violet-500/10', borderColor: 'border-violet-500', icon: ShoppingBag },
+                  { name: 'Sakin', arabic: 'ساكن', tagline: 'Live', color: 'text-emerald-400', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500', icon: Home },
+                  { name: 'Wasil', arabic: 'واصل', tagline: 'Get', color: 'text-orange-400', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500', icon: Send },
+                  { name: 'Hawil', arabic: 'حوّل', tagline: 'Send', color: 'text-green-400', bgColor: 'bg-green-500/10', borderColor: 'border-green-500', icon: Send },
+                ].map((product, i) => (
+                  <div key={i} className={`${product.bgColor} rounded-xl p-4 border-2 ${product.borderColor} text-center`}>
+                    <div className={`w-10 h-10 rounded-xl ${product.bgColor} flex items-center justify-center mx-auto mb-2 border ${product.borderColor}`}>
+                      <product.icon className={`w-5 h-5 ${product.color}`} />
+                    </div>
+                    <h3 className={`text-lg font-black ${product.color}`}>{product.name}</h3>
+                    <span className="text-slate-400 text-xs">{product.arabic}</span>
+                    <p className="text-slate-300 text-sm mt-1">{product.tagline}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Integration Points */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Link2 className="w-5 h-5 text-green-400" />
+                Deep Ecosystem Integration
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {ecosystemIntegration.map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                        item.product === 'Nuqta' ? 'bg-[#c9a227]/20' :
+                        item.product === 'Qist' ? 'bg-violet-500/20' :
+                        item.product === 'Sakin' ? 'bg-emerald-500/20' :
+                        'bg-orange-500/20'
+                      }`}>
+                        <item.icon className={`w-5 h-5 ${item.color}`} />
+                      </div>
+                      <h4 className={`font-bold ${item.color}`}>{item.product}</h4>
+                    </div>
+                    <p className="text-sm text-slate-300 mb-2">{item.integration}</p>
+                    <div className="flex items-center gap-2 text-xs text-green-400">
+                      <CheckCircle className="w-3 h-3" />
+                      {item.benefit}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Use Case: Complete Journey */}
+            <div className="bg-green-500/10 rounded-xl p-6 border-2 border-green-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Plane className="w-5 h-5 text-green-400" />
+                Complete Expat Journey: Ahmed from Pakistan
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                {[
+                  { product: 'Nuqta', action: 'Gets Nuqta+ via employer', result: 'Saves on daily purchases' },
+                  { product: 'Sakin', action: 'Finances apartment move-in', result: '68K over 12 months' },
+                  { product: 'Qist', action: 'Buys furniture via BNPL', result: '0% fees for 3 months' },
+                  { product: 'Wasil', action: 'Orders groceries weekly', result: 'Earns coins on delivery' },
+                  { product: 'Hawil', action: 'Sends 5K/month to Pakistan', result: 'Google rate, earns coins' },
+                ].map((step, i) => (
+                  <div key={i} className={`rounded-lg p-4 border ${
+                    step.product === 'Nuqta' ? 'bg-[#c9a227]/10 border-[#c9a227]/30' :
+                    step.product === 'Qist' ? 'bg-violet-500/10 border-violet-500/30' :
+                    step.product === 'Sakin' ? 'bg-emerald-500/10 border-emerald-500/30' :
+                    step.product === 'Wasil' ? 'bg-orange-500/10 border-orange-500/30' :
+                    'bg-green-500/10 border-green-500/30'
+                  }`}>
+                    <div className={`text-xs font-bold mb-2 ${
+                      step.product === 'Nuqta' ? 'text-[#c9a227]' :
+                      step.product === 'Qist' ? 'text-violet-400' :
+                      step.product === 'Sakin' ? 'text-emerald-400' :
+                      step.product === 'Wasil' ? 'text-orange-400' :
+                      'text-green-400'
+                    }`}>{step.product}</div>
+                    <p className="text-xs text-white font-medium mb-1">{step.action}</p>
+                    <p className="text-xs text-slate-400">{step.result}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-slate-300">
+                  Ahmed saves <span className="text-green-400 font-bold">15,000+ AED/year</span> using the full Nuqta ecosystem
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Corridors Tab */}
+        {activeTab === 'corridors' && (
+          <div className="space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-green-400" />
+                Top Remittance Corridors from UAE
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400">Country</th>
+                      <th className="text-right py-3 px-4 text-slate-400">Annual Volume</th>
+                      <th className="text-right py-3 px-4 text-slate-400">Market Share</th>
+                      <th className="text-right py-3 px-4 text-slate-400">Avg Transfer</th>
+                      <th className="text-center py-3 px-4 text-slate-400">Hawil Fee</th>
+                      <th className="text-center py-3 px-4 text-slate-400">Others Fee</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {corridors.map((corridor, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 hover:bg-slate-800/50">
+                        <td className="py-3 px-4">
+                          <div className="flex items-center gap-2">
+                            <span className="text-2xl">{corridor.flag}</span>
+                            <span className="text-white font-medium">{corridor.country}</span>
+                          </div>
+                        </td>
+                        <td className="py-3 px-4 text-right text-white font-medium">{corridor.volume}</td>
+                        <td className="py-3 px-4 text-right text-slate-300">{corridor.share}</td>
+                        <td className="py-3 px-4 text-right text-slate-300">{corridor.avgTransfer} AED</td>
+                        <td className="py-3 px-4 text-center">
+                          <span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs font-bold">{corridor.ourFee}</span>
+                        </td>
+                        <td className="py-3 px-4 text-center">
+                          <span className="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs font-bold">{corridor.competitorFee}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/5 rounded-xl p-6 border border-green-500/30">
+              <h3 className="text-lg font-bold text-white mb-4">Launch Strategy</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-green-400 font-bold mb-2">Phase 1 (Launch)</div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇮🇳</span> India
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇵🇰</span> Pakistan
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-blue-400 font-bold mb-2">Phase 2 (3 months)</div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇵🇭</span> Philippines
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇧🇩</span> Bangladesh
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇪🇬</span> Egypt
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4">
+                  <div className="text-purple-400 font-bold mb-2">Phase 3 (6 months)</div>
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇳🇵</span> Nepal
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇱🇰</span> Sri Lanka
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-slate-300">
+                      <span>🇮🇩</span> Indonesia
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Pricing Tab */}
+        {activeTab === 'pricing' && (
+          <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {pricingTiers.map((tier, i) => (
+                <div key={i} className={`rounded-xl p-6 border-2 ${tier.color} ${tier.bgColor} relative`}>
+                  {tier.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-[#c9a227] text-[#0a1628] text-xs font-bold rounded-full">
+                      BEST VALUE
+                    </div>
+                  )}
+                  <h3 className="text-xl font-bold text-white mb-2">{tier.tier}</h3>
+                  <div className="text-3xl font-black text-green-400 mb-1">{tier.transferFee}</div>
+                  <div className="text-sm text-slate-400 mb-4">transfer fee</div>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Exchange Rate</span>
+                      <span className="text-green-400 font-medium">{tier.exchangeRate}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Transfer Limit</span>
+                      <span className="text-white font-medium">{tier.maxTransfer}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Speed</span>
+                      <span className="text-white font-medium">{tier.speed}</span>
+                    </div>
+                    <div className="flex justify-between py-2 border-b border-slate-700/50">
+                      <span className="text-slate-400">Coin Reward</span>
+                      <span className="text-[#c9a227] font-medium">{tier.coinReward}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Unit Economics Tab */}
+        {activeTab === 'economics' && (
+          <div className="space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Calculator className="w-5 h-5 text-green-400" />
+                Per Transfer Economics (Avg 2,500 AED)
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="bg-green-500/10 rounded-xl p-4 text-center border border-green-500/30">
+                  <div className="text-2xl font-bold text-green-400">{unitEconomics.transferFee} AED</div>
+                  <div className="text-xs text-slate-400">Transfer Fee (0.5%)</div>
+                </div>
+                <div className="bg-blue-500/10 rounded-xl p-4 text-center border border-blue-500/30">
+                  <div className="text-2xl font-bold text-blue-400">{unitEconomics.fxSpread} AED</div>
+                  <div className="text-xs text-slate-400">FX Markup (0%!)</div>
+                </div>
+                <div className="bg-red-500/10 rounded-xl p-4 text-center border border-red-500/30">
+                  <div className="text-2xl font-bold text-red-400">-{unitEconomics.partnerCost} AED</div>
+                  <div className="text-xs text-slate-400">Partner Cost</div>
+                </div>
+                <div className="bg-[#c9a227]/10 rounded-xl p-4 text-center border border-[#c9a227]/30">
+                  <div className="text-2xl font-bold text-[#c9a227]">{unitEconomics.actualProfit} AED</div>
+                  <div className="text-xs text-slate-400">Net Profit</div>
+                </div>
+              </div>
+
+              <div className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                <h3 className="text-white font-bold mb-4">Breakdown</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Average Transfer</span>
+                    <span className="text-white font-bold">{unitEconomics.avgTransfer.toLocaleString()} AED</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                    <span className="text-green-400">+ Transfer Fee (0.5%)</span>
+                    <span className="text-green-400 font-bold">+{unitEconomics.transferFee} AED</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                    <span className="text-red-400">- Payout Partner Cost</span>
+                    <span className="text-red-400 font-bold">-{unitEconomics.partnerCost} AED</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                    <span className="text-red-400">- Operating Cost</span>
+                    <span className="text-red-400 font-bold">-{unitEconomics.operatingCost} AED</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+                    <span className="text-red-400">- Coin Reward Cost</span>
+                    <span className="text-red-400 font-bold">-{unitEconomics.coinRewardCost} AED</span>
+                  </div>
+                  <div className="flex justify-between items-center py-3 bg-green-500/10 rounded-lg px-3">
+                    <span className="text-white font-bold">Net Profit per Transfer</span>
+                    <span className="text-green-400 font-bold text-xl">{unitEconomics.actualProfit} AED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Financials Tab */}
+        {activeTab === 'financials' && (
+          <div className="space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-green-400" />
+                3-Year Financial Projections
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400">Metric</th>
+                      {financialProjections.map((proj, i) => (
+                        <th key={i} className="text-right py-3 px-4 text-white font-bold">{proj.year}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Volume (AED M)</td>
+                      {financialProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-green-400 font-bold">{proj.volume}M</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Transactions</td>
+                      {financialProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{(proj.transactions/1000).toFixed(0)}K</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Revenue (AED M)</td>
+                      {financialProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-blue-400 font-bold">{proj.revenue}M</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Net Profit (AED M)</td>
+                      {financialProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-[#c9a227] font-bold">{proj.netProfit}M</td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-slate-300">Active Users</td>
+                      {financialProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{(proj.users/1000).toFixed(0)}K</td>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-4 text-slate-300">Countries</td>
+                      {financialProjections.map((proj, i) => (
+                        <td key={i} className="py-3 px-4 text-right text-white font-medium">{proj.countries}</td>
+                      ))}
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Roadmap Tab */}
+        {activeTab === 'roadmap' && (
+          <div className="space-y-6">
+            {roadmapPhases.map((phase, i) => (
+              <div key={i} className={`rounded-xl p-6 border-2 ${phase.color} ${phase.bgColor}`}>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-bold text-slate-400">{phase.phase}</span>
+                      <h3 className="text-xl font-bold text-white">{phase.title}</h3>
+                    </div>
+                    <div className="flex items-center gap-2 mt-1">
+                      <Clock className="w-4 h-4 text-slate-400" />
+                      <span className="text-slate-400 text-sm">{phase.timeline}</span>
+                    </div>
+                  </div>
+                  <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                    phase.status === 'planned' ? 'bg-blue-500/20 text-blue-400' :
+                    phase.status === 'in_progress' ? 'bg-green-500/20 text-green-400' :
+                    'bg-slate-500/20 text-slate-400'
+                  }`}>
+                    {phase.status === 'planned' ? 'Planned' : 'Pending'}
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {phase.milestones.map((milestone, j) => (
+                    <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                      {milestone}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Risks Tab */}
+        {activeTab === 'risks' && (
+          <div className="space-y-4">
+            {risks.map((risk, i) => (
+              <div key={i} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden">
+                <button
+                  onClick={() => setExpandedRisk(expandedRisk === risk.risk ? null : risk.risk)}
+                  className="w-full p-4 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className={`px-2 py-1 rounded text-xs font-bold ${
+                      risk.severity === 'high' ? 'bg-red-500/20 text-red-400' :
+                      'bg-yellow-500/20 text-yellow-400'
+                    }`}>
+                      {risk.severity.toUpperCase()}
+                    </span>
+                    <span className="text-white font-bold">{risk.risk}</span>
+                  </div>
+                  {expandedRisk === risk.risk ? (
+                    <ChevronUp className="w-5 h-5 text-slate-400" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-slate-400" />
+                  )}
+                </button>
+                {expandedRisk === risk.risk && (
+                  <div className="px-4 pb-4">
+                    <div className="bg-slate-900/50 rounded-lg p-4">
+                      <div className="text-sm font-bold text-white mb-3">Mitigation Strategies:</div>
+                      <div className="space-y-2">
+                        {risk.mitigation.map((item, j) => (
+                          <div key={j} className="flex items-center gap-2 text-sm text-slate-300">
+                            <Shield className="w-4 h-4 text-green-400 flex-shrink-0" />
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Competition Tab */}
+        {activeTab === 'competition' && (
+          <div className="space-y-8">
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Users className="w-5 h-5 text-green-400" />
+                UAE Remittance Competitive Landscape
+              </h2>
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[900px]">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400">Provider</th>
+                      <th className="text-center py-3 px-4 text-slate-400">Transfer Fee</th>
+                      <th className="text-center py-3 px-4 text-slate-400">FX Markup</th>
+                      <th className="text-center py-3 px-4 text-slate-400">Speed</th>
+                      <th className="text-center py-3 px-4 text-slate-400">Rewards</th>
+                      <th className="text-center py-3 px-4 text-slate-400">Ecosystem</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {competitors.map((comp, i) => (
+                      <tr key={i} className={`border-b border-slate-700/50 ${comp.name === 'Hawil' ? 'bg-green-500/10' : ''}`}>
+                        <td className={`py-3 px-4 font-bold ${comp.name === 'Hawil' ? 'text-green-400' : 'text-white'}`}>{comp.name}</td>
+                        <td className="py-3 px-4 text-center text-slate-300">{comp.fee}</td>
+                        <td className="py-3 px-4 text-center">
+                          {comp.fxMarkup.includes('0%') ? (
+                            <span className="text-green-400 font-bold">{comp.fxMarkup}</span>
+                          ) : (
+                            <span className="text-red-400">{comp.fxMarkup}</span>
+                          )}
+                        </td>
+                        <td className="py-3 px-4 text-center text-slate-300">{comp.speed}</td>
+                        <td className="py-3 px-4 text-center">
+                          {comp.rewards !== 'None' ? (
+                            <span className="text-[#c9a227] font-bold">{comp.rewards}</span>
+                          ) : (
+                            <span className="text-slate-500">None</span>
+                          )}
+                        </td>
+                        <td className="py-3 px-4 text-center">
+                          {comp.ecosystem === 'Full Nuqta' ? (
+                            <span className="text-green-400 font-bold">{comp.ecosystem}</span>
+                          ) : (
+                            <span className="text-slate-400">{comp.ecosystem}</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Competitive Advantage */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-green-400" />
+                Hawil Competitive Moat
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-white font-bold mb-3">What Competitors Lack</h4>
+                  <div className="space-y-2">
+                    {['Hidden FX markups (2-5%)', 'No rewards or loyalty', 'No ecosystem integration', 'Slow settlement times'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <AlertTriangle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-3">Hawil Unique Value</h4>
+                  <div className="space-y-2">
+                    {['Google rate (0% markup)', 'Nuqta coins on every transfer', 'Full ecosystem (Qist, Sakin, Wasil)', 'Instant transfers 24/7'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+      </main>
+
+      <GlobalFooter />
+    </div>
+  );
+}
