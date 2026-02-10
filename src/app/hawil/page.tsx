@@ -276,6 +276,38 @@ const corporateStructure = {
   regulator: 'Central Bank of UAE (CBUAE)',
 };
 
+// Tourist Acquisition Strategy
+const touristStrategy = {
+  headline: 'Best Rate = Tourist Magnet',
+  subheadline: 'Attract tourists with unbeatable rates, keep them with amazing deals',
+  uaeStats: {
+    tourists: '21M+ tourists annually',
+    spending: '$30B+ tourist spending',
+    avgStay: '4.5 days average stay',
+    topSpend: 'Shopping, dining, experiences',
+  },
+  acquisitionFlow: [
+    { step: 1, title: 'Discover Hawil', description: 'Tourist searches "best currency exchange Dubai"', icon: Search },
+    { step: 2, title: 'Get Google Rate', description: 'Converts USD/EUR/GBP at 0% markup via Nuqta Coins', icon: Coins },
+    { step: 3, title: 'Join Nuqta', description: 'Downloads Nuqta app to use coins at merchants', icon: Smartphone },
+    { step: 4, title: 'Discover Deals', description: 'Finds best prices at 500+ partner merchants', icon: Store },
+    { step: 5, title: 'Use Everything', description: 'Wasil delivery, Qist BNPL, exclusive offers', icon: Crown },
+  ],
+  touristBenefits: [
+    { title: 'No FX Loss', description: 'Unlike credit cards (3-5% foreign transaction fee), Hawil = 0%' },
+    { title: 'Merchant Discounts', description: 'Exclusive Nuqta deals at restaurants, shops, attractions' },
+    { title: 'One Wallet', description: 'Use Nuqta Coins everywhere - no need for multiple apps' },
+    { title: 'Cashback in Coins', description: 'Earn rewards on every purchase to use before leaving' },
+  ],
+  touristCampaigns: [
+    { segment: 'Luxury Shoppers', offer: 'Gold rate alerts + jewelry partner deals', spend: '10,000+ AED' },
+    { segment: 'Family Visitors', offer: 'Theme park bundles + restaurant offers', spend: '5,000+ AED' },
+    { segment: 'Business Travelers', offer: 'Premium hotel partners + transport', spend: '8,000+ AED' },
+    { segment: 'Budget Tourists', offer: 'Street food guide + budget stays', spend: '2,000+ AED' },
+  ],
+  usp: 'Why lose 3-5% on every purchase with your foreign credit card when you can get Google rate and earn rewards?',
+};
+
 // Ecosystem Integration
 const ecosystemIntegration = [
   {
@@ -316,6 +348,7 @@ export default function HawilPage() {
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Send },
     { id: 'google-rate', label: 'Google Rate', icon: Percent },
+    { id: 'tourists', label: 'Tourists', icon: Plane },
     { id: 'ecosystem', label: 'Ecosystem', icon: Network },
     { id: 'corridors', label: 'Corridors', icon: Globe },
     { id: 'pricing', label: 'Pricing', icon: DollarSign },
@@ -734,6 +767,223 @@ export default function HawilPage() {
               <div className="mt-6 text-center">
                 <p className="text-slate-300">
                   Sending 10,000 AED monthly = <span className="text-green-400 font-bold">Save 3,000-7,000 AED/year</span> with Hawil
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Tourists Tab */}
+        {activeTab === 'tourists' && (
+          <div className="space-y-8">
+            {/* Hero */}
+            <div className="bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-teal-500/10 rounded-2xl p-8 border-2 border-blue-500">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Plane className="w-5 h-5 text-blue-400" />
+                  <span className="text-blue-400 font-bold">Tourist Acquisition Engine</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                  {touristStrategy.headline}
+                </h2>
+                <p className="text-slate-300 text-lg">{touristStrategy.subheadline}</p>
+              </div>
+
+              {/* UAE Tourism Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-blue-500/30">
+                  <div className="text-2xl font-bold text-blue-400">{touristStrategy.uaeStats.tourists}</div>
+                  <div className="text-xs text-slate-400">Annual Visitors</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-cyan-500/30">
+                  <div className="text-2xl font-bold text-cyan-400">{touristStrategy.uaeStats.spending}</div>
+                  <div className="text-xs text-slate-400">Tourist Spending</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-teal-500/30">
+                  <div className="text-2xl font-bold text-teal-400">{touristStrategy.uaeStats.avgStay}</div>
+                  <div className="text-xs text-slate-400">Average Stay</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
+                  <div className="text-2xl font-bold text-green-400">{touristStrategy.uaeStats.topSpend}</div>
+                  <div className="text-xs text-slate-400">Top Spending</div>
+                </div>
+              </div>
+
+              {/* USP Banner */}
+              <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/20 rounded-xl p-6 border border-[#c9a227]">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#c9a227]/20 flex items-center justify-center flex-shrink-0">
+                    <Zap className="w-6 h-6 text-[#c9a227]" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-lg mb-2">The Question Every Tourist Should Ask</h3>
+                    <p className="text-slate-300 text-lg">&quot;{touristStrategy.usp}&quot;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tourist Acquisition Flow */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-blue-400" />
+                Tourist Acquisition Funnel
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                {touristStrategy.acquisitionFlow.map((step, i) => (
+                  <div key={i} className="relative">
+                    <div className="bg-gradient-to-b from-blue-500/20 to-slate-900/50 rounded-xl p-4 border border-blue-500/30 text-center h-full">
+                      <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3 border border-blue-500/50">
+                        <step.icon className="w-6 h-6 text-blue-400" />
+                      </div>
+                      <div className="text-xs text-blue-400 font-bold mb-1">Step {step.step}</div>
+                      <div className="text-sm font-bold text-white mb-2">{step.title}</div>
+                      <div className="text-xs text-slate-400">{step.description}</div>
+                    </div>
+                    {i < 4 && (
+                      <ChevronRight className="hidden md:block absolute -right-2 top-1/2 -translate-y-1/2 text-blue-500/50" size={24} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Credit Card vs Hawil */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-red-500/10 rounded-xl p-6 border-2 border-red-500/50">
+                <h4 className="text-red-400 font-bold mb-4 flex items-center gap-2">
+                  <CreditCard className="w-5 h-5" />
+                  Using Foreign Credit Card
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Foreign Transaction Fee</span>
+                    <span className="text-red-400 font-bold">3-5%</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Dynamic Currency Conversion</span>
+                    <span className="text-red-400 font-bold">+2-7%</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">ATM Withdrawal Fees</span>
+                    <span className="text-red-400 font-bold">$5-10 + 3%</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Merchant Rewards</span>
+                    <span className="text-slate-500">None</span>
+                  </div>
+                  <div className="flex justify-between py-3 bg-red-500/20 rounded-lg px-3 mt-2">
+                    <span className="text-white font-bold">Lost on $1,000 spend</span>
+                    <span className="text-red-400 font-bold">$50-120</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-green-500/10 rounded-xl p-6 border-2 border-green-500">
+                <h4 className="text-green-400 font-bold mb-4 flex items-center gap-2">
+                  <Coins className="w-5 h-5" />
+                  Using Hawil + Nuqta Coins
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">FX Markup</span>
+                    <span className="text-green-400 font-bold">0%</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Conversion Fee</span>
+                    <span className="text-green-400 font-bold">0.5% one-time</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Merchant Discounts</span>
+                    <span className="text-[#c9a227] font-bold">5-30% off</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-slate-700/50">
+                    <span className="text-slate-400">Cashback in Coins</span>
+                    <span className="text-[#c9a227] font-bold">1-5%</span>
+                  </div>
+                  <div className="flex justify-between py-3 bg-green-500/20 rounded-lg px-3 mt-2">
+                    <span className="text-white font-bold">Saved on $1,000 spend</span>
+                    <span className="text-green-400 font-bold">$100-200</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Tourist Benefits */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Star className="w-5 h-5 text-[#c9a227]" />
+                Why Tourists Love Nuqta
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {touristStrategy.touristBenefits.map((benefit, i) => (
+                  <div key={i} className="bg-gradient-to-b from-[#c9a227]/10 to-slate-900/50 rounded-xl p-5 border border-[#c9a227]/30">
+                    <CheckCircle className="w-8 h-8 text-[#c9a227] mb-3" />
+                    <h4 className="text-white font-bold mb-2">{benefit.title}</h4>
+                    <p className="text-slate-400 text-sm">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Tourist Campaigns */}
+            <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl p-6 border border-blue-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Target className="w-5 h-5 text-blue-400" />
+                Targeted Tourist Campaigns
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                {touristStrategy.touristCampaigns.map((campaign, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Users className="w-5 h-5 text-blue-400" />
+                      <h4 className="text-white font-bold text-sm">{campaign.segment}</h4>
+                    </div>
+                    <p className="text-slate-400 text-xs mb-3">{campaign.offer}</p>
+                    <div className="text-xs text-slate-500">
+                      Avg Spend: <span className="text-blue-400 font-bold">{campaign.spend}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ecosystem Discovery */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-green-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Network className="w-5 h-5 text-[#c9a227]" />
+                From Currency Exchange to Full Ecosystem
+              </h3>
+              <p className="text-slate-300 mb-6">
+                Once tourists convert currency via Hawil, they unlock the entire Nuqta ecosystem:
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-[#c9a227]/30">
+                  <Store className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm">500+ Merchants</div>
+                  <div className="text-xs text-slate-400">Exclusive deals</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-orange-500/30">
+                  <Send className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm">Wasil Delivery</div>
+                  <div className="text-xs text-slate-400">60-min delivery</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-violet-500/30">
+                  <ShoppingBag className="w-8 h-8 text-violet-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm">Qist BNPL</div>
+                  <div className="text-xs text-slate-400">For big purchases</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-4 text-center border border-green-500/30">
+                  <Gift className="w-8 h-8 text-green-400 mx-auto mb-2" />
+                  <div className="text-white font-bold text-sm">Earn Coins</div>
+                  <div className="text-xs text-slate-400">Rewards on everything</div>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-lg text-white">
+                  <span className="text-[#c9a227] font-bold">Best rate → Best deals → Best experience</span>
+                </p>
+                <p className="text-slate-400 text-sm mt-2">
+                  Every tourist who uses Hawil becomes a Nuqta user
                 </p>
               </div>
             </div>
