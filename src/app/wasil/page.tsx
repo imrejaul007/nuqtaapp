@@ -230,6 +230,13 @@ const ecosystemIntegration = [
     color: 'text-[#c9a227]',
   },
   {
+    product: 'Hawil Card',
+    integration: 'Pay for deliveries with Hawil Card',
+    benefit: 'Tourists get Google rate - save 3-5% vs credit cards',
+    icon: CreditCard,
+    color: 'text-blue-400',
+  },
+  {
     product: 'Qist',
     integration: 'BNPL for orders above 200 AED',
     benefit: '0% fees for Nuqta+ members',
@@ -244,6 +251,25 @@ const ecosystemIntegration = [
     color: 'text-emerald-400',
   },
 ];
+
+// Hawil Card Payment for Tourists
+const hawilCardPayment = {
+  headline: 'Pay with Hawil Card',
+  description: 'Tourists: use your Hawil Card for all Wasil orders and save 3-5% vs foreign credit cards',
+  benefits: [
+    { benefit: 'Google Rate', description: 'No FX markup on your home currency' },
+    { benefit: 'No Foreign Fees', description: 'Unlike credit cards (3-5% fee)' },
+    { benefit: 'Earn Double Coins', description: 'Coins from Wasil + coins from Hawil' },
+    { benefit: 'Instant Payment', description: 'Tap to pay with Apple/Google Pay' },
+  ],
+  example: {
+    order: '150 AED grocery order',
+    creditCardCost: '157.50 AED (5% foreign fee)',
+    hawilCardCost: '150 AED (0% fee)',
+    savings: '7.50 AED saved',
+    coinsEarned: '7.5 Nuqta coins',
+  },
+};
 
 // Dark Store Model
 const darkStoreModel = {

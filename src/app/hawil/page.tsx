@@ -13,7 +13,7 @@ import {
   Link2, RefreshCw, Landmark, MapPin, Flag, Percent, Receipt,
   Timer, UserCheck, Lock, Eye, Search, Repeat, ArrowDownUp,
   Plane, Home, ShoppingBag, IndianRupee, PhilippinePeso, BadgeDollarSign,
-  Package, Wifi, Heart, Users2
+  Package, Wifi, Heart, Users2, Car
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -28,7 +28,7 @@ const keyStats = [
 // Top Remittance Corridors from UAE
 const corridors = [
   { country: 'India', flag: '🇮🇳', volume: '$15B', share: '30%', avgTransfer: 3000, ourFee: '0.5%', competitorFee: '3-5%' },
-  { country: 'Pakistan', flag: '🇵🇰', volume: '$8B', share: '16%', avgTransfer: 2500, ourFee: '0.5%', competitorFee: '3-4%' },
+  { country: 'UK/Europe', flag: '🇬🇧', volume: '$8B', share: '16%', avgTransfer: 2500, ourFee: '0.5%', competitorFee: '3-4%' },
   { country: 'Philippines', flag: '🇵🇭', volume: '$6B', share: '12%', avgTransfer: 2000, ourFee: '0.5%', competitorFee: '2-4%' },
   { country: 'Bangladesh', flag: '🇧🇩', volume: '$4B', share: '8%', avgTransfer: 2200, ourFee: '0.5%', competitorFee: '3-5%' },
   { country: 'Egypt', flag: '🇪🇬', volume: '$3B', share: '6%', avgTransfer: 2800, ourFee: '0.5%', competitorFee: '2-4%' },
@@ -160,7 +160,7 @@ const roadmapPhases = [
       'Partner with 3 payout networks',
       'Build core transfer platform',
       'Integrate Nuqta wallet',
-      'Launch India & Pakistan corridors',
+      'Launch India & UK/Europe corridors',
     ],
     color: 'border-green-500',
     bgColor: 'bg-green-500/10',
@@ -422,7 +422,7 @@ const hawilCard = {
       { code: 'EUR', name: 'Euro', flag: '🇪🇺', canHold: true, canSpend: true },
       { code: 'GBP', name: 'British Pound', flag: '🇬🇧', canHold: true, canSpend: true },
       { code: 'INR', name: 'Indian Rupee', flag: '🇮🇳', canHold: true, canSpend: false },
-      { code: 'PKR', name: 'Pakistani Rupee', flag: '🇵🇰', canHold: true, canSpend: false },
+      { code: 'EGP', name: 'Egyptian Pound', flag: '🇪🇬', canHold: true, canSpend: false },
       { code: 'PHP', name: 'Philippine Peso', flag: '🇵🇭', canHold: true, canSpend: false },
     ],
     features: [
@@ -527,6 +527,77 @@ const hawilCard = {
       'POS terminal with Hawil integration',
       'Staff training (1 hour)',
     ],
+  },
+};
+
+// Hawil Card as Universal Payment Method
+const hawilCardPayments = {
+  title: 'Pay Across the Entire Nuqta Ecosystem',
+  description: 'Your Hawil Card works everywhere in the ecosystem - one card for everything',
+  headline: 'One Card. Every Product. Google Rate.',
+  products: [
+    {
+      product: 'Wasil Delivery',
+      icon: Package,
+      description: 'Pay for groceries, food, pharmacy with Hawil Card',
+      benefit: 'Tourists save 3-5% vs foreign credit cards',
+      example: '100 AED order = save 5 AED + earn 5 coins',
+      color: 'text-orange-400',
+    },
+    {
+      product: 'Rakab Rides',
+      icon: Car,
+      description: 'Pay for all rides with Hawil Card',
+      benefit: 'No FX fees + 5% coins back',
+      example: '50 AED ride = save 2.50 AED + earn 2.50 coins',
+      color: 'text-green-400',
+    },
+    {
+      product: 'Qist BNPL',
+      icon: Wallet,
+      description: 'Fund BNPL payments from Hawil Card balance',
+      benefit: 'Split purchases, pay in home currency',
+      example: 'Buy 1,000 AED item, pay in 3 installments',
+      color: 'text-violet-400',
+    },
+    {
+      product: 'Sakin Stays',
+      icon: Home,
+      description: 'Pay for short-term apartment rentals',
+      benefit: 'Weekly/monthly stays at Google rate',
+      example: '5,000 AED/week = save 250 AED vs hotel',
+      color: 'text-emerald-400',
+    },
+    {
+      product: '500+ Merchants',
+      icon: Store,
+      description: 'Tap to pay at all Nuqta partner merchants',
+      benefit: 'Google rate at partners, standard rate elsewhere',
+      example: 'Shopping, dining, experiences - all with one card',
+      color: 'text-[#c9a227]',
+    },
+    {
+      product: 'Send Money Home',
+      icon: Send,
+      description: 'Transfer to family at Google rate',
+      benefit: '0% FX markup + 0.5% flat fee',
+      example: '10,000 AED transfer = only 50 AED fee',
+      color: 'text-blue-400',
+    },
+  ],
+  touristSavingsExample: {
+    title: '7-Day Tourist Trip Savings',
+    items: [
+      { category: 'Wasil Orders (10x)', spend: 500, savings: 25, coins: 25 },
+      { category: 'Rakab Rides (15x)', spend: 600, savings: 30, coins: 30 },
+      { category: 'Sakin Apartment', spend: 2500, savings: 125, coins: 125 },
+      { category: 'Merchant Shopping', spend: 3000, savings: 150, coins: 150 },
+      { category: 'Dining Out', spend: 800, savings: 40, coins: 40 },
+    ],
+    totalSpend: 7400,
+    totalSavings: 370,
+    totalCoins: 370,
+    vsCrediCard: 'Save 370 AED vs foreign credit card + earn 370 coins',
   },
 };
 
@@ -1588,7 +1659,7 @@ export default function HawilPage() {
             <div className="bg-green-500/10 rounded-xl p-6 border-2 border-green-500">
               <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
                 <Plane className="w-5 h-5 text-green-400" />
-                Complete Expat Journey: Ahmed from Pakistan
+                Complete Expat Journey: Raj from India
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
                 {[
@@ -1596,7 +1667,7 @@ export default function HawilPage() {
                   { product: 'Sakin', action: 'Finances apartment move-in', result: '68K over 12 months' },
                   { product: 'Qist', action: 'Buys furniture via BNPL', result: '0% fees for 3 months' },
                   { product: 'Wasil', action: 'Orders groceries weekly', result: 'Earns coins on delivery' },
-                  { product: 'Hawil', action: 'Sends 5K/month to Pakistan', result: 'Google rate, earns coins' },
+                  { product: 'Hawil', action: 'Sends 5K/month to family in India', result: 'Google rate, earns coins' },
                 ].map((step, i) => (
                   <div key={i} className={`rounded-lg p-4 border ${
                     step.product === 'Nuqta' ? 'bg-[#c9a227]/10 border-[#c9a227]/30' :
@@ -1681,7 +1752,7 @@ export default function HawilPage() {
                       <span>🇮🇳</span> India
                     </div>
                     <div className="flex items-center gap-2 text-sm text-slate-300">
-                      <span>🇵🇰</span> Pakistan
+                      <span>🇬🇧</span> UK / Europe
                     </div>
                   </div>
                 </div>

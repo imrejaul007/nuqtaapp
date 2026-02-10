@@ -106,6 +106,42 @@ const touristRentals = {
   },
 };
 
+// Hawil Card Payment Integration
+const hawilCardPayment = {
+  headline: 'Pay Rent & Stays with Hawil Card',
+  description: 'Residents and tourists can pay for all Sakin services using Hawil Card for the best exchange rates',
+  forResidents: {
+    title: 'Residents - Monthly Rent Payments',
+    benefits: [
+      { benefit: 'Pay in Home Currency', description: 'Send money from abroad to pay UAE rent at Google rate' },
+      { benefit: 'Auto-Debit Setup', description: 'Set up automatic monthly payments from Hawil Card' },
+      { benefit: 'Split with Family', description: 'Parents/family abroad can contribute to rent via Hawil' },
+      { benefit: 'Earn Coins', description: 'Get Nuqta coins on every rent payment' },
+    ],
+    example: {
+      monthlyRent: '6,300 AED',
+      bankTransfer: '6,615 AED (5% FX fee from abroad)',
+      hawilCard: '6,300 AED (0% FX fee)',
+      yearlySavings: '3,780 AED saved',
+    },
+  },
+  forTourists: {
+    title: 'Tourists - Sakin Stays Bookings',
+    benefits: [
+      { benefit: 'Google Rate', description: 'Pay for short-term stays at mid-market exchange rate' },
+      { benefit: 'No Foreign Fees', description: 'Save 3-5% compared to credit card bookings' },
+      { benefit: 'Instant Booking', description: 'Pay directly from Hawil Card, instant confirmation' },
+      { benefit: 'Double Coins', description: '2X Nuqta coins on all Sakin Stays bookings' },
+    ],
+    example: {
+      twoWeekStay: '5,500 AED (1BR Marina)',
+      creditCardCost: '5,775 AED (5% FX fee)',
+      hawilCardCost: '5,500 AED (0% FX fee)',
+      savings: '275 AED saved + 550 coins',
+    },
+  },
+};
+
 // Broker Partnership Model
 const brokerPartnershipModel = {
   valueForBrokers: [

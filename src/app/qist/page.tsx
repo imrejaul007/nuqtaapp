@@ -48,7 +48,28 @@ const nuqtaAdvantage = [
   { icon: Crown, title: 'Nuqta+ Cross-sell', description: 'BNPL users convert to premium membership.' },
   { icon: Coins, title: 'Coin Economy', description: 'Use Nuqta coins as down payment or earn on purchases.' },
   { icon: ArrowRightLeft, title: 'Ecosystem Synergy', description: 'Deep integration with Sakin, Nuqta+ and rewards.' },
+  { icon: CreditCard, title: 'Hawil Card Payment', description: 'Pay installments with Hawil Card - tourists get Google rate on every payment.' },
 ];
+
+// Hawil Card Payment Integration
+const hawilCardPayment = {
+  headline: 'Pay Installments with Hawil Card',
+  description: 'Tourists and residents can pay their Qist installments using Hawil Card for the best exchange rates',
+  benefits: [
+    { benefit: 'Google Rate', description: 'Pay installments in your home currency at mid-market rate' },
+    { benefit: 'No FX Fees', description: 'Save 3-5% compared to foreign credit cards' },
+    { benefit: 'Auto-Debit', description: 'Set up automatic payments from Hawil Card balance' },
+    { benefit: 'Earn Coins', description: 'Get Nuqta coins on every installment payment' },
+  ],
+  touristExample: {
+    purchase: 'iPhone 15 Pro - 4,500 AED',
+    installments: '6 months × 750 AED',
+    creditCardCost: '787.50 AED/month (5% FX fee)',
+    hawilCardCost: '750 AED/month (0% FX fee)',
+    totalSavings: '225 AED saved over 6 months',
+    coinsEarned: '450 Nuqta coins',
+  },
+};
 
 // Pricing Tiers
 const pricingTiers = [
@@ -300,7 +321,7 @@ const marketOpportunity = {
   nuqtaAdvantage: 'Only BNPL with rewards ecosystem and corporate network',
 };
 
-// Ecosystem Integration - The Power of Three
+// Ecosystem Integration - The Power of Four
 const ecosystemProducts = [
   {
     name: 'Nuqta',
@@ -340,6 +361,19 @@ const ecosystemProducts = [
     ticketSize: '60,000-100,000 AED',
     useCase: 'Rent, deposits, move-in costs',
     keyFeatures: ['12-month rent plans', 'Broker partnerships', '3 pillars (Find/Pay/Move)', 'Nuqta+ rewards'],
+  },
+  {
+    name: 'Hawil Card',
+    arabic: 'حوّل',
+    tagline: 'Pay Smart',
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500',
+    icon: CreditCard,
+    description: 'Universal payment card with Google rates',
+    ticketSize: 'Any amount',
+    useCase: 'Pay Qist installments at best rate',
+    keyFeatures: ['Google exchange rate', '0% FX markup', 'Auto-debit payments', 'Earn coins on payments'],
   },
 ];
 
