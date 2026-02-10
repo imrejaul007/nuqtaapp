@@ -12,7 +12,9 @@ import {
   Building2, Banknote, Scale, UserCheck, Landmark, PiggyBank,
   LineChart, CircleDollarSign, ShieldCheck, HeartHandshake,
   Coins, Network, ArrowRightLeft, CreditCard as CardIcon, Timer,
-  ShoppingCart, Package, Gem, Sparkles, BadgePercent, Receipt, Layers
+  ShoppingCart, Package, Gem, Sparkles, BadgePercent, Receipt, Layers,
+  Home, Car, Plane, Sofa, GraduationCap, Heart, Repeat, TrendingDown,
+  ArrowUpRight, Link2
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -298,12 +300,125 @@ const marketOpportunity = {
   nuqtaAdvantage: 'Only BNPL with rewards ecosystem and corporate network',
 };
 
+// Ecosystem Integration - The Power of Three
+const ecosystemProducts = [
+  {
+    name: 'Nuqta',
+    arabic: 'نقطة',
+    tagline: 'Earn & Save',
+    color: 'text-[#c9a227]',
+    bgColor: 'bg-[#c9a227]/10',
+    borderColor: 'border-[#c9a227]',
+    icon: Crown,
+    description: 'Corporate rewards & loyalty ecosystem',
+    ticketSize: '50-500 AED',
+    useCase: 'Daily spending at merchants',
+    keyFeatures: ['Nuqta+ membership', 'Coin rewards', '500+ merchants', 'Corporate perks'],
+  },
+  {
+    name: 'Qist',
+    arabic: 'قسط',
+    tagline: 'Pay Easy',
+    color: 'text-violet-400',
+    bgColor: 'bg-violet-500/10',
+    borderColor: 'border-violet-500',
+    icon: ShoppingBag,
+    description: 'BNPL payment infrastructure',
+    ticketSize: '500-5,000 AED',
+    useCase: 'Retail purchases & electronics',
+    keyFeatures: ['0% interest for Nuqta+', '3-12 month plans', 'Instant approval', 'Coin rewards'],
+  },
+  {
+    name: 'Sakin',
+    arabic: 'ساكن',
+    tagline: 'Live Better',
+    color: 'text-emerald-400',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500',
+    icon: Home,
+    description: 'Housing & move-in financing',
+    ticketSize: '60,000-100,000 AED',
+    useCase: 'Rent, deposits, move-in costs',
+    keyFeatures: ['12-month rent plans', 'Broker partnerships', '3 pillars (Find/Pay/Move)', 'Nuqta+ rewards'],
+  },
+];
+
+// Cross-product use cases
+const ecosystemUseCases = [
+  {
+    scenario: 'New Employee Moving to Dubai',
+    icon: Plane,
+    journey: [
+      { product: 'Nuqta', action: 'Gets corporate Nuqta+ membership through employer', coins: '+500' },
+      { product: 'Sakin', action: 'Finances 68K move-in cost over 12 months', coins: '+1,000' },
+      { product: 'Qist', action: 'Buys furniture via BNPL at 0% interest', coins: '+200' },
+      { product: 'Nuqta', action: 'Earns coins on daily purchases at cafes/gyms', coins: '+100/mo' },
+    ],
+    totalValue: '15,000 AED',
+    yearlyCoins: '3,000+',
+  },
+  {
+    scenario: 'Young Professional Upgrading Lifestyle',
+    icon: TrendingUp,
+    journey: [
+      { product: 'Nuqta', action: 'Subscribes to Nuqta+ for 99 AED/month', coins: '+100/mo' },
+      { product: 'Qist', action: 'Buys iPhone via 6-month BNPL at 0%', coins: '+300' },
+      { product: 'Sakin', action: 'Moves to better apartment, finances deposit', coins: '+800' },
+      { product: 'Nuqta', action: 'Uses coins for free coffee & salon visits', coins: 'Redeem' },
+    ],
+    totalValue: '8,000 AED',
+    yearlyCoins: '2,000+',
+  },
+  {
+    scenario: 'Family Setting Up Home',
+    icon: Heart,
+    journey: [
+      { product: 'Sakin', action: 'Finances 3BR apartment move-in (95K)', coins: '+1,500' },
+      { product: 'Qist', action: 'Furnishes entire home via BNPL (25K)', coins: '+500' },
+      { product: 'Nuqta', action: 'Family Nuqta+ plan for school & grocery savings', coins: '+200/mo' },
+      { product: 'Qist', action: 'Finances home appliances (TV, AC, etc.)', coins: '+300' },
+    ],
+    totalValue: '30,000 AED',
+    yearlyCoins: '5,000+',
+  },
+];
+
+// Unified credit infrastructure
+const unifiedCreditBenefits = [
+  { icon: UserCheck, title: 'Single Credit Profile', description: 'One profile across Qist retail & Sakin housing - build credit faster' },
+  { icon: TrendingUp, title: 'Progressive Limits', description: 'Good Qist history unlocks higher Sakin limits and vice versa' },
+  { icon: Coins, title: 'Unified Coin Economy', description: 'Earn and redeem Nuqta coins across all three products' },
+  { icon: Shield, title: 'Shared Risk Scoring', description: 'Better underwriting with cross-product payment behavior data' },
+  { icon: Repeat, title: 'Flywheel Effect', description: 'Each product drives users to the others, reducing CAC' },
+  { icon: Crown, title: 'Nuqta+ Gateway', description: '0% interest on both Qist & Sakin drives Nuqta+ subscriptions' },
+];
+
+// Ecosystem financial power
+const ecosystemFinancials = {
+  combinedGMV: {
+    year1: { nuqta: 15, qist: 50, sakin: 400, total: 465 },
+    year2: { nuqta: 50, qist: 250, sakin: 1200, total: 1500 },
+    year3: { nuqta: 150, qist: 800, sakin: 3000, total: 3950 },
+  },
+  crossSellRates: {
+    nuqtaToQist: '40%',
+    qistToSakin: '15%',
+    sakinToNuqta: '80%',
+    nuqtaPlusConversion: '35%',
+  },
+  unitEconomicsBoost: {
+    standalone: { ltv: 500, cac: 150, ratio: 3.3 },
+    ecosystem: { ltv: 2500, cac: 100, ratio: 25 },
+  },
+};
+
 export default function QistPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedRisk, setExpandedRisk] = useState<string | null>(null);
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: ShoppingBag },
+    { id: 'ecosystem', label: 'Ecosystem', icon: Network },
     { id: 'value-prop', label: 'Value Proposition', icon: Gift },
     { id: 'pricing', label: 'Pricing', icon: DollarSign },
     { id: 'economics', label: 'Unit Economics', icon: Calculator },
@@ -556,6 +671,371 @@ export default function QistPage() {
                     <p className="text-xs text-slate-400">{item.description}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Ecosystem Tab - The Power of Three */}
+        {activeTab === 'ecosystem' && (
+          <div className="space-y-8">
+            {/* Hero Banner */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 via-violet-500/20 to-emerald-500/20 rounded-2xl p-8 border-2 border-[#c9a227]/50">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900/50 rounded-full mb-4">
+                  <Network className="w-5 h-5 text-[#c9a227]" />
+                  <span className="text-[#c9a227] font-bold">The Nuqta Fintech Ecosystem</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-black text-white mb-4">
+                  Three Products. <span className="text-[#c9a227]">One Powerful Platform.</span>
+                </h2>
+                <p className="text-slate-300 max-w-3xl mx-auto text-lg">
+                  Nuqta, Qist, and Sakin form a unified financial ecosystem that captures the complete
+                  consumer journey - from daily spending to major purchases to housing.
+                </p>
+              </div>
+
+              {/* Three Products Visual */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {ecosystemProducts.map((product, i) => (
+                  <div key={i} className={`${product.bgColor} rounded-xl p-6 border-2 ${product.borderColor} relative`}>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`w-12 h-12 rounded-xl ${product.bgColor} flex items-center justify-center border ${product.borderColor}`}>
+                        <product.icon className={`w-6 h-6 ${product.color}`} />
+                      </div>
+                      <div>
+                        <h3 className={`text-xl font-black ${product.color}`}>{product.name}</h3>
+                        <span className="text-slate-400 text-sm">{product.arabic} • {product.tagline}</span>
+                      </div>
+                    </div>
+                    <p className="text-slate-300 text-sm mb-4">{product.description}</p>
+                    <div className="space-y-2 mb-4">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-400">Ticket Size</span>
+                        <span className="text-white font-medium">{product.ticketSize}</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-slate-400">Use Case</span>
+                        <span className="text-white font-medium">{product.useCase}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-1">
+                      {product.keyFeatures.map((feature, j) => (
+                        <span key={j} className="px-2 py-1 bg-slate-900/50 rounded text-xs text-slate-300">{feature}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Connection Lines Visual */}
+              <div className="mt-8 flex justify-center">
+                <div className="bg-slate-900/50 rounded-xl p-6 inline-flex items-center gap-4">
+                  <div className="text-center">
+                    <Crown className="w-8 h-8 text-[#c9a227] mx-auto mb-1" />
+                    <span className="text-xs text-slate-400">Nuqta</span>
+                  </div>
+                  <ArrowRightLeft className="w-6 h-6 text-slate-500" />
+                  <div className="text-center">
+                    <ShoppingBag className="w-8 h-8 text-violet-400 mx-auto mb-1" />
+                    <span className="text-xs text-slate-400">Qist</span>
+                  </div>
+                  <ArrowRightLeft className="w-6 h-6 text-slate-500" />
+                  <div className="text-center">
+                    <Home className="w-8 h-8 text-emerald-400 mx-auto mb-1" />
+                    <span className="text-xs text-slate-400">Sakin</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Qist as Payment Rail */}
+            <div className="bg-violet-500/10 rounded-xl p-6 border-2 border-violet-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Link2 className="w-5 h-5 text-violet-400" />
+                Qist: The Unified Payment Infrastructure
+              </h3>
+              <p className="text-slate-300 mb-6">
+                Qist serves as the <strong className="text-white">payment rail</strong> for the entire ecosystem.
+                Whether it&apos;s a 500 AED purchase at a Nuqta merchant or a 68,000 AED move-in cost through Sakin,
+                Qist powers the financing.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/30">
+                  <div className="flex items-center gap-3 mb-3">
+                    <ShoppingCart className="w-6 h-6 text-violet-400" />
+                    <h4 className="text-white font-bold">Qist for Nuqta (Retail)</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      Split purchases at 500+ merchant partners
+                    </li>
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      3-month 0% interest for Nuqta+ members
+                    </li>
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      Ticket size: 500-5,000 AED
+                    </li>
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      Earn Nuqta Coins on every installment
+                    </li>
+                  </ul>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-emerald-500/30">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Home className="w-6 h-6 text-emerald-400" />
+                    <h4 className="text-white font-bold">Qist for Sakin (Housing)</h4>
+                  </div>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      Finance full move-in cost (rent + deposit + broker)
+                    </li>
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      12-month payment plans for housing
+                    </li>
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      Ticket size: 60,000-100,000 AED
+                    </li>
+                    <li className="flex items-start gap-2 text-slate-300">
+                      <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                      Largest single transaction in ecosystem
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Real User Journeys */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Users className="w-5 h-5 text-[#c9a227]" />
+                Real User Journeys
+              </h3>
+              <div className="space-y-6">
+                {ecosystemUseCases.map((useCase, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-5 border border-slate-700/50">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-10 h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
+                        <useCase.icon className="w-5 h-5 text-[#c9a227]" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold">{useCase.scenario}</h4>
+                        <span className="text-slate-400 text-sm">Total Financing: {useCase.totalValue} • Yearly Coins: {useCase.yearlyCoins}</span>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                      {useCase.journey.map((step, j) => (
+                        <div key={j} className={`rounded-lg p-3 border ${
+                          step.product === 'Nuqta' ? 'bg-[#c9a227]/10 border-[#c9a227]/30' :
+                          step.product === 'Qist' ? 'bg-violet-500/10 border-violet-500/30' :
+                          'bg-emerald-500/10 border-emerald-500/30'
+                        }`}>
+                          <div className="flex items-center justify-between mb-2">
+                            <span className={`text-xs font-bold ${
+                              step.product === 'Nuqta' ? 'text-[#c9a227]' :
+                              step.product === 'Qist' ? 'text-violet-400' :
+                              'text-emerald-400'
+                            }`}>{step.product}</span>
+                            <span className="text-xs text-green-400 font-medium">{step.coins} coins</span>
+                          </div>
+                          <p className="text-xs text-slate-300">{step.action}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unified Credit Infrastructure */}
+            <div className="bg-gradient-to-r from-violet-500/10 to-emerald-500/10 rounded-xl p-6 border border-violet-500/30">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-violet-400" />
+                Unified Credit Infrastructure
+              </h3>
+              <p className="text-slate-300 mb-6">
+                A single credit profile powers both Qist retail and Sakin housing - creating a
+                <strong className="text-white"> shared underwriting advantage</strong> that standalone BNPL players can&apos;t replicate.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {unifiedCreditBenefits.map((benefit, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <benefit.icon className="w-6 h-6 text-violet-400 mb-2" />
+                    <h4 className="text-white font-bold text-sm mb-1">{benefit.title}</h4>
+                    <p className="text-xs text-slate-400">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Ecosystem Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-green-400" />
+                Combined Ecosystem GMV (AED Millions)
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left py-3 px-4 text-slate-400 font-medium">Product</th>
+                      <th className="text-right py-3 px-4 text-slate-400 font-medium">Year 1</th>
+                      <th className="text-right py-3 px-4 text-slate-400 font-medium">Year 2</th>
+                      <th className="text-right py-3 px-4 text-slate-400 font-medium">Year 3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-[#c9a227] font-medium flex items-center gap-2">
+                        <Crown className="w-4 h-4" /> Nuqta
+                      </td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year1.nuqta}M</td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year2.nuqta}M</td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year3.nuqta}M</td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-violet-400 font-medium flex items-center gap-2">
+                        <ShoppingBag className="w-4 h-4" /> Qist BNPL
+                      </td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year1.qist}M</td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year2.qist}M</td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year3.qist}M</td>
+                    </tr>
+                    <tr className="border-b border-slate-700/50">
+                      <td className="py-3 px-4 text-emerald-400 font-medium flex items-center gap-2">
+                        <Home className="w-4 h-4" /> Sakin Housing
+                      </td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year1.sakin}M</td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year2.sakin}M</td>
+                      <td className="py-3 px-4 text-right text-white">{ecosystemFinancials.combinedGMV.year3.sakin}M</td>
+                    </tr>
+                    <tr className="bg-[#c9a227]/10">
+                      <td className="py-3 px-4 text-white font-bold">Total Ecosystem</td>
+                      <td className="py-3 px-4 text-right text-[#c9a227] font-bold">{ecosystemFinancials.combinedGMV.year1.total}M</td>
+                      <td className="py-3 px-4 text-right text-[#c9a227] font-bold">{ecosystemFinancials.combinedGMV.year2.total}M</td>
+                      <td className="py-3 px-4 text-right text-[#c9a227] font-bold">{ecosystemFinancials.combinedGMV.year3.total}M</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Cross-sell rates */}
+              <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-[#c9a227]">{ecosystemFinancials.crossSellRates.nuqtaToQist}</div>
+                  <div className="text-xs text-slate-400">Nuqta → Qist</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-violet-400">{ecosystemFinancials.crossSellRates.qistToSakin}</div>
+                  <div className="text-xs text-slate-400">Qist → Sakin</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-emerald-400">{ecosystemFinancials.crossSellRates.sakinToNuqta}</div>
+                  <div className="text-xs text-slate-400">Sakin → Nuqta</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-green-400">{ecosystemFinancials.crossSellRates.nuqtaPlusConversion}</div>
+                  <div className="text-xs text-slate-400">Nuqta+ Conversion</div>
+                </div>
+              </div>
+            </div>
+
+            {/* LTV:CAC Improvement */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-xl p-6 border-2 border-green-500">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-green-400" />
+                The Ecosystem Advantage: LTV:CAC Multiplier
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-slate-600/30">
+                  <h4 className="text-slate-400 font-bold mb-4">Standalone BNPL</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">LTV per User</span>
+                      <span className="text-white font-bold">{ecosystemFinancials.unitEconomicsBoost.standalone.ltv} AED</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">CAC</span>
+                      <span className="text-white font-bold">{ecosystemFinancials.unitEconomicsBoost.standalone.cac} AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 bg-slate-800/50 rounded-lg px-3">
+                      <span className="text-slate-300 font-medium">LTV:CAC Ratio</span>
+                      <span className="text-orange-400 font-bold">{ecosystemFinancials.unitEconomicsBoost.standalone.ratio}x</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-green-500/10 rounded-xl p-5 border border-green-500/30">
+                  <h4 className="text-green-400 font-bold mb-4">Nuqta Ecosystem</h4>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-slate-300">LTV per User</span>
+                      <span className="text-white font-bold">{ecosystemFinancials.unitEconomicsBoost.ecosystem.ltv} AED</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-300">CAC (shared)</span>
+                      <span className="text-white font-bold">{ecosystemFinancials.unitEconomicsBoost.ecosystem.cac} AED</span>
+                    </div>
+                    <div className="flex justify-between py-2 bg-green-500/20 rounded-lg px-3">
+                      <span className="text-white font-medium">LTV:CAC Ratio</span>
+                      <span className="text-green-400 font-bold text-xl">{ecosystemFinancials.unitEconomicsBoost.ecosystem.ratio}x</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 rounded-full">
+                  <ArrowUpRight className="w-5 h-5 text-green-400" />
+                  <span className="text-green-400 font-bold">7.6x Better Unit Economics vs Standalone BNPL</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Why This Matters */}
+            <div className="bg-[#c9a227]/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Zap className="w-5 h-5 text-[#c9a227]" />
+                Why This Trilogy is Unstoppable
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="text-white font-bold mb-3">What Competitors Can&apos;t Replicate</h4>
+                  <ul className="space-y-2">
+                    {[
+                      'Tabby/Tamara have no rewards ecosystem',
+                      'Real estate players have no retail BNPL',
+                      'Loyalty apps have no financing capability',
+                      'No one has corporate partnership network',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <AlertTriangle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-3">Nuqta Ecosystem Moat</h4>
+                  <ul className="space-y-2">
+                    {[
+                      'Single user serves 3 revenue streams',
+                      'Cross-product data = better underwriting',
+                      'Nuqta+ drives 0% interest across all products',
+                      'CAC amortized across entire ecosystem',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
