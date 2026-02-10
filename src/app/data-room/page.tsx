@@ -1014,6 +1014,12 @@ export default function DataRoomPage() {
             ← Back to Site
           </Link>
           <div className="flex flex-wrap gap-3 sm:gap-6">
+            <Link href="/company-profile" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
+              Company Profile
+            </Link>
+            <Link href="/ecosystem-docs" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
+              Ecosystem Docs
+            </Link>
             <Link href="/commitment" className="text-[#c9a227] hover:text-[#f4d35e] transition-colors text-sm sm:text-base">
               Founder Commitment
             </Link>

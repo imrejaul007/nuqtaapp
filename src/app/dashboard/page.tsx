@@ -143,6 +143,8 @@ const cxoDepartments: CXODepartment[] = [
         name: 'Investor Relations',
         icon: Briefcase,
         links: [
+          { label: 'Company Profile', href: '/company-profile', icon: Building2 },
+          { label: 'Ecosystem Docs', href: '/ecosystem-docs', icon: Layers },
           { label: 'Data Room', href: '/data-room', icon: Database },
           { label: 'Investor Outreach', href: '/investor-outreach', icon: Mail },
           { label: 'Investor FAQ', href: '/investor-faq', icon: FileText },
