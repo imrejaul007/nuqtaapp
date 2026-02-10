@@ -65,7 +65,10 @@ import {
   Brain,
   Filter,
   Eye,
-  MapPin
+  MapPin,
+  HelpCircle,
+  Play,
+  Shield
 } from 'lucide-react';
 
 /**
@@ -260,19 +263,16 @@ const navigationData: NavCategory[] = [
     icon: Building2,
     color: 'text-slate-300',
     items: [
+      { label: 'About', href: '/about', icon: Building2 },
+      { label: 'Why Nuqta', href: '/why-nuqta', icon: Zap },
+      { label: 'Features', href: '/features', icon: Sparkles },
+      { label: 'How It Works', href: '/how-it-works', icon: Play },
+      { label: 'FAQ', href: '/faq', icon: HelpCircle },
+      { label: 'Contact', href: '/contact', icon: Mail },
+      { label: 'Privacy', href: '/privacy', icon: Shield },
       { label: 'Team', href: '/team', icon: Users },
-      { label: 'Org Chart', href: '/org-chart', icon: Users },
       { label: 'Careers', href: '/careers', icon: Briefcase },
-      { label: 'Hiring Pipeline', href: '/hiring-pipeline', icon: UserPlus },
-      { label: 'Employee Handbook', href: '/employee-handbook', icon: BookOpen },
-      { label: 'D&I Policy', href: '/diversity-inclusion', icon: Heart },
-      { label: 'HR Operations', href: '/hr-operations', icon: Heart },
-      { label: 'Hiring Playbook', href: '/hiring-playbook', icon: UserPlus },
-      { label: 'Compensation', href: '/compensation-guide', icon: Wallet },
-      { label: 'ESOP', href: '/esop', icon: Ticket },
-      { label: 'Contracts', href: '/contracts', icon: FileText },
-      { label: 'Legal Docs', href: '/legal-docs', icon: Scale },
-      { label: 'Policies', href: '/policies', icon: Scale },
+      { label: 'Terms', href: '/terms', icon: FileText },
     ]
   },
   {

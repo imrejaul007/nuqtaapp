@@ -86,7 +86,8 @@ import {
   Flag,
   Box,
   Clock,
-  Phone
+  Phone,
+  HelpCircle
 } from 'lucide-react';
 
 interface SubTeam {
@@ -488,10 +489,24 @@ const cxoDepartments: CXODepartment[] = [
   },
 ];
 
+// Marketing Hub Pages
+const marketingHubPages = [
+  { label: 'Command Center', href: '/marketing-dashboard', icon: LayoutGrid, desc: 'Daily execution & tracking' },
+  { label: 'Marketing Bible', href: '/marketing-bible', icon: BookOpen, desc: '21 strategy sections' },
+  { label: 'War Room', href: '/marketing-war-room', icon: Brain, desc: 'Campaign analysis' },
+];
+
 // Other pages (landing, agency, etc.)
 const otherPages = [
   { label: 'Landing Page', href: '/landing-v1', icon: Globe },
   { label: 'Agency Pages', href: '/agency-pages', icon: Building2 },
+  { label: 'About', href: '/about', icon: Building2 },
+  { label: 'Why Nuqta', href: '/why-nuqta', icon: Zap },
+  { label: 'Features', href: '/features', icon: Sparkles },
+  { label: 'How It Works', href: '/how-it-works', icon: Play },
+  { label: 'FAQ', href: '/faq', icon: HelpCircle },
+  { label: 'Contact', href: '/contact', icon: Mail },
+  { label: 'Privacy', href: '/privacy', icon: Shield },
 ];
 
 // Quick Actions
@@ -658,6 +673,31 @@ export default function DashboardPage() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Marketing Hub */}
+        <div className="mt-8 sm:mt-10">
+          <h3 className="text-sm font-bold text-[#c9a227] mb-3 flex items-center gap-2">
+            <Megaphone size={16} />
+            Marketing Hub
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {marketingHubPages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border border-[#c9a227]/30 rounded-xl hover:border-[#c9a227]/60 transition-all group"
+              >
+                <div className="w-10 h-10 rounded-lg bg-[#c9a227]/20 flex items-center justify-center">
+                  <page.icon size={20} className="text-[#c9a227]" />
+                </div>
+                <div>
+                  <div className="text-white font-medium group-hover:text-[#c9a227] transition-colors">{page.label}</div>
+                  <div className="text-slate-500 text-xs">{page.desc}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Other Pages */}

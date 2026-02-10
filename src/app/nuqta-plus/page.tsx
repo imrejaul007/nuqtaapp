@@ -611,6 +611,79 @@ export default function NuqtaPlusPage() {
               </div>
             </div>
 
+            {/* Merchant Loyalty Mechanics */}
+            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/10 rounded-xl p-6 border border-orange-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-orange-500 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <div className="text-orange-400 text-sm font-bold uppercase tracking-wider">Beyond Cashback</div>
+                  <h3 className="text-xl font-bold text-white">Merchant Loyalty Mechanics</h3>
+                </div>
+              </div>
+
+              <p className="text-slate-300 mb-6">
+                We build <span className="text-orange-400 font-medium">habit, not just one-time visits</span>. These mechanics drive repeat behavior and deeper merchant engagement.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                {/* Streak Rewards */}
+                <div className="bg-slate-900/70 rounded-xl p-5 border border-orange-500/20">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Sparkles className="w-5 h-5 text-orange-400" />
+                    <span className="text-white font-bold">Streak Rewards</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
+                      <span className="text-slate-300 text-sm">&ldquo;Visit 4 times this month&rdquo;</span>
+                      <span className="text-green-400 font-medium text-sm">+5% extra</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
+                      <span className="text-slate-300 text-sm">&ldquo;3-day streak at any merchant&rdquo;</span>
+                      <span className="text-green-400 font-medium text-sm">+50 coins</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
+                      <span className="text-slate-300 text-sm">&ldquo;30-day streak&rdquo;</span>
+                      <span className="text-[#c9a227] font-medium text-sm">+1,000 coins</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Category Challenges */}
+                <div className="bg-slate-900/70 rounded-xl p-5 border border-purple-500/20">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Target className="w-5 h-5 text-purple-400" />
+                    <span className="text-white font-bold">Category Challenges</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
+                      <span className="text-slate-300 text-sm">&ldquo;Try 3 new cafes this month&rdquo;</span>
+                      <span className="text-green-400 font-medium text-sm">Unlock bonus</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
+                      <span className="text-slate-300 text-sm">&ldquo;Visit 5 salons in category&rdquo;</span>
+                      <span className="text-green-400 font-medium text-sm">+150 coins</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-slate-800/50 rounded-lg p-3">
+                      <span className="text-slate-300 text-sm">&ldquo;Explore 10 new merchants&rdquo;</span>
+                      <span className="text-[#c9a227] font-medium text-sm">Explorer badge</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                <div className="flex items-center gap-3">
+                  <TrendingUp className="w-6 h-6 text-green-400" />
+                  <div>
+                    <div className="text-white font-medium">Why This Works</div>
+                    <div className="text-sm text-slate-400">Builds habit loops, not just discounts. Users return for the challenge, not just the reward.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Membership Structure */}
             <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
               <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">

@@ -10,11 +10,12 @@ import {
   Send, UserPlus, Briefcase, CreditCard, Lock, Crown, Flame,
   Eye, Bell, RefreshCw, Heart, Coffee, Smartphone, Globe,
   Award, Layers, PieChart, Activity, Lightbulb, Brain, Gem,
-  Network, Repeat, Timer, Hash, Link, Image, Film, Mic,
+  Network, Repeat, Timer, Hash, Link as LinkIcon, Image, Film, Mic,
   Radio, Tv, Newspaper, Package, ShoppingCart, Percent,
   ArrowRight, ArrowUp, ArrowDown, Minus, Plus, X, Check
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
+import MarketingNav from '@/components/MarketingNav';
 
 // =============================================================================
 // ELITE MARKETING TEAM - Virtual Experts
@@ -2254,6 +2255,9 @@ export default function MarketingWarRoomPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Unified Marketing Navigation */}
+      <MarketingNav currentPage="war-room" />
+
       {/* Header */}
       <div className="bg-gradient-to-r from-[#0a1628] via-purple-900 to-[#0a1628] text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

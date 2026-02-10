@@ -104,6 +104,7 @@ import {
   Volume2,
   Settings
 } from 'lucide-react';
+import MarketingNav from '@/components/MarketingNav';
 
 // Component to handle URL params
 function TabHandler({ onTabChange }: { onTabChange: (tab: string) => void }) {
@@ -183,25 +184,8 @@ export default function MarketingPlanPage() {
         <TabHandler onTabChange={handleTabChange} />
       </Suspense>
 
-      {/* Header */}
-      <header className="bg-[#0a1628]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Link href="/" className="flex items-center gap-2 text-gray-400 hover:text-[#c9a227] transition-colors">
-                <ArrowLeft size={20} />
-                <span>Back</span>
-              </Link>
-              <div className="w-px h-6 bg-white/20" />
-              <h1 className="text-xl font-bold text-[#c9a227]">Marketing Plan</h1>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-gray-400">
-              <Clock size={16} />
-              <span>Launch: March 1, 2026</span>
-            </div>
-          </div>
-        </div>
-      </header>
+      {/* Unified Marketing Navigation */}
+      <MarketingNav currentPage="bible" />
 
       {/* Hero */}
       <section className="py-12 px-4 bg-gradient-to-b from-[#c9a227]/10 to-transparent">
@@ -221,7 +205,7 @@ export default function MarketingPlanPage() {
       </section>
 
       {/* Tab Navigation */}
-      <div className="border-b border-white/10 sticky top-[73px] bg-[#0a1628]/95 backdrop-blur-md z-40">
+      <div className="border-b border-white/10 sticky top-0 bg-[#0a1628]/95 backdrop-blur-md z-40">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex overflow-x-auto gap-1 py-3">
             {tabs.map((tab) => (

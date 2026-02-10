@@ -759,6 +759,73 @@ export default function MerchantPlaybookPage() {
               </div>
             </div>
 
+            {/* Merchant Loyalty Mechanics */}
+            <div className="bg-gradient-to-r from-orange-500/10 to-red-500/10 rounded-xl p-6 border border-orange-500/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center">
+                  <Award className="text-orange-400" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Merchant Loyalty Mechanics</h3>
+                  <p className="text-gray-400 text-sm">Beyond cashback - build habit, not just one-time visits</p>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                {/* Streak Rewards */}
+                <div className="bg-white/5 rounded-xl p-5 border border-orange-500/20">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Zap className="text-orange-400" size={20} />
+                    <span className="font-bold text-white">Streak Rewards</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <span className="text-gray-300 text-sm">&quot;Visit 4 times this month&quot;</span>
+                      <span className="text-green-400 font-medium text-sm">+5% extra cashback</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <span className="text-gray-300 text-sm">&quot;7-day streak at your store&quot;</span>
+                      <span className="text-green-400 font-medium text-sm">+150 bonus coins</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <span className="text-gray-300 text-sm">&quot;30-day streak&quot;</span>
+                      <span className="text-[#c9a227] font-medium text-sm">+1,000 coins + badge</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Category Challenges */}
+                <div className="bg-white/5 rounded-xl p-5 border border-purple-500/20">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Target className="text-purple-400" size={20} />
+                    <span className="font-bold text-white">Category Challenges</span>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <span className="text-gray-300 text-sm">&quot;Try 3 new cafes this month&quot;</span>
+                      <span className="text-green-400 font-medium text-sm">Unlock bonus</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <span className="text-gray-300 text-sm">&quot;Visit 5 salons in category&quot;</span>
+                      <span className="text-green-400 font-medium text-sm">+150 coins</span>
+                    </div>
+                    <div className="flex items-center justify-between bg-white/5 rounded-lg p-3">
+                      <span className="text-gray-300 text-sm">&quot;Explore 10 new merchants&quot;</span>
+                      <span className="text-[#c9a227] font-medium text-sm">Explorer badge</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/5 rounded-lg p-4 flex items-center gap-3">
+                <TrendingUp className="text-green-400 flex-shrink-0" size={24} />
+                <div>
+                  <span className="text-white font-medium">Merchant Benefit:</span>
+                  <span className="text-gray-400 ml-2">Streak rewards drive repeat visits. Customers return for the challenge, not just the discount.</span>
+                </div>
+              </div>
+            </div>
+
             {/* Merchant Lifecycle Overview */}
             <div className="bg-white/5 rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-bold text-white mb-6">Merchant Lifecycle Overview</h3>

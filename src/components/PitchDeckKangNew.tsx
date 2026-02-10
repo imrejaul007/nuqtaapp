@@ -2722,33 +2722,33 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
                         <CheckCircle2 size={20} className="text-blue-500 mt-1 flex-shrink-0" />
-                        <p className="text-base text-slate-700">Merchant loyalty campaigns</p>
+                        <p className="text-base text-slate-700"><span className="font-bold text-blue-700">Streak rewards:</span> "Visit 4x this month → 5% extra"</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 size={20} className="text-blue-500 mt-1 flex-shrink-0" />
-                        <p className="text-base text-slate-700">Repeat purchase rewards</p>
+                        <p className="text-base text-slate-700"><span className="font-bold text-blue-700">Category challenges:</span> "Try 3 cafes → unlock bonus"</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <CheckCircle2 size={20} className="text-blue-500 mt-1 flex-shrink-0" />
-                        <p className="text-base text-slate-700">Example: Buy 3x → 200 Brand Coins</p>
+                        <p className="text-base text-slate-700">Repeat purchase milestones (Buy 3x → 200 Brand Coins)</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <h4 className="text-xl font-bold text-slate-900">Why It Exists:</h4>
+                    <h4 className="text-xl font-bold text-slate-900">Why It Works:</h4>
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                        <p className="text-base text-slate-700">True loyalty without discounting</p>
+                        <p className="text-base text-slate-700"><strong>Builds habit loops</strong>, not one-time visits</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                        <p className="text-base text-slate-700">Incentivize repeat visits</p>
+                        <p className="text-base text-slate-700">True loyalty without discounting margin</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                        <p className="text-base text-slate-700">Lower cost than flat discounts</p>
+                        <p className="text-base text-slate-700">Drives 6+ visits/month vs 2-3 for competitors</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
@@ -3765,7 +3765,11 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-1" />
-                        <p className="text-sm text-slate-700">7-day streak rewards (extra 2% cashback)</p>
+                        <p className="text-sm text-slate-700"><span className="font-bold text-emerald-700">Streak rewards:</span> "Visit 4 times this month, get 5% extra"</p>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-1" />
+                        <p className="text-sm text-slate-700"><span className="font-bold text-emerald-700">Category challenges:</span> "Try 3 new cafes, unlock bonus"</p>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle2 size={18} className="text-emerald-600 flex-shrink-0 mt-1" />
@@ -3774,7 +3778,7 @@ export default function PitchDeckKangNew({ isOpen, onClose }: PitchDeckProps) {
                     </div>
                     <div className="bg-slate-50 rounded-lg p-3">
                       <p className="text-xs font-semibold text-slate-500 uppercase mb-1">Why It Works</p>
-                      <p className="text-sm text-slate-700">Habits drive LTV. Retention &gt; acquisition at this stage.</p>
+                      <p className="text-sm text-slate-700">Builds habit loops, not one-time visits. Retention &gt; acquisition at this stage.</p>
                     </div>
                   </div>
                 </div>

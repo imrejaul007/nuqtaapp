@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  ArrowLeft,
   Target,
   Calendar,
   Users,
@@ -59,6 +58,7 @@ import {
   Image,
   Bot
 } from 'lucide-react';
+import MarketingNav from '@/components/MarketingNav';
 
 export default function MarketingDashboardPage() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'bible' | 'strategy' | 'content' | 'channels' | 'campaigns' | 'community' | 'execution'>('dashboard');
@@ -455,18 +455,16 @@ export default function MarketingDashboardPage() {
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
+      {/* Unified Marketing Navigation */}
+      <MarketingNav currentPage="dashboard" />
+
       {/* Header */}
       <header className="bg-[#0a1628]/95 backdrop-blur-md border-b border-white/10 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-4">
-              <Link href="/" className="text-gray-400 hover:text-white transition-colors">
-                <ArrowLeft size={24} />
-              </Link>
-              <div>
-                <h1 className="text-2xl font-bold text-[#c9a227]">Marketing Command Center</h1>
-                <p className="text-gray-400 text-sm">Everything you need to launch Nuqta</p>
-              </div>
+            <div>
+              <h1 className="text-2xl font-bold text-[#c9a227]">Marketing Command Center</h1>
+              <p className="text-gray-400 text-sm">Everything you need to launch Nuqta</p>
             </div>
             <div className="flex items-center gap-6">
               <div className="text-right">

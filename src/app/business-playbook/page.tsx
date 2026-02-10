@@ -880,6 +880,64 @@ function MerchantPackagesTab() {
         </div>
       </div>
 
+      {/* Merchant Loyalty Mechanics */}
+      <div className="bg-gradient-to-br from-orange-500/10 to-red-500/10 border border-orange-500/30 rounded-2xl p-6">
+        <h3 className="text-xl font-black text-orange-400 mb-2">Merchant Loyalty Mechanics</h3>
+        <p className="text-slate-400 mb-4">Beyond cashback - build habit, not just one-time visits</p>
+
+        <div className="grid md:grid-cols-2 gap-4 mb-4">
+          {/* Streak Rewards */}
+          <div className="bg-white/5 rounded-xl p-4">
+            <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-orange-500/30 flex items-center justify-center text-xs">🔥</span>
+              Streak Rewards
+            </h4>
+            <ul className="text-sm text-slate-300 space-y-2">
+              <li className="flex justify-between">
+                <span>&ldquo;Visit 4 times this month&rdquo;</span>
+                <span className="text-green-400">+5% extra</span>
+              </li>
+              <li className="flex justify-between">
+                <span>&ldquo;3-day streak&rdquo;</span>
+                <span className="text-green-400">+50 coins</span>
+              </li>
+              <li className="flex justify-between">
+                <span>&ldquo;30-day streak&rdquo;</span>
+                <span className="text-[#c9a227]">+1,000 coins</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Category Challenges */}
+          <div className="bg-white/5 rounded-xl p-4">
+            <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+              <span className="w-6 h-6 rounded-full bg-purple-500/30 flex items-center justify-center text-xs">🎯</span>
+              Category Challenges
+            </h4>
+            <ul className="text-sm text-slate-300 space-y-2">
+              <li className="flex justify-between">
+                <span>&ldquo;Try 3 new cafes&rdquo;</span>
+                <span className="text-green-400">Unlock bonus</span>
+              </li>
+              <li className="flex justify-between">
+                <span>&ldquo;Visit 5 salons&rdquo;</span>
+                <span className="text-green-400">+150 coins</span>
+              </li>
+              <li className="flex justify-between">
+                <span>&ldquo;Explore 10 merchants&rdquo;</span>
+                <span className="text-[#c9a227]">Explorer badge</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white/5 rounded-lg p-3 text-center">
+          <p className="text-sm text-slate-300">
+            <span className="text-orange-400 font-bold">Key Insight:</span> Users return for the challenge, not just the reward. This builds habit loops, driving consistent repeat visits.
+          </p>
+        </div>
+      </div>
+
       {/* Price Engineering */}
       <div className="bg-gradient-to-br from-emerald-500/10 to-green-500/10 border border-emerald-500/30 rounded-2xl p-6">
         <h3 className="text-xl font-black text-emerald-400 mb-4">Price Engineering Strategy</h3>
