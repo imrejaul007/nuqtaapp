@@ -473,19 +473,57 @@ export default function RTMNGroupPage() {
         </div>
       </main>
 
-      {/* Navigation */}
-      <section className="bg-slate-800/30 border-t border-slate-700/50 py-8">
+      {/* ═══════════════ FULL NAVIGATION ═══════════════ */}
+      <section className="bg-slate-800/30 border-t border-slate-700/50 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors">
-              <Network className="w-5 h-5" /> App Ecosystem
+          <h2 className="text-xl font-bold text-white text-center mb-8 flex items-center justify-center gap-2">
+            <Network className="w-5 h-5 text-[#c9a227]" /> Navigate the Ecosystem
+          </h2>
+
+          {/* Key Pages */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors text-sm">
+              <Network className="w-4 h-4" /> Full Ecosystem (100+ Apps)
             </Link>
-            <Link href="/rabtul" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-500 text-white rounded-xl font-bold hover:bg-purple-400 transition-colors">
-              <Database className="w-5 h-5" /> Rabtul Core
+            <Link href="/rtmn-dashboard" className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors text-sm">
+              <BarChart3 className="w-4 h-4" /> RTMN Dashboard
             </Link>
-            <Link href="/bizone" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-400 transition-colors">
-              <Store className="w-5 h-5" /> BizOne Merchants
+            <Link href="/rabtul" className="inline-flex items-center gap-2 px-5 py-2.5 bg-purple-500 text-white rounded-xl font-bold hover:bg-purple-400 transition-colors text-sm">
+              <Database className="w-4 h-4" /> Rabtul Core OS
             </Link>
+          </div>
+
+          {/* All Product Pages Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+            {[
+              { name: 'Nuqta', href: '/nuqta', color: 'text-[#c9a227]', bg: 'bg-[#c9a227]/10', border: 'border-[#c9a227]/30', icon: Coins },
+              { name: 'NuqtaPay', href: '/nuqtapay', color: 'text-teal-400', bg: 'bg-teal-500/10', border: 'border-teal-500/30', icon: CreditCard },
+              { name: 'Qist', href: '/qist', color: 'text-indigo-400', bg: 'bg-indigo-500/10', border: 'border-indigo-500/30', icon: Wallet },
+              { name: 'Hawil', href: '/hawil', color: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/30', icon: Globe },
+              { name: 'Wasil', href: '/wasil', color: 'text-orange-400', bg: 'bg-orange-500/10', border: 'border-orange-500/30', icon: Truck },
+              { name: 'Rakab', href: '/rakab', color: 'text-amber-400', bg: 'bg-amber-500/10', border: 'border-amber-500/30', icon: Calendar },
+              { name: 'Safar', href: '/safar', color: 'text-sky-400', bg: 'bg-sky-500/10', border: 'border-sky-500/30', icon: Plane },
+              { name: 'Ajer', href: '/ajer', color: 'text-green-400', bg: 'bg-green-500/10', border: 'border-green-500/30', icon: Package },
+              { name: 'Sakin', href: '/sakin', color: 'text-rose-400', bg: 'bg-rose-500/10', border: 'border-rose-500/30', icon: Building2 },
+              { name: 'Fakhir', href: '/fakhir', color: 'text-yellow-400', bg: 'bg-yellow-500/10', border: 'border-yellow-500/30', icon: Crown },
+              { name: 'BizOne', href: '/bizone', color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/30', icon: Store },
+              { name: 'Inventora', href: '/inventora', color: 'text-teal-400', bg: 'bg-teal-500/10', border: 'border-teal-500/30', icon: Layers },
+              { name: 'NextaBizz', href: '/nextabizz', color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', icon: Package },
+              { name: 'Eventora', href: '/eventora', color: 'text-violet-400', bg: 'bg-violet-500/10', border: 'border-violet-500/30', icon: Calendar },
+              { name: 'Adzy', href: '/adzy', color: 'text-pink-400', bg: 'bg-pink-500/10', border: 'border-pink-500/30', icon: Megaphone },
+              { name: 'Rabtul', href: '/rabtul', color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30', icon: Database },
+              { name: 'Nuqta Corp', href: '/nuqta-corp', color: 'text-[#c9a227]', bg: 'bg-[#c9a227]/10', border: 'border-[#c9a227]/30', icon: Crown },
+              { name: 'RTMN Finance', href: '/rtmn-finance', color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/30', icon: Wallet },
+            ].map((item, i) => (
+              <Link
+                key={i}
+                href={item.href}
+                className={`${item.bg} border ${item.border} rounded-xl p-3 text-center hover:scale-105 transition-all group`}
+              >
+                <item.icon className={`w-5 h-5 ${item.color} mx-auto mb-1.5`} />
+                <div className={`text-sm font-bold ${item.color} group-hover:text-white transition-colors`}>{item.name}</div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
