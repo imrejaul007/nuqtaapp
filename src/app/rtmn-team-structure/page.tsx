@@ -972,14 +972,24 @@ export default function RTMNTeamStructurePage() {
           <div className="space-y-8">
             {/* Rabtul Overview */}
             <div className="bg-gradient-to-r from-purple-500/20 to-violet-500/10 rounded-xl p-6 border-2 border-purple-500">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center">
-                  <Cloud className="w-8 h-8 text-white" />
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center">
+                    <Cloud className="w-8 h-8 text-white" />
+                  </div>
+                  <div>
+                    <h2 className="text-2xl font-bold text-white">Rabtul</h2>
+                    <p className="text-purple-400">Technology & AI Infrastructure for All RTMN Companies</p>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-2xl font-bold text-white">Rabtul</h2>
-                  <p className="text-purple-400">Technology & AI Infrastructure for All RTMN Companies</p>
-                </div>
+                <Link
+                  href="/rabtul-tech"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-violet-600 text-white font-bold rounded-xl hover:opacity-90 transition-opacity"
+                >
+                  <Code className="w-5 h-5" />
+                  View Full Tech Team & Tasks
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
               <p className="text-slate-300 mb-6">
                 Rabtul is the technology backbone of RTMN Group. Instead of each company building their
