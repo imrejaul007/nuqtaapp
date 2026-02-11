@@ -357,6 +357,210 @@ const ecosystemCategories = [
   },
 ];
 
+// Ecosystem Build Steps - How Rabtul builds each product and the ecosystem grows stronger
+const ecosystemBuildSteps = [
+  {
+    step: 1,
+    name: 'Rabtul',
+    tagline: 'The Tech Backbone',
+    icon: Brain,
+    color: 'from-purple-500 to-violet-600',
+    textColor: 'text-purple-400',
+    bgColor: 'bg-purple-500/10',
+    borderColor: 'border-purple-500',
+    phase: 'Phase 1',
+    whyNow: 'Everything runs on Rabtul. Before launching any consumer or merchant app, we build the shared infrastructure — Cloud, APIs, AI/ML, Auth, Payments, Security. Every future product plugs into this.',
+    whatItBuilds: ['Unified SSO & Identity', 'Payment Gateway (NuqtaPay rails)', 'AI/ML Platform & AIRA', 'Event Bus & Real-time streaming', 'Data Warehouse (DataPulse)', 'Security & Compliance (SecureVault)'],
+    ecosystemPower: 10,
+    connectsTo: [],
+    synergiesUnlocked: ['Shared authentication for all 100+ future apps', 'Single payment infrastructure used by every product', 'AI models that get smarter with every company added'],
+    appsUnlocked: ['Rabtul Cloud', 'AIRA', 'DataPulse', 'CloudSync', 'SecureVault'],
+    cumulativeApps: 5,
+    cumulativeUsers: '0',
+    networkEffect: 'Foundation layer. No network effects yet — but every future company plugs directly into Rabtul.',
+  },
+  {
+    step: 2,
+    name: 'BizOne + Merchant B2B',
+    tagline: 'Merchant SaaS Platform',
+    icon: Store,
+    color: 'from-emerald-500 to-green-600',
+    textColor: 'text-emerald-400',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500',
+    phase: 'Phase 1',
+    whyNow: 'Before bringing consumers, onboard merchants. Give them POS, CRM, inventory, analytics — make them dependent on your tools. When consumer apps launch, merchants are already integrated.',
+    whatItBuilds: ['BizOne POS for all merchants', 'CRM & Customer Management', 'Inventory tracking (Inventora lite)', 'Digital menus & booking', 'Staff management & payroll', 'Business analytics dashboard'],
+    ecosystemPower: 22,
+    connectsTo: ['Rabtul'],
+    synergiesUnlocked: ['500+ merchant network ready for consumer apps', 'POS transaction data feeds Rabtul AI for insights', 'Merchants pre-integrated for Nuqta rewards launch', 'Rabtul Auth gives merchants single login to all tools'],
+    appsUnlocked: ['BizOne', 'NextaBizz', 'Inventora', 'Adzy'],
+    cumulativeApps: 9,
+    cumulativeUsers: '500+ merchants',
+    networkEffect: 'Merchant lock-in. More merchants use BizOne → more valuable the platform becomes (shared features, benchmarks, community).',
+  },
+  {
+    step: 3,
+    name: 'ReZ / Nuqta Core',
+    tagline: 'Rewards, Loyalty & Gamification',
+    icon: Crown,
+    color: 'from-[#c9a227] to-amber-600',
+    textColor: 'text-[#c9a227]',
+    bgColor: 'bg-[#c9a227]/10',
+    borderColor: 'border-[#c9a227]',
+    phase: 'Phase 1',
+    whyNow: 'Now that 500+ merchants are on BizOne, launch the consumer-facing super-app. Nuqta+ membership, Nuqta Coins, CoinHunt gamification — consumers earn rewards at every BizOne merchant.',
+    whatItBuilds: ['ReZ super-app hub', 'Nuqta+ Membership tiers', 'Nuqta Coins universal currency', 'CoinHunt gamification engine', 'Gamification Hub (badges, streaks, levels)', 'BuzzLoop discovery feed'],
+    ecosystemPower: 38,
+    connectsTo: ['Rabtul', 'BizOne'],
+    synergiesUnlocked: ['Consumers earn Nuqta Coins at all BizOne merchants', 'CoinHunt drives daily engagement via quests & challenges', 'Gamification keeps users returning across ecosystem', 'Consumer behavior data feeds Rabtul AI → better recommendations', 'Merchants see foot traffic increase 30-50% from Nuqta users'],
+    appsUnlocked: ['ReZ (Nuqta)', 'CoinHunt', 'BuzzLoop', 'Gamification Hub', 'Memezy', 'Quizzy', 'Spinzy', 'Scratchzy', 'Dailywin'],
+    cumulativeApps: 18,
+    cumulativeUsers: '50K+',
+    networkEffect: 'Two-sided network: More merchants → more places to earn coins → more consumers join → merchants see more sales → more merchants want in.',
+  },
+  {
+    step: 4,
+    name: 'Finance Stack',
+    tagline: 'Islamic Fintech Platform',
+    icon: Wallet,
+    color: 'from-blue-500 to-cyan-500',
+    textColor: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500',
+    phase: 'Phase 1',
+    whyNow: 'With consumers and merchants active, add full financial rails. Qist BNPL, Hawil remittance, ReZPay wallet, merchant credit — money flows through everything.',
+    whatItBuilds: ['Qist BNPL (0% split payments)', 'Hawil remittance (Google rate)', 'ReZPay digital wallet', 'Splitzy bill splitting', 'BudgetPro expense tracking', 'CreditBoost score building'],
+    ecosystemPower: 52,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core'],
+    synergiesUnlocked: ['Qist BNPL drives 40% higher cart value at BizOne merchants', 'Hawil users auto-earn Nuqta Coins on every remittance', 'ReZPay wallet holds Nuqta Coins + real money in one place', 'BizOne merchants get instant credit based on POS data from Rabtul AI', 'Splitzy works across Wasil orders, events, travel (future)'],
+    appsUnlocked: ['Qist', 'Hawil', 'ReZPay', 'Splitzy', 'BudgetPro', 'CreditBoost', 'Savezy+'],
+    cumulativeApps: 25,
+    cumulativeUsers: '200K+',
+    networkEffect: 'Financial network: More transactions → better credit scoring → lower rates → more users → more transactions. Money becomes the glue binding everything.',
+  },
+  {
+    step: 5,
+    name: 'Wasil Lifestyle',
+    tagline: '24 Delivery Verticals',
+    icon: Truck,
+    color: 'from-orange-500 to-red-500',
+    textColor: 'text-orange-400',
+    bgColor: 'bg-orange-500/10',
+    borderColor: 'border-orange-500',
+    phase: 'Phase 1',
+    whyNow: 'Commerce needs a physical delivery layer. Connect BizOne merchants to Nuqta consumers — food, grocery, pharmacy, beauty, cleaning, gifts. Pay with ReZPay/Qist, earn Nuqta Coins on every order.',
+    whatItBuilds: ['Wasil Hub (60-min delivery)', 'Dinezy (food delivery)', 'Grocify (grocery)', 'MediEarn (pharmacy)', 'Glowzy (beauty services)', 'CleanEZ, Sparklean, Handyzy, Brewzy, QuickDrop...'],
+    ecosystemPower: 65,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core', 'Finance'],
+    synergiesUnlocked: ['BizOne merchants → Wasil delivery (auto-integrated via Rabtul)', 'Nuqta+ Gold/Platinum get free Wasil+ delivery', 'Pay with ReZPay or Qist BNPL, earn 2X Nuqta Coins', 'RTMN Finance provides rider fleet financing', 'Rabtul AI predicts demand → reduces delivery times 20%', 'CoinHunt: Complete 5 Wasil orders → unlock bonus coins'],
+    appsUnlocked: ['Wasil Hub', 'Dinezy', 'Grocify', 'MediEarn', 'Glowzy', 'CleanEZ', 'Sparklean', 'Handyzy', 'Brewzy', 'QuickDrop', 'NightOwl', 'GiftWrap', 'AquaFresh'],
+    cumulativeApps: 38,
+    cumulativeUsers: '500K+',
+    networkEffect: 'Density network: More riders → faster delivery → more orders → more riders needed. Each neighborhood becomes more efficient. Cross-vertical bundling (order food + groceries + pharmacy in one delivery).',
+  },
+  {
+    step: 6,
+    name: 'Real Estate & Mobility',
+    tagline: 'Housing + Transportation',
+    icon: Home,
+    color: 'from-green-500 to-emerald-600',
+    textColor: 'text-green-400',
+    bgColor: 'bg-green-500/10',
+    borderColor: 'border-green-500',
+    phase: 'Phase 2',
+    whyNow: 'Users are now earning coins, ordering deliveries, managing finances. Add the two biggest life expenses: housing (Sakin rent financing, Ajer rentals) and transportation (Rakab ride-hailing). These are high-ARPU products.',
+    whatItBuilds: ['Sakin rent financing (deposit + rent over 12mo)', 'Sakin Short Stay', 'Ajer rental marketplace', 'Rakab ride-hailing (85% driver cut)', 'Rakab Business (corporate)', 'HomeHub (home management)'],
+    ecosystemPower: 73,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core', 'Finance', 'Wasil'],
+    synergiesUnlocked: ['Sakin rent financing powered by RTMN Finance credit engine', 'Rakab drivers also deliver for Wasil (shared fleet = lower costs)', 'Pay rent/rides with ReZPay, earn Nuqta Coins on everything', 'Ajer rental data feeds Rabtul AI → better property recommendations', 'Rakab + Wasil share mapping/routing infrastructure from Rabtul', 'CoinHunt: Use Rakab 10 times → unlock "City Explorer" badge'],
+    appsUnlocked: ['Sakin', 'Ajer', 'Rakab', 'Rakab Business', 'HomeHub', 'AutoCare'],
+    cumulativeApps: 44,
+    cumulativeUsers: '800K+',
+    networkEffect: 'Shared fleet economics: Rakab + Wasil share drivers = higher utilization = lower costs for both. Housing data creates financial insights for better credit scoring.',
+  },
+  {
+    step: 7,
+    name: 'Travel & Luxury',
+    tagline: 'Travel, Adventure & Premium',
+    icon: Plane,
+    color: 'from-cyan-500 to-teal-600',
+    textColor: 'text-cyan-400',
+    bgColor: 'bg-cyan-500/10',
+    borderColor: 'border-cyan-500',
+    phase: 'Phase 2',
+    whyNow: 'With 800K+ users, launch high-value travel. Safar OTA, Fakhir luxury, adventure apps. These are the highest ARPU transactions — a single flight booking earns more coins than 50 food orders.',
+    whatItBuilds: ['Safar OTA (flights, hotels, visa)', 'Fakhir luxury concierge', 'Airzy (flight booking)', 'TravoPay (travel wallet)', 'Weekendzy, Trekzy, Campzy', 'BeachLife, DesertVibes, CityExplore'],
+    ecosystemPower: 82,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core', 'Finance', 'Wasil', 'Mobility'],
+    synergiesUnlocked: ['Book flights → earn 3X Nuqta Coins (high-value transactions)', 'Pay with Hawil Card abroad = zero FX markup', 'TravoPay wallet auto-converts via Hawil FX engine', 'Fakhir members get automatic Nuqta+ Platinum tier', 'Rakab provides airport pickup/dropoff', 'Wasil delivers travel gear and essentials before trip', 'Rabtul AI builds travel preference profiles → personalized deals'],
+    appsUnlocked: ['Safar', 'Fakhir', 'Airzy', 'TravoPay', 'Weekendzy', 'BeachLife', 'DesertVibes', 'CityExplore', 'Staycay', 'Trekzy', 'Campzy'],
+    cumulativeApps: 55,
+    cumulativeUsers: '1.5M+',
+    networkEffect: 'Cross-sell explosion: Every traveler uses payments, rewards, delivery, rides. ARPU jumps 3-5X when travel is in the ecosystem. Tourist corridor: Hawil Card tourist → uses all RTMN services during visit.',
+  },
+  {
+    step: 8,
+    name: 'Growth & Advertising',
+    tagline: 'Creator Tools + Ad Network',
+    icon: Megaphone,
+    color: 'from-pink-500 to-rose-500',
+    textColor: 'text-pink-400',
+    bgColor: 'bg-pink-500/10',
+    borderColor: 'border-pink-500',
+    phase: 'Phase 2',
+    whyNow: 'With 1.5M+ users generating data across 7 product categories — launch precision advertising (Adzy) and creator tools (Gigzy, BuzzLocal). Every surface becomes a revenue stream. The ecosystem starts monetizing itself.',
+    whatItBuilds: ['Adzy ad network (cross-ecosystem)', 'BuzzLocal (influencer platform)', 'Gigzy (freelance marketplace)', 'Z-Events (event ticketing)', 'Leadzy, ReferralHub, LoyaltyMax', 'Pollzy, Contestify, GrowthLab'],
+    ecosystemPower: 90,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core', 'Finance', 'Wasil', 'Mobility', 'Travel'],
+    synergiesUnlocked: ['User behavior from ALL 55 apps → hyper-targeted Adzy ads', 'Merchants promote on Adzy → drive Wasil orders + foot traffic', 'BuzzLocal influencers earn Nuqta Coins for promoting products', 'Gigzy freelancers get paid via ReZPay', 'Z-Events uses Rabtul ticketing + ReZPay payments', 'Ad spend is self-funding: merchants pay to reach ecosystem users', 'Rabtul AI optimizes ad delivery across all surfaces in real-time'],
+    appsUnlocked: ['Adzy', 'BuzzLocal', 'Gigzy', 'Z-Events', 'Leadzy', 'ReferralHub', 'LoyaltyMax', 'Pollzy', 'Contestify', 'GrowthLab', 'Brandzy', 'MemberPlus'],
+    cumulativeApps: 67,
+    cumulativeUsers: '2.5M+',
+    networkEffect: 'Data flywheel: More apps = more data = better ad targeting = higher ROI for advertisers = more ad spend = more revenue to reinvest. The ecosystem monetizes every interaction.',
+  },
+  {
+    step: 9,
+    name: 'Community & Wellness',
+    tagline: 'Social + Health + Education',
+    icon: Heart,
+    color: 'from-rose-500 to-pink-600',
+    textColor: 'text-rose-400',
+    bgColor: 'bg-rose-500/10',
+    borderColor: 'border-rose-500',
+    phase: 'Phase 3',
+    whyNow: 'Users live in the ecosystem daily. Now add social, health, and education — making it impossible to leave. Communities form around shared interests, health gets tracked, learning happens.',
+    whatItBuilds: ['Circlezy (interest communities)', 'FitLife, MindCalm, NutriPlan', 'DocConnect (telemedicine)', 'Learnzy, Tutorly, SkillBoost', 'FitSquad, BookClubz, NeighborNet', 'PawCare, GardenPro, SmartHome'],
+    ecosystemPower: 96,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core', 'Finance', 'Wasil', 'Mobility', 'Travel', 'Growth'],
+    synergiesUnlocked: ['FitSquad workout challenges earn Nuqta Coins', 'DocConnect prescriptions auto-order via MediEarn (Wasil)', 'Community events ticketed via Z-Events, rides via Rakab', 'Learnzy tutors are Gigzy freelancers paid via ReZPay', 'FitLife + NutriPlan data → Rabtul AI health recommendations', 'NeighborNet connects to Handyzy, CleanEZ for local services', 'BookClubz book purchases delivered by Wasil'],
+    appsUnlocked: ['Circlezy', 'FitLife', 'MindCalm', 'NutriPlan', 'DocConnect', 'Learnzy', 'Tutorly', 'SkillBoost', 'FitSquad', 'BookClubz', 'NeighborNet', 'PawCare', 'GardenPro', 'SmartHome'],
+    cumulativeApps: 81,
+    cumulativeUsers: '4M+',
+    networkEffect: 'Social lock-in: Users have friends, communities, health data, learning progress in the ecosystem. Switching cost becomes near-infinite. Every life domain is covered.',
+  },
+  {
+    step: 10,
+    name: 'Full Ecosystem',
+    tagline: 'Super-App Complete',
+    icon: Sparkles,
+    color: 'from-[#c9a227] to-amber-600',
+    textColor: 'text-[#c9a227]',
+    bgColor: 'bg-[#c9a227]/10',
+    borderColor: 'border-[#c9a227]',
+    phase: 'Phase 3',
+    whyNow: 'The final wave: remaining viral apps, advanced finance (Investzy, Insurzy, Wealthzy), AI assistant (AI-R), and LocalEdge. Every life moment is in the ecosystem. 100+ apps, one identity, one wallet.',
+    whatItBuilds: ['AI-R personal assistant', 'LocalEdge hyperlocal', 'Investzy micro-investing', 'Insurzy insurance marketplace', 'Wealthzy wealth management', 'Remaining viral & lifestyle apps'],
+    ecosystemPower: 100,
+    connectsTo: ['Rabtul', 'BizOne', 'ReZ Core', 'Finance', 'Wasil', 'Mobility', 'Travel', 'Growth', 'Community'],
+    synergiesUnlocked: ['AI-R orchestrates entire ecosystem: "Book dinner, send flowers, order Rakab — all by voice"', 'Investzy invests spare Nuqta Coins into Shariah-compliant funds', 'Insurzy auto-detects insurance needs from Rabtul data (travel = travel insurance)', 'LocalEdge surfaces hyper-local deals from all BizOne merchants', 'Every transaction in every app feeds every other app', 'One login, one wallet, one coin system, one AI — 100+ services', 'The GCC\'s first true super-app ecosystem is complete'],
+    appsUnlocked: ['AI-R', 'LocalEdge', 'Investzy', 'Insurzy', 'Wealthzy', 'CryptoLite', 'Taxzy', 'All remaining apps'],
+    cumulativeApps: '100+',
+    cumulativeUsers: '5M+',
+    networkEffect: 'SUPER-APP COMPLETE. Every transaction feeds every other company. Users never need to leave. The ecosystem is self-reinforcing, self-growing, and self-monetizing. AED 2B+ annual revenue.',
+  },
+];
+
 // Calculate totals
 const totalApps = ecosystemCategories.reduce((sum, cat) => sum + cat.apps.length, 0);
 const builtApps = ecosystemCategories.reduce((sum, cat) => sum + cat.apps.filter(a => a.status === 'built').length, 0);
@@ -374,6 +578,7 @@ const flywheel = [
 export default function RTMNEcosystemPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>('rez-core');
   const [filterStatus, setFilterStatus] = useState<'all' | 'built' | 'planned'>('all');
+  const [activeBuildStep, setActiveBuildStep] = useState(1);
 
   const filteredCategories = ecosystemCategories.map(cat => ({
     ...cat,
@@ -450,6 +655,267 @@ export default function RTMNEcosystemPage() {
                 {i < 4 && (
                   <ArrowRight className="hidden lg:block absolute -right-2 top-1/2 -translate-y-1/2 text-slate-600" size={20} />
                 )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ecosystem Build - Step by Step */}
+      <section className="bg-gradient-to-b from-[#0a1628] to-slate-900/50 border-b border-slate-700/50 py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500/20 border border-emerald-500/50 rounded-full mb-4">
+              <Rocket className="w-5 h-5 text-emerald-400" />
+              <span className="text-emerald-400 font-bold text-sm">Step-by-Step Ecosystem Build</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-3">
+              How Each Product Makes the Ecosystem <span className="text-[#c9a227]">Stronger</span>
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base">
+              Built by Rabtul tech team. Each step adds a new product layer that connects to everything before it — creating compounding network effects.
+            </p>
+          </div>
+
+          {/* Step Selector - Horizontal */}
+          <div className="flex items-center justify-center gap-1 sm:gap-2 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+            {ecosystemBuildSteps.map((step) => {
+              const isActive = activeBuildStep === step.step;
+              const isCompleted = activeBuildStep > step.step;
+              return (
+                <button
+                  key={step.step}
+                  onClick={() => setActiveBuildStep(step.step)}
+                  className={`flex flex-col items-center gap-1 min-w-[60px] sm:min-w-[80px] transition-all ${
+                    isActive ? 'scale-110' : 'hover:scale-105'
+                  }`}
+                >
+                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center font-bold text-sm sm:text-base transition-all ${
+                    isActive
+                      ? `bg-gradient-to-br ${step.color} text-white shadow-lg shadow-${step.textColor.replace('text-', '')}/30`
+                      : isCompleted
+                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/50'
+                      : 'bg-slate-800 text-slate-500 border border-slate-700'
+                  }`}>
+                    {isCompleted && !isActive ? <CheckCircle className="w-5 h-5" /> : step.step}
+                  </div>
+                  <span className={`text-[10px] sm:text-xs font-medium text-center leading-tight ${
+                    isActive ? step.textColor : isCompleted ? 'text-emerald-400' : 'text-slate-500'
+                  }`}>
+                    {step.name.split(' ')[0]}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Ecosystem Power Bar */}
+          <div className="mb-8">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm text-slate-400">Ecosystem Power</span>
+              <span className="text-sm font-bold text-[#c9a227]">{ecosystemBuildSteps[activeBuildStep - 1].ecosystemPower}%</span>
+            </div>
+            <div className="w-full bg-slate-800 rounded-full h-4 overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-emerald-500 via-[#c9a227] to-purple-500 transition-all duration-700 ease-out relative"
+                style={{ width: `${ecosystemBuildSteps[activeBuildStep - 1].ecosystemPower}%` }}
+              >
+                <div className="absolute inset-0 bg-white/10 animate-pulse" />
+              </div>
+            </div>
+            <div className="flex justify-between mt-1">
+              <span className="text-xs text-slate-500">Foundation</span>
+              <span className="text-xs text-slate-500">Super-App Complete</span>
+            </div>
+          </div>
+
+          {/* Active Step Detail */}
+          {(() => {
+            const step = ecosystemBuildSteps[activeBuildStep - 1];
+            return (
+              <div className={`${step.bgColor} border-2 ${step.borderColor} rounded-2xl overflow-hidden`}>
+                {/* Step Header */}
+                <div className="p-5 sm:p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-5">
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center flex-shrink-0`}>
+                      <step.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <span className="bg-slate-900/50 text-white font-bold px-3 py-1 rounded-full text-sm">
+                          Step {step.step} of 10
+                        </span>
+                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                          step.phase === 'Phase 1' ? 'bg-emerald-500/20 text-emerald-400' :
+                          step.phase === 'Phase 2' ? 'bg-blue-500/20 text-blue-400' :
+                          'bg-purple-500/20 text-purple-400'
+                        }`}>
+                          {step.phase}
+                        </span>
+                      </div>
+                      <h3 className={`text-xl sm:text-2xl font-black ${step.textColor} mt-1`}>{step.name}</h3>
+                      <p className="text-slate-400 text-sm">{step.tagline}</p>
+                    </div>
+                    <div className="flex gap-3 sm:gap-4 flex-wrap sm:flex-nowrap">
+                      <div className="bg-slate-900/50 rounded-xl px-4 py-2 text-center">
+                        <div className={`text-xl font-bold ${step.textColor}`}>{step.cumulativeApps}</div>
+                        <div className="text-xs text-slate-400">Total Apps</div>
+                      </div>
+                      <div className="bg-slate-900/50 rounded-xl px-4 py-2 text-center">
+                        <div className={`text-xl font-bold ${step.textColor}`}>{step.cumulativeUsers}</div>
+                        <div className="text-xs text-slate-400">Users</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Why Now */}
+                  <div className="bg-slate-900/40 rounded-xl p-4 mb-5 border border-slate-700/50">
+                    <h4 className="text-white font-bold text-sm mb-2 flex items-center gap-2">
+                      <Target className="w-4 h-4 text-[#c9a227]" />
+                      Why Build This Now?
+                    </h4>
+                    <p className="text-slate-300 text-sm leading-relaxed">{step.whyNow}</p>
+                  </div>
+
+                  {/* Two Column Layout */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                    {/* What Gets Built */}
+                    <div className="bg-slate-900/40 rounded-xl p-4 border border-slate-700/50">
+                      <h4 className="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                        <Rocket className={`w-4 h-4 ${step.textColor}`} />
+                        What Rabtul Builds
+                      </h4>
+                      <div className="space-y-2">
+                        {step.whatItBuilds.map((item, i) => (
+                          <div key={i} className="flex items-start gap-2 text-sm">
+                            <CheckCircle className={`w-4 h-4 ${step.textColor} flex-shrink-0 mt-0.5`} />
+                            <span className="text-slate-300">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Apps Unlocked */}
+                    <div className="bg-slate-900/40 rounded-xl p-4 border border-slate-700/50">
+                      <h4 className="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                        <Sparkles className={`w-4 h-4 ${step.textColor}`} />
+                        Apps Unlocked
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {step.appsUnlocked.map((app, i) => (
+                          <span key={i} className={`${step.bgColor} border ${step.borderColor} px-3 py-1 rounded-full text-xs ${step.textColor} font-medium`}>
+                            {app}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Connections - How it plugs into existing ecosystem */}
+                  {step.connectsTo.length > 0 && (
+                    <div className="mt-5 bg-slate-900/40 rounded-xl p-4 border border-slate-700/50">
+                      <h4 className="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                        <Network className="w-4 h-4 text-emerald-400" />
+                        Connects To (Ecosystem Links)
+                      </h4>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {step.connectsTo.map((connection, i) => (
+                          <div key={i} className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-3 py-2">
+                            <div className="w-2 h-2 rounded-full bg-emerald-400" />
+                            <span className="text-emerald-400 text-sm font-medium">{connection}</span>
+                            <ArrowRight className="w-3 h-3 text-emerald-400/50" />
+                            <span className={`${step.textColor} text-sm font-bold`}>{step.name.split(' ')[0]}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Synergies Unlocked */}
+                  <div className="mt-5 bg-gradient-to-r from-[#c9a227]/10 to-emerald-500/5 rounded-xl p-4 border border-[#c9a227]/30">
+                    <h4 className="text-white font-bold text-sm mb-3 flex items-center gap-2">
+                      <Zap className="w-4 h-4 text-[#c9a227]" />
+                      Synergies Unlocked
+                    </h4>
+                    <div className="space-y-2">
+                      {step.synergiesUnlocked.map((synergy, i) => (
+                        <div key={i} className="flex items-start gap-2 text-sm">
+                          <ArrowRight className="w-4 h-4 text-[#c9a227] flex-shrink-0 mt-0.5" />
+                          <span className="text-slate-300">{synergy}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Network Effect */}
+                  <div className="mt-5 bg-purple-500/10 rounded-xl p-4 border border-purple-500/30">
+                    <h4 className="text-white font-bold text-sm mb-2 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-purple-400" />
+                      Network Effect
+                    </h4>
+                    <p className="text-purple-300 text-sm leading-relaxed font-medium">{step.networkEffect}</p>
+                  </div>
+                </div>
+
+                {/* Step Navigation */}
+                <div className="flex items-center justify-between px-5 sm:px-6 py-4 bg-slate-900/30 border-t border-slate-700/50">
+                  <button
+                    onClick={() => setActiveBuildStep(Math.max(1, activeBuildStep - 1))}
+                    disabled={activeBuildStep === 1}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      activeBuildStep === 1
+                        ? 'text-slate-600 cursor-not-allowed'
+                        : 'text-white bg-slate-800 hover:bg-slate-700'
+                    }`}
+                  >
+                    <ChevronUp className="w-4 h-4 -rotate-90" /> Previous
+                  </button>
+                  <Link
+                    href="/rabtul-tech"
+                    className="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-1"
+                  >
+                    View Rabtul Tasks <ArrowRight size={14} />
+                  </Link>
+                  <button
+                    onClick={() => setActiveBuildStep(Math.min(10, activeBuildStep + 1))}
+                    disabled={activeBuildStep === 10}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                      activeBuildStep === 10
+                        ? 'text-slate-600 cursor-not-allowed'
+                        : `text-white bg-gradient-to-r ${ecosystemBuildSteps[activeBuildStep]?.color || step.color} hover:opacity-90`
+                    }`}
+                  >
+                    Next <ChevronDown className="w-4 h-4 -rotate-90" />
+                  </button>
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Ecosystem Growth Summary - Visual Grid */}
+          <div className="mt-8 grid grid-cols-2 sm:grid-cols-5 gap-3">
+            {ecosystemBuildSteps.slice(0, activeBuildStep).map((step) => (
+              <div
+                key={step.step}
+                onClick={() => setActiveBuildStep(step.step)}
+                className={`${step.bgColor} border ${step.borderColor} rounded-xl p-3 text-center cursor-pointer hover:scale-105 transition-all ${
+                  activeBuildStep === step.step ? 'ring-2 ring-white/30 scale-105' : 'opacity-70 hover:opacity-100'
+                }`}
+              >
+                <step.icon className={`w-6 h-6 mx-auto mb-1 ${step.textColor}`} />
+                <div className={`text-xs font-bold ${step.textColor}`}>{step.name.split(' ')[0]}</div>
+                <div className="text-[10px] text-slate-400">{step.cumulativeApps} apps</div>
+              </div>
+            ))}
+            {ecosystemBuildSteps.slice(activeBuildStep).map((step) => (
+              <div
+                key={step.step}
+                onClick={() => setActiveBuildStep(step.step)}
+                className="bg-slate-800/30 border border-slate-700/30 rounded-xl p-3 text-center cursor-pointer hover:scale-105 transition-all opacity-40 hover:opacity-60"
+              >
+                <step.icon className="w-6 h-6 mx-auto mb-1 text-slate-600" />
+                <div className="text-xs font-bold text-slate-600">{step.name.split(' ')[0]}</div>
+                <div className="text-[10px] text-slate-600">Step {step.step}</div>
               </div>
             ))}
           </div>
