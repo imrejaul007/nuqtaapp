@@ -1281,20 +1281,36 @@ export default function RTMNDashboardPage() {
 
       </main>
 
-      {/* Back to Nuqta Dashboard */}
+      {/* RTMN Navigation Hub */}
       <section className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border-t border-[#c9a227]/30 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Nuqta Corporation Dashboard</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">RTMN Digital Holding</h2>
           <p className="text-slate-400 mb-6 max-w-2xl mx-auto">
-            Nuqta Corporation is the flagship company of RTMN Group, powering rewards, membership, and BNPL for the entire ecosystem.
+            Explore the full RTMN ecosystem — group structure, 100+ apps, and the Nuqta Corporation dashboard.
           </p>
-          <Link
-            href="/dashboard"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] rounded-xl text-white font-bold hover:bg-[#c9a227]/90 transition-all"
-          >
-            <Crown className="w-5 h-5" />
-            Go to Nuqta Corporation Dashboard
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/rtmn-group"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] rounded-xl text-[#0a1628] font-bold hover:bg-[#f4d35e] transition-all"
+            >
+              <Building2 className="w-5 h-5" />
+              RTMN Group
+            </Link>
+            <Link
+              href="/rtmn-ecosystem"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 rounded-xl text-white font-bold hover:bg-slate-600 transition-all"
+            >
+              <Layers className="w-5 h-5" />
+              RTMN Ecosystem
+            </Link>
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 rounded-xl text-white font-bold hover:bg-slate-600 transition-all"
+            >
+              <Crown className="w-5 h-5" />
+              Nuqta Dashboard
+            </Link>
+          </div>
         </div>
       </section>
 

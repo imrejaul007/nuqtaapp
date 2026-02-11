@@ -785,7 +785,7 @@ export default function NuqtaPayDashboard() {
       <div className="bg-[#0a1628]/95 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/" className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors">
+            <Link href="/rtmn-group" className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors" title="Back to RTMN Group">
               <ArrowLeft className="w-4 h-4" />
             </Link>
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">

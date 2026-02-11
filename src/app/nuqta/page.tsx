@@ -640,9 +640,9 @@ export default function NuqtaDashboard() {
       {/* Header */}
       <header className="border-b border-slate-800 bg-[#0a1628]/95 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
+          <Link href="/rtmn-group" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">
             <ArrowLeft className="w-5 h-5" />
-            <span className="hidden sm:inline">Back to Hub</span>
+            <span className="hidden sm:inline">Back to RTMN Group</span>
           </Link>
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#c9a227] to-amber-600 flex items-center justify-center">
@@ -1879,6 +1879,23 @@ export default function NuqtaDashboard() {
               <Network className="w-6 h-6" />
               RTMN Ecosystem
               <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation Footer */}
+      <section className="bg-slate-800/30 border-t border-slate-700/50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/rtmn-group" className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors">
+              <Building2 className="w-5 h-5" /> RTMN Group
+            </Link>
+            <Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <Network className="w-5 h-5" /> RTMN Ecosystem
+            </Link>
+            <Link href="/rtmn-dashboard" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <BarChart3 className="w-5 h-5" /> RTMN Dashboard
             </Link>
           </div>
         </div>

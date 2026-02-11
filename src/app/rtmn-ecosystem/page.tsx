@@ -1460,14 +1460,21 @@ export default function RTMNEcosystemPage() {
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* RTMN Navigation Hub */}
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/ecosystem"
+              href="/rtmn-group"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors"
             >
-              <Network className="w-5 h-5" />
-              Ecosystem Overview
+              <Building2 className="w-5 h-5" />
+              RTMN Group
+            </Link>
+            <Link
+              href="/rtmn-dashboard"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white border border-slate-700 rounded-xl font-bold hover:bg-slate-700 transition-colors"
+            >
+              <BarChart3 className="w-5 h-5" />
+              RTMN Dashboard
             </Link>
             <Link
               href="/group-master-plan"

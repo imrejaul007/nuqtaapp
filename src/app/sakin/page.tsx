@@ -587,6 +587,9 @@ export default function SakinPage() {
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-[#0a1628] via-[#1a2d4a] to-[#0a1628] border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <Link href="/rtmn-group" className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 mb-4 text-sm">
+            <ArrowRight className="w-4 h-4 rotate-180" /> Back to RTMN Group
+          </Link>
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div>
               {/* Logo & Brand */}
@@ -2471,6 +2474,23 @@ export default function SakinPage() {
           </div>
         </div>
       </main>
+
+      {/* Navigation Footer */}
+      <section className="bg-slate-800/30 border-t border-slate-700/50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/rtmn-group" className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors">
+              <Building2 className="w-5 h-5" /> RTMN Group
+            </Link>
+            <Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <Globe className="w-5 h-5" /> RTMN Ecosystem
+            </Link>
+            <Link href="/rtmn-dashboard" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <BarChart3 className="w-5 h-5" /> RTMN Dashboard
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <GlobalFooter />
     </div>

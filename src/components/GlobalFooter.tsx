@@ -255,7 +255,33 @@ const navigationData: NavCategory[] = [
     icon: Sparkles,
     color: 'text-emerald-400',
     items: [
-      { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
+      { label: 'Nuqta', href: '/nuqta', icon: Crown },
+      { label: 'NuqtaPay', href: '/nuqtapay', icon: CreditCard },
+      { label: 'Adzy', href: '/adzy', icon: Megaphone },
+      { label: 'Ajer', href: '/ajer', icon: Layers },
+      { label: 'BizOne', href: '/bizone', icon: Store },
+      { label: 'Eventora', href: '/eventora', icon: Calendar },
+      { label: 'Inventora', href: '/inventora', icon: Database },
+      { label: 'NextaBizz', href: '/nextabizz', icon: Briefcase },
+      { label: 'Rakab', href: '/rakab', icon: MapPin },
+      { label: 'Safar', href: '/safar', icon: Globe },
+      { label: 'Wasil', href: '/wasil', icon: ShoppingCart },
+      { label: 'Qist', href: '/qist', icon: Wallet },
+      { label: 'Hawil', href: '/hawil', icon: DollarSign },
+      { label: 'Sakin', href: '/sakin', icon: Building2 },
+      { label: 'Fakhir', href: '/fakhir', icon: Gem },
+      { label: 'Rabtul', href: '/rabtul', icon: Settings },
+      { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Sparkles },
+    ]
+  },
+  {
+    title: 'RTMN Hub',
+    icon: Globe,
+    color: 'text-[#c9a227]',
+    items: [
+      { label: 'RTMN Group', href: '/rtmn-group', icon: Building2 },
+      { label: 'RTMN Ecosystem', href: '/rtmn-ecosystem', icon: Layers },
+      { label: 'RTMN Dashboard', href: '/rtmn-dashboard', icon: BarChart3 },
     ]
   },
   {
