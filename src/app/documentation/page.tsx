@@ -51,6 +51,7 @@ const sections: Section[] = [
   { id: 'prive-vip', label: 'Prive VIP Program', icon: Star, audience: 'PM + Dev' },
   { id: 'wasil-verticals', label: 'Wasil Vertical Apps', icon: Globe, audience: 'PM' },
   { id: 'referral', label: 'Referral & Ambassador', icon: Users, audience: 'PM + Dev' },
+  { id: 'product-dashboards', label: 'Product Dashboards', icon: Monitor, audience: 'PM + Dev' },
 ];
 
 // ─── Expandable Section Component ───────────────────────────────────
@@ -4057,6 +4058,567 @@ function ReferralSection() {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// PRODUCT DASHBOARDS — Admin (RTMN HQ) + Merchant/Partner per Product
+// ════════════════════════════════════════════════════════════════════
+function ProductDashboardsSection() {
+  return (
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-2xl font-bold text-white mb-2">Product Dashboards</h2>
+        <p className="text-slate-400 mb-2">Every product in the RTMN ecosystem has two dashboard layers:</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+          <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+            <div className="flex items-center gap-2 mb-1"><Shield className="w-4 h-4 text-red-400" /><span className="text-red-400 font-semibold text-sm">RTMN HQ Admin</span></div>
+            <p className="text-slate-400 text-xs">Platform-level controls, approvals, compliance, revenue management, and system configuration.</p>
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
+            <div className="flex items-center gap-2 mb-1"><Store className="w-4 h-4 text-blue-400" /><span className="text-blue-400 font-semibold text-sm">Merchant / Partner Dashboard</span></div>
+            <p className="text-slate-400 text-xs">Self-service portal for merchants, partners, organizers, drivers, brokers, etc. Built on BizOne OS.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ── NuqtaPay ── */}
+      <Expandable title="NuqtaPay — Payment Processing" icon={CreditCard} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['MDR Configuration', 'Set per-category merchant discount rates (1.5–3%)', 'Super Admin'],
+              ['Fraud Detection', 'ML-based transaction scoring, velocity checks, device fingerprinting', 'Risk Team'],
+              ['Settlement Engine', 'T+1 / T+2 settlement cycles, batch processing, bank reconciliation', 'Finance'],
+              ['Merchant KYC', 'Document verification, bank account validation, compliance checks', 'Compliance'],
+              ['Dispute Resolution', 'Chargeback management, evidence collection, arbitration workflow', 'Support'],
+              ['Gateway Health', 'Monitor Razorpay/Paytm/PhonePe uptime, auto-failover routing', 'DevOps'],
+              ['Revenue Dashboard', 'Total TPV, MDR revenue, settlement float income, refund costs', 'C-Suite'],
+              ['Compliance', 'PCI-DSS audit logs, RBI mandate compliance, data retention policies', 'Legal'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Merchant Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Overview', 'Live transaction feed, today\'s volume, success rate', 'Real-time WebSocket updates'],
+              ['Transactions', 'Search/filter by date, status, amount; export CSV/PDF', 'Retention: 2 years'],
+              ['Analytics', 'Hourly/daily/monthly volume charts, payment method breakdown', 'Compare periods'],
+              ['Settlement', 'Payout history, pending settlements, bank account management', 'T+1 default cycle'],
+              ['Refund Management', 'Initiate full/partial refunds, track refund status', 'Auto-credit to customer'],
+              ['Chargeback', 'View disputes, upload evidence, track resolution', 'SLA: 7-day response'],
+              ['Multi-location', 'Per-store transaction breakdown, location-level analytics', 'Up to 50 locations'],
+              ['Integration', 'API keys, webhook configuration, SDK documentation', 'Test/Live mode toggle'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Adzy ── */}
+      <Expandable title="Adzy — Advertising & Marketing" icon={Eye} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Ad Review Queue', 'Approve/reject ad creatives, content policy enforcement', 'Content Team'],
+              ['Platform Pricing', 'Set CPM/CPC/CPA rates per category, premium placement pricing', 'Revenue'],
+              ['Audience Segments', 'Global audience pools, 1st-party data management, segment builder', 'Data Team'],
+              ['Ad Inventory', 'Manage placements across Nuqta, BizOne, partner apps', 'Product'],
+              ['Revenue Reports', 'Total ad spend, fill rates, eCPM, advertiser LTV', 'Finance'],
+              ['Agency Console', 'Multi-client management, API access, white-label options', 'Partnerships'],
+              ['Brand Safety', 'Category exclusions, keyword blocking, content adjacency rules', 'Compliance'],
+              ['Attribution', 'Cross-platform attribution models, conversion windows, pixel management', 'Analytics'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Merchant Ads Manager</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Campaign Dashboard', 'Active/paused/completed campaigns, spend tracking, KPI cards', 'Real-time metrics'],
+              ['Campaign Builder', '6-step wizard: Objective → Audience → Placement → Creative → Budget → Review', 'Draft auto-save'],
+              ['Audience Builder', 'Demographics, interests, purchase history, lookalike targeting', '12+ filter dimensions'],
+              ['Performance Analytics', 'Impressions, clicks, CTR, conversions, ROAS by campaign/ad set', 'Exportable reports'],
+              ['A/B Testing', 'Split test creatives, audiences, placements with statistical significance', 'Auto-winner selection'],
+              ['Attribution Reports', 'View-through, click-through, multi-touch attribution per campaign', '7/14/28-day windows'],
+              ['Creative Studio', 'Template library, image/video editor, AI copy suggestions', 'Brand asset management'],
+              ['Budget Optimizer', 'Auto-allocate budget to best-performing ad sets, dayparting rules', 'Min/max daily limits'],
+              ['Competitor Insights', 'Category benchmarks, share of voice, trending ad formats', 'Anonymized data'],
+              ['Settings', 'Billing, payment methods, team access, notification preferences', 'Invoice download'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Eventora ── */}
+      <Expandable title="Eventora — Events & Ticketing" icon={Star} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Event Approval', 'Review/approve event listings, content moderation, featured events', 'Content Team'],
+              ['Venue Management', 'Venue registry, capacity management, interactive seat maps', 'Operations'],
+              ['Commission Tiers', 'Set per-category commission rates (5–15%), volume discounts', 'Finance'],
+              ['Fraud Prevention', 'Ticket scalping detection, bulk purchase limits, bot protection', 'Risk Team'],
+              ['Settlement', 'Post-event settlement, refund pool management, organizer payouts', 'Finance'],
+              ['Insurance', 'Event cancellation insurance, weather policies, force majeure rules', 'Legal'],
+              ['Analytics', 'Platform-wide event metrics, category trends, seasonal patterns', 'Strategy'],
+              ['Partner Integration', 'Venue partner APIs, AV equipment providers, catering integrations', 'Partnerships'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Event Organizer Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Events Overview', 'All events list, status filters, quick stats per event', 'Draft/Live/Past/Cancelled'],
+              ['Event Creation Wizard', '6-step: Details → Venue/Date → Tickets → Add-ons → Promotions → Review', 'Multi-day/recurring support'],
+              ['Real-time Sales', 'Live ticket sales counter, revenue ticker, conversion funnel', 'WebSocket updates'],
+              ['Attendee Management', 'Guest list, email/SMS blast, VIP tagging, dietary preferences', 'CSV import/export'],
+              ['Analytics', 'Sales by ticket type, traffic sources, promo code performance', 'Comparison with past events'],
+              ['Check-in System', 'QR scanner, NFC tap, manual search, real-time attendance count', 'Offline mode support'],
+              ['Communications', 'Pre/post event emails, push notifications, SMS reminders', 'Template library'],
+              ['Promo Codes', 'Create discount codes, early-bird pricing, group discounts', 'Usage limits & expiry'],
+              ['Waitlist', 'Auto-waitlist when sold out, priority queue, auto-release', 'Notification on availability'],
+              ['Settlement', 'Event revenue breakdown, platform fees, net payout, payout history', 'Post-event settlement'],
+              ['Multi-Event', 'Festival/series management, shared attendees, bundle pricing', 'Cross-event analytics'],
+              ['Team Access', 'Add staff, assign roles (Scanner, Manager, Finance), per-event access', 'Activity audit log'],
+              ['Adzy Integration', 'Promote events via Adzy, track ad-driven ticket sales', 'One-click campaign setup'],
+              ['Settings', 'Organizer profile, payout accounts, notification preferences, branding', 'Custom ticket templates'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Ajer ── */}
+      <Expandable title="Ajer — Vehicle Rentals" icon={MapPin} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Fleet Partner Approval', 'KYC verification, fleet size validation, insurance document check', 'Compliance'],
+              ['Pricing Engine', 'Dynamic pricing rules, surge multipliers, seasonal rates', 'Revenue'],
+              ['Insurance Management', 'Policy verification, claim processing, damage assessment workflow', 'Legal'],
+              ['Vehicle Categories', 'Define vehicle types, features, pricing tiers, availability zones', 'Operations'],
+              ['Dispute Resolution', 'Customer-partner disputes, damage claims, deposit refund decisions', 'Support'],
+              ['Compliance', 'RTA/transport authority licensing, emission standards, age restrictions', 'Legal'],
+              ['Analytics', 'Fleet utilization rates, revenue per vehicle, seasonal demand patterns', 'Strategy'],
+              ['Quality Control', 'Vehicle inspection schedules, cleanliness ratings, maintenance alerts', 'Operations'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Fleet Partner Portal (70% BizOne Reuse)</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Dashboard', 'Active rentals, upcoming bookings, revenue today/week/month', 'Real-time vehicle status map'],
+              ['Vehicle Listings', 'Add/edit vehicles, photos, specs, pricing, availability calendar', 'Bulk import via CSV'],
+              ['Bookings', 'Incoming requests, confirmed bookings, handover/return workflow', 'In-app chat with customer'],
+              ['Revenue Analytics', 'Per-vehicle earnings, utilization rate, peak vs off-peak breakdown', 'Monthly/quarterly reports'],
+              ['Maintenance', 'Schedule servicing, track maintenance history, cost tracking', 'Auto-alerts at km intervals'],
+              ['Insurance', 'Policy uploads, claim submissions, coverage status per vehicle', 'Expiry reminders'],
+              ['Damage Reports', 'Photo evidence upload, assessment forms, deposit deductions', 'Before/after comparison'],
+              ['Customer Reviews', 'Rating overview, review responses, quality score tracking', 'Automated review requests'],
+              ['Settings', 'Business profile, payout accounts, team members, operating hours', 'Multi-location support'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Rakab ── */}
+      <Expandable title="Rakab — Ride-Hailing" icon={MapPin} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Driver Onboarding', 'License verification, background checks, vehicle inspection, training modules', 'Operations'],
+              ['Surge Pricing', 'Dynamic multiplier rules, zone-based pricing, demand prediction', 'Revenue'],
+              ['Driver Management', 'Rating monitoring, compliance tracking, suspension/deactivation workflow', 'Operations'],
+              ['Corporate Accounts', 'B2B contracts, employee ride limits, consolidated billing', 'Enterprise Sales'],
+              ['Safety Center', 'SOS alert monitoring, trip recording, incident management', 'Safety Team'],
+              ['Route Optimization', 'ML-based ETA, traffic pattern learning, zone heat maps', 'Tech'],
+              ['Commission Structure', 'Per-ride platform fee, incentive programs, bonus tiers', 'Finance'],
+              ['Regulatory', 'City permits, transport authority compliance, driver hour limits', 'Legal'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Driver App & Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Earnings Dashboard', 'Daily/weekly/monthly earnings, commission breakdown, bonus tracker', 'Real-time updates'],
+              ['Heat Maps', 'Demand zones, surge areas, event-driven hotspots, optimal positioning', 'ML-powered predictions'],
+              ['Multi-Mode Toggle', 'Switch between rides, Wasil deliveries, or both simultaneously', 'Unified earnings'],
+              ['Trip History', 'Completed trips, cancelled trips, earnings per trip, ratings received', 'Exportable reports'],
+              ['Incentives', 'Active bonus programs, progress toward targets, streak rewards', 'Real-time progress bar'],
+              ['Vehicle Documents', 'Upload/renew license, insurance, registration, inspection certificates', 'Expiry alerts'],
+              ['Performance Score', 'Acceptance rate, cancellation rate, rating average, completion rate', 'Tier progression'],
+              ['Support', 'In-app tickets, fare adjustment requests, incident reporting', 'Priority queue for high-rated'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Safar ── */}
+      <Expandable title="Safar — Travel & Tourism" icon={Globe} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['GDS Integration', 'Amadeus/Sabre/Travelport connections, fare caching, inventory sync', 'Tech'],
+              ['Booking Management', 'All bookings (flights, hotels, packages), modification/cancellation processing', 'Operations'],
+              ['Visa Processing', 'Application tracking, document verification, embassy liaison workflow', 'Travel Ops'],
+              ['Partner Management', 'Hotel contracts, airline agreements, DMC partnerships, commission rates', 'Partnerships'],
+              ['Revenue Management', 'Markup rules, dynamic pricing, package margin analysis', 'Finance'],
+              ['Content Management', 'Destination pages, travel guides, package descriptions, photo library', 'Content'],
+              ['Customer Support', 'Booking issues, refund processing, emergency assistance coordination', 'Support'],
+              ['Compliance', 'ATOL/IATA licensing, travel insurance requirements, consumer protection', 'Legal'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Travel Partner Portal</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Dashboard', 'Booking volume, revenue, upcoming departures, customer inquiries', 'Real-time stats'],
+              ['Inventory', 'Room/seat availability, blackout dates, rate plans, allotment management', 'Channel sync'],
+              ['Bookings', 'Reservation list, modification requests, no-show management', 'Auto-confirmation'],
+              ['Packages', 'Create/edit travel packages, itinerary builder, pricing tiers', 'Seasonal variations'],
+              ['Reviews', 'Customer feedback, response management, rating analytics', 'Automated solicitation'],
+              ['Content', 'Property/service photos, descriptions, amenity listings, virtual tours', 'Multi-language support'],
+              ['Settlement', 'Commission statements, payout schedule, invoice generation', 'Monthly reconciliation'],
+              ['Analytics', 'Occupancy/load rates, RevPAR, booking lead time, source markets', 'Competitive benchmarking'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Wasil ── */}
+      <Expandable title="Wasil — Delivery & Logistics" icon={Package} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Fleet Management', 'Rider onboarding, vehicle tracking, zone assignment, shift scheduling', 'Operations'],
+              ['Delivery Zones', 'Geofence configuration, delivery radius per merchant, zone-based pricing', 'Operations'],
+              ['Order Routing', 'Auto-dispatch algorithm, batching logic, priority rules, re-routing', 'Tech'],
+              ['Rider Compliance', 'License verification, health certificates, uniform compliance', 'Compliance'],
+              ['SLA Management', 'Delivery time targets, merchant SLAs, penalty/bonus structure', 'Operations'],
+              ['Pricing Engine', 'Distance-based pricing, surge rules, subscription delivery plans', 'Revenue'],
+              ['Quality Control', 'Delivery success rates, damage reports, customer satisfaction scores', 'Quality'],
+              ['Analytics', 'Orders per hour, average delivery time, rider utilization, cost per delivery', 'Strategy'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Merchant Dashboard (Wasil)</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Orders', 'Incoming delivery orders, preparation timer, handoff confirmation', 'Real-time WebSocket'],
+              ['Sales Analytics', 'Revenue by day/week, top items, delivery vs pickup split', 'Category breakdown'],
+              ['Menu Management', 'Item availability toggle, prep time updates, out-of-stock marking', 'Sync with BizOne POS'],
+              ['Delivery Zone', 'View delivery radius, request zone expansion, zone-based pricing', 'Map visualization'],
+              ['Payouts', 'Settlement history, pending payouts, commission breakdown', 'Weekly/bi-weekly cycles'],
+              ['Ratings', 'Delivery ratings, food quality ratings, packaging feedback', 'Per-order breakdown'],
+              ['Promotions', 'Free delivery offers, bundle deals, flash sales for delivery', 'ROI tracking'],
+              ['Settings', 'Operating hours, prep time defaults, auto-accept rules, holiday schedule', 'Per-location config'],
+            ]} />
+          </div>
+          <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+            <h4 className="text-green-400 font-semibold mb-3 flex items-center gap-2"><Users className="w-4 h-4" /> Rider App</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Earnings', 'Daily/weekly earnings, tips, bonuses, incentive progress', 'Instant cashout option'],
+              ['Orders', 'Active deliveries, navigation, pickup/dropoff confirmation', 'Multi-stop batching'],
+              ['Route Planner', 'Optimized multi-drop routes, traffic avoidance, ETA updates', 'Turn-by-turn navigation'],
+              ['Tier System', 'Bronze → Silver → Gold → Platinum, unlockable perks per tier', 'Monthly evaluation'],
+              ['Schedule', 'Shift booking, availability calendar, peak hour bonuses', 'Flexible scheduling'],
+              ['Performance', 'Completion rate, on-time rate, rating average, speed score', 'Weekly report card'],
+              ['Support', 'Order issues, payment queries, accident reporting', 'Emergency SOS button'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Qist (BNPL) ── */}
+      <Expandable title="Qist — Buy Now Pay Later" icon={CreditCard} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Credit Scoring', 'ML scoring model, risk parameters, credit limit assignment rules', 'Risk Team'],
+              ['Merchant Onboarding', 'Eligibility criteria, integration setup, category restrictions', 'Partnerships'],
+              ['Default Monitoring', 'Overdue tracking, collection workflows, write-off policies', 'Collections'],
+              ['Regulatory Compliance', 'CBUAE/RBI lending regulations, interest rate caps, disclosure requirements', 'Legal'],
+              ['Portfolio Analytics', 'Default rates, recovery rates, portfolio age analysis, concentration risk', 'Finance'],
+              ['Funding', 'Capital allocation, funding partner management, securitization', 'Treasury'],
+              ['Fraud Prevention', 'Identity verification, velocity checks, synthetic ID detection', 'Risk Team'],
+              ['Settlement', 'Merchant settlement after customer payment, reconciliation, adjustments', 'Finance'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Merchant Dashboard (Qist)</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Overview', 'BNPL-enabled transactions, conversion lift, average order value impact', 'Real-time stats'],
+              ['Transactions', 'All BNPL orders, installment schedules, customer payment status', 'Search & filter'],
+              ['Settlement', 'Upfront merchant payment (minus MDR), settlement history, reconciliation', 'T+1 settlement'],
+              ['Conversion Analytics', 'BNPL vs cash checkout rates, cart abandonment reduction, AOV lift', 'A/B comparison'],
+              ['Customer Insights', 'Repeat BNPL users, average installment size, preferred plans', 'Anonymized data'],
+              ['Integration', 'Checkout widget setup, API documentation, test mode', 'Copy-paste integration'],
+              ['Settings', 'Eligible categories, minimum order, maximum installment plans offered', 'Per-product config'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Hawil (Remittance) ── */}
+      <Expandable title="Hawil — Remittance & Transfers" icon={DollarSign} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Transfer Monitoring', 'Real-time transfer tracking, suspicious activity alerts, velocity monitoring', 'Compliance'],
+              ['Corridor Management', 'Country corridors, exchange rate margins, partner bank integrations', 'Treasury'],
+              ['AML/CFT', 'Sanctions screening, PEP checks, transaction monitoring rules, SAR filing', 'Compliance'],
+              ['Partner SLAs', 'Payout partner performance, delivery time tracking, failure rate monitoring', 'Operations'],
+              ['Card Issuance', 'Virtual/physical card management, spending limits, card lifecycle', 'Product'],
+              ['FX Management', 'Rate sourcing, spread management, hedging, rate lock policies', 'Treasury'],
+              ['Regulatory', 'CBUAE exchange house license, cross-border reporting, transaction limits', 'Legal'],
+              ['Revenue', 'Transfer fees, FX spread revenue, card interchange income', 'Finance'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Recharge Partner Program</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Dashboard', 'Top-up volume, commission earned, active customers', 'Daily/weekly/monthly'],
+              ['Top-up Processing', 'Process mobile/utility recharges, bill payments on behalf of customers', 'Multi-operator support'],
+              ['Commission Tracking', 'Per-transaction commission, bonus tiers, payout schedule', 'Tiered rates by volume'],
+              ['Customer Management', 'Registered customers, transaction history per customer', 'KYC verification assist'],
+              ['Float Management', 'Wallet balance, top-up requests, auto-reload settings', 'Low-balance alerts'],
+              ['Reports', 'Daily reconciliation, commission statements, tax reports', 'Downloadable PDF/CSV'],
+              ['Settings', 'Operating hours, supported services, sub-agent management', 'Multi-location support'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Sakin (Real Estate) ── */}
+      <Expandable title="Sakin — Real Estate & Housing" icon={Building2} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Property Moderation', 'Listing approval, photo verification, price validation, duplicate detection', 'Content'],
+              ['Financing Operations', 'Mortgage partner integrations, EMI calculator management, approval workflows', 'Finance'],
+              ['Broker Management', 'Broker registration, license verification (RERA/DLD), commission structures', 'Partnerships'],
+              ['Market Analytics', 'Price trends, inventory levels, demand heatmaps, rental yield analysis', 'Strategy'],
+              ['Legal Compliance', 'RERA regulations, tenancy law compliance, escrow account management', 'Legal'],
+              ['Developer Partnerships', 'Off-plan project listings, payment plan management, handover tracking', 'Business Dev'],
+              ['Dispute Resolution', 'Tenant-landlord disputes, deposit return cases, maintenance escalations', 'Support'],
+              ['Revenue', 'Listing fees, featured placement revenue, lead generation fees, financing referrals', 'Finance'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Broker Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Listings', 'Active/draft/expired listings, quick edit, featured upgrade', 'Bulk upload support'],
+              ['Leads', 'Incoming inquiries, lead scoring, follow-up reminders, conversion tracking', 'Auto-assignment rules'],
+              ['Commission', 'Deal tracking, commission calculations, payment status, tax invoices', 'Split commission support'],
+              ['Analytics', 'Listing views, inquiry rate, response time, market position', 'Competitor comparison'],
+              ['CRM', 'Client database, property preferences, viewing history, communication log', 'Email/WhatsApp integration'],
+              ['Documents', 'Contract templates, NOC generation, tenancy agreements, MOU drafts', 'E-signature support'],
+              ['Calendar', 'Viewing appointments, key handover dates, contract renewals', 'Sync with Google/Outlook'],
+            ]} />
+          </div>
+          <div className="bg-purple-500/10 border border-purple-500/20 rounded-lg p-4">
+            <h4 className="text-purple-400 font-semibold mb-3 flex items-center gap-2"><Building2 className="w-4 h-4" /> Landlord Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Properties', 'All owned properties, occupancy status, rental income overview', 'Multi-property management'],
+              ['Tenant Screening', 'Application review, credit check results, reference verification', 'Automated scoring'],
+              ['Financials', 'Rent collection, expense tracking, net yield calculation, tax reports', 'Auto-invoicing'],
+              ['Maintenance', 'Tenant requests, vendor assignment, cost tracking, completion verification', 'Photo documentation'],
+              ['Documents', 'Tenancy contracts, Ejari registration, utility transfer records', 'Renewal reminders'],
+              ['Analytics', 'Occupancy rate, rent vs market rate, maintenance cost trends', 'Portfolio performance'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Fakhir (Luxury) ── */}
+      <Expandable title="Fakhir — Luxury & Concierge" icon={Star} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Membership Tiers', 'Define Elite/Prestige/Royal tiers, benefits per tier, upgrade criteria', 'Product'],
+              ['Concierge Operations', 'Request queue, agent assignment, SLA tracking, quality scoring', 'Luxury Ops'],
+              ['Partner Management', 'Luxury brand partnerships, exclusive access agreements, commission rates', 'Partnerships'],
+              ['Experience Curation', 'Curate luxury experiences, private events, VIP access packages', 'Content'],
+              ['Revenue', 'Membership fees, concierge service fees, partner commission income', 'Finance'],
+              ['Quality Assurance', 'Mystery shopping, partner audits, customer satisfaction surveys', 'Quality'],
+              ['Exclusivity Rules', 'Member limits per tier, waitlist management, invitation-only events', 'Product'],
+              ['Analytics', 'Member LTV, engagement metrics, experience popularity, churn prediction', 'Strategy'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Luxury Partner Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Bookings', 'Incoming reservations, VIP guest preferences, special requests', 'Priority flagging'],
+              ['Availability', 'Calendar management, exclusive slot allocation, blackout dates', 'Real-time sync'],
+              ['Commission', 'Booking revenue, commission statements, payout history', 'Monthly settlement'],
+              ['Guest Profiles', 'VIP preferences, past interactions, allergies/requirements, gift history', 'CRM integration'],
+              ['Experiences', 'List exclusive offerings, pricing, capacity, seasonal availability', 'Photo/video showcase'],
+              ['Reviews', 'Member feedback, response management, quality score tracking', 'Curated review display'],
+              ['Brand Assets', 'Logo usage, co-branding materials, marketing collateral', 'Approval workflow'],
+              ['Settings', 'Contact info, team access, notification preferences, integration setup', 'Multi-location support'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Inventora ── */}
+      <Expandable title="Inventora — Inventory Management" icon={Package} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Platform Analytics', 'Aggregate inventory health across all merchants, stock-out trends', 'Strategy'],
+              ['Supplier Network', 'Verified supplier directory, bulk negotiation, quality certifications', 'Partnerships'],
+              ['Integration Management', 'BizOne sync health, API status, data pipeline monitoring', 'Tech'],
+              ['Compliance', 'Expiry date tracking regulations, recall management, food safety compliance', 'Legal'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Merchant Dashboard (Inventora)</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Stock Overview', 'Real-time stock levels, low-stock alerts, category breakdown', 'Color-coded thresholds'],
+              ['AI Forecasting', 'Demand prediction, auto-reorder suggestions, seasonal adjustments', 'ML model per SKU'],
+              ['Multi-Warehouse', 'Per-location stock, inter-warehouse transfers, allocation rules', 'Up to 20 warehouses'],
+              ['Purchase Orders', 'Create PO, supplier selection, approval workflow, delivery tracking', 'Auto-PO on low stock'],
+              ['Barcode/SKU', 'Barcode generation, SKU management, batch/lot tracking, serial numbers', 'Scanner integration'],
+              ['Supplier Scoring', 'Delivery reliability, price competitiveness, quality ratings, lead times', 'Auto-ranking'],
+              ['Expiry Tracking', 'FEFO management, expiry alerts, discount/clearance automation', 'Waste reduction reports'],
+              ['Reports', 'Stock valuation, turnover rates, dead stock analysis, shrinkage tracking', 'FIFO/LIFO/weighted avg'],
+              ['BizOne Sync', 'Real-time POS integration, auto-deduction on sale, return restocking', 'Bi-directional sync'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── NextaBizz (B2B) ── */}
+      <Expandable title="NextaBizz — B2B Marketplace" icon={Building2} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Marketplace Governance', 'Supplier verification, product quality standards, dispute arbitration', 'Operations'],
+              ['Trade Finance', 'Credit line management, payment term approvals, default monitoring', 'Finance'],
+              ['Category Management', 'Product taxonomy, minimum order quantities, industry classifications', 'Product'],
+              ['Compliance', 'Trade licenses, import/export regulations, customs documentation', 'Legal'],
+              ['Analytics', 'GMV, active buyers/sellers, category trends, cross-border trade flows', 'Strategy'],
+              ['Partner APIs', 'Logistics partner integrations, payment gateway management, ERP connectors', 'Tech'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Supplier Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Products', 'Catalog management, bulk pricing tiers, MOQ settings, variant management', 'Bulk upload CSV/Excel'],
+              ['Orders', 'Incoming orders, fulfillment workflow, shipping label generation', 'Auto-accept rules'],
+              ['Invoicing', 'Generate invoices, payment tracking, credit note management', 'Multi-currency support'],
+              ['RFQ Responses', 'Incoming quote requests, bid submission, negotiation chat', 'Template responses'],
+              ['Analytics', 'Sales by category, buyer retention, pricing competitiveness', 'Market share estimates'],
+              ['Inventory', 'Stock sync with Inventora, availability management, lead time updates', 'Real-time sync'],
+              ['Shipping', 'Carrier selection, rate comparison, tracking management, returns processing', 'Wasil integration'],
+              ['Settings', 'Business profile, certifications, payment terms, team access', 'Verification badges'],
+            ]} />
+          </div>
+          <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+            <h4 className="text-green-400 font-semibold mb-3 flex items-center gap-2"><ShoppingCart className="w-4 h-4" /> Buyer Dashboard</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Supplier Discovery', 'Search/filter suppliers, verified badges, rating comparison', 'AI recommendations'],
+              ['RFQ Management', 'Create quote requests, compare bids, negotiate terms', 'Multi-supplier RFQ'],
+              ['Orders', 'Purchase history, reorder shortcuts, delivery tracking', 'Approval workflows'],
+              ['Credit Management', 'Available credit, payment schedules, statement downloads', 'Qist BNPL integration'],
+              ['Procurement', 'Approved supplier lists, purchase budgets, spend analytics', 'Category-level budgets'],
+              ['Reports', 'Spend analysis, supplier performance, savings tracking', 'Exportable dashboards'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Nuqta+ ── */}
+      <Expandable title="Nuqta+ — Premium Offers Network" icon={Star} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['Offer Curation', 'Partner offer approval, quality scoring, featured offer selection', 'Content'],
+              ['Partner Onboarding', 'Brand verification, offer terms review, integration setup', 'Partnerships'],
+              ['Revenue Sharing', 'Commission structures per partner, tiered rates, settlement management', 'Finance'],
+              ['Customer Analytics', 'Redemption rates, customer segments, offer performance ranking', 'Strategy'],
+              ['Campaign Management', 'Seasonal campaigns, push notification scheduling, email targeting', 'Marketing'],
+              ['Quality Control', 'Partner compliance audits, customer complaint tracking, offer accuracy', 'Operations'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Store className="w-4 h-4" /> Partner Dashboard (Nuqta+)</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Offer Management', 'Create/edit offers, set terms, capacity limits, validity periods', 'Bulk offer creation'],
+              ['Guaranteed Customers', 'View committed foot traffic, walk-in tracking, conversion rates', 'Per-offer breakdown'],
+              ['Transaction Reporting', 'Redemption history, revenue per offer, customer demographics', 'Real-time updates'],
+              ['Coin Redemption', 'Coin-based offer redemptions, settlement calculations, reconciliation', 'NuqtaCoin integration'],
+              ['Analytics', 'ROI per offer, customer acquisition cost, repeat visit rates', 'Comparison with peers'],
+              ['Creative Assets', 'Upload offer images, brand guidelines, promotional materials', 'Template library'],
+              ['Settlement', 'Monthly payout statements, commission deductions, payment history', 'Auto-invoicing'],
+              ['Settings', 'Store locations, operating hours, team access, notification preferences', 'Multi-branch support'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* ── Rabtul ── */}
+      <Expandable title="Rabtul — Developer & Integration Platform" icon={Code} defaultOpen={false}>
+        <div className="space-y-4">
+          <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4">
+            <h4 className="text-red-400 font-semibold mb-3 flex items-center gap-2"><Shield className="w-4 h-4" /> RTMN HQ Admin</h4>
+            <DocTable headers={['Module', 'Features', 'Access']} rows={[
+              ['API Gateway', 'Rate limiting, API key management, usage monitoring, versioning', 'Tech'],
+              ['Developer Management', 'App approvals, OAuth client registration, permission scoping', 'Platform'],
+              ['SDK & Docs', 'SDK version management, documentation publishing, changelog', 'DevRel'],
+              ['Webhook Registry', 'Event catalog, webhook health monitoring, retry policies', 'Tech'],
+              ['Marketplace', 'Third-party app approvals, listing management, review/ratings', 'Product'],
+              ['Analytics', 'API call volume, error rates, latency percentiles, top consumers', 'Tech'],
+            ]} />
+          </div>
+          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+            <h4 className="text-blue-400 font-semibold mb-3 flex items-center gap-2"><Code className="w-4 h-4" /> Developer Portal</h4>
+            <DocTable headers={['Tab', 'Features', 'Details']} rows={[
+              ['Dashboard', 'API usage stats, active apps, recent errors, quota remaining', 'Real-time monitoring'],
+              ['API Explorer', 'Interactive API console, request builder, response inspector', 'Try-before-you-code'],
+              ['Apps', 'Register apps, manage OAuth credentials, configure permissions', 'Sandbox + production'],
+              ['Webhooks', 'Subscribe to events, endpoint configuration, delivery logs', 'Retry configuration'],
+              ['SDKs', 'Download SDKs (JS, Python, Swift, Kotlin), code samples', 'Version management'],
+              ['Documentation', 'Full API reference, getting started guides, use case tutorials', 'Searchable'],
+              ['Support', 'Developer forum, ticket submission, Stack Overflow integration', 'Priority for paid tiers'],
+            ]} />
+          </div>
+        </div>
+      </Expandable>
+
+      {/* Cross-Product Integration Map */}
+      <div className="mt-8 bg-gradient-to-r from-[#c9a227]/10 to-[#c9a227]/5 border border-[#c9a227]/30 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-[#c9a227] mb-4 flex items-center gap-2"><Network className="w-5 h-5" /> Cross-Product Data Flow</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div className="space-y-2">
+            <p className="text-white font-medium">Merchant-Side Integrations</p>
+            <ul className="text-slate-400 space-y-1">
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />BizOne POS → Inventora (auto stock deduction)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />BizOne → NuqtaPay (payment processing)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />BizOne → Wasil (delivery dispatch)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />BizOne → Adzy (in-app advertising)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />BizOne → Qist (BNPL at checkout)</li>
+            </ul>
+          </div>
+          <div className="space-y-2">
+            <p className="text-white font-medium">Platform-Side Integrations</p>
+            <ul className="text-slate-400 space-y-1">
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />Nuqta → All products (unified customer identity)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />NuqtaCoin → All products (earn/spend across ecosystem)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />Rabtul → All products (unified API gateway)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />AIRA AI → All products (recommendations, fraud, personalization)</li>
+              <li className="flex items-start gap-2"><ArrowRight className="w-3 h-3 mt-1 text-[#c9a227] flex-shrink-0" />Hawil → NuqtaPay (wallet funding, international transfers)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ════════════════════════════════════════════════════════════════════
 // MAIN PAGE COMPONENT
 // ════════════════════════════════════════════════════════════════════
 export default function DocumentationPage() {
@@ -4090,6 +4652,7 @@ export default function DocumentationPage() {
     'prive-vip': <PriveVipSection />,
     'wasil-verticals': <WasilVerticalsSection />,
     'referral': <ReferralSection />,
+    'product-dashboards': <ProductDashboardsSection />,
   };
 
   return (
