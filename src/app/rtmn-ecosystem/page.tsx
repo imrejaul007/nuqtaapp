@@ -25,9 +25,9 @@ import { NuqtaMainLogo } from '@/components/CompanyLogos';
 // RTMN Ecosystem Categories
 const ecosystemCategories = [
   {
-    id: 'rez-core',
-    name: 'ReZ Core',
-    arabic: 'ريز الأساسي',
+    id: 'nuqta-core',
+    name: 'Nuqta Core',
+    arabic: 'نقطة الأساسي',
     description: 'The foundation - super-app, AI assistant, discovery, gamification',
     color: 'from-[#c9a227] to-amber-600',
     textColor: 'text-[#c9a227]',
@@ -35,7 +35,7 @@ const ecosystemCategories = [
     borderColor: 'border-[#c9a227]',
     icon: Crown,
     apps: [
-      { name: 'ReZ (Nuqta)', arabic: 'نقطة', status: 'built', description: 'Super-app hub - unified wallet, membership, rewards', icon: Crown, href: '/nuqta-plus' },
+      { name: 'Nuqta', arabic: 'نقطة', status: 'built', description: 'Super-app hub - unified wallet, membership, rewards', icon: Crown, href: '/nuqta-plus' },
       { name: 'AI-R', arabic: 'ذكاء', status: 'planned', description: 'Personal AI assistant - recommendations, automation, insights', icon: Brain, timeline: 'Q3 2027' },
       { name: 'BuzzLoop', arabic: 'بزلوب', status: 'planned', description: 'Personalized discovery feed - trending, local, interests', icon: Sparkles, timeline: 'Q4 2027' },
       { name: 'CoinHunt', arabic: 'كوين هنت', status: 'planned', description: 'Gamified earning - quests, challenges, treasure hunts', icon: Coins, timeline: 'Q2 2027' },
@@ -183,7 +183,7 @@ const ecosystemCategories = [
     apps: [
       { name: 'Qist', arabic: 'قسط', status: 'built', description: 'BNPL - split payments 3-12 months, 0% fees', icon: Wallet, href: '/qist' },
       { name: 'Hawil', arabic: 'حوّل', status: 'built', description: 'Remittance - Google rate, 0% markup, 8+ corridors', icon: ArrowLeftRight, href: '/hawil' },
-      { name: 'ReZPay', arabic: 'ريز باي', status: 'planned', description: 'Digital wallet - QR payments, P2P transfers', icon: CreditCardIcon, timeline: 'Q2 2027' },
+      { name: 'NuqtaPay', arabic: 'نقطة باي', status: 'planned', description: 'Digital wallet - QR payments, P2P transfers', icon: CreditCardIcon, timeline: 'Q2 2027' },
       { name: 'Splitzy', arabic: 'سبليت زي', status: 'planned', description: 'Bill splitting - groups, events, households', icon: Receipt, timeline: 'Q3 2027' },
       { name: 'Savezy+', arabic: 'سيف زي+', status: 'planned', description: 'Savings goals - round-ups, auto-save, vaults', icon: PiggyBank, timeline: 'Q4 2027' },
       { name: 'Investzy', arabic: 'إنفست زي', status: 'planned', description: 'Micro-investing - stocks, gold, Shariah-compliant', icon: LineChart, timeline: 'Q1 2028' },
@@ -377,7 +377,7 @@ const ecosystemBuildSteps = [
     whyNow: 'Everything runs on Rabtul. Before any consumer or merchant app, we build 5 shared SDKs (AuthSDK, WalletSDK, OrderSDK, RuleSDK, EventSDK), API Gateway, Event Bus, Data Platform, and Security. Every future product across all 10 companies plugs into this — build once, reuse 100+ times.',
     whatItBuilds: [
       'AuthSDK — OTP login, JWT tokens, SSO for all apps',
-      'WalletSDK — 4 coin types (Promo→Branded→ReZ→Cash debit priority)',
+      'WalletSDK — 4 coin types (Promo→Branded→Nuqta→Cash debit priority)',
       'OrderSDK — Order state machine (PLACED→CONFIRMED→PREPARING→READY→DELIVERED)',
       'RuleSDK — Campaign eligibility, coin calculations, cap enforcement',
       'EventSDK — Real-time event bus (Redis Pub/Sub → Kafka)',
@@ -466,7 +466,7 @@ const ecosystemBuildSteps = [
     whyNow: 'Built in parallel with BizOne. The consumer super-app connects to all 500+ BizOne merchants. Nuqta Coins, Nuqta+ membership tiers, gamification — users earn rewards everywhere. This is where the two-sided network ignites.',
     whatItBuilds: [
       'Nuqta Super-App shell — React Native (iOS + Android)',
-      'Nuqta Wallet — 4 coin types (Promo→Branded→ReZ→Cash), balance, history',
+      'Nuqta Wallet — 4 coin types (Promo→Branded→Nuqta→Cash), balance, history',
       'Merchant Discovery — browse, search, maps, categories',
       'QR Scan & Pay — scan merchant QR at BizOne POS',
       'Nuqta+ Membership — 4 tiers (Basic→Silver→Gold→Prive)',
@@ -486,7 +486,7 @@ const ecosystemBuildSteps = [
       'Gamification engine is REUSED by every future app (Wasil challenges, Safar badges)',
       'Nuqta Prive (141 screens) creates premium tier driving high ARPU',
     ],
-    appsUnlocked: ['Nuqta App (ReZ)', 'Nuqta Prive', 'Gamification Hub', 'CoinHunt lite', 'BuzzLoop lite'],
+    appsUnlocked: ['Nuqta App', 'Nuqta Prive', 'Gamification Hub', 'CoinHunt lite', 'BuzzLoop lite'],
     cumulativeApps: 14,
     cumulativeUsers: '50K+',
     licensesNeeded: [
@@ -521,7 +521,7 @@ const ecosystemBuildSteps = [
       'Hawil Transfer Flow — UAE→India, UAE→PH, 8+ corridors',
       'Hawil Card — prepaid card top-up from remittance',
     ],
-    docsDetail: 'Qist: ML credit scoring + installment plans • Hawil: 8+ corridors, 0% markup • Both integrated in Nuqta app + BizOne POS • Coin debit priority: Promo→Branded→ReZ→Cash→Qist',
+    docsDetail: 'Qist: ML credit scoring + installment plans • Hawil: 8+ corridors, 0% markup • Both integrated in Nuqta app + BizOne POS • Coin debit priority: Promo→Branded→Nuqta→Cash→Qist',
     ecosystemPower: 52,
     connectsTo: ['Rabtul', 'BizOne', 'Nuqta'],
     synergiesUnlocked: [
@@ -530,10 +530,10 @@ const ecosystemBuildSteps = [
       'Qist credit model REUSED by Sakin rent finance and Ajer leasing (Step 6)',
       'Hawil FX engine REUSED by Safar TravoPay wallet (Step 7)',
       'BizOne merchant POS data improves Qist credit scoring accuracy',
-      'ReZPay wallet (built on Rabtul WalletSDK) holds coins + cash + Qist credit',
+      'NuqtaPay wallet (built on Rabtul WalletSDK) holds coins + cash + Qist credit',
       'Both accessible inside Nuqta app — no separate downloads needed',
     ],
-    appsUnlocked: ['Qist', 'Hawil', 'ReZPay', 'Qist Virtual Card', 'Hawil Card'],
+    appsUnlocked: ['Qist', 'Hawil', 'NuqtaPay', 'Qist Virtual Card', 'Hawil Card'],
     cumulativeApps: 19,
     cumulativeUsers: '200K+',
     licensesNeeded: [
@@ -556,7 +556,7 @@ const ecosystemBuildSteps = [
     phaseColor: 'bg-yellow-500/20 text-yellow-400',
     timeline: 'Month 5-7 (Sprint 5-8)',
     sisterCompanies: ['Wasil Apps', 'Rabtul', 'NextaBizz'],
-    whyNow: 'Physical commerce layer. Connect BizOne merchants to Nuqta consumers via 60-minute delivery. Start with 5 highest-GMV categories: food, grocery, pharmacy, fitness, beauty. Pay with ReZPay/Qist, earn Nuqta Coins on every order.',
+    whyNow: 'Physical commerce layer. Connect BizOne merchants to Nuqta consumers via 60-minute delivery. Start with 5 highest-GMV categories: food, grocery, pharmacy, fitness, beauty. Pay with NuqtaPay/Qist, earn Nuqta Coins on every order.',
     whatItBuilds: [
       'Wasil Hub — unified delivery platform, order lifecycle',
       'Dinezy — food delivery from BizOne restaurants (8 endpoints)',
@@ -573,7 +573,7 @@ const ecosystemBuildSteps = [
     synergiesUnlocked: [
       'BizOne merchants → Wasil delivery auto-integrated via shared Rabtul APIs',
       'Nuqta+ Gold/Prive get free Wasil delivery (loyalty perk)',
-      'Pay with ReZPay, Qist BNPL, or Hawil Card — earn 2X Nuqta Coins',
+      'Pay with NuqtaPay, Qist BNPL, or Hawil Card — earn 2X Nuqta Coins',
       'Wasil Rider App REUSES Rabtul AuthSDK + Mobile SDK (80% code reuse)',
       'Rabtul AI predicts demand → optimizes rider dispatch → 20% faster delivery',
       'Routing engine is REUSED by Rakab ride-hailing later (Step 7)',
@@ -621,7 +621,7 @@ const ecosystemBuildSteps = [
     synergiesUnlocked: [
       'Qist credit model REUSED for rent/lease eligibility — zero ML rebuild',
       'Merchant Portal base REUSED for Sakin Landlord + Ajer Fleet portals',
-      'Pay rent/lease with ReZPay, earn Nuqta Coins on monthly payments',
+      'Pay rent/lease with NuqtaPay, earn Nuqta Coins on monthly payments',
       'Sakin data + Qist data → better credit profiles for all RTMN Finance products',
       'Wasil delivers home essentials when tenants move in',
       'Ajer vehicles can double as Wasil delivery fleet = shared economics',
@@ -770,8 +770,8 @@ const ecosystemBuildSteps = [
       'Merchants promote on Adzy → drives Wasil orders + BizOne foot traffic',
       'Inventora syncs with BizOne POS → automated inventory replenishment',
       'NextaBizz B2B uses Qist for business credit + Hawil for cross-border B2B',
-      'Eventora events ticketed + paid via ReZPay + Rakab for transport',
-      'Gigzy freelancers paid via ReZPay, Learnly courses paid via Qist BNPL',
+      'Eventora events ticketed + paid via NuqtaPay + Rakab for transport',
+      'Gigzy freelancers paid via NuqtaPay, Learnly courses paid via Qist BNPL',
       'Ad spend from merchants becomes revenue → self-sustaining ecosystem',
     ],
     appsUnlocked: ['Adzy', 'Shopazy', 'Funzy', 'AutoPerks', 'Petzy', 'Kidzo', 'Luxora', 'Elitezy', 'Royale+', 'Washzy', 'Maidzy', 'Essentia+', 'Society+', 'Bizora', 'Gamezy', 'Wellnez', 'Learnly', 'Inventora', 'NextaBizz', 'Eventora', 'Gigzy', 'BuzzLocal'],
@@ -783,7 +783,7 @@ const ecosystemBuildSteps = [
       { app: 'Inventora (Warehouse Mgmt)', licenses: ['Trade License — Warehouse Management / Logistics SaaS', 'If operating warehouses: warehouse license from municipality', 'Food storage: Dubai Municipality food storage permit'], authority: 'DED + Municipality', difficulty: 'Easy-Medium', timeline: '2-4 weeks', cost: 'AED 20K-50K' },
       { app: 'NextaBizz (B2B Marketplace)', licenses: ['E-Commerce license — B2B marketplace', 'Trade License — IT Services / Marketplace Platform', 'If cross-border B2B: customs broker registration or partnership'], authority: 'DED', difficulty: 'Easy-Medium', timeline: '2-4 weeks', cost: 'AED 15K-40K' },
       { app: 'Eventora (Event Ticketing)', licenses: ['Event management license — DED', 'Event permit per event from Dubai Police / Municipality', 'Ticketing platform: no special license (e-commerce)', 'Large events (500+): DCAS (Dubai Civil Aviation) if outdoor + safety permits'], authority: 'DED + Dubai Police + Municipality', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 30K-80K + per-event permits' },
-      { app: 'Gigzy (Freelancer Platform)', licenses: ['Freelancer marketplace: DED trade license', 'Freelancers must hold UAE freelancer permits (MOHRE)', 'Payment processing through existing NuqtaPay/ReZPay rails', 'Labor law compliance for gig economy (UAE Gig Worker regulations)'], authority: 'DED + MOHRE', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 30K-60K' },
+      { app: 'Gigzy (Freelancer Platform)', licenses: ['Freelancer marketplace: DED trade license', 'Freelancers must hold UAE freelancer permits (MOHRE)', 'Payment processing through existing NuqtaPay/NuqtaPay rails', 'Labor law compliance for gig economy (UAE Gig Worker regulations)'], authority: 'DED + MOHRE', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 30K-60K' },
     ],
     networkEffect: 'Monetization flywheel: More apps = more ad surfaces = more ad revenue = more investment = more apps. Each new Wasil app costs 80% less to build due to shared infrastructure.',
   },
@@ -856,7 +856,7 @@ const flywheel = [
 ];
 
 export default function RTMNEcosystemPage() {
-  const [expandedCategory, setExpandedCategory] = useState<string | null>('rez-core');
+  const [expandedCategory, setExpandedCategory] = useState<string | null>('nuqta-core');
   const [filterStatus, setFilterStatus] = useState<'all' | 'built' | 'planned'>('all');
   const [activeBuildStep, setActiveBuildStep] = useState(1);
 
@@ -881,7 +881,7 @@ export default function RTMNEcosystemPage() {
               <span className="text-[#c9a227]">100+ Apps</span> for the GCC Market
             </h1>
             <p className="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto">
-              The complete Nuqta (ReZ/RTMN) digital ecosystem - from super-app core to 24 delivery verticals,
+              The complete Nuqta/RTMN digital ecosystem - from super-app core to 24 delivery verticals,
               travel, community, finance, and gamification layers.
             </p>
           </div>
