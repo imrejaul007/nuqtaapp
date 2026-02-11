@@ -1705,8 +1705,52 @@ export default function EcosystemPage() {
 
       </main>
 
+      {/* RTMN Full Ecosystem Section */}
+      <section className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-t border-b border-purple-500/30 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">RTMN Digital Ecosystem</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Explore our complete 100+ app ecosystem vision for the GCC market.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            <Link href="/rtmn-ecosystem" className="group bg-slate-800/50 rounded-xl p-4 border border-[#c9a227]/30 hover:border-[#c9a227] transition-all text-center">
+              <Network className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">Full Roadmap</h3>
+              <p className="text-xs text-slate-400">100+ apps</p>
+            </Link>
+            <Link href="/wasil-verticals" className="group bg-slate-800/50 rounded-xl p-4 border border-orange-500/30 hover:border-orange-500 transition-all text-center">
+              <Truck className="w-8 h-8 text-orange-400 mx-auto mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">Wasil Lifestyle</h3>
+              <p className="text-xs text-slate-400">24 verticals</p>
+            </Link>
+            <Link href="/finance-apps" className="group bg-slate-800/50 rounded-xl p-4 border border-emerald-500/30 hover:border-emerald-500 transition-all text-center">
+              <Wallet className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">Finance Apps</h3>
+              <p className="text-xs text-slate-400">12 fintech</p>
+            </Link>
+            <Link href="/bizone" className="group bg-slate-800/50 rounded-xl p-4 border border-blue-500/30 hover:border-blue-500 transition-all text-center">
+              <Store className="w-8 h-8 text-blue-400 mx-auto mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">BizOne Suite</h3>
+              <p className="text-xs text-slate-400">Merchant B2B</p>
+            </Link>
+            <Link href="/ai-infrastructure" className="group bg-slate-800/50 rounded-xl p-4 border border-purple-500/30 hover:border-purple-500 transition-all text-center">
+              <Brain className="w-8 h-8 text-purple-400 mx-auto mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">AI & Infra</h3>
+              <p className="text-xs text-slate-400">5 platforms</p>
+            </Link>
+            <Link href="/safar" className="group bg-slate-800/50 rounded-xl p-4 border border-cyan-500/30 hover:border-cyan-500 transition-all text-center">
+              <Plane className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
+              <h3 className="font-bold text-white text-sm mb-1">Travel</h3>
+              <p className="text-xs text-slate-400">11 apps</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Group Strategy Section */}
-      <section className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border-t border-b border-[#c9a227]/30 py-12">
+      <section className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border-b border-[#c9a227]/30 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Nuqta Group Strategy</h2>
