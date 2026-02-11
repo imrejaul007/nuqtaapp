@@ -398,6 +398,11 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Rabtul Core', 'AIRA Engine', 'DataPulse', 'CloudSync', 'SecureVault'],
     cumulativeApps: 5,
     cumulativeUsers: '0 (infrastructure only)',
+    licensesNeeded: [
+      { app: 'Rabtul (Tech Company)', licenses: ['UAE Trade License (DED) — IT Services / Software Development', 'TDRA Registration — Telecom & Digital Government Regulatory Authority', 'UAE Data Protection Registration — Federal Decree-Law No. 45/2021 (PDPL)'], authority: 'DED + TDRA', difficulty: 'Easy', timeline: '2-4 weeks', cost: 'AED 15K-30K' },
+      { app: 'NuqtaPay (Payment Processing)', licenses: ['Retail Payment Service Provider (RPSP) License — CBUAE', 'PCI-DSS Level 1 Certification — for card processing', 'Payment Card Industry compliance audit'], authority: 'Central Bank of UAE (CBUAE)', difficulty: 'Hard', timeline: '6-12 months', cost: 'AED 500K-2M + AED 5M minimum capital' },
+      { app: 'Data Platform', licenses: ['Cloud Service Provider registration with TDRA', 'Data hosting compliance (UAE data residency requirements)'], authority: 'TDRA', difficulty: 'Medium', timeline: '1-3 months', cost: 'AED 20K-50K' },
+    ],
     networkEffect: 'Foundation layer — no user-facing products yet, but every single app built after this plugs into Rabtul. The more apps we add, the more valuable these shared services become.',
   },
   {
@@ -438,6 +443,11 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['BizOne POS', 'BizOne Merchant App', 'Merchant Portal', 'HQ Admin (lite)'],
     cumulativeApps: 9,
     cumulativeUsers: '500+ merchants',
+    licensesNeeded: [
+      { app: 'BizOne POS System', licenses: ['UAE Trade License — POS/Payment Terminal Provider', 'PCI-DSS compliance (if processing cards)', 'Merchant acquiring registration with CBUAE (if direct acquiring)'], authority: 'DED + CBUAE', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 50K-150K' },
+      { app: 'BizOne Merchant SaaS', licenses: ['Trade License — SaaS / IT Services', 'E-Commerce license (if online merchant tools)'], authority: 'DED', difficulty: 'Easy', timeline: '2-4 weeks', cost: 'AED 15K-30K' },
+      { app: 'HQ Admin Dashboard', licenses: ['No additional license — internal tool under Rabtul trade license'], authority: 'N/A', difficulty: 'None', timeline: 'N/A', cost: 'N/A' },
+    ],
     networkEffect: 'Merchant lock-in: More merchants → better benchmarks, community features, shared learnings. Every merchant on BizOne is pre-wired for every future consumer product.',
   },
   {
@@ -479,6 +489,12 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Nuqta App (ReZ)', 'Nuqta Prive', 'Gamification Hub', 'CoinHunt lite', 'BuzzLoop lite'],
     cumulativeApps: 14,
     cumulativeUsers: '50K+',
+    licensesNeeded: [
+      { app: 'Nuqta Consumer App', licenses: ['Trade License — Mobile App / E-Commerce', 'Apple App Store + Google Play developer accounts', 'UAE Consumer Protection Law compliance'], authority: 'DED + App Stores', difficulty: 'Easy', timeline: '2-4 weeks', cost: 'AED 15K-25K' },
+      { app: 'Nuqta Loyalty/Coins', licenses: ['Stored Value Facility (SVF) License — if coins are redeemable for cash', 'OR operate as "loyalty points" (not redeemable = no SVF needed)', 'CBUAE guidance on virtual currencies/loyalty programs'], authority: 'CBUAE (if SVF)', difficulty: 'Medium-Hard', timeline: '3-9 months (if SVF needed)', cost: 'AED 100K-500K (SVF) or minimal (loyalty only)' },
+      { app: 'Nuqta+ Membership', licenses: ['No special license — subscription model under e-commerce', 'VAT registration (if revenue > AED 375K)'], authority: 'FTA (Federal Tax Authority)', difficulty: 'Easy', timeline: '1-2 weeks', cost: 'AED 5K-10K' },
+      { app: 'Gamification/CoinHunt', licenses: ['Verify not classified as "gambling" under UAE law', 'If skill-based with no real-money wagering → no gaming license needed', 'Content compliance with UAE media regulations'], authority: 'UAE Media Council', difficulty: 'Low', timeline: '1-2 weeks review', cost: 'Minimal' },
+    ],
     networkEffect: 'Two-sided network activated: More merchants → more places to earn → more consumers → more sales → more merchants. Gamification drives daily active engagement across the whole ecosystem.',
   },
   {
@@ -520,6 +536,11 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Qist', 'Hawil', 'ReZPay', 'Qist Virtual Card', 'Hawil Card'],
     cumulativeApps: 19,
     cumulativeUsers: '200K+',
+    licensesNeeded: [
+      { app: 'Qist BNPL', licenses: ['BNPL/Consumer Credit License — CBUAE (Mandatory)', 'Minimum capital requirement: AED 2M-10M', 'AML/CFT compliance program (Federal AML Law)', 'Credit Information Agency registration (Al Etihad Credit Bureau)', 'Consumer lending disclosure requirements'], authority: 'Central Bank of UAE (CBUAE)', difficulty: 'Very Hard', timeline: '9-18 months', cost: 'AED 2M-10M capital + AED 500K-1M setup' },
+      { app: 'Hawil Remittance', licenses: ['Hawala / Money Transfer License — CBUAE (Mandatory)', 'OR Retail Payment Service Provider (RPSP) License', 'Minimum capital: AED 5M-15M', 'AML/KYC/CFT full compliance program', 'Sanctions screening (OFAC, UN, UAE local)', 'Correspondent banking relationships', 'Registration with Financial Intelligence Unit (FIU)'], authority: 'Central Bank of UAE (CBUAE)', difficulty: 'Very Hard', timeline: '12-24 months', cost: 'AED 5M-15M capital + AED 1M-3M setup' },
+      { app: 'Hawil Card (Prepaid)', licenses: ['Stored Value Facility (SVF) License — CBUAE', 'Card scheme membership (Visa/Mastercard) or partner', 'EMV compliance', 'PCI-DSS certification'], authority: 'CBUAE + Visa/Mastercard', difficulty: 'Hard', timeline: '6-12 months', cost: 'AED 2M-5M' },
+    ],
     networkEffect: 'Financial flywheel: More transactions → better credit data → lower risk → better rates → more users → more transactions. Hawil captures remittance corridor sticky users.',
   },
   {
@@ -561,6 +582,13 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Wasil Hub', 'Dinezy', 'Grocify', 'MediEarn', 'FitEarn', 'Glowzy', 'Wasil Rider App'],
     cumulativeApps: 26,
     cumulativeUsers: '500K+',
+    licensesNeeded: [
+      { app: 'Wasil Delivery Platform', licenses: ['Trade License — Last-Mile Delivery / Courier Services', 'DED delivery services activity code', 'Commercial vehicle permits for fleet'], authority: 'DED + RTA', difficulty: 'Medium', timeline: '1-3 months', cost: 'AED 30K-80K' },
+      { app: 'Dinezy (Food Delivery)', licenses: ['Food delivery intermediary registration', 'Dubai Municipality food safety permit (if handling food)', 'Restaurants on platform must have their own food licenses', 'FSSAI-equivalent: Municipality food handler card for riders'], authority: 'Dubai Municipality + DED', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 50K-100K' },
+      { app: 'MediEarn (Pharmacy Delivery)', licenses: ['Pharmacy delivery requires MOH/DHA approval', 'Partner pharmacies must hold valid pharmacy license', 'Controlled substance delivery restrictions apply', 'Cold chain compliance for temperature-sensitive medicines'], authority: 'MOH + DHA (Dubai Health Authority)', difficulty: 'Hard', timeline: '3-6 months', cost: 'AED 100K-300K' },
+      { app: 'Glowzy (Beauty Services)', licenses: ['Beauty services at-home: DED professional license per provider', 'Beautician/stylist individual permits from DHA', 'Products must have Emirates Authority for Standardization (ESMA) approval'], authority: 'DED + DHA + ESMA', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 30K-60K per provider' },
+      { app: 'Rider Fleet', licenses: ['Rider visa sponsorship (if employed) or freelancer permits', 'Motorcycle/vehicle permits from RTA', 'Third-party liability insurance per rider', 'Labor law compliance (UAE Federal Decree-Law No. 33/2021)'], authority: 'RTA + MOHRE + Insurance', difficulty: 'Medium', timeline: 'Ongoing', cost: 'AED 5K-10K per rider/year' },
+    ],
     networkEffect: 'Density network: More riders → faster delivery → more orders → more riders. Cross-vertical bundling: food + grocery + pharmacy in one delivery = higher order value per trip.',
   },
   {
@@ -602,6 +630,11 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Sakin', 'Sakin Short Stay', 'Ajer', 'Landlord Portal', 'Fleet Portal'],
     cumulativeApps: 31,
     cumulativeUsers: '800K+',
+    licensesNeeded: [
+      { app: 'Sakin (Rent Financing)', licenses: ['Consumer Credit / Financing License — CBUAE (if financing rent)', 'OR partner with a licensed finance company', 'Real Estate Regulatory Agency (RERA) broker license — DLD', 'Ejari/Tawtheeq system integration approval', 'AML/KYC compliance for financial transactions'], authority: 'CBUAE + DLD/RERA', difficulty: 'Hard', timeline: '6-12 months', cost: 'AED 1M-5M capital + AED 200K-500K setup' },
+      { app: 'Sakin Short Stay', licenses: ['Holiday Home License — DTCM (Dubai) or equivalent per emirate', 'Each property needs individual holiday home permit', 'Tourism Dirham levy registration', 'Building NOC from community/developer'], authority: 'DTCM + DLD', difficulty: 'Medium', timeline: '2-4 months per property', cost: 'AED 10K-20K per property + AED 50K platform' },
+      { app: 'Ajer (Vehicle Leasing)', licenses: ['Vehicle Rental / Leasing License — DED + RTA', 'Fleet registration with RTA', 'Vehicle insurance (comprehensive) per vehicle', 'Lease financing license if offering lease-to-own (CBUAE)', 'Traffic fine management compliance'], authority: 'DED + RTA + CBUAE (if financing)', difficulty: 'Medium-Hard', timeline: '3-6 months', cost: 'AED 100K-300K + vehicle fleet capital' },
+    ],
     networkEffect: 'Recurring revenue lock-in: Monthly rent + vehicle payments = predictable revenue stream. Every rent/lease payment earns coins = daily engagement with Nuqta ecosystem.',
   },
   {
@@ -644,6 +677,12 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Safar', 'Fakhir', 'TravoPay', 'Rakab', 'Rakab Business', 'Weekendzy', 'BeachLife', 'DesertVibes', 'CityExplore', 'Staycay'],
     cumulativeApps: 41,
     cumulativeUsers: '1.5M+',
+    licensesNeeded: [
+      { app: 'Safar (Travel OTA)', licenses: ['Travel Agency License — DTCM (Dubai) or DOT (Abu Dhabi)', 'IATA accreditation (for direct airline ticketing)', 'OR IATA sub-agent agreement with accredited agency', 'Hotel aggregator agreements (no special license if intermediary)', 'Tourism Dirham collection registration', 'Visa processing: Ministry of Foreign Affairs authorization'], authority: 'DTCM + IATA + MOFA', difficulty: 'Medium-Hard', timeline: '3-6 months', cost: 'AED 100K-300K + IATA bond ~AED 200K' },
+      { app: 'Rakab (Ride-Hailing)', licenses: ['Smart Rental / E-Hail License — RTA (EXTREMELY limited)', 'Only ~5 licenses ever issued in Dubai (Careem, Uber, S\'hail, etc.)', 'May need to partner with existing license holder', 'Minimum fleet requirements (100+ vehicles typically)', 'Driver background checks + training certification', 'Insurance: AED 1M+ third-party liability per vehicle', 'Fare regulation compliance with RTA pricing'], authority: 'RTA (Roads & Transport Authority)', difficulty: 'Extremely Hard', timeline: '12-24 months', cost: 'AED 5M-20M (license + fleet + insurance)' },
+      { app: 'TravoPay (Travel Wallet)', licenses: ['Stored Value Facility (SVF) or E-Money license — CBUAE', 'Multi-currency wallet requires FX dealer license', 'OR use Hawil existing FX/money transfer license'], authority: 'CBUAE', difficulty: 'Hard (new) / Easy (reuse Hawil)', timeline: '6-12 months (new) / 0 (reuse)', cost: 'AED 2M-5M (new) / Minimal (reuse)' },
+      { app: 'Fakhir (Luxury Concierge)', licenses: ['Concierge / Lifestyle Services license — DED', 'If booking luxury experiences: tourism license', 'VIP transport: limousine service permit from RTA'], authority: 'DED + DTCM + RTA', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 50K-150K' },
+    ],
     networkEffect: 'Cross-sell explosion: Every traveler uses payments, rewards, delivery, rides. ARPU jumps 3-5X. Shared fleet (Rakab + Wasil) = lower cost per ride/delivery for both.',
   },
   {
@@ -686,6 +725,16 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['AI-R', 'BuzzLoop', 'CoinHunt', 'LocalEdge', 'StyleSync', 'FitCircle', 'TechHunt', 'HomeHub'],
     cumulativeApps: 49,
     cumulativeUsers: '2.5M+',
+    licensesNeeded: [
+      { app: 'AI-R (AI Assistant)', licenses: ['No special license — operates as in-app feature under Nuqta trade license', 'UAE AI Ethics Guidelines compliance (Mohammed Bin Zayed University framework)', 'Data processing consent under UAE PDPL'], authority: 'N/A (internal feature)', difficulty: 'Easy', timeline: '1-2 weeks review', cost: 'Minimal' },
+      { app: 'BuzzLoop (Social/UGC)', licenses: ['Social media platform: National Media Council (NMC) registration', 'User-generated content moderation compliance (UAE Cybercrime Law)', 'Content liability: platform must remove illegal content within 24hrs'], authority: 'National Media Council (NMC)', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 20K-50K' },
+      { app: 'CoinHunt (Gamification)', licenses: ['Ensure not classified as gambling under UAE Federal Penal Code', 'Skill-based challenges with loyalty rewards = no gaming license', 'If real prizes: promotional permit from DED per campaign'], authority: 'DED + UAE Media Council', difficulty: 'Low', timeline: '1-2 weeks', cost: 'AED 5K-10K per campaign permit' },
+      { app: 'LocalEdge (Hyperlocal)', licenses: ['Location data collection: UAE PDPL consent requirements', 'No special license — operates as discovery feature', 'Map data usage: compliance with UAE mapping regulations'], authority: 'TDRA + DED', difficulty: 'Easy', timeline: '1-2 weeks', cost: 'Minimal' },
+      { app: 'StyleSync (Fashion)', licenses: ['E-Commerce license if selling directly (DED)', 'OR marketplace/intermediary — lighter requirements', 'Textile/fashion product compliance (ESMA standards)'], authority: 'DED + ESMA', difficulty: 'Easy-Medium', timeline: '2-4 weeks', cost: 'AED 15K-30K' },
+      { app: 'FitCircle (Health/Fitness)', licenses: ['Health & wellness content disclaimer requirements', 'If offering medical advice: DHA/MOH health content license', 'Fitness tracking = no license (consumer app)', 'Nutrition advice: qualified dietitian partnership required'], authority: 'DHA/MOH (if medical)', difficulty: 'Easy-Medium', timeline: '1-3 months', cost: 'AED 10K-30K' },
+      { app: 'TechHunt (Electronics)', licenses: ['Price comparison: no special license (aggregator model)', 'If selling: e-commerce license + ESMA product compliance', 'Electronics import: ECAS conformity certificate per product'], authority: 'DED + ESMA', difficulty: 'Easy', timeline: '2-4 weeks', cost: 'AED 15K-25K' },
+      { app: 'HomeHub (Home Services)', licenses: ['Home services marketplace: DED professional license', 'Service providers need individual trade licenses', 'Interior design services: Engineering license if structural work'], authority: 'DED', difficulty: 'Easy-Medium', timeline: '2-4 weeks', cost: 'AED 15K-30K' },
+    ],
     networkEffect: 'Data flywheel: 8 new data sources → smarter AI-R recommendations → higher engagement → more data → smarter AI. Each vertical app creates new transaction types that feed the whole ecosystem.',
   },
   {
@@ -728,6 +777,14 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['Adzy', 'Shopazy', 'Funzy', 'AutoPerks', 'Petzy', 'Kidzo', 'Luxora', 'Elitezy', 'Royale+', 'Washzy', 'Maidzy', 'Essentia+', 'Society+', 'Bizora', 'Gamezy', 'Wellnez', 'Learnly', 'Inventora', 'NextaBizz', 'Eventora', 'Gigzy', 'BuzzLocal'],
     cumulativeApps: 71,
     cumulativeUsers: '4M+',
+    licensesNeeded: [
+      { app: 'Adzy (Ad Platform)', licenses: ['Advertising agency license — DED (mandatory for ad network)', 'National Media Council (NMC) advertising content approval', 'UAE Advertising Standards compliance', 'User data for targeting: PDPL consent + opt-out mechanisms', 'Influencer marketing: NMC influencer registration requirements'], authority: 'DED + NMC', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 50K-100K' },
+      { app: 'Wasil Wave 2-4 (17 Apps)', licenses: ['All covered under existing Wasil delivery license (Step 5)', 'Per-category additions: AutoPerks (RTA vehicle permit), Luxora (luxury goods import)', 'Premium tiers (Royale+, Elitezy): no extra license — pricing tier only', 'Gamezy: ensure not gambling classification'], authority: 'Existing licenses + category-specific', difficulty: 'Easy-Medium', timeline: '1-2 months per wave', cost: 'AED 20K-50K per wave' },
+      { app: 'Inventora (Warehouse Mgmt)', licenses: ['Trade License — Warehouse Management / Logistics SaaS', 'If operating warehouses: warehouse license from municipality', 'Food storage: Dubai Municipality food storage permit'], authority: 'DED + Municipality', difficulty: 'Easy-Medium', timeline: '2-4 weeks', cost: 'AED 20K-50K' },
+      { app: 'NextaBizz (B2B Marketplace)', licenses: ['E-Commerce license — B2B marketplace', 'Trade License — IT Services / Marketplace Platform', 'If cross-border B2B: customs broker registration or partnership'], authority: 'DED', difficulty: 'Easy-Medium', timeline: '2-4 weeks', cost: 'AED 15K-40K' },
+      { app: 'Eventora (Event Ticketing)', licenses: ['Event management license — DED', 'Event permit per event from Dubai Police / Municipality', 'Ticketing platform: no special license (e-commerce)', 'Large events (500+): DCAS (Dubai Civil Aviation) if outdoor + safety permits'], authority: 'DED + Dubai Police + Municipality', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 30K-80K + per-event permits' },
+      { app: 'Gigzy (Freelancer Platform)', licenses: ['Freelancer marketplace: DED trade license', 'Freelancers must hold UAE freelancer permits (MOHRE)', 'Payment processing through existing NuqtaPay/ReZPay rails', 'Labor law compliance for gig economy (UAE Gig Worker regulations)'], authority: 'DED + MOHRE', difficulty: 'Medium', timeline: '2-4 months', cost: 'AED 30K-60K' },
+    ],
     networkEffect: 'Monetization flywheel: More apps = more ad surfaces = more ad revenue = more investment = more apps. Each new Wasil app costs 80% less to build due to shared infrastructure.',
   },
   {
@@ -770,6 +827,16 @@ const ecosystemBuildSteps = [
     appsUnlocked: ['All remaining apps — 100+ total across 10 companies'],
     cumulativeApps: '100+',
     cumulativeUsers: '5M+',
+    licensesNeeded: [
+      { app: 'Investzy (Micro-Investing)', licenses: ['Securities & Commodities Authority (SCA) license — mandatory', 'Shariah Advisory Board certification for Islamic funds', 'Minimum capital: AED 5M-20M (depends on category)', 'Financial promotions approval from SCA', 'Custody arrangement with licensed custodian bank'], authority: 'SCA (Securities & Commodities Authority)', difficulty: 'Extremely Hard', timeline: '12-24 months', cost: 'AED 5M-20M capital + AED 1M-3M setup' },
+      { app: 'Insurzy (Insurance)', licenses: ['Insurance Broker License — CBUAE Insurance Authority', 'OR Insurance Aggregator model (lighter regulation)', 'Minimum capital: AED 3M (broker) or AED 500K (aggregator)', 'Each insurance product needs CBUAE approval', 'Appointed Actuary requirement for certain products'], authority: 'CBUAE Insurance Authority', difficulty: 'Very Hard', timeline: '9-18 months', cost: 'AED 500K-3M capital + AED 300K-800K setup' },
+      { app: 'Wealthzy (Wealth Management)', licenses: ['Financial Advisory License — SCA', 'OR DFSA license if operating from DIFC', 'Minimum capital: AED 2M-10M', 'KYC/AML/CFT full compliance program', 'Qualified financial advisors (CFA/CFP registered)'], authority: 'SCA or DFSA', difficulty: 'Very Hard', timeline: '12-18 months', cost: 'AED 2M-10M capital + AED 500K-1M setup' },
+      { app: 'DocConnect (Telemedicine)', licenses: ['Telemedicine Service License — DHA (Dubai) or DOH (Abu Dhabi)', 'Doctors must be DHA/MOH licensed practitioners', 'Platform license: Health Informatics license from DHA', 'Prescription delivery: partner pharmacy must be licensed', 'Patient data: healthcare-specific data protection compliance'], authority: 'DHA + MOH', difficulty: 'Hard', timeline: '6-12 months', cost: 'AED 200K-500K' },
+      { app: 'Community Apps (Circlezy, FitSquad, etc.)', licenses: ['Social platform: NMC registration', 'Community gathering features: comply with UAE association laws', 'VolunteerHub: MOCCAE (volunteer organization) registration', 'No special licenses for most — covered under existing trade license'], authority: 'NMC + DED', difficulty: 'Easy', timeline: '2-4 weeks', cost: 'AED 10K-20K' },
+      { app: 'Education (Learnzy, Tutorly)', licenses: ['E-Learning platform: KHDA approval (Dubai) or ADEK (Abu Dhabi)', 'Content compliance with UAE education standards', 'Tutorly: tutors need teaching permits if operating in UAE', 'Certify+: certification validity requires accreditation body approval'], authority: 'KHDA (Dubai) / ADEK (Abu Dhabi)', difficulty: 'Medium', timeline: '3-6 months', cost: 'AED 50K-150K' },
+      { app: 'CryptoLite (Crypto Services)', licenses: ['VARA (Virtual Asset Regulatory Authority) license — Dubai only', 'OR SCA virtual asset service provider license (federal)', 'Minimum capital: AED 1M-15M (depends on activity type)', 'Shariah compliance certification if offering Islamic crypto', 'AML/CFT enhanced due diligence requirements'], authority: 'VARA (Dubai) or SCA', difficulty: 'Extremely Hard', timeline: '12-24 months', cost: 'AED 1M-15M capital + AED 500K-2M setup' },
+      { app: 'SmartHome / SecurityPlus', licenses: ['Security systems: SIRA (Security Industry Regulatory Agency) license', 'IoT devices: TDRA type approval for wireless devices', 'CCTV/monitoring: SIRA guard + monitoring license', 'Installation services: DED maintenance license'], authority: 'SIRA + TDRA', difficulty: 'Medium-Hard', timeline: '3-6 months', cost: 'AED 100K-300K' },
+    ],
     networkEffect: 'SUPER-APP COMPLETE. Every company strengthens every other company. Users never need to leave. Self-reinforcing, self-growing, self-monetizing. AED 2B+ annual revenue potential.',
   },
 ];
@@ -1087,6 +1154,54 @@ export default function RTMNEcosystemPage() {
                     </h4>
                     <p className="text-purple-300 text-sm leading-relaxed font-medium">{step.networkEffect}</p>
                   </div>
+
+                  {/* Licenses & Regulatory Requirements */}
+                  {step.licensesNeeded && step.licensesNeeded.length > 0 && (
+                    <div className="mt-5 bg-slate-900/40 rounded-xl p-4 border border-amber-500/30">
+                      <h4 className="text-white font-bold text-sm mb-4 flex items-center gap-2">
+                        <FileText className="w-4 h-4 text-amber-400" />
+                        Licenses & Regulatory Requirements
+                        <span className="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full text-xs ml-auto">
+                          {step.licensesNeeded.length} {step.licensesNeeded.length === 1 ? 'area' : 'areas'}
+                        </span>
+                      </h4>
+                      <div className="space-y-3">
+                        {step.licensesNeeded.map((license: { app: string; licenses: string[]; authority: string; difficulty: string; timeline: string; cost: string }, li: number) => (
+                          <div key={li} className="bg-slate-800/60 rounded-xl p-3 border border-slate-700/50">
+                            <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+                              <span className="text-white font-bold text-sm">{license.app}</span>
+                              <div className="flex items-center gap-2">
+                                <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${
+                                  license.difficulty === 'None' || license.difficulty === 'Easy' || license.difficulty === 'Low'
+                                    ? 'bg-emerald-500/20 text-emerald-400'
+                                    : license.difficulty === 'Easy-Medium' || license.difficulty === 'Medium'
+                                    ? 'bg-yellow-500/20 text-yellow-400'
+                                    : license.difficulty === 'Medium-Hard' || license.difficulty === 'Hard'
+                                    ? 'bg-orange-500/20 text-orange-400'
+                                    : 'bg-red-500/20 text-red-400'
+                                }`}>
+                                  {license.difficulty}
+                                </span>
+                                <span className="text-slate-500 text-[10px]">{license.timeline}</span>
+                              </div>
+                            </div>
+                            <div className="space-y-1 mb-2">
+                              {license.licenses.map((lic: string, idx: number) => (
+                                <div key={idx} className="flex items-start gap-2 text-xs">
+                                  <Shield className="w-3 h-3 text-amber-400/70 flex-shrink-0 mt-0.5" />
+                                  <span className="text-slate-300">{lic}</span>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="flex items-center justify-between text-[10px] pt-2 border-t border-slate-700/50">
+                              <span className="text-slate-500">Authority: <span className="text-slate-400">{license.authority}</span></span>
+                              <span className="text-slate-500">Est. Cost: <span className="text-amber-400 font-medium">{license.cost}</span></span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Step Navigation */}
