@@ -32,8 +32,11 @@ const sisterCompanies = [
     phase: 1,
     apps: [
       { name: 'Nuqta+', href: '/nuqta-plus', icon: Crown, description: 'Membership & rewards' },
+      { name: 'Nuqta+ Card', href: '/nuqta-plus', icon: CreditCard, description: 'Premium member card' },
       { name: 'Qist', href: '/qist', icon: Wallet, description: 'Buy Now Pay Later' },
+      { name: 'Qist Card', href: '/qist', icon: CreditCard, description: 'Virtual BNPL card' },
       { name: 'Gamification', href: '/gamification', icon: Gamepad2, description: 'Engagement engine' },
+      { name: 'Nuqta Coins', href: '/nuqta-plus', icon: Coins, description: 'Universal rewards currency' },
     ],
     revenue: 'AED 89-175M/yr',
     status: 'Active',
@@ -54,13 +57,17 @@ const sisterCompanies = [
     phase: 1,
     apps: [
       { name: 'Wasil', href: '/wasil', icon: Truck, description: 'Quick commerce delivery' },
+      { name: 'Wasil+', href: '/wasil', icon: Crown, description: 'Premium delivery subscription' },
       { name: 'Sakin', href: '/sakin', icon: Home, description: 'Rent financing' },
+      { name: 'Sakin Short Stay', href: '/sakin', icon: Building2, description: 'Short-term rentals' },
       { name: 'Ajer', href: '/ajer', icon: Package, description: 'Rental marketplace' },
       { name: 'Wasil Fresh', href: '/wasil-apps', icon: ShoppingCart, description: 'Grocery delivery' },
       { name: 'Wasil Pharmacy', href: '/wasil-apps', icon: Package, description: 'Medicine delivery' },
       { name: 'Wasil Food', href: '/wasil-apps', icon: Package, description: 'Restaurant delivery' },
       { name: 'Wasil Mall', href: '/wasil-apps', icon: Store, description: 'Retail delivery' },
       { name: 'Wasil Express', href: '/wasil-apps', icon: Truck, description: 'Same-day courier' },
+      { name: 'Wasil Laundry', href: '/wasil-apps', icon: Package, description: 'Laundry pickup' },
+      { name: 'Wasil Gifts', href: '/wasil-apps', icon: Gift, description: 'Gift delivery' },
     ],
     revenue: 'AED 150-300M/yr',
     status: 'Active',
@@ -81,14 +88,17 @@ const sisterCompanies = [
     phase: 1,
     apps: [
       { name: 'Hawil', href: '/hawil', icon: ArrowLeftRight, description: 'Remittance at Google rate' },
+      { name: 'Hawil Card', href: '/hawil', icon: CreditCard, description: 'Prepaid tourist card' },
+      { name: 'Hawil Wallet', href: '/hawil', icon: Wallet, description: 'Multi-currency wallet' },
       { name: 'NuqtaPay', href: '/rtmn-finance', icon: CreditCard, description: 'Payment processing' },
-      { name: 'Hawil Card', href: '/rtmn-finance', icon: CreditCard, description: 'Prepaid tourist card' },
+      { name: 'NuqtaPay POS', href: '/rtmn-finance', icon: Store, description: 'Merchant terminals' },
       { name: 'Merchant Credit', href: '/rtmn-finance', icon: Store, description: 'Working capital' },
       { name: 'Consumer Credit', href: '/rtmn-finance', icon: Users, description: 'Personal financing' },
       { name: 'Qist Engine', href: '/rtmn-finance', icon: Wallet, description: 'BNPL infrastructure' },
       { name: 'FX Platform', href: '/rtmn-finance', icon: Globe, description: 'Currency exchange' },
       { name: 'Compliance Suite', href: '/rtmn-finance', icon: Shield, description: 'AML/KYC system' },
       { name: 'Treasury', href: '/rtmn-finance', icon: Building2, description: 'Fund management' },
+      { name: 'Credit Scoring', href: '/rtmn-finance', icon: TrendingUp, description: 'AI credit engine' },
     ],
     revenue: 'AED 200-400M/yr',
     status: 'Active',
@@ -109,16 +119,20 @@ const sisterCompanies = [
     phase: 2,
     apps: [
       { name: 'Safar', href: '/safar', icon: Plane, description: 'Travel booking' },
-      { name: 'Rakab', href: '/rakab', icon: Car, description: 'Ride-hailing' },
-      { name: 'Fakhir', href: '/fakhir', icon: Crown, description: 'Luxury concierge' },
-      { name: 'Airzy', href: '/travel-co', icon: Plane, description: 'Airport services' },
-      { name: 'Safar Visa', href: '/travel-co', icon: FileText, description: 'Visa processing' },
+      { name: 'Safar Flights', href: '/safar', icon: Plane, description: 'Flight booking' },
       { name: 'Safar Hotels', href: '/travel-co', icon: Building2, description: 'Hotel booking' },
+      { name: 'Safar Visa', href: '/travel-co', icon: FileText, description: 'Visa processing' },
       { name: 'Safar Experiences', href: '/travel-co', icon: Ticket, description: 'Activity booking' },
+      { name: 'Rakab', href: '/rakab', icon: Car, description: 'Ride-hailing' },
       { name: 'Rakab Business', href: '/travel-co', icon: Briefcase, description: 'Corporate mobility' },
+      { name: 'Rakab Driver', href: '/rakab', icon: Car, description: 'Driver app' },
+      { name: 'Fakhir', href: '/fakhir', icon: Crown, description: 'Luxury concierge' },
       { name: 'Fakhir Jets', href: '/travel-co', icon: Plane, description: 'Private aviation' },
       { name: 'Fakhir Yachts', href: '/travel-co', icon: MapPin, description: 'Yacht charters' },
       { name: 'Fakhir Events', href: '/travel-co', icon: Ticket, description: 'VIP experiences' },
+      { name: 'Airzy', href: '/travel-co', icon: Plane, description: 'Airport services' },
+      { name: 'Airzy Lounge', href: '/travel-co', icon: Crown, description: 'Lounge access' },
+      { name: 'Airzy FX', href: '/travel-co', icon: ArrowLeftRight, description: 'Airport currency' },
     ],
     revenue: 'AED 180-350M/yr',
     status: 'Phase 2',
@@ -144,6 +158,8 @@ const sisterCompanies = [
       { name: 'BizOne Analytics', href: '/bizone', icon: BarChart3, description: 'Business insights' },
       { name: 'BizOne Staff', href: '/bizone', icon: Users, description: 'HR & payroll' },
       { name: 'BizOne Menu', href: '/bizone', icon: FileText, description: 'Digital menus' },
+      { name: 'BizOne Booking', href: '/bizone', icon: Calendar, description: 'Appointment system' },
+      { name: 'BizOne Loyalty', href: '/bizone', icon: Crown, description: 'Loyalty program' },
     ],
     revenue: 'AED 50-100M/yr',
     status: 'Phase 2',
@@ -167,6 +183,8 @@ const sisterCompanies = [
       { name: 'Inventora Finance', href: '/inventora', icon: DollarSign, description: 'Inventory financing' },
       { name: 'Inventora Logistics', href: '/inventora', icon: Truck, description: 'B2B delivery' },
       { name: 'Inventora Forecast', href: '/inventora', icon: TrendingUp, description: 'Demand prediction' },
+      { name: 'Inventora Supplier', href: '/inventora', icon: Users, description: 'Supplier portal' },
+      { name: 'Inventora Track', href: '/inventora', icon: MapPin, description: 'Shipment tracking' },
     ],
     revenue: 'AED 80-160M/yr',
     status: 'Phase 2',
@@ -190,6 +208,8 @@ const sisterCompanies = [
       { name: 'NextaBizz Bulk', href: '/nextabizz', icon: Package, description: 'Bulk ordering' },
       { name: 'NextaBizz Credit', href: '/nextabizz', icon: Wallet, description: 'Trade financing' },
       { name: 'NextaBizz Import', href: '/nextabizz', icon: Globe, description: 'Import facilitation' },
+      { name: 'NextaBizz Supplier', href: '/nextabizz', icon: Factory, description: 'Supplier network' },
+      { name: 'NextaBizz Export', href: '/nextabizz', icon: Plane, description: 'Export services' },
     ],
     revenue: 'AED 120-240M/yr',
     status: 'Phase 3',
@@ -214,6 +234,8 @@ const sisterCompanies = [
       { name: 'Adzy Analytics', href: '/adzy', icon: BarChart3, description: 'Ad performance' },
       { name: 'Adzy Creative', href: '/adzy', icon: Sparkles, description: 'Creative studio' },
       { name: 'Adzy Influencer', href: '/adzy', icon: Users, description: 'Influencer platform' },
+      { name: 'Adzy Merchant', href: '/adzy', icon: Store, description: 'Merchant ads portal' },
+      { name: 'Adzy Retarget', href: '/adzy', icon: RefreshCw, description: 'Retargeting engine' },
     ],
     revenue: 'AED 50-150M/yr',
     status: 'Phase 2',
@@ -238,6 +260,8 @@ const sisterCompanies = [
       { name: 'Rabtul APIs', href: '/rabtul', icon: Code, description: 'API gateway' },
       { name: 'Rabtul Data', href: '/rabtul', icon: Database, description: 'Data platform' },
       { name: 'Rabtul Security', href: '/rabtul', icon: Shield, description: 'Security services' },
+      { name: 'Rabtul CDN', href: '/rabtul', icon: Globe, description: 'Content delivery' },
+      { name: 'Rabtul Analytics', href: '/rabtul', icon: LineChart, description: 'Real-time analytics' },
     ],
     revenue: 'AED 30-60M/yr',
     status: 'Active',
@@ -261,6 +285,8 @@ const sisterCompanies = [
       { name: 'Eventora Host', href: '/eventora', icon: Users, description: 'Event management' },
       { name: 'Eventora Venues', href: '/eventora', icon: MapPin, description: 'Venue booking' },
       { name: 'Eventora Corporate', href: '/eventora', icon: Building2, description: 'Corporate events' },
+      { name: 'Eventora Sports', href: '/eventora', icon: Activity, description: 'Sports events' },
+      { name: 'Eventora Concerts', href: '/eventora', icon: Megaphone, description: 'Concert ticketing' },
     ],
     revenue: 'AED 40-80M/yr',
     status: 'Phase 3',
@@ -433,6 +459,7 @@ export default function RTMNDashboardPage() {
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Network },
     { id: 'companies', label: 'Companies', icon: Building2 },
+    { id: 'apps', label: 'All Apps', icon: Sparkles },
     { id: 'value-chain', label: 'Value Chain', icon: Layers },
     { id: 'synergies', label: 'Synergies', icon: RefreshCw },
     { id: 'phases', label: 'Launch Phases', icon: Calendar },
@@ -728,6 +755,162 @@ export default function RTMNDashboardPage() {
                 </div>
               );
             })}
+          </div>
+        )}
+
+        {/* All Apps Tab */}
+        {activeTab === 'apps' && (
+          <div className="space-y-8">
+            {/* Stats Banner */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-purple-500/10 rounded-xl p-6 border-2 border-[#c9a227]">
+              <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#c9a227]" />
+                Complete RTMN Ecosystem - All Apps & Products
+              </h2>
+              <p className="text-slate-300 mb-4">
+                50+ apps and platforms across 10 sister companies, creating the most comprehensive
+                closed-loop digital economy in the GCC.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-[#c9a227]/30">
+                  <div className="text-2xl font-bold text-[#c9a227]">{sisterCompanies.reduce((acc, c) => acc + c.apps.length, 0)}</div>
+                  <div className="text-xs text-slate-400">Total Apps</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-emerald-500/30">
+                  <div className="text-2xl font-bold text-emerald-400">10</div>
+                  <div className="text-xs text-slate-400">Companies</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-blue-500/30">
+                  <div className="text-2xl font-bold text-blue-400">3</div>
+                  <div className="text-xs text-slate-400">Payment Cards</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-purple-500/30">
+                  <div className="text-2xl font-bold text-purple-400">6</div>
+                  <div className="text-xs text-slate-400">GCC Countries</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cards Section */}
+            <div className="bg-blue-500/10 rounded-xl p-6 border-2 border-blue-500">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <CreditCard className="w-5 h-5 text-blue-400" />
+                Payment Cards
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-blue-500/30">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                      <CreditCard className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold">Hawil Card</div>
+                      <div className="text-blue-400 text-sm">بطاقة حوّل</div>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 text-sm mb-3">Tourist & expat prepaid card with Google rate FX. Works across entire ecosystem.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-blue-500/20 px-2 py-1 rounded text-blue-400">0% FX Markup</span>
+                    <span className="text-xs bg-emerald-500/20 px-2 py-1 rounded text-emerald-400">Apple Pay</span>
+                    <span className="text-xs bg-purple-500/20 px-2 py-1 rounded text-purple-400">Virtual + Physical</span>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-[#c9a227]/30">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#c9a227] to-amber-600 flex items-center justify-center">
+                      <CreditCard className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold">Nuqta+ Card</div>
+                      <div className="text-[#c9a227] text-sm">بطاقة نقطة+</div>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 text-sm mb-3">Premium membership card with exclusive rewards and priority access at 500+ merchants.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-[#c9a227]/20 px-2 py-1 rounded text-[#c9a227]">2X Coins</span>
+                    <span className="text-xs bg-emerald-500/20 px-2 py-1 rounded text-emerald-400">VIP Access</span>
+                    <span className="text-xs bg-purple-500/20 px-2 py-1 rounded text-purple-400">Metal Card</span>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-5 border border-violet-500/30">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
+                      <CreditCard className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <div className="text-white font-bold">Qist Card</div>
+                      <div className="text-violet-400 text-sm">بطاقة قسط</div>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 text-sm mb-3">BNPL virtual card for split payments over 3-12 months at any merchant.</p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-xs bg-violet-500/20 px-2 py-1 rounded text-violet-400">0% Interest</span>
+                    <span className="text-xs bg-emerald-500/20 px-2 py-1 rounded text-emerald-400">Instant Approval</span>
+                    <span className="text-xs bg-blue-500/20 px-2 py-1 rounded text-blue-400">Flexible Terms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* All Apps by Company */}
+            {sisterCompanies.map((company) => (
+              <div key={company.id} className={`${company.bgColor} rounded-xl p-6 border-2 ${company.borderColor}`}>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${company.color} flex items-center justify-center`}>
+                      <company.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className={`text-lg font-bold ${company.textColor}`}>{company.name}</h3>
+                      <p className="text-sm text-slate-400">{company.tagline} • {company.apps.length} apps</p>
+                    </div>
+                  </div>
+                  <Link
+                    href={company.dashboardHref}
+                    className={`text-sm ${company.textColor} hover:underline flex items-center gap-1`}
+                  >
+                    Dashboard <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+                  {company.apps.map((app, i) => (
+                    <Link
+                      key={i}
+                      href={app.href}
+                      className="bg-slate-900/50 rounded-lg p-3 border border-slate-700/50 hover:border-slate-600 transition-all group"
+                    >
+                      <app.icon className={`w-5 h-5 ${company.textColor} mb-2`} />
+                      <div className="text-sm font-medium text-white group-hover:text-[#c9a227] transition-colors">{app.name}</div>
+                      <div className="text-xs text-slate-500">{app.description}</div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            {/* Future Apps */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <Rocket className="w-5 h-5 text-purple-400" />
+                Future Products (2028+)
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { name: "Jame'", arabic: 'جامع', description: 'Savings & Investment', icon: PieChart, color: 'text-amber-400' },
+                  { name: "Ta'meen", arabic: 'تأمين', description: 'Insurance Platform', icon: Shield, color: 'text-red-400' },
+                  { name: 'Nuqta Pay', arabic: 'نقطة باي', description: 'QR Payments', icon: CreditCard, color: 'text-green-400' },
+                  { name: 'Seha', arabic: 'صحة', description: 'Healthcare & Telemedicine', icon: Activity, color: 'text-pink-400' },
+                ].map((product, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/30">
+                    <product.icon className={`w-6 h-6 ${product.color} mb-2`} />
+                    <div className={`font-bold ${product.color}`}>{product.name}</div>
+                    <div className="text-xs text-slate-500">{product.arabic}</div>
+                    <div className="text-sm text-slate-400 mt-1">{product.description}</div>
+                    <span className="inline-block mt-2 text-xs bg-purple-500/20 px-2 py-1 rounded text-purple-400">Planned</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
