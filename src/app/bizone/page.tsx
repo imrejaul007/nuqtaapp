@@ -429,6 +429,9 @@ export default function BizOnePage() {
          ════════════════════════════════════════════════════════════════ */}
       <div className="bg-gradient-to-br from-[#0a1628] via-blue-900/20 to-[#0a1628] border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+          <Link href="/rtmn-group" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mb-4 text-sm">
+            <ArrowRight className="w-4 h-4 rotate-180" /> Back to RTMN Group
+          </Link>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-500/50 rounded-full mb-6">
             <Store className="w-5 h-5 text-blue-400" />
             <span className="text-blue-400 font-bold">Merchant Operating System</span>
@@ -1621,6 +1624,23 @@ export default function BizOnePage() {
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 text-white border border-slate-700 rounded-xl font-bold hover:bg-slate-700 transition-colors"
             >
               <Package className="w-5 h-5" /> Full Ecosystem
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation Footer */}
+      <section className="bg-slate-800/30 border-t border-slate-700/50 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/rtmn-group" className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors">
+              <Building2 className="w-5 h-5" /> RTMN Group
+            </Link>
+            <Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <Globe className="w-5 h-5" /> RTMN Ecosystem
+            </Link>
+            <Link href="/rtmn-dashboard" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <BarChart3 className="w-5 h-5" /> RTMN Dashboard
             </Link>
           </div>
         </div>
