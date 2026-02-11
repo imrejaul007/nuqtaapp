@@ -299,6 +299,7 @@ const navigationData: NavCategory[] = [
       { label: 'Team', href: '/team', icon: Users },
       { label: 'Careers', href: '/careers', icon: Briefcase },
       { label: 'Terms', href: '/terms', icon: FileText },
+      { label: 'Documentation', href: '/documentation', icon: BookOpen },
     ]
   },
   {

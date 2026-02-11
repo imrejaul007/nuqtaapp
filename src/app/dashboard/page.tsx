@@ -758,6 +758,7 @@ const quickActions = [
   { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle, color: 'text-amber-400', description: 'Track & fix issues' },
   { label: 'Merchant Database', href: '/merchant-database', icon: Store, color: 'text-green-400', description: '500+ merchants' },
   { label: 'Customer Intelligence', href: '/customer-intelligence', icon: Eye, color: 'text-cyan-400', description: 'User insights' },
+  { label: 'System Documentation', href: '/documentation', icon: BookOpen, color: 'text-[#c9a227]', description: 'PM & Dev docs' },
 ];
 
 export default function DashboardPage() {
