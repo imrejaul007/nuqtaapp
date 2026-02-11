@@ -30,6 +30,7 @@ import {
   DollarSign,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA INVESTOR OUTREACH - COMPREHENSIVE DATABASE
@@ -3418,6 +3419,7 @@ Rejaul`,
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

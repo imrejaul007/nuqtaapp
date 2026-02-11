@@ -38,6 +38,7 @@ import {
   ChevronRight,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Campaign interface
 interface Campaign {
@@ -1764,6 +1765,7 @@ function LoadingFallback() {
         <div className="w-12 h-12 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
         <p className="text-slate-400">Loading campaigns...</p>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

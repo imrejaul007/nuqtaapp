@@ -45,6 +45,7 @@ import {
   TrendingDown,
   Percent
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CEO MASTER PLAN & EXECUTION ROADMAP
@@ -1070,6 +1071,7 @@ function RisksAndMitigation() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

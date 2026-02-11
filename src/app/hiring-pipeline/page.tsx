@@ -36,6 +36,7 @@ import {
   UserCheck,
   AlertTriangle
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // NUQTA HIRING PIPELINE TRACKER
@@ -821,6 +822,7 @@ export default function HiringPipelinePage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

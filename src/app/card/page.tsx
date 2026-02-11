@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import Image from 'next/image';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function NuqtaInvestorOnePager() {
   const websiteUrl = 'https://nuqtaapp.com';
@@ -932,6 +933,7 @@ export default function NuqtaInvestorOnePager() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

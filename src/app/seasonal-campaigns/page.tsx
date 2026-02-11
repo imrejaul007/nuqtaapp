@@ -39,6 +39,7 @@ import {
   Gem,
   Crown
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface SeasonalCampaign {
   id: string;
@@ -609,6 +610,7 @@ export default function SeasonalCampaignsPage() {
           })}
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

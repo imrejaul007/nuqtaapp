@@ -6,6 +6,7 @@ import {
   Heart, Zap, Users, Globe, Copy, Check, Target, Star,
   ThumbsUp, ThumbsDown, Volume2, PenTool
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function BrandVoicePage() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -518,6 +519,7 @@ export default function BrandVoicePage() {
           </div>
         )}
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -33,6 +33,7 @@ import {
   BarChart3,
   Zap
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function LaunchSprintPage() {
   const [expandedDay, setExpandedDay] = useState<number | null>(1);
@@ -488,6 +489,7 @@ export default function LaunchSprintPage() {
           <p>14-Day Launch Sprint | Nuqta 2026</p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

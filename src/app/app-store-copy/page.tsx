@@ -25,6 +25,7 @@ import {
   Store,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface AppStoreCopy {
   platform: 'ios' | 'android';
@@ -617,6 +618,7 @@ export default function AppStoreCopyPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

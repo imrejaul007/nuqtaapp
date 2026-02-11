@@ -49,6 +49,7 @@ import {
   Instagram,
   Youtube
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function CampaignsPage() {
   const [activeTab, setActiveTab] = useState('acquisition');
@@ -1084,6 +1085,7 @@ export default function CampaignsPage() {
           <p>Campaign ideas? Share at <a href="mailto:marketing@nuqta.ae" className="text-[#c9a227] hover:underline">marketing@nuqta.ae</a></p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

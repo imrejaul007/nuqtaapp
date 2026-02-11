@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Folder Component
 function Folder({
@@ -1032,6 +1033,7 @@ export default function DataRoomPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

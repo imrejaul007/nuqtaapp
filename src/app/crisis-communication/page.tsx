@@ -6,6 +6,7 @@ import {
   FileText, CheckCircle, XCircle, AlertCircle, Zap, Eye,
   Radio, Mail, Smartphone, Globe, Copy, Check, ChevronDown, ChevronUp, Bell
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface CrisisScenario {
   id: string;
@@ -913,6 +914,7 @@ The Nuqta Team`
           </div>
         )}
       </div>
+    <GlobalFooter />
     </div>
   );
 }

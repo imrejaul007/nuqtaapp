@@ -105,6 +105,7 @@ import {
   Settings
 } from 'lucide-react';
 import MarketingNav from '@/components/MarketingNav';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Component to handle URL params
 function TabHandler({ onTabChange }: { onTabChange: (tab: string) => void }) {
@@ -8619,6 +8620,7 @@ export default function MarketingPlanPage() {
           <p>Marketing Plan | Nuqta 2026</p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

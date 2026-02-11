@@ -26,6 +26,7 @@ import {
   Edit,
   Printer
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * LEGAL DOCUMENTS PAGE
@@ -8811,6 +8812,7 @@ const LegalDocumentsPage = () => {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 };

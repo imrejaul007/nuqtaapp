@@ -15,6 +15,7 @@ import {
   Copy,
   Check
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function ContractsPage() {
   const [activeTab, setActiveTab] = useState<'merchant-a' | 'merchant-b' | 'merchant-c' | 'corporate' | 'copartner'>('merchant-a');
@@ -1032,6 +1033,7 @@ Minimum Distribution: AED 1,000`;
           </pre>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

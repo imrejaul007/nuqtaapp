@@ -38,6 +38,7 @@ import {
   Activity,
   Gauge
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CFO AGENT PAGE
@@ -875,6 +876,7 @@ function FinancialMetrics() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

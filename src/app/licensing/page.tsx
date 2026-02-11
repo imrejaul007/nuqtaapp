@@ -15,6 +15,7 @@ import {
   Scale,
   Landmark
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function LicensingPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'uae' | 'payments' | 'bnpl' | 'timeline'>('overview');
@@ -869,6 +870,7 @@ function TimelineTab() {
           Razorpay and BNPL integrations have no upfront costs (transaction-based fees only).
         </p>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

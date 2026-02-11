@@ -1,5 +1,7 @@
 'use client';
 
+import GlobalFooter from '@/components/GlobalFooter';
+
 export default function ExecutionPlanPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
@@ -1198,6 +1200,7 @@ export default function ExecutionPlanPage() {
         </section>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

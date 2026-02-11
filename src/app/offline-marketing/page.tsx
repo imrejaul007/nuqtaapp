@@ -35,6 +35,7 @@ import {
   Heart,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * OFFLINE MARKETING PLAYBOOK
@@ -768,6 +769,7 @@ export default function OfflineMarketingPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

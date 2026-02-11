@@ -35,6 +35,7 @@ import {
   Award,
   Building2
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface MerchantLead {
   id: string;
@@ -695,6 +696,7 @@ export default function MerchantPipelinePage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

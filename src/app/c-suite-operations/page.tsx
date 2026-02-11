@@ -33,6 +33,7 @@ import {
   Heart,
   Award
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * C-SUITE OPERATIONS CENTER
@@ -1665,6 +1666,7 @@ function MeetingMoM() {
           ))}
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

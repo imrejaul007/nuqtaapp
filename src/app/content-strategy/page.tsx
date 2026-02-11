@@ -44,6 +44,7 @@ import {
   TrendingDown,
   ArrowUpRight
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface StrategyPhase {
   id: string;
@@ -964,6 +965,7 @@ export default function ContentStrategyPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

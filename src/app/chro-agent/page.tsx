@@ -36,6 +36,7 @@ import {
   Handshake,
   Smile
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CHRO AGENT PAGE
@@ -860,6 +861,7 @@ function PeopleMetrics() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

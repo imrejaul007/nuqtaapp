@@ -36,6 +36,7 @@ import {
   MessageCircle,
   ThumbsUp
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface Tier {
   name: string;
@@ -541,6 +542,7 @@ export default function GamificationPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

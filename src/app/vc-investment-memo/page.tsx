@@ -45,6 +45,7 @@ import {
   Crown,
   Gavel
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // INSTITUTIONAL VC INVESTMENT MEMO
@@ -663,6 +664,7 @@ export default function VCInvestmentMemoPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

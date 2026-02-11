@@ -13,6 +13,7 @@ import {
   ChevronRight,
   ExternalLink
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface FAQItem {
   question: string;
@@ -458,6 +459,7 @@ export default function InvestorFAQPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -8,6 +8,7 @@ import {
   Smartphone, Globe, Crown, Gift, Store, Mic, Camera, PenTool, BarChart3,
   AlertTriangle, Heart, Map, Layers, BookOpen, ChevronRight, ExternalLink
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface ResourceCard {
   title: string;
@@ -656,6 +657,7 @@ export default function MarketingHubPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

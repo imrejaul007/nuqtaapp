@@ -30,6 +30,7 @@ import {
   Search,
   Filter
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA CAREERS PAGE
@@ -953,6 +954,7 @@ export default function CareersPage() {
           </Link>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

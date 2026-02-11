@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Commitment Section Component
 function CommitmentSection({
@@ -340,6 +341,7 @@ export default function FounderCommitment() {
           </a>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

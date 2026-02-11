@@ -36,6 +36,7 @@ import {
   DollarSign,
   Handshake
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface PartnerType {
   name: string;
@@ -568,6 +569,7 @@ export default function PartnershipFrameworkPage() {
           </Link>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

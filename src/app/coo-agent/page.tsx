@@ -40,6 +40,7 @@ import {
   Headphones,
   DollarSign
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * COO AGENT REPORT
@@ -922,6 +923,7 @@ function SuccessMetrics() {
           </span>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -22,6 +22,7 @@ import {
   Star,
   Zap
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function SalesKitPage() {
   const [activeTab, setActiveTab] = useState<'scripts' | 'objections' | 'process' | 'materials'>('scripts');
@@ -626,6 +627,7 @@ function MaterialsTab() {
           ))}
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

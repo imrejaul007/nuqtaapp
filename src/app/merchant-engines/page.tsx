@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA MERCHANT ENGINES
@@ -540,6 +541,7 @@ function EngineC() {
           Exhibition Deck →
         </Link>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

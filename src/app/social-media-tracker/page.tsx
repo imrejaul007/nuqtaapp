@@ -30,6 +30,7 @@ import {
   Crown,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * SOCIAL MEDIA TRACKER
@@ -718,6 +719,7 @@ export default function SocialMediaTrackerPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

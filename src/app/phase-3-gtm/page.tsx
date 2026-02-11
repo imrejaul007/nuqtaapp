@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle2, Trophy, Users, Target, Zap, TrendingUp, DollarSign, Globe, Building2, Sparkles, Crown, Rocket } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function Phase3GTMPage() {
   return (
@@ -624,6 +625,7 @@ export default function Phase3GTMPage() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -38,6 +38,7 @@ import {
   Database,
   Cog
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // COO COMPREHENSIVE OPERATIONS ANALYSIS
@@ -708,6 +709,7 @@ export default function COOAnalysisPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

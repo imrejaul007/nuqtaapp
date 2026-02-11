@@ -34,6 +34,7 @@ import {
   Zap,
   Award
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface Influencer {
   id: string;
@@ -1136,6 +1137,7 @@ No pressure at all - just thought it'd be a fun collab! Let me know if you're in
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

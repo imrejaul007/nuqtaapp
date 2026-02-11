@@ -40,6 +40,7 @@ import {
   PieChart,
   Calendar
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface CategoryPage {
   id: string;
@@ -664,6 +665,7 @@ export default function AgencyPagesPage() {
           </p>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import PasswordProtection from '@/components/PasswordProtection';
 import PitchDeck from '@/components/PitchDeck';
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Intersection Observer Hook for scroll animations
 function useInView(options = {}) {
@@ -2370,6 +2371,7 @@ export default function Home() {
             </div>
           </div>
         </footer>
+      <GlobalFooter />
       </div>
 
       {/* Custom Animations */}

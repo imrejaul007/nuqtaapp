@@ -7,6 +7,7 @@ import {
   ArrowUpRight, ArrowDownRight, Activity, Layers, Bell, Settings,
   ChevronDown, ChevronUp, Smartphone, Mail, MessageCircle
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface DashboardMetric {
   name: string;
@@ -807,6 +808,7 @@ export default function AnalyticsDashboardPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

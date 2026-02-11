@@ -39,6 +39,7 @@ import {
   Scale,
   Activity
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CEO AGENT PAGE
@@ -904,6 +905,7 @@ function SuccessMetrics() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

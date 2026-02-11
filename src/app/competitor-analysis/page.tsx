@@ -31,6 +31,7 @@ import {
   Coins,
   Network
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA COMPETITOR ANALYSIS
@@ -2097,6 +2098,7 @@ export default function CompetitorAnalysisPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

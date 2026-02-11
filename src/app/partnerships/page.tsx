@@ -46,6 +46,7 @@ import {
   Layers,
   ArrowRight
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface Partnership {
   id: string;
@@ -2488,6 +2489,7 @@ export default function PartnershipsPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

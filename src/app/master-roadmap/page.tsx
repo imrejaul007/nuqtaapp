@@ -1,5 +1,7 @@
 'use client';
 
+import GlobalFooter from '@/components/GlobalFooter';
+
 export default function MasterRoadmapPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
@@ -441,6 +443,7 @@ export default function MasterRoadmapPage() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

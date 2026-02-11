@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MerchantDatabase() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -1335,6 +1336,7 @@ export default function MerchantDatabase() {
           </p>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

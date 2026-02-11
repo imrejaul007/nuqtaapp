@@ -39,6 +39,7 @@ import {
   Bell,
   Award
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface BigPrize {
   id: string;
@@ -704,6 +705,7 @@ export default function BigWinCampaignsPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

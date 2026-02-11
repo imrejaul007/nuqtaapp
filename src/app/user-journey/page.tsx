@@ -19,6 +19,7 @@ import {
   Target,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function UserJourneyPage() {
   const [activeTab, setActiveTab] = useState<'journey' | 'onboarding' | 'engagement' | 'retention'>('journey');
@@ -724,6 +725,7 @@ function RetentionTab() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

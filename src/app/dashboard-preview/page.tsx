@@ -21,6 +21,7 @@ import {
   ChevronRight,
   Filter
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function DashboardPreviewPage() {
   const [activeTab, setActiveTab] = useState<'merchant' | 'admin' | 'user'>('merchant');
@@ -630,6 +631,7 @@ function UserApp() {
           ))}
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -34,6 +34,7 @@ import {
   MapPin,
   Handshake
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CEO AGENT REPORT
@@ -1011,6 +1012,7 @@ function SuccessMetrics() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

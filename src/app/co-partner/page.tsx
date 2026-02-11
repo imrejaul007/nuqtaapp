@@ -34,6 +34,7 @@ import {
   MessageSquare,
   ShoppingCart
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function CoPartnerPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'model' | 'verticals' | 'marketing' | 'fleet' | 'process' | 'faq'>('overview');
@@ -1240,6 +1241,7 @@ function FAQTab() {
           </a>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

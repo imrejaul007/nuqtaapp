@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // DataPoint Tooltip Component for statistics with sources
 function DataPoint({
@@ -574,6 +575,7 @@ export default function InvestorMemo() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -49,6 +49,7 @@ import {
   CheckCircle,
   AlertCircle
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // =============================================
 // TOP 20 NICHE CAMPAIGNS - PRIORITY VERTICALS
@@ -1726,6 +1727,7 @@ export default function Top20CampaignsPage() {
           Top 20 Niche Campaigns v1.0 • {totalCampaigns} Campaigns Ready • Last Updated: February 2026
         </p>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

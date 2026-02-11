@@ -46,6 +46,7 @@ import {
   Award,
   Calendar
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MerchantPackagesPage() {
   const [activeEngine, setActiveEngine] = useState<'A' | 'B' | 'C'>('A');
@@ -791,6 +792,7 @@ export default function MerchantPackagesPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

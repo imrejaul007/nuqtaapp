@@ -67,6 +67,7 @@ import {
   Download,
   ExternalLink
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function CMOPlaybookPage() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -1516,6 +1517,7 @@ export default function CMOPlaybookPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

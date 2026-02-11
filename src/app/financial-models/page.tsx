@@ -24,6 +24,7 @@ import {
   AlertCircle,
   Info
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA FINANCIAL MODELS
@@ -1000,6 +1001,7 @@ export default function FinancialModelsPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

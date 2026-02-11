@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import PitchDeckNew from '@/components/PitchDeckNew';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function DeckNewPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function DeckNewPage() {
   return (
     <div className="min-h-screen bg-[#0a1628]">
       <PitchDeckNew isOpen={isOpen} onClose={handleClose} />
+    <GlobalFooter />
     </div>
   );
 }

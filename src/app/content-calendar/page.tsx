@@ -35,6 +35,7 @@ import {
   Camera,
   Smartphone
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface ContentPost {
   id: string;
@@ -1224,6 +1225,7 @@ export default function ContentCalendarPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -35,6 +35,7 @@ import {
   AlertCircle,
   Gauge
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 type TabType = 'dashboard' | 'assumptions' | 'h1' | 'h2' | 'h3' | 'cashflow' | 'pnl' | 'sensitivity';
 
@@ -2617,6 +2618,7 @@ function RevenueStreamCard({
           FREE Year 1
         </span>
       )}
+    <GlobalFooter />
     </div>
   );
 }

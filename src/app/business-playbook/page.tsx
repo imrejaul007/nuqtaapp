@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA BUSINESS PLAYBOOK
@@ -1125,6 +1126,7 @@ function CoPartnerTab() {
         </p>
         <p className="text-lg font-bold text-white mt-4">This is merchant-led growth, not brand micromanagement.</p>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

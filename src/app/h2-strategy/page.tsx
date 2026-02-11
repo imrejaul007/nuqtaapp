@@ -1,5 +1,7 @@
 'use client';
 
+import GlobalFooter from '@/components/GlobalFooter';
+
 export default function H2StrategyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white">
@@ -902,6 +904,7 @@ export default function H2StrategyPage() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

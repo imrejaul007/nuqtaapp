@@ -37,6 +37,7 @@ import {
   Scale,
   Layers
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // CEO COMPREHENSIVE STRATEGIC ANALYSIS
@@ -796,6 +797,7 @@ export default function CEOAnalysisPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

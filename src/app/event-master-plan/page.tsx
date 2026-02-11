@@ -43,6 +43,7 @@ import {
   ArrowDownRight,
   AlertTriangle
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * 60 EVENTS IN 6 MONTHS - MASTER PLAN
@@ -1120,6 +1121,7 @@ export default function EventMasterPlanPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

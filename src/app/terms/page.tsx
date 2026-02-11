@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Term Card Component
 function TermCard({
@@ -385,6 +386,7 @@ export default function TermsPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

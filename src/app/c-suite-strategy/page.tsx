@@ -33,6 +33,7 @@ import {
   LineChart,
   MapPin
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * C-SUITE STRATEGIC ANALYSIS
@@ -1703,6 +1704,7 @@ function CFOSection() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -30,6 +30,7 @@ import {
   Zap,
   Heart
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface Template {
   id: string;
@@ -1189,6 +1190,7 @@ export default function SupportTemplatesPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

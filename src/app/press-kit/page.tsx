@@ -24,6 +24,7 @@ import {
   Mail,
   Phone
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function PressKitPage() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -762,6 +763,7 @@ export default function PressKitPage() {
           <p className="mt-2">© 2026 Nuqta. All rights reserved.</p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

@@ -76,6 +76,7 @@ import {
   Lightbulb,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface ChecklistItem {
   id: string;
@@ -664,6 +665,7 @@ export default function LaunchReadinessPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

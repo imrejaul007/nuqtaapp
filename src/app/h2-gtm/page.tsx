@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle2, Heart, Home, Target, Zap, TrendingUp, DollarSign, Users, Building2, Sparkles, AlertTriangle } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function H2GTMPage() {
   return (
@@ -459,6 +460,7 @@ export default function H2GTMPage() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

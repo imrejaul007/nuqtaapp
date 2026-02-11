@@ -38,6 +38,7 @@ import {
   Radio,
   Camera
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CMO AGENT REPORT
@@ -1367,6 +1368,7 @@ export default function CMOReportPage() {
           </div>
         )}
       </div>
+    <GlobalFooter />
     </div>
   );
 }

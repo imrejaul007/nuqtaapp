@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CO-FOUNDER / CTO RECRUITMENT PAGE
@@ -400,6 +401,7 @@ export default function JoinUsPage() {
           </Link>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

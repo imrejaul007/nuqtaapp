@@ -28,6 +28,7 @@ import {
   UserPlus,
   Calendar
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // NUQTA ORG CHART - HORIZON-BASED STRUCTURE
@@ -586,6 +587,7 @@ export default function OrgChartPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

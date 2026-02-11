@@ -23,6 +23,7 @@ import {
   LineChart,
   Calculator
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * THREE FINANCIAL SCENARIOS
@@ -1539,6 +1540,7 @@ function ComparisonTable({ activeScenario }: { activeScenario: Scenario }) {
           If revenue grows faster than expected, you might never need Series A.
         </p>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

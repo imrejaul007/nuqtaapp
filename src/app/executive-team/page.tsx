@@ -1,4 +1,5 @@
 import ExecutiveTeam from '@/components/ExecutiveTeam';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export const metadata = {
   title: 'Executive Leadership Team | Nuqta',
@@ -6,5 +7,10 @@ export const metadata = {
 };
 
 export default function ExecutiveTeamPage() {
-  return <ExecutiveTeam />;
+  return (
+    <>
+      <ExecutiveTeam />
+      <GlobalFooter />
+    </>
+  );
 }

@@ -6,6 +6,7 @@ import {
   Smartphone, Mail, Bell, Target, Heart, TrendingUp, CheckCircle, AlertCircle,
   Zap, Coffee, Car, Plane, Home, Briefcase, GraduationCap, Users
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface JourneyStage {
   name: string;
@@ -664,6 +665,7 @@ export default function CustomerJourneysPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

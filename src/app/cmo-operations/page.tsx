@@ -7,6 +7,7 @@ import {
   BarChart3, PieChart, ArrowRight, ChevronDown, ChevronUp, Copy, Check,
   Shield, Zap, Eye, Settings, Bell, Layers, GitBranch, ClipboardList
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function CMOOperationsPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('budget');
@@ -606,6 +607,7 @@ KEY METRICS:
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

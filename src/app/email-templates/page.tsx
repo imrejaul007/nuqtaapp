@@ -20,6 +20,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface EmailTemplate {
   id: string;
@@ -1019,6 +1020,7 @@ Link: ${template.ctaLink}`;
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

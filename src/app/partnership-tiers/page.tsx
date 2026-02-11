@@ -38,6 +38,7 @@ import {
   Award,
   Smartphone
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function PartnershipTiersPage() {
   const [expandedCategory, setExpandedCategory] = useState<string | null>('platform');
@@ -540,6 +541,7 @@ export default function PartnershipTiersPage() {
           <p>Questions about partnership tiers? <a href="mailto:merchants@nuqta.ae" className="text-[#c9a227] hover:underline">merchants@nuqta.ae</a></p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

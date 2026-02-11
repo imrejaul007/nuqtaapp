@@ -1,6 +1,7 @@
 'use client';
 
 import { CheckCircle2, ArrowRight, Target, Zap, TrendingUp, Building2, Globe, Trophy, MapPin, Users, DollarSign, Sparkles } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function GTMMainPage() {
   return (
@@ -473,6 +474,7 @@ export default function GTMMainPage() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -39,6 +39,7 @@ import {
   Crown,
   Sparkles
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MerchantAcquisitionPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('pitch');
@@ -641,6 +642,7 @@ export default function MerchantAcquisitionPage() {
           <p>Merchant Acquisition Playbook | Nuqta 2026</p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

@@ -36,6 +36,7 @@ import {
   Gauge,
   Flag
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // CFO COMPREHENSIVE FINANCIAL ANALYSIS
@@ -784,6 +785,7 @@ export default function CFOAnalysisPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

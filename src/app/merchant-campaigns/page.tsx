@@ -67,6 +67,7 @@ import {
   Mic,
   Send
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface Campaign {
   id: string;
@@ -2213,6 +2214,7 @@ export default function MerchantCampaignsPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -1,5 +1,7 @@
 'use client';
 
+import GlobalFooter from '@/components/GlobalFooter';
+
 export default function Phase2Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a1628] via-[#1a2a42] to-[#0a1628] text-white">
@@ -264,6 +266,7 @@ export default function Phase2Page() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -59,6 +59,7 @@ import {
   Bot
 } from 'lucide-react';
 import MarketingNav from '@/components/MarketingNav';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MarketingDashboardPage() {
   const [activeTab, setActiveTab] = useState<'dashboard' | 'bible' | 'strategy' | 'content' | 'channels' | 'campaigns' | 'community' | 'execution'>('dashboard');
@@ -854,6 +855,7 @@ export default function MarketingDashboardPage() {
           <p>Marketing Command Center | Nuqta 2026</p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

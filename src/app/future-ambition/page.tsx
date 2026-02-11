@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Trophy, Users, DollarSign, Building2, Globe, TrendingUp, Zap, Crown, Target, Sparkles, ArrowRight, CheckCircle2, Home } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function FutureAmbitionPage() {
   return (
@@ -715,6 +716,7 @@ export default function FutureAmbitionPage() {
         </div>
 
       </div>
+    <GlobalFooter />
     </div>
   );
 }

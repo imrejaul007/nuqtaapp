@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import PitchDeckKangNew from '@/components/PitchDeckKangNew';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function DeckKangPage() {
   const [isDeckOpen, setIsDeckOpen] = useState(true);
@@ -17,6 +18,7 @@ export default function DeckKangPage() {
   return (
     <div className="min-h-screen bg-white flex items-center justify-center p-4">
       <PitchDeckKangNew isOpen={isDeckOpen} onClose={handleClose} />
+    <GlobalFooter />
     </div>
   );
 }

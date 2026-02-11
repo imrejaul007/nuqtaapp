@@ -38,6 +38,7 @@ import {
   Landmark,
   FileSpreadsheet
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CFO AGENT REPORT
@@ -1404,6 +1405,7 @@ export default function CFOReportPage() {
           </div>
         )}
       </div>
+    <GlobalFooter />
     </div>
   );
 }

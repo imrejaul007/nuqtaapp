@@ -32,6 +32,7 @@ import {
   ShoppingCart,
   Store
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * FUNDING DOCUMENTS CENTER
@@ -1351,6 +1352,7 @@ function TeamBiosSection() {
           <p className="text-slate-400 text-sm mt-1">Current 8 + 7 new hires over 6 months. All positions budgeted in Use of Funds.</p>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

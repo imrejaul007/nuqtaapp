@@ -31,6 +31,7 @@ import {
   Briefcase,
   Coffee
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface AmbassadorTier {
   id: string;
@@ -983,6 +984,7 @@ export default function AmbassadorProgramPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -46,6 +46,7 @@ import {
   MessageSquare,
   Award
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // =============================================
 // NUQTA COMPANY STRUCTURE - COMPREHENSIVE VIEW
@@ -1076,6 +1077,7 @@ export default function CompanyStructurePage() {
           Company Structure v1.0 • Last Updated: February 2026
         </p>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

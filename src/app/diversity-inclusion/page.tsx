@@ -23,6 +23,7 @@ import {
   Lightbulb,
   Handshake
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // NUQTA DIVERSITY & INCLUSION POLICY
@@ -417,6 +418,7 @@ export default function DiversityInclusionPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

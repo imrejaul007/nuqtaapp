@@ -29,6 +29,7 @@ import {
   Bell,
   Gift
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Category Sales Days - Targeting slow weekdays
 const categorySalesDays = [
@@ -715,6 +716,7 @@ export default function SalesCalendarPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

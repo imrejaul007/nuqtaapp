@@ -57,6 +57,7 @@ import {
   Car,
   Mic
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MarketingExecutionPage() {
   const [activeTab, setActiveTab] = useState<'overview' | 'team' | 'phase1' | 'phase2' | 'phase3' | 'daily' | 'tools'>('overview');
@@ -939,6 +940,7 @@ export default function MarketingExecutionPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

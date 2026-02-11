@@ -41,6 +41,7 @@ import {
   Folder,
   ClipboardList
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * LICENSE PREPARATION PAGE
@@ -945,6 +946,7 @@ const LicensePreparationPage = () => {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 };

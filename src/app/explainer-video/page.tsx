@@ -30,6 +30,7 @@ import {
   Star,
   Volume2
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface VideoScene {
   id: string;
@@ -585,6 +586,7 @@ export default function ExplainerVideoPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

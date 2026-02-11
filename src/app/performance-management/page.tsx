@@ -7,6 +7,7 @@ import {
   Zap, Clock, Heart, BookOpen, ArrowUp, ArrowDown, Minus, Crown,
   Shield, AlertTriangle, ThumbsUp, ThumbsDown, GraduationCap
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function PerformanceManagementPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>('okrs');
@@ -767,6 +768,7 @@ export default function PerformanceManagementPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

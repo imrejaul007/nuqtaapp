@@ -33,6 +33,7 @@ import {
   Smile,
   Building2
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // CHRO COMPREHENSIVE PEOPLE ANALYSIS
@@ -673,6 +674,7 @@ export default function CHROAnalysisPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

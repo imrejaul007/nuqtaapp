@@ -20,6 +20,7 @@ import {
   Clock,
   MapPin
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface SMSTemplate {
   id: string;
@@ -680,6 +681,7 @@ export default function SMSTemplatesPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

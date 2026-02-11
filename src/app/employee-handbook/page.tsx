@@ -39,6 +39,7 @@ import {
   Bell,
   HeartHandshake
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // NUQTA EMPLOYEE HANDBOOK HUB
@@ -629,6 +630,7 @@ export default function EmployeeHandbookPage() {
           <p>Questions? Contact HR at hr@nuqta.ae</p>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

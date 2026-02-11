@@ -44,6 +44,7 @@ import {
   Flag,
   Activity
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // ========================================
 // CMO COMPREHENSIVE MARKETING ANALYSIS
@@ -983,6 +984,7 @@ export default function CMOAnalysisPage() {
           </div>
         </div>
       </section>
+    <GlobalFooter />
     </div>
   );
 }

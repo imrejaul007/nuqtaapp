@@ -44,6 +44,7 @@ import {
   Layers,
   Crown
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CMO AGENT REPORT
@@ -1062,6 +1063,7 @@ function SuccessMetrics() {
           </span>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

@@ -80,6 +80,7 @@ import {
   Grid,
   ExternalLink
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // SOP Section Component
 interface SOPStep {
@@ -3051,6 +3052,7 @@ export default function SOPPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -27,6 +27,7 @@ import {
   AlertCircle,
   Zap
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * LEGAL & COMPLIANCE PAGE
@@ -936,6 +937,7 @@ const LegalCompliancePage = () => {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 };

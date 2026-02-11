@@ -94,6 +94,7 @@ import {
   Plane,
   Package
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface SubTeam {
   name: string;
@@ -991,6 +992,7 @@ export default function DashboardPage() {
           </p>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -38,6 +38,7 @@ import {
   ThumbsUp,
   Repeat
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface UGCCampaign {
   id: string;
@@ -642,6 +643,7 @@ export default function UGCCampaignsPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

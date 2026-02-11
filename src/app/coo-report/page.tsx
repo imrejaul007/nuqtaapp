@@ -35,6 +35,7 @@ import {
   Database,
   RefreshCw
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * COO AGENT REPORT
@@ -906,6 +907,7 @@ function OperationsMetrics() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

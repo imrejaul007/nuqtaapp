@@ -26,6 +26,7 @@ import {
   FileCheck,
   AlertCircle
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * NUQTA LEGAL DOCUMENTS
@@ -1015,6 +1016,7 @@ Contact: dpo@nuqta.ae`
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

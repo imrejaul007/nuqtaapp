@@ -42,6 +42,7 @@ import {
   MessageSquare,
   Briefcase
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * EXECUTIVE ISSUES & STRATEGY ANALYSIS
@@ -1427,6 +1428,7 @@ function CFOAnalysis() {
           ))}
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

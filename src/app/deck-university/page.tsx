@@ -25,6 +25,7 @@ import {
   ShoppingBag,
   Handshake
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function UniversityDeckPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -733,6 +734,7 @@ function CTASlide() {
           <p className="text-slate-500 text-sm mt-1">Response within 24 hours</p>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

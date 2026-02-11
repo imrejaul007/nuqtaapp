@@ -24,6 +24,7 @@ import {
   Store,
   Target
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface DesignSpec {
   id: string;
@@ -507,6 +508,7 @@ export default function QRDesignSpecsPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

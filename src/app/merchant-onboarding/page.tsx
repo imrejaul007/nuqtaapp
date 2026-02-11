@@ -56,6 +56,7 @@ import {
   Stethoscope,
   Settings
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 // Step indicator component
 const StepIndicator = ({
@@ -994,6 +995,7 @@ export default function MerchantOnboardingPage() {
           </p>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

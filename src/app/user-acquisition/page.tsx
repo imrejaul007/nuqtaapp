@@ -24,6 +24,7 @@ import {
   DollarSign,
   TrendingUp
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function UserAcquisitionPage() {
   const [activePhase, setActivePhase] = useState<'founders' | 'beta' | 'growth'>('founders');
@@ -439,6 +440,7 @@ export default function UserAcquisitionPage() {
           <p>User Acquisition Playbook | Nuqta 2026</p>
         </div>
       </footer>
+    <GlobalFooter />
     </div>
   );
 }

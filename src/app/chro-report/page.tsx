@@ -36,6 +36,7 @@ import {
   Handshake,
   Gift
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * CHRO AGENT REPORT
@@ -1333,6 +1334,7 @@ export default function CHROReportPage() {
           </div>
         )}
       </div>
+    <GlobalFooter />
     </div>
   );
 }

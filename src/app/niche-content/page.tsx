@@ -38,6 +38,7 @@ import {
   Calendar,
   DollarSign
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface NicheAccount {
   id: string;
@@ -669,6 +670,7 @@ export default function NicheContentPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -57,6 +57,7 @@ import {
   Shirt,
   PartyPopper
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MerchantPlaybookPage() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -1760,6 +1761,7 @@ export default function MerchantPlaybookPage() {
           </div>
         )}
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -18,6 +18,7 @@ import {
   Calendar,
   BarChart3
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function MediaHubPage() {
   const [activeTab, setActiveTab] = useState<'strategy' | 'influencers' | 'content' | 'campaigns' | 'metrics'>('strategy');
@@ -947,6 +948,7 @@ function MetricsTab() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

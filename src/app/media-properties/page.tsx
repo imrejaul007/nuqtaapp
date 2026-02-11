@@ -44,6 +44,7 @@ import {
   Utensils,
   Camera
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 interface MediaProperty {
   id: string;
@@ -593,6 +594,7 @@ export default function MediaPropertiesPage() {
           </div>
         </div>
       </main>
+    <GlobalFooter />
     </div>
   );
 }

@@ -35,6 +35,7 @@ import {
   Coins,
   Crown
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 /**
  * EVENT EXECUTION PLAYBOOK
@@ -1078,6 +1079,7 @@ export default function EventExecutionPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

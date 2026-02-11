@@ -6,6 +6,7 @@ import {
   ChevronDown, ChevronUp, Zap, Star, AlertTriangle, DollarSign,
   BarChart3, Globe, Heart, ShoppingCart, Award, Rocket, Copy, Check, Download
 } from 'lucide-react';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function ExecutionPlanExtendedPage() {
   const [expandedWeek, setExpandedWeek] = useState<string | null>('week5');
@@ -714,6 +715,7 @@ export default function ExecutionPlanExtendedPage() {
           </div>
         </div>
       </div>
+    <GlobalFooter />
     </div>
   );
 }

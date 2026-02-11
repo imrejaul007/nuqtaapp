@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import PitchDeckFinal from '@/components/PitchDeckFinal';
+import GlobalFooter from '@/components/GlobalFooter';
 
 export default function DeckFinalPage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function DeckFinalPage() {
   return (
     <div className="min-h-screen bg-[#0a1628]">
       <PitchDeckFinal isOpen={isOpen} onClose={handleClose} />
+    <GlobalFooter />
     </div>
   );
 }
