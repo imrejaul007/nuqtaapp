@@ -448,6 +448,7 @@ const groupStrategyLinks = [
   { name: 'Monetization', href: '/monetization', icon: DollarSign, description: 'Revenue models', color: 'text-green-400' },
   { name: 'Master Plan', href: '/group-master-plan', icon: Target, description: '55B AED vision', color: 'text-[#c9a227]' },
   { name: 'Team Structure', href: '/rtmn-team-structure', icon: Users, description: '10 company teams', color: 'text-purple-400' },
+  { name: 'Rabtul Tech', href: '/rabtul-tech', icon: Code, description: 'Tech team & tasks', color: 'text-violet-400' },
   { name: 'Launch Strategy', href: '/group-launch-strategy', icon: Rocket, description: 'Go-to-market', color: 'text-blue-400' },
   { name: 'Governance', href: '/group-governance', icon: Shield, description: 'Shariah compliance', color: 'text-rose-400' },
 ];

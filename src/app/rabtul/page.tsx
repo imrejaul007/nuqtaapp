@@ -428,6 +428,9 @@ export default function RabtulPage() {
             <Link href="/bizone" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-400 transition-colors">
               <Store className="w-5 h-5" /> BizOne Merchants
             </Link>
+            <Link href="/rabtul-tech" className="inline-flex items-center gap-2 px-6 py-3 bg-violet-500 text-white rounded-xl font-bold hover:bg-violet-400 transition-colors">
+              <Code className="w-5 h-5" /> Rabtul Tech Team & Tasks
+            </Link>
             <Link href="/ai-infrastructure" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-500 text-white rounded-xl font-bold hover:bg-purple-400 transition-colors">
               <Brain className="w-5 h-5" /> AI Infrastructure
             </Link>
