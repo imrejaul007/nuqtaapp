@@ -21,7 +21,7 @@ import {
   SafarLogo, AjerLogo, FakhirLogo
 } from '@/components/CompanyLogos';
 
-// Core Products
+// Nuqta Corporation Core Products (3 products only)
 const coreProducts = [
   {
     name: 'Nuqta+',
@@ -56,70 +56,6 @@ const coreProducts = [
     revenue: '3-5% platform fee from merchants',
   },
   {
-    name: 'Sakin',
-    arabic: 'ساكن',
-    tagline: 'Live',
-    description: 'Rent financing. Cover security deposit + first rent over 12 months.',
-    color: 'from-emerald-500 to-green-600',
-    textColor: 'text-emerald-400',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500',
-    icon: Home,
-    logo: SakinLogo,
-    href: '/sakin',
-    stats: { amount: '68K AED', term: '12 months', fee: '3%' },
-    features: ['Finance deposit + rent', 'Direct landlord payment', 'No credit history needed', 'Wasil welcome kit included'],
-    revenue: '3% financing fee',
-  },
-  {
-    name: 'Wasil',
-    arabic: 'واصل',
-    tagline: 'Get',
-    description: 'Quick commerce. 60-minute delivery across 12 categories.',
-    color: 'from-orange-500 to-red-500',
-    textColor: 'text-orange-400',
-    bgColor: 'bg-orange-500/10',
-    borderColor: 'border-orange-500',
-    icon: Truck,
-    logo: WasilLogo,
-    href: '/wasil',
-    stats: { delivery: '60 min', categories: '12', coverage: 'UAE-wide' },
-    features: ['Groceries, pharmacy, F&B', 'Nuqta wallet integrated', 'Qist BNPL for big orders', 'Wasil+ in Nuqta+ membership'],
-    revenue: 'Delivery fees + merchant commission',
-  },
-  {
-    name: 'Hawil',
-    arabic: 'حوّل',
-    tagline: 'Send',
-    description: 'Remittance & currency exchange at Google rate with 0% markup.',
-    color: 'from-blue-500 to-cyan-500',
-    textColor: 'text-blue-400',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500',
-    icon: ArrowLeftRight,
-    logo: HawilLogo,
-    href: '/hawil',
-    stats: { rate: 'Google Rate', fee: '0.5%', corridors: '8+' },
-    features: ['0% FX markup', 'Hawil Card for tourists', 'Instant transfers', 'Earn coins on every send'],
-    revenue: '0.5% transfer fee',
-  },
-  {
-    name: 'Rakab',
-    arabic: 'ركب',
-    tagline: 'Ride',
-    description: 'Ride-hailing with Google rate payments and 5% Nuqta coins.',
-    color: 'from-green-500 to-emerald-600',
-    textColor: 'text-green-400',
-    bgColor: 'bg-green-500/10',
-    borderColor: 'border-green-500',
-    icon: Car,
-    logo: RakabLogo,
-    href: '/rakab',
-    stats: { drivers: '1,000+', coverage: 'Dubai', coins: '5% back' },
-    features: ['Pay with Hawil Card at Google rate', '5% coins on every ride', '85% driver commission', 'Tourist-first features'],
-    revenue: '15% commission per ride',
-  },
-  {
     name: 'Gamification',
     arabic: 'ألعاب',
     tagline: 'Play',
@@ -134,54 +70,6 @@ const coreProducts = [
     stats: { levels: '10', badges: '50+', rewards: 'Unlimited' },
     features: ['Cross-product achievements', 'Referral bonuses', 'Daily challenges', 'Exclusive rewards'],
     revenue: 'Drives engagement → higher LTV',
-  },
-  {
-    name: 'Safar',
-    arabic: 'سفر',
-    tagline: 'Travel',
-    description: 'Complete travel services: visas, flights, hotels, experiences.',
-    color: 'from-cyan-500 to-teal-600',
-    textColor: 'text-cyan-400',
-    bgColor: 'bg-cyan-500/10',
-    borderColor: 'border-cyan-500',
-    icon: Plane,
-    logo: SafarLogo,
-    href: '/safar',
-    stats: { destinations: '150+', visaApproval: '98%', commission: '8-15%' },
-    features: ['Visa processing 150+ countries', 'Flights at Google rate', 'Hotels with Nuqta+ discount', 'Qist BNPL for trips'],
-    revenue: '8-15% commission on bookings',
-  },
-  {
-    name: 'Ajer',
-    arabic: 'أجر',
-    tagline: 'Rent',
-    description: 'Rent anything: cars, electronics, fashion, baby gear & more.',
-    color: 'from-violet-500 to-purple-600',
-    textColor: 'text-violet-400',
-    bgColor: 'bg-violet-500/10',
-    borderColor: 'border-violet-500',
-    icon: Package,
-    logo: AjerLogo,
-    href: '/ajer',
-    stats: { categories: '8', items: '10K+', commission: '15-25%' },
-    features: ['Rent instead of buy - save 70-95%', 'List & earn from idle items', 'Wasil delivery integration', 'Insurance & protection'],
-    revenue: '15-25% platform commission',
-  },
-  {
-    name: 'Fakhir',
-    arabic: 'فاخر',
-    tagline: 'Luxury',
-    description: 'Exclusive luxury concierge & lifestyle management for HNWIs.',
-    color: 'from-amber-500 to-yellow-600',
-    textColor: 'text-amber-400',
-    bgColor: 'bg-amber-500/10',
-    borderColor: 'border-amber-500',
-    icon: Crown,
-    logo: FakhirLogo,
-    href: '/fakhir',
-    stats: { members: '2,500', avgSpend: '500K+ AED', commission: '5-15%' },
-    features: ['24/7 white-glove concierge', 'Private aviation & yachts', 'Exclusive events access', 'Fakhir Black Card'],
-    revenue: 'Membership + 5-15% service commission',
   },
 ];
 
@@ -778,15 +666,11 @@ export default function EcosystemPage() {
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Network },
     { id: 'products', label: 'Products', icon: Sparkles },
-    { id: 'hawil-card', label: 'Hawil Card', icon: CreditCard },
-    { id: 'gcc-expansion', label: 'GCC Expansion', icon: Globe },
     { id: 'synergies', label: 'Synergies', icon: Layers },
     { id: 'journeys', label: 'User Journeys', icon: Users },
     { id: 'segments', label: 'Segments', icon: Target },
-    { id: 'future', label: 'Future', icon: Rocket },
     { id: 'advantages', label: 'Advantages', icon: Award },
     { id: 'financials', label: 'Financials', icon: BarChart3 },
-    { id: 'improvements', label: 'Improvements', icon: Lightbulb },
   ];
 
   return (
@@ -796,15 +680,15 @@ export default function EcosystemPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#c9a227]/20 border border-[#c9a227]/50 rounded-full mb-4">
-              <Network className="w-5 h-5 text-[#c9a227]" />
-              <span className="text-[#c9a227] font-bold">Complete Financial Ecosystem</span>
+              <Crown className="w-5 h-5 text-[#c9a227]" />
+              <span className="text-[#c9a227] font-bold">Nuqta Corporation</span>
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">
-              The <span className="text-[#c9a227]">Nuqta</span> Ecosystem
+              <span className="text-[#c9a227]">Nuqta</span> Rewards & Loyalty
             </h1>
             <p className="text-slate-300 text-lg max-w-3xl mx-auto">
-              Nine integrated products serving residents, tourists, corporates, and merchants.
-              One wallet. One membership. Infinite possibilities.
+              Membership, rewards, BNPL, and gamification - the core consumer-facing products
+              that power the RTMN ecosystem. One wallet. One membership. Infinite rewards.
             </p>
           </div>
 
@@ -817,8 +701,8 @@ export default function EcosystemPage() {
               </div>
             </div>
 
-            {/* Product Ring */}
-            <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-3">
+            {/* Product Ring - 3 Nuqta Corp Products */}
+            <div className="grid grid-cols-3 gap-4 max-w-xl mx-auto">
               {coreProducts.map((product, i) => {
                 const Logo = product.logo;
                 return (
@@ -842,7 +726,7 @@ export default function EcosystemPage() {
           {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
-              <div className="text-2xl font-bold text-[#c9a227]">9</div>
+              <div className="text-2xl font-bold text-[#c9a227]">3</div>
               <div className="text-xs text-slate-400">Core Products</div>
             </div>
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
@@ -850,12 +734,12 @@ export default function EcosystemPage() {
               <div className="text-xs text-slate-400">Merchant Partners</div>
             </div>
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
-              <div className="text-2xl font-bold text-blue-400">4</div>
-              <div className="text-xs text-slate-400">User Segments</div>
+              <div className="text-2xl font-bold text-blue-400">50K</div>
+              <div className="text-xs text-slate-400">Target Members</div>
             </div>
             <div className="bg-slate-800/50 rounded-xl p-4 text-center border border-slate-700/50">
-              <div className="text-2xl font-bold text-purple-400">50x</div>
-              <div className="text-xs text-slate-400">LTV:CAC Ratio</div>
+              <div className="text-2xl font-bold text-purple-400">175M</div>
+              <div className="text-xs text-slate-400">AED Revenue Target</div>
             </div>
           </div>
         </div>
@@ -1705,88 +1589,45 @@ export default function EcosystemPage() {
 
       </main>
 
-      {/* RTMN Full Ecosystem Section */}
+      {/* RTMN Group Ecosystem Link */}
       <section className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 border-t border-b border-purple-500/30 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">RTMN Digital Ecosystem</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Explore our complete 100+ app ecosystem vision for the GCC market.
+          <div className="text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Part of RTMN Digital Group</h2>
+            <p className="text-slate-400 max-w-2xl mx-auto mb-8">
+              Nuqta Corporation is one of 10 sister companies under RTMN Digital Holding.
+              Explore the complete 50+ app ecosystem across fintech, commerce, travel, and more.
             </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            <Link href="/rtmn-ecosystem" className="group bg-slate-800/50 rounded-xl p-4 border border-[#c9a227]/30 hover:border-[#c9a227] transition-all text-center">
-              <Network className="w-8 h-8 text-[#c9a227] mx-auto mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Full Roadmap</h3>
-              <p className="text-xs text-slate-400">100+ apps</p>
+            <Link
+              href="/rtmn-dashboard"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#c9a227] to-amber-600 rounded-xl text-white font-bold text-lg hover:opacity-90 transition-opacity"
+            >
+              <Network className="w-6 h-6" />
+              Explore RTMN Group Dashboard
+              <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/wasil-verticals" className="group bg-slate-800/50 rounded-xl p-4 border border-orange-500/30 hover:border-orange-500 transition-all text-center">
-              <Truck className="w-8 h-8 text-orange-400 mx-auto mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Wasil Lifestyle</h3>
-              <p className="text-xs text-slate-400">24 verticals</p>
-            </Link>
-            <Link href="/finance-apps" className="group bg-slate-800/50 rounded-xl p-4 border border-emerald-500/30 hover:border-emerald-500 transition-all text-center">
-              <Wallet className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Finance Apps</h3>
-              <p className="text-xs text-slate-400">12 fintech</p>
-            </Link>
-            <Link href="/bizone" className="group bg-slate-800/50 rounded-xl p-4 border border-blue-500/30 hover:border-blue-500 transition-all text-center">
-              <Store className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">BizOne Suite</h3>
-              <p className="text-xs text-slate-400">Merchant B2B</p>
-            </Link>
-            <Link href="/ai-infrastructure" className="group bg-slate-800/50 rounded-xl p-4 border border-purple-500/30 hover:border-purple-500 transition-all text-center">
-              <Brain className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">AI & Infra</h3>
-              <p className="text-xs text-slate-400">5 platforms</p>
-            </Link>
-            <Link href="/safar" className="group bg-slate-800/50 rounded-xl p-4 border border-cyan-500/30 hover:border-cyan-500 transition-all text-center">
-              <Plane className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
-              <h3 className="font-bold text-white text-sm mb-1">Travel</h3>
-              <p className="text-xs text-slate-400">11 apps</p>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Group Strategy Section */}
-      <section className="bg-gradient-to-r from-[#c9a227]/10 to-purple-500/10 border-b border-[#c9a227]/30 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">Nuqta Group Strategy</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              Explore our comprehensive plans for building a multi-billion dollar Islamic fintech ecosystem.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/group-master-plan" className="group bg-slate-800/50 rounded-xl p-5 border border-[#c9a227]/30 hover:border-[#c9a227] transition-all">
-              <div className="w-12 h-12 rounded-xl bg-[#c9a227]/20 flex items-center justify-center mb-3 group-hover:bg-[#c9a227]/30 transition-colors">
-                <Target className="w-6 h-6 text-[#c9a227]" />
+            <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4 max-w-3xl mx-auto">
+              <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                <div className="text-xl font-bold text-[#c9a227]">10</div>
+                <div className="text-xs text-slate-400">Companies</div>
               </div>
-              <h3 className="font-bold text-white mb-1">Master Plan</h3>
-              <p className="text-sm text-slate-400">55B AED ecosystem vision, valuation path & milestones</p>
-            </Link>
-            <Link href="/group-org-structure" className="group bg-slate-800/50 rounded-xl p-5 border border-purple-500/30 hover:border-purple-500 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-3 group-hover:bg-purple-500/30 transition-colors">
-                <Users className="w-6 h-6 text-purple-400" />
+              <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                <div className="text-xl font-bold text-emerald-400">50+</div>
+                <div className="text-xs text-slate-400">Apps</div>
               </div>
-              <h3 className="font-bold text-white mb-1">Organization</h3>
-              <p className="text-sm text-slate-400">C-Suite team, departments & hiring roadmap</p>
-            </Link>
-            <Link href="/group-launch-strategy" className="group bg-slate-800/50 rounded-xl p-5 border border-emerald-500/30 hover:border-emerald-500 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center mb-3 group-hover:bg-emerald-500/30 transition-colors">
-                <Rocket className="w-6 h-6 text-emerald-400" />
+              <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                <div className="text-xl font-bold text-blue-400">6</div>
+                <div className="text-xs text-slate-400">GCC Countries</div>
               </div>
-              <h3 className="font-bold text-white mb-1">Launch Strategy</h3>
-              <p className="text-sm text-slate-400">5-phase go-to-market & product sequence</p>
-            </Link>
-            <Link href="/group-governance" className="group bg-slate-800/50 rounded-xl p-5 border border-blue-500/30 hover:border-blue-500 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-3 group-hover:bg-blue-500/30 transition-colors">
-                <Shield className="w-6 h-6 text-blue-400" />
+              <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                <div className="text-xl font-bold text-purple-400">2B+</div>
+                <div className="text-xs text-slate-400">AED Target</div>
               </div>
-              <h3 className="font-bold text-white mb-1">Governance</h3>
-              <p className="text-sm text-slate-400">Shariah compliance, policies & risk management</p>
-            </Link>
+              <div className="bg-slate-800/50 rounded-lg p-3 text-center">
+                <div className="text-xl font-bold text-pink-400">5M+</div>
+                <div className="text-xs text-slate-400">Users Goal</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

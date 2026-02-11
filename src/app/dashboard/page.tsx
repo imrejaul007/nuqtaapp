@@ -617,19 +617,23 @@ const cxoDepartments: CXODepartment[] = [
         ]
       },
       {
-        name: 'Core Products',
+        name: 'Nuqta Corp Products',
         icon: Sparkles,
         links: [
           { label: 'Ecosystem Overview', href: '/ecosystem', icon: Layers },
           { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Crown },
-          { label: 'Sakin Rent', href: '/sakin', icon: Home },
           { label: 'Qist BNPL', href: '/qist', icon: Wallet },
-          { label: 'Wasil Delivery', href: '/wasil', icon: Truck },
-          { label: 'Hawil Remittance', href: '/hawil', icon: ArrowLeftRight },
-          { label: 'Rakab Mobility', href: '/rakab', icon: Truck },
-          { label: 'Safar Travel', href: '/safar', icon: Plane },
-          { label: 'Ajer Rentals', href: '/ajer', icon: Package },
           { label: 'Gamification', href: '/gamification', icon: Gamepad2 },
+        ]
+      },
+      {
+        name: 'RTMN Group',
+        icon: Building2,
+        links: [
+          { label: 'RTMN Dashboard', href: '/rtmn-dashboard', icon: LayoutGrid },
+          { label: 'Value Chain', href: '/value-chain', icon: Layers },
+          { label: 'Monetization', href: '/monetization', icon: DollarSign },
+          { label: 'All Sister Companies', href: '/rtmn-group', icon: Building2 },
         ]
       },
       {
