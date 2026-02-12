@@ -13,7 +13,12 @@ import {
   Trophy, Play, Calendar, CheckCircle, Coins, LayoutGrid, Fingerprint,
   Bell, Cloud, HardDrive, Wifi, Terminal, Coffee, Scissors,
   Car, Truck, GraduationCap, Stethoscope, Home, Plane, Music,
-  Camera, Mic, PenTool, Share2, Mail, MessageSquare, Phone, Map
+  Camera, Mic, PenTool, Share2, Mail, MessageSquare, Phone, Map,
+  Gamepad2, Dog, Leaf, Dice1, Flame, Medal, Vote, Tent, Mountain,
+  Palmtree, Ship, Flower2, Cake, Droplets, Beer, Moon, Baby, Sparkle,
+  Wrench, Shirt, Tv, Receipt, PiggyBank, Dumbbell, Salad, Ticket,
+  Lightbulb, PartyPopper, UtensilsCrossed, Utensils, Send, BadgePercent,
+  Calculator, HelpCircle
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -27,6 +32,8 @@ interface PageLink {
   description: string;
   icon: React.ElementType;
   arabic?: string;
+  status?: 'built' | 'planned';
+  timeline?: string;
 }
 
 interface SubCategory {
@@ -124,7 +131,219 @@ const categories: Category[] = [
     ],
   },
 
-  // ─── 4. Strategy & Roadmaps ────────────────────────────────────
+  // ─── 4. Full App Portfolio (150+ Apps) ──────────────────────────
+  {
+    id: 'app-portfolio',
+    title: 'App Portfolio (150+)',
+    icon: Layers,
+    color: 'text-violet-400',
+    bgColor: 'bg-violet-400/10',
+    borderColor: 'border-violet-400/30',
+    description: 'Complete 150+ app ecosystem across 14 verticals — built & planned',
+    subcategories: [
+      {
+        title: 'Nuqta Core (5)',
+        pages: [
+          { title: 'Nuqta', href: '/nuqta', description: 'Super-app hub — wallet, membership, rewards', icon: Crown, arabic: 'نقطة', status: 'built' },
+          { title: 'AI-R', href: '/rtmn-ecosystem', description: 'Personal AI assistant — recommendations, automation', icon: Brain, arabic: 'ذكاء', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'BuzzLoop', href: '/rtmn-ecosystem', description: 'Personalized discovery feed — trending, local', icon: Sparkle, arabic: 'بزلوب', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'CoinHunt', href: '/rtmn-ecosystem', description: 'Gamified earning — quests, challenges, hunts', icon: Coins, arabic: 'كوين هنت', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'LocalEdge', href: '/rtmn-ecosystem', description: 'Hyperlocal recommendations — neighborhood gems', icon: Map, arabic: 'لوكال إيدج', status: 'planned', timeline: 'Q1 2028' },
+        ],
+      },
+      {
+        title: 'Wasil Lifestyle (25)',
+        pages: [
+          { title: 'Wasil Hub', href: '/wasil', description: 'Quick commerce hub — 60min delivery', icon: Truck, arabic: 'واصل', status: 'built' },
+          { title: 'Dinezy', href: '/rtmn-ecosystem', description: 'Food delivery — restaurants, cloud kitchens', icon: Utensils, arabic: 'داينزي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Grocify', href: '/rtmn-ecosystem', description: 'Grocery delivery — supermarkets, fresh produce', icon: ShoppingCart, arabic: 'غروسيفاي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Glowzy', href: '/rtmn-ecosystem', description: 'Beauty & salon — at-home services, products', icon: Sparkle, arabic: 'غلوزي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'MediEarn', href: '/rtmn-ecosystem', description: 'Pharmacy delivery — prescriptions, health products', icon: Stethoscope, arabic: 'ميدي إيرن', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'PetPals', href: '/rtmn-ecosystem', description: 'Pet supplies — food, grooming, vet booking', icon: Dog, arabic: 'بت بالز', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'CleanEZ', href: '/rtmn-ecosystem', description: 'Home cleaning — deep clean, regular, move-in/out', icon: Sparkle, arabic: 'كلين إي زد', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Handyzy', href: '/rtmn-ecosystem', description: 'Home repairs — plumbing, electrical, AC', icon: Wrench, arabic: 'هاندي زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Sparklean', href: '/rtmn-ecosystem', description: 'Laundry & dry cleaning — pickup, wash, deliver', icon: Shirt, arabic: 'سباركلين', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Stylezy', href: '/rtmn-ecosystem', description: 'Fashion delivery — clothing, shoes, accessories', icon: Shirt, arabic: 'ستايلزي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'TechDrop', href: '/rtmn-ecosystem', description: 'Electronics delivery — gadgets, accessories', icon: Tv, arabic: 'تك دروب', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Bloominz', href: '/rtmn-ecosystem', description: 'Flower delivery — bouquets, arrangements', icon: Flower2, arabic: 'بلومينز', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Cakezy', href: '/rtmn-ecosystem', description: 'Bakery & desserts — cakes, custom orders', icon: Cake, arabic: 'كيكزي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Feastly', href: '/rtmn-ecosystem', description: 'Premium catering — events, corporate, private chef', icon: UtensilsCrossed, arabic: 'فيستلي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Savorly', href: '/rtmn-ecosystem', description: 'Meal kits — recipes, pre-portioned ingredients', icon: UtensilsCrossed, arabic: 'سافورلي', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'AquaFresh', href: '/rtmn-ecosystem', description: 'Water delivery — bottles, dispensers, subscriptions', icon: Droplets, arabic: 'أكوا فريش', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'IceColdz', href: '/rtmn-ecosystem', description: 'Cold beverages — juices, smoothies, ice cream', icon: Beer, arabic: 'آيس كولدز', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Brewzy', href: '/rtmn-ecosystem', description: 'Coffee & tea — specialty coffee, brewing equipment', icon: Coffee, arabic: 'بروزي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'QuickDrop', href: '/rtmn-ecosystem', description: 'Instant delivery — 15-30 min essentials', icon: Zap, arabic: 'كويك دروب', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'NightOwl', href: '/rtmn-ecosystem', description: 'Late-night delivery — 24/7 essentials', icon: Moon, arabic: 'نايت أول', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Kidszone', href: '/rtmn-ecosystem', description: 'Kids products — toys, clothes, school supplies', icon: Baby, arabic: 'كيدز زون', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Seniorly', href: '/rtmn-ecosystem', description: 'Senior care — medical supplies, home help', icon: Heart, arabic: 'سينيورلي', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'OfficeEats', href: '/rtmn-ecosystem', description: 'Corporate catering — office lunches, meetings', icon: Building2, arabic: 'أوفيس إيتس', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'PartyPack', href: '/rtmn-ecosystem', description: 'Event supplies — decorations, disposables', icon: PartyPopper, arabic: 'بارتي باك', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'GiftWrap', href: '/rtmn-ecosystem', description: 'Gift delivery — curated gifts, wrapping', icon: Heart, arabic: 'غيفت راب', status: 'planned', timeline: 'Q4 2027' },
+        ],
+      },
+      {
+        title: 'Travel & Adventure (12)',
+        pages: [
+          { title: 'Safar', href: '/safar', description: 'Travel hub — visas, flights, hotels, experiences', icon: Plane, arabic: 'سفر', status: 'built' },
+          { title: 'Airzy', href: '/rtmn-ecosystem', description: 'Flight bookings — compare, book, manage', icon: Plane, arabic: 'إيرزي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'TravoPay', href: '/rtmn-ecosystem', description: 'Travel wallet — multi-currency, expense tracking', icon: Wallet, arabic: 'ترافو باي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Weekendzy', href: '/rtmn-ecosystem', description: 'Weekend getaways — curated short trips', icon: Calendar, arabic: 'ويكند زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Trekzy', href: '/rtmn-ecosystem', description: 'Adventure activities — hiking, water sports', icon: Mountain, arabic: 'تريك زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Campzy', href: '/rtmn-ecosystem', description: 'Camping & outdoor — gear rental, campsites', icon: Tent, arabic: 'كامب زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Staycay', href: '/rtmn-ecosystem', description: 'Staycations — hotel deals, day passes, spa', icon: Building2, arabic: 'ستايكاي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'WildEscape', href: '/rtmn-ecosystem', description: 'Wildlife experiences — safaris, nature tours', icon: Mountain, arabic: 'وايلد إسكيب', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'DesertVibes', href: '/rtmn-ecosystem', description: 'Desert experiences — dune bashing, camping', icon: Palmtree, arabic: 'ديزرت فايبز', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'BeachLife', href: '/rtmn-ecosystem', description: 'Beach activities — clubs, water sports', icon: Palmtree, arabic: 'بيتش لايف', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'CityExplore', href: '/rtmn-ecosystem', description: 'City tours — walking, bus, private guides', icon: Building2, arabic: 'سيتي إكسبلور', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Cruise+', href: '/rtmn-ecosystem', description: 'Cruise bookings — luxury, family, adventure', icon: Ship, arabic: 'كروز+', status: 'planned', timeline: 'Q2 2028' },
+        ],
+      },
+      {
+        title: 'Finance (12)',
+        pages: [
+          { title: 'Qist', href: '/qist', description: 'BNPL — split payments 3-12 months, 0% fees', icon: Wallet, arabic: 'قسط', status: 'built' },
+          { title: 'Hawil', href: '/hawil', description: 'Remittance — Google rate, 0% markup', icon: Send, arabic: 'حوّل', status: 'built' },
+          { title: 'NuqtaPay', href: '/nuqtapay', description: 'Digital wallet — QR payments, P2P transfers', icon: CreditCard, arabic: 'نقطة باي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Splitzy', href: '/rtmn-ecosystem', description: 'Bill splitting — groups, events, households', icon: Receipt, arabic: 'سبليت زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Savezy+', href: '/rtmn-ecosystem', description: 'Savings goals — round-ups, auto-save, vaults', icon: PiggyBank, arabic: 'سيف زي+', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Investzy', href: '/rtmn-ecosystem', description: 'Micro-investing — stocks, gold, Shariah-compliant', icon: TrendingUp, arabic: 'إنفست زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Insurzy', href: '/rtmn-ecosystem', description: 'Insurance marketplace — health, car, travel', icon: Shield, arabic: 'إنشور زي', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'Taxzy', href: '/rtmn-ecosystem', description: 'Tax filing — VAT, corporate, personal', icon: FileText, arabic: 'تاكس زي', status: 'planned', timeline: 'Q1 2029' },
+          { title: 'CreditBoost', href: '/rtmn-ecosystem', description: 'Credit building — score tracking, tips', icon: TrendingUp, arabic: 'كريديت بوست', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'BudgetPro', href: '/rtmn-ecosystem', description: 'Budgeting — expense tracking, insights', icon: Calculator, arabic: 'بدجت برو', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Wealthzy', href: '/rtmn-ecosystem', description: 'Wealth management — portfolio, advisor', icon: TrendingUp, arabic: 'ويلث زي', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'CryptoLite', href: '/rtmn-ecosystem', description: 'Crypto exposure — education, small investments', icon: Coins, arabic: 'كريبتو لايت', status: 'planned', timeline: 'Q4 2028' },
+        ],
+      },
+      {
+        title: 'Community & Social (10)',
+        pages: [
+          { title: 'Circlezy', href: '/rtmn-ecosystem', description: 'Interest-based communities — hobbies, groups', icon: Users, arabic: 'سيركل زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Hangoutzy', href: '/rtmn-ecosystem', description: 'Social meetups — events, activities, friends', icon: Users, arabic: 'هانج آوت زي', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'Vibezy', href: '/rtmn-ecosystem', description: 'Local events — parties, concerts, exhibitions', icon: PartyPopper, arabic: 'فايب زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Campuszy', href: '/rtmn-ecosystem', description: 'Student communities — universities, study groups', icon: GraduationCap, arabic: 'كامبس زي', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'ParentHub', href: '/rtmn-ecosystem', description: 'Parenting network — tips, playdates, support', icon: Baby, arabic: 'بارنت هب', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'FitSquad', href: '/rtmn-ecosystem', description: 'Fitness groups — workout buddies, challenges', icon: Dumbbell, arabic: 'فت سكواد', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'BookClubz', href: '/rtmn-ecosystem', description: 'Reading communities — clubs, reviews, swaps', icon: BookOpen, arabic: 'بوك كلبز', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'Skillsharez', href: '/rtmn-ecosystem', description: 'Skill exchange — teach, learn, collaborate', icon: Lightbulb, arabic: 'سكيل شير زي', status: 'planned', timeline: 'Q4 2028' },
+          { title: 'VolunteerHub', href: '/rtmn-ecosystem', description: 'Volunteering — opportunities, NGOs, service', icon: Heart, arabic: 'فولنتير هب', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'NeighborNet', href: '/rtmn-ecosystem', description: 'Neighborhood connect — local help, events', icon: Home, arabic: 'نيبر نت', status: 'planned', timeline: 'Q2 2028' },
+        ],
+      },
+      {
+        title: 'Growth Stack (11)',
+        pages: [
+          { title: 'Gigzy', href: '/rtmn-ecosystem', description: 'Freelance marketplace — gigs, projects, talent', icon: Briefcase, arabic: 'غيغ زي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'BuzzLocal', href: '/rtmn-ecosystem', description: 'Local influencer platform — nano/micro creators', icon: Megaphone, arabic: 'بز لوكال', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Z-Events', href: '/rtmn-ecosystem', description: 'Event ticketing — concerts, sports, experiences', icon: Ticket, arabic: 'زي إيفنتس', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'MemberPlus', href: '/rtmn-ecosystem', description: 'Subscription management — all memberships in one', icon: Crown, arabic: 'ممبر بلس', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Brandzy', href: '/rtmn-ecosystem', description: 'Brand partnerships — collabs, sponsorships', icon: Megaphone, arabic: 'براند زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Pollzy', href: '/rtmn-ecosystem', description: 'Surveys & feedback — earn for opinions', icon: HelpCircle, arabic: 'بول زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Leadzy', href: '/rtmn-ecosystem', description: 'Lead generation — connect businesses with customers', icon: Target, arabic: 'ليد زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'ReferralHub', href: '/rtmn-ecosystem', description: 'Referral programs — track, earn, redeem', icon: Users, arabic: 'ريفرال هب', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'LoyaltyMax', href: '/rtmn-ecosystem', description: 'Loyalty programs — unified rewards across brands', icon: Star, arabic: 'لويالتي ماكس', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Contestify', href: '/rtmn-ecosystem', description: 'Competitions — enter, win, share prizes', icon: Trophy, arabic: 'كونتستيفاي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'GrowthLab', href: '/rtmn-ecosystem', description: 'Analytics — track performance, insights', icon: BarChart3, arabic: 'غروث لاب', status: 'planned', timeline: 'Q1 2028' },
+        ],
+      },
+      {
+        title: 'Education (5)',
+        pages: [
+          { title: 'Learnzy', href: '/rtmn-ecosystem', description: 'Online courses — skills, hobbies, professional', icon: GraduationCap, arabic: 'ليرن زي', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'Tutorly', href: '/rtmn-ecosystem', description: 'Tutoring — 1-on-1, group, all subjects', icon: BookOpen, arabic: 'تيوتورلي', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'Certify+', href: '/rtmn-ecosystem', description: 'Certifications — professional credentials', icon: Star, arabic: 'سيرتيفاي+', status: 'planned', timeline: 'Q4 2028' },
+          { title: 'SkillBoost', href: '/rtmn-ecosystem', description: 'Professional development — workshops, bootcamps', icon: TrendingUp, arabic: 'سكيل بوست', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'KidLearn', href: '/rtmn-ecosystem', description: 'Children education — interactive, fun learning', icon: Baby, arabic: 'كيد ليرن', status: 'planned', timeline: 'Q4 2028' },
+        ],
+      },
+      {
+        title: 'Real Estate & Mobility (3)',
+        pages: [
+          { title: 'Sakin', href: '/sakin', description: 'Rent financing — deposit + rent over 12 months', icon: Home, arabic: 'ساكن', status: 'built' },
+          { title: 'Ajer', href: '/ajer', description: 'Rental marketplace — cars, electronics, gear', icon: Package, arabic: 'أجر', status: 'built' },
+          { title: 'Rakab', href: '/rakab', description: 'Ride-hailing — 85% driver cut, Google rate', icon: Car, arabic: 'ركب', status: 'built' },
+        ],
+      },
+      {
+        title: 'Health & Wellness (5)',
+        pages: [
+          { title: 'FitLife', href: '/rtmn-ecosystem', description: 'Fitness tracking — workouts, goals, challenges', icon: Dumbbell, arabic: 'فت لايف', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'MindCalm', href: '/rtmn-ecosystem', description: 'Mental wellness — meditation, therapy, journaling', icon: Brain, arabic: 'مايند كالم', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'NutriPlan', href: '/rtmn-ecosystem', description: 'Nutrition — meal plans, calorie tracking', icon: Salad, arabic: 'نيوتري بلان', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'DocConnect', href: '/rtmn-ecosystem', description: 'Telemedicine — video consults, prescriptions', icon: Stethoscope, arabic: 'دوك كونكت', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'WellnessHub', href: '/rtmn-ecosystem', description: 'Holistic health — spas, yoga, alternative medicine', icon: Heart, arabic: 'ويلنس هب', status: 'planned', timeline: 'Q4 2028' },
+        ],
+      },
+      {
+        title: 'Luxury (1)',
+        pages: [
+          { title: 'Fakhir', href: '/fakhir', description: 'Luxury concierge — 24/7 white-glove service', icon: Crown, arabic: 'فاخر', status: 'built' },
+        ],
+      },
+      {
+        title: 'Pets, Home & Auto (6)',
+        pages: [
+          { title: 'PawCare', href: '/rtmn-ecosystem', description: 'Pet services — vets, grooming, sitting, walking', icon: Dog, arabic: 'باو كير', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'HomeHub', href: '/rtmn-ecosystem', description: 'Home management — bills, maintenance, reminders', icon: Home, arabic: 'هوم هب', status: 'planned', timeline: 'Q2 2028' },
+          { title: 'AutoCare', href: '/rtmn-ecosystem', description: 'Vehicle services — maintenance, fuel, insurance', icon: Car, arabic: 'أوتو كير', status: 'planned', timeline: 'Q3 2028' },
+          { title: 'GardenPro', href: '/rtmn-ecosystem', description: 'Gardening — landscaping, plant care, equipment', icon: Leaf, arabic: 'غاردن برو', status: 'planned', timeline: 'Q4 2028' },
+          { title: 'SmartHome', href: '/rtmn-ecosystem', description: 'IoT integration — smart devices, automation', icon: Smartphone, arabic: 'سمارت هوم', status: 'planned', timeline: 'Q1 2029' },
+          { title: 'SecurityPlus', href: '/rtmn-ecosystem', description: 'Home security — cameras, alarms, monitoring', icon: Lock, arabic: 'سيكيوريتي+', status: 'planned', timeline: 'Q1 2029' },
+        ],
+      },
+      {
+        title: 'Ultra-Light Viral (18)',
+        pages: [
+          { title: 'Memezy', href: '/rtmn-ecosystem', description: 'Meme creation — templates, sharing, contests', icon: Camera, arabic: 'ميم زي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Quizzy', href: '/rtmn-ecosystem', description: 'Trivia games — daily quizzes, earn coins', icon: HelpCircle, arabic: 'كويز زي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Spinzy', href: '/rtmn-ecosystem', description: 'Wheel games — spin to win, daily rewards', icon: Dice1, arabic: 'سبين زي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Scratchzy', href: '/rtmn-ecosystem', description: 'Scratch cards — instant wins, daily cards', icon: Star, arabic: 'سكراتش زي', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Pollzy', href: '/rtmn-ecosystem', description: 'Quick polls — vote, earn, see results', icon: Vote, arabic: 'بول زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Confessly', href: '/rtmn-ecosystem', description: 'Anonymous confessions — share, react, trend', icon: MessageSquare, arabic: 'كونفسلي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Dailywin', href: '/rtmn-ecosystem', description: 'Daily rewards — check-in, streak bonuses', icon: Star, arabic: 'ديلي وين', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'Streakzy', href: '/rtmn-ecosystem', description: 'Habit streaks — build habits, earn rewards', icon: Flame, arabic: 'ستريك زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Rankzy', href: '/rtmn-ecosystem', description: 'Leaderboards — compete, climb, win prizes', icon: Trophy, arabic: 'رانك زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Badgezy', href: '/rtmn-ecosystem', description: 'Achievement badges — collect, showcase, trade', icon: Medal, arabic: 'بادج زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Challengezy', href: '/rtmn-ecosystem', description: 'Social challenges — compete with friends', icon: Target, arabic: 'تشالنج زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Snapzy', href: '/rtmn-ecosystem', description: 'Photo contests — themes, votes, prizes', icon: Camera, arabic: 'سناب زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Votezy', href: '/rtmn-ecosystem', description: 'Voting games — this or that, rankings', icon: Vote, arabic: 'فوت زي', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Predictzy', href: '/rtmn-ecosystem', description: 'Predictions — sports, events, outcomes', icon: Target, arabic: 'بريديكت زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Matchzy', href: '/rtmn-ecosystem', description: 'Matching games — pairs, memory, puzzles', icon: Layers, arabic: 'ماتش زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Flipzy', href: '/rtmn-ecosystem', description: 'Card flip games — reveal, collect, win', icon: Layers, arabic: 'فليب زي', status: 'planned', timeline: 'Q4 2027' },
+          { title: 'Bouncezy', href: '/rtmn-ecosystem', description: 'Bounce games — casual, addictive, shareable', icon: Play, arabic: 'باونس زي', status: 'planned', timeline: 'Q1 2028' },
+          { title: 'Collectzy', href: '/rtmn-ecosystem', description: 'Digital collectibles — NFT-lite, trading', icon: Star, arabic: 'كوليكت زي', status: 'planned', timeline: 'Q1 2028' },
+        ],
+      },
+      {
+        title: 'Merchant B2B Suite (4)',
+        pages: [
+          { title: 'BizOne', href: '/bizone', description: 'Business dashboard — unified merchant portal', icon: Store, arabic: 'بيز ون', status: 'built' },
+          { title: 'NextaBizz', href: '/nextabizz', description: 'Business tools — POS, invoicing, payments', icon: Smartphone, arabic: 'نكستا بيز', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Inventora', href: '/inventora', description: 'Inventory management — stock, orders, alerts', icon: Package, arabic: 'إنفنتورا', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Adzy', href: '/adzy', description: 'Advertising — targeted ads in ecosystem', icon: Megaphone, arabic: 'أدزي', status: 'planned', timeline: 'Q4 2027' },
+        ],
+      },
+      {
+        title: 'AI & Infrastructure (5)',
+        pages: [
+          { title: 'AIRA', href: '/rtmn-ecosystem', description: 'AI recommendation engine — personalization at scale', icon: Brain, arabic: 'أيرا', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'Rabtul', href: '/rabtul', description: 'API/integration layer — connect everything', icon: Layers, arabic: 'ربطل', status: 'built' },
+          { title: 'DataPulse', href: '/rtmn-ecosystem', description: 'Analytics platform — insights, ML, reporting', icon: BarChart3, arabic: 'داتا بالس', status: 'planned', timeline: 'Q3 2027' },
+          { title: 'CloudSync', href: '/rtmn-ecosystem', description: 'Cloud infrastructure — multi-region, scalable', icon: Cloud, arabic: 'كلاود سينك', status: 'planned', timeline: 'Q2 2027' },
+          { title: 'SecureVault', href: '/rtmn-ecosystem', description: 'Security services — encryption, compliance, fraud', icon: Lock, arabic: 'سيكيور فولت', status: 'planned', timeline: 'Q2 2027' },
+        ],
+      },
+      {
+        title: 'Gamification Engine (1)',
+        pages: [
+          { title: 'Gamification Hub', href: '/gamification', description: 'Coins, levels, badges, challenges across all products', icon: Gamepad2, arabic: 'ألعاب', status: 'built' },
+        ],
+      },
+    ],
+    pages: [],
+  },
+
+  // ─── 5. Strategy & Roadmaps ────────────────────────────────────
   {
     id: 'strategy',
     title: 'Strategy & Roadmaps',
@@ -934,6 +1153,12 @@ function PageCard({ page, color, borderColor }: { page: PageLink; color: string;
           </h4>
           {page.arabic && (
             <span className="text-xs text-slate-500 font-normal" dir="rtl">{page.arabic}</span>
+          )}
+          {page.status === 'built' && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-semibold">BUILT</span>
+          )}
+          {page.status === 'planned' && page.timeline && (
+            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-slate-700 text-slate-400">{page.timeline}</span>
           )}
         </div>
         <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">{page.description}</p>
