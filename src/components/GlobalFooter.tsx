@@ -4,81 +4,20 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
-  Home,
-  Presentation,
-  TrendingUp,
-  Store,
-  Megaphone,
-  Crown,
-  Handshake,
-  Database,
-  Mail,
-  FileText,
-  Rocket,
-  DollarSign,
-  Target,
-  BookOpen,
-  Coffee,
-  Scissors,
-  ShoppingCart,
-  Gem,
-  Building2,
-  Users,
-  Settings,
-  Scale,
-  Heart,
-  BarChart3,
-  Calendar,
-  Layers,
-  Briefcase,
-  Map,
-  Dumbbell,
-  MessageSquare,
-  CheckSquare,
-  CreditCard,
-  Bot,
-  AlertTriangle,
-  Search,
-  X,
-  Calculator,
-  LineChart,
-  Smartphone,
-  Tv,
-  Shirt,
-  Pill,
-  Gamepad2,
-  ClipboardList,
-  Video,
-  Globe,
-  UserPlus,
-  Award,
-  Wallet,
-  Ticket,
-  QrCode,
-  Headphones,
-  PenTool,
-  Share2,
-  Sparkles,
-  Beaker,
-  RefreshCw,
-  Zap,
-  Brain,
-  Filter,
-  Eye,
-  MapPin,
-  HelpCircle,
-  Play,
-  Shield,
-  Stethoscope,
-  Landmark,
-  GraduationCap,
-  MessageCircle,
-  Wheat
+  Home, Presentation, TrendingUp, Store, Megaphone, Crown, Handshake,
+  Database, Mail, FileText, Rocket, DollarSign, Target, BookOpen, Coffee,
+  Scissors, ShoppingCart, Gem, Building2, Users, Settings, Scale, Heart,
+  BarChart3, Calendar, Layers, Briefcase, Map, Dumbbell, MessageSquare,
+  CheckSquare, CreditCard, Bot, AlertTriangle, Search, X, Calculator,
+  LineChart, Smartphone, Tv, Shirt, Pill, Gamepad2, ClipboardList, Globe,
+  UserPlus, Award, Wallet, QrCode, Headphones, Share2, Sparkles, Beaker,
+  RefreshCw, Zap, Brain, Filter, Eye, MapPin, HelpCircle, Play, Shield,
+  Stethoscope, Landmark, GraduationCap, MessageCircle, Wheat
 } from 'lucide-react';
 
 /**
  * GLOBAL FOOTER - Complete Navigation Hub
- * All navigation is here - no floating header
+ * Reorganized: 13 categories, balanced columns, proper grouping
  */
 
 interface NavItem {
@@ -94,7 +33,7 @@ interface NavCategory {
   items: NavItem[];
 }
 
-// Complete navigation data
+// ─── Navigation Data (13 categories, properly organized) ────────────
 const navigationData: NavCategory[] = [
   {
     title: 'Investors',
@@ -120,6 +59,7 @@ const navigationData: NavCategory[] = [
     items: [
       { label: 'Complete Roadmap', href: '/complete-roadmap', icon: Map },
       { label: 'Master Roadmap', href: '/master-roadmap', icon: Map },
+      { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp },
       { label: 'Competitor Analysis', href: '/competitor-analysis', icon: BarChart3 },
       { label: 'Execution Plan', href: '/execution-plan', icon: Target },
@@ -129,6 +69,46 @@ const navigationData: NavCategory[] = [
       { label: 'Phase 2 GTM', href: '/phase-2-gtm', icon: Calendar },
       { label: 'Phase 3 GTM', href: '/phase-3-gtm', icon: Calendar },
       { label: 'KPI Tracking', href: '/kpi-tracking', icon: BarChart3 },
+    ]
+  },
+  {
+    title: 'User Apps',
+    icon: Smartphone,
+    color: 'text-emerald-400',
+    items: [
+      { label: 'Nuqta', href: '/nuqta', icon: Crown },
+      { label: 'Nuqta+', href: '/nuqta-plus', icon: Sparkles },
+      { label: 'NuqtaPay', href: '/nuqtapay', icon: CreditCard },
+      { label: 'Qist', href: '/qist', icon: Wallet },
+      { label: 'Hawil', href: '/hawil', icon: DollarSign },
+      { label: 'Wasil', href: '/wasil', icon: ShoppingCart },
+      { label: 'Safar', href: '/safar', icon: Globe },
+      { label: 'Rakab', href: '/rakab', icon: MapPin },
+      { label: 'Sakin', href: '/sakin', icon: Building2 },
+      { label: 'Ajer', href: '/ajer', icon: Layers },
+      { label: 'Fakhir', href: '/fakhir', icon: Gem },
+      { label: 'Tabib', href: '/tabib', icon: Stethoscope },
+      { label: 'Majlis', href: '/majlis', icon: MessageCircle },
+    ]
+  },
+  {
+    title: 'Business Tools',
+    icon: Store,
+    color: 'text-blue-400',
+    items: [
+      { label: 'BizOne', href: '/bizone', icon: Store },
+      { label: 'Rabtul', href: '/rabtul', icon: Settings },
+      { label: 'Adzy', href: '/adzy', icon: Megaphone },
+      { label: 'Amana', href: '/amana', icon: Shield },
+      { label: 'Tawzeef', href: '/tawzeef', icon: Users },
+      { label: 'Daman', href: '/daman', icon: Heart },
+      { label: 'Khedma', href: '/khedma', icon: Landmark },
+      { label: 'Tadreeb', href: '/tadreeb', icon: GraduationCap },
+      { label: 'Inventora', href: '/inventora', icon: Database },
+      { label: 'Mazra', href: '/mazra', icon: Wheat },
+      { label: 'Aqar', href: '/aqar', icon: Home },
+      { label: 'NextaBizz', href: '/nextabizz', icon: Briefcase },
+      { label: 'Eventora', href: '/eventora', icon: Calendar },
     ]
   },
   {
@@ -173,7 +153,6 @@ const navigationData: NavCategory[] = [
     color: 'text-pink-400',
     items: [
       { label: 'Marketing Hub', href: '/marketing-hub', icon: Megaphone },
-      { label: 'Social Media Tracker', href: '/social-media-tracker', icon: TrendingUp },
       { label: 'CMO Playbook', href: '/cmo-playbook', icon: BookOpen },
       { label: 'Marketing Execution', href: '/marketing-execution', icon: Target },
       { label: 'Content Calendar', href: '/content-calendar', icon: Calendar },
@@ -182,12 +161,11 @@ const navigationData: NavCategory[] = [
       { label: 'UGC Campaigns', href: '/ugc-campaigns', icon: Share2 },
       { label: 'Influencer List', href: '/influencer-list', icon: Users },
       { label: 'Ambassador Program', href: '/ambassador-program', icon: Award },
-      { label: 'Offline Marketing', href: '/offline-marketing', icon: Map },
-      { label: 'SMS Templates', href: '/sms-templates', icon: MessageSquare },
-      { label: 'Email Templates', href: '/email-templates', icon: Mail },
       { label: 'Press Kit', href: '/press-kit', icon: FileText },
       { label: 'Media Hub', href: '/media-hub', icon: Tv },
       { label: 'Analytics', href: '/analytics-dashboard', icon: BarChart3 },
+      { label: 'Social Tracker', href: '/social-media-tracker', icon: TrendingUp },
+      { label: 'Offline Marketing', href: '/offline-marketing', icon: Map },
     ]
   },
   {
@@ -209,31 +187,37 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
-    title: 'C-Suite',
+    title: 'Leadership',
     icon: Crown,
     color: 'text-[#c9a227]',
     items: [
-      { label: 'Future Ambition', href: '/future-ambition', icon: Globe },
-      { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
       { label: 'Executive Team', href: '/executive-team', icon: Crown },
+      { label: 'Future Ambition', href: '/future-ambition', icon: Globe },
       { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },
       { label: 'C-Suite Operations', href: '/c-suite-operations', icon: Settings },
+      { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown },
+      { label: 'Legal & Compliance', href: '/legal-compliance', icon: Scale },
+      { label: 'License Preparation', href: '/license-preparation', icon: ClipboardList },
+      { label: 'Legal Documents', href: '/legal-documents', icon: FileText },
       { label: 'Issue Resolution', href: '/issue-resolution', icon: AlertTriangle },
+      { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
+    ]
+  },
+  {
+    title: 'AI Agents',
+    icon: Bot,
+    color: 'text-violet-400',
+    items: [
       { label: 'CEO Agent', href: '/ceo-agent', icon: Bot },
       { label: 'CEO Analysis', href: '/ceo-analysis', icon: Crown },
-      { label: 'CEO Master Plan', href: '/ceo-master-plan', icon: Crown },
       { label: 'COO Agent', href: '/coo-agent', icon: Bot },
       { label: 'COO Analysis', href: '/coo-analysis', icon: Settings },
       { label: 'CFO Agent', href: '/cfo-agent', icon: Bot },
       { label: 'CFO Analysis', href: '/cfo-analysis', icon: Calculator },
-      { label: 'Legal & Compliance', href: '/legal-compliance', icon: Scale },
-      { label: 'License Preparation', href: '/license-preparation', icon: ClipboardList },
-      { label: 'Legal Documents', href: '/legal-documents', icon: FileText },
       { label: 'CMO Agent', href: '/cmo-agent', icon: Bot },
       { label: 'CMO Analysis', href: '/cmo-analysis', icon: Megaphone },
       { label: 'CHRO Agent', href: '/chro-agent', icon: Bot },
       { label: 'CHRO Analysis', href: '/chro-analysis', icon: Heart },
-      { label: 'CHRO Master Plan', href: '/chro-master-plan', icon: Heart },
     ]
   },
   {
@@ -257,39 +241,6 @@ const navigationData: NavCategory[] = [
     ]
   },
   {
-    title: 'Products',
-    icon: Sparkles,
-    color: 'text-emerald-400',
-    items: [
-      { label: 'Nuqta', href: '/nuqta', icon: Crown },
-      { label: 'NuqtaPay', href: '/nuqtapay', icon: CreditCard },
-      { label: 'Adzy', href: '/adzy', icon: Megaphone },
-      { label: 'Ajer', href: '/ajer', icon: Layers },
-      { label: 'BizOne', href: '/bizone', icon: Store },
-      { label: 'Eventora', href: '/eventora', icon: Calendar },
-      { label: 'Inventora', href: '/inventora', icon: Database },
-      { label: 'NextaBizz', href: '/nextabizz', icon: Briefcase },
-      { label: 'Rakab', href: '/rakab', icon: MapPin },
-      { label: 'Safar', href: '/safar', icon: Globe },
-      { label: 'Wasil', href: '/wasil', icon: ShoppingCart },
-      { label: 'Qist', href: '/qist', icon: Wallet },
-      { label: 'Hawil', href: '/hawil', icon: DollarSign },
-      { label: 'Sakin', href: '/sakin', icon: Building2 },
-      { label: 'Fakhir', href: '/fakhir', icon: Gem },
-      { label: 'Rabtul', href: '/rabtul', icon: Settings },
-      { label: 'Amana', href: '/amana', icon: Shield },
-      { label: 'Tawzeef', href: '/tawzeef', icon: Users },
-      { label: 'Daman', href: '/daman', icon: Heart },
-      { label: 'Khedma', href: '/khedma', icon: Landmark },
-      { label: 'Tabib', href: '/tabib', icon: Stethoscope },
-      { label: 'Aqar', href: '/aqar', icon: Home },
-      { label: 'Mazra', href: '/mazra', icon: Wheat },
-      { label: 'Tadreeb', href: '/tadreeb', icon: GraduationCap },
-      { label: 'Majlis', href: '/majlis', icon: MessageCircle },
-      { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Sparkles },
-    ]
-  },
-  {
     title: 'RTMN Hub',
     icon: Globe,
     color: 'text-[#c9a227]',
@@ -297,23 +248,6 @@ const navigationData: NavCategory[] = [
       { label: 'RTMN Group', href: '/rtmn-group', icon: Building2 },
       { label: 'RTMN Ecosystem', href: '/rtmn-ecosystem', icon: Layers },
       { label: 'RTMN Dashboard', href: '/rtmn-dashboard', icon: BarChart3 },
-    ]
-  },
-  {
-    title: 'Company',
-    icon: Building2,
-    color: 'text-slate-300',
-    items: [
-      { label: 'About', href: '/about', icon: Building2 },
-      { label: 'Why Nuqta', href: '/why-nuqta', icon: Zap },
-      { label: 'Features', href: '/features', icon: Sparkles },
-      { label: 'How It Works', href: '/how-it-works', icon: Play },
-      { label: 'FAQ', href: '/faq', icon: HelpCircle },
-      { label: 'Contact', href: '/contact', icon: Mail },
-      { label: 'Privacy', href: '/privacy', icon: Shield },
-      { label: 'Team', href: '/team', icon: Users },
-      { label: 'Careers', href: '/careers', icon: Briefcase },
-      { label: 'Terms', href: '/terms', icon: FileText },
       { label: 'Documentation', href: '/documentation', icon: BookOpen },
       { label: 'BizOne OS Spec', href: '/bizone-os', icon: Store },
       { label: 'HQ Admin Spec', href: '/hq-admin', icon: Shield },
@@ -336,6 +270,23 @@ const navigationData: NavCategory[] = [
       { label: 'Business Playbook', href: '/business-playbook', icon: BookOpen },
     ]
   },
+  {
+    title: 'Company',
+    icon: Building2,
+    color: 'text-slate-300',
+    items: [
+      { label: 'About', href: '/about', icon: Building2 },
+      { label: 'Why Nuqta', href: '/why-nuqta', icon: Zap },
+      { label: 'Features', href: '/features', icon: Sparkles },
+      { label: 'How It Works', href: '/how-it-works', icon: Play },
+      { label: 'FAQ', href: '/faq', icon: HelpCircle },
+      { label: 'Contact', href: '/contact', icon: Mail },
+      { label: 'Team', href: '/team', icon: Users },
+      { label: 'Careers', href: '/careers', icon: Briefcase },
+      { label: 'Privacy', href: '/privacy', icon: Shield },
+      { label: 'Terms', href: '/terms', icon: FileText },
+    ]
+  },
 ];
 
 // All searchable pages
@@ -348,13 +299,14 @@ const allPages = [
 const quickLinks = [
   { label: 'Home', href: '/', icon: Home },
   { label: 'Dashboard', href: '/dashboard', icon: BarChart3 },
+  { label: 'Roadmap', href: '/complete-roadmap', icon: Map },
   { label: 'Pitch Deck', href: '/deck-90', icon: Rocket },
   { label: 'Data Room', href: '/data-room', icon: Database },
-  { label: 'Financial', href: '/financialprojection', icon: Calculator },
+  { label: 'RTMN Group', href: '/rtmn-group', icon: Globe },
+  { label: 'Products', href: '/nuqta', icon: Crown },
   { label: 'GTM', href: '/gtm', icon: TrendingUp },
   { label: 'Merchants', href: '/merchant-engines', icon: Store },
   { label: 'Marketing', href: '/marketing-hub', icon: Megaphone },
-  { label: 'Partnerships', href: '/partnerships', icon: Handshake },
   { label: 'C-Suite', href: '/executive-team', icon: Crown },
   { label: 'Launch', href: '/launch-readiness', icon: Rocket },
 ];
@@ -406,7 +358,7 @@ const GlobalFooter = () => {
               <input
                 ref={searchRef}
                 type="text"
-                placeholder="Search pages..."
+                placeholder="Search 242+ pages..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="flex-1 bg-transparent text-white text-base sm:text-lg placeholder:text-slate-500 outline-none"
@@ -423,7 +375,7 @@ const GlobalFooter = () => {
             {/* Search Results */}
             <div className="max-h-64 sm:max-h-96 overflow-y-auto py-2">
               {filteredPages.length > 0 ? (
-                filteredPages.slice(0, 12).map((page) => (
+                filteredPages.slice(0, 15).map((page) => (
                   <Link
                     key={page.href}
                     href={page.href}
@@ -445,9 +397,9 @@ const GlobalFooter = () => {
             {/* Quick Categories */}
             {!searchQuery && (
               <div className="border-t border-white/10 px-4 py-3">
-                <p className="text-xs text-slate-500 mb-2">Quick Access</p>
+                <p className="text-xs text-slate-500 mb-2">Browse by Category</p>
                 <div className="flex flex-wrap gap-2">
-                  {navigationData.slice(0, 4).map((cat) => (
+                  {navigationData.slice(0, 6).map((cat) => (
                     <button
                       key={cat.title}
                       onClick={() => setSearchQuery(cat.title.toLowerCase())}
@@ -473,7 +425,7 @@ const GlobalFooter = () => {
               className="w-full flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 bg-white/5 border border-white/10 rounded-lg sm:rounded-xl text-slate-400 hover:text-white hover:border-[#c9a227]/50 transition-all text-sm sm:text-base"
             >
               <Search size={16} />
-              <span>Search all pages...</span>
+              <span>Search 242+ pages...</span>
               <kbd className="text-[10px] sm:text-xs bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded ml-1 sm:ml-2 hidden sm:block">Cmd+K</kbd>
             </button>
           </div>
@@ -502,9 +454,9 @@ const GlobalFooter = () => {
           </div>
         </div>
 
-        {/* Main Footer Grid - All Categories */}
+        {/* Main Footer Grid - 14 Categories in 7 columns */}
         <div className="max-w-7xl mx-auto px-3 sm:px-4 py-6 sm:py-8 lg:py-12">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 sm:gap-6 lg:gap-8">
             {navigationData.map((category) => (
               <div key={category.title}>
                 <h4 className={`text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2 sm:mb-4 flex items-center gap-1.5 sm:gap-2 ${category.color}`}>
@@ -550,12 +502,21 @@ const GlobalFooter = () => {
                 </Link>
               </div>
 
+              {/* Stats */}
+              <div className="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-slate-500">
+                <span>26 Products</span>
+                <span>•</span>
+                <span>242+ Pages</span>
+                <span>•</span>
+                <span>11 Companies</span>
+              </div>
+
               {/* Links */}
               <div className="flex items-center gap-4 sm:gap-6 text-xs sm:text-sm">
                 <Link href="/terms" className="text-slate-400 hover:text-white transition-colors">
                   Terms
                 </Link>
-                <Link href="/policies" className="text-slate-400 hover:text-white transition-colors">
+                <Link href="/privacy" className="text-slate-400 hover:text-white transition-colors">
                   Privacy
                 </Link>
                 <a
