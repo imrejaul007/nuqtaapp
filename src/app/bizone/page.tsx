@@ -1646,6 +1646,19 @@ export default function BizOnePage() {
         </div>
       </section>
 
+      {/* Link to Full BizOne OS Specification */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-blue-900/30 to-indigo-900/30 border border-blue-500/30 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-2">BizOne Merchant OS — Full Technical Specification</h3>
+            <p className="text-slate-400 mb-4">219 screens, 21 modules — complete API specs, data models, and user flows for PMs and developers.</p>
+            <Link href="/bizone-os" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition-colors">
+              <FileText className="w-5 h-5" /> View Full Spec <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <GlobalFooter />
     </div>
   );

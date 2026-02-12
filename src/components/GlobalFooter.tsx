@@ -300,6 +300,9 @@ const navigationData: NavCategory[] = [
       { label: 'Careers', href: '/careers', icon: Briefcase },
       { label: 'Terms', href: '/terms', icon: FileText },
       { label: 'Documentation', href: '/documentation', icon: BookOpen },
+      { label: 'BizOne OS Spec', href: '/bizone-os', icon: Store },
+      { label: 'HQ Admin Spec', href: '/hq-admin', icon: Shield },
+      { label: 'Rabtul Core Spec', href: '/rabtul-core', icon: Database },
     ]
   },
   {

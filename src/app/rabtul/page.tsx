@@ -965,6 +965,19 @@ export default function RabtulPage() {
         </div>
       </section>
 
+      {/* Link to Full Rabtul Core Specification */}
+      <section className="py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-purple-900/30 to-indigo-900/30 border border-purple-500/30 rounded-2xl p-8">
+            <h3 className="text-xl font-bold text-white mb-2">Rabtul Core — Full Technical Specification</h3>
+            <p className="text-slate-400 mb-4">9 core services — complete API specs, database schemas, event contracts, and security standards for developers.</p>
+            <Link href="/rabtul-core" className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-xl font-bold hover:bg-purple-500 transition-colors">
+              <Code className="w-5 h-5" /> View Full Spec <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <GlobalFooter />
     </div>
   );
