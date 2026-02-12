@@ -10,7 +10,8 @@ import {
   Clock, Shield, Target, PieChart, Smartphone,
   LayoutGrid, ChevronRight, Car, Coins,
   Search, Heart, TrendingUp, Award,
-  Store, Crown, Armchair, UserPlus, Eye
+  Store, Crown, Armchair, UserPlus, Eye,
+  Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -434,7 +435,7 @@ const eventCategories = [
 
 export default function EventoraPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('event-discovery');
-  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market'>('features');
+  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
@@ -485,6 +486,7 @@ export default function EventoraPage() {
               { key: 'features' as const, label: 'Core Features', icon: LayoutGrid },
               { key: 'pricing' as const, label: 'Pricing & Economics', icon: DollarSign },
               { key: 'market' as const, label: 'Market & Competition', icon: Globe },
+              { key: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -839,6 +841,143 @@ export default function EventoraPage() {
               </div>
             </div>
           </>
+        )}
+
+        {/* ═══════════════ PITCH DECK TAB ═══════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 rounded-2xl p-6 border border-violet-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Eventora is not just a ticketing platform -- it is the events layer of a $50B+ commerce ecosystem. Every ticket sold feeds NuqtaPay transactions, Qist BNPL volume, Rakab rides, Adzy ad revenue, and Nuqta Coin circulation. No competitor in MENA has this flywheel capturing the $4B+ UAE events market.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$4B+', detail: 'UAE Events & Entertainment Market' },
+                  { label: 'SAM', value: '$1.2B', detail: 'Ticketed Events Segment' },
+                  { label: 'SOM', value: '80M AED', detail: 'Year 3 Eventora Revenue Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Nuqta Coins on Every Ticket', desc: 'Earn 5x coins on purchases and bonus for check-in. No competitor has loyalty rewards.' },
+                  { title: 'Qist BNPL for Events', desc: 'Split VIP and festival tickets into 3-6 monthly installments. Unique in ticketing.' },
+                  { title: 'Rakab Transport Built-In', desc: 'Pre-schedule rides to/from events with surge-free pricing.' },
+                  { title: 'NuqtaPay Checkout', desc: 'Cards, wallets, or NuqtaPay balance. One-tap purchase for repeat buyers.' },
+                  { title: 'Full Organizer Ecosystem', desc: 'Seat maps, real-time analytics, promo codes, CRM tools, 3-day settlement.' },
+                  { title: 'Adzy Event Promotion', desc: 'Integrated ad platform with closed-loop attribution from ad to ticket sale.' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-violet-400 mt-0.5 flex-shrink-0" />
+                    <div><span className="text-white font-semibold text-sm">{d.title}</span><span className="text-slate-400 text-sm"> — {d.desc}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">3-Year Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Tickets Sold', 'Revenue', 'Costs', 'Net Profit'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-violet-400 font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', tickets: '100K', rev: '5M AED', costs: '3M AED', net: '2M AED' },
+                      { year: 'Year 2', tickets: '500K', rev: '25M AED', costs: '10M AED', net: '15M AED' },
+                      { year: 'Year 3', tickets: '2M', rev: '80M AED', costs: '24M AED', net: '56M AED' },
+                    ].map(r => (
+                      <tr key={r.year} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{r.year}</td>
+                        <td className="px-3 py-3 text-blue-400">{r.tickets}</td>
+                        <td className="px-3 py-3 text-emerald-400 font-bold">{r.rev}</td>
+                        <td className="px-3 py-3 text-red-400">{r.costs}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{r.net}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Eventbrite', val: '$1.5B', model: 'Self-service ticketing' },
+                  { name: 'StubHub', val: '$4B', model: 'Secondary ticket marketplace' },
+                  { name: 'Dice', val: '$400M', model: 'Music-focused ticketing' },
+                  { name: 'Platinumlist', val: '$50-100M', model: 'UAE event ticketing' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-violet-400 text-lg font-black mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.model}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-violet-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', metric: '100K tickets', timeline: 'Q4 2026', val: '~$25M' },
+                  { stage: 'Series A', metric: '500K tickets', timeline: 'Q4 2027', val: '~$120M' },
+                  { stage: 'Series B', metric: '2M tickets', timeline: 'Q4 2028', val: '~$400M' },
+                  { stage: '$1B+', metric: '8M tickets (GCC)', timeline: '2029+', val: '~$1B+' },
+                ].map(s => (
+                  <div key={s.stage} className="bg-violet-500/10 rounded-xl p-4 border border-violet-500/30 text-center">
+                    <div className="text-xs text-violet-400 font-bold">{s.stage}</div>
+                    <div className="text-white font-bold text-sm mt-1">{s.metric}</div>
+                    <div className="text-lg font-black text-violet-400 mt-1">{s.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{s.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Every ticket sold on Eventora generates cascading revenue across the RTMN ecosystem.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  'NuqtaPay transaction volume',
+                  'Qist BNPL expansion',
+                  'Rakab ride generation',
+                  'Adzy ad inventory',
+                ].map(s => (
+                  <div key={s} className="bg-[#c9a227]/10 rounded-lg px-3 py-2 text-center">
+                    <span className="text-[#c9a227] text-xs font-medium">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </main>
 

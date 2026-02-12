@@ -15,7 +15,7 @@ import {
   Hotel, Car, Camera, Palmtree, Mountain, Tent, Ship,
   Ticket, Map, Compass, Luggage, Stamp, Flag, Wifi,
   Anchor, Waves, Sun, TreePine, DollarSign, Percent,
-  ArrowDown, ArrowUp, X, Check, Info, Heart, Gem
+  ArrowDown, ArrowUp, X, Check, Info, Heart, Gem, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -355,6 +355,7 @@ export default function SafarPage() {
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
     { id: 'gcc', label: 'GCC Expansion', icon: Globe },
     { id: 'financials', label: 'Financials', icon: BarChart3 },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1447,6 +1448,144 @@ export default function SafarPage() {
                 <div className="text-[#c9a227] font-bold text-2xl">23:1</div>
                 <div className="text-white text-sm">LTV:CAC Ratio</div>
                 <p className="text-xs text-slate-400">Excellent unit economics</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════════════ PITCH DECK TAB ═══════════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-cyan-500/20 to-cyan-500/5 rounded-2xl p-6 border border-cyan-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                Travel is the highest-ticket consumer vertical (avg 2,000-5,000 AED/booking). Safar captures this with Nuqta Coins (10X earning),
+                Hawil Card (best FX rates for travel), and Qist BNPL (split vacations over 12 months). With 9.5M expats needing annual home trips,
+                the Hawil-to-Safar cross-sell alone is a billion-dollar pipeline.
+              </p>
+            </div>
+
+            {/* Market Opportunity - TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-cyan-500/30 text-center">
+                  <div className="text-3xl font-bold text-cyan-400">$50B+</div>
+                  <div className="text-sm text-slate-400 mt-1">TAM — GCC Outbound Travel</div>
+                  <div className="text-xs text-slate-500 mt-1">Flights, hotels, packages, adventures</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">$15B</div>
+                  <div className="text-sm text-slate-400 mt-1">SAM — UAE Outbound</div>
+                  <div className="text-xs text-slate-500 mt-1">12% YoY growth</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-blue-500/30 text-center">
+                  <div className="text-3xl font-bold text-blue-400">$2.1B</div>
+                  <div className="text-sm text-slate-400 mt-1">SOM — Year 3 GMV</div>
+                  <div className="text-xs text-slate-500 mt-1">350K users, 280M AED revenue</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Hawil-to-Safar Pipeline', desc: '9.5M expat remittance users become travel bookers. Every person who sends money home also needs to fly home.' },
+                  { title: 'Hawil Card (Zero FX Abroad)', desc: 'Every Safar traveler gets Hawil Card for zero foreign exchange fees abroad — save 3-5% on every purchase.' },
+                  { title: 'Qist BNPL (12-Month Financing)', desc: 'Split a 12,000 AED Europe trip into 1,000 AED/month. Unlocks travel for the mass market.' },
+                  { title: '10X Nuqta Coins on Travel', desc: 'Highest coin earning rate in the ecosystem. Every booking is a rewards windfall redeemable at 500+ merchants.' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-slate-900/50 rounded-lg p-4 border border-slate-700/30">
+                    <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                    <div><div className="text-white font-bold text-sm">{d.title}</div><p className="text-xs text-slate-400 mt-1">{d.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700 text-slate-400">
+                    <th className="text-left py-2 pr-4">Year</th><th className="text-right py-2 px-4">Users</th><th className="text-right py-2 px-4">GMV (AED)</th><th className="text-right py-2 px-4">Revenue (AED)</th><th className="text-right py-2 px-4">Valuation</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '30K', gmv: '175M', revenue: '25M', valuation: '~$50M' },
+                      { year: 'Year 2', users: '120K', gmv: '700M', revenue: '100M', valuation: '~$250M' },
+                      { year: 'Year 3', users: '350K', gmv: '2.1B', revenue: '280M', valuation: '~$750M' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 text-slate-300">
+                        <td className="py-2 pr-4 text-white font-medium">{r.year}</td><td className="text-right py-2 px-4">{r.users}</td><td className="text-right py-2 px-4">{r.gmv}</td><td className="text-right py-2 px-4 text-emerald-400">{r.revenue}</td><td className="text-right py-2 px-4 text-cyan-400">{r.valuation}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'MakeMyTrip', val: '$3.5B', region: 'India OTA' },
+                  { name: 'Almosafer/Wego', val: '$500M+', region: 'MENA Travel' },
+                  { name: 'Hopper', val: '$5B', region: 'AI Travel + Fintech' },
+                  { name: 'Trip.com', val: '$25B', region: 'Global OTA' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-cyan-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.region}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5 text-cyan-400" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Year 1', val: '~$50M', timeline: '30K users', metric: '175M GMV, 25M rev' },
+                  { stage: 'Year 2', val: '~$250M', timeline: '120K users', metric: '700M GMV, 100M rev' },
+                  { stage: 'Year 3', val: '~$750M', timeline: '350K users', metric: '2.1B GMV, 280M rev' },
+                  { stage: 'Year 5', val: '$2B+', timeline: '900K users', metric: '10.5B GMV, 1.05B rev' },
+                ].map((s, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-cyan-500/10 border-cyan-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">{s.stage}</div>
+                    <div className={`text-2xl font-black mt-1 ${i === 3 ? 'text-cyan-400' : 'text-white'}`}>{s.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{s.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{s.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Travel is the highest-ticket vertical. With Hawil Card (0% FX), Qist BNPL (12-month financing), and 10X Nuqta Coins, Safar has a true fintech moat no standalone OTA can replicate.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { app: 'Hawil Card', metric: 'Zero FX abroad' },
+                  { app: 'Qist BNPL', metric: '12-month split' },
+                  { app: '10X Nuqta Coins', metric: 'Best travel rewards' },
+                  { app: 'Daman Insurance', metric: 'Baked-in coverage' },
+                  { app: 'Rakab Transfers', metric: 'Airport pickup' },
+                  { app: 'Wasil Pre-trip', metric: 'Travel essentials' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg px-3 py-2 border border-slate-700/30 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">{item.app}</span>
+                    <span className="text-emerald-400 text-xs font-bold">{item.metric}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

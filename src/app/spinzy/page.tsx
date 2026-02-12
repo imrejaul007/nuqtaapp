@@ -9,7 +9,8 @@ import {
   CheckCircle, XCircle, ChevronDown, ChevronUp,
   ArrowRight, Shield, Rocket, Calendar, Store,
   Megaphone, Database, Layers, Award, Percent,
-  Globe, Play, Heart, Sparkles, Timer, Dice1
+  Globe, Play, Heart, Sparkles, Timer, Dice1,
+  Briefcase, ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -368,6 +369,7 @@ const roadmap = [
 export default function SpinZyPage() {
   const [expandedGame, setExpandedGame] = useState<string | null>(null);
   const [expandedRevenue, setExpandedRevenue] = useState<string | null>(null);
+  const [showDeck, setShowDeck] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
@@ -840,6 +842,178 @@ export default function SpinZyPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ============================================ */}
+      {/* PITCH DECK */}
+      {/* ============================================ */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <button onClick={() => setShowDeck(!showDeck)} className="w-full flex items-center justify-between bg-gradient-to-r from-yellow-500/20 to-amber-500/10 rounded-xl p-6 border-2 border-yellow-500/30 hover:border-yellow-500/50 transition-colors mb-6">
+          <div className="flex items-center gap-3">
+            <Briefcase className="w-6 h-6 text-yellow-400" />
+            <div className="text-left">
+              <h2 className="text-xl font-bold text-white">Investor Pitch Deck</h2>
+              <p className="text-slate-400 text-sm">Investment thesis, market opportunity, financials &amp; unicorn path</p>
+            </div>
+          </div>
+          {showDeck ? <ChevronUp className="w-6 h-6 text-yellow-400" /> : <ChevronDown className="w-6 h-6 text-yellow-400" />}
+        </button>
+
+        {showDeck && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-br from-yellow-500/15 to-amber-500/5 rounded-xl p-6 border border-yellow-500/40">
+              <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+                <Briefcase className="w-6 h-6 text-yellow-400" /> Investment Thesis
+              </h3>
+              <p className="text-slate-300 text-sm">
+                SpinZy is not a gaming app — it is a <strong className="text-yellow-400">customer acquisition engine disguised as entertainment</strong>.
+                Every 30-second session converts a player into a Nuqta ecosystem user. No other play-to-earn platform in the world
+                has a <strong className="text-[#c9a227]">real-commerce ecosystem</strong> behind it with 500+ merchants and cross-app monetization.
+              </p>
+            </div>
+
+            {/* Market Opportunity — TAM/SAM/SOM */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-yellow-400">$2.5B</div>
+                  <div className="text-xs text-slate-400 mt-1">TAM</div>
+                  <div className="text-[10px] text-slate-500">GCC Mobile Gaming Market (2026)</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-yellow-500/30">
+                  <div className="text-2xl font-bold text-amber-400">$800M</div>
+                  <div className="text-xs text-slate-400 mt-1">SAM</div>
+                  <div className="text-[10px] text-slate-500">Reward &amp; Loyalty Gaming Segment</div>
+                </div>
+                <div className="bg-yellow-500/10 rounded-xl p-4 text-center border border-yellow-500/40">
+                  <div className="text-2xl font-bold text-[#c9a227]">$50M</div>
+                  <div className="text-xs text-slate-400 mt-1">SOM (Year 3)</div>
+                  <div className="text-[10px] text-slate-500">SpinZy Revenue Target</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  'Real-value coins redeemable at 500+ merchants — not worthless points',
+                  'Ultra-lightweight <5MB app works on any device and connection',
+                  'Merchant-funded prizes create self-sustaining reward engine',
+                  '30-second micro-sessions designed for commuters and quick breaks',
+                  'Closed-loop attribution: game to ad to merchant visit to purchase',
+                  'Viral by design with referral bonuses, PvP challenges, and leaderboards',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-yellow-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-yellow-400" /> 3-Year Financial Projections (AED)
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700/50">
+                      <th className="text-left py-2 px-3 text-yellow-400 font-semibold">Metric</th>
+                      <th className="text-center py-2 px-3 text-yellow-400 font-semibold">Year 1</th>
+                      <th className="text-center py-2 px-3 text-yellow-400 font-semibold">Year 2</th>
+                      <th className="text-center py-2 px-3 text-yellow-400 font-semibold">Year 3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { label: 'Total Users', y1: '100K', y2: '500K', y3: '1.5M', highlight: false },
+                      { label: 'DAU', y1: '30K', y2: '150K', y3: '450K', highlight: false },
+                      { label: 'Revenue', y1: '3.5M', y2: '18M', y3: '50M', highlight: true },
+                      { label: 'Ad Revenue', y1: '1.4M', y2: '7.2M', y3: '20M', highlight: false },
+                      { label: 'Merchant Revenue', y1: '1.05M', y2: '5.4M', y3: '15M', highlight: false },
+                      { label: 'Premium Revenue', y1: '0.7M', y2: '3.6M', y3: '10M', highlight: false },
+                      { label: 'Costs', y1: '2.1M', y2: '7.2M', y3: '15M', highlight: false },
+                      { label: 'Net Profit', y1: '1.4M', y2: '10.8M', y3: '35M', highlight: true },
+                    ].map((row) => (
+                      <tr key={row.label} className={`border-b border-slate-800/50 ${row.highlight ? 'bg-yellow-500/5' : ''}`}>
+                        <td className={`py-2 px-3 ${row.highlight ? 'text-yellow-400 font-bold' : 'text-slate-300'}`}>{row.label}</td>
+                        <td className={`py-2 px-3 text-center ${row.highlight ? 'text-yellow-400 font-bold' : 'text-white'}`}>{row.y1}</td>
+                        <td className={`py-2 px-3 text-center ${row.highlight ? 'text-yellow-400 font-bold' : 'text-white'}`}>{row.y2}</td>
+                        <td className={`py-2 px-3 text-center ${row.highlight ? 'text-yellow-400 font-bold' : 'text-white'}`}>{row.y3}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { company: 'Mistplay', valuation: '$100M+ revenue', model: 'Game discovery + ads', edge: 'SpinZy adds real-commerce rewards + merchant funding' },
+                  { company: 'MPL (India)', valuation: '$2.3B valuation', model: 'Mobile gaming + prizes', edge: 'SpinZy has lower CAC, higher LTV via ecosystem' },
+                  { company: 'Sweatcoin', valuation: '$450M valuation', model: 'Move-to-earn', edge: 'SpinZy is play-to-earn with 6x more engagement modes' },
+                ].map((comp, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                    <div className="text-white font-bold">{comp.company}</div>
+                    <div className="text-yellow-400 font-bold text-sm mt-1">{comp.valuation}</div>
+                    <div className="text-slate-400 text-xs mt-1">{comp.model}</div>
+                    <div className="text-emerald-400 text-xs mt-2">{comp.edge}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-yellow-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[
+                  { milestone: '500K users', timeline: 'Q4 2026', revenue: '~18M AED', valuation: '~$50M' },
+                  { milestone: '1.5M users', timeline: 'Q4 2027', revenue: '~50M AED', valuation: '~$200M' },
+                  { milestone: '5M users (GCC)', timeline: 'Q4 2028', revenue: '~150M AED', valuation: '~$500M' },
+                  { milestone: '15M users (MENA)', timeline: '2029+', revenue: '~400M AED', valuation: '~$1B+' },
+                ].map((ms, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-yellow-500/10 border-yellow-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className={`text-xl font-bold ${i === 3 ? 'text-yellow-400' : 'text-white'}`}>{ms.valuation}</div>
+                    <div className="text-xs text-slate-400 mt-1">{ms.milestone}</div>
+                    <div className="text-xs text-slate-500">{ms.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{ms.revenue} rev</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-yellow-500/5 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-4">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-400 text-sm mb-4">Why SpinZy inside RTMN is 10x more valuable than a standalone gaming app:</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { factor: 'Zero CAC from Nuqta', detail: 'Every Nuqta user gets SpinZy pre-installed. 50K+ users on day one.' },
+                  { factor: 'Merchant-funded growth', detail: 'BizOne merchants pay for prizes = SpinZy earns while acquiring users for the ecosystem.' },
+                  { factor: 'Cross-sell engine', detail: 'SpinZy user becomes Nuqta member, orders via Wasil, books via Dinezy, uses Qist BNPL. Each app multiplies LTV.' },
+                  { factor: 'Data moat', detail: 'Gaming behavior + spending behavior = unmatched targeting for Adzy ads. No competitor has this data.' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                    <div className="text-[#c9a227] font-bold text-sm mb-1">{item.factor}</div>
+                    <div className="text-slate-400 text-xs">{item.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       {/* ============================================ */}

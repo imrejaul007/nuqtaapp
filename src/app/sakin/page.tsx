@@ -12,7 +12,8 @@ import {
   Building2, Banknote, Scale, UserCheck, Landmark, PiggyBank,
   LineChart, CircleDollarSign, ShieldCheck, HeartHandshake,
   Search, Eye, MessageCircle, CalendarDays, Sparkles, Camera, Layers,
-  ShoppingBag, Coins, Network, ArrowRightLeft, Truck, Package, Wrench
+  ShoppingBag, Coins, Network, ArrowRightLeft, Truck, Package, Wrench,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -580,6 +581,7 @@ export default function SakinPage() {
     { id: 'risks', label: 'Risks', icon: Shield },
     { id: 'competition', label: 'Competition', icon: Users },
     { id: 'ecosystem', label: 'Ecosystem', icon: Network },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -2440,6 +2442,147 @@ export default function SakinPage() {
                       <div className="text-white font-bold text-sm sm:text-base">{adv.title}</div>
                       <div className="text-xs sm:text-sm text-slate-400">{adv.desc}</div>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ─── PITCH DECK TAB ─── */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-teal-500/20 to-teal-500/5 rounded-2xl p-6 border border-teal-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Housing is the largest expense for 9.5M UAE expats. Sakin captures the $15B rental market by financing the biggest pain point -- upfront move-in costs of 40K-95K AED. One Sakin transaction generates massive GMV. With Qist credit integration, Aqar property listings, CleanEZ move-in cleaning, and Handyzy setup services, Sakin owns the entire housing lifecycle. No competitor touches rent BNPL.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$15B+', detail: 'UAE Annual Rental Market' },
+                  { label: 'SAM', value: '$4.2B', detail: 'Addressable Rent BNPL (900K households)' },
+                  { label: 'SOM', value: '$200M', detail: 'Year 1 GMV Target (5K tenants)' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Full Move-in Financing', desc: 'Deposit + first month + agency fee -- all financed into monthly payments' },
+                  { title: 'Nuqta Coin Rewards', desc: '100 AED/month in coins for on-time payment (1,200 AED/year)' },
+                  { title: 'Salary-Linked Auto-Debit', desc: 'Automated monthly deductions, zero missed payments' },
+                  { title: 'Landlord Gets Full Rent Day 1', desc: 'We pay landlord entire annual rent upfront' },
+                  { title: 'Property Marketplace', desc: 'Find, tour, and finance your next home in one app' },
+                  { title: 'Zero Competitor', desc: 'No rent BNPL exists in UAE -- we are creating the category' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-white font-bold text-sm">{d.title}</div>
+                      <div className="text-slate-400 text-xs">{d.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections (3-Year)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Tenants', 'Revenue (AED)', 'Profit (AED)'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { y: 'Year 1', u: '5,000', r: '15M', p: '5M' },
+                      { y: 'Year 2', u: '20,000', r: '60M', p: '25M' },
+                      { y: 'Year 3', u: '50,000', r: '150M', p: '65M' },
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-slate-700/30">
+                        <td className="px-3 py-2 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-2 text-slate-300">{row.u}</td>
+                        <td className="px-3 py-2 text-teal-400 font-bold">{row.r}</td>
+                        <td className="px-3 py-2 text-emerald-400 font-bold">{row.p}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Divvy Homes', val: '$2B', market: 'USA' },
+                  { name: 'Bilt Rewards', val: '$3.1B', market: 'USA' },
+                  { name: 'Jetty', val: '$200M', market: 'USA' },
+                  { name: 'RentRedi', val: '$500M+', market: 'USA' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold text-sm">{c.name}</div>
+                    <div className="text-teal-400 text-xl font-black mt-1">{c.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$50M', time: 'Year 1', color: 'text-emerald-400' },
+                  { stage: '20K Tenants', val: '$200M', time: 'Year 2', color: 'text-blue-400' },
+                  { stage: '50K Tenants', val: '$500M', time: 'Year 3', color: 'text-purple-400' },
+                  { stage: 'GCC + Purchase', val: '$1B+', time: 'Year 4', color: 'text-[#c9a227]' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/30">
+                    <div className={`text-xs font-bold ${m.color} uppercase`}>{m.stage}</div>
+                    <div className={`text-xl font-bold ${m.color} mt-1`}>{m.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{m.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Sakin owns the entire housing lifecycle through RTMN integration. Six ecosystem products feed into every tenant journey.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  'Qist: Shared credit scoring from rent history',
+                  'Aqar: Property listings feed into marketplace',
+                  'CleanEZ: Move-in deep cleaning bundled',
+                  'Handyzy: Maintenance & setup for new tenants',
+                  'Nuqta Coins: 100 AED/mo rewards on rent',
+                  'Daman: Tenant insurance bundled at checkout',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    {item}
                   </div>
                 ))}
               </div>

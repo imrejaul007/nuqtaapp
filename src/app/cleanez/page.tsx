@@ -11,7 +11,7 @@ import {
   Smartphone, Banknote, Phone, BadgePercent, CircleDollarSign, PieChart,
   LineChart, ArrowUpRight, Timer, UserCheck, Lock, Eye, Search,
   Calendar, RefreshCw, Layers, Globe, TrendingUp, Package,
-  Percent, Store, FileText, Settings, Wrench, Droplets
+  Percent, Store, FileText, Settings, Wrench, Droplets, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -309,6 +309,7 @@ export default function CleanEZPage() {
     { id: 'services', label: 'Services & Features', icon: Sparkles },
     { id: 'pricing', label: 'Pricing & Economics', icon: DollarSign },
     { id: 'market', label: 'Market & Competition', icon: Globe },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -845,6 +846,141 @@ export default function CleanEZPage() {
               </div>
             </div>
           </div>
+        )}
+
+        {/* ═══════════════════════════════════════════ */}
+        {/* PITCH DECK */}
+        {/* ═══════════════════════════════════════════ */}
+        {activeTab === 'deck' && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-cyan-500/20 to-teal-500/10 rounded-2xl p-6 sm:p-8 border border-cyan-500/30">
+              <h2 className="text-2xl font-bold text-white mb-3 flex items-center gap-2"><Briefcase className="w-6 h-6 text-cyan-400" /> Investment Thesis</h2>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                CleanEZ is the home services vertical of the RTMN super-ecosystem. UAE has $1.5B+ in home services demand driven by 85% expat population needing professional cleaning. With Khedma workforce compliance, Sakin auto-booking for tenant move-in/out, Qist BNPL for deep cleaning, and Nuqta Coins loyalty, CleanEZ creates an unbreakable cleaning habit with zero customer acquisition cost via ecosystem cross-sell.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Market Opportunity</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM — UAE Home Services', value: '$1.5B+', color: 'text-cyan-400', border: 'border-cyan-500/40' },
+                  { label: 'SAM — Digital Addressable (35%)', value: '$540M', color: 'text-teal-400', border: 'border-teal-500/40' },
+                  { label: 'SOM — Year 3 Target (10%)', value: '$54M', color: 'text-emerald-400', border: 'border-emerald-500/40' },
+                ].map((m, i) => (
+                  <div key={i} className={`bg-slate-800/60 rounded-xl p-5 border ${m.border} text-center`}>
+                    <div className={`text-3xl font-black ${m.color}`}>{m.value}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Key Differentiators</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { title: '2X Nuqta Coins on Every Booking', desc: 'Real coins spendable at 500+ merchants across grocery, food, transport, and more.', icon: Coins, color: 'text-[#c9a227]' },
+                  { title: 'Subscription Auto-Booking', desc: 'CleanEZ+ subscribers get automatic weekly scheduling with same-cleaner matching.', icon: RefreshCw, color: 'text-cyan-400' },
+                  { title: 'Qist BNPL for Deep Cleaning', desc: 'Split deep cleaning, pest control, or full-home packages into 3-6 installments.', icon: CreditCard, color: 'text-purple-400' },
+                  { title: '6 Verticals in One App', desc: 'Home, deep, office, laundry, car wash, pest control — no need for 6 separate apps.', icon: Layers, color: 'text-teal-400' },
+                  { title: 'Quality-Assured Professionals', desc: 'Background-checked, trained, rated cleaners with photo verification before & after.', icon: ShieldCheck, color: 'text-green-400' },
+                  { title: 'Sakin Auto-Scheduling', desc: 'Every Sakin move-in/out auto-triggers CleanEZ booking. Built-in recurring demand.', icon: Home, color: 'text-blue-400' },
+                ].map((d, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+                    <d.icon className={`w-6 h-6 ${d.color} mb-2`} />
+                    <h3 className="text-white font-bold text-sm mb-1">{d.title}</h3>
+                    <p className="text-slate-400 text-xs">{d.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">3-Year Financial Projections</h2>
+              <div className="overflow-x-auto rounded-xl border border-slate-700/50">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-slate-800/80 text-slate-300">
+                    <th className="px-4 py-3 text-left">Year</th><th className="px-4 py-3 text-right">Users</th><th className="px-4 py-3 text-right">Bookings</th><th className="px-4 py-3 text-right">Revenue</th><th className="px-4 py-3 text-right">Costs</th><th className="px-4 py-3 text-right">Net Profit</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '15K', bookings: '36K', revenue: '6M AED', costs: '4.5M', profit: '1.5M AED' },
+                      { year: 'Year 2', users: '60K', bookings: '144K', revenue: '25M AED', costs: '16M', profit: '9M AED' },
+                      { year: 'Year 3', users: '150K', bookings: '360K', revenue: '65M AED', costs: '40M', profit: '25M AED' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-t border-slate-700/50 text-slate-300">
+                        <td className="px-4 py-3 font-bold text-cyan-400">{r.year}</td><td className="px-4 py-3 text-right">{r.users}</td><td className="px-4 py-3 text-right">{r.bookings}</td><td className="px-4 py-3 text-right font-semibold text-emerald-400">{r.revenue}</td><td className="px-4 py-3 text-right">{r.costs}</td><td className="px-4 py-3 text-right font-bold text-white">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Comparable Companies</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Urban Company', val: '$2.8B', note: 'Home services marketplace (India)' },
+                  { name: 'Justlife', val: '$100M+', note: 'UAE home cleaning leader' },
+                  { name: 'Handy', val: '$500M', note: 'Acquired by Angi (US)' },
+                  { name: 'Helpling', val: '$200M', note: 'European home cleaning' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-lg font-bold text-white">{c.name}</div>
+                    <div className="text-2xl font-black text-cyan-400">{c.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{c.note}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Unicorn Path</h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { milestone: '15K users', timeline: 'Year 1', revenue: '~6M AED', valuation: '~$15M' },
+                  { milestone: '60K users', timeline: 'Year 2', revenue: '~25M AED', valuation: '~$75M' },
+                  { milestone: '150K users', timeline: 'Year 3', revenue: '~65M AED', valuation: '~$200M' },
+                  { milestone: '500K+ users (GCC)', timeline: '2029+', revenue: '~200M AED', valuation: '~$600M+' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-xs text-slate-400">{m.timeline}</div>
+                    <div className="text-lg font-bold text-cyan-400 mt-1">{m.valuation}</div>
+                    <div className="text-xs text-slate-500">{m.revenue}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.milestone}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-slate-800/40 rounded-2xl p-6 border border-cyan-500/20">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-6 h-6 text-cyan-400" /> RTMN Ecosystem Multiplier</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { factor: 'Zero CAC via Nuqta Cross-Sell', detail: 'CleanEZ promoted to every ecosystem user — Wasil, Rakab, Safar, Grocify users all need cleaning.' },
+                  { factor: 'Khedma Visa/Labor Pipeline', detail: 'Khedma handles visa sponsorship and labor compliance for all CleanEZ cleaners. No recruitment overhead.' },
+                  { factor: 'BizOne Commercial Contracts', detail: 'BizOne merchants book commercial cleaning through their existing business dashboard. Enterprise revenue.' },
+                  { factor: 'Qist BNPL = Higher AOV', detail: 'Deep cleaning and pest control packages financed via Qist. Increases average order value by 40%.' },
+                  { factor: 'Wasil Supply Logistics', detail: 'Cleaning supply delivery and laundry pickup/drop powered by Wasil fleet. Zero logistics cost.' },
+                  { factor: 'Sakin Tenant Auto-Booking', detail: 'Every Sakin move-in/out auto-triggers CleanEZ booking. Built-in recurring demand pipeline.' },
+                ].map((f, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <h3 className="text-cyan-400 font-bold text-sm mb-1">{f.factor}</h3>
+                    <p className="text-slate-400 text-xs">{f.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         )}
 
       </main>

@@ -9,7 +9,7 @@ import {
   FileText, Calculator, ChevronDown, ChevronUp, HeartHandshake, Coins,
   Network, MapPin, DollarSign, LineChart,
   UserCheck, Globe, Calendar, RefreshCw, Layers, Shield,
-  Thermometer, Stethoscope, Syringe, ScrollText
+  Thermometer, Stethoscope, Syringe, ScrollText, Briefcase, ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -451,6 +451,7 @@ export default function MediEarnPage() {
     { id: 'integrations', label: 'Integrations', icon: Network },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
     { id: 'gcc', label: 'GCC Expansion', icon: MapPin },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1304,6 +1305,140 @@ export default function MediEarnPage() {
             </div>
           </div>
         )}
+
+        {/* ═══════════════════════════════════════════ */}
+        {/* PITCH DECK */}
+        {/* ═══════════════════════════════════════════ */}
+        {activeTab === 'deck' && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-teal-500/20 to-emerald-500/10 rounded-2xl p-6 sm:p-8 border border-teal-500/30">
+              <h2 className="text-2xl font-bold text-white mb-3 flex items-center gap-2"><Briefcase className="w-6 h-6 text-teal-400" /> Investment Thesis</h2>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                MediEarn is the pharmacy vertical of the RTMN super-ecosystem. With UAE mandatory health insurance, 17% diabetes prevalence driving chronic recurring demand, Tabib e-prescription integration, and Wasil cold-chain delivery, MediEarn captures the $4B+ GCC pharmacy market with unmatched unit economics and ecosystem lock-in.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Market Opportunity</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM — GCC Pharmacy Market', value: '$4B+', color: 'text-teal-400', border: 'border-teal-500/40' },
+                  { label: 'SAM — UAE Online Pharmacy', value: '$640M', color: 'text-emerald-400', border: 'border-emerald-500/40' },
+                  { label: 'SOM — Year 3 Target', value: '$64M', color: 'text-[#c9a227]', border: 'border-[#c9a227]/40' },
+                ].map((m, i) => (
+                  <div key={i} className={`bg-slate-800/60 rounded-xl p-5 border ${m.border} text-center`}>
+                    <div className={`text-3xl font-black ${m.color}`}>{m.value}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Key Differentiators</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { title: 'Tabib E-Prescription Pipeline', desc: 'Direct e-prescription flow from Tabib telemedicine to MediEarn delivery. Zero friction.', icon: Stethoscope, color: 'text-teal-400' },
+                  { title: 'Insurance Auto-Billing', desc: '12+ insurance partners with auto-claim processing. Patients pay only copay.', icon: ShieldCheck, color: 'text-blue-400' },
+                  { title: 'Cold-Chain Delivery (Wasil)', desc: '100% temperature-monitored delivery for medications requiring cold storage.', icon: Thermometer, color: 'text-cyan-400' },
+                  { title: 'Chronic Auto-Refill', desc: 'Automatic medication refill for chronic patients with insurance auto-billing.', icon: RefreshCw, color: 'text-emerald-400' },
+                  { title: '3% Nuqta Coins on Every Order', desc: 'Real coins spendable at 500+ merchants. 5% for Nuqta+ members.', icon: Coins, color: 'text-[#c9a227]' },
+                  { title: 'Pharmacist Verification', desc: 'Every prescription verified by licensed pharmacist within 5 minutes.', icon: UserCheck, color: 'text-purple-400' },
+                ].map((d, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+                    <d.icon className={`w-6 h-6 ${d.color} mb-2`} />
+                    <h3 className="text-white font-bold text-sm mb-1">{d.title}</h3>
+                    <p className="text-slate-400 text-xs">{d.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">3-Year Financial Projections</h2>
+              <div className="overflow-x-auto rounded-xl border border-slate-700/50">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-slate-800/80 text-slate-300">
+                    <th className="px-4 py-3 text-left">Year</th><th className="px-4 py-3 text-right">Users</th><th className="px-4 py-3 text-right">Pharmacies</th><th className="px-4 py-3 text-right">Revenue</th><th className="px-4 py-3 text-right">Net Profit</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '25K', pharmacies: '500', revenue: '12M AED', profit: '3M AED' },
+                      { year: 'Year 2', users: '100K', pharmacies: '1,200', revenue: '50M AED', profit: '18M AED' },
+                      { year: 'Year 3', users: '300K', pharmacies: '2,000', revenue: '130M AED', profit: '50M AED' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-t border-slate-700/50 text-slate-300">
+                        <td className="px-4 py-3 font-bold text-teal-400">{r.year}</td><td className="px-4 py-3 text-right">{r.users}</td><td className="px-4 py-3 text-right">{r.pharmacies}</td><td className="px-4 py-3 text-right font-semibold text-emerald-400">{r.revenue}</td><td className="px-4 py-3 text-right font-bold text-white">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Comparable Companies</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'PharmEasy', val: '$5.6B', note: 'India — 60M+ users, IPO-bound' },
+                  { name: 'Netmeds', val: '$550M', note: 'Acquired by Reliance' },
+                  { name: 'Amazon Pharmacy', val: '$1B+', note: 'PillPack acquisition' },
+                  { name: 'Capsule', val: '$1B', note: 'NYC dominance, Series D' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-lg font-bold text-white">{c.name}</div>
+                    <div className="text-2xl font-black text-teal-400">{c.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{c.note}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Unicorn Path</h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { milestone: '25K users, 500 pharmacies', timeline: 'Year 1', revenue: '~12M AED', valuation: '~$30M' },
+                  { milestone: '100K users, 1.2K pharmacies', timeline: 'Year 2', revenue: '~50M AED', valuation: '~$125M' },
+                  { milestone: '300K users, 2K pharmacies', timeline: 'Year 3', revenue: '~130M AED', valuation: '~$400M' },
+                  { milestone: '1M+ users (GCC)', timeline: '2030+', revenue: '~500M AED', valuation: '~$1B+' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-xs text-slate-400">{m.timeline}</div>
+                    <div className="text-lg font-bold text-teal-400 mt-1">{m.valuation}</div>
+                    <div className="text-xs text-slate-500">{m.revenue}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.milestone}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-slate-800/40 rounded-2xl p-6 border border-teal-500/20">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-6 h-6 text-teal-400" /> RTMN Ecosystem Multiplier</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { factor: 'Tabib E-Prescription Pipeline', detail: 'Every Tabib telemedicine consultation generates a prescription that flows directly to MediEarn. Zero-cost patient acquisition.' },
+                  { factor: 'Daman Insurance Integration', detail: 'Daman processes insurance claims, MediEarn handles delivery. Patients pay only copay — highest conversion rate.' },
+                  { factor: 'Wasil Cold-Chain Delivery', detail: 'Dedicated temperature-monitored delivery for medications. No fleet ownership cost — shared Wasil infrastructure.' },
+                  { factor: 'Nuqta Coins Health Rewards', detail: '3-5% coin earning on pharmacy spend. Chronic patients earn significant coins monthly — ecosystem lock-in.' },
+                ].map((f, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <h3 className="text-teal-400 font-bold text-sm mb-1">{f.factor}</h3>
+                    <p className="text-slate-400 text-xs">{f.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
       </main>
 
       {/* ═══ NAVIGATION FOOTER ═══ */}

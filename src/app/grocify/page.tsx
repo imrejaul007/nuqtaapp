@@ -12,7 +12,7 @@ import {
   BadgePercent, CircleDollarSign, PieChart, LineChart, ArrowUpRight,
   RefreshCw, Layers, MapPin, Shield, Calculator, Receipt,
   ClipboardList, Box, Repeat, Filter, Bell, Eye,
-  Wheat, Coffee, Grape, Beef, Milk, Carrot
+  Wheat, Coffee, Grape, Beef, Milk, Carrot, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -329,6 +329,7 @@ const tabs = [
   { id: 'categories', label: 'Categories & Features', icon: Layers },
   { id: 'pricing', label: 'Pricing & Economics', icon: DollarSign },
   { id: 'market', label: 'Market & Competition', icon: TrendingUp },
+  { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
 ];
 
 // ─── COMPONENT ───
@@ -970,6 +971,140 @@ export default function GrocifyPage() {
               </div>
             </div>
           </div>
+        )}
+
+        {/* ═══════════════════════════════════════════ */}
+        {/* PITCH DECK */}
+        {/* ═══════════════════════════════════════════ */}
+        {activeTab === 'deck' && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/10 rounded-2xl p-6 sm:p-8 border border-green-500/30">
+              <h2 className="text-2xl font-bold text-white mb-3 flex items-center gap-2"><Briefcase className="w-6 h-6 text-green-400" /> Investment Thesis</h2>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                Families order groceries 3-4x/week — each order earning Nuqta Coins, building Qist credit history, and feeding Inventora supply chain data. With Wasil fleet and $12B TAM, Grocify alone is a unicorn candidate. The highest-frequency consumer spend category with full ecosystem integration.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Market Opportunity</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM — GCC Grocery Market', value: '$12B+', color: 'text-green-400', border: 'border-green-500/40' },
+                  { label: 'SAM — UAE Online Grocery', value: '$1.8B', color: 'text-emerald-400', border: 'border-emerald-500/40' },
+                  { label: 'Growth Rate YoY', value: '28%', color: 'text-[#c9a227]', border: 'border-[#c9a227]/40' },
+                ].map((m, i) => (
+                  <div key={i} className={`bg-slate-800/60 rounded-xl p-5 border ${m.border} text-center`}>
+                    <div className={`text-3xl font-black ${m.color}`}>{m.value}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Key Differentiators</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { title: 'Price Match Guarantee', desc: 'Auto-scans competitors and refunds the difference. Trust built into every transaction.', icon: BadgePercent, color: 'text-[#c9a227]' },
+                  { title: '100% Freshness Guarantee', desc: 'Photo verification at pickup, cold-chain compliance, instant refund if quality fails.', icon: ShieldCheck, color: 'text-emerald-400' },
+                  { title: 'AI Smart Lists & Auto-Reorder', desc: 'AI learns your preferences and auto-suggests weekly essentials.', icon: ClipboardList, color: 'text-green-400' },
+                  { title: 'Qist BNPL for Bulk Orders', desc: 'Split 250+ AED orders into 3-6 monthly installments. No competitor offers this.', icon: CreditCard, color: 'text-violet-400' },
+                  { title: 'Wasil Shared Fleet', desc: 'Zero fleet ownership cost. Temperature-controlled vehicles for fresh produce.', icon: Truck, color: 'text-orange-400' },
+                  { title: '2X Nuqta Coins on Every Order', desc: 'Real currency spendable at 500+ merchants, not siloed grocery points.', icon: Coins, color: 'text-[#c9a227]' },
+                ].map((d, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+                    <d.icon className={`w-6 h-6 ${d.color} mb-2`} />
+                    <h3 className="text-white font-bold text-sm mb-1">{d.title}</h3>
+                    <p className="text-slate-400 text-xs">{d.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">3-Year Financial Projections</h2>
+              <div className="overflow-x-auto rounded-xl border border-slate-700/50">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-slate-800/80 text-slate-300">
+                    <th className="px-4 py-3 text-left">Year</th><th className="px-4 py-3 text-right">Users</th><th className="px-4 py-3 text-right">Orders/mo</th><th className="px-4 py-3 text-right">Revenue</th><th className="px-4 py-3 text-right">Net Profit</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '30K', orders: '150K/mo', revenue: '20M AED', profit: '5M AED' },
+                      { year: 'Year 2', users: '120K', orders: '600K/mo', revenue: '80M AED', profit: '28M AED' },
+                      { year: 'Year 3', users: '350K', orders: '1.8M/mo', revenue: '200M AED', profit: '80M AED' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-t border-slate-700/50 text-slate-300">
+                        <td className="px-4 py-3 font-bold text-green-400">{r.year}</td><td className="px-4 py-3 text-right">{r.users}</td><td className="px-4 py-3 text-right">{r.orders}</td><td className="px-4 py-3 text-right font-semibold text-emerald-400">{r.revenue}</td><td className="px-4 py-3 text-right font-bold text-white">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Comparable Companies</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'InstaShop', val: '$360M', note: 'Acquired by Delivery Hero (2020)' },
+                  { name: 'Instacart', val: '$39B', note: 'IPO valuation (2023)' },
+                  { name: 'Getir', val: '$11.8B', note: 'Peak valuation (2022)' },
+                  { name: 'Gorillas', val: '$3B', note: 'Acquired valuation (2022)' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-lg font-bold text-white">{c.name}</div>
+                    <div className="text-2xl font-black text-green-400">{c.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{c.note}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Unicorn Path</h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { milestone: '30K users', timeline: 'Year 1', revenue: '~20M AED', valuation: '~$50M' },
+                  { milestone: '120K users', timeline: 'Year 2', revenue: '~80M AED', valuation: '~$200M' },
+                  { milestone: '350K users', timeline: 'Year 3', revenue: '~200M AED', valuation: '~$600M' },
+                  { milestone: '1M+ users (GCC)', timeline: '2029+', revenue: '~500M AED', valuation: '~$1B+' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-xs text-slate-400">{m.timeline}</div>
+                    <div className="text-lg font-bold text-green-400 mt-1">{m.valuation}</div>
+                    <div className="text-xs text-slate-500">{m.revenue}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.milestone}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-slate-800/40 rounded-2xl p-6 border border-green-500/20">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-6 h-6 text-green-400" /> RTMN Ecosystem Multiplier</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { factor: 'Zero Fleet Cost (Wasil)', detail: 'Wasil shared delivery fleet — no need to build or own a delivery network.' },
+                  { factor: 'Auto-Restock via Inventora', detail: 'Partner stores get AI-driven inventory alerts — Grocify demand data feeds restock predictions.' },
+                  { factor: 'Built-in Payments (NuqtaPay)', detail: 'Instant checkout with zero fees for premium members. No third-party payment dependency.' },
+                  { factor: 'Bulk BNPL (Qist)', detail: 'Families and businesses split large grocery bills into installments — unique to RTMN.' },
+                  { factor: 'Supplier Marketplace (NextaBizz)', detail: 'Grocery suppliers list and sell on NextaBizz B2B, feeding Grocify inventory at wholesale rates.' },
+                ].map((f, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <h3 className="text-green-400 font-bold text-sm mb-1">{f.factor}</h3>
+                    <p className="text-slate-400 text-xs">{f.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         )}
 
       </main>

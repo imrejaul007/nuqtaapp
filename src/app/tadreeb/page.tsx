@@ -13,7 +13,8 @@ import {
   Crown, Store, Package, Target, Rocket,
   Calculator, Wallet, HeartHandshake,
   Network, Sparkles, GraduationCap, Video,
-  Clipboard, Play, Trophy, BarChart2
+  Clipboard, Play, Trophy, BarChart2,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -128,6 +129,7 @@ export default function TadreebPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -173,6 +175,102 @@ export default function TadreebPage() {
         {activeTab === 'competition' && (<div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50"><h2 className="text-xl font-bold text-white mb-4">Competitive Comparison</h2><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-slate-700/50">{['', 'Compliance', 'GCC', 'Arabic', 'LMS', 'Gamification', 'HR Integ.', 'Price'].map((h) => (<th key={h} className="text-left px-2 py-2 text-purple-400 font-semibold whitespace-nowrap text-xs">{h}</th>))}</tr></thead><tbody>{competitors.map((c) => (<tr key={c.name} className={`border-b border-slate-800/50 ${c.name === 'Tadreeb' ? 'bg-purple-500/10' : ''}`}><td className="px-2 py-2 text-white font-bold whitespace-nowrap">{c.name}</td>{[c.compliance, c.gcc, c.arabic, c.lms, c.gamification, c.hr, c.price].map((val, j) => (<td key={j} className={`px-2 py-2 whitespace-nowrap text-xs ${val.startsWith('✅') ? 'text-emerald-400' : val.startsWith('❌') ? 'text-red-400' : 'text-amber-400'}`}>{val}</td>))}</tr>))}</tbody></table></div></div>)}
 
         {activeTab === 'risks' && (<div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>)}
+
+        {/* Pitch Deck */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-purple-500/5 rounded-2xl p-6 border border-purple-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Tadreeb is not just an LMS — it is the learning layer of the entire RTMN employment ecosystem. When training leads directly to jobs (Tawzeef) and compliance (Amana), retention and engagement are fundamentally different from standalone platforms. The GCC has no Arabic-native, compliance-integrated, ecosystem-connected training platform. Tadreeb fills this gap.</p>
+            </div>
+            {/* TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[{label:'TAM',value:'$1.5B+',detail:'UAE Education & Training Market'},{label:'SAM',value:'$600M',detail:'Corporate & Professional Training Segment'},{label:'SOM',value:'$50M',detail:'Year 3 Tadreeb Revenue Target'}].map(m=>(
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[{title:'Certificates That Get You Hired',desc:'Tadreeb certificates are verified on Tawzeef. Employers see your skills instantly — no other platform connects learning to hiring'},{title:'Compliance Auto-Enrollment',desc:'Amana flags a compliance gap, Tadreeb auto-enrolls the employee. Mandatory training is never missed'},{title:'Arabic-Native Content',desc:'Built for GCC from day one. Full Arabic UI, Arabic-language courses, and culturally relevant content — not translated afterthoughts'},{title:'NuqtaCoin Rewards',desc:'Complete courses, earn NuqtaCoins. Real value redeemable across the RTMN ecosystem. Gamification meets real incentives'},{title:'GCC Compliance Library',desc:'CBUAE AML/CFT, SAMA, PDPL, OSHAD, HACCP — all mandatory GCC training in one platform'}].map(d=>(
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-purple-400 shrink-0 mt-0.5"/>
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year','Revenue','Costs','Net Profit'].map(h=><th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>)}
+                  </tr></thead>
+                  <tbody>
+                    {[{y:'Year 1',r:'AED 3M',c:'AED 2.5M',n:'AED 0.5M'},{y:'Year 2',r:'AED 15M',c:'AED 8M',n:'AED 7M'},{y:'Year 3',r:'AED 50M',c:'AED 18M',n:'AED 32M'}].map(row=>(
+                      <tr key={row.y} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-3 text-emerald-400">{row.r}</td>
+                        <td className="px-3 py-3 text-red-400">{row.c}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{row.n}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[{name:'Coursera',val:'$2B',market:'Online courses + university degrees'},{name:'Udemy',val:'$3.3B',market:'Marketplace for online courses'},{name:'Duolingo',val:'$7B',market:'Gamified language learning'},{name:"Byju's",val:'$22B',market:'EdTech at scale in emerging market'}].map(c=>(
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-[#c9a227] mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5"/> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[{stage:'50K enrollments',val:'~$40M',rev:'~15M AED',time:'Q4 2026'},{stage:'200K enrollments',val:'~$150M',rev:'~50M AED',time:'Q4 2027'},{stage:'500K enrollments',val:'~$400M',rev:'~120M AED',time:'Q4 2028'},{stage:'2M enrollments',val:'~$1B+',rev:'~350M AED',time:'2029+'}].map((ms,i)=>(
+                  <div key={ms.stage} className={`rounded-xl p-4 text-center border ${i===3?'bg-[#c9a227]/10 border-[#c9a227]/40':'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className={`text-xl font-bold ${i===3?'text-[#c9a227]':'text-white'}`}>{ms.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{ms.stage}</div>
+                    <div className="text-xs text-slate-500">{ms.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[{s:'Zero-cost pilot with 500+ RTMN staff',d:'10 companies, 500+ employees training on Tadreeb from day one — instant case studies and testimonials'},{s:'Amana compliance creates mandatory demand',d:'When Amana flags a compliance gap, Tadreeb auto-enrolls the employee. This is regulatory requirement, not optional'},{s:'Tawzeef learn-to-earn loop',d:'Complete a Tadreeb course, certificate appears on Tawzeef, employer sees it, you get hired. Clear ROI for learners'},{s:'NuqtaCoin rewards drive completion',d:'Course completion earns NuqtaCoins redeemable at 500+ merchants. Real financial incentive to finish courses'},{s:'BizOne merchant training channel',d:'100K+ BizOne merchants need staff training — Tadreeb is the default platform for merchant onboarding'},{s:'Arabic-native content moat',d:'No global competitor offers native Arabic professional training with GCC compliance depth'}].map(s=>(
+                  <div key={s.s} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#c9a227] shrink-0 mt-0.5"/>
+                    <div><div className="text-white font-medium text-xs">{s.s}</div><div className="text-xs text-slate-500">{s.d}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <section className="py-12 px-4 border-t border-slate-800/50"><div className="max-w-4xl mx-auto text-center"><h2 className="text-2xl font-bold text-white mb-4">Learn. Comply. Grow.</h2><p className="text-slate-400 mb-8">7 modules. 500+ courses. Compliance automated. Arabic-native.</p><div className="flex flex-wrap justify-center gap-4"><Link href="/tawzeef" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition-colors"><Users className="w-5 h-5" /> Tawzeef HR</Link><Link href="/amana" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-500 transition-colors"><Shield className="w-5 h-5" /> Amana Compliance</Link><Link href="/bizone" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-500 transition-colors"><Store className="w-5 h-5" /> BizOne Technology</Link></div></div></section>

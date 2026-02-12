@@ -12,7 +12,7 @@ import {
   Home, Shield, Layers, Sparkles, Percent, BadgePercent,
   CircleDollarSign, PieChart, LineChart, ArrowUpRight, Cpu,
   Database, Activity, Globe, Bike, Store, RefreshCw, Search,
-  Bell, Lock, Truck, AlertTriangle
+  Bell, Lock, Truck, AlertTriangle, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -188,6 +188,7 @@ export default function QuickDropPage() {
     { id: 'features', label: 'Features & Categories', icon: Layers },
     { id: 'pricing', label: 'Pricing & Economics', icon: Calculator },
     { id: 'market', label: 'Market & Competition', icon: BarChart3 },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -739,6 +740,147 @@ export default function QuickDropPage() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ─── PITCH DECK TAB ─── */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 rounded-2xl p-6 border border-violet-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Quick-commerce is the fastest-growing retail segment globally. QuickDrop captures impulse purchases with 15-min guaranteed delivery from strategically placed dark stores. High margins (25-35%), high frequency (3-4x/week), and Nuqta Coins create unbreakable habit loops. Shared Wasil fleet makes unit economics profitable from Day 1.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$3.2B', detail: 'UAE Convenience Retail Market' },
+                  { label: 'SAM', value: '$500M+', detail: 'UAE Quick-Commerce (40% YoY)' },
+                  { label: 'SOM', value: '$40M', detail: 'Year 3 Target (8% share)' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: '15-Minute Guarantee', desc: 'Delivered in 15 min or next delivery free -- SLA backed' },
+                  { title: 'Own Dark Store Inventory', desc: 'Full quality control from shelf to doorstep' },
+                  { title: '2X Nuqta Coins', desc: 'Highest coin earn rate in quick-commerce, 3X for subscribers' },
+                  { title: 'Wasil Shared Fleet', desc: 'Zero incremental fleet cost -- rider arrives as picking completes' },
+                  { title: 'Qist BNPL', desc: 'Split electronics and bulk orders into 3 installments at 0%' },
+                  { title: '24/7 Always-On', desc: 'Dark stores operate around the clock for any-time delivery' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-white font-bold text-sm">{d.title}</div>
+                      <div className="text-slate-400 text-xs">{d.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections (3-Year)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Dark Stores', 'Revenue (AED)', 'Net Profit (AED)'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { y: 'Year 1', s: '4', r: '8M', p: '1.5M' },
+                      { y: 'Year 2', s: '8', r: '35M', p: '12M' },
+                      { y: 'Year 3', s: '12', r: '95M', p: '38M' },
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-slate-700/30">
+                        <td className="px-3 py-2 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-2 text-slate-300">{row.s}</td>
+                        <td className="px-3 py-2 text-violet-400 font-bold">{row.r}</td>
+                        <td className="px-3 py-2 text-emerald-400 font-bold">{row.p}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Getir', val: '$11.8B', market: 'Turkey/Global' },
+                  { name: 'Gopuff', val: '$15B', market: 'USA' },
+                  { name: 'Flink', val: '$5B', market: 'Europe' },
+                  { name: 'Zepto', val: '$3.6B', market: 'India' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold text-sm">{c.name}</div>
+                    <div className="text-violet-400 text-xl font-black mt-1">{c.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$20M', time: '2027 H1', color: 'text-emerald-400' },
+                  { stage: '100K Users', val: '$80M', time: '2027 H2', color: 'text-blue-400' },
+                  { stage: 'GCC Expansion', val: '$300M', time: '2028', color: 'text-purple-400' },
+                  { stage: 'Multi-Country', val: '$1B+', time: '2029', color: 'text-[#c9a227]' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/30">
+                    <div className={`text-xs font-bold ${m.color} uppercase`}>{m.stage}</div>
+                    <div className={`text-xl font-bold ${m.color} mt-1`}>{m.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{m.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">QuickDrop inside RTMN is 10x more valuable than a standalone quick-commerce app. Six ecosystem products create compounding network effects.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  'Wasil Fleet: Zero incremental delivery cost',
+                  'NuqtaPay: One-tap checkout, 30%+ higher conversion',
+                  'Nuqta Coins: 2-3X loyalty creates switching cost',
+                  'Adzy: Brand placement revenue stream',
+                  'Qist BNPL: 40%+ higher AOV on electronics',
+                  'Inventora: In-house inventory management',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

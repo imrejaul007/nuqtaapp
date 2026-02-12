@@ -486,6 +486,7 @@ export default function AjerPage() {
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
     { id: 'gcc', label: 'GCC Expansion', icon: Globe },
     { id: 'financials', label: 'Financials', icon: BarChart3 },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1746,6 +1747,147 @@ export default function AjerPage() {
                   <div className="text-xs text-slate-400">Payback Period</div>
                   <div className="text-xs text-slate-500">(Per vehicle basis)</div>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ─── PITCH DECK TAB ─── */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-teal-500/20 to-teal-500/5 rounded-2xl p-6 border border-teal-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">The sharing/rental economy is $350B globally. Ajer captures UAE rental spend across cars, equipment, and spaces with a single unified platform. Monthly car subscriptions replace ownership for 60% of expats who stay 3-5 years. With Daman insurance, Qist BNPL for deposits, and Nuqta rewards, Ajer makes renting easier than owning -- and no competitor offers this breadth.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$3.3B+', detail: 'UAE Total Rental Market' },
+                  { label: 'SAM', value: '$1.2B', detail: 'Digital-first renters in UAE' },
+                  { label: 'SOM', value: '$120M', detail: 'Year 3 Target (3-4% share)' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Unified Marketplace', desc: 'Cars, equipment, spaces, and luxury items in one app' },
+                  { title: 'Nuqta Coins on Every Rental', desc: '2-5% coins on every transaction, spend at 500+ merchants' },
+                  { title: 'Qist BNPL for Deposits', desc: 'Split large deposits into easy installments via Qist' },
+                  { title: 'Daman Insurance Built-In', desc: 'Every rental comes with integrated protection' },
+                  { title: 'Lease-to-Own Pathway', desc: '30% of car payments build equity, purchase after 24 months' },
+                  { title: 'Ecosystem Lock-In', desc: 'Multi-product users have 4x higher retention' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-white font-bold text-sm">{d.title}</div>
+                      <div className="text-slate-400 text-xs">{d.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections (3-Year)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Vehicles', 'Revenue (AED)', 'Profit (AED)'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { y: 'Year 1', v: '500', r: '15M', p: '3M' },
+                      { y: 'Year 2', v: '1,500', r: '60M', p: '20M' },
+                      { y: 'Year 3', v: '4,000', r: '180M', p: '70M' },
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-slate-700/30">
+                        <td className="px-3 py-2 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-2 text-slate-300">{row.v}</td>
+                        <td className="px-3 py-2 text-teal-400 font-bold">{row.r}</td>
+                        <td className="px-3 py-2 text-emerald-400 font-bold">{row.p}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Turo', val: '$8.4B', market: 'US/Global' },
+                  { name: 'Getaround', val: '$1.5B', market: 'US/Europe' },
+                  { name: 'Fat Llama', val: '$50M', market: 'UK' },
+                  { name: 'eZhire', val: '$100M+', market: 'UAE' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold text-sm">{c.name}</div>
+                    <div className="text-teal-400 text-xl font-black mt-1">{c.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$10-15M', time: '2027', color: 'text-teal-400' },
+                  { stage: 'Series A', val: '$50-80M', time: '2028', color: 'text-cyan-400' },
+                  { stage: 'Series B', val: '$200-350M', time: '2029', color: 'text-emerald-400' },
+                  { stage: 'Series C', val: '$800M-1B+', time: '2030-31', color: 'text-[#c9a227]' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/30">
+                    <div className={`text-xs font-bold ${m.color} uppercase`}>{m.stage}</div>
+                    <div className={`text-xl font-bold ${m.color} mt-1`}>{m.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{m.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">No standalone rental app can replicate Ajer&apos;s ecosystem moat. Six RTMN products feed into Ajer, creating compounding network effects.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  'Daman: Rental insurance for every transaction',
+                  'Qist: BNPL for deposits, 2x premium conversions',
+                  'NuqtaPay: Instant settlements, lower failures',
+                  'Safar: Tourist car rental demand channel',
+                  'BizOne: Fleet owner dashboard & management',
+                  'Aqar: Parking and storage space listings',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

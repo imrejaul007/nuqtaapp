@@ -12,7 +12,8 @@ import {
   PieChart, LineChart, Settings, Briefcase, Rocket,
   Calendar, Filter, LayoutGrid, Monitor, UserCheck,
   ShoppingCart, Heart, FileText, Code,
-  RefreshCw, Clock, Crosshair, Brain, TrendingDown
+  RefreshCw, Clock, Crosshair, Brain, TrendingDown,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -667,7 +668,7 @@ const heroStats = [
 // ============================================
 export default function AdzyPage() {
   const [expandedProduct, setExpandedProduct] = useState<string | null>('merchant-ads');
-  const [activeTab, setActiveTab] = useState<'overview' | 'formats' | 'targeting' | 'pricing' | 'market' | 'ecosystem' | 'tools' | 'roadmap'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'formats' | 'targeting' | 'pricing' | 'market' | 'ecosystem' | 'tools' | 'roadmap' | 'deck'>('overview');
   const [expandedRisk, setExpandedRisk] = useState<number | null>(null);
   const [expandedCompetitor, setExpandedCompetitor] = useState<number | null>(null);
 
@@ -682,6 +683,7 @@ export default function AdzyPage() {
     { id: 'ecosystem' as const, label: 'Ecosystem', icon: Activity },
     { id: 'tools' as const, label: 'Tools', icon: Settings },
     { id: 'roadmap' as const, label: 'Roadmap', icon: Rocket },
+    { id: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1659,6 +1661,143 @@ export default function AdzyPage() {
                       <div className="text-sm font-bold text-white">{milestone.event}</div>
                       <div className="text-xs text-slate-500">{milestone.date}</div>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
+      )}
+
+      {/* ============================================ */}
+      {/* PITCH DECK TAB */}
+      {/* ============================================ */}
+      {activeTab === 'deck' && (
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-pink-500/20 to-pink-500/5 rounded-2xl p-6 border border-pink-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                Adzy is the only closed-loop advertising platform in the MENA region — tracking from ad impression to verified purchase
+                across 60+ app surfaces and 5,000+ merchants. With first-party data from the entire Nuqta ecosystem (no cookie dependency),
+                Adzy is building the &quot;Amazon Ads&quot; of the Middle East with 70% gross margins at scale.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$2B+', detail: 'UAE Digital Ad Market' },
+                  { label: 'SAM', value: '$500M', detail: 'In-App & Retail Media Segment' },
+                  { label: 'SOM', value: '$100M', detail: 'Year 3 Adzy Revenue Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Closed-Loop Attribution', desc: 'Track from impression to verified purchase — real ROI, not estimates' },
+                  { title: 'First-Party Data Only', desc: 'All targeting from 60+ Nuqta apps. No third-party cookies, no iOS issues' },
+                  { title: 'Cross-Ecosystem Reach', desc: 'Single campaign across Wasil, BizOne, Safar — one budget, 60+ surfaces' },
+                  { title: 'Pay Per Result', desc: 'CPM, CPC, or CPA — merchants choose. Only pay for real results' },
+                  { title: 'Self-Serve in Minutes', desc: 'Any merchant launches a campaign in under 5 minutes with AI optimization' },
+                  { title: 'AI-Powered Targeting', desc: '7 targeting dimensions: behavioral, location, demographic, interest, contextual, retargeting, lookalike' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-pink-400 shrink-0 mt-0.5" />
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <table className="w-full text-sm">
+                <thead><tr className="border-b border-slate-700">
+                  <th className="text-left py-2 text-slate-400">Metric</th>
+                  <th className="text-right py-2 text-slate-400">Year 1</th>
+                  <th className="text-right py-2 text-slate-400">Year 2</th>
+                  <th className="text-right py-2 text-slate-400">Year 3</th>
+                </tr></thead>
+                <tbody>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Merchants</td><td className="text-right text-white">500</td><td className="text-right text-white">2,000</td><td className="text-right text-white">5,000</td></tr>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Revenue (AED M)</td><td className="text-right text-pink-400 font-bold">8M</td><td className="text-right text-pink-400 font-bold">35M</td><td className="text-right text-pink-400 font-bold">100M</td></tr>
+                  <tr><td className="py-2 text-slate-300">Net Profit (AED M)</td><td className="text-right text-emerald-400">3M</td><td className="text-right text-emerald-400">21M</td><td className="text-right text-emerald-400">70M</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'The Trade Desk', val: '$40B', metric: 'Programmatic DSP, open web' },
+                  { name: 'Criteo', val: '$2B', metric: 'Retail media + retargeting' },
+                  { name: 'Amazon Ads', val: '$50B+ rev', metric: 'Retail media on Amazon' },
+                  { name: 'Instacart Ads', val: '$10B+', metric: 'Grocery retail media' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50">
+                    <div className="text-sm font-bold text-white">{c.name}</div>
+                    <div className="text-lg font-black text-pink-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { ms: '500 merchants', val: '~8M AED', detail: 'Q4 2025 — ~$25M valuation' },
+                  { ms: '2,000 merchants', val: '~35M AED', detail: 'Q4 2026 — ~$120M valuation' },
+                  { ms: '5,000 merchants', val: '~100M AED', detail: 'Q4 2027 — ~$400M valuation' },
+                  { ms: '15,000 merchants', val: '~300M AED', detail: '2029+ — ~$1B+ valuation' },
+                ].map(m => (
+                  <div key={m.ms} className="bg-slate-900/50 rounded-lg p-3 border border-pink-500/20">
+                    <div className="text-xs text-pink-400 font-bold">{m.ms}</div>
+                    <div className="text-sm font-bold text-white mt-1">{m.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Every RTMN app is an ad surface. Every transaction is attribution data. Adzy sits at the center of the ecosystem&apos;s monetization engine.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { product: 'Captive Merchants', role: 'BizOne + Wasil merchants = zero cold outreach' },
+                  { product: 'Purchase Data Moat', role: 'More transactions = better targeting = higher ROAS' },
+                  { product: 'Cross-App Signals', role: 'Sushi order + Tokyo flight = Japanese restaurant ads' },
+                  { product: 'Near-Zero Marginal Cost', role: 'Ad infra exists across all apps already' },
+                  { product: 'AI-R Intelligence', role: 'Predict who buys, when, and what' },
+                  { product: 'Rabtul Identity', role: 'SSO user graph + consent management' },
+                ].map(s => (
+                  <div key={s.product} className="bg-slate-800/50 rounded-lg px-3 py-2 border border-[#c9a227]/20">
+                    <div className="text-xs font-bold text-[#c9a227]">{s.product}</div>
+                    <div className="text-xs text-slate-400">{s.role}</div>
                   </div>
                 ))}
               </div>

@@ -9,7 +9,7 @@ import {
   Target, LayoutGrid, Coins, Search,
   Award, Store, Calendar, Package,
   Home, Eye, UserCheck, Truck, Bell, BadgePercent,
-  Activity, Droplets
+  Activity, Droplets, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -415,7 +415,7 @@ const competitiveAdvantages = [
 
 export default function GlowzyPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('salon-booking');
-  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market'>('features');
+  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
@@ -466,6 +466,7 @@ export default function GlowzyPage() {
               { key: 'features' as const, label: 'Services & Features', icon: LayoutGrid },
               { key: 'pricing' as const, label: 'Pricing & Economics', icon: DollarSign },
               { key: 'market' as const, label: 'Market & Competition', icon: Globe },
+              { key: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -814,6 +815,142 @@ export default function GlowzyPage() {
             </div>
           </>
         )}
+
+        {/* ═══════════════════════════════════════════ */}
+        {/* PITCH DECK */}
+        {/* ═══════════════════════════════════════════ */}
+        {activeTab === 'deck' && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-pink-500/20 to-rose-500/10 rounded-2xl p-6 sm:p-8 border border-pink-500/30">
+              <h2 className="text-2xl font-bold text-white mb-3 flex items-center gap-2"><Briefcase className="w-6 h-6 text-pink-400" /> Investment Thesis</h2>
+              <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+                Beauty is high-frequency, high-margin, and deeply personal. Glowzy captures the $2.8B UAE beauty market with tech-enabled salon booking and at-home services. With Nuqta loyalty driving repeat bookings (3.2x/month avg), Qist BNPL for bridal/premium packages, and Adzy beauty ads, Glowzy builds an unbreakable user habit across booking commissions, product sales, and advertising.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Market Opportunity</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM — UAE Beauty & Salon', value: '$2.8B', color: 'text-pink-400', border: 'border-pink-500/40' },
+                  { label: 'SAM — Online Salon Booking', value: '$1.2B', color: 'text-purple-400', border: 'border-purple-500/40' },
+                  { label: 'SOM — Year 3 Target', value: '$180M', color: 'text-emerald-400', border: 'border-emerald-500/40' },
+                ].map((m, i) => (
+                  <div key={i} className={`bg-slate-800/60 rounded-xl p-5 border ${m.border} text-center`}>
+                    <div className={`text-3xl font-black ${m.color}`}>{m.value}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Key Differentiators</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { title: '3X Nuqta Coin Rewards', desc: 'Every booking earns real coins spendable at 500+ merchants, not siloed salon points.', icon: Coins, color: 'text-[#c9a227]' },
+                  { title: 'At-Home Beauty (800+ Pros)', desc: 'Verified at-home professionals with hygiene kits and real-time GPS tracking.', icon: Home, color: 'text-pink-400' },
+                  { title: 'Eventora Bridal Integration', desc: 'Bridal beauty coordinated with venue, transport, and event planning seamlessly.', icon: Calendar, color: 'text-violet-400' },
+                  { title: 'Qist BNPL for Premium Packages', desc: 'Split 2,500+ AED bridal packages into installments. No competitor offers this.', icon: CreditCard, color: 'text-teal-400' },
+                  { title: 'AI Stylist Matching', desc: 'Recommends salons and stylists based on hair type, preferences, and past bookings.', icon: Target, color: 'text-cyan-400' },
+                  { title: 'Beauty Product Marketplace', desc: 'Salon-recommended products delivered same-day via Wasil delivery network.', icon: Package, color: 'text-emerald-400' },
+                ].map((d, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+                    <d.icon className={`w-6 h-6 ${d.color} mb-2`} />
+                    <h3 className="text-white font-bold text-sm mb-1">{d.title}</h3>
+                    <p className="text-slate-400 text-xs">{d.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">3-Year Financial Projections</h2>
+              <div className="overflow-x-auto rounded-xl border border-slate-700/50">
+                <table className="w-full text-sm">
+                  <thead><tr className="bg-slate-800/80 text-slate-300">
+                    <th className="px-4 py-3 text-left">Year</th><th className="px-4 py-3 text-right">Users</th><th className="px-4 py-3 text-right">Salons</th><th className="px-4 py-3 text-right">Revenue</th><th className="px-4 py-3 text-right">Costs</th><th className="px-4 py-3 text-right">Net Profit</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '20K', salons: '800', revenue: '8M AED', costs: '6M', profit: '2M AED' },
+                      { year: 'Year 2', users: '80K', salons: '1,800', revenue: '35M AED', costs: '23M', profit: '12M AED' },
+                      { year: 'Year 3', users: '200K', salons: '3,200', revenue: '90M AED', costs: '55M', profit: '35M AED' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-t border-slate-700/50 text-slate-300">
+                        <td className="px-4 py-3 font-bold text-pink-400">{r.year}</td><td className="px-4 py-3 text-right">{r.users}</td><td className="px-4 py-3 text-right">{r.salons}</td><td className="px-4 py-3 text-right font-semibold text-emerald-400">{r.revenue}</td><td className="px-4 py-3 text-right">{r.costs}</td><td className="px-4 py-3 text-right font-bold text-white">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Comparable Companies</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Fresha', val: '$1B+', note: 'Global salon booking platform' },
+                  { name: 'Urban Company', val: '$2.8B', note: 'At-home services marketplace (India)' },
+                  { name: 'Booksy', val: '$300M', note: 'Salon scheduling SaaS' },
+                  { name: 'StyleSeat', val: '$500M+', note: 'US stylist marketplace' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-lg font-bold text-white">{c.name}</div>
+                    <div className="text-2xl font-black text-pink-400">{c.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{c.note}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div>
+              <h2 className="text-2xl font-bold text-white mb-4">Unicorn Path</h2>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { milestone: '1K salons + 20K users', timeline: 'Month 12', revenue: '8M AED', valuation: '50M AED' },
+                  { milestone: '2.5K salons + 80K users', timeline: 'Month 24', revenue: '35M AED', valuation: '200M AED' },
+                  { milestone: '5K salons + 200K users', timeline: 'Month 36', revenue: '90M AED', valuation: '500M AED' },
+                  { milestone: 'GCC + 500K users', timeline: 'Month 48', revenue: '200M AED', valuation: '1B+ AED' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-xs text-slate-400">{m.timeline}</div>
+                    <div className="text-lg font-bold text-pink-400 mt-1">{m.valuation}</div>
+                    <div className="text-xs text-slate-500">{m.revenue}</div>
+                    <div className="text-xs text-slate-400 mt-1">{m.milestone}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-slate-800/40 rounded-2xl p-6 border border-pink-500/20">
+              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-6 h-6 text-pink-400" /> RTMN Ecosystem Multiplier</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { factor: 'Zero CAC via Nuqta Cross-Sell', detail: 'Existing Nuqta ecosystem users (500K+) see Glowzy promotions — no paid acquisition needed.' },
+                  { factor: 'Adzy Beauty Ads', detail: 'Salons advertise through Adzy with measurable ROI. Beauty ad revenue creates dual monetization.' },
+                  { factor: 'Qist BNPL for Premium Packages', detail: 'Bridal packages (2,500-10,000 AED) become accessible via installments. Higher AOV = higher commissions.' },
+                  { factor: 'BizOne Salon Dashboard', detail: 'Salons manage bookings, inventory, staff, and analytics through BizOne — deep lock-in and switching cost.' },
+                  { factor: 'Wasil Product Delivery', detail: 'Beauty product orders fulfilled by Wasil same-day delivery — instant product marketplace.' },
+                  { factor: 'Eventora Bridal Integration', detail: 'Every wedding booked through Eventora = beauty package upsell. Highest-ticket category.' },
+                ].map((f, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <h3 className="text-pink-400 font-bold text-sm mb-1">{f.factor}</h3>
+                    <p className="text-slate-400 text-xs">{f.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
       </main>
 
       {/* ═══════════════ NAVIGATION ═══════════════ */}

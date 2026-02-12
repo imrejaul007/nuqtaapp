@@ -13,7 +13,8 @@ import {
   Timer, UserCheck, Lock, Eye, Search, Plane, Home, ShoppingBag,
   Package, Bike, Bus, Train, Navigation, Fuel, Wrench, Key,
   Calendar, RefreshCw, Layers, Sparkles, Send, Map, Activity,
-  Gauge, ThermometerSun, Radio, Settings, Play, Hash, Percent
+  Gauge, ThermometerSun, Radio, Settings, Play, Hash, Percent,
+  Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -579,6 +580,7 @@ export default function RakabPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
     { id: 'financials', label: 'Financials', icon: LineChart },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1740,6 +1742,148 @@ export default function RakabPage() {
                       style={{ height: `${(proj.commission / 3.5) * 140}px` }}
                     />
                     <span className="text-slate-400 text-xs">{proj.year}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ─── PITCH DECK TAB ─── */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-green-500/20 to-green-500/5 rounded-2xl p-6 border border-green-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">UAE ride-hailing is a $2B+ market dominated by an Uber/Careem duopoly with zero innovation. Rakab disrupts with driver-first economics (75-80% fare share), rider rewards via Nuqta Coins, and a shared Wasil fleet achieving 80-90% utilization. 70% code reuse from Wasil means faster development at 50% lower R&D cost. Hawil Card saves tourists 3-5% per ride on FX fees.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$2B+', detail: 'UAE Ride-Hailing Market (Annual)' },
+                  { label: 'SAM', value: '$500M', detail: 'Dubai + Abu Dhabi Addressable' },
+                  { label: 'SOM', value: '$50M', detail: 'Year 3 Target Revenue' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Driver-First Commission', desc: '75-80% fare share -- highest in UAE vs Uber 70-75%' },
+                  { title: 'Rider Nuqta Coins', desc: '5% coins on every ride, spendable at 500+ merchants' },
+                  { title: 'Shared Wasil Fleet', desc: 'Rides + deliveries on same network, 80-90% utilization' },
+                  { title: '70% Code Reuse', desc: 'Shared driver app, navigation, payments from Wasil' },
+                  { title: 'Tourist Hawil Card', desc: 'Google rate payments save tourists 3-5% per ride' },
+                  { title: 'Ecosystem Payments', desc: 'NuqtaPay, Hawil, Qist BNPL, coins, or cash' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-white font-bold text-sm">{d.title}</div>
+                      <div className="text-slate-400 text-xs">{d.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections (3-Year)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Riders', 'Revenue (AED)', 'Profit (AED)'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { y: 'Year 1', u: '30K', r: '20M', p: '4M' },
+                      { y: 'Year 2', u: '120K', r: '80M', p: '28M' },
+                      { y: 'Year 3', u: '350K', r: '220M', p: '85M' },
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-slate-700/30">
+                        <td className="px-3 py-2 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-2 text-slate-300">{row.u}</td>
+                        <td className="px-3 py-2 text-green-400 font-bold">{row.r}</td>
+                        <td className="px-3 py-2 text-emerald-400 font-bold">{row.p}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                {[
+                  { name: 'Uber', val: '$120B', market: 'Global' },
+                  { name: 'Careem', val: '$3.1B', market: 'MENA' },
+                  { name: 'Bolt', val: '$8.4B', market: 'Europe/Africa' },
+                  { name: 'inDriver', val: '$1.3B', market: 'Global' },
+                  { name: 'Grab', val: '$40B', market: 'SE Asia' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold text-sm">{c.name}</div>
+                    <div className="text-green-400 text-xl font-black mt-1">{c.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed / Launch', val: '$15M', time: 'Q2 2027', color: 'text-emerald-400' },
+                  { stage: '800 Drivers', val: '$60M', time: 'Q4 2027', color: 'text-blue-400' },
+                  { stage: 'GCC Multi-City', val: '$250M', time: '2028', color: 'text-purple-400' },
+                  { stage: 'Super-App Scale', val: '$1B+', time: '2029+', color: 'text-[#c9a227]' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/30">
+                    <div className={`text-xs font-bold ${m.color} uppercase`}>{m.stage}</div>
+                    <div className={`text-xl font-bold ${m.color} mt-1`}>{m.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{m.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Rakab inside RTMN achieves 80-90% driver utilization vs industry 55-65%. Shared fleet, instant payouts, and ecosystem rewards create insurmountable competitive moat.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  'Wasil Fleet: +40-50% driver earnings via dual-use',
+                  'NuqtaPay: Instant driver payouts, zero wait',
+                  'Nuqta Coins: 5% per ride stickiness engine',
+                  'Qist BNPL: 0% car financing for drivers',
+                  'Daman: Comprehensive driver insurance bundled',
+                  'Safar: Auto-booked airport transfers',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    {item}
                   </div>
                 ))}
               </div>

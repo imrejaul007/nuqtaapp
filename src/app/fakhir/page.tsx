@@ -9,7 +9,7 @@ import {
   Shirt, Watch, Diamond, Building2, Briefcase, Globe, Award,
   ChevronDown, ChevronUp, Target, BarChart3, TrendingUp, Zap,
   Lock, UserCheck, Coins, Network, FileText, AlertTriangle,
-  Rocket, Calculator, Send, Bell, Headphones, Key, Palmtree
+  Rocket, Calculator, Send, Bell, Headphones, Key, Palmtree, ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 import { FakhirLogo } from '@/components/CompanyLogos';
@@ -470,6 +470,7 @@ export default function FakhirPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1156,6 +1157,139 @@ export default function FakhirPage() {
                 )}
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Pitch Deck Tab */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-amber-500/20 to-amber-500/5 rounded-2xl p-6 border border-amber-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                Fakhir captures the GCC&apos;s $2.1T HNWI wealth pool with a digital-first luxury concierge platform — the only service
+                integrated with payments, rewards, and BNPL. Premium memberships (999-4,999 AED/month) create predictable recurring
+                revenue with 80%+ gross margins across 70K+ UAE HNWIs and 200K+ affluent professionals.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$15B+', detail: 'UAE Luxury Market Size' },
+                  { label: 'SAM', value: '70K+', detail: 'UAE HNWIs' },
+                  { label: 'SOM', value: '200K+', detail: 'Affluent Professionals' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: '24/7 White-Glove Concierge', desc: 'Dedicated lifestyle managers fulfilling requests in minutes, not hours' },
+                  { title: 'Nuqta Platinum Rewards', desc: 'Triple coins on every luxury purchase, redeemable across ecosystem' },
+                  { title: 'Qist Luxury BNPL', desc: '0% interest on private jets, yacht charters, fine jewelry' },
+                  { title: 'Curated Exclusivity', desc: 'Off-market properties, sold-out events, limited-edition collections' },
+                  { title: 'GCC-Native Excellence', desc: 'Arabic-first, Sharia-compliant, deep regional partnerships' },
+                  { title: 'Full Ecosystem Synergy', desc: 'Connected to Hawil, Safar, Rakab, Dinezy — one luxury lifestyle app' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <table className="w-full text-sm">
+                <thead><tr className="border-b border-slate-700">
+                  <th className="text-left py-2 text-slate-400">Metric</th>
+                  <th className="text-right py-2 text-slate-400">Year 1</th>
+                  <th className="text-right py-2 text-slate-400">Year 2</th>
+                  <th className="text-right py-2 text-slate-400">Year 3</th>
+                </tr></thead>
+                <tbody>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Members</td><td className="text-right text-white">2,000</td><td className="text-right text-white">8,000</td><td className="text-right text-white">20,000</td></tr>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Revenue (AED M)</td><td className="text-right text-amber-400 font-bold">15M</td><td className="text-right text-amber-400 font-bold">60M</td><td className="text-right text-amber-400 font-bold">180M</td></tr>
+                  <tr><td className="py-2 text-slate-300">Net Profit (AED M)</td><td className="text-right text-emerald-400">5M</td><td className="text-right text-emerald-400">25M</td><td className="text-right text-emerald-400">75M</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Quintessentially', val: '$500M+', metric: '5K members globally' },
+                  { name: 'Ten Lifestyle', val: '$200M', metric: 'Listed on LSE' },
+                  { name: 'John Paul (Accor)', val: 'Acquired', metric: 'Strategic acquisition' },
+                  { name: 'Velocity Black', val: '$100M+', metric: 'AI-powered concierge' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50">
+                    <div className="text-sm font-bold text-white">{c.name}</div>
+                    <div className="text-lg font-black text-amber-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { ms: 'Year 1: Foundation', val: '2K members, 15M AED', detail: 'Dubai launch, 50 brand partners' },
+                  { ms: 'Year 2: Scale', val: '8K members, 60M AED', detail: 'UAE-wide, private aviation' },
+                  { ms: 'Year 3: Dominance', val: '20K members, 180M AED', detail: 'GCC expansion, physical lounges' },
+                  { ms: 'Year 4-5: Unicorn', val: '50K+ members, 500M+ AED', detail: 'Global, $1B+ valuation' },
+                ].map(m => (
+                  <div key={m.ms} className="bg-slate-900/50 rounded-lg p-3 border border-amber-500/20">
+                    <div className="text-xs text-amber-400 font-bold">{m.ms}</div>
+                    <div className="text-sm font-bold text-white mt-1">{m.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Fakhir is the highest-ARPU consumer vertical in the RTMN ecosystem. Every luxury request flows through sister products.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { product: 'Safar', role: 'Private jet & VIP travel' },
+                  { product: 'Dinezy', role: 'Michelin-star dining' },
+                  { product: 'Eventora', role: 'Exclusive events & VIP' },
+                  { product: 'Rakab Black', role: 'Black car & chauffeur' },
+                  { product: 'Qist', role: 'Luxury BNPL — 0% interest' },
+                  { product: 'Hawil Card', role: 'Fakhir Black Card' },
+                ].map(s => (
+                  <div key={s.product} className="bg-slate-800/50 rounded-lg px-3 py-2 border border-[#c9a227]/20">
+                    <div className="text-xs font-bold text-[#c9a227]">{s.product}</div>
+                    <div className="text-xs text-slate-400">{s.role}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 

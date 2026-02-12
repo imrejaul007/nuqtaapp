@@ -13,7 +13,8 @@ import {
   Crown, Store, Package, Target, Rocket,
   Calculator, Wallet, HeartHandshake,
   ChevronRight, Network, Sparkles, PieChart,
-  Stethoscope, Plane, Umbrella, Scale
+  Stethoscope, Plane, Umbrella, Scale,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -187,6 +188,7 @@ export default function DamanPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -356,6 +358,141 @@ export default function DamanPage() {
 
         {activeTab === 'risks' && (
           <div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>
+        )}
+
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-500/5 rounded-2xl p-6 border border-emerald-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Daman is the insurance layer embedded into every transaction across the RTMN ecosystem. Property leases trigger home insurance, travel bookings trigger travel cover, delivery gigs trigger rider protection. This embedded model creates a captive distribution channel that no standalone InsurTech can replicate, targeting $200M GWP by Year 3.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$30B', detail: 'GCC Insurance Market (2026)' },
+                  { label: 'SAM', value: '$8B', detail: 'Digital-Addressable Segment' },
+                  { label: 'SOM', value: '$200M', detail: 'Year 3 GWP Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'One-Tap Comparison', desc: 'Compare 40+ insurers side-by-side. AI recommends the best fit based on your profile.' },
+                  { title: 'Ecosystem-Embedded', desc: 'Buy property on Aqar? Insurance auto-offered. Book on Safar? Travel cover bundled.' },
+                  { title: 'Digital Claims in <24h', desc: 'Photo upload, AI damage assessment, digital payout. No paper, no waiting.' },
+                  { title: 'Bilingual + Takaful', desc: 'Full Arabic/English. Shariah-compliant Takaful options for every product line.' },
+                  { title: '6 Insurance Lines', desc: 'Health, auto, property, device, travel, life -- covering every need in one platform.' },
+                  { title: 'Micro-Insurance for Gig Workers', desc: 'Pay-per-delivery coverage for Wasil/Rakab riders. Emerging market segment.' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+                    <div><span className="text-white font-semibold text-sm">{d.title}</span><span className="text-slate-400 text-sm"> — {d.desc}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">3-Year Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Policies', 'GWP', 'Total Revenue', 'Net Profit'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-emerald-400 font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', policies: '15K', gwp: '30M AED', rev: '8M AED', net: '2M AED' },
+                      { year: 'Year 2', policies: '120K', gwp: '100M AED', rev: '32M AED', net: '16M AED' },
+                      { year: 'Year 3', policies: '500K', gwp: '200M AED', rev: '70M AED', net: '42M AED' },
+                    ].map(r => (
+                      <tr key={r.year} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{r.year}</td>
+                        <td className="px-3 py-3 text-blue-400">{r.policies}</td>
+                        <td className="px-3 py-3 text-slate-300">{r.gwp}</td>
+                        <td className="px-3 py-3 text-emerald-400 font-bold">{r.rev}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{r.net}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { name: 'Lemonade', val: '$2B', model: 'AI-first home/renters insurance' },
+                  { name: 'Oscar Health', val: '$6B', model: 'Digital health insurance' },
+                  { name: 'Root Insurance', val: '$1B', model: 'Telematics-based auto insurance' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-emerald-400 text-lg font-black mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.model}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-emerald-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', metric: '50K policies', timeline: 'Q4 2027', val: '~$100M' },
+                  { stage: 'Series A', metric: '200K policies', timeline: 'Q2 2028', val: '~$300M' },
+                  { stage: 'Series B', metric: '500K policies', timeline: 'Q4 2028', val: '~$600M' },
+                  { stage: '$1B+', metric: '2M policies (GCC)', timeline: '2029+', val: '~$1.5B+' },
+                ].map(s => (
+                  <div key={s.stage} className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 text-center">
+                    <div className="text-xs text-emerald-400 font-bold">{s.stage}</div>
+                    <div className="text-white font-bold text-sm mt-1">{s.metric}</div>
+                    <div className="text-lg font-black text-emerald-400 mt-1">{s.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{s.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Daman&apos;s embedded insurance model is powered by deep integrations across the RTMN ecosystem.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  'Captive distribution via ecosystem',
+                  'Data advantage from ecosystem',
+                  'Cross-sell multiplier (2.4x)',
+                  'Claims cost advantage',
+                ].map(s => (
+                  <div key={s} className="bg-[#c9a227]/10 rounded-lg px-3 py-2 text-center">
+                    <span className="text-[#c9a227] text-xs font-medium">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </main>
 

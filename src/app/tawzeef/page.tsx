@@ -13,7 +13,8 @@ import {
   Crown, Store, Package, Target, Rocket,
   Calculator, Calendar, Wallet, HeartHandshake,
   ChevronRight, Network, Sparkles, PieChart,
-  ClipboardList, UserPlus, GraduationCap, Banknote
+  ClipboardList, UserPlus, GraduationCap, Banknote,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -227,6 +228,7 @@ export default function TawzeefPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -490,6 +492,102 @@ export default function TawzeefPage() {
               {expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}
             </div>
           ))}</div>
+        )}
+
+        {/* Pitch Deck */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-blue-500/20 to-blue-500/5 rounded-2xl p-6 border border-blue-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Tawzeef is not a job board — it is a hire-to-work operating system. From AI matching to visa processing to payroll enrollment, no platform in the GCC (or globally) closes the loop from job post to first paycheck. LinkedIn proved recruitment platforms can reach $26B. Tawzeef brings that model to the fastest-growing labor market on earth — with full government and payroll integration that LinkedIn, Bayt, and Indeed cannot replicate.</p>
+            </div>
+            {/* TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[{label:'TAM',value:'$2B+',detail:'UAE Recruitment Market (2026)'},{label:'SAM',value:'$600M',detail:'Digital Recruitment & HR Tech Segment'},{label:'SOM',value:'$60M',detail:'Year 3 Tawzeef Revenue Target'}].map(m=>(
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[{title:'AI Talent Matching',desc:'ML-powered scoring ranks applicants by skills, experience, cultural fit, and visa eligibility — time-to-hire from 45 days to 12'},{title:'Khedma Visa Pipeline',desc:'New hires auto-trigger visa applications via Khedma. Work permits, medical fitness, Emirates ID — all tracked in one dashboard'},{title:'BizOne Payroll Sync',desc:'Accepted offers auto-create employee records in BizOne payroll. WPS-ready from day one. Zero re-entry'},{title:'GCC Nationalization Aware',desc:'Emiratisation, Saudization, and Bahrainisation quotas baked into every job posting. Auto-flag non-compliant hires'},{title:'Skills Assessment Engine',desc:'Built-in coding tests, psychometric assessments, and Arabic/English proficiency exams — no third-party tools needed'}].map(d=>(
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-400 shrink-0 mt-0.5"/>
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year','Revenue','Costs','Net Profit'].map(h=><th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>)}
+                  </tr></thead>
+                  <tbody>
+                    {[{y:'Year 1',r:'AED 5M',c:'AED 3.5M',n:'AED 1.5M'},{y:'Year 2',r:'AED 20M',c:'AED 10M',n:'AED 10M'},{y:'Year 3',r:'AED 60M',c:'AED 24M',n:'AED 36M'}].map(row=>(
+                      <tr key={row.y} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-3 text-emerald-400">{row.r}</td>
+                        <td className="px-3 py-3 text-red-400">{row.c}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{row.n}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[{name:'LinkedIn',val:'$26B',market:'Microsoft acquisition'},{name:'Indeed',val:'$20B+',market:'Recruit Holdings implied'},{name:'Seek',val:'$5B',market:'Regional job marketplace'},{name:'ZipRecruiter',val:'$2B+',market:'AI-powered job matching'}].map(c=>(
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-[#c9a227] mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5"/> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[{stage:'5K placements',val:'~$25M',rev:'5M AED',time:'Q4 2026'},{stage:'20K placements',val:'~$100M',rev:'20M AED',time:'Q4 2027'},{stage:'50K placements',val:'~$300M',rev:'60M AED',time:'Q4 2028'},{stage:'200K+ placements',val:'~$1B+',rev:'250M+ AED',time:'2029+'}].map((ms,i)=>(
+                  <div key={ms.stage} className={`rounded-xl p-4 text-center border ${i===3?'bg-[#c9a227]/10 border-[#c9a227]/40':'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className={`text-xl font-bold ${i===3?'text-[#c9a227]':'text-white'}`}>{ms.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{ms.stage}</div>
+                    <div className="text-xs text-slate-500">{ms.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[{s:'BizOne merchant pipeline',d:'100K+ BizOne merchants are employers — each is a warm lead for Tawzeef subscriptions'},{s:'Khedma visa lock-in',d:'Once employers process visas through Tawzeef to Khedma, switching costs become extreme'},{s:'BizOne payroll integration',d:'Auto-enroll hires into payroll. Employers using Tawzeef + BizOne never need a separate ATS'},{s:'Data moat',d:'Recruitment + visa + payroll data = unmatched employer intelligence no competitor has'},{s:'Adzy recruitment marketing',d:'Job postings promoted via Adzy ad network reach passive candidates competitors cannot access'},{s:'RTMN seed customers',d:'10 RTMN companies hiring immediately — instant traction and case studies'}].map(s=>(
+                  <div key={s.s} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#c9a227] shrink-0 mt-0.5"/>
+                    <div><div className="text-white font-medium text-xs">{s.s}</div><div className="text-xs text-slate-500">{s.d}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </main>
 

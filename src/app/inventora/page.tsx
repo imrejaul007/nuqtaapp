@@ -9,7 +9,7 @@ import {
   Scan, Settings, TrendingUp, DollarSign, Globe, ShoppingCart,
   Cpu, Zap, Shield, Users, Target, PieChart, CreditCard,
   ArrowUpRight, Clock, Star, Brain, Bell, Smartphone,
-  Link2, LayoutGrid, GitBranch, ChevronRight
+  Link2, LayoutGrid, GitBranch, ChevronRight, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -427,7 +427,7 @@ const warehouseLocations = [
 
 export default function InventoraPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('stock-tracking');
-  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market'>('features');
+  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
@@ -478,6 +478,7 @@ export default function InventoraPage() {
               { key: 'features' as const, label: 'Core Features', icon: LayoutGrid },
               { key: 'pricing' as const, label: 'Pricing & Economics', icon: DollarSign },
               { key: 'market' as const, label: 'Market & Competition', icon: Globe },
+              { key: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -833,6 +834,138 @@ export default function InventoraPage() {
               </div>
             </div>
           </>
+        )}
+
+        {/* ═══════════════ PITCH DECK TAB ═══════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-teal-500/20 to-teal-500/5 rounded-2xl p-6 border border-teal-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                Inventora is the supply chain operating system for MENA commerce. By connecting BizOne POS data to AI demand forecasting
+                to automated procurement via NextaBizz to last-mile delivery via Wasil, Inventora creates a closed-loop supply chain that
+                no standalone inventory tool can replicate. Every SME joining the RTMN ecosystem becomes an Inventora customer by default.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$2B+', detail: 'UAE Supply Chain Software Market' },
+                  { label: 'SAM', value: '$500M', detail: 'SME Inventory Management Segment' },
+                  { label: 'SOM', value: '$50M', detail: 'Year 3 Inventora Revenue Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'AI Demand Forecasting', desc: '95% accuracy ML models predict demand per SKU, location, and season' },
+                  { title: 'Auto-Reorder from NextaBizz', desc: 'POs auto-route through marketplace for best wholesale pricing' },
+                  { title: 'Real-time BizOne POS Sync', desc: 'Every sale deducts stock, every restock updates POS — zero manual work' },
+                  { title: 'Multi-warehouse Visibility', desc: '6+ GCC warehouses with zone-based org and inter-warehouse transfers' },
+                  { title: 'Batch & Expiry Intelligence', desc: 'FEFO/FIFO enforcement, automated alerts at 30/60/90 days' },
+                  { title: 'Arabic-First, AED-Native', desc: 'Built for MENA — Arabic interface, local compliance, GCC seasonality' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <table className="w-full text-sm">
+                <thead><tr className="border-b border-slate-700">
+                  <th className="text-left py-2 text-slate-400">Metric</th>
+                  <th className="text-right py-2 text-slate-400">Year 1</th>
+                  <th className="text-right py-2 text-slate-400">Year 2</th>
+                  <th className="text-right py-2 text-slate-400">Year 3</th>
+                </tr></thead>
+                <tbody>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Businesses</td><td className="text-right text-white">500</td><td className="text-right text-white">2,000</td><td className="text-right text-white">8,000</td></tr>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Revenue (AED M)</td><td className="text-right text-teal-400 font-bold">3M</td><td className="text-right text-teal-400 font-bold">15M</td><td className="text-right text-teal-400 font-bold">50M</td></tr>
+                  <tr><td className="py-2 text-slate-300">Net Profit (AED M)</td><td className="text-right text-emerald-400">0.9M</td><td className="text-right text-emerald-400">7.5M</td><td className="text-right text-emerald-400">32.5M</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { name: 'Cin7', val: '$1B+', metric: 'Multi-channel inventory mgmt' },
+                  { name: 'Fishbowl', val: '$300M+', metric: 'Manufacturing inventory + QuickBooks' },
+                  { name: 'ShipBob', val: '$3B', metric: 'Fulfillment + inventory for e-commerce' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50">
+                    <div className="text-sm font-bold text-white">{c.name}</div>
+                    <div className="text-lg font-black text-teal-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { ms: '500 businesses', val: '~3M AED', detail: 'Q4 2026 — ~$15M valuation' },
+                  { ms: '2,000 businesses', val: '~15M AED', detail: 'Q4 2027 — ~$75M valuation' },
+                  { ms: '8,000 businesses', val: '~50M AED', detail: 'Q4 2028 — ~$250M valuation' },
+                  { ms: '25,000 businesses', val: '~200M AED', detail: '2029+ — ~$1B+ valuation' },
+                ].map(m => (
+                  <div key={m.ms} className="bg-slate-900/50 rounded-lg p-3 border border-teal-500/20">
+                    <div className="text-xs text-teal-400 font-bold">{m.ms}</div>
+                    <div className="text-sm font-bold text-white mt-1">{m.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Every BizOne merchant is a pre-qualified lead. The POS-to-inventory-to-procurement loop creates unbreakable switching costs.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { product: 'BizOne Cross-sell', role: '10K+ merchants = massive built-in TAM' },
+                  { product: 'NextaBizz Auto-order', role: 'No competitor can auto-order wholesale' },
+                  { product: 'Data Flywheel', role: 'More merchants = better AI = less waste' },
+                  { product: 'Supply Chain Lock-in', role: 'POS + Inventory + Procurement + Delivery' },
+                  { product: 'Wasil Fulfillment', role: 'Pick-pack-ship to last-mile hand-off' },
+                  { product: 'NuqtaPay', role: 'Unified supplier payments and reconciliation' },
+                ].map(s => (
+                  <div key={s.product} className="bg-slate-800/50 rounded-lg px-3 py-2 border border-[#c9a227]/20">
+                    <div className="text-xs font-bold text-[#c9a227]">{s.product}</div>
+                    <div className="text-xs text-slate-400">{s.role}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </main>
 

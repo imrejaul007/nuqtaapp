@@ -200,6 +200,7 @@ export default function WasilPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'risks', label: 'Risks', icon: Shield },
     { id: 'gcc', label: 'GCC Expansion', icon: Globe },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   const allApps = [...wave1Apps, ...wave2Apps, ...wave3Apps, ...wave4Apps];
@@ -1417,6 +1418,144 @@ export default function WasilPage() {
               <div className="mt-4 bg-slate-900/50 rounded-xl p-4 text-center border border-green-500/30">
                 <div className="text-2xl font-black text-green-400">$10.8B Total GCC Market</div>
                 <div className="text-sm text-slate-400 mt-1">Wasil targeting 2-5% share across all GCC by 2030</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════════════ PITCH DECK TAB ═══════════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-orange-500/20 to-orange-500/5 rounded-2xl p-6 border border-orange-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                24 verticals in one app, a shared Rakab fleet slashing last-mile cost by 40%, and NuqtaCoin rewards on every order —
+                the flywheel that turns a regional delivery brand into a billion-dollar platform. Wasil combines Talabat&apos;s regional
+                focus with Grab&apos;s super-app breadth.
+              </p>
+            </div>
+
+            {/* Market Opportunity - TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-orange-500/30 text-center">
+                  <div className="text-3xl font-bold text-orange-400">$10.8B</div>
+                  <div className="text-sm text-slate-400 mt-1">TAM — GCC Delivery Market</div>
+                  <div className="text-xs text-slate-500 mt-1">Food, grocery, pharmacy, retail</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">$3.5B</div>
+                  <div className="text-sm text-slate-400 mt-1">SAM — UAE Delivery</div>
+                  <div className="text-xs text-slate-500 mt-1">30% YoY growth</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-blue-500/30 text-center">
+                  <div className="text-3xl font-bold text-blue-400">$510M</div>
+                  <div className="text-sm text-slate-400 mt-1">SOM — Year 3 GMV</div>
+                  <div className="text-xs text-slate-500 mt-1">6M orders, 4K merchants</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: '24 Verticals, 1 App', desc: 'Food, grocery, pharmacy, beauty, fashion, luxury and 18 more categories — every delivery need under one roof.' },
+                  { title: 'Shared Rakab Fleet', desc: 'One driver pool for rides + deliveries. Higher utilisation, lower cost per drop — 40% cost reduction.' },
+                  { title: 'NuqtaCoin on Every Order', desc: 'Customers earn NuqtaCoin with every delivery. Rewards lock users into the RTMN ecosystem.' },
+                  { title: 'Qist BNPL at Checkout', desc: 'Split any delivery into 4 interest-free payments. Increases AOV by 35% and unlocks big-ticket verticals.' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-slate-900/50 rounded-lg p-4 border border-slate-700/30">
+                    <CheckCircle className="w-5 h-5 text-orange-400 flex-shrink-0 mt-0.5" />
+                    <div><div className="text-white font-bold text-sm">{d.title}</div><p className="text-xs text-slate-400 mt-1">{d.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700 text-slate-400">
+                    <th className="text-left py-2 pr-4">Year</th><th className="text-right py-2 px-4">Orders</th><th className="text-right py-2 px-4">GMV (AED M)</th><th className="text-right py-2 px-4">Revenue (AED M)</th><th className="text-right py-2 px-4">Net Profit (AED M)</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', orders: '500K', gmv: '42.5', revenue: '6', profit: '1.5' },
+                      { year: 'Year 2', orders: '2M', gmv: '170', revenue: '25', profit: '8' },
+                      { year: 'Year 3', orders: '6M', gmv: '510', revenue: '75', profit: '28' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 text-slate-300">
+                        <td className="py-2 pr-4 text-white font-medium">{r.year}</td><td className="text-right py-2 px-4">{r.orders}</td><td className="text-right py-2 px-4">{r.gmv}</td><td className="text-right py-2 px-4 text-emerald-400">{r.revenue}</td><td className="text-right py-2 px-4 text-orange-400">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Talabat', val: '$3.5B', region: 'GCC' },
+                  { name: 'Deliveroo', val: '$7B', region: 'UK / GCC' },
+                  { name: 'DoorDash', val: '$56B', region: 'USA' },
+                  { name: 'Grab', val: '$40B', region: 'SE Asia' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-orange-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.region}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5 text-orange-400" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$15M', timeline: 'Year 0-1', metric: '5 verticals, 50K orders/mo' },
+                  { stage: 'Series A', val: '$60M', timeline: 'Year 1-2', metric: '12 verticals, UAE + KSA' },
+                  { stage: 'Series B', val: '$250M', timeline: 'Year 2-3', metric: '20 verticals, 4 GCC markets' },
+                  { stage: 'Unicorn', val: '$1B+', timeline: 'Year 3-4', metric: '24 verticals, full GCC' },
+                ].map((s, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-orange-500/10 border-orange-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">{s.stage}</div>
+                    <div className={`text-2xl font-black mt-1 ${i === 3 ? 'text-orange-400' : 'text-white'}`}>{s.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{s.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{s.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Wasil + Rakab + BizOne + Qist + NuqtaCoin = an unbreakable moat. Each RTMN product feeds the others — a flywheel competitors cannot replicate piecemeal.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { app: 'Shared Rakab Fleet', metric: '-40% cost/drop' },
+                  { app: 'BizOne Lock-in', metric: '1-tap go-live' },
+                  { app: 'Qist BNPL', metric: '+35% AOV' },
+                  { app: 'NuqtaCoin', metric: 'Ecosystem loyalty' },
+                  { app: 'Adzy Ads', metric: 'Merchant spend' },
+                  { app: 'Dark Stores', metric: '25-35% margin' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg px-3 py-2 border border-slate-700/30 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">{item.app}</span>
+                    <span className="text-emerald-400 text-xs font-bold">{item.metric}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

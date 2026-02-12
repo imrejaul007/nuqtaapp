@@ -13,7 +13,8 @@ import {
   Crown, Store, Package, Target, Rocket,
   Calculator, Wallet, HeartHandshake,
   Network, Sparkles, Key, Hammer,
-  Camera, Wrench, PieChart, Scale
+  Camera, Wrench, PieChart, Scale,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -128,6 +129,7 @@ export default function AqarPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -198,6 +200,142 @@ export default function AqarPage() {
         {activeTab === 'competition' && (<div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50"><h2 className="text-xl font-bold text-white mb-4">Competitive Comparison</h2><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-slate-700/50">{['', 'Financing', 'Management', 'Maintenance', 'Mortgage', 'Arabic', 'Ecosystem', 'Price'].map((h) => (<th key={h} className="text-left px-2 py-2 text-indigo-400 font-semibold whitespace-nowrap text-xs">{h}</th>))}</tr></thead><tbody>{competitors.map((c) => (<tr key={c.name} className={`border-b border-slate-800/50 ${c.name === 'Aqar' ? 'bg-indigo-500/10' : ''}`}><td className="px-2 py-2 text-white font-bold whitespace-nowrap">{c.name}</td>{[c.financing, c.mgmt, c.maint, c.mortgage, c.arabic, c.ecosystem, c.price].map((val, j) => (<td key={j} className={`px-2 py-2 whitespace-nowrap text-xs ${val.startsWith('✅') ? 'text-emerald-400' : val.startsWith('❌') ? 'text-red-400' : 'text-amber-400'}`}>{val}</td>))}</tr>))}</tbody></table></div></div>)}
 
         {activeTab === 'risks' && (<div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>)}
+
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-indigo-500/20 to-indigo-500/5 rounded-2xl p-6 border border-indigo-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Aqar is not a listing portal -- it is the operating system for GCC real estate. By combining listings, financing, management, and maintenance into a single platform with RTMN ecosystem integration, Aqar captures value at every stage of the property lifecycle. No competitor in the Middle East has this full-stack approach with built-in BNPL financing.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$30B+', detail: 'UAE Real Estate Market (Annual)' },
+                  { label: 'SAM', value: '$3B', detail: 'Digital Real Estate Services' },
+                  { label: 'SOM', value: '$50M', detail: 'Year 3 Aqar Revenue Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Built-In Financing', desc: 'Qist BNPL for deposits + Sakin rent-to-own. No other platform has integrated financing.' },
+                  { title: 'Full Lifecycle Coverage', desc: 'Search, tour, buy, rent, manage, maintain -- all in one app. Competitors only do listings.' },
+                  { title: 'Virtual Tours Built-In', desc: '360-degree virtual tours and video walkthroughs on every premium listing.' },
+                  { title: 'Property Management Suite', desc: 'Landlord dashboard with rent collection, tenant screening, and financial reporting.' },
+                  { title: 'Nuqta Rewards on Transactions', desc: 'Earn Nuqta Coins on every property transaction. Redeemable across 500+ merchants.' },
+                  { title: 'RTMN Ecosystem Integration', desc: 'Wasil for maintenance, Daman for insurance, NuqtaPay for payments, BizOne for commercial.' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-indigo-400 mt-0.5 flex-shrink-0" />
+                    <div><span className="text-white font-semibold text-sm">{d.title}</span><span className="text-slate-400 text-sm"> — {d.desc}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">3-Year Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Listings', 'Revenue', 'Costs', 'Net Profit'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-indigo-400 font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', listings: '5K', rev: '3M AED', costs: '2M AED', net: '1M AED' },
+                      { year: 'Year 2', listings: '20K', rev: '15M AED', costs: '7M AED', net: '8M AED' },
+                      { year: 'Year 3', listings: '50K', rev: '50M AED', costs: '18M AED', net: '32M AED' },
+                    ].map(r => (
+                      <tr key={r.year} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{r.year}</td>
+                        <td className="px-3 py-3 text-blue-400">{r.listings}</td>
+                        <td className="px-3 py-3 text-emerald-400 font-bold">{r.rev}</td>
+                        <td className="px-3 py-3 text-red-400">{r.costs}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{r.net}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Zillow', val: '$10B', model: 'Listings + mortgage + rental mgmt' },
+                  { name: 'Redfin', val: '$2B', model: 'Tech-enabled brokerage' },
+                  { name: 'PropertyGuru', val: '$1.7B', model: 'SE Asia property marketplace' },
+                  { name: 'Housing.com', val: '$1B+', model: 'Indian property marketplace' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-indigo-400 text-lg font-black mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.model}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-indigo-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', metric: '5K listings', timeline: 'Q4 2026', val: '~$30M' },
+                  { stage: 'Series A', metric: '20K listings', timeline: 'Q4 2027', val: '~$150M' },
+                  { stage: 'Series B', metric: '50K listings', timeline: 'Q4 2028', val: '~$500M' },
+                  { stage: '$1B+', metric: '200K listings (GCC)', timeline: '2029+', val: '~$1B+' },
+                ].map(s => (
+                  <div key={s.stage} className="bg-indigo-500/10 rounded-xl p-4 border border-indigo-500/30 text-center">
+                    <div className="text-xs text-indigo-400 font-bold">{s.stage}</div>
+                    <div className="text-white font-bold text-sm mt-1">{s.metric}</div>
+                    <div className="text-lg font-black text-indigo-400 mt-1">{s.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{s.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Aqar&apos;s full-stack property platform is uniquely strengthened by deep RTMN ecosystem integrations.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  'Sakin + Qist Financing Moat',
+                  'Wasil Maintenance Network',
+                  'BizOne Commercial Pipeline',
+                  'Nuqta Rewards on Real Estate',
+                ].map(s => (
+                  <div key={s} className="bg-[#c9a227]/10 rounded-lg px-3 py-2 text-center">
+                    <span className="text-[#c9a227] text-xs font-medium">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <section className="py-12 px-4 border-t border-slate-800/50"><div className="max-w-4xl mx-auto text-center"><h2 className="text-2xl font-bold text-white mb-4">Property, Full-Stack.</h2><p className="text-slate-400 mb-8">7 modules. Buy, sell, rent, manage. Financing built-in.</p><div className="flex flex-wrap justify-center gap-4"><Link href="/sakin" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-xl font-bold hover:bg-indigo-500 transition-colors"><Home className="w-5 h-5" /> Sakin Financing</Link><Link href="/qist" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-500 transition-colors"><Wallet className="w-5 h-5" /> Qist BNPL</Link><Link href="/daman" className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-xl font-bold hover:bg-green-500 transition-colors"><Heart className="w-5 h-5" /> Daman Insurance</Link></div></div></section>

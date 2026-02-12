@@ -11,7 +11,7 @@ import {
   Target, MapPin, CreditCard, Coins, Home, FileText,
   ShieldCheck, Percent, PieChart, Layers, Settings,
   Timer, BadgePercent, CircleDollarSign, Wallet, Activity,
-  LineChart, ArrowUpRight, Database, Store, XCircle
+  LineChart, ArrowUpRight, Database, Store, XCircle, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -416,7 +416,7 @@ const gccMarkets = [
 // ============================================
 export default function HandyzyPage() {
   const [expandedService, setExpandedService] = useState<string | null>('ac-hvac');
-  const [activeTab, setActiveTab] = useState<'overview' | 'services' | 'pricing' | 'economics' | 'revenue' | 'competitors' | 'ecosystem' | 'roadmap' | 'risks' | 'gcc'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'services' | 'pricing' | 'economics' | 'revenue' | 'competitors' | 'ecosystem' | 'roadmap' | 'risks' | 'gcc' | 'deck'>('overview');
   const [expandedRisk, setExpandedRisk] = useState<number | null>(null);
 
   const totalTechnicians = serviceCategories.reduce((acc, c) => acc + c.technicianCount, 0);
@@ -432,6 +432,7 @@ export default function HandyzyPage() {
     { id: 'roadmap' as const, label: 'Roadmap', icon: Rocket },
     { id: 'risks' as const, label: 'Risks', icon: AlertTriangle },
     { id: 'gcc' as const, label: 'GCC', icon: Globe },
+    { id: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1219,6 +1220,151 @@ export default function HandyzyPage() {
                   {item}
                 </div>
               ))}
+            </div>
+          </div>
+        </main>
+      )}
+
+      {/* ============================================ */}
+      {/* PITCH DECK TAB */}
+      {/* ============================================ */}
+      {activeTab === 'deck' && (
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-amber-500/20 to-amber-500/5 rounded-2xl p-6 border border-amber-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Every home needs maintenance. AC servicing alone is a 4x/year recurring need per household. Handyzy captures all home maintenance spend with AI-powered upfront pricing, 30-day warranty, and Nuqta ecosystem rewards. With Aqar property management, Sakin move-in services, and BizOne commercial contracts feeding demand, Handyzy becomes the home services backbone of the entire RTMN ecosystem.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$2.1B', detail: 'UAE Home Maintenance Market' },
+                  { label: 'SAM', value: '$800M', detail: 'Addressable Digital Segment' },
+                  { label: 'SOM', value: '$120M', detail: 'Year 3 Target (15% share)' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'AI Photo Estimation', desc: 'Snap a photo, get instant 90%+ accurate price range' },
+                  { title: 'Real-Time Tracking', desc: 'Track your technician live on map, know exact arrival' },
+                  { title: '30-Day Warranty', desc: 'Every job backed by warranty -- free redo if fix fails' },
+                  { title: 'Nuqta Coins (5X)', desc: 'Up to 5X coins on Villa Elite, redeem across ecosystem' },
+                  { title: 'Qist BNPL', desc: '0% interest financing for major renovations (3-12 months)' },
+                  { title: '1,500+ Verified Techs', desc: 'Vetted, rated, certified across 6 service categories' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-white font-bold text-sm">{d.title}</div>
+                      <div className="text-slate-400 text-xs">{d.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections (3-Year)</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Users', 'Revenue (AED)', 'Profit (AED)'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { y: 'Year 1', u: '20K', r: '10M', p: '2.5M' },
+                      { y: 'Year 2', u: '80K', r: '40M', p: '15M' },
+                      { y: 'Year 3', u: '200K', r: '100M', p: '40M' },
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-slate-700/30">
+                        <td className="px-3 py-2 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-2 text-slate-300">{row.u}</td>
+                        <td className="px-3 py-2 text-amber-400 font-bold">{row.r}</td>
+                        <td className="px-3 py-2 text-emerald-400 font-bold">{row.p}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Urban Company', val: '$2.8B', market: 'India' },
+                  { name: 'HomeServe', val: '$4.5B', market: 'Global' },
+                  { name: 'Porch', val: '$1B+', market: 'USA' },
+                  { name: 'Thumbtack', val: '$3.2B', market: 'USA' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold text-sm">{c.name}</div>
+                    <div className="text-amber-400 text-xl font-black mt-1">{c.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '15M AED', time: 'Q1 2025', color: 'text-emerald-400' },
+                  { stage: 'Series A', val: '80M AED', time: 'Q4 2025', color: 'text-blue-400' },
+                  { stage: 'Series B', val: '300M AED', time: 'Q3 2026', color: 'text-purple-400' },
+                  { stage: 'Series C / IPO', val: '1B+ AED', time: '2027+', color: 'text-[#c9a227]' },
+                ].map((m, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/30">
+                    <div className={`text-xs font-bold ${m.color} uppercase`}>{m.stage}</div>
+                    <div className={`text-xl font-bold ${m.color} mt-1`}>{m.val}</div>
+                    <div className="text-slate-500 text-xs mt-1">{m.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Every RTMN app funnels demand into Handyzy, creating a compounding growth flywheel that standalone competitors cannot replicate.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  'Aqar: Maintenance contracts auto-route',
+                  'Sakin: Move-in AC/plumbing setup',
+                  'BizOne: Commercial maintenance contracts',
+                  'Qist: 0% interest for major repairs',
+                  'Khedma: Technician visa processing',
+                  'Nuqta Coins: Cross-ecosystem loyalty',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
+                    <CheckCircle className="w-3.5 h-3.5 text-[#c9a227] mt-0.5 flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </main>

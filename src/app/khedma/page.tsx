@@ -13,7 +13,8 @@ import {
   Crown, Store, Package, Target, Rocket,
   Calculator, Wallet, HeartHandshake,
   Network, Sparkles, Stamp, Landmark,
-  Fingerprint, Plane, ClipboardList, Heart
+  Fingerprint, Plane, ClipboardList, Heart,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -152,6 +153,7 @@ export default function KhedmaPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -257,6 +259,140 @@ export default function KhedmaPage() {
         {activeTab === 'competition' && (<div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50"><h2 className="text-xl font-bold text-white mb-4">Competitive Comparison</h2><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-slate-700/50">{['', 'Digital', 'GCC', 'Arabic', 'Tracking', 'Portals', 'API', 'Price'].map((h) => (<th key={h} className="text-left px-2 py-2 text-amber-400 font-semibold whitespace-nowrap text-xs">{h}</th>))}</tr></thead><tbody>{competitors.map((c) => (<tr key={c.name} className={`border-b border-slate-800/50 ${c.name === 'Khedma' ? 'bg-amber-500/10' : ''}`}><td className="px-2 py-2 text-white font-bold whitespace-nowrap">{c.name}</td>{[c.digital, c.gcc, c.arabic, c.track, c.portals, c.api, c.price].map((val, j) => (<td key={j} className={`px-2 py-2 whitespace-nowrap text-xs ${val.startsWith('✅') ? 'text-emerald-400' : val.startsWith('❌') ? 'text-red-400' : 'text-amber-400'}`}>{val}</td>))}</tr>))}</tbody></table></div></div>)}
 
         {activeTab === 'risks' && (<div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>)}
+
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-amber-500/20 to-amber-500/5 rounded-2xl p-6 border border-amber-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Khedma is the operating system for government services in the GCC. Every expat (25M+) and every business (350K+) needs PRO services. Khedma digitizes the entire chain at 75% lower cost with 60% faster processing, auto-filled from Rabtul identity. The $3B+ market is still dominated by manual PRO agents.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$3B+', detail: 'UAE Government Services Market' },
+                  { label: 'SAM', value: '$800M', detail: 'PRO & Digital Processing Segment' },
+                  { label: 'SOM', value: '$50M', detail: 'Year 3 Khedma Revenue Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Digital PRO Replacement', desc: 'Submit visa, licensing, attestation requests from your phone — no office visits.' },
+                  { title: 'Rabtul Identity Auto-Fill', desc: 'Documents and forms pre-filled from Rabtul Core identity layer. Zero re-entry.' },
+                  { title: '25+ Portal Aggregation', desc: 'GDRFA, MOHRE, DET, MOFA, FTA, DLD unified into one interface.' },
+                  { title: 'Real-Time Tracking', desc: 'Track every application from submission to approval with push notifications.' },
+                  { title: '75% Cost Reduction', desc: 'AED 49/service vs AED 200-500 at traditional PRO companies.' },
+                  { title: 'Bilingual & GCC-Wide', desc: 'Arabic + English. Expanding from UAE to all 6 GCC countries.' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+                    <div><span className="text-white font-semibold text-sm">{d.title}</span><span className="text-slate-400 text-sm"> — {d.desc}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">3-Year Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Revenue', 'Costs', 'Net Profit'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-amber-400 font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', rev: '3M AED', costs: '2.1M AED', net: '0.9M AED' },
+                      { year: 'Year 2', rev: '15M AED', costs: '7.5M AED', net: '7.5M AED' },
+                      { year: 'Year 3', rev: '50M AED', costs: '17.5M AED', net: '32.5M AED' },
+                    ].map(r => (
+                      <tr key={r.year} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{r.year}</td>
+                        <td className="px-3 py-3 text-emerald-400 font-bold">{r.rev}</td>
+                        <td className="px-3 py-3 text-red-400">{r.costs}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{r.net}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                {[
+                  { name: 'DocuSign', val: '$8B', model: 'Digital document processing' },
+                  { name: 'ID.me', val: '$1.5B', model: 'Digital identity for government' },
+                  { name: 'Deel', val: '$12B', model: 'Global employment compliance' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-amber-400 text-lg font-black mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.model}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-amber-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', metric: '5K txns', timeline: 'Q4 2026', val: '~$15M' },
+                  { stage: 'Series A', metric: '25K txns', timeline: 'Q4 2027', val: '~$75M' },
+                  { stage: 'Series B', metric: '80K txns', timeline: 'Q4 2028', val: '~$250M' },
+                  { stage: '$1B+', metric: '300K+ txns', timeline: '2029+', val: '~$1B+' },
+                ].map(s => (
+                  <div key={s.stage} className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 text-center">
+                    <div className="text-xs text-amber-400 font-bold">{s.stage}</div>
+                    <div className="text-white font-bold text-sm mt-1">{s.metric}</div>
+                    <div className="text-lg font-black text-amber-400 mt-1">{s.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{s.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Khedma benefits from deep ecosystem integration that no standalone GovTech company can replicate.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  'Built-in 10-company customer base',
+                  'Rabtul identity auto-fill',
+                  'Tawzeef HR pipeline',
+                  'Amana compliance automation',
+                ].map(s => (
+                  <div key={s} className="bg-[#c9a227]/10 rounded-lg px-3 py-2 text-center">
+                    <span className="text-[#c9a227] text-xs font-medium">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <section className="py-12 px-4 border-t border-slate-800/50"><div className="max-w-4xl mx-auto text-center"><h2 className="text-2xl font-bold text-white mb-4">Government Services, Digitized.</h2><p className="text-slate-400 mb-8">7 service areas. 25+ portals. 60% faster. One platform.</p><div className="flex flex-wrap justify-center gap-4"><Link href="/tawzeef" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition-colors"><Users className="w-5 h-5" /> Tawzeef HR</Link><Link href="/amana" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-500 transition-colors"><Shield className="w-5 h-5" /> Amana Compliance</Link></div></div></section>

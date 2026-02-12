@@ -13,7 +13,7 @@ import {
   Link2, RefreshCw, Landmark, MapPin, Flag, Percent, Receipt,
   Timer, UserCheck, Lock, Eye, Search, Repeat, ArrowDownUp,
   Plane, Home, ShoppingBag, IndianRupee, PhilippinePeso, BadgeDollarSign,
-  Package, Wifi, Heart, Users2, Car
+  Package, Wifi, Heart, Users2, Car, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -661,6 +661,7 @@ export default function HawilPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'risks', label: 'Risks', icon: Shield },
     { id: 'competition', label: 'Competition', icon: Users },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -2127,6 +2128,145 @@ export default function HawilPage() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════════════ PITCH DECK TAB ═══════════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-green-500/20 to-green-500/5 rounded-2xl p-6 border border-green-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                UAE processes $50B in annual remittances — yet incumbents charge 3-5% FX markups. Hawil offers the Google mid-market
+                rate with 0% markup and 0.5% transfer fee, saving expats thousands per year. With 9.5M expats in the UAE alone and
+                deep RTMN ecosystem integration (Safar travel, Qist BNPL, NuqtaCoins), Hawil captures the entire expat financial lifecycle.
+              </p>
+            </div>
+
+            {/* Market Opportunity - TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-green-500/30 text-center">
+                  <div className="text-3xl font-bold text-green-400">$50B</div>
+                  <div className="text-sm text-slate-400 mt-1">TAM — UAE Remittance</div>
+                  <div className="text-xs text-slate-500 mt-1">Annual outbound volume</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">$15B</div>
+                  <div className="text-sm text-slate-400 mt-1">SAM — India Corridor</div>
+                  <div className="text-xs text-slate-500 mt-1">Largest single corridor (30%)</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-blue-500/30 text-center">
+                  <div className="text-3xl font-bold text-blue-400">$2B</div>
+                  <div className="text-sm text-slate-400 mt-1">SOM — Year 3 Volume</div>
+                  <div className="text-xs text-slate-500 mt-1">250K users, 25 countries</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Google Rate (0% Markup)', desc: 'Mid-market exchange rate with zero FX markup. Competitors charge 2-5% hidden markup on every transfer.' },
+                  { title: '0.5% Transfer Fee', desc: 'Flat transparent fee — 6-10x cheaper than traditional exchange houses and banks.' },
+                  { title: 'Hawil Card', desc: 'Physical/virtual card for spending abroad at Google rate. Multi-currency wallet with instant conversion.' },
+                  { title: 'NuqtaCoin Rewards', desc: 'Earn Nuqta coins on every transfer. First remittance product with loyalty rewards integration.' },
+                  { title: 'Instant Transfers 24/7', desc: 'No banking hours. Instant settlement to 25+ countries with real-time tracking.' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-slate-900/50 rounded-lg p-4 border border-slate-700/30">
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                    <div><div className="text-white font-bold text-sm">{d.title}</div><p className="text-xs text-slate-400 mt-1">{d.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700 text-slate-400">
+                    <th className="text-left py-2 pr-4">Year</th><th className="text-right py-2 px-4">Volume ($M)</th><th className="text-right py-2 px-4">Users</th><th className="text-right py-2 px-4">Revenue ($M)</th><th className="text-right py-2 px-4">Net Profit ($M)</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', volume: '100', users: '15K', revenue: '0.5', profit: '0.12' },
+                      { year: 'Year 2', volume: '500', users: '75K', revenue: '2.5', profit: '0.8' },
+                      { year: 'Year 3', volume: '2,000', users: '250K', revenue: '10', profit: '4' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 text-slate-300">
+                        <td className="py-2 pr-4 text-white font-medium">{r.year}</td><td className="text-right py-2 px-4">{r.volume}</td><td className="text-right py-2 px-4">{r.users}</td><td className="text-right py-2 px-4 text-emerald-400">{r.revenue}</td><td className="text-right py-2 px-4 text-green-400">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Wise', val: '$8B', region: 'Global' },
+                  { name: 'Remitly', val: '$5B', region: 'USA / Global' },
+                  { name: 'Al Ansari', val: '$3B+', region: 'UAE (incumbent)' },
+                  { name: 'Revolut', val: '$33B', region: 'UK / Global' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-green-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.region}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5 text-green-400" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$10M', timeline: 'Q4 2026', metric: '15K users, 8 corridors' },
+                  { stage: 'Series A', val: '$40M', timeline: 'Q2 2027', metric: '75K users, Hawil Card live' },
+                  { stage: 'Series B', val: '$150M', timeline: 'Q4 2028', metric: '250K users, 25 countries' },
+                  { stage: 'Unicorn', val: '$1B+', timeline: '2030', metric: '1M+ users, $10B+ volume' },
+                ].map((s, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-green-500/10 border-green-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">{s.stage}</div>
+                    <div className={`text-2xl font-black mt-1 ${i === 3 ? 'text-green-400' : 'text-white'}`}>{s.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{s.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{s.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Every remittance user becomes a travel booker (Safar), a BNPL customer (Qist), and a rewards member (Nuqta+). The 9.5M expat pipeline is the RTMN ecosystem&apos;s most powerful acquisition channel.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { app: 'Safar Travel', metric: 'Expat flight bookings' },
+                  { app: 'Hawil Card', metric: '0% FX abroad' },
+                  { app: 'Qist BNPL', metric: 'Split installments' },
+                  { app: 'Nuqta Coins', metric: 'Rewards on transfers' },
+                  { app: 'Wasil Delivery', metric: 'Cross-border gifts' },
+                  { app: 'Nuqta+', metric: 'Premium conversion' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg px-3 py-2 border border-slate-700/30 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">{item.app}</span>
+                    <span className="text-emerald-400 text-xs font-bold">{item.metric}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

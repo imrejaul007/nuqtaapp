@@ -432,7 +432,7 @@ const b2bVerticals = [
 
 export default function NextaBizzPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('marketplace');
-  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market'>('features');
+  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
@@ -483,6 +483,7 @@ export default function NextaBizzPage() {
               { key: 'features' as const, label: 'Core Features', icon: LayoutGrid },
               { key: 'pricing' as const, label: 'Pricing & Economics', icon: DollarSign },
               { key: 'market' as const, label: 'Market & Competition', icon: Globe },
+              { key: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -823,6 +824,140 @@ export default function NextaBizzPage() {
               </div>
             </div>
           </>
+        )}
+
+        {/* ═══════════════ PITCH DECK TAB ═══════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-emerald-500/20 to-emerald-500/5 rounded-2xl p-6 border border-emerald-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                NextaBizz is the operating system for B2B trade in MENA. By integrating procurement, trade finance (Qist), supply chain
+                management (Inventora), and cross-border trade (Hawil) into a single platform connected to BizOne POS, NextaBizz creates
+                a closed-loop B2B ecosystem with massive switching costs and compounding network effects in a $25B+ market.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$25B+', detail: 'UAE B2B Trade Market' },
+                  { label: 'SAM', value: '$8B', detail: 'Digital B2B Procurement' },
+                  { label: 'SOM', value: '$200M', detail: 'Year 3 GMV Target' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Wholesale Direct Pricing', desc: '20-40% cheaper than retail sourcing with volume-based tiers' },
+                  { title: 'Built-in Trade Credit (Qist)', desc: 'Net-30/60/90 terms and BNPL up to 12 months — pre-approved' },
+                  { title: 'BizOne POS Integration', desc: 'Orders auto-sync with POS for inventory receiving and cost tracking' },
+                  { title: 'Inventora Supply Chain', desc: 'Procurement flows into warehouse management in real-time' },
+                  { title: 'Cross-Border via Hawil', desc: 'Multi-currency B2B payments, customs docs, and compliance' },
+                  { title: 'AI Supplier Matching', desc: 'AI matches businesses with best suppliers by need, price, and trust' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <table className="w-full text-sm">
+                <thead><tr className="border-b border-slate-700">
+                  <th className="text-left py-2 text-slate-400">Metric</th>
+                  <th className="text-right py-2 text-slate-400">Year 1</th>
+                  <th className="text-right py-2 text-slate-400">Year 2</th>
+                  <th className="text-right py-2 text-slate-400">Year 3</th>
+                </tr></thead>
+                <tbody>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Businesses</td><td className="text-right text-white">1,000</td><td className="text-right text-white">5,000</td><td className="text-right text-white">15,000</td></tr>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">GMV (AED)</td><td className="text-right text-white">60M</td><td className="text-right text-white">300M</td><td className="text-right text-white">1B</td></tr>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Revenue (AED M)</td><td className="text-right text-emerald-400 font-bold">5M</td><td className="text-right text-emerald-400 font-bold">25M</td><td className="text-right text-emerald-400 font-bold">80M</td></tr>
+                  <tr><td className="py-2 text-slate-300">Net Profit (AED M)</td><td className="text-right text-emerald-400">1M</td><td className="text-right text-emerald-400">10M</td><td className="text-right text-emerald-400">45M</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Udaan (India)', val: '$3.1B', metric: 'B2B marketplace + trade credit' },
+                  { name: 'Faire (US)', val: '$12.6B', metric: 'Wholesale + net-60 terms' },
+                  { name: 'IndiaMART', val: '$3B+', metric: 'B2B lead gen + SaaS' },
+                  { name: 'Zilingo', val: '$970M', metric: 'B2B fashion + supply chain' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50">
+                    <div className="text-sm font-bold text-white">{c.name}</div>
+                    <div className="text-lg font-black text-emerald-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { ms: '5K businesses', val: '~25M AED', detail: 'Q4 2026 — ~$100M valuation' },
+                  { ms: '15K businesses', val: '~80M AED', detail: 'Q4 2027 — ~$400M valuation' },
+                  { ms: '50K businesses', val: '~250M AED', detail: 'Q4 2028 — ~$800M valuation' },
+                  { ms: '100K+ businesses', val: '~600M AED', detail: '2029+ — ~$1.5B+ valuation' },
+                ].map(m => (
+                  <div key={m.ms} className="bg-slate-900/50 rounded-lg p-3 border border-emerald-500/20">
+                    <div className="text-xs text-emerald-400 font-bold">{m.ms}</div>
+                    <div className="text-sm font-bold text-white mt-1">{m.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Every BizOne merchant is a pre-qualified buyer. POS data enables instant credit scoring. Inventora creates an unbreakable supply chain loop.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { product: 'BizOne POS Lock-in', role: 'Pre-qualified buyers with POS data' },
+                  { product: 'Inventora Supply Chain', role: 'Closed-loop procurement to warehouse' },
+                  { product: 'Qist Embedded Finance', role: 'Trade credit increases AOV by 40%' },
+                  { product: 'Hawil Cross-Border', role: 'End-to-end international B2B trade' },
+                  { product: 'Wasil Logistics', role: 'B2B delivery and fulfillment' },
+                  { product: 'Amana Compliance', role: 'Trade and customs compliance built-in' },
+                ].map(s => (
+                  <div key={s.product} className="bg-slate-800/50 rounded-lg px-3 py-2 border border-[#c9a227]/20">
+                    <div className="text-xs font-bold text-[#c9a227]">{s.product}</div>
+                    <div className="text-xs text-slate-400">{s.role}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </main>
 

@@ -14,7 +14,7 @@ import {
   Calculator, Flame, Leaf, ShoppingCart, Megaphone,
   Truck, Stethoscope, Home, Car, GraduationCap,
   ChevronRight, ArrowRightLeft, Network, Sparkles,
-  PieChart, HeartHandshake
+  PieChart, HeartHandshake, ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -419,6 +419,7 @@ export default function AmanaPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Users },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1158,6 +1159,139 @@ export default function AmanaPage() {
                 )}
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Pitch Deck Tab */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-red-500/20 to-red-500/5 rounded-2xl p-6 border border-red-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                Amana is the regulatory infrastructure layer for every business in the GCC. As regulations tighten across AML, data privacy,
+                ESG, and corporate tax, every company needs compliance automation. No other platform covers all 12 pillars with Arabic-native
+                GCC regulatory intelligence. This is a monopoly-grade opportunity in a $1.5B+ market.
+              </p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$1.5B+', detail: 'GCC Compliance & RegTech Market' },
+                  { label: 'SAM', value: '$400M', detail: 'SME & Fintech Compliance Segment' },
+                  { label: 'SOM', value: '$60M', detail: 'Year 3 Amana Revenue Target (AED)' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'All-in-One Compliance OS', desc: '12 pillars in one platform — AML, tax, privacy, Shariah, ESG, and more' },
+                  { title: 'GCC-Native Intelligence', desc: '30+ local regulators, Arabic-native, Shariah + fire safety + civil defense' },
+                  { title: 'AI Regulatory Monitor', desc: 'AI scans 30+ government websites daily for new laws and amendments' },
+                  { title: 'Zero-Miss Deadline Engine', desc: 'Auto-alerts at 30/15/7 days. Never pay a preventable fine' },
+                  { title: '80% Cost Savings', desc: 'Replace AED 10K+/month consultants with AED 199-2,999/month software' },
+                  { title: 'GCC Data Residency', desc: 'All data in AWS me-south-1 (Bahrain). SOC2 + PCI-DSS certified' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <table className="w-full text-sm">
+                <thead><tr className="border-b border-slate-700">
+                  <th className="text-left py-2 text-slate-400">Metric</th>
+                  <th className="text-right py-2 text-slate-400">Year 1</th>
+                  <th className="text-right py-2 text-slate-400">Year 2</th>
+                  <th className="text-right py-2 text-slate-400">Year 3</th>
+                </tr></thead>
+                <tbody>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Companies</td><td className="text-right text-white">50</td><td className="text-right text-white">200</td><td className="text-right text-white">500</td></tr>
+                  <tr className="border-b border-slate-700/50"><td className="py-2 text-slate-300">Revenue (AED M)</td><td className="text-right text-red-400 font-bold">5M</td><td className="text-right text-red-400 font-bold">20M</td><td className="text-right text-red-400 font-bold">60M</td></tr>
+                  <tr><td className="py-2 text-slate-300">Net Profit (AED M)</td><td className="text-right text-emerald-400">2M</td><td className="text-right text-emerald-400">12M</td><td className="text-right text-emerald-400">42M</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'ComplyAdvantage', val: '$1.4B', metric: 'AML screening only' },
+                  { name: 'Chainalysis', val: '$8.6B', metric: 'Blockchain compliance' },
+                  { name: 'Onfido', val: '$1.5B', metric: 'Identity verification' },
+                  { name: 'Vanta', val: '$2.5B', metric: 'SOC2 automation' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50">
+                    <div className="text-sm font-bold text-white">{c.name}</div>
+                    <div className="text-lg font-black text-red-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { ms: '50 companies', val: '~5M AED', detail: 'Q4 2026 — ~$25M valuation' },
+                  { ms: '200 companies', val: '~20M AED', detail: 'Q4 2027 — ~$100M valuation' },
+                  { ms: '500 companies', val: '~60M AED', detail: 'Q4 2028 — ~$300M valuation' },
+                  { ms: '2,000+ companies', val: '~200M AED', detail: '2029+ — ~$1B+ valuation' },
+                ].map(m => (
+                  <div key={m.ms} className="bg-slate-900/50 rounded-lg p-3 border border-red-500/20">
+                    <div className="text-xs text-red-400 font-bold">{m.ms}</div>
+                    <div className="text-sm font-bold text-white mt-1">{m.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Born from managing compliance across 10 RTMN companies. Every BizOne merchant becomes an Amana user at zero CAC.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { product: '10 RTMN Anchor', role: 'Live proof-of-concept from day one' },
+                  { product: 'BizOne Distribution', role: 'Thousands of SMEs at zero CAC' },
+                  { product: 'Regulatory Data Moat', role: '30+ bodies mapped, 200+ templates' },
+                  { product: 'Cross-sell Pipeline', role: 'Amana user = NuqtaPay = BizOne merchant' },
+                  { product: 'Arabic-Native Advantage', role: '70% of GCC regs published in Arabic first' },
+                  { product: 'Rabtul Core Integration', role: 'Shared identity, audit trail, fraud signals' },
+                ].map(s => (
+                  <div key={s.product} className="bg-slate-800/50 rounded-lg px-3 py-2 border border-[#c9a227]/20">
+                    <div className="text-xs font-bold text-[#c9a227]">{s.product}</div>
+                    <div className="text-xs text-slate-400">{s.role}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
       </main>

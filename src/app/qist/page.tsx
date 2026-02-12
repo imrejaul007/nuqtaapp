@@ -482,6 +482,7 @@ export default function QistPage() {
     { id: 'gtm', label: 'Go-to-Market', icon: Target },
     { id: 'risks', label: 'Risks', icon: Shield },
     { id: 'competition', label: 'Competition', icon: Users },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1674,6 +1675,144 @@ export default function QistPage() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════════════ PITCH DECK TAB ═══════════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-violet-500/20 to-violet-500/5 rounded-2xl p-6 border border-violet-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                Shariah-compliant BNPL with true 0% markup, integrated across 31 RTMN apps — a distribution moat no standalone
+                BNPL can replicate. Qist captures the 70%+ GCC population demanding halal finance products while cross-selling
+                Nuqta+, Coins, and Hawil Card for 4x revenue per user vs standalone BNPL.
+              </p>
+            </div>
+
+            {/* Market Opportunity - TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-violet-500/30 text-center">
+                  <div className="text-3xl font-bold text-violet-400">$8B</div>
+                  <div className="text-sm text-slate-400 mt-1">TAM — GCC BNPL Market</div>
+                  <div className="text-xs text-slate-500 mt-1">Projected 2028 market size</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">$2.5B</div>
+                  <div className="text-sm text-slate-400 mt-1">SAM — UAE + KSA BNPL</div>
+                  <div className="text-xs text-slate-500 mt-1">Core launch markets</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-purple-500/30 text-center">
+                  <div className="text-3xl font-bold text-purple-400">$800M</div>
+                  <div className="text-sm text-slate-400 mt-1">SOM — Year 3 GMV</div>
+                  <div className="text-xs text-slate-500 mt-1">200K users, 1M transactions</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Distribution Moat', desc: 'Pre-installed across 31 RTMN apps with day-one merchant network from Nuqta corporate partners.' },
+                  { title: 'Shariah-Compliant Edge', desc: 'True 0% markup BNPL — not interest rebranded. Captures 70%+ GCC population demanding halal finance.' },
+                  { title: 'Revenue Compounding', desc: 'Every BNPL user cross-sells Nuqta+, earns Coins, uses Hawil Card — 4x revenue per user vs standalone.' },
+                  { title: 'Instant Merchant Network', desc: 'All Nuqta corporate partners become Qist merchants instantly. No cold-start problem.' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-slate-900/50 rounded-lg p-4 border border-slate-700/30">
+                    <CheckCircle className="w-5 h-5 text-violet-400 flex-shrink-0 mt-0.5" />
+                    <div><div className="text-white font-bold text-sm">{d.title}</div><p className="text-xs text-slate-400 mt-1">{d.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700 text-slate-400">
+                    <th className="text-left py-2 pr-4">Year</th><th className="text-right py-2 px-4">Users</th><th className="text-right py-2 px-4">GMV (AED M)</th><th className="text-right py-2 px-4">Revenue (AED M)</th><th className="text-right py-2 px-4">Net Profit (AED M)</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '20K', gmv: '50', revenue: '2.5', profit: '1.5' },
+                      { year: 'Year 2', users: '80K', gmv: '250', revenue: '12.5', profit: '8' },
+                      { year: 'Year 3', users: '200K', gmv: '800', revenue: '40', profit: '28' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 text-slate-300">
+                        <td className="py-2 pr-4 text-white font-medium">{r.year}</td><td className="text-right py-2 px-4">{r.users}</td><td className="text-right py-2 px-4">{r.gmv}</td><td className="text-right py-2 px-4 text-emerald-400">{r.revenue}</td><td className="text-right py-2 px-4 text-violet-400">{r.profit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Tabby', val: '$660M', region: 'UAE / KSA' },
+                  { name: 'Tamara', val: '$1B', region: 'KSA' },
+                  { name: 'Afterpay', val: '$29B', region: 'Acquired by Block' },
+                  { name: 'Klarna', val: '$6.7B', region: 'Public (2024)' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-violet-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.region}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5 text-violet-400" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$10M', timeline: 'Month 0-6', metric: '5K users, MVP live' },
+                  { stage: 'Series A', val: '$40M', timeline: 'Month 12-18', metric: '25K users, 200 merchants' },
+                  { stage: 'Series B', val: '$150M', timeline: 'Month 24-30', metric: '100K users, GCC expansion' },
+                  { stage: 'Unicorn', val: '$1B+', timeline: 'Month 36-48', metric: '500K+ users, full GCC' },
+                ].map((s, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-violet-500/10 border-violet-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">{s.stage}</div>
+                    <div className={`text-2xl font-black mt-1 ${i === 3 ? 'text-violet-400' : 'text-white'}`}>{s.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{s.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{s.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Qist isn&apos;t a standalone BNPL — it&apos;s embedded in the transaction layer of every RTMN vertical, creating unbreakable distribution.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { app: 'Wasil', use: 'BNPL at grocery checkout' },
+                  { app: 'Sakin', use: 'Split rent deposits' },
+                  { app: 'Aqar', use: 'Finance down payments' },
+                  { app: 'Hawil', use: 'Convert remittance fees' },
+                  { app: 'Safar', use: 'Split vacation costs' },
+                  { app: 'Nuqta+', use: 'Cross-sell premium membership' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg px-3 py-2 border border-slate-700/30 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">{item.app}</span>
+                    <span className="text-violet-400 text-xs">{item.use}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

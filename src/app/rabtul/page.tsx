@@ -10,7 +10,8 @@ import {
   Cloud, GitBranch, Smartphone,
   XCircle, ChevronDown, ChevronUp, DollarSign,
   ArrowUpRight, TrendingUp, CreditCard,
-  LayoutGrid, ChevronRight, Package
+  LayoutGrid, ChevronRight, Package,
+  Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -475,7 +476,7 @@ const ecosystemConnections = [
 
 export default function RabtulPage() {
   const [expandedSystem, setExpandedSystem] = useState<string | null>('identity');
-  const [activeTab, setActiveTab] = useState<'systems' | 'economics' | 'market'>('systems');
+  const [activeTab, setActiveTab] = useState<'systems' | 'economics' | 'market' | 'deck'>('systems');
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
@@ -552,6 +553,7 @@ export default function RabtulPage() {
               { key: 'systems' as const, label: 'Core Systems', icon: LayoutGrid },
               { key: 'economics' as const, label: 'Economics & Value', icon: DollarSign },
               { key: 'market' as const, label: 'Future PaaS Market', icon: Globe },
+              { key: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
             ].map((tab) => (
               <button
                 key={tab.key}
@@ -942,6 +944,143 @@ export default function RabtulPage() {
               <p className="text-purple-400 font-bold text-lg mt-4">...all built for MENA super-apps, in one unified platform.</p>
             </div>
           </>
+        )}
+
+        {/* ═══════════════ PITCH DECK TAB ═══════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-purple-500/20 to-purple-500/5 rounded-2xl p-6 border border-purple-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Rabtul is the silent backbone that makes an entire super-app ecosystem possible. Every transaction, every login, every coin earned flows through Rabtul. At 8.5M AED cost enabling 600M+ AED in ecosystem revenue, it is the highest-leverage investment in the entire RTMN portfolio with a clear path to 20M+ AED direct PaaS revenue.</p>
+            </div>
+
+            {/* Market Opportunity */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[
+                  { label: 'TAM', value: '$5B+', detail: 'GCC Enterprise Infrastructure' },
+                  { label: 'SAM', value: '$2B', detail: 'MENA PaaS & Super-App Infra' },
+                  { label: 'SOM', value: '$20M', detail: 'Year 3 PaaS License Revenue' },
+                ].map(m => (
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Full-Stack Super-App Infra', desc: 'Identity + wallet + rules + events + AI in one platform. Competitors offer 1-2 pieces max.' },
+                  { title: 'MENA-Native Compliance', desc: 'Arabic-first, Emirates ID/KYC, CBUAE/SAMA compliant out of the box.' },
+                  { title: 'Battle-Tested at Scale', desc: 'Already powering 100+ apps and 1M+ events/sec before opening as PaaS.' },
+                  { title: 'Unified Wallet + Loyalty', desc: 'No competitor offers coins + branded rewards + BNPL + remittance in one ledger.' },
+                  { title: 'Central Rule Engine', desc: 'Commission slabs, campaign eligibility, geo-fencing — no PaaS offers this.' },
+                  { title: '70x Proven ROI', desc: '8.5M AED cost enables 600M+ ecosystem revenue. Proven internally first.' },
+                ].map(d => (
+                  <div key={d.title} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
+                    <div><span className="text-white font-semibold text-sm">{d.title}</span><span className="text-slate-400 text-sm"> — {d.desc}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">3-Year Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year', 'Total Cost', 'Direct Revenue', 'Ecosystem Rev Enabled', 'ROI'].map(h => (
+                      <th key={h} className="text-left px-3 py-2 text-purple-400 font-semibold">{h}</th>
+                    ))}
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', cost: '8.5M AED', rev: '0', enabled: '150M AED', roi: '18x' },
+                      { year: 'Year 2', cost: '12M AED', rev: '0', enabled: '400M AED', roi: '33x' },
+                      { year: 'Year 3', cost: '15M AED', rev: '20M AED', enabled: '600M+ AED', roi: '70x+' },
+                    ].map(r => (
+                      <tr key={r.year} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{r.year}</td>
+                        <td className="px-3 py-3 text-red-400">{r.cost}</td>
+                        <td className="px-3 py-3 text-emerald-400 font-bold">{r.rev}</td>
+                        <td className="px-3 py-3 text-blue-400">{r.enabled}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{r.roi}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Stripe', val: '$50B', model: 'Payment infrastructure' },
+                  { name: 'Plaid', val: '$13B', model: 'Financial data connectivity' },
+                  { name: 'Twilio', val: '$10B', model: 'Communication APIs' },
+                  { name: 'Auth0/Okta', val: '$6B', model: 'Identity platform' },
+                ].map(c => (
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-purple-400 text-lg font-black mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.model}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-purple-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Phase 1', metric: '30+ apps', timeline: 'Q4 2026', val: '~$100M' },
+                  { stage: 'Phase 2', metric: '75+ apps, PaaS prep', timeline: 'Q4 2027', val: '~$500M' },
+                  { stage: 'Phase 3', metric: '100+ apps, 50 PaaS clients', timeline: 'Q4 2028', val: '~$1B+' },
+                  { stage: 'Phase 4', metric: 'GCC standard infra', timeline: '2029+', val: '~$3-5B' },
+                ].map(s => (
+                  <div key={s.stage} className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 text-center">
+                    <div className="text-xs text-purple-400 font-bold">{s.stage}</div>
+                    <div className="text-white font-bold text-sm mt-1">{s.metric}</div>
+                    <div className="text-lg font-black text-purple-400 mt-1">{s.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{s.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Rabtul&apos;s value extends far beyond its direct revenue — it is the force multiplier for the entire RTMN ecosystem.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {[
+                  '70x ROI on Infrastructure',
+                  'Zero marginal cost per app',
+                  'Switching cost moat',
+                  'PaaS is pure upside',
+                ].map(s => (
+                  <div key={s} className="bg-[#c9a227]/10 rounded-lg px-3 py-2 text-center">
+                    <span className="text-[#c9a227] text-xs font-medium">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         )}
       </main>
 

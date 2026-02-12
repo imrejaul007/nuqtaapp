@@ -10,7 +10,8 @@ import {
   Building2, Layers, CheckCircle2, Award, Coins, Timer, Heart,
   ShoppingBag, Plane, Car, Home, Truck, Scale, Network, Eye,
   Calculator, Gem, Briefcase, Map, Coffee, Scissors, Utensils,
-  Search, Bell, Share2, Package, Brain, Database, BadgePercent, PiggyBank
+  Search, Bell, Share2, Package, Brain, Database, BadgePercent, PiggyBank,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -650,6 +651,7 @@ const tabs = [
   { id: 'roadmap', label: 'Roadmap', icon: Rocket },
   { id: 'competition', label: 'Competition', icon: Target },
   { id: 'risks', label: 'Risks & Expansion', icon: AlertTriangle },
+  { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
 ];
 
 // ─── Component ──────────────────────────────────────────────────────
@@ -1878,6 +1880,144 @@ export default function NuqtaDashboard() {
                         </div>
                       ))}
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════════════ PITCH DECK TAB ═══════════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-[#c9a227]/20 to-[#c9a227]/5 rounded-2xl p-6 border border-[#c9a227]/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                GCC super-apps are the last uncaptured mega-opportunity in global tech. Every comparable market has produced
+                multi-billion dollar platforms. Nuqta — backed by RTMN Group&apos;s 10-company vertical stack — is positioned
+                to become the GCC&apos;s first homegrown super-app unicorn with 7+ revenue streams and 3-sided marketplace network effects.
+              </p>
+            </div>
+
+            {/* Market Opportunity - TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-[#c9a227]/30 text-center">
+                  <div className="text-3xl font-bold text-[#c9a227]">$300B</div>
+                  <div className="text-sm text-slate-400 mt-1">TAM — GCC Consumer Spending</div>
+                  <div className="text-xs text-slate-500 mt-1">Payments, loyalty, services, commerce</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">$45B</div>
+                  <div className="text-sm text-slate-400 mt-1">SAM — Digital-Ready Segments</div>
+                  <div className="text-xs text-slate-500 mt-1">Mobile payments, e-commerce, food delivery</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-purple-500/30 text-center">
+                  <div className="text-3xl font-bold text-purple-400">$4.5B</div>
+                  <div className="text-sm text-slate-400 mt-1">SOM — Year 5 Capture</div>
+                  <div className="text-xs text-slate-500 mt-1">1.5% of TAM at 5M users</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Vertically integrated from day one', desc: 'RTMN owns 10 companies feeding Nuqta simultaneously — not bolted-on verticals.' },
+                  { title: 'Network effects create a moat', desc: '3-sided marketplace (users x merchants x service providers) becomes exponentially harder to compete with.' },
+                  { title: 'Revenue diversity de-risks', desc: '7+ revenue streams: txn fees, subscriptions, merchant SaaS, ads, BNPL interest, data licensing, white-label.' },
+                  { title: 'Last uncaptured super-app market', desc: 'GCC ($300B consumer spend) has zero homegrown super-app. First mover advantage is decisive.' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-slate-900/50 rounded-lg p-4 border border-slate-700/30">
+                    <CheckCircle2 className="w-5 h-5 text-[#c9a227] flex-shrink-0 mt-0.5" />
+                    <div><div className="text-white font-bold text-sm">{d.title}</div><p className="text-xs text-slate-400 mt-1">{d.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700 text-slate-400">
+                    <th className="text-left py-2 pr-4">Year</th><th className="text-right py-2 px-4">Users</th><th className="text-right py-2 px-4">Merchants</th><th className="text-right py-2 px-4">Revenue (AED)</th><th className="text-right py-2 px-4">ARR</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: 'Year 1', users: '50K', merchants: '500+', revenue: '3.6M', arr: '~$1M' },
+                      { year: 'Year 2', users: '500K', merchants: '3,000+', revenue: '25M', arr: '~$7M' },
+                      { year: 'Year 3', users: '2M', merchants: '10,000+', revenue: '90M+', arr: '$25M+' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 text-slate-300">
+                        <td className="py-2 pr-4 text-white font-medium">{r.year}</td><td className="text-right py-2 px-4">{r.users}</td><td className="text-right py-2 px-4">{r.merchants}</td><td className="text-right py-2 px-4 text-emerald-400">{r.revenue}</td><td className="text-right py-2 px-4 text-[#c9a227]">{r.arr}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Grab', val: '$40B', region: 'SE Asia', users: '187M' },
+                  { name: 'Gojek', val: '$10B', region: 'Indonesia', users: '170M' },
+                  { name: 'Careem', val: '$3.1B', region: 'MENA (acquired)', users: '50M' },
+                  { name: 'Paytm', val: '$20B', region: 'India', users: '350M' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-[#c9a227] mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.region} &middot; {c.users} users</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5 text-[#c9a227]" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$15M', timeline: 'Q3 2025', metric: '50K users, 200 merchants' },
+                  { stage: 'Series A', val: '$50M', timeline: 'Q2 2026', metric: '500K MAU, $5M ARR' },
+                  { stage: 'Series B', val: '$200M', timeline: 'Q4 2027', metric: '2M MAU, 3 GCC markets' },
+                  { stage: 'Series C', val: '$1B+', timeline: '2029', metric: '5M+ users, $100M+ ARR' },
+                ].map((s, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-[#c9a227]/10 border-[#c9a227]/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">{s.stage}</div>
+                    <div className={`text-2xl font-black mt-1 ${i === 3 ? 'text-[#c9a227]' : 'text-white'}`}>{s.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{s.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{s.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Each RTMN sister company compounds Nuqta&apos;s value — not additive, multiplicative. Every vertical feeds users, transactions, and data into the super-app.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { app: 'DineZy', metric: '+$2.8K LTV/user' },
+                  { app: 'Grocify', metric: '+$4.2K LTV/user' },
+                  { app: 'QuickDrop', metric: '+15% retention' },
+                  { app: 'SpinZy', metric: '+40% DAU' },
+                  { app: 'CleanEZ', metric: '+$1.2K LTV/user' },
+                  { app: 'BizOne', metric: '+$3K ARR/merchant' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg px-3 py-2 border border-slate-700/30 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">{item.app}</span>
+                    <span className="text-emerald-400 text-xs font-bold">{item.metric}</span>
                   </div>
                 ))}
               </div>

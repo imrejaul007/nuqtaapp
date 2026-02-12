@@ -520,6 +520,7 @@ export default function BizOnePage() {
     { id: 'roadmap', label: 'Roadmap', icon: Map },
     { id: 'risks', label: 'Risk Analysis', icon: AlertTriangle },
     { id: 'gcc', label: 'GCC Expansion', icon: Globe },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -1694,6 +1695,145 @@ export default function BizOnePage() {
                 {['REST API', 'Webhooks', 'SDKs', 'Sandbox'].map((item, i) => (
                   <div key={i} className="bg-slate-900/50 rounded-lg p-3 text-center border border-emerald-500/30">
                     <span className="text-emerald-400 font-medium text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════════════════ PITCH DECK TAB ═══════════════════ */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-blue-500/20 to-blue-500/5 rounded-2xl p-6 border border-blue-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">
+                GCC merchants juggle 6+ disconnected tools: POS, inventory, loyalty, analytics, payments, and delivery aggregator.
+                BizOne collapses all six into a single merchant OS — one login, one dashboard, one bill. This is the exact playbook
+                that propelled Toast from restaurant POS to a $30B public company. The GCC has 1.2M+ SMBs and zero integrated merchant OS.
+              </p>
+            </div>
+
+            {/* Market Opportunity - TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-blue-500/30 text-center">
+                  <div className="text-3xl font-bold text-blue-400">$4B+</div>
+                  <div className="text-sm text-slate-400 mt-1">TAM — GCC Merchant Tools</div>
+                  <div className="text-xs text-slate-500 mt-1">POS, SaaS, payments, delivery</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 text-center">
+                  <div className="text-3xl font-bold text-emerald-400">$1.2B</div>
+                  <div className="text-sm text-slate-400 mt-1">SAM — UAE + KSA SMBs</div>
+                  <div className="text-xs text-slate-500 mt-1">500K+ digital-ready merchants</div>
+                </div>
+                <div className="bg-slate-800/30 rounded-xl p-5 border border-indigo-500/30 text-center">
+                  <div className="text-3xl font-bold text-indigo-400">$50M</div>
+                  <div className="text-sm text-slate-400 mt-1">SOM — Year 3 ARR</div>
+                  <div className="text-xs text-slate-500 mt-1">10K merchants, $10M ARR</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { title: 'Replaces 6 Tools in 1', desc: 'POS, inventory, loyalty, analytics, payments, delivery — all unified in a single merchant dashboard.' },
+                  { title: 'RTMN Ecosystem Lock-in', desc: 'Every BizOne merchant auto-joins NuqtaPay, Wasil delivery, Adzy ads, and SpinZy gamification.' },
+                  { title: 'Zero-Fee Starter Tier', desc: 'Freemium model with 100 orders/mo free. Land-and-expand to paid tiers as merchants grow.' },
+                  { title: 'First GCC Merchant OS', desc: '1.2M+ GCC SMBs spending $4B+/yr on fragmented tools. No integrated competitor exists in the region.' },
+                  { title: 'Multi-Location Support', desc: 'Manage multiple branches, staff, and inventory from a single account — critical for chain merchants.' },
+                ].map((d, i) => (
+                  <div key={i} className="flex items-start gap-3 bg-slate-900/50 rounded-lg p-4 border border-slate-700/30">
+                    <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                    <div><div className="text-white font-bold text-sm">{d.title}</div><p className="text-xs text-slate-400 mt-1">{d.desc}</p></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700 text-slate-400">
+                    <th className="text-left py-2 pr-4">Year</th><th className="text-right py-2 px-4">Merchants</th><th className="text-right py-2 px-4">ARR (AED)</th><th className="text-right py-2 px-4">SaaS Rev</th><th className="text-right py-2 px-4">Payment Rev</th>
+                  </tr></thead>
+                  <tbody>
+                    {[
+                      { year: '2026', merchants: '500', arr: '$200K', saas: '60%', payment: '40%' },
+                      { year: '2027', merchants: '3,000', arr: '$2M', saas: '50%', payment: '50%' },
+                      { year: '2028', merchants: '10,000', arr: '$10M', saas: '45%', payment: '55%' },
+                    ].map((r, i) => (
+                      <tr key={i} className="border-b border-slate-700/50 text-slate-300">
+                        <td className="py-2 pr-4 text-white font-medium">{r.year}</td><td className="text-right py-2 px-4">{r.merchants}</td><td className="text-right py-2 px-4 text-emerald-400">{r.arr}</td><td className="text-right py-2 px-4">{r.saas}</td><td className="text-right py-2 px-4 text-blue-400">{r.payment}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[
+                  { name: 'Toast', val: '$30B', region: 'US Restaurants' },
+                  { name: 'Square (Block)', val: '$45B', region: 'Global SMBs' },
+                  { name: 'Lightspeed', val: '$2B', region: 'Retail & Hospitality' },
+                  { name: 'Loyverse', val: '$500M', region: 'Global SMBs' },
+                ].map((c, i) => (
+                  <div key={i} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-blue-400 mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.region}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5 text-blue-400" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { stage: 'Seed', val: '$15M', timeline: '2026', metric: '500 merchants, MVP live' },
+                  { stage: 'Series A', val: '$50M', timeline: '2027', metric: '3K merchants, $2M ARR' },
+                  { stage: 'Series B', val: '$200M', timeline: '2028', metric: '10K merchants, 3 GCC' },
+                  { stage: 'Unicorn', val: '$1B+', timeline: '2030', metric: '50K+ merchants, full GCC' },
+                ].map((s, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-blue-500/10 border-blue-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className="text-xs text-slate-500 uppercase tracking-wider">{s.stage}</div>
+                    <div className={`text-2xl font-black mt-1 ${i === 3 ? 'text-blue-400' : 'text-white'}`}>{s.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{s.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{s.metric}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">1 BizOne merchant = 4+ RTMN revenue streams. At 50K merchants, ecosystem LTV per merchant exceeds $12,000/yr — making BizOne the most valuable distribution channel in the RTMN portfolio.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[
+                  { app: 'NuqtaPay', metric: '1.8% MDR on txns' },
+                  { app: 'Adzy Ads', metric: 'Self-serve ad spend' },
+                  { app: 'Wasil Delivery', metric: 'Commission/order' },
+                  { app: 'SpinZy', metric: 'Premium gamification' },
+                  { app: 'Qist BNPL', metric: 'Checkout financing' },
+                  { app: 'Nuqta Coins', metric: 'Loyalty rewards' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg px-3 py-2 border border-slate-700/30 flex items-center justify-between">
+                    <span className="text-white text-sm font-medium">{item.app}</span>
+                    <span className="text-emerald-400 text-xs font-bold">{item.metric}</span>
                   </div>
                 ))}
               </div>

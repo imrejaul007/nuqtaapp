@@ -13,7 +13,8 @@ import {
   Crown, Store, Package, Target, Rocket,
   Calculator, Wallet, HeartHandshake,
   Network, Sparkles, MessageCircle, ThumbsUp,
-  Share2, ShoppingBag, Map, Megaphone
+  Share2, ShoppingBag, Map, Megaphone,
+  ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -121,6 +122,7 @@ export default function MajlisPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -166,6 +168,163 @@ export default function MajlisPage() {
         {activeTab === 'competition' && (<div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50"><h2 className="text-xl font-bold text-white mb-4">Competitive Comparison</h2><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-slate-700/50">{['', 'Local', 'Reviews', 'Commerce', 'Groups', 'Ecosystem', 'Arabic', 'Price'].map((h) => (<th key={h} className="text-left px-2 py-2 text-pink-400 font-semibold whitespace-nowrap text-xs">{h}</th>))}</tr></thead><tbody>{competitors.map((c) => (<tr key={c.name} className={`border-b border-slate-800/50 ${c.name === 'Majlis' ? 'bg-pink-500/10' : ''}`}><td className="px-2 py-2 text-white font-bold whitespace-nowrap">{c.name}</td>{[c.local, c.reviews, c.commerce, c.groups, c.ecosystem, c.arabic, c.price].map((val, j) => (<td key={j} className={`px-2 py-2 whitespace-nowrap text-xs ${val.startsWith('✅') ? 'text-emerald-400' : val.startsWith('❌') ? 'text-red-400' : 'text-amber-400'}`}>{val}</td>))}</tr>))}</tbody></table></div></div>)}
 
         {activeTab === 'risks' && (<div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>)}
+
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-br from-pink-500/15 to-rose-500/5 rounded-xl p-6 border border-pink-500/40">
+              <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-3">
+                <Briefcase className="w-6 h-6 text-pink-400" /> Investment Thesis
+              </h2>
+              <p className="text-slate-300 text-sm">
+                Majlis is not a social network — it is the <strong className="text-pink-400">community operating system for the GCC</strong>.
+                Every neighborhood, every building, every community needs governance, commerce, events, and connection.
+                Majlis provides all four, deeply integrated into the largest digital ecosystem in the region.
+                No competitor combines <strong className="text-amber-400">hyperlocal community + real commerce + governance + ecosystem integration</strong>.
+              </p>
+            </div>
+
+            {/* Market Opportunity — TAM/SAM/SOM */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                  <div className="text-2xl font-bold text-pink-400">$1B+</div>
+                  <div className="text-xs text-slate-400 mt-1">TAM</div>
+                  <div className="text-[10px] text-slate-500">UAE Social/Community Market</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 text-center border border-pink-500/30">
+                  <div className="text-2xl font-bold text-emerald-400">$400M</div>
+                  <div className="text-xs text-slate-400 mt-1">SAM</div>
+                  <div className="text-[10px] text-slate-500">Hyperlocal Community Segment</div>
+                </div>
+                <div className="bg-pink-500/10 rounded-xl p-4 text-center border border-pink-500/40">
+                  <div className="text-2xl font-bold text-[#c9a227]">$35M</div>
+                  <div className="text-xs text-slate-400 mt-1">SOM (Year 3)</div>
+                  <div className="text-[10px] text-slate-500">Majlis Revenue Target</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  'Arabic-first, GCC-native — not a translated Western app',
+                  'Integrated commerce with NuqtaPay escrow + Wasil delivery',
+                  'Democratic governance: polls, formal voting, committee elections',
+                  '25+ ecosystem apps (food, events, real estate, advertising)',
+                  'Hyperlocal by design — neighborhood-level, not city-level',
+                  'Trust layer with Nuqta ID verification and reputation scores',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-pink-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-slate-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 3-Year Financial Projections */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <BarChart3 className="w-5 h-5 text-pink-400" /> 3-Year Financial Projections (AED)
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700/50">
+                      <th className="text-left py-2 px-3 text-pink-400 font-semibold">Metric</th>
+                      <th className="text-center py-2 px-3 text-pink-400 font-semibold">Year 1</th>
+                      <th className="text-center py-2 px-3 text-pink-400 font-semibold">Year 2</th>
+                      <th className="text-center py-2 px-3 text-pink-400 font-semibold">Year 3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { label: 'Total Users', y1: '50K', y2: '200K', y3: '800K', highlight: false },
+                      { label: 'MAU', y1: '30K', y2: '120K', y3: '500K', highlight: false },
+                      { label: 'Revenue', y1: '2M', y2: '10M', y3: '35M', highlight: true },
+                      { label: 'Subscriptions', y1: '0.6M', y2: '3M', y3: '10.5M', highlight: false },
+                      { label: 'Business Listings', y1: '0.6M', y2: '3M', y3: '10.5M', highlight: false },
+                      { label: 'Marketplace', y1: '0.5M', y2: '2.5M', y3: '8.75M', highlight: false },
+                      { label: 'Costs', y1: '3M', y2: '6M', y3: '14M', highlight: false },
+                      { label: 'Net Profit', y1: '-1M', y2: '4M', y3: '21M', highlight: true },
+                    ].map((row) => (
+                      <tr key={row.label} className={`border-b border-slate-800/50 ${row.highlight ? 'bg-pink-500/5' : ''}`}>
+                        <td className={`py-2 px-3 ${row.highlight ? 'text-pink-400 font-bold' : 'text-slate-300'}`}>{row.label}</td>
+                        <td className={`py-2 px-3 text-center ${row.highlight ? 'text-pink-400 font-bold' : 'text-white'}`}>{row.y1}</td>
+                        <td className={`py-2 px-3 text-center ${row.highlight ? 'text-pink-400 font-bold' : 'text-white'}`}>{row.y2}</td>
+                        <td className={`py-2 px-3 text-center ${row.highlight ? 'text-pink-400 font-bold' : 'text-white'}`}>{row.y3}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Comparable Companies */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[
+                  { company: 'Nextdoor', valuation: '$4.3B peak', model: 'Hyperlocal community + local ads', edge: 'Majlis adds commerce, governance, events, and full ecosystem integration' },
+                  { company: 'Discord', valuation: '$15B valuation', model: 'Community groups + real-time chat', edge: 'Majlis is hyperlocal with commerce and real-world services integration' },
+                  { company: 'Reddit', valuation: '$10B+ (IPO)', model: 'Interest-based communities + ads', edge: 'Majlis is geo-local, Arabic-first, with transactions and ecosystem' },
+                ].map((comp, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                    <div className="text-white font-bold">{comp.company}</div>
+                    <div className="text-pink-400 font-bold text-sm mt-1">{comp.valuation}</div>
+                    <div className="text-slate-400 text-xs mt-1">{comp.model}</div>
+                    <div className="text-emerald-400 text-xs mt-2">{comp.edge}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                <ArrowUpRight className="w-5 h-5 text-pink-400" /> Unicorn Path
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[
+                  { milestone: '200K users', timeline: 'Q4 2027', revenue: '~10M AED', valuation: '~$30M' },
+                  { milestone: '800K users', timeline: 'Q4 2028', revenue: '~35M AED', valuation: '~$120M' },
+                  { milestone: '3M users (GCC)', timeline: '2029', revenue: '~120M AED', valuation: '~$400M' },
+                  { milestone: '10M users (MENA)', timeline: '2030+', revenue: '~350M AED', valuation: '~$1B+' },
+                ].map((ms, i) => (
+                  <div key={i} className={`rounded-xl p-4 text-center border ${i === 3 ? 'bg-pink-500/10 border-pink-500/40' : 'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className={`text-xl font-bold ${i === 3 ? 'text-pink-400' : 'text-white'}`}>{ms.valuation}</div>
+                    <div className="text-xs text-slate-400 mt-1">{ms.milestone}</div>
+                    <div className="text-xs text-slate-500">{ms.timeline}</div>
+                    <div className="text-xs text-emerald-400 mt-1">{ms.revenue} rev</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RTMN Ecosystem Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-yellow-500/5 rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-4">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-400 text-sm mb-4">Why Majlis inside RTMN is 10x more valuable than a standalone community app:</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { factor: 'Built-in user base from Nuqta', detail: 'Every Nuqta user gets Majlis. Day-one community seeded from existing ecosystem users — no cold start problem.' },
+                  { factor: 'Commerce layer from day one', detail: 'NuqtaPay, Wasil delivery, BizOne merchants — Majlis has commerce infrastructure that took Nextdoor 10 years to not build.' },
+                  { factor: 'Events + Real Estate synergy', detail: 'Eventora powers community events. Aqar/Sakin integration means every property transaction creates a community member.' },
+                  { factor: 'Data moat: community + commerce', detail: 'Neighborhood sentiment + spending behavior + service usage = deepest hyperlocal data in GCC. Invaluable for Adzy targeting.' },
+                ].map((item, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                    <div className="text-[#c9a227] font-bold text-sm mb-1">{item.factor}</div>
+                    <div className="text-slate-400 text-xs">{item.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <section className="py-12 px-4 border-t border-slate-800/50"><div className="max-w-4xl mx-auto text-center"><h2 className="text-2xl font-bold text-white mb-4">Community, Connected.</h2><p className="text-slate-400 mb-8">6 modules. Reviews. Social commerce. 25+ apps. Your community.</p><div className="flex flex-wrap justify-center gap-4"><Link href="/nuqta" className="inline-flex items-center gap-2 px-6 py-3 bg-[#c9a227] text-black rounded-xl font-bold hover:bg-[#d4ad2e] transition-colors"><Crown className="w-5 h-5" /> Nuqta App</Link><Link href="/adzy" className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-500 transition-colors"><Eye className="w-5 h-5" /> Adzy Ads</Link><Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors"><Layers className="w-5 h-5" /> RTMN Ecosystem</Link></div></div></section>

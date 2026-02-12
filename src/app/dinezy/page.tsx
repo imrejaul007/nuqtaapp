@@ -13,7 +13,7 @@ import {
   MapPin, Timer, Package, Layers, Sparkles, Filter,
   UserCheck, Lock, Eye, Bike, AlertTriangle, Rocket,
   Database, Network, Receipt, Phone, Calendar, RefreshCw,
-  Settings, MessageSquare, Home, Play, Banknote
+  Settings, MessageSquare, Home, Play, Banknote, Briefcase
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -254,6 +254,7 @@ const tabs = [
   { id: 'features', label: 'Features', icon: Zap },
   { id: 'pricing', label: 'Pricing & Economics', icon: DollarSign },
   { id: 'market', label: 'Market & Competition', icon: TrendingUp },
+  { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
 ];
 
 export default function DinezyPage() {
@@ -806,6 +807,139 @@ export default function DinezyPage() {
             </div>
           </section>
         </>
+      )}
+
+      {/* ═══════════════════════════════════════════ */}
+      {/* PITCH DECK */}
+      {/* ═══════════════════════════════════════════ */}
+      {activeTab === 'deck' && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
+          {/* Investment Thesis */}
+          <div className="bg-gradient-to-r from-orange-500/20 to-red-500/10 rounded-2xl p-6 sm:p-8 border border-orange-500/30">
+            <h2 className="text-2xl font-bold text-white mb-3 flex items-center gap-2"><Briefcase className="w-6 h-6 text-orange-400" /> Investment Thesis</h2>
+            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
+              Dinezy is not just food delivery — it is the food vertical of a super-ecosystem. With Wasil fleet sharing, Nuqta rewards, Qist BNPL for catering, and BizOne merchant lock-in, Dinezy achieves unit economics that standalone food apps cannot. Every order strengthens the flywheel across payments, rewards, logistics, and merchant services.
+            </p>
+          </div>
+
+          {/* Market Opportunity */}
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">Market Opportunity</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { label: 'TAM — GCC Food Delivery', value: '$4.5B', color: 'text-orange-400', border: 'border-orange-500/40' },
+                { label: 'SAM — UAE Food Delivery', value: '$1.8B', color: 'text-amber-400', border: 'border-amber-500/40' },
+                { label: 'SOM — Year 3 Target', value: '$150M', color: 'text-emerald-400', border: 'border-emerald-500/40' },
+              ].map((m, i) => (
+                <div key={i} className={`bg-slate-800/60 rounded-xl p-5 border ${m.border} text-center`}>
+                  <div className={`text-3xl font-black ${m.color}`}>{m.value}</div>
+                  <div className="text-xs text-slate-400 mt-1">{m.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Key Differentiators */}
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">Key Differentiators</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: 'Real Nuqta Coin Rewards', desc: 'Every order earns 3X Nuqta Coins — real currency spendable at 500+ merchants.', icon: Coins, color: 'text-[#c9a227]' },
+                { title: '30-40% Lower Delivery Cost', desc: 'Shared Wasil fleet across 24 verticals means lower per-delivery cost.', icon: Bike, color: 'text-orange-400' },
+                { title: 'Lowest Merchant Commission', desc: '18-25% vs industry 30%+. More restaurants join, better selection.', icon: Percent, color: 'text-emerald-400' },
+                { title: '6 Dedicated Food Verticals', desc: 'Restaurants, cafes, cloud kitchens, catering, healthy meals, late night.', icon: Layers, color: 'text-purple-400' },
+                { title: 'Qist BNPL for Catering', desc: 'Split large catering bills into 3-12 installments. No competitor offers this.', icon: Calculator, color: 'text-blue-400' },
+                { title: 'BizOne Merchant Lock-in', desc: 'Restaurants manage Dinezy alongside POS, inventory, and analytics.', icon: Store, color: 'text-pink-400' },
+              ].map((d, i) => (
+                <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50">
+                  <d.icon className={`w-6 h-6 ${d.color} mb-2`} />
+                  <h3 className="text-white font-bold text-sm mb-1">{d.title}</h3>
+                  <p className="text-slate-400 text-xs">{d.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 3-Year Financial Projections */}
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">3-Year Financial Projections</h2>
+            <div className="overflow-x-auto rounded-xl border border-slate-700/50">
+              <table className="w-full text-sm">
+                <thead><tr className="bg-slate-800/80 text-slate-300">
+                  <th className="px-4 py-3 text-left">Year</th><th className="px-4 py-3 text-right">Users</th><th className="px-4 py-3 text-right">Orders</th><th className="px-4 py-3 text-right">Revenue</th><th className="px-4 py-3 text-right">Costs</th><th className="px-4 py-3 text-right">Net Profit</th>
+                </tr></thead>
+                <tbody>
+                  {[
+                    { year: 'Year 1', users: '50K', orders: '500K', revenue: '15M AED', costs: '11M', profit: '4M AED' },
+                    { year: 'Year 2', users: '200K', orders: '2.4M', revenue: '60M AED', costs: '38M', profit: '22M AED' },
+                    { year: 'Year 3', users: '500K', orders: '7.2M', revenue: '150M AED', costs: '85M', profit: '65M AED' },
+                  ].map((r, i) => (
+                    <tr key={i} className="border-t border-slate-700/50 text-slate-300">
+                      <td className="px-4 py-3 font-bold text-orange-400">{r.year}</td><td className="px-4 py-3 text-right">{r.users}</td><td className="px-4 py-3 text-right">{r.orders}</td><td className="px-4 py-3 text-right font-semibold text-emerald-400">{r.revenue}</td><td className="px-4 py-3 text-right">{r.costs}</td><td className="px-4 py-3 text-right font-bold text-white">{r.profit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Comparable Companies */}
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">Comparable Companies</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { name: 'Talabat', val: '$1B+', note: 'GCC food delivery leader' },
+                { name: 'Deliveroo', val: '$7B', note: 'Premium food delivery + Editions' },
+                { name: 'Swiggy', val: '$10B', note: 'Indian multi-vertical delivery' },
+                { name: 'DoorDash', val: '$50B', note: 'US delivery + merchant services' },
+              ].map((c, i) => (
+                <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                  <div className="text-lg font-bold text-white">{c.name}</div>
+                  <div className="text-2xl font-black text-orange-400">{c.val}</div>
+                  <div className="text-xs text-slate-400 mt-1">{c.note}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Unicorn Path */}
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-4">Unicorn Path</h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { milestone: '50K users', timeline: 'Q4 2026', revenue: '~15M AED', valuation: '~$30M' },
+                { milestone: '200K users', timeline: 'Q4 2027', revenue: '~60M AED', valuation: '~$150M' },
+                { milestone: '500K users', timeline: 'Q4 2028', revenue: '~150M AED', valuation: '~$500M' },
+                { milestone: '2M users (GCC)', timeline: '2029+', revenue: '~500M AED', valuation: '~$1B+' },
+              ].map((m, i) => (
+                <div key={i} className="bg-slate-800/50 rounded-xl p-4 border border-slate-700/50 text-center">
+                  <div className="text-xs text-slate-400">{m.timeline}</div>
+                  <div className="text-lg font-bold text-orange-400 mt-1">{m.valuation}</div>
+                  <div className="text-xs text-slate-500">{m.revenue}</div>
+                  <div className="text-xs text-slate-400 mt-1">{m.milestone}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RTMN Ecosystem Multiplier */}
+          <div className="bg-slate-800/40 rounded-2xl p-6 border border-orange-500/20">
+            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-6 h-6 text-orange-400" /> RTMN Ecosystem Multiplier</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { factor: 'Zero fleet cost (Wasil)', detail: 'Wasil shared riders deliver for Dinezy alongside 23 other verticals. No fleet acquisition cost.' },
+                { factor: 'Zero merchant acquisition (BizOne)', detail: 'BizOne merchants are pre-onboarded with POS, inventory, and analytics. Adding Dinezy is a toggle.' },
+                { factor: 'Zero payment cost (NuqtaPay)', detail: 'NuqtaPay processes all transactions with Hawil Card and wallet integration. No third-party fees.' },
+                { factor: 'Built-in rewards (Nuqta Coins)', detail: 'Every order earns Nuqta Coins spendable at 500+ merchants. No need for a separate loyalty program.' },
+              ].map((f, i) => (
+                <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                  <h3 className="text-orange-400 font-bold text-sm mb-1">{f.factor}</h3>
+                  <p className="text-slate-400 text-xs">{f.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* ═══════════════════════════════════════════ */}

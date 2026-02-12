@@ -14,7 +14,7 @@ import {
   Calculator, Wallet, HeartHandshake,
   Network, Sparkles, Stethoscope, Pill,
   Calendar, Video, Microscope, Clipboard,
-  Thermometer, Syringe
+  Thermometer, Syringe, ArrowUpRight
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -144,6 +144,7 @@ export default function TabibPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -233,6 +234,102 @@ export default function TabibPage() {
         {activeTab === 'competition' && (<div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50"><h2 className="text-xl font-bold text-white mb-4">Competitive Comparison</h2><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-slate-700/50">{['', 'Telehealth', 'Booking', 'Pharmacy', 'Records', 'Insurance', 'Arabic', 'Price'].map((h) => (<th key={h} className="text-left px-2 py-2 text-red-400 font-semibold whitespace-nowrap text-xs">{h}</th>))}</tr></thead><tbody>{competitors.map((c) => (<tr key={c.name} className={`border-b border-slate-800/50 ${c.name === 'Tabib' ? 'bg-red-500/10' : ''}`}><td className="px-2 py-2 text-white font-bold whitespace-nowrap">{c.name}</td>{[c.telehealth, c.booking, c.pharmacy, c.records, c.insurance, c.arabic, c.price].map((val, j) => (<td key={j} className={`px-2 py-2 whitespace-nowrap text-xs ${val.startsWith('✅') ? 'text-emerald-400' : val.startsWith('❌') ? 'text-red-400' : 'text-amber-400'}`}>{val}</td>))}</tr>))}</tbody></table></div></div>)}
 
         {activeTab === 'risks' && (<div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>)}
+
+        {/* Pitch Deck */}
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            {/* Investment Thesis */}
+            <div className="bg-gradient-to-r from-red-500/20 to-red-500/5 rounded-2xl p-6 border border-red-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">Tabib is not a telemedicine app — it is a full-stack healthcare operating system. When a patient consults on Tabib, the prescription flows to MediEarn, the insurance claim flows to Daman, the payment flows through NuqtaPay, and the patient earns Nuqta Coins. No other healthtech platform in the MENA region connects consultation, pharmacy, insurance, and rewards into one seamless experience.</p>
+            </div>
+            {/* TAM/SAM/SOM */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[{label:'TAM',value:'$5B+',detail:'UAE Healthcare Market'},{label:'SAM',value:'$1.2B',detail:'Digital Health & Telemedicine'},{label:'SOM',value:'$50M',detail:'Year 3 Tabib Revenue Target'}].map(m=>(
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Key Differentiators */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[{title:'End-to-End Connected Care',desc:'Doctor consultation to e-prescription to pharmacy delivery to insurance claim — all in one seamless flow. No app-switching, no paperwork'},{title:'MediEarn Pharmacy Integration',desc:'Doctor prescribes inside Tabib, MediEarn delivers medicine to your door within 60 minutes. Prescription verified automatically'},{title:'Daman Insurance Built-In',desc:'Insurance verification before consultation, automatic claims submission after visit. Co-pay calculated upfront — no surprises'},{title:'Arabic-First, UAE-Native',desc:'Fully bilingual (Arabic/English), DHA/MOHAP licensed, NABIDH/Malaffi integrated. Built for the GCC from day one'},{title:'Family Health Hub',desc:'Manage health records, appointments, and prescriptions for your entire family from one account'}].map(d=>(
+                  <div key={d.title} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5"/>
+                    <div><div className="text-white font-medium text-sm">{d.title}</div>
+                    <div className="text-xs text-slate-400">{d.desc}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* 3-Year Financials */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year','Revenue','Costs','Net Profit'].map(h=><th key={h} className="text-left px-3 py-2 text-[#c9a227] font-semibold">{h}</th>)}
+                  </tr></thead>
+                  <tbody>
+                    {[{y:'Year 1',r:'AED 3M',c:'AED 2.2M',n:'AED 0.8M'},{y:'Year 2',r:'AED 15M',c:'AED 7.5M',n:'AED 7.5M'},{y:'Year 3',r:'AED 50M',c:'AED 18M',n:'AED 32M'}].map(row=>(
+                      <tr key={row.y} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-3 text-emerald-400">{row.r}</td>
+                        <td className="px-3 py-3 text-red-400">{row.c}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{row.n}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            {/* Comparable Companies */}
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[{name:'Teladoc',val:'$8B',market:'Telemedicine + chronic care'},{name:'Practo',val:'$1B',market:'Doctor booking + teleconsult'},{name:'Doctolib',val:'$6B',market:'Doctor booking SaaS'},{name:'1mg (Tata)',val:'$1B',market:'Online pharmacy + health'}].map(c=>(
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-2xl font-black text-[#c9a227] mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.market}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Unicorn Path */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><ArrowUpRight className="w-5 h-5"/> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[{stage:'50K users',val:'~$30M',rev:'~3M AED',time:'Q4 2026'},{stage:'200K users',val:'~$120M',rev:'~15M AED',time:'Q4 2027'},{stage:'800K users',val:'~$400M',rev:'~50M AED',time:'Q4 2028'},{stage:'3M users (GCC)',val:'~$1B+',rev:'~200M AED',time:'2029+'}].map((ms,i)=>(
+                  <div key={ms.stage} className={`rounded-xl p-4 text-center border ${i===3?'bg-[#c9a227]/10 border-[#c9a227]/40':'bg-slate-900/50 border-slate-700/50'}`}>
+                    <div className={`text-xl font-bold ${i===3?'text-[#c9a227]':'text-white'}`}>{ms.val}</div>
+                    <div className="text-xs text-slate-400 mt-1">{ms.stage}</div>
+                    <div className="text-xs text-slate-500">{ms.time}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* RTMN Multiplier */}
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {[{s:'MediEarn Pharmacy Loop',d:'Every Tabib consultation generates a prescription — MediEarn fulfills it. Two revenue events from one patient visit'},{s:'Daman Insurance Lock-In',d:'Insurance verification + claims inside Tabib means patients never need to leave. Daman gets digital claims, Tabib gets stickiness'},{s:'Nuqta Coins Retention',d:'Health rewards keep patients engaged. Annual checkup = coins. Medication adherence = coins. Preventive care becomes rewarding'},{s:'Corporate via Tawzeef',d:'Tawzeef HR clients get Tabib as employee benefit. 50+ companies = thousands of users with zero consumer CAC'},{s:'Wasil delivery fleet',d:'Pharmacy delivery via Wasil fleet enables 60-minute medicine delivery — no competitor has integrated logistics'},{s:'RTMN captive users',d:'500+ RTMN employees as founding users provide immediate traction and real-world case studies'}].map(s=>(
+                  <div key={s.s} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-[#c9a227] shrink-0 mt-0.5"/>
+                    <div><div className="text-white font-medium text-xs">{s.s}</div><div className="text-xs text-slate-500">{s.d}</div></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <section className="py-12 px-4 border-t border-slate-800/50"><div className="max-w-4xl mx-auto text-center"><h2 className="text-2xl font-bold text-white mb-4">Healthcare, Connected.</h2><p className="text-slate-400 mb-8">8 modules. 5,000+ providers. Teleconsult in 15 min. One platform.</p><div className="flex flex-wrap justify-center gap-4"><Link href="/daman" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-500 transition-colors"><Heart className="w-5 h-5" /> Daman Insurance</Link><Link href="/wasil" className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-500 transition-colors"><Package className="w-5 h-5" /> Wasil Delivery</Link><Link href="/tawzeef" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-500 transition-colors"><Users className="w-5 h-5" /> Tawzeef HR</Link></div></div></section>
