@@ -118,6 +118,7 @@ const navigationData: NavCategory[] = [
     icon: Target,
     color: 'text-purple-400',
     items: [
+      { label: 'Complete Roadmap', href: '/complete-roadmap', icon: Map },
       { label: 'Master Roadmap', href: '/master-roadmap', icon: Map },
       { label: 'GTM Strategy', href: '/gtm', icon: TrendingUp },
       { label: 'Competitor Analysis', href: '/competitor-analysis', icon: BarChart3 },
