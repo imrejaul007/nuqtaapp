@@ -68,7 +68,12 @@ import {
   MapPin,
   HelpCircle,
   Play,
-  Shield
+  Shield,
+  Stethoscope,
+  Landmark,
+  GraduationCap,
+  MessageCircle,
+  Wheat
 } from 'lucide-react';
 
 /**
@@ -272,6 +277,14 @@ const navigationData: NavCategory[] = [
       { label: 'Fakhir', href: '/fakhir', icon: Gem },
       { label: 'Rabtul', href: '/rabtul', icon: Settings },
       { label: 'Amana', href: '/amana', icon: Shield },
+      { label: 'Tawzeef', href: '/tawzeef', icon: Users },
+      { label: 'Daman', href: '/daman', icon: Heart },
+      { label: 'Khedma', href: '/khedma', icon: Landmark },
+      { label: 'Tabib', href: '/tabib', icon: Stethoscope },
+      { label: 'Aqar', href: '/aqar', icon: Home },
+      { label: 'Mazra', href: '/mazra', icon: Wheat },
+      { label: 'Tadreeb', href: '/tadreeb', icon: GraduationCap },
+      { label: 'Majlis', href: '/majlis', icon: MessageCircle },
       { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Sparkles },
     ]
   },
