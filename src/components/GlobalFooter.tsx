@@ -271,6 +271,7 @@ const navigationData: NavCategory[] = [
       { label: 'Sakin', href: '/sakin', icon: Building2 },
       { label: 'Fakhir', href: '/fakhir', icon: Gem },
       { label: 'Rabtul', href: '/rabtul', icon: Settings },
+      { label: 'Amana', href: '/amana', icon: Shield },
       { label: 'Nuqta+ Membership', href: '/nuqta-plus', icon: Sparkles },
     ]
   },
