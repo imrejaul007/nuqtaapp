@@ -1297,6 +1297,13 @@ export default function RTMNDashboardPage() {
               RTMN Group
             </Link>
             <Link
+              href="/complete-roadmap"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 rounded-xl text-white font-bold hover:bg-slate-600 transition-all"
+            >
+              <Target className="w-5 h-5" />
+              Complete Roadmap
+            </Link>
+            <Link
               href="/rtmn-ecosystem"
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 rounded-xl text-white font-bold hover:bg-slate-600 transition-all"
             >

@@ -482,6 +482,9 @@ export default function RTMNGroupPage() {
 
           {/* Key Pages */}
           <div className="flex flex-wrap justify-center gap-3 mb-8">
+            <Link href="/complete-roadmap" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors text-sm">
+              <Target className="w-4 h-4" /> Complete Roadmap
+            </Link>
             <Link href="/rtmn-ecosystem" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#c9a227] text-[#0a1628] rounded-xl font-bold hover:bg-[#f4d35e] transition-colors text-sm">
               <Network className="w-4 h-4" /> Full Ecosystem (100+ Apps)
             </Link>

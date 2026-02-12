@@ -169,6 +169,7 @@ const cxoDepartments: CXODepartment[] = [
         links: [
           { label: 'Future Ambition', href: '/future-ambition', icon: Globe },
           { label: '3-Year Plan', href: '/3-year-plan', icon: Target },
+          { label: 'Complete Roadmap', href: '/complete-roadmap', icon: Map },
           { label: 'Master Roadmap', href: '/master-roadmap', icon: Map },
           { label: 'C-Suite Strategy', href: '/c-suite-strategy', icon: Target },
           { label: 'Commitment', href: '/commitment', icon: CheckSquare },
