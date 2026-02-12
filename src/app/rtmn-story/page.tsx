@@ -35,7 +35,7 @@ const problemPoints = [
 ];
 
 const userApps = [
-  { name: 'Nuqta', arabic: 'نقطة', description: 'Super-app — wallet, loyalty, rewards, membership', icon: Crown, color: 'text-[#c9a227]', bgColor: 'bg-[#c9a227]/10', borderColor: 'border-[#c9a227]/30', href: '/nuqta' },
+  { name: 'Nuqta', arabic: 'نقطة', description: 'Super-app — wallet, bills, savings, loyalty, membership', icon: Crown, color: 'text-[#c9a227]', bgColor: 'bg-[#c9a227]/10', borderColor: 'border-[#c9a227]/30', href: '/nuqta' },
   { name: 'Qist', arabic: 'قسط', description: 'BNPL — 3-12 months, 0% for Nuqta+', icon: Wallet, color: 'text-violet-400', bgColor: 'bg-violet-500/10', borderColor: 'border-violet-500/30', href: '/qist' },
   { name: 'Hawil', arabic: 'حوّل', description: 'Remittance — Google rate, 0% FX markup', icon: Send, color: 'text-green-400', bgColor: 'bg-green-500/10', borderColor: 'border-green-500/30', href: '/hawil' },
   { name: 'SpinZy', arabic: 'سبينزي', description: 'Viral gaming — 6 mini-games, earn coins', icon: Gamepad2, color: 'text-yellow-400', bgColor: 'bg-yellow-500/10', borderColor: 'border-yellow-500/30', href: '/spinzy' },
@@ -55,13 +55,13 @@ const userApps = [
 ];
 
 const bizApps = [
-  { name: 'BizOne', arabic: 'بزون', description: 'Merchant OS — POS, analytics, loyalty, CRM', icon: Store, color: 'text-blue-400', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/30', href: '/bizone' },
+  { name: 'BizOne', arabic: 'بزون', description: 'Merchant OS — POS, accounting, VAT, payroll, lending, storefront', icon: Store, color: 'text-blue-400', bgColor: 'bg-blue-500/10', borderColor: 'border-blue-500/30', href: '/bizone' },
   { name: 'Adzy', arabic: 'أدزي', description: 'Advertising — closed-loop campaigns', icon: Megaphone, color: 'text-pink-400', bgColor: 'bg-pink-500/10', borderColor: 'border-pink-500/30', href: '/adzy' },
   { name: 'Amana', arabic: 'أمانة', description: 'Compliance OS — 12 regulatory pillars', icon: Shield, color: 'text-red-400', bgColor: 'bg-red-500/10', borderColor: 'border-red-500/30', href: '/amana' },
   { name: 'NextaBizz', arabic: 'نكستابز', description: 'B2B marketplace — wholesale, supply', icon: Package, color: 'text-emerald-400', bgColor: 'bg-emerald-500/10', borderColor: 'border-emerald-500/30', href: '/nextabizz' },
   { name: 'Inventora', arabic: 'إنفنتورا', description: 'Supply chain — AI inventory, auto-reorder', icon: Layers, color: 'text-teal-400', bgColor: 'bg-teal-500/10', borderColor: 'border-teal-500/30', href: '/inventora' },
   { name: 'Rabtul', arabic: 'ربطُل', description: 'Core OS — identity, wallet, rules, events', icon: Database, color: 'text-purple-400', bgColor: 'bg-purple-500/10', borderColor: 'border-purple-500/30', href: '/rabtul' },
-  { name: 'Khedma', arabic: 'خدمة', description: 'Services marketplace — home, professional', icon: Briefcase, color: 'text-orange-400', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500/30', href: '/khedma' },
+  { name: 'Khedma', arabic: 'خدمة', description: 'Government & PRO — visa, licensing, labor, attestation', icon: Briefcase, color: 'text-orange-400', bgColor: 'bg-orange-500/10', borderColor: 'border-orange-500/30', href: '/khedma' },
   { name: 'Eventora', arabic: 'إيفنتورا', description: 'Events & ticketing — concerts, sports', icon: Calendar, color: 'text-violet-400', bgColor: 'bg-violet-500/10', borderColor: 'border-violet-500/30', href: '/eventora' },
   { name: 'Daman', arabic: 'ضمان', description: 'Insurance — health, car, travel, property', icon: Shield, color: 'text-sky-400', bgColor: 'bg-sky-500/10', borderColor: 'border-sky-500/30', href: '/daman' },
   { name: 'Aqar', arabic: 'عقار', description: 'Real estate — buy, sell, manage', icon: Home, color: 'text-green-300', bgColor: 'bg-green-400/10', borderColor: 'border-green-400/30', href: '/aqar' },
@@ -126,9 +126,9 @@ const flywheelLoops = [
     color: 'text-blue-400',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
-    summary: 'One onboarding = everywhere. One dashboard replaces six tools.',
-    steps: ['Join BizOne', 'Auto-listed on Wasil', 'Run ads via Adzy', 'Enable Qist BNPL', 'Rabtul analytics', 'More customers'],
-    detail: 'A merchant signs up on BizOne (POS + CRM + inventory in one dashboard). They are automatically listed across all 24 Wasil delivery verticals — Dinezy, Grocify, Glowzy, and more. They create targeted ads through Adzy using their own BizOne sales data. Customers use Qist BNPL at checkout (40% higher average order value). Rabtul AI provides real-time analytics. More customers, more data, better targeting.',
+    summary: 'One onboarding = everywhere. One dashboard replaces ten separate tools.',
+    steps: ['Join BizOne', 'Auto-listed on Wasil', 'Run ads via Adzy', 'Enable Qist BNPL', 'Auto-accounting + VAT', 'Capital from sales data'],
+    detail: 'A merchant signs up on BizOne (POS + CRM + inventory + accounting + payroll in one dashboard). Automatically listed across all 24 Wasil delivery verticals. Ads through Adzy. Qist BNPL at checkout (40% higher AOV). Every sale auto-generates accounting entries and VAT calculations — no QuickBooks needed. Staff paid via WPS-compliant payroll. Need capital? BizOne Capital pre-approves working capital loans based on transaction history. Repay from daily sales. One dashboard, zero other tools.',
   },
   {
     id: 'delivery',
@@ -221,7 +221,7 @@ const defensiveMoats = [
     color: 'text-blue-400',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
-    description: 'One dashboard replaces POS, CRM, inventory, analytics, staff management, and loyalty. Auto-listed on Wasil, Dinezy, Grocify. Leaving means rebuilding 6 separate integrations.',
+    description: 'One dashboard replaces POS, CRM, inventory, accounting, VAT, payroll, lending, and storefront. Auto-listed on Wasil. Leaving means rebuilding 10 separate tools and losing access to pre-approved capital.',
     strength: 'Very High',
   },
   {

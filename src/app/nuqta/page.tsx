@@ -10,7 +10,7 @@ import {
   Building2, Layers, CheckCircle2, Award, Coins, Timer, Heart,
   ShoppingBag, Plane, Car, Home, Truck, Scale, Network, Eye,
   Calculator, Gem, Briefcase, Map, Coffee, Scissors, Utensils,
-  Search, Bell, Share2, Package, Brain, Database, BadgePercent
+  Search, Bell, Share2, Package, Brain, Database, BadgePercent, PiggyBank
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -189,6 +189,40 @@ const coreFeatures: CoreFeature[] = [
       'Natural language queries: "Where can I earn the most coins for coffee?"',
     ],
     metrics: 'ML-powered | Real-time suggestions | NLP queries',
+  },
+  {
+    id: 'bills',
+    title: 'Bill Payments',
+    arabic: 'دفع الفواتير',
+    icon: CreditCard,
+    color: 'from-teal-500 to-cyan-500',
+    description: 'Pay all monthly bills from one place — utilities, telecom, transport, government fees, and education. Earn coins on every payment.',
+    details: [
+      'Utilities: DEWA, SEWA, FEWA, ADDC — auto-fetch balance by account number',
+      'Telecom: Etisalat, du, Virgin — prepaid recharge + postpaid bill pay',
+      'Transport: Salik top-up, RTA fines, parking payments',
+      'Government: GDRFA visa fees, ICP, MOI services via Khedma integration',
+      'Education: School fees, university tuition — Qist BNPL for large amounts',
+      'Auto-pay: Set recurring payments with 3-day advance reminders',
+    ],
+    metrics: '50+ billers | Auto-pay | Earn coins on every bill',
+  },
+  {
+    id: 'savings',
+    title: 'Savings Pots',
+    arabic: 'أوعية الادخار',
+    icon: PiggyBank,
+    color: 'from-emerald-500 to-green-500',
+    description: 'Smart savings inside your wallet — named goals, round-ups, auto-save, and Shariah-compliant profit sharing.',
+    details: [
+      'Named pots: Rent, Travel, Emergency, Wedding — set goals with target amounts',
+      'Round-Up: Every transaction rounded to nearest 5 AED, difference auto-saved',
+      'Auto-Save: Set weekly or monthly auto-transfer into any pot',
+      'Profit Sharing: Shariah-compliant returns on savings balance (via banking partner)',
+      'Lock pots: Optional time-lock to prevent impulsive withdrawals',
+      'Visual progress: Track savings goals with milestone celebrations',
+    ],
+    metrics: 'Named goals | Round-up savings | Shariah-compliant profit',
   },
   {
     id: 'ecosystem',

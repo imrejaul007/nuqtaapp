@@ -119,7 +119,7 @@ const categories: Category[] = [
       { title: 'BizOne', href: '/bizone', description: 'Merchant dashboard suite — POS, analytics, loyalty', icon: Store, arabic: 'بزون' },
       { title: 'Adzy', href: '/adzy', description: 'Advertising platform — merchant ads & campaigns', icon: Megaphone, arabic: 'أدزي' },
       { title: 'Amana', href: '/amana', description: 'Compliance OS — 12 regulatory pillars', icon: Shield, arabic: 'أمانة' },
-      { title: 'Khedma', href: '/khedma', description: 'Services marketplace — home & professional', icon: Briefcase, arabic: 'خدمة' },
+      { title: 'Khedma', href: '/khedma', description: 'Government & PRO services — visa, licensing, labor, attestation', icon: Briefcase, arabic: 'خدمة' },
       { title: 'Tawzeef', href: '/tawzeef', description: 'Recruitment platform — hiring & talent', icon: Users, arabic: 'توظيف' },
       { title: 'Tadreeb', href: '/tadreeb', description: 'Training platform — skills & certification', icon: GraduationCap, arabic: 'تدريب' },
       { title: 'Daman', href: '/daman', description: 'Insurance platform — health, auto, property', icon: Shield, arabic: 'ضمان' },
@@ -193,7 +193,7 @@ const categories: Category[] = [
       {
         title: 'Vertical Services (8)',
         pages: [
-          { title: 'Khedma', href: '/khedma', description: 'Services marketplace — home, professional, auto', icon: Briefcase, arabic: 'خدمة' },
+          { title: 'Khedma', href: '/khedma', description: 'Government & PRO services — visa, licensing, compliance', icon: Briefcase, arabic: 'خدمة' },
           { title: 'Eventora', href: '/eventora', description: 'Events & ticketing — concerts, sports, corporate', icon: Calendar, arabic: 'إيفنتورا' },
           { title: 'Daman', href: '/daman', description: 'Insurance marketplace — health, car, travel, property', icon: Shield, arabic: 'ضمان' },
           { title: 'Aqar', href: '/aqar', description: 'Real estate — buy, sell, manage properties', icon: Home, arabic: 'عقار' },

@@ -12,7 +12,7 @@ import {
   LineChart, Smartphone, Tv, Shirt, Pill, Gamepad2, ClipboardList, Globe,
   UserPlus, Award, Wallet, QrCode, Headphones, Share2, Sparkles, Beaker,
   RefreshCw, Zap, Brain, Filter, Eye, MapPin, HelpCircle, Play, Shield,
-  Stethoscope, Landmark, GraduationCap, MessageCircle, Wheat
+  Stethoscope, Landmark, GraduationCap, MessageCircle, Wheat, Network
 } from 'lucide-react';
 
 /**
@@ -246,6 +246,7 @@ const navigationData: NavCategory[] = [
     color: 'text-[#c9a227]',
     items: [
       { label: 'Central Hub', href: '/rtmn', icon: Globe },
+      { label: 'RTMN Story', href: '/rtmn-story', icon: Network },
       { label: 'RTMN Group', href: '/rtmn-group', icon: Building2 },
       { label: 'RTMN Ecosystem', href: '/rtmn-ecosystem', icon: Layers },
       { label: 'RTMN Dashboard', href: '/rtmn-dashboard', icon: BarChart3 },
