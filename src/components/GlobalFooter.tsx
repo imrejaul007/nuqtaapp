@@ -245,6 +245,7 @@ const navigationData: NavCategory[] = [
     icon: Globe,
     color: 'text-[#c9a227]',
     items: [
+      { label: 'Central Hub', href: '/rtmn', icon: Globe },
       { label: 'RTMN Group', href: '/rtmn-group', icon: Building2 },
       { label: 'RTMN Ecosystem', href: '/rtmn-ecosystem', icon: Layers },
       { label: 'RTMN Dashboard', href: '/rtmn-dashboard', icon: BarChart3 },
@@ -302,7 +303,7 @@ const quickLinks = [
   { label: 'Roadmap', href: '/complete-roadmap', icon: Map },
   { label: 'Pitch Deck', href: '/deck-90', icon: Rocket },
   { label: 'Data Room', href: '/data-room', icon: Database },
-  { label: 'RTMN Group', href: '/rtmn-group', icon: Globe },
+  { label: 'RTMN Hub', href: '/rtmn', icon: Building2 },
   { label: 'Products', href: '/nuqta', icon: Crown },
   { label: 'GTM', href: '/gtm', icon: TrendingUp },
   { label: 'Merchants', href: '/merchant-engines', icon: Store },
