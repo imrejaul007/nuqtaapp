@@ -497,6 +497,117 @@ const staffFeatures = [
 ];
 
 // ──────────────────────────────────────────────
+// DATA: Industry-Specific Modules
+// ──────────────────────────────────────────────
+const industryModules = [
+  {
+    id: 'salon-beauty',
+    name: 'Salon & Beauty',
+    arabic: 'صالون وتجميل',
+    icon: Scissors,
+    color: 'text-pink-400',
+    bgColor: 'bg-pink-500/10',
+    borderColor: 'border-pink-500/30',
+    description: 'Complete salon management module — replaces Fresha, Vagaro, and Booksy. Appointment scheduling, stylist portfolios, no-show protection, and social media booking in one system.',
+    targetMerchants: 'Salons, barbershops, spas, beauty studios, at-home beauticians',
+    features: [
+      { name: 'Appointment Calendar', description: 'Drag-and-drop calendar with service duration blocking. Auto-blocks time per service type (30 min haircut, 2 hr coloring). Multi-stylist view.', icon: CalendarDays },
+      { name: 'Social Media Booking', description: 'Book directly from Instagram, Facebook, and Google Maps. "Book Now" button links to BizOne calendar. Auto-sync availability across all channels.', icon: Share2 },
+      { name: 'No-Show Protection', description: 'Collect deposits (10-50% of service) at booking. Auto-charge cancellation fees for late cancels (<24hr). Configurable per service and client tier.', icon: Shield },
+      { name: 'Two-Way Client Messaging', description: 'WhatsApp, SMS, and in-app chat with clients. Full conversation history. Pre-booking consultations, appointment confirmations, and post-visit follow-ups.', icon: MessageSquare },
+      { name: 'Automated Reminders', description: 'SMS + WhatsApp + email reminders: 48hr before, 2hr before, and post-visit "how was it?" feedback. Reduces no-shows by 50%. Auto-rebooking prompts.', icon: Bell },
+      { name: 'Online Booking Widget', description: 'Embeddable booking widget for salon websites. Customizable to match brand colors. Syncs with BizOne calendar in real-time. Supports service selection + stylist choice.', icon: Monitor },
+      { name: 'Walk-In Queue Management', description: 'Digital waitlist for walk-in customers. SMS notification when their turn is near. Estimated wait time display. Works alongside appointment calendar.', icon: Clock },
+      { name: 'Stylist Portfolio & Gallery', description: 'Before/after photo galleries per stylist. Certifications, specialties, and client ratings displayed on booking page. Linked to Glowzy consumer profiles.', icon: Eye },
+    ],
+  },
+  {
+    id: 'restaurant-fb',
+    name: 'Restaurant & F&B',
+    arabic: 'مطاعم وأغذية',
+    icon: UtensilsCrossed,
+    color: 'text-red-400',
+    bgColor: 'bg-red-500/10',
+    borderColor: 'border-red-500/30',
+    description: 'Full restaurant management — table mapping, kitchen display, QR ordering, split bills, and delivery integration. Replaces Foodics, iiko, and Poster.',
+    targetMerchants: 'Restaurants, cafes, cloud kitchens, food trucks, catering',
+    features: [
+      { name: 'Table Management', description: 'Visual floor plan with drag-and-drop tables. Real-time occupancy, course timing, and server assignments. Merge/split tables.', icon: Map },
+      { name: 'Kitchen Display System', description: 'Digital order tickets on kitchen screens. Priority sorting, course-by-course firing, and prep time tracking.', icon: Monitor },
+      { name: 'QR Ordering', description: 'Customers scan QR at table, browse menu, order and pay from phone. No app download needed. Upsell suggestions powered by AI.', icon: QrCode },
+      { name: 'Menu Builder', description: 'Drag-and-drop menu editor with photos, descriptions, allergen tags, and dynamic pricing. Seasonal menus, happy hour pricing.', icon: FileText },
+      { name: 'Split Bills', description: 'Split by item, by seat, or by equal share. Support for group dining, corporate meals, and partial payments.', icon: Receipt },
+      { name: 'Delivery Integration', description: 'Direct integration with Wasil, Talabat, and Deliveroo. Unified order management. Auto-accept rules and prep time estimates.', icon: Truck },
+      { name: 'Ingredient Tracking', description: 'Recipe costing, ingredient-level inventory, and automatic deduction per dish sold. Food cost % dashboard.', icon: Package },
+      { name: 'Reservation System', description: 'Online reservations via website widget, Google, and social media. Waitlist management, special occasion notes, VIP tagging.', icon: CalendarDays },
+    ],
+  },
+  {
+    id: 'clinic-health',
+    name: 'Clinic & Healthcare',
+    arabic: 'عيادات وصحة',
+    icon: Heart,
+    color: 'text-rose-400',
+    bgColor: 'bg-rose-500/10',
+    borderColor: 'border-rose-500/30',
+    description: 'Medical practice management — patient scheduling, intake forms, consultation notes, prescription tracking, and insurance billing. Integrates with Tabib telemedicine.',
+    targetMerchants: 'Clinics, dental offices, physiotherapy, veterinary, wellness centers',
+    features: [
+      { name: 'Patient Scheduling', description: 'Multi-doctor calendar with appointment types, durations, and buffer times. Recurring appointments for ongoing treatments.', icon: CalendarDays },
+      { name: 'Digital Intake Forms', description: 'Patient fills medical history, allergies, and consent forms on tablet before appointment. Auto-saved to patient record.', icon: FileText },
+      { name: 'Consultation Notes', description: 'Structured SOAP notes, diagnosis codes, and treatment plans. Voice-to-text dictation. Linked to patient history.', icon: Activity },
+      { name: 'Prescription Management', description: 'Digital prescriptions linked to MediEarn pharmacy delivery. Refill reminders. Drug interaction warnings.', icon: Package },
+      { name: 'Insurance Billing', description: 'DHA and Daman insurance claim submission. E-claims, pre-authorization, and real-time eligibility checks.', icon: Shield },
+      { name: 'Patient Portal', description: 'Patients view appointments, test results, prescriptions, and billing online. Secure messaging with doctor.', icon: Users },
+      { name: 'Lab Integration', description: 'Order labs, receive results digitally. Auto-attach to patient record. Abnormal value alerts.', icon: Activity },
+      { name: 'Telemedicine Bridge', description: 'Seamless handoff to Tabib video consultations. Patient record shared securely. Follow-up booking auto-created.', icon: Monitor },
+    ],
+  },
+  {
+    id: 'retail-store',
+    name: 'Retail & E-commerce',
+    arabic: 'تجزئة وتجارة',
+    icon: ShoppingCart,
+    color: 'text-emerald-400',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/30',
+    description: 'Omnichannel retail management — in-store POS, online storefront, inventory sync, customer loyalty, and delivery. Replaces Shopify POS + Square.',
+    targetMerchants: 'Retail shops, boutiques, electronics, supermarkets, pharmacies',
+    features: [
+      { name: 'Omnichannel Sync', description: 'Sell in-store and online from one inventory. Price, stock, and product updates sync instantly across all channels.', icon: Layers },
+      { name: 'Barcode & RFID', description: 'Scan barcodes and RFID tags for instant checkout. Bulk stock counts. Generate and print custom barcodes.', icon: QrCode },
+      { name: 'Customer Loyalty', description: 'Points, tiers, birthday rewards, and referral bonuses. Integrated with Nuqta Coins for ecosystem-wide loyalty.', icon: Crown },
+      { name: 'Returns & Exchanges', description: 'Easy return processing with reason tracking. Store credit, refund, or exchange. Loss prevention analytics.', icon: Repeat },
+      { name: 'Gift Cards', description: 'Physical and digital gift cards. Corporate bulk orders. Balance tracking. Redeemable across all locations.', icon: Gift },
+      { name: 'Dynamic Pricing', description: 'Time-based pricing, bundle discounts, clearance automation. AI suggests optimal pricing based on sales velocity.', icon: TrendingUp },
+      { name: 'Visual Merchandising', description: 'Product display planning, shelf layout optimization, and planogram management for multi-location retail.', icon: Eye },
+      { name: 'Supplier Auto-Reorder', description: 'AI predicts demand, auto-generates purchase orders when stock hits reorder point. Supplier comparison engine.', icon: Zap },
+    ],
+  },
+  {
+    id: 'fitness-gym',
+    name: 'Fitness & Gym',
+    arabic: 'لياقة ورياضة',
+    icon: Activity,
+    color: 'text-orange-400',
+    bgColor: 'bg-orange-500/10',
+    borderColor: 'border-orange-500/30',
+    description: 'Gym and fitness studio management — membership plans, class scheduling, trainer assignments, access control, and progress tracking.',
+    targetMerchants: 'Gyms, yoga studios, martial arts, personal trainers, swimming pools',
+    features: [
+      { name: 'Membership Management', description: 'Flexible plans: monthly, annual, class packs, family bundles. Auto-renewal via SubscriptionPOS. Freeze and transfer options.', icon: Award },
+      { name: 'Class Scheduling', description: 'Group class calendar with capacity limits, waitlists, and auto-cancel for under-enrolled classes. Instructor assignments.', icon: CalendarDays },
+      { name: 'Access Control', description: 'QR or NFC check-in at gym entrance. Track visit frequency, peak hours, and member utilization. Guest pass management.', icon: Key },
+      { name: 'Trainer Booking', description: 'Personal trainer profiles, availability, and booking. Session tracking, package management, and commission calculation.', icon: Users },
+      { name: 'Progress Tracking', description: 'Member body metrics, workout logs, and before/after photos. Goal setting and achievement milestones.', icon: TrendingUp },
+      { name: 'Automated Billing', description: 'Recurring billing with Qist BNPL option for annual plans. Failed payment retry logic. Dunning management.', icon: CreditCard },
+      { name: 'Equipment Maintenance', description: 'Track equipment service schedules, report issues, and manage vendor maintenance contracts.', icon: Settings },
+      { name: 'Member App', description: 'Branded member portal: class booking, trainer booking, progress tracking, and payment history. Push notifications for new classes.', icon: Smartphone },
+    ],
+  },
+];
+
+// ──────────────────────────────────────────────
 // COMPONENT
 // ──────────────────────────────────────────────
 export default function BizOnePage() {
@@ -504,6 +615,7 @@ export default function BizOnePage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedTier, setExpandedTier] = useState<string | null>('Basic');
   const [expandedRisk, setExpandedRisk] = useState<string | null>(null);
+  const [expandedIndustry, setExpandedIndustry] = useState<string | null>('salon-beauty');
 
   const tabs = [
     { id: 'overview', label: 'Overview', icon: Eye },
@@ -511,6 +623,7 @@ export default function BizOnePage() {
     { id: 'journey', label: 'How It Works', icon: ArrowRight },
     { id: 'tiers', label: 'Merchant Tiers', icon: Crown },
     { id: 'pos', label: 'POS Variants', icon: Smartphone },
+    { id: 'industry', label: 'Industry Modules', icon: Layers },
     { id: 'economics', label: 'Unit Economics', icon: Calculator },
     { id: 'revenue', label: 'Revenue Model', icon: DollarSign },
     { id: 'market', label: 'Market', icon: Globe },
@@ -983,6 +1096,138 @@ export default function BizOnePage() {
                 ))}
               </div>
             </div>
+          </div>
+        )}
+
+        {/* ─────────────────────────────────────────────
+            TAB: Industry-Specific Modules
+           ───────────────────────────────────────────── */}
+        {activeTab === 'industry' && (
+          <div>
+            <h2 className="text-2xl font-bold text-white mb-2">Industry-Specific Modules</h2>
+            <p className="text-slate-400 mb-6">
+              BizOne adapts to every type of merchant. Each industry module adds specialized features on top of the core POS, inventory, CRM, and analytics.
+            </p>
+
+            {/* Industry Count Badge */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-8">
+              {industryModules.map((mod) => (
+                <button
+                  key={mod.id}
+                  onClick={() => setExpandedIndustry(expandedIndustry === mod.id ? null : mod.id)}
+                  className={`rounded-xl p-3 text-center border transition-all ${
+                    expandedIndustry === mod.id
+                      ? `${mod.bgColor} ${mod.borderColor} ring-2 ring-offset-1 ring-offset-[#0a1628] ${mod.borderColor}`
+                      : 'bg-slate-800/50 border-slate-700/50 hover:border-slate-600'
+                  }`}
+                >
+                  <mod.icon className={`w-6 h-6 mx-auto mb-1 ${expandedIndustry === mod.id ? mod.color : 'text-slate-400'}`} />
+                  <div className={`text-xs font-bold ${expandedIndustry === mod.id ? mod.color : 'text-slate-300'}`}>{mod.name}</div>
+                </button>
+              ))}
+            </div>
+
+            {/* Expanded Module Detail */}
+            {industryModules.map((mod) => expandedIndustry === mod.id && (
+              <div key={mod.id} className={`${mod.bgColor} rounded-2xl border ${mod.borderColor} overflow-hidden`}>
+                {/* Module Header */}
+                <div className="p-6">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className={`w-14 h-14 rounded-xl ${mod.bgColor} flex items-center justify-center border ${mod.borderColor}`}>
+                      <mod.icon className={`w-7 h-7 ${mod.color}`} />
+                    </div>
+                    <div>
+                      <h3 className={`text-xl font-bold ${mod.color}`}>{mod.name}</h3>
+                      <span className="text-slate-500 text-sm">{mod.arabic}</span>
+                    </div>
+                  </div>
+                  <p className="text-slate-300 text-sm mb-3">{mod.description}</p>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs px-3 py-1 rounded-full bg-slate-800/50 text-slate-300 border border-slate-600/50">
+                      Target: {mod.targetMerchants}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Features Grid */}
+                <div className="px-6 pb-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {mod.features.map((feature, i) => (
+                      <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                        <div className="flex items-center gap-3 mb-2">
+                          <feature.icon className={`w-5 h-5 ${mod.color} flex-shrink-0`} />
+                          <h4 className="text-white font-bold text-sm">{feature.name}</h4>
+                        </div>
+                        <p className="text-slate-400 text-xs leading-relaxed">{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Fresha Comparison (for Salon module) */}
+            {expandedIndustry === 'salon-beauty' && (
+              <div className="mt-8 bg-slate-800/40 rounded-xl p-6 border border-pink-500/20">
+                <h3 className="text-white font-bold mb-4 flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-pink-400" /> BizOne Salon vs Fresha — Complete Feature Parity + Ecosystem Extras
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-slate-700/50">
+                        <th className="text-left py-2 px-3 text-slate-400">Feature</th>
+                        <th className="text-center py-2 px-3 text-blue-400">BizOne</th>
+                        <th className="text-center py-2 px-3 text-slate-400">Fresha</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        { feature: 'Appointment Calendar', bizone: true, fresha: true },
+                        { feature: 'POS & Payments', bizone: true, fresha: true },
+                        { feature: 'Client CRM', bizone: true, fresha: true },
+                        { feature: 'Staff Management', bizone: true, fresha: true },
+                        { feature: 'Inventory Management', bizone: true, fresha: true },
+                        { feature: 'Online Booking', bizone: true, fresha: true },
+                        { feature: 'Social Media Booking', bizone: true, fresha: true },
+                        { feature: 'No-Show Protection', bizone: true, fresha: true },
+                        { feature: 'Automated Reminders', bizone: true, fresha: true },
+                        { feature: 'Two-Way Messaging', bizone: true, fresha: true },
+                        { feature: 'Walk-In Queue', bizone: true, fresha: false },
+                        { feature: 'Stylist Portfolio/Gallery', bizone: true, fresha: false },
+                        { feature: 'BNPL at Checkout (Qist)', bizone: true, fresha: false },
+                        { feature: 'Merchant Lending/Capital', bizone: true, fresha: false },
+                        { feature: 'Auto-Accounting + VAT', bizone: true, fresha: false },
+                        { feature: 'WPS Payroll', bizone: true, fresha: false },
+                        { feature: 'Ecosystem Advertising (Adzy)', bizone: true, fresha: false },
+                        { feature: 'Delivery Integration (Wasil)', bizone: true, fresha: false },
+                        { feature: 'Nuqta Coins Loyalty', bizone: true, fresha: false },
+                        { feature: '13 POS Variants', bizone: true, fresha: false },
+                      ].map((row, i) => (
+                        <tr key={i} className="border-b border-slate-800/50">
+                          <td className="py-2 px-3 text-slate-300">{row.feature}</td>
+                          <td className="py-2 px-3 text-center">
+                            <CheckCircle className="w-4 h-4 text-emerald-400 mx-auto" />
+                          </td>
+                          <td className="py-2 px-3 text-center">
+                            {row.fresha ? (
+                              <CheckCircle className="w-4 h-4 text-emerald-400 mx-auto" />
+                            ) : (
+                              <CircleDot className="w-4 h-4 text-red-400/50 mx-auto" />
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mt-4 bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
+                  <p className="text-emerald-400 text-sm font-bold">
+                    BizOne Salon: 20/20 features vs Fresha: 10/20 features. Full parity + 10 ecosystem-exclusive capabilities.
+                  </p>
+                </div>
+              </div>
+            )}
           </div>
         )}
 

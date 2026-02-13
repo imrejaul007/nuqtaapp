@@ -9,7 +9,9 @@ import {
   Target, LayoutGrid, Coins, Search,
   Award, Store, Calendar, Package,
   Home, Eye, UserCheck, Truck, Bell, BadgePercent,
-  Activity, Droplets, Briefcase
+  Activity, Droplets, Briefcase,
+  Camera, Zap, MessageSquare, Languages, Building2, Rocket,
+  Timer, Palette, Brain, ClipboardCheck
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -413,9 +415,224 @@ const competitiveAdvantages = [
   'AI matching: smart salon and stylist recommendations based on preferences and history',
 ];
 
+// ─── Next-Gen Features (10) ───
+const nextGenFeatures = [
+  {
+    id: 'ar-tryon',
+    name: 'AR Virtual Try-On',
+    arabic: 'تجربة افتراضية',
+    icon: Camera,
+    color: 'text-pink-400',
+    bgColor: 'bg-pink-500/10',
+    borderColor: 'border-pink-500/30',
+    phase: 'Phase 1',
+    impact: 'High',
+    description: 'Try hairstyles, hair colors, makeup looks, and nail designs on your live camera before booking — works for both salon visits and at-home appointments.',
+    details: [
+      'Live AR camera overlay for 500+ hairstyles & 200+ hair colors',
+      'Virtual makeup try-on: lipstick, eyeshadow, contouring, lashes',
+      'Nail art preview with 1,000+ designs on your actual nails',
+      'Save looks & share with your stylist before the appointment',
+      'Works in-salon (on iPad) and at-home (on phone before booking)',
+      '"Book This Look" button: AR preview → instant booking in one tap',
+    ],
+    metric: '+35% conversion rate (industry benchmark)',
+  },
+  {
+    id: 'dynamic-pricing',
+    name: 'Dynamic & Smart Pricing',
+    arabic: 'تسعير ذكي',
+    icon: Zap,
+    color: 'text-amber-400',
+    bgColor: 'bg-amber-500/10',
+    borderColor: 'border-amber-500/30',
+    phase: 'Phase 1',
+    impact: 'High',
+    description: 'AI-powered pricing that maximizes salon revenue and rewards users for booking during off-peak hours — across both in-salon and at-home services.',
+    details: [
+      'Off-peak discounts: 15-30% off salon visits during quiet hours (10AM-12PM, Mon-Wed)',
+      'At-home service surge: transparent pricing for peak evening & weekend home visits',
+      'Last-minute deals: empty salon chairs auto-listed at 20-40% discount 2 hours before',
+      'Flash sales: stylists can trigger 1-hour promotions for same-day at-home bookings',
+      'Group discount engine: bridal parties of 4+ get automatic tiered discounts',
+      'Smart price alerts: notify users when their favorite service drops to target price',
+    ],
+    metric: '+22% off-peak bookings, +18% revenue/chair',
+  },
+  {
+    id: 'social-ugc',
+    name: 'Social & UGC Layer',
+    arabic: 'محتوى اجتماعي',
+    icon: MessageSquare,
+    color: 'text-violet-400',
+    bgColor: 'bg-violet-500/10',
+    borderColor: 'border-violet-500/30',
+    phase: 'Phase 1',
+    impact: 'High',
+    description: 'Turn every booking into shareable content. Users post before/after photos, stylists upload reels, and the community curates the best beauty transformations.',
+    details: [
+      'Before/after photo pairs: auto-prompted after every salon & home service booking',
+      'Stylist reels & portfolios: short video showcases of their best salon/at-home work',
+      'Community feed: trending looks, top-rated transformations, seasonal beauty inspo',
+      '"Recreate This Look" button: see a post → book the exact same service & stylist',
+      'Verified reviews with photos: only real customers who completed bookings can review',
+      'Influencer partnerships: local beauty influencers get Glowzy-branded booking pages',
+    ],
+    metric: '+40% organic discovery, 3x review volume',
+  },
+  {
+    id: 'beauty-profile',
+    name: 'AI Beauty Profile',
+    arabic: 'ملف الجمال الذكي',
+    icon: Brain,
+    color: 'text-cyan-400',
+    bgColor: 'bg-cyan-500/10',
+    borderColor: 'border-cyan-500/30',
+    phase: 'Phase 2',
+    impact: 'High',
+    description: 'A personalized beauty profile that learns your hair type, skin tone, allergies, and preferences to recommend the perfect services for salon and home visits.',
+    details: [
+      'Onboarding quiz: hair type (2A-4C), skin type, sensitivities, color preferences',
+      'Allergy & sensitivity flags: auto-alert stylists about allergies for salon & home visits',
+      'Product recommendations: personalized to your hair/skin type from the Glowzy marketplace',
+      'Stylist matching upgrade: AI pairs you with professionals who specialize in your profile',
+      'Seasonal suggestions: hydration treatments in summer, deep conditioning in winter',
+      'Beauty history timeline: visual record of every treatment (salon + home) with outcomes',
+    ],
+    metric: '+28% repeat rate, 2.1x product attachment',
+  },
+  {
+    id: 'beauty-subscriptions',
+    name: 'Beauty Membership Plans',
+    arabic: 'عضوية التجميل',
+    icon: Award,
+    color: 'text-rose-400',
+    bgColor: 'bg-rose-500/10',
+    borderColor: 'border-rose-500/30',
+    phase: 'Phase 2',
+    impact: 'Very High',
+    description: 'Monthly beauty memberships for regulars. Combine salon visits, at-home services, and beauty products into one predictable subscription with VIP perks.',
+    details: [
+      'Glow Basic (149 AED/mo): 2 services/month (salon or home), 10% off products',
+      'Glow Plus (349 AED/mo): 5 services/month (mix & match salon + home), 20% off products, priority booking',
+      'Glow VIP (699 AED/mo): unlimited services, dedicated stylist, free products monthly, home visits included',
+      'Corporate memberships: companies buy beauty packages for employees as wellness perks',
+      'Gift subscriptions: buy beauty memberships as gifts for birthdays, weddings, Eid',
+      'Auto-schedule: recurring appointments booked automatically at your preferred day/time/location',
+    ],
+    metric: 'Predictable MRR, 4.5x LTV vs pay-per-booking',
+  },
+  {
+    id: 'multi-language',
+    name: 'Multi-Language & Cultural UX',
+    arabic: 'متعدد اللغات',
+    icon: Languages,
+    color: 'text-emerald-400',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/30',
+    phase: 'Phase 1',
+    impact: 'Medium',
+    description: 'Full app experience in Arabic, English, Hindi, Tagalog, and Urdu — plus culturally-aware service recommendations for UAE\'s diverse population.',
+    details: [
+      'Full RTL Arabic interface with native beauty terminology and Arabic stylist profiles',
+      'Hindi & Urdu for 3.5M+ South Asian residents who are heavy beauty service users',
+      'Tagalog for 700K+ Filipino community with dedicated stylist categories',
+      'Cultural preferences engine: hijab-friendly salons, ladies-only home services, halal products',
+      'Salon language tags: users filter by stylists who speak their language',
+      'Localized marketing: Eid beauty campaigns, Diwali packages, holiday-specific offers',
+    ],
+    metric: '+45% addressable market, 2x non-English bookings',
+  },
+  {
+    id: 'beauty-entrepreneur',
+    name: 'Beauty Entrepreneur Platform',
+    arabic: 'منصة رائدات التجميل',
+    icon: Rocket,
+    color: 'text-orange-400',
+    bgColor: 'bg-orange-500/10',
+    borderColor: 'border-orange-500/30',
+    phase: 'Phase 2',
+    impact: 'High',
+    description: 'Go beyond listings — give independent beauticians a full business platform to build their brand, manage clients, and grow across both at-home and pop-up salon services.',
+    details: [
+      'Personal brand page: custom URL, portfolio, pricing, and booking calendar for each beautician',
+      'Client CRM: manage regulars, notes, preferences, reminders — for home and salon bookings',
+      'Earnings dashboard: track income, tips, ratings, and growth across all service modes',
+      'Training & certification: in-app courses and certifications to level up skills and rates',
+      'Equipment micro-loans: via Qist financing for professional tools and home-visit kits',
+      'Pop-up salon booking: freelancers can rent salon chairs by the hour through partner salons',
+    ],
+    metric: '10K+ independent beauticians, new supply channel',
+  },
+  {
+    id: 'smart-rebooking',
+    name: 'Waitlist & Smart Rebooking',
+    arabic: 'إعادة الحجز الذكي',
+    icon: Timer,
+    color: 'text-blue-400',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/30',
+    phase: 'Phase 1',
+    impact: 'Medium',
+    description: 'Never miss a slot. AI-powered waitlists, cancellation alerts, and proactive rebooking reminders for both salon and at-home appointments.',
+    details: [
+      'Waitlist with auto-booking: join the queue → instantly booked when a slot opens',
+      'Cancellation alerts: get notified within 30 seconds when your preferred stylist has a cancellation',
+      'Smart rebooking reminders: "Your roots are due" / "Time for your monthly facial" based on booking history',
+      'Schedule sync: integrates with your phone calendar to suggest times that fit your routine',
+      'Home visit rescheduling: one-tap reschedule with real-time beautician availability',
+      'No-show protection: auto-charge deposit for missed salon or home appointments',
+    ],
+    metric: '+15% fill rate, -60% no-shows',
+  },
+  {
+    id: 'corporate-wellness',
+    name: 'Corporate & B2B Wellness',
+    arabic: 'برنامج الشركات',
+    icon: Building2,
+    color: 'text-teal-400',
+    bgColor: 'bg-teal-500/10',
+    borderColor: 'border-teal-500/30',
+    phase: 'Phase 3',
+    impact: 'High',
+    description: 'Beauty and wellness packages for offices, hotels, airlines, and events — combining at-home services, on-site visits, and partner salon access.',
+    details: [
+      'Office wellness days: mobile beauticians visit offices for team grooming sessions',
+      'Hotel partnerships: in-room beauty services for tourists and business travelers',
+      'Airline lounges: express grooming services integrated with Safar travel bookings',
+      'Event beauty desks: on-site stylists for conferences, galas, and Eventora events',
+      'Corporate gift cards: bulk beauty vouchers for employee rewards and client gifting',
+      'Managed accounts: HR dashboards for employee beauty perks budgets and redemption tracking',
+    ],
+    metric: 'B2B contracts worth 15-20M AED/yr',
+  },
+  {
+    id: 'quality-assurance',
+    name: 'Quality & Trust Engine',
+    arabic: 'ضمان الجودة',
+    icon: ClipboardCheck,
+    color: 'text-purple-400',
+    bgColor: 'bg-purple-500/10',
+    borderColor: 'border-purple-500/30',
+    phase: 'Phase 2',
+    impact: 'Very High',
+    description: 'Industry-leading quality standards for every salon and home visit — mystery shopping, hygiene scoring, standardized training, and a service guarantee.',
+    details: [
+      'Hygiene score: every salon and home-visit professional rated on 50-point hygiene checklist',
+      'Mystery shoppers: Glowzy auditors book anonymously to verify service quality monthly',
+      'Standardized training: partner beauticians complete Glowzy Academy modules for certification',
+      'Service guarantee: unhappy with salon or home service? Free redo or full refund within 48 hours',
+      'Home-visit safety: GPS tracking, ID verification, emergency button, and post-visit safety check',
+      'Product authenticity: verified genuine products only — no fakes in salon or marketplace',
+    ],
+    metric: '+50% trust score, #1 rated beauty app',
+  },
+];
+
 export default function GlowzyPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('salon-booking');
-  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
+  const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'roadmap' | 'deck'>('features');
+  const [expandedRoadmap, setExpandedRoadmap] = useState<string | null>('ar-tryon');
 
   return (
     <div className="min-h-screen bg-[#0a1628]">
@@ -466,6 +683,7 @@ export default function GlowzyPage() {
               { key: 'features' as const, label: 'Services & Features', icon: LayoutGrid },
               { key: 'pricing' as const, label: 'Pricing & Economics', icon: DollarSign },
               { key: 'market' as const, label: 'Market & Competition', icon: Globe },
+              { key: 'roadmap' as const, label: 'Next-Gen Roadmap', icon: Rocket },
               { key: 'deck' as const, label: 'Pitch Deck', icon: Briefcase },
             ].map((tab) => (
               <button
@@ -811,6 +1029,190 @@ export default function GlowzyPage() {
                     {adv}
                   </div>
                 ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* ═══════════════ NEXT-GEN ROADMAP TAB ═══════════════ */}
+        {activeTab === 'roadmap' && (
+          <>
+            {/* Phase Overview */}
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-white mb-2">Next-Gen Features Roadmap</h2>
+              <p className="text-slate-400 mb-6">
+                10 features that will make Glowzy the undisputed #1 beauty app in the GCC — designed for both salon visits and at-home services.
+              </p>
+
+              {/* Phase Summary Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                {[
+                  { phase: 'Phase 1', timeline: 'Q2-Q3 2026', count: 4, features: 'AR Try-On, Dynamic Pricing, Social/UGC, Multi-Language, Smart Rebooking', color: 'text-pink-400', bg: 'bg-pink-500/10', border: 'border-pink-500/30' },
+                  { phase: 'Phase 2', timeline: 'Q4 2026-Q1 2027', count: 4, features: 'AI Beauty Profile, Memberships, Entrepreneur Platform, Quality Engine', color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30' },
+                  { phase: 'Phase 3', timeline: 'Q2-Q3 2027', count: 1, features: 'Corporate & B2B Wellness', color: 'text-teal-400', bg: 'bg-teal-500/10', border: 'border-teal-500/30' },
+                ].map((p, i) => (
+                  <div key={i} className={`${p.bg} rounded-xl p-5 border ${p.border}`}>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className={`text-lg font-bold ${p.color}`}>{p.phase}</span>
+                      <span className="text-xs text-slate-400 bg-slate-800/50 px-2 py-1 rounded">{p.timeline}</span>
+                    </div>
+                    <div className={`text-2xl font-black ${p.color} mb-1`}>{p.count} Features</div>
+                    <p className="text-slate-400 text-xs">{p.features}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Dual-Mode Badge */}
+            <div className="bg-gradient-to-r from-pink-500/15 to-purple-500/15 rounded-xl p-5 border border-pink-500/20 mb-8">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-xl bg-pink-500/20 flex items-center justify-center border border-pink-500/30">
+                  <Sparkles className="w-5 h-5 text-pink-400" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold">Dual-Mode Platform: Salon + At-Home</h3>
+                  <p className="text-slate-400 text-sm">Every feature below works seamlessly across both salon visits and at-home beauty services.</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-slate-700/50">
+                  <Store className="w-5 h-5 text-pink-400 mx-auto mb-1" />
+                  <div className="text-xs text-slate-300">3,000+ Salons</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-slate-700/50">
+                  <Home className="w-5 h-5 text-purple-400 mx-auto mb-1" />
+                  <div className="text-xs text-slate-300">800+ Home Pros</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-slate-700/50">
+                  <Droplets className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
+                  <div className="text-xs text-slate-300">500+ Spas</div>
+                </div>
+                <div className="bg-slate-900/50 rounded-lg p-3 text-center border border-slate-700/50">
+                  <Package className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
+                  <div className="text-xs text-slate-300">2,000+ Products</div>
+                </div>
+              </div>
+            </div>
+
+            {/* 10 Feature Cards (Expandable) */}
+            <div className="space-y-4">
+              {nextGenFeatures.map((feature) => (
+                <div
+                  key={feature.id}
+                  className={`${feature.bgColor} border ${feature.borderColor} rounded-xl overflow-hidden transition-all`}
+                >
+                  <button
+                    onClick={() => setExpandedRoadmap(expandedRoadmap === feature.id ? null : feature.id)}
+                    className="w-full p-4 sm:p-5 flex items-center justify-between text-left"
+                  >
+                    <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
+                      <div className={`w-12 h-12 rounded-xl ${feature.bgColor} flex items-center justify-center border ${feature.borderColor} flex-shrink-0`}>
+                        <feature.icon className={`w-6 h-6 ${feature.color}`} />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                          <h3 className={`text-base sm:text-lg font-bold ${feature.color}`}>
+                            {feature.name}
+                          </h3>
+                          <span className="text-slate-500 text-sm">{feature.arabic}</span>
+                        </div>
+                        <div className="flex items-center gap-2 mt-1 flex-wrap">
+                          <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800/50 text-slate-300 border border-slate-600/50">
+                            {feature.phase}
+                          </span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${feature.bgColor} ${feature.color} border ${feature.borderColor}`}>
+                            {feature.impact} Impact
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    {expandedRoadmap === feature.id ? (
+                      <ChevronUp className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0 ml-2" />
+                    )}
+                  </button>
+
+                  {expandedRoadmap === feature.id && (
+                    <div className="px-4 pb-5 sm:px-5 sm:pb-5">
+                      <p className="text-slate-300 text-sm mb-4">{feature.description}</p>
+                      <div className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-white font-bold text-sm">Feature Details</h4>
+                          <span className={`text-xs ${feature.color}`}>{feature.metric}</span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                          {feature.details.map((detail, i) => (
+                            <div key={i} className="flex items-start gap-2 text-slate-300 text-sm">
+                              <CheckCircle className={`w-4 h-4 ${feature.color} flex-shrink-0 mt-0.5`} />
+                              {detail}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Combined Impact Summary */}
+            <div className="mt-12 bg-gradient-to-r from-pink-500/15 via-purple-500/10 to-cyan-500/15 rounded-2xl p-6 sm:p-8 border border-pink-500/20">
+              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-6 h-6 text-pink-400" /> Combined Impact — All 10 Features
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                {[
+                  { label: 'Conversion Uplift', value: '+35%', color: 'text-pink-400' },
+                  { label: 'Repeat Rate', value: '85%+', color: 'text-purple-400' },
+                  { label: 'Revenue Uplift', value: '+60%', color: 'text-emerald-400' },
+                  { label: 'Addressable Market', value: '+45%', color: 'text-cyan-400' },
+                  { label: 'NPS Score', value: '70+', color: 'text-amber-400' },
+                ].map((stat, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className={`text-2xl font-black ${stat.color}`}>{stat.value}</div>
+                    <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 rounded-xl p-4 border border-pink-500/20">
+                  <h4 className="text-pink-400 font-bold text-sm mb-2 flex items-center gap-2">
+                    <Store className="w-4 h-4" /> Salon Visit Enhancements
+                  </h4>
+                  <ul className="space-y-1">
+                    {[
+                      'AR try-on at salon iPad stations',
+                      'Dynamic off-peak salon discounts',
+                      'Waitlist for popular salon stylists',
+                      'Hygiene score displayed at salon entrance',
+                      'Corporate on-site salon partnerships',
+                    ].map((item, i) => (
+                      <li key={i} className="text-slate-400 text-xs flex items-center gap-2">
+                        <CheckCircle className="w-3 h-3 text-pink-400 flex-shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="bg-slate-900/50 rounded-xl p-4 border border-purple-500/20">
+                  <h4 className="text-purple-400 font-bold text-sm mb-2 flex items-center gap-2">
+                    <Home className="w-4 h-4" /> At-Home Service Enhancements
+                  </h4>
+                  <ul className="space-y-1">
+                    {[
+                      'AR try-on before home booking',
+                      'Smart pricing for peak home-visit hours',
+                      'Beautician entrepreneur tools & CRM',
+                      'Home-visit safety & GPS tracking',
+                      'Office and hotel on-site beauty desks',
+                    ].map((item, i) => (
+                      <li key={i} className="text-slate-400 text-xs flex items-center gap-2">
+                        <CheckCircle className="w-3 h-3 text-purple-400 flex-shrink-0" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </>
