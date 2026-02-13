@@ -898,6 +898,12 @@ export default function BusinessSolutionsPage() {
             <Link href="/rtmn-group" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
               <Building2 className="w-5 h-5" /> RTMN Group
             </Link>
+            <Link href="/inter-company-economics" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white rounded-xl font-bold hover:bg-emerald-500 transition-colors">
+              <DollarSign className="w-5 h-5" /> Inter-Company Economics
+            </Link>
+            <Link href="/team-blueprint" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
+              <Users className="w-5 h-5" /> Team Blueprint
+            </Link>
             <Link href="/rtmn" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700 text-white rounded-xl font-bold hover:bg-slate-600 transition-colors">
               <Globe className="w-5 h-5" /> RTMN Hub
             </Link>
