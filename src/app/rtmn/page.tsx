@@ -70,6 +70,7 @@ const categories: Category[] = [
     pages: [
       { title: 'RTMN Story', href: '/rtmn-story', description: 'The full ecosystem narrative — flywheel, moats & interconnections', icon: Network },
       { title: 'Business Solutions', href: '/business-solutions', description: 'Complete end-to-end business lifecycle — registration to operations', icon: Briefcase },
+      { title: 'Team Blueprint', href: '/team-blueprint', description: '3,000-person org plan — SOPs, inter-company model, hiring roadmap', icon: Users },
       { title: 'RTMN Group', href: '/rtmn-group', description: 'Company structure & hierarchy of 11 companies', icon: Building2, arabic: 'مجموعة رتمن' },
       { title: 'RTMN Dashboard', href: '/rtmn-dashboard', description: 'Business dashboard for all 10 sister companies', icon: BarChart3 },
       { title: 'RTMN Ecosystem', href: '/rtmn-ecosystem', description: '150+ apps ecosystem visualization', icon: Globe },
