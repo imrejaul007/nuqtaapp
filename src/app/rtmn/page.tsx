@@ -69,6 +69,7 @@ const categories: Category[] = [
     description: 'Group holding company, core infrastructure & governance',
     pages: [
       { title: 'RTMN Story', href: '/rtmn-story', description: 'The full ecosystem narrative — flywheel, moats & interconnections', icon: Network },
+      { title: 'Business Solutions', href: '/business-solutions', description: 'Complete end-to-end business lifecycle — registration to operations', icon: Briefcase },
       { title: 'RTMN Group', href: '/rtmn-group', description: 'Company structure & hierarchy of 11 companies', icon: Building2, arabic: 'مجموعة رتمن' },
       { title: 'RTMN Dashboard', href: '/rtmn-dashboard', description: 'Business dashboard for all 10 sister companies', icon: BarChart3 },
       { title: 'RTMN Ecosystem', href: '/rtmn-ecosystem', description: '150+ apps ecosystem visualization', icon: Globe },
@@ -1072,6 +1073,7 @@ export default function RTMNCentralHub() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               { label: 'RTMN Story', href: '/rtmn-story', icon: Network, color: 'bg-[#c9a227] text-[#0a1628]' },
+              { label: 'Business Solutions', href: '/business-solutions', icon: Briefcase, color: 'bg-[#c9a227] text-[#0a1628]' },
               { label: 'RTMN Group', href: '/rtmn-group', icon: Building2, color: 'bg-[#c9a227] text-[#0a1628]' },
               { label: 'Complete Roadmap', href: '/complete-roadmap', icon: Map, color: 'bg-purple-600 text-white' },
               { label: 'Documentation', href: '/documentation', icon: BookOpen, color: 'bg-blue-600 text-white' },
