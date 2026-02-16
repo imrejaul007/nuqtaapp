@@ -109,6 +109,7 @@ const navigationData: NavCategory[] = [
       { label: 'Aqar', href: '/aqar', icon: Home },
       { label: 'NextaBizz', href: '/nextabizz', icon: Briefcase },
       { label: 'Eventora', href: '/eventora', icon: Calendar },
+      { label: 'Tamkeen', href: '/tamkeen', icon: Rocket },
     ]
   },
   {
@@ -506,7 +507,7 @@ const GlobalFooter = () => {
 
               {/* Stats */}
               <div className="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-slate-500">
-                <span>26 Products</span>
+                <span>27 Products</span>
                 <span>•</span>
                 <span>242+ Pages</span>
                 <span>•</span>
