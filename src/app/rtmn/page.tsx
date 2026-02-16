@@ -132,6 +132,7 @@ const categories: Category[] = [
       { title: 'Inventora', href: '/inventora', description: 'Supply chain & inventory management', icon: Package, arabic: 'إنفنتورا' },
       { title: 'Mazra', href: '/mazra', description: 'Agriculture — farm-to-table platform', icon: MapPin, arabic: 'مزرعة' },
       { title: 'Nuqta Corp', href: '/nuqta-corp', description: 'Nuqta Corporation overview page', icon: Building2 },
+      { title: 'Tamkeen', href: '/tamkeen', description: 'Business-in-a-Box — register, operate, comply, grow', icon: Rocket, arabic: 'تمكين' },
     ],
   },
 
@@ -1084,6 +1085,7 @@ export default function RTMNCentralHub() {
               { label: 'Ecosystem', href: '/rtmn-ecosystem', icon: Globe, color: 'bg-slate-700 text-white' },
               { label: 'Main Deck', href: '/deck', icon: Presentation, color: 'bg-slate-700 text-white' },
               { label: 'Executive Team', href: '/executive-team', icon: Crown, color: 'bg-slate-700 text-white' },
+              { label: 'Tamkeen', href: '/tamkeen', icon: Rocket, color: 'bg-emerald-600 text-white' },
             ].map(link => (
               <Link
                 key={link.href}
