@@ -138,6 +138,29 @@ function Expandable({ title, children, defaultOpen = false }: { title: string; c
   return (<div className="border border-slate-700/50 rounded-xl overflow-hidden mb-4"><button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between px-5 py-4 bg-slate-800/50 hover:bg-slate-800/80 transition-colors text-left"><span className="font-semibold text-white">{title}</span>{open ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{open && <div className="px-5 py-4 bg-slate-900/30">{children}</div>}</div>);
 }
 
+
+const controls = [
+  'Government service request orchestration',
+  'PRO agent network management',
+  'Document checklist & form engine',
+  'Status tracking & notifications',
+  'Bilingual forms (Arabic + English)',
+  'Pricing & service packaging',
+  'RTMN internal PRO operations',
+  'GCC portal integration layer',
+];
+
+const doesNotOwn = [
+  { item: 'User identity & KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Compliance monitoring', reason: 'Managed by Amana' },
+  { item: 'HR & employee records', reason: 'Managed by Tawzeef' },
+  { item: 'Insurance products', reason: 'Managed by Daman' },
+  { item: 'Business operations tools', reason: 'Managed by BizOne' },
+  { item: 'Document storage vault', reason: 'Managed by Rabtul Core' },
+  { item: 'Tax & VAT filings', reason: 'Managed by Amana' },
+];
+
 export default function KhedmaPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
@@ -177,6 +200,21 @@ export default function KhedmaPage() {
               <div><div className="flex items-center gap-2 mb-2"><Zap className="w-5 h-5 text-amber-400" /><span className="text-lg font-bold text-white">The Core Promise</span></div><p className="text-xl sm:text-2xl font-bold text-white"><span className="text-amber-400">No more PRO queues.</span> Government services <span className="text-emerald-400">from your phone.</span></p></div>
               <div className="flex gap-3"><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-amber-400">25+</div><div className="text-xs text-slate-400">Portals</div></div><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-[#c9a227]">60%</div><div className="text-xs text-slate-400">Faster</div></div></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Khedma Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
           </div>
         </div>
       </div>

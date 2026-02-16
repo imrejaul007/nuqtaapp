@@ -414,6 +414,29 @@ const gccMarkets = [
 // ============================================
 // COMPONENT
 // ============================================
+
+const controls = [
+  'Handyman booking platform',
+  'Service provider matching',
+  'Job scheduling & dispatch',
+  'Pricing & estimation engine',
+  'Service quality tracking',
+  'Provider verification & ratings',
+  'Before/after documentation',
+  'Repeat service scheduling',
+];
+
+const doesNotOwn = [
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Provider identity verification', reason: 'Managed by Rabtul Core' },
+  { item: 'Property management integration', reason: 'Managed by Aqar' },
+  { item: 'Customer reviews', reason: 'Managed by Majlis' },
+  { item: 'Insurance for services', reason: 'Managed by Daman' },
+  { item: 'Compliance & licensing', reason: 'Managed by Amana / Khedma' },
+  { item: 'Advertising', reason: 'Managed by Adzy' },
+  { item: 'Provider training', reason: 'Managed by Tadreeb' },
+];
+
 export default function HandyzyPage() {
   const [expandedService, setExpandedService] = useState<string | null>('ac-hvac');
   const [activeTab, setActiveTab] = useState<'overview' | 'services' | 'pricing' | 'economics' | 'revenue' | 'competitors' | 'ecosystem' | 'roadmap' | 'risks' | 'gcc' | 'deck'>('overview');
@@ -486,6 +509,21 @@ export default function HandyzyPage() {
       {/* ============================================ */}
       {/* TAB NAVIGATION */}
       {/* ============================================ */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What HandyZy Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-slate-900/50 border-b border-slate-700/50 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto gap-1 py-2 scrollbar-hide">

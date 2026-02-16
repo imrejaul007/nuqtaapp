@@ -454,6 +454,29 @@ const risks = [
   },
 ];
 
+
+const controls = [
+  'Luxury marketplace curation',
+  'VIP customer experience',
+  'Authentication & verification',
+  'Personal shopper platform',
+  'Luxury concierge services',
+  'Exclusive event access',
+  'High-end brand partnerships',
+  'Premium loyalty (Fakhir Circle)',
+];
+
+const doesNotOwn = [
+  { item: 'Delivery (white-glove)', reason: 'Managed by Wasil / QuickDrop' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay / Hawil' },
+  { item: 'User identity & KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Insurance for luxury goods', reason: 'Managed by Daman' },
+  { item: 'Compliance', reason: 'Managed by Amana' },
+  { item: 'Advertising', reason: 'Managed by Adzy' },
+  { item: 'Community & reviews', reason: 'Managed by Majlis' },
+  { item: 'Event management', reason: 'Managed by Eventora' },
+];
+
 export default function FakhirPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedService, setExpandedService] = useState<string | null>(null);
@@ -533,6 +556,21 @@ export default function FakhirPage() {
       </div>
 
       {/* Tab Navigation */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Fakhir Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="sticky top-0 z-40 bg-[#0a1628]/95 backdrop-blur-sm border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto scrollbar-hide gap-1 py-2">

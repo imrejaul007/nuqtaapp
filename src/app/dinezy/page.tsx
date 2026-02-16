@@ -257,6 +257,29 @@ const tabs = [
   { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
 ];
 
+
+const controls = [
+  'Restaurant discovery & search',
+  'Table reservation system',
+  'Food delivery ordering UX',
+  'Menu management & pricing',
+  'Restaurant ratings & reviews',
+  'Order tracking (dine-in + delivery)',
+  'Restaurant analytics dashboard',
+  'Loyalty & repeat ordering',
+];
+
+const doesNotOwn = [
+  { item: 'Delivery fleet', reason: 'Managed by Wasil' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Restaurant POS', reason: 'Managed by BizOne' },
+  { item: 'Food supply chain', reason: 'Managed by Mazra' },
+  { item: 'Restaurant compliance', reason: 'Managed by Amana' },
+  { item: 'Advertising & promotions', reason: 'Managed by Adzy' },
+  { item: 'Customer identity', reason: 'Managed by Rabtul Core' },
+  { item: 'Restaurant insurance', reason: 'Managed by Daman' },
+];
+
 export default function DinezyPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState('features');
@@ -313,6 +336,21 @@ export default function DinezyPage() {
       {/* ═══════════════════════════════════════════ */}
       {/* TAB NAVIGATION */}
       {/* ═══════════════════════════════════════════ */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Dinezy Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="sticky top-0 z-40 bg-[#0a1628]/95 backdrop-blur-sm border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">

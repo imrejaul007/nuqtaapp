@@ -130,6 +130,29 @@ const rtmnCompanies = [
 
 const corporateStructure = { parentCompany: 'Wasil Apps Pvt Ltd', entity: 'Tabib Health Platform', ownership: '100% owned by Wasil Apps (RTMN Group)', type: 'HealthTech — Digital Health Marketplace', regulator: 'DHA Telehealth License, MOHAP' };
 
+
+const controls = [
+  'Teleconsultation platform & scheduling',
+  'Clinic/hospital booking engine',
+  'Patient health records vault',
+  'Lab & diagnostics booking',
+  'Wellness & prevention programs',
+  'Emergency services locator',
+  'E-pharmacy order management',
+  'Corporate health dashboard',
+];
+
+const doesNotOwn = [
+  { item: 'Pharmacy delivery', reason: 'Managed by MediEarn + Wasil' },
+  { item: 'Health insurance products', reason: 'Managed by Daman' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'HR sick leave sync', reason: 'Managed by Tawzeef' },
+  { item: 'User identity & KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'NuqtaCoin health rewards', reason: 'Managed by Nuqta ecosystem' },
+  { item: 'Medical licensing compliance', reason: 'Managed by Amana' },
+  { item: 'Event medical services', reason: 'Managed by Eventora' },
+];
+
 export default function TabibPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -168,6 +191,21 @@ export default function TabibPage() {
               <div><div className="flex items-center gap-2 mb-2"><Zap className="w-5 h-5 text-red-400" /><span className="text-lg font-bold text-white">The Core Promise</span></div><p className="text-xl sm:text-2xl font-bold text-white"><span className="text-red-400">See a doctor in 15 minutes.</span> Meds <span className="text-orange-400">delivered in 60.</span></p></div>
               <div className="flex gap-3"><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-red-400">5K+</div><div className="text-xs text-slate-400">Providers</div></div><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-[#c9a227]">8</div><div className="text-xs text-slate-400">Modules</div></div></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Tabib Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
           </div>
         </div>
       </div>

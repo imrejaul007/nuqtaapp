@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   ArrowLeft, CreditCard, Shield, Zap, Globe, Smartphone, QrCode,
-  Lock, TrendingUp, Users, DollarSign, BarChart3, CheckCircle2,
+  Lock, TrendingUp, Users, DollarSign, BarChart3, CheckCircle2, CheckCircle,
   ChevronRight, ChevronDown, ChevronUp, Wallet, Store, Building2,
   ArrowRight, Layers, Network, Coins, Timer, RefreshCw, Star,
   AlertTriangle, Target, Rocket, Code, FileText, Settings, Server,
@@ -772,6 +772,29 @@ const tabs = [
   { id: 'ecosystem', label: 'Ecosystem', icon: Network },
 ];
 
+
+const controls = [
+  'Payment gateway & processing',
+  'Digital wallet management',
+  'Merchant settlement engine',
+  'Transaction fraud detection',
+  'Multi-currency support',
+  'QR code payment system',
+  'Payment SDK for all RTMN apps',
+  'Financial reconciliation',
+];
+
+const doesNotOwn = [
+  { item: 'BNPL financing', reason: 'Managed by Qist' },
+  { item: 'Remittance', reason: 'Managed by Hawil' },
+  { item: 'Rent financing', reason: 'Managed by Sakin' },
+  { item: 'Insurance', reason: 'Managed by Daman' },
+  { item: 'User identity / KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Compliance', reason: 'Managed by Amana / CBUAE' },
+  { item: 'Government licensing', reason: 'Managed by Khedma' },
+  { item: 'Merchant relationships', reason: 'Managed by BizOne' },
+];
+
 export default function NuqtaPayDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
@@ -782,6 +805,21 @@ export default function NuqtaPayDashboard() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What NuqtaPay Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="bg-[#0a1628]/95 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">

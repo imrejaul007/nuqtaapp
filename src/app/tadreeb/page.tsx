@@ -115,6 +115,29 @@ const rtmnCompanies = [
 
 const corporateStructure = { parentCompany: 'BizOne Technology', entity: 'Tadreeb Learning Solutions', ownership: '100% owned by BizOne (RTMN Group)', type: 'EdTech — Corporate Learning & Compliance', regulator: 'Self-regulated (SaaS) — delivers mandated training content' };
 
+
+const controls = [
+  'Course content library & management',
+  'Learning path designer',
+  'Quiz & assessment engine',
+  'Gamification & rewards logic',
+  'Compliance training enrollment',
+  'Certificate generation & verification',
+  'Content creation tools (SCORM/xAPI)',
+  'Learning analytics dashboard',
+];
+
+const doesNotOwn = [
+  { item: 'Compliance requirements', reason: 'Amana triggers enrollment' },
+  { item: 'HR employee records', reason: 'Managed by Tawzeef' },
+  { item: 'NuqtaCoin rewards', reason: 'Managed by Nuqta / NuqtaPay' },
+  { item: 'User identity', reason: 'Managed by Rabtul Core' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Job matching from certificates', reason: 'Managed by Tawzeef' },
+  { item: 'Merchant training enrollment', reason: 'Managed by BizOne' },
+  { item: 'Video hosting infrastructure', reason: 'Managed by Rabtul Core' },
+];
+
 export default function TadreebPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -153,6 +176,21 @@ export default function TadreebPage() {
               <div><div className="flex items-center gap-2 mb-2"><Zap className="w-5 h-5 text-purple-400" /><span className="text-lg font-bold text-white">The Core Promise</span></div><p className="text-xl sm:text-2xl font-bold text-white"><span className="text-purple-400">Compliance automated.</span> Skills <span className="text-emerald-400">measurable.</span></p></div>
               <div className="flex gap-3"><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-purple-400">500+</div><div className="text-xs text-slate-400">Courses</div></div><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-[#c9a227]">12</div><div className="text-xs text-slate-400">Mandatory</div></div></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Tadreeb Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
           </div>
         </div>
       </div>

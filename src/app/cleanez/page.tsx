@@ -299,6 +299,29 @@ const competitiveAdvantages = [
 ];
 
 // ─── COMPONENT ───
+
+const controls = [
+  'Cleaning service marketplace',
+  'Booking & scheduling engine',
+  'Cleaning crew management',
+  'Quality inspection checklists',
+  'Recurring service automation',
+  'Pricing calculator (area-based)',
+  'Crew rating & performance',
+  'Corporate cleaning management',
+];
+
+const doesNotOwn = [
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Crew identity verification', reason: 'Managed by Rabtul Core' },
+  { item: 'Property integration', reason: 'Managed by Aqar / Sakin' },
+  { item: 'Insurance for services', reason: 'Managed by Daman' },
+  { item: 'Compliance & labor', reason: 'Managed by Amana / Khedma' },
+  { item: 'Customer reviews', reason: 'Managed by Majlis' },
+  { item: 'Advertising', reason: 'Managed by Adzy' },
+  { item: 'Crew training', reason: 'Managed by Tadreeb' },
+];
+
 export default function CleanEZPage() {
   const [activeTab, setActiveTab] = useState<string>('services');
   const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
@@ -351,6 +374,21 @@ export default function CleanEZPage() {
       </section>
 
       {/* ─── TAB NAVIGATION ─── */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What CleanEZ Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <nav className="sticky top-0 z-50 bg-[#0a1628]/95 backdrop-blur-md border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto gap-1 py-2 scrollbar-hide">

@@ -107,6 +107,29 @@ const rtmnCompanies = [
 
 const corporateStructure = { parentCompany: 'Inventora', entity: 'Mazra AgriTech', ownership: '100% owned by Inventora (RTMN Group)', type: 'AgriTech — Food Supply Chain Platform', regulator: 'Municipality, SFDA, Customs' };
 
+
+const controls = [
+  'B2B food marketplace & ordering',
+  'Cold chain IoT monitoring dashboard',
+  'Farm-to-table traceability engine',
+  'Supplier verification & scoring',
+  'Demand forecasting AI',
+  'Market intelligence & pricing',
+  'Contract farming management',
+  'Quality grading system',
+];
+
+const doesNotOwn = [
+  { item: 'Logistics & delivery', reason: 'Managed by Wasil fleet' },
+  { item: 'Warehouse management', reason: 'Managed by Inventora' },
+  { item: 'Food safety compliance', reason: 'Managed by Amana' },
+  { item: 'Insurance for perishables', reason: 'Managed by Daman' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay / Qist BNPL' },
+  { item: 'Restaurant merchant needs', reason: 'Managed by BizOne' },
+  { item: 'Event catering procurement', reason: 'Managed by Eventora' },
+  { item: 'Import/export permits', reason: 'Managed by Khedma' },
+];
+
 export default function MazraPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -121,6 +144,7 @@ export default function MazraPage() {
     { id: 'roadmap', label: 'Roadmap', icon: Rocket },
     { id: 'competition', label: 'Competition', icon: Target },
     { id: 'risks', label: 'Risks', icon: AlertTriangle },
+    { id: 'deck', label: 'Pitch Deck', icon: Briefcase },
   ];
 
   return (
@@ -144,6 +168,21 @@ export default function MazraPage() {
               <div><div className="flex items-center gap-2 mb-2"><Zap className="w-5 h-5 text-green-400" /><span className="text-lg font-bold text-white">The Core Promise</span></div><p className="text-xl sm:text-2xl font-bold text-white"><span className="text-green-400">Know your food.</span> From <span className="text-amber-400">farm to fork.</span></p></div>
               <div className="flex gap-3"><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-green-400">85%</div><div className="text-xs text-slate-400">Imported</div></div><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-[#c9a227]">$30B</div><div className="text-xs text-slate-400">Food Market</div></div></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Mazra Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
           </div>
         </div>
       </div>
@@ -191,6 +230,95 @@ export default function MazraPage() {
         {activeTab === 'competition' && (<div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50"><h2 className="text-xl font-bold text-white mb-4">Competitive Comparison</h2><div className="overflow-x-auto"><table className="w-full text-sm"><thead><tr className="border-b border-slate-700/50">{['', 'B2B', 'Cold Chain', 'Traceability', 'Compliance', 'Logistics', 'Arabic', 'Price'].map((h) => (<th key={h} className="text-left px-2 py-2 text-green-400 font-semibold whitespace-nowrap text-xs">{h}</th>))}</tr></thead><tbody>{competitors.map((c) => (<tr key={c.name} className={`border-b border-slate-800/50 ${c.name === 'Mazra' ? 'bg-green-500/10' : ''}`}><td className="px-2 py-2 text-white font-bold whitespace-nowrap">{c.name}</td>{[c.b2b, c.coldchain, c.traceability, c.compliance, c.logistics, c.arabic, c.price].map((val, j) => (<td key={j} className={`px-2 py-2 whitespace-nowrap text-xs ${val.startsWith('✅') ? 'text-emerald-400' : val.startsWith('❌') ? 'text-red-400' : 'text-amber-400'}`}>{val}</td>))}</tr>))}</tbody></table></div></div>)}
 
         {activeTab === 'risks' && (<div className="space-y-4">{risks.map((r) => (<div key={r.risk} className="bg-slate-800/30 rounded-xl border border-slate-700/50 overflow-hidden"><button onClick={() => setExpandedRisk(expandedRisk === r.risk ? null : r.risk)} className="w-full flex items-center justify-between px-5 py-4 hover:bg-slate-800/50 transition-colors"><div className="flex items-center gap-3"><span className={`px-2 py-0.5 rounded text-xs font-bold ${r.severity === 'critical' ? 'bg-red-500/20 text-red-400' : r.severity === 'high' ? 'bg-orange-500/20 text-orange-400' : 'bg-amber-500/20 text-amber-400'}`}>{r.severity.toUpperCase()}</span><span className="text-white font-medium text-sm">{r.risk}</span></div>{expandedRisk === r.risk ? <ChevronUp className="w-5 h-5 text-slate-400" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}</button>{expandedRisk === r.risk && (<div className="px-5 pb-4"><div className="space-y-2">{r.mitigation.map((m, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{m}</span></div>))}</div></div>)}</div>))}</div>)}
+
+        {activeTab === 'deck' && (
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-green-500/20 to-green-500/5 rounded-2xl p-6 border border-green-500/30">
+              <h2 className="text-2xl font-bold text-white mb-2">Investment Thesis</h2>
+              <p className="text-slate-300 leading-relaxed">The GCC imports <strong className="text-red-400">85% of its food</strong> — a $30B+ market with massive inefficiency. 33% of food is wasted in the supply chain. Mazra digitizes the entire chain — B2B sourcing, cold chain monitoring, farm-to-table traceability, and AI demand forecasting. Aligned with <strong className="text-amber-400">UAE Food Security Strategy 2051</strong>. No competitor in the GCC offers full-stack food supply chain tech with RTMN ecosystem integration.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Market Opportunity</h3>
+              <div className="grid grid-cols-3 gap-4">
+                {[{label:'TAM',value:'$30B+',detail:'GCC Food Import Market'},{label:'SAM',value:'$5B',detail:'Food Supply Chain Tech'},{label:'SOM',value:'$50M',detail:'Year 3 Mazra Revenue Target'}].map(m=>(
+                  <div key={m.label} className="bg-slate-800/30 rounded-xl p-4 text-center border border-slate-700/50">
+                    <div className="text-xs text-slate-400">{m.label}</div>
+                    <div className="text-2xl font-black text-white mt-1">{m.value}</div>
+                    <div className="text-xs text-slate-500 mt-1">{m.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">Key Differentiators</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[{title:'Full-Stack Supply Chain',desc:'B2B sourcing + cold chain + traceability + compliance + analytics in one platform'},{title:'IoT Cold Chain Monitoring',desc:'Real-time temperature tracking from farm to fork with automated HACCP compliance'},{title:'Farm-to-Table Traceability',desc:'Every product traceable from seed to plate — consumer-facing origin stories'},{title:'Wasil Fleet Integration',desc:'Refrigerated delivery via Wasil — no competitor has integrated cold-chain logistics'},{title:'Amana Food Safety',desc:'Automated compliance with municipality health permits, halal certification, and import regulations'},{title:'AI Demand Forecasting',desc:'Reduce 33% food waste with predictive ordering based on sales data from BizOne merchants'}].map(d=>(
+                  <div key={d.title} className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                    <div><span className="text-white font-semibold text-sm">{d.title}</span><span className="text-slate-400 text-sm"> — {d.desc}</span></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4">3-Year Financial Projections</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead><tr className="border-b border-slate-700/50">
+                    {['Year','GMV','Revenue','Costs','Net Profit'].map(h=><th key={h} className="text-left px-3 py-2 text-green-400 font-semibold">{h}</th>)}
+                  </tr></thead>
+                  <tbody>
+                    {[{y:'Year 1',gmv:'AED 50M',r:'AED 3M',c:'AED 2.5M',n:'AED 0.5M'},{y:'Year 2',gmv:'AED 250M',r:'AED 15M',c:'AED 8M',n:'AED 7M'},{y:'Year 3',gmv:'AED 800M',r:'AED 45M',c:'AED 18M',n:'AED 27M'}].map(row=>(
+                      <tr key={row.y} className="border-b border-slate-800/50">
+                        <td className="px-3 py-3 text-white font-medium">{row.y}</td>
+                        <td className="px-3 py-3 text-blue-400">{row.gmv}</td>
+                        <td className="px-3 py-3 text-emerald-400 font-bold">{row.r}</td>
+                        <td className="px-3 py-3 text-red-400">{row.c}</td>
+                        <td className="px-3 py-3 text-[#c9a227] font-bold">{row.n}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-white mb-4">Comparable Companies</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                {[{name:'Sysco',val:'$40B',model:'Food distribution giant'},{name:'US Foods',val:'$12B',model:'B2B food distribution'},{name:'Infarm',val:'$1B',model:'Vertical farming tech'},{name:'Nana',val:'$1B',model:'MENA grocery/food delivery'}].map(c=>(
+                  <div key={c.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50 text-center">
+                    <div className="text-white font-bold">{c.name}</div>
+                    <div className="text-green-400 text-lg font-black mt-1">{c.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{c.model}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
+              <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2"><Rocket className="w-5 h-5 text-green-400" /> Unicorn Path</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                {[{stage:'Seed',metric:'500 suppliers',timeline:'Q4 2026',val:'~$20M'},{stage:'Series A',metric:'2K suppliers',timeline:'Q4 2027',val:'~$100M'},{stage:'Series B',metric:'5K suppliers',timeline:'Q4 2028',val:'~$400M'},{stage:'$1B+',metric:'10K+ (GCC)',timeline:'2029+',val:'~$1B+'}].map(s=>(
+                  <div key={s.stage} className="bg-green-500/10 rounded-xl p-4 border border-green-500/30 text-center">
+                    <div className="text-xs text-green-400 font-bold">{s.stage}</div>
+                    <div className="text-white font-bold text-sm mt-1">{s.metric}</div>
+                    <div className="text-lg font-black text-green-400 mt-1">{s.val}</div>
+                    <div className="text-xs text-slate-500 mt-1">{s.timeline}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="bg-gradient-to-r from-[#c9a227]/10 to-transparent rounded-xl p-6 border border-[#c9a227]/30">
+              <h3 className="text-lg font-bold text-[#c9a227] mb-3">RTMN Ecosystem Multiplier</h3>
+              <p className="text-slate-300 text-sm mb-4">Mazra is uniquely positioned within the RTMN ecosystem with built-in demand and distribution.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {['BizOne F&B merchant demand', 'Wasil cold chain logistics', 'Inventora warehouse network', 'Amana food safety compliance'].map(s=>(
+                  <div key={s} className="bg-[#c9a227]/10 rounded-lg px-3 py-2 text-center">
+                    <span className="text-[#c9a227] text-xs font-medium">{s}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </main>
 
       <section className="py-12 px-4 border-t border-slate-800/50"><div className="max-w-4xl mx-auto text-center"><h2 className="text-2xl font-bold text-white mb-4">Farm to Fork, Digitized.</h2><p className="text-slate-400 mb-8">6 modules. B2B sourcing. Cold chain. Food security. One platform.</p><div className="flex flex-wrap justify-center gap-4"><Link href="/inventora" className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-xl font-bold hover:bg-green-500 transition-colors"><Package className="w-5 h-5" /> Inventora</Link><Link href="/wasil" className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-500 transition-colors"><Truck className="w-5 h-5" /> Wasil Delivery</Link><Link href="/amana" className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-xl font-bold hover:bg-teal-500 transition-colors"><Shield className="w-5 h-5" /> Amana Compliance</Link></div></div></section>

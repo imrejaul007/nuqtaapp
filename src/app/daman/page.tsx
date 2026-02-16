@@ -173,6 +173,29 @@ function Expandable({ title, children, defaultOpen = false }: { title: string; c
   );
 }
 
+
+const controls = [
+  'Insurance product marketplace',
+  'Policy management & issuance',
+  'Claims submission & processing',
+  'Insurance comparison engine',
+  'Digital insurance cards',
+  'Renewal automation & alerts',
+  'Group/corporate insurance',
+  'Insurance analytics dashboard',
+];
+
+const doesNotOwn = [
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Health provider network', reason: 'Managed by Tabib' },
+  { item: 'HR employee data', reason: 'Managed by Tawzeef' },
+  { item: 'Compliance monitoring', reason: 'Managed by Amana' },
+  { item: 'Government insurance filings', reason: 'Managed by Khedma' },
+  { item: 'Customer identity / KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Vehicle insurance claims data', reason: 'Managed by Rakab' },
+  { item: 'Property insurance data', reason: 'Managed by Aqar' },
+];
+
 export default function DamanPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeType, setActiveType] = useState<string | null>(null);
@@ -218,6 +241,21 @@ export default function DamanPage() {
                 <div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-[#c9a227]">8</div><div className="text-xs text-slate-400">Types</div></div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Daman Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
           </div>
         </div>
       </div>

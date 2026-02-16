@@ -333,6 +333,29 @@ const tabs = [
 ];
 
 // ─── COMPONENT ───
+
+const controls = [
+  'Grocery marketplace & catalog',
+  'Hyperlocal store discovery',
+  'Shopping list & smart reorder',
+  'Dark store management UX',
+  'Grocery delivery scheduling',
+  'Price comparison engine',
+  'Grocery loyalty program',
+  'Fresh produce quality tracking',
+];
+
+const doesNotOwn = [
+  { item: 'Delivery fleet', reason: 'Managed by Wasil' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Store POS & inventory', reason: 'Managed by BizOne + Inventora' },
+  { item: 'Food supply chain', reason: 'Managed by Mazra' },
+  { item: 'Compliance & food safety', reason: 'Managed by Amana' },
+  { item: 'Advertising', reason: 'Managed by Adzy' },
+  { item: 'Customer identity', reason: 'Managed by Rabtul Core' },
+  { item: 'Store insurance', reason: 'Managed by Daman' },
+];
+
 export default function GrocifyPage() {
   const [activeTab, setActiveTab] = useState('categories');
   const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
@@ -423,6 +446,21 @@ export default function GrocifyPage() {
       </div>
 
       {/* ─── TAB NAVIGATION ─── */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Grocify Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="sticky top-0 z-40 bg-[#0a1628]/95 backdrop-blur-sm border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto py-2 gap-1 sm:gap-2 scrollbar-hide">

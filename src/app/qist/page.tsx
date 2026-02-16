@@ -467,6 +467,29 @@ const ecosystemFinancials = {
   },
 };
 
+
+const controls = [
+  'BNPL product engine',
+  'Merchant integration for installments',
+  'Credit scoring & risk assessment',
+  'Installment plan management',
+  'Collection & recovery workflows',
+  'Merchant settlement engine',
+  'BNPL analytics & reporting',
+  'Shariah-compliant financing structure',
+];
+
+const doesNotOwn = [
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Merchant onboarding', reason: 'Managed by BizOne' },
+  { item: 'User identity / KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Compliance', reason: 'Managed by Amana / CBUAE' },
+  { item: 'Government licensing', reason: 'Managed by Khedma' },
+  { item: 'Insurance', reason: 'Managed by Daman' },
+  { item: 'Property financing', reason: 'Managed by Sakin' },
+  { item: 'Marketing', reason: 'Managed by Adzy' },
+];
+
 export default function QistPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedRisk, setExpandedRisk] = useState<string | null>(null);
@@ -560,6 +583,21 @@ export default function QistPage() {
       </div>
 
       {/* Navigation Tabs */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Qist Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="sticky top-0 z-40 bg-[#0a1628]/95 backdrop-blur-sm border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto py-2 gap-1 sm:gap-2 scrollbar-hide">

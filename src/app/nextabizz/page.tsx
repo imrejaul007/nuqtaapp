@@ -430,6 +430,29 @@ const b2bVerticals = [
   { name: 'PrintoPro', category: 'Printing & Packaging', color: 'text-gray-400', suppliers: 50 },
 ];
 
+
+const controls = [
+  'Cross-border marketplace platform',
+  'Vendor onboarding & verification',
+  'Product catalog management',
+  'Order orchestration engine',
+  'Cross-border shipping coordination',
+  'Marketplace analytics',
+  'Storefront builder',
+  'Commission & payout engine',
+];
+
+const doesNotOwn = [
+  { item: 'Delivery & logistics', reason: 'Managed by Wasil' },
+  { item: 'Warehouse & fulfillment', reason: 'Managed by Inventora' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay / Hawil' },
+  { item: 'Compliance & trade regulations', reason: 'Managed by Amana' },
+  { item: 'Import/export permits', reason: 'Managed by Khedma' },
+  { item: 'Advertising on marketplace', reason: 'Managed by Adzy' },
+  { item: 'Customer identity', reason: 'Managed by Rabtul Core' },
+  { item: 'Insurance for goods', reason: 'Managed by Daman' },
+];
+
 export default function NextaBizzPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('marketplace');
   const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
@@ -476,6 +499,21 @@ export default function NextaBizzPage() {
       </div>
 
       {/* ═══════════════ TAB NAVIGATION ═══════════════ */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What NextaBizz Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="border-b border-slate-700/50 bg-slate-900/30 sticky top-0 z-10 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto">

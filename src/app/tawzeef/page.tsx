@@ -212,6 +212,29 @@ function Expandable({ title, children, defaultOpen = false }: { title: string; c
 }
 
 // ════════════════════════════════════════════════════════════════
+
+const controls = [
+  'Job posting & candidate matching',
+  'Applicant tracking system (ATS)',
+  'Employee onboarding workflow',
+  'Payroll management engine',
+  'HR document management',
+  'Performance review system',
+  'Leave & attendance tracking',
+  'Employee self-service portal',
+];
+
+const doesNotOwn = [
+  { item: 'Training & certifications', reason: 'Managed by Tadreeb' },
+  { item: 'Government visa & labor', reason: 'Managed by Khedma' },
+  { item: 'Compliance (labor law)', reason: 'Managed by Amana' },
+  { item: 'Employee health', reason: 'Managed by Tabib' },
+  { item: 'Salary payments', reason: 'Managed by NuqtaPay' },
+  { item: 'Insurance benefits', reason: 'Managed by Daman' },
+  { item: 'User identity / KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Background verification', reason: 'Managed by Rabtul + Khedma' },
+];
+
 export default function TawzeefPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -285,6 +308,21 @@ export default function TawzeefPage() {
       </div>
 
       {/* Tabs */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Tawzeef Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="sticky top-0 z-40 bg-[#0a1628]/95 backdrop-blur-sm border-b border-slate-700/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto py-2 gap-1 sm:gap-2 scrollbar-hide">

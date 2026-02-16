@@ -108,6 +108,29 @@ const rtmnCompanies = [
 
 const corporateStructure = { parentCompany: 'Nuqta Corporation', entity: 'Majlis Community Platform', ownership: '100% owned by Nuqta Corporation (RTMN Group)', type: 'Social — Community & Social Commerce', regulator: 'TDRA content regulations' };
 
+
+const controls = [
+  'Community boards & moderation',
+  'Reviews & ratings engine',
+  'Social commerce marketplace',
+  'Interest groups & meetups',
+  'Creator/influencer hub',
+  'Referral network engine',
+  'Content moderation AI',
+  'Community analytics',
+];
+
+const doesNotOwn = [
+  { item: 'Payment processing (escrow)', reason: 'Managed by NuqtaPay' },
+  { item: 'Delivery for marketplace', reason: 'Managed by Wasil' },
+  { item: 'Advertising campaigns', reason: 'Managed by Adzy' },
+  { item: 'Event management', reason: 'Managed by Eventora' },
+  { item: 'User identity verification', reason: 'Managed by Rabtul / Nuqta ID' },
+  { item: 'NuqtaCoin rewards', reason: 'Managed by Nuqta ecosystem' },
+  { item: 'Merchant profiles', reason: 'Managed by BizOne' },
+  { item: 'Property community data', reason: 'Managed by Aqar / Sakin' },
+];
+
 export default function MajlisPage() {
   const [activeTab, setActiveTab] = useState('overview');
   const [activeModule, setActiveModule] = useState<string | null>(null);
@@ -146,6 +169,21 @@ export default function MajlisPage() {
               <div><div className="flex items-center gap-2 mb-2"><Zap className="w-5 h-5 text-pink-400" /><span className="text-lg font-bold text-white">The Core Promise</span></div><p className="text-xl sm:text-2xl font-bold text-white"><span className="text-pink-400">Your neighborhood.</span> Your <span className="text-amber-400">community.</span> Your app.</p></div>
               <div className="flex gap-3"><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-pink-400">20+</div><div className="text-xs text-slate-400">Cities</div></div><div className="bg-slate-900/50 rounded-lg p-3 text-center"><div className="text-2xl font-bold text-[#c9a227]">25+</div><div className="text-xs text-slate-400">Apps</div></div></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Majlis Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
           </div>
         </div>
       </div>

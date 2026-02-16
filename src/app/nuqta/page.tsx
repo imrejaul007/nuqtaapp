@@ -7,7 +7,7 @@ import {
   Bot, Globe, Gift, Star, Shield, Zap, TrendingUp, Users, Target,
   ChevronDown, ChevronUp, ChevronRight, DollarSign, CreditCard,
   Smartphone, MapPin, BarChart3, Lock, Rocket, AlertTriangle,
-  Building2, Layers, CheckCircle2, Award, Coins, Timer, Heart,
+  Building2, Layers, CheckCircle2, CheckCircle, Award, Coins, Timer, Heart,
   ShoppingBag, Plane, Car, Home, Truck, Scale, Network, Eye,
   Calculator, Gem, Briefcase, Map, Coffee, Scissors, Utensils,
   Search, Bell, Share2, Package, Brain, Database, BadgePercent, PiggyBank,
@@ -656,6 +656,29 @@ const tabs = [
 
 // ─── Component ──────────────────────────────────────────────────────
 
+
+const controls = [
+  'Super app shell & navigation',
+  'NuqtaCoin reward system',
+  'User engagement & gamification',
+  'Home feed curation & personalization',
+  'Cross-app discovery & deep linking',
+  'User notifications hub',
+  'App marketplace & miniapp framework',
+  'Brand identity & UX standards',
+];
+
+const doesNotOwn = [
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Delivery logistics', reason: 'Managed by Wasil' },
+  { item: 'POS & merchant tools', reason: 'Managed by BizOne' },
+  { item: 'Identity & KYC', reason: 'Managed by Rabtul Core' },
+  { item: 'Compliance', reason: 'Managed by Amana' },
+  { item: 'Advertising platform', reason: 'Managed by Adzy' },
+  { item: 'Community & reviews', reason: 'Managed by Majlis' },
+  { item: 'Each vertical product', reason: 'Managed by respective companies' },
+];
+
 export default function NuqtaDashboard() {
   const [activeTab, setActiveTab] = useState('overview');
   const [expandedFeature, setExpandedFeature] = useState<string | null>(null);
@@ -674,6 +697,21 @@ export default function NuqtaDashboard() {
   return (
     <div className="min-h-screen bg-[#0a1628] text-white">
       {/* Header */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Nuqta Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <header className="border-b border-slate-800 bg-[#0a1628]/95 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           <Link href="/rtmn-group" className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors">

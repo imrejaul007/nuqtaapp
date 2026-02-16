@@ -433,6 +433,29 @@ const eventCategories = [
   { name: 'Community & Social', events: '1,400+', avgPrice: '50 AED', color: 'text-emerald-400', icon: UserPlus },
 ];
 
+
+const controls = [
+  'Event creation & management',
+  'Ticketing & RSVP engine',
+  'Venue booking marketplace',
+  'Event logistics coordinator',
+  'Attendee management',
+  'Event analytics dashboard',
+  'Vendor marketplace for events',
+  'Live streaming integration',
+];
+
+const doesNotOwn = [
+  { item: 'Payment & ticketing payments', reason: 'Managed by NuqtaPay' },
+  { item: 'Food & catering sourcing', reason: 'Managed by Mazra' },
+  { item: 'Event promotion', reason: 'Managed by Adzy' },
+  { item: 'Venue real estate', reason: 'Managed by Aqar' },
+  { item: 'Staff hiring for events', reason: 'Managed by Tawzeef' },
+  { item: 'Event insurance', reason: 'Managed by Daman' },
+  { item: 'Compliance & permits', reason: 'Managed by Khedma + Amana' },
+  { item: 'Community event boards', reason: 'Managed by Majlis' },
+];
+
 export default function EventoraPage() {
   const [expandedFeature, setExpandedFeature] = useState<string | null>('event-discovery');
   const [activeTab, setActiveTab] = useState<'features' | 'pricing' | 'market' | 'deck'>('features');
@@ -479,6 +502,21 @@ export default function EventoraPage() {
       </div>
 
       {/* ═══════════════ TAB NAVIGATION ═══════════════ */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Eventora Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="border-b border-slate-700/50 bg-slate-900/30 sticky top-0 z-10 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto">

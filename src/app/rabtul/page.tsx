@@ -474,6 +474,29 @@ const ecosystemConnections = [
   },
 ];
 
+
+const controls = [
+  'Core API gateway & orchestration',
+  'Identity management (Nuqta ID / KYC)',
+  'Microservices infrastructure',
+  'Data mesh & inter-app communication',
+  'Developer portal & SDK',
+  'Security & encryption layer',
+  'Multi-tenant architecture',
+  'GCC data residency compliance',
+];
+
+const doesNotOwn = [
+  { item: 'Consumer-facing products', reason: 'Managed by Nuqta, Wasil, etc.' },
+  { item: 'Payment processing', reason: 'Managed by NuqtaPay' },
+  { item: 'Business logic per product', reason: 'Managed by each RTMN product' },
+  { item: 'Content moderation', reason: 'Managed by Majlis' },
+  { item: 'Compliance rules engine', reason: 'Managed by Amana' },
+  { item: 'Government portal connectors', reason: 'Managed by Khedma' },
+  { item: 'Marketing & ads', reason: 'Managed by Adzy' },
+  { item: 'Customer support', reason: 'Managed by each product team' },
+];
+
 export default function RabtulPage() {
   const [expandedSystem, setExpandedSystem] = useState<string | null>('identity');
   const [activeTab, setActiveTab] = useState<'systems' | 'economics' | 'market' | 'deck'>('systems');
@@ -546,6 +569,21 @@ export default function RabtulPage() {
       </div>
 
       {/* ═══════════════ TAB NAVIGATION ═══════════════ */}
+
+      {/* Controls / Does NOT Own */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+            <h3 className="text-lg font-bold text-emerald-400 mb-4 flex items-center gap-2"><CheckCircle className="w-5 h-5" /> What Rabtul Controls</h3>
+            <div className="space-y-2">{controls.map((c, i) => (<div key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300">{c}</span></div>))}</div>
+          </div>
+          <div className="bg-orange-500/5 rounded-xl p-6 border border-orange-500/30">
+            <h3 className="text-lg font-bold text-orange-400 mb-4 flex items-center gap-2"><ArrowRight className="w-5 h-5" /> Does NOT Own</h3>
+            <div className="space-y-2">{doesNotOwn.map((d, i) => (<div key={i} className="flex items-start gap-2"><ArrowRight className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" /><span className="text-sm text-slate-300"><span className="text-white font-medium">{d.item}</span> \u2192 {d.reason}</span></div>))}</div>
+          </div>
+        </div>
+      </div>
+
       <div className="border-b border-slate-700/50 bg-slate-900/30 sticky top-0 z-10 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex gap-0 overflow-x-auto">
