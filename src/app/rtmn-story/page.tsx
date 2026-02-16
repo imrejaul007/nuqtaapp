@@ -69,6 +69,7 @@ const bizApps = [
   { name: 'Tadreeb', arabic: 'تدريب', description: 'Training & certification — skills, courses', icon: GraduationCap, color: 'text-indigo-400', bgColor: 'bg-indigo-500/10', borderColor: 'border-indigo-500/30', href: '/tadreeb' },
   { name: 'Tabib', arabic: 'طبيب', description: 'Healthcare — telemedicine, booking', icon: Stethoscope, color: 'text-rose-300', bgColor: 'bg-rose-400/10', borderColor: 'border-rose-400/30', href: '/tabib' },
   { name: 'Majlis', arabic: 'مجلس', description: 'Community — groups, events, local', icon: Users, color: 'text-cyan-300', bgColor: 'bg-cyan-400/10', borderColor: 'border-cyan-400/30', href: '/majlis' },
+  { name: 'Tamkeen', arabic: 'تمكين', description: 'Business-in-a-Box — register, operate, comply, grow', icon: Rocket, color: 'text-lime-400', bgColor: 'bg-lime-500/10', borderColor: 'border-lime-500/30', href: '/tamkeen' },
 ];
 
 const architectureLayers = [

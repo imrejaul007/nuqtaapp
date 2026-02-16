@@ -321,6 +321,7 @@ const ecosystemCategories = [
       { name: 'NextaBizz', arabic: 'نكستا بيز', status: 'planned', description: 'Business tools - POS, invoicing, payments', icon: Smartphone, timeline: 'Q3 2027' },
       { name: 'Inventora', arabic: 'إنفنتورا', status: 'planned', description: 'Inventory management - stock, orders, alerts', icon: Package, timeline: 'Q3 2027' },
       { name: 'Adzy', arabic: 'أدزي', status: 'planned', description: 'Advertising platform - targeted ads in ecosystem', icon: Megaphone, timeline: 'Q4 2027' },
+      { name: 'Tamkeen', arabic: 'تمكين', status: 'planned', description: 'Business-in-a-Box — register, operate, comply, grow', icon: Rocket, timeline: 'Q3 2027' },
     ]
   },
   {

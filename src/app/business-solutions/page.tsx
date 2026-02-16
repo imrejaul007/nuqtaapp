@@ -916,6 +916,9 @@ export default function BusinessSolutionsPage() {
             <Link href="/khedma" className="inline-flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-xl font-bold hover:bg-orange-500 transition-colors">
               <Briefcase className="w-5 h-5" /> Khedma
             </Link>
+            <Link href="/tamkeen" className="inline-flex items-center gap-2 px-6 py-3 bg-lime-600 text-white rounded-xl font-bold hover:bg-lime-500 transition-colors">
+              <Rocket className="w-5 h-5" /> Tamkeen
+            </Link>
           </div>
         </div>
       </section>

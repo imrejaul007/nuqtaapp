@@ -7,7 +7,7 @@ import {
   Wallet, Coins, Brain, Zap, Target, Globe, ArrowRight, CheckCircle,
   AlertTriangle, Crown, Settings, BarChart3, Truck, Plane, Megaphone,
   CreditCard, Calendar, Package, Server, Eye, ArrowDown, ArrowUp,
-  ChevronDown, ChevronUp, XCircle, Briefcase, TrendingUp, Activity
+  ChevronDown, ChevronUp, XCircle, Briefcase, TrendingUp, Activity, Rocket
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -515,6 +515,7 @@ export default function RTMNGroupPage() {
               { name: 'Eventora', href: '/eventora', color: 'text-violet-400', bg: 'bg-violet-500/10', border: 'border-violet-500/30', icon: Calendar },
               { name: 'Adzy', href: '/adzy', color: 'text-pink-400', bg: 'bg-pink-500/10', border: 'border-pink-500/30', icon: Megaphone },
               { name: 'Rabtul', href: '/rabtul', color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30', icon: Database },
+              { name: 'Tamkeen', href: '/tamkeen', color: 'text-lime-400', bg: 'bg-lime-500/10', border: 'border-lime-500/30', icon: Rocket },
               { name: 'Nuqta Corp', href: '/nuqta-corp', color: 'text-[#c9a227]', bg: 'bg-[#c9a227]/10', border: 'border-[#c9a227]/30', icon: Crown },
               { name: 'RTMN Finance', href: '/rtmn-finance', color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/30', icon: Wallet },
             ].map((item, i) => (
