@@ -64,10 +64,10 @@ const useOfFunds = [
 
 // ─── Financial Projections (Source: ReZ 2026 Financial Model) ────────
 const financials = [
-  { period: 'Month 3', users: '18K', merchants: 200, gmv: '₹1.2 Cr', revenue: '₹6.8L', burn: '₹42L/mo', milestone: 'Bangalore PMF, 3 cities' },
-  { period: 'Month 6', users: '68K', merchants: 750, gmv: '₹7.5 Cr', revenue: '₹42L', burn: '₹55L/mo', milestone: '8 cities, unit economics proven' },
-  { period: 'Month 12', users: '269K', merchants: 3000, gmv: '₹52 Cr', revenue: '₹10 Cr', burn: '₹78L/mo', milestone: '32 cities, Year 1: ₹10 Cr rev' },
-  { period: 'Year 2', users: '1.5M', merchants: 12000, gmv: '₹500 Cr', revenue: '₹153 Cr', burn: '₹1.9 Cr/mo', milestone: '120 cities, Series A raised' },
+  { period: 'Month 3', users: '20K', merchants: 180, gmv: '₹1.2 Cr', revenue: '₹6.8L', burn: '₹16L/mo net', milestone: 'Bangalore PMF, 3 cities' },
+  { period: 'Month 6', users: '72K', merchants: 650, gmv: '₹7.5 Cr', revenue: '₹35L', burn: '₹11L/mo net', milestone: '8 cities, unit economics proven' },
+  { period: 'Month 12', users: '269K', merchants: 3000, gmv: '₹52 Cr', revenue: '₹10 Cr', burn: 'Net +₹73L/mo', milestone: '32 cities, breakeven M8' },
+  { period: 'Year 2', users: '1.5M', merchants: 12000, gmv: '₹500 Cr', revenue: '₹153 Cr', burn: '₹6.1 Cr/mo net', milestone: '120 cities, Series A raised' },
   { period: 'Year 3', users: '5M', merchants: 40000, gmv: '₹2,000 Cr', revenue: '₹602 Cr', burn: 'Profitable', milestone: 'Pan-India, ₹207.5 Cr net profit' },
 ];
 
@@ -1145,8 +1145,8 @@ export default function RezPage() {
                 <div className="space-y-2">
                   {[
                     { label: 'SAFE Raise', value: '$500K (₹4.2 Cr)' },
-                    { label: 'Phase 1 Budget', value: '₹50L (₹8.3L/mo)' },
-                    { label: 'Phase 2 Budget', value: '₹33L (₹11L/mo)' },
+                    { label: 'M1-M6 Net Burn', value: '₹86L (₹14L/mo)' },
+                    { label: 'Breakeven Month', value: 'M8 (net positive)' },
                     { label: 'Year 1 Profit', value: '₹61L (6.07% margin)' },
                     { label: 'Series A Target', value: '$20-30M at $150-250M' },
                   ].map(r => (

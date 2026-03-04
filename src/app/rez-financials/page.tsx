@@ -76,22 +76,23 @@ const defaultAssumptions: Assumptions = {
 
 // ============================================
 // MONTHLY DATA (from ReZ 2026 PDF — 12 months)
-// OpEx Budget = operating costs only (team, marketing, tech)
-// COGS (cashback, payment processing) scales with revenue separately
+// OpEx = team, marketing, BizDev, office, support (ramps ₹15L→₹32L as cities grow)
+// COGS = cashback, payment processing, coin funding (~67-70% of revenue early)
+// Sums verified: Revenue ₹10.04Cr, COGS ₹6.73Cr, OpEx ₹2.70Cr, Net ₹0.61Cr
 // ============================================
 const monthlyBreakdown = [
-  { month: 'M1', newUsers: 4000, totalUsers: 4000, activeUsers: 1200, merchants: 50, cities: 1, revenue: 102000, opex: 833000, cogs: 68000, totalExp: 901000, netPL: -799000 },
-  { month: 'M2', newUsers: 6500, totalUsers: 10310, activeUsers: 3093, merchants: 100, cities: 2, revenue: 318000, opex: 900000, cogs: 213000, totalExp: 1113000, netPL: -795000 },
-  { month: 'M3', newUsers: 9800, totalUsers: 19505, activeUsers: 5851, merchants: 180, cities: 3, revenue: 681000, opex: 950000, cogs: 456000, totalExp: 1406000, netPL: -725000 },
-  { month: 'M4', newUsers: 14200, totalUsers: 32480, activeUsers: 9744, merchants: 300, cities: 5, revenue: 1290000, opex: 1000000, cogs: 864000, totalExp: 1864000, netPL: -574000 },
-  { month: 'M5', newUsers: 19000, totalUsers: 49856, activeUsers: 14957, merchants: 450, cities: 6, revenue: 2180000, opex: 1050000, cogs: 1461000, totalExp: 2511000, netPL: -331000 },
-  { month: 'M6', newUsers: 24500, totalUsers: 71863, activeUsers: 21559, merchants: 650, cities: 8, revenue: 3480000, opex: 1100000, cogs: 2332000, totalExp: 3432000, netPL: 48000 },
-  { month: 'M7', newUsers: 30000, totalUsers: 98270, activeUsers: 29481, merchants: 900, cities: 11, revenue: 5120000, opex: 1100000, cogs: 3277000, totalExp: 4377000, netPL: 743000 },
-  { month: 'M8', newUsers: 35500, totalUsers: 128357, activeUsers: 38507, merchants: 1200, cities: 15, revenue: 7340000, opex: 1100000, cogs: 4698000, totalExp: 5798000, netPL: 1542000 },
-  { month: 'M9', newUsers: 40000, totalUsers: 161939, activeUsers: 48582, merchants: 1550, cities: 19, revenue: 10200000, opex: 1100000, cogs: 6222000, totalExp: 7322000, netPL: 2878000 },
-  { month: 'M10', newUsers: 45000, totalUsers: 198842, activeUsers: 59653, merchants: 1950, cities: 23, revenue: 14800000, opex: 1100000, cogs: 8584000, totalExp: 9684000, netPL: 5116000 },
-  { month: 'M11', newUsers: 50000, totalUsers: 238900, activeUsers: 71670, merchants: 2400, cities: 27, revenue: 21200000, opex: 1100000, cogs: 11660000, totalExp: 12760000, netPL: 8440000 },
-  { month: 'M12', newUsers: 56700, totalUsers: 268550, activeUsers: 80565, merchants: 3000, cities: 32, revenue: 32000000, opex: 1100000, cogs: 16640000, totalExp: 17740000, netPL: 14260000 },
+  { month: 'M1', newUsers: 4000, totalUsers: 4000, activeUsers: 1200, merchants: 50, cities: 1, revenue: 102000, opex: 1500000, cogs: 71000, totalExp: 1571000, netPL: -1469000 },
+  { month: 'M2', newUsers: 6500, totalUsers: 10310, activeUsers: 3093, merchants: 100, cities: 2, revenue: 318000, opex: 1600000, cogs: 219000, totalExp: 1819000, netPL: -1501000 },
+  { month: 'M3', newUsers: 9800, totalUsers: 19505, activeUsers: 5851, merchants: 180, cities: 3, revenue: 681000, opex: 1800000, cogs: 470000, totalExp: 2270000, netPL: -1589000 },
+  { month: 'M4', newUsers: 14200, totalUsers: 32480, activeUsers: 9744, merchants: 300, cities: 5, revenue: 1290000, opex: 2000000, cogs: 877000, totalExp: 2877000, netPL: -1587000 },
+  { month: 'M5', newUsers: 19000, totalUsers: 49856, activeUsers: 14957, merchants: 450, cities: 6, revenue: 2180000, opex: 2100000, cogs: 1482000, totalExp: 3582000, netPL: -1402000 },
+  { month: 'M6', newUsers: 24500, totalUsers: 71863, activeUsers: 21559, merchants: 650, cities: 8, revenue: 3480000, opex: 2200000, cogs: 2366000, totalExp: 4566000, netPL: -1086000 },
+  { month: 'M7', newUsers: 30000, totalUsers: 98270, activeUsers: 29481, merchants: 900, cities: 11, revenue: 5120000, opex: 2300000, cogs: 3430000, totalExp: 5730000, netPL: -610000 },
+  { month: 'M8', newUsers: 35500, totalUsers: 128357, activeUsers: 38507, merchants: 1200, cities: 15, revenue: 7340000, opex: 2400000, cogs: 4918000, totalExp: 7318000, netPL: 22000 },
+  { month: 'M9', newUsers: 40000, totalUsers: 161939, activeUsers: 48582, merchants: 1550, cities: 19, revenue: 10200000, opex: 2500000, cogs: 6834000, totalExp: 9334000, netPL: 866000 },
+  { month: 'M10', newUsers: 45000, totalUsers: 198842, activeUsers: 59653, merchants: 1950, cities: 23, revenue: 15200000, opex: 2600000, cogs: 10032000, totalExp: 12632000, netPL: 2568000 },
+  { month: 'M11', newUsers: 50000, totalUsers: 238900, activeUsers: 71670, merchants: 2400, cities: 27, revenue: 21600000, opex: 2800000, cogs: 14256000, totalExp: 17056000, netPL: 4544000 },
+  { month: 'M12', newUsers: 56700, totalUsers: 268550, activeUsers: 80565, merchants: 3000, cities: 32, revenue: 32889000, opex: 3200000, cogs: 22345000, totalExp: 25545000, netPL: 7344000 },
 ];
 
 // ============================================
