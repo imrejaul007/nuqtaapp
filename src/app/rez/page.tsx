@@ -64,10 +64,10 @@ const useOfFunds = [
 
 // ─── Financial Projections ──────────────────────────────────────────
 const financials = [
-  { period: 'Month 6', users: '25K', merchants: 500, gmv: '₹2.5 Cr', revenue: '₹15L', burn: '₹35L/mo', milestone: 'Product-market fit validated' },
-  { period: 'Month 12', users: '100K', merchants: 2000, gmv: '₹15 Cr', revenue: '₹1 Cr', burn: '₹40L/mo', milestone: 'Unit economics positive' },
-  { period: 'Month 18', users: '300K', merchants: 5000, gmv: '₹60 Cr', revenue: '₹4.5 Cr', burn: '₹50L/mo', milestone: 'Series A ready' },
-  { period: 'Month 24', users: '750K', merchants: 10000, gmv: '₹200 Cr', revenue: '₹15 Cr', burn: '₹60L/mo', milestone: 'Bangalore dominant' },
+  { period: 'Month 6', users: '25K', merchants: 500, gmv: '₹2.5 Cr', revenue: '₹15L', burn: '₹35L/mo', milestone: 'PMF validated (Bangalore)' },
+  { period: 'Month 12', users: '200K', merchants: 5000, gmv: '₹50 Cr', revenue: '₹3.5 Cr', burn: '₹45L/mo', milestone: 'Wave 1 cities launched' },
+  { period: 'Month 18', users: '500K', merchants: 10000, gmv: '₹200 Cr', revenue: '₹15 Cr', burn: '₹60L/mo', milestone: 'Series A raised, 6+ cities' },
+  { period: 'Month 24', users: '1.5M', merchants: 15000, gmv: '₹1,500 Cr', revenue: '₹100 Cr', burn: '₹80L/mo', milestone: 'Pan-India dominant, 10+ cities' },
 ];
 
 // ─── Competitors — Cashback & Rewards Apps ──────────────────────────
@@ -128,8 +128,8 @@ const risks = [
 const milestones = [
   { phase: 'Phase 1: Build', timeline: 'Q2-Q3 2026', items: ['Core app (React Native) — wallet, QR, discovery', 'ReZ OS merchant POS (tablet/phone)', 'UPI integration via Razorpay/Cashfree', 'Onboard 50 pilot merchants (Koramangala, Indiranagar)', '5,000 beta users'], color: 'border-blue-500/50', bg: 'bg-blue-500/10' },
   { phase: 'Phase 2: Validate', timeline: 'Q4 2026', items: ['500 merchants across Bangalore', '25K users with 5K MAU', 'Launch ReZ+ membership (4 tiers)', 'Gamification hub live (badges, streaks)', 'Prove unit economics: LTV > 3x CAC'], color: 'border-emerald-500/50', bg: 'bg-emerald-500/10' },
-  { phase: 'Phase 3: Scale', timeline: 'Q1-Q2 2027', items: ['2,000 merchants, 100K users', 'Bill payments + savings pots', 'AI-R recommendation engine', 'ReZ Ads merchant platform', 'Raise Series A ($3-5M at $25-40M)'], color: 'border-purple-500/50', bg: 'bg-purple-500/10' },
-  { phase: 'Phase 4: Dominate', timeline: 'Q3 2027+', items: ['5,000+ merchants, 300K+ users', 'Expand to 3 more Indian cities', 'Launch delivery (Wasil India)', 'BNPL (Qist India) integration', 'Bridge to Nuqta GCC corridor'], color: 'border-amber-500/50', bg: 'bg-amber-500/10' },
+  { phase: 'Phase 3: Scale', timeline: 'Q1-Q2 2027', items: ['5,000 merchants, 200K users', 'Expand to Mumbai, Delhi, Hyderabad, Pune (Wave 1)', 'Bill payments + savings pots', 'AI-R recommendation engine + ReZ Ads', 'Raise Series A ($3-5M at $25-40M)'], color: 'border-purple-500/50', bg: 'bg-purple-500/10' },
+  { phase: 'Phase 4: Dominate', timeline: 'Q3 2027+', items: ['15,000+ merchants, 750K+ users across 10+ cities', 'Wave 2: Chennai, Kolkata, Ahmedabad, Jaipur, Kochi, Chandigarh', 'Launch delivery (Wasil India) + BNPL (Qist India)', 'Pan-India market dominance', 'Bridge to Nuqta GCC corridor'], color: 'border-amber-500/50', bg: 'bg-amber-500/10' },
 ];
 
 // ─── Comparable Exits ───────────────────────────────────────────────
@@ -238,7 +238,7 @@ export default function RezPage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {['Merchant-First', 'Free OS + Loyalty', 'Bangalore First', 'UPI-Native'].map(tag => (
+              {['Merchant-First', 'Free OS + Loyalty', 'Pan-India in 2 Years', 'UPI-Native'].map(tag => (
                 <span key={tag} className="px-3 py-1 bg-slate-800/50 rounded-full text-xs text-slate-300 border border-slate-700/50">{tag}</span>
               ))}
             </div>
@@ -602,7 +602,7 @@ export default function RezPage() {
               {[
                 { label: 'TAM', value: '$10T', detail: 'India Digital Payments by 2026 (BCG)', color: 'text-purple-400' },
                 { label: 'SAM', value: '$8.88B', detail: 'Cashback & Rewards App Market 2025', color: 'text-blue-400' },
-                { label: 'SOM', value: '₹200 Cr', detail: 'Year 2 ReZ GMV Target (Bangalore)', color: 'text-orange-400' },
+                { label: 'SOM', value: '₹1,500 Cr', detail: 'Year 2 GMV — 10+ Cities Across India', color: 'text-orange-400' },
               ].map(m => (
                 <div key={m.label} className="bg-slate-800/30 rounded-xl p-5 text-center border border-slate-700/50">
                   <div className="text-xs text-slate-400 font-bold">{m.label}</div>
@@ -619,9 +619,9 @@ export default function RezPage() {
                 { stat: '1B', label: 'Daily UPI Target (2027)', icon: TrendingUp },
                 { stat: '65%', label: 'Digital Payments by 2026', icon: Smartphone },
                 { stat: '63M', label: 'SMBs in India', icon: Store },
-                { stat: '8.5M', label: 'Bangalore Population', icon: MapPin },
+                { stat: '1.4B', label: 'India Population', icon: MapPin },
                 { stat: '60%+', label: 'Smartphone Penetration', icon: Globe },
-                { stat: '₹50K-2L', label: 'Avg IT Salary (Bangalore)', icon: DollarSign },
+                { stat: '10+', label: 'Target Cities by Year 2', icon: DollarSign },
               ].map(s => (
                 <div key={s.label} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 flex items-center gap-3">
                   <s.icon className="w-5 h-5 text-purple-400 shrink-0" />
@@ -633,20 +633,37 @@ export default function RezPage() {
               ))}
             </div>
 
-            <div className="bg-purple-500/10 rounded-xl p-6 border border-purple-500/30">
-              <h3 className="text-lg font-bold text-white mb-3">Why Bangalore First?</h3>
-              <div className="grid sm:grid-cols-2 gap-3">
+            <div className="bg-purple-500/10 rounded-xl p-6 border border-purple-500/30 mb-6">
+              <h3 className="text-lg font-bold text-white mb-3">Launch City: Bangalore</h3>
+              <p className="text-sm text-slate-400 mb-3">India&apos;s tech capital — highest ARPU, densest merchant ecosystem, UPI-native population. Perfect to prove the model before scaling nationally.</p>
+              <div className="grid sm:grid-cols-3 gap-3">
                 {[
-                  'India\'s tech capital — highest ARPU per user',
-                  'Dense merchant ecosystem (Koramangala, Indiranagar, HSR)',
-                  'UPI-native population — already scan-and-pay daily',
-                  'Young demographic — avg age 28, high engagement',
-                  'Diverse cuisines & retail — ideal for merchant variety',
-                  '₹50K-2L monthly salaries — can afford ₹499-1,999 membership',
+                  'Highest ARPU per user in India',
+                  'Dense merchant corridors (Koramangala, HSR, Indiranagar)',
+                  'UPI-native — already scan-and-pay daily',
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
                     <span className="text-sm text-slate-300">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30">
+              <h3 className="text-lg font-bold text-white mb-3">2-Year Pan-India Expansion</h3>
+              <p className="text-sm text-slate-400 mb-4">Bangalore proves the model → replicate city-by-city. Target: present in most major Indian cities within 24 months.</p>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[
+                  { phase: 'Q2-Q4 2026', label: 'Launch', cities: 'Bangalore', merchants: '500+', color: 'text-blue-400' },
+                  { phase: 'Q1-Q2 2027', label: 'Wave 1', cities: 'Mumbai, Delhi, Hyderabad, Pune', merchants: '5,000+', color: 'text-emerald-400' },
+                  { phase: 'Q3-Q4 2027', label: 'Wave 2', cities: 'Chennai, Kolkata, Ahmedabad, Jaipur, Kochi, Chandigarh +', merchants: '15,000+', color: 'text-amber-400' },
+                ].map((w, i) => (
+                  <div key={i} className="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
+                    <div className="text-xs text-slate-500">{w.phase}</div>
+                    <div className={`text-sm font-bold ${w.color} mt-1`}>{w.label}</div>
+                    <div className="text-white text-sm font-medium mt-2">{w.cities}</div>
+                    <div className="text-xs text-slate-400 mt-1">{w.merchants} merchants</div>
                   </div>
                 ))}
               </div>
@@ -827,7 +844,7 @@ export default function RezPage() {
             </div>
 
             <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50 text-center">
-              <p className="text-slate-300 text-sm"><strong className="text-white">What $500K buys:</strong> Not a concept — it buys <strong className="text-orange-400">scale for a product that already exists</strong>. From 50 merchants to 2,000. From beta to market dominance.</p>
+              <p className="text-slate-300 text-sm"><strong className="text-white">What $500K buys:</strong> Not a concept — it buys <strong className="text-orange-400">scale for a product that already exists</strong>. From 50 merchants to 5,000+. From Bangalore beta to pan-India expansion.</p>
             </div>
           </div>
         </div>
