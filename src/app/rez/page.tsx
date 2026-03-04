@@ -152,7 +152,7 @@ export default function RezPage() {
     { id: 'problem', label: 'Problem' },
     { id: 'solution', label: 'Solution' },
     { id: 'product', label: 'Product' },
-    { id: 'merchant', label: 'Merchant OS' },
+    { id: 'merchant', label: 'Merchant ROI' },
     { id: 'market', label: 'Market' },
     { id: 'model', label: 'Business Model' },
     { id: 'traction', label: 'Traction' },
@@ -214,11 +214,11 @@ export default function RezPage() {
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-4">
               <span className="text-orange-400">ReZ</span>
             </h1>
-            <p className="text-lg sm:text-xl text-slate-400 mb-2">रेज़ — &quot;Reward Every Zone&quot;</p>
+            <p className="text-lg sm:text-xl text-slate-400 mb-2">रेज़ — The Merchant Growth Engine</p>
             <p className="text-xl sm:text-2xl md:text-3xl text-slate-300 mb-8 max-w-3xl mx-auto">
-              India&apos;s Closed-Loop Cashback + Merchant OS
+              Free Merchant OS + Closed-Loop Loyalty
               <br />
-              <span className="text-orange-400 font-bold">Earn coins on every purchase. Spend them everywhere.</span>
+              <span className="text-orange-400 font-bold">More sales. Lower CAC. Higher AOV. Loyal customers.</span>
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-10">
@@ -237,7 +237,7 @@ export default function RezPage() {
             </div>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {['UPI-Native', 'Closed-Loop', 'Bangalore First', 'Full Merchant OS'].map(tag => (
+              {['Merchant-First', 'Free OS + Loyalty', 'Bangalore First', 'UPI-Native'].map(tag => (
                 <span key={tag} className="px-3 py-1 bg-slate-800/50 rounded-full text-xs text-slate-300 border border-slate-700/50">{tag}</span>
               ))}
             </div>
@@ -256,23 +256,26 @@ export default function RezPage() {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 to-red-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 text-center">
-              The <span className="text-red-400">Problem</span>
+              The <span className="text-red-400">Merchant Problem</span>
             </h2>
-            <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">India has 400M+ UPI users, but zero loyalty. Every payment is a commodity. No one earns anything for spending.</p>
+            <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">India&apos;s 63M merchants are bleeding money on customer acquisition with zero loyalty, zero repeat, and zero tools to fix it.</p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-10">
               {[
-                { icon: Users, stat: '400M+', title: 'UPI Users, Zero Loyalty', desc: 'Indians transact 21B+ times/month via UPI but earn nothing. No cashback, no coins, no rewards. Every payment vanishes into the void.' },
-                { icon: Store, stat: '63M', title: 'SMBs with No Tech', desc: 'India has 63M SMBs. Most use paper registers, WhatsApp for orders, and pay ₹2K+/mo for basic POS software. No CRM, no analytics, no marketing tools.' },
-                { icon: DollarSign, stat: '₹500 Cr+', title: 'Leaked to Google/Meta', desc: 'Small merchants spend on Google Ads and Instagram with zero tracking. Money leaves the ecosystem. No measurable ROI. Pure leakage.' },
-                { icon: Target, stat: '0', title: 'Closed-Loop Players', desc: 'CRED = CC-only (15% of India). MagicPin = manual bills. Paytm/PhonePe = open-loop pipes. Nobody combines rewards + merchant OS + closed-loop.' },
+                { icon: Target, stat: '₹500-2K', title: 'Sky-High CAC', desc: 'Merchants spend ₹500-2,000 per customer on Google & Meta ads with zero tracking. Money leaves the ecosystem. No idea which ad brought which customer. Pure waste.', metric: 'Cost per new customer' },
+                { icon: Heart, stat: '80%', title: 'Customers Never Return', desc: '80% of first-time customers never come back. No loyalty program, no reason to return, no follow-up. Merchants acquire the same customer over and over.', metric: 'First-timers who never return' },
+                { icon: ShoppingBag, stat: 'Flat', title: 'AOV Stuck at Baseline', desc: 'No upselling tools, no membership incentives, no bundle offers, no spend thresholds. Average order value stays flat month after month. Leaving money on the table.', metric: 'Average Order Value growth' },
+                { icon: DollarSign, stat: '₹9K+/mo', title: 'Paying for 6 Disconnected Tools', desc: 'POS (₹2K) + CRM (₹1.2K) + Accounting (₹800) + Google Ads (₹5K+) + WhatsApp + Excel. None of them talk to each other. No single view of the business.', metric: 'Spent on disconnected SaaS' },
               ].map(p => (
                 <div key={p.title} className="bg-slate-800/30 rounded-xl p-6 border border-red-500/20">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center">
                       <p.icon className="w-6 h-6 text-red-400" />
                     </div>
-                    <div className="text-2xl font-black text-red-400">{p.stat}</div>
+                    <div>
+                      <div className="text-2xl font-black text-red-400">{p.stat}</div>
+                      <div className="text-[10px] text-slate-500">{p.metric}</div>
+                    </div>
                   </div>
                   <h3 className="text-white font-bold mb-2">{p.title}</h3>
                   <p className="text-slate-400 text-sm">{p.desc}</p>
@@ -280,9 +283,30 @@ export default function RezPage() {
               ))}
             </div>
 
-            <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/30 text-center">
-              <p className="text-lg text-white font-bold mb-2">The Gap</p>
-              <p className="text-slate-300">India needs a <strong className="text-orange-400">CRED for UPI users</strong> — rewards on every transaction, not just credit card bills — combined with a <strong className="text-emerald-400">free merchant OS</strong> that replaces 6 paid tools.</p>
+            <div className="bg-red-500/10 rounded-xl p-6 border border-red-500/30">
+              <p className="text-lg text-white font-bold mb-3 text-center">The Vicious Cycle</p>
+              <div className="flex flex-wrap items-center justify-center gap-2 text-sm mb-4">
+                {[
+                  { text: 'High CAC', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+                  { text: '→' },
+                  { text: 'Customer visits once', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+                  { text: '→' },
+                  { text: 'No loyalty', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+                  { text: '→' },
+                  { text: 'Never returns', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+                  { text: '→' },
+                  { text: 'Spend more on ads', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+                  { text: '→' },
+                  { text: 'Repeat forever', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+                ].map((step, i) => (
+                  step.color ? (
+                    <span key={i} className={`px-3 py-1.5 rounded-lg border font-medium ${step.color}`}>{step.text}</span>
+                  ) : (
+                    <span key={i} className="text-slate-500 font-bold">{step.text}</span>
+                  )
+                ))}
+              </div>
+              <p className="text-slate-300 text-center text-sm">Merchants need a <strong className="text-orange-400">free OS that brings customers back</strong>, <strong className="text-emerald-400">increases basket size</strong>, and <strong className="text-blue-400">costs nothing</strong>.</p>
             </div>
           </div>
         </div>
@@ -295,50 +319,93 @@ export default function RezPage() {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-emerald-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 text-center">
-              The <span className="text-emerald-400">Solution</span>
+              How ReZ <span className="text-emerald-400">Grows Your Sales</span>
             </h2>
-            <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">ReZ is a closed-loop cashback ecosystem. Users earn coins on every purchase. Merchants get a free business OS. 100% of money stays inside.</p>
+            <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">4 metrics that matter to every merchant — and exactly how ReZ moves each one.</p>
 
-            <div className="grid lg:grid-cols-2 gap-8 mb-10">
-              <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
-                <h3 className="text-xl font-bold text-emerald-400 mb-4 flex items-center gap-2"><Smartphone className="w-5 h-5" /> For Users (ReZ App)</h3>
-                <div className="space-y-3">
-                  {['Scan QR at merchant → earn ReZ Coins instantly', 'Coins auto-apply on next purchase → save money', 'Higher membership tier → earn faster (1.5x - 3x)', 'Pay bills → more coins. Play games → more coins', 'One wallet works across rides, delivery, BNPL, rentals', 'Net result: 10-25% savings on daily spending'].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                      <span className="text-sm text-slate-300">{item}</span>
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              {[
+                {
+                  icon: TrendingUp, color: 'emerald', metric: 'Increase Sales', impact: '+20-35%',
+                  impactLabel: 'monthly revenue',
+                  points: [
+                    'ReZ Coins drive foot traffic — users come TO your store to spend coins',
+                    'Adzy campaigns target nearby users with personalized offers',
+                    'Gamification challenges: "Visit 3 cafes this week → bonus coins"',
+                    'Cross-sell from other ecosystem apps (delivery, rides, bills)',
+                  ],
+                },
+                {
+                  icon: Target, color: 'blue', metric: 'Reduce CAC', impact: '60-70%',
+                  impactLabel: 'lower acquisition cost',
+                  points: [
+                    'Merchant QR at checkout = free user acquisition (₹0 CAC)',
+                    'Every customer refers friends for coins — viral loop built in',
+                    'Adzy replaces Google/Meta: closed-loop, fully tracked, zero leakage',
+                    'Cost drops from ₹500-2,000 → ₹50-150 per new customer',
+                  ],
+                },
+                {
+                  icon: ShoppingBag, color: 'purple', metric: 'Increase AOV', impact: '+15-30%',
+                  impactLabel: 'higher basket size',
+                  points: [
+                    'Membership tiers incentivize bigger orders (2x-3x coin earn rates)',
+                    'Spend thresholds: "Spend ₹500 → earn 2x coins" pushes basket up',
+                    'Upsell prompts at POS: "Add ₹80 more to earn bonus coins"',
+                    'Bundle offers via Adzy — merchant sets combos, ReZ promotes them',
+                  ],
+                },
+                {
+                  icon: Heart, color: 'orange', metric: 'Boost Repeat Rate', impact: '2-3x',
+                  impactLabel: 'more visits per customer',
+                  points: [
+                    'Expiring coins (30/90-day) create urgency to return and spend',
+                    'CRM auto-sends win-back campaigns: "You haven\'t visited in 7 days"',
+                    'Streaks & challenges: "Visit 5 times → unlock Gold badge"',
+                    'Branded Coins lock customers to YOUR store specifically',
+                  ],
+                },
+              ].map(s => (
+                <div key={s.metric} className={`bg-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-500/5 rounded-xl p-6 border border-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-500/30`}>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`w-10 h-10 rounded-xl bg-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-500/10 border border-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-500/30 flex items-center justify-center`}>
+                        <s.icon className={`w-5 h-5 text-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-400`} />
+                      </div>
+                      <h3 className="text-white font-bold">{s.metric}</h3>
                     </div>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-blue-500/5 rounded-xl p-6 border border-blue-500/30">
-                <h3 className="text-xl font-bold text-blue-400 mb-4 flex items-center gap-2"><Store className="w-5 h-5" /> For Merchants (BizOne OS)</h3>
-                <div className="space-y-3">
-                  {['Free POS system (replaces ₹2K/mo Petpooja)', 'Full CRM — customer profiles auto-built', 'Inventory management with low-stock alerts', 'Marketing via Adzy — targeted, measurable, closed-loop', 'Analytics dashboard — revenue, peak hours, top products', 'Net result: 20-40% more repeat customers, 60-70% lower CAC'].map((item, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-                      <span className="text-sm text-slate-300">{item}</span>
+                    <div className="text-right">
+                      <div className={`text-xl font-black text-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-400`}>{s.impact}</div>
+                      <div className="text-[10px] text-slate-500">{s.impactLabel}</div>
                     </div>
-                  ))}
+                  </div>
+                  <div className="space-y-2">
+                    {s.points.map((point, i) => (
+                      <div key={i} className="flex items-start gap-2">
+                        <CheckCircle className={`w-4 h-4 text-${s.color === 'emerald' ? 'emerald' : s.color === 'blue' ? 'blue' : s.color === 'purple' ? 'purple' : 'orange'}-400 shrink-0 mt-0.5`} />
+                        <span className="text-sm text-slate-300">{point}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
 
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-              <h3 className="text-lg font-bold text-white mb-4 text-center">The Closed-Loop Money Flow</h3>
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-emerald-500/30">
+              <h3 className="text-lg font-bold text-white mb-4 text-center">The Virtuous Cycle</h3>
               <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
                 {[
-                  { text: '₹100 spent', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
+                  { text: 'Merchant joins free', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
                   { text: '→' },
-                  { text: '₹80-85 to merchant', color: 'bg-blue-500/20 text-blue-400 border-blue-500/30' },
+                  { text: 'QR at checkout', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
                   { text: '→' },
-                  { text: '₹15-20 commission', color: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' },
+                  { text: 'Customers earn coins', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
                   { text: '→' },
-                  { text: '₹5-10 ReZ Coins back', color: 'bg-amber-500/20 text-amber-400 border-amber-500/30' },
+                  { text: 'Coins expire → return', color: 'bg-orange-500/20 text-orange-400 border-orange-500/30' },
                   { text: '→' },
-                  { text: 'Merchant buys Adzy ads', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
+                  { text: 'More sales + data', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
                   { text: '→' },
-                  { text: '100% stays in ReZ', color: 'bg-red-500/20 text-red-400 border-red-500/30' },
+                  { text: 'Smarter Adzy campaigns', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' },
                 ].map((step, i) => (
                   step.color ? (
                     <span key={i} className={`px-3 py-1.5 rounded-lg border font-medium ${step.color}`}>{step.text}</span>
@@ -347,7 +414,7 @@ export default function RezPage() {
                   )
                 ))}
               </div>
-              <p className="text-center text-slate-500 text-xs mt-4">Zero leakage to Google / Meta / Paytm. Every rupee recirculates.</p>
+              <p className="text-center text-emerald-400 text-xs font-bold mt-4">Every customer who pays → earns coins → comes back. The merchant wins on every loop.</p>
             </div>
           </div>
         </div>
@@ -414,24 +481,80 @@ export default function RezPage() {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-blue-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
-              BizOne: <span className="text-blue-400">Free Merchant OS</span>
+              Merchant <span className="text-blue-400">ROI — Before vs After</span>
             </h2>
-            <p className="text-slate-400 text-center mb-8">222 screens. 10 modules. Replaces 6 paid tools. Free for all ReZ merchants.</p>
+            <p className="text-slate-400 text-center mb-8">Concrete numbers for a typical Bangalore cafe/restaurant using ReZ + BizOne.</p>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
-              {bizOneModules.map(mod => (
-                <div key={mod.name} className="bg-slate-800/30 rounded-xl p-4 border border-slate-700/50">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-white font-bold text-sm">{mod.name}</h3>
-                    <span className="text-xs px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 font-bold">{mod.screens}</span>
-                  </div>
-                  <p className="text-xs text-slate-400">{mod.desc}</p>
+            {/* Before vs After Comparison */}
+            <div className="grid lg:grid-cols-2 gap-6 mb-8">
+              <div className="bg-red-500/5 rounded-xl p-6 border border-red-500/30">
+                <h3 className="text-lg font-bold text-red-400 mb-4 text-center">Before ReZ</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Customers/day', value: '100', icon: Users },
+                    { label: 'Average Order Value', value: '₹350', icon: ShoppingBag },
+                    { label: 'Repeat Rate', value: '15%', icon: Heart },
+                    { label: 'CAC (Google/Meta)', value: '₹1,200', icon: Target },
+                    { label: 'Tools Cost', value: '₹9,000/mo', icon: Settings },
+                    { label: 'Monthly Revenue', value: '₹10.5L', icon: DollarSign },
+                  ].map(item => (
+                    <div key={item.label} className="flex items-center justify-between py-2 border-b border-slate-700/30">
+                      <div className="flex items-center gap-2">
+                        <item.icon className="w-4 h-4 text-red-400" />
+                        <span className="text-sm text-slate-400">{item.label}</span>
+                      </div>
+                      <span className="text-white font-bold">{item.value}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div className="bg-emerald-500/5 rounded-xl p-6 border border-emerald-500/30">
+                <h3 className="text-lg font-bold text-emerald-400 mb-4 text-center">After ReZ (Month 6)</h3>
+                <div className="space-y-3">
+                  {[
+                    { label: 'Customers/day', value: '135', change: '+35%', icon: Users },
+                    { label: 'Average Order Value', value: '₹450', change: '+29%', icon: ShoppingBag },
+                    { label: 'Repeat Rate', value: '45%', change: '3x', icon: Heart },
+                    { label: 'CAC (via ReZ/Adzy)', value: '₹120', change: '-90%', icon: Target },
+                    { label: 'Tools Cost', value: '₹0', change: 'FREE', icon: Settings },
+                    { label: 'Monthly Revenue', value: '₹18.2L', change: '+73%', icon: DollarSign },
+                  ].map(item => (
+                    <div key={item.label} className="flex items-center justify-between py-2 border-b border-slate-700/30">
+                      <div className="flex items-center gap-2">
+                        <item.icon className="w-4 h-4 text-emerald-400" />
+                        <span className="text-sm text-slate-300">{item.label}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-bold">{item.value}</span>
+                        <span className="text-xs px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 font-bold">{item.change}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
+            {/* How Each Metric Moves */}
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-orange-500/30 mb-8">
+              <h3 className="text-lg font-bold text-white mb-4 text-center">How Coins & Loyalty Drive Each Metric</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  { metric: 'Sales +35%', how: 'Coin-holding users actively seek out ReZ merchants. Adzy push notifications drive foot traffic. Nearby users see "₹50 coins at this cafe" on the app.', color: 'text-emerald-400' },
+                  { metric: 'CAC -90%', how: 'QR at checkout = ₹0 acquisition. Each customer refers 2-3 friends for coin bonuses. Adzy campaigns cost 60-70% less than Google with full tracking.', color: 'text-blue-400' },
+                  { metric: 'AOV +29%', how: 'Spend ₹500 → earn 2x coins. Gold/Prive members earn 2-3x, so they order more. POS upsell: "Add ₹80 more for bonus coins." Bundle offers via Adzy.', color: 'text-purple-400' },
+                  { metric: 'Repeat 3x', how: 'Promo Coins expire in 30 days — "use it or lose it." Win-back SMS: "Your ₹120 coins expire in 3 days." Streaks: "5th visit = double coins." Branded Coins lock to your store.', color: 'text-orange-400' },
+                ].map(m => (
+                  <div key={m.metric} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                    <div className={`font-bold text-sm ${m.color} mb-2`}>{m.metric}</div>
+                    <p className="text-xs text-slate-300">{m.how}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* BizOne Replaces */}
             <div className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30 mb-6">
-              <h3 className="text-lg font-bold text-white mb-4">What BizOne Replaces</h3>
+              <h3 className="text-lg font-bold text-white mb-4">BizOne: Free OS That Replaces 6 Paid Tools</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
                   { tool: 'Petpooja / POSist', cost: '₹2,000/mo', module: 'POS System' },
@@ -453,7 +576,7 @@ export default function RezPage() {
                   </div>
                 ))}
               </div>
-              <p className="text-center text-emerald-400 text-sm font-bold mt-4">Merchants save ₹9,000+/month by switching to BizOne</p>
+              <p className="text-center text-emerald-400 text-sm font-bold mt-4">₹9,000+/month saved + ₹7.7L/month MORE revenue = merchant ROI from Day 1</p>
             </div>
 
             <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50 text-center">
