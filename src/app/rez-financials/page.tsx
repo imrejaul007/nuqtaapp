@@ -900,6 +900,116 @@ export default function RezFinancialsPage() {
               </div>
             </div>
 
+            {/* Monthly OpEx Category Breakdown */}
+            <div className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30">
+              <h4 className="text-sm font-bold text-purple-400 mb-3">Monthly OpEx Category Breakdown</h4>
+              <p className="text-xs text-slate-400 mb-3">Fixed/semi-fixed operating costs split by department. Ramps from ₹15L/mo (M1) to ₹32L/mo (M12) as team and cities grow.</p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-[10px]">
+                  <thead className="bg-white/5">
+                    <tr>
+                      <th className="text-left px-2 py-2 text-purple-400 font-semibold">Month</th>
+                      {expenseCategories.filter(c => c.pct >= 8).map(cat => (
+                        <th key={cat.name} className="text-right px-2 py-2 font-semibold whitespace-nowrap" style={{ color: cat.color }}>{cat.name.split(' ')[0]}</th>
+                      ))}
+                      <th className="text-right px-2 py-2 text-slate-400 font-semibold">Other</th>
+                      <th className="text-right px-2 py-2 text-white font-semibold">Total OpEx</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {monthlyBreakdown.map((m) => {
+                      const otherPct = expenseCategories.filter(c => c.pct < 8).reduce((s, c) => s + c.pct, 0);
+                      return (
+                        <tr key={m.month} className="border-t border-white/5 hover:bg-white/5">
+                          <td className="px-2 py-1.5 text-white font-bold">{m.month}</td>
+                          {expenseCategories.filter(c => c.pct >= 8).map(cat => (
+                            <td key={cat.name} className="px-2 py-1.5 text-right text-slate-300">{formatINR(Math.round(m.opex * (cat.pct / 100) * scenarioMult))}</td>
+                          ))}
+                          <td className="px-2 py-1.5 text-right text-slate-500">{formatINR(Math.round(m.opex * (otherPct / 100) * scenarioMult))}</td>
+                          <td className="px-2 py-1.5 text-right text-white font-bold">{formatINR(Math.round(m.opex * scenarioMult))}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                  <tfoot className="bg-white/5 border-t border-white/10">
+                    <tr>
+                      <td className="px-2 py-2 text-white font-bold">Year 1</td>
+                      {expenseCategories.filter(c => c.pct >= 8).map(cat => (
+                        <td key={cat.name} className="px-2 py-2 text-right font-bold" style={{ color: cat.color }}>
+                          {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * (cat.pct / 100) * scenarioMult))}
+                        </td>
+                      ))}
+                      <td className="px-2 py-2 text-right text-slate-500 font-bold">
+                        {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * (expenseCategories.filter(c => c.pct < 8).reduce((s, c) => s + c.pct, 0) / 100) * scenarioMult))}
+                      </td>
+                      <td className="px-2 py-2 text-right text-white font-bold">
+                        {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * scenarioMult))}
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            {/* Monthly COGS Category Breakdown */}
+            <div className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30">
+              <h4 className="text-sm font-bold text-amber-400 mb-3">Monthly COGS Category Breakdown</h4>
+              <p className="text-xs text-slate-400 mb-3">Variable costs that scale with revenue. Cashback is the largest component early on; drops as coin breakage increases.</p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-[10px]">
+                  <thead className="bg-white/5">
+                    <tr>
+                      <th className="text-left px-2 py-2 text-amber-400 font-semibold">Month</th>
+                      <th className="text-right px-2 py-2 text-emerald-400 font-semibold">Revenue</th>
+                      {cogsBreakdown.map(cat => (
+                        <th key={cat.name} className="text-right px-2 py-2 font-semibold whitespace-nowrap" style={{ color: cat.color }}>{cat.name.split(' ')[0]}</th>
+                      ))}
+                      <th className="text-right px-2 py-2 text-red-400 font-semibold">COGS Total</th>
+                      <th className="text-right px-2 py-2 text-slate-400 font-semibold">COGS %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {(() => {
+                      const cogsTotalPct = cogsBreakdown.reduce((s, c) => s + c.pctY1, 0) || 1;
+                      return monthlyBreakdown.map((m) => (
+                        <tr key={m.month} className="border-t border-white/5 hover:bg-white/5">
+                          <td className="px-2 py-1.5 text-white font-bold">{m.month}</td>
+                          <td className="px-2 py-1.5 text-right text-emerald-400">{formatINR(Math.round(m.revenue * scenarioMult))}</td>
+                          {cogsBreakdown.map(cat => (
+                            <td key={cat.name} className="px-2 py-1.5 text-right text-slate-300">
+                              {formatINR(Math.round(m.cogs * (cat.pctY1 / cogsTotalPct) * scenarioMult))}
+                            </td>
+                          ))}
+                          <td className="px-2 py-1.5 text-right text-red-400 font-bold">{formatINR(Math.round(m.cogs * scenarioMult))}</td>
+                          <td className="px-2 py-1.5 text-right text-slate-500">{m.revenue > 0 ? `${((m.cogs / m.revenue) * 100).toFixed(0)}%` : '—'}</td>
+                        </tr>
+                      ));
+                    })()}
+                  </tbody>
+                  <tfoot className="bg-white/5 border-t border-white/10">
+                    {(() => {
+                      const cogsTotalPct = cogsBreakdown.reduce((s, c) => s + c.pctY1, 0) || 1;
+                      const totalRev = monthlyBreakdown.reduce((s, m) => s + m.revenue, 0);
+                      const totalCogs = monthlyBreakdown.reduce((s, m) => s + m.cogs, 0);
+                      return (
+                        <tr>
+                          <td className="px-2 py-2 text-white font-bold">Year 1</td>
+                          <td className="px-2 py-2 text-right text-emerald-400 font-bold">{formatINR(Math.round(totalRev * scenarioMult))}</td>
+                          {cogsBreakdown.map(cat => (
+                            <td key={cat.name} className="px-2 py-2 text-right font-bold" style={{ color: cat.color }}>
+                              {formatINR(Math.round(totalCogs * (cat.pctY1 / cogsTotalPct) * scenarioMult))}
+                            </td>
+                          ))}
+                          <td className="px-2 py-2 text-right text-red-400 font-bold">{formatINR(Math.round(totalCogs * scenarioMult))}</td>
+                          <td className="px-2 py-2 text-right text-slate-400 font-bold">{totalRev > 0 ? `${((totalCogs / totalRev) * 100).toFixed(0)}%` : '—'}</td>
+                        </tr>
+                      );
+                    })()}
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
             {/* Key Month-over-Month Metrics */}
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="bg-white/5 rounded-xl p-5 border border-white/10">
