@@ -76,32 +76,38 @@ const defaultAssumptions: Assumptions = {
 
 // ============================================
 // MONTHLY DATA (from ReZ 2026 PDF — 12 months)
+// OpEx Budget = operating costs only (team, marketing, tech)
+// COGS (cashback, payment processing) scales with revenue separately
 // ============================================
 const monthlyBreakdown = [
-  { month: 'M1', newUsers: 4000, totalUsers: 4000, activeUsers: 1200, merchants: 50, cities: 1, revenue: 102000, expenses: 833000, netPL: -731000 },
-  { month: 'M2', newUsers: 6500, totalUsers: 10310, activeUsers: 3093, merchants: 100, cities: 2, revenue: 318000, expenses: 900000, netPL: -582000 },
-  { month: 'M3', newUsers: 9800, totalUsers: 19505, activeUsers: 5851, merchants: 180, cities: 3, revenue: 681000, expenses: 950000, netPL: -269000 },
-  { month: 'M4', newUsers: 14200, totalUsers: 32480, activeUsers: 9744, merchants: 300, cities: 5, revenue: 1290000, expenses: 1000000, netPL: 290000 },
-  { month: 'M5', newUsers: 19000, totalUsers: 49856, activeUsers: 14957, merchants: 450, cities: 6, revenue: 2180000, expenses: 1050000, netPL: 1130000 },
-  { month: 'M6', newUsers: 24500, totalUsers: 71863, activeUsers: 21559, merchants: 650, cities: 8, revenue: 3480000, expenses: 1100000, netPL: 2380000 },
-  { month: 'M7', newUsers: 30000, totalUsers: 98270, activeUsers: 29481, merchants: 900, cities: 11, revenue: 5120000, expenses: 1100000, netPL: 4020000 },
-  { month: 'M8', newUsers: 35500, totalUsers: 128357, activeUsers: 38507, merchants: 1200, cities: 15, revenue: 7340000, expenses: 1100000, netPL: 6240000 },
-  { month: 'M9', newUsers: 40000, totalUsers: 161939, activeUsers: 48582, merchants: 1550, cities: 19, revenue: 10200000, expenses: 1100000, netPL: 9100000 },
-  { month: 'M10', newUsers: 45000, totalUsers: 198842, activeUsers: 59653, merchants: 1950, cities: 23, revenue: 14800000, expenses: 1100000, netPL: 13700000 },
-  { month: 'M11', newUsers: 50000, totalUsers: 238900, activeUsers: 71670, merchants: 2400, cities: 27, revenue: 21200000, expenses: 1100000, netPL: 20100000 },
-  { month: 'M12', newUsers: 56700, totalUsers: 268550, activeUsers: 80565, merchants: 3000, cities: 32, revenue: 32000000, expenses: 1100000, netPL: 30900000 },
+  { month: 'M1', newUsers: 4000, totalUsers: 4000, activeUsers: 1200, merchants: 50, cities: 1, revenue: 102000, opex: 833000, cogs: 68000, totalExp: 901000, netPL: -799000 },
+  { month: 'M2', newUsers: 6500, totalUsers: 10310, activeUsers: 3093, merchants: 100, cities: 2, revenue: 318000, opex: 900000, cogs: 213000, totalExp: 1113000, netPL: -795000 },
+  { month: 'M3', newUsers: 9800, totalUsers: 19505, activeUsers: 5851, merchants: 180, cities: 3, revenue: 681000, opex: 950000, cogs: 456000, totalExp: 1406000, netPL: -725000 },
+  { month: 'M4', newUsers: 14200, totalUsers: 32480, activeUsers: 9744, merchants: 300, cities: 5, revenue: 1290000, opex: 1000000, cogs: 864000, totalExp: 1864000, netPL: -574000 },
+  { month: 'M5', newUsers: 19000, totalUsers: 49856, activeUsers: 14957, merchants: 450, cities: 6, revenue: 2180000, opex: 1050000, cogs: 1461000, totalExp: 2511000, netPL: -331000 },
+  { month: 'M6', newUsers: 24500, totalUsers: 71863, activeUsers: 21559, merchants: 650, cities: 8, revenue: 3480000, opex: 1100000, cogs: 2332000, totalExp: 3432000, netPL: 48000 },
+  { month: 'M7', newUsers: 30000, totalUsers: 98270, activeUsers: 29481, merchants: 900, cities: 11, revenue: 5120000, opex: 1100000, cogs: 3277000, totalExp: 4377000, netPL: 743000 },
+  { month: 'M8', newUsers: 35500, totalUsers: 128357, activeUsers: 38507, merchants: 1200, cities: 15, revenue: 7340000, opex: 1100000, cogs: 4698000, totalExp: 5798000, netPL: 1542000 },
+  { month: 'M9', newUsers: 40000, totalUsers: 161939, activeUsers: 48582, merchants: 1550, cities: 19, revenue: 10200000, opex: 1100000, cogs: 6222000, totalExp: 7322000, netPL: 2878000 },
+  { month: 'M10', newUsers: 45000, totalUsers: 198842, activeUsers: 59653, merchants: 1950, cities: 23, revenue: 14800000, opex: 1100000, cogs: 8584000, totalExp: 9684000, netPL: 5116000 },
+  { month: 'M11', newUsers: 50000, totalUsers: 238900, activeUsers: 71670, merchants: 2400, cities: 27, revenue: 21200000, opex: 1100000, cogs: 11660000, totalExp: 12760000, netPL: 8440000 },
+  { month: 'M12', newUsers: 56700, totalUsers: 268550, activeUsers: 80565, merchants: 3000, cities: 32, revenue: 32000000, opex: 1100000, cogs: 16640000, totalExp: 17740000, netPL: 14260000 },
 ];
 
 // ============================================
-// INCOME STATEMENT (3-year from PDF)
+// INCOME STATEMENT (3-year — corrected with COGS/OpEx split)
 // ============================================
 const incomeStatementData = [
   {
     year: 'Year 1',
     revenue: 100400000,
-    expenses: 94300000,
-    netProfit: 4300000,
-    margin: 4.24,
+    cogs: 67300000,         // 67% — cashback 40%, payment processing 12%, coin funding 15%
+    grossProfit: 33100000,
+    grossMargin: 33,
+    opex: 27000000,         // Team, marketing budget, tech ops (scales with city expansion)
+    totalExpenses: 94300000,
+    netProfit: 6100000,
+    margin: 6.07,
     valuation: 23600000,
     users: 268550,
     merchants: 3000,
@@ -109,11 +115,16 @@ const incomeStatementData = [
     arpu: 5814,
     downloads: 268550,
     mau: 80565,
+    blendedCac: 76,
   },
   {
     year: 'Year 2',
     revenue: 1534000000,
-    expenses: 2263000000,
+    cogs: 844000000,        // 55% — cashback reduces to 30%, processing scales, breakage starts
+    grossProfit: 690000000,
+    grossMargin: 45,
+    opex: 1419000000,       // Massive expansion: 120 cities, 500+ hires, metro marketing blitz
+    totalExpenses: 2263000000,
     netProfit: -729000000,
     margin: -47.55,
     valuation: 180400000,
@@ -123,13 +134,18 @@ const incomeStatementData = [
     arpu: 12780,
     downloads: 1500000,
     mau: 450000,
+    blendedCac: 150,
   },
   {
     year: 'Year 3',
     revenue: 6018000000,
-    expenses: 3943000000,
-    netProfit: 1432000000,
-    margin: 23.92,
+    cogs: 2709000000,       // 45% — coin breakage 20%, lower cashback 25%, payment rates improve
+    grossProfit: 3309000000,
+    grossMargin: 55,
+    opex: 1234000000,       // Ops efficient: cities mature, CAC improves with brand
+    totalExpenses: 3943000000,
+    netProfit: 2075000000,
+    margin: 34.5,
     valuation: 701300000,
     users: 5000000,
     merchants: 40000,
@@ -137,11 +153,22 @@ const incomeStatementData = [
     arpu: 15045,
     downloads: 5000000,
     mau: 1500000,
+    blendedCac: 250,
   },
 ];
 
 // ============================================
-// EXPENSE BREAKDOWN
+// COGS BREAKDOWN (Variable costs that scale with revenue/GMV)
+// ============================================
+const cogsBreakdown = [
+  { name: 'Cashback Rewards', pctY1: 40, pctY3: 25, color: '#f59e0b', desc: 'ReZ Coins earned by users — funded from merchant commission. Drops as coin breakage increases.' },
+  { name: 'Payment Processing', pctY1: 12, pctY3: 8, color: '#3b82f6', desc: 'UPI processing fees via Razorpay/Cashfree. Rates improve with volume.' },
+  { name: 'Coin Funding & Promos', pctY1: 15, pctY3: 5, color: '#a855f7', desc: 'Promo coin minting for campaigns, branded coins. Reduces as organic engagement grows.' },
+  { name: 'Platform/Infra Costs', pctY1: 0, pctY3: 7, color: '#06b6d4', desc: 'Cloud, CDN, APIs — near zero early, scales with millions of users.' },
+];
+
+// ============================================
+// OpEx BREAKDOWN (Fixed/semi-fixed operating costs)
 // ============================================
 const expenseCategories = [
   { name: 'Marketing & Ads', pct: 36, color: '#a855f7', desc: 'Paid ads (Meta/Google), influencer campaigns, referral rewards' },
@@ -151,6 +178,16 @@ const expenseCategories = [
   { name: 'Customer Support', pct: 8, color: '#06b6d4', desc: 'Support team, tools, escalation management' },
   { name: 'Rent & Office', pct: 8, color: '#ec4899', desc: 'Bangalore HQ, co-working for satellite offices' },
   { name: 'Buffer', pct: 1, color: '#64748b', desc: 'Contingency and unexpected costs' },
+];
+
+// ============================================
+// CAC ESCALATION CURVE (realistic at-scale projections)
+// ============================================
+const cacCurve = [
+  { period: 'M1-M6', cac: 76, channels: 'Campus, WhatsApp, ASO, merchant referrals', note: 'Cheapest organic channels available' },
+  { period: 'M7-M12', cac: 95, channels: 'Adding Meta/Google paid, influencers', note: 'Organic channels start saturating' },
+  { period: 'Year 2', cac: 150, channels: 'Mostly paid at scale, brand campaigns', note: 'Cheap channels fully saturated, 120 cities' },
+  { period: 'Year 3', cac: 250, channels: 'National brand, TV/OOH, heavy digital', note: 'Offset by higher LTV from more revenue streams' },
 ];
 
 // ============================================
@@ -460,7 +497,7 @@ export default function RezFinancialsPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-400 text-sm">Expenses</span>
-                      <span className="text-red-400 font-bold">{formatINR(Math.round(yr.expenses * scenarioMult))}</span>
+                      <span className="text-red-400 font-bold">{formatINR(Math.round(yr.totalExpenses * scenarioMult))}</span>
                     </div>
                     <div className="border-t border-white/10 pt-2 flex justify-between">
                       <span className="text-slate-400 text-sm">Net Profit</span>
@@ -764,7 +801,7 @@ export default function RezFinancialsPage() {
                 <Calendar size={18} /> 12-Month Detailed Breakdown
               </p>
               <p className="text-slate-300 text-sm mt-1">
-                Source: ReZ 2026 Financial Model. Month-by-month user growth, revenue, and city expansion.
+                Revenue, COGS (cashback + processing), and OpEx (team + marketing) shown separately. Net P&L = Revenue - COGS - OpEx.
               </p>
             </div>
 
@@ -774,23 +811,24 @@ export default function RezFinancialsPage() {
                 <table className="w-full text-sm">
                   <thead className="bg-white/5">
                     <tr>
-                      {['Month', 'New Users', 'Total Users', 'Active', 'Merchants', 'Cities', 'Revenue', 'Expenses', 'Net P&L'].map(h => (
-                        <th key={h} className="text-left px-3 py-3 text-orange-400 font-semibold whitespace-nowrap text-xs">{h}</th>
+                      {['Month', 'New Users', 'Total', 'MAU', 'Cities', 'Revenue', 'COGS', 'OpEx', 'Total Exp', 'Net P&L'].map(h => (
+                        <th key={h} className="text-left px-2 py-3 text-orange-400 font-semibold whitespace-nowrap text-xs">{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {monthlyBreakdown.map((m) => (
                       <tr key={m.month} className="border-t border-white/5 hover:bg-white/5 transition-colors">
-                        <td className="px-3 py-2.5 text-white font-bold">{m.month}</td>
-                        <td className="px-3 py-2.5 text-slate-300">{formatNum(Math.round(m.newUsers * scenarioMult))}</td>
-                        <td className="px-3 py-2.5 text-blue-400 font-bold">{formatNum(Math.round(m.totalUsers * scenarioMult))}</td>
-                        <td className="px-3 py-2.5 text-slate-300">{formatNum(Math.round(m.activeUsers * scenarioMult))}</td>
-                        <td className="px-3 py-2.5 text-purple-400">{formatNum(Math.round(m.merchants * scenarioMult))}</td>
-                        <td className="px-3 py-2.5 text-cyan-400">{m.cities}</td>
-                        <td className="px-3 py-2.5 text-emerald-400 font-bold">{formatINR(Math.round(m.revenue * scenarioMult))}</td>
-                        <td className="px-3 py-2.5 text-red-400">{formatINR(Math.round(m.expenses * scenarioMult))}</td>
-                        <td className={`px-3 py-2.5 font-bold ${m.netPL >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
+                        <td className="px-2 py-2.5 text-white font-bold">{m.month}</td>
+                        <td className="px-2 py-2.5 text-slate-300 text-xs">{formatNum(Math.round(m.newUsers * scenarioMult))}</td>
+                        <td className="px-2 py-2.5 text-blue-400 font-bold text-xs">{formatNum(Math.round(m.totalUsers * scenarioMult))}</td>
+                        <td className="px-2 py-2.5 text-slate-300 text-xs">{formatNum(Math.round(m.activeUsers * scenarioMult))}</td>
+                        <td className="px-2 py-2.5 text-cyan-400 text-xs">{m.cities}</td>
+                        <td className="px-2 py-2.5 text-emerald-400 font-bold text-xs">{formatINR(Math.round(m.revenue * scenarioMult))}</td>
+                        <td className="px-2 py-2.5 text-amber-400 text-xs">{formatINR(Math.round(m.cogs * scenarioMult))}</td>
+                        <td className="px-2 py-2.5 text-slate-400 text-xs">{formatINR(Math.round(m.opex * scenarioMult))}</td>
+                        <td className="px-2 py-2.5 text-red-400 text-xs">{formatINR(Math.round(m.totalExp * scenarioMult))}</td>
+                        <td className={`px-2 py-2.5 font-bold text-xs ${m.netPL >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
                           {formatINR(Math.round(m.netPL * scenarioMult))}
                         </td>
                       </tr>
@@ -798,17 +836,65 @@ export default function RezFinancialsPage() {
                   </tbody>
                   <tfoot className="bg-white/5 border-t border-white/10">
                     <tr>
-                      <td className="px-3 py-3 text-white font-bold">Year 1</td>
-                      <td className="px-3 py-3 text-slate-300 font-bold">{formatNum(Math.round(monthlyBreakdown.reduce((s, m) => s + m.newUsers, 0) * scenarioMult))}</td>
-                      <td className="px-3 py-3 text-blue-400 font-bold">{formatNum(Math.round(monthlyBreakdown[11].totalUsers * scenarioMult))}</td>
-                      <td className="px-3 py-3 text-slate-300 font-bold">{formatNum(Math.round(monthlyBreakdown[11].activeUsers * scenarioMult))}</td>
-                      <td className="px-3 py-3 text-purple-400 font-bold">{formatNum(Math.round(monthlyBreakdown[11].merchants * scenarioMult))}</td>
-                      <td className="px-3 py-3 text-cyan-400 font-bold">{monthlyBreakdown[11].cities}</td>
-                      <td className="px-3 py-3 text-emerald-400 font-bold">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.revenue, 0) * scenarioMult))}</td>
-                      <td className="px-3 py-3 text-red-400 font-bold">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.expenses, 0) * scenarioMult))}</td>
-                      <td className="px-3 py-3 text-emerald-400 font-bold">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.netPL, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-white font-bold">Year 1</td>
+                      <td className="px-2 py-3 text-slate-300 font-bold text-xs">{formatNum(Math.round(monthlyBreakdown.reduce((s, m) => s + m.newUsers, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-blue-400 font-bold text-xs">{formatNum(Math.round(monthlyBreakdown[11].totalUsers * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-slate-300 font-bold text-xs">{formatNum(Math.round(monthlyBreakdown[11].activeUsers * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-cyan-400 font-bold text-xs">{monthlyBreakdown[11].cities}</td>
+                      <td className="px-2 py-3 text-emerald-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.revenue, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-amber-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.cogs, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-slate-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-red-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.totalExp, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-emerald-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.netPL, 0) * scenarioMult))}</td>
                     </tr>
                   </tfoot>
+                </table>
+              </div>
+            </div>
+
+            {/* COGS Explanation */}
+            <div className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30">
+              <h4 className="text-sm font-bold text-amber-400 mb-3">COGS Breakdown (Variable Costs)</h4>
+              <p className="text-xs text-slate-400 mb-3">These costs scale with revenue/GMV. Early months have high COGS % due to cashback subsidies; it drops as coin breakage increases and payment rates improve.</p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {cogsBreakdown.map(c => (
+                  <div key={c.name} className="bg-white/5 rounded-lg p-3">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: c.color }} />
+                      <span className="text-white text-xs font-bold">{c.name}</span>
+                    </div>
+                    <div className="flex justify-between text-[10px] text-slate-400 mb-1">
+                      <span>Year 1: {c.pctY1}%</span>
+                      <span>Year 3: {c.pctY3}%</span>
+                    </div>
+                    <p className="text-[10px] text-slate-500">{c.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CAC Escalation */}
+            <div className="bg-red-500/10 rounded-xl p-5 border border-red-500/30">
+              <h4 className="text-sm font-bold text-red-400 mb-3">CAC Escalation Curve (Realistic at Scale)</h4>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead>
+                    <tr className="border-b border-white/10">
+                      {['Period', 'Blended CAC', 'Primary Channels', 'Note'].map(h => (
+                        <th key={h} className="text-left px-3 py-2 text-red-400 font-semibold">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cacCurve.map(c => (
+                      <tr key={c.period} className="border-t border-white/5">
+                        <td className="px-3 py-2 text-white font-bold">{c.period}</td>
+                        <td className="px-3 py-2 text-orange-400 font-bold">₹{c.cac}</td>
+                        <td className="px-3 py-2 text-slate-300">{c.channels}</td>
+                        <td className="px-3 py-2 text-slate-500">{c.note}</td>
+                      </tr>
+                    ))}
+                  </tbody>
                 </table>
               </div>
             </div>
@@ -875,10 +961,10 @@ export default function RezFinancialsPage() {
           <div className="space-y-6">
             <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-xl p-4">
               <p className="text-emerald-400 font-bold flex items-center gap-2">
-                <DollarSign size={18} /> 3-Year Profit & Loss Statement
+                <DollarSign size={18} /> 3-Year P&L with COGS / OpEx Split
               </p>
               <p className="text-slate-300 text-sm mt-1">
-                Year 1: Profitable at 4.24%. Year 2: Heavy investment (120 cities). Year 3: ₹143 Cr profit at 23.9%.
+                COGS = cashback + payment processing + coin funding. OpEx = team + marketing + city expansion. Year 2 loss funded by $20-30M Series A.
               </p>
             </div>
 
@@ -902,9 +988,21 @@ export default function RezFinancialsPage() {
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
-                      <td className="px-4 py-3 text-slate-300">Total Expenses</td>
+                      <td className="px-4 py-3 text-amber-400">(-) COGS (Variable)</td>
                       {incomeStatementData.map(yr => (
-                        <td key={yr.year} className="px-4 py-3 text-right text-red-400">{formatINR(Math.round(yr.expenses * scenarioMult))}</td>
+                        <td key={yr.year} className="px-4 py-3 text-right text-amber-400">{formatINR(Math.round(yr.cogs * scenarioMult))}</td>
+                      ))}
+                    </tr>
+                    <tr className="border-t border-white/10 bg-emerald-500/5">
+                      <td className="px-4 py-3 text-white font-bold">Gross Profit</td>
+                      {incomeStatementData.map(yr => (
+                        <td key={yr.year} className="px-4 py-3 text-right text-emerald-400 font-bold">{formatINR(Math.round(yr.grossProfit * scenarioMult))} <span className="text-[10px] text-slate-500">({yr.grossMargin}%)</span></td>
+                      ))}
+                    </tr>
+                    <tr className="border-t border-white/5">
+                      <td className="px-4 py-3 text-slate-300">(-) OpEx (Fixed/Semi-Fixed)</td>
+                      {incomeStatementData.map(yr => (
+                        <td key={yr.year} className="px-4 py-3 text-right text-red-400">{formatINR(Math.round(yr.opex * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/10 bg-white/5">
@@ -923,16 +1021,16 @@ export default function RezFinancialsPage() {
                         </td>
                       ))}
                     </tr>
+                    <tr className="border-t border-white/5">
+                      <td className="px-4 py-3 text-slate-300">Blended CAC</td>
+                      {incomeStatementData.map(yr => (
+                        <td key={yr.year} className="px-4 py-3 text-right text-orange-400 font-bold">₹{yr.blendedCac}</td>
+                      ))}
+                    </tr>
                     <tr className="border-t border-white/10 bg-white/5">
                       <td className="px-4 py-3 text-white font-bold">Implied Valuation</td>
                       {incomeStatementData.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-amber-400 font-bold">{formatUSD(Math.round(yr.valuation * scenarioMult))}</td>
-                      ))}
-                    </tr>
-                    <tr className="border-t border-white/5">
-                      <td className="px-4 py-3 text-slate-300">Total Downloads</td>
-                      {incomeStatementData.map(yr => (
-                        <td key={yr.year} className="px-4 py-3 text-right text-blue-400">{formatNum(Math.round(yr.downloads * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
@@ -980,7 +1078,7 @@ export default function RezFinancialsPage() {
                       {incomeStatementData.map(yr => (
                         <div key={yr.year} className="flex justify-between text-xs">
                           <span className="text-slate-500">{yr.year}</span>
-                          <span className="text-slate-300">{formatINR(Math.round(yr.expenses * (cat.pct / 100) * scenarioMult))}</span>
+                          <span className="text-slate-300">{formatINR(Math.round(yr.opex * (cat.pct / 100) * scenarioMult))}</span>
                         </div>
                       ))}
                     </div>

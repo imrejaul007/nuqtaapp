@@ -68,14 +68,14 @@ const financials = [
   { period: 'Month 6', users: '68K', merchants: 750, gmv: '₹7.5 Cr', revenue: '₹42L', burn: '₹55L/mo', milestone: '8 cities, unit economics proven' },
   { period: 'Month 12', users: '269K', merchants: 3000, gmv: '₹52 Cr', revenue: '₹10 Cr', burn: '₹78L/mo', milestone: '32 cities, Year 1: ₹10 Cr rev' },
   { period: 'Year 2', users: '1.5M', merchants: 12000, gmv: '₹500 Cr', revenue: '₹153 Cr', burn: '₹1.9 Cr/mo', milestone: '120 cities, Series A raised' },
-  { period: 'Year 3', users: '5M', merchants: 40000, gmv: '₹2,000 Cr', revenue: '₹600 Cr', burn: 'Profitable', milestone: 'Pan-India, ₹140 Cr net profit' },
+  { period: 'Year 3', users: '5M', merchants: 40000, gmv: '₹2,000 Cr', revenue: '₹602 Cr', burn: 'Profitable', milestone: 'Pan-India, ₹207.5 Cr net profit' },
 ];
 
 // ─── Income Statement Summary (Source: ReZ 2026 Financial Model) ────
 const incomeStatement = [
-  { year: 'Year 1', revenue: '₹10.04 Cr', expenses: '₹9.43 Cr', netProfit: '₹0.43 Cr', margin: '4.24%', valuation: '$23.6M' },
-  { year: 'Year 2', revenue: '₹153 Cr', expenses: '₹229 Cr', netProfit: '-₹72.9 Cr', margin: '-47.6%', valuation: '$180M' },
-  { year: 'Year 3', revenue: '₹600 Cr', expenses: '₹394 Cr', netProfit: '₹143 Cr', margin: '23.9%', valuation: '$701M' },
+  { year: 'Year 1', revenue: '₹10.04 Cr', expenses: '₹9.43 Cr', netProfit: '₹0.61 Cr', margin: '6.07%', valuation: '$23.6M' },
+  { year: 'Year 2', revenue: '₹153.4 Cr', expenses: '₹226.3 Cr', netProfit: '-₹72.9 Cr', margin: '-47.6%', valuation: '$180M' },
+  { year: 'Year 3', revenue: '₹601.8 Cr', expenses: '₹394.3 Cr', netProfit: '₹207.5 Cr', margin: '34.5%', valuation: '$701M' },
 ];
 
 // ─── Expense Breakdown ──────────────────────────────────────────────
@@ -147,7 +147,7 @@ const risks = [
 const milestones = [
   { phase: 'Phase 1: Build', timeline: 'Q2-Q3 2026', items: ['Core app (React Native) — wallet, QR, discovery', 'ReZ OS merchant POS (tablet/phone)', 'UPI integration via Razorpay/Cashfree', 'Onboard 50 pilot merchants (Koramangala, Indiranagar)', '5,000 beta users'], color: 'border-blue-500/50', bg: 'bg-blue-500/10' },
   { phase: 'Phase 2: Validate', timeline: 'Q4 2026', items: ['500 merchants across Bangalore', '25K users with 5K MAU', 'Launch ReZ+ membership (4 tiers)', 'Gamification hub live (badges, streaks)', 'Prove unit economics: LTV > 3x CAC'], color: 'border-emerald-500/50', bg: 'bg-emerald-500/10' },
-  { phase: 'Phase 3: Scale', timeline: 'Q1-Q2 2027', items: ['5,000 merchants, 200K users', 'Expand to Mumbai, Delhi, Hyderabad, Pune (Wave 1)', 'Bill payments + savings pots', 'AI-R recommendation engine + ReZ Ads', 'Raise Series A ($3-5M at $25-40M)'], color: 'border-purple-500/50', bg: 'bg-purple-500/10' },
+  { phase: 'Phase 3: Scale', timeline: 'Q1-Q2 2027', items: ['5,000 merchants, 200K users', 'Expand to Mumbai, Delhi, Hyderabad, Pune (Wave 1)', 'Bill payments + savings pots', 'AI-R recommendation engine + ReZ Ads', 'Raise Series A ($20-30M at $150-250M)'], color: 'border-purple-500/50', bg: 'bg-purple-500/10' },
   { phase: 'Phase 4: Dominate', timeline: 'Q3 2027+', items: ['15,000+ merchants, 750K+ users across 10+ cities', 'Wave 2: Chennai, Kolkata, Ahmedabad, Jaipur, Kochi, Chandigarh', 'Launch delivery (Wasil India) + BNPL (Qist India)', 'Pan-India market dominance', 'Bridge to Nuqta GCC corridor'], color: 'border-amber-500/50', bg: 'bg-amber-500/10' },
 ];
 
@@ -1147,8 +1147,8 @@ export default function RezPage() {
                     { label: 'SAFE Raise', value: '$500K (₹4.2 Cr)' },
                     { label: 'Phase 1 Budget', value: '₹50L (₹8.3L/mo)' },
                     { label: 'Phase 2 Budget', value: '₹33L (₹11L/mo)' },
-                    { label: 'Year 1 Profit', value: '₹43L (4.24% margin)' },
-                    { label: 'Series A Target', value: '$3-5M at $25-40M' },
+                    { label: 'Year 1 Profit', value: '₹61L (6.07% margin)' },
+                    { label: 'Series A Target', value: '$20-30M at $150-250M' },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between py-0.5">
                       <span className="text-slate-400 text-xs">{r.label}</span>
@@ -1296,7 +1296,7 @@ export default function RezPage() {
                 {[
                   { point: 'Month 6', decision: 'PMF validated?', action: 'If yes → accelerate merchant acquisition. If no → pivot offer mechanics.' },
                   { point: 'Month 12', decision: 'Unit economics work?', action: 'If yes → begin Series A prep. If no → reduce burn, focus on contribution margin.' },
-                  { point: 'Month 18', decision: 'Scale or bridge?', action: 'If metrics hit → raise Series A ($3-5M). If close → raise bridge ($500K-1M).' },
+                  { point: 'Month 18', decision: 'Scale or bridge?', action: 'If metrics hit → raise Series A ($20-30M). If close → raise bridge ($2-5M).' },
                 ].map(d => (
                   <div key={d.point} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
                     <div className="text-purple-400 font-bold text-sm">{d.point}</div>
