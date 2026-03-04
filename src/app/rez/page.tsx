@@ -35,17 +35,17 @@ const coreFeatures = [
   { id: 'ai', title: 'AI-R Assistant', icon: Bot, color: 'text-cyan-400', desc: 'AI-powered recommendations, spending insights, budget optimization, and smart offer alerts.', details: ['Personalized merchant recommendations', 'Spending insights: "You spent 40% more on dining"', 'Smart coupon and offer suggestions', 'NLP queries: "Best coffee deal near me?"'] },
   { id: 'bills', title: 'Bill Payments', icon: CreditCard, color: 'text-teal-400', desc: 'Pay electricity, mobile, broadband, DTH — earn ReZ Coins on every bill. 50+ biller integrations.', details: ['Jio, Airtel, BSNL, Vi recharge', 'BESCOM, BWSSB, Bangalore utilities', 'DTH, broadband, FASTag top-up', 'Auto-pay scheduling with reminders'] },
   { id: 'savings', title: 'Savings Pots', icon: PiggyBank, color: 'text-green-400', desc: 'Goal-based savings with round-ups, auto-save, and milestone rewards.', details: ['Named pots: Rent, Travel, Emergency, Gadget', 'Round-up: ₹147 purchase → ₹3 auto-saved', 'Auto-save: weekly or monthly transfers', 'Milestone rewards: bonus coins on hitting goals'] },
-  { id: 'ecosystem', title: 'Cross-Ecosystem Access', icon: Globe, color: 'text-pink-400', desc: 'One ReZ account connects to BizOne, delivery, rides, BNPL, rentals, travel — coins work everywhere.', details: ['Single sign-on across all ecosystem apps', 'Unified coin balance usable everywhere', 'Cross-app referral bonuses', 'Deep-linking between services'] },
+  { id: 'ecosystem', title: 'Cross-Ecosystem Access', icon: Globe, color: 'text-pink-400', desc: 'One ReZ account connects to ReZ OS, delivery, rides, BNPL, rentals, travel — coins work everywhere.', details: ['Single sign-on across all ecosystem apps', 'Unified coin balance usable everywhere', 'Cross-app referral bonuses', 'Deep-linking between services'] },
   { id: 'rewards', title: 'Rewards Engine', icon: Gift, color: 'text-yellow-400', desc: 'Dynamic rewards: personalized offers, flash deals, surprise drops, and referral bonuses.', details: ['ML-personalized offer feed', 'Flash deals with time-limited multipliers', 'Surprise & delight: random bonus drops', 'Referral rewards: invite friends → both earn'] },
 ];
 
-// ─── BizOne Merchant OS Modules ─────────────────────────────────────
+// ─── ReZ OS Merchant OS Modules ─────────────────────────────────────
 const bizOneModules = [
   { name: 'POS System', screens: 28, desc: 'Tablet/phone POS, QR generation, split payments, UPI, offline mode' },
   { name: 'Inventory', screens: 35, desc: 'Real-time stock, low-stock alerts, barcode scanning, supplier management' },
   { name: 'Order Management', screens: 25, desc: 'Order queue, status tracking, Swiggy/Zomato sync, delivery dispatch' },
   { name: 'CRM', screens: 20, desc: 'Auto-built customer profiles, segmentation, win-back campaigns' },
-  { name: 'Marketing (Adzy)', screens: 22, desc: 'Zero-leakage ads, targeted offers, campaign analytics, full funnel tracking' },
+  { name: 'Marketing Engine', screens: 22, desc: 'Zero-leakage ads, targeted offers, campaign analytics, full funnel tracking' },
   { name: 'Analytics', screens: 18, desc: 'Real-time revenue, peak hours heatmap, product performance, forecasting' },
   { name: 'Financial', screens: 20, desc: 'Daily settlements, GST reports, Tally/Zoho integration, P&L generation' },
   { name: 'Staff', screens: 15, desc: 'Roles, shifts, performance tracking, attendance, permission controls' },
@@ -73,7 +73,7 @@ const financials = [
 // ─── Competitors — Cashback & Rewards Apps ──────────────────────────
 const rewardsCompetitors = [
   { name: 'CRED', val: '$3.5B', users: '13M', type: 'CC Rewards', focus: 'Credit card bill rewards for high-credit-score users (750+). Expanding into lending, UPI, wealth management.', weakness: 'CC-only (15% of India have CC), invite-only, no merchant OS, no closed-loop coins, no offline QR', rezEdge: 'ReZ serves ALL UPI users (400M+), not just CC elite. Closed-loop coins + merchant OS.' },
-  { name: 'MagicPin', val: '$200M+', users: '10M', type: 'Bill Upload', focus: 'Upload bill photos → earn MagicPoints. Local merchant discovery, ONDC delivery. IPO-bound 2025-26.', weakness: 'Manual bill upload (not real-time), no POS/merchant OS, no wallet, no UPI integration, no coin types', rezEdge: 'Real-time QR → instant coins. Full BizOne merchant OS. 4 coin types with smart debit.' },
+  { name: 'MagicPin', val: '$200M+', users: '10M', type: 'Bill Upload', focus: 'Upload bill photos → earn MagicPoints. Local merchant discovery, ONDC delivery. IPO-bound 2025-26.', weakness: 'Manual bill upload (not real-time), no POS/merchant OS, no wallet, no UPI integration, no coin types', rezEdge: 'Real-time QR → instant coins. Full ReZ OS merchant OS. 4 coin types with smart debit.' },
   { name: 'Wyld', val: '₹50 Cr', users: '100K+', type: 'Social Currency', focus: 'Social currency card — cashback based on Instagram followers (30-100%). 1000+ brand partners. Shark Tank funded.', weakness: 'Requires 1000+ IG followers, niche audience (nano-influencers), no merchant OS, no wallet, no bills', rezEdge: 'ReZ is for everyone, not just influencers. No social media required. Full ecosystem.' },
   { name: 'Cherry', val: 'Early', users: '10K+', type: 'Creator Rewards', focus: 'Buy products, post on social media, get cashback to bank account. Influencer network for brands.', weakness: 'Creator-only (tiny TAM), no merchant tools, no wallet, no UPI, revenue ₹78K/yr, very early', rezEdge: 'ReZ covers all consumers + all merchants. 7 revenue streams vs 1.' },
   { name: 'SaveSage', val: '~$10M', users: '200K+', type: 'CC Points Manager', focus: 'AI credit card assistant — manage points, miles, redemption guidance. Gift cards across 250+ brands. Shark Tank ₹4 Cr deal.', weakness: 'CC-only (same 15% TAM as CRED), no merchant side, no closed-loop, advisory not transactional', rezEdge: 'ReZ is transactional, not advisory. Earn coins on every purchase, not just CC optimization.' },
@@ -89,10 +89,10 @@ const paymentCompetitors = [
 
 // ─── Competitors — Merchant Tools ───────────────────────────────────
 const merchantCompetitors = [
-  { name: 'Petpooja', val: '$50M+', users: '100K+ restaurants', type: 'Restaurant POS', focus: 'Leading restaurant POS — billing, KOT, inventory, Swiggy/Zomato integration. ₹10K/year.', weakness: 'Restaurant-only, paid (₹2K/mo+), no consumer app, no loyalty coins, no marketing platform', rezEdge: 'BizOne is FREE, works for all merchant types, includes CRM + marketing + analytics + loyalty.' },
-  { name: 'DotPe', val: '$300M+', users: '10M+ merchants', type: 'QR Commerce', focus: 'QR-based ordering + payments. Partners: McDonald\'s, Starbucks, Haldiram\'s. Commission-based.', weakness: 'No consumer app, no loyalty coins, no rewards, commission-based (merchants pay per transaction)', rezEdge: 'ReZ has consumer app + merchant OS. Closed-loop coins drive repeat visits. Adzy for marketing.' },
-  { name: 'Khatabook', val: '$600M', users: '10M+ merchants', type: 'Digital Ledger', focus: 'Digital ledger for SMBs — credit/debit tracking, payment reminders, basic lending. $187M raised.', weakness: 'Ledger only — no POS, no consumer app, no loyalty, no marketing, tiny revenue (₹1.4 Cr/yr)', rezEdge: 'BizOne is full OS: POS + CRM + Inventory + Marketing + Analytics. Plus consumer demand from ReZ app.' },
-  { name: 'OkCredit', val: '$250M', users: '5M+ merchants', type: 'Digital Ledger', focus: 'Digital ledger in 11 languages. Simple credit/debit tracking for small merchants. $85M raised.', weakness: 'Ledger only — same as Khatabook. No POS, no consumer side, no loyalty, no marketing tools', rezEdge: 'BizOne replaces ledger + 5 more tools. ReZ drives foot traffic that Khatabook/OkCredit cannot.' },
+  { name: 'Petpooja', val: '$50M+', users: '100K+ restaurants', type: 'Restaurant POS', focus: 'Leading restaurant POS — billing, KOT, inventory, Swiggy/Zomato integration. ₹10K/year.', weakness: 'Restaurant-only, paid (₹2K/mo+), no consumer app, no loyalty coins, no marketing platform', rezEdge: 'ReZ OS is FREE, works for all merchant types, includes CRM + marketing + analytics + loyalty.' },
+  { name: 'DotPe', val: '$300M+', users: '10M+ merchants', type: 'QR Commerce', focus: 'QR-based ordering + payments. Partners: McDonald\'s, Starbucks, Haldiram\'s. Commission-based.', weakness: 'No consumer app, no loyalty coins, no rewards, commission-based (merchants pay per transaction)', rezEdge: 'ReZ has consumer app + merchant OS. Closed-loop coins drive repeat visits. Built-in marketing engine.' },
+  { name: 'Khatabook', val: '$600M', users: '10M+ merchants', type: 'Digital Ledger', focus: 'Digital ledger for SMBs — credit/debit tracking, payment reminders, basic lending. $187M raised.', weakness: 'Ledger only — no POS, no consumer app, no loyalty, no marketing, tiny revenue (₹1.4 Cr/yr)', rezEdge: 'ReZ OS is full OS: POS + CRM + Inventory + Marketing + Analytics. Plus consumer demand from ReZ app.' },
+  { name: 'OkCredit', val: '$250M', users: '5M+ merchants', type: 'Digital Ledger', focus: 'Digital ledger in 11 languages. Simple credit/debit tracking for small merchants. $85M raised.', weakness: 'Ledger only — same as Khatabook. No POS, no consumer side, no loyalty, no marketing tools', rezEdge: 'ReZ OS replaces ledger + 5 more tools. ReZ drives foot traffic that Khatabook/OkCredit cannot.' },
 ];
 
 // ─── Competitors — Global Benchmarks ────────────────────────────────
@@ -117,7 +117,7 @@ const team = [
 
 // ─── Risks ──────────────────────────────────────────────────────────
 const risks = [
-  { risk: 'Merchant adoption slower than projected', severity: 'high', mitigation: ['Free BizOne POS replaces ₹2K/mo Petpooja subscription', 'On-ground sales team with incentive structure', 'Pilot with 50 merchants before scaling', 'Offer guaranteed foot traffic via Adzy'] },
+  { risk: 'Merchant adoption slower than projected', severity: 'high', mitigation: ['Free ReZ OS POS replaces ₹2K/mo Petpooja subscription', 'On-ground sales team with incentive structure', 'Pilot with 50 merchants before scaling', 'Offer guaranteed foot traffic via ReZ Ads'] },
   { risk: 'User acquisition cost too high', severity: 'high', mitigation: ['Campus ambassador program (₹50/referral vs ₹200+ on Meta)', 'Referral loop: both parties earn ₹100 in coins', 'Organic via merchant-driven QR adoption', 'Gamification drives daily app opens (4x industry avg)'] },
   { risk: 'UPI competition from Paytm/PhonePe', severity: 'medium', mitigation: ['ReZ is NOT a payments app — it is a rewards + merchant OS', 'UPI is the payment rail, not the product', 'Neither Paytm nor PhonePe offer closed-loop coins or merchant OS', 'Differentiation: earn coins → spend coins → locked in'] },
   { risk: 'Regulatory risk (RBI digital lending / wallet rules)', severity: 'medium', mitigation: ['ReZ Coins are loyalty points, not stored value (no PPI license needed initially)', 'Cash balance via licensed banking partner', 'Legal counsel from Day 1 (Cyril Amarchand / AZB)', 'Phased approach: loyalty first, wallet later'] },
@@ -126,9 +126,9 @@ const risks = [
 
 // ─── Milestones ─────────────────────────────────────────────────────
 const milestones = [
-  { phase: 'Phase 1: Build', timeline: 'Q2-Q3 2026', items: ['Core app (React Native) — wallet, QR, discovery', 'BizOne merchant POS (tablet/phone)', 'UPI integration via Razorpay/Cashfree', 'Onboard 50 pilot merchants (Koramangala, Indiranagar)', '5,000 beta users'], color: 'border-blue-500/50', bg: 'bg-blue-500/10' },
+  { phase: 'Phase 1: Build', timeline: 'Q2-Q3 2026', items: ['Core app (React Native) — wallet, QR, discovery', 'ReZ OS merchant POS (tablet/phone)', 'UPI integration via Razorpay/Cashfree', 'Onboard 50 pilot merchants (Koramangala, Indiranagar)', '5,000 beta users'], color: 'border-blue-500/50', bg: 'bg-blue-500/10' },
   { phase: 'Phase 2: Validate', timeline: 'Q4 2026', items: ['500 merchants across Bangalore', '25K users with 5K MAU', 'Launch ReZ+ membership (4 tiers)', 'Gamification hub live (badges, streaks)', 'Prove unit economics: LTV > 3x CAC'], color: 'border-emerald-500/50', bg: 'bg-emerald-500/10' },
-  { phase: 'Phase 3: Scale', timeline: 'Q1-Q2 2027', items: ['2,000 merchants, 100K users', 'Bill payments + savings pots', 'AI-R recommendation engine', 'Adzy merchant ad platform', 'Raise Series A ($3-5M at $25-40M)'], color: 'border-purple-500/50', bg: 'bg-purple-500/10' },
+  { phase: 'Phase 3: Scale', timeline: 'Q1-Q2 2027', items: ['2,000 merchants, 100K users', 'Bill payments + savings pots', 'AI-R recommendation engine', 'ReZ Ads merchant platform', 'Raise Series A ($3-5M at $25-40M)'], color: 'border-purple-500/50', bg: 'bg-purple-500/10' },
   { phase: 'Phase 4: Dominate', timeline: 'Q3 2027+', items: ['5,000+ merchants, 300K+ users', 'Expand to 3 more Indian cities', 'Launch delivery (Wasil India)', 'BNPL (Qist India) integration', 'Bridge to Nuqta GCC corridor'], color: 'border-amber-500/50', bg: 'bg-amber-500/10' },
 ];
 
@@ -137,7 +137,7 @@ const comparables = [
   { name: 'CRED', val: '$3.5B', stage: 'Series E', model: 'CC rewards → fintech platform, 13M users', relevance: 'Same "reward spending" thesis — ReZ serves 26x larger UPI base' },
   { name: 'MagicPin', val: '$200M+', stage: 'IPO-bound', model: 'Bill upload cashback, 10M users, EBITDA near breakeven', relevance: 'Direct comp — ReZ adds real-time QR + merchant OS + closed-loop' },
   { name: 'Razorpay', val: '$7.5B', stage: 'Series F', model: 'Payment infra powering 300M+ transactions', relevance: 'ReZ builds on top of payment rails, adds commerce + loyalty' },
-  { name: 'Khatabook', val: '$600M', stage: 'Series C', model: 'Digital ledger for 10M+ merchants, $187M raised', relevance: 'ReZ BizOne replaces ledger + 5 more tools. Consumer demand built in.' },
+  { name: 'Khatabook', val: '$600M', stage: 'Series C', model: 'Digital ledger for 10M+ merchants, $187M raised', relevance: 'ReZ ReZ OS replaces ledger + 5 more tools. Consumer demand built in.' },
   { name: 'Tata Neu', val: '$5B+', stage: 'Tata Group', model: 'Super app: BigBasket, Croma, Taj — NeuCoins ecosystem', relevance: 'Single-brand ecosystem. ReZ works with ANY merchant, not just Tata.' },
   { name: 'Fetch (US)', val: '$2.5B', stage: 'Series D', model: 'Receipt scanning → points. 17M MAU, $110B receipts', relevance: 'ReZ upgrades receipt model to instant QR + coin economy in India' },
 ];
@@ -154,6 +154,7 @@ export default function RezPage() {
     { id: 'product', label: 'Product' },
     { id: 'merchant', label: 'Merchant ROI' },
     { id: 'market', label: 'Market' },
+    { id: 'moat', label: 'Why We Win' },
     { id: 'model', label: 'Business Model' },
     { id: 'traction', label: 'Traction' },
     { id: 'competition', label: 'Competition' },
@@ -330,7 +331,7 @@ export default function RezPage() {
                   impactLabel: 'monthly revenue',
                   points: [
                     'ReZ Coins drive foot traffic — users come TO your store to spend coins',
-                    'Adzy campaigns target nearby users with personalized offers',
+                    'ReZ push notifications target nearby users with personalized offers',
                     'Gamification challenges: "Visit 3 cafes this week → bonus coins"',
                     'Cross-sell from other ecosystem apps (delivery, rides, bills)',
                   ],
@@ -341,7 +342,7 @@ export default function RezPage() {
                   points: [
                     'Merchant QR at checkout = free user acquisition (₹0 CAC)',
                     'Every customer refers friends for coins — viral loop built in',
-                    'Adzy replaces Google/Meta: closed-loop, fully tracked, zero leakage',
+                    'ReZ Ads replace Google/Meta: closed-loop, fully tracked, zero leakage',
                     'Cost drops from ₹500-2,000 → ₹50-150 per new customer',
                   ],
                 },
@@ -352,7 +353,7 @@ export default function RezPage() {
                     'Membership tiers incentivize bigger orders (2x-3x coin earn rates)',
                     'Spend thresholds: "Spend ₹500 → earn 2x coins" pushes basket up',
                     'Upsell prompts at POS: "Add ₹80 more to earn bonus coins"',
-                    'Bundle offers via Adzy — merchant sets combos, ReZ promotes them',
+                    'Bundle offers via ReZ Ads — merchant sets combos, ReZ promotes them',
                   ],
                 },
                 {
@@ -405,7 +406,7 @@ export default function RezPage() {
                   { text: '→' },
                   { text: 'More sales + data', color: 'bg-purple-500/20 text-purple-400 border-purple-500/30' },
                   { text: '→' },
-                  { text: 'Smarter Adzy campaigns', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' },
+                  { text: 'Smarter ReZ campaigns', color: 'bg-pink-500/20 text-pink-400 border-pink-500/30' },
                 ].map((step, i) => (
                   step.color ? (
                     <span key={i} className={`px-3 py-1.5 rounded-lg border font-medium ${step.color}`}>{step.text}</span>
@@ -475,7 +476,7 @@ export default function RezPage() {
       )}
 
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {/* SLIDE 5: MERCHANT OS (BizOne) */}
+      {/* SLIDE 5: MERCHANT OS (ReZ OS) */}
       {/* ═══════════════════════════════════════════════════════════════ */}
       {currentSlide === 4 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-blue-900/20 p-6 sm:p-8">
@@ -483,7 +484,7 @@ export default function RezPage() {
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
               Merchant <span className="text-blue-400">ROI — Before vs After</span>
             </h2>
-            <p className="text-slate-400 text-center mb-8">Concrete numbers for a typical Bangalore cafe/restaurant using ReZ + BizOne.</p>
+            <p className="text-slate-400 text-center mb-8">Concrete numbers for a typical Bangalore cafe/restaurant using ReZ + ReZ OS.</p>
 
             {/* Before vs After Comparison */}
             <div className="grid lg:grid-cols-2 gap-6 mb-8">
@@ -515,7 +516,7 @@ export default function RezPage() {
                     { label: 'Customers/day', value: '135', change: '+35%', icon: Users },
                     { label: 'Average Order Value', value: '₹450', change: '+29%', icon: ShoppingBag },
                     { label: 'Repeat Rate', value: '45%', change: '3x', icon: Heart },
-                    { label: 'CAC (via ReZ/Adzy)', value: '₹120', change: '-90%', icon: Target },
+                    { label: 'CAC (via ReZ Ads)', value: '₹120', change: '-90%', icon: Target },
                     { label: 'Tools Cost', value: '₹0', change: 'FREE', icon: Settings },
                     { label: 'Monthly Revenue', value: '₹18.2L', change: '+73%', icon: DollarSign },
                   ].map(item => (
@@ -539,9 +540,9 @@ export default function RezPage() {
               <h3 className="text-lg font-bold text-white mb-4 text-center">How Coins & Loyalty Drive Each Metric</h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 {[
-                  { metric: 'Sales +35%', how: 'Coin-holding users actively seek out ReZ merchants. Adzy push notifications drive foot traffic. Nearby users see "₹50 coins at this cafe" on the app.', color: 'text-emerald-400' },
-                  { metric: 'CAC -90%', how: 'QR at checkout = ₹0 acquisition. Each customer refers 2-3 friends for coin bonuses. Adzy campaigns cost 60-70% less than Google with full tracking.', color: 'text-blue-400' },
-                  { metric: 'AOV +29%', how: 'Spend ₹500 → earn 2x coins. Gold/Prive members earn 2-3x, so they order more. POS upsell: "Add ₹80 more for bonus coins." Bundle offers via Adzy.', color: 'text-purple-400' },
+                  { metric: 'Sales +35%', how: 'Coin-holding users actively seek out ReZ merchants. Push notifications drive foot traffic. Nearby users see "₹50 coins at this cafe" on the app.', color: 'text-emerald-400' },
+                  { metric: 'CAC -90%', how: 'QR at checkout = ₹0 acquisition. Each customer refers 2-3 friends for coin bonuses. ReZ Ad campaigns cost 60-70% less than Google with full tracking.', color: 'text-blue-400' },
+                  { metric: 'AOV +29%', how: 'Spend ₹500 → earn 2x coins. Gold/Prive members earn 2-3x, so they order more. POS upsell: "Add ₹80 more for bonus coins." Bundle offers via ReZ Ads.', color: 'text-purple-400' },
                   { metric: 'Repeat 3x', how: 'Promo Coins expire in 30 days — "use it or lose it." Win-back SMS: "Your ₹120 coins expire in 3 days." Streaks: "5th visit = double coins." Branded Coins lock to your store.', color: 'text-orange-400' },
                 ].map(m => (
                   <div key={m.metric} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
@@ -552,15 +553,15 @@ export default function RezPage() {
               </div>
             </div>
 
-            {/* BizOne Replaces */}
+            {/* ReZ OS Replaces */}
             <div className="bg-blue-500/10 rounded-xl p-6 border border-blue-500/30 mb-6">
-              <h3 className="text-lg font-bold text-white mb-4">BizOne: Free OS That Replaces 6 Paid Tools</h3>
+              <h3 className="text-lg font-bold text-white mb-4">ReZ OS: Free OS That Replaces 6 Paid Tools</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {[
                   { tool: 'Petpooja / POSist', cost: '₹2,000/mo', module: 'POS System' },
                   { tool: 'Zoho CRM', cost: '₹1,200/mo', module: 'CRM' },
                   { tool: 'Tally / Zoho Books', cost: '₹800/mo', module: 'Financial' },
-                  { tool: 'Google Ads', cost: '₹5,000+/mo', module: 'Adzy Marketing' },
+                  { tool: 'Google Ads', cost: '₹5,000+/mo', module: 'ReZ Marketing' },
                   { tool: 'WhatsApp Business', cost: 'Free but manual', module: 'Order Management' },
                   { tool: 'Excel Spreadsheets', cost: 'Error-prone', module: 'Analytics + Inventory' },
                 ].map(r => (
@@ -580,7 +581,7 @@ export default function RezPage() {
             </div>
 
             <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50 text-center">
-              <p className="text-slate-300 text-sm"><strong className="text-white">Lock-in Effect:</strong> Once a merchant&apos;s billing, inventory, customers, and credit history live in BizOne — <strong className="text-orange-400">they never leave</strong>. Switching cost is infinite.</p>
+              <p className="text-slate-300 text-sm"><strong className="text-white">Lock-in Effect:</strong> Once a merchant&apos;s billing, inventory, customers, and credit history live in ReZ OS — <strong className="text-orange-400">they never leave</strong>. Switching cost is infinite.</p>
             </div>
           </div>
         </div>
@@ -655,9 +656,62 @@ export default function RezPage() {
       )}
 
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {/* SLIDE 7: BUSINESS MODEL */}
+      {/* SLIDE 7: WHY WE WIN (MOAT) */}
       {/* ═══════════════════════════════════════════════════════════════ */}
       {currentSlide === 6 && (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-amber-900/20 p-6 sm:p-8">
+          <div className="max-w-5xl w-full">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 text-center">
+              Why We <span className="text-orange-400">Win</span>
+            </h2>
+            <p className="text-slate-400 text-center mb-10 max-w-2xl mx-auto">6 structural moats that make ReZ extremely hard to replicate — and impossible to leave once adopted.</p>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+              {[
+                { icon: Lock, color: 'text-orange-400', bg: 'bg-orange-500/10', border: 'border-orange-500/30', title: 'Closed-Loop Lock-In', desc: 'ReZ Coins only work inside ReZ. Every rupee earned stays in the ecosystem. Money never leaks to Google, Meta, or Paytm. Once a user has coins, they MUST come back to spend them.' },
+                { icon: Store, color: 'text-blue-400', bg: 'bg-blue-500/10', border: 'border-blue-500/30', title: 'Free ReZ OS = Infinite Switching Cost', desc: 'Once a merchant\'s POS, inventory, CRM, customer data, and credit history live in ReZ OS — they never leave. Replacing 6 integrated tools is impossible. And it\'s free.' },
+                { icon: QrCode, color: 'text-emerald-400', bg: 'bg-emerald-500/10', border: 'border-emerald-500/30', title: 'QR = Zero-CAC Acquisition', desc: 'Every merchant checkout counter becomes a free user acquisition channel. Customer scans QR to pay → downloads ReZ → earns coins. No ad spend needed. Each merchant recruits users for you.' },
+                { icon: Timer, color: 'text-red-400', bg: 'bg-red-500/10', border: 'border-red-500/30', title: 'Expiring Coins = Forced Repeat', desc: 'Promo Coins expire in 30 days. Branded Coins in 90 days. Users MUST return and spend before expiry. This creates predictable, recurring foot traffic that no discount coupon can match.' },
+                { icon: Network, color: 'text-purple-400', bg: 'bg-purple-500/10', border: 'border-purple-500/30', title: 'Two-Sided Network Effect', desc: 'More merchants = more places to earn coins. More coins = more users join. More users = more merchants want in. This flywheel accelerates with every merchant added. Winner takes all.' },
+                { icon: Brain, color: 'text-cyan-400', bg: 'bg-cyan-500/10', border: 'border-cyan-500/30', title: 'Data Moat', desc: 'Every transaction teaches us: what users buy, where, when, how often. This makes ReZ Ads targeting smarter over time. New entrants start with zero data. We compound daily.' },
+              ].map(m => (
+                <div key={m.title} className={`${m.bg} rounded-xl p-6 border ${m.border}`}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`w-10 h-10 rounded-xl ${m.bg} border ${m.border} flex items-center justify-center`}>
+                      <m.icon className={`w-5 h-5 ${m.color}`} />
+                    </div>
+                    <h3 className="text-white font-bold text-sm">{m.title}</h3>
+                  </div>
+                  <p className="text-slate-300 text-sm">{m.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="bg-slate-800/30 rounded-xl p-6 border border-orange-500/30">
+              <h3 className="text-lg font-bold text-white mb-4 text-center">Why Competitors Can&apos;t Copy This</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  { comp: 'Paytm / PhonePe', why: 'Open-loop payment pipes. Money leaves their ecosystem instantly. No coin lock-in, no merchant OS, no loyalty engine.' },
+                  { comp: 'CRED', why: 'CC-only (15% of India). No merchant tools. No QR at checkout. No closed-loop coins. Cannot serve the UPI-native 400M.' },
+                  { comp: 'MagicPin', why: 'Manual bill uploads (not real-time). No POS, no CRM, no integrated merchant OS. Cannot lock merchants in.' },
+                  { comp: 'Petpooja / Khatabook', why: 'Merchant tools only — no consumer app, no loyalty coins, no foot traffic generation. Half the flywheel missing.' },
+                ].map(c => (
+                  <div key={c.comp} className="bg-slate-900/50 rounded-lg p-4 border border-slate-700/50">
+                    <div className="text-orange-400 font-bold text-sm mb-1">{c.comp}</div>
+                    <p className="text-xs text-slate-400">{c.why}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-center text-orange-400 text-sm font-bold mt-4">ReZ is the only player combining closed-loop coins + free merchant OS + UPI-native + gamification. Nobody has all four.</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* SLIDE 8: BUSINESS MODEL */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {currentSlide === 7 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-emerald-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -669,11 +723,11 @@ export default function RezPage() {
               {[
                 { stream: 'Merchant Commission', rev: '5-15%', desc: 'Per-transaction commission on every sale through ReZ', icon: DollarSign, color: 'text-emerald-400' },
                 { stream: 'ReZ+ Membership', rev: '₹499-1,999/mo', desc: 'Premium tiers: Silver, Gold, Prive — earn multipliers + exclusive perks', icon: Crown, color: 'text-purple-400' },
-                { stream: 'Adzy Campaigns', rev: '₹5-50K/campaign', desc: 'Closed-loop merchant advertising — zero leakage, full ROI tracking', icon: Eye, color: 'text-blue-400' },
+                { stream: 'ReZ Ad Campaigns', rev: '₹5-50K/campaign', desc: 'Closed-loop merchant advertising — zero leakage, full ROI tracking', icon: Eye, color: 'text-blue-400' },
                 { stream: 'Coin Breakage', rev: '15-25%', desc: 'Unused/expired coins — industry standard loyalty revenue', icon: Coins, color: 'text-amber-400' },
                 { stream: 'Bill Pay Commission', rev: '0.5-2%', desc: 'Utility, telecom, DTH bill payment commissions', icon: CreditCard, color: 'text-cyan-400' },
                 { stream: 'Data Insights', rev: '₹10K+/mo', desc: 'Anonymized merchant analytics sold to brands and FMCG', icon: BarChart3, color: 'text-pink-400' },
-                { stream: 'BizOne Premium', rev: '₹999-4,999/mo', desc: 'Advanced merchant tools: multi-store, advanced analytics, priority support', icon: Store, color: 'text-orange-400' },
+                { stream: 'ReZ OS Premium', rev: '₹999-4,999/mo', desc: 'Advanced merchant tools: multi-store, advanced analytics, priority support', icon: Store, color: 'text-orange-400' },
               ].map(s => (
                 <div key={s.stream} className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
                   <div className="flex items-center gap-2 mb-2">
@@ -710,7 +764,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 8: TRACTION / WHAT'S BUILT */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 7 && (
+      {currentSlide === 8 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-amber-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -742,7 +796,7 @@ export default function RezPage() {
                 { metric: '1,100+', label: 'Screens Designed', desc: 'Complete UI/UX across user app, merchant OS, and admin panel', color: 'text-orange-400' },
                 { metric: '500+', label: 'API Endpoints', desc: 'Full RESTful API architecture documented and implemented', color: 'text-blue-400' },
                 { metric: '60+', label: 'Database Tables', desc: 'PostgreSQL + MongoDB + Redis + Elasticsearch — production-ready', color: 'text-emerald-400' },
-                { metric: '31', label: 'Products Designed', desc: 'Full ecosystem: Nuqta/ReZ + BizOne + 29 vertical apps', color: 'text-purple-400' },
+                { metric: '31', label: 'Products Designed', desc: 'Full ecosystem: Nuqta/ReZ + ReZ OS + 29 vertical apps', color: 'text-purple-400' },
                 { metric: '11', label: 'Companies Structured', desc: 'Corporate hierarchy, ownership, and regulatory mapping done', color: 'text-cyan-400' },
                 { metric: '740+', label: 'Pages Built', desc: 'Product pages, pitch decks, documentation — all live on web', color: 'text-pink-400' },
               ].map(t => (
@@ -782,7 +836,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 9: COMPETITION */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 8 && (
+      {currentSlide === 9 && (
         <div className="min-h-screen bg-gradient-to-br from-[#0a1628] to-red-900/20 p-6 sm:p-8 pt-16">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -903,7 +957,7 @@ export default function RezPage() {
                       ['Merchant CRM',       '✅ Full', '❌', '⚠️ Basic', '❌', '❌', '❌', '⚠️', '❌', '❌', '⚠️', '❌'],
                       ['Membership Tiers',   '✅ 4 tiers', '✅ Mint', '❌', '✅ Score', '❌', '❌', '⚠️ First', '❌', '✅ NeuPass', '❌', '❌'],
                       ['Consumer App',       '✅', '✅', '✅', '✅', '✅', '✅', '✅', '✅', '✅', '❌', '❌'],
-                      ['Merchant App',       '✅ BizOne', '❌', '✅ Basic', '❌', '❌', '❌', '✅', '❌', '❌', '✅', '✅'],
+                      ['Merchant App',       '✅ ReZ OS', '❌', '✅ Basic', '❌', '❌', '❌', '✅', '❌', '❌', '✅', '✅'],
                       ['Works Offline',      '✅', '❌', '❌', '❌', '❌', '❌', '✅', '❌', '❌', '⚠️', '✅'],
                     ].map((row, i) => (
                       <tr key={i} className="border-b border-slate-800/50">
@@ -928,7 +982,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 10: FINANCIALS */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 9 && (
+      {currentSlide === 10 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-emerald-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -1024,7 +1078,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 11: TEAM */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 10 && (
+      {currentSlide === 11 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-blue-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -1095,7 +1149,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 12: MILESTONES */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 11 && (
+      {currentSlide === 12 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-purple-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -1147,7 +1201,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 13: USE OF FUNDS */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 12 && (
+      {currentSlide === 13 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-orange-900/20 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -1221,7 +1275,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 14: RISKS */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 13 && (
+      {currentSlide === 14 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-red-900/10 p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
@@ -1263,7 +1317,7 @@ export default function RezPage() {
       {/* ═══════════════════════════════════════════════════════════════ */}
       {/* SLIDE 15: THE ASK */}
       {/* ═══════════════════════════════════════════════════════════════ */}
-      {currentSlide === 14 && (
+      {currentSlide === 15 && (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] via-orange-900/20 to-[#0a1628] p-6 sm:p-8">
           <div className="max-w-5xl w-full">
             <div className="text-center mb-10">
