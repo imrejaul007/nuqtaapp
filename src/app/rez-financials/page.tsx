@@ -498,13 +498,13 @@ export default function RezFinancialsPage() {
               <KPICard
                 label="Year 1 Revenue"
                 value={formatINR(Math.round(100400000 * scenarioMult))}
-                subtext="4.24% net margin"
+                subtext="6.07% net margin"
                 status="success"
               />
               <KPICard
                 label="Year 3 Revenue"
                 value={formatINR(Math.round(6018000000 * scenarioMult))}
-                subtext="23.9% net margin"
+                subtext="34.5% net margin"
                 status="success"
               />
               <KPICard
@@ -1099,7 +1099,7 @@ export default function RezFinancialsPage() {
                     { label: 'M6 Revenue', value: '₹34.8L' },
                     { label: 'M12 Revenue', value: '₹3.2 Cr' },
                     { label: 'Year 1 Total', value: '₹10.04 Cr' },
-                    { label: 'Revenue Growth', value: '910%' },
+                    { label: 'M6→M12 Growth', value: '845%' },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between">
                       <span className="text-xs text-slate-400">{r.label}</span>
@@ -1524,9 +1524,9 @@ export default function RezFinancialsPage() {
                       { metric: 'Year 1 Revenue', base: 100400000 },
                       { metric: 'Year 2 Revenue', base: 1534000000 },
                       { metric: 'Year 3 Revenue', base: 6018000000 },
-                      { metric: 'Year 1 Net Profit', base: 4300000 },
+                      { metric: 'Year 1 Net Profit', base: 6100000 },
                       { metric: 'Year 2 Net Profit', base: -729000000 },
-                      { metric: 'Year 3 Net Profit', base: 1432000000 },
+                      { metric: 'Year 3 Net Profit', base: 2075000000 },
                       { metric: 'Year 1 Users', base: 268550 },
                       { metric: 'Year 2 Users', base: 1500000 },
                       { metric: 'Year 3 Users', base: 5000000 },
