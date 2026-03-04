@@ -62,12 +62,31 @@ const useOfFunds = [
   { category: 'Reserve', amount: '$50K', percent: 10, color: 'bg-slate-500', details: 'Runway buffer, unexpected costs, opportunity fund' },
 ];
 
-// ─── Financial Projections ──────────────────────────────────────────
+// ─── Financial Projections (Source: ReZ 2026 Financial Model) ────────
 const financials = [
-  { period: 'Month 6', users: '25K', merchants: 500, gmv: '₹2.5 Cr', revenue: '₹15L', burn: '₹35L/mo', milestone: 'PMF validated (Bangalore)' },
-  { period: 'Month 12', users: '200K', merchants: 5000, gmv: '₹50 Cr', revenue: '₹3.5 Cr', burn: '₹45L/mo', milestone: 'Wave 1 cities launched' },
-  { period: 'Month 18', users: '500K', merchants: 10000, gmv: '₹200 Cr', revenue: '₹15 Cr', burn: '₹60L/mo', milestone: 'Series A raised, 6+ cities' },
-  { period: 'Month 24', users: '1.5M', merchants: 15000, gmv: '₹1,500 Cr', revenue: '₹100 Cr', burn: '₹80L/mo', milestone: 'Pan-India dominant, 10+ cities' },
+  { period: 'Month 3', users: '18K', merchants: 200, gmv: '₹1.2 Cr', revenue: '₹6.8L', burn: '₹42L/mo', milestone: 'Bangalore PMF, 3 cities' },
+  { period: 'Month 6', users: '68K', merchants: 750, gmv: '₹7.5 Cr', revenue: '₹42L', burn: '₹55L/mo', milestone: '8 cities, unit economics proven' },
+  { period: 'Month 12', users: '269K', merchants: 3000, gmv: '₹52 Cr', revenue: '₹10 Cr', burn: '₹78L/mo', milestone: '32 cities, Year 1: ₹10 Cr rev' },
+  { period: 'Year 2', users: '1.5M', merchants: 12000, gmv: '₹500 Cr', revenue: '₹153 Cr', burn: '₹1.9 Cr/mo', milestone: '120 cities, Series A raised' },
+  { period: 'Year 3', users: '5M', merchants: 40000, gmv: '₹2,000 Cr', revenue: '₹600 Cr', burn: 'Profitable', milestone: 'Pan-India, ₹140 Cr net profit' },
+];
+
+// ─── Income Statement Summary (Source: ReZ 2026 Financial Model) ────
+const incomeStatement = [
+  { year: 'Year 1', revenue: '₹10.04 Cr', expenses: '₹9.43 Cr', netProfit: '₹0.43 Cr', margin: '4.24%', valuation: '$23.6M' },
+  { year: 'Year 2', revenue: '₹153 Cr', expenses: '₹229 Cr', netProfit: '-₹72.9 Cr', margin: '-47.6%', valuation: '$180M' },
+  { year: 'Year 3', revenue: '₹600 Cr', expenses: '₹394 Cr', netProfit: '₹143 Cr', margin: '23.9%', valuation: '$701M' },
+];
+
+// ─── Expense Breakdown ──────────────────────────────────────────────
+const expenseBreakdown = [
+  { category: 'Marketing & Ads', pct: 36, color: 'bg-purple-500' },
+  { category: 'Technology & Infra', pct: 20, color: 'bg-blue-500' },
+  { category: 'BizDev & Merchant Acq', pct: 19, color: 'bg-emerald-500' },
+  { category: 'Team & Salaries', pct: 8, color: 'bg-orange-500' },
+  { category: 'Customer Support', pct: 8, color: 'bg-cyan-500' },
+  { category: 'Rent & Office', pct: 8, color: 'bg-pink-500' },
+  { category: 'Buffer', pct: 1, color: 'bg-slate-500' },
 ];
 
 // ─── Competitors — Cashback & Rewards Apps ──────────────────────────
@@ -1000,33 +1019,34 @@ export default function RezPage() {
       {/* SLIDE 10: FINANCIALS */}
       {/* ═══════════════════════════════════════════════════════════════ */}
       {currentSlide === 10 && (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0a1628] to-emerald-900/20 p-6 sm:p-8">
-          <div className="max-w-5xl w-full">
+        <div className="min-h-screen bg-gradient-to-br from-[#0a1628] to-emerald-900/20 p-6 sm:p-8 pt-16">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
               Financial <span className="text-emerald-400">Projections</span>
             </h2>
-            <p className="text-slate-400 text-center mb-10">24-month projections. Revenue from Month 1. Series A readiness by Month 18.</p>
+            <p className="text-slate-400 text-center mb-8">3-year model. Year 1 profitable. Year 3: ₹600 Cr revenue, $701M valuation.</p>
 
-            <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50 mb-8">
+            {/* Income Statement Summary */}
+            <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 mb-6">
+              <h3 className="text-sm font-bold text-emerald-400 mb-3">3-Year Income Statement</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-slate-700/50">
-                      {['Period', 'Users', 'Merchants', 'GMV', 'Revenue', 'Burn', 'Milestone'].map(h => (
+                      {['', 'Revenue', 'Expenses', 'Net Profit', 'Margin', 'Valuation'].map(h => (
                         <th key={h} className="text-left px-3 py-2 text-emerald-400 font-semibold whitespace-nowrap text-xs">{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    {financials.map(f => (
-                      <tr key={f.period} className="border-b border-slate-800/50">
-                        <td className="px-3 py-3 text-white font-bold whitespace-nowrap">{f.period}</td>
-                        <td className="px-3 py-3 text-slate-300">{f.users}</td>
-                        <td className="px-3 py-3 text-slate-300">{f.merchants.toLocaleString()}</td>
-                        <td className="px-3 py-3 text-blue-400 font-bold">{f.gmv}</td>
-                        <td className="px-3 py-3 text-emerald-400 font-bold">{f.revenue}</td>
-                        <td className="px-3 py-3 text-red-400">{f.burn}</td>
-                        <td className="px-3 py-3 text-slate-400 text-xs">{f.milestone}</td>
+                    {incomeStatement.map(row => (
+                      <tr key={row.year} className="border-b border-slate-800/50">
+                        <td className="px-3 py-2.5 text-white font-bold whitespace-nowrap">{row.year}</td>
+                        <td className="px-3 py-2.5 text-emerald-400 font-bold">{row.revenue}</td>
+                        <td className="px-3 py-2.5 text-red-400">{row.expenses}</td>
+                        <td className={`px-3 py-2.5 font-bold ${row.netProfit.startsWith('-') ? 'text-red-400' : 'text-emerald-400'}`}>{row.netProfit}</td>
+                        <td className={`px-3 py-2.5 font-bold ${row.margin.startsWith('-') ? 'text-red-400' : 'text-emerald-400'}`}>{row.margin}</td>
+                        <td className="px-3 py-2.5 text-amber-400 font-bold">{row.valuation}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -1034,59 +1054,134 @@ export default function RezPage() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6 mb-8">
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <h3 className="text-lg font-bold text-white mb-4">Runway Analysis</h3>
-                <div className="space-y-3">
+            {/* Growth Trajectory */}
+            <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50 mb-6">
+              <h3 className="text-sm font-bold text-blue-400 mb-3">Growth Trajectory</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700/50">
+                      {['Period', 'Users', 'Merchants', 'GMV', 'Revenue', 'Burn', 'Milestone'].map(h => (
+                        <th key={h} className="text-left px-2 py-2 text-blue-400 font-semibold whitespace-nowrap text-xs">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {financials.map(f => (
+                      <tr key={f.period} className="border-b border-slate-800/50">
+                        <td className="px-2 py-2 text-white font-bold whitespace-nowrap text-xs">{f.period}</td>
+                        <td className="px-2 py-2 text-slate-300 text-xs">{f.users}</td>
+                        <td className="px-2 py-2 text-slate-300 text-xs">{f.merchants.toLocaleString()}</td>
+                        <td className="px-2 py-2 text-blue-400 font-bold text-xs">{f.gmv}</td>
+                        <td className="px-2 py-2 text-emerald-400 font-bold text-xs">{f.revenue}</td>
+                        <td className="px-2 py-2 text-red-400 text-xs">{f.burn}</td>
+                        <td className="px-2 py-2 text-slate-400 text-[10px]">{f.milestone}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+              {/* Unit Economics */}
+              <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                <h3 className="text-sm font-bold text-white mb-3">Unit Economics</h3>
+                <div className="space-y-2">
                   {[
-                    { label: 'Total Raise', value: '$500K (₹4.2 Cr)' },
-                    { label: 'Monthly Burn (Avg)', value: '₹40L (~$48K)' },
-                    { label: 'Runway', value: '18-20 months' },
-                    { label: 'Break-even Target', value: 'Month 15-18' },
-                    { label: 'Series A Trigger', value: '100K users, ₹1 Cr/mo revenue' },
+                    { label: 'AOV', value: '₹650' },
+                    { label: 'ARPU', value: '₹5,814/yr' },
+                    { label: 'CAC (Blended)', value: '₹76' },
+                    { label: 'CAM (Merchant)', value: '₹1,000' },
+                    { label: 'Active Rate', value: '30%' },
+                    { label: 'User Churn', value: '5%/mo' },
                   ].map(r => (
-                    <div key={r.label} className="flex justify-between py-1 border-b border-slate-700/30">
-                      <span className="text-slate-400 text-sm">{r.label}</span>
-                      <span className="text-white font-bold text-sm">{r.value}</span>
+                    <div key={r.label} className="flex justify-between py-0.5">
+                      <span className="text-slate-400 text-xs">{r.label}</span>
+                      <span className="text-white font-bold text-xs">{r.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="bg-slate-800/30 rounded-xl p-6 border border-slate-700/50">
-                <h3 className="text-lg font-bold text-white mb-4">Path to Series A</h3>
-                <div className="space-y-3">
+
+              {/* Expense Split */}
+              <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                <h3 className="text-sm font-bold text-white mb-3">Expense Allocation</h3>
+                <div className="space-y-2">
+                  {expenseBreakdown.map(e => (
+                    <div key={e.category} className="flex items-center gap-2">
+                      <div className={`w-2 h-2 rounded-full ${e.color} shrink-0`} />
+                      <span className="text-slate-400 text-xs flex-1">{e.category}</span>
+                      <span className="text-white font-bold text-xs">{e.pct}%</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Revenue Streams */}
+              <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                <h3 className="text-sm font-bold text-white mb-3">Revenue per Active User/Mo</h3>
+                <div className="space-y-2">
                   {[
-                    { label: 'Timeline', value: 'Month 18 (Q4 2027)' },
-                    { label: 'Target Raise', value: '$3-5M' },
-                    { label: 'Target Valuation', value: '$25-40M' },
-                    { label: 'Key Metrics Needed', value: '100K MAU, 2K merchants' },
-                    { label: 'Revenue Run Rate', value: '₹12 Cr ARR' },
+                    { stream: 'Commission (5%)', value: '₹162.50' },
+                    { stream: 'Promoted Sales (5%)', value: '₹65' },
+                    { stream: 'Business Sub', value: '₹1,500/mo' },
+                    { stream: 'Affiliate', value: '₹10' },
+                    { stream: 'User Sub (ReZ+)', value: '₹49/mo' },
+                    { stream: 'B2B Buying', value: '₹500' },
                   ].map(r => (
-                    <div key={r.label} className="flex justify-between py-1 border-b border-slate-700/30">
-                      <span className="text-slate-400 text-sm">{r.label}</span>
-                      <span className="text-white font-bold text-sm">{r.value}</span>
+                    <div key={r.stream} className="flex justify-between py-0.5">
+                      <span className="text-slate-400 text-xs">{r.stream}</span>
+                      <span className="text-emerald-400 font-bold text-xs">{r.value}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            <div className="bg-emerald-500/10 rounded-xl p-6 border border-emerald-500/30">
-              <h3 className="text-lg font-bold text-white mb-3">Investor Return Scenario</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {[
-                  { label: 'Entry (SAFE)', value: '$5M cap', sub: '$500K → 10% equiv.' },
-                  { label: 'Series A (18mo)', value: '$25-40M', sub: '5-8x paper return' },
-                  { label: 'Series B (36mo)', value: '$100-200M', sub: '20-40x paper return' },
-                  { label: 'Exit (5-7yr)', value: '$500M-1B', sub: '100-200x return' },
-                ].map(r => (
-                  <div key={r.label} className="text-center bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
-                    <div className="text-xs text-emerald-400 font-bold">{r.label}</div>
-                    <div className="text-lg font-black text-white mt-1">{r.value}</div>
-                    <div className="text-[10px] text-slate-500 mt-1">{r.sub}</div>
-                  </div>
-                ))}
+            <div className="grid sm:grid-cols-2 gap-4 mb-6">
+              <div className="bg-slate-800/30 rounded-xl p-5 border border-slate-700/50">
+                <h3 className="text-sm font-bold text-white mb-3">Runway & Path to Series A</h3>
+                <div className="space-y-2">
+                  {[
+                    { label: 'SAFE Raise', value: '$500K (₹4.2 Cr)' },
+                    { label: 'Phase 1 Budget', value: '₹50L (₹8.3L/mo)' },
+                    { label: 'Phase 2 Budget', value: '₹33L (₹11L/mo)' },
+                    { label: 'Year 1 Profit', value: '₹43L (4.24% margin)' },
+                    { label: 'Series A Target', value: '$3-5M at $25-40M' },
+                  ].map(r => (
+                    <div key={r.label} className="flex justify-between py-0.5">
+                      <span className="text-slate-400 text-xs">{r.label}</span>
+                      <span className="text-white font-bold text-xs">{r.value}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
+              <div className="bg-emerald-500/10 rounded-xl p-5 border border-emerald-500/30">
+                <h3 className="text-sm font-bold text-white mb-3">Investor Return Scenario</h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: 'Entry (SAFE)', value: '$5M cap', sub: '$500K → 10%' },
+                    { label: 'Year 1', value: '$23.6M', sub: '4.7x paper' },
+                    { label: 'Year 2', value: '$180M', sub: '36x paper' },
+                    { label: 'Year 3', value: '$701M', sub: '140x paper' },
+                  ].map(r => (
+                    <div key={r.label} className="text-center bg-slate-900/50 rounded-lg p-3 border border-slate-700/50">
+                      <div className="text-[10px] text-emerald-400 font-bold">{r.label}</div>
+                      <div className="text-sm font-black text-white mt-0.5">{r.value}</div>
+                      <div className="text-[9px] text-slate-500 mt-0.5">{r.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <Link href="/rez-financials" className="inline-flex items-center gap-2 px-6 py-2.5 bg-emerald-500/20 text-emerald-400 rounded-full border border-emerald-500/30 hover:bg-emerald-500/30 transition-colors text-sm font-bold">
+                <Calculator className="w-4 h-4" />
+                View Full Interactive Financial Model
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
