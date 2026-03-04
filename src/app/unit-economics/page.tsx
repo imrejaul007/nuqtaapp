@@ -9,32 +9,34 @@ import {
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
-// Unit Economics Data
+// Unit Economics Data — Aligned with canonical metrics across all financial pages
+// Canonical: AOV AED 100, 4 txns/mo, 8% total commission (5% Nuqta + 3% cashback)
 const userMetrics = {
   cac: {
     paid: { amount: 25, label: 'Paid CAC', channels: ['Instagram Ads', 'TikTok Ads', 'Google Ads'] },
     organic: { amount: 8, label: 'Organic CAC', channels: ['Referrals', 'Word of mouth', 'Content'] },
-    blended: { amount: 15.4, label: 'Blended CAC', target: 12 }
+    blended: { amount: 18, label: 'Blended CAC', target: 12 }
   },
   ltv: {
-    current: 89,
-    target: 150,
+    current: 360,                    // ARPU AED 20/mo × 18 months
+    target: 500,
     breakdown: {
-      avgTransactionValue: 125,
-      transactionsPerMonth: 4.2,
+      avgTransactionValue: 100,      // Canonical AOV
+      transactionsPerMonth: 4,       // Canonical frequency
       avgLifespanMonths: 18,
-      commissionRate: 0.05,
-      coinsRedemptionRate: 0.7
+      commissionRate: 0.08,          // 8% total commission (merchant pays)
+      nuqtaTakeRate: 0.05,           // 5% net to Nuqta
+      cashbackRate: 0.03             // 3% to user as rewards
     }
   },
   ltvCacRatio: {
-    current: 5.8,
-    target: 10,
+    current: 20,                     // 360 / 18
+    target: 25,
     benchmark: { good: 3, great: 5, excellent: 8 }
   },
   paybackPeriod: {
-    current: 2.7, // months
-    target: 2,
+    current: 0.9, // months (CAC 18 / ARPU 20)
+    target: 1,
     benchmark: { good: 6, great: 3, excellent: 1 }
   }
 };
@@ -47,65 +49,67 @@ const merchantMetrics = {
     blended: { amount: 150, label: 'Blended CAC', target: 100 }
   },
   ltv: {
-    current: 2400,
-    target: 5000,
+    current: 6000,                    // AED 250/mo × 24 months
+    target: 12000,
     breakdown: {
-      avgGmvPerMonth: 8000,
-      commissionRate: 0.05,
+      avgGmvPerMonth: 5000,           // GMV routed through Nuqta (not total merchant GMV)
+      commissionRate: 0.05,           // 5% net to Nuqta (of 8% total)
       avgLifespanMonths: 24,
-      premiumFeatureRevenue: 50
+      premiumFeatureRevenue: 0        // Free initially
     }
   },
   ltvCacRatio: {
-    current: 16,
-    target: 25,
+    current: 40,                      // 6000 / 150
+    target: 60,
     benchmark: { good: 5, great: 10, excellent: 20 }
   }
 };
 
 // Cohort Data
 const cohortData = [
-  { month: 'Jan 2025', users: 1000, m1: 65, m2: 48, m3: 42, m6: 35, m12: 28, ltv: 75 },
-  { month: 'Feb 2025', users: 1500, m1: 68, m2: 52, m3: 45, m6: 38, m12: null, ltv: 82 },
-  { month: 'Mar 2025', users: 2200, m1: 72, m2: 55, m3: 48, m6: null, m12: null, ltv: 89 },
-  { month: 'Apr 2025', users: 3000, m1: 75, m2: 58, m3: null, m6: null, m12: null, ltv: null },
-  { month: 'May 2025', users: 4500, m1: 78, m2: null, m3: null, m6: null, m12: null, ltv: null },
+  { month: 'Jan 2026', users: 1000, m1: 65, m2: 48, m3: 42, m6: 35, m12: 28, ltv: 280 },
+  { month: 'Feb 2026', users: 1500, m1: 68, m2: 52, m3: 45, m6: 38, m12: null, ltv: 310 },
+  { month: 'Mar 2026', users: 2200, m1: 72, m2: 55, m3: 48, m6: null, m12: null, ltv: 360 },
+  { month: 'Apr 2026', users: 3000, m1: 75, m2: 58, m3: null, m6: null, m12: null, ltv: null },
+  { month: 'May 2026', users: 4500, m1: 78, m2: null, m3: null, m6: null, m12: null, ltv: null },
 ];
 
-// Channel Economics
+// Channel Economics — LTV varies by channel quality (higher-intent channels → better retention → higher LTV)
 const channelEconomics = [
-  { channel: 'Instagram Ads', cac: 28, ltv: 95, ltvCac: 3.4, payback: 3.5, contribution: 35, status: 'Scale' },
-  { channel: 'TikTok Ads', cac: 22, ltv: 72, ltvCac: 3.3, payback: 3.8, contribution: 25, status: 'Scale' },
-  { channel: 'Google Ads', cac: 45, ltv: 110, ltvCac: 2.4, payback: 5.2, contribution: 15, status: 'Optimize' },
-  { channel: 'Referrals', cac: 8, ltv: 120, ltvCac: 15.0, payback: 0.8, contribution: 20, status: 'Superscale' },
-  { channel: 'Events', cac: 15, ltv: 95, ltvCac: 6.3, payback: 1.9, contribution: 5, status: 'Scale' },
+  { channel: 'Instagram Ads', cac: 28, ltv: 340, ltvCac: 12.1, payback: 1.4, contribution: 35, status: 'Scale' },
+  { channel: 'TikTok Ads', cac: 22, ltv: 280, ltvCac: 12.7, payback: 1.1, contribution: 25, status: 'Scale' },
+  { channel: 'Google Ads', cac: 45, ltv: 400, ltvCac: 8.9, payback: 2.3, contribution: 15, status: 'Optimize' },
+  { channel: 'Referrals', cac: 8, ltv: 450, ltvCac: 56.3, payback: 0.4, contribution: 20, status: 'Superscale' },
+  { channel: 'Events', cac: 15, ltv: 360, ltvCac: 24.0, payback: 0.8, contribution: 5, status: 'Scale' },
 ];
 
-// Revenue Breakdown
+// Revenue Breakdown — Based on 8% total commission (5% Nuqta net + 3% cashback)
 const revenueStreams = [
-  { stream: 'Transaction Commission (5%)', percentage: 75, monthly: 37500, growth: '+15%' },
+  { stream: 'Transaction Commission (5% net)', percentage: 75, monthly: 37500, growth: '+15%' },
   { stream: 'Nuqta+ Subscriptions', percentage: 10, monthly: 5000, growth: '+25%' },
   { stream: 'Merchant Premium Features', percentage: 8, monthly: 4000, growth: '+20%' },
-  { stream: 'Expired Coins', percentage: 5, monthly: 2500, growth: '+8%' },
+  { stream: 'Expired Rewards', percentage: 5, monthly: 2500, growth: '+8%' },
   { stream: 'Data Insights (Future)', percentage: 2, monthly: 1000, growth: 'New' },
 ];
 
 // Interactive Calculator Component
 const UnitEconomicsCalculator = () => {
   const [inputs, setInputs] = useState({
-    avgTransactionValue: 125,
-    transactionsPerMonth: 4.2,
-    commissionRate: 5,
+    avgTransactionValue: 100,        // Canonical AOV
+    transactionsPerMonth: 4,         // Canonical frequency
+    commissionRate: 8,               // 8% total commission (merchant pays)
     userLifespanMonths: 18,
-    coinsRedemptionRate: 70,
+    cashbackRate: 3,                 // 3% cashback to user (of 8% total)
     cacPaid: 25,
     cacOrganic: 8,
     organicShare: 40
   });
 
   const calculate = () => {
-    const monthlyRevenue = inputs.avgTransactionValue * inputs.transactionsPerMonth * (inputs.commissionRate / 100);
-    const netRevenue = monthlyRevenue * (1 - inputs.coinsRedemptionRate / 100 * 0.5); // 50% of coins = cost
+    const monthlyGmv = inputs.avgTransactionValue * inputs.transactionsPerMonth;
+    const monthlyRevenue = monthlyGmv * (inputs.commissionRate / 100);
+    const cashbackCost = monthlyGmv * (inputs.cashbackRate / 100);
+    const netRevenue = monthlyRevenue - cashbackCost; // Nuqta net take
     const ltv = netRevenue * inputs.userLifespanMonths;
     const blendedCac = (inputs.cacPaid * (100 - inputs.organicShare) / 100) + (inputs.cacOrganic * inputs.organicShare / 100);
     const ltvCacRatio = ltv / blendedCac;
@@ -163,11 +167,12 @@ const UnitEconomicsCalculator = () => {
           />
         </div>
         <div>
-          <label className="text-sm text-gray-300">Coins Redemption (%)</label>
+          <label className="text-sm text-gray-300">Cashback Rate (%)</label>
           <input
             type="number"
-            value={inputs.coinsRedemptionRate}
-            onChange={(e) => setInputs({ ...inputs, coinsRedemptionRate: Number(e.target.value) })}
+            step="0.5"
+            value={inputs.cashbackRate}
+            onChange={(e) => setInputs({ ...inputs, cashbackRate: Number(e.target.value) })}
             className="w-full bg-white/10 border border-white/20 rounded-lg px-3 py-2 mt-1"
           />
         </div>
@@ -279,19 +284,19 @@ export default function UnitEconomicsPage() {
             {/* Key Metrics Overview */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto">
               <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-[#c9a227]">AED 89</div>
+                <div className="text-3xl font-bold text-[#c9a227]">AED {userMetrics.ltv.current}</div>
                 <div className="text-sm text-gray-300">User LTV</div>
-                <div className="text-xs text-emerald-400 mt-1">↑ 12% vs last month</div>
+                <div className="text-xs text-emerald-400 mt-1">8% commission × 18 mo</div>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-emerald-400">5.8x</div>
+                <div className="text-3xl font-bold text-emerald-400">{userMetrics.ltvCacRatio.current}x</div>
                 <div className="text-sm text-gray-300">LTV:CAC Ratio</div>
-                <div className="text-xs text-emerald-400 mt-1">Target: 10x</div>
+                <div className="text-xs text-emerald-400 mt-1">Target: {userMetrics.ltvCacRatio.target}x</div>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
-                <div className="text-3xl font-bold text-pink-400">2.7 mo</div>
+                <div className="text-3xl font-bold text-pink-400">{userMetrics.paybackPeriod.current} mo</div>
                 <div className="text-sm text-gray-300">Payback Period</div>
-                <div className="text-xs text-emerald-400 mt-1">↓ 0.5 mo improved</div>
+                <div className="text-xs text-emerald-400 mt-1">Under 1 month</div>
               </div>
               <div className="bg-white/10 rounded-xl p-4">
                 <div className="text-3xl font-bold text-cyan-400">AED 50K</div>
@@ -421,11 +426,15 @@ export default function UnitEconomicsPage() {
                     <span className="font-medium">{userMetrics.ltv.breakdown.avgLifespanMonths} months</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-500">Coins Redemption Rate</span>
-                    <span className="font-medium">{userMetrics.ltv.breakdown.coinsRedemptionRate * 100}%</span>
+                    <span className="text-gray-500">Nuqta Net Take</span>
+                    <span className="font-medium">{userMetrics.ltv.breakdown.nuqtaTakeRate * 100}%</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-gray-100">
+                    <span className="text-gray-500">Cashback Rate</span>
+                    <span className="font-medium">{userMetrics.ltv.breakdown.cashbackRate * 100}%</span>
                   </div>
                   <div className="flex justify-between py-2 bg-emerald-100 px-3 rounded-lg font-semibold">
-                    <span>LTV = (ATV × TPM × CR × Life) × (1 - CRR×0.5)</span>
+                    <span>LTV = GMV × Net Take × Life = {userMetrics.ltv.breakdown.avgTransactionValue * userMetrics.ltv.breakdown.transactionsPerMonth} × {userMetrics.ltv.breakdown.nuqtaTakeRate * 100}% × {userMetrics.ltv.breakdown.avgLifespanMonths}</span>
                     <span className="text-emerald-600">AED {userMetrics.ltv.current}</span>
                   </div>
                 </div>
@@ -827,7 +836,7 @@ export default function UnitEconomicsPage() {
                 <li>• First transaction within 24 hours</li>
                 <li>• Higher value first transactions</li>
                 <li>• Better onboarding conversion</li>
-                <li>• Reduce coin redemption rate</li>
+                <li>• Optimize cashback efficiency</li>
               </ul>
             </div>
           </div>

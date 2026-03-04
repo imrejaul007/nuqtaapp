@@ -95,19 +95,20 @@ interface Assumptions {
   h3GateRetention: number;
 }
 
-// Default assumptions - ALIGNED WITH OFFICIAL DOCUMENTS
-// Source: funding-docs, memo, homepage
-// LTV:CAC target: 16.8x (AED 504 LTV / AED 30 CAC)
+// Default assumptions - ALIGNED WITH CANONICAL METRICS
+// Source: Reconciled across all financial pages (financial-models, unit-economics, scenarios)
+// Canonical: AOV AED 100, 4 txns/mo, 8% commission (5% Nuqta + 3% cashback)
+// LTV:CAC target: 20x (AED 360 LTV / AED 18 CAC)
 const defaultAssumptions: Assumptions = {
   aov: 100,
   frequency: 4,
-  cac: 30, // Official: AED 30 blended CAC
-  retentionMonths: 14, // 14 months retention → LTV ~AED 493 ≈ official AED 504
+  cac: 18, // Blended CAC: Paid AED 25 × 60% + Organic AED 8 × 40%
+  retentionMonths: 18, // 18 months average user lifespan
   activationRate: 40,
   userChurn: 5,
 
   baseCommission: 5,
-  noShareBonus: 5,
+  noShareBonus: 3, // 5% base + 3% bonus = 8% total commission (aligns with canonical 8%)
   noShareRate: 40,
   promotedCommission: 5,
   promotedGmvPct: 30,

@@ -242,7 +242,8 @@ function BootstrapScenario() {
 
         <div className="mb-4 p-3 bg-orange-500/10 rounded-lg border border-orange-500/20">
           <p className="text-orange-300 text-sm">
-            <strong>Budget Rule:</strong> Fixed costs (AED 7K) + 40% of previous month revenue reinvested into marketing/growth
+            <strong>Budget Rule:</strong> Fixed costs (AED 7K) + 40% of previous month revenue reinvested into marketing/growth.
+            Revenue = 8% total commission (5% Nuqta + 3% cashback).
           </p>
         </div>
 
@@ -264,17 +265,17 @@ function BootstrapScenario() {
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                // Month | Users | Merchants | GMV | Revenue (15% take) | Fixed Costs | Reinvest (40% of prev rev) | Total Cost | Net | Cash
-                { month: 'M1', users: 50, merchants: 3, gmv: 5000, revenue: 750, fixed: 7000, reinvest: 3000, total: 10000, net: -9250, cash: 40750, note: 'Launch spend' },
-                { month: 'M2', users: 150, merchants: 5, gmv: 15000, revenue: 2250, fixed: 7000, reinvest: 300, total: 7300, net: -5050, cash: 35700, note: '40% of M1 rev' },
-                { month: 'M3', users: 400, merchants: 8, gmv: 40000, revenue: 6000, fixed: 7000, reinvest: 900, total: 7900, net: -1900, cash: 33800, note: '40% of M2 rev' },
-                { month: 'M4', users: 700, merchants: 10, gmv: 70000, revenue: 10500, fixed: 7000, reinvest: 2400, total: 9400, net: 1100, cash: 34900, note: 'Break-even!' },
-                { month: 'M5', users: 1100, merchants: 14, gmv: 110000, revenue: 16500, fixed: 7000, reinvest: 4200, total: 11200, net: 5300, cash: 40200, note: 'Profitable' },
-                { month: 'M6', users: 1700, merchants: 18, gmv: 170000, revenue: 25500, fixed: 8000, reinvest: 6600, total: 14600, net: 10900, cash: 51100, note: '+1 contractor' },
-                { month: 'M7', users: 2400, merchants: 22, gmv: 240000, revenue: 36000, fixed: 8000, reinvest: 10200, total: 18200, net: 17800, cash: 68900, note: 'Scaling' },
-                { month: 'M8', users: 3300, merchants: 27, gmv: 330000, revenue: 49500, fixed: 8000, reinvest: 14400, total: 22400, net: 27100, cash: 96000, note: 'Compounding' },
-                { month: 'M9', users: 4500, merchants: 32, gmv: 450000, revenue: 67500, fixed: 10000, reinvest: 19800, total: 29800, net: 37700, cash: 133700, note: '+1 more hire' },
-                { month: 'M12', users: 10000, merchants: 50, gmv: 1000000, revenue: 150000, fixed: 15000, reinvest: 50000, total: 65000, net: 85000, cash: 350000, note: '3-person team' },
+                // Revenue = GMV × 8% (canonical take rate) | Fixed costs + 40% of prev month rev reinvested
+                { month: 'M1', users: 50, merchants: 3, gmv: 5000, revenue: 400, fixed: 7000, reinvest: 3000, total: 10000, net: -9600, cash: 40400, note: 'Launch spend' },
+                { month: 'M2', users: 150, merchants: 5, gmv: 15000, revenue: 1200, fixed: 7000, reinvest: 160, total: 7160, net: -5960, cash: 34440, note: '40% of M1 rev' },
+                { month: 'M3', users: 400, merchants: 8, gmv: 40000, revenue: 3200, fixed: 7000, reinvest: 480, total: 7480, net: -4280, cash: 30160, note: '40% of M2 rev' },
+                { month: 'M4', users: 700, merchants: 10, gmv: 70000, revenue: 5600, fixed: 7000, reinvest: 1280, total: 8280, net: -2680, cash: 27480, note: 'Narrowing loss' },
+                { month: 'M5', users: 1100, merchants: 14, gmv: 110000, revenue: 8800, fixed: 7000, reinvest: 2240, total: 9240, net: -440, cash: 27040, note: 'Near break-even' },
+                { month: 'M6', users: 1700, merchants: 18, gmv: 170000, revenue: 13600, fixed: 8000, reinvest: 3520, total: 11520, net: 2080, cash: 29120, note: 'Break-even!' },
+                { month: 'M7', users: 2400, merchants: 22, gmv: 240000, revenue: 19200, fixed: 8000, reinvest: 5440, total: 13440, net: 5760, cash: 34880, note: 'Profitable' },
+                { month: 'M8', users: 3300, merchants: 27, gmv: 330000, revenue: 26400, fixed: 8000, reinvest: 7680, total: 15680, net: 10720, cash: 45600, note: 'Compounding' },
+                { month: 'M9', users: 4500, merchants: 32, gmv: 450000, revenue: 36000, fixed: 10000, reinvest: 10560, total: 20560, net: 15440, cash: 61040, note: '+1 more hire' },
+                { month: 'M12', users: 10000, merchants: 50, gmv: 1000000, revenue: 80000, fixed: 15000, reinvest: 28000, total: 43000, net: 37000, cash: 160000, note: '3-person team' },
               ].map((row) => (
                 <tr key={row.month} className={row.net >= 0 ? 'bg-green-500/5' : ''}>
                   <td className="py-3 px-2 text-white font-medium">{row.month}</td>
@@ -299,9 +300,9 @@ function BootstrapScenario() {
 
         <div className="mt-4 grid sm:grid-cols-2 gap-4">
           <div className="p-4 bg-orange-500/10 rounded-xl border border-orange-500/30">
-            <p className="text-orange-400 font-bold">Break-even: Month 4</p>
+            <p className="text-orange-400 font-bold">Break-even: Month 6</p>
             <p className="text-slate-400 text-sm mt-1">
-              First profit at Month 4. Revenue reinvestment compounds growth.
+              First profit at Month 6 with 8% take rate. Revenue reinvestment compounds growth.
               <strong className="text-orange-300"> Zero margin for error.</strong>
             </p>
           </div>
@@ -389,10 +390,10 @@ function BootstrapScenario() {
               risk: 'If missed: Model fundamentally broken'
             },
             {
-              week: 'Month 4',
+              week: 'Month 6',
               milestone: 'Break-even (Revenue ≥ Costs)',
-              why: 'Survival point. After this, you can live forever.',
-              risk: 'If missed: Out of cash, game over'
+              why: 'Survival point at 8% take rate. After this, you can live forever.',
+              risk: 'If missed: Out of cash by Month 8'
             },
           ].map((item, idx) => (
             <div key={idx} className="p-4 bg-white/5 rounded-xl border-l-4 border-orange-500">
@@ -428,30 +429,30 @@ function BootstrapScenario() {
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
-              <p className="text-2xl font-bold text-white">AED 1.8M/year</p>
-              <p className="text-slate-500 text-xs">~$490K ARR (AED 150K × 12)</p>
+              <p className="text-2xl font-bold text-white">AED 960K/year</p>
+              <p className="text-slate-500 text-xs">~$261K ARR (AED 80K × 12)</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Monthly Profit</p>
-              <p className="text-2xl font-bold text-green-400">AED 85K</p>
-              <p className="text-slate-500 text-xs">Cash position: AED 350K</p>
+              <p className="text-2xl font-bold text-green-400">AED 37K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 160K</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-3">
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR</p>
-              <p className="text-xl font-bold text-white">$4.9M</p>
-              <p className="text-green-400 text-sm">Founder 100% = $4.9M</p>
+              <p className="text-xl font-bold text-white">$2.6M</p>
+              <p className="text-green-400 text-sm">Founder 100% = $2.6M</p>
             </div>
             <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30">
               <p className="text-orange-400 text-xs">At 15x ARR</p>
-              <p className="text-xl font-bold text-orange-400">$7.4M</p>
-              <p className="text-orange-400 text-sm">Founder 100% = $7.4M</p>
+              <p className="text-xl font-bold text-orange-400">$3.9M</p>
+              <p className="text-orange-400 text-sm">Founder 100% = $3.9M</p>
             </div>
             <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR</p>
-              <p className="text-xl font-bold text-[#c9a227]">$9.8M</p>
-              <p className="text-[#c9a227] text-sm">Founder 100% = $9.8M</p>
+              <p className="text-xl font-bold text-[#c9a227]">$5.2M</p>
+              <p className="text-[#c9a227] text-sm">Founder 100% = $5.2M</p>
             </div>
           </div>
         </div>
@@ -462,30 +463,30 @@ function BootstrapScenario() {
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
-              <p className="text-2xl font-bold text-white">AED 6M/year</p>
-              <p className="text-slate-500 text-xs">~$1.6M ARR (3x Y1 growth)</p>
+              <p className="text-2xl font-bold text-white">AED 3.2M/year</p>
+              <p className="text-slate-500 text-xs">~$870K ARR (3.3x Y1 growth)</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Monthly Profit</p>
-              <p className="text-2xl font-bold text-green-400">AED 250K</p>
-              <p className="text-slate-500 text-xs">Cash position: AED 2M+</p>
+              <p className="text-2xl font-bold text-green-400">AED 130K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 900K+</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-3">
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR</p>
-              <p className="text-xl font-bold text-white">$16M</p>
-              <p className="text-green-400 text-sm">Founder 100% = $16M</p>
+              <p className="text-xl font-bold text-white">$8.7M</p>
+              <p className="text-green-400 text-sm">Founder 100% = $8.7M</p>
             </div>
             <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30">
               <p className="text-orange-400 text-xs">At 15x ARR</p>
-              <p className="text-xl font-bold text-orange-400">$24M</p>
-              <p className="text-orange-400 text-sm">Founder 100% = $24M</p>
+              <p className="text-xl font-bold text-orange-400">$13M</p>
+              <p className="text-orange-400 text-sm">Founder 100% = $13M</p>
             </div>
             <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR</p>
-              <p className="text-xl font-bold text-[#c9a227]">$32M</p>
-              <p className="text-[#c9a227] text-sm">Founder 100% = $32M</p>
+              <p className="text-xl font-bold text-[#c9a227]">$17.4M</p>
+              <p className="text-[#c9a227] text-sm">Founder 100% = $17.4M</p>
             </div>
           </div>
         </div>
@@ -496,30 +497,30 @@ function BootstrapScenario() {
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
-              <p className="text-2xl font-bold text-white">AED 15M/year</p>
-              <p className="text-slate-500 text-xs">~$4.1M ARR (2.5x Y2 growth)</p>
+              <p className="text-2xl font-bold text-white">AED 8M/year</p>
+              <p className="text-slate-500 text-xs">~$2.2M ARR (2.5x Y2 growth)</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Monthly Profit</p>
-              <p className="text-2xl font-bold text-green-400">AED 600K</p>
-              <p className="text-slate-500 text-xs">Cash position: AED 8M+</p>
+              <p className="text-2xl font-bold text-green-400">AED 320K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 4M+</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-3">
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR</p>
-              <p className="text-xl font-bold text-white">$41M</p>
-              <p className="text-green-400 text-sm">Founder 100% = $41M</p>
+              <p className="text-xl font-bold text-white">$22M</p>
+              <p className="text-green-400 text-sm">Founder 100% = $22M</p>
             </div>
             <div className="p-3 bg-orange-500/10 rounded-xl border border-orange-500/30">
               <p className="text-orange-400 text-xs">At 15x ARR</p>
-              <p className="text-xl font-bold text-orange-400">$62M</p>
-              <p className="text-orange-400 text-sm">Founder 100% = $62M</p>
+              <p className="text-xl font-bold text-orange-400">$33M</p>
+              <p className="text-orange-400 text-sm">Founder 100% = $33M</p>
             </div>
             <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR</p>
-              <p className="text-xl font-bold text-[#c9a227]">$82M</p>
-              <p className="text-[#c9a227] text-sm">Founder 100% = $82M</p>
+              <p className="text-xl font-bold text-[#c9a227]">$44M</p>
+              <p className="text-[#c9a227] text-sm">Founder 100% = $44M</p>
             </div>
           </div>
         </div>
@@ -529,8 +530,8 @@ function BootstrapScenario() {
           <p className="text-orange-400 font-bold mb-2">Bootstrap Exit Advantage</p>
           <p className="text-slate-300 text-sm">
             <strong>100% ownership</strong> means slower absolute growth but higher personal returns per dollar of revenue.
-            A $41M valuation at Year 3 with 100% ownership = $41M for you.
-            Compare: $490M Multi-Round valuation at 55% = $270M, but required $8.4M in fundraising.
+            A $22M valuation at Year 3 with 100% ownership = $22M for you.
+            Compare: Multi-Round path requires $8.4M fundraising with dilution.
           </p>
         </div>
       </div>
@@ -669,7 +670,8 @@ function SafeOnlyScenario() {
 
         <div className="mb-4 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
           <p className="text-blue-300 text-sm">
-            <strong>Budget Rule:</strong> Fixed ops (AED 50K base, scaling with team) + 35% of revenue reinvested into marketing/growth
+            <strong>Budget Rule:</strong> Fixed ops (AED 50K base, scaling with team) + 35% of revenue reinvested into marketing/growth.
+            Revenue = 8% total commission (5% Nuqta + 3% cashback).
           </p>
         </div>
 
@@ -692,18 +694,18 @@ function SafeOnlyScenario() {
             </thead>
             <tbody className="divide-y divide-white/5">
               {[
-                // Budget allocation: Team (fixed) + Marketing (35% of rev or min 20K) + Ops (15K base)
-                { month: 'M1', users: 500, merchants: 10, gmv: 50, revenue: 7.5, team: 45, mktg: 25, ops: 15, total: 85, net: -77.5, cash: 1392, note: '8-person team' },
-                { month: 'M2', users: 1200, merchants: 15, gmv: 120, revenue: 18, team: 45, mktg: 20, ops: 15, total: 80, net: -62, cash: 1330, note: 'Growing' },
-                { month: 'M3', users: 2500, merchants: 22, gmv: 250, revenue: 37.5, team: 50, mktg: 25, ops: 15, total: 90, net: -52.5, cash: 1278, note: '+1 hire' },
-                { month: 'M4', users: 4500, merchants: 32, gmv: 450, revenue: 67.5, team: 50, mktg: 30, ops: 15, total: 95, net: -27.5, cash: 1250, note: 'Scaling' },
-                { month: 'M5', users: 7000, merchants: 45, gmv: 700, revenue: 105, team: 55, mktg: 40, ops: 15, total: 110, net: -5, cash: 1245, note: '+1 hire' },
-                { month: 'M6', users: 10000, merchants: 55, gmv: 1000, revenue: 150, team: 60, mktg: 55, ops: 18, total: 133, net: 17, cash: 1262, note: 'Break-even zone' },
-                { month: 'M7', users: 13000, merchants: 65, gmv: 1300, revenue: 195, team: 65, mktg: 70, ops: 18, total: 153, net: 42, cash: 1304, note: '+1 hire' },
-                { month: 'M8', users: 16500, merchants: 75, gmv: 1650, revenue: 248, team: 70, mktg: 85, ops: 20, total: 175, net: 73, cash: 1377, note: 'Profitable' },
-                { month: 'M9', users: 20000, merchants: 85, gmv: 2000, revenue: 300, team: 75, mktg: 105, ops: 22, total: 202, net: 98, cash: 1475, note: 'Compounding' },
-                { month: 'M12', users: 35000, merchants: 110, gmv: 3500, revenue: 525, team: 90, mktg: 180, ops: 28, total: 298, net: 227, cash: 2000, note: '15-person team' },
-                { month: 'M18', users: 60000, merchants: 160, gmv: 6000, revenue: 900, team: 120, mktg: 315, ops: 40, total: 475, net: 425, cash: 3500, note: '20-person team' },
+                // Revenue = GMV × 8% (canonical) | Team (fixed) + Marketing (35% of rev or min 20K) + Ops
+                { month: 'M1', users: 500, merchants: 10, gmv: 50, revenue: 4, team: 45, mktg: 20, ops: 15, total: 80, net: -76, cash: 1394, note: '8-person team' },
+                { month: 'M2', users: 1200, merchants: 15, gmv: 120, revenue: 9.6, team: 45, mktg: 20, ops: 15, total: 80, net: -70.4, cash: 1324, note: 'Growing' },
+                { month: 'M3', users: 2500, merchants: 22, gmv: 250, revenue: 20, team: 50, mktg: 20, ops: 15, total: 85, net: -65, cash: 1259, note: '+1 hire' },
+                { month: 'M4', users: 4500, merchants: 32, gmv: 450, revenue: 36, team: 50, mktg: 20, ops: 15, total: 85, net: -49, cash: 1210, note: 'Scaling' },
+                { month: 'M5', users: 7000, merchants: 45, gmv: 700, revenue: 56, team: 55, mktg: 20, ops: 15, total: 90, net: -34, cash: 1176, note: '+1 hire' },
+                { month: 'M6', users: 10000, merchants: 55, gmv: 1000, revenue: 80, team: 60, mktg: 28, ops: 18, total: 106, net: -26, cash: 1150, note: 'Revenue growing' },
+                { month: 'M7', users: 13000, merchants: 65, gmv: 1300, revenue: 104, team: 65, mktg: 36, ops: 18, total: 119, net: -15, cash: 1135, note: '+1 hire' },
+                { month: 'M8', users: 16500, merchants: 75, gmv: 1650, revenue: 132, team: 70, mktg: 46, ops: 20, total: 136, net: -4, cash: 1131, note: 'Near break-even' },
+                { month: 'M9', users: 20000, merchants: 85, gmv: 2000, revenue: 160, team: 75, mktg: 56, ops: 22, total: 153, net: 7, cash: 1138, note: 'Break-even!' },
+                { month: 'M12', users: 35000, merchants: 110, gmv: 3500, revenue: 280, team: 90, mktg: 98, ops: 28, total: 216, net: 64, cash: 1300, note: '15-person team' },
+                { month: 'M18', users: 60000, merchants: 160, gmv: 6000, revenue: 480, team: 120, mktg: 168, ops: 40, total: 328, net: 152, cash: 2000, note: '20-person team' },
               ].map((row) => (
                 <tr key={row.month} className={row.net >= 0 ? 'bg-green-500/5' : ''}>
                   <td className="py-3 px-2 text-white font-medium">{row.month}</td>
@@ -727,9 +729,9 @@ function SafeOnlyScenario() {
 
         <div className="mt-4 grid sm:grid-cols-3 gap-4">
           <div className="p-4 bg-blue-500/10 rounded-xl border border-blue-500/30">
-            <p className="text-blue-400 font-bold">Break-even: Month 6</p>
+            <p className="text-blue-400 font-bold">Break-even: Month 9</p>
             <p className="text-slate-400 text-sm mt-1">
-              Revenue covers costs. Every month after = profit.
+              Revenue covers costs at 8% take rate. Every month after = profit.
             </p>
           </div>
           <div className="p-4 bg-white/5 rounded-xl border border-white/10">
@@ -741,7 +743,7 @@ function SafeOnlyScenario() {
           <div className="p-4 bg-green-500/10 rounded-xl border border-green-500/30">
             <p className="text-green-400 font-bold">Month 18 Profit</p>
             <p className="text-slate-400 text-sm mt-1">
-              AED 425K/month net profit. Self-sustaining.
+              AED 152K/month net profit. Self-sustaining.
             </p>
           </div>
         </div>
@@ -806,25 +808,25 @@ function SafeOnlyScenario() {
             {
               month: 'Month 6',
               milestone: 'Product-Market Fit Proven',
-              metrics: '50K users, 1,500 merchants, 30% D30 retention, AED 2M revenue/month',
+              metrics: '10K users, 55 merchants, 30% D30 retention, AED 80K revenue/month',
               action: 'Stop experimenting, double down on what works'
             },
             {
               month: 'Month 9',
               milestone: 'Break-even Achieved',
-              metrics: 'Revenue ≥ Costs, positive cash flow',
+              metrics: 'Revenue ≥ Costs, positive cash flow at 8% take rate',
               action: 'Reduce dependency on remaining SAFE funds'
             },
             {
               month: 'Month 12',
               milestone: 'Sustainable Growth',
-              metrics: '100K users, 2,500 merchants, AED 8M revenue/month',
+              metrics: '35K users, 110 merchants, AED 280K revenue/month',
               action: 'Reinvest all profits into growth'
             },
             {
               month: 'Month 18',
               milestone: 'Market Leader in Dubai',
-              metrics: '200K users, 5,000 merchants, AED 20M revenue/month',
+              metrics: '60K users, 160 merchants, AED 480K revenue/month',
               action: 'Consider organic GCC expansion (Abu Dhabi first)'
             },
           ].map((item, idx) => (
@@ -860,30 +862,30 @@ function SafeOnlyScenario() {
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
-              <p className="text-2xl font-bold text-white">AED 6.3M/year</p>
-              <p className="text-slate-500 text-xs">~$1.7M ARR (AED 525K × 12)</p>
+              <p className="text-2xl font-bold text-white">AED 3.36M/year</p>
+              <p className="text-slate-500 text-xs">~$915K ARR (AED 280K × 12)</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Monthly Profit</p>
-              <p className="text-2xl font-bold text-green-400">AED 227K</p>
-              <p className="text-slate-500 text-xs">Cash position: AED 2M</p>
+              <p className="text-2xl font-bold text-green-400">AED 64K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 1.3M</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-3">
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR</p>
-              <p className="text-xl font-bold text-white">$17M</p>
-              <p className="text-green-400 text-sm">Founder 92% = $15.6M</p>
+              <p className="text-xl font-bold text-white">$9.2M</p>
+              <p className="text-green-400 text-sm">Founder 92% = $8.5M</p>
             </div>
             <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
               <p className="text-blue-400 text-xs">At 15x ARR</p>
-              <p className="text-xl font-bold text-blue-400">$26M</p>
-              <p className="text-blue-400 text-sm">Founder 92% = $23.9M</p>
+              <p className="text-xl font-bold text-blue-400">$13.7M</p>
+              <p className="text-blue-400 text-sm">Founder 92% = $12.6M</p>
             </div>
             <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR</p>
-              <p className="text-xl font-bold text-[#c9a227]">$34M</p>
-              <p className="text-[#c9a227] text-sm">Founder 92% = $31.3M</p>
+              <p className="text-xl font-bold text-[#c9a227]">$18.3M</p>
+              <p className="text-[#c9a227] text-sm">Founder 92% = $16.8M</p>
             </div>
           </div>
         </div>
@@ -894,30 +896,30 @@ function SafeOnlyScenario() {
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
-              <p className="text-2xl font-bold text-white">AED 14.4M/year</p>
-              <p className="text-slate-500 text-xs">~$3.9M ARR (2.3x Y1 growth)</p>
+              <p className="text-2xl font-bold text-white">AED 7.7M/year</p>
+              <p className="text-slate-500 text-xs">~$2.1M ARR (2.3x Y1 growth)</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Monthly Profit</p>
-              <p className="text-2xl font-bold text-green-400">AED 550K</p>
-              <p className="text-slate-500 text-xs">Cash position: AED 6M+</p>
+              <p className="text-2xl font-bold text-green-400">AED 290K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 3M+</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-3">
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR</p>
-              <p className="text-xl font-bold text-white">$39M</p>
-              <p className="text-green-400 text-sm">Founder 92% = $35.9M</p>
+              <p className="text-xl font-bold text-white">$21M</p>
+              <p className="text-green-400 text-sm">Founder 92% = $19.3M</p>
             </div>
             <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
               <p className="text-blue-400 text-xs">At 15x ARR</p>
-              <p className="text-xl font-bold text-blue-400">$59M</p>
-              <p className="text-blue-400 text-sm">Founder 92% = $54.3M</p>
+              <p className="text-xl font-bold text-blue-400">$31.5M</p>
+              <p className="text-blue-400 text-sm">Founder 92% = $29M</p>
             </div>
             <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR</p>
-              <p className="text-xl font-bold text-[#c9a227]">$78M</p>
-              <p className="text-[#c9a227] text-sm">Founder 92% = $71.8M</p>
+              <p className="text-xl font-bold text-[#c9a227]">$42M</p>
+              <p className="text-[#c9a227] text-sm">Founder 92% = $38.6M</p>
             </div>
           </div>
         </div>
@@ -928,30 +930,30 @@ function SafeOnlyScenario() {
           <div className="grid sm:grid-cols-2 gap-4 mb-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Annual Revenue Run Rate</p>
-              <p className="text-2xl font-bold text-white">AED 28.8M/year</p>
-              <p className="text-slate-500 text-xs">~$7.8M ARR (2x Y2 growth)</p>
+              <p className="text-2xl font-bold text-white">AED 15.4M/year</p>
+              <p className="text-slate-500 text-xs">~$4.2M ARR (2x Y2 growth)</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <p className="text-slate-400 text-sm">Monthly Profit</p>
-              <p className="text-2xl font-bold text-green-400">AED 1.1M</p>
-              <p className="text-slate-500 text-xs">Cash position: AED 15M+</p>
+              <p className="text-2xl font-bold text-green-400">AED 580K</p>
+              <p className="text-slate-500 text-xs">Cash position: AED 8M+</p>
             </div>
           </div>
           <div className="grid sm:grid-cols-3 gap-3">
             <div className="p-3 bg-white/5 rounded-xl border border-white/10">
               <p className="text-slate-400 text-xs">At 10x ARR</p>
-              <p className="text-xl font-bold text-white">$78M</p>
-              <p className="text-green-400 text-sm">Founder 92% = $71.8M</p>
+              <p className="text-xl font-bold text-white">$42M</p>
+              <p className="text-green-400 text-sm">Founder 92% = $38.6M</p>
             </div>
             <div className="p-3 bg-blue-500/10 rounded-xl border border-blue-500/30">
               <p className="text-blue-400 text-xs">At 15x ARR</p>
-              <p className="text-xl font-bold text-blue-400">$117M</p>
-              <p className="text-blue-400 text-sm">Founder 92% = $107.6M</p>
+              <p className="text-xl font-bold text-blue-400">$63M</p>
+              <p className="text-blue-400 text-sm">Founder 92% = $58M</p>
             </div>
             <div className="p-3 bg-[#c9a227]/10 rounded-xl border border-[#c9a227]/30">
               <p className="text-[#c9a227] text-xs">At 20x ARR</p>
-              <p className="text-xl font-bold text-[#c9a227]">$156M</p>
-              <p className="text-[#c9a227] text-sm">Founder 92% = $143.5M</p>
+              <p className="text-xl font-bold text-[#c9a227]">$84M</p>
+              <p className="text-[#c9a227] text-sm">Founder 92% = $77.3M</p>
             </div>
           </div>
         </div>
@@ -961,7 +963,7 @@ function SafeOnlyScenario() {
           <p className="text-blue-400 font-bold mb-2">SAFE-Only Exit Advantage</p>
           <p className="text-slate-300 text-sm">
             <strong>92% ownership</strong> with profitable, sustainable growth = maximum control + strong returns.
-            A $117M valuation at Year 3 (15x ARR) with 92% ownership = $107.6M for you.
+            A $63M valuation at Year 3 (15x ARR) with 92% ownership = $58M for you.
             Lower risk, no VC pressure, and freedom to exit on your terms.
           </p>
         </div>
@@ -1356,7 +1358,7 @@ function MultiRoundScenario() {
           <p className="text-green-400 font-bold mb-2">Multi-Round Exit Advantage</p>
           <p className="text-slate-300 text-sm">
             <strong>Maximum growth = maximum absolute returns.</strong> Despite 45% dilution, a $735M exit at 15x ARR
-            = $404M for founder (55%). This is 3.8x more than SAFE-Only ($107.6M) and 6.5x more than Bootstrap ($62M).
+            = $404M for founder (55%). This is 7x more than SAFE-Only ($58M) and 12x more than Bootstrap ($33M).
             Aggressive funding enables aggressive scaling and market dominance.
           </p>
         </div>
@@ -1415,7 +1417,7 @@ function MultiRoundScenario() {
                 { metric: 'Users', target: '50,000 MAU', why: 'Proves product-market fit' },
                 { metric: 'Merchants', target: '150 live', why: 'Supply side validated' },
                 { metric: 'GMV', target: 'AED 5M/month', why: 'Transaction volume' },
-                { metric: 'Revenue', target: 'AED 750K/month', why: 'Monetization working' },
+                { metric: 'Revenue', target: 'AED 400K/month', why: 'Monetization at 8% take rate' },
                 { metric: 'Retention', target: '25% D30', why: 'Users stick around' },
                 { metric: 'LTV:CAC', target: '> 3x', why: 'Unit economics viable' },
               ],
@@ -1427,7 +1429,7 @@ function MultiRoundScenario() {
                 { metric: 'Users', target: '250,000 MAU', why: '5x growth from Seed' },
                 { metric: 'Merchants', target: '500 live', why: 'Strong network effects' },
                 { metric: 'GMV', target: 'AED 25M/month', why: 'Significant scale' },
-                { metric: 'Revenue', target: 'AED 3.75M/month', why: 'Revenue run rate' },
+                { metric: 'Revenue', target: 'AED 2M/month', why: 'Revenue run rate at 8%' },
                 { metric: 'Markets', target: '3+ GCC countries', why: 'Expansion proven' },
                 { metric: 'Team', target: '70+ people', why: 'Can execute at scale' },
               ],
@@ -1511,11 +1513,12 @@ function ComparisonTable({ activeScenario }: { activeScenario: Scenario }) {
               { metric: 'Total Capital', bootstrap: 'AED 50K', safe: '$400K', multi: '$8.4M' },
               { metric: 'Runway', bootstrap: '4-6 months', safe: '12-18 months', multi: '36+ months' },
               { metric: 'Founder Ownership (Y3)', bootstrap: '100%', safe: '92%', multi: '55%' },
-              { metric: 'Team Size (Y1)', bootstrap: '1-2', safe: '12-15', multi: '45+' },
-              { metric: 'Users (Y1)', bootstrap: '2,500', safe: '25,000', multi: '120,000' },
-              { metric: 'Merchants (Y1)', bootstrap: '25', safe: '100', multi: '300' },
-              { metric: 'Revenue (Y1)', bootstrap: 'AED 450K', safe: 'AED 4.5M', multi: 'AED 18M' },
-              { metric: 'Break-even', bootstrap: 'Month 4', safe: 'Month 9', multi: 'Month 24' },
+              { metric: 'Team Size (Y1)', bootstrap: '1-3', safe: '12-15', multi: '45+' },
+              { metric: 'Users (Y1)', bootstrap: '10,000', safe: '35,000', multi: '100,000' },
+              { metric: 'Merchants (Y1)', bootstrap: '50', safe: '110', multi: '2,500' },
+              { metric: 'Revenue (Y1)', bootstrap: 'AED 300K', safe: 'AED 1.1M', multi: 'AED 9.6M' },
+              { metric: 'Take Rate', bootstrap: '8%', safe: '8%', multi: '8%' },
+              { metric: 'Break-even', bootstrap: 'Month 6', safe: 'Month 9', multi: 'Month 15' },
               { metric: 'GCC Expansion', bootstrap: 'No', safe: 'Slow (Y2+)', multi: 'Yes (Y1)' },
               { metric: 'Risk Level', bootstrap: 'Very High', safe: 'Medium', multi: 'Low' },
               { metric: 'Success Probability', bootstrap: '15-20%', safe: '45-55%', multi: '65-75%' },

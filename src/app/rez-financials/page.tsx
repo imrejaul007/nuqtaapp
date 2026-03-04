@@ -172,14 +172,49 @@ const cogsBreakdown = [
 // OpEx BREAKDOWN (Fixed/semi-fixed operating costs)
 // ============================================
 const expenseCategories = [
-  { name: 'Marketing & Ads', pct: 36, color: '#a855f7', desc: 'Paid ads (Meta/Google), influencer campaigns, referral rewards' },
-  { name: 'Technology & Infra', pct: 20, color: '#3b82f6', desc: 'AWS/cloud, payment processing, app stores, security' },
-  { name: 'BizDev & Merchant Acq', pct: 19, color: '#22c55e', desc: 'Sales team, merchant onboarding, QR hardware, partnerships' },
-  { name: 'Team & Salaries', pct: 8, color: '#f97316', desc: 'CXO salaries, engineering team, support staff' },
-  { name: 'Customer Support', pct: 8, color: '#06b6d4', desc: 'Support team, tools, escalation management' },
-  { name: 'Rent & Office', pct: 8, color: '#ec4899', desc: 'Bangalore HQ, co-working for satellite offices' },
-  { name: 'Buffer', pct: 1, color: '#64748b', desc: 'Contingency and unexpected costs' },
+  { name: 'Marketing & Ads', key: 'marketing', pct: 36, type: 'variable' as const, color: '#a855f7', desc: 'Paid ads, influencer campaigns, referrals — scales with sales budget & revenue' },
+  { name: 'Technology & Infra', key: 'tech', pct: 20, type: 'step' as const, color: '#3b82f6', desc: 'AWS/cloud, APIs, security — steps up per new city or user threshold' },
+  { name: 'BizDev & Merchant Acq', key: 'bizdev', pct: 19, type: 'variable' as const, color: '#22c55e', desc: 'Sales team, merchant onboarding — grows with sales pipeline' },
+  { name: 'Team & Salaries', key: 'team', pct: 8, type: 'fixed' as const, color: '#f97316', desc: 'CXO salaries, engineering — fixed until hire wave' },
+  { name: 'Customer Support', key: 'support', pct: 8, type: 'fixed' as const, color: '#06b6d4', desc: 'Support team, tools — fixed until team scales' },
+  { name: 'Rent & Office', key: 'rent', pct: 8, type: 'fixed' as const, color: '#ec4899', desc: 'Bangalore HQ — fixed until new office or upgrade needed' },
+  { name: 'Buffer', key: 'buffer', pct: 1, type: 'fixed' as const, color: '#64748b', desc: 'Contingency — fixed reserve' },
 ];
+
+// ============================================
+// MONTHLY OpEx COMPUTATION — phase-based cost modeling (from ReZ 2026 PDF)
+// Fixed: flat within phase, steps at phase boundary & hire waves
+// Step-growth: discrete jumps at phase change + city milestones (1→4→16→32)
+// Variable: absorbs remaining OpEx, scales with surplus reinvestment
+// PDF Phase 1 (M1-M6): ₹833.3K/mo base, 1 city
+// PDF Phase 2 (M7-M12): ₹1.1M/mo base + surplus → Marketing/BizDev
+// ============================================
+function computeMonthlyOpEx(m: typeof monthlyBreakdown[0]) {
+  const mi = parseInt(m.month.replace('M', '')) - 1;
+  const isPhase1 = mi < 6;
+  // FIXED: Rent — flat within phase, steps at phase boundary
+  // PDF: ₹66.7K (Phase 1) → ₹280K (Phase 2). Scales with satellite offices.
+  const rent = isPhase1 ? 80000 : mi < 9 ? 130000 : 200000;
+  // FIXED: Team — steps at M5 (pre-Phase 2 hiring), M7 (Phase 2), M10 (16 cities scaling)
+  // PDF: ₹66.7K base → ₹100K at M5 → ₹300K+ at Phase 2
+  const team = mi < 4 ? 100000 : mi < 6 ? 120000 : mi < 9 ? 200000 : 300000;
+  // FIXED: Support — flat in Phase 1, steps at Phase 2 and city scaling
+  // PDF: ₹66.7K (Phase 1) → ₹313.3K (Phase 2)
+  const support = isPhase1 ? 80000 : mi < 9 ? 120000 : 170000;
+  // STEP: Tech — discrete jumps at phase change + city tier milestones
+  // PDF: ₹166.7K (Phase 1) → ₹366.7K (Phase 2) → grows with cities
+  const tech = mi < 4 ? 200000 : mi < 7 ? 260000 : mi < 10 ? 380000 : 550000;
+  // Buffer: 1% contingency
+  const buffer = Math.round(m.opex * 0.01);
+  // VARIABLE: Marketing & BizDev — absorb remaining OpEx budget
+  // PDF uses surplus reinvestment: 50% of cash surplus → Marketing, 10% → BizDev
+  // These grow as a % of total because fixed costs stay flat while budget grows
+  const fixedAndStep = rent + team + support + buffer + tech;
+  const variablePool = Math.max(0, m.opex - fixedAndStep);
+  const marketing = Math.round(variablePool * 0.655);    // 36/(36+19) of variable
+  const bizdev = variablePool - marketing;    // remainder
+  return { marketing, tech, bizdev, team, support, rent, buffer };
+}
 
 // ============================================
 // CAC ESCALATION CURVE (realistic at-scale projections)
@@ -900,52 +935,79 @@ export default function RezFinancialsPage() {
               </div>
             </div>
 
-            {/* Monthly OpEx Category Breakdown */}
+            {/* Monthly OpEx Category Breakdown — Type-Based Cost Model */}
             <div className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30">
               <h4 className="text-sm font-bold text-purple-400 mb-3">Monthly OpEx Category Breakdown</h4>
-              <p className="text-xs text-slate-400 mb-3">Fixed/semi-fixed operating costs split by department. Ramps from ₹15L/mo (M1) to ₹32L/mo (M12) as team and cities grow.</p>
+              <p className="text-xs text-slate-400 mb-3">Costs modeled by behavior type — fixed costs stay flat, tech steps up per city, marketing & BizDev scale with revenue growth.</p>
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                <div className="bg-blue-500/10 rounded-lg px-3 py-2 border border-blue-500/20">
+                  <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-blue-400" /><span className="text-[10px] font-bold text-blue-400">FIXED</span></div>
+                  <p className="text-[9px] text-slate-500 mt-0.5">Rent, Team, Support — flat within phase, steps at hire waves & phase boundary</p>
+                </div>
+                <div className="bg-amber-500/10 rounded-lg px-3 py-2 border border-amber-500/20">
+                  <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-amber-400" /><span className="text-[10px] font-bold text-amber-400">STEP-GROWTH</span></div>
+                  <p className="text-[9px] text-slate-500 mt-0.5">Tech — discrete jumps at phase change + city tier milestones (4→16→32)</p>
+                </div>
+                <div className="bg-green-500/10 rounded-lg px-3 py-2 border border-green-500/20">
+                  <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-green-400" /><span className="text-[10px] font-bold text-green-400">VARIABLE</span></div>
+                  <p className="text-[9px] text-slate-500 mt-0.5">Marketing, BizDev — absorbs surplus cash, 50%/10% reinvestment loop</p>
+                </div>
+              </div>
               <div className="overflow-x-auto">
                 <table className="w-full text-[10px]">
                   <thead className="bg-white/5">
                     <tr>
                       <th className="text-left px-2 py-2 text-purple-400 font-semibold">Month</th>
                       {expenseCategories.filter(c => c.pct >= 8).map(cat => (
-                        <th key={cat.name} className="text-right px-2 py-2 font-semibold whitespace-nowrap" style={{ color: cat.color }}>{cat.name.split(' ')[0]}</th>
+                        <th key={cat.name} className="text-right px-2 py-2 font-semibold whitespace-nowrap" style={{ color: cat.color }}>
+                          <span className="flex items-center justify-end gap-1">
+                            <span className={`w-1.5 h-1.5 rounded-full ${cat.type === 'fixed' ? 'bg-blue-400' : cat.type === 'step' ? 'bg-amber-400' : 'bg-green-400'}`} />
+                            {cat.name.split(' ')[0]}
+                          </span>
+                        </th>
                       ))}
-                      <th className="text-right px-2 py-2 text-slate-400 font-semibold">Other</th>
+                      <th className="text-right px-2 py-2 text-slate-400 font-semibold">Buffer</th>
                       <th className="text-right px-2 py-2 text-white font-semibold">Total OpEx</th>
                     </tr>
                   </thead>
                   <tbody>
                     {monthlyBreakdown.map((m) => {
-                      const otherPct = expenseCategories.filter(c => c.pct < 8).reduce((s, c) => s + c.pct, 0);
+                      const cats = computeMonthlyOpEx(m);
                       return (
                         <tr key={m.month} className="border-t border-white/5 hover:bg-white/5">
                           <td className="px-2 py-1.5 text-white font-bold">{m.month}</td>
                           {expenseCategories.filter(c => c.pct >= 8).map(cat => (
-                            <td key={cat.name} className="px-2 py-1.5 text-right text-slate-300">{formatINR(Math.round(m.opex * (cat.pct / 100) * scenarioMult))}</td>
+                            <td key={cat.name} className="px-2 py-1.5 text-right text-slate-300">{formatINR(Math.round(cats[cat.key as keyof typeof cats] * scenarioMult))}</td>
                           ))}
-                          <td className="px-2 py-1.5 text-right text-slate-500">{formatINR(Math.round(m.opex * (otherPct / 100) * scenarioMult))}</td>
+                          <td className="px-2 py-1.5 text-right text-slate-500">{formatINR(Math.round(cats.buffer * scenarioMult))}</td>
                           <td className="px-2 py-1.5 text-right text-white font-bold">{formatINR(Math.round(m.opex * scenarioMult))}</td>
                         </tr>
                       );
                     })}
                   </tbody>
                   <tfoot className="bg-white/5 border-t border-white/10">
-                    <tr>
-                      <td className="px-2 py-2 text-white font-bold">Year 1</td>
-                      {expenseCategories.filter(c => c.pct >= 8).map(cat => (
-                        <td key={cat.name} className="px-2 py-2 text-right font-bold" style={{ color: cat.color }}>
-                          {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * (cat.pct / 100) * scenarioMult))}
-                        </td>
-                      ))}
-                      <td className="px-2 py-2 text-right text-slate-500 font-bold">
-                        {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * (expenseCategories.filter(c => c.pct < 8).reduce((s, c) => s + c.pct, 0) / 100) * scenarioMult))}
-                      </td>
-                      <td className="px-2 py-2 text-right text-white font-bold">
-                        {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * scenarioMult))}
-                      </td>
-                    </tr>
+                    {(() => {
+                      const yearTotals = monthlyBreakdown.reduce((acc, m) => {
+                        const c = computeMonthlyOpEx(m);
+                        return { marketing: acc.marketing + c.marketing, tech: acc.tech + c.tech, bizdev: acc.bizdev + c.bizdev, team: acc.team + c.team, support: acc.support + c.support, rent: acc.rent + c.rent, buffer: acc.buffer + c.buffer };
+                      }, { marketing: 0, tech: 0, bizdev: 0, team: 0, support: 0, rent: 0, buffer: 0 });
+                      return (
+                        <tr>
+                          <td className="px-2 py-2 text-white font-bold">Year 1</td>
+                          {expenseCategories.filter(c => c.pct >= 8).map(cat => (
+                            <td key={cat.name} className="px-2 py-2 text-right font-bold" style={{ color: cat.color }}>
+                              {formatINR(Math.round(yearTotals[cat.key as keyof typeof yearTotals] * scenarioMult))}
+                            </td>
+                          ))}
+                          <td className="px-2 py-2 text-right text-slate-500 font-bold">
+                            {formatINR(Math.round(yearTotals.buffer * scenarioMult))}
+                          </td>
+                          <td className="px-2 py-2 text-right text-white font-bold">
+                            {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * scenarioMult))}
+                          </td>
+                        </tr>
+                      );
+                    })()}
                   </tfoot>
                 </table>
               </div>

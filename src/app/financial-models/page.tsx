@@ -53,28 +53,29 @@ export default function FinancialModelsPage() {
 
   const mult = scenarioData[scenario].multiplier;
 
-  // Unit Economics Data
+  // Unit Economics Data — Aligned with canonical metrics across all financial pages
+  // Source of truth: AOV AED 100, 4 txns/mo, 8% commission (5% Nuqta + 3% cashback)
   const unitEconomics = {
     user: {
-      cac: 5,
-      ltv: 120,
-      ltvCacRatio: 24,
-      paybackMonths: 2,
-      avgTransactionsPerMonth: 8,
-      avgTransactionValue: 75,
-      avgCashbackRate: 0.05,
-      avgCashbackPerTransaction: 3.75,
-      monthlyGMV: 600,
-      annualGMV: 7200,
+      cac: 18,                          // Blended CAC (Paid AED 25, Organic AED 8, ~40% organic)
+      ltv: 360,                         // ARPU AED 20/mo × 18 months
+      ltvCacRatio: 20,                  // 360 / 18
+      paybackMonths: 1,                 // CAC / ARPU = 18/20 ≈ 1 month
+      avgTransactionsPerMonth: 4,
+      avgTransactionValue: 100,         // AOV AED 100
+      avgCashbackRate: 0.03,            // 3% user cashback (of 8% total)
+      avgCashbackPerTransaction: 3,     // AED 100 × 3%
+      monthlyGMV: 400,                  // AOV × frequency
+      annualGMV: 4800,                  // 400 × 12
     },
     merchant: {
-      cacPerMerchant: 200,
-      ltvPerMerchant: 4800,
-      avgCommissionRate: 0.08,
-      avgMonthlyGMV: 50000,
-      avgMonthlyRevenue: 400,
+      cacPerMerchant: 150,              // Blended merchant acquisition cost
+      ltvPerMerchant: 6000,             // AED 250/mo × 24 months
+      avgCommissionRate: 0.08,          // 8% total commission
+      avgMonthlyGMV: 50000,             // Total merchant GMV (Nuqta-routed ~AED 5K)
+      avgMonthlyRevenue: 250,           // Nuqta revenue: ~5K routed GMV × 5% net take
       churnRate: 0.05,
-      lifetimeMonths: 12,
+      lifetimeMonths: 24,
     },
   };
 
@@ -349,24 +350,28 @@ export default function FinancialModelsPage() {
                   <div className="bg-gray-800/30 rounded-xl p-4">
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Monthly Revenue/User</span>
-                        <span className="text-white">AED 5 (commission share)</span>
+                        <span className="text-gray-400">Monthly GMV/User</span>
+                        <span className="text-white">AED 400 (100 AOV × 4 txns)</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Net Take Rate (Nuqta)</span>
+                        <span className="text-white">5% (of 8% total)</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-400">Monthly ARPU</span>
+                        <span className="text-white">AED 20</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-400">Average Lifetime</span>
-                        <span className="text-white">24 months</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-400">Gross Margin</span>
-                        <span className="text-white">50%</span>
+                        <span className="text-white">18 months</span>
                       </div>
                       <div className="border-t border-gray-700 pt-3 flex justify-between">
                         <span className="text-[#c9a227] font-semibold">LTV</span>
-                        <span className="text-[#c9a227] font-bold">AED 120</span>
+                        <span className="text-[#c9a227] font-bold">AED 360</span>
                       </div>
                     </div>
                     <p className="text-xs text-gray-500 mt-4">
-                      LTV = Monthly Revenue × Lifetime × Gross Margin
+                      LTV = GMV × Net Take Rate × Lifetime = 400 × 5% × 18
                     </p>
                   </div>
                   <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/30">
@@ -375,7 +380,7 @@ export default function FinancialModelsPage() {
                       <span className="text-green-400 font-semibold">Healthy Economics</span>
                     </div>
                     <p className="text-sm text-gray-300">
-                      LTV:CAC of 24x far exceeds the 3x minimum threshold, indicating strong unit economics and capital efficiency.
+                      LTV:CAC of 20x far exceeds the 3x minimum threshold, indicating strong unit economics and capital efficiency.
                     </p>
                   </div>
                 </div>
@@ -412,22 +417,22 @@ export default function FinancialModelsPage() {
                   <div className="bg-gray-800/30 rounded-xl p-4">
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Monthly Revenue</span>
-                        <span className="text-white">AED 400</span>
+                        <span className="text-gray-400">Monthly Revenue (Nuqta net)</span>
+                        <span className="text-white">AED 250</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-400">Average Lifetime</span>
-                        <span className="text-white">12 months</span>
+                        <span className="text-white">24 months</span>
                       </div>
                       <div className="border-t border-gray-700 pt-3 flex justify-between">
                         <span className="text-[#c9a227] font-semibold">Merchant LTV</span>
-                        <span className="text-[#c9a227] font-bold">AED 4,800</span>
+                        <span className="text-[#c9a227] font-bold">AED 6,000</span>
                       </div>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 rounded-lg bg-blue-500/10 border border-blue-500/30 text-center">
-                      <p className="text-2xl font-bold text-blue-400">24x</p>
+                      <p className="text-2xl font-bold text-blue-400">40x</p>
                       <p className="text-xs text-gray-400">LTV:CAC Ratio</p>
                     </div>
                     <div className="p-4 rounded-lg bg-purple-500/10 border border-purple-500/30 text-center">
@@ -575,9 +580,9 @@ export default function FinancialModelsPage() {
                 <div>
                   <p className="text-[#c9a227] font-medium mb-2">Revenue Model</p>
                   <ul className="space-y-1 text-gray-400">
-                    <li>• 8% blended take rate on GMV</li>
-                    <li>• AED 100/user/month GMV avg</li>
-                    <li>• AED 60K/merchant/month GMV</li>
+                    <li>• 8% total commission (5% Nuqta + 3% cashback)</li>
+                    <li>• AED 400/user/month GMV (AED 100 AOV × 4)</li>
+                    <li>• AED 50K/merchant/month total GMV</li>
                     <li>• 70/15/10/5 revenue mix</li>
                   </ul>
                 </div>
@@ -727,11 +732,11 @@ export default function FinancialModelsPage() {
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Year 1 COGS as % Revenue</span>
-                      <span className="text-white">50%</span>
+                      <span className="text-white">40%</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-gray-400">Year 5 COGS as % Revenue</span>
-                      <span className="text-green-400">20%</span>
+                      <span className="text-green-400">15%</span>
                     </div>
                     <div className="pt-4 border-t border-gray-700">
                       <p className="text-gray-400">
@@ -774,11 +779,11 @@ export default function FinancialModelsPage() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-400">Year 1 OpEx as % Revenue</span>
-                        <span className="text-red-400">75%</span>
+                        <span className="text-red-400">50%</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-gray-400">Year 5 OpEx as % Revenue</span>
-                        <span className="text-green-400">30%</span>
+                        <span className="text-green-400">25%</span>
                       </div>
                     </div>
                   </div>
@@ -788,7 +793,7 @@ export default function FinancialModelsPage() {
                       <span className="text-green-400 font-semibold">Operating Leverage</span>
                     </div>
                     <p className="text-sm text-gray-300">
-                      Revenue grows 120x while OpEx grows only 48x from Year 1 to Year 5, demonstrating strong operating leverage and path to profitability.
+                      Revenue grows 50x while OpEx grows only 25x from Year 1 to Year 5, demonstrating strong operating leverage and path to profitability.
                     </p>
                   </div>
                 </div>
@@ -922,10 +927,10 @@ export default function FinancialModelsPage() {
                       { driver: 'Merchant Growth Rate', cons: '2x YoY', base: '3x YoY', opt: '4x YoY' },
                       { driver: 'User Retention (D30)', cons: '20%', base: '25%', opt: '30%' },
                       { driver: 'Merchant Churn', cons: '7%/mo', base: '5%/mo', opt: '3%/mo' },
-                      { driver: 'Take Rate', cons: '6%', base: '8%', opt: '10%' },
-                      { driver: 'CAC', cons: 'AED 40', base: 'AED 30', opt: 'AED 20' },
-                      { driver: 'Avg Transaction Value', cons: 'AED 60', base: 'AED 75', opt: 'AED 90' },
-                      { driver: 'Monthly GMV/User', cons: 'AED 80', base: 'AED 100', opt: 'AED 120' },
+                      { driver: 'Total Commission', cons: '6%', base: '8%', opt: '10%' },
+                      { driver: 'Blended CAC', cons: 'AED 25', base: 'AED 18', opt: 'AED 12' },
+                      { driver: 'Avg Transaction Value', cons: 'AED 80', base: 'AED 100', opt: 'AED 120' },
+                      { driver: 'Monthly GMV/User', cons: 'AED 300', base: 'AED 400', opt: 'AED 500' },
                     ].map((row, idx) => (
                       <tr key={idx} className="border-t border-gray-800">
                         <td className="p-4 text-white font-medium">{row.driver}</td>
