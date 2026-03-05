@@ -158,14 +158,15 @@ const playbooks = [
   {
     id: 'college-fest', name: 'College Business Fest', icon: ShoppingCart, color: 'amber',
     steps: [
-      { step: 1, title: 'Partner 20 Student Businesses', description: 'Identify 20 student entrepreneurs from the college (food stalls, chai, juice, accessories, printing, snacks, etc.). Offer ₹10K each as 50-50 partnership investment to open a stall at the fest. Total investment: ₹2L per event.', duration: 'T-2 weeks' },
+      { step: 1, title: 'Partner 20 Student Businesses', description: 'Identify 20 student entrepreneurs from the college (food stalls, chai, juice, accessories, printing, snacks, etc.). Offer ₹10K each as 50-50 partnership investment to open a stall at the fest. Total investment: ₹2L per event. Launch locations: BTM, HSR, Koramangala, Jayanagar.', duration: 'T-2 weeks' },
       { step: 2, title: 'Set Up Stall Economics', description: 'Each stall sets MRP minimum ₹200. COGS per item = ₹50 (covered from the ₹10K investment pool = 200 transactions capacity). Student businesses keep all profit above COGS. 15% cashback in ReZ Coins on every purchase.', duration: 'T-1 week' },
       { step: 3, title: 'Distribute Free ₹100 ReZ Coins', description: 'Every attending student gets FREE ₹100 ReZ Coins (event-only). They MUST download the app and create account to receive coins. Coins are valid only at fest stalls, creating urgency to spend. This is your zero-CAC user acquisition.', duration: 'Event day' },
       { step: 4, title: 'Run the Fest', description: 'Students browse 20 stalls, spend ₹100 cash + ₹100 ReZ Coins per purchase (₹200 MRP). Student business gets ₹100 cash + settlement from ReZ for coins. COGS ₹50 comes from the ₹10K pool. Everyone earns 15% cashback (₹30 ReZ Coins) for future orders.', duration: '1-2 days' },
-      { step: 5, title: 'Post-Fest Conversion', description: 'All students now have the app, a completed transaction history, and ₹30 cashback coins. Push notification within 48h: "Your ₹30 ReZ Coins expire in 7 days — use them at any Nuqta merchant!" Convert event users into platform users.', duration: 'T+1 week' },
-      { step: 6, title: 'Scale: 2 Fests/Month Across Cities', description: 'Replicate playbook at 2 colleges per month. Each fest = 500-1000 real transacting users at near-zero CAC. Student businesses become micro-merchants on the platform. Top performers get ongoing partnership.', duration: 'Ongoing' },
+      { step: 5, title: 'Onboard Businesses Online', description: 'Post-fest, onboard student businesses as permanent merchants on the Nuqta app. They already have a product, pricing, and customer base. Set up their online store profile, menu, and delivery radius. Target: 30%+ of fest businesses continue selling online.', duration: 'T+1-3 days' },
+      { step: 6, title: 'Post-Fest User Conversion', description: 'All students now have the app, a completed transaction history, and ₹30 cashback coins. Push notification within 48h: "Your favorite fest seller is now on the app — order again!" Users can reorder from the same businesses online.', duration: 'T+1 week' },
+      { step: 7, title: 'Scale: 10 Fests M1, Grow Monthly', description: '10 fests across BTM, HSR, Koramangala, Jayanagar in M1 alone = 5,000+ users + 200 businesses (60+ go online). Each fest = 500 real transacting users at near-zero CAC. Expand to more Bangalore zones M2-M3, then new cities.', duration: 'Ongoing' },
     ],
-    kpis: ['500+ transacting users per fest', 'CAC < ₹10 (effectively near-zero)', '20 student businesses activated', '30%+ post-fest retention'], budget: '₹2L per fest (₹10K × 20 businesses)', owner: 'Campus Ambassador Program Manager + BizDev Lead',
+    kpis: ['500+ transacting users per fest', 'CAC < ₹10 (effectively near-zero)', '10 fests in M1 = 5,000 users', '30%+ businesses continue online', 'M1: 200 merchants, 60+ online'], budget: '₹25L/month (10 fests × ₹2.5L)', owner: 'Campus Ambassador Program Manager + BizDev Lead',
   },
 ];
 
@@ -405,7 +406,7 @@ export default function AcquisitionStrategyPage() {
                 <div>
                   <h2 className="text-xl sm:text-2xl font-bold text-white">College Business Fest</h2>
                   <p className="text-amber-400 text-sm font-medium mt-1">Near-Zero CAC Acquisition Through Student Entrepreneurship</p>
-                  <p className="text-slate-300 text-xs mt-2 leading-relaxed">Partner with 20 student businesses at college fests. Invest ₹10K each (50-50 partnership). Students get real business experience, customers get free ₹100 ReZ Coins, and Nuqta gets real transacting users — everyone wins.</p>
+                  <p className="text-slate-300 text-xs mt-2 leading-relaxed">Partner with 20 student businesses at college fests. Invest ₹10K each (50-50 partnership). Students get real business experience, customers get free ₹100 ReZ Coins, and Nuqta gets real transacting users — everyone wins. Post-fest, student businesses continue selling online through the app as permanent merchants.</p>
                 </div>
               </div>
             </div>
@@ -516,8 +517,9 @@ export default function AcquisitionStrategyPage() {
                     'Keep all profit above ₹50 COGS',
                     '₹50 profit per ₹200 sale (25% margin)',
                     '₹10K investment covers 200 transactions',
-                    'Real entrepreneurship experience',
-                    'Become micro-merchant on Nuqta platform post-fest',
+                    'Real entrepreneurship experience with real revenue',
+                    'Continue selling ONLINE through the app after fest',
+                    'Become permanent merchant on the platform — ongoing income',
                   ].map(w => (
                     <p key={w} className="text-slate-300 text-xs flex items-start gap-1.5"><CheckCircle size={10} className="text-amber-400 mt-0.5 shrink-0" />{w}</p>
                   ))}
@@ -546,9 +548,10 @@ export default function AcquisitionStrategyPage() {
                     '500+ REAL transacting users per fest (not just signups)',
                     'Users have completed a real purchase — highest quality',
                     '₹30 cashback coins drive post-fest retention',
-                    '20 student businesses become micro-merchants',
+                    '20 student businesses become ONLINE merchants post-fest',
+                    'Solves both supply (merchants) AND demand (users) in one event',
                     'Brand presence + buzz on campus',
-                    '₹10K investment is recoverable (COGS pool, not a grant)',
+                    '10 fests/month in M1 = 5,000 users + 200 merchants from day one',
                   ].map(w => (
                     <p key={w} className="text-slate-300 text-xs flex items-start gap-1.5"><CheckCircle size={10} className="text-purple-400 mt-0.5 shrink-0" />{w}</p>
                   ))}
@@ -570,25 +573,86 @@ export default function AcquisitionStrategyPage() {
               </div>
             </div>
 
+            {/* Bangalore Launch Plan */}
+            <div className="bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-blue-500/10 rounded-xl p-5 border border-blue-500/30">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><MapPin size={16} className="text-blue-400" /> M1 Launch: 10 Fests Across 4 Bangalore Zones</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+                {[
+                  { zone: 'BTM Layout', fests: 3, colleges: 'Christ, Jyoti Nivas, St. Joseph\'s area', color: 'blue' },
+                  { zone: 'HSR Layout', fests: 2, colleges: 'Tech hubs, PG clusters, startup crowd', color: 'emerald' },
+                  { zone: 'Koramangala', fests: 3, colleges: 'BMS, National, St. John\'s area', color: 'purple' },
+                  { zone: 'Jayanagar', fests: 2, colleges: 'Residential density, Jain Univ area', color: 'orange' },
+                ].map(z => (
+                  <div key={z.zone} className={`bg-${z.color}-500/10 rounded-lg p-3 border border-${z.color}-500/30`}>
+                    <p className={`text-${z.color}-400 font-bold text-sm`}>{z.zone}</p>
+                    <p className="text-white text-lg font-bold">{z.fests} fests</p>
+                    <p className="text-slate-500 text-[10px] mt-1">{z.colleges}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'M1 Total Fests', value: '10', color: 'text-amber-400' },
+                  { label: 'M1 Users', value: '5,000+', color: 'text-emerald-400' },
+                  { label: 'M1 Merchants', value: '200', color: 'text-blue-400' },
+                  { label: 'M1 Investment', value: '₹25L', color: 'text-orange-400' },
+                ].map(s => (
+                  <div key={s.label} className="bg-white/5 rounded-lg p-3 text-center">
+                    <p className={`${s.color} font-bold text-lg`}>{s.value}</p>
+                    <p className="text-slate-500 text-[10px]">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Fest → Online Merchant Pipeline */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><Store size={16} className="text-amber-400" /> Fest → Online Merchant Pipeline</h3>
+              <p className="text-slate-300 text-xs mb-4">Student businesses don&apos;t end at the fest — they continue selling online through the Nuqta app as permanent merchants. The fest is just the launchpad.</p>
+              <div className="flex flex-col sm:flex-row items-center gap-3 justify-center mb-4">
+                {[
+                  { label: 'Fest Stall', sub: '₹10K investment, sell at fest', color: 'amber' },
+                  { label: 'Prove Product', sub: '200 sales, real demand data', color: 'emerald' },
+                  { label: 'Go Online', sub: 'Listed on Nuqta app next day', color: 'blue' },
+                  { label: 'Grow Business', sub: 'Serve entire campus online', color: 'purple' },
+                  { label: 'Expand', sub: 'Multi-campus delivery, full merchant', color: 'orange' },
+                ].map((step, i) => (
+                  <React.Fragment key={step.label}>
+                    <div className={`bg-${step.color}-500/10 rounded-lg p-3 border border-${step.color}-500/30 text-center min-w-[120px]`}>
+                      <p className={`text-${step.color}-400 font-bold text-xs`}>{step.label}</p>
+                      <p className="text-slate-500 text-[10px]">{step.sub}</p>
+                    </div>
+                    {i < 4 && <ArrowRight size={16} className="text-slate-600 shrink-0 rotate-90 sm:rotate-0" />}
+                  </React.Fragment>
+                ))}
+              </div>
+              <div className="bg-amber-500/5 rounded-lg p-3 border border-amber-500/20">
+                <p className="text-amber-400 text-xs font-bold">Why this is powerful:</p>
+                <p className="text-slate-300 text-[10px] mt-1">10 fests in M1 = 200 student businesses. Even if 30% continue online = 60 new merchants on the platform — all with proven products and existing customer base. This solves the chicken-and-egg supply problem.</p>
+              </div>
+            </div>
+
             {/* Scale Plan */}
             <div className="bg-white/5 rounded-xl p-5 border border-white/10">
-              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><TrendingUp size={16} className="text-amber-400" /> Scale Plan: 2 Fests/Month</h3>
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><TrendingUp size={16} className="text-amber-400" /> Scale Plan: 10 Fests in M1, Grow From There</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-xs">
                   <thead className="bg-white/5">
                     <tr>
-                      {['Period', 'Fests/Month', 'Users/Month', 'Monthly Spend', 'Cumulative Users', 'Businesses Activated'].map(h => (
+                      {['Period', 'Fests/Month', 'Users/Month', 'Monthly Spend', 'Cumulative Users', 'New Merchants', 'Online Merchants (30% conv.)'].map(h => (
                         <th key={h} className="text-left px-3 py-2 text-amber-400 font-semibold whitespace-nowrap">{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {[
-                      { period: 'M1-M3', fests: 1, users: 500, spend: '₹2.5L', cumUsers: '1,500', businesses: 60 },
-                      { period: 'M4-M6', fests: 2, users: 1000, spend: '₹5L', cumUsers: '4,500', businesses: 180 },
-                      { period: 'M7-M12', fests: 3, users: 1500, spend: '₹7.5L', cumUsers: '13,500', businesses: 540 },
-                      { period: 'Year 2', fests: 5, users: 2500, spend: '₹12.5L', cumUsers: '43,500', businesses: 1740 },
-                      { period: 'Year 3', fests: 10, users: 5000, spend: '₹25L', cumUsers: '103,500', businesses: 4140 },
+                      { period: 'M1', fests: 10, users: 5000, spend: '₹25L', cumUsers: '5,000', merchants: 200, onlineMerchants: 60 },
+                      { period: 'M2', fests: 10, users: 5000, spend: '₹25L', cumUsers: '10,000', merchants: 200, onlineMerchants: 120 },
+                      { period: 'M3', fests: 12, users: 6000, spend: '₹30L', cumUsers: '16,000', merchants: 240, onlineMerchants: 192 },
+                      { period: 'M4-M6', fests: 15, users: 7500, spend: '₹37.5L', cumUsers: '38,500', merchants: 300, onlineMerchants: 462 },
+                      { period: 'M7-M12', fests: 20, users: 10000, spend: '₹50L', cumUsers: '98,500', merchants: 400, onlineMerchants: 1182 },
+                      { period: 'Year 2', fests: 30, users: 15000, spend: '₹75L', cumUsers: '2,78,500', merchants: 600, onlineMerchants: 3342 },
+                      { period: 'Year 3', fests: 50, users: 25000, spend: '₹1.25Cr', cumUsers: '5,78,500', merchants: 1000, onlineMerchants: 6342 },
                     ].map(row => (
                       <tr key={row.period} className="border-t border-white/5 hover:bg-white/5">
                         <td className="px-3 py-2 text-white font-bold">{row.period}</td>
@@ -596,25 +660,26 @@ export default function AcquisitionStrategyPage() {
                         <td className="px-3 py-2 text-emerald-400 font-bold">{formatNum(row.users)}</td>
                         <td className="px-3 py-2 text-orange-400">{row.spend}</td>
                         <td className="px-3 py-2 text-blue-400 font-bold">{row.cumUsers}</td>
-                        <td className="px-3 py-2 text-amber-400">{row.businesses}</td>
+                        <td className="px-3 py-2 text-amber-400">{row.merchants}</td>
+                        <td className="px-3 py-2 text-purple-400 font-bold">{row.onlineMerchants}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <p className="text-[10px] text-slate-500 mt-3">Student businesses from fests become micro-merchants on Nuqta platform, creating a self-reinforcing supply-side flywheel.</p>
+              <p className="text-[10px] text-slate-500 mt-3">BTM, HSR, Koramangala, Jayanagar first. Expand to other Bangalore zones M2-M3, then new cities M4+. Student businesses continue selling online through the app — the fest is just their launchpad.</p>
             </div>
 
             {/* Post-Fest Retention Strategy */}
             <div className="bg-white/5 rounded-xl p-5 border border-white/10">
               <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><RefreshCw size={16} className="text-emerald-400" /> Post-Fest Retention Flywheel</h3>
-              <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
+              <div className="flex flex-col sm:flex-row items-center gap-3 justify-center flex-wrap">
                 {[
                   { label: 'Fest Purchase', sub: '₹200 MRP, ₹100 paid', color: 'amber' },
                   { label: '₹30 Cashback', sub: 'ReZ Coins earned', color: 'emerald' },
                   { label: '48h Push', sub: '"Coins expiring!"', color: 'blue' },
-                  { label: '2nd Order', sub: 'At any Nuqta merchant', color: 'purple' },
-                  { label: 'More Coins', sub: 'Habit loop begins', color: 'orange' },
+                  { label: 'Order Online', sub: 'Same seller, now on the app', color: 'purple' },
+                  { label: 'Habit Loop', sub: 'Reorder from fav sellers', color: 'orange' },
                 ].map((step, i) => (
                   <React.Fragment key={step.label}>
                     <div className={`bg-${step.color}-500/10 rounded-lg p-3 border border-${step.color}-500/30 text-center min-w-[120px]`}>
@@ -630,10 +695,10 @@ export default function AcquisitionStrategyPage() {
             {/* Key Metrics */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { label: 'Investment/Fest', value: '₹2.5L', sub: '₹2L businesses + ₹50K coins', color: 'text-orange-400', border: 'border-orange-500/30 bg-orange-500/5' },
-                { label: 'Effective CAC', value: '< ₹10', sub: 'Coin cost ÷ transacting users', color: 'text-emerald-400', border: 'border-emerald-500/30 bg-emerald-500/5' },
-                { label: 'Users/Fest', value: '500+', sub: 'Real transactions, not just signups', color: 'text-purple-400', border: 'border-purple-500/30 bg-purple-500/5' },
-                { label: 'Business Profit', value: '₹50/sale', sub: '₹100 cash - ₹50 COGS', color: 'text-amber-400', border: 'border-amber-500/30 bg-amber-500/5' },
+                { label: 'M1: 10 Fests', value: '₹25L', sub: 'BTM, HSR, Koramangala, Jayanagar', color: 'text-orange-400', border: 'border-orange-500/30 bg-orange-500/5' },
+                { label: 'M1 Users', value: '5,000+', sub: 'Real transactions from day one', color: 'text-emerald-400', border: 'border-emerald-500/30 bg-emerald-500/5' },
+                { label: 'M1 Merchants', value: '200', sub: '60+ continue online on the app', color: 'text-purple-400', border: 'border-purple-500/30 bg-purple-500/5' },
+                { label: 'Effective CAC', value: '< ₹10', sub: 'vs ₹76 blended for other channels', color: 'text-amber-400', border: 'border-amber-500/30 bg-amber-500/5' },
               ].map(kpi => (
                 <div key={kpi.label} className={`rounded-xl p-4 border ${kpi.border}`}>
                   <span className="text-slate-400 text-xs">{kpi.label}</span>
