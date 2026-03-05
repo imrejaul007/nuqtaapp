@@ -16,7 +16,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 // ============================================
 // TYPES
 // ============================================
-type SectionTab = 'overview' | 'college-fest' | 'phases' | 'channels' | 'team' | 'playbooks' | 'funnel' | 'budget' | 'risks';
+type SectionTab = 'overview' | 'college-fest' | 'merchant-plan' | 'phases' | 'channels' | 'team' | 'playbooks' | 'funnel' | 'budget' | 'risks';
 
 // ============================================
 // DATA: ACQUISITION CHANNELS (matches parent page exactly)
@@ -249,6 +249,7 @@ export default function AcquisitionStrategyPage() {
   const tabs = [
     { id: 'overview' as SectionTab, label: 'Overview', icon: BarChart3 },
     { id: 'college-fest' as SectionTab, label: 'College Fest', icon: ShoppingCart },
+    { id: 'merchant-plan' as SectionTab, label: 'Merchant Plan', icon: Store },
     { id: 'phases' as SectionTab, label: 'Phases', icon: Calendar },
     { id: 'channels' as SectionTab, label: 'Channels', icon: Target },
     { id: 'team' as SectionTab, label: 'Team', icon: Users },
@@ -735,6 +736,389 @@ export default function AcquisitionStrategyPage() {
                 ))}
               </div>
               <p className="text-[10px] text-slate-500 mt-3">College Business Fest achieves the lowest CAC of any channel because users complete real transactions — not just installs.</p>
+            </div>
+          </div>
+        )}
+
+        {/* ═══════ MERCHANT PLAN TAB ═══════ */}
+        {activeTab === 'merchant-plan' && (
+          <div className="space-y-6">
+            {/* Hero */}
+            <div className="bg-gradient-to-r from-emerald-500/20 via-green-500/10 to-emerald-500/20 border border-emerald-500/30 rounded-xl p-5 sm:p-6">
+              <div className="flex items-start gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center shrink-0">
+                  <Store size={24} className="text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white">Merchant Onboarding Plan — Bangalore</h2>
+                  <p className="text-emerald-400 text-sm font-medium mt-1">BTM Layout &bull; HSR Layout &bull; Koramangala &bull; Jayanagar</p>
+                  <p className="text-slate-300 text-xs mt-2 leading-relaxed">Systematic onboarding of local merchants + brand stores across 4 high-density Bangalore zones. Target: 500+ merchants in M1-M3 covering food, retail, services, and daily essentials.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Zone Overview KPIs */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { label: 'Target Zones', value: '4', sub: 'BTM, HSR, Koramangala, Jayanagar', color: 'text-emerald-400', border: 'border-emerald-500/30 bg-emerald-500/5' },
+                { label: 'M1-M3 Target', value: '500+', sub: 'Merchants onboarded', color: 'text-blue-400', border: 'border-blue-500/30 bg-blue-500/5' },
+                { label: 'Brand Stores', value: '100+', sub: 'National & regional chains', color: 'text-purple-400', border: 'border-purple-500/30 bg-purple-500/5' },
+                { label: 'Commission', value: '5%', sub: 'vs 25-30% on Swiggy/Zomato', color: 'text-orange-400', border: 'border-orange-500/30 bg-orange-500/5' },
+              ].map(kpi => (
+                <div key={kpi.label} className={`rounded-xl p-4 border ${kpi.border}`}>
+                  <span className="text-slate-400 text-xs">{kpi.label}</span>
+                  <p className={`text-xl sm:text-2xl font-bold ${kpi.color}`}>{kpi.value}</p>
+                  <p className="text-[10px] text-slate-500 mt-1">{kpi.sub}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Zone-wise Merchant Map */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {/* BTM Layout */}
+              <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+                <div className="px-4 py-3 bg-blue-500/10 border-b border-blue-500/30">
+                  <h3 className="text-blue-400 font-bold flex items-center gap-2"><MapPin size={16} /> BTM Layout</h3>
+                  <p className="text-slate-400 text-[10px] mt-1">High-density residential + commercial. College crowd (Christ, Jyoti Nivas). Heavy food delivery market.</p>
+                </div>
+                <div className="p-4 space-y-3">
+                  {[
+                    { category: 'Food & Beverage', count: '40+', stores: ['Domino\'s', 'KFC', 'Subway', 'McDonald\'s', 'Chai Point', 'Third Wave Coffee', 'Starbucks', 'Burger King', 'Behrouz Biryani', 'Mojo Pizza', 'Local biryani joints', 'Darshinis (10+)', 'Juice shops', 'Bakeries', 'Sweet shops'], color: 'orange' },
+                    { category: 'Grocery & Daily Needs', count: '25+', stores: ['Reliance Fresh', 'More Supermarket', 'BigBasket pickup', 'DMart', 'Local kiranas (15+)', 'Fruit & vegetable vendors', 'Milk booths (Nandini/Amul)'], color: 'emerald' },
+                    { category: 'Pharmacy & Health', count: '10+', stores: ['Apollo Pharmacy', 'MedPlus', 'PharmEasy pickup', 'Netmeds pickup', 'Local medical shops (5+)'], color: 'red' },
+                    { category: 'Fashion & Lifestyle', count: '15+', stores: ['Max Fashion', 'Pantaloons', 'Westside', 'Lifestyle', 'Local boutiques', 'Saree shops', 'Footwear stores', 'Accessory shops'], color: 'pink' },
+                    { category: 'Services', count: '15+', stores: ['Naturals Salon', 'Green Trends', 'Local salons (5+)', 'Laundry services', 'Xerox/printing shops', 'Mobile repair', 'Key cutting', 'Tailors'], color: 'cyan' },
+                    { category: 'Electronics & Mobile', count: '10+', stores: ['Croma', 'Reliance Digital', 'Samsung Store', 'Local mobile shops (5+)', 'Laptop repair shops'], color: 'blue' },
+                  ].map(cat => (
+                    <div key={cat.category}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-${cat.color}-400 text-xs font-bold`}>{cat.category}</span>
+                        <span className="text-slate-500 text-[10px]">{cat.count} stores</span>
+                      </div>
+                      <p className="text-slate-300 text-[10px] leading-relaxed">{cat.stores.join(' • ')}</p>
+                    </div>
+                  ))}
+                  <div className="pt-2 border-t border-white/5">
+                    <p className="text-white text-xs font-bold">BTM Target: 120+ merchants</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* HSR Layout */}
+              <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+                <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/30">
+                  <h3 className="text-emerald-400 font-bold flex items-center gap-2"><MapPin size={16} /> HSR Layout</h3>
+                  <p className="text-slate-400 text-[10px] mt-1">Startup hub, tech professionals, PG/apartment clusters. High-spending young demographic.</p>
+                </div>
+                <div className="p-4 space-y-3">
+                  {[
+                    { category: 'Food & Beverage', count: '45+', stores: ['Starbucks', 'Third Wave Coffee', 'Blue Tokai', 'Toit (nearby)', 'Truffles', 'Meghana Foods', 'Empire', 'McDonald\'s', 'Pizza Hut', 'Baskin Robbins', 'Natural Ice Cream', 'Local cafes (10+)', 'Cloud kitchens (15+)', 'Health food stores'], color: 'orange' },
+                    { category: 'Grocery & Daily Needs', count: '20+', stores: ['Zepto/Blinkit dark stores', 'Star Market', 'Namdhari\'s Fresh', 'Local supermarkets (5+)', 'Organic stores', 'Fruit vendors', 'Kiranas (10+)'], color: 'emerald' },
+                    { category: 'Pharmacy & Health', count: '8+', stores: ['Apollo Pharmacy', 'MedPlus', 'Wellness Forever', 'Local pharmacies (4+)', 'Gym supplements store'], color: 'red' },
+                    { category: 'Fashion & Lifestyle', count: '12+', stores: ['FabIndia', 'Allen Solly', 'Van Heusen', 'Local boutiques (5+)', 'Sneaker stores', 'Thrift shops'], color: 'pink' },
+                    { category: 'Services', count: '12+', stores: ['Urban Company partners', 'Monsoon Salon', 'Local salons', 'Dry cleaning', 'Pet shops & grooming', 'Co-working cafes', 'EV charging'], color: 'cyan' },
+                    { category: 'Fitness & Wellness', count: '8+', stores: ['Cult.fit', 'Gold\'s Gym', 'Local yoga studios', 'CrossFit boxes', 'Sports shops', 'Supplement stores'], color: 'violet' },
+                  ].map(cat => (
+                    <div key={cat.category}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-${cat.color}-400 text-xs font-bold`}>{cat.category}</span>
+                        <span className="text-slate-500 text-[10px]">{cat.count} stores</span>
+                      </div>
+                      <p className="text-slate-300 text-[10px] leading-relaxed">{cat.stores.join(' • ')}</p>
+                    </div>
+                  ))}
+                  <div className="pt-2 border-t border-white/5">
+                    <p className="text-white text-xs font-bold">HSR Target: 100+ merchants</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Koramangala */}
+              <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+                <div className="px-4 py-3 bg-purple-500/10 border-b border-purple-500/30">
+                  <h3 className="text-purple-400 font-bold flex items-center gap-2"><MapPin size={16} /> Koramangala</h3>
+                  <p className="text-slate-400 text-[10px] mt-1">Bangalore&apos;s most vibrant commercial hub. Startup capital of India. Dense food & retail scene. BMS College.</p>
+                </div>
+                <div className="p-4 space-y-3">
+                  {[
+                    { category: 'Food & Beverage', count: '60+', stores: ['Toit Brewpub', 'Truffles', 'Meghana Foods', 'Empire Restaurant', 'Vidyarthi Bhavan (nearby)', 'Starbucks (2)', 'Third Wave Coffee', 'KFC', 'McDonald\'s', 'Domino\'s', 'Behrouz Biryani', 'Faasos', 'Local biryani (10+)', 'Street food stalls (15+)', 'Dessert parlours', 'Juice bars', 'Pubs & bars (20+)'], color: 'orange' },
+                    { category: 'Grocery & Daily Needs', count: '20+', stores: ['Big Bazaar', 'Reliance Fresh', 'Spencer\'s', 'Nilgiris', 'Local kiranas (10+)', 'Organic stores', 'Fresh meat & fish shops'], color: 'emerald' },
+                    { category: 'Pharmacy & Health', count: '10+', stores: ['Apollo Pharmacy (2)', 'MedPlus', '1mg pickup', 'Local pharmacies (5+)', 'Ayurvedic stores'], color: 'red' },
+                    { category: 'Fashion & Lifestyle', count: '20+', stores: ['Zara (Forum Mall nearby)', 'H&M', 'Pantaloons', 'Max', 'Nike', 'Adidas', 'Puma', 'Local boutiques (8+)', 'Jewelry shops', 'Watch stores'], color: 'pink' },
+                    { category: 'Electronics', count: '12+', stores: ['Croma', 'Reliance Digital', 'iStore (Apple)', 'Samsung Experience', 'Mi Store', 'Local mobile shops (5+)', 'Gaming cafes'], color: 'blue' },
+                    { category: 'Services', count: '15+', stores: ['Looks Salon', 'Toni & Guy', 'Naturals', 'Laundry chains (3+)', 'Pet shops (3+)', 'Bookstores', 'Stationery shops', 'Printing/xerox', 'Coworking spaces'], color: 'cyan' },
+                  ].map(cat => (
+                    <div key={cat.category}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-${cat.color}-400 text-xs font-bold`}>{cat.category}</span>
+                        <span className="text-slate-500 text-[10px]">{cat.count} stores</span>
+                      </div>
+                      <p className="text-slate-300 text-[10px] leading-relaxed">{cat.stores.join(' • ')}</p>
+                    </div>
+                  ))}
+                  <div className="pt-2 border-t border-white/5">
+                    <p className="text-white text-xs font-bold">Koramangala Target: 150+ merchants</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Jayanagar */}
+              <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+                <div className="px-4 py-3 bg-orange-500/10 border-b border-orange-500/30">
+                  <h3 className="text-orange-400 font-bold flex items-center gap-2"><MapPin size={16} /> Jayanagar</h3>
+                  <p className="text-slate-400 text-[10px] mt-1">Established residential hub. Strong local business community. Family-oriented. Jayanagar 4th Block commercial hub.</p>
+                </div>
+                <div className="p-4 space-y-3">
+                  {[
+                    { category: 'Food & Beverage', count: '35+', stores: ['MTR (iconic)', 'Vidyarthi Bhavan', 'Brahmin\'s Coffee Bar', 'CTR (Shri Sagar)', 'Maiyas', 'Domino\'s', 'KFC', 'Local darshinis (10+)', 'Bakeries (Sri Krishna, Iyengar\'s)', 'Sweet shops (5+)', 'Juice centres', 'Chat stalls'], color: 'orange' },
+                    { category: 'Grocery & Daily Needs', count: '25+', stores: ['Namdhari\'s Fresh', 'Nilgiris', 'HyperCity', 'Ratnadeep', 'Local kiranas (15+)', 'Flower shops', 'Vegetable markets', 'Milk booths'], color: 'emerald' },
+                    { category: 'Pharmacy & Health', count: '8+', stores: ['Apollo Pharmacy', 'MedPlus', 'SastaSundar', 'Local pharmacies (4+)', 'Ayurveda shops'], color: 'red' },
+                    { category: 'Fashion & Lifestyle', count: '25+', stores: ['Jayanagar Shopping Complex', 'Max Fashion', 'Pantaloons', 'Reliance Trends', 'Saree emporiums (5+)', 'Silk stores (Nalli, Mysore Silk)', 'Jewelry (Tanishq, Joyalukkas)', 'Local boutiques (8+)'], color: 'pink' },
+                    { category: 'Services', count: '12+', stores: ['Green Trends', 'Naturals Salon', 'Local salons (5+)', 'Tailors (5+)', 'Laundry services', 'Photo studios', 'Flower decorators'], color: 'cyan' },
+                    { category: 'Books & Education', count: '8+', stores: ['Sapna Book House', 'Gangarams', 'Local stationery shops', 'Coaching centres', 'Art supplies', 'Musical instrument shops'], color: 'indigo' },
+                  ].map(cat => (
+                    <div key={cat.category}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`text-${cat.color}-400 text-xs font-bold`}>{cat.category}</span>
+                        <span className="text-slate-500 text-[10px]">{cat.count} stores</span>
+                      </div>
+                      <p className="text-slate-300 text-[10px] leading-relaxed">{cat.stores.join(' • ')}</p>
+                    </div>
+                  ))}
+                  <div className="pt-2 border-t border-white/5">
+                    <p className="text-white text-xs font-bold">Jayanagar Target: 130+ merchants</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Brand Store Priority List */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/5">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2"><Award size={18} className="text-purple-400" /> Priority Brand Stores — Onboard First</h3>
+                <p className="text-slate-400 text-xs mt-1">National & regional chains with multiple outlets across all 4 zones. Sign one deal → onboard all locations.</p>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead className="bg-white/5">
+                    <tr>
+                      {['Brand', 'Category', 'Outlets in 4 Zones', 'Why Priority', 'Pitch Angle'].map(h => (
+                        <th key={h} className="text-left px-4 py-2.5 text-purple-400 font-semibold whitespace-nowrap">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { brand: 'Domino\'s Pizza', category: 'QSR', outlets: '4-6', why: 'Highest delivery volume, tech-savvy ops', pitch: 'Additional order channel at 5% vs 25% on Swiggy' },
+                      { brand: 'McDonald\'s', category: 'QSR', outlets: '3-4', why: 'Massive student customer base', pitch: 'Reach college crowd directly via NuqtaCoin deals' },
+                      { brand: 'KFC', category: 'QSR', outlets: '3-4', why: 'High AOV, popular with target demo', pitch: 'Cashback-driven repeat orders, lower commission' },
+                      { brand: 'Starbucks', category: 'Cafe', outlets: '3-5', why: 'Premium brand, high-spend users', pitch: 'NuqtaCoin loyalty on top of Stars — double rewards' },
+                      { brand: 'Third Wave Coffee', category: 'Cafe', outlets: '4-6', why: 'Fastest-growing cafe chain in BLR', pitch: 'Drive footfall via coin redemption, not discounting' },
+                      { brand: 'Meghana Foods', category: 'Restaurant', outlets: '3-4', why: 'Bangalore\'s #1 biryani brand, massive volume', pitch: '5% commission vs 30%+ food aggregators' },
+                      { brand: 'Empire Restaurant', category: 'Restaurant', outlets: '4+', why: 'Iconic BLR brand, late-night crowd', pitch: 'Capture late-night orders from PG/hostel crowd' },
+                      { brand: 'Apollo Pharmacy', category: 'Pharmacy', outlets: '6-8', why: 'Highest density pharmacy chain', pitch: 'Medicine delivery + health essentials + coin rewards' },
+                      { brand: 'Reliance Fresh/Smart', category: 'Grocery', outlets: '4-6', why: 'Daily essentials = daily transactions', pitch: 'Drive daily active users via grocery coin cashback' },
+                      { brand: 'More Supermarket', category: 'Grocery', outlets: '3-5', why: 'Neighborhood grocery presence', pitch: 'Loyalty layer (NuqtaCoin) without cannibalizing margins' },
+                      { brand: 'Naturals/Green Trends', category: 'Salon', outlets: '4-6', why: 'High-value recurring service', pitch: 'Coin-based booking, cashback drives rebooking' },
+                      { brand: 'Croma / Reliance Digital', category: 'Electronics', outlets: '2-3', why: 'High AOV transactions', pitch: '5% on ₹10K+ purchases = ₹500+ per transaction' },
+                      { brand: 'Max / Pantaloons', category: 'Fashion', outlets: '3-4', why: 'Affordable fashion, high footfall', pitch: 'ReZ Coins as in-store loyalty, drive app installs' },
+                      { brand: 'Tanishq / Joyalukkas', category: 'Jewelry', outlets: '2-3', why: 'Ultra-high AOV (₹5K-50K+)', pitch: 'Even 2% cashback on jewelry = massive coin earning' },
+                      { brand: 'Cult.fit', category: 'Fitness', outlets: '2-3', why: 'Subscription model, engaged user base', pitch: 'Coin rewards for gym check-ins, cross-sell food' },
+                      { brand: 'Chai Point', category: 'Beverage', outlets: '4-6', why: 'Low AOV but daily frequency', pitch: 'Daily chai → daily NuqtaCoin habit, highest retention' },
+                    ].map(b => (
+                      <tr key={b.brand} className="border-t border-white/5 hover:bg-white/5">
+                        <td className="px-4 py-2.5 text-white font-bold">{b.brand}</td>
+                        <td className="px-4 py-2.5 text-slate-300">{b.category}</td>
+                        <td className="px-4 py-2.5 text-blue-400 text-center">{b.outlets}</td>
+                        <td className="px-4 py-2.5 text-slate-300">{b.why}</td>
+                        <td className="px-4 py-2.5 text-emerald-400">{b.pitch}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Local Merchant Categories */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><Layers size={16} className="text-amber-400" /> Local Merchant Categories — The Long Tail</h3>
+              <p className="text-slate-400 text-xs mb-4">Brand stores get you credibility. Local merchants get you volume. Target 70% local, 30% brand mix.</p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {[
+                  { category: 'Darshinis & Tiffin Centres', count: '50+', why: 'Daily breakfast habit, ₹50-150 AOV, highest frequency', target: '30+ in M1', color: 'orange' },
+                  { category: 'Local Kiranas', count: '60+', why: 'Daily essentials, every lane has one, instant adoption', target: '40+ in M1', color: 'emerald' },
+                  { category: 'Street Food & Chaat', count: '30+', why: 'Low price point drives trial, very popular with students', target: '15+ in M1', color: 'yellow' },
+                  { category: 'Bakeries & Sweet Shops', count: '25+', why: 'Festival & celebration purchases, gift orders', target: '15+ in M1', color: 'pink' },
+                  { category: 'Fruit & Vegetable Vendors', count: '40+', why: 'Daily purchase, high retention, every neighborhood', target: '20+ in M1', color: 'lime' },
+                  { category: 'Local Salons & Parlours', count: '30+', why: 'Recurring monthly service, strong loyalty', target: '15+ in M1', color: 'cyan' },
+                  { category: 'Tailors & Alteration Shops', count: '15+', why: 'Trusted local business, word-of-mouth referrals', target: '8+ in M2', color: 'indigo' },
+                  { category: 'Mobile & Repair Shops', count: '20+', why: 'Essential service, high trust value', target: '10+ in M2', color: 'blue' },
+                  { category: 'Xerox & Printing Shops', count: '15+', why: 'Student essential near every college', target: '10+ in M1', color: 'violet' },
+                  { category: 'Laundry & Dry Cleaning', count: '15+', why: 'Recurring service, PG crowd dependency', target: '8+ in M1', color: 'teal' },
+                  { category: 'Pet Shops & Grooming', count: '10+', why: 'High-value recurring, passionate customer base', target: '5+ in M2', color: 'amber' },
+                  { category: 'Flower & Gift Shops', count: '10+', why: 'Occasion-based, high margins, quick delivery', target: '5+ in M2', color: 'rose' },
+                ].map(cat => (
+                  <div key={cat.category} className={`bg-${cat.color}-500/5 rounded-lg p-3 border border-${cat.color}-500/20`}>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className={`text-${cat.color}-400 text-xs font-bold`}>{cat.category}</span>
+                      <span className="text-slate-500 text-[10px]">{cat.count} across 4 zones</span>
+                    </div>
+                    <p className="text-slate-300 text-[10px]">{cat.why}</p>
+                    <p className={`text-${cat.color}-400 text-[10px] font-bold mt-1`}>Target: {cat.target}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Onboarding Playbook */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><BookOpen size={16} className="text-blue-400" /> Merchant Onboarding Playbook</h3>
+              <div className="space-y-3">
+                {[
+                  { step: 1, title: 'Zone Mapping & List Building', description: 'Walk every main road and cross-street in BTM, HSR, Koramangala, Jayanagar. Google Maps scraping for all listed businesses. Build master spreadsheet: business name, category, address, phone, owner name, footfall estimate.', duration: 'Week 1', color: 'blue' },
+                  { step: 2, title: 'Prioritize & Segment', description: 'Rank merchants by: (1) daily footfall, (2) student proximity, (3) brand recognition, (4) category diversity. Tier 1: Brand stores (sign central deal). Tier 2: High-traffic locals (darshinis, kiranas). Tier 3: Long-tail services.', duration: 'Week 1', color: 'purple' },
+                  { step: 3, title: 'Brand Store Outreach', description: 'Approach brand store managers/regional heads. Pitch: "5% commission vs 25-30% on Swiggy/Zomato. NuqtaCoin drives repeat visits. Zero listing fee for first 3 months." Sign MoU covering all outlets in the zone. Target: 15-20 brand deals.', duration: 'Week 2-3', color: 'emerald' },
+                  { step: 4, title: 'Local Merchant Door-to-Door', description: 'BizDev team visits 20 merchants/day per person. Pitch: show app demo, explain commission (5%), show NuqtaCoin benefit (customers keep coming back). Offer first-month zero commission. Collect menu/catalog, photos, bank details on-spot.', duration: 'Week 2-4', color: 'orange' },
+                  { step: 5, title: 'Onboarding & Setup', description: 'Same-day digital onboarding: store profile, product catalog with photos, pricing, delivery radius (if applicable). Install QR code table tent for in-store payments. Train staff on order acceptance (2-minute training). Go live within 24h of signup.', duration: 'Ongoing', color: 'amber' },
+                  { step: 6, title: 'Activate & First Transaction', description: 'Send first customer within 48h of listing (use campus ambassadors or free coin offers). Ensure merchant completes at least 5 orders in first week. Call merchant on Day 3 and Day 7 for feedback. Fix any issues immediately.', duration: 'Per merchant', color: 'cyan' },
+                  { step: 7, title: 'Merchant Success & Retention', description: 'Weekly merchant dashboard SMS: orders, revenue, new customers. Monthly merchant meetup (zone-wise). Feature top merchants in app ("Trending near you"). Merchant referral: refer another merchant = ₹2K bonus.', duration: 'Ongoing', color: 'lime' },
+                ].map(s => (
+                  <div key={s.step} className={`flex items-start gap-3 p-3 rounded-lg bg-${s.color}-500/5 border border-${s.color}-500/20`}>
+                    <div className={`w-7 h-7 rounded-full bg-${s.color}-500/20 flex items-center justify-center shrink-0`}>
+                      <span className={`text-${s.color}-400 text-xs font-bold`}>{s.step}</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-0.5">
+                        <p className="text-white font-bold text-xs">{s.title}</p>
+                        <span className="text-slate-500 text-[10px] flex items-center gap-1"><Clock size={8} />{s.duration}</span>
+                      </div>
+                      <p className="text-slate-300 text-[10px] leading-relaxed">{s.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Onboarding Timeline */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/5">
+                <h3 className="text-sm font-bold text-white flex items-center gap-2"><Calendar size={16} className="text-orange-400" /> Merchant Onboarding Timeline — M1 to M6</h3>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead className="bg-white/5">
+                    <tr>
+                      {['Month', 'BTM', 'HSR', 'Koramangala', 'Jayanagar', 'Total', 'Cumulative', 'From Fests'].map(h => (
+                        <th key={h} className="text-right px-3 py-2 text-orange-400 font-semibold whitespace-nowrap first:text-left">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { month: 'M1', btm: 30, hsr: 25, kora: 40, jaya: 30, total: 125, cum: 125, fests: 60 },
+                      { month: 'M2', btm: 25, hsr: 20, kora: 30, jaya: 25, total: 100, cum: 225, fests: 60 },
+                      { month: 'M3', btm: 25, hsr: 20, kora: 30, jaya: 25, total: 100, cum: 325, fests: 72 },
+                      { month: 'M4', btm: 15, hsr: 15, kora: 20, jaya: 15, total: 65, cum: 390, fests: 90 },
+                      { month: 'M5', btm: 15, hsr: 12, kora: 18, jaya: 15, total: 60, cum: 450, fests: 90 },
+                      { month: 'M6', btm: 10, hsr: 10, kora: 15, jaya: 10, total: 45, cum: 495, fests: 90 },
+                    ].map(row => (
+                      <tr key={row.month} className="border-t border-white/5 hover:bg-white/5">
+                        <td className="px-3 py-2 text-white font-bold">{row.month}</td>
+                        <td className="px-3 py-2 text-right text-blue-400">{row.btm}</td>
+                        <td className="px-3 py-2 text-right text-emerald-400">{row.hsr}</td>
+                        <td className="px-3 py-2 text-right text-purple-400">{row.kora}</td>
+                        <td className="px-3 py-2 text-right text-orange-400">{row.jaya}</td>
+                        <td className="px-3 py-2 text-right text-white font-bold">{row.total}</td>
+                        <td className="px-3 py-2 text-right text-amber-400 font-bold">{row.cum}</td>
+                        <td className="px-3 py-2 text-right text-lime-400">+{row.fests}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot className="bg-white/5 border-t border-white/10">
+                    <tr>
+                      <td className="px-3 py-2 text-white font-bold">M6 Total</td>
+                      <td className="px-3 py-2 text-right text-blue-400 font-bold">120</td>
+                      <td className="px-3 py-2 text-right text-emerald-400 font-bold">102</td>
+                      <td className="px-3 py-2 text-right text-purple-400 font-bold">153</td>
+                      <td className="px-3 py-2 text-right text-orange-400 font-bold">120</td>
+                      <td className="px-3 py-2 text-right text-white font-bold">495</td>
+                      <td className="px-3 py-2 text-right text-amber-400 font-bold">495</td>
+                      <td className="px-3 py-2 text-right text-lime-400 font-bold">+462</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div className="px-5 py-3 bg-lime-500/5 border-t border-lime-500/20">
+                <p className="text-lime-400 text-xs font-bold">Total by M6: 495 direct + 462 from College Fests = 957 merchants</p>
+                <p className="text-slate-500 text-[10px]">Fest merchants who continue online are counted separately. Combined merchant supply covers all 4 zones comprehensively.</p>
+              </div>
+            </div>
+
+            {/* Merchant Pitch: Why Join Nuqta */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><Megaphone size={16} className="text-emerald-400" /> The Merchant Pitch — Why Join Nuqta</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <h4 className="text-emerald-400 text-xs font-bold">vs Swiggy/Zomato</h4>
+                  {[
+                    { us: '5% commission', them: '25-30% commission' },
+                    { us: 'Customer data shared', them: 'Customer data hidden' },
+                    { us: 'NuqtaCoin drives repeat visits', them: 'Discounting erodes brand' },
+                    { us: 'Zero listing fee (first 3 months)', them: '₹10K+ onboarding fees' },
+                    { us: 'Direct customer relationship', them: 'Platform owns the customer' },
+                  ].map(row => (
+                    <div key={row.us} className="flex gap-2 text-[10px]">
+                      <div className="flex-1 bg-emerald-500/10 rounded px-2 py-1 text-emerald-400">
+                        <CheckCircle size={8} className="inline mr-1" />{row.us}
+                      </div>
+                      <div className="flex-1 bg-red-500/10 rounded px-2 py-1 text-red-400">
+                        <AlertTriangle size={8} className="inline mr-1" />{row.them}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="space-y-2">
+                  <h4 className="text-blue-400 text-xs font-bold">Key Selling Points</h4>
+                  {[
+                    'Customers earn NuqtaCoins → come back again and again',
+                    'See who your customers are — age, frequency, preferences',
+                    'Promoted listing option to boost visibility (optional)',
+                    'Business subscription (₹1,500/mo) for premium dashboard',
+                    'B2B buying through the platform at wholesale prices',
+                    'Get featured in college fest events — free foot traffic',
+                    'Community events bring new customers to your door',
+                  ].map(p => (
+                    <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5">
+                      <ChevronRight size={8} className="text-blue-400 mt-0.5 shrink-0" />{p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* BizDev Team for Merchant Onboarding */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><Users size={16} className="text-blue-400" /> Merchant Onboarding Team</h3>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { role: 'BizDev Lead', count: 1, zone: 'All zones', tasks: 'Strategy, brand deals, team management', hire: 'M1 Day 1', color: 'emerald' },
+                  { role: 'Zone BizDev Rep', count: 4, zone: '1 per zone', tasks: '20 merchant visits/day, onboarding, QR setup', hire: 'M1 Week 1', color: 'blue' },
+                  { role: 'Merchant Success Mgr', count: 1, zone: 'All zones', tasks: 'Merchant retention, issue resolution, upsell', hire: 'M2', color: 'purple' },
+                  { role: 'Catalog & Content', count: 1, zone: 'All zones', tasks: 'Product photos, menu digitization, store profiles', hire: 'M1 Week 2', color: 'orange' },
+                ].map(r => (
+                  <div key={r.role} className={`bg-${r.color}-500/10 rounded-lg p-3 border border-${r.color}-500/30`}>
+                    <p className={`text-${r.color}-400 font-bold text-sm`}>{r.role}</p>
+                    <p className="text-white text-lg font-bold">{r.count} {r.count > 1 ? 'people' : 'person'}</p>
+                    <p className="text-slate-400 text-[10px] mt-1">{r.zone}</p>
+                    <p className="text-slate-300 text-[10px]">{r.tasks}</p>
+                    <p className="text-slate-500 text-[10px] mt-1">Hire: {r.hire}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 bg-blue-500/5 rounded-lg p-3 border border-blue-500/20">
+                <p className="text-blue-400 text-xs font-bold">M1 team: 7 people</p>
+                <p className="text-slate-400 text-[10px]">1 BizDev Lead + 4 Zone Reps + 1 Catalog person + 1 Merchant Success Manager (M2). Each zone rep targets 20 merchants/day = 80 visits/day across 4 zones. At 30% conversion = 24 new merchants/day = 500+ in M1.</p>
+              </div>
             </div>
           </div>
         )}
