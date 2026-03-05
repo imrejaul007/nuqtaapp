@@ -7,8 +7,8 @@ import {
   CheckCircle, AlertTriangle, Clock, Zap, ChevronDown, ChevronRight,
   ArrowRight, ArrowLeft, MapPin, Megaphone, Shield,
   Share2, Smartphone, MessageSquare, Star, Award, Briefcase,
-  UserPlus, Store, Instagram, Play,
-  BookOpen, Filter, Activity, Layers,
+  UserPlus, Store, Instagram, Play, ShoppingCart, Gift,
+  BookOpen, Filter, Activity, Layers, Sparkles,
   Search, Rocket, Hash, RefreshCw, Globe, Eye
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
@@ -16,7 +16,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 // ============================================
 // TYPES
 // ============================================
-type SectionTab = 'overview' | 'phases' | 'channels' | 'team' | 'playbooks' | 'funnel' | 'budget' | 'risks';
+type SectionTab = 'overview' | 'college-fest' | 'phases' | 'channels' | 'team' | 'playbooks' | 'funnel' | 'budget' | 'risks';
 
 // ============================================
 // DATA: ACQUISITION CHANNELS (matches parent page exactly)
@@ -155,6 +155,18 @@ const playbooks = [
     ],
     kpis: ['500 orders in launch week', '200 DAU by week 4', '30+ active merchants', 'Self-sustaining by week 5'], budget: '₹2-3L per city launch', owner: 'Growth Lead + BizDev Lead',
   },
+  {
+    id: 'college-fest', name: 'College Business Fest', icon: ShoppingCart, color: 'amber',
+    steps: [
+      { step: 1, title: 'Partner 20 Student Businesses', description: 'Identify 20 student entrepreneurs from the college (food stalls, chai, juice, accessories, printing, snacks, etc.). Offer ₹10K each as 50-50 partnership investment to open a stall at the fest. Total investment: ₹2L per event.', duration: 'T-2 weeks' },
+      { step: 2, title: 'Set Up Stall Economics', description: 'Each stall sets MRP minimum ₹200. COGS per item = ₹50 (covered from the ₹10K investment pool = 200 transactions capacity). Student businesses keep all profit above COGS. 15% cashback in ReZ Coins on every purchase.', duration: 'T-1 week' },
+      { step: 3, title: 'Distribute Free ₹100 ReZ Coins', description: 'Every attending student gets FREE ₹100 ReZ Coins (event-only). They MUST download the app and create account to receive coins. Coins are valid only at fest stalls, creating urgency to spend. This is your zero-CAC user acquisition.', duration: 'Event day' },
+      { step: 4, title: 'Run the Fest', description: 'Students browse 20 stalls, spend ₹100 cash + ₹100 ReZ Coins per purchase (₹200 MRP). Student business gets ₹100 cash + settlement from ReZ for coins. COGS ₹50 comes from the ₹10K pool. Everyone earns 15% cashback (₹30 ReZ Coins) for future orders.', duration: '1-2 days' },
+      { step: 5, title: 'Post-Fest Conversion', description: 'All students now have the app, a completed transaction history, and ₹30 cashback coins. Push notification within 48h: "Your ₹30 ReZ Coins expire in 7 days — use them at any Nuqta merchant!" Convert event users into platform users.', duration: 'T+1 week' },
+      { step: 6, title: 'Scale: 2 Fests/Month Across Cities', description: 'Replicate playbook at 2 colleges per month. Each fest = 500-1000 real transacting users at near-zero CAC. Student businesses become micro-merchants on the platform. Top performers get ongoing partnership.', duration: 'Ongoing' },
+    ],
+    kpis: ['500+ transacting users per fest', 'CAC < ₹10 (effectively near-zero)', '20 student businesses activated', '30%+ post-fest retention'], budget: '₹2L per fest (₹10K × 20 businesses)', owner: 'Campus Ambassador Program Manager + BizDev Lead',
+  },
 ];
 
 // ============================================
@@ -235,6 +247,7 @@ export default function AcquisitionStrategyPage() {
 
   const tabs = [
     { id: 'overview' as SectionTab, label: 'Overview', icon: BarChart3 },
+    { id: 'college-fest' as SectionTab, label: 'College Fest', icon: ShoppingCart },
     { id: 'phases' as SectionTab, label: 'Phases', icon: Calendar },
     { id: 'channels' as SectionTab, label: 'Channels', icon: Target },
     { id: 'team' as SectionTab, label: 'Team', icon: Users },
@@ -376,6 +389,287 @@ export default function AcquisitionStrategyPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {/* ═══════ COLLEGE FEST TAB ═══════ */}
+        {activeTab === 'college-fest' && (
+          <div className="space-y-6">
+            {/* Hero Banner */}
+            <div className="bg-gradient-to-r from-amber-500/20 via-orange-500/10 to-amber-500/20 border border-amber-500/30 rounded-xl p-5 sm:p-6">
+              <div className="flex items-start gap-3">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center shrink-0">
+                  <ShoppingCart size={24} className="text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-white">College Business Fest</h2>
+                  <p className="text-amber-400 text-sm font-medium mt-1">Near-Zero CAC Acquisition Through Student Entrepreneurship</p>
+                  <p className="text-slate-300 text-xs mt-2 leading-relaxed">Partner with 20 student businesses at college fests. Invest ₹10K each (50-50 partnership). Students get real business experience, customers get free ₹100 ReZ Coins, and Nuqta gets real transacting users — everyone wins.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* The Model — Visual Flow */}
+            <div className="bg-white/5 rounded-xl p-5 sm:p-6 border border-white/10">
+              <h3 className="text-lg font-bold text-white mb-5 flex items-center gap-2"><Sparkles size={18} className="text-amber-400" /> How It Works — The Win-Win-Win Model</h3>
+              <div className="grid sm:grid-cols-3 gap-4 mb-6">
+                <div className="bg-amber-500/10 rounded-xl p-4 border border-amber-500/30 text-center">
+                  <div className="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center mx-auto mb-2">
+                    <Store size={20} className="text-amber-400" />
+                  </div>
+                  <p className="text-amber-400 font-bold text-sm">20 Student Businesses</p>
+                  <p className="text-slate-400 text-xs mt-1">Get ₹10K each to open stalls</p>
+                  <p className="text-slate-500 text-[10px] mt-1">50-50 partnership with ReZ</p>
+                </div>
+                <div className="bg-emerald-500/10 rounded-xl p-4 border border-emerald-500/30 text-center">
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+                    <Gift size={20} className="text-emerald-400" />
+                  </div>
+                  <p className="text-emerald-400 font-bold text-sm">Free ₹100 ReZ Coins</p>
+                  <p className="text-slate-400 text-xs mt-1">Every student gets coins</p>
+                  <p className="text-slate-500 text-[10px] mt-1">Must download app to receive</p>
+                </div>
+                <div className="bg-purple-500/10 rounded-xl p-4 border border-purple-500/30 text-center">
+                  <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center mx-auto mb-2">
+                    <Rocket size={20} className="text-purple-400" />
+                  </div>
+                  <p className="text-purple-400 font-bold text-sm">Real Transactions</p>
+                  <p className="text-slate-400 text-xs mt-1">Not just signups — actual orders</p>
+                  <p className="text-slate-500 text-[10px] mt-1">500-1000 users per fest</p>
+                </div>
+              </div>
+
+              {/* Transaction Flow */}
+              <div className="bg-slate-800/50 rounded-xl p-4 sm:p-5">
+                <h4 className="text-sm font-bold text-white mb-3">Transaction Flow — Single Purchase (₹200 MRP)</h4>
+                <div className="space-y-2">
+                  {[
+                    { step: '1', label: 'Student pays', value: '₹100 cash + ₹100 ReZ Coins', note: 'Uses free event coins', color: 'blue' },
+                    { step: '2', label: 'COGS deducted', value: '₹50', note: 'From ₹10K investment pool', color: 'red' },
+                    { step: '3', label: 'Cashback earned', value: '₹30 ReZ Coins (15%)', note: 'Brings user back to platform', color: 'emerald' },
+                    { step: '4', label: 'Student business profit', value: '₹100 cash received', note: 'After ₹50 COGS = ₹50 net profit', color: 'amber' },
+                    { step: '5', label: 'ReZ cost per user', value: '₹100 (coin subsidy)', note: 'But got a REAL transacting user', color: 'purple' },
+                  ].map(item => (
+                    <div key={item.step} className={`flex items-center gap-3 p-2.5 rounded-lg bg-${item.color}-500/5 border border-${item.color}-500/20`}>
+                      <div className={`w-6 h-6 rounded-full bg-${item.color}-500/20 flex items-center justify-center shrink-0`}>
+                        <span className={`text-${item.color}-400 text-xs font-bold`}>{item.step}</span>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-slate-400 text-xs">{item.label}</span>
+                      </div>
+                      <div className="text-right shrink-0">
+                        <p className={`text-${item.color}-400 font-bold text-sm`}>{item.value}</p>
+                        <p className="text-slate-500 text-[10px]">{item.note}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Unit Economics Breakdown */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-5 py-4 border-b border-white/5">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2"><DollarSign size={18} className="text-emerald-400" /> Per-Fest Unit Economics</h3>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead className="bg-white/5">
+                    <tr>
+                      <th className="text-left px-4 py-3 text-slate-400 font-semibold text-xs">Line Item</th>
+                      <th className="text-right px-4 py-3 text-slate-400 font-semibold text-xs">Amount</th>
+                      <th className="text-left px-4 py-3 text-slate-400 font-semibold text-xs">Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { item: 'Investment (20 businesses × ₹10K)', amount: '₹2,00,000', notes: '50-50 partnership capital', type: 'cost' },
+                      { item: 'COGS capacity (₹10K ÷ ₹50)', amount: '200 txns/stall', notes: 'Each business can serve 200 customers', type: 'neutral' },
+                      { item: 'Total transaction capacity', amount: '4,000 txns', notes: '20 stalls × 200 transactions', type: 'neutral' },
+                      { item: 'Free ReZ Coins (500 students × ₹100)', amount: '₹50,000', notes: 'Coin subsidy — the acquisition cost', type: 'cost' },
+                      { item: 'Total ReZ spend per fest', amount: '₹2,50,000', notes: '₹2L investment + ₹50K coins', type: 'cost' },
+                      { item: 'Transacting users acquired', amount: '500+', notes: 'Real purchases, not just signups', type: 'revenue' },
+                      { item: 'Effective CAC', amount: '< ₹10', notes: '₹50K coins ÷ 500+ users (investment is recoverable)', type: 'revenue' },
+                      { item: 'GMV generated', amount: '₹1,00,000+', notes: '500 users × ₹200 MRP', type: 'revenue' },
+                      { item: 'Cashback coins distributed', amount: '₹15,000', notes: '500 × ₹30 — drives post-fest retention', type: 'neutral' },
+                      { item: 'Student business total profit', amount: '₹25,000+', notes: '500 × ₹50 net profit per transaction', type: 'revenue' },
+                    ].map(row => (
+                      <tr key={row.item} className="border-t border-white/5 hover:bg-white/5">
+                        <td className="px-4 py-2.5 text-white text-xs">{row.item}</td>
+                        <td className={`px-4 py-2.5 text-right font-bold text-xs ${row.type === 'cost' ? 'text-red-400' : row.type === 'revenue' ? 'text-emerald-400' : 'text-slate-300'}`}>{row.amount}</td>
+                        <td className="px-4 py-2.5 text-slate-500 text-xs">{row.notes}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Why This Works — 4 Stakeholders */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="bg-amber-500/10 rounded-xl p-5 border border-amber-500/30">
+                <h4 className="text-sm font-bold text-amber-400 mb-3 flex items-center gap-2"><Store size={14} /> Student Business Wins</h4>
+                <div className="space-y-1.5">
+                  {[
+                    'Zero risk — COGS covered by ReZ investment',
+                    'Keep all profit above ₹50 COGS',
+                    '₹50 profit per ₹200 sale (25% margin)',
+                    '₹10K investment covers 200 transactions',
+                    'Real entrepreneurship experience',
+                    'Become micro-merchant on Nuqta platform post-fest',
+                  ].map(w => (
+                    <p key={w} className="text-slate-300 text-xs flex items-start gap-1.5"><CheckCircle size={10} className="text-amber-400 mt-0.5 shrink-0" />{w}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-emerald-500/10 rounded-xl p-5 border border-emerald-500/30">
+                <h4 className="text-sm font-bold text-emerald-400 mb-3 flex items-center gap-2"><Users size={14} /> Student Customer Wins</h4>
+                <div className="space-y-1.5">
+                  {[
+                    'Free ₹100 to spend at 20 stalls',
+                    'Pay only ₹100 for ₹200 worth of goods',
+                    'Earn 15% cashback (₹30) for future use',
+                    'Discover new student businesses',
+                    'Fun event experience with friends',
+                    'App installed with transaction history — ready to reuse',
+                  ].map(w => (
+                    <p key={w} className="text-slate-300 text-xs flex items-start gap-1.5"><CheckCircle size={10} className="text-emerald-400 mt-0.5 shrink-0" />{w}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-purple-500/10 rounded-xl p-5 border border-purple-500/30">
+                <h4 className="text-sm font-bold text-purple-400 mb-3 flex items-center gap-2"><Rocket size={14} /> ReZ / Nuqta Wins</h4>
+                <div className="space-y-1.5">
+                  {[
+                    'CAC effectively < ₹10 (near zero)',
+                    '500+ REAL transacting users per fest (not just signups)',
+                    'Users have completed a real purchase — highest quality',
+                    '₹30 cashback coins drive post-fest retention',
+                    '20 student businesses become micro-merchants',
+                    'Brand presence + buzz on campus',
+                    '₹10K investment is recoverable (COGS pool, not a grant)',
+                  ].map(w => (
+                    <p key={w} className="text-slate-300 text-xs flex items-start gap-1.5"><CheckCircle size={10} className="text-purple-400 mt-0.5 shrink-0" />{w}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-blue-500/10 rounded-xl p-5 border border-blue-500/30">
+                <h4 className="text-sm font-bold text-blue-400 mb-3 flex items-center gap-2"><Award size={14} /> College Wins</h4>
+                <div className="space-y-1.5">
+                  {[
+                    'Entrepreneurship event for students (great optics)',
+                    'Zero cost to the college',
+                    'Students learn real business skills',
+                    'Attractive event for placements branding',
+                    'Can tie into E-Cell / business club activities',
+                  ].map(w => (
+                    <p key={w} className="text-slate-300 text-xs flex items-start gap-1.5"><CheckCircle size={10} className="text-blue-400 mt-0.5 shrink-0" />{w}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Scale Plan */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><TrendingUp size={16} className="text-amber-400" /> Scale Plan: 2 Fests/Month</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs">
+                  <thead className="bg-white/5">
+                    <tr>
+                      {['Period', 'Fests/Month', 'Users/Month', 'Monthly Spend', 'Cumulative Users', 'Businesses Activated'].map(h => (
+                        <th key={h} className="text-left px-3 py-2 text-amber-400 font-semibold whitespace-nowrap">{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { period: 'M1-M3', fests: 1, users: 500, spend: '₹2.5L', cumUsers: '1,500', businesses: 60 },
+                      { period: 'M4-M6', fests: 2, users: 1000, spend: '₹5L', cumUsers: '4,500', businesses: 180 },
+                      { period: 'M7-M12', fests: 3, users: 1500, spend: '₹7.5L', cumUsers: '13,500', businesses: 540 },
+                      { period: 'Year 2', fests: 5, users: 2500, spend: '₹12.5L', cumUsers: '43,500', businesses: 1740 },
+                      { period: 'Year 3', fests: 10, users: 5000, spend: '₹25L', cumUsers: '103,500', businesses: 4140 },
+                    ].map(row => (
+                      <tr key={row.period} className="border-t border-white/5 hover:bg-white/5">
+                        <td className="px-3 py-2 text-white font-bold">{row.period}</td>
+                        <td className="px-3 py-2 text-slate-300">{row.fests}</td>
+                        <td className="px-3 py-2 text-emerald-400 font-bold">{formatNum(row.users)}</td>
+                        <td className="px-3 py-2 text-orange-400">{row.spend}</td>
+                        <td className="px-3 py-2 text-blue-400 font-bold">{row.cumUsers}</td>
+                        <td className="px-3 py-2 text-amber-400">{row.businesses}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-[10px] text-slate-500 mt-3">Student businesses from fests become micro-merchants on Nuqta platform, creating a self-reinforcing supply-side flywheel.</p>
+            </div>
+
+            {/* Post-Fest Retention Strategy */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4 flex items-center gap-2"><RefreshCw size={16} className="text-emerald-400" /> Post-Fest Retention Flywheel</h3>
+              <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
+                {[
+                  { label: 'Fest Purchase', sub: '₹200 MRP, ₹100 paid', color: 'amber' },
+                  { label: '₹30 Cashback', sub: 'ReZ Coins earned', color: 'emerald' },
+                  { label: '48h Push', sub: '"Coins expiring!"', color: 'blue' },
+                  { label: '2nd Order', sub: 'At any Nuqta merchant', color: 'purple' },
+                  { label: 'More Coins', sub: 'Habit loop begins', color: 'orange' },
+                ].map((step, i) => (
+                  <React.Fragment key={step.label}>
+                    <div className={`bg-${step.color}-500/10 rounded-lg p-3 border border-${step.color}-500/30 text-center min-w-[120px]`}>
+                      <p className={`text-${step.color}-400 font-bold text-xs`}>{step.label}</p>
+                      <p className="text-slate-500 text-[10px]">{step.sub}</p>
+                    </div>
+                    {i < 4 && <ArrowRight size={16} className="text-slate-600 shrink-0 rotate-90 sm:rotate-0" />}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+
+            {/* Key Metrics */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {[
+                { label: 'Investment/Fest', value: '₹2.5L', sub: '₹2L businesses + ₹50K coins', color: 'text-orange-400', border: 'border-orange-500/30 bg-orange-500/5' },
+                { label: 'Effective CAC', value: '< ₹10', sub: 'Coin cost ÷ transacting users', color: 'text-emerald-400', border: 'border-emerald-500/30 bg-emerald-500/5' },
+                { label: 'Users/Fest', value: '500+', sub: 'Real transactions, not just signups', color: 'text-purple-400', border: 'border-purple-500/30 bg-purple-500/5' },
+                { label: 'Business Profit', value: '₹50/sale', sub: '₹100 cash - ₹50 COGS', color: 'text-amber-400', border: 'border-amber-500/30 bg-amber-500/5' },
+              ].map(kpi => (
+                <div key={kpi.label} className={`rounded-xl p-4 border ${kpi.border}`}>
+                  <span className="text-slate-400 text-xs">{kpi.label}</span>
+                  <p className={`text-xl sm:text-2xl font-bold ${kpi.color}`}>{kpi.value}</p>
+                  <p className="text-[10px] text-slate-500 mt-1">{kpi.sub}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Comparison vs Traditional CAC */}
+            <div className="bg-white/5 rounded-xl p-5 border border-white/10">
+              <h3 className="text-sm font-bold text-white mb-4">College Fest CAC vs Other Channels</h3>
+              <div className="space-y-2">
+                {[
+                  { channel: 'College Business Fest', cac: 10, width: 4, color: 'amber', highlight: true },
+                  { channel: 'WhatsApp Marketing', cac: 25, width: 10, color: 'lime', highlight: false },
+                  { channel: 'App Store Optimization', cac: 40, width: 16, color: 'teal', highlight: false },
+                  { channel: 'Merchant-Led Referrals', cac: 50, width: 20, color: 'emerald', highlight: false },
+                  { channel: 'Campus Ambassadors', cac: 67, width: 27, color: 'purple', highlight: false },
+                  { channel: 'Campus Events', cac: 100, width: 40, color: 'indigo', highlight: false },
+                  { channel: 'User Referrals', cac: 100, width: 40, color: 'green', highlight: false },
+                  { channel: 'Paid Ads (Meta)', cac: 300, width: 100, color: 'blue', highlight: false },
+                ].map(ch => (
+                  <div key={ch.channel} className="flex items-center gap-3">
+                    <div className="w-36 sm:w-44 shrink-0 text-right">
+                      <span className={`text-xs ${ch.highlight ? 'text-amber-400 font-bold' : 'text-slate-400'}`}>{ch.channel}</span>
+                    </div>
+                    <div className="flex-1">
+                      <div className={`bg-${ch.color}-500/40 rounded-r h-5 flex items-center px-2 ${ch.highlight ? 'ring-1 ring-amber-400/50' : ''}`} style={{ width: `${Math.max(ch.width, 8)}%` }}>
+                        <span className="text-white text-[10px] font-bold">₹{ch.cac}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-[10px] text-slate-500 mt-3">College Business Fest achieves the lowest CAC of any channel because users complete real transactions — not just installs.</p>
             </div>
           </div>
         )}
