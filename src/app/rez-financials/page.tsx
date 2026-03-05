@@ -45,6 +45,20 @@ interface Assumptions {
   startingCities: number;
   citiesMonth12: number;
   citiesYear2: number;
+  // Cost Structure (% of revenue)
+  cogsRateY1: number;
+  cogsRateY2: number;
+  cogsRateY3: number;
+  y2OpexPctRevenue: number;
+  y3OpexPctRevenue: number;
+  // Growth Targets (Year 2 & 3)
+  y2Users: number;
+  y3Users: number;
+  y2Merchants: number;
+  y3Merchants: number;
+  y3Cities: number;
+  cacY2: number;
+  cacY3: number;
 }
 
 // ============================================
@@ -72,91 +86,178 @@ const defaultAssumptions: Assumptions = {
   startingCities: 1,
   citiesMonth12: 32,
   citiesYear2: 120,
+  // Cost Structure
+  cogsRateY1: 67,         // COGS as % of revenue — cashback 40%, processing 12%, coin funding 15%
+  cogsRateY2: 55,         // Cashback drops to 30%, breakage starts
+  cogsRateY3: 45,         // Coin breakage 20%, lower cashback 25%
+  y2OpexPctRevenue: 92.5, // Massive expansion: 120 cities, 500+ hires
+  y3OpexPctRevenue: 20.5, // Efficient at scale: cities mature, CAC improves
+  // Growth Targets
+  y2Users: 1500000,
+  y3Users: 5000000,
+  y2Merchants: 12000,
+  y3Merchants: 40000,
+  y3Cities: 300,
+  cacY2: 150,             // Mostly paid at scale, brand campaigns
+  cacY3: 250,             // National brand, TV/OOH, heavy digital
 };
 
 // ============================================
-// MONTHLY DATA (from ReZ 2026 PDF — 12 months)
-// OpEx = team, marketing, BizDev, office, support (ramps ₹15L→₹32L as cities grow)
-// COGS = cashback, payment processing, coin funding (~67-70% of revenue early)
-// Sums verified: Revenue ₹10.04Cr, COGS ₹6.73Cr, OpEx ₹2.70Cr, Net ₹0.61Cr
+// FULL MODEL COMPUTATION — ALL data derived from assumptions
+// Monthly breakdown + 3-year P&L computed dynamically
 // ============================================
-const monthlyBreakdown = [
-  { month: 'M1', newUsers: 4000, totalUsers: 4000, activeUsers: 1200, merchants: 50, cities: 1, revenue: 102000, opex: 1500000, cogs: 71000, totalExp: 1571000, netPL: -1469000 },
-  { month: 'M2', newUsers: 6500, totalUsers: 10310, activeUsers: 3093, merchants: 100, cities: 2, revenue: 318000, opex: 1600000, cogs: 219000, totalExp: 1819000, netPL: -1501000 },
-  { month: 'M3', newUsers: 9800, totalUsers: 19505, activeUsers: 5851, merchants: 180, cities: 3, revenue: 681000, opex: 1800000, cogs: 470000, totalExp: 2270000, netPL: -1589000 },
-  { month: 'M4', newUsers: 14200, totalUsers: 32480, activeUsers: 9744, merchants: 300, cities: 5, revenue: 1290000, opex: 2000000, cogs: 877000, totalExp: 2877000, netPL: -1587000 },
-  { month: 'M5', newUsers: 19000, totalUsers: 49856, activeUsers: 14957, merchants: 450, cities: 6, revenue: 2180000, opex: 2100000, cogs: 1482000, totalExp: 3582000, netPL: -1402000 },
-  { month: 'M6', newUsers: 24500, totalUsers: 71863, activeUsers: 21559, merchants: 650, cities: 8, revenue: 3480000, opex: 2200000, cogs: 2366000, totalExp: 4566000, netPL: -1086000 },
-  { month: 'M7', newUsers: 30000, totalUsers: 98270, activeUsers: 29481, merchants: 900, cities: 11, revenue: 5120000, opex: 2300000, cogs: 3430000, totalExp: 5730000, netPL: -610000 },
-  { month: 'M8', newUsers: 35500, totalUsers: 128357, activeUsers: 38507, merchants: 1200, cities: 15, revenue: 7340000, opex: 2400000, cogs: 4918000, totalExp: 7318000, netPL: 22000 },
-  { month: 'M9', newUsers: 40000, totalUsers: 161939, activeUsers: 48582, merchants: 1550, cities: 19, revenue: 10200000, opex: 2500000, cogs: 6834000, totalExp: 9334000, netPL: 866000 },
-  { month: 'M10', newUsers: 45000, totalUsers: 198842, activeUsers: 59653, merchants: 1950, cities: 23, revenue: 15200000, opex: 2600000, cogs: 10032000, totalExp: 12632000, netPL: 2568000 },
-  { month: 'M11', newUsers: 50000, totalUsers: 238900, activeUsers: 71670, merchants: 2400, cities: 27, revenue: 21600000, opex: 2800000, cogs: 14256000, totalExp: 17056000, netPL: 4544000 },
-  { month: 'M12', newUsers: 56700, totalUsers: 268550, activeUsers: 80565, merchants: 3000, cities: 32, revenue: 32889000, opex: 3200000, cogs: 22345000, totalExp: 25545000, netPL: 7344000 },
-];
+interface MonthlyRow {
+  month: string;
+  newUsers: number;
+  totalUsers: number;
+  activeUsers: number;
+  merchants: number;
+  cities: number;
+  revenue: number;
+  cogs: number;
+  opex: number;
+  totalExp: number;
+  netPL: number;
+}
 
-// ============================================
-// INCOME STATEMENT (3-year — corrected with COGS/OpEx split)
-// ============================================
-const incomeStatementData = [
-  {
-    year: 'Year 1',
-    revenue: 100400000,
-    cogs: 67300000,         // 67% — cashback 40%, payment processing 12%, coin funding 15%
-    grossProfit: 33100000,
-    grossMargin: 33,
-    opex: 27000000,         // Team, marketing budget, tech ops (scales with city expansion)
-    totalExpenses: 94300000,
-    netProfit: 6100000,
-    margin: 6.07,
-    valuation: 23600000,
-    users: 268550,
-    merchants: 3000,
-    cities: 32,
-    arpu: 5814,
-    downloads: 268550,
-    mau: 80565,
-    blendedCac: 76,
-  },
-  {
-    year: 'Year 2',
-    revenue: 1534000000,
-    cogs: 844000000,        // 55% — cashback reduces to 30%, processing scales, breakage starts
-    grossProfit: 690000000,
-    grossMargin: 45,
-    opex: 1419000000,       // Massive expansion: 120 cities, 500+ hires, metro marketing blitz
-    totalExpenses: 2263000000,
-    netProfit: -729000000,
-    margin: -47.55,
-    valuation: 180400000,
-    users: 1500000,
-    merchants: 12000,
-    cities: 120,
-    arpu: 12780,
-    downloads: 1500000,
-    mau: 450000,
-    blendedCac: 150,
-  },
-  {
-    year: 'Year 3',
-    revenue: 6018000000,
-    cogs: 2709000000,       // 45% — coin breakage 20%, lower cashback 25%, payment rates improve
-    grossProfit: 3309000000,
-    grossMargin: 55,
-    opex: 1234000000,       // Ops efficient: cities mature, CAC improves with brand
-    totalExpenses: 3943000000,
-    netProfit: 2075000000,
-    margin: 34.5,
-    valuation: 701300000,
-    users: 5000000,
-    merchants: 40000,
-    cities: 300,
-    arpu: 15045,
-    downloads: 5000000,
-    mau: 1500000,
-    blendedCac: 250,
-  },
-];
+interface YearRow {
+  year: string;
+  revenue: number;
+  cogs: number;
+  grossProfit: number;
+  grossMargin: number;
+  opex: number;
+  totalExpenses: number;
+  netProfit: number;
+  margin: number;
+  valuation: number;
+  users: number;
+  merchants: number;
+  cities: number;
+  arpu: number;
+  downloads: number;
+  mau: number;
+  blendedCac: number;
+}
+
+function computeFullModel(a: Assumptions) {
+  const metrics = calculateMetrics(a);
+  const totalBudget = a.phase1Budget + a.phase2Budget;
+  const totalFundedMonths = a.phase1Months + a.phase2Months;
+  const cityGrowthRate = Math.pow(a.citiesMonth12 / a.startingCities, 1 / 12);
+
+  // ── Year 1 Monthly Model ──
+  let cumUsers = 0;
+  let merchants = a.startingCities * 50;
+  const monthly: MonthlyRow[] = [];
+
+  for (let i = 0; i < 12; i++) {
+    const month = i + 1;
+    const monthlyBudget = i < a.phase1Months
+      ? a.phase1Budget / a.phase1Months
+      : (i < totalFundedMonths ? a.phase2Budget / a.phase2Months : 0);
+
+    // User acquisition: paid (from marketing budget ≈36% of OpEx) + organic (viral/referral)
+    const paidUsers = monthlyBudget > 0 ? Math.floor(monthlyBudget * 0.36 / a.blendedCac) : 0;
+    const organicUsers = Math.floor(month * 1500);
+    const newUsers = paidUsers + organicUsers;
+    const churnedUsers = Math.floor(cumUsers * (a.userChurn / 100));
+    cumUsers += newUsers - churnedUsers;
+
+    // Merchant growth: paid (from BizDev budget ≈19% of OpEx) + organic
+    const paidMerchants = monthlyBudget > 0 ? Math.floor(monthlyBudget * 0.19 / a.cam) : 0;
+    const organicMerchants = Math.floor(month * 20);
+    const newMerchants = paidMerchants + organicMerchants;
+    const churnedMerchants = Math.floor(merchants * (a.merchantChurn / 100));
+    merchants += newMerchants - churnedMerchants;
+
+    const activeUsers = Math.floor(cumUsers * (a.activationRate / 100));
+    const cities = Math.round(a.startingCities * Math.pow(cityGrowthRate, month));
+
+    // Revenue = MAU × ARPU
+    const revenue = Math.round(activeUsers * metrics.arpu);
+
+    // COGS = revenue × cost rate
+    const cogs = Math.round(revenue * (a.cogsRateY1 / 100));
+
+    // OpEx: base burn from budget × overhead × monthly growth
+    const baseBurn = totalBudget / totalFundedMonths;
+    const overheadMult = 1.6; // team salaries, rent, support exceed just the budget
+    const monthlyGrowth = 1 + i * 0.06; // ~6% monthly growth for hiring & city expansion
+    const opex = Math.round(baseBurn * overheadMult * monthlyGrowth);
+
+    const totalExp = cogs + opex;
+    const netPL = revenue - totalExp;
+
+    monthly.push({ month: `M${month}`, newUsers, totalUsers: cumUsers, activeUsers, merchants, cities, revenue, cogs, opex, totalExp, netPL });
+  }
+
+  // ── Year 1 Totals ──
+  const y1Revenue = monthly.reduce((s, m) => s + m.revenue, 0);
+  const y1Cogs = monthly.reduce((s, m) => s + m.cogs, 0);
+  const y1Opex = monthly.reduce((s, m) => s + m.opex, 0);
+  const y1GrossProfit = y1Revenue - y1Cogs;
+  const y1NetProfit = y1Revenue - y1Cogs - y1Opex;
+  const y1Margin = y1Revenue > 0 ? (y1NetProfit / y1Revenue) * 100 : 0;
+  const y1GrossMargin = y1Revenue > 0 ? Math.round((y1GrossProfit / y1Revenue) * 100) : 0;
+  const y1Mau = monthly[11].activeUsers;
+  const y1Arpu = y1Mau > 0 ? Math.round(y1Revenue / y1Mau) : 0;
+  const usdInrRate = 83;
+  const y1Valuation = Math.round(y1Revenue * 20 / usdInrRate); // 20x ARR early-stage premium
+
+  // ── Year 2 Projection ──
+  const y2Mau = Math.floor(a.y2Users * (a.activationRate / 100));
+  const y2Revenue = Math.round(y2Mau * metrics.arpu * 12);
+  const y2Cogs = Math.round(y2Revenue * (a.cogsRateY2 / 100));
+  const y2Opex = Math.round(y2Revenue * (a.y2OpexPctRevenue / 100));
+  const y2GrossProfit = y2Revenue - y2Cogs;
+  const y2NetProfit = y2Revenue - y2Cogs - y2Opex;
+  const y2Margin = y2Revenue > 0 ? (y2NetProfit / y2Revenue) * 100 : 0;
+  const y2GrossMargin = y2Revenue > 0 ? Math.round((y2GrossProfit / y2Revenue) * 100) : 0;
+  const y2Arpu = y2Mau > 0 ? Math.round(y2Revenue / y2Mau) : 0;
+  const y2Valuation = Math.round(y2Revenue * 10 / usdInrRate); // 10x ARR growth-stage
+
+  // ── Year 3 Projection ──
+  const y3Mau = Math.floor(a.y3Users * (a.activationRate / 100));
+  const y3Revenue = Math.round(y3Mau * metrics.arpu * 12);
+  const y3Cogs = Math.round(y3Revenue * (a.cogsRateY3 / 100));
+  const y3Opex = Math.round(y3Revenue * (a.y3OpexPctRevenue / 100));
+  const y3GrossProfit = y3Revenue - y3Cogs;
+  const y3NetProfit = y3Revenue - y3Cogs - y3Opex;
+  const y3Margin = y3Revenue > 0 ? (y3NetProfit / y3Revenue) * 100 : 0;
+  const y3GrossMargin = y3Revenue > 0 ? Math.round((y3GrossProfit / y3Revenue) * 100) : 0;
+  const y3Arpu = y3Mau > 0 ? Math.round(y3Revenue / y3Mau) : 0;
+  const y3Valuation = Math.round(y3Revenue * 10 / usdInrRate);
+
+  const incomeStatement: YearRow[] = [
+    {
+      year: 'Year 1', revenue: y1Revenue, cogs: y1Cogs, grossProfit: y1GrossProfit,
+      grossMargin: y1GrossMargin, opex: y1Opex, totalExpenses: y1Cogs + y1Opex,
+      netProfit: y1NetProfit, margin: parseFloat(y1Margin.toFixed(1)),
+      valuation: y1Valuation, users: monthly[11].totalUsers, merchants: monthly[11].merchants,
+      cities: monthly[11].cities, arpu: y1Arpu, downloads: monthly[11].totalUsers,
+      mau: y1Mau, blendedCac: a.blendedCac,
+    },
+    {
+      year: 'Year 2', revenue: y2Revenue, cogs: y2Cogs, grossProfit: y2GrossProfit,
+      grossMargin: y2GrossMargin, opex: y2Opex, totalExpenses: y2Cogs + y2Opex,
+      netProfit: y2NetProfit, margin: parseFloat(y2Margin.toFixed(1)),
+      valuation: y2Valuation, users: a.y2Users, merchants: a.y2Merchants,
+      cities: a.citiesYear2, arpu: y2Arpu, downloads: a.y2Users,
+      mau: y2Mau, blendedCac: a.cacY2,
+    },
+    {
+      year: 'Year 3', revenue: y3Revenue, cogs: y3Cogs, grossProfit: y3GrossProfit,
+      grossMargin: y3GrossMargin, opex: y3Opex, totalExpenses: y3Cogs + y3Opex,
+      netProfit: y3NetProfit, margin: parseFloat(y3Margin.toFixed(1)),
+      valuation: y3Valuation, users: a.y3Users, merchants: a.y3Merchants,
+      cities: a.y3Cities, arpu: y3Arpu, downloads: a.y3Users,
+      mau: y3Mau, blendedCac: a.cacY3,
+    },
+  ];
+
+  return { monthly, incomeStatement };
+}
 
 // ============================================
 // COGS BREAKDOWN (Variable costs that scale with revenue/GMV)
@@ -189,9 +290,9 @@ const expenseCategories = [
 // PDF Phase 1 (M1-M6): ₹833.3K/mo base, 1 city
 // PDF Phase 2 (M7-M12): ₹1.1M/mo base + surplus → Marketing/BizDev
 // ============================================
-function computeMonthlyOpEx(m: typeof monthlyBreakdown[0]) {
+function computeMonthlyOpEx(m: MonthlyRow, phase1Months: number = 6) {
   const mi = parseInt(m.month.replace('M', '')) - 1;
-  const isPhase1 = mi < 6;
+  const isPhase1 = mi < phase1Months;
   // FIXED: Rent — flat within phase, steps at phase boundary
   // PDF: ₹66.7K (Phase 1) → ₹280K (Phase 2). Scales with satellite offices.
   const rent = isPhase1 ? 80000 : mi < 9 ? 130000 : 200000;
@@ -280,31 +381,7 @@ function calculateMetrics(a: Assumptions) {
   };
 }
 
-function generateProjectedMonthly(a: Assumptions) {
-  const { arpu, gmvPerUser } = calculateMetrics(a);
-  let users = 0;
-  let merchants = a.startingCities * 50;
-  const cityGrowthRate = Math.pow(a.citiesMonth12 / a.startingCities, 1 / 12);
-
-  return Array.from({ length: 12 }, (_, idx) => {
-    const month = idx + 1;
-    const monthlyBudget = month <= a.phase1Months ? a.phase1Budget / a.phase1Months : a.phase2Budget / a.phase2Months;
-    const newUsers = Math.floor(monthlyBudget * 0.36 / a.blendedCac) + Math.floor(month * 1500);
-    const churnedUsers = Math.floor(users * (a.userChurn / 100));
-    users = users + newUsers - churnedUsers;
-
-    const newMerchants = Math.floor(monthlyBudget * 0.19 / a.cam) + Math.floor(month * 20);
-    const churnedMerchants = Math.floor(merchants * (a.merchantChurn / 100));
-    merchants = merchants + newMerchants - churnedMerchants;
-
-    const activeUsers = Math.floor(users * (a.activationRate / 100));
-    const cities = Math.round(a.startingCities * Math.pow(cityGrowthRate, month));
-    const gmv = activeUsers * gmvPerUser;
-    const revenue = activeUsers * arpu;
-
-    return { month: `M${month}`, users, activeUsers, merchants, cities, gmv, revenue, expenses: monthlyBudget };
-  });
-}
+// generateProjectedMonthly removed — replaced by computeFullModel above
 
 // ============================================
 // FORMATTING HELPERS
@@ -380,6 +457,7 @@ export default function RezFinancialsPage() {
   });
 
   const metrics = calculateMetrics(assumptions);
+  const model = computeFullModel(assumptions);
   const scenarioMult = scenario === 'conservative' ? 0.7 : scenario === 'optimistic' ? 1.4 : 1.0;
 
   const updateAssumption = useCallback((key: keyof Assumptions, value: number) => {
@@ -488,7 +566,7 @@ export default function RezFinancialsPage() {
                   <Target size={18} /> ReZ — India&apos;s Closed-Loop Cashback Ecosystem
                 </p>
                 <p className="text-slate-300 text-sm mt-1">
-                  $500K SAFE at $5M cap • Year 1: ₹10 Cr revenue • Year 3: ₹600 Cr, $701M valuation
+                  $500K SAFE at $5M cap • Year 1: {formatINR(model.incomeStatement[0].revenue)} revenue • Year 3: {formatINR(model.incomeStatement[2].revenue)}, {formatUSD(model.incomeStatement[2].valuation)} valuation
                 </p>
               </div>
             </div>
@@ -497,20 +575,20 @@ export default function RezFinancialsPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
               <KPICard
                 label="Year 1 Revenue"
-                value={formatINR(Math.round(100400000 * scenarioMult))}
-                subtext="6.07% net margin"
+                value={formatINR(Math.round(model.incomeStatement[0].revenue * scenarioMult))}
+                subtext={`${model.incomeStatement[0].margin}% net margin`}
                 status="success"
               />
               <KPICard
                 label="Year 3 Revenue"
-                value={formatINR(Math.round(6018000000 * scenarioMult))}
-                subtext="34.5% net margin"
+                value={formatINR(Math.round(model.incomeStatement[2].revenue * scenarioMult))}
+                subtext={`${model.incomeStatement[2].margin}% net margin`}
                 status="success"
               />
               <KPICard
                 label="Year 3 Valuation"
-                value={formatUSD(Math.round(701300000 * scenarioMult))}
-                subtext="140x SAFE return"
+                value={formatUSD(Math.round(model.incomeStatement[2].valuation * scenarioMult))}
+                subtext={`${Math.round(model.incomeStatement[2].valuation * scenarioMult / 5000000)}x SAFE return`}
                 status="success"
               />
               <KPICard
@@ -523,7 +601,7 @@ export default function RezFinancialsPage() {
 
             {/* 3-Year Summary Cards */}
             <div className="grid md:grid-cols-3 gap-6">
-              {incomeStatementData.map((yr) => (
+              {model.incomeStatement.map((yr) => (
                 <div key={yr.year} className={`rounded-xl p-6 border ${yr.netProfit >= 0 ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-red-500/30 bg-red-500/5'}`}>
                   <h3 className="text-lg font-bold text-white mb-4">{yr.year}</h3>
                   <div className="space-y-3">
@@ -802,6 +880,86 @@ export default function RezFinancialsPage() {
               )}
             </div>
 
+            {/* Growth Targets (Year 2 & 3) */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <button onClick={() => toggleSection('growthTargets')} className="w-full flex items-center justify-between p-4 hover:bg-white/5 transition-colors">
+                <span className="text-white font-bold flex items-center gap-2"><TrendingUp size={18} className="text-cyan-400" /> Growth Targets (Year 2 & 3)</span>
+                {expandedSections.growthTargets ? <ChevronDown size={18} className="text-slate-400" /> : <ChevronRight size={18} className="text-slate-400" />}
+              </button>
+              {expandedSections.growthTargets && (
+                <div className="p-4 pt-0 grid sm:grid-cols-2 gap-4">
+                  {[
+                    { key: 'y2Users' as const, label: 'Year 2 Total Users', min: 500000, max: 5000000, step: 100000 },
+                    { key: 'y3Users' as const, label: 'Year 3 Total Users', min: 1000000, max: 15000000, step: 500000 },
+                    { key: 'y2Merchants' as const, label: 'Year 2 Merchants', min: 3000, max: 50000, step: 1000 },
+                    { key: 'y3Merchants' as const, label: 'Year 3 Merchants', min: 10000, max: 100000, step: 5000 },
+                    { key: 'y3Cities' as const, label: 'Year 3 Cities', min: 50, max: 500, step: 10 },
+                    { key: 'cacY2' as const, label: 'Year 2 Blended CAC (₹)', min: 50, max: 500, step: 10 },
+                    { key: 'cacY3' as const, label: 'Year 3 Blended CAC (₹)', min: 100, max: 800, step: 25 },
+                  ].map((param) => (
+                    <div key={param.key} className="bg-white/5 rounded-lg p-3">
+                      <div className="flex justify-between items-center mb-2">
+                        <label className="text-sm text-slate-400">{param.label}</label>
+                        <span className="text-cyan-400 font-bold">{param.key.includes('cac') ? `₹${assumptions[param.key]}` : formatNum(assumptions[param.key])}</span>
+                      </div>
+                      <input
+                        type="range"
+                        min={param.min}
+                        max={param.max}
+                        step={param.step}
+                        value={assumptions[param.key]}
+                        onChange={(e) => updateAssumption(param.key, Number(e.target.value))}
+                        className="w-full accent-cyan-500"
+                      />
+                      <div className="flex justify-between text-[10px] text-slate-500">
+                        <span>{formatNum(param.min)}</span>
+                        <span>{formatNum(param.max)}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Cost Structure */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <button onClick={() => toggleSection('costStructure')} className="w-full flex items-center justify-between p-4 hover:bg-white/5 transition-colors">
+                <span className="text-white font-bold flex items-center gap-2"><Percent size={18} className="text-red-400" /> Cost Structure (% of Revenue)</span>
+                {expandedSections.costStructure ? <ChevronDown size={18} className="text-slate-400" /> : <ChevronRight size={18} className="text-slate-400" />}
+              </button>
+              {expandedSections.costStructure && (
+                <div className="p-4 pt-0 grid sm:grid-cols-2 gap-4">
+                  {[
+                    { key: 'cogsRateY1' as const, label: 'Year 1 COGS Rate (%)', min: 30, max: 90, step: 1 },
+                    { key: 'cogsRateY2' as const, label: 'Year 2 COGS Rate (%)', min: 20, max: 80, step: 1 },
+                    { key: 'cogsRateY3' as const, label: 'Year 3 COGS Rate (%)', min: 10, max: 70, step: 1 },
+                    { key: 'y2OpexPctRevenue' as const, label: 'Year 2 OpEx (% of Revenue)', min: 20, max: 150, step: 2.5 },
+                    { key: 'y3OpexPctRevenue' as const, label: 'Year 3 OpEx (% of Revenue)', min: 10, max: 80, step: 2.5 },
+                  ].map((param) => (
+                    <div key={param.key} className="bg-white/5 rounded-lg p-3">
+                      <div className="flex justify-between items-center mb-2">
+                        <label className="text-sm text-slate-400">{param.label}</label>
+                        <span className="text-red-400 font-bold">{assumptions[param.key]}%</span>
+                      </div>
+                      <input
+                        type="range"
+                        min={param.min}
+                        max={param.max}
+                        step={param.step}
+                        value={assumptions[param.key]}
+                        onChange={(e) => updateAssumption(param.key, Number(e.target.value))}
+                        className="w-full accent-red-500"
+                      />
+                      <div className="flex justify-between text-[10px] text-slate-500">
+                        <span>{param.min}%</span>
+                        <span>{param.max}%</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
             {/* Live Calculated Metrics */}
             <div className="bg-orange-500/10 rounded-xl p-6 border border-orange-500/30">
               <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
@@ -823,6 +981,20 @@ export default function RezFinancialsPage() {
                 <div className="text-center">
                   <p className="text-xs text-slate-400">CAC Payback</p>
                   <p className="text-xl font-bold text-purple-400">{metrics.cacPayback.toFixed(1)} mo</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t border-orange-500/20">
+                <div className="text-center">
+                  <p className="text-xs text-slate-400">Y1 Revenue</p>
+                  <p className="text-lg font-bold text-emerald-400">{formatINR(model.incomeStatement[0].revenue)}</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-xs text-slate-400">Y3 Revenue</p>
+                  <p className="text-lg font-bold text-emerald-400">{formatINR(model.incomeStatement[2].revenue)}</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-xs text-slate-400">Y3 Valuation</p>
+                  <p className="text-lg font-bold text-amber-400">{formatUSD(model.incomeStatement[2].valuation)}</p>
                 </div>
               </div>
             </div>
@@ -853,7 +1025,7 @@ export default function RezFinancialsPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {monthlyBreakdown.map((m) => (
+                    {model.monthly.map((m) => (
                       <tr key={m.month} className="border-t border-white/5 hover:bg-white/5 transition-colors">
                         <td className="px-2 py-2.5 text-white font-bold">{m.month}</td>
                         <td className="px-2 py-2.5 text-slate-300 text-xs">{formatNum(Math.round(m.newUsers * scenarioMult))}</td>
@@ -873,15 +1045,15 @@ export default function RezFinancialsPage() {
                   <tfoot className="bg-white/5 border-t border-white/10">
                     <tr>
                       <td className="px-2 py-3 text-white font-bold">Year 1</td>
-                      <td className="px-2 py-3 text-slate-300 font-bold text-xs">{formatNum(Math.round(monthlyBreakdown.reduce((s, m) => s + m.newUsers, 0) * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-blue-400 font-bold text-xs">{formatNum(Math.round(monthlyBreakdown[11].totalUsers * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-slate-300 font-bold text-xs">{formatNum(Math.round(monthlyBreakdown[11].activeUsers * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-cyan-400 font-bold text-xs">{monthlyBreakdown[11].cities}</td>
-                      <td className="px-2 py-3 text-emerald-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.revenue, 0) * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-amber-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.cogs, 0) * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-slate-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-red-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.totalExp, 0) * scenarioMult))}</td>
-                      <td className="px-2 py-3 text-emerald-400 font-bold text-xs">{formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.netPL, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-slate-300 font-bold text-xs">{formatNum(Math.round(model.monthly.reduce((s, m) => s + m.newUsers, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-blue-400 font-bold text-xs">{formatNum(Math.round(model.monthly[11].totalUsers * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-slate-300 font-bold text-xs">{formatNum(Math.round(model.monthly[11].activeUsers * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-cyan-400 font-bold text-xs">{model.monthly[11].cities}</td>
+                      <td className="px-2 py-3 text-emerald-400 font-bold text-xs">{formatINR(Math.round(model.monthly.reduce((s, m) => s + m.revenue, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-amber-400 font-bold text-xs">{formatINR(Math.round(model.monthly.reduce((s, m) => s + m.cogs, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-slate-400 font-bold text-xs">{formatINR(Math.round(model.monthly.reduce((s, m) => s + m.opex, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-red-400 font-bold text-xs">{formatINR(Math.round(model.monthly.reduce((s, m) => s + m.totalExp, 0) * scenarioMult))}</td>
+                      <td className="px-2 py-3 text-emerald-400 font-bold text-xs">{formatINR(Math.round(model.monthly.reduce((s, m) => s + m.netPL, 0) * scenarioMult))}</td>
                     </tr>
                   </tfoot>
                 </table>
@@ -971,8 +1143,8 @@ export default function RezFinancialsPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {monthlyBreakdown.map((m) => {
-                      const cats = computeMonthlyOpEx(m);
+                    {model.monthly.map((m) => {
+                      const cats = computeMonthlyOpEx(m, assumptions.phase1Months);
                       return (
                         <tr key={m.month} className="border-t border-white/5 hover:bg-white/5">
                           <td className="px-2 py-1.5 text-white font-bold">{m.month}</td>
@@ -987,8 +1159,8 @@ export default function RezFinancialsPage() {
                   </tbody>
                   <tfoot className="bg-white/5 border-t border-white/10">
                     {(() => {
-                      const yearTotals = monthlyBreakdown.reduce((acc, m) => {
-                        const c = computeMonthlyOpEx(m);
+                      const yearTotals = model.monthly.reduce((acc, m) => {
+                        const c = computeMonthlyOpEx(m, assumptions.phase1Months);
                         return { marketing: acc.marketing + c.marketing, tech: acc.tech + c.tech, bizdev: acc.bizdev + c.bizdev, team: acc.team + c.team, support: acc.support + c.support, rent: acc.rent + c.rent, buffer: acc.buffer + c.buffer };
                       }, { marketing: 0, tech: 0, bizdev: 0, team: 0, support: 0, rent: 0, buffer: 0 });
                       return (
@@ -1003,7 +1175,7 @@ export default function RezFinancialsPage() {
                             {formatINR(Math.round(yearTotals.buffer * scenarioMult))}
                           </td>
                           <td className="px-2 py-2 text-right text-white font-bold">
-                            {formatINR(Math.round(monthlyBreakdown.reduce((s, m) => s + m.opex, 0) * scenarioMult))}
+                            {formatINR(Math.round(model.monthly.reduce((s, m) => s + m.opex, 0) * scenarioMult))}
                           </td>
                         </tr>
                       );
@@ -1033,7 +1205,7 @@ export default function RezFinancialsPage() {
                   <tbody>
                     {(() => {
                       const cogsTotalPct = cogsBreakdown.reduce((s, c) => s + c.pctY1, 0) || 1;
-                      return monthlyBreakdown.map((m) => (
+                      return model.monthly.map((m) => (
                         <tr key={m.month} className="border-t border-white/5 hover:bg-white/5">
                           <td className="px-2 py-1.5 text-white font-bold">{m.month}</td>
                           <td className="px-2 py-1.5 text-right text-emerald-400">{formatINR(Math.round(m.revenue * scenarioMult))}</td>
@@ -1051,8 +1223,8 @@ export default function RezFinancialsPage() {
                   <tfoot className="bg-white/5 border-t border-white/10">
                     {(() => {
                       const cogsTotalPct = cogsBreakdown.reduce((s, c) => s + c.pctY1, 0) || 1;
-                      const totalRev = monthlyBreakdown.reduce((s, m) => s + m.revenue, 0);
-                      const totalCogs = monthlyBreakdown.reduce((s, m) => s + m.cogs, 0);
+                      const totalRev = model.monthly.reduce((s, m) => s + m.revenue, 0);
+                      const totalCogs = model.monthly.reduce((s, m) => s + m.cogs, 0);
                       return (
                         <tr>
                           <td className="px-2 py-2 text-white font-bold">Year 1</td>
@@ -1072,17 +1244,17 @@ export default function RezFinancialsPage() {
               </div>
             </div>
 
-            {/* Key Month-over-Month Metrics */}
+            {/* Key Month-over-Month Metrics — all computed from assumptions */}
             <div className="grid sm:grid-cols-3 gap-4">
               <div className="bg-white/5 rounded-xl p-5 border border-white/10">
                 <h4 className="text-sm font-bold text-white mb-3">User Growth</h4>
                 <div className="space-y-2">
                   {[
-                    { label: 'M1 Downloads', value: '4,000' },
-                    { label: 'M6 Total', value: '71,863' },
-                    { label: 'M12 Total', value: '268,550' },
-                    { label: 'M12 MAU', value: '80,565' },
-                    { label: 'MoM Growth', value: '~40%' },
+                    { label: 'M1 Downloads', value: formatNum(Math.round(model.monthly[0].newUsers * scenarioMult)) },
+                    { label: 'M6 Total', value: formatNum(Math.round(model.monthly[5].totalUsers * scenarioMult)) },
+                    { label: 'M12 Total', value: formatNum(Math.round(model.monthly[11].totalUsers * scenarioMult)) },
+                    { label: 'M12 MAU', value: formatNum(Math.round(model.monthly[11].activeUsers * scenarioMult)) },
+                    { label: 'MoM Growth', value: model.monthly[5].totalUsers > 0 ? `${Math.round(((model.monthly[11].totalUsers / model.monthly[5].totalUsers) - 1) * 100)}%` : '—' },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between">
                       <span className="text-xs text-slate-400">{r.label}</span>
@@ -1095,11 +1267,11 @@ export default function RezFinancialsPage() {
                 <h4 className="text-sm font-bold text-white mb-3">Revenue Trajectory</h4>
                 <div className="space-y-2">
                   {[
-                    { label: 'M1 Revenue', value: '₹1.02L' },
-                    { label: 'M6 Revenue', value: '₹34.8L' },
-                    { label: 'M12 Revenue', value: '₹3.2 Cr' },
-                    { label: 'Year 1 Total', value: '₹10.04 Cr' },
-                    { label: 'M6→M12 Growth', value: '845%' },
+                    { label: 'M1 Revenue', value: formatINR(Math.round(model.monthly[0].revenue * scenarioMult)) },
+                    { label: 'M6 Revenue', value: formatINR(Math.round(model.monthly[5].revenue * scenarioMult)) },
+                    { label: 'M12 Revenue', value: formatINR(Math.round(model.monthly[11].revenue * scenarioMult)) },
+                    { label: 'Year 1 Total', value: formatINR(Math.round(model.monthly.reduce((s, m) => s + m.revenue, 0) * scenarioMult)) },
+                    { label: 'M6→M12 Growth', value: model.monthly[5].revenue > 0 ? `${Math.round(((model.monthly[11].revenue / model.monthly[5].revenue) - 1) * 100)}%` : '—' },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between">
                       <span className="text-xs text-slate-400">{r.label}</span>
@@ -1112,11 +1284,11 @@ export default function RezFinancialsPage() {
                 <h4 className="text-sm font-bold text-white mb-3">City Expansion</h4>
                 <div className="space-y-2">
                   {[
-                    { label: 'Launch City', value: 'Bangalore' },
-                    { label: 'M3 Cities', value: '3' },
-                    { label: 'M6 Cities', value: '8' },
-                    { label: 'M12 Cities', value: '32' },
-                    { label: 'Year 2 Target', value: '120' },
+                    { label: 'Starting Cities', value: String(assumptions.startingCities) },
+                    { label: 'M3 Cities', value: String(model.monthly[2].cities) },
+                    { label: 'M6 Cities', value: String(model.monthly[5].cities) },
+                    { label: 'M12 Cities', value: String(model.monthly[11].cities) },
+                    { label: 'Year 2 Target', value: String(assumptions.citiesYear2) },
                   ].map(r => (
                     <div key={r.label} className="flex justify-between">
                       <span className="text-xs text-slate-400">{r.label}</span>
@@ -1148,7 +1320,7 @@ export default function RezFinancialsPage() {
                   <thead className="bg-white/5">
                     <tr>
                       <th className="text-left px-4 py-3 text-slate-400 font-medium">Metric</th>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <th key={yr.year} className="text-right px-4 py-3 text-orange-400 font-medium">{yr.year}</th>
                       ))}
                     </tr>
@@ -1156,31 +1328,31 @@ export default function RezFinancialsPage() {
                   <tbody>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">Total Revenue</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-emerald-400 font-bold">{formatINR(Math.round(yr.revenue * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-amber-400">(-) COGS (Variable)</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-amber-400">{formatINR(Math.round(yr.cogs * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/10 bg-emerald-500/5">
                       <td className="px-4 py-3 text-white font-bold">Gross Profit</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-emerald-400 font-bold">{formatINR(Math.round(yr.grossProfit * scenarioMult))} <span className="text-[10px] text-slate-500">({yr.grossMargin}%)</span></td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">(-) OpEx (Fixed/Semi-Fixed)</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-red-400">{formatINR(Math.round(yr.opex * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/10 bg-white/5">
                       <td className="px-4 py-3 text-white font-bold">Net Profit / (Loss)</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className={`px-4 py-3 text-right font-bold ${yr.netProfit >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
                           {formatINR(Math.round(yr.netProfit * scenarioMult))}
                         </td>
@@ -1188,7 +1360,7 @@ export default function RezFinancialsPage() {
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">Net Margin</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className={`px-4 py-3 text-right font-bold ${yr.margin >= 0 ? 'text-emerald-400' : 'text-red-400'}`}>
                           {yr.margin.toFixed(1)}%
                         </td>
@@ -1196,37 +1368,37 @@ export default function RezFinancialsPage() {
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">Blended CAC</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-orange-400 font-bold">₹{yr.blendedCac}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/10 bg-white/5">
                       <td className="px-4 py-3 text-white font-bold">Implied Valuation</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-amber-400 font-bold">{formatUSD(Math.round(yr.valuation * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">MAU</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-blue-400">{formatNum(Math.round(yr.mau * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">Merchants</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-purple-400">{formatNum(Math.round(yr.merchants * scenarioMult))}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">Cities</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-cyan-400">{yr.cities}</td>
                       ))}
                     </tr>
                     <tr className="border-t border-white/5">
                       <td className="px-4 py-3 text-slate-300">ARPU (Annual)</td>
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <td key={yr.year} className="px-4 py-3 text-right text-orange-400">₹{yr.arpu.toLocaleString('en-IN')}</td>
                       ))}
                     </tr>
@@ -1248,7 +1420,7 @@ export default function RezFinancialsPage() {
                     <p className="text-2xl font-bold" style={{ color: cat.color }}>{cat.pct}%</p>
                     <p className="text-xs text-slate-400 mt-1">{cat.desc}</p>
                     <div className="mt-3 space-y-1">
-                      {incomeStatementData.map(yr => (
+                      {model.incomeStatement.map(yr => (
                         <div key={yr.year} className="flex justify-between text-xs">
                           <span className="text-slate-500">{yr.year}</span>
                           <span className="text-slate-300">{formatINR(Math.round(yr.opex * (cat.pct / 100) * scenarioMult))}</span>
@@ -1268,9 +1440,9 @@ export default function RezFinancialsPage() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {[
                   { label: 'Entry', value: '$5M cap', sub: '$500K → 10%', mult: '' },
-                  { label: 'Year 1', value: formatUSD(Math.round(23600000 * scenarioMult)), sub: `${(23600000 * scenarioMult / 5000000).toFixed(1)}x return`, mult: 'text-emerald-400' },
-                  { label: 'Year 2', value: formatUSD(Math.round(180400000 * scenarioMult)), sub: `${(180400000 * scenarioMult / 5000000).toFixed(0)}x return`, mult: 'text-emerald-400' },
-                  { label: 'Year 3', value: formatUSD(Math.round(701300000 * scenarioMult)), sub: `${(701300000 * scenarioMult / 5000000).toFixed(0)}x return`, mult: 'text-emerald-400' },
+                  { label: 'Year 1', value: formatUSD(Math.round(model.incomeStatement[0].valuation * scenarioMult)), sub: `${(model.incomeStatement[0].valuation * scenarioMult / 5000000).toFixed(1)}x return`, mult: 'text-emerald-400' },
+                  { label: 'Year 2', value: formatUSD(Math.round(model.incomeStatement[1].valuation * scenarioMult)), sub: `${(model.incomeStatement[1].valuation * scenarioMult / 5000000).toFixed(0)}x return`, mult: 'text-emerald-400' },
+                  { label: 'Year 3', value: formatUSD(Math.round(model.incomeStatement[2].valuation * scenarioMult)), sub: `${(model.incomeStatement[2].valuation * scenarioMult / 5000000).toFixed(0)}x return`, mult: 'text-emerald-400' },
                 ].map(r => (
                   <div key={r.label} className="text-center bg-white/5 rounded-xl p-4 border border-white/10">
                     <p className="text-xs text-amber-400 font-bold">{r.label}</p>
@@ -1521,16 +1693,16 @@ export default function RezFinancialsPage() {
                   </thead>
                   <tbody>
                     {[
-                      { metric: 'Year 1 Revenue', base: 100400000 },
-                      { metric: 'Year 2 Revenue', base: 1534000000 },
-                      { metric: 'Year 3 Revenue', base: 6018000000 },
-                      { metric: 'Year 1 Net Profit', base: 6100000 },
-                      { metric: 'Year 2 Net Profit', base: -729000000 },
-                      { metric: 'Year 3 Net Profit', base: 2075000000 },
-                      { metric: 'Year 1 Users', base: 268550 },
-                      { metric: 'Year 2 Users', base: 1500000 },
-                      { metric: 'Year 3 Users', base: 5000000 },
-                      { metric: 'Year 3 Valuation', base: 701300000 },
+                      { metric: 'Year 1 Revenue', base: model.incomeStatement[0].revenue },
+                      { metric: 'Year 2 Revenue', base: model.incomeStatement[1].revenue },
+                      { metric: 'Year 3 Revenue', base: model.incomeStatement[2].revenue },
+                      { metric: 'Year 1 Net Profit', base: model.incomeStatement[0].netProfit },
+                      { metric: 'Year 2 Net Profit', base: model.incomeStatement[1].netProfit },
+                      { metric: 'Year 3 Net Profit', base: model.incomeStatement[2].netProfit },
+                      { metric: 'Year 1 Users', base: model.incomeStatement[0].users },
+                      { metric: 'Year 2 Users', base: model.incomeStatement[1].users },
+                      { metric: 'Year 3 Users', base: model.incomeStatement[2].users },
+                      { metric: 'Year 3 Valuation', base: model.incomeStatement[2].valuation },
                     ].map((row) => (
                       <tr key={row.metric} className="border-t border-white/5">
                         <td className="px-4 py-2.5 text-slate-300">{row.metric}</td>
@@ -1574,10 +1746,10 @@ export default function RezFinancialsPage() {
                       <tr key={cac} className="border-t border-white/5">
                         <td className="px-3 py-2 text-blue-400 font-bold">₹{cac}</td>
                         {[400, 500, 650, 800, 1000].map(aov => {
-                          const factor = (aov / 650) * (76 / cac);
-                          const rev = 6018000000 * factor;
+                          const factor = (aov / assumptions.aov) * (assumptions.blendedCac / cac);
+                          const rev = model.incomeStatement[2].revenue * factor;
                           return (
-                            <td key={aov} className={`px-3 py-2 text-right ${cac === 76 && aov === 650 ? 'text-orange-400 font-bold bg-orange-500/10' : 'text-slate-300'}`}>
+                            <td key={aov} className={`px-3 py-2 text-right ${cac === assumptions.blendedCac && aov === assumptions.aov ? 'text-orange-400 font-bold bg-orange-500/10' : 'text-slate-300'}`}>
                               {formatINR(Math.round(rev))}
                             </td>
                           );
@@ -1587,7 +1759,7 @@ export default function RezFinancialsPage() {
                   </tbody>
                 </table>
               </div>
-              <p className="text-[10px] text-slate-500 mt-3">Highlighted cell = base case (CAC ₹76, AOV ₹650). Year 3 revenue scales linearly with AOV and inversely with CAC.</p>
+              <p className="text-[10px] text-slate-500 mt-3">Highlighted cell = current base case (CAC ₹{assumptions.blendedCac}, AOV ₹{assumptions.aov}). Year 3 revenue scales linearly with AOV and inversely with CAC.</p>
             </div>
 
             {/* Break-even Analysis */}
