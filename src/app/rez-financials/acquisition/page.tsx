@@ -1120,6 +1120,474 @@ export default function AcquisitionStrategyPage() {
                 <p className="text-slate-400 text-[10px]">1 BizDev Lead + 4 Zone Reps + 1 Catalog person + 1 Merchant Success Manager (M2). Each zone rep targets 20 merchants/day = 80 visits/day across 4 zones. At 30% conversion = 24 new merchants/day = 500+ in M1.</p>
               </div>
             </div>
+
+            {/* ══════ NICHE PLAYBOOKS ══════ */}
+            <div className="bg-gradient-to-r from-amber-500/10 via-orange-500/5 to-amber-500/10 border border-amber-500/30 rounded-xl p-4">
+              <p className="text-amber-400 font-bold flex items-center gap-2"><BookOpen size={18} /> Niche-by-Niche Merchant Playbooks</p>
+              <p className="text-slate-300 text-sm mt-1">Every niche has different pain points and motivations. Here&apos;s exactly why each type of merchant should join and how to pitch them.</p>
+            </div>
+
+            {/* QSR / Fast Food Chains */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-red-500/10 border-b border-red-500/30 flex items-center justify-between">
+                <h4 className="text-red-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> QSR & Fast Food Chains</h4>
+                <span className="text-slate-500 text-[10px]">Domino&apos;s, KFC, McDonald&apos;s, Burger King, Subway</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Swiggy/Zomato take 25-30% commission — kills margins on ₹200-500 orders', 'Platform owns the customer — brand has zero direct relationship', 'Forced to run deep discounts to stay visible on aggregator listings', 'Delivery partner quality issues they can\'t control', 'Zero customer data — don\'t know who orders, how often, or preferences'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['5% commission vs 25-30% = save ₹40-60 per order on a ₹200 order', 'NuqtaCoin cashback brings customers BACK without discounting your brand', 'Full customer data: who they are, order frequency, preferences', 'Direct customer relationship — build your own loyal base', 'College crowd is their #1 demographic — we deliver them directly'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;You&apos;re paying Swiggy 25-30% per order. We charge 5%. Your ₹300 McChicken meal — Swiggy takes ₹75, we take ₹15. That&apos;s ₹60 saved per order. Plus, our NuqtaCoin cashback means the same customer orders again without you paying for ads. You get the customer data. You build the relationship. We just bring them to you.&quot;</p>
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="bg-emerald-500/10 rounded-lg p-2 text-center"><p className="text-emerald-400 font-bold text-sm">₹60</p><p className="text-slate-500 text-[10px]">saved/order vs Swiggy</p></div>
+                  <div className="bg-blue-500/10 rounded-lg p-2 text-center"><p className="text-blue-400 font-bold text-sm">3x</p><p className="text-slate-500 text-[10px]">more margin per order</p></div>
+                  <div className="bg-purple-500/10 rounded-lg p-2 text-center"><p className="text-purple-400 font-bold text-sm">15%</p><p className="text-slate-500 text-[10px]">cashback drives repeat</p></div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-yellow-400 mb-1">Objection Handling</p>
+                  <div className="space-y-1">
+                    {[
+                      { obj: '"We already have Swiggy/Zomato"', answer: 'Great — keep them. We\'re not replacing, we\'re adding a cheaper channel. Same kitchen, extra orders at 5x better margins.' },
+                      { obj: '"You don\'t have enough users yet"', answer: 'We\'re launching with 10 college fests this month — 5,000+ students getting the app. Your store will be one of the first they see.' },
+                      { obj: '"Our corporate won\'t approve"', answer: 'We sign zone-level MoUs — no corporate approval needed for a pilot. Zero listing fee for 3 months. Zero risk.' },
+                    ].map(o => (
+                      <div key={o.obj} className="bg-yellow-500/5 rounded p-2 border border-yellow-500/10">
+                        <p className="text-yellow-400 text-[10px] font-bold">{o.obj}</p>
+                        <p className="text-slate-300 text-[10px]">{o.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Cafes */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-amber-500/10 border-b border-amber-500/30 flex items-center justify-between">
+                <h4 className="text-amber-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Cafes & Coffee Chains</h4>
+                <span className="text-slate-500 text-[10px]">Starbucks, Third Wave, Blue Tokai, Chai Point</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Footfall depends on location — slow days hurt badly', 'Existing loyalty programs (Starbucks Stars) have low redemption outside their ecosystem', 'Dine-in focused — missing delivery/takeaway revenue', 'High rent in prime locations (Koramangala, HSR) means every empty seat is a loss', 'Student crowd comes once for Instagram, rarely returns without incentive'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['NuqtaCoin cashback STACKS with their existing loyalty — double reward for customers', 'Drive repeat visits: "You have ₹45 NuqtaCoins at Third Wave" push notifications', 'Chai Point: ₹30-50 AOV = daily frequency = highest NuqtaCoin earning velocity', 'Pre-order feature reduces wait time — students love this', 'Featured in college fests = massive brand visibility for free'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Your average customer comes 2x a month. With NuqtaCoin cashback, we push that to 4-5x. A ₹300 coffee order earns ₹45 in coins — that&apos;s a free coffee every 7 visits. The student literally gets a notification: &apos;You have enough coins for a free latte at [your cafe].&apos; They walk in. No discount on your end — the coins are our cost. You get a full-price customer.&quot;</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-yellow-400 mb-1">Objection Handling</p>
+                  <div className="space-y-1">
+                    {[
+                      { obj: '"We already have our own loyalty program"', answer: 'NuqtaCoin stacks on TOP of yours. Customer earns your Stars AND NuqtaCoins. Double reason to visit you over the cafe next door.' },
+                      { obj: '"Coffee is a walk-in business, we don\'t need an app"', answer: 'Exactly — we drive walk-ins. Student gets a push: "₹45 coins expiring, nearest cafe: [your name, 200m away]." That\'s a free customer at your door.' },
+                    ].map(o => (
+                      <div key={o.obj} className="bg-yellow-500/5 rounded p-2 border border-yellow-500/10">
+                        <p className="text-yellow-400 text-[10px] font-bold">{o.obj}</p>
+                        <p className="text-slate-300 text-[10px]">{o.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Darshinis & Tiffin Centres */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-orange-500/10 border-b border-orange-500/30 flex items-center justify-between">
+                <h4 className="text-orange-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Darshinis & Tiffin Centres</h4>
+                <span className="text-slate-500 text-[10px]">50+ across 4 zones — highest frequency category</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Zero online presence — no website, no Google listing, no social media', 'Cash-only business = no customer tracking, no reorder data', 'Competition from 10 other darshinis within 500m radius', 'Can\'t do delivery — no staff, no packaging, no logistics', 'Younger crowd shifting to Swiggy/Zomato for convenience over walking 2 min'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['Get discovered online — students find you on the app instead of Googling "breakfast near me"', 'QR code payment = now you know who your regulars are', 'NuqtaCoin makes YOUR darshini the default choice vs the 10 others nearby', 'Daily idli-dosa habit (₹60-100) = coins add up fast = unbreakable loyalty', 'No delivery needed — just in-store payments with coin cashback', 'Free Google-style listing: menu, photos, hours, rating — we set it all up for you'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (in Kannada-friendly simple English)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Uncle, your idli is the best in BTM. But the students don&apos;t know that — they open Swiggy and order from whoever is on top. We put you on OUR app for free. Student scans your QR, pays normally, but earns coins. Next time they want breakfast, our app tells them: &apos;You have ₹15 coins at [your darshini].&apos; They come to YOU, not the one next door. Zero cost to you. We just put this QR tent on your counter.&quot;</p>
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="bg-emerald-500/10 rounded-lg p-2 text-center"><p className="text-emerald-400 font-bold text-sm">₹0</p><p className="text-slate-500 text-[10px]">cost to merchant</p></div>
+                  <div className="bg-blue-500/10 rounded-lg p-2 text-center"><p className="text-blue-400 font-bold text-sm">Daily</p><p className="text-slate-500 text-[10px]">visit frequency</p></div>
+                  <div className="bg-purple-500/10 rounded-lg p-2 text-center"><p className="text-purple-400 font-bold text-sm">2 min</p><p className="text-slate-500 text-[10px]">onboarding time</p></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Kiranas / Local Grocery */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-emerald-500/10 border-b border-emerald-500/30 flex items-center justify-between">
+                <h4 className="text-emerald-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Kiranas & Local Grocery</h4>
+                <span className="text-slate-500 text-[10px]">60+ stores — daily essentials, highest retention</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Losing customers to Zepto, Blinkit, BigBasket — 10-minute delivery is killing walk-ins', 'Udhari (credit) system = ₹50K-2L stuck in unpaid tabs', 'No way to send offers or reminders to regular customers', 'Inventory management is manual — frequent stockouts', 'Young renters/PG residents default to apps instead of discovering local kirana'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['NuqtaCoin loyalty = your customers CHOOSE you over Zepto because they have coins with you', 'Digital payments = end udhari problem forever — every transaction tracked', 'Push notifications: "Your kirana has fresh vegetables today" — re-engage dormant customers', 'B2B buying through Nuqta platform = wholesale prices, better margins', 'Student PG crowd (our core users) will discover you on the app', 'We help digitize your inventory — free catalog setup with photos'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Bhaiya, your customers are ordering from Zepto now. Why? Because it&apos;s on their phone. We put YOUR shop on their phone too. When they buy ₹500 groceries from you, they earn ₹75 in NuqtaCoins. Next time they need milk at 10pm, our app says: &apos;You have ₹75 coins at [your shop], 100m away.&apos; They come to you, not Zepto. Plus, no more udhari — everything digital. And we can get you wholesale prices through our B2B network.&quot;</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-yellow-400 mb-1">Objection Handling</p>
+                  <div className="space-y-1">
+                    {[
+                      { obj: '"My customers are old people, they don\'t use apps"', answer: 'Your OLD customers will stay. We bring you NEW customers — the PG students and young renters who currently use Zepto. That\'s incremental revenue, not replacement.' },
+                      { obj: '"I don\'t want to pay commission"', answer: 'First 3 months: zero commission. After that, 5% only on orders that come THROUGH the app — your walk-in customers pay normally, zero cut. We only charge on new business we bring you.' },
+                    ].map(o => (
+                      <div key={o.obj} className="bg-yellow-500/5 rounded p-2 border border-yellow-500/10">
+                        <p className="text-yellow-400 text-[10px] font-bold">{o.obj}</p>
+                        <p className="text-slate-300 text-[10px]">{o.answer}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pharmacies */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-red-500/10 border-b border-red-500/30 flex items-center justify-between">
+                <h4 className="text-red-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Pharmacies & Health Stores</h4>
+                <span className="text-slate-500 text-[10px]">Apollo, MedPlus, local pharmacies — essential + recurring</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['PharmEasy, 1mg, Netmeds offering 20-25% discounts — impossible to match', 'Medicine is a grudge purchase — zero loyalty, people go wherever is cheapest', 'No way to remind patients about refills or recurring prescriptions', 'Late-night/emergency demand but no discovery channel', 'Health supplements margin is good but hard to cross-sell in-store'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['NuqtaCoin cashback = price-competitive WITHOUT discounting. ₹500 medicine = ₹75 coins', 'Refill reminders: "Your monthly medicines at [pharmacy] — order now, use ₹75 coins"', 'Late-night discovery: nearest open pharmacy on the app', 'Cross-sell supplements, health products with coin rewards', 'Prescription upload feature drives repeat: same pharmacy, same pharmacist'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;PharmEasy gives 25% discount, right? You can&apos;t match that. But here&apos;s what you CAN do: when someone buys ₹500 medicine from you, they earn ₹75 NuqtaCoins. Next month, same prescription — our app reminds them: &apos;Your medicines are due. ₹75 coins waiting at [your pharmacy].&apos; They come to you. Not PharmEasy. And you didn&apos;t discount a single rupee — the coins are on us.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Salons & Beauty */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-pink-500/10 border-b border-pink-500/30 flex items-center justify-between">
+                <h4 className="text-pink-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Salons & Beauty Services</h4>
+                <span className="text-slate-500 text-[10px]">Naturals, Green Trends, local salons — high-value recurring</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Urban Company eating market with at-home services at lower prices', 'No-shows: 20-30% appointments are missed, wasting time slots', 'Customer switches salons for ₹50 discount — zero loyalty', 'Walk-ins are unpredictable — some days packed, some days empty', 'Hard to upsell premium services (keratin, spa) to regulars'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['₹800 haircut = ₹120 NuqtaCoins = powerful lock-in for monthly visits', 'Coin balance creates switching cost: "I have ₹400 coins at this salon, why go elsewhere?"', 'Push notifications for rebooking: "It\'s been 4 weeks since your last haircut — ₹120 coins waiting"', 'Premium service upsell: "Use your coins toward a spa treatment — only ₹200 more"', 'Pre-booking through app reduces no-shows'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Your customer gets a ₹800 haircut every month. Urban Company charges ₹500 for the same at home. You can&apos;t cut prices. But with NuqtaCoin, that ₹800 haircut earns ₹120 in coins. After 3 visits, they have ₹360 — that&apos;s a free facial. They&apos;d never switch because they have coins with YOU. Plus, we send them a reminder every 4 weeks. You stop losing customers to Urban Company, and you fill empty slots.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Fashion & Lifestyle */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-pink-500/10 border-b border-pink-500/30 flex items-center justify-between">
+                <h4 className="text-pink-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Fashion & Lifestyle Stores</h4>
+                <span className="text-slate-500 text-[10px]">Max, Pantaloons, local boutiques, jewelry — high AOV</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Myntra/Ajio/Amazon offering 40-70% discounts — foot traffic declining', 'End-of-season sales is the only time they get real volume', 'No way to re-engage someone who browsed in-store but didn\'t buy', 'Jewelry stores: ₹10K+ purchases but customer shops around for weeks before deciding', 'Local boutiques: zero discoverability against big brands'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['High AOV = massive coin earning: ₹2,000 kurta = ₹300 coins, ₹10K jewelry = ₹1,500 coins', 'Coins create reason to come BACK to store instead of browsing Myntra', 'Local boutiques get discovered by 5,000+ new users in their area', 'Festival season: NuqtaCoin deals drive footfall without heavy discounting', 'Cross-sell: earn coins on clothing, spend at cafe next door = ecosystem stickiness'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;A customer buys a ₹2,000 kurta from you. They earn ₹300 NuqtaCoins. They can spend those coins at ANY Nuqta merchant — or save them for their next purchase with you. Either way, they&apos;re locked into the ecosystem that includes YOUR store. Myntra can&apos;t do that. And for your Tanishq-level jewelry purchases — ₹10K = ₹1,500 coins. That&apos;s real money. Customer will think twice before going to the competitor.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Grocery Chains */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-green-500/10 border-b border-green-500/30 flex items-center justify-between">
+                <h4 className="text-green-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Grocery Chains & Supermarkets</h4>
+                <span className="text-slate-500 text-[10px]">Reliance Fresh, More, Namdhari&apos;s, Nilgiris</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Zepto/Blinkit 10-min delivery stealing weekly grocery trips', 'Own loyalty cards (More Card, Reliance One) have low engagement', 'Can\'t target specific customer segments with offers', 'Weekend rush but weekday footfall is low', 'Fresh produce wastage on slow days'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['NuqtaCoin STACKS with their existing loyalty card — double rewards', 'Weekly grocery ₹2,000 = ₹300 coins. Monthly: ₹1,200 coins = significant wallet', 'Weekday push: "Fresh vegetables arrived at [store] — use your ₹300 coins"', 'Daily essentials = daily transactions = highest NuqtaCoin velocity', 'We drive the young PG/apartment crowd who default to Zepto back to your store'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Your More Card gives 2% cashback. We add 15% NuqtaCoin on top. Customer spends ₹2,000 weekly grocery — that&apos;s ₹300 coins per week, ₹1,200/month. They won&apos;t switch to Zepto because ₹1,200 in coins is real money sitting with you. We also push notifications on slow days — &apos;Fresh stock at More HSR, use your coins.&apos; You fill weekday gaps without discounting.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Electronics */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-blue-500/10 border-b border-blue-500/30 flex items-center justify-between">
+                <h4 className="text-blue-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Electronics & Mobile</h4>
+                <span className="text-slate-500 text-[10px]">Croma, Reliance Digital, Samsung, local shops</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Amazon/Flipkart price matching makes it hard to compete on price', 'Showrooming: customers try in-store, buy online for ₹500 less', 'Accessories (cases, chargers) have best margins but customers buy on Amazon', 'Repair services are hidden gem but no discovery channel', 'One-time purchase — customers don\'t return for years'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['₹15,000 phone = ₹2,250 NuqtaCoins — beats any Amazon cashback', 'Coins spent across ecosystem = customer uses coins at cafes/food, not just electronics', 'Anti-showrooming: "Buy in-store, earn ₹2,250 coins usable everywhere"', 'Accessories upsell: "Your coin balance covers a free case with this phone"', 'Repair services: students need screen repair → discover your shop on the app'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Customer walks in, tries the phone, then says &apos;I&apos;ll check Amazon.&apos; You&apos;ve lost them. With Nuqta: ₹15,000 phone = ₹2,250 in NuqtaCoins. That&apos;s ₹2,250 they can use at ANY merchant — coffee, food, grocery, salon. Amazon can&apos;t do that. The customer saves more by buying from YOU because the coins work everywhere in their daily life.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Fruit & Vegetable Vendors */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-lime-500/10 border-b border-lime-500/30 flex items-center justify-between">
+                <h4 className="text-lime-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Fruit & Vegetable Vendors</h4>
+                <span className="text-slate-500 text-[10px]">40+ across zones — daily frequency, hyper-local</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['BigBasket/Zepto Fresh taking their regular customers', 'Perishable goods = daily pressure to sell everything', 'Cash-only, no digital presence, invisible to new residents', 'No way to communicate "today\'s fresh arrivals" to customers'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['Daily ₹100-200 purchases = coins build fast = unbeatable daily habit', 'Digital payment via QR = track customers, end cash-only limitation', '"Fresh stock today" push to nearby users = sell perishables faster', 'New PG residents discover you on app instead of ordering BigBasket', 'Zero cost, zero commission on walk-in QR payments — just the loyalty layer'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Anna, students in your lane are ordering vegetables from BigBasket. They don&apos;t even know you&apos;re here. We put your shop on our app — when they search &apos;vegetables near me,&apos; YOUR cart shows up. They scan QR, pay normally, earn coins. Tomorrow they buy fruit from you because they have coins with you. BigBasket can&apos;t match that — they&apos;re 30 minutes away, you&apos;re 30 seconds away.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Street Food & Chaat */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-yellow-500/10 border-b border-yellow-500/30 flex items-center justify-between">
+                <h4 className="text-yellow-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Street Food, Chaat & Bakeries</h4>
+                <span className="text-slate-500 text-[10px]">Pani puri, chaat, bakeries, sweet shops — impulse + celebration</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Entirely walk-in dependent — rain, weekday = zero customers', 'No way to build customer base beyond word-of-mouth', 'Bakeries: festival orders go to big brands (Monginis, Theobroma), not local', 'Sweet shops: seasonal peaks (Diwali, weddings) but dead rest of the year', 'Zero online presence — don\'t even have a Google Maps listing'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['Low price (₹50-150) = perfect for coin redemption — students use coins here first', 'Impulse purchase: "₹40 pani puri, you have ₹30 coins — pay just ₹10!" push notification', 'Festival pre-orders through app: Diwali sweets, birthday cakes — capture ahead of big brands', 'Student crowd LOVES street food — we deliver this exact audience', 'Photo-worthy food + NuqtaCoin = Instagram sharing = free marketing'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Your pani puri is famous in BTM. But the new students in the PG next door? They don&apos;t know you exist. Our app shows them: &apos;Best pani puri 200m away — ₹40, you have ₹30 coins, pay just ₹10.&apos; They come running. And next time they want chaat, they come to you because they keep earning coins. It&apos;s like having a loyalty card, but better — and it costs you nothing.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Services: Laundry, Tailors, Repair */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-cyan-500/10 border-b border-cyan-500/30 flex items-center justify-between">
+                <h4 className="text-cyan-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Services: Laundry, Tailors, Repair, Printing</h4>
+                <span className="text-slate-500 text-[10px]">Essential services — high trust, recurring need</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['Laundry: apps like UClean, Tumbledry stealing PG crowd', 'Tailors: seasonal (Diwali, wedding) but dead otherwise', 'Mobile repair: customers go wherever Google shows first, no loyalty', 'Printing/xerox: declining usage but essential near colleges', 'All rely on physical visibility — if not on main road, invisible'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['Laundry: recurring weekly service = coins lock customer in permanently', 'Tailors: "Your alteration is ready — earn coins when you pick up" notification', 'Mobile repair: students URGENTLY need this — "nearest repair shop" search = you', 'Printing: college students need this daily — be the first result near every college', 'All services: discovery by 5,000+ new users who just moved to the area'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (universal for services)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;Every month, 200 new students move into PGs in BTM/HSR. They need laundry, tailoring, phone repair, printing — but they don&apos;t know who&apos;s good. They Google or ask their PG owner. Now imagine they open Nuqta and see: &apos;Best laundry service, 150m away, 4.8 stars, ₹50 coins waiting.&apos; That&apos;s your shop. Every new batch of students = new customers for you, forever. And coins mean they never switch.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Fitness & Wellness */}
+            <div className="bg-white/5 rounded-xl border border-white/10 overflow-hidden">
+              <div className="px-4 py-3 bg-violet-500/10 border-b border-violet-500/30 flex items-center justify-between">
+                <h4 className="text-violet-400 font-bold text-sm flex items-center gap-2"><Store size={14} /> Fitness, Gyms & Wellness</h4>
+                <span className="text-slate-500 text-[10px]">Cult.fit, Gold&apos;s Gym, yoga studios, supplement stores</span>
+              </div>
+              <div className="p-4 space-y-3">
+                <div>
+                  <p className="text-xs font-bold text-red-400 mb-1">Their Pain Points</p>
+                  <div className="space-y-1">
+                    {['High customer churn — 60% of gym members quit within 3 months', 'Cult.fit undercutting with ₹500/month pass across multiple activities', 'Supplement stores: Amazon/HealthKart price-matching', 'Hard to convert trial members into annual subscriptions', 'Yoga/CrossFit studios: small, niche — struggle with discovery'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><AlertTriangle size={8} className="text-red-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-emerald-400 mb-1">Why Join Nuqta</p>
+                  <div className="space-y-1">
+                    {['₹3,000 monthly gym = ₹450 coins. After 3 months: ₹1,350 coins — too much to leave', 'Cross-sell: gym members earn coins → spend at health food stores, supplement shops', 'Check-in rewards: earn bonus coins for showing up — gamifies consistency', 'Yoga/CrossFit: get discovered by health-conscious young professionals in HSR/Koramangala', 'Supplement stores: coins compete with Amazon discounts without cutting YOUR margin'].map(p => (
+                      <p key={p} className="text-slate-300 text-[10px] flex items-start gap-1.5"><CheckCircle size={8} className="text-emerald-400 mt-0.5 shrink-0" />{p}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-slate-800/50 rounded-lg p-3">
+                  <p className="text-xs font-bold text-white mb-1">The Pitch (30 seconds)</p>
+                  <p className="text-amber-400 text-[10px] italic leading-relaxed">&quot;60% of your members quit in 3 months. Why? No switching cost. With NuqtaCoin, a ₹3,000/month member earns ₹450 coins per month. After 3 months, they have ₹1,350 in coins usable at cafes, restaurants, grocery — everywhere they go daily. Quitting your gym means losing ₹1,350 in real purchasing power. That&apos;s a retention tool no other gym has.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Summary: The Core Pitch Framework */}
+            <div className="bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-purple-500/10 rounded-xl p-5 border border-purple-500/30">
+              <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2"><Megaphone size={16} className="text-purple-400" /> The Universal Pitch Framework</h3>
+              <p className="text-slate-400 text-xs mb-3">Every niche pitch follows this 4-step formula:</p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                {[
+                  { step: '1. Name the Enemy', desc: 'Swiggy takes 25%. Amazon undercuts you. Zepto steals your walk-ins. PharmEasy discounts 20%.', color: 'red' },
+                  { step: '2. Show the Alternative', desc: '5% commission. NuqtaCoin cashback. Zero discounting. Customer data is YOURS.', color: 'emerald' },
+                  { step: '3. Do the Math', desc: '₹X purchase = ₹Y coins. That\'s Z free visits. Your customer never leaves.', color: 'blue' },
+                  { step: '4. Remove the Risk', desc: 'Zero listing fee for 3 months. Zero commission on walk-ins. We set everything up.', color: 'amber' },
+                ].map(s => (
+                  <div key={s.step} className={`bg-${s.color}-500/10 rounded-lg p-3 border border-${s.color}-500/30`}>
+                    <p className={`text-${s.color}-400 font-bold text-xs mb-1`}>{s.step}</p>
+                    <p className="text-slate-300 text-[10px]">{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         )}
 
