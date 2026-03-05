@@ -8,7 +8,7 @@ import {
   Coins, Calculator, ChevronRight, ChevronDown, LineChart, Activity,
   CheckCircle, AlertTriangle, Settings, Percent, CreditCard, Building2,
   Banknote, Package, ShoppingCart, RefreshCw, AlertCircle, Gauge,
-  ArrowRight, MapPin, Globe, TrendingDown
+  ArrowRight, MapPin, Globe, TrendingDown, BookOpen
 } from 'lucide-react';
 import GlobalFooter from '@/components/GlobalFooter';
 
@@ -1585,6 +1585,13 @@ export default function RezFinancialsPage() {
               <p className="text-slate-300 text-sm mt-1">
                 12 acquisition channels with blended CAC of ₹{assumptions.blendedCac}. Source: ReZ 2026 Financial Model.
               </p>
+              <Link
+                href="/rez-financials/acquisition"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg border border-purple-500/30 hover:bg-purple-500/30 transition-colors text-sm font-medium mt-3"
+              >
+                <BookOpen size={16} /> View Full Acquisition Strategy
+                <ArrowRight size={14} />
+              </Link>
             </div>
 
             {/* Channel Table */}
