@@ -1585,13 +1585,22 @@ export default function RezFinancialsPage() {
               <p className="text-slate-300 text-sm mt-1">
                 12 acquisition channels with blended CAC of ₹{assumptions.blendedCac}. Source: ReZ 2026 Financial Model.
               </p>
-              <Link
-                href="/rez-financials/acquisition"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg border border-purple-500/30 hover:bg-purple-500/30 transition-colors text-sm font-medium mt-3"
-              >
-                <BookOpen size={16} /> View Full Acquisition Strategy
-                <ArrowRight size={14} />
-              </Link>
+              <div className="flex gap-3 mt-3 flex-wrap">
+                <Link
+                  href="/rez-financials/acquisition"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg border border-purple-500/30 hover:bg-purple-500/30 transition-colors text-sm font-medium"
+                >
+                  <BookOpen size={16} /> View Full Acquisition Strategy
+                  <ArrowRight size={14} />
+                </Link>
+                <Link
+                  href="/rez-financials/investors"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/20 text-green-400 rounded-lg border border-green-500/30 hover:bg-green-500/30 transition-colors text-sm font-medium"
+                >
+                  <Target size={16} /> Investor Strategy &amp; Outreach
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
 
             {/* Channel Table */}
