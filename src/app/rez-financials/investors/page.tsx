@@ -741,7 +741,9 @@ const platforms = [
 // ============================================
 // DATA: GOVERNMENT GRANTS & PROGRAMS
 // ============================================
-const governmentPrograms = [
+type GrantCategory = 'central' | 'state' | 'incubator' | 'corporate' | 'tax';
+const governmentPrograms: { name: string; amount: string; type: string; eligibility: string; process: string; timeline: string; rezAction: string; priority: 'high' | 'medium' | 'low'; category: GrantCategory; docs: string[] }[] = [
+  // ── CENTRAL GOVERNMENT ──
   {
     name: 'Startup India Seed Fund Scheme (SISFS)',
     amount: '₹20L - ₹50L',
@@ -750,47 +752,96 @@ const governmentPrograms = [
     process: 'Register on DPIIT → Apply through approved incubator → Incubator evaluates → Government disburses',
     timeline: 'Rolling applications, 4-8 weeks processing',
     rezAction: 'Register as DPIIT startup immediately. Apply through NSRCEL (IIM-B) or IIIT-B incubator.',
-    priority: 'high' as const,
+    priority: 'high', category: 'central',
+    docs: ['DPIIT Certificate', 'Certificate of Incorporation', 'PAN Card', 'Business Plan', 'Pitch Deck', 'Bank Account Details'],
   },
   {
-    name: 'Karnataka Elevate 100',
-    amount: '₹50L grant',
+    name: 'SIDBI Fund of Funds for Startups (FFS)',
+    amount: 'Indirect — ₹10,000 Cr corpus invests through SEBI-registered AIFs',
+    type: 'Equity (through VC/AIF)',
+    eligibility: 'DPIIT-registered startup, raise through an FFS-backed AIF/VC',
+    process: 'Get funded by a SIDBI FFS-backed fund (100Cheeks, Kalaari, Blume, Chiratae are FFS recipients) → SIDBI provides matching capital to the fund',
+    timeline: 'Ongoing — when your VC raises from SIDBI',
+    rezAction: 'Target VCs that are SIDBI FFS recipients. 100Cheeks, Kalaari, Chiratae, Blume all have SIDBI backing — makes them more likely to fund early-stage.',
+    priority: 'medium', category: 'central',
+    docs: ['DPIIT Certificate', 'Standard VC due diligence docs'],
+  },
+  {
+    name: 'MEITY TIDE 2.0 (Technology Incubation)',
+    amount: '₹7L per startup + incubation support',
     type: 'Grant (non-dilutive)',
-    eligibility: 'Karnataka-registered, innovative product, < 5 years old',
-    process: 'Apply on elevate100.karnataka.gov.in → Evaluation → Shortlist → Grant',
-    timeline: 'Annual program, usually applications open Q3',
-    rezAction: 'Perfect for ReZ — Bangalore-based, commerce innovation. Apply in next cycle.',
-    priority: 'high' as const,
+    eligibility: 'Tech startup, apply through MEITY-funded incubator (NSRCEL, IIIT-B qualify)',
+    process: 'Apply through MEITY-incubator → Selection → 6-12 month incubation + grant → Graduation',
+    timeline: 'Rolling through incubators',
+    rezAction: 'Apply through NSRCEL or IIIT-B Innovation Centre — both are MEITY TIDE 2.0 centres. ReZ qualifies as digital commerce tech.',
+    priority: 'medium', category: 'central',
+    docs: ['DPIIT Certificate', 'Business Plan', 'Product Demo/Prototype', 'Team Details'],
   },
   {
-    name: 'KITS (Karnataka IT/BT) Grant',
-    amount: '₹10L - ₹30L',
-    type: 'Grant',
-    eligibility: 'IT/BT startup registered in Karnataka',
-    process: 'Apply through karnataka.gov.in → Department evaluation → Disbursal',
-    timeline: 'Ongoing',
-    rezAction: 'Register as IT startup in Karnataka. Apply for product development grant.',
-    priority: 'medium' as const,
-  },
-  {
-    name: 'MEITY Startup Hub',
+    name: 'MEITY Startup Hub (MSH)',
     amount: '₹25L - ₹1Cr',
     type: 'Grant + Equity',
-    eligibility: 'Tech-focused startup, Indian incorporated',
+    eligibility: 'Tech-focused startup, Indian incorporated, working on emerging tech / digital commerce',
     process: 'Apply on meity.gov.in → Screening → Pitch → Award',
     timeline: 'Multiple programs throughout the year',
-    rezAction: 'Apply under Digital Commerce / Fintech track.',
-    priority: 'medium' as const,
+    rezAction: 'Apply under Digital Commerce / Fintech track. ReZ is a strong fit for the "Digital India" narrative.',
+    priority: 'medium', category: 'central',
+    docs: ['DPIIT Certificate', 'Detailed Project Report', 'Financial Projections', 'Team Credentials', 'Product Architecture'],
   },
   {
-    name: 'Atal Innovation Mission (NITI Aayog)',
+    name: 'DST-NIDHI Prayas (Dept of Science & Tech)',
+    amount: '₹10L per idea',
+    type: 'Grant (non-dilutive)',
+    eligibility: 'Innovator with prototype, apply through Technology Business Incubator (TBI)',
+    process: 'Apply through TBI (IISc-SID, NSRCEL qualify) → Evaluation → Grant for prototype development',
+    timeline: 'Rolling, 6-8 weeks',
+    rezAction: 'Apply through IISc SID or NSRCEL. Position ReZ as commerce tech innovation requiring prototype scaling.',
+    priority: 'medium', category: 'central',
+    docs: ['Innovation Brief', 'Prototype Details', 'Budget Breakdown', 'Team Profiles'],
+  },
+  {
+    name: 'DST-NIDHI Seed Support System (SSS)',
+    amount: '₹25L - ₹1Cr',
+    type: 'Loan / Equity',
+    eligibility: 'Incubated startup with validated prototype, < 3 years old',
+    process: 'Get incubated at DST-recognized TBI → Apply for SSS → Committee evaluation → Funding',
+    timeline: '4-8 weeks after incubation',
+    rezAction: 'First get incubated at NSRCEL/IIIT-B (DST-recognized). Then apply for SSS as follow-on to NIDHI Prayas.',
+    priority: 'medium', category: 'central',
+    docs: ['Incubation Certificate', 'Product Validation Data', 'Financial Model', 'IP Details'],
+  },
+  {
+    name: 'Atal Innovation Mission (AIM / NITI Aayog)',
     amount: '₹10L + incubation support',
     type: 'Grant + Mentorship',
     eligibility: 'Innovative startup, any stage',
     process: 'Apply through AIM portal → Selection → Incubation at AIC',
     timeline: 'Rolling',
-    rezAction: 'Apply to Atal Incubation Centre in Bangalore (AIC-IIITB or AIC-CCL).',
-    priority: 'low' as const,
+    rezAction: 'Apply to Atal Incubation Centre in Bangalore (AIC-IIITB or AIC-CCL). Good for credibility and mentorship.',
+    priority: 'low', category: 'central',
+    docs: ['Business Plan', 'Innovation Brief', 'Prototype Details', 'Team Details'],
+  },
+  {
+    name: 'CGTMSE (Credit Guarantee for MSMEs)',
+    amount: 'Guarantee on loans up to ₹5Cr (collateral-free)',
+    type: 'Credit Guarantee (loan facilitation)',
+    eligibility: 'MSME-registered, new or existing enterprise',
+    process: 'Apply through any bank (SBI, HDFC, ICICI) → Bank processes loan → CGTMSE provides guarantee (no collateral needed)',
+    timeline: '2-4 weeks through bank',
+    rezAction: 'Get MSME Udyam registration first. Then apply for collateral-free loan through HDFC/SBI. Good for working capital once revenue starts.',
+    priority: 'low', category: 'central',
+    docs: ['Udyam Registration', 'Bank Statements', 'Financial Projections', 'GST Registration', 'ITR'],
+  },
+  {
+    name: 'Startup Intellectual Property Protection (SIPP)',
+    amount: '80% rebate on patent filing + 50% rebate on trademark',
+    type: 'IP Subsidy',
+    eligibility: 'DPIIT-registered startup',
+    process: 'File patent/trademark through SIPP-empanelled facilitator → Government reimburses 80% (patent) / 50% (trademark)',
+    timeline: 'Ongoing — file anytime after DPIIT registration',
+    rezAction: 'File "ReZ" trademark through SIPP for 50% rebate. If filing any patents for the coin/rewards system, get 80% rebate. Essential for brand protection.',
+    priority: 'high', category: 'central',
+    docs: ['DPIIT Certificate', 'Patent/Trademark Application', 'Facilitator Selection'],
   },
   {
     name: 'Stand-Up India',
@@ -800,9 +851,271 @@ const governmentPrograms = [
     process: 'Apply through any bank → Subsidy from government → Repayment over 7 years',
     timeline: 'Ongoing',
     rezAction: 'Check eligibility. Low-interest loan can supplement equity funding.',
-    priority: 'low' as const,
+    priority: 'low', category: 'central',
+    docs: ['Category Certificate', 'Business Plan', 'Bank Account', 'Aadhaar/PAN'],
+  },
+  // ── KARNATAKA STATE SCHEMES ──
+  {
+    name: 'Karnataka Elevate 100',
+    amount: '₹50L grant',
+    type: 'Grant (non-dilutive)',
+    eligibility: 'Karnataka-registered, innovative product, < 5 years old',
+    process: 'Apply on elevate100.karnataka.gov.in → Evaluation by expert panel → Shortlist 100 startups → Grant disbursed in tranches',
+    timeline: 'Annual program, usually applications open Q3 (Jul-Sep)',
+    rezAction: 'MUST APPLY — Bangalore-based, commerce innovation, ₹50L non-dilutive. Perfect for ReZ. Prepare application when next cycle opens.',
+    priority: 'high', category: 'state',
+    docs: ['Karnataka CoI', 'Product Demo', 'Business Plan', 'Financial Projections', 'Team Details', 'Innovation Brief'],
+  },
+  {
+    name: 'Startup Karnataka — Idea2PoC Grant',
+    amount: '₹5L - ₹20L',
+    type: 'Grant (non-dilutive)',
+    eligibility: 'Karnataka-registered startup with innovative idea/early prototype',
+    process: 'Register on startupcell.karnataka.gov.in → Apply for Idea2PoC → Expert evaluation → Grant for prototype development',
+    timeline: 'Rolling applications through Startup Cell',
+    rezAction: 'Register on Karnataka Startup Cell portal first. Apply for Idea2PoC grant — good for initial product development funding.',
+    priority: 'high', category: 'state',
+    docs: ['Karnataka Startup Cell Registration', 'CoI', 'Innovation Description', 'Budget for PoC'],
+  },
+  {
+    name: 'KITS (Karnataka IT/BT Startup) Grant',
+    amount: '₹10L - ₹30L',
+    type: 'Grant',
+    eligibility: 'IT/BT startup registered in Karnataka, product-stage',
+    process: 'Apply through Karnataka IT department → Department evaluation → Disbursal',
+    timeline: 'Ongoing',
+    rezAction: 'Register as IT startup in Karnataka. Apply for product development grant. Good supplement to Elevate 100.',
+    priority: 'medium', category: 'state',
+    docs: ['Karnataka CoI', 'IT Product Details', 'Financial Projections'],
+  },
+  {
+    name: 'Karnataka Digital Economy Mission (KDEM)',
+    amount: 'Mentorship + networking + ₹5L-₹15L grants',
+    type: 'Incubation + Grant',
+    eligibility: 'Digital/tech startup in Karnataka, focus on digital economy',
+    process: 'Apply on KDEM portal → Screening → Join program → Access grants and corporates',
+    timeline: 'Cohort-based, 2-3x per year',
+    rezAction: 'Strong fit — ReZ is literally building digital economy infrastructure for local commerce. Apply when next cohort opens.',
+    priority: 'medium', category: 'state',
+    docs: ['CoI', 'Product Demo', 'Business Model', 'Team Details'],
+  },
+  {
+    name: 'Karnataka Startup Policy — Marketing Support',
+    amount: 'Up to ₹5L reimbursement for marketing/exhibition costs',
+    type: 'Reimbursement',
+    eligibility: 'Karnataka Startup Cell registered startup',
+    process: 'Participate in approved exhibitions/events → Submit bills → Get reimbursement',
+    timeline: 'Ongoing (post-event)',
+    rezAction: 'Claim reimbursement for college fest events, startup conferences, and demo days. Can recover event costs.',
+    priority: 'medium', category: 'state',
+    docs: ['Event Participation Proof', 'Bills/Invoices', 'Startup Cell Registration'],
+  },
+  // ── INCUBATOR PROGRAMS ──
+  {
+    name: 'NSRCEL (IIM Bangalore)',
+    amount: '₹5L - ₹20L grant + incubation + IIM-B mentors',
+    type: 'Incubation + Seed Grant',
+    eligibility: 'Innovative startup, any stage. Competitive selection.',
+    process: 'Apply on nsrcel.org → Screening committee → Faculty interview → Join incubation (6-12 months) → Access grants + mentors',
+    timeline: 'Rolling applications — apply anytime',
+    rezAction: 'TOP PRIORITY — IIM-B brand opens every door. NSRCEL incubation = credibility for ALL future fundraises. Gateway to SISFS and DST-NIDHI grants.',
+    priority: 'high', category: 'incubator',
+    docs: ['Application Form', 'Pitch Deck', 'Business Plan', 'Founder Bio', 'Product Demo'],
+  },
+  {
+    name: 'IISc Society for Innovation & Development (SID)',
+    amount: '₹10L - ₹25L + lab access + IISc mentors',
+    type: 'Incubation + Grant',
+    eligibility: 'Tech startup, preferably with IISc connection or deep-tech angle',
+    process: 'Apply on sid.iisc.ac.in → Technical evaluation → Incubation → Access to IISc labs, mentors, and grants',
+    timeline: 'Rolling',
+    rezAction: 'Apply if you can frame the ReZ Coin system as a technical innovation (tokenomics, recommendation engine, etc.). IISc brand is gold for deep-tech credibility.',
+    priority: 'medium', category: 'incubator',
+    docs: ['Technical Innovation Brief', 'Product Architecture', 'Business Plan', 'Team Credentials'],
+  },
+  {
+    name: 'IIIT-B Innovation Centre',
+    amount: '₹5L - ₹15L + co-working + IIIT-B network',
+    type: 'Incubation + Grant',
+    eligibility: 'Tech startup in Bangalore, product stage',
+    process: 'Apply on icentre.iiitb.ac.in → Selection → 12-month incubation → Access to MEITY TIDE 2.0 grants',
+    timeline: 'Rolling',
+    rezAction: 'Good alternative to NSRCEL. IIIT-B is a MEITY TIDE 2.0 centre — gives access to additional ₹7L TIDE grant.',
+    priority: 'medium', category: 'incubator',
+    docs: ['Application Form', 'Product Demo', 'Business Plan'],
+  },
+  {
+    name: 'NASSCOM 10,000 Startups / CoE',
+    amount: 'Mentorship + corporate connects + ₹5L-₹10L (via partners)',
+    type: 'Incubation + Acceleration',
+    eligibility: 'Tech startup, < 5 years, product-market fit or close to it',
+    process: 'Apply on nasscom10000startups.com → Screening → Join program → Demo Day with corporates',
+    timeline: 'Cohort-based, 3-4x per year',
+    rezAction: 'Apply to NASSCOM CoE for Fintech (if available) or Retail Tech. Good for corporate partnership introductions.',
+    priority: 'medium', category: 'incubator',
+    docs: ['Application Form', 'Pitch Deck', 'Product Demo', 'Traction Metrics'],
+  },
+  {
+    name: 'T-Hub Hyderabad',
+    amount: '₹10L - ₹25L + incubation',
+    type: 'Incubation + Grant',
+    eligibility: 'Tech startup, any geography (Hyderabad presence preferred)',
+    process: 'Apply on t-hub.co → Selection → Incubation (6-18 months) → Access to Telangana government grants',
+    timeline: 'Rolling',
+    rezAction: 'Apply when expanding to Hyderabad (Year 1 M6+). T-Hub is India\'s largest incubator. Good for Telangana market entry.',
+    priority: 'low', category: 'incubator',
+    docs: ['Application Form', 'Business Plan', 'Pitch Deck', 'Expansion Plan'],
+  },
+  // ── CORPORATE STARTUP PROGRAMS (Cloud Credits & Tools) ──
+  {
+    name: 'AWS Activate',
+    amount: '$5K - $100K in AWS credits + technical support',
+    type: 'Cloud Credits (non-dilutive)',
+    eligibility: 'Any startup < 10 years old. Higher tiers need VC/incubator affiliation.',
+    process: 'Apply on aws.amazon.com/activate → Self-serve ($5K) or Portfolio ($100K through accelerator/VC) → Credits applied',
+    timeline: 'Instant for self-serve, 1-2 weeks for portfolio tier',
+    rezAction: 'Apply for self-serve ($5K) immediately. After getting into NSRCEL/accelerator, apply for Portfolio tier ($100K). Use for EC2, Lambda, RDS, S3.',
+    priority: 'high', category: 'corporate',
+    docs: ['Company Email', 'Website URL', 'Accelerator/VC Name (for portfolio)'],
+  },
+  {
+    name: 'Google for Startups Cloud Program',
+    amount: '$2K - $200K in Google Cloud credits + mentorship',
+    type: 'Cloud Credits (non-dilutive)',
+    eligibility: 'Startup < 5 years, raised < $10M. Higher tiers through accelerator.',
+    process: 'Apply on cloud.google.com/startup → $2K auto-approved → $100K-$200K through Google accelerator or VC partner',
+    timeline: '1-3 days for basic, 2-4 weeks for accelerator tier',
+    rezAction: 'Get $2K immediately. If accepted into Google for Startups Accelerator India, get $200K + 3 months mentorship. Use for Firebase, Maps, BigQuery.',
+    priority: 'high', category: 'corporate',
+    docs: ['Company Email', 'Website', 'VC/Accelerator Affiliation (for high tier)'],
+  },
+  {
+    name: 'Microsoft for Startups Founders Hub',
+    amount: '$1K - $150K in Azure credits + GitHub Enterprise + LinkedIn tools',
+    type: 'Cloud Credits + Tools (non-dilutive)',
+    eligibility: 'Any startup < 7 years, < $10M revenue',
+    process: 'Apply on startups.microsoft.com → Auto-approved for $1K → Upgrade to $150K with milestones/VC backing',
+    timeline: 'Instant for basic tier',
+    rezAction: 'Get $1K Azure credits immediately. Upgrade path to $150K. Also includes free GitHub Enterprise, VS Code tools, LinkedIn Sales Navigator for investor outreach.',
+    priority: 'high', category: 'corporate',
+    docs: ['Company Email', 'Website URL'],
+  },
+  {
+    name: 'Razorpay Rize',
+    amount: 'Free payment processing (3 months) + ₹5L in credits + mentorship',
+    type: 'Fintech Credits + Mentorship',
+    eligibility: 'Fintech/commerce startup using Razorpay for payments',
+    process: 'Apply on razorpay.com/rize → Selection → 3-month program → Free payment processing + credits',
+    timeline: 'Cohort-based, 2-3x per year',
+    rezAction: 'MUST APPLY — ReZ will use Razorpay for UPI processing. Free payment processing for 3 months saves ₹2-5L in early stage. Apply when next cohort opens.',
+    priority: 'high', category: 'corporate',
+    docs: ['Razorpay Account', 'Business Details', 'Product Demo'],
+  },
+  {
+    name: 'Zoho for Startups',
+    amount: '₹75K-₹3L worth of Zoho Suite free (1 year)',
+    type: 'SaaS Credits',
+    eligibility: 'Startup < 3 years, < $1M revenue',
+    process: 'Apply on zoho.com/startups → Verification → Full Zoho Suite free for 1 year',
+    timeline: '1 week',
+    rezAction: 'Get free CRM, email, accounting, HR suite. Replace paid tools with Zoho stack to reduce burn.',
+    priority: 'medium', category: 'corporate',
+    docs: ['Company Details', 'Incorporation Certificate'],
+  },
+  {
+    name: 'Freshworks for Startups',
+    amount: '$10K in Freshworks credits (CRM, helpdesk, marketing)',
+    type: 'SaaS Credits',
+    eligibility: 'Startup < 2 years, raised < $5M',
+    process: 'Apply on freshworks.com/startups → Verification → Credits applied',
+    timeline: '1 week',
+    rezAction: 'Use for Freshdesk (customer support), Freshsales (CRM), Freshmarketer. Good for merchant/user support.',
+    priority: 'medium', category: 'corporate',
+    docs: ['Company Email', 'Website', 'VC/Accelerator (optional)'],
+  },
+  {
+    name: 'HubSpot for Startups',
+    amount: '90% off HubSpot Suite Year 1, 50% Year 2',
+    type: 'SaaS Credits',
+    eligibility: 'Startup enrolled in approved accelerator/incubator/VC',
+    process: 'Apply through hubspot.com/startups → Need accelerator/VC referral → 90% discount applied',
+    timeline: '1-2 weeks',
+    rezAction: 'After NSRCEL/accelerator, apply for 90% off HubSpot CRM, Marketing, Sales. Great for investor pipeline management.',
+    priority: 'medium', category: 'corporate',
+    docs: ['Accelerator/VC Affiliation Proof'],
+  },
+  {
+    name: 'Notion for Startups',
+    amount: '$1,000 in Notion credits (6 months free Plus plan)',
+    type: 'SaaS Credits',
+    eligibility: 'Startup < 2 years',
+    process: 'Apply on notion.so/startups → Auto-approved → Credits applied',
+    timeline: 'Instant',
+    rezAction: 'Use for internal wiki, project management, investor updates. Apply immediately.',
+    priority: 'low', category: 'corporate',
+    docs: ['Company Email'],
+  },
+  {
+    name: 'Segment for Startups',
+    amount: '$25K in Segment credits (free for 1 year)',
+    type: 'Analytics Credits',
+    eligibility: 'Startup < 2 years, < $5M raised',
+    process: 'Apply on segment.com/startups → Verification → Free tier for 1 year',
+    timeline: '1-2 weeks',
+    rezAction: 'Use for user analytics, event tracking, data pipeline. Essential for tracking acquisition funnel across 12 channels.',
+    priority: 'medium', category: 'corporate',
+    docs: ['Company Details', 'Product URL'],
+  },
+  {
+    name: 'DigitalOcean Hatch',
+    amount: '$10K in DigitalOcean credits',
+    type: 'Cloud Credits',
+    eligibility: 'Startup < 2 years, product stage',
+    process: 'Apply on digitalocean.com/hatch → Approval → Credits applied',
+    timeline: '1-2 weeks',
+    rezAction: 'Good alternative/supplement to AWS. Use for staging environments, testing servers.',
+    priority: 'low', category: 'corporate',
+    docs: ['Company Email', 'Website'],
   },
 ];
+
+// ── TAX BENEFITS (under DPIIT registration) ──
+const taxBenefits = [
+  { benefit: 'Section 80-IAC — 3 Year Tax Holiday', desc: 'Income tax exemption for 3 consecutive years out of first 10 years from incorporation. Choose the 3 most profitable years.', amount: 'Up to 100% income tax waiver', action: 'File Form-1 application to Inter-Ministerial Board after DPIIT registration.' },
+  { benefit: 'Angel Tax Exemption (Section 56(2)(viib))', desc: 'Investments above fair market value are NOT taxed as income. Critical for SAFE/equity rounds.', amount: 'Exemption from tax on premium raised', action: 'File Form-2 after DPIIT registration. Essential BEFORE raising $500K SAFE round.' },
+  { benefit: 'Self-Certification for Labor Laws', desc: 'Self-certify compliance for 9 labor laws (no inspector visits for 3-5 years). Reduces compliance burden.', amount: 'Saves ₹50K-₹2L/year in compliance costs', action: 'Automatic with DPIIT — self-certify through Startup India portal annually.' },
+  { benefit: 'Self-Certification for Environment Laws', desc: 'Self-certify for 3 environment laws. No need for environmental clearance for tech startups.', amount: 'Saves ₹30K-₹1L in clearances', action: 'Self-certify through portal. ReZ as a platform company has minimal environmental footprint.' },
+  { benefit: 'Fast-Track Patent Examination', desc: 'Patent applications examined in 6-12 months instead of 3-5 years. 80% fee rebate through SIPP.', amount: 'Save 80% on patent fees + 3 year faster processing', action: 'File any patents for ReZ Coin system, recommendation engine, or merchant matching algorithm.' },
+  { benefit: 'Fast-Track Trademark Registration', desc: 'Priority trademark examination. 50% rebate on trademark fees through SIPP.', amount: 'Save 50% on trademark fees', action: 'File "ReZ" and "ReZ Coins" trademarks immediately through SIPP facilitator.' },
+  { benefit: 'Government Tender Exemption', desc: 'Startups can participate in government tenders without prior experience/turnover requirement.', amount: 'Access to government contracts', action: 'Not immediately relevant, but useful if ReZ wants government/PSU merchant accounts.' },
+  { benefit: 'Easy Winding Up (90 days)', desc: 'If ReZ doesn\'t work out, company can be wound up in 90 days instead of years. Reduces founder risk.', amount: 'De-risk: clean exit in 90 days if needed', action: 'Just know this exists — peace of mind. File through Insolvency and Bankruptcy Board.' },
+];
+
+// ── APPLICATION DOCUMENT CHECKLIST ──
+const applicationDocuments = {
+  universal: [
+    { doc: 'Certificate of Incorporation (CoI)', needed: 'ALL', status: 'Check if registered' },
+    { doc: 'PAN Card (Company)', needed: 'ALL', status: 'Needed for any financial activity' },
+    { doc: 'GST Registration', needed: 'Most grants + all revenue', status: 'Register before revenue starts' },
+    { doc: 'Udyam (MSME) Registration', needed: 'CGTMSE, PMEGP, some state schemes', status: 'Free, do it online' },
+    { doc: 'DPIIT Startup Recognition', needed: 'ALL government grants + tax benefits', status: 'CRITICAL — do first' },
+    { doc: 'Bank Account (company)', needed: 'ALL', status: 'Required for all disbursements' },
+    { doc: 'Founder Aadhaar + PAN', needed: 'ALL', status: 'Ready' },
+    { doc: 'Pitch Deck (PDF)', needed: 'ALL', status: 'READY at /rez-deck' },
+    { doc: 'Business Plan (detailed)', needed: 'Most grants', status: 'READY at /rez-financials + /rez-data-room' },
+    { doc: 'Financial Projections (3-year)', needed: 'ALL', status: 'READY at /rez-financials' },
+    { doc: 'Product Demo / Prototype', needed: 'Most programs', status: 'Need to build MVP/demo' },
+    { doc: 'Team Details / Founder Bio', needed: 'ALL', status: 'READY at /executive-team' },
+  ],
+  dpiitSteps: [
+    { step: 1, title: 'Prerequisite: Company Incorporation', desc: 'Register as Private Limited Company or LLP with MCA. If not done, use services like Vakilsearch/LegalRaasta/ClearTax — costs ₹7-15K. Takes 7-10 days.' },
+    { step: 2, title: 'Go to startupindia.gov.in', desc: 'Click "Register" → Create account with founder email → Verify email → Login.' },
+    { step: 3, title: 'Fill Startup Recognition Form', desc: 'Entity Type (Pvt Ltd/LLP), CIN/LLPIN number, Date of Incorporation, PAN, Address. Innovation description (200 words) — focus on "closed-loop cashback for local commerce" angle.' },
+    { step: 4, title: 'Upload Documents', desc: 'Certificate of Incorporation (PDF), Company PAN (PDF), Brief about innovation (write how ReZ creates a new market), and recommendation letter from incubator (optional but helps).' },
+    { step: 5, title: 'Submit & Get Recognition Number', desc: 'DPIIT team reviews in 2-3 working days. You get a DPIIT Recognition Number and Certificate. Download and save.' },
+    { step: 6, title: 'Unlock Benefits', desc: 'After recognition: Apply for 80-IAC tax exemption (Form-1), Angel Tax exemption (Form-2), SIPP trademark filing, and all government grants. Also register on Karnataka Startup Cell.' },
+  ],
+};
 
 // ============================================
 // DATA: OUTREACH PLAYBOOK
@@ -2063,49 +2376,211 @@ export default function ReZInvestorsPage() {
         {/* ═══════ GOVERNMENT GRANTS TAB ═══════ */}
         {activeTab === 'government' && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold flex items-center gap-2"><Shield size={20} className="text-teal-400" /> Government Grants & Programs</h2>
-            <p className="text-sm text-slate-400">Non-dilutive and low-dilution funding from government programs. Stack these with VC funding.</p>
+            <h2 className="text-xl font-bold flex items-center gap-2"><Shield size={20} className="text-teal-400" /> Government Grants, Schemes & Programs</h2>
+            <p className="text-sm text-slate-400">{governmentPrograms.length} programs across government grants, incubators, corporate programs, and tax benefits. Total potential value: ₹3-5Cr+ in non-dilutive funding and credits.</p>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {governmentPrograms.map(prog => (
-                <div key={prog.name} className={`bg-slate-800/50 border rounded-xl p-5 ${prog.priority === 'high' ? 'border-teal-500/30' : 'border-slate-700/50'}`}>
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-white font-bold">{prog.name}</h3>
-                    <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${prog.priority === 'high' ? 'text-red-400 bg-red-500/10' : prog.priority === 'medium' ? 'text-yellow-400 bg-yellow-500/10' : 'text-blue-400 bg-blue-500/10'}`}>
-                      {prog.priority}
-                    </span>
-                  </div>
-                  <div className="mt-3 space-y-2 text-sm">
-                    <p className="text-green-400 font-medium text-lg">{prog.amount}</p>
-                    <p className="text-slate-400"><strong className="text-slate-300">Type:</strong> {prog.type}</p>
-                    <p className="text-slate-400"><strong className="text-slate-300">Eligibility:</strong> {prog.eligibility}</p>
-                    <p className="text-slate-400"><strong className="text-slate-300">Process:</strong> {prog.process}</p>
-                    <p className="text-slate-400"><strong className="text-slate-300">Timeline:</strong> {prog.timeline}</p>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-slate-700/50">
-                    <p className="text-xs text-teal-400"><strong>ReZ Action:</strong> {prog.rezAction}</p>
-                  </div>
+            {/* Summary KPIs */}
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+              {[
+                { label: 'Central Govt', count: governmentPrograms.filter(p => p.category === 'central').length, color: 'teal' },
+                { label: 'Karnataka State', count: governmentPrograms.filter(p => p.category === 'state').length, color: 'purple' },
+                { label: 'Incubators', count: governmentPrograms.filter(p => p.category === 'incubator').length, color: 'blue' },
+                { label: 'Corporate Programs', count: governmentPrograms.filter(p => p.category === 'corporate').length, color: 'orange' },
+                { label: 'Tax Benefits', count: taxBenefits.length, color: 'green' },
+              ].map(s => (
+                <div key={s.label} className={`bg-slate-800/50 border border-${s.color}-500/20 rounded-lg p-3 text-center`}>
+                  <p className={`text-2xl font-bold text-${s.color}-400`}>{s.count}</p>
+                  <p className="text-xs text-slate-400">{s.label}</p>
                 </div>
               ))}
             </div>
 
-            {/* Step 1: DPIIT */}
-            <div className="bg-teal-500/5 border border-teal-500/20 rounded-xl p-6">
-              <h3 className="text-lg font-bold text-teal-400 mb-3">Step 1: Register on DPIIT (Do This TODAY)</h3>
-              <p className="text-sm text-slate-400 mb-4">DPIIT registration unlocks ALL government grants + tax benefits. Takes 2-3 days.</p>
-              <div className="space-y-2">
-                {[
-                  'Go to startupindia.gov.in → Register',
-                  'Register as "Startup" under DPIIT',
-                  'Upload: Certificate of Incorporation, PAN, Brief about innovation',
-                  'Get DPIIT Recognition Number',
-                  'Unlock: Tax exemption (Section 80-IAC), SISFS eligibility, self-certification for labor laws',
-                ].map((step, i) => (
-                  <div key={i} className="flex items-start gap-2 text-sm">
-                    <div className="w-5 h-5 rounded-full bg-teal-500/20 flex items-center justify-center text-xs text-teal-400 flex-shrink-0 mt-0.5">
-                      {i + 1}
+            {/* ── SECTION 1: DPIIT Registration (FIRST STEP) ── */}
+            <div className="bg-red-500/5 border border-red-500/30 rounded-xl p-6">
+              <h3 className="text-lg font-bold text-red-400 mb-2 flex items-center gap-2"><AlertTriangle size={18} /> Step 0: DPIIT Registration — BLOCKER for Everything</h3>
+              <p className="text-sm text-slate-400 mb-4">Without DPIIT registration, you CANNOT access any government grants, tax benefits, or incubator programs. Do this FIRST.</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  {applicationDocuments.dpiitSteps.map(s => (
+                    <div key={s.step} className="flex items-start gap-3">
+                      <div className="w-7 h-7 rounded-full bg-red-500/20 flex items-center justify-center text-sm text-red-400 font-bold flex-shrink-0 mt-0.5">{s.step}</div>
+                      <div>
+                        <p className="text-white font-medium text-sm">{s.title}</p>
+                        <p className="text-xs text-slate-400 mt-0.5">{s.desc}</p>
+                      </div>
                     </div>
-                    <span className="text-slate-300">{step}</span>
+                  ))}
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-3 text-sm">Documents Needed for ALL Programs</h4>
+                  <div className="space-y-1.5">
+                    {applicationDocuments.universal.map(d => (
+                      <div key={d.doc} className="flex items-start gap-2 text-xs">
+                        <CheckCircle size={12} className="text-teal-400 mt-0.5 flex-shrink-0" />
+                        <div>
+                          <span className="text-white">{d.doc}</span>
+                          <span className="text-slate-500 ml-1">({d.needed})</span>
+                          <span className="text-teal-400 ml-1">— {d.status}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── SECTION 2: Central Government Schemes ── */}
+            <div>
+              <h3 className="text-lg font-bold text-teal-400 mb-3 flex items-center gap-2"><Building2 size={18} /> Central Government Schemes</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {governmentPrograms.filter(p => p.category === 'central').map(prog => (
+                  <div key={prog.name} className={`bg-slate-800/50 border rounded-xl p-5 ${prog.priority === 'high' ? 'border-teal-500/30' : 'border-slate-700/50'}`}>
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="text-white font-bold text-sm">{prog.name}</h4>
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0 ${prog.priority === 'high' ? 'text-red-400 bg-red-500/10' : prog.priority === 'medium' ? 'text-yellow-400 bg-yellow-500/10' : 'text-blue-400 bg-blue-500/10'}`}>{prog.priority}</span>
+                    </div>
+                    <p className="text-green-400 font-medium mt-2">{prog.amount}</p>
+                    <div className="mt-2 space-y-1 text-xs">
+                      <p className="text-slate-400"><strong className="text-slate-300">Type:</strong> {prog.type}</p>
+                      <p className="text-slate-400"><strong className="text-slate-300">Eligibility:</strong> {prog.eligibility}</p>
+                      <p className="text-slate-400"><strong className="text-slate-300">Process:</strong> {prog.process}</p>
+                      <p className="text-slate-400"><strong className="text-slate-300">Timeline:</strong> {prog.timeline}</p>
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-slate-700/50">
+                      <p className="text-xs text-teal-400"><strong>ReZ Action:</strong> {prog.rezAction}</p>
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {prog.docs.map(d => <span key={d} className="text-[10px] px-1.5 py-0.5 rounded bg-slate-700/50 text-slate-400">{d}</span>)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── SECTION 3: Karnataka State Schemes ── */}
+            <div>
+              <h3 className="text-lg font-bold text-purple-400 mb-3 flex items-center gap-2"><MapPin size={18} /> Karnataka State Schemes</h3>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {governmentPrograms.filter(p => p.category === 'state').map(prog => (
+                  <div key={prog.name} className={`bg-slate-800/50 border rounded-xl p-5 ${prog.priority === 'high' ? 'border-purple-500/30' : 'border-slate-700/50'}`}>
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="text-white font-bold text-sm">{prog.name}</h4>
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0 ${prog.priority === 'high' ? 'text-red-400 bg-red-500/10' : prog.priority === 'medium' ? 'text-yellow-400 bg-yellow-500/10' : 'text-blue-400 bg-blue-500/10'}`}>{prog.priority}</span>
+                    </div>
+                    <p className="text-green-400 font-medium mt-2">{prog.amount}</p>
+                    <div className="mt-2 space-y-1 text-xs">
+                      <p className="text-slate-400"><strong className="text-slate-300">Type:</strong> {prog.type}</p>
+                      <p className="text-slate-400"><strong className="text-slate-300">Eligibility:</strong> {prog.eligibility}</p>
+                      <p className="text-slate-400"><strong className="text-slate-300">Process:</strong> {prog.process}</p>
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-slate-700/50">
+                      <p className="text-xs text-purple-400"><strong>ReZ Action:</strong> {prog.rezAction}</p>
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {prog.docs.map(d => <span key={d} className="text-[10px] px-1.5 py-0.5 rounded bg-slate-700/50 text-slate-400">{d}</span>)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── SECTION 4: Incubator Programs ── */}
+            <div>
+              <h3 className="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2"><Rocket size={18} /> Incubator Programs (Bangalore)</h3>
+              <p className="text-xs text-slate-400 mb-3">Getting into an incubator (especially NSRCEL) unlocks: SISFS ₹50L, DST-NIDHI grants, MEITY TIDE 2.0, and massive credibility with VCs.</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {governmentPrograms.filter(p => p.category === 'incubator').map(prog => (
+                  <div key={prog.name} className={`bg-slate-800/50 border rounded-xl p-5 ${prog.priority === 'high' ? 'border-blue-500/30' : 'border-slate-700/50'}`}>
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="text-white font-bold text-sm">{prog.name}</h4>
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium flex-shrink-0 ${prog.priority === 'high' ? 'text-red-400 bg-red-500/10' : prog.priority === 'medium' ? 'text-yellow-400 bg-yellow-500/10' : 'text-blue-400 bg-blue-500/10'}`}>{prog.priority}</span>
+                    </div>
+                    <p className="text-green-400 font-medium mt-2">{prog.amount}</p>
+                    <div className="mt-2 space-y-1 text-xs">
+                      <p className="text-slate-400"><strong className="text-slate-300">Process:</strong> {prog.process}</p>
+                      <p className="text-slate-400"><strong className="text-slate-300">Timeline:</strong> {prog.timeline}</p>
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-slate-700/50">
+                      <p className="text-xs text-blue-400"><strong>ReZ Action:</strong> {prog.rezAction}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── SECTION 5: Corporate Startup Programs ── */}
+            <div>
+              <h3 className="text-lg font-bold text-orange-400 mb-3 flex items-center gap-2"><Briefcase size={18} /> Corporate Startup Programs (Free Credits & Tools)</h3>
+              <p className="text-xs text-slate-400 mb-3">Combined value: $300K+ in cloud credits + $50K+ in SaaS tools. All non-dilutive. Apply to ALL of these.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {governmentPrograms.filter(p => p.category === 'corporate').map(prog => (
+                  <div key={prog.name} className={`bg-slate-800/50 border rounded-lg p-4 ${prog.priority === 'high' ? 'border-orange-500/30' : 'border-slate-700/50'}`}>
+                    <h4 className="text-white font-bold text-sm">{prog.name}</h4>
+                    <p className="text-orange-400 font-medium text-sm mt-1">{prog.amount}</p>
+                    <p className="text-xs text-slate-400 mt-2">{prog.rezAction}</p>
+                    <p className="text-[10px] text-slate-500 mt-1">Timeline: {prog.timeline}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── SECTION 6: Tax Benefits under DPIIT ── */}
+            <div>
+              <h3 className="text-lg font-bold text-green-400 mb-3 flex items-center gap-2"><DollarSign size={18} /> Tax Benefits (After DPIIT Registration)</h3>
+              <p className="text-xs text-slate-400 mb-3">DPIIT registration unlocks 8 major tax/compliance benefits. Combined savings: ₹10L-₹50L+ over first 3 years.</p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                {taxBenefits.map(tb => (
+                  <div key={tb.benefit} className="bg-slate-800/50 border border-green-500/20 rounded-lg p-4">
+                    <h4 className="text-white font-bold text-sm">{tb.benefit}</h4>
+                    <p className="text-green-400 text-xs font-medium mt-1">{tb.amount}</p>
+                    <p className="text-xs text-slate-400 mt-1">{tb.desc}</p>
+                    <p className="text-xs text-green-400 mt-2"><strong>Action:</strong> {tb.action}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── SECTION 7: Priority Action Plan ── */}
+            <div className="bg-teal-500/5 border border-teal-500/20 rounded-xl p-6">
+              <h3 className="text-lg font-bold text-teal-400 mb-4">Priority Application Sequence</h3>
+              <div className="space-y-3">
+                {[
+                  { week: 'Day 1-3', title: 'DPIIT Registration', items: 'startupindia.gov.in — Upload CoI, PAN, innovation brief. Get recognition number.', color: 'red' },
+                  { week: 'Day 1-3', title: 'Cloud Credits (Instant)', items: 'AWS Activate ($5K), Google Cloud ($2K), Microsoft Founders Hub ($1K), Notion, DigitalOcean — all auto-approved.', color: 'orange' },
+                  { week: 'Week 1', title: 'SIPP — File Trademark', items: 'File "ReZ" and "ReZ Coins" trademarks through SIPP facilitator. 50% rebate with DPIIT.', color: 'green' },
+                  { week: 'Week 1', title: 'Angel Tax Exemption', items: 'File Form-2 on Startup India portal. MUST be done BEFORE closing the $500K SAFE round.', color: 'red' },
+                  { week: 'Week 1-2', title: 'Karnataka Startup Cell', items: 'Register on startupcell.karnataka.gov.in. Apply for Idea2PoC grant (₹5-20L). Register for marketing reimbursement.', color: 'purple' },
+                  { week: 'Week 2', title: 'Incubator Applications', items: 'Apply to NSRCEL (IIM-B) — top priority. Also apply to IIIT-B Innovation Centre. Either one unlocks SISFS + TIDE 2.0.', color: 'blue' },
+                  { week: 'Week 2-3', title: 'SaaS Credits', items: 'Apply for Razorpay Rize, Zoho for Startups, Freshworks, Segment. Combined value: ₹15L+ in tools.', color: 'orange' },
+                  { week: 'Week 3-4', title: 'Government Grants', items: 'After DPIIT: Apply for SISFS (₹50L through incubator), MEITY TIDE 2.0 (₹7L), DST-NIDHI Prayas (₹10L).', color: 'teal' },
+                  { week: 'Month 2', title: 'Karnataka Elevate 100', items: 'Prepare application for next cycle (usually Q3). ₹50L non-dilutive grant. Start building relationship with Karnataka IT department.', color: 'purple' },
+                  { week: 'Month 2-3', title: 'Higher-Tier Credits', items: 'After incubator acceptance: AWS Portfolio ($100K), Google Accelerator ($200K), Microsoft upgrade ($150K), HubSpot 90% off.', color: 'orange' },
+                ].map((s, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span className={`px-2 py-1 rounded text-xs font-medium bg-${s.color}-500/10 text-${s.color}-400 flex-shrink-0 w-20 text-center`}>{s.week}</span>
+                    <div>
+                      <p className="text-white font-medium text-sm">{s.title}</p>
+                      <p className="text-xs text-slate-400">{s.items}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Total Value Summary ── */}
+            <div className="bg-green-500/5 border border-green-500/30 rounded-xl p-6">
+              <h3 className="text-green-400 font-bold mb-3">Total Non-Dilutive Value Available</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                {[
+                  { label: 'Government Grants', value: '₹1.5-3Cr', sub: 'SISFS + Elevate + MEITY + DST + Karnataka' },
+                  { label: 'Cloud Credits', value: '$300K+', sub: 'AWS + Google + Microsoft + DO' },
+                  { label: 'SaaS Tools', value: '₹20L+', sub: 'Razorpay + Zoho + Freshworks + HubSpot' },
+                  { label: 'Tax Savings', value: '₹10-50L+', sub: '80-IAC + Angel Tax + SIPP + self-cert' },
+                ].map(v => (
+                  <div key={v.label} className="bg-slate-800/50 border border-green-500/20 rounded-lg p-3 text-center">
+                    <p className="text-xl font-bold text-green-400">{v.value}</p>
+                    <p className="text-xs text-white font-medium">{v.label}</p>
+                    <p className="text-[10px] text-slate-500 mt-0.5">{v.sub}</p>
                   </div>
                 ))}
               </div>
