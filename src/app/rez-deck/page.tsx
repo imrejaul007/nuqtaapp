@@ -15,7 +15,7 @@ import GlobalFooter from '@/components/GlobalFooter';
 // ============================================
 // ReZ PITCH DECK — 12 SLIDES
 // All numbers match /rez-financials computeFullModel()
-// ARPU = ₹195/mo, LTV = ₹3,900, CAC = ₹76, LTV:CAC = 16.8x (YC-grade)
+// ARPU = ₹195/mo, LTV = ₹3,900, CAC = ₹76, LTV:CAC = 51.3x (YC-grade)
 // ============================================
 
 const formatINR = (n: number) => {
@@ -54,7 +54,7 @@ export default function ReZDeckPage() {
             <div className="bg-slate-800/50 border border-purple-500/30 rounded-xl px-5 py-3">
               <p className="text-xs text-slate-400">Year 3 Revenue</p>
               <p className="text-xl font-bold text-purple-400">₹601 Cr</p>
-              <p className="text-xs text-slate-500">5M users, $701M valuation</p>
+              <p className="text-xs text-slate-500">5M users, $725M valuation</p>
             </div>
           </div>
           <p className="text-sm text-slate-500 mt-8">Founded by Rejaul Karim &bull; rejaul@nuqtaapp.com</p>
@@ -210,7 +210,7 @@ export default function ReZDeckPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
               { name: 'Transaction Commission', rate: '5% of GMV', value: '₹162.50/user/mo', desc: 'Core revenue. 5% commission on ₹650 AOV × 5 orders/mo. Merchant-funded.', pct: 83, color: 'orange', active: true },
-              { name: 'Promoted Listings', rate: '5% promoted sales', value: '₹32.50/user/mo', desc: 'Merchants pay to appear at top of search. 2 promoted orders/user/mo.', pct: 17, color: 'purple', active: true },
+              { name: 'Promoted Listings', rate: '5% promoted sales', value: '₹32.50/user/mo', desc: 'Merchants pay to appear at top of search. 1 promoted order/user/mo.', pct: 17, color: 'purple', active: true },
               { name: 'Business Subscriptions', rate: '₹1,500/mo', value: 'Per merchant', desc: 'Premium merchant tools: analytics, CRM, promotional coins, priority support.', pct: 0, color: 'blue', active: true },
               { name: 'Affiliate Revenue', rate: '₹10/user/mo', value: 'Brand partnerships', desc: 'Affiliate deals with brands for in-app offers and cross-promotions.', pct: 0, color: 'green', active: true },
               { name: 'User Subscription (ReZ+)', rate: '₹49/mo', value: 'Premium membership', desc: 'Extra cashback, exclusive deals, free delivery, priority support.', pct: 0, color: 'cyan', active: false },

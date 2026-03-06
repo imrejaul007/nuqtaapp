@@ -80,7 +80,7 @@ Why 100X.VC fit:
 • ₹1.25Cr iSAFE aligns perfectly with our $500K raise at $5M cap
 • We're live in Bangalore with 4 zones, 12 acquisition channels, CAC < ₹76
 
-Metrics: 35K users Y1, ₹4.2Cr revenue Y1, 16.8x LTV:CAC. No VC subsidy — merchants fund the rewards.
+Metrics: 35K users Y1, ₹10Cr revenue Y1, 51.3x LTV:CAC. No VC subsidy — merchants fund the rewards.
 
 Would love 20 minutes to share our deck.
 
@@ -862,7 +862,7 @@ I'm Rejaul, founder of ReZ. We're building India's closed-loop cashback ecosyste
 Why [Fund Name]: [1 specific reason — portfolio company, thesis, location]
 
 Quick numbers:
-• ₹650 AOV, 5% merchant commission, 16.8x LTV:CAC
+• ₹650 AOV, 5% merchant commission, 51.3x LTV:CAC
 • 12 channels, CAC < ₹76, 35K users Y1
 • Bangalore launch: BTM, HSR, Koramangala, Jayanagar (500+ merchants mapped)
 
@@ -1206,7 +1206,7 @@ export default function ReZInvestorsPage() {
                     why: 'Angels and busy investors want a 1-page summary before looking at a deck. Quick scan document.',
                     slides: [
                       'Problem + Solution (2 sentences each)',
-                      'Key Metrics: 35K users, 500+ merchants, ₹76 CAC, 16.8x LTV:CAC',
+                      'Key Metrics: 35K users, 500+ merchants, ₹76 CAC, 51.3x LTV:CAC',
                       'Business Model: 6 revenue streams',
                       'The Ask: $500K SAFE at $5M cap',
                       'Team: 1 line per founder',

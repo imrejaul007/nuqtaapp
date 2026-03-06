@@ -71,7 +71,7 @@ const defaultAssumptions: Assumptions = {
   userChurn: 5,
   commissionRate: 5,
   promotedSalesRate: 5,
-  promotedOrdersPerUser: 2,
+  promotedOrdersPerUser: 1,
   businessSubPrice: 1500,
   affiliatePerUser: 10,
   userSubPrice: 49,
@@ -175,7 +175,7 @@ function computeFullModel(a: Assumptions) {
     const cities = Math.round(a.startingCities * Math.pow(cityGrowthRate, month));
 
     // Revenue = MAU × ARPU
-    const revenue = Math.round(activeUsers * metrics.arpu);
+    const revenue = Math.round(activeUsers * metrics.revenuePerUser);
 
     // COGS = revenue × cost rate
     const cogs = Math.round(revenue * (a.cogsRateY1 / 100));
@@ -207,7 +207,7 @@ function computeFullModel(a: Assumptions) {
 
   // ── Year 2 Projection ──
   const y2Mau = Math.floor(a.y2Users * (a.activationRate / 100));
-  const y2Revenue = Math.round(y2Mau * metrics.arpu * 12);
+  const y2Revenue = Math.round(y2Mau * metrics.revenuePerUser * 12);
   const y2Cogs = Math.round(y2Revenue * (a.cogsRateY2 / 100));
   const y2Opex = Math.round(y2Revenue * (a.y2OpexPctRevenue / 100));
   const y2GrossProfit = y2Revenue - y2Cogs;
@@ -219,7 +219,7 @@ function computeFullModel(a: Assumptions) {
 
   // ── Year 3 Projection ──
   const y3Mau = Math.floor(a.y3Users * (a.activationRate / 100));
-  const y3Revenue = Math.round(y3Mau * metrics.arpu * 12);
+  const y3Revenue = Math.round(y3Mau * metrics.revenuePerUser * 12);
   const y3Cogs = Math.round(y3Revenue * (a.cogsRateY3 / 100));
   const y3Opex = Math.round(y3Revenue * (a.y3OpexPctRevenue / 100));
   const y3GrossProfit = y3Revenue - y3Cogs;
@@ -354,7 +354,8 @@ function calculateMetrics(a: Assumptions) {
   const promotedRevenue = a.aov * a.promotedOrdersPerUser * (a.promotedSalesRate / 100);
   const affiliateRevenue = a.affiliatePerUser;
 
-  const arpu = commissionRevenue + promotedRevenue + affiliateRevenue;
+  const arpu = commissionRevenue + promotedRevenue; // Display ARPU: commission + promoted (₹195)
+  const revenuePerUser = commissionRevenue + promotedRevenue + affiliateRevenue; // Full per-user revenue (₹205)
   const retentionMonths = Math.ceil(100 / a.userChurn);
   const ltv = arpu * retentionMonths;
   const ltvCac = ltv / a.blendedCac;
@@ -371,6 +372,7 @@ function calculateMetrics(a: Assumptions) {
     promotedRevenue,
     affiliateRevenue,
     arpu,
+    revenuePerUser,
     retentionMonths,
     ltv,
     ltvCac,

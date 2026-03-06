@@ -75,7 +75,7 @@ const financials = [
 const incomeStatement = [
   { year: 'Year 1', revenue: '₹10.04 Cr', expenses: '₹9.43 Cr', netProfit: '₹0.61 Cr', margin: '6.07%', valuation: '$23.6M' },
   { year: 'Year 2', revenue: '₹153.4 Cr', expenses: '₹226.3 Cr', netProfit: '-₹72.9 Cr', margin: '-47.6%', valuation: '$180M' },
-  { year: 'Year 3', revenue: '₹601.8 Cr', expenses: '₹394.3 Cr', netProfit: '₹207.5 Cr', margin: '34.5%', valuation: '$701M' },
+  { year: 'Year 3', revenue: '₹601.8 Cr', expenses: '₹394.3 Cr', netProfit: '₹207.5 Cr', margin: '34.5%', valuation: '$725M' },
 ];
 
 // ─── Expense Breakdown ──────────────────────────────────────────────
@@ -780,10 +780,10 @@ export default function RezPage() {
               <h3 className="text-lg font-bold text-white mb-3">Unit Economics (Target at Scale)</h3>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {[
-                  { metric: 'CAC', value: '₹80-120', sub: 'Referral + organic' },
-                  { metric: 'LTV', value: '₹2,000-4,000', sub: '24-month horizon' },
-                  { metric: 'LTV:CAC', value: '17-42x', sub: 'Industry: 3-5x' },
-                  { metric: 'Payback', value: '45-60 days', sub: 'Industry: 6-12 months' },
+                  { metric: 'CAC', value: '₹76', sub: 'Blended across 12 channels' },
+                  { metric: 'LTV', value: '₹3,900', sub: '20-month retention' },
+                  { metric: 'LTV:CAC', value: '51.3x', sub: 'Industry: 3-5x' },
+                  { metric: 'Payback', value: '<1 month', sub: 'Industry: 6-12 months' },
                 ].map(u => (
                   <div key={u.metric} className="text-center bg-slate-900/50 rounded-xl p-4 border border-slate-700/50">
                     <div className="text-xs text-emerald-400 font-bold">{u.metric}</div>
@@ -1024,7 +1024,7 @@ export default function RezPage() {
             <h2 className="text-3xl sm:text-4xl font-black text-white mb-2 text-center">
               Financial <span className="text-emerald-400">Projections</span>
             </h2>
-            <p className="text-slate-400 text-center mb-8">3-year model. Year 1 profitable. Year 3: ₹600 Cr revenue, $701M valuation.</p>
+            <p className="text-slate-400 text-center mb-8">3-year model. Year 1 profitable. Year 3: ₹600 Cr revenue, $725M valuation.</p>
 
             {/* Income Statement Summary */}
             <div className="bg-slate-800/30 rounded-xl p-5 border border-emerald-500/30 mb-6">
@@ -1090,7 +1090,7 @@ export default function RezPage() {
                 <div className="space-y-2">
                   {[
                     { label: 'AOV', value: '₹650' },
-                    { label: 'ARPU', value: '₹5,814/yr' },
+                    { label: 'ARPU', value: '₹195/mo' },
                     { label: 'CAC (Blended)', value: '₹76' },
                     { label: 'CAM (Merchant)', value: '₹1,000' },
                     { label: 'Active Rate', value: '30%' },
@@ -1164,7 +1164,7 @@ export default function RezPage() {
                     { label: 'Entry (SAFE)', value: '$5M cap', sub: '$500K → 10%' },
                     { label: 'Year 1', value: '$23.6M', sub: '4.7x paper' },
                     { label: 'Year 2', value: '$180M', sub: '36x paper' },
-                    { label: 'Year 3', value: '$701M', sub: '140x paper' },
+                    { label: 'Year 3', value: '$725M', sub: '145x paper' },
                   ].map(r => (
                     <div key={r.label} className="text-center bg-slate-900/50 rounded-lg p-3 border border-slate-700/50">
                       <div className="text-[10px] text-emerald-400 font-bold">{r.label}</div>
