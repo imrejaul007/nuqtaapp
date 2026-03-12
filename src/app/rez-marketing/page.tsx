@@ -1008,20 +1008,33 @@ export default function ReZMarketingIndiaPage() {
 
                 {/* Vendor Categories to Target */}
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-                  <h3 className="font-bold text-white mb-3">Vendor Categories to Target</h3>
+                  <h3 className="font-bold text-white mb-3">Roadside Business Types in Bangalore</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
                     {[
-                      'Fresh Fruits (banana, mango, grapes)',
-                      'Vegetables (tomato, onion, potato)',
-                      'Leafy Greens (spinach, coriander, methi)',
-                      'Dairy (milk, curd, paneer)',
-                      'Bakery (bread, buns, cookies)',
-                      'Tea & Coffee (chai, filter coffee)',
-                      'Street Food (chaat, momos, rolls)',
-                      'Snacks (chips, namkeen, biscuits)',
-                      'Cold Drinks (juice, lassi, soda)',
-                      'Packaged Goods (soap, shampoo, household)',
-                      'Mobile Recharge (all operators)'
+                      'Food Stalls (chaat, momos, dosa, rolls)',
+                      'Fruit Sellers (banana, mango, grapes, papaya)',
+                      'Vegetable Sellers (tomato, onion, potato, spinach)',
+                      'Tea Stalls (chai, filter coffee, snacks)',
+                      'Flower Shops (garlands, bouquets, rose)',
+                      'Coconut Sellers (tender coconut water)',
+                      'Flower Pot Sellers (indoor plants, succulents)',
+                      'Juice/Sharbat Stalls (sugarcane, fresh juices)',
+                      'Street Snacks (chips, namkeen, popcorn, bhel)',
+                      'Sweet Shops (mithai, jalebi, lassi, falooda)',
+                      'Egg Sellers (egg stalls)',
+                      'Chicken/Meat Shops (fresh chicken, mutton)',
+                      'Fish Sellers (wet markets, karimeena)',
+                      'Dairy Shops (milk, curd, paneer, ghee)',
+                      'Bakeries (bread, buns, biscuits, puffs)',
+                      'General Stores (kirana, daily needs)',
+                      'Tobacco/Pan Shops (small retail)',
+                      'Mobile Recharge (all operators)',
+                      'Stationery (small items, pens, notebooks)',
+                      'Grocery Kiranas (all household needs)',
+                      'Chai Points (adda + breakfast items)',
+                      'Breakfast Stalls (idli, vada, upma)',
+                      'Paan Shops (betel leaf preparation)',
+                      'Panipuri Stalls (small snacks)',
                     ].map((category, idx) => (
                       <div key={idx} className="bg-emerald-500/10 rounded px-2 py-1 text-emerald-300">
                         <span className="text-orange-400">•</span> {category}
