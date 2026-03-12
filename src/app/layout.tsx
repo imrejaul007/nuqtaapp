@@ -1,9 +1,8 @@
-'use client';
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import GlobalHeader from "@/components/GlobalHeader";
+import LayoutWrapper from "@/components/LayoutWrapper";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,16 +40,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname();
-
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased bg-[#0a1628]`}>
         <GlobalHeader />
         <main className="pt-14 sm:pt-16 min-h-screen">
-          {children}
+          <LayoutWrapper>{children}</LayoutWrapper>
         </main>
-        {!pathname?.startsWith('/rez') && <GlobalFooter />}
       </body>
     </html>
   );

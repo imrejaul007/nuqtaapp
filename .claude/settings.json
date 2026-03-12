@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(do sed -i '' \"s|import GlobalFooter from ''@/components/GlobalFooter''|import RezFooter from ''@/components/RezFooter''|g; sed -i '''' ''s|<GlobalFooter />|<RezFooter />|g'' \"$f\"; 2>/dev/null && echo \"Updated: $f \")",
+      "Bash(grep -n \"</div>$\" /Users/rejaulkarim/Documents/Nuqta/src/app/rez-financials/page.tsx)",
+      "Bash(do sed -i 's/      <RezFooter \\\\/>//g' \"$f\")",
+      "Bash(perl -i -pe 's/<RezFooter \\\\/>//g' /Users/rejaulkarim/Documents/Nuqta/src/app/rez-financials/isafe/page.tsx)",
+      "Bash(perl -i -pe 's/<RezFooter \\\\/>//g' /Users/rejaulkarim/Documents/Nuqta/src/app/rez-financials/acquisition/page.tsx)",
+      "Bash(do grep -v \"^import RezFooter\" \"$f\")",
+      "Bash(do head -n 5 \"$f\")",
+      "Read(//Users/rejaulkarim/Documents/Nuqta/**)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
+    ]
+  }
+}
