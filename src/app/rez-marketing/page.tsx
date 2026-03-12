@@ -253,11 +253,28 @@ export default function ReZMarketingIndiaPage() {
                           <h4 className="font-bold text-blue-400 mb-2">Offline Activation</h4>
                           <ul className="text-sm space-y-1 text-gray-300">
                             <li>20 merchant QR stickers</li>
-                            <li>College event sponsorships (5)</li>
-                            <li>Popup activation at MG Road</li>
+                            <li>College event sponsorships (5) with 20 popup activities</li>
+                            <li>Popup activation at MG Road (malls)</li>
                             <li>Referral contest launch</li>
                             <li>Weekend market activations</li>
                           </ul>
+                          <div className="mt-4 bg-orange-500/10 border border-orange-500/20 rounded-lg p-3">
+                            <h5 className="font-bold text-orange-400 mb-2">20 Popup Event Activities:</h5>
+                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                              {[
+                                'Jewelry', 'Custom t-shirts, hoodies', 'IPL/sports jerseys', 'Perfumes',
+                                'Accessories', 'Posters & books', 'Craft items', 'Polaroid images',
+                                'Crochet / Mehndi', 'Tops, dresses, kurtas', 'Games stall',
+                                'Photo booth with props', 'Custom keychains', 'Temp tattoos & henna',
+                                'Phone grips & PopSockets', 'Mini carnival games', 'Free food samples',
+                                'Tarot card reading', 'Quick caricatures', 'Express nail art'
+                              ].map((activity, idx) => (
+                                <div key={idx} className="bg-white/5 rounded px-2 py-1 text-gray-300">
+                                  <span className="text-orange-400">{idx + 1}.</span> {activity}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
