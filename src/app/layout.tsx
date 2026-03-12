@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Nuqta - Payment Intelligence & Universal Rewards for the GCC",
-      },
+      }
     ],
   },
   twitter: {
