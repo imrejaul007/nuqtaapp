@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import RezFooter from '@/components/RezFooter';
 import {
   Coins, BarChart3, FileText, Video, FolderOpen, Target,
   Users, Scale, ArrowRight, ExternalLink, TrendingUp,
@@ -329,7 +328,6 @@ export default function ReZLandingPage() {
         </div>
       </div>
 
-      <RezFooter />
     </div>
   );
 }
