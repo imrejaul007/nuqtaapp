@@ -13,10 +13,10 @@ import RezHeader from '@/components/RezHeader';
 import RezFooter from '@/components/RezFooter';
 
 export default function ReZMarketingIndiaPage() {
-  const [activeTab, setActiveTab] = useState<'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget' | 'customer'>('overview');
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
-  const tabs: Array<{id: 'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget', label: string, icon: any}> = [
+  const tabs: Array<{id: 'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget' | 'customer', label: string, icon: any}> = [
     { id: 'overview', label: 'Overview', icon: Target },
     { id: 'phase1', label: 'Phase 1 (Months 1-3)', icon: Rocket },
     { id: 'phase2', label: 'Phase 2 (Months 4-6)', icon: TrendingUp },
@@ -24,6 +24,7 @@ export default function ReZMarketingIndiaPage() {
     { id: 'channels', label: 'Marketing Channels', icon: Megaphone },
     { id: 'team', label: 'Team Structure', icon: Users },
     { id: 'budget', label: 'Budget & KPIs', icon: DollarSign },
+    { id: 'customer', label: 'Customer Acquisition', icon: Store },
   ];
 
   const toggleSection = (section: string) => {
@@ -912,6 +913,258 @@ export default function ReZMarketingIndiaPage() {
                       <p className="text-sm text-gray-400">{item.action}</p>
                     </div>
                   ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Customer Acquisition Tab */}
+        {activeTab === 'customer' && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-green-900/30 to-emerald-800/20 border-2 border-emerald-500/40 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-emerald-300">Roadside Vendor Acquisition Strategy</h2>
+                  <p className="text-gray-400">B2B2C Model: Bulk buying → Better margins → Extra cashback for customers</p>
+                </div>
+                <Store className="text-emerald-400" size={48} />
+              </div>
+
+              <div className="space-y-6">
+                {/* The Problem */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">The Problem</h3>
+                  <ul className="text-sm space-y-2 text-gray-300">
+                    <li>• <span className="text-red-400">Roadside vendors have thin margins (10-15%)</span></li>
+                    <li>• No bargaining power with suppliers</li>
+                    <li>• Can't offer competitive prices</li>
+                    <li>• Cashflow constraints limit inventory</li>
+                    <li>• Need to compete with organized retail</li>
+                  </ul>
+                </div>
+
+                {/* The Solution */}
+                <div className="bg-gradient-to-br from-emerald-500/20 to-green-500/10 rounded-lg p-4 border border-emerald-500/30">
+                  <h3 className="font-bold text-emerald-300 mb-3">The ReZ Solution</h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div>
+                      <p className="text-xl font-bold text-white mb-2">Bulk Purchasing</p>
+                      <p className="text-sm text-gray-300">ReZ buys inventory at bulk rates → Pass savings to vendors</p>
+                    </div>
+                    <div>
+                      <p className="text-xl font-bold text-white mb-2">Zero Inventory Cost</p>
+                      <p className="text-sm text-gray-300">Vendors stock our items → No upfront payment required</p>
+                    </div>
+                    <div>
+                      <p className="text-xl font-bold text-white mb-2">Extra Cashback</p>
+                      <p className="text-sm text-gray-300">Vendors offer 2-5% extra cashback on ReZ payments</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* How It Works */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">How It Works</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-emerald-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">1</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">ReZ Approaches Vendor</p>
+                        <p className="text-sm text-gray-400">Pitch bulk buying at 20-30% below market</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-emerald-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">2</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Vendor Stocks ReZ Items</p>
+                        <p className="text-sm text-gray-400">No payment, inventory on consignment</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-emerald-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">3</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Customers Pay via ReZ</p>
+                        <p className="text-sm text-gray-400">Get 2-5% extra cashback from vendor</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-emerald-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">4</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Vendor Wins Loyalty</p>
+                        <p className="text-sm text-gray-400">Repeat customers → Better data → More cashback offers</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vendor Categories to Target */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">Vendor Categories to Target</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs">
+                    {[
+                      'Fresh Fruits (banana, mango, grapes)',
+                      'Vegetables (tomato, onion, potato)',
+                      'Leafy Greens (spinach, coriander, methi)',
+                      'Dairy (milk, curd, paneer)',
+                      'Bakery (bread, buns, cookies)',
+                      'Tea & Coffee (chai, filter coffee)',
+                      'Street Food (chaat, momos, rolls)',
+                      'Snacks (chips, namkeen, biscuits)',
+                      'Cold Drinks (juice, lassi, soda)',
+                      'Packaged Goods (soap, shampoo, household)',
+                      'Mobile Recharge (all operators)'
+                    ].map((category, idx) => (
+                      <div key={idx} className="bg-emerald-500/10 rounded px-2 py-1 text-emerald-300">
+                        <span className="text-orange-400">•</span> {category}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Benefits for Each Stakeholder */}
+                <div className="bg-gradient-to-br from-blue-500/20 to-blue-500/10 rounded-lg p-4 border border-blue-500/30">
+                  <h3 className="font-bold text-blue-300 mb-3">Benefits for Each Stakeholder</h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div>
+                      <p className="font-bold text-white mb-2">🏪 Vendors</p>
+                      <ul className="text-sm space-y-1 text-gray-300">
+                        <li>• Better margins (10-15% vs 2-3%)</li>
+                        <li>• No inventory cost</li>
+                        <li>• Zero payment upfront</li>
+                        <li>• Free branding materials</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-bold text-white mb-2">👥 Customers</p>
+                      <ul className="text-sm space-y-1 text-gray-300">
+                        <li>• 2-5% extra cashback</li>
+                        <li>• Digital payments (UPI)</li>
+                        <li>• Loyalty points on every purchase</li>
+                        <li>• Trusted, verified vendors</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-bold text-white mb-2">💰 ReZ</p>
+                      <ul className="text-sm space-y-1 text-gray-300">
+                        <li>• Merchant acquisition at 0 cost</li>
+                        <li>• Transaction revenue on every payment</li>
+                        <li>• B2B data from daily operations</li>
+                        <li>• Viral loops at neighborhood level</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Team Structure for Roadside Acquisition */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">Independent Roadside Acquisition Team</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      {
+                        role: 'Team Lead (Roadside)',
+                        salary: '₹50,000-60,000',
+                        responsibilities: ['Overall vendor acquisition strategy', 'Bulk purchasing negotiations', 'Vendor relationships', 'Quality control'],
+                        teamSize: '3-4 people'
+                      },
+                      {
+                        role: 'Field Executives (2-3)',
+                        salary: '₹30,000-40,000',
+                        responsibilities: ['Daily vendor visits (10-15/day)', 'New vendor onboarding', 'Product delivery', 'Inventory management'],
+                        teamSize: '6-8 people'
+                      },
+                      {
+                        role: 'Warehouse Manager',
+                        salary: '₹25,000-35,000',
+                        responsibilities: ['Inventory storage', 'Order fulfillment', 'Quality checks', 'Distribution coordination'],
+                        teamSize: '1 person'
+                      },
+                    ].map((member, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3 border border-white/10">
+                        <p className="font-bold text-white text-sm">{member.role}</p>
+                        <p className="text-xs text-emerald-400 mb-2">{member.salary}/month</p>
+                        <ul className="text-xs text-gray-400 space-y-1">
+                          {member.responsibilities.map((r, i) => <li key={i}>• {r}</li>)}
+                        </ul>
+                        <p className="text-xs text-gray-500 mt-2">Team: {member.teamSize}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Rollout Strategy */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">Rollout Strategy</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="font-medium text-emerald-400">Phase 1 (Months 1-2): Pilot in 2 neighborhoods</p>
+                      <p className="text-sm text-gray-400">Koramangala + Indiranagar → 50 vendors → Validate model</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-blue-400">Phase 2 (Months 3-4): Expand to 10 neighborhoods</p>
+                      <p className="text-sm text-gray-400">Full Bangalore South → 200 vendors → Optimize operations</p>
+                    </div>
+                    <div>
+                      <p className="font-medium text-purple-400">Phase 3 (Months 5-6): Scale across Bangalore</p>
+                      <p className="text-sm text-gray-400">All major zones → 500 vendors → City dominance</p>
+                    </div>
+                    <div>
+                      <p className="font-bold text-orange-400 mt-4">Target by Month 6:</p>
+                      <p className="text-sm text-gray-400">500 roadside vendors • 25K daily active customers • ₹50L+ daily GMV</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Budget for Roadside Team */}
+                <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg p-4 border border-emerald-500/20">
+                  <div className="grid md:grid-cols-4 gap-4">
+                    <div>
+                      <p className="text-xs text-gray-400">Team Cost (6 months)</p>
+                      <p className="text-xl font-bold text-white">₹15-18L</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">Inventory Investment</p>
+                      <p className="text-xl font-bold text-white">₹5-8L</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">Expected Revenue</p>
+                      <p className="text-xl font-bold text-emerald-400">₹8-12L</p>
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400">ROI Target</p>
+                      <p className="text-xl font-bold text-emerald-400">6-8 months</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Key Metrics to Track */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">Key Metrics to Track</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      { metric: 'Active Vendors', target: '500 by Month 6', current: '50 by Month 2', unit: 'vendors' },
+                      { metric: 'Daily Orders', target: '25K by Month 6', current: '5K by Month 2', unit: 'orders' },
+                      { metric: 'Average Order Value', target: '₹200', current: '₹150', unit: 'per order' },
+                      { metric: 'Vendor Retention', target: '80% by Month 6', current: '90% by Month 2', unit: '%' },
+                      { metric: 'Customer Retention', target: '60% by Month 6', current: '70% by Month 2', unit: '%' },
+                      { metric: 'Repayment Rate', target: '95% on time', current: '98% by Month 2', unit: '%' },
+                    ].map((item, idx) => (
+                      <div key={idx} className="bg-white/5 rounded p-3 border border-white/10">
+                        <p className="font-bold text-white">{item.metric}</p>
+                        <p className="text-sm text-gray-400">Target: {item.target}</p>
+                        <p className="text-sm text-emerald-400">Current: {item.current}</p>
+                        <p className="text-xs text-gray-500">Unit: {item.unit}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
