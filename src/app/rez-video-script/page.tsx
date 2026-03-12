@@ -7,7 +7,7 @@ import {
   Video, Mic, Camera, Smartphone, Target,
   AlertTriangle, Zap, Star
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // ReZ VIDEO PITCH SCRIPTS — 60s, 90s, and 3-min versions
@@ -222,7 +222,7 @@ Let's build this together.`,
         </div>
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

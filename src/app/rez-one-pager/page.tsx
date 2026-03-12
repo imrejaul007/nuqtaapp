@@ -7,7 +7,7 @@ import {
   ArrowRight, ArrowLeft, Zap, CheckCircle, Coins, Globe,
   Rocket, Smartphone, Shield, BarChart3, Star
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // ReZ ONE-PAGER — Print-friendly, single page summary
@@ -242,7 +242,7 @@ export default function ReZOnePagerPage() {
       </div>
 
       <div className="no-print">
-        <GlobalFooter />
+        <RezFooter />
       </div>
     </div>
   );

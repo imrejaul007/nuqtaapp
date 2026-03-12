@@ -11,7 +11,7 @@ import {
   BookOpen, Filter, Activity, Layers, Sparkles,
   Search, Rocket, Hash, RefreshCw, Globe, Eye
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // TYPES
@@ -2184,7 +2184,7 @@ export default function AcquisitionStrategyPage() {
 
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

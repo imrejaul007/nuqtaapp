@@ -10,7 +10,7 @@ import {
   Banknote, Package, ShoppingCart, RefreshCw, AlertCircle, Gauge,
   ArrowRight, MapPin, Globe, TrendingDown, BookOpen
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // TYPES
@@ -1830,7 +1830,7 @@ export default function RezFinancialsPage() {
       </div>
 
       {/* Footer */}
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

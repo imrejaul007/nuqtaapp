@@ -10,7 +10,7 @@ import {
   Calendar, Share2, Instagram, Search, Briefcase, UserPlus,
   AlertTriangle, Heart, Building2
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // ReZ PITCH DECK — 12 SLIDES
@@ -733,7 +733,7 @@ export default function ReZDeckPage() {
         </div>
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

@@ -2,13 +2,13 @@
 
 import React from 'react';
 import Link from 'next/link';
+import RezFooter from '@/components/RezFooter';
 import {
   Coins, BarChart3, FileText, Video, FolderOpen, Target,
   Users, Scale, ArrowRight, ExternalLink, TrendingUp,
   DollarSign, Store, MapPin, Zap, Star, Rocket,
   CheckCircle, Mail, Globe, Presentation, Shield
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
 
 // ============================================
 // ReZ LANDING HUB — Central navigation for all ReZ pages
@@ -329,7 +329,7 @@ export default function ReZLandingPage() {
         </div>
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

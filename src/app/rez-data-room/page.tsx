@@ -8,7 +8,7 @@ import {
   DollarSign, MapPin, Target, Rocket, Globe, Store,
   TrendingUp, Briefcase, Scale, Coins
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // ReZ DATA ROOM — Virtual data room for investor due diligence
@@ -210,7 +210,7 @@ export default function ReZDataRoomPage() {
         </div>
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

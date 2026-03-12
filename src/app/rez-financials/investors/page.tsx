@@ -10,7 +10,7 @@ import {
   Send, Copy, Filter, Search, Award, Rocket, Shield,
   MessageSquare, BookOpen, Layers, Hash, Eye, Store
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // TYPES
@@ -2590,7 +2590,7 @@ export default function ReZInvestorsPage() {
 
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import {
   AlertTriangle, FileText, Copy, ChevronDown, ChevronRight,
   Scale, Briefcase, Clock, Globe, Zap
 } from 'lucide-react';
-import GlobalFooter from '@/components/GlobalFooter';
+import RezFooter from '@/components/RezFooter';
 
 // ============================================
 // ReZ iSAFE (India Simple Agreement for Future Equity)
@@ -387,7 +387,7 @@ Investors of INR 1,00,00,000 or more shall have board observer rights.`,
         })}
       </div>
 
-      <GlobalFooter />
+      <RezFooter />
     </div>
   );
 }
