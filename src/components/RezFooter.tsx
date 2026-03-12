@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {
   Coins, Home, Presentation, FileText, Video, BarChart3, Scale,
   FolderOpen, Target, Users, Mail, Globe, ArrowRight,
-  DollarSign, Store, Zap, TrendingUp, CheckCircle
+  DollarSign, Store, Zap, TrendingUp, CheckCircle, Megaphone
 } from 'lucide-react';
 
 // ============================================
@@ -18,6 +18,7 @@ const quickLinks = [
   { label: 'One-Pager', route: '/rez-one-pager', icon: 'FileText', desc: 'Print-friendly PDF summary' },
   { label: 'Video Scripts', route: '/rez-video-script', icon: 'Video', desc: '60s / 90s / 3-min versions' },
   { label: 'Financial Model', route: '/rez-financials', icon: 'BarChart3', desc: '3-year P&L, 7 tabs' },
+  { label: 'Marketing Plan', route: '/rez-marketing', icon: 'Megaphone', desc: 'India GTM strategy' },
   { label: 'iSAFE Terms', route: '/rez-financials/isafe', icon: 'Scale', desc: 'Legal terms & conversion' },
   { label: 'Data Room', route: '/rez-data-room', icon: 'FolderOpen', desc: '35+ docs organized' },
   { label: 'Acquisition', route: '/rez-financials/acquisition', icon: 'Target', desc: '10 tabs, 12 channels' },
@@ -45,6 +46,7 @@ export default function RezFooter() {
                          link.icon === 'FileText' ? FileText :
                          link.icon === 'Video' ? Video :
                          link.icon === 'BarChart3' ? BarChart3 :
+                         link.icon === 'Megaphone' ? Megaphone :
                          link.icon === 'Scale' ? Scale :
                          link.icon === 'FolderOpen' ? FolderOpen :
                          link.icon === 'Target' ? Target :

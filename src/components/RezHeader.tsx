@@ -11,9 +11,9 @@ import { Coins, ArrowRight, Home } from 'lucide-react';
 const tabs = [
   { label: 'Overview', route: '/rez' },
   { label: 'Financials', route: '/rez-financials' },
+  { label: 'Marketing', route: '/rez-marketing' },
   { label: 'Deck', route: '/rez-deck' },
   { label: 'Strategy', route: '/rez-financials/acquisition' },
-  { label: 'Investors', route: '/rez-financials/investors' },
 ];
 
 export default function RezHeader() {
