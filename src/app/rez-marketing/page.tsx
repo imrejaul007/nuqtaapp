@@ -7,16 +7,17 @@ import {
   Rocket, Megaphone, MapPin, Trophy, BarChart3,
   Instagram, MessageCircle, Video, Globe, Play, Star,
   Share2, Phone, QrCode, GraduationCap, Zap,
-  Train, Bus
+  Train, Bus, Utensils, Scissors, Sparkles, Coffee,
+  Leaf, Car, Building2, Headphones, FileText
 } from 'lucide-react';
 import RezHeader from '@/components/RezHeader';
 import RezFooter from '@/components/RezFooter';
 
 export default function ReZMarketingIndiaPage() {
-  const [activeTab, setActiveTab] = useState<'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget' | 'customer'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget' | 'customer' | 'media' | 'viral'>('overview');
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
-  const tabs: Array<{id: 'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget' | 'customer', label: string, icon: any}> = [
+  const tabs: Array<{id: 'overview' | 'phase1' | 'phase2' | 'phase3' | 'channels' | 'team' | 'budget' | 'customer' | 'media' | 'viral', label: string, icon: any}> = [
     { id: 'overview', label: 'Overview', icon: Target },
     { id: 'phase1', label: 'Phase 1 (Months 1-3)', icon: Rocket },
     { id: 'phase2', label: 'Phase 2 (Months 4-6)', icon: TrendingUp },
@@ -25,6 +26,8 @@ export default function ReZMarketingIndiaPage() {
     { id: 'team', label: 'Team Structure', icon: Users },
     { id: 'budget', label: 'Budget & KPIs', icon: DollarSign },
     { id: 'customer', label: 'Customer Acquisition', icon: Store },
+    { id: 'media', label: 'Media House Strategy', icon: Video },
+    { id: 'viral', label: 'Viral Growth Channels', icon: Zap },
   ];
 
   const toggleSection = (section: string) => {
@@ -1177,6 +1180,658 @@ export default function ReZMarketingIndiaPage() {
                         <p className="text-xs text-gray-500">Unit: {item.unit}</p>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Media House Strategy */}
+        {activeTab === 'media' && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/20 border-2 border-purple-500/40 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-purple-300">Media House Strategy: Niche Content Teams</h2>
+                  <p className="text-gray-400">Dedicated content teams for each business category → Reviews, testimonials, social media</p>
+                </div>
+                <Video className="text-purple-400" size={48} />
+              </div>
+
+              <div className="space-y-6">
+                {/* Concept Overview */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">The Concept</h3>
+                  <p className="text-sm text-gray-300 mb-3">Each niche has a dedicated 2-3 person media house team that:</p>
+                  <ul className="text-sm space-y-2 text-gray-300">
+                    <li>• <span className="text-purple-400">Visits businesses daily</span> (3-4 hours on-site)</li>
+                    <li>• <span className="text-purple-400">Creates content</span> (photos, videos, reviews, offers)</li>
+                    <li>• <span className="text-purple-400">Documents products/services</span> on ReZ platform</li>
+                    <li>• <span className="text-purple-400">Manages social media</span> for business owners</li>
+                    <li>• <span className="text-purple-400">Collects testimonials</span> from happy customers</li>
+                    <li>• <span className="text-purple-400">Packages as monthly retainer</span> for recurring content</li>
+                  </ul>
+                </div>
+
+                {/* 10 Niche Teams */}
+                <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/10 rounded-lg p-4 border border-purple-500/30">
+                  <h3 className="font-bold text-purple-300 mb-4">10 Niche Media House Teams</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      {
+                        niche: 'Food & Restaurants',
+                        services: ['Food photography', 'Menu digitization', 'Review collection', 'Social media posts', 'Reel content creation', 'Offer campaigns', 'Recipe tutorials', 'Behind-the-scenes'],
+                        icon: 'Utensils',
+                        teamSize: '3 people',
+                        monthlyKPIs: '500 pieces content, 20 reviews, 15 videos, 10 offers',
+                        businessKPIs: '20% more orders, 15% social engagement, 4.8 star rating'
+                      },
+                      {
+                        niche: 'Beauty & Salons',
+                        services: ['Before/After photos', 'Service showcases', 'Styling tutorials', 'Product reviews', 'Makeup tutorials', 'Seasonal trends', 'Consultation content'],
+                        icon: 'Scissors',
+                        teamSize: '2 people',
+                        monthlyKPIs: '400 pieces content, 15 reviews, 10 videos, 8 offers',
+                        businessKPIs: '25% more bookings, 20% social engagement, 4.7 star rating'
+                      },
+                      {
+                        niche: 'Fashion & Clothing',
+                        services: ['Outfit shoots', 'Size guides', 'Lookbooks', 'Product reviews', 'Seasonal collections', 'Influencer partnerships', 'Styling tips'],
+                        icon: 'TrendingUp',
+                        teamSize: '3 people',
+                        monthlyKPIs: '600 pieces content, 20 reviews, 20 videos, 12 offers',
+                        businessKPIs: '18% more sales, 25% social engagement, 4.5 star rating'
+                      },
+                      {
+                        niche: 'Jewelry & Accessories',
+                        services: ['Product photography', 'Gemstone education', 'Lifestyle shoots', 'Product reviews', 'Styling videos', 'Jewelry care tips', 'Customization content'],
+                        icon: 'Sparkles',
+                        teamSize: '2 people',
+                        monthlyKPIs: '300 pieces content, 10 reviews, 8 videos, 6 offers',
+                        businessKPIs: '15% more sales, 18% social engagement, 4.3 star rating'
+                      },
+                      {
+                        niche: 'Sweets & Bakeries',
+                        services: ['Food styling', 'Packaging design', 'Behind-the-scenes', 'Recipe tutorials', 'Product reviews', 'Festival content', 'Offer campaigns'],
+                        icon: 'Coffee',
+                        teamSize: '2 people',
+                        monthlyKPIs: '350 pieces content, 12 reviews, 8 videos, 10 offers',
+                        businessKPIs: '12% more orders, 22% social engagement, 4.6 star rating'
+                      },
+                      {
+                        niche: 'Fruits & Vegetables',
+                        services: ['Farm-to-table stories', 'Quality certification', 'Healthy eating education', 'Product reviews', 'Seasonal highlights', 'Recipe ideas', 'Sourcing content'],
+                        icon: 'Leaf',
+                        teamSize: '2 people',
+                        monthlyKPIs: '400 pieces content, 10 reviews, 6 videos, 8 offers',
+                        businessKPIs: '22% more orders, 18% social engagement, 4.4 star rating'
+                      },
+                      {
+                        niche: 'Tea & Coffee',
+                        services: ['Cafe ambience photos', 'Brew guides', 'Chai culture content', 'Latte art', 'Menu digitization', 'Customer testimonials', 'Offer campaigns'],
+                        icon: 'Coffee',
+                        teamSize: '2 people',
+                        monthlyKPIs: '450 pieces content, 15 reviews, 10 videos, 12 offers',
+                        businessKPIs: '15% more orders, 20% social engagement, 4.8 star rating'
+                      },
+                      {
+                        niche: 'Mobile Recharge',
+                        services: ['Plan comparison', 'Recharge tips', 'Network coverage', 'Offer aggregations', 'Data pack content', 'Tutorial videos', 'Customer reviews'],
+                        icon: 'Phone',
+                        teamSize: '2 people',
+                        monthlyKPIs: '400 pieces content, 10 reviews, 8 videos, 12 offers',
+                        businessKPIs: '10% more top-ups, 15% social engagement, 4.2 star rating'
+                      },
+                      {
+                        niche: 'Grocery & Kirana',
+                        services: ['Store tours', 'Product highlights', 'Deals compilation', 'Community stories', 'Inventory management', 'Customer service', 'Loyalty programs'],
+                        icon: 'Store',
+                        teamSize: '3 people',
+                        monthlyKPIs: '600 pieces content, 20 reviews, 15 videos, 12 offers',
+                        businessKPIs: '25% more orders, 18% social engagement, 4.8 star rating'
+                      },
+                      {
+                        niche: 'General Stores',
+                        services: ['Store branding', 'Inventory systems', 'Customer service', 'Loyalty programs', 'Offer campaigns', 'Promotional content', 'Staff training'],
+                        icon: 'Building2',
+                        teamSize: '2 people',
+                        monthlyKPIs: '500 pieces content, 20 reviews, 10 videos, 12 offers',
+                        businessKPIs: '20% more footfall, 15% social engagement, 4.5 star rating'
+                      },
+                      {
+                        niche: 'Auto/Transport',
+                        services: ['Showcase content', 'Feature videos', 'Maintenance tips', 'Service reviews', 'Customer testimonials', 'Offer campaigns', 'Comparison content'],
+                        icon: 'Car',
+                        teamSize: '2 people',
+                        monthlyKPIs: '350 pieces content, 12 reviews, 8 videos, 10 offers',
+                        businessKPIs: '12% more inquiries, 18% social engagement, 4.3 star rating'
+                      }
+                    ].map((team, idx) => {
+                      const iconMap: Record<string, any> = {
+                        'Utensils': Utensils,
+                        'Scissors': Scissors,
+                        'TrendingUp': TrendingUp,
+                        'Sparkles': Sparkles,
+                        'Coffee': Coffee,
+                        'Leaf': Leaf,
+                        'Phone': Phone,
+                        'Store': Store,
+                        'Building2': Building2,
+                        'Car': Car,
+                      };
+                      const IconComponent = iconMap[team.icon] || Video;
+
+                      return (
+                        <div key={idx} className="bg-white/5 rounded-lg p-4 border border-white/10">
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <IconComponent className="text-purple-400" size={24} />
+                              <div>
+                                <p className="font-bold text-white">{team.niche}</p>
+                                <p className="text-xs text-purple-400">Team: {team.teamSize} people</p>
+                              </div>
+                            </div>
+                            <div className="text-right text-xs text-gray-500">
+                              ₹25,000-30,000/month
+                            </div>
+                          </div>
+                          <div className="space-y-2">
+                            <p className="text-xs text-gray-500 mb-1">Monthly Content: {team.monthlyKPIs}</p>
+                            <p className="text-xs text-emerald-400 mb-1">Business Impact: {team.businessKPIs}</p>
+                            <div className="text-xs text-blue-400 mb-1">Services: {team.services.slice(0, 3).join(' • ')}...</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Content Production Workflow */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">Content Production Workflow</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-purple-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">1</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">On-Site Content Creation</p>
+                        <p className="text-sm text-gray-400">3-4 hours → Photos, videos, reviews collected</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-purple-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">2</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Content Processing & Upload</p>
+                        <p className="text-sm text-gray-400">Same day → Edited, uploaded to ReZ</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-purple-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold">3</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Quality Assurance & Review</p>
+                        <p className="text-sm text-gray-400">ReZ team reviews before publishing</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Business Benefits */}
+                <div className="bg-gradient-to-br from-purple-500/20 to-purple-500/10 rounded-lg p-4 border border-purple-500/30">
+                  <h3 className="font-bold text-purple-300 mb-3">Business Benefits from Media House Service</h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {[
+                      {
+                        title: 'Digital Presence',
+                        icon: 'Video',
+                        benefits: ['Professional social media', 'Online reviews & ratings', 'Product catalogs', 'Enhanced visibility', 'SEO optimization', 'Brand awareness']
+                      },
+                      {
+                        title: 'Content Marketing',
+                        icon: 'FileText',
+                        benefits: ['Regular social posts', 'Video content', 'Recipe tutorials', 'Seasonal campaigns', 'Behind-the-scenes', 'Customer testimonials', 'Offer promotions']
+                      },
+                      {
+                        title: 'Operational Support',
+                        icon: 'Headphones',
+                        benefits: ['Social media training', 'Content calendar management', 'Performance analytics', 'Ongoing optimization', '24/7 support team']
+                      }
+                    ].map((benefit, idx) => {
+                      const benefitIconMap: Record<string, any> = {
+                        'Video': Video,
+                        'FileText': FileText,
+                        'Headphones': Headphones,
+                      };
+                      const BenefitIcon = benefitIconMap[benefit.icon] || Video;
+
+                      return (
+                        <div key={idx} className="bg-white/5 rounded-lg p-3 border border-white/10">
+                          <BenefitIcon className="text-purple-400 mb-2" size={20} />
+                          <p className="font-bold text-white text-sm">{benefit.title}</p>
+                          <ul className="text-xs text-gray-400 space-y-1">
+                            {benefit.benefits.slice(0, 4).map((b, i) => <li key={i}>• {b}</li>)}
+                            <li>• <span className="text-emerald-400">+ More based on tier</span></li>
+                          </ul>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Pricing Model */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">Pricing Model for Businesses</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-4">
+                        <p className="text-sm text-gray-400">Monthly Retainer</p>
+                        <p className="text-2xl font-bold text-purple-400">₹30,000</p>
+                      </div>
+                      <div className="text-right text-xs text-gray-500">
+                        <span className="text-gray-300">per business</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-4">
+                        <p className="text-sm text-gray-400">Pay-Per-Piece</p>
+                        <p className="text-2xl font-bold text-orange-400">₹50-100</p>
+                      </div>
+                      <div className="text-right text-xs text-gray-500">
+                        <span className="text-gray-300">based on content volume</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex gap-4">
+                        <p className="text-sm text-gray-400">What's Included</p>
+                        <p className="text-lg font-bold text-white">₹30,000 worth</p>
+                      </div>
+                      <div className="text-right text-xs text-gray-500">
+                        <span className="text-gray-300">photos, videos, reviews, posts, SEO</span>
+                      </div>
+                    </div>
+                    <div className="bg-orange-500/10 rounded-lg p-3 border-orange-500/20">
+                      <p className="text-sm text-emerald-400 font-bold">Startup Offer:</p>
+                      <p className="text-xs text-gray-300">First 3 months at 50% discount for first 20 businesses</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Viral Growth Channels */}
+        {activeTab === 'viral' && (
+          <div className="space-y-6">
+            <div className="bg-gradient-to-br from-yellow-900/30 to-orange-900/20 border-2 border-yellow-500/40 rounded-xl p-6">
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-yellow-300">Viral Growth Channels: Earn ReZ Coins</h2>
+                  <p className="text-gray-400">Interactive challenges, street interviews, social media contests → Instant rewards</p>
+                </div>
+                <Zap className="text-yellow-400" size={48} />
+              </div>
+
+              <div className="space-y-6">
+                {/* Overview */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">The Viral Growth Philosophy</h3>
+                  <p className="text-sm text-gray-300 mb-3">
+                    Transform everyday interactions into earning opportunities. People participate, share, and bring friends → organic viral growth.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="bg-yellow-500/10 rounded-lg p-3 border border-yellow-500/20">
+                      <p className="text-2xl font-bold text-yellow-400">25-500</p>
+                      <p className="text-xs text-gray-400">ReZ coins per activity</p>
+                    </div>
+                    <div className="bg-yellow-500/10 rounded-lg p-3 border border-yellow-500/20">
+                      <p className="text-2xl font-bold text-yellow-400">10x</p>
+                      <p className="text-xs text-gray-400">Expected viral coefficient</p>
+                    </div>
+                    <div className="bg-yellow-500/10 rounded-lg p-3 border border-yellow-500/20">
+                      <p className="text-2xl font-bold text-yellow-400">1000+</p>
+                      <p className="text-xs text-gray-400">Daily active participants</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Interactive Public Challenges */}
+                <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-500/10 rounded-lg p-4 border border-yellow-500/30">
+                  <h3 className="font-bold text-yellow-300 mb-4">🎯 Interactive Public Challenges</h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {[
+                      {
+                        title: 'ReZ Challenge Zones',
+                        location: 'Malls, Metro Stations, Colleges',
+                        activities: ['30-sec Bangalore quizzes', 'Spot the difference games', 'Memory card challenges'],
+                        rewards: '50-100 coins instantly',
+                        frequency: 'Weekend activations',
+                        team: '2 activation team members',
+                        target: '200-300 participants/day'
+                      },
+                      {
+                        title: 'Weekend City Quests',
+                        location: 'Commercial Street, Indiranagar, Koramangala',
+                        activities: ['Find 3 participating stores', 'Take photos with merchant QR codes', 'Complete tasks at locations'],
+                        rewards: '500-1000 coins + prizes',
+                        frequency: 'Saturday & Sunday',
+                        team: '3 quest coordinators',
+                        target: '150-200 participants/weekend'
+                      },
+                      {
+                        title: 'Skill-Based Games',
+                        location: 'Festivals, Markets, Public Events',
+                        activities: ['1-min singing contests', '30-sec dance-offs', 'Quick drawing challenges', 'Photography contests'],
+                        rewards: '200-500 coins + feature on ReZ',
+                        frequency: 'Event-based',
+                        team: '2 talent scouts',
+                        target: '100+ talent discoveries/month'
+                      }
+                    ].map((challenge, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-4 border border-white/10">
+                        <h4 className="font-bold text-white mb-2">{challenge.title}</h4>
+                        <p className="text-xs text-yellow-400 mb-2">📍 {challenge.location}</p>
+                        <ul className="text-xs text-gray-300 space-y-1 mb-2">
+                          {challenge.activities.map((a, i) => <li key={i}>• {a}</li>)}
+                        </ul>
+                        <div className="space-y-1 mt-3 pt-2 border-t border-white/10">
+                          <p className="text-xs text-gray-500">🎁 Rewards: <span className="text-emerald-400">{challenge.rewards}</span></p>
+                          <p className="text-xs text-gray-500">📅 Frequency: <span className="text-blue-400">{challenge.frequency}</span></p>
+                          <p className="text-xs text-gray-500">👥 Team: <span className="text-purple-400">{challenge.team}</span></p>
+                          <p className="text-xs text-gray-500">🎯 Target: <span className="text-orange-400">{challenge.target}</span></p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Street Interviews */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-4">🎤 Street Interview & Interaction</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    {[
+                      {
+                        title: 'ReZ Street Talk',
+                        concept: 'Interview people at busy spots',
+                        locations: 'MG Road, Brigade Road, Cubbon Park, KR Market',
+                        questions: ['"What\'s your favorite local business?"', '"Show us your best money-saving tip"', '"What would you do with ₹1000 extra?"'],
+                        rewards: '25-50 coins for answering + video feature',
+                        kpis: '150+ interviews/week, 80% social share rate'
+                      },
+                      {
+                        title: 'Flash Giveaways',
+                        concept: 'Unexpected rewards for quick tasks',
+                        locations: 'High footfall areas randomly',
+                        questions: ['Selfie with ReZ mascot', 'Download app instantly', 'Share on Instagram story'],
+                        rewards: '50-100 coins + surprise prizes',
+                        kpis: '100+ giveaways/week, 70% conversion rate'
+                      },
+                      {
+                        title: 'Vendor Spotlights',
+                        concept: 'Interview roadside vendors',
+                        locations: 'Street vendors across Bangalore',
+                        questions: ['"Tell us your story"', '"What makes your business special?"', '"How did you start?"'],
+                        rewards: '100 coins for vendor + platform feature',
+                        kpis: '30 vendor features/week, merchant acquisition boost 25%'
+                      },
+                      {
+                        title: 'Community Stories',
+                        concept: 'Document local community heroes',
+                        locations: 'Neighborhoods, local events',
+                        questions: ['Local business success stories', 'Community helpers', 'Artisans & craftsmen'],
+                        rewards: '200 coins for subjects, 50 coins for nominators',
+                        kpis: '50 stories/month, strong community engagement'
+                      }
+                    ].map((interview, idx) => (
+                      <div key={idx} className="bg-gradient-to-br from-yellow-500/10 to-orange-500/10 rounded-lg p-4 border border-yellow-500/20">
+                        <h4 className="font-bold text-yellow-300 mb-2">{interview.title}</h4>
+                        <p className="text-xs text-gray-400 mb-2">{interview.concept}</p>
+                        <p className="text-xs text-gray-500 mb-2">📍 {interview.locations}</p>
+                        <ul className="text-xs text-gray-300 space-y-1 mb-3">
+                          {interview.questions.map((q, i) => <li key={i}>• {q}</li>)}
+                        </ul>
+                        <div className="pt-2 border-t border-white/10">
+                          <p className="text-xs text-gray-500">🎁 Rewards: <span className="text-emerald-400">{interview.rewards}</span></p>
+                          <p className="text-xs text-gray-500">📊 KPIs: <span className="text-blue-400">{interview.kpis}</span></p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Viral Social Media Challenges */}
+                <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-500/10 rounded-lg p-4 border border-yellow-500/30">
+                  <h3 className="font-bold text-yellow-300 mb-4">📱 Viral Social Media Challenges</h3>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        title: '#ReZSavingsChallenge',
+                        frequency: 'Weekly themes',
+                        examples: ['"Best Sunday market haul under ₹500"', '"Share street food finds"', '"Creative reuse item"'],
+                        rewards: 'Best entries win 1000-5000 coins',
+                        platforms: 'Instagram Reels, YouTube Shorts, TikTok',
+                        engagement_target: '5000+ entries/month, 100K+ views'
+                      },
+                      {
+                        title: '#ReZMyDay',
+                        frequency: 'Daily documentation',
+                        examples: ['"Morning chai routine"', '"Lunch from local tiffin"', '"Evening walk discoveries"'],
+                        rewards: 'Top 10 daily winners get 200-500 coins',
+                        platforms: 'Instagram Stories, Facebook Stories',
+                        engagement_target: '3000+ daily participants'
+                      },
+                      {
+                        title: '#ReZBuddyChallenge',
+                        frequency: 'Ongoing referral program',
+                        examples: ['"Tag your shopping buddy"', '"Bring a friend to challenge zones"'],
+                        rewards: 'Both get 100 coins when friend signs up, top referrer gets 5000 coins weekly',
+                        platforms: 'All social platforms',
+                        engagement_target: 'Viral coefficient 10x, 50% referral rate'
+                      },
+                      {
+                        title: '#ReZHiddenGems',
+                        frequency: 'Bi-weekly discoveries',
+                        examples: ['"Underrated local businesses"', '"Secret menu items"', '"Hidden Bangalore spots"'],
+                        rewards: '500 coins per featured gem, monthly winner gets 10,000 coins',
+                        platforms: 'Instagram Reels, YouTube',
+                        engagement_target: '2000+ gems discovered, merchant partnerships'
+                      }
+                    ].map((challenge, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-4 border border-white/10">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <h4 className="font-bold text-white">{challenge.title}</h4>
+                            <p className="text-xs text-yellow-400">{challenge.frequency}</p>
+                          </div>
+                          <Share2 className="text-yellow-400" size={24} />
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-4">
+                          <div>
+                            <p className="text-xs text-gray-500 mb-1">Examples:</p>
+                            <ul className="text-xs text-gray-300 space-y-1">
+                              {challenge.examples.map((e, i) => <li key={i}>• {e}</li>)}
+                            </ul>
+                          </div>
+                          <div>
+                            <p className="text-xs text-emerald-400 mb-1">🎁 {challenge.rewards}</p>
+                            <p className="text-xs text-blue-400 mb-1">📱 {challenge.platforms}</p>
+                            <p className="text-xs text-purple-400">📊 {challenge.engagement_target}</p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Festival & Seasonal Campaigns */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-4">🎉 Festival & Seasonal Campaigns</h3>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {[
+                      { festival: 'Diwali', campaign: 'Light Hunt', activity: 'Find best decorated shops', reward: '200-500 coins' },
+                      { festival: 'Holi', campaign: 'Color Challenge', activity: 'Share safe Holi tips', reward: '150-300 coins' },
+                      { festival: 'Ramadan', campaign: 'Iftar Guide', activity: 'Best iftar spots', reward: '100-250 coins' },
+                      { festival: 'Pongal', campaign: 'Food Contest', activity: 'Traditional dishes', reward: '200-400 coins' },
+                      { festival: 'Christmas', campaign: 'Charity Drive', activity: 'Acts of kindness', reward: '100-200 coins' },
+                      { festival: 'New Year', campaign: 'Resolution Challenge', activity: '2024 goals', reward: '300-500 coins' }
+                    ].map((fest, idx) => (
+                      <div key={idx} className="bg-gradient-to-br from-yellow-500/10 to-red-500/10 rounded-lg p-3 border border-yellow-500/20">
+                        <p className="font-bold text-yellow-300 text-sm mb-1">{fest.festival}</p>
+                        <p className="text-xs text-white mb-1">{fest.campaign}</p>
+                        <p className="text-xs text-gray-400 mb-1">{fest.activity}</p>
+                        <p className="text-xs text-emerald-400">🎁 {fest.reward}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Community-Based Initiatives */}
+                <div className="bg-gradient-to-br from-emerald-500/20 to-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
+                  <h3 className="font-bold text-emerald-300 mb-4">🤝 Community-Based Initiatives</h3>
+                  <div className="grid md:grid-cols-4 gap-4">
+                    {[
+                      { tagline: '#ReZCleanDrive', activity: 'Clean up local areas', reward: '100-200 coins' },
+                      { tagline: '#ReZShare', activity: 'Share with homeless/needy', reward: '150-300 coins' },
+                      { tagline: '#ReZSkill', activity: 'Teach someone new skill', reward: '200-400 coins' },
+                      { tagline: '#ReZLocalHero', activity: 'Nominate helpful locals', reward: '100-250 coins' },
+                      { tagline: '#ReZPlant', activity: 'Tree planting drives', reward: '250-500 coins' },
+                      { tagline: '#ReZEducate', activity: 'Teach kids digital skills', reward: '300-500 coins' },
+                      { tagline: '#ReZHelp', activity: 'Assist elderly citizens', reward: '200-400 coins' },
+                      { tagline: '#ReZCreate', activity: 'Local art & culture events', reward: '150-350 coins' }
+                    ].map((initiative, idx) => (
+                      <div key={idx} className="bg-white/5 rounded-lg p-3 border border-white/10">
+                        <p className="font-bold text-emerald-400 text-xs mb-2">{initiative.tagline}</p>
+                        <p className="text-xs text-gray-300 mb-2">{initiative.activity}</p>
+                        <p className="text-xs text-emerald-400">🎁 {initiative.reward}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Corporate & Partnership */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-4">🏢 Corporate & Partnership</h3>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {[
+                      {
+                        title: 'Office "Lunch Roulette"',
+                        concept: 'Random team gets ReZ coins for trying new places',
+                        partners: 'Corporate HR teams',
+                        impact: 'Employee engagement + merchant discovery'
+                      },
+                      {
+                        title: 'Ride-Hacking Partnerships',
+                        concept: 'Uber/Ola: earn coins for sharing rides',
+                        partners: 'Uber, Ola, Rapido',
+                        impact: 'High adoption, eco-friendly messaging'
+                      },
+                      {
+                        title: 'Gym Challenges',
+                        concept: 'Fitness goals = ReZ coins',
+                        partners: 'Local gyms, fitness centers',
+                        impact: 'Health + rewards motivation'
+                      },
+                      {
+                        title: 'Library/Café Study Sessions',
+                        concept: 'Check-in rewards for study spots',
+                        partners: 'Cafes, libraries, coworking spaces',
+                        impact: 'Student engagement'
+                      },
+                      {
+                        title: 'Railway/Metro Activations',
+                        concept: 'Quick challenges during commutes',
+                        partners: 'Metro, Railway authorities',
+                        impact: 'Mass reach, daily commuters'
+                      },
+                      {
+                        title: 'College Ambassador Program',
+                        concept: 'Student ambassadors run challenges',
+                        partners: 'College student bodies',
+                        impact: 'Youth market penetration'
+                      }
+                    ].map((partner, idx) => (
+                      <div key={idx} className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-lg p-4 border border-blue-500/20">
+                        <h4 className="font-bold text-blue-300 mb-2">{partner.title}</h4>
+                        <p className="text-xs text-gray-400 mb-2">{partner.concept}</p>
+                        <p className="text-xs text-purple-400 mb-1">🤝 Partners: {partner.partners}</p>
+                        <p className="text-xs text-emerald-400">📈 Impact: {partner.impact}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Execution Timeline */}
+                <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <h3 className="font-bold text-white mb-3">📅 Execution Timeline</h3>
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold text-sm">M1</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Month 1: Launch & Test</p>
+                        <p className="text-sm text-gray-400">2 challenge zones, street interviews pilot, 1 social challenge</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold text-sm">M2</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Month 2: Scale Core Activities</p>
+                        <p className="text-sm text-gray-400">5 challenge zones, weekend quests, 2 social challenges</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold text-sm">M3</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Month 3: Add Corporate Partners</p>
+                        <p className="text-sm text-gray-400">8 challenge zones, corporate programs, festival campaigns</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="bg-yellow-500 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                        <span className="text-white font-bold text-sm">M6</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-white">Month 6: City-Wide Rollout</p>
+                        <p className="text-sm text-gray-400">All channels active, 10+ challenge zones, 1000+ daily participants</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Budget */}
+                <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-lg p-4 border border-yellow-500/30">
+                  <h3 className="font-bold text-yellow-300 mb-3">💰 Budget Breakdown</h3>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-sm text-white mb-2">Monthly Costs:</p>
+                      <ul className="text-xs text-gray-300 space-y-1">
+                        <li>• Challenge Zone Setup: ₹15,000</li>
+                        <li>• Street Interview Team (3): ₹75,000</li>
+                        <li>• Social Challenge Prizes: ₹30,000</li>
+                        <li>• Equipment & Supplies: ₹10,000</li>
+                        <li>• Marketing & Promotion: ₹20,000</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-sm text-white mb-2">ROI Metrics:</p>
+                      <ul className="text-xs text-gray-300 space-y-1">
+                        <li>• Cost per acquisition: ₹25-40</li>
+                        <li>• Daily participants: 1000+</li>
+                        <li>• Viral coefficient: 10x</li>
+                        <li>• Social reach: 500K+ monthly</li>
+                        <li>• Merchant signups: 200+ monthly</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
